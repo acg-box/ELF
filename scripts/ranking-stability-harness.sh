@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-if [[ -f "${ROOT_DIR}/.env" ]]; then
+if [[ "${ELF_HARNESS_LOAD_ENV:-1}" == "1" && -f "${ROOT_DIR}/.env" ]]; then
   set -a
   # shellcheck disable=SC1090
   source "${ROOT_DIR}/.env"

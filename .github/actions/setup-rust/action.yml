@@ -42,11 +42,21 @@ runs:
       with:
         tool: taplo@0.10.0
 
-    - name: Install actionlint
+    - name: Install verified actionlint release
       if: inputs.checks == 'true'
-      uses: taiki-e/install-action@b8cecb83565409bcc297b2df6e77f030b2a468d5
-      with:
-        tool: actionlint@1.7.12
+      shell: bash
+      env:
+        ACTIONLINT_VERSION: 1.7.12
+        ACTIONLINT_SHA256: 8aca8db96f1b94770f1b0d72b6dddcb1ebb8123cb3712530b08cc387b349a3d8
+      run: |
+        set -euo pipefail
+        archive="${RUNNER_TEMP}/actionlint.tar.gz"
+        curl --fail --show-error --silent --location --retry 3 \
+          "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
+          --output "${archive}"
+        echo "${ACTIONLINT_SHA256}  ${archive}" | sha256sum --check --strict
+        tar -xzf "${archive}" -C "${RUNNER_TEMP}" actionlint
+        install -m 0755 "${RUNNER_TEMP}/actionlint" "${HOME}/.cargo/bin/actionlint"
 
     - name: Install nightly formatter
       if: inputs.checks == 'true'

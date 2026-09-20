@@ -156,3 +156,6 @@ The trace harness exports its selected DSN to the evaluator through
 Task registration tests traverse the root makefile's extension graph, reject cycles
 and missing required files, and ignore unregistered files. Ranking stability starts
 the already-built API and worker directly.
+
+Set `ELF_HARNESS_LOAD_ENV=0` for an isolated harness run that must not load a
+checkout-local `.env`; default interactive behavior remains unchanged.
