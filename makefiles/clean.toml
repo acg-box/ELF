@@ -1,8 +1,6 @@
 # Rust workspace tasks: Clean.
 
 [tasks.clean-baseline-live-docker]
-workspace = false
-command = "docker"
 args = [
 	"compose",
 	"-f",
@@ -11,10 +9,9 @@ args = [
 	"-v",
 	"--remove-orphans",
 ]
+command = "docker"
 
 [tasks.clean-parity-docker]
-workspace = false
-command = "docker"
 args = [
 	"compose",
 	"-f",
@@ -23,3 +20,24 @@ args = [
 	"-v",
 	"--remove-orphans",
 ]
+command = "docker"
+
+# Git SHA is embedded by the shared CLI metadata crate and application build scripts.
+[tasks.clean-release]
+args = [
+	"clean",
+	"--release",
+	"--locked",
+	"-p",
+	"elf-cli",
+	"-p",
+	"elf-api",
+	"-p",
+	"elf-worker",
+	"-p",
+	"elf-mcp",
+	"-p",
+	"elf-eval",
+	"${@}",
+]
+command = "cargo"

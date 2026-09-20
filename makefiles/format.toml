@@ -1,37 +1,23 @@
-# Rust workspace tasks: Format.
+# Formatting and format checks share the same scope.
 
 [tasks.fmt]
-workspace = false
-dependencies = [
-	"fmt-rust",
-	"fmt-toml",
-]
+dependencies = ["fmt-rust", "fmt-toml"]
 
-[tasks.fmt-check]
-workspace = false
-dependencies = [
-	"fmt-rust-check",
-	"fmt-toml-check",
-]
+[tasks.check-format]
+dependencies = ["check-format-rust", "check-format-toml"]
 
 [tasks.fmt-rust]
-workspace = false
-script = "cargo +nightly fmt --all"
+args    = ["run", "nightly", "cargo", "fmt", "--all"]
+command = "rustup"
 
-[tasks.fmt-rust-check]
+[tasks.check-format-rust]
+args   = ["run", "nightly", "cargo", "fmt", "--all", "--", "--check"]
 extend = "fmt-rust"
-script = "cargo +nightly fmt --all -- --check"
 
 [tasks.fmt-toml]
-workspace = false
-command = "taplo"
-args = [
-	"fmt",
-]
+args    = ["-c", "git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt"]
+command = "sh"
 
-[tasks.fmt-toml-check]
+[tasks.check-format-toml]
+args   = ["-c", "git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt --check"]
 extend = "fmt-toml"
-args = [
-	"fmt",
-	"--check",
-]

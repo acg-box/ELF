@@ -1,0 +1,148 @@
+# Benchmark tasks: retrieval.
+
+[tasks.real-world-memory-project-decisions]
+dependencies = [
+	"real-world-memory-project-decisions-report",
+]
+
+[tasks.real-world-memory-project-decisions-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/project_decisions",
+	"--out",
+	"tmp/real-world-memory/project-decisions/report.json",
+	"--run-id",
+	"real-world-memory-project-decisions",
+	"--adapter-id",
+	"fixture_project_decisions",
+	"--adapter-name",
+	"ELF project decision fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-project-decisions-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/project-decisions/report.json",
+	"--out",
+	"tmp/real-world-memory/project-decisions/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-project-decisions-json",
+]
+
+[tasks.real-world-memory-retrieval]
+dependencies = [
+	"real-world-memory-retrieval-report",
+]
+
+[tasks.real-world-memory-retrieval-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/retrieval",
+	"--run-id",
+	"real-world-memory-retrieval",
+	"--adapter-id",
+	"fixture_retrieval",
+	"--adapter-name",
+	"ELF fixture retrieval cases",
+	"--out",
+	"tmp/real-world-memory/retrieval-report.json",
+]
+command = "cargo"
+
+[tasks.real-world-memory-retrieval-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/retrieval-report.json",
+	"--out",
+	"tmp/real-world-memory/retrieval-report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-retrieval-json",
+]
+
+[tasks.real-world-memory-work-continuity]
+dependencies = [
+	"real-world-memory-work-continuity-report",
+]
+
+[tasks.real-world-memory-work-continuity-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/work_continuity",
+	"--out",
+	"tmp/real-world-memory/work-continuity/report.json",
+	"--run-id",
+	"real-world-memory-work-continuity",
+	"--adapter-id",
+	"fixture_work_continuity",
+	"--adapter-name",
+	"ELF Work Continuity fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-work-continuity-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/work-continuity/report.json",
+	"--out",
+	"tmp/real-world-memory/work-continuity/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-work-continuity-json",
+]

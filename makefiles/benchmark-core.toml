@@ -5,138 +5,116 @@
 # benchmark commands.
 
 [tasks.benchmark-competitors]
-workspace = false
-command = "python3"
 args = [
 	"scripts/benchmark-runner.py",
 	"${@}",
 ]
-
-[tasks.test-benchmark-runner-contract]
-workspace = false
 command = "python3"
-args = [
-	"-m",
-	"unittest",
-	"scripts/tests/test_benchmark_thin_runner.py",
-]
 
 [tasks.baseline-backfill-100k-docker]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"backfill-100k",
 ]
+command = "bash"
 
 [tasks.baseline-backfill-10k-docker]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"backfill-10k",
 ]
+command = "bash"
 
 [tasks.baseline-backfill-docker]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"backfill",
 ]
+command = "bash"
 
 [tasks.baseline-live-docker]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"live",
 ]
+command = "bash"
 
 [tasks.baseline-live-report]
-workspace = false
-command = "bash"
 args = [
 	"scripts/live-baseline-report-to-md.sh",
 ]
+command = "bash"
 
 [tasks.baseline-production-private]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"production-private",
 ]
+command = "bash"
 
 [tasks.baseline-production-private-addendum]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"production-private-addendum",
 ]
+command = "bash"
 
 [tasks.baseline-production-synthetic]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"production-synthetic",
 ]
+command = "bash"
 
 [tasks.baseline-soak-docker]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"soak",
 ]
+command = "bash"
 
 [tasks.local-agent-loop]
-workspace = false
-command = "bash"
 args = [
 	"scripts/local-agent-loop.sh",
 ]
+command = "bash"
 
 [tasks.openmemory-ui-export-readback]
-workspace = false
-command = "bash"
 args = [
 	"scripts/baseline-docker.sh",
 	"openmemory-ui-export-readback",
 ]
+command = "bash"
 
 [tasks.parity-docker]
-workspace = false
-command = "docker"
 args = [
 	"compose",
 	"-f",
 	"docker-compose.parity.yml",
 	"run",
+	"--locked",
 	"--build",
 	"--rm",
 	"parity-runner",
 ]
+command = "docker"
 
 [tasks.real-world-first-generation-oss]
-workspace = false
 dependencies = [
 	"real-world-first-generation-oss-report",
 ]
 
 [tasks.real-world-first-generation-oss-json]
-workspace = false
-command = "cargo"
 args = [
 	"run",
+	"--locked",
 	"-p",
 	"elf-eval",
 	"--bin",
 	"real_world_job_benchmark",
 	"--",
 	"run",
+	"--locked",
 	"--fixtures",
 	"apps/elf-eval/fixtures/real_world_external_adapters/first_generation_oss",
 	"--out",
@@ -148,15 +126,12 @@ args = [
 	"--adapter-name",
 	"First-generation OSS fixture coverage",
 ]
+command = "cargo"
 
 [tasks.real-world-first-generation-oss-report]
-workspace = false
-dependencies = [
-	"real-world-first-generation-oss-json",
-]
-command = "cargo"
 args = [
 	"run",
+	"--locked",
 	"-p",
 	"elf-eval",
 	"--bin",
@@ -168,24 +143,27 @@ args = [
 	"--out",
 	"tmp/real-world-memory/first-generation-oss/report.md",
 ]
+command = "cargo"
+dependencies = [
+	"real-world-first-generation-oss-json",
+]
 
 [tasks.real-world-job-operator-ux]
-workspace = false
 dependencies = [
 	"real-world-job-operator-ux-report",
 ]
 
 [tasks.real-world-job-operator-ux-json]
-workspace = false
-command = "cargo"
 args = [
 	"run",
+	"--locked",
 	"-p",
 	"elf-eval",
 	"--bin",
 	"real_world_job_benchmark",
 	"--",
 	"run",
+	"--locked",
 	"--fixtures",
 	"apps/elf-eval/fixtures/real_world_job/operator_debugging_ux",
 	"--out",
@@ -197,23 +175,19 @@ args = [
 	"--adapter-name",
 	"ELF operator UX fixture",
 ]
+command = "cargo"
 
 [tasks.real-world-job-operator-ux-live-adapters]
-workspace = false
-command = "bash"
 args = [
 	"scripts/real-world-docker.sh",
 	"job-operator-ux-live-adapters",
 ]
+command = "bash"
 
 [tasks.real-world-job-operator-ux-report]
-workspace = false
-dependencies = [
-	"real-world-job-operator-ux-json",
-]
-command = "cargo"
 args = [
 	"run",
+	"--locked",
 	"-p",
 	"elf-eval",
 	"--bin",
@@ -224,4 +198,8 @@ args = [
 	"tmp/real-world-job/real-world-job-operator-ux-report.json",
 	"--out",
 	"tmp/real-world-job/real-world-job-operator-ux-report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-job-operator-ux-json",
 ]

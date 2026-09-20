@@ -1,13 +1,11 @@
 name: Release
 
 permissions:
-  contents: write
-  discussions: write
+  contents: read
 
 env:
   CARGO_REGISTRIES_CRATES_IO_PROTOCOL: sparse
   CARGO_TERM_COLOR: always
-
   RUST_BACKTRACE: full
 
 on:
@@ -17,123 +15,139 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  cancel-in-progress: false
 
 jobs:
   build:
     name: Build ${{ matrix.target.name }} package
     runs-on: ${{ matrix.target.os }}
+    timeout-minutes: 60
     strategy:
+      fail-fast: false
       matrix:
         target:
-          [
-            { name: aarch64-apple-darwin, os: macos-latest },
-            { name: x86_64-unknown-linux-gnu, os: ubuntu-latest },
-            { name: x86_64-pc-windows-msvc, os: windows-latest },
-          ]
+          - name: aarch64-apple-darwin
+            os: macos-latest
+            archive: elf-aarch64-apple-darwin.zip
+          - name: x86_64-unknown-linux-gnu
+            os: ubuntu-latest
+            archive: elf-x86_64-unknown-linux-gnu.tar.gz
+          - name: x86_64-pc-windows-msvc
+            os: windows-latest
+            archive: elf-x86_64-pc-windows-msvc.zip
     steps:
-      - name: Fetch latest code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      - name: Fetch exact release source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Set up Rust toolchain
-        uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659
+      - name: Set up Rust CI tools
+        uses: ./.github/actions/setup-rust
         with:
-          cache: true
-          components: rustfmt, clippy
+          target: ${{ matrix.target.name }}
 
-      - name: Add target
-        run: rustup target add ${{ matrix.target.name }}
+      - name: Remove cached package outputs with embedded Git identity
+        run: cargo make clean-release --target ${{ matrix.target.name }}
 
-      - name: Build
-        run: cargo build --release --locked --target ${{ matrix.target.name }} -p elf-api -p elf-worker -p elf-mcp -p elf-eval
+      - name: Build shipped binaries in one Cargo graph
+        run: cargo make build-release --target ${{ matrix.target.name }}
 
-      - name: Pack (macOS, Linux)
-        if: matrix.target.os != 'windows-latest'
+      - name: Verify binary identity and pack (macOS, Linux)
+        if: runner.os != 'Windows'
+        shell: bash
+        env:
+          RELEASE_TARGET: ${{ matrix.target.name }}
+          RELEASE_ARCHIVE: ${{ matrix.target.archive }}
         run: |
+          set -euo pipefail
           mkdir -p dist
           for bin in elf-api elf-worker elf-mcp elf-eval; do
-            cp "target/${{ matrix.target.name }}/release/${bin}" dist/
+            binary="target/${RELEASE_TARGET}/release/${bin}"
+            version="$("${binary}" --version)"
+            case "${version}" in
+              *"-${GITHUB_SHA}-${RELEASE_TARGET}") ;;
+              *) echo "Unexpected binary identity: ${version}" >&2; exit 1 ;;
+            esac
+            cp "${binary}" dist/
           done
+          if [[ "${RUNNER_OS}" == macOS ]]; then
+            (cd dist && zip "../${RELEASE_ARCHIVE}" ./*)
+          else
+            tar -czf "${RELEASE_ARCHIVE}" -C dist .
+          fi
 
-      - name: Archive (macOS)
-        if: matrix.target.os == 'macos-latest'
-        run: |
-          cd dist
-          zip "../elf-${{ matrix.target.name }}.zip" ./*
-
-      - name: Archive (Linux)
-        if: matrix.target.os == 'ubuntu-latest'
-        run: |
-          tar -czvf "elf-${{ matrix.target.name }}.tar.gz" -C dist .
-
-      - name: Pack (Windows)
-        if: matrix.target.os == 'windows-latest'
+      - name: Verify binary identity and pack (Windows)
+        if: runner.os == 'Windows'
         shell: pwsh
+        env:
+          RELEASE_TARGET: ${{ matrix.target.name }}
+          RELEASE_ARCHIVE: ${{ matrix.target.archive }}
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
-          Copy-Item "target/${{ matrix.target.name }}/release/elf-api.exe" dist/
-          Copy-Item "target/${{ matrix.target.name }}/release/elf-worker.exe" dist/
-          Copy-Item "target/${{ matrix.target.name }}/release/elf-mcp.exe" dist/
-          Copy-Item "target/${{ matrix.target.name }}/release/elf-eval.exe" dist/
-          Compress-Archive -Path dist/* -DestinationPath "elf-${{ matrix.target.name }}.zip"
+          foreach ($binaryName in @('elf-api', 'elf-worker', 'elf-mcp', 'elf-eval')) {
+            $binary = "target/$env:RELEASE_TARGET/release/$binaryName.exe"
+            $version = & $binary --version
+            if ($LASTEXITCODE -ne 0 -or -not $version.EndsWith("-$env:GITHUB_SHA-$env:RELEASE_TARGET")) {
+              throw "Unexpected binary identity: $version"
+            }
+            Copy-Item $binary dist/
+          }
+          Compress-Archive -Path dist/* -DestinationPath $env:RELEASE_ARCHIVE
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      - name: Upload exact archive
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: elf-${{ matrix.target.name }}
-          path: elf-${{ matrix.target.name }}.*
+          archive: false
+          if-no-files-found: error
+          path: ${{ matrix.target.archive }}
           retention-days: 1
-
-  # release:
-  #   name: Release
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Publish
-  #       uses: softprops/action-gh-release@v2
-  #       with:
-  #         discussion_category_name: Announcements
-  #         generate_release_notes: true
 
   release:
     name: Release
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     needs: [build]
+    permissions:
+      contents: write
+      discussions: write
     steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+      - name: Download verified archives
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          digest-mismatch: error
+          merge-multiple: true
+          path: artifacts
+          pattern: elf-*
+          skip-decompress: true
 
-      - name: Hash
+      - name: Verify complete archive set and executable membership
+        shell: bash
         run: |
-          mkdir -p artifacts
-          mv -- elf-*/* artifacts/
-          cd artifacts
-          sha256sum -- * | tee ../SHA256
-          md5sum -- * | tee ../MD5
-          mv ../SHA256 .
-          mv ../MD5 .
+          set -euo pipefail
+          test "$(find artifacts -mindepth 1 -maxdepth 1 -type f | wc -l | tr -d ' ')" -eq 3
+          for target in aarch64-apple-darwin x86_64-unknown-linux-gnu x86_64-pc-windows-msvc; do
+            if [[ "${target}" == x86_64-unknown-linux-gnu ]]; then
+              archive="artifacts/elf-${target}.tar.gz"
+              tar -tzf "${archive}" | sed 's|^./||' | sed '/^$/d' | sort > actual-members
+            else
+              archive="artifacts/elf-${target}.zip"
+              unzip -t "${archive}"
+              unzip -Z1 "${archive}" | sort > actual-members
+            fi
+            suffix=''
+            if [[ "${target}" == x86_64-pc-windows-msvc ]]; then suffix='.exe'; fi
+            printf '%s\n' "elf-api${suffix}" "elf-eval${suffix}" "elf-mcp${suffix}" "elf-worker${suffix}" > expected-members
+            diff -u expected-members actual-members
+          done
+
+      - name: Hash release archives
+        working-directory: artifacts
+        run: |
+          sha256sum -- elf-* | tee SHA256
+          md5sum -- elf-* | tee MD5
 
       - name: Publish
-        uses: softprops/action-gh-release@718ea10b132b3b2eba29c1007bb80653f286566b
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
         with:
           discussion_category_name: Announcements
           generate_release_notes: true
           files: artifacts/*
-
-  # publish-on-crates-io:
-  #   name: Publish on crates.io
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Fetch latest code
-  #       uses: actions/checkout@v4
-  #
-  #     - name: Set up Rust toolchain
-  #       uses: actions-rust-lang/setup-rust-toolchain@v1
-  #       with:
-  #         cache: true
-  #         components: rustfmt, clippy
-  #
-  #     - name: Login
-  #       run: cargo login ${{ secrets.CARGO_REGISTRY_TOKEN }}
-  #
-  #     - name: Publish
-  #       run: cargo publish --locked
+          fail_on_unmatched_files: true

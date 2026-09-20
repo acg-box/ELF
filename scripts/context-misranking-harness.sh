@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-if [[ -f "${ROOT_DIR}/.env" ]]; then
+if [[ "${ELF_HARNESS_LOAD_ENV:-1}" == "1" && -f "${ROOT_DIR}/.env" ]]; then
   set -a
   # shellcheck disable=SC1090
   source "${ROOT_DIR}/.env"
@@ -333,7 +333,7 @@ TOML
 taplo fmt "${CFG_BASE}" "${CFG_CONTEXT}" >/dev/null 2>&1
 
 echo "Building harness binaries."
-(cd "${ROOT_DIR}" && cargo build -p elf-worker -p elf-api -p elf-eval >/dev/null)
+(cd "${ROOT_DIR}" && cargo make build-harness >/dev/null)
 
 echo "Starting worker and API (logs: ${WORKER_LOG}, ${API_LOG})."
 (cd "${ROOT_DIR}" && "${ROOT_DIR}/target/debug/elf-worker" --config "${CFG_BASE}" >"${WORKER_LOG}" 2>&1) &
@@ -492,7 +492,7 @@ JSON
 run_eval() {
   local cfg_path="$1"
   local out_path="$2"
-  (cd "${ROOT_DIR}" && cargo run -q -p elf-eval -- --config "${cfg_path}" --dataset "${DATASET}") \
+  (cd "${ROOT_DIR}" && cargo run --locked -q -p elf-eval -- --config "${cfg_path}" --dataset "${DATASET}") \
     | awk 'BEGIN { started = 0 } /^\{/ { started = 1 } { if (started) print }' \
     >"${out_path}"
 }

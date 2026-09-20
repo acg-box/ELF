@@ -1,36 +1,31 @@
 # Rust workspace tasks: Checks.
 
-[tasks.checks]
+[tasks.check]
 clear = true
-workspace = false
 dependencies = [
-	"fmt-check",
+	"check-format",
 	"check-docs",
-	"check-rust",
+	"check-workflows",
 	"lint",
 	"test",
 ]
 
 [tasks.check-docs]
-workspace = false
-command = "python3"
 args = [
 	"scripts/check-docs.py",
 ]
+command = "python3"
 
 [tasks.check-rust]
-workspace = false
-command = "cargo"
 args = [
 	"check",
+	"--locked",
 	"--workspace",
 	"--all-targets",
 	"--all-features",
 ]
+command = "cargo"
 
-[tasks.check-trace-gate]
-workspace = false
-command = "bash"
-args = [
-	"scripts/trace-gate.sh",
-]
+[tasks.check-workflows]
+args    = ["-color"]
+command = "actionlint"

@@ -15,7 +15,7 @@ tags:
 source_refs:
   - https://linear.app/hack-ink/issue/XY-1163/r1-define-model-ladder-and-local-background-organizer-benchmark-gate
 code_refs:
-  - makefiles/benchmark-memory-b.toml
+  - makefiles/benchmark-lifecycle.toml
   - apps/elf-eval/src/bin/real_world_job_benchmark/main.rs
   - apps/elf-eval/src/bin/real_world_job_benchmark/artifacts/local_organizer.rs
   - apps/elf-eval/fixtures/real_world_memory/local_background_organizer/proposal_only_gate.json
@@ -26,7 +26,7 @@ related:
   - docs/spec/system_work_journal_v1.md
 drift_watch:
   - docs/spec/system_model_ladder_background_organizer_v1.md
-  - makefiles/benchmark-memory-b.toml
+  - makefiles/benchmark-lifecycle.toml
   - apps/elf-eval/src/bin/real_world_job_benchmark/main.rs
   - apps/elf-eval/src/bin/real_world_job_benchmark/artifacts/local_organizer.rs
   - apps/elf-eval/fixtures/real_world_memory/local_background_organizer/proposal_only_gate.json

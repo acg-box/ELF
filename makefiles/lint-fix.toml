@@ -1,17 +1,15 @@
 # Rust workspace tasks: Lint Fix.
 
 [tasks.lint-fix]
-workspace = false
 dependencies = [
 	"lint-fix-rust",
 	"lint-fix-vstyle",
 ]
 
 [tasks.lint-fix-rust]
-workspace = false
-command = "cargo"
 args = [
 	"clippy",
+	"--locked",
 	"--fix",
 	"--allow-dirty",
 	"--all-features",
@@ -35,11 +33,14 @@ args = [
 	"-D",
 	"warnings",
 ]
+command = "cargo"
 
 [tasks.lint-fix-vstyle]
-workspace = false
-command = "cargo"
+dependencies = ["lint-fix-vstyle-rust"]
+
+[tasks.lint-fix-vstyle-rust]
 args = [
+	"--locked",
 	"vstyle",
 	"tune",
 	"--language",
@@ -48,3 +49,4 @@ args = [
 	"--all-features",
 	"--strict",
 ]
+command = "cargo"

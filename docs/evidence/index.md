@@ -9,6 +9,10 @@ Routes to: Drift audits and evidence concepts under `docs/evidence/`.
 
 ## Concepts
 
+- [Engineering Conventions Adoption](2026-09-19-engineering-conventions.md): template alignment, complete gate, integration, and release checks.
+
+- [Module Refactor Validation](2026-09-19-module-refactor.md): ownership changes, preserved contracts, local checks, and evidence limits.
+
 - `benchmarking/index.md`: checked-in benchmark reports, matrices, diagnostics, and
   adoption evidence.
 - `external_memory/index.md`: external memory-system comparisons, inventories, and

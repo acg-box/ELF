@@ -15,8 +15,8 @@ tags:
 source_refs: []
 code_refs:
   - Makefile.toml
-  - makefiles/benchmark-memory-a.toml
-  - makefiles/benchmark-memory-b.toml
+  - makefiles/benchmark-knowledge.toml
+  - makefiles/benchmark-quality.toml
   - scripts/materialize-explicit-qrels.py
   - scripts/materialize-quantitative-artifact-freshness.py
   - scripts/real-world-explicit-qrels.sh
@@ -35,8 +35,8 @@ related:
 drift_watch:
   - docs/spec/agent_memory_quantitative_benchmark_v1.md
   - Makefile.toml
-  - makefiles/benchmark-memory-a.toml
-  - makefiles/benchmark-memory-b.toml
+  - makefiles/benchmark-knowledge.toml
+  - makefiles/benchmark-quality.toml
   - scripts/materialize-explicit-qrels.py
   - scripts/materialize-quantitative-artifact-freshness.py
   - scripts/real-world-explicit-qrels.sh

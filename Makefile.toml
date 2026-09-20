@@ -5,15 +5,24 @@
 # remains the public task-runner authority.
 
 extend = [
-    { path = "makefiles/benchmark-core.toml" },
-    { path = "makefiles/benchmark-memory-a.toml" },
-    { path = "makefiles/benchmark-memory-b.toml" },
-    { path = "makefiles/check.toml" },
-    { path = "makefiles/clean.toml" },
-    { path = "makefiles/format.toml" },
-    { path = "makefiles/lint.toml" },
-    { path = "makefiles/lint-fix.toml" },
-    { path = "makefiles/research.toml" },
-    { path = "makefiles/smoke.toml" },
-    { path = "makefiles/test.toml" },
+	{ path = "makefiles/benchmark-core.toml" },
+	{ path = "makefiles/benchmark-memory.toml" },
+	{ path = "makefiles/benchmark-retrieval.toml" },
+	{ path = "makefiles/benchmark-knowledge.toml" },
+	{ path = "makefiles/benchmark-lifecycle.toml" },
+	{ path = "makefiles/benchmark-quality.toml" },
+	{ path = "makefiles/benchmark-live.toml" },
+	{ path = "makefiles/build.toml" },
+	{ path = "makefiles/check.toml" },
+	{ path = "makefiles/clean.toml" },
+	{ path = "makefiles/format.toml" },
+	{ path = "makefiles/lint.toml" },
+	{ path = "makefiles/lint-fix.toml" },
+	{ path = "makefiles/research.toml" },
+	{ path = "makefiles/smoke.toml" },
+	{ path = "makefiles/test.toml" },
 ]
+
+[config]
+default_to_workspace = false
+skip_core_tasks      = true

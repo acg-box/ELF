@@ -1,83 +1,73 @@
 # Rust workspace tasks: Smoke.
 
 [tasks.smoke-graphify-docker-graph-report]
-workspace = false
-command = "bash"
 args = [
 	"scripts/smoke-docker.sh",
 	"graphify-docker-graph-report",
 ]
+command = "bash"
 
 [tasks.smoke-graphiti-zep-docker-temporal]
-workspace = false
-command = "bash"
 args = [
 	"scripts/smoke-docker.sh",
 	"graphiti-zep-docker-temporal",
 ]
+command = "bash"
 
 [tasks.smoke-graphrag-docker]
-workspace = false
-command = "bash"
 args = [
 	"scripts/smoke-docker.sh",
 	"graphrag-docker",
 ]
+command = "bash"
 
 [tasks.smoke-letta-core-archive-export-readback]
-workspace = false
-command = "bash"
 args = [
 	"scripts/smoke-docker.sh",
 	"letta-core-archive-export-readback",
 ]
+command = "bash"
 
 [tasks.smoke-lightrag-docker-context]
-workspace = false
-command = "bash"
 args = [
 	"scripts/smoke-docker.sh",
 	"lightrag-docker-context",
 ]
+command = "bash"
 
 [tasks.smoke-ragflow-docker]
-workspace = false
-command = "bash"
 args = [
 	"scripts/ragflow-docker-evidence-smoke.sh",
 ]
+command = "bash"
 
 [tasks.smoke-real-world-job]
-workspace = false
 dependencies = [
 	"smoke-real-world-job-report",
 ]
 
 [tasks.smoke-real-world-job-json]
-workspace = false
-command = "cargo"
 args = [
 	"run",
+	"--locked",
 	"-p",
 	"elf-eval",
 	"--bin",
 	"real_world_job_benchmark",
 	"--",
 	"run",
+	"--locked",
 	"--fixtures",
 	"apps/elf-eval/fixtures/real_world_memory/work_resume",
 	"--out",
 	"tmp/real-world-job/real-world-job-smoke-report.json",
 ]
+command = "cargo"
 
 [tasks.smoke-real-world-job-report]
-workspace = false
-dependencies = [
-	"smoke-real-world-job-json",
-]
-command = "cargo"
 args = [
 	"run",
+	"--locked",
 	"-p",
 	"elf-eval",
 	"--bin",
@@ -88,4 +78,8 @@ args = [
 	"tmp/real-world-job/real-world-job-smoke-report.json",
 	"--out",
 	"tmp/real-world-job/real-world-job-smoke-report.md",
+]
+command = "cargo"
+dependencies = [
+	"smoke-real-world-job-json",
 ]

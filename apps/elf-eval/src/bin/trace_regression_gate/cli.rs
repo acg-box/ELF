@@ -11,6 +11,8 @@ use clap::Parser;
 pub(super) struct Args {
 	#[arg(long, short = 'c', value_name = "FILE")]
 	pub(super) config: PathBuf,
+	#[arg(long, env = "TRACE_GATE_PG_DSN", hide_env_values = true)]
+	pub(super) postgres_dsn: Option<String>,
 	#[arg(long, short = 'g', value_name = "FILE")]
 	pub(super) gate: PathBuf,
 	#[arg(long, value_name = "FILE")]

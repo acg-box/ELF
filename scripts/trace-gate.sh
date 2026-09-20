@@ -31,7 +31,7 @@ PY
 
 psql "${DSN}" -v ON_ERROR_STOP=1 -f "${SCHEMA_PATH}"
 psql "${DSN}" -v ON_ERROR_STOP=1 -f .github/fixtures/trace_gate/fixture.sql
-cargo run -p elf-eval --bin trace_regression_gate -- \
+TRACE_GATE_PG_DSN="${DSN}" cargo run --locked -p elf-eval --bin trace_regression_gate -- \
 	--config .github/fixtures/trace_gate/config.toml \
 	--gate .github/fixtures/trace_gate/gate.json \
 	--out "${REPORT_PATH}"

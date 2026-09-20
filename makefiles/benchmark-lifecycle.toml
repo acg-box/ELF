@@ -1,0 +1,427 @@
+# Benchmark tasks: lifecycle.
+
+[tasks.real-world-memory-consolidation]
+dependencies = [
+	"real-world-memory-consolidation-report",
+]
+
+[tasks.real-world-memory-consolidation-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/consolidation",
+	"--out",
+	"tmp/real-world-memory/consolidation/report.json",
+	"--run-id",
+	"real-world-memory-consolidation",
+	"--adapter-id",
+	"fixture_consolidation",
+	"--adapter-name",
+	"ELF consolidation fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-consolidation-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/consolidation/report.json",
+	"--out",
+	"tmp/real-world-memory/consolidation/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-consolidation-json",
+]
+
+[tasks.real-world-memory-core-archival]
+dependencies = [
+	"real-world-memory-core-archival-report",
+]
+
+[tasks.real-world-memory-core-archival-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/core_archival_memory",
+	"--out",
+	"tmp/real-world-memory/core-archival/report.json",
+	"--run-id",
+	"real-world-memory-core-archival",
+	"--adapter-id",
+	"fixture_core_archival_memory",
+	"--adapter-name",
+	"ELF core and archival memory fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-core-archival-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/core-archival/report.json",
+	"--out",
+	"tmp/real-world-memory/core-archival/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-core-archival-json",
+]
+
+[tasks.real-world-memory-evolution]
+dependencies = [
+	"real-world-memory-evolution-report",
+]
+
+[tasks.real-world-memory-evolution-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/evolution",
+	"--out",
+	"tmp/real-world-memory/evolution-report.json",
+	"--run-id",
+	"real-world-memory-evolution",
+	"--adapter-id",
+	"fixture_memory_evolution",
+	"--adapter-name",
+	"ELF fixture memory evolution",
+]
+command = "cargo"
+
+[tasks.real-world-memory-evolution-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/evolution-report.json",
+	"--out",
+	"tmp/real-world-memory/evolution-report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-evolution-json",
+]
+
+[tasks.real-world-memory-r1-local-organizer]
+dependencies = [
+	"real-world-memory-r1-local-organizer-report",
+]
+
+[tasks.real-world-memory-r1-local-organizer-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/local_background_organizer",
+	"--out",
+	"tmp/real-world-memory/r1-local-organizer/report.json",
+	"--run-id",
+	"real-world-memory-r1-local-organizer",
+	"--adapter-id",
+	"fixture_local_background_organizer",
+	"--adapter-name",
+	"ELF R1 local background organizer fixture",
+	"--adapter-behavior",
+	"proposal_only_schema_constrained_local_fixture",
+	"--adapter-storage-status",
+	"pass",
+	"--adapter-runtime-status",
+	"pass",
+	"--adapter-notes",
+	"Fixture-backed local/background organizer slice scores proposal-only extraction, schema, provenance, lifecycle, escalation, latency, cost, and resource metrics before any Memory Authority mutation.",
+]
+command = "cargo"
+
+[tasks.real-world-memory-r1-local-organizer-validate]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"validate-local-organizer",
+	"--report",
+	"tmp/real-world-memory/r1-local-organizer/report.json",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-r1-local-organizer-json",
+]
+
+[tasks.real-world-memory-r1-local-organizer-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/r1-local-organizer/report.json",
+	"--out",
+	"tmp/real-world-memory/r1-local-organizer/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-r1-local-organizer-validate",
+]
+
+[tasks.real-world-memory-mem0-openmemory-letta]
+dependencies = [
+	"real-world-memory-mem0-openmemory-letta-report",
+]
+
+[tasks.real-world-memory-mem0-openmemory-letta-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_external_adapters/mem0_openmemory_letta",
+	"--out",
+	"tmp/real-world-memory/mem0-openmemory-letta/report.json",
+	"--run-id",
+	"real-world-memory-mem0-openmemory-letta",
+	"--adapter-id",
+	"fixture_mem0_openmemory_letta",
+	"--adapter-name",
+	"mem0/OpenMemory and Letta memory-history/core-archive adapters",
+	"--adapter-behavior",
+	"same_corpus_adapter_fixture",
+	"--adapter-storage-status",
+	"blocked",
+	"--adapter-runtime-status",
+	"blocked",
+	"--adapter-notes",
+	"Offline fixtures map mem0 SDK history/export outputs to source ids and preserve OpenMemory UI/export plus Letta core/archive blockers until contained product exports map source ids.",
+]
+command = "cargo"
+
+[tasks.real-world-memory-mem0-openmemory-letta-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/mem0-openmemory-letta/report.json",
+	"--out",
+	"tmp/real-world-memory/mem0-openmemory-letta/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-mem0-openmemory-letta-json",
+]
+
+[tasks.real-world-memory-proactive-brief]
+dependencies = [
+	"real-world-memory-proactive-brief-report",
+]
+
+[tasks.real-world-memory-proactive-brief-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/proactive_brief",
+	"--out",
+	"tmp/real-world-memory/proactive-brief/report.json",
+	"--run-id",
+	"real-world-memory-proactive-brief",
+	"--adapter-id",
+	"fixture_proactive_brief",
+	"--adapter-name",
+	"ELF proactive brief fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-proactive-brief-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/proactive-brief/report.json",
+	"--out",
+	"tmp/real-world-memory/proactive-brief/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-proactive-brief-json",
+]
+
+[tasks.real-world-memory-scheduled]
+dependencies = [
+	"real-world-memory-scheduled-report",
+]
+
+[tasks.real-world-memory-scheduled-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/scheduled_memory",
+	"--out",
+	"tmp/real-world-memory/scheduled/report.json",
+	"--run-id",
+	"real-world-memory-scheduled",
+	"--adapter-id",
+	"fixture_scheduled_memory",
+	"--adapter-name",
+	"ELF scheduled memory fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-scheduled-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/scheduled/report.json",
+	"--out",
+	"tmp/real-world-memory/scheduled/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-scheduled-json",
+]
+
+[tasks.real-world-memory-summary]
+dependencies = [
+	"real-world-memory-summary-report",
+]
+
+[tasks.real-world-memory-summary-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/memory_summary",
+	"--out",
+	"tmp/real-world-memory/memory-summary/report.json",
+	"--run-id",
+	"real-world-memory-summary",
+	"--adapter-id",
+	"fixture_memory_summary",
+	"--adapter-name",
+	"ELF memory summary fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-summary-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/memory-summary/report.json",
+	"--out",
+	"tmp/real-world-memory/memory-summary/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-summary-json",
+]

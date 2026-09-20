@@ -9,6 +9,7 @@
 # General Ignores
 *.bak
 *.log
+.config
 .env*
 .turbo
 /backups/

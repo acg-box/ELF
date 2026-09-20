@@ -6,3 +6,15 @@
 .git
 target
 tmp
+
+# Local tool state and private service configuration are not build inputs.
+.agent
+.codex
+.config
+.vscode
+.zed
+.workspaces
+backups
+elf.toml
+elf.*.toml
+!elf.example.toml
