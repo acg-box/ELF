@@ -1,0 +1,72 @@
+name: ELF Rust CI setup
+description: Own the Rust toolchain, cache policy, and pinned CI tools.
+inputs:
+  target:
+    description: Optional release target triple.
+    default: ''
+  checks:
+    description: Install formatting, workflow lint, and style-check tools.
+    default: 'false'
+  integration:
+    description: Install nextest for external-service tests.
+    default: 'false'
+  harness:
+    description: Install taplo for generated harness configuration.
+    default: 'false'
+runs:
+  using: composite
+  steps:
+    - name: Set up repository Rust toolchain
+      uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659 # v1.17.0
+      with:
+        target: ${{ inputs.target }}
+        cache: true
+        cache-on-failure: false
+        cache-save-if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') }}
+        rustflags: ''
+
+    - name: Install cargo-make
+      uses: taiki-e/install-action@b8cecb83565409bcc297b2df6e77f030b2a468d5
+      with:
+        tool: cargo-make@0.37.24
+
+    - name: Install nextest
+      if: inputs.checks == 'true' || inputs.integration == 'true'
+      uses: taiki-e/install-action@b8cecb83565409bcc297b2df6e77f030b2a468d5
+      with:
+        tool: nextest@0.9.143
+
+    - name: Install taplo
+      if: inputs.checks == 'true' || inputs.harness == 'true'
+      uses: taiki-e/install-action@b8cecb83565409bcc297b2df6e77f030b2a468d5
+      with:
+        tool: taplo@0.10.0
+
+    - name: Install actionlint
+      if: inputs.checks == 'true'
+      uses: taiki-e/install-action@b8cecb83565409bcc297b2df6e77f030b2a468d5
+      with:
+        tool: actionlint@1.7.12
+
+    - name: Install nightly formatter
+      if: inputs.checks == 'true'
+      shell: bash
+      run: rustup toolchain install nightly --profile minimal --component rustfmt --no-self-update
+
+    - name: Install verified vibe-style release
+      if: inputs.checks == 'true'
+      shell: bash
+      env:
+        VSTYLE_VERSION: v0.2.5
+        VSTYLE_SHA256: ed2cac495e8beb882decc2e65163773ed4680e0ac510f305f96bafd9f9930da3
+      run: |
+        set -euo pipefail
+        asset="vibe-style-x86_64-unknown-linux-gnu-${VSTYLE_VERSION}"
+        archive="${RUNNER_TEMP}/${asset}.tgz"
+        curl --fail --show-error --silent --location --retry 3 \
+          "https://github.com/acg-box/vibe-style/releases/download/${VSTYLE_VERSION}/${asset}.tgz" \
+          --output "${archive}"
+        echo "${VSTYLE_SHA256}  ${archive}" | sha256sum --check --strict
+        tar -xzf "${archive}" -C "${RUNNER_TEMP}"
+        install -m 0755 "${RUNNER_TEMP}/${asset}/vstyle" "${HOME}/.cargo/bin/vstyle"
+        install -m 0755 "${RUNNER_TEMP}/${asset}/cargo-vstyle" "${HOME}/.cargo/bin/cargo-vstyle"

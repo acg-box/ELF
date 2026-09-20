@@ -1,17 +1,15 @@
 # Rust workspace tasks: Lint.
 
 [tasks.lint]
-workspace = false
 dependencies = [
 	"lint-rust",
 	"lint-vstyle",
 ]
 
 [tasks.lint-rust]
-workspace = false
-command = "cargo"
 args = [
 	"clippy",
+	"--locked",
 	"--all-features",
 	"--all-targets",
 	"--workspace",
@@ -33,15 +31,20 @@ args = [
 	"-D",
 	"warnings",
 ]
+command = "cargo"
 
 [tasks.lint-vstyle]
-workspace = false
-command = "cargo"
+dependencies = ["lint-vstyle-rust"]
+
+[tasks.lint-vstyle-rust]
 args = [
+	"--locked",
 	"vstyle",
 	"curate",
 	"--language",
 	"rust",
 	"--workspace",
 	"--all-features",
+	"--strict",
 ]
+command = "cargo"

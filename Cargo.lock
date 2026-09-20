@@ -1046,6 +1046,7 @@ dependencies = [
  "sqlx",
  "time",
  "tokio",
+ "toml",
  "tracing",
  "tracing-subscriber",
  "uuid",

@@ -144,8 +144,7 @@ fn validate_local_organizer_report(report: &Value, suffix: &str) -> Result<Outpu
 
 #[test]
 fn r1_local_organizer_task_is_registered() -> Result<()> {
-	let makefile =
-		fs::read_to_string(support::workspace_root()?.join("makefiles/benchmark-memory-b.toml"))?;
+	let makefile = support::make_task_catalog()?;
 
 	for task in [
 		"[tasks.real-world-memory-r1-local-organizer]",

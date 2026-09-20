@@ -1,0 +1,42 @@
+# Benchmark tasks: live.
+
+[tasks.real-world-memory-explicit-qrels]
+args = [
+	"scripts/real-world-explicit-qrels.sh",
+]
+command = "bash"
+
+[tasks.real-world-memory-live-adapters]
+args = [
+	"scripts/real-world-docker.sh",
+	"memory-live-adapters",
+]
+command = "bash"
+
+[tasks.real-world-memory-live-consolidation]
+args = [
+	"scripts/real-world-docker.sh",
+	"memory-live-consolidation",
+]
+command = "bash"
+
+[tasks.real-world-memory-live-explicit-qrels]
+args = [
+	"scripts/real-world-docker.sh",
+	"memory-live-explicit-qrels",
+]
+command = "bash"
+
+[tasks.real-world-memory-live-knowledge]
+args = [
+	"scripts/real-world-docker.sh",
+	"memory-live-knowledge",
+]
+command = "bash"
+
+[tasks.real-world-memory-quantitative-docker]
+args = [
+	"scripts/real-world-docker.sh",
+	"memory-quantitative-docker",
+]
+command = "bash"

@@ -1,5 +1,3 @@
-use std::fs;
-
 use color_eyre::{Result, eyre};
 use serde_json::Value;
 
@@ -77,8 +75,7 @@ fn source_backed_quality_report_emits_xy1155_metrics_and_scenarios() -> Result<(
 
 #[test]
 fn source_backed_quality_task_is_registered() -> Result<()> {
-	let makefile =
-		fs::read_to_string(support::workspace_root()?.join("makefiles/benchmark-memory-b.toml"))?;
+	let makefile = support::make_task_catalog()?;
 
 	for task in [
 		"[tasks.source-backed-memory-quality]",

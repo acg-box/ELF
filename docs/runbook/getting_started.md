@@ -177,7 +177,7 @@ Use `cargo make` tasks from repository root.
 
 ```sh
 cargo make fmt
-cargo make checks
+cargo make check
 cargo make test-rust
 cargo make test-rust-integration
 cargo make test-e2e

@@ -1,0 +1,106 @@
+# Benchmark tasks: memory.
+
+[tasks.real-world-memory]
+dependencies = [
+	"real-world-memory-report",
+]
+
+[tasks.real-world-memory-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory",
+	"--out",
+	"tmp/real-world-memory/real-world-memory-report.json",
+	"--run-id",
+	"real-world-memory",
+	"--adapter-id",
+	"elf_real_world_memory_fixture",
+	"--adapter-name",
+	"ELF real-world memory fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-production-ops]
+dependencies = [
+	"real-world-memory-production-ops-report",
+]
+
+[tasks.real-world-memory-production-ops-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/production_ops",
+	"--run-id",
+	"real-world-memory-production-ops",
+	"--adapter-id",
+	"fixture_production_ops",
+	"--adapter-name",
+	"ELF production-ops fixture",
+	"--out",
+	"tmp/real-world-memory/production-ops-report.json",
+]
+command = "cargo"
+
+[tasks.real-world-memory-production-ops-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/production-ops-report.json",
+	"--out",
+	"tmp/real-world-memory/production-ops-report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-production-ops-json",
+]
+
+[tasks.real-world-memory-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/real-world-memory-report.json",
+	"--out",
+	"tmp/real-world-memory/real-world-memory-report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-json",
+]
+
+[tasks.real-world-memory-service-native-dreaming]
+args = [
+	"scripts/real-world-docker.sh",
+	"memory-service-native-dreaming",
+]
+command = "bash"

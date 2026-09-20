@@ -12,6 +12,9 @@ TASK_RE = re.compile(r"^\[tasks\.([^\]]+)\]", re.MULTILINE)
 CARGO_MAKE_RE = re.compile(r"\bcargo\s+make\s+([A-Za-z0-9][A-Za-z0-9_:-]*)")
 MARKDOWN_LINK_RE = re.compile(r"!?\[[^\]\n]*\]\(([^)\n]+)\)")
 LEGACY_CARGO_MAKE_TASK_REFS = {
+	Path("docs/log.md"): {"checks"},
+	Path("docs/evidence/2026-09-19-module-refactor.md"): {"checks"},
+	Path("docs/evidence/benchmarking/2026-07-03-final-source-backed-project-memory-closeout-report.md"): {"checks"},
 	Path("docs/evidence/benchmarking/2026-06-20-dreaming-review-queue-report.md"): {"check"},
 	Path("docs/evidence/benchmarking/2026-06-20-graph-topic-map-report.md"): {"check"},
 }

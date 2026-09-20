@@ -7,4 +7,8 @@ Routes to: Reference concepts under `docs/reference/`.
 
 ## Concepts
 
+- [Engineering Conventions](engineering_conventions.md): tooling, tasks, CI, and release ownership.
+
+- [Module Ownership](module_ownership.md): product, Context Pack, and benchmark code owners.
+
 - `plans/index.md`: retained historical planning artifacts kept as reference concepts.

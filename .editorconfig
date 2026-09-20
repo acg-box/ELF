@@ -13,3 +13,12 @@ trim_trailing_whitespace=true
 [*.{sh,yml,yaml}]
 indent_size=2
 indent_style=space
+
+[*.{js,json,jsonc,jsx,mjs,mts,ts,tsx}]
+indent_size=2
+indent_style=space
+tab_width=2
+
+[*.py]
+indent_size=4
+indent_style=space

@@ -6,7 +6,7 @@ resource: docs/policy.md
 status: active
 authority: normative
 owner: docs
-last_verified: 2026-06-18
+last_verified: 2026-09-19
 tags:
   - docs
   - okf
@@ -85,7 +85,8 @@ content has an owner; then update indexes, links, and `docs/log.md`.
 
 ## Validation
 
-- Run `decodex docs check` before claiming the OKF and LLM Wiki bundle is ready.
+- Review concept frontmatter, directory indexes, ownership, and source references
+  against this policy before claiming the documentation bundle is ready.
 - Run `cargo make check-docs` for the repository-native Markdown link and task-name
   check.
 - When docs claims touch commands, config, code, schemas, generated outputs, or runtime

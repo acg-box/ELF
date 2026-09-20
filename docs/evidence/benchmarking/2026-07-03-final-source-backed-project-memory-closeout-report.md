@@ -16,7 +16,7 @@ source_refs:
   - https://linear.app/hack-ink/issue/XY-1157/run-independent-review-and-decodex-closeout-for-final-elf-memory-system
 code_refs:
   - Makefile.toml
-  - makefiles/benchmark-memory-b.toml
+  - makefiles/benchmark-quality.toml
   - apps/elf-eval/src/bin/real_world_job_benchmark/source_backed_quality.rs
   - apps/elf-eval/tests/real_world_job_benchmark/source_backed_quality.rs
 related:

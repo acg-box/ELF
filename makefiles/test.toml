@@ -2,51 +2,88 @@
 
 [tasks.test]
 clear = true
-workspace = false
 dependencies = [
 	"test-rust",
+	"test-benchmark-runner-contract",
+	"test-tooling",
 ]
 
 [tasks.test-e2e]
-workspace = false
-command = "bash"
 args = [
 	"scripts/context-misranking-harness.sh",
 ]
+command = "bash"
 
 [tasks.test-rust]
-workspace = false
-command = "cargo"
 args = [
 	"nextest",
 	"run",
+	"--locked",
 	"--workspace",
 	"--all-targets",
 	"--all-features",
 ]
+command = "cargo"
 
 [tasks.test-rust-all]
-workspace = false
-command = "cargo"
 args = [
 	"nextest",
 	"run",
+	"--locked",
 	"--workspace",
 	"--all-targets",
 	"--all-features",
 	"--run-ignored",
 	"all",
 ]
+command = "cargo"
+dependencies = ["check-integration-env"]
 
 [tasks.test-rust-integration]
-workspace = false
-command = "cargo"
 args = [
 	"nextest",
 	"run",
+	"--locked",
 	"--workspace",
 	"--all-targets",
 	"--all-features",
 	"--run-ignored",
 	"only",
 ]
+command = "cargo"
+dependencies = ["check-integration-env"]
+
+[tasks.test-trace-gate]
+args = [
+	"scripts/trace-gate.sh",
+]
+command = "bash"
+
+[tasks.test-ranking-stability]
+args    = ["scripts/ranking-stability-harness.sh"]
+command = "bash"
+
+[tasks.test-benchmark-runner-contract]
+args = [
+	"-m",
+	"unittest",
+	"discover",
+	"--start-directory",
+	"scripts/tests",
+	"--pattern",
+	"test_benchmark_*.py",
+]
+command = "python3"
+
+# Explicit integration runs must not report skipped prerequisites as passing tests.
+[tasks.check-integration-env]
+args = [
+	"-e",
+	"-c",
+	'[[ "$ELF_PG_DSN" =~ [^[:space:]] ]] || { echo "Set ELF_PG_DSN for integration tests." >&2; exit 1; }; if [[ -v ELF_QDRANT_GRPC_URL ]]; then qdrant="$ELF_QDRANT_GRPC_URL"; else qdrant="$ELF_QDRANT_URL"; fi; [[ "$qdrant" =~ [^[:space:]] ]] || { echo "Set ELF_QDRANT_GRPC_URL (or ELF_QDRANT_URL) for integration tests." >&2; exit 1; }',
+]
+command = "bash"
+
+[tasks.test-tooling]
+args    = ["-m", "unittest", "scripts/tests/test_tooling.py"]
+command = "python3"

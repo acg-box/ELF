@@ -1,0 +1,277 @@
+# Benchmark tasks: quality.
+
+[tasks.real-world-memory-adversarial-quality]
+dependencies = [
+	"real-world-memory-adversarial-quality-report",
+]
+
+[tasks.real-world-memory-adversarial-quality-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/adversarial_quality",
+	"--out",
+	"tmp/real-world-memory/adversarial-quality/report.json",
+	"--run-id",
+	"real-world-memory-adversarial-quality",
+	"--adapter-id",
+	"fixture_adversarial_quality",
+	"--adapter-name",
+	"ELF adversarial quality fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-adversarial-quality-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/adversarial-quality/report.json",
+	"--out",
+	"tmp/real-world-memory/adversarial-quality/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-adversarial-quality-json",
+]
+
+[tasks.real-world-memory-p1-closeout]
+dependencies = [
+	"real-world-memory-p1-closeout-report",
+]
+
+[tasks.real-world-memory-p1-closeout-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/p1_closeout",
+	"--out",
+	"tmp/real-world-memory/p1-closeout/report.json",
+	"--run-id",
+	"real-world-memory-p1-closeout",
+	"--adapter-id",
+	"fixture_p1_closeout",
+	"--adapter-name",
+	"ELF P1 closeout fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-p1-closeout-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/p1-closeout/report.json",
+	"--out",
+	"tmp/real-world-memory/p1-closeout/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-p1-closeout-json",
+]
+
+[tasks.real-world-memory-p4-production-readiness]
+dependencies = [
+	"real-world-memory-p4-production-readiness-report",
+]
+
+[tasks.real-world-memory-p4-production-readiness-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory/production_ops",
+	"--out",
+	"tmp/real-world-memory/p4-production-readiness/report.json",
+	"--run-id",
+	"real-world-memory-p4-production-readiness",
+	"--adapter-id",
+	"fixture_production_ops",
+	"--adapter-name",
+	"ELF P4 production-readiness fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-p4-production-readiness-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/p4-production-readiness/report.json",
+	"--out",
+	"tmp/real-world-memory/p4-production-readiness/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-p4-production-readiness-json",
+]
+
+[tasks.real-world-memory-p4-quality-hardening-closeout]
+dependencies = [
+	"real-world-memory-adversarial-quality-report",
+	"real-world-memory-p2-knowledge-closeout",
+	"real-world-memory-p4-production-readiness-report",
+]
+
+[tasks.real-world-memory-p2-knowledge-closeout]
+dependencies = [
+	"real-world-memory-source-library-report",
+	"real-world-memory-knowledge-report",
+]
+
+[tasks.source-backed-memory-quality]
+dependencies = [
+	"source-backed-memory-quality-report",
+]
+
+[tasks.source-backed-memory-quality-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory",
+	"--out",
+	"tmp/source-backed-memory-quality/report.json",
+	"--run-id",
+	"source-backed-memory-quality",
+	"--adapter-id",
+	"elf_source_backed_memory_quality",
+	"--adapter-name",
+	"ELF source-backed memory quality benchmark",
+]
+command = "cargo"
+
+[tasks.source-backed-memory-quality-validate]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"validate-source-backed-quality",
+	"--report",
+	"tmp/source-backed-memory-quality/report.json",
+]
+command = "cargo"
+dependencies = [
+	"source-backed-memory-quality-json",
+]
+
+[tasks.source-backed-memory-quality-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/source-backed-memory-quality/report.json",
+	"--out",
+	"tmp/source-backed-memory-quality/report.md",
+]
+command = "cargo"
+dependencies = [
+	"source-backed-memory-quality-validate",
+]
+
+[tasks.real-world-memory-quantitative-scoreboard]
+dependencies = [
+	"real-world-memory-quantitative-scoreboard-report",
+]
+
+[tasks.real-world-memory-quantitative-scoreboard-json]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"run",
+	"--locked",
+	"--fixtures",
+	"apps/elf-eval/fixtures/real_world_memory",
+	"--out",
+	"tmp/real-world-memory/quantitative-scoreboard/report.json",
+	"--run-id",
+	"public-quantitative-competitor-scoreboard",
+	"--adapter-id",
+	"elf_real_world_memory_fixture",
+	"--adapter-name",
+	"ELF real-world memory fixture",
+]
+command = "cargo"
+
+[tasks.real-world-memory-quantitative-scoreboard-report]
+args = [
+	"run",
+	"--locked",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"real_world_job_benchmark",
+	"--",
+	"publish",
+	"--report",
+	"tmp/real-world-memory/quantitative-scoreboard/report.json",
+	"--out",
+	"tmp/real-world-memory/quantitative-scoreboard/report.md",
+]
+command = "cargo"
+dependencies = [
+	"real-world-memory-quantitative-scoreboard-json",
+]

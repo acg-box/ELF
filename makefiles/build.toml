@@ -1,0 +1,45 @@
+# Build only shipped binaries; benchmark executables have separate tasks.
+
+[tasks.build-release]
+args = [
+	"build",
+	"--release",
+	"--locked",
+	"-p",
+	"elf-api",
+	"--bin",
+	"elf-api",
+	"-p",
+	"elf-worker",
+	"--bin",
+	"elf-worker",
+	"-p",
+	"elf-mcp",
+	"--bin",
+	"elf-mcp",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"elf-eval",
+	"${@}",
+]
+command = "cargo"
+
+[tasks.build-harness]
+args = [
+	"build",
+	"--locked",
+	"-p",
+	"elf-api",
+	"--bin",
+	"elf-api",
+	"-p",
+	"elf-worker",
+	"--bin",
+	"elf-worker",
+	"-p",
+	"elf-eval",
+	"--bin",
+	"elf-eval",
+]
+command = "cargo"

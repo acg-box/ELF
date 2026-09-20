@@ -27,9 +27,14 @@ pub(crate) enum AcceptanceFailure {
 	#[error(transparent)]
 	Sqlx(#[from] sqlx::Error),
 	#[error(transparent)]
-	Qdrant(#[from] QdrantError),
+	Qdrant(Box<QdrantError>),
 	#[error("{0}")]
 	Message(String),
+}
+impl From<QdrantError> for AcceptanceFailure {
+	fn from(error: QdrantError) -> Self {
+		Self::Qdrant(Box::new(error))
+	}
 }
 
 pub(crate) async fn test_db() -> Option<TestDatabase> {

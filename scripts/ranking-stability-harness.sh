@@ -315,12 +315,12 @@ perl -0777 -i -pe 'BEGIN { $c = 0 } $c += s/\[ranking\.deterministic\.hits\]\nen
 taplo fmt "${CFG_BASE}" "${CFG_DET}" >/dev/null 2>&1
 
 echo "Building harness binaries."
-(cd "${ROOT_DIR}" && cargo build -p elf-worker -p elf-api -p elf-eval >/dev/null)
+(cd "${ROOT_DIR}" && cargo make build-harness >/dev/null)
 
 echo "Starting worker and API (logs: ${WORKER_LOG}, ${API_LOG})."
-(cd "${ROOT_DIR}" && cargo run -p elf-worker -- --config "${CFG_BASE}" >"${WORKER_LOG}" 2>&1) &
+(cd "${ROOT_DIR}" && exec "${ROOT_DIR}/target/debug/elf-worker" --config "${CFG_BASE}" >"${WORKER_LOG}" 2>&1) &
 WORKER_PID="$!"
-(cd "${ROOT_DIR}" && cargo run -p elf-api -- --config "${CFG_BASE}" >"${API_LOG}" 2>&1) &
+(cd "${ROOT_DIR}" && exec "${ROOT_DIR}/target/debug/elf-api" --config "${CFG_BASE}" >"${API_LOG}" 2>&1) &
 API_PID="$!"
 
 echo "Waiting for API health check at ${HTTP_BASE}/health."
@@ -434,7 +434,7 @@ cat >"${DATASET}" <<JSON
 JSON
 
 echo "Running eval compare (runs_per_query=${RUNS_PER_QUERY})."
-(cd "${ROOT_DIR}" && cargo run -q -p elf-eval -- --config-a "${CFG_BASE}" --config-b "${CFG_DET}" --dataset "${DATASET}" --runs-per-query "${RUNS_PER_QUERY}") \
+(cd "${ROOT_DIR}" && cargo run --locked -q -p elf-eval -- --config-a "${CFG_BASE}" --config-b "${CFG_DET}" --dataset "${DATASET}" --runs-per-query "${RUNS_PER_QUERY}") \
   | awk 'BEGIN { started = 0 } /^\{/ { started = 1 } { if (started) print }' \
   >"${OUT_JSON}"
 

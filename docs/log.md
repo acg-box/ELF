@@ -6,6 +6,20 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-09-19
+
+- Aligned task, toolchain, dotfile, CI, and release conventions with vibe-mono
+  revision `3ec54864`. The complete gate is now `cargo make check`. Specialized
+  benchmark and runtime contracts remain. See the engineering conventions reference.
+- Removed the unsupported Decodex docs command from active policy; frontmatter
+  and source-reference review remain separate from the repository link/task checker.
+
+- Added the module ownership reference for product code, Context Pack, and the
+  competitor benchmark. The reference records retained contracts, retired duplicate
+  execution, and the distinction between local checks and live evidence.
+- Added the module refactor drift audit with source comparison, test results, and
+  the unavailable Decodex docs subcommand recorded as an evidence limit.
+
 ## 2026-06-18
 
 - Adopted the Decodex Markdown-only OKF and LLM Wiki profile for `docs/`.

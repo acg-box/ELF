@@ -31,3 +31,6 @@ elf-worker    = { workspace = true }
 
 [build-dependencies]
 vergen-gitcl = { workspace = true }
+
+[dev-dependencies]
+toml = { workspace = true }

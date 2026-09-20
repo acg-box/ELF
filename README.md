@@ -5,11 +5,11 @@
 Evidence-linked fact memory for agents.
 
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Language Checks](https://github.com/hack-ink/ELF/actions/workflows/language.yml/badge.svg?branch=main)](https://github.com/hack-ink/ELF/actions/workflows/language.yml)
-[![Release](https://github.com/hack-ink/ELF/actions/workflows/release.yml/badge.svg)](https://github.com/hack-ink/ELF/actions/workflows/release.yml)
-[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/hack-ink/ELF)](https://github.com/hack-ink/ELF/tags)
-[![GitHub last commit](https://img.shields.io/github/last-commit/hack-ink/ELF?color=red&style=plastic)](https://github.com/hack-ink/ELF)
-[![GitHub code lines](https://tokei.rs/b1/github/hack-ink/ELF)](https://github.com/hack-ink/ELF)
+[![Language Checks](https://github.com/acg-box/ELF/actions/workflows/language.yml/badge.svg?branch=main)](https://github.com/acg-box/ELF/actions/workflows/language.yml)
+[![Release](https://github.com/acg-box/ELF/actions/workflows/release.yml/badge.svg)](https://github.com/acg-box/ELF/actions/workflows/release.yml)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/acg-box/ELF)](https://github.com/acg-box/ELF/tags)
+[![GitHub last commit](https://img.shields.io/github/last-commit/acg-box/ELF?color=red&style=plastic)](https://github.com/acg-box/ELF)
+[![GitHub code lines](https://tokei.rs/b1/github/acg-box/ELF)](https://github.com/acg-box/ELF)
 
 </div>
 
@@ -659,9 +659,10 @@ benchmark gate.
 
 ```sh
 cargo make fmt
-cargo make checks
-cargo make test-rust
+cargo make check
 ```
+
+For tool prerequisites and CI ownership, see [Engineering Conventions](docs/reference/engineering_conventions.md).
 
 For integration and E2E workflows, use `docs/runbook/getting_started.md` and `docs/runbook/integration-testing.md`.
 

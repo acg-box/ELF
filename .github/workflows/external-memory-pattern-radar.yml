@@ -17,20 +17,13 @@ jobs:
   radar:
     name: Run read-only radar artifact refresh
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Fetch latest code
-        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Set up Rust toolchain
-        uses: actions-rust-lang/setup-rust-toolchain@166cdcfd11aee3cb47222f9ddb555ce30ddb9659
-        with:
-          cache: true
-          rustflags: ""
-
-      - name: Install cargo-make
-        uses: taiki-e/install-action@b8cecb83565409bcc297b2df6e77f030b2a468d5
-        with:
-          tool: cargo-make
+      - name: Set up Rust CI tools
+        uses: ./.github/actions/setup-rust
 
       - name: Run radar artifact refresh
         run: cargo make external-memory-radar-artifact

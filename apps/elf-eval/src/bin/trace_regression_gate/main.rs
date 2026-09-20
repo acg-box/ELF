@@ -27,7 +27,14 @@ async fn main() -> Result<()> {
 	color_eyre::install()?;
 
 	let args = Args::parse();
-	let cfg = elf_config::load(&args.config)?;
+	let mut cfg = elf_config::load(&args.config)?;
+
+	if let Some(dsn) = &args.postgres_dsn {
+		cfg.storage.postgres.dsn = dsn.clone();
+	}
+
+	elf_config::validate(&cfg)?;
+
 	let filter = EnvFilter::new(cfg.service.log_level.clone());
 
 	tracing_subscriber::fmt().with_env_filter(filter).init();
