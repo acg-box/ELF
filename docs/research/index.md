@@ -20,3 +20,5 @@ under `docs/evidence/`.
 
 For legacy research JSON disposition, read
 `docs/evidence/2026-06-18-research-artifact-disposition.md`.
+
+- [ELF Value Review: September 2026](2026-09-20-elf-value-review.md): current native-memory pressure, differentiated value hypothesis, and proposed task-level pilot.

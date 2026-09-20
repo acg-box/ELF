@@ -6,6 +6,14 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-09-20
+
+- Added an exploratory ELF value review using September agent-platform sources and
+  current source boundaries. The pilot and product priorities are proposals, not
+  accepted feature work or current competitive performance claims.
+- Added integration prerequisite regression tests, extension-graph task registration,
+  a consistent trace DSN, and direct execution of ranking harness binaries.
+
 ## 2026-09-19
 
 - Aligned task, toolchain, dotfile, CI, and release conventions with vibe-mono

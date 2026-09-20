@@ -116,3 +116,24 @@ checks stop reporting, any preserved test is omitted, source identity differs,
 archive membership changes, or a supported release platform fails. Keep the prior
 source/module refactor independent of that rollback. Measure matched hosted cold
 and warm runs before accepting resource savings or a linker/profile change.
+
+## September 20 follow-up
+
+The follow-up repairs add a fail-closed integration prerequisite task, task catalog
+traversal through actual extensions, a shared DSN between trace fixture loading and
+evaluation, and direct ranking harness binary execution. Local regression coverage
+now includes two task-catalog tests and three tooling tests. Tooling tests invoke
+cargo-make itself because its variable interpolation can alter shell expressions.
+
+Fresh external-service verification passed all 92 tests; nextest marked one HTTP
+English-input test as leaky on this local run. This is a process-output cleanup
+warning, not evidence of a memory leak or a clean teardown pass. It remains visible
+rather than being hidden with a retry. The context misranking E2E passed with
+baseline recall@1 of 0 and contextual recall@1 of 1. The trace gate passed on a
+non-default local port, proving that both halves used the configured database.
+
+The first hosted PR run exposed unsupported actionlint installation through the
+pinned generic installer. Setup now downloads the native upstream archive with a
+verified digest. A subsequent formatter failure identified an import regrouping
+left by vstyle; formatting was applied after the style repair. These failures are
+part of the rollout record, not successful prior validation.

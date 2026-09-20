@@ -1,9 +1,8 @@
 use std::{
 	collections::HashSet,
-	fs,
+	env, fs,
 	path::{Path, PathBuf},
 };
-use std::env;
 
 use color_eyre::{Result, eyre};
 use serde::Deserialize;
