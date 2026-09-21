@@ -15,7 +15,7 @@ from benchmark_runner.baselines import run_baseline, target_contract
 from benchmark_runner.checkpoints import read_checkpoint, save_checkpoint
 from benchmark_runner.execution import acceptance
 from benchmark_runner.profiles import select_suite
-from benchmark_runner import runtime, cli, docker
+from benchmark_runner import runtime, cli, docker, execution
 from benchmark_report import publish
 
 
@@ -151,3 +151,22 @@ class BenchmarkModeTests(BenchmarkCase):
     def test_command_timeout_terminates_child_group(self):
         with self.assertRaises(subprocess.TimeoutExpired):
             runtime.command(["python3", "-c", "import time; time.sleep(30)"], timeout=0.05)
+
+    def test_interrupted_container_unit_still_cleans_up_and_stops_admission(self):
+        previous = runtime.DEADLINE
+        try:
+            with tempfile.TemporaryDirectory() as directory, \
+                 mock.patch.object(execution, "command", side_effect=KeyboardInterrupt), \
+                 mock.patch.object(execution, "project_images", return_value=[]), \
+                 mock.patch.object(execution, "compose_project_logs", return_value=""), \
+                 mock.patch.object(execution, "cleanup_project", return_value={"passed": True}) as cleanup:
+                row = execution.run_unit(target=self.targets["elf"], suite=self.subset("common-core-v1"),
+                    run_id="interrupt-test", artifact_root=Path(directory), compose_file=Path("compose.yml"),
+                    container_env={}, host_provider_env={}, image="test", build_failure=None,
+                    timeout_seconds=60, context_budget=12000)
+                cleanup.assert_called_once()
+                self.assertEqual(row["evaluation"]["classification"], "harness_failed")
+                with self.assertRaises(TimeoutError):
+                    runtime.remaining_seconds(60)
+        finally:
+            runtime.DEADLINE = previous

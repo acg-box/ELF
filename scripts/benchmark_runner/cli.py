@@ -195,7 +195,7 @@ def main() -> int:
         bundle["acceptance"] = acceptance(bundle, False)
         bundle["quality"] = quality_summary(bundle)
         bundle["classification"] = "completed" if bundle["acceptance"]["passed"] else "failed"
-    except Exception as error:
+    except (Exception, KeyboardInterrupt) as error:
         # Avoid printing exception text that could contain a provider credential.
         bundle["classification"] = "configuration_or_execution_failed"
         bundle["acceptance"] = {"passed": False, "findings": [f"{type(error).__name__}: run stopped; inspect stage artifacts"]}

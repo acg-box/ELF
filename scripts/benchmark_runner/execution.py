@@ -19,6 +19,7 @@ from benchmark_contract import (
     sha256_json,
 )
 
+from . import runtime as runtime_limits
 from .profiles import integrity_findings
 
 from .answers import attach_shared_answers, failure_unit
@@ -117,7 +118,9 @@ def run_unit(
             timed_output = timed_output.decode(errors="replace")
         compose_output = timed_output + "\nunit timed out\n"
         compose_exit = 124
-    except Exception as error:
+    except (Exception, KeyboardInterrupt) as error:
+        if isinstance(error, KeyboardInterrupt):
+            runtime_limits.DEADLINE = time.monotonic()
         harness_error = f"Compose unit invocation failed: {type(error).__name__}: {error}"
         compose_output = harness_error + "\n"
         compose_exit = 125

@@ -52,7 +52,7 @@ def command(
                           stderr=subprocess.STDOUT, text=True, start_new_session=True) as process:
         try:
             output, _ = process.communicate(timeout=limit)
-        except subprocess.TimeoutExpired:
+        except (subprocess.TimeoutExpired, KeyboardInterrupt) as interrupted:
             # Terminate the command group, including compiler/test child processes.
             try:
                 os.killpg(process.pid, signal.SIGTERM)
@@ -66,6 +66,8 @@ def command(
                 except ProcessLookupError:
                     pass
                 output, _ = process.communicate()
+            if isinstance(interrupted, KeyboardInterrupt):
+                raise interrupted
             raise subprocess.TimeoutExpired(args, limit, output=output) from None
         result = subprocess.CompletedProcess(args, process.returncode, output)
         if check:
