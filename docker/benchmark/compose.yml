@@ -56,22 +56,6 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql
 
-  sag-postgres:
-    image: pgvector/pgvector:pg18
-    environment:
-      POSTGRES_DB: sag_benchmark
-      POSTGRES_PASSWORD: ${BENCHMARK_POSTGRES_PASSWORD}
-      POSTGRES_USER: sag_benchmark
-    healthcheck:
-      test:
-        - CMD-SHELL
-        - pg_isready -U sag_benchmark -d sag_benchmark
-      interval: 1s
-      timeout: 5s
-      retries: 60
-    volumes:
-      - sag-postgres-data:/var/lib/postgresql
-
   qdrant:
     image: qdrant/qdrant:v1.18.0
     volumes:
@@ -255,10 +239,6 @@ services:
       - --target
       - graphrag
 
-  letta-unit:
-    <<: *unit
-    image: ${BENCHMARK_LETTA_IMAGE:-elf-benchmark-letta:v4}
-
   openkb-unit:
     <<: *unit
     image: ${BENCHMARK_OPENKB_IMAGE:-elf-benchmark-openkb:v4}
@@ -270,22 +250,6 @@ services:
       - /opt/benchmark/benchmark-unit.py
       - --target
       - openkb
-
-  sag-unit:
-    <<: *unit
-    image: ${BENCHMARK_SAG_IMAGE:-elf-benchmark-sag:v4}
-    depends_on:
-      sag-postgres:
-        condition: service_healthy
-    environment:
-      <<: *unit-environment
-      DATABASE_URL: postgres://sag_benchmark:${BENCHMARK_POSTGRES_PASSWORD}@sag-postgres:5432/sag_benchmark
-      EMBEDDING_DIMENSIONS: "1024"
-    command:
-      - python3
-      - /opt/benchmark/benchmark-unit.py
-      - --target
-      - sag
 
   honcho-unit:
     <<: *unit
@@ -313,6 +277,5 @@ volumes:
   lightrag-data:
   lightrag-inputs:
   falkordb-data:
-  sag-postgres-data:
   honcho-postgres-data:
   honcho-redis-data:

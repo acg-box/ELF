@@ -26,7 +26,10 @@ class BenchmarkContractTests(BenchmarkCase):
     def test_manifest_and_exact_four_suites_validate(self) -> None:
         validate_manifest(self.manifest)
         self.assertEqual(set(self.suites), set(SUITE_IDS))
-        self.assertEqual(len(self.manifest["targets"]), 12)
+        self.assertEqual(len(self.manifest["targets"]), 10)
+        self.assertTrue({"sag", "letta"}.isdisjoint(
+            target["id"] for target in self.manifest["targets"]
+        ))
         self.assertEqual(self.manifest["runner"]["capacity"], 1)
         for suite_id, expected in {
             "common-core-v1": 24,

@@ -18,8 +18,6 @@ TARGET_IMAGE_ENV = {
         "openviking",
         "graphiti",
         "graphrag",
-        "letta",
-        "sag",
         "openkb",
         "honcho",
     )

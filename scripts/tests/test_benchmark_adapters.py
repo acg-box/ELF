@@ -14,7 +14,6 @@ GRAPHITI = load_script("benchmark_graphiti", "scripts/benchmark_targets/graphiti
 
 GRAPHRAG = load_script("benchmark_graphrag", "scripts/benchmark_targets/graphrag.py")
 
-LETTA = load_script("benchmark_letta", "scripts/benchmark_targets/letta.py")
 
 OPENVIKING = load_script(
     "benchmark_openviking", "scripts/benchmark_targets/openviking.py"
@@ -87,86 +86,6 @@ class BenchmarkAdaptersTests(BenchmarkCase):
             ],
         )
         self.assertEqual(len(native), 1)
-
-
-    def test_letta_native_contexts_and_mutation_receipts_use_passage_apis(self) -> None:
-        native_search = {
-            "results": [
-                {"id": "old-update", "content": "old update text"},
-                {"id": "unknown", "content": "unmapped native text"},
-            ]
-        }
-        self.assertEqual(
-            LETTA._native_contexts(native_search, {"old-update": "e_update"}),
-            [
-                {"evidence_id": "e_update", "text": "old update text"},
-                {"evidence_id": None, "text": "unmapped native text"},
-            ],
-        )
-
-        class Passages:
-            def __init__(self) -> None:
-                self.deleted: list[tuple[str, str]] = []
-
-            def delete(self, *, agent_id: str, memory_id: str) -> dict[str, bool]:
-                self.deleted.append((agent_id, memory_id))
-                return {"deleted": True}
-
-            def create(self, *, agent_id: str, text: str) -> list[object]:
-                self.created = (agent_id, text)
-                return [types.SimpleNamespace(id="replacement")]
-
-        passages = Passages()
-        client = types.SimpleNamespace(
-            agents=types.SimpleNamespace(passages=passages)
-        )
-        jobs = [
-            {
-                "job_id": "j_mutation",
-                "operations": [
-                    {"type": "update", "evidence_id": "e_update", "text": "new"},
-                    {"type": "delete", "evidence_id": "e_delete"},
-                ],
-            }
-        ]
-        state = {
-            "j_mutation": {
-                "agent_id": "agent",
-                "passage_identity": {
-                    "old-update": "e_update",
-                    "old-delete": "e_delete",
-                },
-                "historical_passage_identity": {
-                    "old-update": "e_update",
-                    "old-delete": "e_delete",
-                },
-            }
-        }
-        receipts, native = LETTA._apply_operations(client, jobs, state)
-        self.assertEqual(
-            [row["native_type"] for row in receipts["j_mutation"]],
-            ["replace", "delete"],
-        )
-        self.assertEqual(passages.deleted, [("agent", "old-update"), ("agent", "old-delete")])
-        self.assertEqual(
-            state["j_mutation"]["passage_identity"], {"replacement": "e_update"}
-        )
-        self.assertEqual(
-            LETTA._mapped_evidence(
-                {"results": [{"id": "old-delete", "content": "stale"}]},
-                state["j_mutation"]["historical_passage_identity"],
-            ),
-            ["e_delete"],
-        )
-        self.assertEqual(
-            state["j_mutation"]["historical_passage_identity"],
-            {
-                "old-update": "e_update",
-                "old-delete": "e_delete",
-                "replacement": "e_update",
-            },
-        )
-        self.assertEqual(len(native[0]["operations"]), 2)
 
 
     def test_openviking_uses_native_uri_prefixes_dimensions_and_mutations(self) -> None:

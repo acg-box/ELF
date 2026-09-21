@@ -34,8 +34,6 @@ def parse_args() -> argparse.Namespace:
             "openviking",
             "graphiti",
             "graphrag",
-            "letta",
-            "sag",
             "pageindex",
             "openkb",
             "honcho",
@@ -57,8 +55,6 @@ def failure_result(
         "openviking": "native_resource_find",
         "graphiti": "native_temporal_graph_search",
         "graphrag": "native_local_search",
-        "letta": "native_archival_search",
-        "sag": "native_multi_search_source_id_trace",
         "openkb": "agent_query_with_native_source_trace",
         "honcho": "native_hybrid_message_search",
     }.get(target, "external_embedding")
@@ -113,8 +109,6 @@ def main() -> int:
             "openviking",
             "graphiti",
             "graphrag",
-            "letta",
-            "sag",
             "honcho",
         }:
             required += (
@@ -127,8 +121,6 @@ def main() -> int:
             "mem0",
             "lightrag",
             "graphiti",
-            "letta",
-            "sag",
             "openkb",
             "honcho",
         }:
@@ -189,25 +181,6 @@ def main() -> int:
             except GraphRAGAdapterFailure as error:
                 result = failure_result(args.target, "adapter_failed", error, job_ids)
                 exit_code = 1
-        elif args.target == "letta":
-            from benchmark_targets.letta import (
-                LettaAdapterFailure,
-                LettaProductFailure,
-                run_letta,
-            )
-
-            try:
-                result = run_letta(INPUT, ARTIFACTS, STATE / "letta")
-            except LettaProductFailure as error:
-                result = failure_result(args.target, "product_failed", error, job_ids)
-                exit_code = 1
-            except LettaAdapterFailure as error:
-                result = failure_result(args.target, "adapter_failed", error, job_ids)
-                exit_code = 1
-        elif args.target == "sag":
-            from benchmark_targets.sag import run_sag
-
-            result = run_sag(INPUT, ARTIFACTS, STATE / "sag")
         elif args.target == "pageindex":
             result = run_pageindex(INPUT, ARTIFACTS, STATE / "pageindex")
         elif args.target == "openkb":

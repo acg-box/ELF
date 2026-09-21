@@ -244,7 +244,7 @@ class BenchmarkReportTests(BenchmarkCase):
     def test_decisions_disclose_performance_and_add_thresholded_action(self) -> None:
         suite = self.subset("common-core-v1", 2)
         rows = []
-        for target, latency, ingest in (("elf", 100.0, 1000.0), ("sag", 5.0, 10.0)):
+        for target, latency, ingest in (("elf", 100.0, 1000.0), ("qmd", 5.0, 10.0)):
             evaluation = evaluate_unit(
                 suite, self.completed_unit(target, suite), self.targets[target]
             )
@@ -262,7 +262,7 @@ class BenchmarkReportTests(BenchmarkCase):
                 }
             )
         bundle = {
-            "target_pins": {"elf": {}, "sag": {}},
+            "target_pins": {"elf": {}, "qmd": {}},
             "suite_results": {"common-core-v1": {"results": rows}},
         }
         decisions = "\n".join(report_decisions.five_decisions(bundle))

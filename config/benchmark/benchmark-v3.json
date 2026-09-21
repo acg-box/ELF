@@ -115,34 +115,6 @@
       }
     },
     {
-      "id": "letta",
-      "adapter": "native_archival_search",
-      "role": "stateful_core_and_archival_memory",
-      "score_eligible": true,
-      "suites": ["common-core-v1", "memory-lifecycle-v1"],
-      "image": "elf-benchmark-letta:v4",
-      "dockerfile": "docker/benchmark/letta.Dockerfile",
-      "pin": {
-        "kind": "container_image",
-        "value": "letta/letta@sha256:aa66c3eeee13d2dfc40c650d709b550237ee31bfc91942a52fa488a13fa8c102",
-        "client_lock": "config/benchmark/locks/letta.txt"
-      }
-    },
-    {
-      "id": "sag",
-      "adapter": "native_multi_search_source_id_trace",
-      "role": "structure_aware_graph_and_multi_search",
-      "score_eligible": true,
-      "suites": ["common-core-v1", "knowledge-structure-v1"],
-      "image": "elf-benchmark-sag:v4",
-      "dockerfile": "docker/benchmark/sag.Dockerfile",
-      "native_deviations": {
-        "embedding_dimensions": 1024,
-        "reason": "The pinned unmodified SAG schema supports 1024-dimensional embeddings."
-      },
-      "pin": {"kind": "git", "source": "https://github.com/Zleap-AI/SAG.git", "value": "84a5b8c9bd45944b8a3cd76e0ba4762ce68ccc72"}
-    },
-    {
       "id": "pageindex",
       "adapter": "native_hierarchy_construction",
       "role": "document_hierarchy_construction",

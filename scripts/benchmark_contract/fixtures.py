@@ -16,8 +16,6 @@ PRODUCT_IDS = {
     "openviking",
     "graphrag",
     "graphiti",
-    "letta",
-    "sag",
     "pageindex",
     "openkb",
     "honcho",

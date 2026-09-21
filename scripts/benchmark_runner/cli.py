@@ -38,6 +38,10 @@ def main() -> int:
     args = parse_args()
     manifest = load_json(args.manifest)
     validate_manifest(manifest)
+    if args.only_target and args.only_target not in {
+        target["id"] for target in manifest["targets"]
+    }:
+        raise ValueError(f"unknown or retired target: {args.only_target}")
     selected_suite_ids = args.suites or [entry["id"] for entry in manifest["suites"]]
     unknown = set(selected_suite_ids) - {entry["id"] for entry in manifest["suites"]}
     if unknown:
