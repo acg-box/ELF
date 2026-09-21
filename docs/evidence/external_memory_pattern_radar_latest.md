@@ -14,7 +14,7 @@ tags:
 source_refs: []
 code_refs:
   - apps/elf-eval/fixtures/external_memory_pattern_radar/cursor.json
-  - apps/elf-eval/src/bin/external_memory_pattern_radar.rs
+  - apps/elf-eval/src/bin/external_memory_pattern_radar/main.rs
 related: []
 drift_watch:
   - docs/evidence/external_memory_pattern_radar_latest.md
