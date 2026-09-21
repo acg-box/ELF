@@ -149,6 +149,7 @@ services:
 
   elf-unit:
     <<: *unit
+    image: ${BENCHMARK_ELF_IMAGE:-elf-benchmark-elf:v5}
     depends_on:
       postgres:
         condition: service_healthy

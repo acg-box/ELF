@@ -5,6 +5,8 @@ from __future__ import annotations
 from typing import Any
 import json
 
+from .modes import publish_modes
+
 from .coverage import (
     common_ci,
     coverage_table,
@@ -20,6 +22,8 @@ from .roadmap import elf_job_summary, roadmap
 
 
 def publish(bundle: dict[str, Any]) -> str:
+    if bundle.get("schema") == "elf.benchmark_bundle/v2":
+        return publish_modes(bundle)
     source = bundle.get("source") or {}
     routes = bundle.get("provider_routes") or {}
     preflight = bundle.get("provider_preflight") or {}

@@ -25,7 +25,7 @@ Not this document: A fresh measurement or a claim that retained target pins are 
 
 ## Current set
 
-The default manifest retains ten targets: ELF, mem0, qmd, LightRAG, OpenViking,
+The competitor manifest retains ten targets: ELF, mem0, qmd, LightRAG, OpenViking,
 Graphiti, GraphRAG, PageIndex, OpenKB, and Honcho. The four suite definitions,
 scoring rules, and PageIndex eligibility boundary are unchanged. A reduction in
 the matrix is not an improvement in measured performance. Do not compare an
@@ -42,7 +42,7 @@ Neither project is declared inactive. OpenKB and GraphRAG remain available:
 slower development alone does not prove retirement. Other retained pins still
 need separate freshness reviews; this change does not silently upgrade them.
 
-The default manifest, target dispatcher, build list, Compose services, Dockerfiles,
+The competitor manifest, target dispatcher, build list, Compose services, Dockerfiles,
 and retired adapter dependencies no longer expose these two old implementations.
 Explicit selection of a retired target fails before provider access or artifact
 creation. Retired implementation-specific tests are removed; shared provenance,
@@ -61,3 +61,9 @@ Preserve original bundle contents and matrix identities when rendering old
 reports. Do not remove rows from a historical result or relabel an old SAG/Letta
 measurement as a measurement of its replacement. This cleanup performs no paid
 provider calls and produces no new competitor-quality results.
+
+## Execution modes
+
+The command now defaults to offline quick checks. Use `--mode compare` for this
+competitor set. The measure and compare modes also include two local baselines.
+See [bounded benchmark modes](../runbook/benchmarking/benchmark_modes.md).

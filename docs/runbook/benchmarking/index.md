@@ -13,3 +13,5 @@ Routes to: Benchmarking runbooks under `docs/runbook/benchmarking/`.
 - `real_world_agent_memory_benchmark.md`: operator map for creating, extending, and
   interpreting real-world agent memory benchmark jobs.
 - `real_world_memory_evolution.md`: memory-evolution fixture runbook.
+
+- [Bounded Benchmark Modes](benchmark_modes.md): offline checks, baseline measurements, budgets, and resumable evidence.

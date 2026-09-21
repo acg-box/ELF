@@ -12,6 +12,8 @@ import urllib.request
 from benchmark_contract import NativeContextError, answer_cases
 
 
+from .runtime import remaining_seconds
+
 def failure_unit(
     target: dict[str, Any], suite: dict[str, Any], classification: str, message: str
 ) -> dict[str, Any]:
@@ -101,7 +103,7 @@ def attach_shared_answers(
     )
     native: dict[str, Any] | None = None
     try:
-        with urllib.request.urlopen(request, timeout=300) as response:
+        with urllib.request.urlopen(request, timeout=remaining_seconds(300)) as response:
             native = json.loads(response.read().decode())
         unit["provider_raw"] = {"shared_answer": native}
         content = native["choices"][0]["message"]["content"]
