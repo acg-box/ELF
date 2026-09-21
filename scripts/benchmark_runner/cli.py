@@ -41,13 +41,13 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def local_row(target, suite, root, env):
+def local_row(target, suite, root, env, context_budget=12000):
     started = time.monotonic()
     inputs = root / "product-input"
     materialize_product_fixtures(suite, inputs)
     unit = run_baseline(target["id"], inputs, root / "state")
     if env is not None:
-        unit = attach_shared_answers(suite, unit, env, 12000)
+        unit = attach_shared_answers(suite, unit, env, context_budget)
     evaluation = evaluate_unit(suite, unit, target)
     replay = evaluate_unit(suite, json.loads(json.dumps(unit)), target)
     return {"target": target["id"], "unit_result": unit, "evaluation": evaluation,
@@ -129,6 +129,8 @@ def main() -> int:
         # Explicit measured single-target diagnosis may select any maintained target.
         targets = [t for t in targets + manifest["targets"] if t["id"] == args.only_target][:1]
     targets = [t for t in targets if set(t["suites"]) & set(selected)]
+    if not targets:
+        raise ValueError("no targets eligible for the selected suites")
     if args.plan:
         print(json.dumps({"mode": args.mode, "targets": [t["id"] for t in targets],
             "coverage": {k: [j["job_id"] for j in v["jobs"]] for k, v in suites.items()},
@@ -139,6 +141,8 @@ def main() -> int:
     source = source_fingerprint()
     if args.mode != "quick" and source["dirty"] and not args.allow_dirty:
         raise ValueError("live measurement requires a clean fixed source commit or --allow-dirty")
+    if args.skip_build and source["dirty"] and any(t["id"] == "elf" for t in targets):
+        raise ValueError("dirty ELF source cannot be verified against a cached image")
     started = time.monotonic()
     runtime.DEADLINE = started + args.max_seconds
     now = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
@@ -205,7 +209,7 @@ def main() -> int:
                         attempted += 1
                         unit_root = root / "units" / suite_id / name
                         if name in BASELINES:
-                            row = local_row(target, suite, unit_root, host_env)
+                            row = local_row(target, suite, unit_root, host_env, int(manifest["runner"]["context_budget_chars"]))
                         else:
                             row = run_unit(target=target, suite=suite, run_id=run_id,
                                 artifact_root=root, compose_file=REPO / manifest["runner"]["compose_file"],
@@ -213,7 +217,7 @@ def main() -> int:
                                 image=images.get(name), build_failure=failures.get(name),
                                 timeout_seconds=int(manifest["runner"]["unit_timeout_seconds"]),
                                 context_budget=int(manifest["runner"]["context_budget_chars"]))
-                    save_checkpoint(root / receipt, identity, row)
+                save_checkpoint(root / receipt, identity, row)
                 section["results"].append(row)
                 write_json(root / "bundle.json", bundle)
         bundle["acceptance"] = acceptance(bundle, False)

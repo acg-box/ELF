@@ -30,7 +30,7 @@ def read_checkpoint(path: Path, identity: str, suite: dict[str, Any], target: di
             return None
         if not reusable(row, suite, target):
             return None
-        row["reuse"] = {"reused": True, "original_receipt": str(path.resolve()),
+        row["reuse"] = {"reused": True, "original_receipt": row.get("reuse", {}).get("original_receipt", str(path.resolve())),
                        "note": "Prior measurement; not a fresh timing sample."}
         return row
     except (KeyError, ValueError, TypeError, OSError):

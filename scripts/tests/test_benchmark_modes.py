@@ -116,6 +116,10 @@ class BenchmarkModeTests(BenchmarkCase):
                     self.assertEqual(cli.main(), 0)
                 resumed = json.loads((args.artifact_root / "bundle.json").read_text())
                 self.assertTrue(all(r["reuse"]["reused"] for s in resumed["suite_results"].values() for r in s["results"]))
+                args.resume = args.artifact_root
+                args.artifact_root = root / "resumed-again"
+                with mock.patch.object(cli, "local_row", side_effect=AssertionError("must reuse twice")):
+                    self.assertEqual(cli.main(), 0)
                 args.resume = None
                 args.max_units = 1
                 args.artifact_root = root / "limited"
