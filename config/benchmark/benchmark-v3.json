@@ -48,6 +48,9 @@
   "targets": [
     {
       "id": "elf",
+      "image": "elf-benchmark-elf:v5",
+      "dockerfile": "docker/benchmark/Dockerfile",
+      "build_target": "elf-runtime",
       "adapter": "elf",
       "role": "source_linked_agent_memory_and_knowledge",
       "score_eligible": true,

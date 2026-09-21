@@ -1,208 +1,232 @@
-"""Host benchmark cli responsibilities."""
-
+"""One benchmark entrypoint: offline quick checks, ELF measurement, and comparison."""
 from __future__ import annotations
 
-from pathlib import Path
-from typing import Any
 import argparse
-import copy
 import hashlib
+import json
 import os
 import sys
 import time
+from pathlib import Path
+from typing import Any
 
-from benchmark_contract import load_json, sha256_json, validate_manifest, validate_suite
-
+from benchmark_contract import evaluate_unit, load_json, materialize_product_fixtures, sha256_json, validate_manifest, validate_suite
+from . import runtime
+from .answers import attach_shared_answers, failure_unit
+from .baselines import BASELINES, run_baseline, target_contract
+from .checkpoints import read_checkpoint, save_checkpoint
 from .docker import build_images
-from .execution import acceptance, run_matrix
+from .execution import acceptance, run_unit
+from .profiles import quality_summary, select_suite
 from .providers import load_local_env, provider_environment, provider_preflight
 from .runtime import REPO, command, source_fingerprint, write_json
-
 
 DEFAULT_MANIFEST = REPO / "config/benchmark/benchmark-v3.json"
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--plan", action="store_true", help="Print selected targets and coverage without execution")
+    parser.add_argument("--mode", choices=("quick", "measure", "compare"), default="quick")
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--suite", action="append", dest="suites")
     parser.add_argument("--only-target")
     parser.add_argument("--job-limit", type=int)
     parser.add_argument("--artifact-root", type=Path)
+    parser.add_argument("--resume", type=Path, help="Reuse successful receipts from a matching prior run")
+    parser.add_argument("--max-seconds", type=int, default=1800)
+    parser.add_argument("--max-units", type=int, default=32)
     parser.add_argument("--skip-build", action="store_true")
     parser.add_argument("--allow-dirty", action="store_true")
     return parser.parse_args()
 
 
+def local_row(target, suite, root, env):
+    started = time.monotonic()
+    inputs = root / "product-input"
+    materialize_product_fixtures(suite, inputs)
+    unit = run_baseline(target["id"], inputs, root / "state")
+    if env is not None:
+        unit = attach_shared_answers(suite, unit, env, 12000)
+    evaluation = evaluate_unit(suite, unit, target)
+    replay = evaluate_unit(suite, json.loads(json.dumps(unit)), target)
+    return {"target": target["id"], "unit_result": unit, "evaluation": evaluation,
+            "duration_seconds": round(time.monotonic() - started, 3),
+            "cleanup": {"passed": True, "not_started": True},
+            "deterministic_replay": {"passed": evaluation == replay},
+            "answer_measurement": "live" if env is not None else "not_measured"}
+
+
+def failed_row(target, suite, reason):
+    unit = failure_unit(target, suite, "timeout_failed", reason)
+    return {"target": target["id"], "unit_result": unit,
+            "evaluation": evaluate_unit(suite, unit, target),
+            "cleanup": {"passed": True, "not_started": True},
+            "deterministic_replay": {"passed": True}, "duration_seconds": 0}
+
+
+def render_summary(bundle, root):
+    lines = ["# Benchmark result", "", f"Mode: {bundle['mode']}",
+             f"Execution passed: {bundle['acceptance']['passed']}",
+             "", "Execution success does not establish product quality or superiority.",
+             "Quick mode does not execute ELF, external products, or model answers.", "",
+             "| Suite | Target | Status | Reused | Seconds |", "| --- | --- | --- | --- | --- |"]
+    for name, suite in bundle["suite_results"].items():
+        for row in suite["results"]:
+            lines.append(f"| {name} | {row['target']} | {row['evaluation']['classification']} | "
+                         f"{row.get('reuse', {}).get('reused', False)} | {row.get('duration_seconds', 0)} |")
+    lines += ["", "## Warm retrieval metrics", "",
+              "| Suite | Target | Recall@5 | nDCG@5 | Answer correctness |", "| --- | --- | --- | --- | --- |"]
+    for name, suite in bundle["suite_results"].items():
+        for row in suite["results"]:
+            metrics = row["evaluation"].get("phases", {}).get("warm", {}).get("metrics") or {}
+            def value(key):
+                measured = metrics.get(key)
+                return "not measured" if measured is None else str(measured)
+            lines.append(f"| {name} | {row['target']} | {value('mean_recall_at_5')} | "
+                         f"{value('mean_ndcg_at_5')} | {value('programmatic_answer_correctness')} |")
+    lines += ["", "## Findings", ""] + [f"- {f}" for f in bundle["acceptance"]["findings"]]
+    lines += ["", "## Seeded invariant findings", ""]
+    for finding in bundle.get("quality", {}).get("seeded_violations", []):
+        lines.append(f"- {finding['target']}/{finding['job']}: {finding['reason']}")
+    missing = [key for key, present in bundle.get("provider_configuration", {}).items() if not present]
+    if missing:
+        lines += ["", "Missing provider configuration: " + ", ".join(missing)]
+    lines += ["", "## Selected scenarios", ""]
+    for suite, jobs in bundle["coverage"].items():
+        lines.append(f"- {suite}: " + ", ".join(jobs))
+    lines += ["", "## Coverage limits", "", "Unmeasured: native host memory, end-to-end agent actions, Chinese inputs, "
+              "ACL enforcement, restart recovery, and large-corpus behavior. Use the repository integration/E2E gates "
+              "for their existing guarantees. File search is a lexical baseline, not a simulated competitor.", "",
+              "All raw unit results and evaluator metrics are in bundle.json. Reused timings are historical samples."]
+    (root / "report.md").write_text("\n".join(lines) + "\n")
+
+
 def main() -> int:
     args = parse_args()
+    if args.max_seconds <= 0 or args.max_units <= 0:
+        raise ValueError("budgets must be positive")
     manifest = load_json(args.manifest)
     validate_manifest(manifest)
-    if args.only_target and args.only_target not in {
-        target["id"] for target in manifest["targets"]
-    }:
+    known = {t["id"] for t in manifest["targets"]} | set(BASELINES)
+    if args.only_target and args.only_target not in known:
         raise ValueError(f"unknown or retired target: {args.only_target}")
-    selected_suite_ids = args.suites or [entry["id"] for entry in manifest["suites"]]
-    unknown = set(selected_suite_ids) - {entry["id"] for entry in manifest["suites"]}
-    if unknown:
-        raise ValueError(f"unknown suites: {sorted(unknown)}")
-    full_run = not args.suites and not args.only_target and not args.job_limit
-    now = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
-    run_id = hashlib.sha256(f"{now}-{os.getpid()}".encode()).hexdigest()[:10]
-    artifact_root = args.artifact_root or REPO / "tmp/benchmark-v4" / f"{now}-{run_id}"
-    artifact_root.mkdir(parents=True, exist_ok=False)
+    if args.mode == "quick" and args.only_target and args.only_target not in BASELINES:
+        raise ValueError("quick mode is offline; select measure or compare for a product")
+    selected = args.suites or [s["id"] for s in manifest["suites"]]
+    if set(selected) - {s["id"] for s in manifest["suites"]} or len(selected) != len(set(selected)):
+        raise ValueError("unknown or duplicate suites")
+    suites = {}
+    for entry in manifest["suites"]:
+        if entry["id"] in selected:
+            original = load_json(REPO / entry["path"])
+            validate_suite(original)
+            suites[entry["id"]] = select_suite(original, args.mode, args.job_limit)
+    targets = [target_contract(name, selected) for name in BASELINES]
+    if args.mode != "quick":
+        targets += [t for t in manifest["targets"] if args.mode == "compare" or t["id"] == "elf"]
+    if args.only_target:
+        # Explicit measured single-target diagnosis may select any maintained target.
+        targets = [t for t in targets + manifest["targets"] if t["id"] == args.only_target][:1]
+    targets = [t for t in targets if set(t["suites"]) & set(selected)]
+    if args.plan:
+        print(json.dumps({"mode": args.mode, "targets": [t["id"] for t in targets],
+            "coverage": {k: [j["job_id"] for j in v["jobs"]] for k, v in suites.items()},
+            "target_pins": {t["id"]: t["pin"] for t in targets},
+            "scheduled_units": sum(len(set(t["suites"]) & set(suites)) for t in targets),
+            "budget": {"seconds": args.max_seconds, "units": args.max_units}}, indent=2))
+        return 0
     source = source_fingerprint()
-    if full_run and source["dirty"] and not args.allow_dirty:
-        result = {
-            "schema": "elf.benchmark_bundle/v1",
-            "classification": "configuration_failed",
-            "message": "complete measured run requires a clean fixed source commit",
-            "source": source,
-        }
-        write_json(artifact_root / "bundle.json", result)
-        print(artifact_root / "bundle.json")
-        return 2
+    if args.mode != "quick" and source["dirty"] and not args.allow_dirty:
+        raise ValueError("live measurement requires a clean fixed source commit or --allow-dirty")
+    started = time.monotonic()
+    runtime.DEADLINE = started + args.max_seconds
+    now = time.strftime("%Y%m%dT%H%M%SZ", time.gmtime())
+    run_id = hashlib.sha256(f"{now}:{os.getpid()}".encode()).hexdigest()[:10]
+    root = args.artifact_root or REPO / "tmp/benchmark-v5" / f"{now}-{run_id}"
+    root.mkdir(parents=True, exist_ok=False)
+    bundle: dict[str, Any] = {"schema": "elf.benchmark_bundle/v1", "mode": args.mode,
+        "run_id": run_id, "source": source, "created_at": now,
+        "classification": "incomplete", "suite_results": {}, "timings": {},
+        "budget": {"max_seconds": args.max_seconds, "max_units": args.max_units,
+                   "boundary": "Whole-run subprocess/HTTP timeouts; cleanup has a separate bounded reserve. Internal product model calls are not a money cap."},
+        "coverage": {k: [j["job_id"] for j in s["jobs"]] for k, s in suites.items()},
+        "target_pins": {t["id"]: t["pin"] for t in targets}}
+    write_json(root / "bundle.json", bundle)
+    images, digests, failures = {}, {}, {}
+    host_env = None
+    container_env = {}
     try:
-        local_env = load_local_env()
-        host_provider_env = dict(os.environ)
-        host_provider_env.update(
-            provider_environment(local_env, manifest["providers"], inside_container=False)
-        )
-        container_provider_env = provider_environment(
-            local_env, manifest["providers"], inside_container=True
-        )
-    except KeyError as error:
-        result = {
-            "schema": "elf.benchmark_provider_preflight/v1",
-            "classification": "configuration_failed",
-            "message": str(error),
-        }
-        write_json(artifact_root / "provider-preflight.json", result)
-        print(artifact_root / "provider-preflight.json")
-        return 2
-    preflight = provider_preflight(host_provider_env, artifact_root)
-    if preflight.get("classification") != "completed":
-        bundle = {
-            "schema": "elf.benchmark_bundle/v1",
-            "classification": preflight.get("classification"),
-            "source": source,
-            "provider_preflight": preflight,
-            "suite_results": {},
-        }
-        write_json(artifact_root / "bundle.json", bundle)
-        print(artifact_root / "bundle.json")
-        return 2
-
-    entries = {
-        entry["id"]: entry for entry in manifest["suites"] if entry["id"] in selected_suite_ids
-    }
-    suites: dict[str, dict[str, Any]] = {}
-    for suite_id, entry in entries.items():
-        suite = load_json(REPO / entry["path"])
-        validate_suite(suite)
-        if args.job_limit:
-            if args.job_limit < 1 or args.job_limit > len(suite["jobs"]):
-                raise ValueError("job limit is outside the suite")
-            suite = copy.deepcopy(suite)
-            suite["jobs"] = suite["jobs"][: args.job_limit]
-            suite["execution_mode"] = "readiness"
-        suites[suite_id] = suite
-    selected_targets = [
-        target
-        for target in manifest["targets"]
-        if any(suite_id in target["suites"] for suite_id in selected_suite_ids)
-        and (args.only_target is None or target["id"] == args.only_target)
-    ]
-    if args.only_target and not selected_targets:
-        raise ValueError(f"target {args.only_target} is not eligible for selected suites")
-    images, image_digests, build_failures = build_images(
-        manifest, selected_targets, skip_build=args.skip_build
-    )
-    docker_version = command(["docker", "version", "--format", "{{.Server.Version}}"]).stdout.strip()
-    compose_file = REPO / manifest["runner"]["compose_file"]
-    suite_results: dict[str, Any] = {}
-    for suite_id, suite in suites.items():
-        targets = [
-            target
-            for target in selected_targets
-            if suite_id in target["suites"]
-        ]
-        rows = run_matrix(
-            targets=targets,
-            capacity=int(manifest["runner"]["capacity"]),
-            suite=suite,
-            run_id=run_id,
-            artifact_root=artifact_root,
-            compose_file=compose_file,
-            container_env=container_provider_env,
-            host_provider_env=host_provider_env,
-            images=images,
-            build_failures=build_failures,
-            timeout_seconds=int(manifest["runner"]["unit_timeout_seconds"]),
-            context_budget=int(manifest["runner"]["context_budget_chars"]),
-        )
-        suite_results[suite_id] = {
-            "suite_sha256": sha256_json(suite),
-            "scheduled_targets": [target["id"] for target in targets],
-            "results": sorted(rows, key=lambda row: row["target"]),
-        }
-        write_json(artifact_root / "suites" / suite_id / "summary.json", suite_results[suite_id])
-    bundle = {
-        "schema": "elf.benchmark_bundle/v1",
-        "classification": "completed",
-        "mode": "complete_measured_run" if full_run else "readiness_or_regression",
-        "run_id": run_id,
-        "created_at": now,
-        "source": source,
-        "manifest_sha256": hashlib.sha256(args.manifest.read_bytes()).hexdigest(),
-        "provider_routes": {
-            "chat_model": manifest["providers"]["chat"]["model"],
-            "chat_reasoning_effort": manifest["providers"]["chat"]["reasoning_effort"],
-            "embedding_model": manifest["providers"]["embedding"]["model"],
-            "embedding_dimensions": manifest["providers"]["embedding"]["dimensions"],
-        },
-        "provider_preflight": preflight,
-        "docker_server_version": docker_version,
-        "target_image_tags": images,
-        "target_image_digests": image_digests,
-        "target_pins": {target["id"]: target["pin"] for target in manifest["targets"]},
-        "target_contracts": {
-            target["id"]: {
-                key: target[key]
-                for key in (
-                    "adapter",
-                    "score_eligible",
-                    "suites",
-                    "native_deviations",
-                    "not_applicable",
-                )
-                if key in target
+        if args.mode == "quick":
+            test = command(["cargo", "make", "test"], check=False)
+            (root / "contract-tests.log").write_text(test.stdout)
+            if test.returncode:
+                raise RuntimeError("repository tests failed")
+        else:
+            local = load_local_env()
+            bundle["provider_configuration"] = {
+                "EMBEDDING_API_BASE": bool(local.get("EMBEDDING_API_BASE")),
+                "EMBEDDING_API_KEY": bool(local.get("EMBEDDING_API_KEY")),
+                "LITELLM_BASE_URL_or_COMPAT": bool(local.get("LITELLM_CHAT_COMPAT_BASE_URL") or local.get("LITELLM_BASE_URL")),
+                "LITELLM_API_KEY": bool(local.get("LITELLM_API_KEY")),
             }
-            for target in manifest["targets"]
-        },
-        "build_failures": build_failures,
-        "suite_results": suite_results,
-    }
-    bundle["acceptance"] = acceptance(bundle, full_run)
-    bundle_path = artifact_root / "bundle.json"
-    write_json(bundle_path, bundle)
-    if full_run:
-        report_path = artifact_root / "report.en.md"
-        report = command(
-            [
-                sys.executable,
-                "scripts/benchmark-report.py",
-                "--bundle",
-                str(bundle_path),
-                "--out",
-                str(report_path),
-            ],
-            check=False,
-        )
-        (artifact_root / "report.log").write_text(report.stdout, encoding="utf-8")
-        if report.returncode:
-            print(bundle_path)
-            return 1
-    print(bundle_path)
-    return 0 if bundle["acceptance"]["passed"] else 1
-
+            write_json(root / "bundle.json", bundle)
+            host_env = dict(os.environ)
+            host_env.update(provider_environment(local, manifest["providers"], inside_container=False))
+            container_env = provider_environment(local, manifest["providers"], inside_container=True)
+            preflight = provider_preflight(host_env, root)
+            if preflight.get("classification") != "completed":
+                raise RuntimeError("provider preflight failed; see provider-preflight.json")
+            bundle["provider_preflight"] = preflight
+        bundle["timings"]["preflight_seconds"] = round(time.monotonic() - started, 3)
+        build_started = time.monotonic()
+        live_targets = [t for t in targets if t["id"] not in BASELINES]
+        if live_targets:
+            images, digests, failures = build_images(manifest, live_targets, skip_build=args.skip_build)
+        bundle["timings"]["build_seconds"] = round(time.monotonic() - build_started, 3)
+        bundle["image_digests"] = digests
+        provider_identity = {k: v for k, v in (host_env or {}).items()
+                             if k.startswith("BENCHMARK_") and not k.endswith("KEY")}
+        identity = sha256_json({"source": source, "manifest": manifest, "suites": suites,
+                               "mode": args.mode, "providers": provider_identity, "images": digests})
+        attempted = 0
+        for suite_id, suite in suites.items():
+            eligible = [t for t in targets if suite_id in t["suites"]]
+            section = {"scheduled_targets": [t["id"] for t in eligible], "results": []}
+            bundle["suite_results"][suite_id] = section
+            for target in eligible:
+                name = target["id"]
+                receipt = Path("receipts") / suite_id / f"{name}.json"
+                row = read_checkpoint(args.resume / receipt, identity, suite, target) if args.resume else None
+                if row is None:
+                    if attempted >= args.max_units or time.monotonic() >= runtime.DEADLINE:
+                        row = failed_row(target, suite, "run budget exhausted; unit not started")
+                    else:
+                        attempted += 1
+                        unit_root = root / "units" / suite_id / name
+                        if name in BASELINES:
+                            row = local_row(target, suite, unit_root, host_env)
+                        else:
+                            row = run_unit(target=target, suite=suite, run_id=run_id,
+                                artifact_root=root, compose_file=REPO / manifest["runner"]["compose_file"],
+                                container_env=container_env, host_provider_env=host_env,
+                                image=images.get(name), build_failure=failures.get(name),
+                                timeout_seconds=int(manifest["runner"]["unit_timeout_seconds"]),
+                                context_budget=int(manifest["runner"]["context_budget_chars"]))
+                    save_checkpoint(root / receipt, identity, row)
+                section["results"].append(row)
+                write_json(root / "bundle.json", bundle)
+        bundle["acceptance"] = acceptance(bundle, False)
+        bundle["quality"] = quality_summary(bundle)
+        bundle["classification"] = "completed" if bundle["acceptance"]["passed"] else "failed"
+    except Exception as error:
+        # Avoid printing exception text that could contain a provider credential.
+        bundle["classification"] = "configuration_or_execution_failed"
+        bundle["acceptance"] = {"passed": False, "findings": [f"{type(error).__name__}: run stopped; inspect stage artifacts"]}
+    finally:
+        runtime.DEADLINE = None
+    bundle["timings"]["total_seconds"] = round(time.monotonic() - started, 3)
+    write_json(root / "bundle.json", bundle)
+    render_summary(bundle, root)
+    print(root / "report.md")
+    return 0 if bundle["acceptance"]["passed"] and bundle.get("quality", {}).get("elf_seeded_invariants_passed", True) else 1

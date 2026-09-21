@@ -8,6 +8,11 @@ logs.
 
 ## 2026-09-21
 
+- Added bounded quick, measure, and compare benchmark modes; explicit scenario
+  selection, scoring-blind local baselines, atomic resumable receipts, phase
+  timings, and failure-aware acceptance. Offline evidence is separated from
+  model-backed measurements and unimplemented agent-task coverage.
+
 - Removed the retired SAG v1 and Letta Python server implementations from the
   default competitor matrix, dispatcher, container setup, and dependency locks.
   Preserved dated evidence and documented the exact historical reproduction ref.

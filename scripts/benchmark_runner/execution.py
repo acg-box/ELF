@@ -19,6 +19,8 @@ from benchmark_contract import (
     sha256_json,
 )
 
+from .profiles import integrity_findings
+
 from .answers import attach_shared_answers, failure_unit
 from .docker import (
     TARGET_IMAGE_ENV,
@@ -27,7 +29,7 @@ from .docker import (
     compose_project_name,
     project_images,
 )
-from .runtime import command, write_json
+from .runtime import command, write_json, cleanup_budget
 
 
 def run_unit(
@@ -120,15 +122,19 @@ def run_unit(
         compose_output = harness_error + "\n"
         compose_exit = 125
     unit_root.mkdir(parents=True, exist_ok=True)
-    runtime_images = project_images(project, compose_file, env)
-    dependency_logs = compose_project_logs(project, compose_file, env)
-    (unit_root / "compose.log").write_text(
-        compose_output
-        + "\n--- Compose dependency logs captured before cleanup ---\n"
-        + dependency_logs,
-        encoding="utf-8",
-    )
-    cleanup = cleanup_project(project, compose_file, env)
+    runtime_seconds = time.monotonic() - started
+    cleanup_started = time.monotonic()
+    with cleanup_budget():
+        runtime_images = project_images(project, compose_file, env)
+        dependency_logs = compose_project_logs(project, compose_file, env)
+        (unit_root / "compose.log").write_text(
+            compose_output
+            + "\n--- Compose dependency logs captured before cleanup ---\n"
+            + dependency_logs,
+            encoding="utf-8",
+        )
+        cleanup = cleanup_project(project, compose_file, env)
+    cleanup_seconds = time.monotonic() - cleanup_started
     result_path = artifact_dir / "unit-result.json"
     if timed_out:
         raw_unit = failure_unit(target, suite, "timeout_failed", "isolated unit timed out")
@@ -152,9 +158,12 @@ def run_unit(
         raw_unit = failure_unit(
             target, suite, "cleanup_failed", "Compose project cleanup was incomplete"
         )
+    answer_started = time.monotonic()
     raw_unit = attach_shared_answers(
         suite, raw_unit, host_provider_env, context_budget
     )
+    answer_seconds = time.monotonic() - answer_started
+    evaluation_started = time.monotonic()
     write_json(unit_root / "raw-unit-result.json", raw_unit)
     try:
         evaluation = evaluate_unit(suite, raw_unit, target)
@@ -173,6 +182,10 @@ def run_unit(
         "project": project,
         "compose_exit_code": compose_exit,
         "duration_seconds": round(time.monotonic() - started, 3),
+        "timings": {"runtime_seconds": round(runtime_seconds, 3),
+                    "logs_and_cleanup_seconds": round(cleanup_seconds, 3),
+                    "shared_answer_seconds": round(answer_seconds, 3),
+                    "evaluation_seconds": round(time.monotonic() - evaluation_started, 3)},
         "input_sha256": input_hash,
         "unit_result": raw_unit,
         "evaluation": evaluation,
@@ -227,7 +240,8 @@ def run_matrix(
 
 def acceptance(bundle: dict[str, Any], full_run: bool) -> dict[str, Any]:
     if not full_run:
-        return {"passed": True, "mode": "readiness_or_regression", "findings": []}
+        findings = integrity_findings(bundle)
+        return {"passed": not findings, "mode": "readiness_or_regression", "findings": findings}
     findings: list[str] = []
     suites = bundle["suite_results"]
     common = suites["common-core-v1"]["results"]

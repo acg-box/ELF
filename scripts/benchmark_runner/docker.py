@@ -14,6 +14,7 @@ from .runtime import command
 TARGET_IMAGE_ENV = {
     target: f"BENCHMARK_{target.upper()}_IMAGE"
     for target in (
+        "elf",
         "pageindex",
         "openviking",
         "graphiti",
@@ -35,7 +36,7 @@ def image_id(image: str) -> str:
     return value
 
 
-def build_image(image: str, dockerfile: str) -> str:
+def build_image(image: str, dockerfile: str, stage: str | None = None) -> str:
     source_commit = command(["git", "rev-parse", "HEAD"]).stdout.strip()
     completed = command(
         [
@@ -45,6 +46,7 @@ def build_image(image: str, dockerfile: str) -> str:
             dockerfile,
             "--tag",
             image,
+            *(["--target", stage] if stage else []),
             "--build-arg",
             f"ELF_SOURCE_COMMIT={source_commit}",
             ".",
@@ -71,6 +73,12 @@ def build_images(
                 if skip_build
                 else build_image(main_image, "docker/benchmark/Dockerfile")
             )
+            if skip_build and any(target["id"] == "elf" for target in main_targets):
+                expected = command(["git", "rev-parse", "HEAD"]).stdout.strip()
+                revision = command(["docker", "image", "inspect", "--format",
+                    '{{ index .Config.Labels "org.opencontainers.image.revision" }}', main_image]).stdout.strip()
+                if revision != expected:
+                    raise RuntimeError("cached ELF image source differs from HEAD; rebuild without --skip-build")
             for target in main_targets:
                 tags[target["id"]] = main_image
                 digests[target["id"]] = main_digest
@@ -85,8 +93,14 @@ def build_images(
             digest = (
                 image_id(target["image"])
                 if skip_build
-                else build_image(target["image"], target["dockerfile"])
+                else build_image(target["image"], target["dockerfile"], target.get("build_target"))
             )
+            if skip_build and target_id == "elf":
+                expected = command(["git", "rev-parse", "HEAD"]).stdout.strip()
+                revision = command(["docker", "image", "inspect", "--format",
+                    '{{ index .Config.Labels "org.opencontainers.image.revision" }}', target["image"]]).stdout.strip()
+                if revision != expected:
+                    raise RuntimeError("cached ELF image source differs from HEAD; rebuild without --skip-build")
             tags[target_id] = target["image"]
             digests[target_id] = digest
         except Exception as error:
@@ -190,6 +204,7 @@ def project_images(project: str, compose_file: Path, env: dict[str, str]) -> lis
             ],
             env=env,
             check=False,
+            timeout=30,
         )
     except Exception as error:
         return [

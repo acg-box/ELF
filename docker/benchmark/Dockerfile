@@ -40,6 +40,19 @@ WORKDIR /opt/qmd
 RUN pnpm install --frozen-lockfile \
   && pnpm run build
 
+FROM python:3.11-bookworm AS elf-runtime
+
+ARG ELF_SOURCE_COMMIT=unknown
+COPY --from=elf-builder /out/real_world_live_adapter /usr/local/bin/real_world_live_adapter
+COPY config/local/elf.docker.toml /opt/elf/
+COPY config/local/tokenizer.wordlevel.json /config/local/tokenizer.wordlevel.json
+COPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py
+COPY scripts/benchmark_targets /opt/benchmark/benchmark_targets
+LABEL org.opencontainers.image.revision="${ELF_SOURCE_COMMIT}"
+ENV PYTHONUNBUFFERED=1
+WORKDIR /
+CMD ["python3", "/opt/benchmark/benchmark-unit.py", "--target", "elf"]
+
 FROM node:22-bookworm
 
 ARG ELF_SOURCE_COMMIT=unknown
