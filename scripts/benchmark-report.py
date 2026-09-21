@@ -21,7 +21,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     bundle = json.loads(args.bundle.read_text(encoding="utf-8"))
-    if bundle.get("schema") != "elf.benchmark_bundle/v1":
+    if bundle.get("schema") not in {"elf.benchmark_bundle/v1", "elf.benchmark_bundle/v2"}:
         raise ValueError("input is not an ELF benchmark bundle")
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(publish(bundle), encoding="utf-8")

@@ -95,6 +95,9 @@ Products remain serial to preserve the existing provider contention boundary.
 cargo make benchmark-competitors --mode measure --resume tmp/benchmark-v5/PRIOR_RUN --max-seconds 1800
 ```
 
+New runs use `elf.benchmark_bundle/v2`. The report command supports v1 and v2
+without relabeling quick evidence as a complete measured run.
+
 Each run writes to a new directory. Receipts are atomic and bind source state,
 manifest, exact selected suites, mode, provider routes/models, and built image IDs.
 Only complete units with successful cleanup, replay, and coverage can be reused.

@@ -16,6 +16,7 @@ from benchmark_runner.checkpoints import read_checkpoint, save_checkpoint
 from benchmark_runner.execution import acceptance
 from benchmark_runner.profiles import select_suite
 from benchmark_runner import runtime, cli, docker
+from benchmark_report import publish
 
 
 class BenchmarkModeTests(BenchmarkCase):
@@ -115,6 +116,9 @@ class BenchmarkModeTests(BenchmarkCase):
                 with mock.patch.object(cli, "local_row", side_effect=AssertionError("must reuse")):
                     self.assertEqual(cli.main(), 0)
                 resumed = json.loads((args.artifact_root / "bundle.json").read_text())
+                self.assertEqual(resumed["schema"], "elf.benchmark_bundle/v2")
+                self.assertEqual(publish(resumed), (args.artifact_root / "report.md").read_text())
+                self.assertNotIn("This complete measured run", publish(resumed))
                 self.assertTrue(all(r["reuse"]["reused"] for s in resumed["suite_results"].values() for r in s["results"]))
                 args.resume = args.artifact_root
                 args.artifact_root = root / "resumed-again"

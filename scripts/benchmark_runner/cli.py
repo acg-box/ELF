@@ -10,6 +10,7 @@ import time
 from pathlib import Path
 from typing import Any
 
+from benchmark_report.modes import publish_modes
 from benchmark_contract import evaluate_unit, load_json, materialize_product_fixtures, sha256_json, validate_manifest, validate_suite
 from . import runtime
 from .answers import attach_shared_answers, failure_unit
@@ -65,41 +66,6 @@ def failed_row(target, suite, reason):
             "deterministic_replay": {"passed": True}, "duration_seconds": 0}
 
 
-def render_summary(bundle, root):
-    lines = ["# Benchmark result", "", f"Mode: {bundle['mode']}",
-             f"Execution passed: {bundle['acceptance']['passed']}",
-             "", "Execution success does not establish product quality or superiority.",
-             "Quick mode does not execute ELF, external products, or model answers.", "",
-             "| Suite | Target | Status | Reused | Seconds |", "| --- | --- | --- | --- | --- |"]
-    for name, suite in bundle["suite_results"].items():
-        for row in suite["results"]:
-            lines.append(f"| {name} | {row['target']} | {row['evaluation']['classification']} | "
-                         f"{row.get('reuse', {}).get('reused', False)} | {row.get('duration_seconds', 0)} |")
-    lines += ["", "## Warm retrieval metrics", "",
-              "| Suite | Target | Recall@5 | nDCG@5 | Answer correctness |", "| --- | --- | --- | --- | --- |"]
-    for name, suite in bundle["suite_results"].items():
-        for row in suite["results"]:
-            metrics = row["evaluation"].get("phases", {}).get("warm", {}).get("metrics") or {}
-            def value(key):
-                measured = metrics.get(key)
-                return "not measured" if measured is None else str(measured)
-            lines.append(f"| {name} | {row['target']} | {value('mean_recall_at_5')} | "
-                         f"{value('mean_ndcg_at_5')} | {value('programmatic_answer_correctness')} |")
-    lines += ["", "## Findings", ""] + [f"- {f}" for f in bundle["acceptance"]["findings"]]
-    lines += ["", "## Seeded invariant findings", ""]
-    for finding in bundle.get("quality", {}).get("seeded_violations", []):
-        lines.append(f"- {finding['target']}/{finding['job']}: {finding['reason']}")
-    missing = [key for key, present in bundle.get("provider_configuration", {}).items() if not present]
-    if missing:
-        lines += ["", "Missing provider configuration: " + ", ".join(missing)]
-    lines += ["", "## Selected scenarios", ""]
-    for suite, jobs in bundle["coverage"].items():
-        lines.append(f"- {suite}: " + ", ".join(jobs))
-    lines += ["", "## Coverage limits", "", "Unmeasured: native host memory, end-to-end agent actions, Chinese inputs, "
-              "ACL enforcement, restart recovery, and large-corpus behavior. Use the repository integration/E2E gates "
-              "for their existing guarantees. File search is a lexical baseline, not a simulated competitor.", "",
-              "All raw unit results and evaluator metrics are in bundle.json. Reused timings are historical samples."]
-    (root / "report.md").write_text("\n".join(lines) + "\n")
 
 
 def main() -> int:
@@ -149,13 +115,19 @@ def main() -> int:
     run_id = hashlib.sha256(f"{now}:{os.getpid()}".encode()).hexdigest()[:10]
     root = args.artifact_root or REPO / "tmp/benchmark-v5" / f"{now}-{run_id}"
     root.mkdir(parents=True, exist_ok=False)
-    bundle: dict[str, Any] = {"schema": "elf.benchmark_bundle/v1", "mode": args.mode,
+    bundle: dict[str, Any] = {"schema": "elf.benchmark_bundle/v2", "mode": args.mode,
         "run_id": run_id, "source": source, "created_at": now,
         "classification": "incomplete", "suite_results": {}, "timings": {},
         "budget": {"max_seconds": args.max_seconds, "max_units": args.max_units,
                    "boundary": "Whole-run subprocess/HTTP timeouts; cleanup has a separate bounded reserve. Internal product model calls are not a money cap."},
         "coverage": {k: [j["job_id"] for j in s["jobs"]] for k, s in suites.items()},
-        "target_pins": {t["id"]: t["pin"] for t in targets}}
+        "target_pins": {t["id"]: t["pin"] for t in targets},
+        "manifest_sha256": sha256_json(manifest),
+        "provider_routes": {"chat_model": manifest["providers"]["chat"]["model"],
+                            "chat_reasoning_effort": manifest["providers"]["chat"]["reasoning_effort"],
+                            "embedding_model": manifest["providers"]["embedding"]["model"],
+                            "embedding_dimensions": manifest["providers"]["embedding"]["dimensions"]},
+        "target_contracts": {t["id"]: t for t in targets}}
     write_json(root / "bundle.json", bundle)
     images, digests, failures = {}, {}, {}
     host_env = None
@@ -188,7 +160,7 @@ def main() -> int:
         if live_targets:
             images, digests, failures = build_images(manifest, live_targets, skip_build=args.skip_build)
         bundle["timings"]["build_seconds"] = round(time.monotonic() - build_started, 3)
-        bundle["image_digests"] = digests
+        bundle["target_image_digests"] = digests
         provider_identity = {k: v for k, v in (host_env or {}).items()
                              if k.startswith("BENCHMARK_") and not k.endswith("KEY")}
         identity = sha256_json({"source": source, "manifest": manifest, "suites": suites,
@@ -196,7 +168,7 @@ def main() -> int:
         attempted = 0
         for suite_id, suite in suites.items():
             eligible = [t for t in targets if suite_id in t["suites"]]
-            section = {"scheduled_targets": [t["id"] for t in eligible], "results": []}
+            section = {"suite_sha256": sha256_json(suite), "scheduled_targets": [t["id"] for t in eligible], "results": []}
             bundle["suite_results"][suite_id] = section
             for target in eligible:
                 name = target["id"]
@@ -231,6 +203,6 @@ def main() -> int:
         runtime.DEADLINE = None
     bundle["timings"]["total_seconds"] = round(time.monotonic() - started, 3)
     write_json(root / "bundle.json", bundle)
-    render_summary(bundle, root)
+    (root / "report.md").write_text(publish_modes(bundle))
     print(root / "report.md")
     return 0 if bundle["acceptance"]["passed"] and bundle.get("quality", {}).get("elf_seeded_invariants_passed", True) else 1
