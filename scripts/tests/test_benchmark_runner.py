@@ -12,6 +12,8 @@ from benchmark_contract import opaque_job_id
 from benchmark_runner import answers as runner_answers
 from benchmark_runner import docker as runner_docker
 import subprocess
+import sys
+import tempfile
 
 PREFLIGHT = load_script(
     "benchmark_provider_preflight", "scripts/benchmark-provider-preflight.py"
@@ -19,6 +21,19 @@ PREFLIGHT = load_script(
 
 
 class BenchmarkRunnerTests(BenchmarkCase):
+    def test_retired_target_is_rejected_before_artifacts_or_provider_access(self) -> None:
+        for target in ("letta", "sag"):
+            with self.subTest(target=target), tempfile.TemporaryDirectory() as directory:
+                artifacts = Path(directory) / "artifacts"
+                result = subprocess.run(
+                    [sys.executable, str(REPO / "scripts/benchmark-runner.py"),
+                     "--only-target", target, "--artifact-root", str(artifacts)],
+                    cwd=REPO, capture_output=True, text=True, check=False,
+                )
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn(f"unknown or retired target: {target}", result.stderr)
+                self.assertFalse(artifacts.exists())
+
     def test_shared_answer_requires_nonempty_text_and_preserves_raw_response(self) -> None:
         suite = self.subset("common-core-v1")
         case_id = opaque_job_id(suite["jobs"][0]["job_id"])

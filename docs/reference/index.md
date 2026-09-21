@@ -1,5 +1,8 @@
 # Reference Index
 
+- [Benchmark Target Lifecycle](benchmark-target-lifecycle.md): current targets,
+  retired implementations, and historical reproduction boundaries.
+
 Purpose: Route agents to current structure references and non-procedural orientation.
 Read this when: You need a stable overview that is not a normative spec or runbook.
 Not this document: Correctness contracts, execution steps, or latent research.

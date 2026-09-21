@@ -2,6 +2,10 @@
 
 # ELF
 
+For current competitor runs and retired target versions, see the
+[benchmark target lifecycle](docs/reference/benchmark-target-lifecycle.md).
+Older dated benchmark reports describe their original frozen implementations.
+
 Evidence-linked fact memory for agents.
 
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)

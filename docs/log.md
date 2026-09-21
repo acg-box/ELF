@@ -8,6 +8,10 @@ logs.
 
 ## 2026-09-21
 
+- Removed the retired SAG v1 and Letta Python server implementations from the
+  default competitor matrix, dispatcher, container setup, and dependency locks.
+  Preserved dated evidence and documented the exact historical reproduction ref.
+
 - Recorded legacy workspace disposition, historical benchmark claim corrections,
   and the bounded repair queue. Fixed the radar generator's obsolete entrypoint
   reference and its checked-in report. Removed the misplaced application-level
