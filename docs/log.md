@@ -6,6 +6,14 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-09-21
+
+- Recorded legacy workspace disposition, historical benchmark claim corrections,
+  and the bounded repair queue. Fixed the radar generator's obsolete entrypoint
+  reference and its checked-in report. Removed the misplaced application-level
+  `--locked` argument from radar tasks; Cargo remains locked. Product behavior
+  is unchanged.
+
 ## 2026-09-20
 
 - Added an exploratory ELF value review using September agent-platform sources and
