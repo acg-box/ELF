@@ -95,7 +95,8 @@ pub(super) fn is_memory_summary_category(category: &str) -> bool {
 		category,
 		"top_of_mind"
 			| "background"
-			| "stale" | "superseded"
+			| "stale"
+			| "superseded"
 			| "tombstone"
 			| "derived_project_profile"
 	)
@@ -107,7 +108,8 @@ pub(super) fn is_memory_summary_freshness_status(status: &str) -> bool {
 		"current"
 			| "background"
 			| "historical"
-			| "stale" | "superseded"
+			| "stale"
+			| "superseded"
 			| "tombstoned"
 			| "unsupported"
 	)
