@@ -124,7 +124,8 @@ Then set `search.expansion.mode = "off"` to avoid LLM-backed query expansion. Th
 
 The machine must have:
 
-- Rust toolchain (pinned by `rust-toolchain.toml`).
+- The `stable` Rust toolchain selected by `rust-toolchain.toml`.
+- The unversioned `nightly` toolchain with Rustfmt for formatting.
 - Docker Compose for the checked-in local dependency stack, or separately running Postgres and Qdrant.
 - `psql` available on PATH.
 - Running Postgres instance with `pgvector` installed/enabled when not using Compose.

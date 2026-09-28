@@ -110,7 +110,8 @@ pub(super) fn assert_memsearch_first_generation_records(memsearch: &Value) {
 		|evidence| evidence.contains("fixture-backed retrieval-debug prompt coverage")
 			&& evidence.contains(
 				"No live memsearch runtime adapter executes retrieval prompt scoring yet"
-			) && evidence.contains("not a suite pass")
+			)
+			&& evidence.contains("not a suite pass")
 	));
 	assert_eq!(memsearch.pointer("/scenarios/1/status").and_then(Value::as_str), Some("pass"));
 	assert_eq!(

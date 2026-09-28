@@ -40,16 +40,23 @@ fn adapter_has_passing_text(adapter: &ExternalAdapterReport, needles: &[&str]) -
 			adapter.result.status,
 			adapter.result.evidence.as_str(),
 			needles,
-		) || adapter.capabilities.iter().any(|capability| {
-		adapter_status_mentions_any(capability.status, capability.capability.as_str(), needles)
-			|| adapter_status_mentions_any(capability.status, capability.evidence.as_str(), needles)
-	}) || adapter.suites.iter().any(|suite| {
-		adapter_status_mentions_any(suite.status, suite.suite_id.as_str(), needles)
-			|| adapter_status_mentions_any(suite.status, suite.evidence.as_str(), needles)
-	}) || adapter.scenarios.iter().any(|scenario| {
-		adapter_status_mentions_any(scenario.status, scenario.scenario_id.as_str(), needles)
-			|| adapter_status_mentions_any(scenario.status, scenario.evidence.as_str(), needles)
-	})
+		)
+		|| adapter.capabilities.iter().any(|capability| {
+			adapter_status_mentions_any(capability.status, capability.capability.as_str(), needles)
+				|| adapter_status_mentions_any(
+					capability.status,
+					capability.evidence.as_str(),
+					needles,
+				)
+		})
+		|| adapter.suites.iter().any(|suite| {
+			adapter_status_mentions_any(suite.status, suite.suite_id.as_str(), needles)
+				|| adapter_status_mentions_any(suite.status, suite.evidence.as_str(), needles)
+		})
+		|| adapter.scenarios.iter().any(|scenario| {
+			adapter_status_mentions_any(scenario.status, scenario.scenario_id.as_str(), needles)
+				|| adapter_status_mentions_any(scenario.status, scenario.evidence.as_str(), needles)
+		})
 }
 
 fn adapter_has_reported_same_corpus_text(
