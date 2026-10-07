@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:1c5ea702b939e75ab4120e174b42cf761ddd326d908e64b203ce31f6582ec78b",
+  "claims": [
+    {
+      "id": "claim_f33449baf9ba4bba90352d6c62afa42e",
+      "statement": "The benchmark runner supports offline quick mode, an ELF-and-baselines measure mode, and a compare mode with product-specific suite eligibility.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_runner/cli.py#L25-L105",
+          "version": "repo-lines-v1:sha256:0d528e326107ea71414be2c65072c9c28864b63ceeb6939af65c5544aa0152c2:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwNTJmN2I4ODc2NDliMGFjYTJiNGQ2ZjMzOWE5MjNmMzQzZTQ4ZDFkOTBjMGMzYmU4NGU5MGY5NDIxNjU5ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMDg1OGQ3MDM3NzBhNGE0OTc1OGVjNDMzZjUwZmU3MjU2N2VhZThjZThiYmEyYjc1MTVmMWZiOTY4ODIxYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MzkzZTk2YWRmNGM2MThmYzk0OGFkNjE1M2NlYmJjNzExMDc4YWRhMTcwNjJlNzkzOTM5YTBlMDg1NjhiMTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MDQ3MWQyYmI3NTUwYzNlNGFkZTI4OWFkZDI4MmIwMmY1MjY4ODQxMmJlMTIxNjZmYTI2ZWQ1NTk1NTRiYWYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T14:59:10.952Z"
+  }
+}

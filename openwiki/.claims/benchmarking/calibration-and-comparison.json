@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:bb3169f510d0f5a36521f3f9759f4d01042c13e9dd10cb1a4c1e6ca33dd972c1",
+  "claims": [
+    {
+      "id": "claim_b2092c21a8fb49378b24e596378c2f93",
+      "statement": "The October 7 bounded calibration records $0.016648811 of reported API cost across 393 requests, with no unknown request costs at completion.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/evidence/2026-10-07/summary.json",
+          "version": "repo-file-v1:sha256:444f6cc5dfdf6ba89bc59940cbc7ed2180970ca777ff3bd1024a6c44505cfe95"
+        }
+      ]
+    },
+    {
+      "id": "claim_19c5401f23954a82be7bf6b8df120e55",
+      "statement": "The shared-answer scorer uses normalized required fact strings and forbidden fact checks rather than a paid model judge.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_contract/metrics.py#L59-L85",
+          "version": "repo-lines-v1:sha256:8a2acb1af779b527f496f259f3b892eef3cb77297557ea09cfc1663dfdfbe01f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNDZhMjAzYmEzNDdmN2NkNjZmZGQ2ZTdiNTU2ZDZlOWJiNjMzMjcxNmNkMzJiM2MyMmZkMTc4ZDg3NmM4N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ODlkY2U1ZjA2OTQwOGY2YTFhNzA5MDQ1MTZjOWY2MDJiNDQ1Njg1OTdkMjA5M2Q0ZWYzZGI1MDU3M2ZiMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkODM1ZTVkMWJhYmNhN2NiNmY2MGM2OWQ0MjQ2ZmI5MzllZmI4ZGE5MjcyNGUwYzhjNjU2OWZiYTY3ZDE2MDEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_061502b16681441ba58f6b7fa6133bab",
+      "statement": "The October 7 GBrain lifecycle probe improved from 2/4 to 4/4 correct shared-reader answers after native vector refresh; immediate and settled observations are separate.",
+      "evidence": [
+        {
+          "resource": "repo://docs/evidence/benchmarking/2026-10-07-bounded-calibration.md#L101-L125",
+          "version": "repo-lines-v1:sha256:cb9ff6adaa1ff50fc7103fe221bf005ae6de2dd3f4ccc21377d8828b818f3a60:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzOWMzODdkMjRmNjVjNWNjNTJjY2YzOWY0MWNkODA3ODNiZjkwYjFjNTZmNTkzMDIxYzUzMDgyZmY2MWMyZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZTc3MGUwZGEzYjMwYTBmMzM4Y2U1YTQ2N2E1MWUxNjg2NjgwOGQyM2U3OTVkMGM2ZTUwNmU1MzFhMTJkZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NjhiZDQ1Zjg4MmIyZWMwMDg2ZjFlMGZlMzU1ZjJhMWVjMDE1YmFlMGMxYzNhYTg2MGI3MjQyNmM2ZGY4ZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzYTQzYWRhMDA3MTZkNzZmYTQ3Yzg3MGY3N2RhYmU1YzU5NmVlNmU5ZjMyNTdkOTNjN2ZkMTAwYzg2MDhkYmIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-07T14:59:10.952Z"
+  }
+}

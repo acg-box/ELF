@@ -6,6 +6,12 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-10-07
+
+- Recorded bounded native benchmark calibration with per-request API accounting,
+  immediate versus settled GBrain update visibility, and explicit product-mode
+  limits. Clarified three questions without weakening their scoring facts.
+
 ## 2026-09-21
 
 - Added bounded quick, measure, and compare benchmark modes; explicit scenario

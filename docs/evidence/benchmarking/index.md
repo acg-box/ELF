@@ -9,6 +9,8 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [Bounded native calibration](2026-10-07-bounded-calibration.md): API accounting, lifecycle visibility, competitor-mode limits, and question repairs.
+
 - `2026-06-09-live-baseline-report.md`: Live Baseline Benchmark Report - 2026-06-09.
 - `2026-06-09-operator-debugging-ux-report.md`: Real-World Job Benchmark Report.
 - `2026-06-09-production-adoption-gate-report.md`: Production Adoption Gate Report - June 9, 2026.

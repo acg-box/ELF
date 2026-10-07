@@ -1,0 +1,5503 @@
+[
+  {
+    "run": "initial-core",
+    "suite": "common-core-v1",
+    "suite_sha256": "be712db4a257059a5e43fdff003ec05555bff5585882a6e0439b30ad996e4da5",
+    "target": "no-memory",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 4096,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 6.786,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "job_level_95ci": {
+        "answer_correctness": {
+          "lower": 0.0,
+          "mean": 0.166667,
+          "method": "job_level_normal_approximation",
+          "n": 6,
+          "upper": 0.493333
+        },
+        "ndcg_at_5": {
+          "lower": 0.0,
+          "mean": 0.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 0.0
+        },
+        "recall_at_5": {
+          "lower": 0.0,
+          "mean": 0.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 0.0
+        }
+      },
+      "mean_ndcg_at_5": 0.0,
+      "mean_query_latency_ms": 0.001521,
+      "mean_recall_at_5": 0.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 0.166667,
+      "source_or_citation_trace_rate": null,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-correction-falcon",
+        "latency_ms": 0.0028330032364465296,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-direct-region",
+        "latency_ms": 0.0011250012903474271,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-resume-harbor",
+        "latency_ms": 0.0015409968909807503,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-scope-orion",
+        "latency_ms": 0.0007080016075633466,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-synthesis-runtime-storage",
+        "latency_ms": 0.001958003849722445,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-unsupported-lyra",
+        "latency_ms": 0.0009580035111866891,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": 0.0
+      }
+    ]
+  },
+  {
+    "run": "initial-core",
+    "suite": "common-core-v1",
+    "suite_sha256": "be712db4a257059a5e43fdff003ec05555bff5585882a6e0439b30ad996e4da5",
+    "target": "files-search",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 4096,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 8.33,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.833333,
+      "job_level_95ci": {
+        "answer_correctness": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 6,
+          "upper": 1.0
+        },
+        "ndcg_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        },
+        "recall_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        }
+      },
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 0.015847,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "10 minutes"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_correction_falcon_old"
+        ],
+        "job_id": "core-correction-falcon",
+        "latency_ms": 0.018584003555588424,
+        "native_contexts": [
+          {
+            "evidence_id": "core_correction_falcon_current",
+            "text": "Current Falcon decision, revised on 2026-07-20: the cache TTL is 10 minutes. This supersedes the earlier value."
+          },
+          {
+            "evidence_id": "core_correction_falcon_old",
+            "text": "Historical Falcon decision from 2026-06-01: the cache TTL was 30 minutes. This value is obsolete."
+          },
+          {
+            "evidence_id": "core_correction_falcon_format",
+            "text": "Falcon cache entries use JSON serialization."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_correction_falcon_current",
+          "core_correction_falcon_old",
+          "core_correction_falcon_format"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "AWS eu-west-2"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_direct_region_old"
+        ],
+        "job_id": "core-direct-region",
+        "latency_ms": 0.010416006261948496,
+        "native_contexts": [
+          {
+            "evidence_id": "core_direct_region",
+            "text": "The Atlas service is currently deployed in AWS eu-west-2. This production decision is active."
+          },
+          {
+            "evidence_id": "core_direct_region_stage",
+            "text": "The Atlas staging environment is deployed in AWS us-east-1."
+          },
+          {
+            "evidence_id": "core_direct_region_old",
+            "text": "An obsolete Atlas proposal considered AWS eu-central-1 but was never adopted."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_direct_region",
+          "core_direct_region_stage",
+          "core_direct_region_old"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Checkpoint: schema conversion completed and commit 8f21a6 passed integration tests. Next action: run the rollback drill before enabling production traffic."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-resume-harbor",
+        "latency_ms": 0.019249993783887476,
+        "native_contexts": [
+          {
+            "evidence_id": "core_resume_harbor_next",
+            "text": "Harbor migration next action: run the rollback drill before enabling production traffic."
+          },
+          {
+            "evidence_id": "core_resume_harbor_done",
+            "text": "Harbor migration checkpoint: schema conversion completed and commit 8f21a6 passed integration tests."
+          },
+          {
+            "evidence_id": "core_resume_harbor_rejected",
+            "text": "The team rejected skipping the Harbor rollback drill."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_resume_harbor_next",
+          "core_resume_harbor_done",
+          "core_resume_harbor_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Deployment completed successfully on 2026-07-24."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "job_id": "core-scope-orion",
+        "latency_ms": 0.012500000593718141,
+        "native_contexts": [
+          {
+            "evidence_id": "core_scope_orion_public",
+            "text": "Approved public Orion release note: deployment completed successfully on 2026-07-24."
+          },
+          {
+            "evidence_id": "core_scope_orion_draft",
+            "text": "Draft Orion release copy was rejected and is not approved for publication."
+          },
+          {
+            "evidence_id": "core_scope_orion_private",
+            "text": "Private Orion security note: temporary incident credential is private-only and must never be published."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_scope_orion_public",
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Backend runtime: Rust with the Axum web framework; durable storage: PostgreSQL 18 with pgvector."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_synth_rejected"
+        ],
+        "job_id": "core-synthesis-runtime-storage",
+        "latency_ms": 0.011542004358489066,
+        "native_contexts": [
+          {
+            "evidence_id": "core_synth_storage",
+            "text": "Project Cobalt uses PostgreSQL 18 with pgvector as durable storage."
+          },
+          {
+            "evidence_id": "core_synth_runtime",
+            "text": "Project Cobalt's backend runtime is Rust with the Axum web framework."
+          },
+          {
+            "evidence_id": "core_synth_rejected",
+            "text": "A rejected Cobalt design proposed a Redis-only durable store."
+          },
+          {
+            "evidence_id": "core_synth_frontend",
+            "text": "Project Cobalt's frontend is implemented with React."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_synth_storage",
+          "core_synth_runtime",
+          "core_synth_rejected",
+          "core_synth_frontend"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule"
+        ],
+        "job_id": "core-unsupported-lyra",
+        "latency_ms": 0.022791995434090495,
+        "native_contexts": [
+          {
+            "evidence_id": "core_unsupported_lyra_owner",
+            "text": "The Lyra release owner is the platform team. This source does not contain a launch code."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_schedule",
+            "text": "The Lyra launch rehearsal is scheduled for Friday. No launch code is recorded here."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_policy",
+            "text": "Policy requires stating that the launch code is unknown when no source provides it."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule",
+          "core_unsupported_lyra_policy"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": 0.0
+      }
+    ]
+  },
+  {
+    "run": "initial-core",
+    "suite": "common-core-v1",
+    "suite_sha256": "be712db4a257059a5e43fdff003ec05555bff5585882a6e0439b30ad996e4da5",
+    "target": "elf",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 4096,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 109.668,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.833333,
+      "job_level_95ci": {
+        "answer_correctness": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 6,
+          "upper": 1.0
+        },
+        "ndcg_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        },
+        "recall_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        }
+      },
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 1325.800607,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "10 minutes"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_correction_falcon_old"
+        ],
+        "job_id": "core-correction-falcon",
+        "latency_ms": 2631.6723340000003,
+        "native_contexts": [
+          {
+            "evidence_id": "core_correction_falcon_current",
+            "text": "Current Falcon decision, revised on 2026-07-20: the cache TTL is 10 minutes. This supersedes the earlier value."
+          },
+          {
+            "evidence_id": "core_correction_falcon_format",
+            "text": "Falcon cache entries use JSON serialization."
+          },
+          {
+            "evidence_id": "core_correction_falcon_old",
+            "text": "Historical Falcon decision from 2026-06-01: the cache TTL was 30 minutes. This value is obsolete."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_correction_falcon_current",
+          "core_correction_falcon_format",
+          "core_correction_falcon_old"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "AWS eu-west-2"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_direct_region_old"
+        ],
+        "job_id": "core-direct-region",
+        "latency_ms": 526.4651759999999,
+        "native_contexts": [
+          {
+            "evidence_id": "core_direct_region",
+            "text": "The Atlas service is currently deployed in AWS eu-west-2. This production decision is active."
+          },
+          {
+            "evidence_id": "core_direct_region_stage",
+            "text": "The Atlas staging environment is deployed in AWS us-east-1."
+          },
+          {
+            "evidence_id": "core_direct_region_old",
+            "text": "An obsolete Atlas proposal considered AWS eu-central-1 but was never adopted."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_direct_region",
+          "core_direct_region_stage",
+          "core_direct_region_old"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Checkpoint: schema conversion completed and commit 8f21a6 passed integration tests; next action: run the rollback drill before enabling production traffic."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-resume-harbor",
+        "latency_ms": 1770.1217510000001,
+        "native_contexts": [
+          {
+            "evidence_id": "core_resume_harbor_next",
+            "text": "Harbor migration next action: run the rollback drill before enabling production traffic."
+          },
+          {
+            "evidence_id": "core_resume_harbor_done",
+            "text": "Harbor migration checkpoint: schema conversion completed and commit 8f21a6 passed integration tests."
+          },
+          {
+            "evidence_id": "core_resume_harbor_rejected",
+            "text": "The team rejected skipping the Harbor rollback drill."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_resume_harbor_next",
+          "core_resume_harbor_done",
+          "core_resume_harbor_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Deployment completed successfully on 2026-07-24."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "job_id": "core-scope-orion",
+        "latency_ms": 642.064231,
+        "native_contexts": [
+          {
+            "evidence_id": "core_scope_orion_public",
+            "text": "Approved public Orion release note: deployment completed successfully on 2026-07-24."
+          },
+          {
+            "evidence_id": "core_scope_orion_draft",
+            "text": "Draft Orion release copy was rejected and is not approved for publication."
+          },
+          {
+            "evidence_id": "core_scope_orion_private",
+            "text": "Private Orion security note: temporary incident credential is private-only and must never be published."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_scope_orion_public",
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Rust with the Axum web framework; PostgreSQL 18 with pgvector"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_synth_rejected"
+        ],
+        "job_id": "core-synthesis-runtime-storage",
+        "latency_ms": 598.194161,
+        "native_contexts": [
+          {
+            "evidence_id": "core_synth_runtime",
+            "text": "Project Cobalt's backend runtime is Rust with the Axum web framework."
+          },
+          {
+            "evidence_id": "core_synth_storage",
+            "text": "Project Cobalt uses PostgreSQL 18 with pgvector as durable storage."
+          },
+          {
+            "evidence_id": "core_synth_rejected",
+            "text": "A rejected Cobalt design proposed a Redis-only durable store."
+          },
+          {
+            "evidence_id": "core_synth_frontend",
+            "text": "Project Cobalt's frontend is implemented with React."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_synth_runtime",
+          "core_synth_storage",
+          "core_synth_rejected",
+          "core_synth_frontend"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule"
+        ],
+        "job_id": "core-unsupported-lyra",
+        "latency_ms": 1786.28599,
+        "native_contexts": [
+          {
+            "evidence_id": "core_unsupported_lyra_owner",
+            "text": "The Lyra release owner is the platform team. This source does not contain a launch code."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_schedule",
+            "text": "The Lyra launch rehearsal is scheduled for Friday. No launch code is recorded here."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_policy",
+            "text": "Policy requires stating that the launch code is unknown when no source provides it."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule",
+          "core_unsupported_lyra_policy"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": 0.0
+      }
+    ]
+  },
+  {
+    "run": "elf-1536-core",
+    "suite": "common-core-v1",
+    "suite_sha256": "be712db4a257059a5e43fdff003ec05555bff5585882a6e0439b30ad996e4da5",
+    "target": "elf",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 56.324,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.833333,
+      "job_level_95ci": {
+        "answer_correctness": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 6,
+          "upper": 1.0
+        },
+        "ndcg_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        },
+        "recall_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        }
+      },
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 765.22202,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "10 minutes"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_correction_falcon_old"
+        ],
+        "job_id": "core-correction-falcon",
+        "latency_ms": 474.492318,
+        "native_contexts": [
+          {
+            "evidence_id": "core_correction_falcon_current",
+            "text": "Current Falcon decision, revised on 2026-07-20: the cache TTL is 10 minutes. This supersedes the earlier value."
+          },
+          {
+            "evidence_id": "core_correction_falcon_format",
+            "text": "Falcon cache entries use JSON serialization."
+          },
+          {
+            "evidence_id": "core_correction_falcon_old",
+            "text": "Historical Falcon decision from 2026-06-01: the cache TTL was 30 minutes. This value is obsolete."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_correction_falcon_current",
+          "core_correction_falcon_format",
+          "core_correction_falcon_old"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "AWS eu-west-2"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_direct_region_old"
+        ],
+        "job_id": "core-direct-region",
+        "latency_ms": 785.608826,
+        "native_contexts": [
+          {
+            "evidence_id": "core_direct_region",
+            "text": "The Atlas service is currently deployed in AWS eu-west-2. This production decision is active."
+          },
+          {
+            "evidence_id": "core_direct_region_stage",
+            "text": "The Atlas staging environment is deployed in AWS us-east-1."
+          },
+          {
+            "evidence_id": "core_direct_region_old",
+            "text": "An obsolete Atlas proposal considered AWS eu-central-1 but was never adopted."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_direct_region",
+          "core_direct_region_stage",
+          "core_direct_region_old"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Stopped after schema conversion completed and commit 8f21a6 passed integration tests; next action is to run the rollback drill before enabling production traffic"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-resume-harbor",
+        "latency_ms": 510.72456200000005,
+        "native_contexts": [
+          {
+            "evidence_id": "core_resume_harbor_next",
+            "text": "Harbor migration next action: run the rollback drill before enabling production traffic."
+          },
+          {
+            "evidence_id": "core_resume_harbor_done",
+            "text": "Harbor migration checkpoint: schema conversion completed and commit 8f21a6 passed integration tests."
+          },
+          {
+            "evidence_id": "core_resume_harbor_rejected",
+            "text": "The team rejected skipping the Harbor rollback drill."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_resume_harbor_next",
+          "core_resume_harbor_done",
+          "core_resume_harbor_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Deployment completed successfully on 2026-07-24"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "job_id": "core-scope-orion",
+        "latency_ms": 993.213583,
+        "native_contexts": [
+          {
+            "evidence_id": "core_scope_orion_public",
+            "text": "Approved public Orion release note: deployment completed successfully on 2026-07-24."
+          },
+          {
+            "evidence_id": "core_scope_orion_draft",
+            "text": "Draft Orion release copy was rejected and is not approved for publication."
+          },
+          {
+            "evidence_id": "core_scope_orion_private",
+            "text": "Private Orion security note: temporary incident credential is private-only and must never be published."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_scope_orion_public",
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Rust with the Axum web framework; PostgreSQL 18 with pgvector"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_synth_rejected"
+        ],
+        "job_id": "core-synthesis-runtime-storage",
+        "latency_ms": 494.545491,
+        "native_contexts": [
+          {
+            "evidence_id": "core_synth_runtime",
+            "text": "Project Cobalt's backend runtime is Rust with the Axum web framework."
+          },
+          {
+            "evidence_id": "core_synth_storage",
+            "text": "Project Cobalt uses PostgreSQL 18 with pgvector as durable storage."
+          },
+          {
+            "evidence_id": "core_synth_rejected",
+            "text": "A rejected Cobalt design proposed a Redis-only durable store."
+          },
+          {
+            "evidence_id": "core_synth_frontend",
+            "text": "Project Cobalt's frontend is implemented with React."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_synth_runtime",
+          "core_synth_storage",
+          "core_synth_rejected",
+          "core_synth_frontend"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule"
+        ],
+        "job_id": "core-unsupported-lyra",
+        "latency_ms": 1332.7473429999998,
+        "native_contexts": [
+          {
+            "evidence_id": "core_unsupported_lyra_owner",
+            "text": "The Lyra release owner is the platform team. This source does not contain a launch code."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_schedule",
+            "text": "The Lyra launch rehearsal is scheduled for Friday. No launch code is recorded here."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_policy",
+            "text": "Policy requires stating that the launch code is unknown when no source provides it."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule",
+          "core_unsupported_lyra_policy"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": 0.0
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "knowledge-structure-v1",
+    "suite_sha256": "8eb242eebba00be209b3829eb05cfb972afdee5555fc4ea08416c270de4d9305",
+    "target": "no-memory",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 1.966,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 0.0,
+      "mean_query_latency_ms": 0.001636,
+      "mean_recall_at_5": 0.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 0.25,
+      "source_or_citation_trace_rate": null,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "knowledge-cobalt-stack",
+        "latency_ms": 0.001500004145782441,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "knowledge-juniper-ownership-graph",
+        "latency_ms": 0.0010829971870407462,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "knowledge-lyra-citation-boundary",
+        "latency_ms": 0.002334003511350602,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": 0.0
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "knowledge-orion-policy-tree",
+        "latency_ms": 0.001624997821636498,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "knowledge-structure-v1",
+    "suite_sha256": "8eb242eebba00be209b3829eb05cfb972afdee5555fc4ea08416c270de4d9305",
+    "target": "files-search",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 4.285,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 1.0,
+      "mean_ndcg_at_5": 0.852858,
+      "mean_query_latency_ms": 0.019562,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 0.5,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "Rust and Axum; cobalt-main queue; PostgreSQL 18 with pgvector."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_cobalt_rejected"
+        ],
+        "job_id": "knowledge-cobalt-stack",
+        "latency_ms": 0.02229100209660828,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_cobalt_runtime",
+            "text": "# Cobalt Runtime\nThe request service uses Rust and Axum."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_rejected",
+            "text": "# Rejected Design\nA Redis-only durable store was rejected."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_queue",
+            "text": "# Cobalt Processing\nAccepted jobs enter the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_store",
+            "text": "# Cobalt Storage\nWorkers persist completed jobs in PostgreSQL 18 with pgvector."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.906025,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "knowledge_cobalt_runtime",
+          "knowledge_cobalt_rejected",
+          "knowledge_cobalt_queue",
+          "knowledge_cobalt_store"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Delivery Systems team owns Juniper; cobalt-main queue carries its work; Delivery Systems on-call engineer receives a depth alert."
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_juniper_old"
+        ],
+        "job_id": "knowledge-juniper-ownership-graph",
+        "latency_ms": 0.01912500010803342,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_juniper_old",
+            "text": "The amber-old queue no longer carries Juniper work."
+          },
+          {
+            "evidence_id": "knowledge_juniper_alert",
+            "text": "When cobalt-main exceeds 500 Juniper jobs, alert the Delivery Systems on-call engineer."
+          },
+          {
+            "evidence_id": "knowledge_juniper_owner",
+            "text": "The Delivery Systems team owns Juniper."
+          },
+          {
+            "evidence_id": "knowledge_juniper_queue",
+            "text": "Juniper production jobs use the cobalt-main queue."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.732829,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "knowledge_juniper_old",
+          "knowledge_juniper_alert",
+          "knowledge_juniper_owner",
+          "knowledge_juniper_queue"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_owner"
+        ],
+        "job_id": "knowledge-lyra-citation-boundary",
+        "latency_ms": 0.020332998246885836,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_lyra_schedule",
+            "text": "Lyra's launch rehearsal is Friday; no launch code is stored in this source."
+          },
+          {
+            "evidence_id": "knowledge_lyra_owner",
+            "text": "The Platform team owns Lyra; no launch code is documented."
+          },
+          {
+            "evidence_id": "knowledge_lyra_policy",
+            "text": "A missing launch code must be reported as unknown rather than inferred."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_owner",
+          "knowledge_lyra_policy"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": 0.0
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Integration tests must pass, a security reviewer must approve the source-linked findings, and the release owner must sign the final checksum manifest."
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_orion_draft"
+        ],
+        "job_id": "knowledge-orion-policy-tree",
+        "latency_ms": 0.016500001947861165,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_orion_policy",
+            "text": "# Orion Release Policy\n## Engineering gate\nIntegration tests must pass.\n## Security gate\nA security reviewer must approve the source-linked findings.\n## Publication gate\nThe release owner must sign the final checksum manifest."
+          },
+          {
+            "evidence_id": "knowledge_orion_draft",
+            "text": "A draft proposed publishing before security review; it was rejected."
+          },
+          {
+            "evidence_id": "knowledge_orion_roles",
+            "text": "The Orion release owner is the Platform Runtime lead."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.919721,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "knowledge_orion_policy",
+          "knowledge_orion_draft",
+          "knowledge_orion_roles"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "knowledge-structure-v1",
+    "suite_sha256": "8eb242eebba00be209b3829eb05cfb972afdee5555fc4ea08416c270de4d9305",
+    "target": "elf",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 95.543,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 1.0,
+      "mean_ndcg_at_5": 0.879618,
+      "mean_query_latency_ms": 1959.885626,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 0.5,
+      "source_or_citation_trace_rate": 0.9375,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "Rust and Axum runtime; cobalt-main queue; PostgreSQL 18 with pgvector durable store."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_cobalt_rejected"
+        ],
+        "job_id": "knowledge-cobalt-stack",
+        "latency_ms": 557.7429189999999,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_cobalt_store",
+            "text": "# Cobalt Storage Workers persist completed jobs in PostgreSQL 18 with pgvector."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_rejected",
+            "text": "# Rejected Design A Redis-only durable store was rejected."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_queue",
+            "text": "# Cobalt Processing Accepted jobs enter the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_runtime",
+            "text": "# Cobalt Runtime The request service uses Rust and Axum."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.906025,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "knowledge_cobalt_store",
+          "knowledge_cobalt_rejected",
+          "knowledge_cobalt_queue",
+          "knowledge_cobalt_runtime"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Delivery Systems team owns Juniper; cobalt-main queue carries Juniper work; Delivery Systems on-call engineer receives the depth alert."
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_juniper_old"
+        ],
+        "job_id": "knowledge-juniper-ownership-graph",
+        "latency_ms": 2270.907271,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_juniper_old",
+            "text": "The amber-old queue no longer carries Juniper work."
+          },
+          {
+            "evidence_id": "knowledge_juniper_queue",
+            "text": "Juniper production jobs use the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_juniper_alert",
+            "text": "When cobalt-main exceeds 500 Juniper jobs, alert the Delivery Systems on-call engineer."
+          },
+          {
+            "evidence_id": "knowledge_juniper_owner",
+            "text": "The Delivery Systems team owns Juniper."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.732829,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "knowledge_juniper_old",
+          "knowledge_juniper_queue",
+          "knowledge_juniper_alert",
+          "knowledge_juniper_owner"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_lyra_owner",
+          "knowledge_lyra_schedule"
+        ],
+        "job_id": "knowledge-lyra-citation-boundary",
+        "latency_ms": 4545.73181,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_lyra_owner",
+            "text": "The Platform team owns Lyra; no launch code is documented."
+          },
+          {
+            "evidence_id": "knowledge_lyra_schedule",
+            "text": "Lyra's launch rehearsal is Friday; no launch code is stored in this source."
+          },
+          {
+            "evidence_id": "knowledge_lyra_policy",
+            "text": "A missing launch code must be reported as unknown rather than inferred."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [
+          "knowledge_lyra_owner",
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_policy"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": 0.0
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Integration tests must pass; a security reviewer must approve source-linked findings; the release owner must sign the final checksum."
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "knowledge_orion_draft"
+        ],
+        "job_id": "knowledge-orion-policy-tree",
+        "latency_ms": 465.160503,
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_orion_policy",
+            "text": "# Orion Release Policy ## Engineering gate Integration tests must pass. ## Security gate A security reviewer must approve the source-linked findings. ## Publication gate The release owner must sign the final checksum"
+          },
+          {
+            "evidence_id": "knowledge_orion_roles",
+            "text": "The Orion release owner is the Platform Runtime lead."
+          },
+          {
+            "evidence_id": "knowledge_orion_draft",
+            "text": "A draft proposed publishing before security review; it was rejected."
+          },
+          {
+            "evidence_id": "knowledge_orion_policy",
+            "text": "manifest."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "knowledge_orion_policy",
+          "knowledge_orion_roles",
+          "knowledge_orion_draft"
+        ],
+        "source_trace_rate": 0.75,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "memory-lifecycle-v1",
+    "suite_sha256": "2aa71d0374b87111656c3550e707ac3278e06f69cf3c938af15aad1291d95631",
+    "target": "no-memory",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 1.805,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 0.0,
+      "mean_query_latency_ms": 0.001708,
+      "mean_recall_at_5": 0.0,
+      "native_correction_and_update_success": 0.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 0.0,
+      "source_or_citation_trace_rate": null,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-delete-credential",
+        "latency_ms": 0.0021669984562322497,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-resume-migration",
+        "latency_ms": 0.0020419975044205785,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 0.0,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-and-delete-release",
+        "latency_ms": 0.0011659940355457366,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 0.0,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-channel",
+        "latency_ms": 0.00145800004247576,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 0.0,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "memory-lifecycle-v1",
+    "suite_sha256": "2aa71d0374b87111656c3550e707ac3278e06f69cf3c938af15aad1291d95631",
+    "target": "files-search",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 6.186,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 0.907733,
+      "mean_query_latency_ms": 0.0105,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "Nova staging deployment is healthy and passed the green readiness gate."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-delete-credential",
+        "latency_ms": 0.014582998119294643,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_nova_public",
+            "text": "Nova staging deployment is healthy and passed the green readiness gate."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_nova_public"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Kestrel schema conversion completed at commit 8f21a6; next action is the rollback drill."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-resume-migration",
+        "latency_ms": 0.013291995855979621,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_kestrel_checkpoint",
+            "text": "Kestrel schema conversion completed at commit 8f21a6. The next action is the rollback drill."
+          },
+          {
+            "evidence_id": "memory_kestrel_context",
+            "text": "Kestrel uses signed release artifacts."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_kestrel_checkpoint",
+          "memory_kestrel_context"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "release approval and checksum verification"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-and-delete-release",
+        "latency_ms": 0.006457994459196925,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_solstice_gate",
+            "text": "Solstice may publish only after release approval and checksum verification."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_solstice_gate"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Signal"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-channel",
+        "latency_ms": 0.007665999874006957,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_channel_noise",
+            "text": "Rowan reviews incident summaries on Mondays."
+          },
+          {
+            "evidence_id": "memory_channel",
+            "text": "Rowan now prefers incident updates by Signal. This replaces the email preference."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 0.63093,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_channel_noise",
+          "memory_channel"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "memory-lifecycle-v1",
+    "suite_sha256": "2aa71d0374b87111656c3550e707ac3278e06f69cf3c938af15aad1291d95631",
+    "target": "elf",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 69.152,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 1691.008309,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "Nova staging deployment is healthy and passed the green readiness gate."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-delete-credential",
+        "latency_ms": 5099.704795,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_nova_public",
+            "text": "Nova staging deployment is healthy and passed the green readiness gate."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_nova_public"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Kestrel schema conversion completed at commit 8f21a6; next action is the rollback drill."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-resume-migration",
+        "latency_ms": 526.779022,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_kestrel_checkpoint",
+            "text": "Kestrel schema conversion completed at commit 8f21a6. The next action is the rollback drill."
+          },
+          {
+            "evidence_id": "memory_kestrel_context",
+            "text": "Kestrel uses signed release artifacts."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_kestrel_checkpoint",
+          "memory_kestrel_context"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Solstice may publish only after release approval and checksum verification."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-and-delete-release",
+        "latency_ms": 550.3273760000001,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_solstice_gate",
+            "text": "Solstice may publish only after release approval and checksum verification."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_solstice_gate"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Rowan now prefers incident updates by Signal."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-channel",
+        "latency_ms": 587.2220420000001,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_channel",
+            "text": "Rowan now prefers incident updates by Signal. This replaces the email preference."
+          },
+          {
+            "evidence_id": "memory_channel_noise",
+            "text": "Rowan reviews incident summaries on Mondays."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_channel",
+          "memory_channel_noise"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "repository-knowledge-v1",
+    "suite_sha256": "0b73b67d6a11d8b529e77a369d2c0351da99b0371429c926f545ed702d68fce8",
+    "target": "no-memory",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 1.738,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 0.0,
+      "mean_query_latency_ms": 0.001177,
+      "mean_recall_at_5": 0.0,
+      "native_correction_and_update_success": 0.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 0.0,
+      "source_or_citation_trace_rate": null,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-change-validation-command",
+        "latency_ms": 0.0010000003385357559,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 0.0,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-deprecated-module",
+        "latency_ms": 0.0007910057320259511,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-secret-example",
+        "latency_ms": 0.0007920025382190943,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-update-release-resume",
+        "latency_ms": 0.002125001628883183,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 0.0,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "repository-knowledge-v1",
+    "suite_sha256": "0b73b67d6a11d8b529e77a369d2c0351da99b0371429c926f545ed702d68fce8",
+    "target": "files-search",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 2.166,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 0.009292,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 0.75,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "cargo make verify-all"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-change-validation-command",
+        "latency_ms": 0.013999997463542968,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_validation",
+            "text": "The complete validation gate now runs cargo make verify-all. The old cargo make check command is obsolete."
+          },
+          {
+            "evidence_id": "repo_validation_context",
+            "text": "Validation must finish before a review request."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_validation",
+          "repo_validation_context"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "packages/cinder-runtime"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-deprecated-module",
+        "latency_ms": 0.004624998837243766,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_cinder_current",
+            "text": "packages/cinder-runtime owns Cinder retry policy."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_cinder_current"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "load credentials from the approved secret manager"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-secret-example",
+        "latency_ms": 0.009750001481734216,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_atlas_auth",
+            "text": "Atlas documentation says to load credentials from the approved secret manager."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_atlas_auth"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Obtain release approval"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-update-release-resume",
+        "latency_ms": 0.008791997970547527,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_solstice_state",
+            "text": "Solstice packaging and checksum verification are complete. Obtain release approval before publishing."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_solstice_state"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "elf-remaining",
+    "suite": "repository-knowledge-v1",
+    "suite_sha256": "0b73b67d6a11d8b529e77a369d2c0351da99b0371429c926f545ed702d68fce8",
+    "target": "elf",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 1536,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 78.335,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 3018.609303,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 0.75,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "cargo make verify-all"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-change-validation-command",
+        "latency_ms": 4799.942992,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_validation",
+            "text": "The complete validation gate now runs cargo make verify-all. The old cargo make check command is obsolete."
+          },
+          {
+            "evidence_id": "repo_validation_context",
+            "text": "Validation must finish before a review request."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_validation",
+          "repo_validation_context"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "packages/cinder-runtime"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-deprecated-module",
+        "latency_ms": 1092.467692,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_cinder_current",
+            "text": "packages/cinder-runtime owns Cinder retry policy."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_cinder_current"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "load credentials from the approved secret manager"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-secret-example",
+        "latency_ms": 4337.759127,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_atlas_auth",
+            "text": "Atlas documentation says to load credentials from the approved secret manager."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_atlas_auth"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Obtain release approval."
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-update-release-resume",
+        "latency_ms": 1844.267399,
+        "native_contexts": [
+          {
+            "evidence_id": "repo_solstice_state",
+            "text": "Solstice packaging and checksum verification are complete. Obtain release approval before publishing."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "repo_solstice_state"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "mem0",
+    "suite": "common-core-v1",
+    "suite_sha256": "be712db4a257059a5e43fdff003ec05555bff5585882a6e0439b30ad996e4da5",
+    "target": "mem0",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 4096,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 37.477,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.833333,
+      "job_level_95ci": {
+        "answer_correctness": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 6,
+          "upper": 1.0
+        },
+        "ndcg_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        },
+        "recall_at_5": {
+          "lower": 1.0,
+          "mean": 1.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 1.0
+        }
+      },
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 797.981586,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "10 minutes"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_correction_falcon_old"
+        ],
+        "job_id": "core-correction-falcon",
+        "latency_ms": 1463.9525569946272,
+        "native_contexts": [
+          {
+            "evidence_id": "core_correction_falcon_current",
+            "text": "Current Falcon decision, revised on 2026-07-20: the cache TTL is 10 minutes. This supersedes the earlier value."
+          },
+          {
+            "evidence_id": "core_correction_falcon_old",
+            "text": "Historical Falcon decision from 2026-06-01: the cache TTL was 30 minutes. This value is obsolete."
+          },
+          {
+            "evidence_id": "core_correction_falcon_format",
+            "text": "Falcon cache entries use JSON serialization."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_correction_falcon_current",
+          "core_correction_falcon_old",
+          "core_correction_falcon_format"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "AWS eu-west-2"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_direct_region_old"
+        ],
+        "job_id": "core-direct-region",
+        "latency_ms": 574.4294739997713,
+        "native_contexts": [
+          {
+            "evidence_id": "core_direct_region",
+            "text": "The Atlas service is currently deployed in AWS eu-west-2. This production decision is active."
+          },
+          {
+            "evidence_id": "core_direct_region_stage",
+            "text": "The Atlas staging environment is deployed in AWS us-east-1."
+          },
+          {
+            "evidence_id": "core_direct_region_old",
+            "text": "An obsolete Atlas proposal considered AWS eu-central-1 but was never adopted."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_direct_region",
+          "core_direct_region_stage",
+          "core_direct_region_old"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Schema conversion completed and commit 8f21a6 passed integration tests; next action is to run the rollback drill before enabling production traffic."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-resume-harbor",
+        "latency_ms": 600.0206699973205,
+        "native_contexts": [
+          {
+            "evidence_id": "core_resume_harbor_next",
+            "text": "Harbor migration next action: run the rollback drill before enabling production traffic."
+          },
+          {
+            "evidence_id": "core_resume_harbor_done",
+            "text": "Harbor migration checkpoint: schema conversion completed and commit 8f21a6 passed integration tests."
+          },
+          {
+            "evidence_id": "core_resume_harbor_rejected",
+            "text": "The team rejected skipping the Harbor rollback drill."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_resume_harbor_next",
+          "core_resume_harbor_done",
+          "core_resume_harbor_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Deployment completed successfully on 2026-07-24."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "job_id": "core-scope-orion",
+        "latency_ms": 612.4503500032006,
+        "native_contexts": [
+          {
+            "evidence_id": "core_scope_orion_public",
+            "text": "Approved public Orion release note: deployment completed successfully on 2026-07-24."
+          },
+          {
+            "evidence_id": "core_scope_orion_draft",
+            "text": "Draft Orion release copy was rejected and is not approved for publication."
+          },
+          {
+            "evidence_id": "core_scope_orion_private",
+            "text": "Private Orion security note: temporary incident credential is private-only and must never be published."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_scope_orion_public",
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Rust with the Axum web framework and PostgreSQL 18 with pgvector"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_synth_rejected"
+        ],
+        "job_id": "core-synthesis-runtime-storage",
+        "latency_ms": 599.2303750099381,
+        "native_contexts": [
+          {
+            "evidence_id": "core_synth_runtime",
+            "text": "Project Cobalt's backend runtime is Rust with the Axum web framework."
+          },
+          {
+            "evidence_id": "core_synth_storage",
+            "text": "Project Cobalt uses PostgreSQL 18 with pgvector as durable storage."
+          },
+          {
+            "evidence_id": "core_synth_frontend",
+            "text": "Project Cobalt's frontend is implemented with React."
+          },
+          {
+            "evidence_id": "core_synth_rejected",
+            "text": "A rejected Cobalt design proposed a Redis-only durable store."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "core_synth_runtime",
+          "core_synth_storage",
+          "core_synth_frontend",
+          "core_synth_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule"
+        ],
+        "job_id": "core-unsupported-lyra",
+        "latency_ms": 937.8060900053242,
+        "native_contexts": [
+          {
+            "evidence_id": "core_unsupported_lyra_owner",
+            "text": "The Lyra release owner is the platform team. This source does not contain a launch code."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_policy",
+            "text": "Policy requires stating that the launch code is unknown when no source provides it."
+          },
+          {
+            "evidence_id": "core_unsupported_lyra_schedule",
+            "text": "The Lyra launch rehearsal is scheduled for Friday. No launch code is recorded here."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_policy",
+          "core_unsupported_lyra_schedule"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": 0.0
+      }
+    ]
+  },
+  {
+    "run": "mem0",
+    "suite": "memory-lifecycle-v1",
+    "suite_sha256": "2aa71d0374b87111656c3550e707ac3278e06f69cf3c938af15aad1291d95631",
+    "target": "mem0",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 4096,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 27.216,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 1.0,
+      "mean_query_latency_ms": 594.441656,
+      "mean_recall_at_5": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": true,
+          "text": "Nova staging deployment is healthy and passed the green readiness gate."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-delete-credential",
+        "latency_ms": 584.6299349941546,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_nova_public",
+            "text": "Nova staging deployment is healthy and passed the green readiness gate."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_result": {
+              "message": "Memory deleted successfully!"
+            },
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_nova_public"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Kestrel schema conversion completed at commit 8f21a6; next is the rollback drill."
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-resume-migration",
+        "latency_ms": 620.7003040035488,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_kestrel_checkpoint",
+            "text": "Kestrel schema conversion completed at commit 8f21a6. The next action is the rollback drill."
+          },
+          {
+            "evidence_id": "memory_kestrel_context",
+            "text": "Kestrel uses signed release artifacts."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_result": {
+              "message": "Memory updated successfully!"
+            },
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_kestrel_checkpoint",
+          "memory_kestrel_context"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "release approval and checksum verification"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-and-delete-release",
+        "latency_ms": 600.6787560036173,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_solstice_gate",
+            "text": "Solstice may publish only after release approval and checksum verification."
+          }
+        ],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_result": {
+              "message": "Memory updated successfully!"
+            },
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_result": {
+              "message": "Memory deleted successfully!"
+            },
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_solstice_gate"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": true,
+          "text": "Signal"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "memory-update-channel",
+        "latency_ms": 571.7576280003414,
+        "native_contexts": [
+          {
+            "evidence_id": "memory_channel",
+            "text": "Rowan now prefers incident updates by Signal. This replaces the email preference."
+          },
+          {
+            "evidence_id": "memory_channel_noise",
+            "text": "Rowan reviews incident summaries on Mondays."
+          }
+        ],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_result": {
+              "message": "Memory updated successfully!"
+            },
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "ndcg_at_5": 1.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 1.0,
+        "retrieved_evidence": [
+          "memory_channel",
+          "memory_channel_noise"
+        ],
+        "source_trace_rate": 1.0,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "qmd",
+    "suite": "common-core-v1",
+    "suite_sha256": "be712db4a257059a5e43fdff003ec05555bff5585882a6e0439b30ad996e4da5",
+    "target": "qmd",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 4096,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 12.25,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "job_level_95ci": {
+        "answer_correctness": {
+          "lower": 0.0,
+          "mean": 0.166667,
+          "method": "job_level_normal_approximation",
+          "n": 6,
+          "upper": 0.493333
+        },
+        "ndcg_at_5": {
+          "lower": 0.0,
+          "mean": 0.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 0.0
+        },
+        "recall_at_5": {
+          "lower": 0.0,
+          "mean": 0.0,
+          "method": "job_level_normal_approximation",
+          "n": 5,
+          "upper": 0.0
+        }
+      },
+      "mean_ndcg_at_5": 0.0,
+      "mean_query_latency_ms": 333.202476,
+      "mean_recall_at_5": 0.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "programmatic_answer_correctness": 0.166667,
+      "source_or_citation_trace_rate": null,
+      "unsupported_answer_rate": 0.0
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-correction-falcon",
+        "latency_ms": 331.504392,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-direct-region",
+        "latency_ms": 350.07034999999996,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-resume-harbor",
+        "latency_ms": 323.923525,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-scope-orion",
+        "latency_ms": 340.297389,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-synthesis-runtime-storage",
+        "latency_ms": 320.44309300000003,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 1.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "core-unsupported-lyra",
+        "latency_ms": 332.976107,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [],
+        "native_update_success": null,
+        "ndcg_at_5": null,
+        "privacy_scope_violation": null,
+        "recall_at_5": null,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": 0.0
+      }
+    ]
+  },
+  {
+    "run": "qmd",
+    "suite": "repository-knowledge-v1",
+    "suite_sha256": "0b73b67d6a11d8b529e77a369d2c0351da99b0371429c926f545ed702d68fce8",
+    "target": "qmd",
+    "stage": "original_questions",
+    "provider_routes": {
+      "chat_model": "deepseek/deepseek-v4.1-flash",
+      "chat_reasoning_effort": "low",
+      "embedding_dimensions": 4096,
+      "embedding_model": "qwen/qwen3-embedding-8b"
+    },
+    "duration_seconds": 9.788,
+    "acceptance": {
+      "findings": [],
+      "mode": "readiness_or_regression",
+      "passed": true
+    },
+    "cleanup": true,
+    "metrics": {
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "mean_ndcg_at_5": 0.0,
+      "mean_query_latency_ms": 329.383612,
+      "mean_recall_at_5": 0.0,
+      "native_correction_and_update_success": 0.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "programmatic_answer_correctness": 0.0,
+      "source_or_citation_trace_rate": null,
+      "unsupported_answer_rate": null
+    },
+    "jobs": [
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-change-validation-command",
+        "latency_ms": 327.244665,
+        "native_contexts": [],
+        "native_delete_success": null,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "reindex_update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 0.0,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-deprecated-module",
+        "latency_ms": 333.756736,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-delete-secret-example",
+        "latency_ms": 335.83357800000005,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": 0.0,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      },
+      {
+        "answer": {
+          "supported": false,
+          "text": "unknown"
+        },
+        "answer_correct": 0.0,
+        "classification": "completed",
+        "failure": null,
+        "forbidden_answer_facts": [],
+        "forbidden_evidence_hits": [],
+        "job_id": "repo-update-release-resume",
+        "latency_ms": 320.69946999999996,
+        "native_contexts": [],
+        "native_delete_success": 1.0,
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "reindex_update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 0.0,
+        "ndcg_at_5": 0.0,
+        "privacy_scope_violation": null,
+        "recall_at_5": 0.0,
+        "retrieved_evidence": [],
+        "source_trace_rate": null,
+        "unsupported_answer_error": null
+      }
+    ]
+  },
+  {
+    "run": "gbrain-core",
+    "suite": "common-core-v1",
+    "target": "gbrain",
+    "stage": "single_search_probe",
+    "boundary": "single native search per scenario; not a complete cold/warm contract run",
+    "embedding_dimensions": 1536,
+    "jobs": [
+      {
+        "job_id": "core-correction-falcon",
+        "answer": {
+          "text": "10 minutes",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "retrieved_evidence": [
+          "core_correction_falcon_current",
+          "core_correction_falcon_old",
+          "core_correction_falcon_format"
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [
+          "core_correction_falcon_old"
+        ],
+        "forbidden_answer_facts": []
+      },
+      {
+        "job_id": "core-synthesis-runtime-storage",
+        "answer": {
+          "text": "Rust with the Axum web framework; PostgreSQL 18 with pgvector",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "retrieved_evidence": [
+          "core_synth_runtime",
+          "core_synth_storage",
+          "core_synth_frontend",
+          "core_synth_rejected"
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [
+          "core_synth_rejected"
+        ],
+        "forbidden_answer_facts": []
+      },
+      {
+        "job_id": "core-resume-harbor",
+        "answer": {
+          "text": "Stopped after schema conversion completed and commit 8f21a6 passed integration tests; next action: run the rollback drill before enabling production traffic.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "retrieved_evidence": [
+          "core_resume_harbor_next",
+          "core_resume_harbor_done",
+          "core_resume_harbor_rejected"
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "forbidden_answer_facts": []
+      },
+      {
+        "job_id": "core-direct-region",
+        "answer": {
+          "text": "AWS eu-west-2",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "retrieved_evidence": [
+          "core_direct_region",
+          "core_direct_region_stage",
+          "core_direct_region_old"
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [
+          "core_direct_region_old"
+        ],
+        "forbidden_answer_facts": []
+      },
+      {
+        "job_id": "core-unsupported-lyra",
+        "answer": {
+          "text": "unknown",
+          "supported": false
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": 0.0,
+        "retrieved_evidence": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_policy",
+          "core_unsupported_lyra_schedule"
+        ],
+        "recall_at_5": null,
+        "ndcg_at_5": null,
+        "forbidden_evidence_hits": [
+          "core_unsupported_lyra_owner",
+          "core_unsupported_lyra_schedule"
+        ],
+        "forbidden_answer_facts": []
+      },
+      {
+        "job_id": "core-scope-orion",
+        "answer": {
+          "text": "deployment completed successfully on 2026-07-24",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "retrieved_evidence": [
+          "core_scope_orion_public",
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [
+          "core_scope_orion_draft",
+          "core_scope_orion_private"
+        ],
+        "forbidden_answer_facts": []
+      }
+    ]
+  },
+  {
+    "run": "gbrain-followup",
+    "suite": "memory-lifecycle-v1",
+    "target": "gbrain",
+    "stage": "immediate",
+    "embedding_dimensions": 1536,
+    "duration_seconds": 57.609,
+    "metrics": {
+      "mean_recall_at_5": 0.5,
+      "mean_ndcg_at_5": 0.5,
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 0.5,
+      "native_correction_and_update_success": 0.333333,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "unsupported_answer_rate": null,
+      "mean_query_latency_ms": 2312.5
+    },
+    "jobs": [
+      {
+        "job_id": "memory-delete-credential",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_nova_public"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_nova_public",
+            "text": "# e_57eef27c07206e291403c6b1\n\nNova staging deployment is healthy and passed the green readiness gate."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Nova staging deployment is healthy and passed the green readiness gate.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": 0.0,
+        "latency_ms": 4427.0,
+        "failure": null
+      },
+      {
+        "job_id": "memory-resume-migration",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_kestrel_context"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_kestrel_context",
+            "text": "# e_c1ab6659f4462808e36d34f2\n\nKestrel uses signed release artifacts."
+          }
+        ],
+        "recall_at_5": 0.0,
+        "ndcg_at_5": 0.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "unknown",
+          "supported": false
+        },
+        "answer_correct": 0.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 0.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1827.0,
+        "failure": null
+      },
+      {
+        "job_id": "memory-update-and-delete-release",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_solstice_gate"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_solstice_gate",
+            "text": "# e_b8dfcb2275135ed5c40138da\n\nSolstice may publish only after release approval and checksum verification."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Solstice may publish only after release approval and checksum verification.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          },
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 1549.0,
+        "failure": null
+      },
+      {
+        "job_id": "memory-update-channel",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_channel_noise"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_channel_noise",
+            "text": "# e_e00fcb05681a5c790b26907e\n\nRowan reviews incident summaries on Mondays."
+          }
+        ],
+        "recall_at_5": 0.0,
+        "ndcg_at_5": 0.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "unknown",
+          "supported": false
+        },
+        "answer_correct": 0.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 0.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1447.0,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "gbrain-followup",
+    "suite": "memory-lifecycle-v1",
+    "target": "gbrain",
+    "stage": "after_native_embed_stale",
+    "embedding_dimensions": 1536,
+    "duration_seconds": 15.51,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 1.0,
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "unsupported_answer_rate": null,
+      "mean_query_latency_ms": 1452.0
+    },
+    "jobs": [
+      {
+        "job_id": "memory-delete-credential",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_nova_public"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_nova_public",
+            "text": "# e_57eef27c07206e291403c6b1\n\nNova staging deployment is healthy and passed the green readiness gate."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Nova staging deployment is healthy and passed the green readiness gate.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": 0.0,
+        "latency_ms": 1495.0,
+        "failure": null
+      },
+      {
+        "job_id": "memory-resume-migration",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_kestrel_checkpoint",
+          "memory_kestrel_context"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_kestrel_checkpoint",
+            "text": "# e_4cbaa2526bebec5b37b3210b\n\nKestrel schema conversion completed at commit 8f21a6. The next action is the rollback drill."
+          },
+          {
+            "evidence_id": "memory_kestrel_context",
+            "text": "# e_c1ab6659f4462808e36d34f2\n\nKestrel uses signed release artifacts."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Kestrel schema conversion completed at commit 8f21a6. The next action is the rollback drill.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1475.0,
+        "failure": null
+      },
+      {
+        "job_id": "memory-update-and-delete-release",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_solstice_gate"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_solstice_gate",
+            "text": "# e_b8dfcb2275135ed5c40138da\n\nSolstice may publish only after release approval and checksum verification."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Solstice may publish only after release approval and checksum verification.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          },
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 1414.0,
+        "failure": null
+      },
+      {
+        "job_id": "memory-update-channel",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "memory_channel",
+          "memory_channel_noise"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "memory_channel",
+            "text": "# e_e513b5b79650dd9ca47102f4\n\nRowan now prefers incident updates by Signal. This replaces the email preference."
+          },
+          {
+            "evidence_id": "memory_channel_noise",
+            "text": "# e_e00fcb05681a5c790b26907e\n\nRowan reviews incident summaries on Mondays."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Rowan now prefers incident updates by Signal.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1424.0,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "gbrain-followup",
+    "suite": "repository-knowledge-v1",
+    "target": "gbrain",
+    "stage": "immediate",
+    "embedding_dimensions": 1536,
+    "duration_seconds": 95.497,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 0.907733,
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 0.75,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "unsupported_answer_rate": null,
+      "mean_query_latency_ms": 2951.5
+    },
+    "jobs": [
+      {
+        "job_id": "repo-change-validation-command",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_validation_context",
+          "repo_validation"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_validation_context",
+            "text": "# e_e570b33ecaf9f9ffab4e8d71\n\nValidation must finish before a review request."
+          },
+          {
+            "evidence_id": "repo_validation",
+            "text": "# e_5d881f28d253b2d35c1be92e\n\nThe complete validation gate now runs cargo make verify-all. The old cargo make check command is obsolete."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 0.63093,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "cargo make verify-all",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1457.0,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-deprecated-module",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_cinder_current"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_cinder_current",
+            "text": "# e_c00aa7998822b29119849cde\n\npackages/cinder-runtime owns Cinder retry policy."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "packages/cinder-runtime",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 2116.0,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-secret-example",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_atlas_auth"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_atlas_auth",
+            "text": "# e_4943494a8415a1ba07c6c847\n\nAtlas documentation says to load credentials from the approved secret manager."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "load credentials from the approved secret manager",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": 0.0,
+        "latency_ms": 6821.0,
+        "failure": null
+      },
+      {
+        "job_id": "repo-update-release-resume",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_solstice_state"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_solstice_state",
+            "text": "# e_61d0baf15a3ce66e2376cb31\n\nSolstice packaging and checksum verification are complete. Obtain release approval before publishing."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Obtain release approval before publishing.",
+          "supported": true
+        },
+        "answer_correct": 0.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          },
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 1412.0,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "gbrain-followup",
+    "suite": "repository-knowledge-v1",
+    "target": "gbrain",
+    "stage": "after_native_embed_stale",
+    "embedding_dimensions": 1536,
+    "duration_seconds": 12.764,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 1.0,
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 0.75,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "unsupported_answer_rate": null,
+      "mean_query_latency_ms": 1441.0
+    },
+    "jobs": [
+      {
+        "job_id": "repo-change-validation-command",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_validation",
+          "repo_validation_context"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_validation",
+            "text": "# e_5d881f28d253b2d35c1be92e\n\nThe complete validation gate now runs cargo make verify-all. The old cargo make check command is obsolete."
+          },
+          {
+            "evidence_id": "repo_validation_context",
+            "text": "# e_e570b33ecaf9f9ffab4e8d71\n\nValidation must finish before a review request."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "cargo make verify-all",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1402.0,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-deprecated-module",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_cinder_current"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_cinder_current",
+            "text": "# e_c00aa7998822b29119849cde\n\npackages/cinder-runtime owns Cinder retry policy."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "packages/cinder-runtime",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 1424.0,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-secret-example",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_atlas_auth"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_atlas_auth",
+            "text": "# e_4943494a8415a1ba07c6c847\n\nAtlas documentation says to load credentials from the approved secret manager."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Load credentials from the approved secret manager.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": 0.0,
+        "latency_ms": 1529.0,
+        "failure": null
+      },
+      {
+        "job_id": "repo-update-release-resume",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_solstice_state"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_solstice_state",
+            "text": "# e_61d0baf15a3ce66e2376cb31\n\nSolstice packaging and checksum verification are complete. Obtain release approval before publishing."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Obtain release approval before publishing.",
+          "supported": true
+        },
+        "answer_correct": 0.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "requested_type": "update",
+            "native_type": "update",
+            "classification": "completed",
+            "native_success": true
+          },
+          {
+            "requested_type": "delete",
+            "native_type": "delete",
+            "classification": "completed",
+            "native_success": true
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 1409.0,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "gbrain-followup",
+    "suite": "knowledge-structure-v1",
+    "target": "gbrain",
+    "stage": "immediate",
+    "embedding_dimensions": 1536,
+    "duration_seconds": 46.981,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 0.910943,
+      "forbidden_or_stale_evidence_hit_rate": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 0.75,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "unsupported_answer_rate": 0.0,
+      "mean_query_latency_ms": 1574.5
+    },
+    "jobs": [
+      {
+        "job_id": "knowledge-cobalt-stack",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_cobalt_queue",
+          "knowledge_cobalt_runtime",
+          "knowledge_cobalt_store",
+          "knowledge_cobalt_rejected"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_cobalt_queue",
+            "text": "# e_bdd8752c7dad66dbc43840ea\n\n# Cobalt Processing\nAccepted jobs enter the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_runtime",
+            "text": "# e_7654dfa807783479692172ac\n\n# Cobalt Runtime\nThe request service uses Rust and Axum."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_store",
+            "text": "# e_137d4a5fb667812a2ca75fee\n\n# Cobalt Storage\nWorkers persist completed jobs in PostgreSQL 18 with pgvector."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_rejected",
+            "text": "# e_6e0be6acfbf7255e6f320473\n\n# Rejected Design\nA Redis-only durable store was rejected."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [
+          "knowledge_cobalt_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Runtime: Rust and Axum; queue: cobalt-main; durable store: PostgreSQL 18 with pgvector.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1448.0,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-juniper-ownership-graph",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_juniper_old",
+          "knowledge_juniper_owner",
+          "knowledge_juniper_queue",
+          "knowledge_juniper_alert"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_juniper_old",
+            "text": "# e_c20224f82486dc0976fd921c\n\nThe amber-old queue no longer carries Juniper work."
+          },
+          {
+            "evidence_id": "knowledge_juniper_owner",
+            "text": "# e_a69d5a173f3c23744293f7e7\n\nThe Delivery Systems team owns Juniper."
+          },
+          {
+            "evidence_id": "knowledge_juniper_queue",
+            "text": "# e_ed3df2a7f73477f24ab052cc\n\nJuniper production jobs use the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_juniper_alert",
+            "text": "# e_472ef69f02c33907f623fce8\n\nWhen cobalt-main exceeds 500 Juniper jobs, alert the Delivery Systems on-call engineer."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 0.732829,
+        "forbidden_evidence_hits": [
+          "knowledge_juniper_old"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Juniper is owned by the Delivery Systems team; its work uses the cobalt-main queue; when cobalt-main exceeds 500 Juniper jobs, the Delivery Systems on-call engineer receives the depth alert.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1830.0,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-lyra-citation-boundary",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_owner",
+          "knowledge_lyra_policy"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_lyra_schedule",
+            "text": "# e_27dad0a21931d5d3a43bf779\n\nLyra's launch rehearsal is Friday; no launch code is stored in this source."
+          },
+          {
+            "evidence_id": "knowledge_lyra_owner",
+            "text": "# e_d05c49752a0b12c925f069df\n\nThe Platform team owns Lyra; no launch code is documented."
+          },
+          {
+            "evidence_id": "knowledge_lyra_policy",
+            "text": "# e_e7971ba2075b2c9a7c2c6947\n\nA missing launch code must be reported as unknown rather than inferred."
+          }
+        ],
+        "recall_at_5": null,
+        "ndcg_at_5": null,
+        "forbidden_evidence_hits": [
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_owner"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "unknown",
+          "supported": false
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": 0.0,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1472.0,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-orion-policy-tree",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_orion_policy",
+          "knowledge_orion_roles",
+          "knowledge_orion_draft"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_orion_policy",
+            "text": "# e_761b3a73338fcff2af0b4f34\n\n# Orion Release Policy\n## Engineering gate\nIntegration tests must pass.\n## Security gate\nA security reviewer must approve the source-linked findings.\n## Publication gate\nThe release owner must sign the final checksum manifest."
+          },
+          {
+            "evidence_id": "knowledge_orion_roles",
+            "text": "# e_fa361ca6e488f25a6c6d4ec6\n\nThe Orion release owner is the Platform Runtime lead."
+          },
+          {
+            "evidence_id": "knowledge_orion_draft",
+            "text": "# e_6c62e44c0c91b639619dc84b\n\nA draft proposed publishing before security review; it was rejected."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [
+          "knowledge_orion_draft"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Integration tests must pass; a security reviewer must approve the source-linked findings; the release owner must sign the final checksum manifest.",
+          "supported": true
+        },
+        "answer_correct": 0.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 1548.0,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "clarified-reader",
+    "suite": "knowledge-structure-v1",
+    "target": "files-search",
+    "stage": "clarified_questions_reader_only",
+    "boundary": "reader-only replay with clarified questions; native retrieval is unchanged from historical run",
+    "duration_seconds": 7.134,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 0.852858,
+      "forbidden_or_stale_evidence_hit_rate": 1.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 1.0,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "unsupported_answer_rate": 0.0,
+      "mean_query_latency_ms": 0.019562
+    },
+    "jobs": [
+      {
+        "job_id": "knowledge-cobalt-stack",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_cobalt_runtime",
+          "knowledge_cobalt_rejected",
+          "knowledge_cobalt_queue",
+          "knowledge_cobalt_store"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_cobalt_runtime",
+            "text": "# Cobalt Runtime\nThe request service uses Rust and Axum."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_rejected",
+            "text": "# Rejected Design\nA Redis-only durable store was rejected."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_queue",
+            "text": "# Cobalt Processing\nAccepted jobs enter the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_store",
+            "text": "# Cobalt Storage\nWorkers persist completed jobs in PostgreSQL 18 with pgvector."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 0.906025,
+        "forbidden_evidence_hits": [
+          "knowledge_cobalt_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Runtime: Rust and Axum. Queue: cobalt-main. Durable store: PostgreSQL 18 with pgvector.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 0.02229100209660828,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-juniper-ownership-graph",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_juniper_old",
+          "knowledge_juniper_alert",
+          "knowledge_juniper_owner",
+          "knowledge_juniper_queue"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_juniper_old",
+            "text": "The amber-old queue no longer carries Juniper work."
+          },
+          {
+            "evidence_id": "knowledge_juniper_alert",
+            "text": "When cobalt-main exceeds 500 Juniper jobs, alert the Delivery Systems on-call engineer."
+          },
+          {
+            "evidence_id": "knowledge_juniper_owner",
+            "text": "The Delivery Systems team owns Juniper."
+          },
+          {
+            "evidence_id": "knowledge_juniper_queue",
+            "text": "Juniper production jobs use the cobalt-main queue."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 0.732829,
+        "forbidden_evidence_hits": [
+          "knowledge_juniper_old"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Juniper is owned by the Delivery Systems team; its work uses the cobalt-main queue; when cobalt-main exceeds 500 Juniper jobs, alert the Delivery Systems on-call engineer.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 0.01912500010803342,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-lyra-citation-boundary",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_owner",
+          "knowledge_lyra_policy"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_lyra_schedule",
+            "text": "Lyra's launch rehearsal is Friday; no launch code is stored in this source."
+          },
+          {
+            "evidence_id": "knowledge_lyra_owner",
+            "text": "The Platform team owns Lyra; no launch code is documented."
+          },
+          {
+            "evidence_id": "knowledge_lyra_policy",
+            "text": "A missing launch code must be reported as unknown rather than inferred."
+          }
+        ],
+        "recall_at_5": null,
+        "ndcg_at_5": null,
+        "forbidden_evidence_hits": [
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_owner"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "unknown",
+          "supported": false
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": 0.0,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 0.020332998246885836,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-orion-policy-tree",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_orion_policy",
+          "knowledge_orion_draft",
+          "knowledge_orion_roles"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_orion_policy",
+            "text": "# Orion Release Policy\n## Engineering gate\nIntegration tests must pass.\n## Security gate\nA security reviewer must approve the source-linked findings.\n## Publication gate\nThe release owner must sign the final checksum manifest."
+          },
+          {
+            "evidence_id": "knowledge_orion_draft",
+            "text": "A draft proposed publishing before security review; it was rejected."
+          },
+          {
+            "evidence_id": "knowledge_orion_roles",
+            "text": "The Orion release owner is the Platform Runtime lead."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 0.919721,
+        "forbidden_evidence_hits": [
+          "knowledge_orion_draft"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Orion requires integration tests to pass, a security reviewer to approve the source-linked findings, and the release owner to sign the final checksum manifest; the Orion release owner is the Platform Runtime lead.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 0.016500001947861165,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "clarified-reader",
+    "suite": "knowledge-structure-v1",
+    "target": "elf",
+    "stage": "clarified_questions_reader_only",
+    "boundary": "reader-only replay with clarified questions; native retrieval is unchanged from historical run",
+    "duration_seconds": 5.493,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 0.879618,
+      "forbidden_or_stale_evidence_hit_rate": 1.0,
+      "source_or_citation_trace_rate": 0.9375,
+      "programmatic_answer_correctness": 0.75,
+      "native_correction_and_update_success": null,
+      "native_deletion_or_forgetting_success": null,
+      "privacy_scope_violation_rate": null,
+      "unsupported_answer_rate": 0.0,
+      "mean_query_latency_ms": 1959.885626
+    },
+    "jobs": [
+      {
+        "job_id": "knowledge-cobalt-stack",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_cobalt_store",
+          "knowledge_cobalt_rejected",
+          "knowledge_cobalt_queue",
+          "knowledge_cobalt_runtime"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_cobalt_store",
+            "text": "# Cobalt Storage Workers persist completed jobs in PostgreSQL 18 with pgvector."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_rejected",
+            "text": "# Rejected Design A Redis-only durable store was rejected."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_queue",
+            "text": "# Cobalt Processing Accepted jobs enter the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_cobalt_runtime",
+            "text": "# Cobalt Runtime The request service uses Rust and Axum."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 0.906025,
+        "forbidden_evidence_hits": [
+          "knowledge_cobalt_rejected"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Runtime: Rust and Axum; queue: cobalt-main; durable store: PostgreSQL 18 with pgvector.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 557.7429189999999,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-juniper-ownership-graph",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_juniper_old",
+          "knowledge_juniper_queue",
+          "knowledge_juniper_alert",
+          "knowledge_juniper_owner"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_juniper_old",
+            "text": "The amber-old queue no longer carries Juniper work."
+          },
+          {
+            "evidence_id": "knowledge_juniper_queue",
+            "text": "Juniper production jobs use the cobalt-main queue."
+          },
+          {
+            "evidence_id": "knowledge_juniper_alert",
+            "text": "When cobalt-main exceeds 500 Juniper jobs, alert the Delivery Systems on-call engineer."
+          },
+          {
+            "evidence_id": "knowledge_juniper_owner",
+            "text": "The Delivery Systems team owns Juniper."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 0.732829,
+        "forbidden_evidence_hits": [
+          "knowledge_juniper_old"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Owner: Delivery Systems; queue: cobalt-main; alert threshold: when cobalt-main exceeds 500 Juniper jobs; alert recipient: Delivery Systems on-call engineer.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 2270.907271,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-lyra-citation-boundary",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_lyra_owner",
+          "knowledge_lyra_schedule",
+          "knowledge_lyra_policy"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_lyra_owner",
+            "text": "The Platform team owns Lyra; no launch code is documented."
+          },
+          {
+            "evidence_id": "knowledge_lyra_schedule",
+            "text": "Lyra's launch rehearsal is Friday; no launch code is stored in this source."
+          },
+          {
+            "evidence_id": "knowledge_lyra_policy",
+            "text": "A missing launch code must be reported as unknown rather than inferred."
+          }
+        ],
+        "recall_at_5": null,
+        "ndcg_at_5": null,
+        "forbidden_evidence_hits": [
+          "knowledge_lyra_owner",
+          "knowledge_lyra_schedule"
+        ],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "unknown",
+          "supported": false
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": 0.0,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 4545.73181,
+        "failure": null
+      },
+      {
+        "job_id": "knowledge-orion-policy-tree",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "knowledge_orion_policy",
+          "knowledge_orion_roles",
+          "knowledge_orion_draft"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "knowledge_orion_policy",
+            "text": "# Orion Release Policy ## Engineering gate Integration tests must pass. ## Security gate A security reviewer must approve the source-linked findings. ## Publication gate The release owner must sign the final checksum"
+          },
+          {
+            "evidence_id": "knowledge_orion_roles",
+            "text": "The Orion release owner is the Platform Runtime lead."
+          },
+          {
+            "evidence_id": "knowledge_orion_draft",
+            "text": "A draft proposed publishing before security review; it was rejected."
+          },
+          {
+            "evidence_id": "knowledge_orion_policy",
+            "text": "manifest."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [
+          "knowledge_orion_draft"
+        ],
+        "source_trace_rate": 0.75,
+        "answer": {
+          "text": "Engineering gate: integration tests must pass; Security gate: a security reviewer must approve the source-linked findings; Publication gate: the release owner must sign the final checksum. The Orion release owner is the Platform Runtime lead.",
+          "supported": true
+        },
+        "answer_correct": 0.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [],
+        "native_update_success": null,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 465.160503,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "clarified-reader",
+    "suite": "repository-knowledge-v1",
+    "target": "files-search",
+    "stage": "clarified_questions_reader_only",
+    "boundary": "reader-only replay with clarified questions; native retrieval is unchanged from historical run",
+    "duration_seconds": 3.092,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 1.0,
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "unsupported_answer_rate": null,
+      "mean_query_latency_ms": 0.009292
+    },
+    "jobs": [
+      {
+        "job_id": "repo-change-validation-command",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_validation",
+          "repo_validation_context"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_validation",
+            "text": "The complete validation gate now runs cargo make verify-all. The old cargo make check command is obsolete."
+          },
+          {
+            "evidence_id": "repo_validation_context",
+            "text": "Validation must finish before a review request."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "cargo make verify-all",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 0.013999997463542968,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-deprecated-module",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_cinder_current"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_cinder_current",
+            "text": "packages/cinder-runtime owns Cinder retry policy."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "packages/cinder-runtime",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 0.004624998837243766,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-secret-example",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_atlas_auth"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_atlas_auth",
+            "text": "Atlas documentation says to load credentials from the approved secret manager."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Load credentials from the approved secret manager.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": 0.0,
+        "latency_ms": 0.009750001481734216,
+        "failure": null
+      },
+      {
+        "job_id": "repo-update-release-resume",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_solstice_state"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_solstice_state",
+            "text": "Solstice packaging and checksum verification are complete. Obtain release approval before publishing."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Solstice packaging and checksum verification are complete; obtain release approval before publishing.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 0.008791997970547527,
+        "failure": null
+      }
+    ]
+  },
+  {
+    "run": "clarified-reader",
+    "suite": "repository-knowledge-v1",
+    "target": "elf",
+    "stage": "clarified_questions_reader_only",
+    "boundary": "reader-only replay with clarified questions; native retrieval is unchanged from historical run",
+    "duration_seconds": 2.867,
+    "metrics": {
+      "mean_recall_at_5": 1.0,
+      "mean_ndcg_at_5": 1.0,
+      "forbidden_or_stale_evidence_hit_rate": 0.0,
+      "source_or_citation_trace_rate": 1.0,
+      "programmatic_answer_correctness": 1.0,
+      "native_correction_and_update_success": 1.0,
+      "native_deletion_or_forgetting_success": 1.0,
+      "privacy_scope_violation_rate": 0.0,
+      "unsupported_answer_rate": null,
+      "mean_query_latency_ms": 3018.609303
+    },
+    "jobs": [
+      {
+        "job_id": "repo-change-validation-command",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_validation",
+          "repo_validation_context"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_validation",
+            "text": "The complete validation gate now runs cargo make verify-all. The old cargo make check command is obsolete."
+          },
+          {
+            "evidence_id": "repo_validation_context",
+            "text": "Validation must finish before a review request."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "cargo make verify-all",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": null,
+        "privacy_scope_violation": null,
+        "latency_ms": 4799.942992,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-deprecated-module",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_cinder_current"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_cinder_current",
+            "text": "packages/cinder-runtime owns Cinder retry policy."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "packages/cinder-runtime",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 1092.467692,
+        "failure": null
+      },
+      {
+        "job_id": "repo-delete-secret-example",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_atlas_auth"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_atlas_auth",
+            "text": "Atlas documentation says to load credentials from the approved secret manager."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Load credentials from the approved secret manager.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": null,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": 0.0,
+        "latency_ms": 4337.759127,
+        "failure": null
+      },
+      {
+        "job_id": "repo-update-release-resume",
+        "classification": "completed",
+        "retrieved_evidence": [
+          "repo_solstice_state"
+        ],
+        "native_contexts": [
+          {
+            "evidence_id": "repo_solstice_state",
+            "text": "Solstice packaging and checksum verification are complete. Obtain release approval before publishing."
+          }
+        ],
+        "recall_at_5": 1.0,
+        "ndcg_at_5": 1.0,
+        "forbidden_evidence_hits": [],
+        "source_trace_rate": 1.0,
+        "answer": {
+          "text": "Packaging and checksum verification are complete; obtain release approval before publishing.",
+          "supported": true
+        },
+        "answer_correct": 1.0,
+        "unsupported_answer_error": null,
+        "forbidden_answer_facts": [],
+        "native_operations": [
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "update",
+            "requested_type": "update"
+          },
+          {
+            "classification": "completed",
+            "native_success": true,
+            "native_type": "delete",
+            "requested_type": "delete"
+          }
+        ],
+        "native_update_success": 1.0,
+        "native_delete_success": 1.0,
+        "privacy_scope_violation": null,
+        "latency_ms": 1844.267399,
+        "failure": null
+      }
+    ]
+  }
+]

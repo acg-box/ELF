@@ -35,7 +35,7 @@
       "job_id": "knowledge-orion-policy-tree",
       "stratum": "document_hierarchy",
       "title": "Navigate a nested release policy",
-      "query": "What approvals and evidence does Orion require before a public release?",
+      "query": "What approvals and evidence does Orion require before a public release, and which team supplies its release owner?",
       "corpus": [
         {"evidence_id": "knowledge_orion_policy", "text": "# Orion Release Policy\n## Engineering gate\nIntegration tests must pass.\n## Security gate\nA security reviewer must approve the source-linked findings.\n## Publication gate\nThe release owner must sign the final checksum manifest."},
         {"evidence_id": "knowledge_orion_roles", "text": "The Orion release owner is the Platform Runtime lead."},
@@ -60,7 +60,7 @@
       "job_id": "knowledge-juniper-ownership-graph",
       "stratum": "entity_relationship",
       "title": "Resolve service, queue, and owner relationships",
-      "query": "Who owns Juniper, which queue carries its work, and who receives a depth alert?",
+      "query": "Who owns Juniper, which queue carries its work, at what queue depth is an alert required, and who receives that alert?",
       "corpus": [
         {"evidence_id": "knowledge_juniper_owner", "text": "The Delivery Systems team owns Juniper."},
         {"evidence_id": "knowledge_juniper_queue", "text": "Juniper production jobs use the cobalt-main queue."},
