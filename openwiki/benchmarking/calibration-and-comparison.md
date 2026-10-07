@@ -5,7 +5,7 @@ description: Verified API spend, native index readiness, real repository repairs
 tags: [benchmark, memory, cost]
 verified:
   - by: openwiki/0.7.1
-    at: 2026-10-07T16:16:48.378Z
+    at: 2026-10-07T22:06:36.328Z
 sources:
   - id: openwiki-source-edb430929cfea30c15990b19
     resource: repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs
@@ -17,11 +17,15 @@ sources:
     resource: repo://docs/evidence/benchmarking/2026-10-07-bounded-calibration.md
   - id: openwiki-source-bb1247307c8794ccbd2882d5
     resource: repo://docs/evidence/benchmarking/2026-10-07-repository-replay.md
+  - id: openwiki-source-0e54ac6a76b520718715ada9
+    resource: repo://docs/runbook/benchmarking/full_comparison.md
+  - id: openwiki-source-390a5c4cc8f0dab92d64cc55
+    resource: repo://scripts/benchmark_budget.py
   - id: openwiki-source-0330dc1965b65f2f9996851a
     resource: repo://scripts/benchmark_contract/metrics.py
   - id: openwiki-source-56065a3815cb963d127dfd71
     resource: repo://scripts/benchmark_replay/agent.py
-generated: { by: "codex", at: "2026-10-07T16:08:29.830Z" }
+generated: { by: "codex", at: "2026-10-07T22:06:36.328Z" }
 ---
 
 # Benchmark calibration and fair product comparison
@@ -84,7 +88,9 @@ The agent also stopped dialogue immediately on invalid JSON. These diagnostic
 results remain in the evidence; they are not a product ranking.
 
 The adapter now waits for its dedicated worker queues to reach `DONE`, and fails
-on a failed job or a 180-second timeout. Direct readback showed 222/222 note jobs
+on a failed job or an indexing deadline. The default is 180 seconds;
+`ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS` can set a longer deadline, and the deep
+profile uses 5,400 seconds. Direct pilot readback showed 222/222 note jobs
 complete. Cold and warm retrieval both returned context in 6/6 episodes after
 this correction. Invalid model JSON now consumes a turn and receives format
 feedback within the same six-turn budget. The final isolated test determines
@@ -105,7 +111,7 @@ $0.000248200 and 428.820 seconds. The setup made 456 small embedding requests;
 their summed gateway duration was 392.721 seconds. The repair timing difference
 is not a stable product speed ranking.
 
-Cumulative API spend, including the earlier screen, failed calls, both native
+Cumulative API spend through this pilot, including the earlier screen, failed calls, both native
 preparations, and all 48 repair trials, is **$0.094396915** against the **$10**
 ceiling. This pilot contributed $0.077748104 across 955 accounted calls. Of its
 556,834 chat input tokens, 439,168 were cache hits. There are no unsettled request
@@ -116,7 +122,7 @@ for boundaries and the [accounting artifact](../../config/benchmark/evidence/202
 for phase costs, case results, and ledger links. The
 [runbook](../../docs/runbook/benchmarking/repository_memory_replay.md) owns execution.
 
-## Next useful work
+## Pilot limits and current full protocol
 
 The file and ELF conditions both passed 6/6 with 25 turns. This small pilot does
 not establish an ELF advantage over file recall. The explicit target path and
@@ -131,8 +137,37 @@ unseen tasks that require prior decisions, ordered source changes, and competing
 authority. Preserve immediate versus settled indexing boundaries. Batch or reuse
 embedding requests with an explicit cache boundary before a larger native run.
 
-Complete native workflows for Agent Memory Repo, Hindsight, MemOS, OpenViking,
-and graph systems remain unmeasured. Knowledge bases remain eligible when their
-tasks match. Do not choose or reject products by category labels alone.
+That pilot did not measure complete native workflows for Agent Memory Repo,
+Hindsight, MemOS, OpenViking, or graph systems. Knowledge bases remain eligible
+when their tasks match. Do not choose or reject products by category labels alone.
+
+The [full comparison runbook](../../docs/runbook/benchmarking/full_comparison.md)
+owns the expanded protocol. Its core matrix assigns all 48 cases to fourteen
+products and two baselines: 64 product/suite units and 768 logical cases, with
+cold and warm phases. Deep workloads add 100- and 1,000-document corpora,
+cross-session recall, competing authority, corrections, shared namespaces,
+and mutation readback. Each deep workload has 62 scored questions. Defined
+scope is not completed coverage; use published execution evidence for results.
+
+The final reader receives one case per request. Earlier batches remain protocol
+diagnostics because a model could use a neighboring case's context. Deep scoring
+requires the expected value to occur in that case's supplied context. Native
+retrieval, reader correctness, and execution failures remain separate. Core
+negative retrieval fixtures do not establish access-control behavior.
+
+Use `cargo make benchmark-budget` for paid execution. The checked-in gateway
+fixes the model routes and keeps cumulative actual costs and conservative
+reservations under the USD 10 ceiling, including prior pilots. Core or repair
+phases admit at most USD 0.50 of new exposure; a full deep invocation admits at
+most USD 1. Unknown costs retain their reservations. Buffered SSE does not
+measure time to first token.
+
+Profiles matter when comparing results. ELF uses native note ingestion, worker
+indexing, and raw search, not its separate document-ingestion API. QMD's host
+hybrid profile uses local models. The manifest records native extraction,
+hierarchy, graph, transport, and maintenance deviations for other products.
+A timeout or broken adapter remains incomplete execution. A legacy exact-text
+update metric can fail even when delete-and-insert replacement succeeds; retain
+operation acknowledgements, actual readback, and reader answers separately.
 
 See [quickstart](../quickstart.md) for repository commands and documentation owners.

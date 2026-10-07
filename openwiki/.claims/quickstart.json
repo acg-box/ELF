@@ -1,34 +1,62 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:44dceb9a32f2ca00b86096f2f0a9c088ee13fdac14b3a0dc1eb50ccb757391f5",
+  "pageVersion": "sha256:e8db5bc8f41267acec1ac7c179ff925ad6c853e08cfa389f69ef1ce874cb3fd5",
   "claims": [
     {
       "id": "claim_f33449baf9ba4bba90352d6c62afa42e",
-      "statement": "The benchmark runner supports offline quick mode, an ELF-and-baselines measure mode, and a compare mode with product-specific suite eligibility.",
+      "statement": "The benchmark runner supports offline quick mode, an ELF-and-baselines measure mode, and a compare mode whose current manifest assigns all four suites to fourteen products and two baselines.",
       "evidence": [
         {
-          "resource": "repo://scripts/benchmark_runner/cli.py#L25-L105",
-          "version": "repo-lines-v1:sha256:0d528e326107ea71414be2c65072c9c28864b63ceeb6939af65c5544aa0152c2:eyJzZWxlY3RlZExpbmVDb3VudCI6ODEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwNTJmN2I4ODc2NDliMGFjYTJiNGQ2ZjMzOWE5MjNmMzQzZTQ4ZDFkOTBjMGMzYmU4NGU5MGY5NDIxNjU5ODgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliMDg1OGQ3MDM3NzBhNGE0OTc1OGVjNDMzZjUwZmU3MjU2N2VhZThjZThiYmEyYjc1MTVmMWZiOTY4ODIxYmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM1MzkzZTk2YWRmNGM2MThmYzk0OGFkNjE1M2NlYmJjNzExMDc4YWRhMTcwNjJlNzkzOTM5YTBlMDg1NjhiMTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0MDQ3MWQyYmI3NTUwYzNlNGFkZTI4OWFkZDI4MmIwMmY1MjY4ODQxMmJlMTIxNjZmYTI2ZWQ1NTk1NTRiYWYifQ"
+          "resource": "repo://config/benchmark/benchmark-v3.json",
+          "version": "repo-file-v1:sha256:dcd20322d41bff17e9cac87259a672c152f18c452aed18a82e27f3a29dcbcb42"
+        },
+        {
+          "resource": "repo://scripts/benchmark_runner/cli.py",
+          "version": "repo-file-v1:sha256:8e1d2b1cf9b80ec367e67f50b9023c20c06deac104cc00610e344fa8c9151430"
         }
       ]
     },
     {
       "id": "claim_fef8d666fc724e3d96216f127793a12b",
-      "statement": "The public benchmark-repository-memory cargo-make task dispatches the Python replay CLI with prepare, validate, learn, retrieve, run, and report phases.",
+      "statement": "The benchmark-repository-memory and benchmark-replay cargo-make tasks dispatch the same Python CLI with prepare, validate, learn, retrieve, run, and report phases and native target and arm selection.",
       "evidence": [
         {
-          "resource": "repo://makefiles/benchmark-core.toml#L207-L209",
-          "version": "repo-lines-v1:sha256:78e44eaf8fc3ab6284a62407ef925de8c76823b91d3e4dc7a2477570c1230edc:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiOWNlYmQxN2EzMzRiNDQxOTdjY2I2NTBiZDg1Njk3MDBmMDQ5MGRlNzYzY2UxODdkOGE3YzVlNjE4M2Q5NmNkYSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOGNhZDdjYzg4MDM4MjljYzY0N2VmNTk2NzM4YjA2YWEzOGY4ZTBjMjQzYWU0NWY4OWRmYTdiMjQ5ZDg0NTBlNSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTJiNzhiY2FkNzllNmEyYjZjMWQxMzAwZTJmMzA0NzIxOWY4MGFlODRhN2ZjMjM5OWNlMjFiMDZkOTA3ZjU4ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjAsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTNiMGM0NDI5OGZjMWMxNDlhZmJmNGM4OTk2ZmI5MjQyN2FlNDFlNDY0OWI5MzRjYTQ5NTk5MWI3ODUyYjg1NSJ9"
+          "resource": "repo://makefiles/benchmark-core.toml",
+          "version": "repo-file-v1:sha256:a8bbff05bb96bbe26b0186dd76b7706c9d9710fbe6d368005a051e3a3450801c"
         },
         {
-          "resource": "repo://scripts/benchmark_replay/cli.py#L21-L28",
-          "version": "repo-lines-v1:sha256:303ff4e17af96458e15f83361408e69e9eb7cd82641ec39dad191eaa669653fd:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDhhMjQxODU4NDU5ZGY3NDg0M2UwNGJkMjAwMWY3ZGMwNGMwODk2OTRjM2JiYjAwOTExNDA2YTQwZTE4YzI2YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWQ2MjlmNGE0OTkzN2Q1MDI2MzMwMDAxMTgzYWE1YmYwNmMxZTg0OWVkZjE5Nzg0Mzk4ZGVkZWIwNzc4YmE2NCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiODkzYmQ2NmUyYmI3MWYzYjhhOTI0MDY0YmJmN2IwN2M1OTAzYTc3M2ZhNGY4YzM1NDYwNjAzODY2NzFkM2E3MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNjI4NmYyNDMxMTBkMDRmMzQ5Mjc1OWVmYTFhMjgxYTk1NmE0ZTgwYjUzMjNiMzcxMjQxY2JmNTY1MWYwNzQ2ZSJ9"
+          "resource": "repo://scripts/benchmark_replay/cli.py",
+          "version": "repo-file-v1:sha256:851a2668094cd7ed0d017564cd453e42dc0722c9f951141f3f8976a0c0a17c9b"
+        }
+      ]
+    },
+    {
+      "id": "claim_99cb5e70916146c2b3839138cb7e2342",
+      "statement": "Public cargo-make tasks expose the cumulative cost gateway, deep workloads, prepared QMD host execution, and the separate native Letta Code condition.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
+          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+        },
+        {
+          "resource": "repo://makefiles/benchmark-core.toml",
+          "version": "repo-file-v1:sha256:a8bbff05bb96bbe26b0186dd76b7706c9d9710fbe6d368005a051e3a3450801c"
+        }
+      ]
+    },
+    {
+      "id": "claim_b0a93544c8e04a95a3796f6728c3cef7",
+      "statement": "Current full-comparison controls fix DeepSeek V4.1 Flash through DeepSeek and external Qwen3 Embedding 8B through DeepInfra, retain cumulative costs and unknown-cost reservations, and isolate final shared-reader cases.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
+          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-07T16:08:29.830Z"
+    "at": "2026-10-07T22:06:36.328Z"
   }
 }
