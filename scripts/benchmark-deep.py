@@ -13,6 +13,7 @@ import time
 from pathlib import Path
 
 from benchmark_deep.fixtures import workload
+from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS
 from benchmark_runner.answers import ANSWER_BATCH_SIZE, request_answers
 from benchmark_deep.scoring import score_answer
 from benchmark_runner.baselines import BASELINES, target_contract
@@ -148,6 +149,10 @@ def main():
         "answer_protocol": {"revision": "isolated_case_v1", "batch_size": ANSWER_BATCH_SIZE,
                             "grounding": "Expected factual values must occur in the case's supplied context."},
         "providers": manifest["providers"], "source": source,
+        "execution_limits": (retained.get("execution_limits", {"status": "not_recorded_in_original_bundle"})
+            if retained else {"native_total_seconds": args.max_seconds,
+                              "ingest_action_seconds": INGEST_TIMEOUT_SECONDS,
+                              "other_action_seconds": ACTION_TIMEOUT_SECONDS}),
         "runtime": {"host_execution": host_execution, "host_qmd": args.qmd_host, "platform": platform.platform(), "native_only": args.native_only},
         "workload_sha256": hashlib.sha256(json.dumps(inputs,sort_keys=True).encode()).hexdigest(),
         "oracle_sha256": hashlib.sha256(json.dumps(oracle,sort_keys=True).encode()).hexdigest(),

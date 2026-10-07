@@ -11,7 +11,7 @@ import sys
 import time
 from pathlib import Path
 
-from benchmark_deep.drivers import run_action
+from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS, run_action
 from benchmark_targets.unit_runtime import sanitized_error, write_json
 
 
@@ -47,7 +47,8 @@ def main():
             try:
                 with path.with_suffix(".log").open("w") as log:
                     subprocess.run([sys.executable, __file__, "--target", args.target,
-                        "--action", str(path)], stdout=log, stderr=subprocess.STDOUT, timeout=1200)
+                        "--action", str(path)], stdout=log, stderr=subprocess.STDOUT,
+                        timeout=INGEST_TIMEOUT_SECONDS if action["action"] == "ingest" else ACTION_TIMEOUT_SECONDS)
                 row = json.loads(path.with_suffix(".result.json").read_text())
             except (subprocess.TimeoutExpired, FileNotFoundError) as error:
                 row = {"status": "failed", "failure": sanitized_error(error)}

@@ -11,6 +11,10 @@ import uuid
 from pathlib import Path
 
 
+INGEST_TIMEOUT_SECONDS = 5400
+ACTION_TIMEOUT_SECONDS = 1200
+
+
 def rust_action(target, action, root):
     scope = action["scope"]
     store = root / "inputs" / scope
@@ -47,7 +51,8 @@ def rust_action(target, action, root):
     if action["action"] != "ingest":
         args += ["--reuse-index"]
     with (receipt / "process.log").open("w") as log:
-        result = subprocess.run(args, env=env, stdout=log, stderr=subprocess.STDOUT, timeout=900)
+        result = subprocess.run(args, env=env, stdout=log, stderr=subprocess.STDOUT,
+            timeout=INGEST_TIMEOUT_SECONDS if action["action"] == "ingest" else ACTION_TIMEOUT_SECONDS)
     if not (receipt / "evidence.json").exists():
         raise RuntimeError(f"native {target} process exited {result.returncode}; see process.log")
     evidence = json.loads((receipt / "evidence.json").read_text())

@@ -61,7 +61,11 @@ answer separately, and keep the native context for inspection.
 The deterministic deep workload contains 62 scored questions. The product
 receives actions and source text; the answer oracle remains on the host. Each
 action uses a new client process. Preserve the initial ingestion and all native
-mutation receipts. Use `cargo make benchmark-deep --help` to inspect the CLI.
+mutation receipts. Each ingest action has a 5,400-second limit; other actions
+have a 1,200-second limit. The native invocation has a 7,200-second default total
+limit. The bundle records these limits. A timeout is incomplete execution, not
+proof of an unsupported capability. Use `cargo make benchmark-deep --help` to
+inspect the CLI.
 
 Host CPU work can overlap image builds. Treat measured wall time as observed
 execution time, not a controlled CPU performance ranking.
