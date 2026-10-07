@@ -180,7 +180,7 @@
         "knowledge-structure-v1",
         "repository-knowledge-v1"
       ],
-      "image": "elf-benchmark-graphrag:v7",
+      "image": "elf-benchmark-graphrag:v8",
       "dockerfile": "docker/benchmark/graphrag.Dockerfile",
       "pin": {
         "kind": "python_package",
@@ -188,7 +188,8 @@
         "lock": "config/benchmark/locks/graphrag.txt"
       },
       "native_deviations": {
-        "dependency": "Benchmark-only NLTK 3.10 line overrides upstream 3.9 constraint. Retain resolved lock, advisory review, and native compatibility outcomes."
+        "dependency": "Benchmark-only NLTK 3.10 line overrides upstream 3.9 constraint. Retain resolved lock, advisory review, and native compatibility outcomes.",
+        "structured_output": "JSON-object transport with the original output schema in the prompt; GraphRAG still performs native typed response validation. The fixed DeepSeek provider advertises response_format but not structured_outputs."
       }
     },
     {

@@ -21,6 +21,19 @@ OPENVIKING = load_script(
 
 
 class BenchmarkAdaptersTests(BenchmarkCase):
+    def test_graphrag_retains_native_failure_logs_without_credentials(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); (root / "logs").mkdir()
+            (root / "logs/index.log").write_text("native error with local-test-credential")
+            result=types.SimpleNamespace(returncode=1, stdout="pipeline error", stderr="")
+            with mock.patch.object(GRAPHRAG.subprocess, "run", return_value=result), \
+                 mock.patch.dict(GRAPHRAG.os.environ, {"CHAT_API_KEY":"local-test-credential"}):
+                with self.assertRaises(GRAPHRAG.GraphRAGProductFailure):
+                    GRAPHRAG._run_cli([str(GRAPHRAG.GRAPHRAG_EXECUTABLE), "index"], cwd=root,
+                        stdout_path=root / "artifacts/stdout.log", stderr_path=root / "artifacts/stderr.log", timeout=5)
+            self.assertEqual((root / "artifacts/native-logs/index.log").read_text(), "native error with [redacted]")
+            self.assertEqual((root / "artifacts/stdout.log").read_text(), "pipeline error")
+
     def test_graphiti_preserves_the_requested_response_schema(self) -> None:
         class ResponseModel:
             @staticmethod

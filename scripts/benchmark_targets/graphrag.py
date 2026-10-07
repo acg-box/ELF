@@ -11,6 +11,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 import time
 from enum import Enum
 from pathlib import Path
@@ -267,6 +268,8 @@ def _run_cli(
     timeout: int,
 ) -> float:
     started = time.monotonic()
+    if command[0] == str(GRAPHRAG_EXECUTABLE):
+        command = [sys.executable, str(Path(__file__).with_name("graphrag_transport.py")), *command[1:]]
     try:
         completed = subprocess.run(
             command,
@@ -280,9 +283,21 @@ def _run_cli(
         )
     except subprocess.TimeoutExpired as error:
         stdout_path.parent.mkdir(parents=True, exist_ok=True)
-        stdout_path.write_text(error.stdout or "", encoding="utf-8")
-        stderr_path.write_text(error.stderr or "", encoding="utf-8")
+        stdout_path.write_text((error.stdout or b"").decode(errors="replace") if isinstance(error.stdout, bytes) else error.stdout or "", encoding="utf-8")
+        stderr_path.write_text((error.stderr or b"").decode(errors="replace") if isinstance(error.stderr, bytes) else error.stderr or "", encoding="utf-8")
         raise GraphRAGProductFailure("GraphRAG native operation timed out") from error
+    finally:
+        for source in (cwd / "logs").rglob("*"):
+            if not source.is_file():
+                continue
+            text = source.read_text(errors="replace")
+            for name in ("CHAT_API_KEY", "EMBEDDING_API_KEY"):
+                value = os.environ.get(name)
+                if value:
+                    text = text.replace(value, "[redacted]")
+            output = stdout_path.parent / "native-logs" / source.relative_to(cwd / "logs")
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(text)
     stdout_path.parent.mkdir(parents=True, exist_ok=True)
     stdout_path.write_text(completed.stdout, encoding="utf-8")
     stderr_path.write_text(completed.stderr, encoding="utf-8")
@@ -538,6 +553,9 @@ def run_graphrag(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str,
     """Run one cold native index pass and reuse the exact indexes for warm search."""
     _required_environment()
     _verify_version()
+    from benchmark_targets.graphrag_transport import install_json_transport
+
+    install_json_transport()
     jobs = _load_jobs(input_dir)
     state_dir.mkdir(parents=True, exist_ok=True)
     receipt_path = state_dir / "cold-index.json"

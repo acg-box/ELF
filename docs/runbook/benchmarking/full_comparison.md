@@ -115,6 +115,10 @@ The manifest records each native profile and deviation. Important distinctions:
   fast, content-only profile does not establish the hierarchy's capability.
 - LightRAG and Graphiti execute native graph construction. Their retrieved
   context feeds the shared reader.
+- GraphRAG uses JSON-object transport for typed outputs, with the original
+  schema supplied to the model and native GraphRAG validation retained. The
+  fixed DeepSeek route advertises JSON mode but not strict structured outputs.
+  Preserve the initial JSON-schema transport failure as a diagnostic.
 - Honcho supplies native hybrid message search. This does not measure peer chat
   or dreaming. Its available session deletion can remove unrelated retained
   messages; report that loss separately from a successful deletion request.
