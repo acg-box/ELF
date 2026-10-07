@@ -114,6 +114,11 @@ product or model. Do not tune a product on the scored questions.
 
 The manifest records each native profile and deviation. Important distinctions:
 
+- ELF uses `ElfService.add_note`, native worker indexing, and `search_raw` in
+  this comparison. The adapter splits sources into 220-character note chunks
+  to fit the measured configuration's 240-character note limit. Count logical
+  sources and stored notes separately. This condition does not measure the
+  separate document-ingestion API or establish its bulk-import performance.
 - Mem0 extracts memories with `infer=True`; raw insertion is not the main condition.
 - QMD uses local embedding, query expansion, and reranking. Its host Metal and
   Docker CPU measurements are different runtime conditions.

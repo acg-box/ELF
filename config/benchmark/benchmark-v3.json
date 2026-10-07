@@ -81,6 +81,10 @@
       ],
       "pin": {
         "kind": "benchmark_source_commit"
+      },
+      "native_deviations": {
+        "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+        "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
       }
     },
     {
