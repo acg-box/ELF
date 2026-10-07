@@ -192,6 +192,9 @@ backend on the same three historical repair tasks, twice each. A first process
 records source knowledge through native persistent memory. A second process
 and conversation performs the repair. Both have six turns and use the same
 bounded model route. Skills, mods, and background reflection are disabled.
+The native tool allowlist contains Read, Edit, Write, and Bash. Keep native
+memory-file snapshots and verify a new conversation on the same agent. A
+successful repair alone does not prove that memory was written or used.
 Report this native-agent condition separately from the common JSON-action
 agent, because their tool sets and system prompts differ.
 

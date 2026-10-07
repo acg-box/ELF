@@ -58,7 +58,8 @@ def main():
     write_json(root / "protocol.json", {"image": image, "package_version": "0.34.4",
         "tasks": 3, "repeats": 2, "max_turns_per_session": 6,
         "scope": "Native explicit memory write, new process and conversation, native repair tools. Separate from the common JSON-action agent comparison.",
-        "reflection": "off", "transport": "buffered SSE; no time-to-first-token claim"})
+        "reflection": "off", "tools": ["Read", "Edit", "Write", "Bash"],
+        "transport": "buffered SSE; no time-to-first-token claim"})
     results = []
     for task in TASKS:
         original = root / "source" / task["id"]
@@ -73,8 +74,9 @@ def main():
             shutil.copytree(original, workspace)
             state.mkdir()
             learning = json.dumps({"instruction": "Record concise reusable knowledge in your native persistent memory from this prior exploration. Do not repair source code, analyze fixes, or predict a future task. Cite source paths and distinguish observed implementation from policy. Keep the retained notes concise.", "topic": task["topic"], "sources": packet})
-            write_json(state / "seed-prompt.json", {"prompt": learning})
-            write_json(state / "repair-prompt.json", {"prompt": task["request"]})
+            boundary = "Work only with the supplied files and your native memory. Do not delegate, send messages, schedule tasks, access network services, or push Git changes.\n\n"
+            write_json(state / "seed-prompt.json", {"prompt": boundary + learning})
+            write_json(state / "repair-prompt.json", {"prompt": boundary + task["request"]})
             row = {"task": task["id"], "repeat": repeat, "arm": "letta-code-native", "source": provenance}
             try:
                 learned = invoke(["seed"], seed, state, trial / "seed")

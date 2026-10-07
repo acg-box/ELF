@@ -19,5 +19,6 @@ else:
 prompt = json.loads((state / ("seed-prompt.json" if phase == "seed" else "repair-prompt.json")).read_text())["prompt"]
 os.execvp("letta", ["letta", "--backend", "local", *args,
     "--model", "openai-compatible/deepseek/deepseek-v4.1-flash",
+    "--tools", "Read,Edit,Write,Bash",
     "--no-skills", "--no-mods", "--reflection-trigger", "off", "--max-turns", "6",
     "--yolo", "--output-format", "json", "-p", prompt])
