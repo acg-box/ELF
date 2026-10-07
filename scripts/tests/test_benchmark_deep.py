@@ -51,6 +51,17 @@ class DeepContractTests(unittest.TestCase):
         actions = [a["action"] for a in inputs["actions"] if a["scope"] == "mutations"]
         self.assertEqual(actions, ["ingest"] + ["update"] * 6 + ["query"] * 6 + ["delete"] * 6 + ["query"] * 6)
 
+class DeepGroundingTests(unittest.TestCase):
+    def test_correct_value_without_case_context_is_not_a_supported_answer(self):
+        from benchmark_deep.scoring import score_answer
+        expected={'supported':True,'facts':['current-2-green']}
+        answer={'supported':True,'text':'current-2-green'}
+        scored=score_answer(expected,answer,'Dune-2 used retired-2-blue.')
+        self.assertTrue(scored['answer_matches_expected'])
+        self.assertFalse(scored['fact_in_supplied_context'])
+        self.assertFalse(scored['correct'])
+        self.assertTrue(score_answer(expected,answer,'The approved route is current-2-green.')['correct'])
+
 
 if __name__ == "__main__":
     unittest.main()

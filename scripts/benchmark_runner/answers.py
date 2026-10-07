@@ -128,7 +128,7 @@ def attach_shared_answers(
             f"shared_answer_{index + 1}": response.get("usage") or {}
             for index, response in enumerate(responses)
         }
-        unit["answer_protocol"] = {"batch_size": ANSWER_BATCH_SIZE, "max_tokens": 4096}
+        unit["answer_protocol"] = {"revision": "isolated_case_v1", "batch_size": ANSWER_BATCH_SIZE, "max_tokens": 4096}
         return unit
     except Exception as error:
         message = f"shared target-blind answer request failed: {type(error).__name__}: {error}"
@@ -145,7 +145,7 @@ def attach_shared_answers(
 
 
 
-ANSWER_BATCH_SIZE = 4
+ANSWER_BATCH_SIZE = 1
 
 
 def request_answers(cases: list[dict[str, Any]], env: dict[str, str]) -> dict[str, Any]:

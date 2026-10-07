@@ -127,7 +127,9 @@ part of the measured configuration. It is not an upstream product release.
 The cumulative API limit is USD 10, including prior pilot spend. Reconcile
 completed requests with explicit provider costs. Keep conservative reservations
 for unknown costs and in-flight requests. Allow only one active budget gateway;
-use at most USD 0.50 of new exposure in each invocation. A cost stop remains
+use at most USD 0.50 of new exposure for a core suite or repair phase, and
+USD 1 for a full 1,000-document deep invocation. The cumulative USD 10 limit
+applies to all invocations. A cost stop remains
 incomplete coverage. It does not justify silently shrinking the matrix.
 
 ## Results and acceptance
@@ -179,6 +181,13 @@ The legacy update metric requires exact replacement text in retrieved context.
 It is an exact readback check, not a semantic correction score. A product can
 acknowledge an update and return a correct paraphrase while failing that check.
 Keep native operation receipts, answer correctness, and exact readback separate.
+
+The final shared-reader protocol submits exactly one case per request. A batch
+of separate cases still exposes every case's context to the model, so a correct
+answer can use another case's evidence. Retain earlier batch results as protocol
+diagnostics and reanswer their native readbacks before comparison. Deep scores
+also separate a matching answer from a value that is present in that case's
+supplied context. A matching but unsupported value is not a grounded success.
 
 A failed unit can still have valid individual native results. Retain those
 results and their shared-reader answers, but do not treat the unit as complete

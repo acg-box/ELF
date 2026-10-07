@@ -13,7 +13,8 @@ import time
 from pathlib import Path
 
 from benchmark_deep.fixtures import workload
-from benchmark_runner.answers import request_answers
+from benchmark_runner.answers import ANSWER_BATCH_SIZE, request_answers
+from benchmark_deep.scoring import score_answer
 from benchmark_runner.baselines import BASELINES, target_contract
 from benchmark_runner.docker import TARGET_IMAGE_ENV, cleanup_project, compose_project_logs, image_id
 from benchmark_runner.providers import provider_environment
@@ -113,8 +114,8 @@ def main():
         if row.get("status") == "completed":
             context = "\n".join(c["text"] for c in row.get("contexts", []))[:12000]
             available.append({"case_id": query["case_id"], "question": query["question"], "context": [context]})
-    for offset in range(0, 0 if args.native_only else len(available), 4):
-        batch = available[offset:offset+4]
+    for offset in range(0, 0 if args.native_only else len(available), ANSWER_BATCH_SIZE):
+        batch = available[offset:offset+ANSWER_BATCH_SIZE]
         try:
             response = request_answers(batch, host)
             responses.append(response)
@@ -135,18 +136,17 @@ def main():
     for case_id, expected in oracle.items():
         row, answer = by_id.get(case_id, {}), answers.get(case_id)
         contexts = row.get("contexts", [])
-        context = "\n".join(c["text"] for c in contexts).casefold()
-        correct = None
-        if answer is not None:
-            correct = (answer["supported"] == expected["supported"] and
-                (all(f.casefold() in answer["text"].casefold() for f in expected["facts"])
-                 if expected["supported"] else answer["text"].strip().casefold() == "unknown"))
+        supplied_context = "\n".join(c["text"] for c in contexts)[:12000]
+        context = supplied_context.casefold()
+        correctness = score_answer(expected, answer, supplied_context)
         scores.append({"case_id": case_id, "lane": expected["lane"],
-            "execution": row.get("status", "not_run"), "answer": answer, "correct": correct,
+            "execution": row.get("status", "not_run"), "answer": answer, **correctness,
             "required_evidence_found": all(e in {c.get("evidence_id") for c in contexts} for e in expected["evidence"]),
             "forbidden_context_hits": [f for f in expected["forbidden"] if f.casefold() in context],
             "duration_seconds": row.get("duration_seconds")})
-    bundle = {"schema": "elf.deep_bundle/v1", "target": target, "image_digest": digest,
+    bundle = {"schema": "elf.deep_bundle/v2", "target": target, "image_digest": digest,
+        "answer_protocol": {"revision": "isolated_case_v1", "batch_size": ANSWER_BATCH_SIZE,
+                            "grounding": "Expected factual values must occur in the case's supplied context."},
         "providers": manifest["providers"], "source": source,
         "runtime": {"host_execution": host_execution, "host_qmd": args.qmd_host, "platform": platform.platform(), "native_only": args.native_only},
         "workload_sha256": hashlib.sha256(json.dumps(inputs,sort_keys=True).encode()).hexdigest(),

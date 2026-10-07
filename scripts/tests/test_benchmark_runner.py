@@ -116,8 +116,8 @@ class BenchmarkRunnerTests(BenchmarkCase):
 
         with mock.patch.object(runner_answers, "request_answers", side_effect=respond):
             result = runner_answers.attach_shared_answers(suite, unit, {}, 12000)
-        self.assertEqual([len(batch) for batch in batches], [4, 4, 1])
-        self.assertEqual(len(result["provider_usage"]), 3)
+        self.assertEqual([len(batch) for batch in batches], [1] * 9)
+        self.assertEqual(len(result["provider_usage"]), 9)
         original = self.completed_unit("elf", suite)
         with mock.patch.object(runner_answers, "request_answers", return_value={
             "choices": [{"finish_reason": "length", "message": {"content": None}}],
