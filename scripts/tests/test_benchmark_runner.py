@@ -128,6 +128,29 @@ class BenchmarkRunnerTests(BenchmarkCase):
         self.assertEqual(failed["native_retrieval"], original)
         self.assertIn("output token limit", failed["failure"]["message"])
 
+    def test_one_reader_failure_retains_other_answers_and_native_evidence(self) -> None:
+        suite = self.subset("common-core-v1", 3)
+        original = self.completed_unit("elf", suite)
+        calls = []
+        def respond(cases, env):
+            calls.append(cases[0]["case_id"])
+            if len(calls) == 2:
+                raise TimeoutError("provider timeout")
+            return {"choices": [{"message": {"content": json.dumps({"answers": [{
+                "case_id": cases[0]["case_id"], "text": "unknown", "supported": False,
+            }]})}}]}
+        with mock.patch.object(runner_answers, "request_answers", side_effect=respond):
+            result = runner_answers.attach_shared_answers(suite, original, {}, 12000)
+        rows = result["phases"]["warm"]["jobs"]
+        self.assertEqual(len(calls), 3)
+        self.assertEqual([r["classification"] for r in rows], ["completed", "provider_failed", "completed"])
+        self.assertEqual(rows[0]["answer"]["text"], "unknown")
+        self.assertEqual(rows[2]["answer"]["text"], "unknown")
+        self.assertNotIn("answer", rows[1])
+        self.assertEqual(result["native_retrieval"], original)
+        self.assertEqual(result["phases"]["cold"], original["phases"]["cold"])
+        self.assertEqual(result["answer_errors"][0]["case_id"], calls[1])
+
     def test_partial_native_answers_do_not_erase_unit_failure(self) -> None:
         suite = self.subset("common-core-v1", 2)
         unit = self.completed_unit("elf", suite)
