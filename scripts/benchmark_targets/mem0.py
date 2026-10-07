@@ -60,7 +60,7 @@ def mem0_config(job_dir: Path, collection: str) -> dict[str, Any]:
                 "collection_name": collection,
                 "host": "qdrant",
                 "port": 6333,
-                "embedding_model_dims": 4096,
+                "embedding_model_dims": int(os.environ["EMBEDDING_DIMENSIONS"]),
             },
         },
         "embedder": {
@@ -88,6 +88,7 @@ def mem0_config(job_dir: Path, collection: str) -> dict[str, Any]:
 
 def run_mem0(input_dir: Path, artifacts: Path, state_root: Path) -> dict[str, Any]:
     os.environ.setdefault("MEM0_TELEMETRY", "false")
+    infer = os.environ.get("MEM0_INFER", "true").lower() == "true"
     wait_port("qdrant", 6333)
     from mem0 import Memory
 
@@ -111,21 +112,17 @@ def run_mem0(input_dir: Path, artifacts: Path, state_root: Path) -> dict[str, An
             operation_results = []
             if phase == "cold":
                 ingest_started = time.monotonic()
-                memory_ids: dict[str, str] = {}
+                memory_ids: dict[str, list[str]] = {}
                 for item in job["corpus"]["items"]:
                     add_result = memory.add(
                         item["text"],
                         user_id=user_id,
                         metadata={"evidence_id": item["evidence_id"]},
-                        infer=False,
+                        infer=infer,
                     )
                     adds.append(add_result)
                     ids = created_memory_ids(add_result)
-                    if not ids:
-                        raise RuntimeError(
-                            f"mem0 add returned no memory id for {item['evidence_id']}"
-                        )
-                    memory_ids[item["evidence_id"]] = ids[0]
+                    memory_ids[item["evidence_id"]] = ids
                 cold_ingest_duration_ms += (
                     time.monotonic() - ingest_started
                 ) * 1000.0
@@ -134,21 +131,31 @@ def run_mem0(input_dir: Path, artifacts: Path, state_root: Path) -> dict[str, An
                 receipt_value = json.loads(receipt.read_text(encoding="utf-8"))
                 memory_ids = receipt_value.get("memory_ids") or {}
                 for operation in job.get("operations") or []:
-                    memory_id = memory_ids.get(operation["evidence_id"])
-                    if not isinstance(memory_id, str):
-                        raise RuntimeError(
-                            f"mem0 operation has no native id for {operation['evidence_id']}"
-                        )
+                    ids = memory_ids.get(operation["evidence_id"], [])
+                    if not ids:
+                        operation_results.append({
+                            "requested_type": operation["type"],
+                            "native_type": operation["type"],
+                            "classification": "product_failed",
+                            "native_success": False,
+                            "failure": "native extraction retained no memory identity",
+                        })
+                        continue
                     if operation["type"] == "update":
-                        native = memory.update(
+                        native = [memory.update(
                             memory_id,
                             operation["text"],
                             metadata={"evidence_id": operation["evidence_id"]},
-                        )
+                        ) for memory_id in ids]
                         native_type = "update"
+                        readbacks = [memory.get(memory_id) for memory_id in ids]
+                        success = all(row and row.get("memory") == operation["text"]
+                                      for row in readbacks)
                     elif operation["type"] == "delete":
-                        native = memory.delete(memory_id)
+                        native = [memory.delete(memory_id) for memory_id in ids]
                         native_type = "delete"
+                        readbacks = [memory.get(memory_id) for memory_id in ids]
+                        success = all(row is None for row in readbacks)
                     else:
                         raise RuntimeError(
                             f"unsupported mem0 operation {operation['type']}"
@@ -158,8 +165,9 @@ def run_mem0(input_dir: Path, artifacts: Path, state_root: Path) -> dict[str, An
                             "requested_type": operation["type"],
                             "native_type": native_type,
                             "classification": "completed",
-                            "native_success": True,
+                            "native_success": success,
                             "native_result": native,
+                            "native_readback": readbacks,
                         }
                     )
             started = time.monotonic()
@@ -202,7 +210,7 @@ def run_mem0(input_dir: Path, artifacts: Path, state_root: Path) -> dict[str, An
     return {
         "schema": "elf.benchmark_unit_result/v4",
         "target": "mem0",
-        "native_mode": "external_embedding",
+        "native_mode": "native_extraction" if infer else "raw_memory_storage",
         "score_eligible": True,
         "result_class": combined_status(phases),
         "warm_reused_state": True,
@@ -210,5 +218,3 @@ def run_mem0(input_dir: Path, artifacts: Path, state_root: Path) -> dict[str, An
         "ingest_duration_ms": round(cold_ingest_duration_ms, 3),
         "phases": phases,
     }
-
-

@@ -37,6 +37,8 @@ class BenchmarkAdaptersTests(BenchmarkCase):
             response_format["json_schema"]["schema"], ResponseModel.model_json_schema()
         )
         self.assertFalse(response_format["json_schema"]["strict"])
+        self.assertEqual(GRAPHITI._chat_response_format(ResponseModel, "json_object"),
+                         {"type": "json_object"})
 
 
     def test_graphiti_rejects_schema_documents_and_preserves_stale_native_contexts(
@@ -191,6 +193,10 @@ class BenchmarkAdaptersTests(BenchmarkCase):
             with mock.patch.dict(
                 OPENVIKING.os.environ,
                 {
+                    "CHAT_API_BASE": "https://provider.test/v1",
+                    "CHAT_API_KEY": "protected",
+                    "CHAT_MODEL": "deepseek/deepseek-v4.1-flash",
+                    "CHAT_REASONING_EFFORT": "low",
                     "EMBEDDING_API_BASE": "https://provider.test/v1",
                     "EMBEDDING_API_KEY": "protected",
                     "EMBEDDING_MODEL": "Qwen3-Embedding-8B",
@@ -217,6 +223,10 @@ class BenchmarkAdaptersTests(BenchmarkCase):
         )
         self.assertEqual(config["storage"]["vectordb"]["dimension"], 4096)
         self.assertEqual(config["embedding"]["dense"]["dimension"], 4096)
+        self.assertTrue(config["auto_generate_l0"])
+        self.assertTrue(config["auto_generate_l1"])
+        self.assertEqual(config["default_search_mode"], "thinking")
+        self.assertEqual(config["vlm"]["model"], "deepseek/deepseek-v4.1-flash")
 
 
     def test_readiness_repairs_remain_native_and_bounded(self) -> None:
@@ -248,5 +258,3 @@ class BenchmarkAdaptersTests(BenchmarkCase):
         self.assertEqual(call_args["dimensions"], 4096)
         self.assertEqual(call_args["allowed_openai_params"], ["dimensions"])
         self.assertEqual(settings["vector_store"]["vector_size"], 4096)
-
-

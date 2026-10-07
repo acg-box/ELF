@@ -15,11 +15,11 @@ from pathlib import Path
 from typing import Any, Awaitable, TypeVar
 
 
-GRAPHITI_PACKAGE = "graphiti-core[falkordb]==0.21.0"
-EMBEDDING_MODEL = "Qwen3-Embedding-8B"
-EMBEDDING_DIMENSIONS = 4096
-CHAT_MODEL = "gpt-5.6-luna"
-CHAT_REASONING_EFFORT = "high"
+GRAPHITI_PACKAGE = "graphiti-core[falkordb]==0.30.2"
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "Qwen3-Embedding-8B")
+EMBEDDING_DIMENSIONS = int(os.environ.get("EMBEDDING_DIMENSIONS", "4096"))
+CHAT_MODEL = os.environ.get("CHAT_MODEL", "gpt-5.6-luna")
+CHAT_REASONING_EFFORT = os.environ.get("CHAT_REASONING_EFFORT", "high")
 SCHEMA_INSTANCE_INSTRUCTION = (
     "Return one JSON instance that validates against the requested schema. "
     "Do not return or describe the schema itself."
@@ -174,9 +174,9 @@ def _required_environment() -> dict[str, str]:
     return environment
 
 
-def _chat_response_format(response_model: Any) -> dict[str, Any]:
-    """Preserve Graphiti's response schema on the Luna chat-completions route."""
-    if response_model is None:
+def _chat_response_format(response_model: Any, mode: str = "json_schema") -> dict[str, Any]:
+    """Use Graphiti's supported structured-output mode for this provider."""
+    if response_model is None or mode == "json_object":
         return {"type": "json_object"}
     return {
         "type": "json_schema",
@@ -290,7 +290,7 @@ def _new_graphiti(environment: dict[str, str]) -> tuple[Any, Any, Any]:
                     messages=native_messages,
                     max_tokens=max_tokens,
                     reasoning_effort=CHAT_REASONING_EFFORT,
-                    response_format=_chat_response_format(response_model),
+                    response_format=_chat_response_format(response_model, self.structured_output_mode),
                 )
                 content = response.choices[0].message.content or "{}"
                 try:
@@ -326,7 +326,8 @@ def _new_graphiti(environment: dict[str, str]) -> tuple[Any, Any, Any]:
                 model=CHAT_MODEL,
                 small_model=CHAT_MODEL,
                 max_tokens=8192,
-            )
+            ),
+            structured_output_mode="json_object",
         )
         embedder = FixedDimensionEmbedder(
             OpenAIEmbedderConfig(
@@ -510,6 +511,15 @@ async def _native_contexts_from_edges(
     return contexts, episodes
 
 
+async def _scoped_driver(driver: Any, group_id: str) -> Any:
+    scoped = driver.clone(database=group_id)
+    # FalkorDB 0.30.2 starts native index creation when a driver is cloned.
+    # Drain that task before readback and before the shared connection closes.
+    if scoped._init_task is not None:
+        await _product_call("scoped index readiness", scoped._init_task)
+    return scoped
+
+
 async def _apply_operations(
     graphiti: Any,
     episodic_node: Any,
@@ -554,15 +564,19 @@ async def _apply_operations(
                     "Graphiti native mutation target did not resolve to one episode"
                 )
             old_uuid = matching[0]
+            scoped_driver = await _scoped_driver(graphiti.driver, group_id)
             before = await _product_call(
                 "mutation episodic-node readback",
-                episodic_node.get_by_uuids(graphiti.driver, [old_uuid]),
+                episodic_node.get_by_uuids(scoped_driver, [old_uuid]),
             )
             if len(before) != 1:
                 raise GraphitiAdapterFailure(
                     "Graphiti native mutation target was absent before mutation"
                 )
-            await _product_call("remove_episode", graphiti.remove_episode(old_uuid))
+            scoped_graphiti = type(graphiti)(graph_driver=scoped_driver,
+                llm_client=graphiti.llm_client, embedder=graphiti.embedder,
+                cross_encoder=graphiti.cross_encoder)
+            await _product_call("remove_episode", scoped_graphiti.remove_episode(old_uuid))
             removed_episode_uuids.append(old_uuid)
             historical_identity[old_uuid] = evidence_id
             del episode_identity[old_uuid]
@@ -662,7 +676,7 @@ async def _query_phase(
         latency_ms = (time.monotonic() - started) * 1000.0
         evidence_ids = evidence_ids_from_edges(edges, historical_identity)
         contexts, native_episodes = await _native_contexts_from_edges(
-            episodic_node, graphiti.driver, edges, historical_identity
+            episodic_node, await _scoped_driver(graphiti.driver, group_id), edges, historical_identity
         )
         rows.append(
             {
@@ -701,7 +715,7 @@ async def _query_phase(
                 "chat_model": CHAT_MODEL,
                 "chat_reasoning_effort": CHAT_REASONING_EFFORT,
                 "structured_response": (
-                    "chat_completions_json_schema_with_instance_validation"
+                    "chat_completions_json_object_with_instance_validation"
                 ),
             },
         },
@@ -715,25 +729,22 @@ async def _verify_warm_state(
     identities: dict[str, Any],
     removed_episode_uuids: list[str],
 ) -> list[Any]:
-    expected: dict[str, str] = {}
+    all_episodes = []
     for state in identities.values():
-        for episode_uuid in state["episode_identity"]:
-            expected[episode_uuid] = state["group_id"]
-    episodes = await _product_call(
-        "warm episodic-node query",
-        episodic_node.get_by_uuids(
-            driver, list(expected) + removed_episode_uuids
-        ),
-    )
-    actual = {
-        getattr(episode, "uuid", None): getattr(episode, "group_id", None)
-        for episode in episodes
-    }
-    if actual != expected:
-        raise GraphitiAdapterFailure(
-            "Graphiti warm native episode state does not match post-operation state"
+        expected = {episode_uuid: state["group_id"] for episode_uuid in state["episode_identity"]}
+        episodes = await _product_call(
+            "warm episodic-node query",
+            episodic_node.get_by_uuids(
+                await _scoped_driver(driver, state["group_id"]), list(expected) + removed_episode_uuids
+            ),
         )
-    return episodes
+        actual = {getattr(e, "uuid", None): getattr(e, "group_id", None) for e in episodes}
+        if actual != expected:
+            raise GraphitiAdapterFailure(
+                "Graphiti warm native episode state differs: "
+                + json.dumps({"expected": expected, "actual": actual}, sort_keys=True))
+        all_episodes.extend(episodes)
+    return all_episodes
 
 
 async def _run_graphiti_async(
@@ -787,6 +798,7 @@ async def _run_graphiti_async(
             ingest_output=ingest_output,
         )
         _write_json(artifacts / "raw" / "graphiti-cold.json", cold_native)
+        _write_json(artifacts / "raw" / "graphiti-cold-normalized.json", cold)
 
         warm_receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         if (

@@ -1,4 +1,16 @@
 # Rust workspace tasks: benchmark core, baseline, and operator commands.
+
+[tasks.benchmark-deep]
+args    = ["scripts/benchmark-deep.py", "${@}"]
+command = "python3"
+
+[tasks.benchmark-budget]
+args    = ["scripts/benchmark-budget.py", "${@}"]
+command = "python3"
+
+[tasks.benchmark-letta]
+args    = ["scripts/benchmark-letta.py", "${@}"]
+command = "python3"
 #
 # Keep long task listings out of comments. `cargo make --list-all-steps` is the
 # source for the complete task index, while this file owns only non-sharded
@@ -205,5 +217,13 @@ dependencies = [
 ]
 
 [tasks.benchmark-repository-memory]
+args    = ["scripts/benchmark-repository-memory.py", "${@}"]
+command = "python3"
+
+[tasks.benchmark-qmd-host]
+args    = ["scripts/benchmark-qmd-host.py", "${@}"]
+command = "python3"
+
+[tasks.benchmark-replay]
 args    = ["scripts/benchmark-repository-memory.py", "${@}"]
 command = "python3"

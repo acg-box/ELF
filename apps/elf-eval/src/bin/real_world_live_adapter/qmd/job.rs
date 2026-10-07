@@ -18,7 +18,8 @@ pub(super) fn materialize_qmd_job(
 	let corpus = crate::corpus_texts(loaded)?;
 	let job_slug = crate::slug(&loaded.job.job_id);
 	let corpus_dir = args.work_dir.join("corpus").join(&job_slug);
-	let home_dir = args.work_dir.join("home").join(&job_slug);
+	let home_dir =
+		args.work_dir.join("home").join(if args.shared_index { "shared" } else { &job_slug });
 	let collection = format!("elfrw-{job_slug}");
 
 	fs::create_dir_all(&corpus_dir)?;
@@ -37,32 +38,33 @@ pub(super) fn materialize_qmd_job(
 	let started_at = Instant::now();
 	let query = if args.lexical_only {
 		format!("lex: {}", loaded.job.prompt.content)
+	} else if args.rerank {
+		loaded.job.prompt.content.clone()
 	} else {
 		format!("lex: {}\nvec: {}", loaded.job.prompt.content, loaded.job.prompt.content)
 	};
-	let stdout = crate::run_qmd_command(
-		"qmd query",
-		args,
-		&home_dir,
-		&[
-			"query",
-			query.as_str(),
-			"-c",
-			collection.as_str(),
-			"--json",
-			"--no-rerank",
-			"--min-score",
-			"0",
-			"-n",
-			"5",
-		],
-		log_path,
-	)?;
+	let mut query_args = vec![
+		"query",
+		query.as_str(),
+		"-c",
+		collection.as_str(),
+		"--json",
+		"--min-score",
+		"0",
+		"-n",
+		"5",
+	];
+
+	if !args.rerank {
+		query_args.push("--no-rerank");
+	}
+
+	let stdout = crate::run_qmd_command("qmd query", args, &home_dir, &query_args, log_path)?;
 	let latency_ms = started_at.elapsed().as_secs_f64() * 1_000.0;
 	let (entries, evidence_ids) = response::qmd_query_entries(loaded, &corpus, &stdout)?;
 	let contexts = response::qmd_native_contexts(loaded, &corpus, &entries)?;
 	let selected = crate::selected_retrieved_corpus_texts(&corpus, &evidence_ids);
-	let replay_command = crate::qmd_replay_command(&loaded.job.prompt.content, collection.as_str());
+	let replay_command = crate::qmd_replay_command(&query, collection.as_str(), args.rerank);
 	let (operator_debug, operator_debug_evidence) = crate::operator_debug_output(
 		AdapterKind::QmdCliRuntime,
 		loaded,

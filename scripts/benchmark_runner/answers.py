@@ -56,12 +56,12 @@ def _api_endpoint(base: str, resource: str) -> str:
 def attach_shared_answers(
     suite: dict[str, Any], unit: dict[str, Any], env: dict[str, str], context_budget: int
 ) -> dict[str, Any]:
-    if unit.get("result_class") != "completed" or not unit.get("score_eligible"):
+    if not unit.get("score_eligible"):
         return unit
     try:
         cases = answer_cases(suite, unit, context_budget)
     except NativeContextError as error:
-        return failure_unit(
+        failed = failure_unit(
             {
                 "id": unit["target"],
                 "adapter": unit.get("native_mode"),
@@ -71,46 +71,31 @@ def attach_shared_answers(
             "adapter_failed",
             str(error),
         )
+        failed["native_retrieval"] = copy.deepcopy(unit)
+        return failed
     if not cases:
         return unit
-    prompt = {
-        "instruction": (
-            "Answer each case only from its supplied context. Return one JSON object "
-            "with key answers. Each answer must contain the unchanged case_id, text, and "
-            "supported. The text value must never be empty. If supported=true, copy the "
-            "concise requested fact from context into text. If the context does not support "
-            "the fact, set supported=false and text exactly to unknown."
-        ),
-        "cases": cases,
-    }
-    request = urllib.request.Request(
-        _api_endpoint(env["BENCHMARK_CHAT_API_BASE"], "chat/completions"),
-        data=json.dumps(
-            {
-                "model": env["BENCHMARK_CHAT_MODEL"],
-                "messages": [{"role": "user", "content": json.dumps(prompt, ensure_ascii=False)}],
-                "reasoning_effort": env["BENCHMARK_CHAT_REASONING_EFFORT"],
-                "response_format": {"type": "json_object"},
-                "stream": False,
-                "max_tokens": 4096,
-            }
-        ).encode(),
-        headers={
-            "Authorization": f"Bearer {env['BENCHMARK_CHAT_API_KEY']}",
-            "Content-Type": "application/json",
-        },
-        method="POST",
-    )
-    native: dict[str, Any] | None = None
+    responses: list[dict[str, Any]] = []
     try:
-        with urllib.request.urlopen(request, timeout=remaining_seconds(300)) as response:
-            native = json.loads(response.read().decode())
-        unit["provider_raw"] = {"shared_answer": native}
-        content = native["choices"][0]["message"]["content"]
-        decoded = json.loads(content)
-        answers = decoded["answers"]
-        if not isinstance(answers, list):
-            raise TypeError("answers is not a list")
+        answers = []
+        for offset in range(0, len(cases), ANSWER_BATCH_SIZE):
+            batch = cases[offset:offset + ANSWER_BATCH_SIZE]
+            native = request_answers(batch, env)
+            responses.append(native)
+            choice = native["choices"][0]
+            if choice.get("finish_reason") == "length":
+                raise ValueError("shared answer exhausted its output token limit")
+            content = choice["message"]["content"]
+            if not isinstance(content, str) or not content.strip():
+                raise ValueError("shared answer returned no content")
+            decoded = json.loads(content)["answers"]
+            if not isinstance(decoded, list):
+                raise TypeError("answers is not a list")
+            returned = [row.get("case_id") for row in decoded if isinstance(row, dict)]
+            if len(returned) != len(set(returned)) or set(returned) != {row["case_id"] for row in batch}:
+                raise ValueError("shared answer case identities differ from the request")
+            answers.extend(decoded)
+        unit["provider_raw"] = {"shared_answer": responses[0] if len(responses) == 1 else {"batches": responses}}
         by_id = {
             row.get("case_id"): row
             for row in answers
@@ -139,7 +124,11 @@ def attach_shared_answers(
                     "text": text,
                     "supported": supported,
                 }
-        unit["provider_usage"] = {"shared_answer": native.get("usage") or {}}
+        unit["provider_usage"] = {
+            f"shared_answer_{index + 1}": response.get("usage") or {}
+            for index, response in enumerate(responses)
+        }
+        unit["answer_protocol"] = {"batch_size": ANSWER_BATCH_SIZE, "max_tokens": 4096}
         return unit
     except Exception as error:
         message = f"shared target-blind answer request failed: {type(error).__name__}: {error}"
@@ -149,7 +138,44 @@ def attach_shared_answers(
             "provider_failed",
             message,
         )
-        if native is not None:
-            failed["provider_raw"] = {"shared_answer": native}
+        failed["native_retrieval"] = copy.deepcopy(unit)
+        if responses:
+            failed["provider_raw"] = {"shared_answer": responses[0] if len(responses) == 1 else {"batches": responses}}
         return failed
 
+
+
+ANSWER_BATCH_SIZE = 4
+
+
+def request_answers(cases: list[dict[str, Any]], env: dict[str, str]) -> dict[str, Any]:
+    prompt = {
+        "instruction": (
+            "Answer each case only from its supplied context. Return one JSON object "
+            "with key answers. Each answer must contain the unchanged case_id, text, and "
+            "supported. The text value must never be empty. If supported=true, copy the "
+            "concise requested fact from context into text. If the context does not support "
+            "the fact, set supported=false and text exactly to unknown."
+        ),
+        "cases": cases,
+    }
+    request = urllib.request.Request(
+        _api_endpoint(env["BENCHMARK_CHAT_API_BASE"], "chat/completions"),
+        data=json.dumps(
+            {
+                "model": env["BENCHMARK_CHAT_MODEL"],
+                "messages": [{"role": "user", "content": json.dumps(prompt, ensure_ascii=False)}],
+                "reasoning_effort": env["BENCHMARK_CHAT_REASONING_EFFORT"],
+                "response_format": {"type": "json_object"},
+                "stream": False,
+                "max_tokens": 4096,
+            }
+        ).encode(),
+        headers={
+            "Authorization": f"Bearer {env['BENCHMARK_CHAT_API_KEY']}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=remaining_seconds(300)) as response:
+        return json.loads(response.read().decode())

@@ -38,7 +38,7 @@ pub(super) fn ensure_qmd_checkout(args: &QmdArgs, log_path: &Path) -> Result<()>
 			args.qmd_revision
 		));
 	}
-	if args.qmd_dir.join("node_modules/.bin/tsx").is_file() {
+	if args.qmd_dir.join("dist/cli/qmd.js").is_file() {
 		return Ok(());
 	}
 

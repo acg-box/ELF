@@ -12,15 +12,22 @@ from .runtime import command
 
 
 TARGET_IMAGE_ENV = {
-    target: f"BENCHMARK_{target.upper()}_IMAGE"
+    target: f"BENCHMARK_{target.upper().replace('-', '_')}_IMAGE"
     for target in (
         "elf",
+        "mem0",
+        "qmd",
+        "lightrag",
         "pageindex",
         "openviking",
         "graphiti",
         "graphrag",
         "openkb",
         "honcho",
+        "gbrain",
+        "hindsight",
+        "sag-engine",
+        "memos",
     )
 }
 
@@ -225,4 +232,3 @@ def project_images(project: str, compose_file: Path, env: dict[str, str]) -> lis
 def compose_project_name(run_id: str, suite_id: str, target_id: str) -> str:
     token = hashlib.sha256(f"{run_id}:{suite_id}:{target_id}".encode()).hexdigest()[:10]
     return f"elfb-{token}-{target_id}"[:63]
-

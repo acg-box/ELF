@@ -47,7 +47,7 @@ not a representative quality claim. Zero and out-of-range limits fail.
 | --- | --- | --- | --- |
 | quick | `cargo make test`, then no-memory and persisted-file search | 18 named scenarios across four suites; 8 baseline units | Source tests and offline pipeline integrity. No ELF runtime or model answers. |
 | measure | ELF, no-memory, files-search; one shared answer model and fixed suite inputs | Same 18 scenarios; 12 units | A small product retrieval/lifecycle comparison, not end-to-end agent task utility. |
-| compare | Ten retained products plus both baselines | All 48 scenarios with per-product suite eligibility; 32 units | Frozen-version comparative evidence; execution failures remain visible. |
+| compare | Fourteen retained products plus both baselines | All 48 scenarios for each product and baseline; 64 units | Frozen-version comparative evidence; execution failures remain visible. |
 
 The selected sample includes direct lookup, synthesis, correction, work resumption,
 scope traps, abstention, update, delete, combined mutations, document structure,

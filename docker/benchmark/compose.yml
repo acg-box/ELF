@@ -40,6 +40,66 @@ x-honcho-environment: &honcho-environment
   DERIVER_MODEL_CONFIG__THINKING_EFFORT: ${BENCHMARK_CHAT_REASONING_EFFORT}
 
 services:
+  memos-neo4j:
+    image: neo4j:5.26.6-community
+    environment:
+      NEO4J_AUTH: neo4j/${BENCHMARK_POSTGRES_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p \"$${NEO4J_AUTH#*/}\" 'RETURN 1'"]
+      interval: 3s
+      timeout: 10s
+      retries: 40
+
+  memos:
+    image: ${BENCHMARK_MEMOS_SERVER_IMAGE:-elf-benchmark-memos:v1}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      memos-neo4j:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    environment:
+      OPENAI_API_KEY: ${BENCHMARK_CHAT_API_KEY}
+      OPENAI_API_BASE: ${BENCHMARK_CHAT_API_BASE}
+      MOS_CHAT_MODEL: ${BENCHMARK_CHAT_MODEL}
+      MEMRADER_MODEL: ${BENCHMARK_CHAT_MODEL}
+      MEMRADER_API_KEY: ${BENCHMARK_CHAT_API_KEY}
+      MEMRADER_API_BASE: ${BENCHMARK_CHAT_API_BASE}
+      MEMREADER_GENERAL_MODEL: ${BENCHMARK_CHAT_MODEL}
+      PREFERENCE_EXTRACTOR_MODEL: ${BENCHMARK_CHAT_MODEL}
+      FEEDBACK_MODEL: ${BENCHMARK_CHAT_MODEL}
+      SUGGESTION_MODEL: ${BENCHMARK_CHAT_MODEL}
+      MEMSCHEDULER_MODEL: ${BENCHMARK_CHAT_MODEL}
+      MOS_EMBEDDER_MODEL: ${BENCHMARK_EMBEDDING_MODEL}
+      MOS_EMBEDDER_BACKEND: universal_api
+      MOS_EMBEDDER_API_BASE: ${BENCHMARK_EMBEDDING_API_BASE}
+      MOS_EMBEDDER_API_KEY: ${BENCHMARK_EMBEDDING_API_KEY}
+      EMBEDDING_DIMENSION: ${BENCHMARK_EMBEDDING_DIMENSIONS}
+      MOS_RERANKER_BACKEND: cosine_local
+      NEO4J_BACKEND: neo4j-community
+      NEO4J_URI: bolt://memos-neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${BENCHMARK_POSTGRES_PASSWORD}
+      NEO4J_DB_NAME: neo4j
+      MOS_NEO4J_SHARED_DB: "false"
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: "6333"
+      MEMSCHEDULER_USE_REDIS_QUEUE: "false"
+
+  memos-unit:
+    <<: *unit
+    image: ${BENCHMARK_MEMOS_IMAGE:-elf-benchmark-http:v3}
+    depends_on:
+      memos:
+        condition: service_started
+    command: ["python3", "/opt/benchmark/benchmark-unit.py", "--target", "memos"]
+
+  sag-engine-unit:
+    <<: *unit
+    image: ${BENCHMARK_SAG_ENGINE_IMAGE:-elf-benchmark-sag-engine:v1}
+    command: ["python3", "/opt/benchmark/benchmark-unit.py", "--target", "sag-engine"]
+
   postgres:
     image: pgvector/pgvector:pg18
     environment:
@@ -62,7 +122,7 @@ services:
       - qdrant-data:/qdrant/storage
 
   lightrag:
-    image: ghcr.io/hkuds/lightrag@sha256:de09cd75e32b6b45b104625a9fb229f84f3dec4827ecffc825aa4438b196cbe6
+    image: ghcr.io/hkuds/lightrag@sha256:04716d2f10557342e033395c6490903ed0849a41ac5f89008736a7383e8bad7a
     environment:
       WORKING_DIR: /app/data/rag_storage
       INPUT_DIR: /app/data/inputs
@@ -166,8 +226,53 @@ services:
       - --target
       - elf
 
+  hindsight:
+    image: ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      HINDSIGHT_API_LLM_PROVIDER: openai
+      HINDSIGHT_API_LLM_API_KEY: ${BENCHMARK_CHAT_API_KEY}
+      HINDSIGHT_API_LLM_BASE_URL: ${BENCHMARK_CHAT_API_BASE}
+      HINDSIGHT_API_LLM_MODEL: ${BENCHMARK_CHAT_MODEL}
+      HINDSIGHT_API_LLM_REASONING_EFFORT: ${BENCHMARK_CHAT_REASONING_EFFORT}
+      HINDSIGHT_API_LLM_MAX_CONCURRENT: "1"
+      HINDSIGHT_API_LLM_MAX_RETRIES: "0"
+      HINDSIGHT_API_EMBEDDINGS_PROVIDER: openai
+      HINDSIGHT_API_EMBEDDINGS_OPENAI_API_KEY: ${BENCHMARK_EMBEDDING_API_KEY}
+      HINDSIGHT_API_EMBEDDINGS_OPENAI_BASE_URL: ${BENCHMARK_EMBEDDING_API_BASE}
+      HINDSIGHT_API_EMBEDDINGS_OPENAI_MODEL: ${BENCHMARK_EMBEDDING_MODEL}
+      HINDSIGHT_API_EMBEDDINGS_OPENAI_DIMENSIONS: ${BENCHMARK_EMBEDDING_DIMENSIONS}
+      HINDSIGHT_API_EMBEDDINGS_MAX_CONCURRENT_REQUESTS: "1"
+      HINDSIGHT_API_RERANKER_LOCAL_FORCE_CPU: "true"
+
+  hindsight-unit:
+    <<: *unit
+    image: ${BENCHMARK_HINDSIGHT_IMAGE:-elf-benchmark-http:v1}
+    depends_on:
+      hindsight:
+        condition: service_started
+    command:
+      - python3
+      - /opt/benchmark/benchmark-unit.py
+      - --target
+      - hindsight
+
+  gbrain-unit:
+    <<: *unit
+    image: ${BENCHMARK_GBRAIN_IMAGE:-elf-benchmark-gbrain:v1}
+    command:
+      - python3
+      - /opt/benchmark/benchmark-unit.py
+      - --target
+      - gbrain
+
   mem0-unit:
     <<: *unit
+    image: ${BENCHMARK_MEM0_IMAGE:-elf-benchmark-mem0:v2}
+    environment:
+      <<: *unit-environment
+      MEM0_INFER: ${BENCHMARK_MEM0_INFER:-true}
     depends_on:
       qdrant:
         condition: service_started
@@ -179,6 +284,10 @@ services:
 
   qmd-unit:
     <<: *unit
+    image: ${BENCHMARK_QMD_IMAGE:-elf-benchmark-qmd:v6}
+    environment:
+      <<: *unit-environment
+      QMD_BENCHMARK_MODE: ${BENCHMARK_QMD_MODE:-hybrid_rerank}
     command:
       - python3
       - /opt/benchmark/benchmark-unit.py
@@ -187,6 +296,7 @@ services:
 
   lightrag-unit:
     <<: *unit
+    image: ${BENCHMARK_LIGHTRAG_IMAGE:-elf-benchmark-http:v4}
     depends_on:
       lightrag:
         condition: service_started

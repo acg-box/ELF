@@ -1,8 +1,9 @@
-"""GraphRAG local-search benchmark adapter for the pinned 3.1.0 API."""
+"""GraphRAG local-search benchmark adapter for the pinned 3.2.0 API."""
 
 from __future__ import annotations
 
 import asyncio
+import copy
 import dataclasses
 import hashlib
 import importlib.metadata
@@ -16,14 +17,14 @@ from pathlib import Path
 from typing import Any
 
 
-GRAPHRAG_VERSION = "3.1.0"
+GRAPHRAG_VERSION = "3.2.0"
 GRAPHRAG_EXECUTABLE = Path(
     os.environ.get("GRAPHRAG_EXECUTABLE", "/opt/graphrag-venv/bin/graphrag")
 )
-CHAT_MODEL = "gpt-5.6-luna"
-CHAT_REASONING_EFFORT = "high"
-EMBEDDING_MODEL = "Qwen3-Embedding-8B"
-EMBEDDING_DIMENSIONS = 4096
+CHAT_MODEL = os.environ.get("CHAT_MODEL", "gpt-5.6-luna")
+CHAT_REASONING_EFFORT = os.environ.get("CHAT_REASONING_EFFORT", "high")
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "Qwen3-Embedding-8B")
+EMBEDDING_DIMENSIONS = int(os.environ.get("EMBEDDING_DIMENSIONS", "4096"))
 TOP_K = 5
 FORBIDDEN_FIXTURE_KEYS = {
     "expected_answer",
@@ -478,11 +479,21 @@ def _query_job(
     evidence_ids = evidence_ids_from_context(
         context_data, tables["text_units"], tables["documents"], source_map
     )
+    contexts = []
+    for source in source_rows[:TOP_K]:
+        text = source.get("text")
+        if not isinstance(text, str):
+            raise GraphRAGAdapterFailure("Native GraphRAG source context omitted text")
+        parents = evidence_ids_from_context({"sources": [source]},
+            tables["text_units"], tables["documents"], source_map)
+        for evidence_id in parents or [None]:
+            contexts.append({"evidence_id": evidence_id, "text": text})
     return (
         {
             "job_id": job["job_id"],
             "classification": "completed",
             "evidence_ids": evidence_ids,
+            "contexts": contexts,
             "returned_count": min(len(source_rows), TOP_K),
             "latency_ms": round(latency_ms, 3),
             "native_status": "completed",
@@ -596,6 +607,23 @@ def run_graphrag(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str,
             "output_state_sha256": current_hash,
             "reused_cold_index": True,
         }
+        operations = []
+        if job.get("operations"):
+            updated = copy.deepcopy(job)
+            items = {item["evidence_id"]: item for item in updated["corpus"]["items"]}
+            for op in job["operations"]:
+                if op["type"] == "delete":
+                    items.pop(op["evidence_id"])
+                else:
+                    items[op["evidence_id"]]["text"] = op["text"]
+            updated["corpus"]["items"] = list(items.values())
+            _materialize_job(root, updated)
+            elapsed = _run_cli([str(GRAPHRAG_EXECUTABLE), "index", "--root", str(root), "--method", "standard"],
+                cwd=root, stdout_path=raw_root / "warm" / key / "reindex.stdout.log",
+                stderr_path=raw_root / "warm" / key / "reindex.stderr.log", timeout=1800)
+            operations = [{"requested_type": op["type"], "native_type": "rebuild_index",
+                "classification": "completed", "native_success": True} for op in job["operations"]]
+            warm_readiness[job["job_id"]].update(reindexed=True, reindex_latency_ms=elapsed)
         row, _ = _query_job(
             root,
             job,
@@ -605,6 +633,7 @@ def run_graphrag(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str,
                 for item in job["corpus"]["items"]
             },
         )
+        row["operations"] = operations
         warm_rows.append(row)
     _write_json(raw_root / "warm" / "index-readiness.json", warm_readiness)
 

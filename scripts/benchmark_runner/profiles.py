@@ -42,10 +42,21 @@ def integrity_findings(bundle: dict[str, Any]) -> list[str]:
     suites = bundle.get("suite_results") or {}
     if not suites:
         return ["no suites executed"]
+    contracts = bundle.get("target_contracts") or {}
+    expected_suites = {name for target in contracts.values() for name in target["suites"]
+                       if name in bundle.get("coverage", {})}
+    for name in sorted(expected_suites - set(suites)):
+        findings.append(f"{name}: eligible suite was not executed")
     for name, suite in suites.items():
         rows = suite.get("results") or []
         planned = suite.get("scheduled_targets") or []
         actual = [row.get("target") for row in rows]
+        eligible = sorted(target_id for target_id, target in contracts.items()
+                          if name in target["suites"])
+        if contracts and sorted(planned) != eligible:
+            findings.append(f"{name}: scheduled targets differ from declared eligibility")
+        if contracts and not eligible and not planned and not actual:
+            continue
         if not planned or sorted(actual) != sorted(planned) or len(set(actual)) != len(actual):
             findings.append(f"{name}: missing, duplicate, or unexpected targets")
         for row in rows:

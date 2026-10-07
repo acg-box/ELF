@@ -102,6 +102,50 @@ class BenchmarkRunnerTests(BenchmarkCase):
         self.assertEqual(failed["provider_raw"]["shared_answer"], invalid_native)
 
 
+    def test_shared_answers_bound_batches_and_retain_native_result_on_truncation(self) -> None:
+        suite = self.subset("common-core-v1", 9)
+        unit = self.completed_unit("elf", suite)
+        batches = []
+
+        def respond(cases, env):
+            batches.append(cases)
+            return {"choices": [{"finish_reason": "stop", "message": {
+                "content": json.dumps({"answers": [{
+                    "case_id": case["case_id"], "text": "unknown", "supported": False,
+                } for case in cases]})}}], "usage": {"total_tokens": 10}}
+
+        with mock.patch.object(runner_answers, "request_answers", side_effect=respond):
+            result = runner_answers.attach_shared_answers(suite, unit, {}, 12000)
+        self.assertEqual([len(batch) for batch in batches], [4, 4, 1])
+        self.assertEqual(len(result["provider_usage"]), 3)
+        original = self.completed_unit("elf", suite)
+        with mock.patch.object(runner_answers, "request_answers", return_value={
+            "choices": [{"finish_reason": "length", "message": {"content": None}}],
+            "usage": {"total_tokens": 4096},
+        }):
+            failed = runner_answers.attach_shared_answers(suite, original, {}, 12000)
+        self.assertEqual(failed["result_class"], "provider_failed")
+        self.assertEqual(failed["native_retrieval"], original)
+        self.assertIn("output token limit", failed["failure"]["message"])
+
+    def test_partial_native_answers_do_not_erase_unit_failure(self) -> None:
+        suite = self.subset("common-core-v1", 2)
+        unit = self.completed_unit("elf", suite)
+        unit["result_class"] = "provider_failed"
+        unit["phases"]["warm"]["status"] = "provider_failed"
+        unit["phases"]["warm"]["jobs"][1]["classification"] = "provider_failed"
+        for row in unit["phases"]["warm"]["jobs"]:
+            row.pop("answer", None)
+        case_id = unit["phases"]["warm"]["jobs"][0]["job_id"]
+        response = {"choices": [{"finish_reason": "stop", "message": {"content": json.dumps({
+            "answers": [{"case_id": case_id, "text": "unknown", "supported": False}]})}}]}
+        with mock.patch.object(runner_answers, "request_answers", return_value=response) as request:
+            result = runner_answers.attach_shared_answers(suite, unit, {}, 12000)
+        self.assertEqual(len(request.call_args.args[0]), 1)
+        self.assertEqual(result["result_class"], "provider_failed")
+        self.assertEqual(result["phases"]["warm"]["jobs"][0]["answer"]["text"], "unknown")
+        self.assertNotIn("answer", result["phases"]["warm"]["jobs"][1])
+
     def test_compose_names_are_isolated_and_bounded(self) -> None:
         names = {
             runner_docker.compose_project_name("run", suite, target)
@@ -151,5 +195,3 @@ class BenchmarkRunnerTests(BenchmarkCase):
             "[tasks.", 1
         )[0]
         self.assertIn('"${@}"', benchmark_task)
-
-

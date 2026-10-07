@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Any
 
 
-OPENKB_REVISION = "0d905e40afa6f416c616f00c56a4cd0fd995a787"
+OPENKB_REVISION = "ac118407eacd995618256f121c21a2d275672f47"
 OPENKB_REPO = Path(os.environ.get("OPENKB_REPO_DIR", "/opt/openkb"))
 OPENKB_PYTHON = Path(
     os.environ.get("OPENKB_PYTHON", "/opt/openkb-venv/bin/python")
@@ -168,7 +168,7 @@ def _bounded_timeouts(
 
 def _litellm_model(model: str) -> str:
     """Select LiteLLM's OpenAI transport for an operator-defined proxy alias."""
-    return model if "/" in model else f"openai/{model}"
+    return model if model.startswith("openai/") else f"openai/{model}"
 
 
 def _configure_litellm_api_base(kb_dir: Path, api_base: str) -> None:

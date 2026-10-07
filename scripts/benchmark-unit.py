@@ -11,7 +11,6 @@ from typing import Any
 
 from benchmark_targets.lightrag import run_lightrag_target
 from benchmark_targets.mem0 import run_mem0
-from benchmark_targets.pageindex import PageIndexProductFailure, run_pageindex
 from benchmark_targets.rust import run_rust_target
 from benchmark_targets.unit_runtime import classify_failure, sanitized_error, write_json
 
@@ -37,6 +36,10 @@ def parse_args() -> argparse.Namespace:
             "pageindex",
             "openkb",
             "honcho",
+            "gbrain",
+            "hindsight",
+            "sag-engine",
+            "memos",
         ),
     )
     return parser.parse_args()
@@ -48,10 +51,10 @@ def failure_result(
     error: BaseException,
     job_ids: list[str] | None = None,
 ) -> dict[str, Any]:
-    score_eligible = target != "pageindex"
+    score_eligible = True
     native_mode = {
         "qmd": "lexical",
-        "pageindex": "hierarchical_tree_construction",
+        "pageindex": "native_local_pdf_agent",
         "openviking": "native_resource_find",
         "graphiti": "native_temporal_graph_search",
         "graphrag": "native_local_search",
@@ -110,6 +113,7 @@ def main() -> int:
             "graphiti",
             "graphrag",
             "honcho",
+            "gbrain",
         }:
             required += (
                 "EMBEDDING_API_BASE",
@@ -136,6 +140,22 @@ def main() -> int:
         exit_code = 0
         if args.target == "mem0":
             result = run_mem0(INPUT, ARTIFACTS, STATE)
+        elif args.target == "gbrain":
+            from benchmark_targets.gbrain import run_gbrain
+
+            result = run_gbrain(INPUT, ARTIFACTS, STATE / "gbrain")
+        elif args.target == "memos":
+            from benchmark_targets.memos import run_memos
+
+            result = run_memos(INPUT, ARTIFACTS, STATE / "memos")
+        elif args.target == "sag-engine":
+            from benchmark_targets.sag_engine import run_sag_engine
+
+            result = run_sag_engine(INPUT, ARTIFACTS, STATE / "sag-engine")
+        elif args.target == "hindsight":
+            from benchmark_targets.hindsight import run_hindsight
+
+            result = run_hindsight(INPUT, ARTIFACTS, STATE / "hindsight")
         elif args.target == "openviking":
             from benchmark_targets.openviking import (
                 OpenVikingAdapterFailure,
@@ -182,6 +202,8 @@ def main() -> int:
                 result = failure_result(args.target, "adapter_failed", error, job_ids)
                 exit_code = 1
         elif args.target == "pageindex":
+            from benchmark_targets.pageindex import run_pageindex
+
             result = run_pageindex(INPUT, ARTIFACTS, STATE / "pageindex")
         elif args.target == "openkb":
             from benchmark_targets.openkb import run_openkb
@@ -209,9 +231,6 @@ def main() -> int:
     except KeyError as error:
         result = failure_result(args.target, "configuration_failed", error, job_ids)
         exit_code = 2
-    except PageIndexProductFailure as error:
-        result = failure_result(args.target, "product_failed", error, job_ids)
-        exit_code = 1
     except Exception as error:
         classification = classify_failure(sanitized_error(error))
         result = failure_result(args.target, classification, error, job_ids)

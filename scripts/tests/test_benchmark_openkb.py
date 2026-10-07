@@ -135,7 +135,7 @@ class BenchmarkOpenkbTests(BenchmarkCase):
         self.assertEqual(OPENKB._litellm_model("gpt-5.6-luna"), "openai/gpt-5.6-luna")
         self.assertEqual(
             OPENKB._litellm_model("anthropic/claude-example"),
-            "anthropic/claude-example",
+            "openai/anthropic/claude-example",
         )
         jobs = [
             {
@@ -175,5 +175,4 @@ class BenchmarkOpenkbTests(BenchmarkCase):
         self.assertNotIn("secret-value", detail)
         self.assertIn("<redacted>", detail)
         self.assertIn("[truncated; inspect the preserved native log]", detail)
-
 

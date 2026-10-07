@@ -7,6 +7,8 @@ import math
 import re
 import statistics
 
+from .fixtures import FAILURE_CLASSES
+
 
 def _dedupe(values: list[str]) -> list[str]:
     output: list[str] = []
@@ -123,7 +125,7 @@ def _operation_scores(
                 for item in rows
                 if isinstance(item, dict)
                 and item.get("requested_type") == requested
-                and item.get("classification") == "completed"
+                and item.get("classification") in FAILURE_CLASSES
             ),
             None,
         )
@@ -133,7 +135,8 @@ def _operation_scores(
             native_type = None
         else:
             native_type = row.get("native_type")
-            value = 1.0 if row.get("native_success") is True else 0.0
+            value = 1.0 if (row.get("classification") == "completed"
+                            and row.get("native_success") is True) else 0.0
         if requested == "update":
             exact = native_type in {"update", "replace", "reindex_update"}
             evidence_id = operation.get("evidence_id") if operation else None
@@ -164,5 +167,4 @@ def _operation_scores(
             )
             delete_values.append(value if exact and readback else 0.0)
     return _mean(update_values), _mean(delete_values), missing
-
 

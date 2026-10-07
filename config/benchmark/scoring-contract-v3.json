@@ -1,0 +1,39 @@
+{
+  "schema": "elf.benchmark_answer_contract/v1",
+  "revision": 3,
+  "interpretation": "Deterministic requested-fact checks, not a general semantic judge. Public disclosure requires explicit public-source support; permission for an internal summary does not establish public permission.",
+  "corrections": {
+    "core-scope-nova": {
+      "query": "What public Nova deployment fact remains after the credential was deleted?",
+      "reason": "The source permits an internal project summary only. A public disclosure question has no explicitly authorized public answer.",
+      "qrels": {
+        "answer_facts": [],
+        "expect_unsupported": true
+      }
+    },
+    "knowledge-meridian-recovery": {
+      "query": "If Meridian's canary fails its latency gate, what sequence restores service?",
+      "reason": "The question asks for the recovery sequence, not the deployment percentage or the failure threshold. The drain stem accepts drain, drained, and draining.",
+      "qrels": {
+        "answer_facts": [
+          "drain",
+          "last signed release"
+        ],
+        "relevant_evidence": [
+          "knowledge_meridian_action"
+        ]
+      }
+    },
+    "repo-delete-retired-runbook": {
+      "query": "Which Meridian recovery runbook is active?",
+      "reason": "The requested fact is the active path. The recovery actions are not requested.",
+      "qrels": {
+        "answer_facts": [
+          "docs/runbooks/meridian.md"
+        ]
+      }
+    }
+  },
+  "source_trace_measurement": "native_context_rows",
+  "provenance_correction": "Measure the fraction of returned native context rows that map to a source. Multiple chunks or consolidated facts may share a source; a shared source is not missing provenance."
+}

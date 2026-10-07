@@ -48,32 +48,65 @@ def bounded(rows, maximum=12000):
 
 
 def elf_retrieve(episodes, output):
+    return native_retrieve(episodes, output, "elf")
+
+
+def native_retrieve(episodes, output, target, manifest=None):
     inputs = output / "native-input"; artifacts = output / "native-artifacts"
     inputs.mkdir(); artifacts.mkdir()
     for episode in episodes:
         fixture = {"schema": "elf.real_world_job/v1", "job_id": episode["key"], "suite": "retrieval", "title": "Repository follow-up task",
             "prompt": {"content": episode["task"]["request"]}, "corpus": {"items": [{"evidence_id": row["id"], "text": row["text"]} for row in episode["packet"]]}, "memory_evolution": None, "operations": []}
         (inputs / (episode["key"] + ".json")).write_text(json.dumps(fixture))
+    if target == "qmd" and os.environ.get("QMD_CHECKOUT"):
+        import hashlib
+        import platform
+        from benchmark_targets.rust import run_rust_target
+
+        started = time.monotonic()
+        (output / "native-runtime.json").write_text(json.dumps({"mode": "host QMD", "platform": platform.platform(),
+            "adapter_sha256": hashlib.sha256(Path(os.environ["BENCHMARK_NATIVE_ADAPTER"]).read_bytes()).hexdigest(),
+            "models": json.loads(Path(os.environ["QMD_MODEL_MANIFEST"]).read_text())}, indent=2))
+        unit = run_rust_target("qmd", inputs, artifacts, output / "native-state")
+        (artifacts / "unit-result.json").write_text(json.dumps(unit, indent=2))
+        contexts = {row["job_id"]: bounded(row["contexts"]) for row in unit["phases"]["warm"]["jobs"]
+                    if row["classification"] == "completed"}
+        (output / "qmd-contexts.json").write_text(json.dumps(contexts, indent=2))
+        (output / "native-cleanup.json").write_text(json.dumps({"passed": True, "mode": "host QMD processes exited"}))
+        return {"seconds": time.monotonic()-started, "contexts": contexts,
+                "native_status": unit["result_class"]}
     providers = {"chat": {"model": "deepseek/deepseek-v4.1-flash", "reasoning_effort": "low"}, "embedding": {"model": "qwen/qwen3-embedding-8b", "dimensions": 1536}}
     env = dict(os.environ); env.update(provider_environment(env, providers, inside_container=True))
     env.update(BENCHMARK_IMAGE=env.get("BENCHMARK_ELF_IMAGE", "elf-benchmark-elf:replay-drain"), BENCHMARK_ELF_IMAGE=env.get("BENCHMARK_ELF_IMAGE", "elf-benchmark-elf:replay-drain"), BENCHMARK_POSTGRES_PASSWORD=uuid.uuid4().hex,
         BENCHMARK_INPUT_HOST=str(inputs.resolve()), BENCHMARK_ARTIFACT_HOST=str(artifacts.resolve()))
+    if manifest is not None:
+        from benchmark_runner.docker import TARGET_IMAGE_ENV, image_id
+
+        selected = next(row for row in manifest["targets"] if row["id"] == target)
+        image = selected.get("image", manifest["runner"]["image"])
+        env["BENCHMARK_IMAGE"] = image
+        if target in TARGET_IMAGE_ENV:
+            env[TARGET_IMAGE_ENV[target]] = image
+        (output / "native-runtime.json").write_text(json.dumps({"target": selected,
+            "image_digest": image_id(image), "providers": providers}, indent=2))
     project = "elf-replay-" + uuid.uuid4().hex[:12]; compose = ROOT / "docker/benchmark/compose.yml"
     started = time.monotonic()
     try:
-        result = subprocess.run(["docker", "compose", "-p", project, "-f", str(compose), "run", "--rm", "--no-TTY", "elf-unit"], env=env, text=True, capture_output=True, timeout=600)
+        result = subprocess.run(["docker", "compose", "-p", project, "-f", str(compose), "run", "--rm", "--no-TTY", f"{target}-unit"], env=env, text=True, capture_output=True, timeout=1800)
         # Compose output is retained only after removing all process credentials.
         log = result.stdout + result.stderr
         for key in ["LITELLM_API_KEY", "EMBEDDING_API_KEY", "BENCHMARK_CHAT_API_KEY", "BENCHMARK_EMBEDDING_API_KEY", "BENCHMARK_POSTGRES_PASSWORD"]:
             if env.get(key): log = log.replace(env[key], "[redacted]")
         (output / "native.log").write_text(log)
-        if result.returncode: raise RuntimeError("native ELF process failed; inspect the sanitized log")
-        unit = json.loads((artifacts / "unit-result.json").read_text())
-        if unit.get("result_class") != "completed": raise RuntimeError("native ELF unit did not complete")
-        contexts = {row["job_id"]: bounded(row["contexts"]) for row in unit["phases"]["warm"]["jobs"]}
-        (output / "elf-contexts.json").write_text(json.dumps(contexts, indent=2))
+        unit_path = artifacts / "unit-result.json"
+        unit = json.loads(unit_path.read_text()) if unit_path.exists() else {}
+        contexts = {row["job_id"]: bounded(row["contexts"])
+                    for row in unit.get("phases", {}).get("warm", {}).get("jobs", [])
+                    if row.get("classification") == "completed"}
+        (output / f"{target}-contexts.json").write_text(json.dumps(contexts, indent=2))
     finally:
         cleanup = cleanup_project(project, compose, env)
         (output / "native-cleanup.json").write_text(json.dumps(cleanup, indent=2))
-    if not cleanup["passed"]: raise RuntimeError("native ELF cleanup failed")
-    return {"seconds": round(time.monotonic()-started, 3), "contexts": contexts}
+    if not cleanup["passed"]: raise RuntimeError("native memory cleanup failed")
+    return {"seconds": round(time.monotonic()-started, 3), "contexts": contexts,
+            "native_status": unit.get("result_class", "harness_failed"), "exit_code": result.returncode}

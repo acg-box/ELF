@@ -20,6 +20,7 @@ PRODUCT_IDS = {
     "openkb",
     "honcho",
 }
+OPTIONAL_PRODUCT_IDS = {"gbrain", "hindsight", "sag-engine", "memos"}
 SUITE_IDS = {
     "common-core-v1": 24,
     "memory-lifecycle-v1": 8,
@@ -110,7 +111,9 @@ def validate_manifest(manifest: dict[str, Any]) -> None:
     if not isinstance(targets, list):
         raise ValueError("manifest targets must be a list")
     target_ids = [target.get("id") for target in targets if isinstance(target, dict)]
-    if set(target_ids) != PRODUCT_IDS or len(target_ids) != len(PRODUCT_IDS):
+    if (not PRODUCT_IDS <= set(target_ids)
+            or not set(target_ids) <= PRODUCT_IDS | OPTIONAL_PRODUCT_IDS
+            or len(set(target_ids)) != len(target_ids)):
         raise ValueError("manifest must contain every retained product exactly once")
     suites = manifest.get("suites")
     if not isinstance(suites, list):
@@ -235,5 +238,3 @@ def materialize_product_fixtures(
         path.write_bytes(canonical_json(payload))
         paths.append(path)
     return paths
-
-

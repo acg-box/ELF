@@ -1,0 +1,3 @@
+# Benchmark-only override: upstream 3.2 constrains NLTK to the affected 3.9 line.
+# Validate GraphRAG's native import/index/search against this resolved environment.
+nltk>=3.10,<3.11

@@ -101,6 +101,11 @@ def evaluate_unit(
                 if returned_count > 0
                 else None
             )
+            if suite.get("source_trace_measurement") == "native_context_rows" and native_contexts is not None:
+                trace_rate = (
+                    sum(context.get("evidence_id") in original_evidence_ids for context in native_contexts)
+                    / len(native_contexts) if native_contexts else None
+                )
             answer_correct, unsupported_error, forbidden_answer = _answer_scores(
                 qrels, raw_job.get("answer")
             )
@@ -280,5 +285,4 @@ def evaluate_unit(
         "provider_usage": unit.get("provider_usage") or {},
         "phases": phases,
     }
-
 

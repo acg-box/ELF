@@ -24,12 +24,11 @@ RUN --mount=type=cache,id=elf-benchmark-cargo-registry,target=/usr/local/cargo/r
 
 FROM node:22-bookworm AS qmd-builder
 
-ARG QMD_REVISION=e428df76bc0274d9e93eb7ca3e95673315c42e90
+ARG QMD_REVISION=facd35e01359e59d938bc9418e93fb9318addee3
 
 RUN apt-get update \
   && apt-get install -y --no-install-recommends git \
-  && rm -rf /var/lib/apt/lists/* \
-  && npm install --global pnpm@10.17.1
+  && rm -rf /var/lib/apt/lists/*
 
 RUN git init /opt/qmd \
   && git -C /opt/qmd remote add origin https://github.com/tobi/qmd.git \
@@ -37,8 +36,12 @@ RUN git init /opt/qmd \
   && git -C /opt/qmd checkout --detach FETCH_HEAD
 
 WORKDIR /opt/qmd
-RUN pnpm install --frozen-lockfile \
-  && pnpm run build
+COPY config/benchmark/locks/qmd-overrides.json /opt/qmd-overrides.json
+COPY config/benchmark/locks/qmd-package-lock.json /opt/qmd/package-lock.json
+RUN node --input-type=module -e 'import fs from "node:fs"; const p=JSON.parse(fs.readFileSync("package.json")); p.overrides={...p.overrides,...JSON.parse(fs.readFileSync("/opt/qmd-overrides.json"))}; fs.writeFileSync("package.json",JSON.stringify(p,null,2)+"\n");' \
+  && npm ci --ignore-scripts \
+  && npm rebuild better-sqlite3 node-llama-cpp --foreground-scripts \
+  && npm run build
 
 FROM python:3.11-bookworm AS elf-runtime
 
@@ -52,6 +55,21 @@ LABEL org.opencontainers.image.revision="${ELF_SOURCE_COMMIT}"
 ENV PYTHONUNBUFFERED=1
 WORKDIR /
 CMD ["python3", "/opt/benchmark/benchmark-unit.py", "--target", "elf"]
+
+FROM qmd-builder AS qmd-runtime
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends python3 \
+  && rm -rf /var/lib/apt/lists/*
+COPY --from=elf-builder /out/real_world_live_adapter /usr/local/bin/real_world_live_adapter
+COPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py
+COPY scripts/benchmark_targets /opt/benchmark/benchmark_targets
+ENV XDG_CACHE_HOME=/opt/qmd-cache
+ENV QMD_FORCE_CPU=1
+ENV PYTHONUNBUFFERED=1
+RUN npx tsx /opt/benchmark/benchmark_targets/qmd_models.mts
+RUN npm prune --omit=dev --ignore-scripts
+CMD ["python3", "/opt/benchmark/benchmark-unit.py", "--target", "qmd"]
 
 FROM node:22-bookworm
 
