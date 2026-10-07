@@ -20,6 +20,8 @@ class MemOSReceiptTests(BenchmarkCase):
             with patch.object(memos, "ready"), patch.object(memos, "add", return_value={"code":200}), \
                  patch.object(memos, "recall", side_effect=recall), \
                  patch.object(memos, "source_readback", side_effect=[([{"id":"m_one"}],{}),([], {})]), \
-                 patch.object(memos, "request", return_value={"code":200,"data":{"status":"failure"}}):
+                 patch.object(memos, "request", return_value={"code":200,"data":{"status":"failure"}}) as delete:
                 result = memos.run_memos(inputs, root / "artifacts", root / "state")
             self.assertFalse(result["phases"]["warm"]["jobs"][0]["operations"][0]["native_success"])
+            delete.assert_called_once_with("/product/delete_memory", {
+                "writable_cube_ids": ["j_one"], "memory_ids": ["m_one"]})

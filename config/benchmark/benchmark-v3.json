@@ -371,7 +371,7 @@
         "knowledge-structure-v1",
         "repository-knowledge-v1"
       ],
-      "image": "elf-benchmark-http:v8",
+      "image": "elf-benchmark-http:v9",
       "dockerfile": "docker/benchmark/http.Dockerfile",
       "pin": {
         "kind": "git",
@@ -382,7 +382,8 @@
       },
       "native_deviations": {
         "update": "Delete matching source memories, then extract the replacement through the native add API.",
-        "runtime": "Self-hosted product server, Neo4j Community, Qdrant; no hosted MemOS Cloud score."
+        "runtime": "Self-hosted product server, Neo4j Community, Qdrant; no hosted MemOS Cloud score.",
+        "delete": "Use native source-filtered readback to obtain exact memory IDs, then call delete_memory with those IDs and verify absence."
       }
     }
   ],

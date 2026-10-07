@@ -89,15 +89,19 @@ def run_memos(inputs: Path, artifacts: Path, state: Path):
         operations = []
         for op in job.get("operations", []):
             before, before_raw = source_readback(scope, op["evidence_id"])
-            deleted = request("/product/delete_memory", {"writable_cube_ids": [scope],
-                "user_id": scope, "filter": {"evidence_id": op["evidence_id"]}})
+            memory_ids = list(dict.fromkeys(memory["id"] for memory in before))
+            deleted = (request("/product/delete_memory", {"writable_cube_ids": [scope],
+                "memory_ids": memory_ids}) if memory_ids else
+                {"code": None, "data": {"status": "not_attempted"},
+                 "adapter_reason": "Native source readback returned no memory IDs"})
             after, after_raw = source_readback(scope, op["evidence_id"])
             replacement = add(scope, op) if op["type"] == "update" else None
             success = (deleted.get("code") in (0, 200)
                        and deleted.get("data", {}).get("status") == "success"
                        and bool(before) and not after)
             operations.append({"requested_type": op["type"],
-                "native_type": "delete_then_add" if replacement else "delete_memory",
+                "native_type": "delete_then_add" if replacement else "delete",
+                "native_delete_api": "delete_memory_by_ids",
                 "classification": "completed", "native_success": success})
             receipt["operations"].append({"operation": op, "deleted": deleted,
                 "before": before_raw, "after": after_raw, "replacement": replacement})

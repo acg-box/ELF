@@ -114,6 +114,10 @@ The manifest records each native profile and deviation. Important distinctions:
 - Honcho supplies native hybrid message search. This does not measure peer chat
   or dreaming. Its available session deletion can remove unrelated retained
   messages; report that loss separately from a successful deletion request.
+- MemOS deletes the exact memory IDs returned by native source-filtered readback,
+  then checks the same source again. The pinned API treats `user_id` as a filter
+  delete mode, so the ID delete request must omit it. Keep failed filter-delete
+  attempts separate from this condition.
 - PageIndex uses generated PDFs and its local tool-using agent. Retain the native
   answer, but build shared-reader context from observed tool results.
 - A missing source mapping reduces measured traceability. Keep the returned
