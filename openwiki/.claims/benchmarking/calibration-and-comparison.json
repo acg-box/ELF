@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:7e937444e5490d23ab83c2f3ea29d14a2e967d40cbe34308ca07ecbd5a630f5b",
+  "pageVersion": "sha256:51aaab82c0882825bba6d8776775d782d84b2bd5975e4530b015bd6c3f17f3e9",
   "claims": [
     {
       "id": "claim_b2092c21a8fb49378b24e596378c2f93",
@@ -57,8 +57,8 @@
       "statement": "The native benchmark adapter drains its dedicated worker queues before readiness and returns an error for failed jobs or a 180-second drain timeout.",
       "evidence": [
         {
-          "resource": "repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs#L21-L67",
-          "version": "repo-lines-v1:sha256:75d2cbd8d57c3b910975313ec143243d3ecbf9275f6402f1358d083b2caf4630:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NzY2YzJmM2IyOTc4ZWFjYmU3ZDdhODg3NzIxZjI5NmJlOGNkMWU0OWFmYjY3M2MwYmI2ZTg1YTlhMWQwNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkM2IzNGEwYWRkYWNjNDFhODU4NzQxMTY0M2FkOTc2ZWJiZDkxYTAzMzFlMDNkOTdjMWQxMTBmZjdkNzc1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1Mjk5ODY2NjExYjk5NDgyNmFjMjgyMzk4ZTNkODQ3NDFmOGI5MDkwMTQ3MTA0ZTE2MTU4NTc1OWI1MzAzNTEifQ"
+          "resource": "repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs#L25-L71",
+          "version": "repo-lines-v1:sha256:b006aba7cb1428827725292084480865aaa203d9fa714fd1b2866dbd68e5d33b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NzY2YzJmM2IyOTc4ZWFjYmU3ZDdhODg3NzIxZjI5NmJlOGNkMWU0OWFmYjY3M2MwYmI2ZTg1YTlhMWQwNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkM2IzNGEwYWRkYWNjNDFhODU4NzQxMTY0M2FkOTc2ZWJiZDkxYTAzMzFlMDNkOTdjMWQxMTBmZjdkNzc1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1Mjk5ODY2NjExYjk5NDgyNmFjMjgyMzk4ZTNkODQ3NDFmOGI5MDkwMTQ3MTA0ZTE2MTU4NTc1OWI1MzAzNTEifQ"
         }
       ]
     },
@@ -75,6 +75,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-07T16:08:29.830Z"
+    "at": "2026-10-07T16:16:48.378Z"
   }
 }

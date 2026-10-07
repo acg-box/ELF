@@ -67,8 +67,8 @@ the owning queries. A route override must not bypass these checks.
 ## Competitor benchmark
 
 The public script paths and cargo-make task names stay stable. Python remains the
-owner of this existing benchmark. This refactor does not introduce a language
-migration or expand the benchmark capability.
+owner of the benchmark. The repository repair pilot extends this owner without
+a language migration or another runtime.
 
 | Owner | Responsibility |
 | --- | --- |

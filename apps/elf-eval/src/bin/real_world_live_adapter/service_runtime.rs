@@ -1,3 +1,7 @@
+use std::time::Duration;
+
+use tokio::time;
+
 use crate::{
 	Arc, BaselineRuntime, ChunkingConfig, Db, ElfService, JoinSet, QdrantStore, Result,
 	WorkerState, eyre, worker,
@@ -57,11 +61,11 @@ pub(super) async fn run_worker(runtime: &BaselineRuntime) -> Result<()> {
 				joined??;
 			}
 
-			tokio::time::sleep(std::time::Duration::from_millis(25)).await;
+			time::sleep(Duration::from_millis(25)).await;
 		}
 	};
 
-	tokio::time::timeout(std::time::Duration::from_secs(180), drain)
+	time::timeout(Duration::from_secs(180), drain)
 		.await
 		.map_err(|_| eyre::eyre!("Benchmark worker did not drain within 180 seconds."))?
 }

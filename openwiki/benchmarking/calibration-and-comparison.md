@@ -5,7 +5,7 @@ description: Verified API spend, native index readiness, real repository repairs
 tags: [benchmark, memory, cost]
 verified:
   - by: openwiki/0.7.1
-    at: 2026-10-07T16:08:29.830Z
+    at: 2026-10-07T16:16:48.378Z
 sources:
   - id: openwiki-source-edb430929cfea30c15990b19
     resource: repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs
