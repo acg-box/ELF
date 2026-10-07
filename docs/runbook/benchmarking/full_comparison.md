@@ -58,6 +58,12 @@ correctly mention a rejected draft, an obsolete value, or a development option.
 Their presence alone does not make the final answer wrong. Score the selected
 answer separately, and keep the native context for inspection.
 
+The core `forbidden_evidence_hits` field includes superseded and off-topic
+sources. Its strict `elf_seeded_invariants_passed` aggregate must not be reported
+as an access-control verdict. Core text labels such as "private" do not configure
+native permissions. Use the explicit shared-store namespace lane for isolation
+observations, and actual mutation readback for deletion observations.
+
 The deterministic deep workload contains 62 scored questions. The product
 receives actions and source text; the answer oracle remains on the host. Each
 action uses a new client process. Preserve the initial ingestion and all native
