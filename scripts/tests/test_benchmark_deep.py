@@ -1,9 +1,14 @@
 """Protect scope separation, reuse, and the evaluator/product boundary."""
 
 import json
+import importlib.util
+import os
 from pathlib import Path
+import signal
 import sys
+import tempfile
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from benchmark_deep.fixtures import workload
@@ -61,6 +66,59 @@ class DeepGroundingTests(unittest.TestCase):
         self.assertFalse(scored['fact_in_supplied_context'])
         self.assertFalse(scored['correct'])
         self.assertTrue(score_answer(expected,answer,'The approved route is current-2-green.')['correct'])
+
+
+class DeepProcessTests(unittest.TestCase):
+    def test_action_timeout_stops_native_descendant_and_retains_failure(self):
+        source = Path(__file__).resolve().parents[1] / 'benchmark-deep-unit.py'
+        spec = importlib.util.spec_from_file_location('deep_unit_timeout_test', source)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'input').mkdir()
+            (root / 'input/workload.json').write_text(json.dumps({'actions': [
+                {'action': 'ingest', 'scope': 'probe', 'items': []},
+                {'action': 'query', 'scope': 'probe', 'case_id': 'probe-query'},
+            ]}))
+            fake = root / 'native.py'
+            fake.write_text('''import os, signal, subprocess, sys, time
+from pathlib import Path
+root = Path(__file__).parent
+if '--leaf' in sys.argv:
+    def stop(signum, frame):
+        (root / 'stopped').write_text('terminated')
+        sys.exit(0)
+    signal.signal(signal.SIGTERM, stop)
+    (root / 'child.pid').write_text(str(os.getpid()))
+    print('native-started', flush=True)
+    time.sleep(30)
+else:
+    child = subprocess.Popen([sys.executable, __file__, '--leaf'])
+    def stop(signum, frame):
+        child.wait(timeout=3)
+        sys.exit(0)
+    signal.signal(signal.SIGTERM, stop)
+    child.wait()
+''')
+            try:
+                with patch.object(module, '__file__', str(fake)), \
+                     patch.object(module, 'INGEST_TIMEOUT_SECONDS', 1), \
+                     patch.dict(os.environ, {'BENCHMARK_DEEP_ROOT': str(root)}), \
+                     patch.object(sys, 'argv', [str(source), '--target', 'elf']):
+                    self.assertEqual(module.main(), 1)
+                self.assertEqual((root / 'stopped').read_text(), 'terminated')
+                with self.assertRaises(ProcessLookupError):
+                    os.kill(int((root / 'child.pid').read_text()), 0)
+                result = json.loads((root / 'artifacts/deep-result.json').read_text())
+                self.assertEqual([r['status'] for r in result['results']], ['failed', 'blocked_by_ingest'])
+                self.assertIn('native-started', (root / 'artifacts/deep-state/operation-000.log').read_text())
+            finally:
+                if (root / 'child.pid').exists():
+                    try:
+                        os.kill(int((root / 'child.pid').read_text()), signal.SIGTERM)
+                    except ProcessLookupError:
+                        pass
 
 
 if __name__ == "__main__":

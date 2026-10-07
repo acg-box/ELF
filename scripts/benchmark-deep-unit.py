@@ -12,6 +12,7 @@ import time
 from pathlib import Path
 
 from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS, run_action
+from benchmark_runner.runtime import command
 from benchmark_targets.unit_runtime import sanitized_error, write_json
 
 
@@ -45,12 +46,14 @@ def main():
             row = {"status": "blocked_by_ingest", "failure": "Native scope ingestion did not complete"}
         else:
             try:
-                with path.with_suffix(".log").open("w") as log:
-                    subprocess.run([sys.executable, __file__, "--target", args.target,
-                        "--action", str(path)], stdout=log, stderr=subprocess.STDOUT,
-                        timeout=INGEST_TIMEOUT_SECONDS if action["action"] == "ingest" else ACTION_TIMEOUT_SECONDS)
+                result = command([sys.executable, __file__, "--target", args.target,
+                    "--action", str(path)], check=False,
+                    timeout=INGEST_TIMEOUT_SECONDS if action["action"] == "ingest" else ACTION_TIMEOUT_SECONDS)
+                path.with_suffix(".log").write_text(result.stdout)
                 row = json.loads(path.with_suffix(".result.json").read_text())
             except (subprocess.TimeoutExpired, FileNotFoundError) as error:
+                if isinstance(error, subprocess.TimeoutExpired):
+                    path.with_suffix(".log").write_text(error.output or "")
                 row = {"status": "failed", "failure": sanitized_error(error)}
         if action["action"] == "ingest" and row["status"] != "completed":
             unavailable.add(action["scope"])

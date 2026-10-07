@@ -73,6 +73,11 @@ limit. The bundle records these limits. A timeout is incomplete execution, not
 proof of an unsupported capability. Use `cargo make benchmark-deep --help` to
 inspect the CLI.
 
+Each action runs in its own process group. On an action timeout, the runner
+terminates that group, retains captured output, and marks later queries in a
+failed ingestion scope as blocked. This prevents a native child process from
+continuing provider calls after its Python client has stopped.
+
 Host CPU work can overlap image builds. Treat measured wall time as observed
 execution time, not a controlled CPU performance ranking.
 
