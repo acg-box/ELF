@@ -383,7 +383,8 @@
       "native_deviations": {
         "update": "Delete matching source memories, then extract the replacement through the native add API.",
         "runtime": "Self-hosted product server, Neo4j Community, Qdrant; no hosted MemOS Cloud score.",
-        "delete": "Use native source-filtered readback to obtain exact memory IDs, then call delete_memory with those IDs and verify absence."
+        "delete": "Use native source-filtered readback to obtain exact memory IDs, then call delete_memory with those IDs and verify absence.",
+        "embedding_timeout": "90 seconds through the same bounded gateway; the native five-second default caused retries while successful provider requests took 5-16 seconds."
       }
     }
   ],

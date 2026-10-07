@@ -117,7 +117,9 @@ The manifest records each native profile and deviation. Important distinctions:
 - MemOS deletes the exact memory IDs returned by native source-filtered readback,
   then checks the same source again. The pinned API treats `user_id` as a filter
   delete mode, so the ID delete request must omit it. Keep failed filter-delete
-  attempts separate from this condition.
+  attempts separate from this condition. Its embedding timeout is 90 seconds
+  to match the bounded provider gateway; the native five-second default timed
+  out before otherwise successful provider responses arrived.
 - PageIndex uses generated PDFs and its local tool-using agent. Retain the native
   answer, but build shared-reader context from observed tool results.
 - A missing source mapping reduces measured traceability. Keep the returned
