@@ -53,9 +53,20 @@ async def search(engine, scope, job, operations):
         "operations": operations, "native_status": "completed", "failure": None}, native.model_dump(mode="json")
 
 
+async def delete_source(engine, scope, item, fence_token):
+    from zleap.sag.operations import DeleteSourceRequest, OperationContext
+
+    operation_id = str(uuid.uuid4())
+    payload = {"data_source_id": scope, "source_id": item["evidence_id"]}
+    result = await engine.delete_source(DeleteSourceRequest(**payload,
+        context=OperationContext(operation_id=operation_id, idempotency_key=operation_id,
+            request_digest=hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest(),
+            fence_scope=scope, fence_token=fence_token, owner_id="elf-benchmark")))
+    return result.model_dump(mode="json")
+
+
 async def run(inputs: Path, artifacts: Path, state: Path):
     from zleap.sag import DataEngine
-    from zleap.sag.operations import DeleteSourceRequest, OperationContext
 
     version = importlib.metadata.version("zleap-sag")
     if version != "0.13.0":
@@ -77,19 +88,12 @@ async def run(inputs: Path, artifacts: Path, state: Path):
             cold, receipt["cold"] = await search(engine, scope, job, [])
             phases["cold"]["jobs"].append(cold)
             operations = []
-            for op in job.get("operations", []):
+            for operation_index, op in enumerate(job.get("operations", [])):
                 if op["type"] == "update":
                     native = await ingest(engine, scope, op)
                     success = not native["chunks"].get("failed_items") and not native["events"].get("failed_items")
                 else:
-                    token = str(uuid.uuid4())
-                    result = await engine.delete_source(DeleteSourceRequest(
-                        data_source_id=scope, source_id=op["evidence_id"],
-                        context=OperationContext(operation_id=token, idempotency_key=token,
-                            request_digest=hashlib.sha256(json.dumps(op, sort_keys=True).encode()).hexdigest(),
-                            fence_scope=f"source:{scope}:{op['evidence_id']}", fence_token=1,
-                            owner_id="elf-benchmark")))
-                    native = result.model_dump(mode="json")
+                    native = await delete_source(engine, scope, op, operation_index + 1)
                     success = native["status"] == "succeeded"
                 operations.append({"requested_type": op["type"], "native_type": op["type"],
                     "classification": "completed", "native_success": success})

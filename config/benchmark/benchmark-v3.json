@@ -347,7 +347,7 @@
         "knowledge-structure-v1",
         "repository-knowledge-v1"
       ],
-      "image": "elf-benchmark-sag-engine:v2",
+      "image": "elf-benchmark-sag-engine:v3",
       "dockerfile": "docker/benchmark/sag-engine.Dockerfile",
       "pin": {
         "kind": "python_package",
@@ -358,7 +358,8 @@
       "native_deviations": {
         "identity": "Current independent SAG engine; not the retired SAG v1 adapter.",
         "retries": "One native retry and bounded provider output under the shared gateway.",
-        "structured_output": "Native json_object mode for the selected model route."
+        "structured_output": "Native json_object mode for the selected model route.",
+        "delete": "Native durable delete with a data-source fence and monotonically increasing tokens from the single-writer action order."
       }
     },
     {

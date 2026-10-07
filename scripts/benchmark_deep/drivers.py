@@ -208,8 +208,7 @@ def mem0_action(action, root):
 
 async def sag_action(action, root):
     from zleap.sag import DataEngine
-    from zleap.sag.operations import DeleteSourceRequest, OperationContext
-    from benchmark_targets.sag_engine import configuration, ingest, search
+    from benchmark_targets.sag_engine import configuration, delete_source, ingest, search
 
     scope, kind = action["scope"], action["action"]
     async with DataEngine(configuration(root / "sag-shared"), data_source_id=scope) as engine:
@@ -225,13 +224,9 @@ async def sag_action(action, root):
             return {"contexts": row["contexts"], "native": native}
         if kind == "update":
             return {"native": await ingest(engine, scope, action)}
-        token = str(uuid.uuid4())
-        result = await engine.delete_source(DeleteSourceRequest(data_source_id=scope,
-            source_id=action["evidence_id"], context=OperationContext(
-                operation_id=token, idempotency_key=token, owner_id="elf-benchmark",
-                fence_scope=f"source:{scope}:{action['evidence_id']}", fence_token=1,
-                request_digest=hashlib.sha256(json.dumps(action, sort_keys=True).encode()).hexdigest())))
-        native = result.model_dump(mode="json")
+        # The single writer follows the frozen action order across new processes.
+        fence_token = int(action["operation_id"].rsplit("-", 1)[1]) + 1
+        native = await delete_source(engine, scope, action, fence_token)
         if native["status"] != "succeeded":
             raise RuntimeError("SAG native deletion did not succeed")
         return {"native": native}
