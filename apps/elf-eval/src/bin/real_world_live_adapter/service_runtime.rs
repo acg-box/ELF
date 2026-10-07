@@ -27,7 +27,6 @@ pub(super) async fn run_worker(runtime: &BaselineRuntime) -> Result<()> {
 	let timeout_seconds = env::var("ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS")
 		.unwrap_or_else(|_| "180".to_string())
 		.parse::<u64>()?;
-
 	let drain = async {
 		loop {
 			let (remaining, failed) = sqlx::query_as::<_, (i64, i64)>(
