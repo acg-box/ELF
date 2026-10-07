@@ -203,3 +203,7 @@ command = "cargo"
 dependencies = [
 	"real-world-job-operator-ux-json",
 ]
+
+[tasks.benchmark-repository-memory]
+args    = ["scripts/benchmark-repository-memory.py", "${@}"]
+command = "python3"

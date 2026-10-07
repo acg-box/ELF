@@ -72,6 +72,7 @@ migration or expand the benchmark capability.
 
 | Owner | Responsibility |
 | --- | --- |
+| `scripts/benchmark_replay/` | Own the bounded historical repair pilot, source snapshots, memory conditions, agent tools, and isolated checks within the existing Python benchmark. |
 | `scripts/benchmark-runner.py` | Dispatch the host CLI. |
 | `scripts/benchmark_runner/cli.py` | Parse options and assemble one run. |
 | `scripts/benchmark_runner/runtime.py` | Resolve the repository root, run host commands, write artifacts, and identify source content. |

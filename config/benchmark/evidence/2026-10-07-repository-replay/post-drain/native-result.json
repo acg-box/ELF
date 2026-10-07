@@ -1,0 +1,448 @@
+{
+  "ingest_count": 1,
+  "ingest_duration_measurement": "cold adapter wall time minus native query latency",
+  "ingest_duration_ms": 413104.376,
+  "native_mode": "external_embedding",
+  "phases": {
+    "cold": {
+      "adapter_metadata": {
+        "index_reused": false
+      },
+      "jobs": [
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "Source: docker/benchmark/openviking.Dockerfile FROM rust:1.91.1-trixie AS rust-toolchain FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder ARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a ENV OPENVIKING_VERSION=0.0.0+a0e822a ENV UV_COMPILE_BYTECODE=1 ENV UV_LINK_MODE=copy ENV UV_NO_DEV=1 RUN git init /opt/openviking \\ && git -C /opt/openviking"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "python:3.13-slim-trixie RUN apt-get update \\ && apt-get install -y --no-install-recommends \\ git \\ libstdc++6 \\ && rm -rf /var/lib/apt/lists/* COPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "--from=builder /opt/openviking/.venv /opt/openviking/.venv COPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py COPY scripts/benchmark_targets /opt/benchmark/benchmark_targets ENV"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "/opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\" WORKDIR /opt/openviking RUN --mount=type=cache,target=/root/.cache/uv \\ --mount=type=cache,target=/usr/local/cargo/registry \\"
+            }
+          ],
+          "evidence_ids": [
+            "source-0"
+          ],
+          "failure": null,
+          "job_id": "j_0aca9caebbe0bdb5b220e554",
+          "latency_ms": 509.907668,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "start_new_session=True) as process: try: output, _ = process.communicate(timeout=limit) except subprocess.TimeoutExpired: # Terminate the command group, including compiler/test child processes. try:"
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "os.killpg(process.pid, signal.SIGTERM) except ProcessLookupError: pass try: output, _ = process.communicate(timeout=5) except subprocess.TimeoutExpired: try: os.killpg(process.pid, signal.SIGKILL) except"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "ProcessLookupError: pass output, _ = process.communicate() raise subprocess.TimeoutExpired(args, limit, output=output) from None result = subprocess.CompletedProcess(args, process.returncode, output) if check:"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_62e75ebcc5ee2b7412aeccdc",
+          "latency_ms": 607.2889620000001,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "start_new_session=True) as process: try: output, _ = process.communicate(timeout=limit) except subprocess.TimeoutExpired: # Terminate the command group, including compiler/test child processes. try:"
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "os.killpg(process.pid, signal.SIGTERM) except ProcessLookupError: pass try: output, _ = process.communicate(timeout=5) except subprocess.TimeoutExpired: try: os.killpg(process.pid, signal.SIGKILL) except"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "ProcessLookupError: pass output, _ = process.communicate() raise subprocess.TimeoutExpired(args, limit, output=output) from None result = subprocess.CompletedProcess(args, process.returncode, output) if check:"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_7d05619e4217a183769d9260",
+          "latency_ms": 571.065958,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "{\"reused\": True, \"original_receipt\": str(path.resolve()), \"note\": \"Prior measurement; not a fresh timing sample.\"} return row except (KeyError, ValueError, TypeError, OSError): return None def save_checkpoint(path: Path,"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "return None try: record = load_json(path) row = record[\"row\"] if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row): return None if not reusable(row, suite, target): return None row[\"reuse\"] ="
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "benchmark_contract import evaluate_unit, load_json, sha256_json from .profiles import integrity_findings from .runtime import write_json def reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) ->"
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_82607bd5ea8af918f1adb775",
+          "latency_ms": 553.324482,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "Source: docker/benchmark/openviking.Dockerfile FROM rust:1.91.1-trixie AS rust-toolchain FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder ARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a ENV OPENVIKING_VERSION=0.0.0+a0e822a ENV UV_COMPILE_BYTECODE=1 ENV UV_LINK_MODE=copy ENV UV_NO_DEV=1 RUN git init /opt/openviking \\ && git -C /opt/openviking"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "python:3.13-slim-trixie RUN apt-get update \\ && apt-get install -y --no-install-recommends \\ git \\ libstdc++6 \\ && rm -rf /var/lib/apt/lists/* COPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "/opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\" WORKDIR /opt/openviking RUN --mount=type=cache,target=/root/.cache/uv \\ --mount=type=cache,target=/usr/local/cargo/registry \\"
+            },
+            {
+              "evidence_id": "source-3",
+              "text": "[tasks.fmt-rust] args = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"] command = \"rustup\" [tasks.check-format-rust] args = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"] extend = \"fmt-rust\" [tasks.fmt-toml]"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-3"
+          ],
+          "failure": null,
+          "job_id": "j_905eaf348556205c32b811f4",
+          "latency_ms": 569.2980560000001,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "{\"reused\": True, \"original_receipt\": str(path.resolve()), \"note\": \"Prior measurement; not a fresh timing sample.\"} return row except (KeyError, ValueError, TypeError, OSError): return None def save_checkpoint(path: Path,"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "return None try: record = load_json(path) row = record[\"row\"] if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row): return None if not reusable(row, suite, target): return None row[\"reuse\"] ="
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "benchmark_contract import evaluate_unit, load_json, sha256_json from .profiles import integrity_findings from .runtime import write_json def reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) ->"
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_e79d92fc2bf7fca41b742f2d",
+          "latency_ms": 786.43751,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        }
+      ],
+      "status": "completed"
+    },
+    "warm": {
+      "adapter_metadata": {
+        "index_reused": true
+      },
+      "jobs": [
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "Source: docker/benchmark/openviking.Dockerfile FROM rust:1.91.1-trixie AS rust-toolchain FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder ARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a ENV OPENVIKING_VERSION=0.0.0+a0e822a ENV UV_COMPILE_BYTECODE=1 ENV UV_LINK_MODE=copy ENV UV_NO_DEV=1 RUN git init /opt/openviking \\ && git -C /opt/openviking"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "python:3.13-slim-trixie RUN apt-get update \\ && apt-get install -y --no-install-recommends \\ git \\ libstdc++6 \\ && rm -rf /var/lib/apt/lists/* COPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "/opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\" WORKDIR /opt/openviking RUN --mount=type=cache,target=/root/.cache/uv \\ --mount=type=cache,target=/usr/local/cargo/registry \\"
+            },
+            {
+              "evidence_id": "source-3",
+              "text": "[tasks.fmt-rust] args = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"] command = \"rustup\" [tasks.check-format-rust] args = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"] extend = \"fmt-rust\" [tasks.fmt-toml]"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-3"
+          ],
+          "failure": null,
+          "job_id": "j_0aca9caebbe0bdb5b220e554",
+          "latency_ms": 2359.640949,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "start_new_session=True) as process: try: output, _ = process.communicate(timeout=limit) except subprocess.TimeoutExpired: # Terminate the command group, including compiler/test child processes. try:"
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "os.killpg(process.pid, signal.SIGTERM) except ProcessLookupError: pass try: output, _ = process.communicate(timeout=5) except subprocess.TimeoutExpired: try: os.killpg(process.pid, signal.SIGKILL) except"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "ProcessLookupError: pass output, _ = process.communicate() raise subprocess.TimeoutExpired(args, limit, output=output) from None result = subprocess.CompletedProcess(args, process.returncode, output) if check:"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_62e75ebcc5ee2b7412aeccdc",
+          "latency_ms": 962.29911,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "start_new_session=True) as process: try: output, _ = process.communicate(timeout=limit) except subprocess.TimeoutExpired: # Terminate the command group, including compiler/test child processes. try:"
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "os.killpg(process.pid, signal.SIGTERM) except ProcessLookupError: pass try: output, _ = process.communicate(timeout=5) except subprocess.TimeoutExpired: try: os.killpg(process.pid, signal.SIGKILL) except"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "ProcessLookupError: pass output, _ = process.communicate() raise subprocess.TimeoutExpired(args, limit, output=output) from None result = subprocess.CompletedProcess(args, process.returncode, output) if check:"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_7d05619e4217a183769d9260",
+          "latency_ms": 845.508171,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "{\"reused\": True, \"original_receipt\": str(path.resolve()), \"note\": \"Prior measurement; not a fresh timing sample.\"} return row except (KeyError, ValueError, TypeError, OSError): return None def save_checkpoint(path: Path,"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "benchmark_contract import evaluate_unit, load_json, sha256_json from .profiles import integrity_findings from .runtime import write_json def reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) ->"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "return None try: record = load_json(path) row = record[\"row\"] if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row): return None if not reusable(row, suite, target): return None row[\"reuse\"] ="
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_82607bd5ea8af918f1adb775",
+          "latency_ms": 547.507271,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "Source: docker/benchmark/openviking.Dockerfile FROM rust:1.91.1-trixie AS rust-toolchain FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder ARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a ENV OPENVIKING_VERSION=0.0.0+a0e822a ENV UV_COMPILE_BYTECODE=1 ENV UV_LINK_MODE=copy ENV UV_NO_DEV=1 RUN git init /opt/openviking \\ && git -C /opt/openviking"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "python:3.13-slim-trixie RUN apt-get update \\ && apt-get install -y --no-install-recommends \\ git \\ libstdc++6 \\ && rm -rf /var/lib/apt/lists/* COPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "/opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\" WORKDIR /opt/openviking RUN --mount=type=cache,target=/root/.cache/uv \\ --mount=type=cache,target=/usr/local/cargo/registry \\"
+            },
+            {
+              "evidence_id": "source-3",
+              "text": "[tasks.fmt-rust] args = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"] command = \"rustup\" [tasks.check-format-rust] args = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"] extend = \"fmt-rust\" [tasks.fmt-toml]"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-3"
+          ],
+          "failure": null,
+          "job_id": "j_905eaf348556205c32b811f4",
+          "latency_ms": 1676.468063,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "{\"reused\": True, \"original_receipt\": str(path.resolve()), \"note\": \"Prior measurement; not a fresh timing sample.\"} return row except (KeyError, ValueError, TypeError, OSError): return None def save_checkpoint(path: Path,"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/checkpoints.py \"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any from"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "return None try: record = load_json(path) row = record[\"row\"] if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row): return None if not reusable(row, suite, target): return None row[\"reuse\"] ="
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "benchmark_contract import evaluate_unit, load_json, sha256_json from .profiles import integrity_findings from .runtime import write_json def reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) ->"
+            },
+            {
+              "evidence_id": "source-1",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            }
+          ],
+          "evidence_ids": [
+            "source-0",
+            "source-1"
+          ],
+          "failure": null,
+          "job_id": "j_e79d92fc2bf7fca41b742f2d",
+          "latency_ms": 552.8251309999999,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        }
+      ],
+      "status": "completed"
+    }
+  },
+  "result_class": "completed",
+  "schema": "elf.benchmark_unit_result/v4",
+  "score_eligible": true,
+  "target": "elf",
+  "warm_reused_state": true
+}

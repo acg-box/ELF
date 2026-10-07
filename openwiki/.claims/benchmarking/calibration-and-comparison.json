@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:bb3169f510d0f5a36521f3f9759f4d01042c13e9dd10cb1a4c1e6ca33dd972c1",
+  "pageVersion": "sha256:7e937444e5490d23ab83c2f3ea29d14a2e967d40cbe34308ca07ecbd5a630f5b",
   "claims": [
     {
       "id": "claim_b2092c21a8fb49378b24e596378c2f93",
@@ -31,10 +31,50 @@
           "version": "repo-lines-v1:sha256:cb9ff6adaa1ff50fc7103fe221bf005ae6de2dd3f4ccc21377d8828b818f3a60:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzOWMzODdkMjRmNjVjNWNjNTJjY2YzOWY0MWNkODA3ODNiZjkwYjFjNTZmNTkzMDIxYzUzMDgyZmY2MWMyZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlZTc3MGUwZGEzYjMwYTBmMzM4Y2U1YTQ2N2E1MWUxNjg2NjgwOGQyM2U3OTVkMGM2ZTUwNmU1MzFhMTJkZGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2NjhiZDQ1Zjg4MmIyZWMwMDg2ZjFlMGZlMzU1ZjJhMWVjMDE1YmFlMGMxYzNhYTg2MGI3MjQyNmM2ZGY4ZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIzYTQzYWRhMDA3MTZkNzZmYTQ3Yzg3MGY3N2RhYmU1YzU5NmVlNmU5ZjMyNTdkOTNjN2ZkMTAwYzg2MDhkYmIifQ"
         }
       ]
+    },
+    {
+      "id": "claim_e8cbc82db3044fa284dc8ee9cce97667",
+      "statement": "The repository repair pilot adds $0.077748104 of reported API cost across 955 calls, bringing cumulative calibration spend to $0.094396915.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/evidence/2026-10-07-repository-replay/accounting.json",
+          "version": "repo-file-v1:sha256:82e0aef19ca64bd6858ebf5d6f5b05aaaa035aa14bd28d21cb6f1bad32ffd4e3"
+        }
+      ]
+    },
+    {
+      "id": "claim_7a41e18cfb914bfebef16bd09cddf4f1",
+      "statement": "The corrected three-task, two-repeat pilot passed 5/6 repairs with no memory and 6/6 with file search, Git notes, and ELF; ELF and file search each used 25 total turns.",
+      "evidence": [
+        {
+          "resource": "repo://docs/evidence/benchmarking/2026-10-07-repository-replay.md#L88-L116",
+          "version": "repo-lines-v1:sha256:f745aaa82c69f3f65fc378c4957cbd32e695a710184f3866b6451cdde6be18da:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFhNTQ3ZTUzZTE2ZDMzMDJjYTYxNjFjYjMzMWZiMDI2OWU4YjM0MTQ4ZWI5OTlmMDlhYjc5MjVlYTUyZTA2YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhMDgxMGU2OTJkNGI5MzUwMWMxODJhOTM1NTYzM2Q3YWRkZmNiYzk3ZmMwMTljMDhhZjUxNTI5YmI0OGM3MmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiNTJiODExMWI0MjM0OTEwNDg2MTAyZGM5ODdiNTllMmRlNGVjYjMwYjdjMzc4OTQwNWZiN2I3M2ExNzM4ZmQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0ZjQ3MzhjN2Q2ODFkZDhlY2RiZTdiZGJhZWFmZGRjMjliOTA5YWYxMWY1MjllNjJkYzhmN2MyZjgyZTQwNTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c5b129bca45649ba894011ec77553c96",
+      "statement": "The native benchmark adapter drains its dedicated worker queues before readiness and returns an error for failed jobs or a 180-second drain timeout.",
+      "evidence": [
+        {
+          "resource": "repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs#L21-L67",
+          "version": "repo-lines-v1:sha256:75d2cbd8d57c3b910975313ec143243d3ecbf9275f6402f1358d083b2caf4630:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NzY2YzJmM2IyOTc4ZWFjYmU3ZDdhODg3NzIxZjI5NmJlOGNkMWU0OWFmYjY3M2MwYmI2ZTg1YTlhMWQwNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkM2IzNGEwYWRkYWNjNDFhODU4NzQxMTY0M2FkOTc2ZWJiZDkxYTAzMzFlMDNkOTdjMWQxMTBmZjdkNzc1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1Mjk5ODY2NjExYjk5NDgyNmFjMjgyMzk4ZTNkODQ3NDFmOGI5MDkwMTQ3MTA0ZTE2MTU4NTc1OWI1MzAzNTEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_66f5aeafe20041f2b77e1d55b8be7839",
+      "statement": "The repair agent records invalid model responses and usage, provides formatting feedback within its existing turn cap, and uses a final isolated test to determine repair success.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_replay/agent.py#L99-L123",
+          "version": "repo-lines-v1:sha256:fb8ac5102e336d77951f5f4c8fdab593ed8126e41b16c0b44cb66689765f3eca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2M2I1MDlmNTEzYzE1YjM5NDNlZjc3MmU1MzU2YjI3ZDc0OGI1ZTZhYzVhMzIzNTZiOGZjM2NjNTQyMjMzNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MTU0Zjk1MmJjYmRiMGRmYzc5ZDI2MjY1Yjk4MjNmN2I4ODRhMmFlNjVjMmZmOWU0MjU3YmRkZThiYWJhMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhOWM4NmY3ZGQxMjU4ZGZlMGNiMjU3NDVkOTY3MzJlODAyNWI4ZDVmNDE5NzUzMTk2ODkzY2NmZDg3NjcwZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-07T14:59:10.952Z"
+    "at": "2026-10-07T16:08:29.830Z"
   }
 }

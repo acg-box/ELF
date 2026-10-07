@@ -1,0 +1,404 @@
+[
+  {
+    "key": "j_82607bd5ea8af918f1adb775",
+    "repeat": 1,
+    "task": {
+      "id": "receipt-origin",
+      "base": "86e68cff^",
+      "fixed": "86e68cff",
+      "path": "scripts/benchmark_runner/checkpoints.py",
+      "topic": "Understand how benchmark receipts preserve measurement provenance across resumes.",
+      "request": "Fix chained benchmark resumes: after saving a reused receipt and resuming again, original_receipt must still identify the first measured receipt. First reuse must record its absolute source path. Preserve identity, integrity and eligibility rejection behavior. Change only the checkpoint module."
+    },
+    "source": {
+      "revision": "d3054cebfd8eb7d1c5962151e8da7d2469ff1b03",
+      "files": {
+        "config/benchmark/suites/common-core-v1.json": "5f9bafa633396a19f544aa5f90e66c9c957dca0c7e2bcae0324634b8d9b7a289",
+        "config/benchmark/suites/knowledge-structure-v1.json": "c307c11b2fc36125fe10eac350240917718155198931eb6c8aaed980b60891f6",
+        "config/benchmark/suites/memory-lifecycle-v1.json": "05150d7d7a52cbe2365a5b25345b7ebd8e6d55f3fd79532f859407db71dbea7a",
+        "config/benchmark/suites/repository-knowledge-v1.json": "7e0a24fe12a3b1e324e3be2e275255a070ecd1a7112388b7552a4d5db34bab9a",
+        "docker/benchmark/openviking.Dockerfile": "cf8e494faf5f17b619be567bb67ef1bb58e70d5238717ef555f50548e5d726ed",
+        "docs/runbook/agent-setup.md": "5cf6dbf524cd17a392e66e95fd797ad0382239e406a7e754c2c3a6020e13c72b",
+        "makefiles/format.toml": "f1f46f1649185a4607abbfb9fe52de9795fc7cdf88488d2f512c77cc0f0ea1f1",
+        "rust-toolchain.toml": "d6c06be84864a2e77f0d2c9b1392e206045bd17b9189817d26bb03c801620d33",
+        "scripts/benchmark_contract/__init__.py": "f472f9d9e78faf1de5c2f0965117f62aca0b34284244c10c34b40b5e0202a0b4",
+        "scripts/benchmark_contract/answers.py": "f57fb9cbb251218eba7fdcefdb06ae7795e2cec9d072ff9f83db72f62559625b",
+        "scripts/benchmark_contract/evaluation.py": "b2c410440ee688c5f0158548d165a9f920ed0edfdd9cf718978bbe4248d9730b",
+        "scripts/benchmark_contract/fixtures.py": "651245b0dec88b5c17e241ab78e090cfea7633fa769fa0cd263fd0229fb68bb4",
+        "scripts/benchmark_contract/metrics.py": "a6e3fc6bb7c26d9fc20ce1831ab73e2ff04228d5ed6f7883a8ca626e4ac00b7d",
+        "scripts/benchmark_runner/__init__.py": "6d857d6c680395343ac13f9e6e7f9714c0b2d952e70af7c98ed934ba848805ff",
+        "scripts/benchmark_runner/answers.py": "80013fcc4ae5667a28a4a1ea3e8d169fca3ab17893bbf71d81250ab5be17b1f5",
+        "scripts/benchmark_runner/baselines.py": "fd0abbcd06982dbf4c0230885a5b2156260cc597c7b8dc41c928a9e8f7c12fcf",
+        "scripts/benchmark_runner/checkpoints.py": "fbef944f8501e67228d0b34c181e0d950ec7fc0474a51d5b1113d0ddc4c8d97b",
+        "scripts/benchmark_runner/cli.py": "8f7112954380a12e9382f8190e9056201b9f7b772ef276627829dd5c799dca3e",
+        "scripts/benchmark_runner/docker.py": "e5b8aa8c2ce6bd2eee09315b19fbd2f556919e0d5962aee7814bea0da267b64f",
+        "scripts/benchmark_runner/execution.py": "ac0396b2e3dbfd6a39e4fe20fe25f7b8fa8a942e292ec680b432861545b59721",
+        "scripts/benchmark_runner/profiles.py": "da179eeaafa0ea718634e53fe31c44d34cfdc8294d057df04e559a88c44c8091",
+        "scripts/benchmark_runner/providers.py": "575fedf23e1f84c29a0923592d2760241d6721c7b95d91fe25afe0d2bd62b74d",
+        "scripts/benchmark_runner/runtime.py": "dae7409c86990dfd49e122d2358f4396b94c76b7978f62eeff7ed91b2bd1c270"
+      }
+    },
+    "packet": [
+      {
+        "id": "source-0",
+        "path": "scripts/benchmark_runner/checkpoints.py",
+        "text": "Source: scripts/benchmark_runner/checkpoints.py\n\"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\"\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nfrom benchmark_contract import evaluate_unit, load_json, sha256_json\nfrom .profiles import integrity_findings\nfrom .runtime import write_json\n\n\ndef reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) -> bool:\n    try:\n        fresh = evaluate_unit(suite, row[\"unit_result\"], target)\n        if fresh != row[\"evaluation\"]:\n            return False\n        return not integrity_findings({\"suite_results\": {suite[\"suite_id\"]: {\n            \"scheduled_targets\": [target[\"id\"]], \"results\": [row]}}})\n    except (KeyError, TypeError, ValueError):\n        return False\n\n\ndef read_checkpoint(path: Path, identity: str, suite: dict[str, Any], target: dict[str, Any]) -> dict[str, Any] | None:\n    if not path.exists():\n        return None\n    try:\n        record = load_json(path)\n        row = record[\"row\"]\n        if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row):\n            return None\n        if not reusable(row, suite, target):\n            return None\n        row[\"reuse\"] = {\"reused\": True, \"original_receipt\": str(path.resolve()),\n                       \"note\": \"Prior measurement; not a fresh timing sample.\"}\n        return row\n    except (KeyError, ValueError, TypeError, OSError):\n        return None\n\n\ndef save_checkpoint(path: Path, identity: str, row: dict[str, Any]) -> None:\n    write_json(path, {\"identity\": identity, \"sha256\": sha256_json(row), \"row\": row})\n"
+      },
+      {
+        "id": "source-1",
+        "path": "scripts/benchmark_runner/runtime.py",
+        "text": "Source: scripts/benchmark_runner/runtime.py\n\"\"\"Host benchmark runtime responsibilities.\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\nimport hashlib\nimport json\nimport subprocess\nimport os\nimport tempfile\nimport time\nimport signal\nfrom contextlib import contextmanager\n\n\nREPO = Path(__file__).resolve().parents[2]\n\n\nDEADLINE: float | None = None\n\n\ndef remaining_seconds(maximum: float) -> float:\n    if DEADLINE is None:\n        return maximum\n    remaining = min(maximum, DEADLINE - time.monotonic())\n    if remaining <= 0:\n        raise TimeoutError(\"benchmark wall-time budget exhausted\")\n    return remaining\n\n\n@contextmanager\ndef cleanup_budget():\n    global DEADLINE\n    saved = DEADLINE\n    DEADLINE = time.monotonic() + 180\n    try:\n        yield\n    finally:\n        DEADLINE = saved\n\n\ndef command(\n    args: list[str],\n    *,\n    env: dict[str, str] | None = None,\n    check: bool = True,\n    timeout: int | None = None,\n) -> subprocess.CompletedProcess[str]:\n    limit = remaining_seconds(timeout if timeout is not None else 86400)\n    with subprocess.Popen(args, cwd=REPO, env=env, stdout=subprocess.PIPE,\n                          stderr=subprocess.STDOUT, text=True, start_new_session=True) as process:\n        try:\n            output, _ = process.communicate(timeout=limit)\n        except subprocess.TimeoutExpired:\n            # Terminate the command group, including compiler/test child processes.\n            try:\n                os.killpg(process.pid, signal.SIGTERM)\n            except ProcessLookupError:\n                pass\n            try:\n                output, _ = process.communicate(timeout=5)\n            except subprocess.TimeoutExpired:\n                try:\n                    os.killpg(process.pid, signal.SIGKILL)\n                except ProcessLookupError:\n                    pass\n                output, _ = process.communicate()\n            raise subprocess.TimeoutExpired(args, limit, output=output) from None\n        result = subprocess.CompletedProcess(args, process.returncode, output)\n        if check:\n            result.check_returncode()\n        return result\n\n\n\ndef write_json(path: Path, value: Any) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    data = json.dumps(value, ensure_ascii=True, indent=2, sort_keys=True) + \"\\n\"\n    with tempfile.NamedTemporaryFile(mode=\"w\", encoding=\"utf-8\", dir=path.parent,\n                                     prefix=\".receipt-\", delete=False) as handle:\n        temporary = Path(handle.name)\n        handle.write(data)\n        handle.flush()\n        os.fsync(handle.fileno())\n    try:\n        temporary.replace(path)\n    finally:\n        temporary.unlink(missing_ok=True)\n\n\n\ndef source_fingerprint() -> dict[str, Any]:\n    head = command([\"git\", \"rev-parse\", \"HEAD\"]).stdout.strip()\n    status = command(\n        [\"git\", \"status\", \"--porcelain=v1\", \"--untracked-files=all\"]\n    ).stdout\n    digest = hashlib.sha256()\n    digest.update(command([\"git\", \"diff\", \"--binary\", \"HEAD\"]).stdout.encode())\n    for relative in command(\n        [\"git\", \"ls-files\", \"--others\", \"--exclude-standard\"]\n    ).stdout.splitlines():\n        path = REPO / relative\n        if path.is_file():\n            digest.update(relative.encode() + b\"\\0\" + path.read_bytes())\n    return {\n        \"head\": head,\n        \"dirty\": bool(status),\n        \"status_sha256\": hashlib.sha256(status.encode()).hexdigest(),\n        \"content_sha256\": digest.hexdigest(),\n    }\n\n"
+      },
+      {
+        "id": "source-2",
+        "path": "makefiles/format.toml",
+        "text": "Source: makefiles/format.toml\n# Formatting and format checks share the same scope.\n\n[tasks.fmt]\ndependencies = [\"fmt-rust\", \"fmt-toml\"]\n\n[tasks.check-format]\ndependencies = [\"check-format-rust\", \"check-format-toml\"]\n\n[tasks.fmt-rust]\nargs    = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"]\ncommand = \"rustup\"\n\n[tasks.check-format-rust]\nargs   = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"]\nextend = \"fmt-rust\"\n\n[tasks.fmt-toml]\nargs    = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt\"]\ncommand = \"sh\"\n\n[tasks.check-format-toml]\nargs   = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt --check\"]\nextend = \"fmt-toml\"\n"
+      },
+      {
+        "id": "source-3",
+        "path": "rust-toolchain.toml",
+        "text": "Source: rust-toolchain.toml\n[toolchain]\nchannel    = \"stable\"\ncomponents = [\"clippy\"]\nprofile    = \"minimal\"\n"
+      },
+      {
+        "id": "source-4",
+        "path": "docker/benchmark/openviking.Dockerfile",
+        "text": "Source: docker/benchmark/openviking.Dockerfile\nFROM rust:1.91.1-trixie AS rust-toolchain\n\nFROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder\n\nARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b\n\nCOPY --from=rust-toolchain /usr/local/cargo /usr/local/cargo\nCOPY --from=rust-toolchain /usr/local/rustup /usr/local/rustup\nCOPY --from=node:24-trixie-slim /usr/local/bin/node /usr/local/bin/\nCOPY --from=node:24-trixie-slim /usr/local/lib/node_modules/ /usr/local/lib/node_modules/\n\nRUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \\\n  && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \\\n  && apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    build-essential \\\n    cmake \\\n    git \\\n  && rm -rf /var/lib/apt/lists/*\n\nENV CARGO_HOME=/usr/local/cargo\nENV RUSTUP_HOME=/usr/local/rustup\nENV PATH=\"/usr/local/cargo/bin:${PATH}\"\nENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a\nENV OPENVIKING_VERSION=0.0.0+a0e822a\nENV UV_COMPILE_BYTECODE=1\nENV UV_LINK_MODE=copy\nENV UV_NO_DEV=1\n\nRUN git init /opt/openviking \\\n  && git -C /opt/openviking remote add origin https://github.com/volcengine/OpenViking.git \\\n  && git -C /opt/openviking fetch --depth=1 origin \"${OPENVIKING_REVISION}\" \\\n  && git -C /opt/openviking checkout --detach FETCH_HEAD \\\n  && test \"$(git -C /opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\"\n\nWORKDIR /opt/openviking\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    --mount=type=cache,target=/usr/local/cargo/registry \\\n    --mount=type=cache,target=/usr/local/cargo/git \\\n    --mount=type=cache,target=/opt/openviking/target \\\n    uv sync --frozen --no-editable \\\n  && git -C /opt/openviking rev-parse HEAD > /opt/openviking/REVISION\n\nFROM python:3.13-slim-trixie\n\nRUN apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    git \\\n    libstdc++6 \\\n  && rm -rf /var/lib/apt/lists/*\n\nCOPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION\nCOPY --from=builder /opt/openviking/.venv /opt/openviking/.venv\nCOPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py\nCOPY scripts/benchmark_targets /opt/benchmark/benchmark_targets\n\nENV PATH=\"/opt/openviking/.venv/bin:${PATH}\"\nENV PYTHONUNBUFFERED=1\n\nCMD [\"python3\", \"/opt/benchmark/benchmark-unit.py\", \"--target\", \"openviking\"]\n"
+      }
+    ]
+  },
+  {
+    "key": "j_e79d92fc2bf7fca41b742f2d",
+    "repeat": 2,
+    "task": {
+      "id": "receipt-origin",
+      "base": "86e68cff^",
+      "fixed": "86e68cff",
+      "path": "scripts/benchmark_runner/checkpoints.py",
+      "topic": "Understand how benchmark receipts preserve measurement provenance across resumes.",
+      "request": "Fix chained benchmark resumes: after saving a reused receipt and resuming again, original_receipt must still identify the first measured receipt. First reuse must record its absolute source path. Preserve identity, integrity and eligibility rejection behavior. Change only the checkpoint module."
+    },
+    "source": {
+      "revision": "d3054cebfd8eb7d1c5962151e8da7d2469ff1b03",
+      "files": {
+        "config/benchmark/suites/common-core-v1.json": "5f9bafa633396a19f544aa5f90e66c9c957dca0c7e2bcae0324634b8d9b7a289",
+        "config/benchmark/suites/knowledge-structure-v1.json": "c307c11b2fc36125fe10eac350240917718155198931eb6c8aaed980b60891f6",
+        "config/benchmark/suites/memory-lifecycle-v1.json": "05150d7d7a52cbe2365a5b25345b7ebd8e6d55f3fd79532f859407db71dbea7a",
+        "config/benchmark/suites/repository-knowledge-v1.json": "7e0a24fe12a3b1e324e3be2e275255a070ecd1a7112388b7552a4d5db34bab9a",
+        "docker/benchmark/openviking.Dockerfile": "cf8e494faf5f17b619be567bb67ef1bb58e70d5238717ef555f50548e5d726ed",
+        "docs/runbook/agent-setup.md": "5cf6dbf524cd17a392e66e95fd797ad0382239e406a7e754c2c3a6020e13c72b",
+        "makefiles/format.toml": "f1f46f1649185a4607abbfb9fe52de9795fc7cdf88488d2f512c77cc0f0ea1f1",
+        "rust-toolchain.toml": "d6c06be84864a2e77f0d2c9b1392e206045bd17b9189817d26bb03c801620d33",
+        "scripts/benchmark_contract/__init__.py": "f472f9d9e78faf1de5c2f0965117f62aca0b34284244c10c34b40b5e0202a0b4",
+        "scripts/benchmark_contract/answers.py": "f57fb9cbb251218eba7fdcefdb06ae7795e2cec9d072ff9f83db72f62559625b",
+        "scripts/benchmark_contract/evaluation.py": "b2c410440ee688c5f0158548d165a9f920ed0edfdd9cf718978bbe4248d9730b",
+        "scripts/benchmark_contract/fixtures.py": "651245b0dec88b5c17e241ab78e090cfea7633fa769fa0cd263fd0229fb68bb4",
+        "scripts/benchmark_contract/metrics.py": "a6e3fc6bb7c26d9fc20ce1831ab73e2ff04228d5ed6f7883a8ca626e4ac00b7d",
+        "scripts/benchmark_runner/__init__.py": "6d857d6c680395343ac13f9e6e7f9714c0b2d952e70af7c98ed934ba848805ff",
+        "scripts/benchmark_runner/answers.py": "80013fcc4ae5667a28a4a1ea3e8d169fca3ab17893bbf71d81250ab5be17b1f5",
+        "scripts/benchmark_runner/baselines.py": "fd0abbcd06982dbf4c0230885a5b2156260cc597c7b8dc41c928a9e8f7c12fcf",
+        "scripts/benchmark_runner/checkpoints.py": "fbef944f8501e67228d0b34c181e0d950ec7fc0474a51d5b1113d0ddc4c8d97b",
+        "scripts/benchmark_runner/cli.py": "8f7112954380a12e9382f8190e9056201b9f7b772ef276627829dd5c799dca3e",
+        "scripts/benchmark_runner/docker.py": "e5b8aa8c2ce6bd2eee09315b19fbd2f556919e0d5962aee7814bea0da267b64f",
+        "scripts/benchmark_runner/execution.py": "ac0396b2e3dbfd6a39e4fe20fe25f7b8fa8a942e292ec680b432861545b59721",
+        "scripts/benchmark_runner/profiles.py": "da179eeaafa0ea718634e53fe31c44d34cfdc8294d057df04e559a88c44c8091",
+        "scripts/benchmark_runner/providers.py": "575fedf23e1f84c29a0923592d2760241d6721c7b95d91fe25afe0d2bd62b74d",
+        "scripts/benchmark_runner/runtime.py": "dae7409c86990dfd49e122d2358f4396b94c76b7978f62eeff7ed91b2bd1c270"
+      }
+    },
+    "packet": [
+      {
+        "id": "source-0",
+        "path": "scripts/benchmark_runner/checkpoints.py",
+        "text": "Source: scripts/benchmark_runner/checkpoints.py\n\"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\"\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nfrom benchmark_contract import evaluate_unit, load_json, sha256_json\nfrom .profiles import integrity_findings\nfrom .runtime import write_json\n\n\ndef reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) -> bool:\n    try:\n        fresh = evaluate_unit(suite, row[\"unit_result\"], target)\n        if fresh != row[\"evaluation\"]:\n            return False\n        return not integrity_findings({\"suite_results\": {suite[\"suite_id\"]: {\n            \"scheduled_targets\": [target[\"id\"]], \"results\": [row]}}})\n    except (KeyError, TypeError, ValueError):\n        return False\n\n\ndef read_checkpoint(path: Path, identity: str, suite: dict[str, Any], target: dict[str, Any]) -> dict[str, Any] | None:\n    if not path.exists():\n        return None\n    try:\n        record = load_json(path)\n        row = record[\"row\"]\n        if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row):\n            return None\n        if not reusable(row, suite, target):\n            return None\n        row[\"reuse\"] = {\"reused\": True, \"original_receipt\": str(path.resolve()),\n                       \"note\": \"Prior measurement; not a fresh timing sample.\"}\n        return row\n    except (KeyError, ValueError, TypeError, OSError):\n        return None\n\n\ndef save_checkpoint(path: Path, identity: str, row: dict[str, Any]) -> None:\n    write_json(path, {\"identity\": identity, \"sha256\": sha256_json(row), \"row\": row})\n"
+      },
+      {
+        "id": "source-1",
+        "path": "scripts/benchmark_runner/runtime.py",
+        "text": "Source: scripts/benchmark_runner/runtime.py\n\"\"\"Host benchmark runtime responsibilities.\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\nimport hashlib\nimport json\nimport subprocess\nimport os\nimport tempfile\nimport time\nimport signal\nfrom contextlib import contextmanager\n\n\nREPO = Path(__file__).resolve().parents[2]\n\n\nDEADLINE: float | None = None\n\n\ndef remaining_seconds(maximum: float) -> float:\n    if DEADLINE is None:\n        return maximum\n    remaining = min(maximum, DEADLINE - time.monotonic())\n    if remaining <= 0:\n        raise TimeoutError(\"benchmark wall-time budget exhausted\")\n    return remaining\n\n\n@contextmanager\ndef cleanup_budget():\n    global DEADLINE\n    saved = DEADLINE\n    DEADLINE = time.monotonic() + 180\n    try:\n        yield\n    finally:\n        DEADLINE = saved\n\n\ndef command(\n    args: list[str],\n    *,\n    env: dict[str, str] | None = None,\n    check: bool = True,\n    timeout: int | None = None,\n) -> subprocess.CompletedProcess[str]:\n    limit = remaining_seconds(timeout if timeout is not None else 86400)\n    with subprocess.Popen(args, cwd=REPO, env=env, stdout=subprocess.PIPE,\n                          stderr=subprocess.STDOUT, text=True, start_new_session=True) as process:\n        try:\n            output, _ = process.communicate(timeout=limit)\n        except subprocess.TimeoutExpired:\n            # Terminate the command group, including compiler/test child processes.\n            try:\n                os.killpg(process.pid, signal.SIGTERM)\n            except ProcessLookupError:\n                pass\n            try:\n                output, _ = process.communicate(timeout=5)\n            except subprocess.TimeoutExpired:\n                try:\n                    os.killpg(process.pid, signal.SIGKILL)\n                except ProcessLookupError:\n                    pass\n                output, _ = process.communicate()\n            raise subprocess.TimeoutExpired(args, limit, output=output) from None\n        result = subprocess.CompletedProcess(args, process.returncode, output)\n        if check:\n            result.check_returncode()\n        return result\n\n\n\ndef write_json(path: Path, value: Any) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    data = json.dumps(value, ensure_ascii=True, indent=2, sort_keys=True) + \"\\n\"\n    with tempfile.NamedTemporaryFile(mode=\"w\", encoding=\"utf-8\", dir=path.parent,\n                                     prefix=\".receipt-\", delete=False) as handle:\n        temporary = Path(handle.name)\n        handle.write(data)\n        handle.flush()\n        os.fsync(handle.fileno())\n    try:\n        temporary.replace(path)\n    finally:\n        temporary.unlink(missing_ok=True)\n\n\n\ndef source_fingerprint() -> dict[str, Any]:\n    head = command([\"git\", \"rev-parse\", \"HEAD\"]).stdout.strip()\n    status = command(\n        [\"git\", \"status\", \"--porcelain=v1\", \"--untracked-files=all\"]\n    ).stdout\n    digest = hashlib.sha256()\n    digest.update(command([\"git\", \"diff\", \"--binary\", \"HEAD\"]).stdout.encode())\n    for relative in command(\n        [\"git\", \"ls-files\", \"--others\", \"--exclude-standard\"]\n    ).stdout.splitlines():\n        path = REPO / relative\n        if path.is_file():\n            digest.update(relative.encode() + b\"\\0\" + path.read_bytes())\n    return {\n        \"head\": head,\n        \"dirty\": bool(status),\n        \"status_sha256\": hashlib.sha256(status.encode()).hexdigest(),\n        \"content_sha256\": digest.hexdigest(),\n    }\n\n"
+      },
+      {
+        "id": "source-2",
+        "path": "makefiles/format.toml",
+        "text": "Source: makefiles/format.toml\n# Formatting and format checks share the same scope.\n\n[tasks.fmt]\ndependencies = [\"fmt-rust\", \"fmt-toml\"]\n\n[tasks.check-format]\ndependencies = [\"check-format-rust\", \"check-format-toml\"]\n\n[tasks.fmt-rust]\nargs    = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"]\ncommand = \"rustup\"\n\n[tasks.check-format-rust]\nargs   = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"]\nextend = \"fmt-rust\"\n\n[tasks.fmt-toml]\nargs    = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt\"]\ncommand = \"sh\"\n\n[tasks.check-format-toml]\nargs   = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt --check\"]\nextend = \"fmt-toml\"\n"
+      },
+      {
+        "id": "source-3",
+        "path": "rust-toolchain.toml",
+        "text": "Source: rust-toolchain.toml\n[toolchain]\nchannel    = \"stable\"\ncomponents = [\"clippy\"]\nprofile    = \"minimal\"\n"
+      },
+      {
+        "id": "source-4",
+        "path": "docker/benchmark/openviking.Dockerfile",
+        "text": "Source: docker/benchmark/openviking.Dockerfile\nFROM rust:1.91.1-trixie AS rust-toolchain\n\nFROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder\n\nARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b\n\nCOPY --from=rust-toolchain /usr/local/cargo /usr/local/cargo\nCOPY --from=rust-toolchain /usr/local/rustup /usr/local/rustup\nCOPY --from=node:24-trixie-slim /usr/local/bin/node /usr/local/bin/\nCOPY --from=node:24-trixie-slim /usr/local/lib/node_modules/ /usr/local/lib/node_modules/\n\nRUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \\\n  && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \\\n  && apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    build-essential \\\n    cmake \\\n    git \\\n  && rm -rf /var/lib/apt/lists/*\n\nENV CARGO_HOME=/usr/local/cargo\nENV RUSTUP_HOME=/usr/local/rustup\nENV PATH=\"/usr/local/cargo/bin:${PATH}\"\nENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a\nENV OPENVIKING_VERSION=0.0.0+a0e822a\nENV UV_COMPILE_BYTECODE=1\nENV UV_LINK_MODE=copy\nENV UV_NO_DEV=1\n\nRUN git init /opt/openviking \\\n  && git -C /opt/openviking remote add origin https://github.com/volcengine/OpenViking.git \\\n  && git -C /opt/openviking fetch --depth=1 origin \"${OPENVIKING_REVISION}\" \\\n  && git -C /opt/openviking checkout --detach FETCH_HEAD \\\n  && test \"$(git -C /opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\"\n\nWORKDIR /opt/openviking\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    --mount=type=cache,target=/usr/local/cargo/registry \\\n    --mount=type=cache,target=/usr/local/cargo/git \\\n    --mount=type=cache,target=/opt/openviking/target \\\n    uv sync --frozen --no-editable \\\n  && git -C /opt/openviking rev-parse HEAD > /opt/openviking/REVISION\n\nFROM python:3.13-slim-trixie\n\nRUN apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    git \\\n    libstdc++6 \\\n  && rm -rf /var/lib/apt/lists/*\n\nCOPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION\nCOPY --from=builder /opt/openviking/.venv /opt/openviking/.venv\nCOPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py\nCOPY scripts/benchmark_targets /opt/benchmark/benchmark_targets\n\nENV PATH=\"/opt/openviking/.venv/bin:${PATH}\"\nENV PYTHONUNBUFFERED=1\n\nCMD [\"python3\", \"/opt/benchmark/benchmark-unit.py\", \"--target\", \"openviking\"]\n"
+      }
+    ]
+  },
+  {
+    "key": "j_62e75ebcc5ee2b7412aeccdc",
+    "repeat": 1,
+    "task": {
+      "id": "interrupt-cleanup",
+      "base": "b7d2f925^",
+      "fixed": "b7d2f925",
+      "path": "scripts/benchmark_runner/runtime.py",
+      "topic": "Understand the benchmark subprocess lifecycle, process groups and timeout cleanup.",
+      "request": "Fix Ctrl-C handling in the benchmark command runner. KeyboardInterrupt must terminate the subprocess group, allow bounded graceful exit, escalate to SIGKILL if needed, drain output, then propagate KeyboardInterrupt. Preserve existing TimeoutExpired behavior and successful command results. Change only the runtime module."
+    },
+    "source": {
+      "revision": "41f690efef22344ae99edd458cb99d65c9529294",
+      "files": {
+        "config/benchmark/suites/common-core-v1.json": "5f9bafa633396a19f544aa5f90e66c9c957dca0c7e2bcae0324634b8d9b7a289",
+        "config/benchmark/suites/knowledge-structure-v1.json": "c307c11b2fc36125fe10eac350240917718155198931eb6c8aaed980b60891f6",
+        "config/benchmark/suites/memory-lifecycle-v1.json": "05150d7d7a52cbe2365a5b25345b7ebd8e6d55f3fd79532f859407db71dbea7a",
+        "config/benchmark/suites/repository-knowledge-v1.json": "7e0a24fe12a3b1e324e3be2e275255a070ecd1a7112388b7552a4d5db34bab9a",
+        "docker/benchmark/openviking.Dockerfile": "cf8e494faf5f17b619be567bb67ef1bb58e70d5238717ef555f50548e5d726ed",
+        "docs/runbook/agent-setup.md": "5cf6dbf524cd17a392e66e95fd797ad0382239e406a7e754c2c3a6020e13c72b",
+        "makefiles/format.toml": "f1f46f1649185a4607abbfb9fe52de9795fc7cdf88488d2f512c77cc0f0ea1f1",
+        "rust-toolchain.toml": "d6c06be84864a2e77f0d2c9b1392e206045bd17b9189817d26bb03c801620d33",
+        "scripts/benchmark_contract/__init__.py": "f472f9d9e78faf1de5c2f0965117f62aca0b34284244c10c34b40b5e0202a0b4",
+        "scripts/benchmark_contract/answers.py": "f57fb9cbb251218eba7fdcefdb06ae7795e2cec9d072ff9f83db72f62559625b",
+        "scripts/benchmark_contract/evaluation.py": "b2c410440ee688c5f0158548d165a9f920ed0edfdd9cf718978bbe4248d9730b",
+        "scripts/benchmark_contract/fixtures.py": "651245b0dec88b5c17e241ab78e090cfea7633fa769fa0cd263fd0229fb68bb4",
+        "scripts/benchmark_contract/metrics.py": "a6e3fc6bb7c26d9fc20ce1831ab73e2ff04228d5ed6f7883a8ca626e4ac00b7d",
+        "scripts/benchmark_runner/__init__.py": "6d857d6c680395343ac13f9e6e7f9714c0b2d952e70af7c98ed934ba848805ff",
+        "scripts/benchmark_runner/answers.py": "80013fcc4ae5667a28a4a1ea3e8d169fca3ab17893bbf71d81250ab5be17b1f5",
+        "scripts/benchmark_runner/baselines.py": "fd0abbcd06982dbf4c0230885a5b2156260cc597c7b8dc41c928a9e8f7c12fcf",
+        "scripts/benchmark_runner/checkpoints.py": "b5357de5a2882919ad70187344dcaa64404d3c7c80229ea556dc4a16047ab59b",
+        "scripts/benchmark_runner/cli.py": "ee5ca504fc5c5f25ab4387fba4b49a52d6e81ad20b607aa8f9b55adf2dd5e723",
+        "scripts/benchmark_runner/docker.py": "e5b8aa8c2ce6bd2eee09315b19fbd2f556919e0d5962aee7814bea0da267b64f",
+        "scripts/benchmark_runner/execution.py": "ac0396b2e3dbfd6a39e4fe20fe25f7b8fa8a942e292ec680b432861545b59721",
+        "scripts/benchmark_runner/profiles.py": "da179eeaafa0ea718634e53fe31c44d34cfdc8294d057df04e559a88c44c8091",
+        "scripts/benchmark_runner/providers.py": "575fedf23e1f84c29a0923592d2760241d6721c7b95d91fe25afe0d2bd62b74d",
+        "scripts/benchmark_runner/runtime.py": "dae7409c86990dfd49e122d2358f4396b94c76b7978f62eeff7ed91b2bd1c270"
+      }
+    },
+    "packet": [
+      {
+        "id": "source-0",
+        "path": "scripts/benchmark_runner/runtime.py",
+        "text": "Source: scripts/benchmark_runner/runtime.py\n\"\"\"Host benchmark runtime responsibilities.\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\nimport hashlib\nimport json\nimport subprocess\nimport os\nimport tempfile\nimport time\nimport signal\nfrom contextlib import contextmanager\n\n\nREPO = Path(__file__).resolve().parents[2]\n\n\nDEADLINE: float | None = None\n\n\ndef remaining_seconds(maximum: float) -> float:\n    if DEADLINE is None:\n        return maximum\n    remaining = min(maximum, DEADLINE - time.monotonic())\n    if remaining <= 0:\n        raise TimeoutError(\"benchmark wall-time budget exhausted\")\n    return remaining\n\n\n@contextmanager\ndef cleanup_budget():\n    global DEADLINE\n    saved = DEADLINE\n    DEADLINE = time.monotonic() + 180\n    try:\n        yield\n    finally:\n        DEADLINE = saved\n\n\ndef command(\n    args: list[str],\n    *,\n    env: dict[str, str] | None = None,\n    check: bool = True,\n    timeout: int | None = None,\n) -> subprocess.CompletedProcess[str]:\n    limit = remaining_seconds(timeout if timeout is not None else 86400)\n    with subprocess.Popen(args, cwd=REPO, env=env, stdout=subprocess.PIPE,\n                          stderr=subprocess.STDOUT, text=True, start_new_session=True) as process:\n        try:\n            output, _ = process.communicate(timeout=limit)\n        except subprocess.TimeoutExpired:\n            # Terminate the command group, including compiler/test child processes.\n            try:\n                os.killpg(process.pid, signal.SIGTERM)\n            except ProcessLookupError:\n                pass\n            try:\n                output, _ = process.communicate(timeout=5)\n            except subprocess.TimeoutExpired:\n                try:\n                    os.killpg(process.pid, signal.SIGKILL)\n                except ProcessLookupError:\n                    pass\n                output, _ = process.communicate()\n            raise subprocess.TimeoutExpired(args, limit, output=output) from None\n        result = subprocess.CompletedProcess(args, process.returncode, output)\n        if check:\n            result.check_returncode()\n        return result\n\n\n\ndef write_json(path: Path, value: Any) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    data = json.dumps(value, ensure_ascii=True, indent=2, sort_keys=True) + \"\\n\"\n    with tempfile.NamedTemporaryFile(mode=\"w\", encoding=\"utf-8\", dir=path.parent,\n                                     prefix=\".receipt-\", delete=False) as handle:\n        temporary = Path(handle.name)\n        handle.write(data)\n        handle.flush()\n        os.fsync(handle.fileno())\n    try:\n        temporary.replace(path)\n    finally:\n        temporary.unlink(missing_ok=True)\n\n\n\ndef source_fingerprint() -> dict[str, Any]:\n    head = command([\"git\", \"rev-parse\", \"HEAD\"]).stdout.strip()\n    status = command(\n        [\"git\", \"status\", \"--porcelain=v1\", \"--untracked-files=all\"]\n    ).stdout\n    digest = hashlib.sha256()\n    digest.update(command([\"git\", \"diff\", \"--binary\", \"HEAD\"]).stdout.encode())\n    for relative in command(\n        [\"git\", \"ls-files\", \"--others\", \"--exclude-standard\"]\n    ).stdout.splitlines():\n        path = REPO / relative\n        if path.is_file():\n            digest.update(relative.encode() + b\"\\0\" + path.read_bytes())\n    return {\n        \"head\": head,\n        \"dirty\": bool(status),\n        \"status_sha256\": hashlib.sha256(status.encode()).hexdigest(),\n        \"content_sha256\": digest.hexdigest(),\n    }\n\n"
+      },
+      {
+        "id": "source-1",
+        "path": "scripts/benchmark_runner/checkpoints.py",
+        "text": "Source: scripts/benchmark_runner/checkpoints.py\n\"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\"\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nfrom benchmark_contract import evaluate_unit, load_json, sha256_json\nfrom .profiles import integrity_findings\nfrom .runtime import write_json\n\n\ndef reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) -> bool:\n    try:\n        fresh = evaluate_unit(suite, row[\"unit_result\"], target)\n        if fresh != row[\"evaluation\"]:\n            return False\n        return not integrity_findings({\"suite_results\": {suite[\"suite_id\"]: {\n            \"scheduled_targets\": [target[\"id\"]], \"results\": [row]}}})\n    except (KeyError, TypeError, ValueError):\n        return False\n\n\ndef read_checkpoint(path: Path, identity: str, suite: dict[str, Any], target: dict[str, Any]) -> dict[str, Any] | None:\n    if not path.exists():\n        return None\n    try:\n        record = load_json(path)\n        row = record[\"row\"]\n        if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row):\n            return None\n        if not reusable(row, suite, target):\n            return None\n        row[\"reuse\"] = {\"reused\": True, \"original_receipt\": row.get(\"reuse\", {}).get(\"original_receipt\", str(path.resolve())),\n                       \"note\": \"Prior measurement; not a fresh timing sample.\"}\n        return row\n    except (KeyError, ValueError, TypeError, OSError):\n        return None\n\n\ndef save_checkpoint(path: Path, identity: str, row: dict[str, Any]) -> None:\n    write_json(path, {\"identity\": identity, \"sha256\": sha256_json(row), \"row\": row})\n"
+      },
+      {
+        "id": "source-2",
+        "path": "makefiles/format.toml",
+        "text": "Source: makefiles/format.toml\n# Formatting and format checks share the same scope.\n\n[tasks.fmt]\ndependencies = [\"fmt-rust\", \"fmt-toml\"]\n\n[tasks.check-format]\ndependencies = [\"check-format-rust\", \"check-format-toml\"]\n\n[tasks.fmt-rust]\nargs    = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"]\ncommand = \"rustup\"\n\n[tasks.check-format-rust]\nargs   = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"]\nextend = \"fmt-rust\"\n\n[tasks.fmt-toml]\nargs    = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt\"]\ncommand = \"sh\"\n\n[tasks.check-format-toml]\nargs   = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt --check\"]\nextend = \"fmt-toml\"\n"
+      },
+      {
+        "id": "source-3",
+        "path": "rust-toolchain.toml",
+        "text": "Source: rust-toolchain.toml\n[toolchain]\nchannel    = \"stable\"\ncomponents = [\"clippy\"]\nprofile    = \"minimal\"\n"
+      },
+      {
+        "id": "source-4",
+        "path": "docker/benchmark/openviking.Dockerfile",
+        "text": "Source: docker/benchmark/openviking.Dockerfile\nFROM rust:1.91.1-trixie AS rust-toolchain\n\nFROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder\n\nARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b\n\nCOPY --from=rust-toolchain /usr/local/cargo /usr/local/cargo\nCOPY --from=rust-toolchain /usr/local/rustup /usr/local/rustup\nCOPY --from=node:24-trixie-slim /usr/local/bin/node /usr/local/bin/\nCOPY --from=node:24-trixie-slim /usr/local/lib/node_modules/ /usr/local/lib/node_modules/\n\nRUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \\\n  && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \\\n  && apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    build-essential \\\n    cmake \\\n    git \\\n  && rm -rf /var/lib/apt/lists/*\n\nENV CARGO_HOME=/usr/local/cargo\nENV RUSTUP_HOME=/usr/local/rustup\nENV PATH=\"/usr/local/cargo/bin:${PATH}\"\nENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a\nENV OPENVIKING_VERSION=0.0.0+a0e822a\nENV UV_COMPILE_BYTECODE=1\nENV UV_LINK_MODE=copy\nENV UV_NO_DEV=1\n\nRUN git init /opt/openviking \\\n  && git -C /opt/openviking remote add origin https://github.com/volcengine/OpenViking.git \\\n  && git -C /opt/openviking fetch --depth=1 origin \"${OPENVIKING_REVISION}\" \\\n  && git -C /opt/openviking checkout --detach FETCH_HEAD \\\n  && test \"$(git -C /opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\"\n\nWORKDIR /opt/openviking\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    --mount=type=cache,target=/usr/local/cargo/registry \\\n    --mount=type=cache,target=/usr/local/cargo/git \\\n    --mount=type=cache,target=/opt/openviking/target \\\n    uv sync --frozen --no-editable \\\n  && git -C /opt/openviking rev-parse HEAD > /opt/openviking/REVISION\n\nFROM python:3.13-slim-trixie\n\nRUN apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    git \\\n    libstdc++6 \\\n  && rm -rf /var/lib/apt/lists/*\n\nCOPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION\nCOPY --from=builder /opt/openviking/.venv /opt/openviking/.venv\nCOPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py\nCOPY scripts/benchmark_targets /opt/benchmark/benchmark_targets\n\nENV PATH=\"/opt/openviking/.venv/bin:${PATH}\"\nENV PYTHONUNBUFFERED=1\n\nCMD [\"python3\", \"/opt/benchmark/benchmark-unit.py\", \"--target\", \"openviking\"]\n"
+      }
+    ]
+  },
+  {
+    "key": "j_7d05619e4217a183769d9260",
+    "repeat": 2,
+    "task": {
+      "id": "interrupt-cleanup",
+      "base": "b7d2f925^",
+      "fixed": "b7d2f925",
+      "path": "scripts/benchmark_runner/runtime.py",
+      "topic": "Understand the benchmark subprocess lifecycle, process groups and timeout cleanup.",
+      "request": "Fix Ctrl-C handling in the benchmark command runner. KeyboardInterrupt must terminate the subprocess group, allow bounded graceful exit, escalate to SIGKILL if needed, drain output, then propagate KeyboardInterrupt. Preserve existing TimeoutExpired behavior and successful command results. Change only the runtime module."
+    },
+    "source": {
+      "revision": "41f690efef22344ae99edd458cb99d65c9529294",
+      "files": {
+        "config/benchmark/suites/common-core-v1.json": "5f9bafa633396a19f544aa5f90e66c9c957dca0c7e2bcae0324634b8d9b7a289",
+        "config/benchmark/suites/knowledge-structure-v1.json": "c307c11b2fc36125fe10eac350240917718155198931eb6c8aaed980b60891f6",
+        "config/benchmark/suites/memory-lifecycle-v1.json": "05150d7d7a52cbe2365a5b25345b7ebd8e6d55f3fd79532f859407db71dbea7a",
+        "config/benchmark/suites/repository-knowledge-v1.json": "7e0a24fe12a3b1e324e3be2e275255a070ecd1a7112388b7552a4d5db34bab9a",
+        "docker/benchmark/openviking.Dockerfile": "cf8e494faf5f17b619be567bb67ef1bb58e70d5238717ef555f50548e5d726ed",
+        "docs/runbook/agent-setup.md": "5cf6dbf524cd17a392e66e95fd797ad0382239e406a7e754c2c3a6020e13c72b",
+        "makefiles/format.toml": "f1f46f1649185a4607abbfb9fe52de9795fc7cdf88488d2f512c77cc0f0ea1f1",
+        "rust-toolchain.toml": "d6c06be84864a2e77f0d2c9b1392e206045bd17b9189817d26bb03c801620d33",
+        "scripts/benchmark_contract/__init__.py": "f472f9d9e78faf1de5c2f0965117f62aca0b34284244c10c34b40b5e0202a0b4",
+        "scripts/benchmark_contract/answers.py": "f57fb9cbb251218eba7fdcefdb06ae7795e2cec9d072ff9f83db72f62559625b",
+        "scripts/benchmark_contract/evaluation.py": "b2c410440ee688c5f0158548d165a9f920ed0edfdd9cf718978bbe4248d9730b",
+        "scripts/benchmark_contract/fixtures.py": "651245b0dec88b5c17e241ab78e090cfea7633fa769fa0cd263fd0229fb68bb4",
+        "scripts/benchmark_contract/metrics.py": "a6e3fc6bb7c26d9fc20ce1831ab73e2ff04228d5ed6f7883a8ca626e4ac00b7d",
+        "scripts/benchmark_runner/__init__.py": "6d857d6c680395343ac13f9e6e7f9714c0b2d952e70af7c98ed934ba848805ff",
+        "scripts/benchmark_runner/answers.py": "80013fcc4ae5667a28a4a1ea3e8d169fca3ab17893bbf71d81250ab5be17b1f5",
+        "scripts/benchmark_runner/baselines.py": "fd0abbcd06982dbf4c0230885a5b2156260cc597c7b8dc41c928a9e8f7c12fcf",
+        "scripts/benchmark_runner/checkpoints.py": "b5357de5a2882919ad70187344dcaa64404d3c7c80229ea556dc4a16047ab59b",
+        "scripts/benchmark_runner/cli.py": "ee5ca504fc5c5f25ab4387fba4b49a52d6e81ad20b607aa8f9b55adf2dd5e723",
+        "scripts/benchmark_runner/docker.py": "e5b8aa8c2ce6bd2eee09315b19fbd2f556919e0d5962aee7814bea0da267b64f",
+        "scripts/benchmark_runner/execution.py": "ac0396b2e3dbfd6a39e4fe20fe25f7b8fa8a942e292ec680b432861545b59721",
+        "scripts/benchmark_runner/profiles.py": "da179eeaafa0ea718634e53fe31c44d34cfdc8294d057df04e559a88c44c8091",
+        "scripts/benchmark_runner/providers.py": "575fedf23e1f84c29a0923592d2760241d6721c7b95d91fe25afe0d2bd62b74d",
+        "scripts/benchmark_runner/runtime.py": "dae7409c86990dfd49e122d2358f4396b94c76b7978f62eeff7ed91b2bd1c270"
+      }
+    },
+    "packet": [
+      {
+        "id": "source-0",
+        "path": "scripts/benchmark_runner/runtime.py",
+        "text": "Source: scripts/benchmark_runner/runtime.py\n\"\"\"Host benchmark runtime responsibilities.\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\nimport hashlib\nimport json\nimport subprocess\nimport os\nimport tempfile\nimport time\nimport signal\nfrom contextlib import contextmanager\n\n\nREPO = Path(__file__).resolve().parents[2]\n\n\nDEADLINE: float | None = None\n\n\ndef remaining_seconds(maximum: float) -> float:\n    if DEADLINE is None:\n        return maximum\n    remaining = min(maximum, DEADLINE - time.monotonic())\n    if remaining <= 0:\n        raise TimeoutError(\"benchmark wall-time budget exhausted\")\n    return remaining\n\n\n@contextmanager\ndef cleanup_budget():\n    global DEADLINE\n    saved = DEADLINE\n    DEADLINE = time.monotonic() + 180\n    try:\n        yield\n    finally:\n        DEADLINE = saved\n\n\ndef command(\n    args: list[str],\n    *,\n    env: dict[str, str] | None = None,\n    check: bool = True,\n    timeout: int | None = None,\n) -> subprocess.CompletedProcess[str]:\n    limit = remaining_seconds(timeout if timeout is not None else 86400)\n    with subprocess.Popen(args, cwd=REPO, env=env, stdout=subprocess.PIPE,\n                          stderr=subprocess.STDOUT, text=True, start_new_session=True) as process:\n        try:\n            output, _ = process.communicate(timeout=limit)\n        except subprocess.TimeoutExpired:\n            # Terminate the command group, including compiler/test child processes.\n            try:\n                os.killpg(process.pid, signal.SIGTERM)\n            except ProcessLookupError:\n                pass\n            try:\n                output, _ = process.communicate(timeout=5)\n            except subprocess.TimeoutExpired:\n                try:\n                    os.killpg(process.pid, signal.SIGKILL)\n                except ProcessLookupError:\n                    pass\n                output, _ = process.communicate()\n            raise subprocess.TimeoutExpired(args, limit, output=output) from None\n        result = subprocess.CompletedProcess(args, process.returncode, output)\n        if check:\n            result.check_returncode()\n        return result\n\n\n\ndef write_json(path: Path, value: Any) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    data = json.dumps(value, ensure_ascii=True, indent=2, sort_keys=True) + \"\\n\"\n    with tempfile.NamedTemporaryFile(mode=\"w\", encoding=\"utf-8\", dir=path.parent,\n                                     prefix=\".receipt-\", delete=False) as handle:\n        temporary = Path(handle.name)\n        handle.write(data)\n        handle.flush()\n        os.fsync(handle.fileno())\n    try:\n        temporary.replace(path)\n    finally:\n        temporary.unlink(missing_ok=True)\n\n\n\ndef source_fingerprint() -> dict[str, Any]:\n    head = command([\"git\", \"rev-parse\", \"HEAD\"]).stdout.strip()\n    status = command(\n        [\"git\", \"status\", \"--porcelain=v1\", \"--untracked-files=all\"]\n    ).stdout\n    digest = hashlib.sha256()\n    digest.update(command([\"git\", \"diff\", \"--binary\", \"HEAD\"]).stdout.encode())\n    for relative in command(\n        [\"git\", \"ls-files\", \"--others\", \"--exclude-standard\"]\n    ).stdout.splitlines():\n        path = REPO / relative\n        if path.is_file():\n            digest.update(relative.encode() + b\"\\0\" + path.read_bytes())\n    return {\n        \"head\": head,\n        \"dirty\": bool(status),\n        \"status_sha256\": hashlib.sha256(status.encode()).hexdigest(),\n        \"content_sha256\": digest.hexdigest(),\n    }\n\n"
+      },
+      {
+        "id": "source-1",
+        "path": "scripts/benchmark_runner/checkpoints.py",
+        "text": "Source: scripts/benchmark_runner/checkpoints.py\n\"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\"\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nfrom benchmark_contract import evaluate_unit, load_json, sha256_json\nfrom .profiles import integrity_findings\nfrom .runtime import write_json\n\n\ndef reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) -> bool:\n    try:\n        fresh = evaluate_unit(suite, row[\"unit_result\"], target)\n        if fresh != row[\"evaluation\"]:\n            return False\n        return not integrity_findings({\"suite_results\": {suite[\"suite_id\"]: {\n            \"scheduled_targets\": [target[\"id\"]], \"results\": [row]}}})\n    except (KeyError, TypeError, ValueError):\n        return False\n\n\ndef read_checkpoint(path: Path, identity: str, suite: dict[str, Any], target: dict[str, Any]) -> dict[str, Any] | None:\n    if not path.exists():\n        return None\n    try:\n        record = load_json(path)\n        row = record[\"row\"]\n        if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row):\n            return None\n        if not reusable(row, suite, target):\n            return None\n        row[\"reuse\"] = {\"reused\": True, \"original_receipt\": row.get(\"reuse\", {}).get(\"original_receipt\", str(path.resolve())),\n                       \"note\": \"Prior measurement; not a fresh timing sample.\"}\n        return row\n    except (KeyError, ValueError, TypeError, OSError):\n        return None\n\n\ndef save_checkpoint(path: Path, identity: str, row: dict[str, Any]) -> None:\n    write_json(path, {\"identity\": identity, \"sha256\": sha256_json(row), \"row\": row})\n"
+      },
+      {
+        "id": "source-2",
+        "path": "makefiles/format.toml",
+        "text": "Source: makefiles/format.toml\n# Formatting and format checks share the same scope.\n\n[tasks.fmt]\ndependencies = [\"fmt-rust\", \"fmt-toml\"]\n\n[tasks.check-format]\ndependencies = [\"check-format-rust\", \"check-format-toml\"]\n\n[tasks.fmt-rust]\nargs    = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"]\ncommand = \"rustup\"\n\n[tasks.check-format-rust]\nargs   = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"]\nextend = \"fmt-rust\"\n\n[tasks.fmt-toml]\nargs    = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt\"]\ncommand = \"sh\"\n\n[tasks.check-format-toml]\nargs   = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt --check\"]\nextend = \"fmt-toml\"\n"
+      },
+      {
+        "id": "source-3",
+        "path": "rust-toolchain.toml",
+        "text": "Source: rust-toolchain.toml\n[toolchain]\nchannel    = \"stable\"\ncomponents = [\"clippy\"]\nprofile    = \"minimal\"\n"
+      },
+      {
+        "id": "source-4",
+        "path": "docker/benchmark/openviking.Dockerfile",
+        "text": "Source: docker/benchmark/openviking.Dockerfile\nFROM rust:1.91.1-trixie AS rust-toolchain\n\nFROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder\n\nARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b\n\nCOPY --from=rust-toolchain /usr/local/cargo /usr/local/cargo\nCOPY --from=rust-toolchain /usr/local/rustup /usr/local/rustup\nCOPY --from=node:24-trixie-slim /usr/local/bin/node /usr/local/bin/\nCOPY --from=node:24-trixie-slim /usr/local/lib/node_modules/ /usr/local/lib/node_modules/\n\nRUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \\\n  && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \\\n  && apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    build-essential \\\n    cmake \\\n    git \\\n  && rm -rf /var/lib/apt/lists/*\n\nENV CARGO_HOME=/usr/local/cargo\nENV RUSTUP_HOME=/usr/local/rustup\nENV PATH=\"/usr/local/cargo/bin:${PATH}\"\nENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a\nENV OPENVIKING_VERSION=0.0.0+a0e822a\nENV UV_COMPILE_BYTECODE=1\nENV UV_LINK_MODE=copy\nENV UV_NO_DEV=1\n\nRUN git init /opt/openviking \\\n  && git -C /opt/openviking remote add origin https://github.com/volcengine/OpenViking.git \\\n  && git -C /opt/openviking fetch --depth=1 origin \"${OPENVIKING_REVISION}\" \\\n  && git -C /opt/openviking checkout --detach FETCH_HEAD \\\n  && test \"$(git -C /opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\"\n\nWORKDIR /opt/openviking\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    --mount=type=cache,target=/usr/local/cargo/registry \\\n    --mount=type=cache,target=/usr/local/cargo/git \\\n    --mount=type=cache,target=/opt/openviking/target \\\n    uv sync --frozen --no-editable \\\n  && git -C /opt/openviking rev-parse HEAD > /opt/openviking/REVISION\n\nFROM python:3.13-slim-trixie\n\nRUN apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    git \\\n    libstdc++6 \\\n  && rm -rf /var/lib/apt/lists/*\n\nCOPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION\nCOPY --from=builder /opt/openviking/.venv /opt/openviking/.venv\nCOPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py\nCOPY scripts/benchmark_targets /opt/benchmark/benchmark_targets\n\nENV PATH=\"/opt/openviking/.venv/bin:${PATH}\"\nENV PYTHONUNBUFFERED=1\n\nCMD [\"python3\", \"/opt/benchmark/benchmark-unit.py\", \"--target\", \"openviking\"]\n"
+      }
+    ]
+  },
+  {
+    "key": "j_905eaf348556205c32b811f4",
+    "repeat": 1,
+    "task": {
+      "id": "floating-builder",
+      "base": "11fda482^",
+      "fixed": "11fda482",
+      "path": "docker/benchmark/openviking.Dockerfile",
+      "topic": "Understand repository Rust channel conventions and the OpenViking container stages.",
+      "request": "Update the OpenViking benchmark Rust builder to follow the unversioned stable Rust release on its existing Debian distribution. Do not select a numeric compiler version or nightly. Preserve the stage name, all subsequent Docker instructions, and the pinned OpenViking revision. Change only the OpenViking Dockerfile."
+    },
+    "source": {
+      "revision": "9138a4abeabc5b81b0aa5a769c40364a736d203b",
+      "files": {
+        "config/benchmark/suites/common-core-v1.json": "5f9bafa633396a19f544aa5f90e66c9c957dca0c7e2bcae0324634b8d9b7a289",
+        "config/benchmark/suites/knowledge-structure-v1.json": "c307c11b2fc36125fe10eac350240917718155198931eb6c8aaed980b60891f6",
+        "config/benchmark/suites/memory-lifecycle-v1.json": "05150d7d7a52cbe2365a5b25345b7ebd8e6d55f3fd79532f859407db71dbea7a",
+        "config/benchmark/suites/repository-knowledge-v1.json": "7e0a24fe12a3b1e324e3be2e275255a070ecd1a7112388b7552a4d5db34bab9a",
+        "docker/benchmark/openviking.Dockerfile": "cf8e494faf5f17b619be567bb67ef1bb58e70d5238717ef555f50548e5d726ed",
+        "docs/runbook/agent-setup.md": "5cf6dbf524cd17a392e66e95fd797ad0382239e406a7e754c2c3a6020e13c72b",
+        "makefiles/format.toml": "f1f46f1649185a4607abbfb9fe52de9795fc7cdf88488d2f512c77cc0f0ea1f1",
+        "rust-toolchain.toml": "d6c06be84864a2e77f0d2c9b1392e206045bd17b9189817d26bb03c801620d33",
+        "scripts/benchmark_contract/__init__.py": "f472f9d9e78faf1de5c2f0965117f62aca0b34284244c10c34b40b5e0202a0b4",
+        "scripts/benchmark_contract/answers.py": "f57fb9cbb251218eba7fdcefdb06ae7795e2cec9d072ff9f83db72f62559625b",
+        "scripts/benchmark_contract/evaluation.py": "b2c410440ee688c5f0158548d165a9f920ed0edfdd9cf718978bbe4248d9730b",
+        "scripts/benchmark_contract/fixtures.py": "651245b0dec88b5c17e241ab78e090cfea7633fa769fa0cd263fd0229fb68bb4",
+        "scripts/benchmark_contract/metrics.py": "a6e3fc6bb7c26d9fc20ce1831ab73e2ff04228d5ed6f7883a8ca626e4ac00b7d",
+        "scripts/benchmark_runner/__init__.py": "6d857d6c680395343ac13f9e6e7f9714c0b2d952e70af7c98ed934ba848805ff",
+        "scripts/benchmark_runner/answers.py": "80013fcc4ae5667a28a4a1ea3e8d169fca3ab17893bbf71d81250ab5be17b1f5",
+        "scripts/benchmark_runner/baselines.py": "fd0abbcd06982dbf4c0230885a5b2156260cc597c7b8dc41c928a9e8f7c12fcf",
+        "scripts/benchmark_runner/checkpoints.py": "b5357de5a2882919ad70187344dcaa64404d3c7c80229ea556dc4a16047ab59b",
+        "scripts/benchmark_runner/cli.py": "7f0ff8a18450a2dbf0764f2b55cd5530f4705751a1cfbf1589e70f11894339f7",
+        "scripts/benchmark_runner/docker.py": "e5b8aa8c2ce6bd2eee09315b19fbd2f556919e0d5962aee7814bea0da267b64f",
+        "scripts/benchmark_runner/execution.py": "90f69ad11a8aff2f7f83ffbf7d4332eff29f46e72fcfdf27072a688662da8474",
+        "scripts/benchmark_runner/profiles.py": "da179eeaafa0ea718634e53fe31c44d34cfdc8294d057df04e559a88c44c8091",
+        "scripts/benchmark_runner/providers.py": "575fedf23e1f84c29a0923592d2760241d6721c7b95d91fe25afe0d2bd62b74d",
+        "scripts/benchmark_runner/runtime.py": "b96af2abf7645da1959e71c1aae61e812f8cfc994db1479a713a551ae82e4299"
+      }
+    },
+    "packet": [
+      {
+        "id": "source-0",
+        "path": "docker/benchmark/openviking.Dockerfile",
+        "text": "Source: docker/benchmark/openviking.Dockerfile\nFROM rust:1.91.1-trixie AS rust-toolchain\n\nFROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder\n\nARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b\n\nCOPY --from=rust-toolchain /usr/local/cargo /usr/local/cargo\nCOPY --from=rust-toolchain /usr/local/rustup /usr/local/rustup\nCOPY --from=node:24-trixie-slim /usr/local/bin/node /usr/local/bin/\nCOPY --from=node:24-trixie-slim /usr/local/lib/node_modules/ /usr/local/lib/node_modules/\n\nRUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \\\n  && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \\\n  && apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    build-essential \\\n    cmake \\\n    git \\\n  && rm -rf /var/lib/apt/lists/*\n\nENV CARGO_HOME=/usr/local/cargo\nENV RUSTUP_HOME=/usr/local/rustup\nENV PATH=\"/usr/local/cargo/bin:${PATH}\"\nENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a\nENV OPENVIKING_VERSION=0.0.0+a0e822a\nENV UV_COMPILE_BYTECODE=1\nENV UV_LINK_MODE=copy\nENV UV_NO_DEV=1\n\nRUN git init /opt/openviking \\\n  && git -C /opt/openviking remote add origin https://github.com/volcengine/OpenViking.git \\\n  && git -C /opt/openviking fetch --depth=1 origin \"${OPENVIKING_REVISION}\" \\\n  && git -C /opt/openviking checkout --detach FETCH_HEAD \\\n  && test \"$(git -C /opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\"\n\nWORKDIR /opt/openviking\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    --mount=type=cache,target=/usr/local/cargo/registry \\\n    --mount=type=cache,target=/usr/local/cargo/git \\\n    --mount=type=cache,target=/opt/openviking/target \\\n    uv sync --frozen --no-editable \\\n  && git -C /opt/openviking rev-parse HEAD > /opt/openviking/REVISION\n\nFROM python:3.13-slim-trixie\n\nRUN apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    git \\\n    libstdc++6 \\\n  && rm -rf /var/lib/apt/lists/*\n\nCOPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION\nCOPY --from=builder /opt/openviking/.venv /opt/openviking/.venv\nCOPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py\nCOPY scripts/benchmark_targets /opt/benchmark/benchmark_targets\n\nENV PATH=\"/opt/openviking/.venv/bin:${PATH}\"\nENV PYTHONUNBUFFERED=1\n\nCMD [\"python3\", \"/opt/benchmark/benchmark-unit.py\", \"--target\", \"openviking\"]\n"
+      },
+      {
+        "id": "source-1",
+        "path": "scripts/benchmark_runner/checkpoints.py",
+        "text": "Source: scripts/benchmark_runner/checkpoints.py\n\"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\"\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nfrom benchmark_contract import evaluate_unit, load_json, sha256_json\nfrom .profiles import integrity_findings\nfrom .runtime import write_json\n\n\ndef reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) -> bool:\n    try:\n        fresh = evaluate_unit(suite, row[\"unit_result\"], target)\n        if fresh != row[\"evaluation\"]:\n            return False\n        return not integrity_findings({\"suite_results\": {suite[\"suite_id\"]: {\n            \"scheduled_targets\": [target[\"id\"]], \"results\": [row]}}})\n    except (KeyError, TypeError, ValueError):\n        return False\n\n\ndef read_checkpoint(path: Path, identity: str, suite: dict[str, Any], target: dict[str, Any]) -> dict[str, Any] | None:\n    if not path.exists():\n        return None\n    try:\n        record = load_json(path)\n        row = record[\"row\"]\n        if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row):\n            return None\n        if not reusable(row, suite, target):\n            return None\n        row[\"reuse\"] = {\"reused\": True, \"original_receipt\": row.get(\"reuse\", {}).get(\"original_receipt\", str(path.resolve())),\n                       \"note\": \"Prior measurement; not a fresh timing sample.\"}\n        return row\n    except (KeyError, ValueError, TypeError, OSError):\n        return None\n\n\ndef save_checkpoint(path: Path, identity: str, row: dict[str, Any]) -> None:\n    write_json(path, {\"identity\": identity, \"sha256\": sha256_json(row), \"row\": row})\n"
+      },
+      {
+        "id": "source-2",
+        "path": "scripts/benchmark_runner/runtime.py",
+        "text": "Source: scripts/benchmark_runner/runtime.py\n\"\"\"Host benchmark runtime responsibilities.\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\nimport hashlib\nimport json\nimport subprocess\nimport os\nimport tempfile\nimport time\nimport signal\nfrom contextlib import contextmanager\n\n\nREPO = Path(__file__).resolve().parents[2]\n\n\nDEADLINE: float | None = None\n\n\ndef remaining_seconds(maximum: float) -> float:\n    if DEADLINE is None:\n        return maximum\n    remaining = min(maximum, DEADLINE - time.monotonic())\n    if remaining <= 0:\n        raise TimeoutError(\"benchmark wall-time budget exhausted\")\n    return remaining\n\n\n@contextmanager\ndef cleanup_budget():\n    global DEADLINE\n    saved = DEADLINE\n    DEADLINE = time.monotonic() + 180\n    try:\n        yield\n    finally:\n        DEADLINE = saved\n\n\ndef command(\n    args: list[str],\n    *,\n    env: dict[str, str] | None = None,\n    check: bool = True,\n    timeout: int | None = None,\n) -> subprocess.CompletedProcess[str]:\n    limit = remaining_seconds(timeout if timeout is not None else 86400)\n    with subprocess.Popen(args, cwd=REPO, env=env, stdout=subprocess.PIPE,\n                          stderr=subprocess.STDOUT, text=True, start_new_session=True) as process:\n        try:\n            output, _ = process.communicate(timeout=limit)\n        except (subprocess.TimeoutExpired, KeyboardInterrupt) as interrupted:\n            # Terminate the command group, including compiler/test child processes.\n            try:\n                os.killpg(process.pid, signal.SIGTERM)\n            except ProcessLookupError:\n                pass\n            try:\n                output, _ = process.communicate(timeout=5)\n            except subprocess.TimeoutExpired:\n                try:\n                    os.killpg(process.pid, signal.SIGKILL)\n                except ProcessLookupError:\n                    pass\n                output, _ = process.communicate()\n            if isinstance(interrupted, KeyboardInterrupt):\n                raise interrupted\n            raise subprocess.TimeoutExpired(args, limit, output=output) from None\n        result = subprocess.CompletedProcess(args, process.returncode, output)\n        if check:\n            result.check_returncode()\n        return result\n\n\n\ndef write_json(path: Path, value: Any) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    data = json.dumps(value, ensure_ascii=True, indent=2, sort_keys=True) + \"\\n\"\n    with tempfile.NamedTemporaryFile(mode=\"w\", encoding=\"utf-8\", dir=path.parent,\n                                     prefix=\".receipt-\", delete=False) as handle:\n        temporary = Path(handle.name)\n        handle.write(data)\n        handle.flush()\n        os.fsync(handle.fileno())\n    try:\n        temporary.replace(path)\n    finally:\n        temporary.unlink(missing_ok=True)\n\n\n\ndef source_fingerprint() -> dict[str, Any]:\n    head = command([\"git\", \"rev-parse\", \"HEAD\"]).stdout.strip()\n    status = command(\n        [\"git\", \"status\", \"--porcelain=v1\", \"--untracked-files=all\"]\n    ).stdout\n    digest = hashlib.sha256()\n    digest.update(command([\"git\", \"diff\", \"--binary\", \"HEAD\"]).stdout.encode())\n    for relative in command(\n        [\"git\", \"ls-files\", \"--others\", \"--exclude-standard\"]\n    ).stdout.splitlines():\n        path = REPO / relative\n        if path.is_file():\n            digest.update(relative.encode() + b\"\\0\" + path.read_bytes())\n    return {\n        \"head\": head,\n        \"dirty\": bool(status),\n        \"status_sha256\": hashlib.sha256(status.encode()).hexdigest(),\n        \"content_sha256\": digest.hexdigest(),\n    }\n\n"
+      },
+      {
+        "id": "source-3",
+        "path": "makefiles/format.toml",
+        "text": "Source: makefiles/format.toml\n# Formatting and format checks share the same scope.\n\n[tasks.fmt]\ndependencies = [\"fmt-rust\", \"fmt-toml\"]\n\n[tasks.check-format]\ndependencies = [\"check-format-rust\", \"check-format-toml\"]\n\n[tasks.fmt-rust]\nargs    = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"]\ncommand = \"rustup\"\n\n[tasks.check-format-rust]\nargs   = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"]\nextend = \"fmt-rust\"\n\n[tasks.fmt-toml]\nargs    = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt\"]\ncommand = \"sh\"\n\n[tasks.check-format-toml]\nargs   = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt --check\"]\nextend = \"fmt-toml\"\n"
+      },
+      {
+        "id": "source-4",
+        "path": "rust-toolchain.toml",
+        "text": "Source: rust-toolchain.toml\n[toolchain]\nchannel    = \"stable\"\ncomponents = [\"clippy\"]\nprofile    = \"minimal\"\n"
+      }
+    ]
+  },
+  {
+    "key": "j_0aca9caebbe0bdb5b220e554",
+    "repeat": 2,
+    "task": {
+      "id": "floating-builder",
+      "base": "11fda482^",
+      "fixed": "11fda482",
+      "path": "docker/benchmark/openviking.Dockerfile",
+      "topic": "Understand repository Rust channel conventions and the OpenViking container stages.",
+      "request": "Update the OpenViking benchmark Rust builder to follow the unversioned stable Rust release on its existing Debian distribution. Do not select a numeric compiler version or nightly. Preserve the stage name, all subsequent Docker instructions, and the pinned OpenViking revision. Change only the OpenViking Dockerfile."
+    },
+    "source": {
+      "revision": "9138a4abeabc5b81b0aa5a769c40364a736d203b",
+      "files": {
+        "config/benchmark/suites/common-core-v1.json": "5f9bafa633396a19f544aa5f90e66c9c957dca0c7e2bcae0324634b8d9b7a289",
+        "config/benchmark/suites/knowledge-structure-v1.json": "c307c11b2fc36125fe10eac350240917718155198931eb6c8aaed980b60891f6",
+        "config/benchmark/suites/memory-lifecycle-v1.json": "05150d7d7a52cbe2365a5b25345b7ebd8e6d55f3fd79532f859407db71dbea7a",
+        "config/benchmark/suites/repository-knowledge-v1.json": "7e0a24fe12a3b1e324e3be2e275255a070ecd1a7112388b7552a4d5db34bab9a",
+        "docker/benchmark/openviking.Dockerfile": "cf8e494faf5f17b619be567bb67ef1bb58e70d5238717ef555f50548e5d726ed",
+        "docs/runbook/agent-setup.md": "5cf6dbf524cd17a392e66e95fd797ad0382239e406a7e754c2c3a6020e13c72b",
+        "makefiles/format.toml": "f1f46f1649185a4607abbfb9fe52de9795fc7cdf88488d2f512c77cc0f0ea1f1",
+        "rust-toolchain.toml": "d6c06be84864a2e77f0d2c9b1392e206045bd17b9189817d26bb03c801620d33",
+        "scripts/benchmark_contract/__init__.py": "f472f9d9e78faf1de5c2f0965117f62aca0b34284244c10c34b40b5e0202a0b4",
+        "scripts/benchmark_contract/answers.py": "f57fb9cbb251218eba7fdcefdb06ae7795e2cec9d072ff9f83db72f62559625b",
+        "scripts/benchmark_contract/evaluation.py": "b2c410440ee688c5f0158548d165a9f920ed0edfdd9cf718978bbe4248d9730b",
+        "scripts/benchmark_contract/fixtures.py": "651245b0dec88b5c17e241ab78e090cfea7633fa769fa0cd263fd0229fb68bb4",
+        "scripts/benchmark_contract/metrics.py": "a6e3fc6bb7c26d9fc20ce1831ab73e2ff04228d5ed6f7883a8ca626e4ac00b7d",
+        "scripts/benchmark_runner/__init__.py": "6d857d6c680395343ac13f9e6e7f9714c0b2d952e70af7c98ed934ba848805ff",
+        "scripts/benchmark_runner/answers.py": "80013fcc4ae5667a28a4a1ea3e8d169fca3ab17893bbf71d81250ab5be17b1f5",
+        "scripts/benchmark_runner/baselines.py": "fd0abbcd06982dbf4c0230885a5b2156260cc597c7b8dc41c928a9e8f7c12fcf",
+        "scripts/benchmark_runner/checkpoints.py": "b5357de5a2882919ad70187344dcaa64404d3c7c80229ea556dc4a16047ab59b",
+        "scripts/benchmark_runner/cli.py": "7f0ff8a18450a2dbf0764f2b55cd5530f4705751a1cfbf1589e70f11894339f7",
+        "scripts/benchmark_runner/docker.py": "e5b8aa8c2ce6bd2eee09315b19fbd2f556919e0d5962aee7814bea0da267b64f",
+        "scripts/benchmark_runner/execution.py": "90f69ad11a8aff2f7f83ffbf7d4332eff29f46e72fcfdf27072a688662da8474",
+        "scripts/benchmark_runner/profiles.py": "da179eeaafa0ea718634e53fe31c44d34cfdc8294d057df04e559a88c44c8091",
+        "scripts/benchmark_runner/providers.py": "575fedf23e1f84c29a0923592d2760241d6721c7b95d91fe25afe0d2bd62b74d",
+        "scripts/benchmark_runner/runtime.py": "b96af2abf7645da1959e71c1aae61e812f8cfc994db1479a713a551ae82e4299"
+      }
+    },
+    "packet": [
+      {
+        "id": "source-0",
+        "path": "docker/benchmark/openviking.Dockerfile",
+        "text": "Source: docker/benchmark/openviking.Dockerfile\nFROM rust:1.91.1-trixie AS rust-toolchain\n\nFROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder\n\nARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b\n\nCOPY --from=rust-toolchain /usr/local/cargo /usr/local/cargo\nCOPY --from=rust-toolchain /usr/local/rustup /usr/local/rustup\nCOPY --from=node:24-trixie-slim /usr/local/bin/node /usr/local/bin/\nCOPY --from=node:24-trixie-slim /usr/local/lib/node_modules/ /usr/local/lib/node_modules/\n\nRUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \\\n  && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \\\n  && apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    build-essential \\\n    cmake \\\n    git \\\n  && rm -rf /var/lib/apt/lists/*\n\nENV CARGO_HOME=/usr/local/cargo\nENV RUSTUP_HOME=/usr/local/rustup\nENV PATH=\"/usr/local/cargo/bin:${PATH}\"\nENV SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a\nENV OPENVIKING_VERSION=0.0.0+a0e822a\nENV UV_COMPILE_BYTECODE=1\nENV UV_LINK_MODE=copy\nENV UV_NO_DEV=1\n\nRUN git init /opt/openviking \\\n  && git -C /opt/openviking remote add origin https://github.com/volcengine/OpenViking.git \\\n  && git -C /opt/openviking fetch --depth=1 origin \"${OPENVIKING_REVISION}\" \\\n  && git -C /opt/openviking checkout --detach FETCH_HEAD \\\n  && test \"$(git -C /opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\"\n\nWORKDIR /opt/openviking\nRUN --mount=type=cache,target=/root/.cache/uv \\\n    --mount=type=cache,target=/usr/local/cargo/registry \\\n    --mount=type=cache,target=/usr/local/cargo/git \\\n    --mount=type=cache,target=/opt/openviking/target \\\n    uv sync --frozen --no-editable \\\n  && git -C /opt/openviking rev-parse HEAD > /opt/openviking/REVISION\n\nFROM python:3.13-slim-trixie\n\nRUN apt-get update \\\n  && apt-get install -y --no-install-recommends \\\n    git \\\n    libstdc++6 \\\n  && rm -rf /var/lib/apt/lists/*\n\nCOPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION\nCOPY --from=builder /opt/openviking/.venv /opt/openviking/.venv\nCOPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py\nCOPY scripts/benchmark_targets /opt/benchmark/benchmark_targets\n\nENV PATH=\"/opt/openviking/.venv/bin:${PATH}\"\nENV PYTHONUNBUFFERED=1\n\nCMD [\"python3\", \"/opt/benchmark/benchmark-unit.py\", \"--target\", \"openviking\"]\n"
+      },
+      {
+        "id": "source-1",
+        "path": "scripts/benchmark_runner/checkpoints.py",
+        "text": "Source: scripts/benchmark_runner/checkpoints.py\n\"\"\"Atomic, identity-bound successful unit receipts; failures always rerun.\"\"\"\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\n\nfrom benchmark_contract import evaluate_unit, load_json, sha256_json\nfrom .profiles import integrity_findings\nfrom .runtime import write_json\n\n\ndef reusable(row: dict[str, Any], suite: dict[str, Any], target: dict[str, Any]) -> bool:\n    try:\n        fresh = evaluate_unit(suite, row[\"unit_result\"], target)\n        if fresh != row[\"evaluation\"]:\n            return False\n        return not integrity_findings({\"suite_results\": {suite[\"suite_id\"]: {\n            \"scheduled_targets\": [target[\"id\"]], \"results\": [row]}}})\n    except (KeyError, TypeError, ValueError):\n        return False\n\n\ndef read_checkpoint(path: Path, identity: str, suite: dict[str, Any], target: dict[str, Any]) -> dict[str, Any] | None:\n    if not path.exists():\n        return None\n    try:\n        record = load_json(path)\n        row = record[\"row\"]\n        if record[\"identity\"] != identity or record[\"sha256\"] != sha256_json(row):\n            return None\n        if not reusable(row, suite, target):\n            return None\n        row[\"reuse\"] = {\"reused\": True, \"original_receipt\": row.get(\"reuse\", {}).get(\"original_receipt\", str(path.resolve())),\n                       \"note\": \"Prior measurement; not a fresh timing sample.\"}\n        return row\n    except (KeyError, ValueError, TypeError, OSError):\n        return None\n\n\ndef save_checkpoint(path: Path, identity: str, row: dict[str, Any]) -> None:\n    write_json(path, {\"identity\": identity, \"sha256\": sha256_json(row), \"row\": row})\n"
+      },
+      {
+        "id": "source-2",
+        "path": "scripts/benchmark_runner/runtime.py",
+        "text": "Source: scripts/benchmark_runner/runtime.py\n\"\"\"Host benchmark runtime responsibilities.\"\"\"\n\nfrom __future__ import annotations\n\nfrom pathlib import Path\nfrom typing import Any\nimport hashlib\nimport json\nimport subprocess\nimport os\nimport tempfile\nimport time\nimport signal\nfrom contextlib import contextmanager\n\n\nREPO = Path(__file__).resolve().parents[2]\n\n\nDEADLINE: float | None = None\n\n\ndef remaining_seconds(maximum: float) -> float:\n    if DEADLINE is None:\n        return maximum\n    remaining = min(maximum, DEADLINE - time.monotonic())\n    if remaining <= 0:\n        raise TimeoutError(\"benchmark wall-time budget exhausted\")\n    return remaining\n\n\n@contextmanager\ndef cleanup_budget():\n    global DEADLINE\n    saved = DEADLINE\n    DEADLINE = time.monotonic() + 180\n    try:\n        yield\n    finally:\n        DEADLINE = saved\n\n\ndef command(\n    args: list[str],\n    *,\n    env: dict[str, str] | None = None,\n    check: bool = True,\n    timeout: int | None = None,\n) -> subprocess.CompletedProcess[str]:\n    limit = remaining_seconds(timeout if timeout is not None else 86400)\n    with subprocess.Popen(args, cwd=REPO, env=env, stdout=subprocess.PIPE,\n                          stderr=subprocess.STDOUT, text=True, start_new_session=True) as process:\n        try:\n            output, _ = process.communicate(timeout=limit)\n        except (subprocess.TimeoutExpired, KeyboardInterrupt) as interrupted:\n            # Terminate the command group, including compiler/test child processes.\n            try:\n                os.killpg(process.pid, signal.SIGTERM)\n            except ProcessLookupError:\n                pass\n            try:\n                output, _ = process.communicate(timeout=5)\n            except subprocess.TimeoutExpired:\n                try:\n                    os.killpg(process.pid, signal.SIGKILL)\n                except ProcessLookupError:\n                    pass\n                output, _ = process.communicate()\n            if isinstance(interrupted, KeyboardInterrupt):\n                raise interrupted\n            raise subprocess.TimeoutExpired(args, limit, output=output) from None\n        result = subprocess.CompletedProcess(args, process.returncode, output)\n        if check:\n            result.check_returncode()\n        return result\n\n\n\ndef write_json(path: Path, value: Any) -> None:\n    path.parent.mkdir(parents=True, exist_ok=True)\n    data = json.dumps(value, ensure_ascii=True, indent=2, sort_keys=True) + \"\\n\"\n    with tempfile.NamedTemporaryFile(mode=\"w\", encoding=\"utf-8\", dir=path.parent,\n                                     prefix=\".receipt-\", delete=False) as handle:\n        temporary = Path(handle.name)\n        handle.write(data)\n        handle.flush()\n        os.fsync(handle.fileno())\n    try:\n        temporary.replace(path)\n    finally:\n        temporary.unlink(missing_ok=True)\n\n\n\ndef source_fingerprint() -> dict[str, Any]:\n    head = command([\"git\", \"rev-parse\", \"HEAD\"]).stdout.strip()\n    status = command(\n        [\"git\", \"status\", \"--porcelain=v1\", \"--untracked-files=all\"]\n    ).stdout\n    digest = hashlib.sha256()\n    digest.update(command([\"git\", \"diff\", \"--binary\", \"HEAD\"]).stdout.encode())\n    for relative in command(\n        [\"git\", \"ls-files\", \"--others\", \"--exclude-standard\"]\n    ).stdout.splitlines():\n        path = REPO / relative\n        if path.is_file():\n            digest.update(relative.encode() + b\"\\0\" + path.read_bytes())\n    return {\n        \"head\": head,\n        \"dirty\": bool(status),\n        \"status_sha256\": hashlib.sha256(status.encode()).hexdigest(),\n        \"content_sha256\": digest.hexdigest(),\n    }\n\n"
+      },
+      {
+        "id": "source-3",
+        "path": "makefiles/format.toml",
+        "text": "Source: makefiles/format.toml\n# Formatting and format checks share the same scope.\n\n[tasks.fmt]\ndependencies = [\"fmt-rust\", \"fmt-toml\"]\n\n[tasks.check-format]\ndependencies = [\"check-format-rust\", \"check-format-toml\"]\n\n[tasks.fmt-rust]\nargs    = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\"]\ncommand = \"rustup\"\n\n[tasks.check-format-rust]\nargs   = [\"run\", \"nightly\", \"cargo\", \"fmt\", \"--all\", \"--\", \"--check\"]\nextend = \"fmt-rust\"\n\n[tasks.fmt-toml]\nargs    = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt\"]\ncommand = \"sh\"\n\n[tasks.check-format-toml]\nargs   = [\"-c\", \"git ls-files -z --cached --others --exclude-standard -- '*.toml' | xargs -0 taplo fmt --check\"]\nextend = \"fmt-toml\"\n"
+      },
+      {
+        "id": "source-4",
+        "path": "rust-toolchain.toml",
+        "text": "Source: rust-toolchain.toml\n[toolchain]\nchannel    = \"stable\"\ncomponents = [\"clippy\"]\nprofile    = \"minimal\"\n"
+      }
+    ]
+  }
+]

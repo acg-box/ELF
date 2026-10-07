@@ -1,0 +1,176 @@
+[
+  {
+    "episode": "j_82607bd5ea8af918f1adb775",
+    "usage": {
+      "prompt_tokens": 2944,
+      "completion_tokens": 1981,
+      "total_tokens": 4925,
+      "cost": 0.0016302,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0016302,
+        "upstream_inference_prompt_cost": 0.0004416,
+        "upstream_inference_completions_cost": 0.0011886
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1515,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "seconds": 9.05,
+    "finish_reason": "stop",
+    "git_commit": "684da722b5beef6552a03a4676c6692c508924dc"
+  },
+  {
+    "episode": "j_e79d92fc2bf7fca41b742f2d",
+    "usage": {
+      "prompt_tokens": 2944,
+      "completion_tokens": 2786,
+      "total_tokens": 5730,
+      "cost": 0.001718064,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 2688,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.001718064,
+        "upstream_inference_prompt_cost": 4.6464e-05,
+        "upstream_inference_completions_cost": 0.0016716
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 2308,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "seconds": 11.25,
+    "finish_reason": "stop",
+    "git_commit": "a1d51c0ba9c32aeea61c0d7f8399455f3ea9e183"
+  },
+  {
+    "episode": "j_62e75ebcc5ee2b7412aeccdc",
+    "usage": {
+      "prompt_tokens": 2964,
+      "completion_tokens": 2377,
+      "total_tokens": 5341,
+      "cost": 0.0018708,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0018708,
+        "upstream_inference_prompt_cost": 0.0004446,
+        "upstream_inference_completions_cost": 0.0014262
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1879,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "seconds": 9.952,
+    "finish_reason": "stop",
+    "git_commit": "48a8455882821f443df1a3b1581d38899a6e5658"
+  },
+  {
+    "episode": "j_7d05619e4217a183769d9260",
+    "usage": {
+      "prompt_tokens": 2964,
+      "completion_tokens": 1402,
+      "total_tokens": 4366,
+      "cost": 0.000871848,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 2816,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000871848,
+        "upstream_inference_prompt_cost": 3.0648e-05,
+        "upstream_inference_completions_cost": 0.0008412
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 775,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "seconds": 6.884,
+    "finish_reason": "stop",
+    "git_commit": "ef1484ec4d9f5bde02e26d581fcd4f7ac77398af"
+  },
+  {
+    "episode": "j_905eaf348556205c32b811f4",
+    "usage": {
+      "prompt_tokens": 2989,
+      "completion_tokens": 2193,
+      "total_tokens": 5182,
+      "cost": 0.00176415,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00176415,
+        "upstream_inference_prompt_cost": 0.00044835,
+        "upstream_inference_completions_cost": 0.0013158
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1798,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "seconds": 9.403,
+    "finish_reason": "stop",
+    "git_commit": "cad6cb61b9556002eb385dfdde4f13bf3e70ecee"
+  },
+  {
+    "episode": "j_0aca9caebbe0bdb5b220e554",
+    "usage": {
+      "prompt_tokens": 2989,
+      "completion_tokens": 2152,
+      "total_tokens": 5141,
+      "cost": 0.001325598,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 2816,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.001325598,
+        "upstream_inference_prompt_cost": 3.4398e-05,
+        "upstream_inference_completions_cost": 0.0012912
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1770,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "seconds": 9.254,
+    "finish_reason": "stop",
+    "git_commit": "a2eae6f06e9336b7d54839367c6fab403567a382"
+  }
+]

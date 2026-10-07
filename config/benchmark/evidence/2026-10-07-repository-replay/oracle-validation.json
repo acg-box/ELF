@@ -1,0 +1,191 @@
+[
+  {
+    "task": "receipt-origin",
+    "before": {
+      "checks": [
+        {
+          "name": "first-origin",
+          "passed": true
+        },
+        {
+          "name": "chained-origin",
+          "passed": false
+        },
+        {
+          "name": "identity-rejected",
+          "passed": true
+        },
+        {
+          "name": "digest-rejected",
+          "passed": true
+        },
+        {
+          "name": "ineligible-rejected",
+          "passed": true
+        }
+      ],
+      "passed": false,
+      "exit_code": 1
+    },
+    "reference_fix": {
+      "checks": [
+        {
+          "name": "first-origin",
+          "passed": true
+        },
+        {
+          "name": "chained-origin",
+          "passed": true
+        },
+        {
+          "name": "identity-rejected",
+          "passed": true
+        },
+        {
+          "name": "digest-rejected",
+          "passed": true
+        },
+        {
+          "name": "ineligible-rejected",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "exit_code": 0
+    }
+  },
+  {
+    "task": "interrupt-cleanup",
+    "before": {
+      "checks": [
+        {
+          "name": "interrupt-bounded-grace-False",
+          "passed": false
+        },
+        {
+          "name": "interrupt-graceful",
+          "passed": false
+        },
+        {
+          "name": "interrupt-bounded-grace-True",
+          "passed": false
+        },
+        {
+          "name": "interrupt-stubborn",
+          "passed": false
+        },
+        {
+          "name": "timeout-bounded-grace-False",
+          "passed": true
+        },
+        {
+          "name": "timeout-graceful",
+          "passed": true
+        },
+        {
+          "name": "timeout-output-False",
+          "passed": true
+        },
+        {
+          "name": "timeout-bounded-grace-True",
+          "passed": true
+        },
+        {
+          "name": "timeout-stubborn",
+          "passed": true
+        },
+        {
+          "name": "timeout-output-True",
+          "passed": true
+        },
+        {
+          "name": "successful-command",
+          "passed": true
+        }
+      ],
+      "passed": false,
+      "exit_code": 1
+    },
+    "reference_fix": {
+      "checks": [
+        {
+          "name": "interrupt-bounded-grace-False",
+          "passed": true
+        },
+        {
+          "name": "interrupt-graceful",
+          "passed": true
+        },
+        {
+          "name": "interrupt-bounded-grace-True",
+          "passed": true
+        },
+        {
+          "name": "interrupt-stubborn",
+          "passed": true
+        },
+        {
+          "name": "timeout-bounded-grace-False",
+          "passed": true
+        },
+        {
+          "name": "timeout-graceful",
+          "passed": true
+        },
+        {
+          "name": "timeout-output-False",
+          "passed": true
+        },
+        {
+          "name": "timeout-bounded-grace-True",
+          "passed": true
+        },
+        {
+          "name": "timeout-stubborn",
+          "passed": true
+        },
+        {
+          "name": "timeout-output-True",
+          "passed": true
+        },
+        {
+          "name": "successful-command",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "exit_code": 0
+    }
+  },
+  {
+    "task": "floating-builder",
+    "before": {
+      "checks": [
+        {
+          "name": "floating-stable-distribution",
+          "passed": false
+        },
+        {
+          "name": "unrelated-instructions-preserved",
+          "passed": true
+        }
+      ],
+      "passed": false,
+      "exit_code": 1
+    },
+    "reference_fix": {
+      "checks": [
+        {
+          "name": "floating-stable-distribution",
+          "passed": true
+        },
+        {
+          "name": "unrelated-instructions-preserved",
+          "passed": true
+        }
+      ],
+      "passed": true,
+      "exit_code": 0
+    }
+  }
+]
