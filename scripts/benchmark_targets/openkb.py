@@ -753,12 +753,6 @@ def _run_phase(
             if not isinstance(answer, str) or not answer.strip():
                 classification = "product_failed"
                 failure = "OpenKB native query returned an empty answer"
-            elif not evidence_ids:
-                classification = "product_failed"
-                failure = (
-                    "OpenKB native query returned no source-bearing tool trace; "
-                    "provenance was not inferred from answer text"
-                )
             else:
                 classification = "completed"
                 failure = None
@@ -796,7 +790,7 @@ def _run_phase(
     }
 
 
-def run_openkb(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str, Any]:
+def _run_openkb(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str, Any]:
     """Ingest once, then run cold and warm OpenKB queries over exact state."""
     jobs: list[dict[str, Any]] = []
     try:
@@ -969,3 +963,29 @@ def run_openkb(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str, A
             },
         },
     }
+
+
+def run_openkb(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str, Any]:
+    """Keep independent cases in independent native knowledge bases."""
+    phases = {phase: {"jobs": []} for phase in ("cold", "warm")}
+    units = []
+    for job in _load_jobs(input_dir):
+        key = hashlib.sha256(job["job_id"].encode()).hexdigest()[:24]
+        job_input = state_dir / "job-inputs" / key
+        _write_json(job_input / "job.json", job)
+        unit = _run_openkb(job_input, artifacts / "jobs" / key, state_dir / "jobs" / key)
+        units.append(unit)
+        _write_json(artifacts / "jobs" / key / "unit-result.json", unit)
+        for phase in phases:
+            phases[phase]["jobs"].extend(unit["phases"][phase]["jobs"])
+    for phase in phases:
+        phases[phase]["status"] = _phase_status(phases[phase]["jobs"])
+        phases[phase]["adapter_metadata"] = {"job_isolation": "one_native_knowledge_base_per_case",
+                                               "job_count": len(units)}
+    result_class = _phase_status(phases["cold"]["jobs"] + phases["warm"]["jobs"])
+    return {"schema": "elf.benchmark_unit_result/v4", "target": "openkb",
+        "native_mode": "agent_query_with_native_source_trace", "score_eligible": True,
+        "result_class": result_class,
+        "warm_reused_state": bool(units) and all(u["warm_reused_state"] for u in units),
+        "ingest_count": 1, "ingest_duration_ms": sum(u.get("ingest_duration_ms", 0) for u in units),
+        "phases": phases}

@@ -281,34 +281,26 @@ def _ingest_job(
     add_results: list[Any] = []
     job_source = source_dir / key
     job_source.mkdir(parents=True, exist_ok=True)
-    _native_call("mkdir", client.mkdir, target_root)
-
+    by_name = {}
     for item_index, item in enumerate(job["corpus"]["items"]):
         name_digest = hashlib.sha256(item["evidence_id"].encode("utf-8")).hexdigest()[:20]
         source_path = job_source / f"source-{item_index:04d}-{name_digest}.txt"
         source_path.write_text(item["text"], encoding="utf-8")
-        target_uri = f"{target_root}/{source_path.name}"
-        added = _native_call(
-            "add_resource",
-            client.add_resource,
-            str(source_path),
-            to=target_uri,
-            wait=True,
-            timeout=300,
-        )
-        _assert_add_result_ready(added)
-        add_results.append(added)
-        root_uri = added.get("root_uri") if isinstance(added, dict) else None
-        if not isinstance(root_uri, str) or not root_uri:
-            raise OpenVikingAdapterFailure(
-                "OpenViking add_resource returned no native root_uri"
-            )
-        if root_uri in source_map:
-            raise OpenVikingAdapterFailure(
-                f"OpenViking returned duplicate native root_uri: {root_uri}"
-            )
-        source_map[root_uri] = item["evidence_id"]
+        by_name[source_path.stem] = item["evidence_id"]
         source_paths[item["evidence_id"]] = str(source_path)
+    added = _native_call("add_resource directory", client.add_resource,
+        str(job_source), to=target_root, wait=True, timeout=300)
+    _assert_add_result_ready(added)
+    add_results.append(added)
+    target_root = added["root_uri"]
+    listing = _native_call("list imported resources", client.ls, target_root, recursive=True)
+    for row in listing:
+        name = row.get("name")
+        if row.get("isDir") and name in by_name:
+            source_map[row["uri"]] = by_name[name]
+    if set(source_map.values()) != set(source_paths):
+        raise OpenVikingAdapterFailure("Directory import did not expose every native source identity")
+    _write_json(raw_dir / f"{key}-listing.json", listing)
 
     _write_json(raw_dir / f"{key}-add.json", native_json(add_results))
     return target_root, source_map, source_paths
@@ -677,7 +669,7 @@ def _run_openviking(
     return {
         "schema": "elf.benchmark_unit_result/v4",
         "target": "openviking",
-        "native_mode": "external_embedding",
+        "native_mode": "native_hierarchy_thinking_search",
         "score_eligible": True,
         "result_class": "completed",
         "warm_reused_state": True,

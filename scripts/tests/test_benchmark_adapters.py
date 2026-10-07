@@ -258,3 +258,23 @@ class BenchmarkAdaptersTests(BenchmarkCase):
         self.assertEqual(call_args["dimensions"], 4096)
         self.assertEqual(call_args["allowed_openai_params"], ["dimensions"])
         self.assertEqual(settings["vector_store"]["vector_size"], 4096)
+    def test_openviking_directory_ingest_maps_returned_native_identifiers(self):
+        class Client:
+            def __init__(self): self.calls = 0
+            def add_resource(self, path, **kwargs):
+                self.calls += 1
+                self.paths = list(Path(path).glob('*.txt'))
+                return {'status':'success','root_uri':'viking://native/actual',
+                        'queue_status':{'Embedding':{'processed':len(self.paths),'error_count':0}}}
+            def ls(self, uri, recursive):
+                return [{'isDir':True,'name':p.stem,'uri':uri+'/'+p.stem} for p in self.paths]
+        client=Client()
+        job={'job_id':'j_bulk','corpus':{'items':[{'evidence_id':f'e_{i}','text':f'fact {i}'} for i in range(3)]}}
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            uri,mapping,paths=OPENVIKING._ingest_job(client,job,job_index=0,
+                source_dir=root/'sources',raw_dir=root/'raw')
+        self.assertEqual(client.calls,1)
+        self.assertEqual(uri,'viking://native/actual')
+        self.assertEqual(set(mapping.values()),{'e_0','e_1','e_2'})
+        self.assertTrue(all(key.startswith(uri+'/') for key in mapping))

@@ -156,7 +156,7 @@
         "knowledge-structure-v1",
         "repository-knowledge-v1"
       ],
-      "image": "elf-benchmark-openviking:v8",
+      "image": "elf-benchmark-openviking:v9",
       "dockerfile": "docker/benchmark/openviking.Dockerfile",
       "pin": {
         "kind": "python_package",
@@ -165,7 +165,8 @@
         "upstream_release_commit": "df32bf6e50a40843438f9491a26069ca4bd08f1f"
       },
       "native_deviations": {
-        "mode": "Native L0/L1 summaries and thinking search with the shared model; one concurrent VLM call and one native retry under the gateway limit."
+        "mode": "Native L0/L1 summaries and thinking search with the shared model; one concurrent VLM call and one native retry under the gateway limit.",
+        "ingest": "One native directory import per case; source mapping comes from the returned native resource listing."
       }
     },
     {
@@ -249,12 +250,15 @@
         "knowledge-structure-v1",
         "repository-knowledge-v1"
       ],
-      "image": "elf-benchmark-openkb:v6",
+      "image": "elf-benchmark-openkb:v7",
       "dockerfile": "docker/benchmark/openkb.Dockerfile",
       "pin": {
         "kind": "git",
         "source": "https://github.com/VectifyAI/OpenKB.git",
         "value": "ac118407eacd995618256f121c21a2d275672f47"
+      },
+      "native_deviations": {
+        "isolation": "One native knowledge base per independent case; cold and warm phases reuse that same knowledge base."
       }
     },
     {

@@ -55,7 +55,7 @@ def failure_result(
     native_mode = {
         "qmd": "lexical",
         "pageindex": "native_local_pdf_agent",
-        "openviking": "native_resource_find",
+        "openviking": "native_hierarchy_thinking_search",
         "graphiti": "native_temporal_graph_search",
         "graphrag": "native_local_search",
         "openkb": "agent_query_with_native_source_trace",
