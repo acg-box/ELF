@@ -15,6 +15,25 @@ from benchmark_deep.fixtures import workload
 
 
 class DeepContractTests(unittest.TestCase):
+    def test_fixed_groups_preserve_every_case_and_native_dependency(self):
+        inputs, oracle = workload()
+        combined = {}
+        for group in ('scale-100', 'scale-1000', 'session', 'conflicts', 'isolation', 'mutations'):
+            selected, expected = workload(group)
+            self.assertFalse(combined.keys() & expected.keys())
+            combined.update(expected)
+            scopes = {a['scope'] for a in selected['actions']}
+            self.assertEqual(selected['actions'], [a for a in inputs['actions'] if a['scope'] in scopes])
+            if group == 'isolation':
+                self.assertEqual(scopes, {'scope-a', 'scope-b'})
+                self.assertEqual([a['action'] for a in selected['actions'][:2]], ['ingest', 'ingest'])
+        self.assertEqual(combined, oracle)
+        behavior, expected = workload('behavior')
+        self.assertEqual(len(expected), 42)
+        self.assertFalse(any(a['scope'].startswith('scale-') for a in behavior['actions']))
+        with self.assertRaises(ValueError):
+            workload('scope-a')
+
     def test_scale_ingests_once_per_size_and_has_absent_controls(self):
         inputs, oracle = workload()
         self.assertEqual(len(oracle), 62)

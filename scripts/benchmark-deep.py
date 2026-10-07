@@ -12,7 +12,7 @@ import sys
 import time
 from pathlib import Path
 
-from benchmark_deep.fixtures import workload
+from benchmark_deep.fixtures import WORKLOAD_GROUPS, workload
 from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS
 from benchmark_runner.answers import ANSWER_BATCH_SIZE, request_answers
 from benchmark_deep.scoring import score_answer
@@ -28,10 +28,16 @@ def main():
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--artifact-root", required=True, type=Path)
     parser.add_argument("--max-seconds", type=int, default=7200)
+    parser.add_argument("--ingest-seconds", type=int, default=INGEST_TIMEOUT_SECONDS,
+                        help="Per-ingest deadline, including index readiness; default 5400")
+    parser.add_argument("--workload-group", choices=('all', *WORKLOAD_GROUPS),
+                        help="Run a fixed group in fresh native state; default is all groups")
     parser.add_argument("--qmd-host", action="store_true")
     parser.add_argument("--native-only", action="store_true")
     parser.add_argument("--reanswer", type=Path)
     args = parser.parse_args()
+    if args.ingest_seconds <= 0:
+        parser.error('--ingest-seconds must be positive')
     if args.qmd_host and args.target != "qmd":
         parser.error("--qmd-host requires --target qmd")
     if args.reanswer and args.native_only:
@@ -43,18 +49,22 @@ def main():
     root = args.artifact_root.resolve()
     root.mkdir(parents=True, exist_ok=False)
     retained = None
+    workload_group = args.workload_group or 'all'
     if args.reanswer:
         retained = json.loads((args.reanswer / "bundle.json").read_text())
+        workload_group = retained.get('workload_group', 'all')
+        if args.workload_group is not None and args.workload_group != workload_group:
+            raise ValueError('Reanswer must preserve the retained workload group')
         inputs = json.loads((args.reanswer / "input/workload.json").read_text())
         oracle = json.loads((args.reanswer / "oracle.json").read_text())
         if retained["target"]["id"] != args.target or retained["providers"] != manifest["providers"]:
             raise ValueError("Reanswer must preserve target and providers")
         if hashlib.sha256(json.dumps(inputs, sort_keys=True).encode()).hexdigest() != retained["workload_sha256"]:
             raise ValueError("Retained deep workload changed")
-        if (inputs, oracle) != workload():
+        if (inputs, oracle) != workload(workload_group):
             raise ValueError("Reanswer requires the unchanged versioned workload and oracle")
     else:
-        inputs, oracle = workload()
+        inputs, oracle = workload(workload_group)
     write_json(root / "input/workload.json", inputs)
     write_json(root / "oracle.json", oracle)
     image = target.get("image", manifest["runner"]["image"])
@@ -66,6 +76,7 @@ def main():
         "BENCHMARK_IMAGE": image,
         **({TARGET_IMAGE_ENV[args.target]: image} if args.target in TARGET_IMAGE_ENV else {}),
         "BENCHMARK_INPUT_HOST": str(root / "input"), "BENCHMARK_ARTIFACT_HOST": str(root / "artifacts"),
+        "BENCHMARK_DEEP_INGEST_TIMEOUT_SECONDS": str(args.ingest_seconds),
         "BENCHMARK_POSTGRES_PASSWORD": hashlib.sha256(project.encode()).hexdigest()[:24]}
     (root / "artifacts").mkdir()
     compose = REPO / manifest["runner"]["compose_file"]
@@ -74,6 +85,7 @@ def main():
     execution_error = None
     try:
         invocation = [*prefix, "run", "--rm", "--no-TTY",
+            "--env", f"BENCHMARK_DEEP_INGEST_TIMEOUT_SECONDS={args.ingest_seconds}",
             "--volume", f"{REPO / 'scripts'}:/opt/deep:ro",
             f"{args.target}-unit", "python3", "/opt/deep/benchmark-deep-unit.py",
             "--target", args.target]
@@ -146,12 +158,13 @@ def main():
             "forbidden_context_hits": [f for f in expected["forbidden"] if f.casefold() in context],
             "duration_seconds": row.get("duration_seconds")})
     bundle = {"schema": "elf.deep_bundle/v2", "target": target, "image_digest": digest,
+        "workload_group": workload_group,
         "answer_protocol": {"revision": "isolated_case_v1", "batch_size": ANSWER_BATCH_SIZE,
                             "grounding": "Expected factual values must occur in the case's supplied context."},
         "providers": manifest["providers"], "source": source,
         "execution_limits": (retained.get("execution_limits", {"status": "not_recorded_in_original_bundle"})
             if retained else {"native_total_seconds": args.max_seconds,
-                              "ingest_action_seconds": INGEST_TIMEOUT_SECONDS,
+                              "ingest_action_seconds": args.ingest_seconds,
                               "other_action_seconds": ACTION_TIMEOUT_SECONDS}),
         "runtime": {"host_execution": host_execution, "host_qmd": args.qmd_host, "platform": platform.platform(), "native_only": args.native_only},
         "workload_sha256": hashlib.sha256(json.dumps(inputs,sort_keys=True).encode()).hexdigest(),

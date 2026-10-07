@@ -5,12 +5,24 @@ from __future__ import annotations
 import hashlib
 import random
 
+WORKLOAD_GROUPS = {
+    'scale-100': {'scale-100'},
+    'scale-1000': {'scale-1000'},
+    'session': {'session'},
+    'conflicts': {'conflicts'},
+    'isolation': {'scope-a', 'scope-b'},
+    'mutations': {'mutations'},
+    'behavior': {'session', 'conflicts', 'scope-a', 'scope-b', 'mutations'},
+}
+
 
 def opaque(value):
     return "e_" + hashlib.sha256(value.encode()).hexdigest()[:24]
 
 
-def workload():
+def workload(group='all'):
+    if group != 'all' and group not in WORKLOAD_GROUPS:
+        raise ValueError(f'Unknown workload group: {group}')
     actions, oracle = [], {}
 
     def write(scope, items):
@@ -114,4 +126,8 @@ def workload():
     for i in range(6):
         ask("delete_restart", "mutations", f"What is Flint-{i}'s recovery destination?",
             [], [], [f"previous-{i}-red", f"replaced-{i}-gold"])
+    if group != 'all':
+        actions = [action for action in actions if action['scope'] in WORKLOAD_GROUPS[group]]
+        selected = {action['case_id'] for action in actions if action['action'] == 'query'}
+        oracle = {key: value for key, value in oracle.items() if key in selected}
     return {"schema": "elf.deep_workload/v2", "actions": actions}, oracle

@@ -78,6 +78,28 @@ terminates that group, retains captured output, and marks later queries in a
 failed ingestion scope as blocked. This prevents a native child process from
 continuing provider calls after its Python client has stopped.
 
+Use `--workload-group` to run a fixed group in fresh native state. The groups
+are `scale-100`, `scale-1000`, `session`, `conflicts`, `isolation`, and
+`mutations`; `behavior` combines the four non-scale groups. The default `all`
+retains the original 62-question workload. Group selection preserves question
+IDs, source text, the oracle, and operation order. Isolation always includes
+both namespaces in the same store. Reanswer preserves the recorded group.
+
+Separate groups when a timed-out scale import leaves index work that delays
+later capability tests. Retain the original combined attempt and its costs.
+Report the fresh-group condition separately; do not claim it measured behavior
+under the earlier backlog. All groups together must still cover all 62 questions.
+An incomplete scale group remains an explicit coverage gap even if the other
+42 questions complete.
+
+For a separate extended-readiness experiment, set `--ingest-seconds` and
+`--max-seconds` explicitly. The ingestion deadline includes native indexing;
+it also sets ELF's worker drain deadline. The bundle records both limits.
+Keep the default-deadline failure and all of its costs. An extended run can
+measure eventual query quality, but it cannot turn the earlier timeout into
+a successful default-budget result. Do not combine its latency with ordinary
+deadline runs as if the conditions were identical.
+
 Host CPU work can overlap image builds. Treat measured wall time as observed
 execution time, not a controlled CPU performance ranking.
 
