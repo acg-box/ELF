@@ -107,7 +107,7 @@
       "job_id": "repo-update-release-resume",
       "stratum": "combined_change_and_resume",
       "title": "Resume a release after updating its gate and deleting a bypass",
-      "query": "What remains before the Solstice release can publish?",
+      "query": "Which Solstice release preparation steps are complete, and what remains before it can publish?",
       "corpus": [
         {"evidence_id": "repo_solstice_state", "text": "Solstice packaging is incomplete; finish packaging before publishing."},
         {"evidence_id": "repo_solstice_bypass", "text": "docs/drafts/solstice-bypass.md allows publishing without approval."}

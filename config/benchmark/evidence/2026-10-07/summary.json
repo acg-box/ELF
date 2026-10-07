@@ -1,0 +1,100 @@
+{
+  "schema": "elf.benchmark_calibration/v1",
+  "date": "2026-10-07",
+  "source_commit": "194b3a5d40123c574dc700c3818e645cabf8afca",
+  "source_boundary": "Native runs used the original questions at source_commit; clarified-question runs replay only the shared reader over preserved native contexts. Local OpenWiki edits were present during native runs.",
+  "model": "deepseek/deepseek-v4.1-flash",
+  "reasoning": "low",
+  "embedding": "qwen/qwen3-embedding-8b",
+  "gbrain_commit": "5b5891069413b28b2fe3a50675116d67d5a1e145",
+  "mem0_version": "2.0.12",
+  "qmd_commit": "e428df76bc0274d9e93eb7ca3e95673315c42e90",
+  "paid_usd": "0.016648811",
+  "budget_usd": 10,
+  "retained_gateway_reservation_usd": 0.532099836,
+  "request_count": 393,
+  "requests_with_unknown_cost": 0,
+  "tokens": {
+    "prompt_tokens": 22393,
+    "cached_tokens": 2937,
+    "completion_tokens": 24356,
+    "reasoning_tokens": 19013
+  },
+  "embedding_input_tokens": 6419,
+  "chat_requests": 35,
+  "embedding_requests": 358,
+  "notes": [
+    "Reasoning is included in completion tokens. Cached input is included in prompt tokens.",
+    "The gateway reserved at most $0.50 per invocation under a $10 cumulative ceiling; it is a local serial diagnostic, not an account limit.",
+    "The cost excludes local compute, image downloads, Codex usage and CI. No paid consumer remained active at export.",
+    "Embedding routing was mixed before request 243 and fixed to DeepInfra afterward.",
+    "ELF and GBrain used 1536 dimensions for the matched follow-up; Mem0 used its existing fixed 4096-dimensional store. No cross-product latency or aggregate superiority claim is supported.",
+    "QMD exercised only native lexical query mode. GBrain did not use query expansion, reranking or agent maintenance; ELF and Mem0 disabled automatic extraction."
+  ],
+  "artifacts": [
+    {
+      "path": "tmp/benchmark-v5/20261007T143720Z-e983f27674/bundle.json",
+      "sha256": "d79ed49714bcfb18501b99a2f3c591edf285614171fea2659c52014e595aab5d"
+    },
+    {
+      "path": "tmp/benchmark-v5/20261007T144206Z-ca16ddbe8b/bundle.json",
+      "sha256": "a210ae17400ddd5c639d23e9ba75abe8dc75f2137c56b8882f645213ae864961"
+    },
+    {
+      "path": "tmp/benchmark-v5/20261007T144456Z-d9e191196f/bundle.json",
+      "sha256": "d25304589593170496e55586aa8fd343cf619e6a50a1b9354c86e8e302c0245d"
+    },
+    {
+      "path": "tmp/benchmark-v5/20261007T145404Z-1ec0d99b97/bundle.json",
+      "sha256": "2a180ad8919d5b9e9914ca2beb682ecd73951d4f443dc9a511a342ff216565f9"
+    },
+    {
+      "path": "tmp/benchmark-v5/20261007T145532Z-f5c0beff91/bundle.json",
+      "sha256": "5ea0bd16eebdaba93ec0622edd5b125fecbad332ac7de3705b77546a80c38c1f"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-20261007T144006Z/answer-evaluation.json",
+      "sha256": "9c7abe5d5bac07f80838447f6f296f3708f9013f728194538a9ada2aeb7b5fda"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-lifecycle-20261007T144953Z/memory-lifecycle-v1/result.json",
+      "sha256": "0a9a1699d59702039afeff7af51bfbe3b1667e31a89f9c289b3843ebfb7b5ab5"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-lifecycle-20261007T144953Z/memory-lifecycle-v1/settled-result.json",
+      "sha256": "cff61f25b1d0b89af3a28de9a28226746683c61b388c9bbe8ef3db63b9d9f865"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-lifecycle-20261007T144953Z/repository-knowledge-v1/result.json",
+      "sha256": "46ca59f9af9a50c732e7d9340959849bd75146751928b5c4f0a47250b664b42c"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-lifecycle-20261007T144953Z/repository-knowledge-v1/settled-result.json",
+      "sha256": "63b41d4eb0a17aecd52f089ae8591db6f7601705267c2ce837da289c7a05e65c"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-lifecycle-20261007T144953Z/knowledge-structure-v1/result.json",
+      "sha256": "518e117c6d3abd62acfd97692c4c8ab23781aa9892ac4957679b9e4c84753cd0"
+    },
+    {
+      "path": "tmp/cost-calibration/clarified-reader.json",
+      "sha256": "5e8837e58008576e0a59145e36decb562a9426913b18c828e9755f77e80f2df5"
+    },
+    {
+      "path": "tmp/cost-calibration/budget-run.mts",
+      "sha256": "ff16c877f78964fea76fa17f259b939413245ebca5d69f89ca8b72a7a6447a7d"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-lifecycle.py",
+      "sha256": "3b6ddc27ae144475d836af96c5deef86f9d6761d43ff1cd19984f70e793d7a18"
+    },
+    {
+      "path": "tmp/cost-calibration/gbrain-refresh.py",
+      "sha256": "73851b4e174826e96d607dda4bf7e2c998b729a91c7f7519578c571783ea901d"
+    },
+    {
+      "path": "tmp/cost-calibration/clarified-reader.py",
+      "sha256": "f4c07c04a86d750edc6f926020a448adad235a4b9ce5bf9b5a03d1985ea3c1ea"
+    }
+  ]
+}
