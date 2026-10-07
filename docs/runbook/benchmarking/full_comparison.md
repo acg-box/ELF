@@ -177,10 +177,13 @@ revision changes the blinded product input. Preserve original bundles and use
 `--rescore` to apply the same revision to every retained condition without paid
 calls. Use `--reanswer` only when shared-reader responses need regeneration.
 
-The legacy update metric requires exact replacement text in retrieved context.
-It is an exact readback check, not a semantic correction score. A product can
-acknowledge an update and return a correct paraphrase while failing that check.
-Keep native operation receipts, answer correctness, and exact readback separate.
+The legacy update metric accepts only the native operation types `update`,
+`replace`, and `reindex_update`. It also requires exact replacement text in the
+retrieved context. A `delete_then_insert` operation receives zero on this metric
+even when the replacement is returned correctly. A native update can also return
+a correct paraphrase and fail the exact text check. Report the operation method,
+acknowledgement, final readback, and answer correctness separately. This metric
+alone does not establish whether a logical correction worked or was atomic.
 
 The final shared-reader protocol submits exactly one case per request. A batch
 of separate cases still exposes every case's context to the model, so a correct
