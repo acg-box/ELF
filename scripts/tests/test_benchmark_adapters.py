@@ -90,6 +90,17 @@ class BenchmarkAdaptersTests(BenchmarkCase):
         self.assertEqual(len(native), 1)
 
 
+    def test_openviking_reaps_server_after_graceful_shutdown_timeout(self) -> None:
+        process, log = mock.Mock(), mock.Mock()
+        process.returncode = -9
+        process.wait.side_effect = [OPENVIKING.subprocess.TimeoutExpired("server", 60), -9]
+        receipt = OPENVIKING._stop_server(process, log)
+        self.assertTrue(receipt["forced_kill"])
+        process.terminate.assert_called_once_with()
+        process.kill.assert_called_once_with()
+        self.assertEqual(process.wait.call_args_list, [mock.call(timeout=60), mock.call(timeout=15)])
+        log.close.assert_called_once_with()
+
     def test_openviking_uses_native_uri_prefixes_dimensions_and_mutations(self) -> None:
         source_map = {
             "viking://resources/job/source": "e_parent",

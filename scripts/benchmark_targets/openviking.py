@@ -245,9 +245,7 @@ def _open_client(native_dir: Path) -> Any:
         client = SyncHTTPClient(url="http://127.0.0.1:1933", account="elfbench", user="elfbench")
         _native_call("initialize", client.initialize)
     except BaseException:
-        process.terminate()
-        process.wait(timeout=15)
-        log.close()
+        _stop_server(process, log)
         raise
     client._benchmark_server = process
     client._benchmark_server_log = log
@@ -552,15 +550,31 @@ def _query_job(
     }
 
 
-def _close_client(client: Any) -> None:
+def _stop_server(process: Any, log: Any) -> dict[str, Any]:
+    """Reap the owned server after its acknowledged native work has drained."""
+    forced = False
+    try:
+        process.terminate()
+        try:
+            process.wait(timeout=60)
+        except subprocess.TimeoutExpired:
+            forced = True
+            process.kill()
+            process.wait(timeout=15)
+    finally:
+        log.close()
+    return {"grace_seconds": 60, "forced_kill": forced, "exit_code": process.returncode}
+
+
+def _close_client(client: Any) -> dict[str, Any]:
+    receipt = {"server_owned": False}
     try:
         _native_call("close", client.close)
     finally:
         process = getattr(client, "_benchmark_server", None)
         if process is not None:
-            process.terminate()
-            process.wait(timeout=15)
-            client._benchmark_server_log.close()
+            receipt = _stop_server(process, client._benchmark_server_log)
+    return receipt
 
 
 def _run_openviking(
@@ -581,6 +595,7 @@ def _run_openviking(
     source_paths: list[dict[str, str]] = []
     cold_rows: list[dict[str, Any]] = []
     ingest_duration_ms = 0.0
+    shutdowns = []
     client = _open_client(state_dir / "native")
     try:
         for index, job in enumerate(jobs):
@@ -607,7 +622,8 @@ def _run_openviking(
                 )
             )
     finally:
-        _close_client(client)
+        shutdowns.append(_close_client(client))
+        _write_json(artifacts / "raw/openviking-shutdowns.json", shutdowns)
 
     receipt = {
         "package_version": OPENVIKING_VERSION,
@@ -664,7 +680,8 @@ def _run_openviking(
                 )
             )
     finally:
-        _close_client(client)
+        shutdowns.append(_close_client(client))
+        _write_json(artifacts / "raw/openviking-shutdowns.json", shutdowns)
 
     return {
         "schema": "elf.benchmark_unit_result/v4",
@@ -673,6 +690,7 @@ def _run_openviking(
         "score_eligible": True,
         "result_class": "completed",
         "warm_reused_state": True,
+        "server_shutdowns": shutdowns,
         "ingest_count": 1,
         "ingest_duration_ms": round(ingest_duration_ms, 3),
         "phases": {

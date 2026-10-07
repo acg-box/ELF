@@ -156,7 +156,7 @@
         "knowledge-structure-v1",
         "repository-knowledge-v1"
       ],
-      "image": "elf-benchmark-openviking:v9",
+      "image": "elf-benchmark-openviking:v10",
       "dockerfile": "docker/benchmark/openviking.Dockerfile",
       "pin": {
         "kind": "python_package",
