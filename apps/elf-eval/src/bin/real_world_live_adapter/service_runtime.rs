@@ -1,4 +1,4 @@
-use std::time::Duration;
+use std::{env, time::Duration};
 
 use tokio::time;
 
@@ -24,6 +24,10 @@ pub(super) async fn build_service(runtime: &BaselineRuntime) -> Result<ElfServic
 
 pub(super) async fn run_worker(runtime: &BaselineRuntime) -> Result<()> {
 	let state = Arc::new(build_worker_state(runtime).await?);
+	let timeout_seconds = env::var("ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS")
+		.unwrap_or_else(|_| "180".to_string())
+		.parse::<u64>()?;
+
 	let drain = async {
 		loop {
 			let (remaining, failed) = sqlx::query_as::<_, (i64, i64)>(
@@ -65,9 +69,9 @@ pub(super) async fn run_worker(runtime: &BaselineRuntime) -> Result<()> {
 		}
 	};
 
-	time::timeout(Duration::from_secs(180), drain)
-		.await
-		.map_err(|_| eyre::eyre!("Benchmark worker did not drain within 180 seconds."))?
+	time::timeout(Duration::from_secs(timeout_seconds), drain).await.map_err(|_| {
+		eyre::eyre!("Benchmark worker did not drain within {timeout_seconds} seconds.")
+	})?
 }
 
 async fn build_worker_state(runtime: &BaselineRuntime) -> Result<WorkerState> {

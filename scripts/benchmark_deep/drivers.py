@@ -41,6 +41,7 @@ def rust_action(target, action, root):
     if target == "elf":
         args += ["--config", "/opt/elf/elf.docker.toml"]
         env["ELF_REAL_WORLD_EXTERNAL_EMBEDDING"] = "1"
+        env["ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS"] = str(INGEST_TIMEOUT_SECONDS)
     else:
         from benchmark_targets.rust import QMD_REVISION
 

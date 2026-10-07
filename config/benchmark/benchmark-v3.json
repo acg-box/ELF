@@ -67,7 +67,7 @@
   "targets": [
     {
       "id": "elf",
-      "image": "elf-benchmark-elf:full",
+      "image": "elf-benchmark-elf:full-v2",
       "dockerfile": "docker/benchmark/Dockerfile",
       "build_target": "elf-runtime",
       "adapter": "elf",

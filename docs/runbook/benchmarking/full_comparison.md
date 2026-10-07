@@ -119,6 +119,9 @@ The manifest records each native profile and deviation. Important distinctions:
   to fit the measured configuration's 240-character note limit. Count logical
   sources and stored notes separately. This condition does not measure the
   separate document-ingestion API or establish its bulk-import performance.
+  Deep runs set `ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS=5400` for the native worker
+  drain. Other invocations retain the 180-second default. Record a drain timeout
+  as incomplete indexing, never as a retrieval-quality result.
 - Mem0 extracts memories with `infer=True`; raw insertion is not the main condition.
 - QMD uses local embedding, query expansion, and reranking. Its host Metal and
   Docker CPU measurements are different runtime conditions.
