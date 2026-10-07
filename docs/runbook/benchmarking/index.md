@@ -8,6 +8,8 @@ Routes to: Benchmarking runbooks under `docs/runbook/benchmarking/`.
 
 ## Concepts
 
+- [Repository memory replay](repository_memory_replay.md): paired historical repair trials, isolated tests, and cost boundaries.
+
 - `live_baseline_benchmark.md`: Docker-isolated current-HEAD baseline checks against
   ELF and external memory projects.
 - `real_world_agent_memory_benchmark.md`: operator map for creating, extending, and

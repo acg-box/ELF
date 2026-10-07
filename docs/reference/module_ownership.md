@@ -67,11 +67,12 @@ the owning queries. A route override must not bypass these checks.
 ## Competitor benchmark
 
 The public script paths and cargo-make task names stay stable. Python remains the
-owner of this existing benchmark. This refactor does not introduce a language
-migration or expand the benchmark capability.
+owner of the benchmark. The repository repair pilot extends this owner without
+a language migration or another runtime.
 
 | Owner | Responsibility |
 | --- | --- |
+| `scripts/benchmark_replay/` | Own the bounded historical repair pilot, source snapshots, memory conditions, agent tools, and isolated checks within the existing Python benchmark. |
 | `scripts/benchmark-runner.py` | Dispatch the host CLI. |
 | `scripts/benchmark_runner/cli.py` | Parse options and assemble one run. |
 | `scripts/benchmark_runner/runtime.py` | Resolve the repository root, run host commands, write artifacts, and identify source content. |

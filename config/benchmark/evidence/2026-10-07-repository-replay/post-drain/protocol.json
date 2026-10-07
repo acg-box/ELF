@@ -1,0 +1,53 @@
+{
+  "arms": [
+    "no-memory",
+    "files-search",
+    "git-memory",
+    "elf"
+  ],
+  "repeats": 2,
+  "tasks": 3,
+  "max_turns": 6,
+  "boundary": "Controlled prior exploration from historical source, followed by real repair actions. Independent repeats; no persistent learning between repeats. Git memory is a model-maintained file baseline, not the Agent Memory Repo product.",
+  "image_digest": "sha256:be03d81d10e480efa730630466f7b3730f98f3eff91d608efff1126891f920da",
+  "chat_model": "deepseek/deepseek-v4.1-flash",
+  "reasoning_effort": "low",
+  "max_output_tokens": 8192,
+  "recall_character_cap": 12000,
+  "execution_order": {
+    "1": [
+      "no-memory",
+      "files-search",
+      "git-memory",
+      "elf"
+    ],
+    "2": [
+      "elf",
+      "git-memory",
+      "files-search",
+      "no-memory"
+    ]
+  },
+  "checker_note": "Before repair trials, allow both rust:trixie and rust:stable-trixie and case-insensitive Docker keywords; historical oracle sensitivity revalidated. Bounded grace is checked before all repair trials.",
+  "runner_sha256": {
+    "scripts/benchmark_replay/__init__.py": "82e8a6e8e5b526ae98111ce63411a5643a56cba2f66c4e01259d6303c1ec3ae7",
+    "scripts/benchmark_replay/agent.py": "bc2915de3540d267ff776be6e544ebdee541431c9e744fb3ff010d1f5acd7703",
+    "scripts/benchmark_replay/checker.py": "c2248d37adbbd4d728c27b6784fdfa97434da618dfa3d42e3e6142e1325bda43",
+    "scripts/benchmark_replay/cli.py": "33b398ae1d9a2682d19b67c11dfefcbd4e53e65e5d0362ab0c3f3280fcc7f77a",
+    "scripts/benchmark_replay/memory.py": "1673b847fdfa55ddc2731af75bda998e8f7f7fc86400456be71c1489edb7b056",
+    "scripts/benchmark_replay/tasks.py": "023eb24e34d0dc9d543e2cdef6a4fe6c8e48dbe447abfdf2f2f6a430cf1b6f7e",
+    "scripts/benchmark-repository-memory.py": "8513771db10d8251e37ac7652e16207354c6c1846365d7279b1a57e00caf2490"
+  },
+  "phase": "protocol-v2 full paired replay",
+  "changed_source": "apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs",
+  "worker_drain_sha256": "88d117a2a2c04c3344c0c609aafd341c135492608dba7a73d1dc60bb5cd84a9f",
+  "changes": [
+    "Drain native worker queues before retrieval.",
+    "Invalid JSON consumes a turn and receives feedback within the original six-turn cap."
+  ],
+  "reused_inputs": [
+    "frozen source snapshots",
+    "prior experience packets",
+    "independently generated Git notes"
+  ]
+}

@@ -9,6 +9,8 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [Repository memory repair pilot](2026-10-07-repository-replay.md): real source edits, indexing-readiness repair, bounded format recovery, and API accounting.
+
 - [Bounded native calibration](2026-10-07-bounded-calibration.md): API accounting, lifecycle visibility, competitor-mode limits, and question repairs.
 
 - `2026-06-09-live-baseline-report.md`: Live Baseline Benchmark Report - 2026-06-09.

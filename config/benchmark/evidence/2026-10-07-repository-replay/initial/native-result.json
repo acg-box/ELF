@@ -1,0 +1,230 @@
+{
+  "ingest_count": 1,
+  "ingest_duration_measurement": "cold adapter wall time minus native query latency",
+  "ingest_duration_ms": 185433.458,
+  "native_mode": "external_embedding",
+  "phases": {
+    "cold": {
+      "adapter_metadata": {
+        "index_reused": false
+      },
+      "jobs": [
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "Source: docker/benchmark/openviking.Dockerfile FROM rust:1.91.1-trixie AS rust-toolchain FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder ARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a ENV OPENVIKING_VERSION=0.0.0+a0e822a ENV UV_COMPILE_BYTECODE=1 ENV UV_LINK_MODE=copy ENV UV_NO_DEV=1 RUN git init /opt/openviking \\ && git -C /opt/openviking"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "/opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\" WORKDIR /opt/openviking RUN --mount=type=cache,target=/root/.cache/uv \\ --mount=type=cache,target=/usr/local/cargo/registry \\"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "/usr/local/lib/node_modules/ /usr/local/lib/node_modules/ RUN ln -s ../lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \\ && ln -s ../lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \\ && apt-get update \\ &&"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "--from=rust-toolchain /usr/local/cargo /usr/local/cargo COPY --from=rust-toolchain /usr/local/rustup /usr/local/rustup COPY --from=node:24-trixie-slim /usr/local/bin/node /usr/local/bin/ COPY --from=node:24-trixie-slim"
+            }
+          ],
+          "evidence_ids": [
+            "source-0"
+          ],
+          "failure": null,
+          "job_id": "j_0aca9caebbe0bdb5b220e554",
+          "latency_ms": 498.715598,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_62e75ebcc5ee2b7412aeccdc",
+          "latency_ms": 516.263096,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_7d05619e4217a183769d9260",
+          "latency_ms": 708.195109,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_82607bd5ea8af918f1adb775",
+          "latency_ms": 566.150618,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_905eaf348556205c32b811f4",
+          "latency_ms": 529.454214,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_e79d92fc2bf7fca41b742f2d",
+          "latency_ms": 532.4439100000001,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        }
+      ],
+      "status": "completed"
+    },
+    "warm": {
+      "adapter_metadata": {
+        "index_reused": true
+      },
+      "jobs": [
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "Source: docker/benchmark/openviking.Dockerfile FROM rust:1.91.1-trixie AS rust-toolchain FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim AS builder ARG OPENVIKING_REVISION=a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "SETUPTOOLS_SCM_PRETEND_VERSION_FOR_OPENVIKING=0.0.0+a0e822a ENV OPENVIKING_VERSION=0.0.0+a0e822a ENV UV_COMPILE_BYTECODE=1 ENV UV_LINK_MODE=copy ENV UV_NO_DEV=1 RUN git init /opt/openviking \\ && git -C /opt/openviking"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "python:3.13-slim-trixie RUN apt-get update \\ && apt-get install -y --no-install-recommends \\ git \\ libstdc++6 \\ && rm -rf /var/lib/apt/lists/* COPY --from=builder /opt/openviking/REVISION /opt/openviking/REVISION COPY"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "--from=builder /opt/openviking/.venv /opt/openviking/.venv COPY scripts/benchmark-unit.py /opt/benchmark/benchmark-unit.py COPY scripts/benchmark_targets /opt/benchmark/benchmark_targets ENV"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "/opt/openviking rev-parse HEAD)\" = \"${OPENVIKING_REVISION}\" WORKDIR /opt/openviking RUN --mount=type=cache,target=/root/.cache/uv \\ --mount=type=cache,target=/usr/local/cargo/registry \\"
+            }
+          ],
+          "evidence_ids": [
+            "source-0"
+          ],
+          "failure": null,
+          "job_id": "j_0aca9caebbe0bdb5b220e554",
+          "latency_ms": 578.545118,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [
+            {
+              "evidence_id": "source-0",
+              "text": "start_new_session=True) as process: try: output, _ = process.communicate(timeout=limit) except subprocess.TimeoutExpired: # Terminate the command group, including compiler/test child processes. try:"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "Source: scripts/benchmark_runner/runtime.py \"\"\"Host benchmark runtime responsibilities.\"\"\" from __future__ import annotations from pathlib import Path from typing import Any import hashlib import json import subprocess"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "os.killpg(process.pid, signal.SIGTERM) except ProcessLookupError: pass try: output, _ = process.communicate(timeout=5) except subprocess.TimeoutExpired: try: os.killpg(process.pid, signal.SIGKILL) except"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": ") -> subprocess.CompletedProcess[str]: limit = remaining_seconds(timeout if timeout is not None else 86400) with subprocess.Popen(args, cwd=REPO, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True,"
+            },
+            {
+              "evidence_id": "source-0",
+              "text": "ProcessLookupError: pass output, _ = process.communicate() raise subprocess.TimeoutExpired(args, limit, output=output) from None result = subprocess.CompletedProcess(args, process.returncode, output) if check:"
+            }
+          ],
+          "evidence_ids": [
+            "source-0"
+          ],
+          "failure": null,
+          "job_id": "j_62e75ebcc5ee2b7412aeccdc",
+          "latency_ms": 567.974554,
+          "native_status": "pass",
+          "operations": [],
+          "returned_count": 5
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_7d05619e4217a183769d9260",
+          "latency_ms": 1528.654424,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_82607bd5ea8af918f1adb775",
+          "latency_ms": 1143.4109329999999,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_905eaf348556205c32b811f4",
+          "latency_ms": 528.084408,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        },
+        {
+          "classification": "completed",
+          "contexts": [],
+          "evidence_ids": [],
+          "failure": null,
+          "job_id": "j_e79d92fc2bf7fca41b742f2d",
+          "latency_ms": 639.6622659999999,
+          "native_status": "wrong_result",
+          "operations": [],
+          "returned_count": 0
+        }
+      ],
+      "status": "completed"
+    }
+  },
+  "result_class": "completed",
+  "schema": "elf.benchmark_unit_result/v4",
+  "score_eligible": true,
+  "target": "elf",
+  "warm_reused_state": true
+}

@@ -8,6 +8,10 @@ logs.
 
 ## 2026-10-07
 
+- Added paired historical repository repair trials and retained both diagnostic
+  and corrected protocol evidence. Fixed native benchmark index readiness and
+  bounded JSON-action recovery. Recorded incremental and cumulative API costs.
+
 - Recorded bounded native benchmark calibration with per-request API accounting,
   immediate versus settled GBrain update visibility, and explicit product-mode
   limits. Clarified three questions without weakening their scoring facts.

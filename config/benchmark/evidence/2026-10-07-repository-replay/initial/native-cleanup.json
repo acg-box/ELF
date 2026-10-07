@@ -1,0 +1,11 @@
+{
+  "down_exit_code": 0,
+  "down_output": " Container elf-replay-02b94c90177b-qdrant-1 Stopping \n Container elf-replay-02b94c90177b-postgres-1 Stopping \n Container elf-replay-02b94c90177b-qdrant-1 Stopped \n Container elf-replay-02b94c90177b-qdrant-1 Removing \n Container elf-replay-02b94c90177b-qdrant-1 Removed \n Container elf-replay-02b94c90177b-postgres-1 Stopped \n Container elf-replay-02b94c90177b-postgres-1 Removing \n Container elf-replay-02b94c90177b-postgres-1 Removed \n Network elf-replay-02b94c90177b_default Removing \n Volume elf-replay-02b94c90177b_qdrant-data Removing \n Volume elf-replay-02b94c90177b_postgres-data Removing \n Volume elf-replay-02b94c90177b_postgres-data Removed \n Volume elf-replay-02b94c90177b_qdrant-data Removed \n Network elf-replay-02b94c90177b_default Removed \n",
+  "remaining": {
+    "containers": [],
+    "volumes": [],
+    "networks": []
+  },
+  "inspection_errors": [],
+  "passed": true
+}
