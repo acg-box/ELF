@@ -5,7 +5,7 @@ description: Verified API spend, native index readiness, real repository repairs
 tags: [benchmark, memory, cost]
 verified:
   - by: openwiki/0.7.1
-    at: 2026-10-08T02:56:52.103Z
+    at: 2026-10-08T09:01:01.458Z
 sources:
   - id: openwiki-source-edb430929cfea30c15990b19
     resource: repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs
@@ -15,6 +15,10 @@ sources:
     resource: repo://config/benchmark/evidence/2026-10-07/summary.json
   - id: openwiki-source-f84e324a6d6a488fafbdcb87
     resource: repo://config/benchmark/scoring-contract-v5.json
+  - id: openwiki-source-87dc0453116a4d53c0b0b603
+    resource: repo://config/local/elf.docker.toml
+  - id: openwiki-source-bf14920f8fd4acd0704573b1
+    resource: repo://docker/benchmark/Dockerfile
   - id: openwiki-source-5d25cf64aa8cc1e9b1be09b8
     resource: repo://docs/evidence/benchmarking/2026-10-07-bounded-calibration.md
   - id: openwiki-source-bb1247307c8794ccbd2882d5
@@ -25,15 +29,25 @@ sources:
     resource: repo://scripts/benchmark_budget.py
   - id: openwiki-source-0330dc1965b65f2f9996851a
     resource: repo://scripts/benchmark_contract/metrics.py
+  - id: openwiki-source-2b4143a3accf3db4bcdc9c12
+    resource: repo://scripts/benchmark_deep/drivers.py
   - id: openwiki-source-56065a3815cb963d127dfd71
     resource: repo://scripts/benchmark_replay/agent.py
   - id: openwiki-source-3d2fd903bddb24ccbdd4a26f
     resource: repo://scripts/benchmark_runner/runtime.py
+  - id: openwiki-source-6b5cd37890aeb4683d1169fe
+    resource: repo://scripts/benchmark_targets/gbrain.py
+  - id: openwiki-source-0f6d21abbbdb7165769b4e32
+    resource: repo://scripts/benchmark_targets/graphrag.py
+  - id: openwiki-source-14ccfc508395d22c8419395c
+    resource: repo://scripts/benchmark_targets/hindsight.py
   - id: openwiki-source-1bc3f7c329b3996edfa5ef00
     resource: repo://scripts/benchmark-deep-unit.py
   - id: openwiki-source-b58326f8c77c6ba9d4f7544d
     resource: repo://scripts/benchmark-qmd-host.py
-generated: { by: "codex", at: "2026-10-08T02:56:52.103Z" }
+  - id: openwiki-source-24b7ca16c2008e1ef8843ea9
+    resource: repo://scripts/tests/test_benchmark_graphrag.py
+generated: { by: "codex", at: "2026-10-08T09:01:01.458Z" }
 ---
 
 # Benchmark calibration and fair product comparison
@@ -166,6 +180,27 @@ An extended `--ingest-seconds` deadline measures eventual readiness; it does not
 convert a default-deadline timeout into a success. Action timeouts terminate the
 native process group and retain logs, so orphaned children cannot keep making
 provider calls after the client exits.
+
+Deep adapter helpers must use the declared action budgets. GBrain imports receive
+`INGEST_TIMEOUT_SECONDS`, while ordinary CLI calls retain their 180-second default.
+Hindsight waits for background operations with the ingestion budget after retain
+and the 1,200-second action budget after mutations. Its ordinary readiness default
+remains 180 seconds. The outer process deadline still bounds the complete action;
+these helper limits do not add time to that deadline. A returned retain receipt
+and an empty background queue are separate readiness observations.
+
+The ELF deep subprocess starts at the image root, `/`, so the container config can
+resolve `config/local/tokenizer.wordlevel.json`. The deep launcher itself can run
+from `/opt`; inheriting that directory would make the local tokenizer path invalid.
+This setup requirement does not change the tokenizer or retrieval profile.
+
+GraphRAG records cold and warm failures for each independent case and continues
+other cases. A failed cold case has no warm index reuse. A failed warm reindex or
+query preserves the cold result and completed operation evidence. Any case failure
+keeps the containing unit in a failed state. Index hashes still protect cold-to-warm
+reuse. Native extraction failures, including missing entities or relationships,
+remain failures; continuing the suite does not convert them into successful cases.
+The focused deep and GraphRAG contract tests cover these boundaries.
 
 The current scoring contract is revision 5. Revision 4 accepts valid English
 month-name dates as ISO-equivalent dates in required and forbidden fact checks.

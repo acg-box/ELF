@@ -17,7 +17,7 @@ sources:
 generated: { by: "codex", at: "2026-10-08T02:56:52.103Z" }
 verified:
   - by: openwiki/0.7.1
-    at: 2026-10-08T02:56:52.103Z
+    at: 2026-10-08T09:01:01.458Z
 ---
 
 # ELF documentation and benchmark entrypoints

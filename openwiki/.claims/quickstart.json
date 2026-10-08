@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e4cd280a1923ec32f671bfaef7ce30de99d1f9564310992f5b5fbcec65beeae9",
+  "pageVersion": "sha256:fc85f76c14f36fadf71d9b9a348a0a58d348a244a192243420c3b5a25cfba96e",
   "claims": [
     {
       "id": "claim_f33449baf9ba4bba90352d6c62afa42e",
@@ -8,7 +8,7 @@
       "evidence": [
         {
           "resource": "repo://config/benchmark/benchmark-v3.json",
-          "version": "repo-file-v1:sha256:670d37194de412dae3f9814f7dbe7eaa4d53deb576a52fd0336302ece59aaa36"
+          "version": "repo-file-v1:sha256:684109479e2ae42a89d4a1adb52fd6d1e6f06ed902b00ad4f1ac445b1cdd7db0"
         },
         {
           "resource": "repo://scripts/benchmark_runner/cli.py",
@@ -67,6 +67,6 @@
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-08T02:56:52.103Z"
+    "at": "2026-10-08T09:01:01.458Z"
   }
 }
