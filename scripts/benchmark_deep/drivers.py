@@ -85,7 +85,7 @@ def hindsight_action(action, root):
             (root / (action["scope"] + "-ingest-progress.json")).write_text(json.dumps(receipts))
             if native.get("success") is not True:
                 raise RuntimeError("Hindsight native retain failed")
-        return {"native": receipts, "readiness": drain(bank)}
+        return {"native": receipts, "readiness": drain(bank, timeout_seconds=INGEST_TIMEOUT_SECONDS)}
     if kind == "query":
         row, native = recall({"job_id": action["case_id"], "prompt": {"content": action["question"]}}, bank, [])
         return {"contexts": row["contexts"], "native": native}
@@ -96,7 +96,7 @@ def hindsight_action(action, root):
         native = request("DELETE", bank + "/documents/" + action["evidence_id"])
     if native.get("success") is not True:
         raise RuntimeError("Hindsight native mutation did not succeed")
-    return {"native": native, "readiness": drain(bank)}
+    return {"native": native, "readiness": drain(bank, timeout_seconds=ACTION_TIMEOUT_SECONDS)}
 
 
 def run_action(target, action, root):

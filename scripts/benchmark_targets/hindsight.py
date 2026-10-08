@@ -33,8 +33,8 @@ def ready():
             time.sleep(1)
 
 
-def drain(bank):
-    deadline = time.monotonic() + 180
+def drain(bank, *, timeout_seconds=180):
+    deadline = time.monotonic() + timeout_seconds
     while True:
         states = {status: request("GET", bank + "/operations?status=" + status + "&limit=1")
                   for status in ("pending", "processing", "failed", "cancelled")}

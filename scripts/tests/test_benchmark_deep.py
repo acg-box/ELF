@@ -15,6 +15,32 @@ from benchmark_deep.fixtures import workload
 
 
 class DeepContractTests(unittest.TestCase):
+    def test_hindsight_readiness_uses_the_deep_action_budget(self):
+        from benchmark_deep.drivers import hindsight_action, INGEST_TIMEOUT_SECONDS, ACTION_TIMEOUT_SECONDS
+
+        with patch("benchmark_targets.hindsight.ready"), \
+                patch("benchmark_targets.hindsight.request", return_value={"success": True}), \
+                patch("benchmark_targets.hindsight.drain", return_value={}) as drain:
+            hindsight_action({"scope": "scale-100", "action": "ingest", "items": []}, Path("/unused"))
+            self.assertEqual(drain.call_args.kwargs["timeout_seconds"], INGEST_TIMEOUT_SECONDS)
+            hindsight_action({"scope": "mutations", "action": "delete", "evidence_id": "example"}, Path("/unused"))
+            self.assertEqual(drain.call_args.kwargs["timeout_seconds"], ACTION_TIMEOUT_SECONDS)
+
+    def test_hindsight_long_readiness_can_complete_after_default_deadline(self):
+        from benchmark_targets.hindsight import drain
+
+        busy = {"operations": [{"status": "pending"}]}
+        quiet = {"operations": []}
+        with patch("benchmark_targets.hindsight.request", side_effect=[busy, quiet, quiet, quiet] + [quiet] * 4), \
+                patch("benchmark_targets.hindsight.time.monotonic", side_effect=[0, 181]), \
+                patch("benchmark_targets.hindsight.time.sleep"):
+            result = drain("/bank", timeout_seconds=5400)
+            self.assertTrue(all(not value["operations"] for value in result.values()))
+        with patch("benchmark_targets.hindsight.request", side_effect=[busy, quiet, quiet, quiet]), \
+                patch("benchmark_targets.hindsight.time.monotonic", side_effect=[0, 181]):
+            with self.assertRaises(TimeoutError):
+                drain("/bank")
+
     def test_gbrain_import_uses_deep_ingestion_budget(self):
         from benchmark_deep.drivers import gbrain_action, INGEST_TIMEOUT_SECONDS
 
