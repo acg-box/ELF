@@ -244,6 +244,16 @@ formatting. Preserve each original bundle and apply the revision uniformly with
 `--rescore`. This offline step changes no native result, answer, or API cost.
 
 
+### Requested facts (revision 5)
+
+Revision 5 accepts the Cinder module name without its repository path prefix.
+It rejects the retired module name with or without that prefix. The Lumen
+question requires the retention periods and written Legal approval, but does
+not request the additional case identifier. Preserve original and prior scores;
+apply this review uniformly to all retained conditions with no provider calls.
+Literal matching remains a bounded requested-fact check, not a semantic judge.
+
+
 The legacy update metric accepts only the native operation types `update`,
 `replace`, and `reindex_update`. It also requires exact replacement text in the
 retrieved context. A `delete_then_insert` operation receives zero on this metric

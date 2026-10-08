@@ -58,7 +58,7 @@ class ScoringReviewTests(BenchmarkCase):
             {"text": "docs/legacy/meridian-unsafe.md", "supported": True})[0], 0.0)
 
     def test_review_preserves_exact_product_payload(self):
-        contract = load_json(REPO / "config/benchmark/scoring-contract-v4.json")
+        contract = load_json(REPO / "config/benchmark/scoring-contract-v5.json")
         with tempfile.TemporaryDirectory() as directory:
             for key, suite in self.suites.items():
                 before = materialize_product_fixtures(suite, Path(directory) / key / "before")
@@ -102,7 +102,7 @@ class ScoringReviewTests(BenchmarkCase):
         import copy
         qmd = load_script("benchmark_qmd_scoring", "scripts/benchmark-qmd-host.py")
         old_contract = load_json(REPO / "config/benchmark/scoring-contract-v3.json")
-        new_contract = load_json(REPO / "config/benchmark/scoring-contract-v4.json")
+        new_contract = load_json(REPO / "config/benchmark/scoring-contract-v5.json")
         for original in self.suites.values():
             old_suite = review_suite(original, old_contract)
             current = review_suite(original, new_contract)
@@ -119,3 +119,18 @@ class ScoringReviewTests(BenchmarkCase):
             changed["jobs"][0]["query"] += " Different question."
             with self.assertRaisesRegex(ValueError, "suite changed"):
                 qmd.reuse_native_result(prior, changed, new_contract)
+
+    def test_requested_module_and_retention_facts_do_not_require_extra_details(self):
+        contract = load_json(REPO / "config/benchmark/scoring-contract-v5.json")
+        jobs = {j["job_id"]: j for suite in self.suites.values()
+                for j in review_suite(suite, contract)["jobs"]}
+        module = jobs["repo-delete-deprecated-module"]["qrels"]
+        for text in ("cinder-runtime", "packages/cinder-runtime"):
+            self.assertEqual(_answer_scores(module, {"text": text})[0], 1.0)
+        for text in ("cinder-legacy", "packages/cinder-legacy", "cinder-runtime and cinder-legacy"):
+            self.assertEqual(_answer_scores(module, {"text": text})[0], 0.0)
+        retention = jobs["knowledge-lumen-handbook"]["qrels"]
+        self.assertEqual(_answer_scores(retention, {"text":
+            "Lumen retains events for 30 days; beyond 60 days requires written Legal approval."})[0], 1.0)
+        self.assertEqual(_answer_scores(retention, {"text":
+            "Lumen retains events for 90 days; beyond 60 days requires written Legal approval."})[0], 0.0)
