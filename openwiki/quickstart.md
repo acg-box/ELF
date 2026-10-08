@@ -3,9 +3,6 @@ type: Reference
 title: ELF documentation and benchmark entrypoints
 description: Navigate source documentation, bounded benchmark commands, and measured calibration evidence.
 tags: [navigation, benchmark, documentation]
-verified:
-  - by: openwiki/0.7.1
-    at: 2026-10-07T22:06:36.328Z
 sources:
   - id: openwiki-source-c5e96b968f291ecf02395ce1
     resource: repo://config/benchmark/benchmark-v3.json
@@ -17,7 +14,10 @@ sources:
     resource: repo://scripts/benchmark_replay/cli.py
   - id: openwiki-source-6edf395d285ada6626e2d809
     resource: repo://scripts/benchmark_runner/cli.py
-generated: { by: "codex", at: "2026-10-07T22:06:36.328Z" }
+generated: { by: "codex", at: "2026-10-08T02:56:52.103Z" }
+verified:
+  - by: openwiki/0.7.1
+    at: 2026-10-08T02:56:52.103Z
 ---
 
 # ELF documentation and benchmark entrypoints
@@ -80,6 +80,13 @@ native bundles with `--reanswer` when reader responses need regeneration; use
 `--rescore` for supported offline scoring revisions. The final reader protocol
 isolates each case in its own request. A successful offline check or configured
 matrix does not establish completed coverage or product superiority.
+
+For deep follow-ups, `--workload-group` selects a fixed group in fresh state;
+`behavior` contains all 42 non-scale questions. Keep an extended-readiness run
+separate from its original timeout. For scoring changes, preserve original
+answers and apply the current reviewed contract uniformly. See the
+[methodology page](benchmarking/calibration-and-comparison.md) for date and
+requested-fact corrections and their limits.
 
 ## Repository memory replay
 

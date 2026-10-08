@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:e8db5bc8f41267acec1ac7c179ff925ad6c853e08cfa389f69ef1ce874cb3fd5",
+  "pageVersion": "sha256:e4cd280a1923ec32f671bfaef7ce30de99d1f9564310992f5b5fbcec65beeae9",
   "claims": [
     {
       "id": "claim_f33449baf9ba4bba90352d6c62afa42e",
@@ -8,7 +8,7 @@
       "evidence": [
         {
           "resource": "repo://config/benchmark/benchmark-v3.json",
-          "version": "repo-file-v1:sha256:dcd20322d41bff17e9cac87259a672c152f18c452aed18a82e27f3a29dcbcb42"
+          "version": "repo-file-v1:sha256:670d37194de412dae3f9814f7dbe7eaa4d53deb576a52fd0336302ece59aaa36"
         },
         {
           "resource": "repo://scripts/benchmark_runner/cli.py",
@@ -36,7 +36,7 @@
       "evidence": [
         {
           "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
-          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
         },
         {
           "resource": "repo://makefiles/benchmark-core.toml",
@@ -50,13 +50,23 @@
       "evidence": [
         {
           "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
-          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
+        }
+      ]
+    },
+    {
+      "id": "claim_1f4ba3b2c7084232a7c75055cedff429",
+      "statement": "Deep follow-ups select fixed workload groups in fresh state; behavior includes all 42 non-scale questions, and extended-readiness runs remain separate from their original timeouts.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L81-L100",
+          "version": "repo-lines-v1:sha256:586e65d0d4605b4dcc5df57ab6b10aa0bd48b19d1f9a4cac0073583189ed0d8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZWVmMWUyNmQ2NjMxYjU0OGZiYjNkYTlhZjg5YTMyNjE0ZmNkMjY1ZmJkNjg3ZmY2MGY3MDA4MjBkZDQyZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzAxZTZhZTYxZDU3ZTM4MjA2Y2JjYThjNDBlMWRmODM2YTlhZDY3NGQwODg2NmI5YWVkNjQxNzVhNTQ5ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZjIxMzk3OWVmYmQ5NzJmNGJkNmY2OTMyNDFjZGY4NGU2ODlmZWYyYmFjYzgyNGRmMGYxZDVlM2MxN2MwZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYzEwMjA4ZTJkMjNmMDFiOWM2ZTAwNjJlOWNjOTU2M2RmNDkwMzcyOGFiNmQ4OWVjZjNjYzgxODE0YThlZjUifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-07T22:06:36.328Z"
+    "at": "2026-10-08T02:56:52.103Z"
   }
 }

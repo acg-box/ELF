@@ -5,7 +5,7 @@ description: Verified API spend, native index readiness, real repository repairs
 tags: [benchmark, memory, cost]
 verified:
   - by: openwiki/0.7.1
-    at: 2026-10-07T22:06:36.328Z
+    at: 2026-10-08T02:56:52.103Z
 sources:
   - id: openwiki-source-edb430929cfea30c15990b19
     resource: repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs
@@ -13,6 +13,8 @@ sources:
     resource: repo://config/benchmark/evidence/2026-10-07-repository-replay/accounting.json
   - id: openwiki-source-dd90a0a1f5aa2e36fb27d874
     resource: repo://config/benchmark/evidence/2026-10-07/summary.json
+  - id: openwiki-source-f84e324a6d6a488fafbdcb87
+    resource: repo://config/benchmark/scoring-contract-v5.json
   - id: openwiki-source-5d25cf64aa8cc1e9b1be09b8
     resource: repo://docs/evidence/benchmarking/2026-10-07-bounded-calibration.md
   - id: openwiki-source-bb1247307c8794ccbd2882d5
@@ -25,7 +27,13 @@ sources:
     resource: repo://scripts/benchmark_contract/metrics.py
   - id: openwiki-source-56065a3815cb963d127dfd71
     resource: repo://scripts/benchmark_replay/agent.py
-generated: { by: "codex", at: "2026-10-07T22:06:36.328Z" }
+  - id: openwiki-source-3d2fd903bddb24ccbdd4a26f
+    resource: repo://scripts/benchmark_runner/runtime.py
+  - id: openwiki-source-1bc3f7c329b3996edfa5ef00
+    resource: repo://scripts/benchmark-deep-unit.py
+  - id: openwiki-source-b58326f8c77c6ba9d4f7544d
+    resource: repo://scripts/benchmark-qmd-host.py
+generated: { by: "codex", at: "2026-10-08T02:56:52.103Z" }
 ---
 
 # Benchmark calibration and fair product comparison
@@ -90,7 +98,7 @@ results remain in the evidence; they are not a product ranking.
 The adapter now waits for its dedicated worker queues to reach `DONE`, and fails
 on a failed job or an indexing deadline. The default is 180 seconds;
 `ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS` can set a longer deadline, and the deep
-profile uses 5,400 seconds. Direct pilot readback showed 222/222 note jobs
+profile defaults to 5,400 seconds. Direct pilot readback showed 222/222 note jobs
 complete. Cold and warm retrieval both returned context in 6/6 episodes after
 this correction. Invalid model JSON now consumes a turn and receives format
 feedback within the same six-turn budget. The final isolated test determines
@@ -146,8 +154,28 @@ owns the expanded protocol. Its core matrix assigns all 48 cases to fourteen
 products and two baselines: 64 product/suite units and 768 logical cases, with
 cold and warm phases. Deep workloads add 100- and 1,000-document corpora,
 cross-session recall, competing authority, corrections, shared namespaces,
-and mutation readback. Each deep workload has 62 scored questions. Defined
+and mutation readback. The default deep workload has 62 scored questions. Defined
 scope is not completed coverage; use published execution evidence for results.
+
+The deep runner can select fixed scale, session, conflicts, isolation, or mutation
+groups. The `behavior` group contains the 42 non-scale questions. Group selection
+preserves source text, question IDs, and operation order; isolation keeps both
+namespaces in one store. Separate groups can avoid an earlier scale-index backlog,
+but they are distinct conditions. Keep the original combined attempt and costs.
+An extended `--ingest-seconds` deadline measures eventual readiness; it does not
+convert a default-deadline timeout into a success. Action timeouts terminate the
+native process group and retain logs, so orphaned children cannot keep making
+provider calls after the client exits.
+
+The current scoring contract is revision 5. Revision 4 accepts valid English
+month-name dates as ISO-equivalent dates in required and forbidden fact checks.
+Revision 5 accepts the Cinder module identity without a repository path prefix
+and removes the unrequested Lumen case identifier from required facts. Retain
+original answers and prior scores; apply scoring revisions uniformly with
+`--rescore`, without new provider calls. These remain deterministic fact checks,
+not a general semantic judge. QMD reanswer applies the reviewed contract before
+checking retained suite equality, so scoring changes can reuse native retrieval
+while changed questions or source text still fail validation.
 
 The final reader receives one case per request. Earlier batches remain protocol
 diagnostics because a model could use a neighboring case's context. Deep scoring
@@ -157,9 +185,10 @@ negative retrieval fixtures do not establish access-control behavior.
 
 Use `cargo make benchmark-budget` for paid execution. The checked-in gateway
 fixes the model routes and keeps cumulative actual costs and conservative
-reservations under the USD 10 ceiling, including prior pilots. Core or repair
-phases admit at most USD 0.50 of new exposure; a full deep invocation admits at
-most USD 1. Unknown costs retain their reservations. Buffered SSE does not
+reservations under the USD 10 ceiling, including prior pilots. Eight-case core suites and repair
+phases admit at most USD 0.50 of new exposure. The 24-case common-core suite
+admits USD 1.50; a full deep invocation admits USD 1. These are separate phase
+limits inside the same USD 10 cumulative ceiling. Unknown costs retain their reservations. Buffered SSE does not
 measure time to first token.
 
 Profiles matter when comparing results. ELF uses native note ingestion, worker

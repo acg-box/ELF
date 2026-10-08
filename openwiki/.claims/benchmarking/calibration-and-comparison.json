@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:4d63b560000256823ceeb8f3a217c2bdf0d247cbf395dd8ecf871d77c66cc1e9",
+  "pageVersion": "sha256:e8810462536c3bcc13ff04dfb2d45c498e0c726315b52b916451a26e7ec16a3e",
   "claims": [
     {
       "id": "claim_b2092c21a8fb49378b24e596378c2f93",
@@ -17,8 +17,8 @@
       "statement": "The shared-answer scorer uses normalized required fact strings and forbidden fact checks rather than a paid model judge.",
       "evidence": [
         {
-          "resource": "repo://scripts/benchmark_contract/metrics.py#L61-L87",
-          "version": "repo-lines-v1:sha256:8a2acb1af779b527f496f259f3b892eef3cb77297557ea09cfc1663dfdfbe01f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNDZhMjAzYmEzNDdmN2NkNjZmZGQ2ZTdiNTU2ZDZlOWJiNjMzMjcxNmNkMzJiM2MyMmZkMTc4ZDg3NmM4N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ODlkY2U1ZjA2OTQwOGY2YTFhNzA5MDQ1MTZjOWY2MDJiNDQ1Njg1OTdkMjA5M2Q0ZWYzZGI1MDU3M2ZiMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkODM1ZTVkMWJhYmNhN2NiNmY2MGM2OWQ0MjQ2ZmI5MzllZmI4ZGE5MjcyNGUwYzhjNjU2OWZiYTY3ZDE2MDEifQ"
+          "resource": "repo://scripts/benchmark_contract/metrics.py#L62-L108",
+          "version": "repo-lines-v1:sha256:d67215ee0dc79194e49d2f2065c2252863b1789b76cf0d59fe28c01fdacdd493:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNDZhMjAzYmEzNDdmN2NkNjZmZGQ2ZTdiNTU2ZDZlOWJiNjMzMjcxNmNkMzJiM2MyMmZkMTc4ZDg3NmM4N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMmVjMGI2N2E3MzY4Y2FiYWI0NDgzYzQ0YWNjNDRmNzRlYzVkZTE4YjUzZTk2MjBmYmQ2MzNiMDFmMjI5ZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMjUwZTRlOWUzN2YxNWE5NjI3NTRhMGNjYmE2YzJhMTZhYjQxNzVjMTkxYjJjOTg5ZTViMDQxNTJiMjc1YjMifQ"
         }
       ]
     },
@@ -54,15 +54,15 @@
     },
     {
       "id": "claim_c5b129bca45649ba894011ec77553c96",
-      "statement": "The native benchmark adapter drains its worker queues and fails on failed jobs or an indexing deadline; ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS overrides the 180-second default, and deep runs use 5400 seconds.",
+      "statement": "The native benchmark adapter drains its worker queues and fails on failed jobs or an indexing deadline; ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS overrides the 180-second default, and deep runs default to 5400 seconds with an explicit configurable ingestion deadline.",
       "evidence": [
         {
           "resource": "repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs",
           "version": "repo-file-v1:sha256:0b67f0a7e7afdaeef8cc91300190d53862398c1f3e3fea102ef2a077f754b65d"
         },
         {
-          "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
-          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L67-L100",
+          "version": "repo-lines-v1:sha256:b7f2eafcad28ea7b929de7fa8e15f713328a3ad27ea06bff770700b6ebe8fa41:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0NThmZmI5YTQ5MzhiMTE5MmUxNzI2ZDRjNDA0YjE4OWQ4NmMzYWVkYWJjZTdlN2VkYThhMmVkZTA5NTMzZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzAxZTZhZTYxZDU3ZTM4MjA2Y2JjYThjNDBlMWRmODM2YTlhZDY3NGQwODg2NmI5YWVkNjQxNzVhNTQ5ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyM2ExYzMyZmUwZTFlNjU4MGVjMTNmYWJhNWY0ZDgwMjAyZmFlMzUyOGZmNzllM2M4OThiNDZjNzg4NzU3NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYzEwMjA4ZTJkMjNmMDFiOWM2ZTAwNjJlOWNjOTU2M2RmNDkwMzcyOGFiNmQ4OWVjZjNjYzgxODE0YThlZjUifQ"
         }
       ]
     },
@@ -78,11 +78,11 @@
     },
     {
       "id": "claim_0f18d596618f4f509fdfe0b051ad02f5",
-      "statement": "The full comparison protocol assigns 48 core cases to fourteen products and two baselines, with 64 product/suite units; each deep workload contains 62 questions covering scale, cross-session use, authority, isolation, and mutation.",
+      "statement": "The full comparison protocol assigns 48 core cases to fourteen products and two baselines, with 64 product/suite units; the default all-group deep workload contains 62 questions covering scale, cross-session use, authority, isolation, and mutation.",
       "evidence": [
         {
           "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
-          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
         }
       ]
     },
@@ -92,17 +92,17 @@
       "evidence": [
         {
           "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
-          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
         }
       ]
     },
     {
       "id": "claim_6e2734b285714a67bce30c8716bb54c1",
-      "statement": "The checked-in budget gateway enforces fixed routes and cumulative accounting with conservative reservations under a USD 10 ceiling; tranche limits are USD 0.50 for core or repair phases and USD 1 for full deep invocations.",
+      "statement": "The checked-in budget gateway enforces fixed routes and cumulative accounting with conservative reservations under the campaign's USD 10 ceiling; phase tranches are USD 0.50 for eight-case core or repair phases, USD 1.50 for 24-case common-core, and USD 1 for full deep invocations.",
       "evidence": [
         {
-          "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
-          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L182-L190",
+          "version": "repo-lines-v1:sha256:8d1d6bfa75ce9270529843b1300b55b73d886f76e563fa3460169c0c310a1330:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ1NmM2MTk3NTY0OTlhZDQ3OTgwM2JkMGJlM2NiNzJiOWM3ZjRkYjc1NThiNWQ3MGE1Y2NiNzhlOTZhNjVlZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJhMmE2MDJhMzk4OGU4Y2VkOTA0ZDg4NmY2YzcwZGRkNjJjMWMyMTM5OGJmODNkYWIxYmY5ODc2NDJhMThjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDZhMmM5NDk5MTlkNTgzNTQ3ZTEyZDE2OTYyOThmNjRlYTIyNWEzYTI3ZmU1MzZkOTQxNDU0M2VlODc2MTk0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTVjMTJhNDZmZWVkZTAwNzFmYjA5ZTgyMDE5ZTgxZjU0ZmQ4ZWMzZmZlMDQ3OTRiMzRkY2I2YWZiZjAzY2ViNyJ9"
         },
         {
           "resource": "repo://scripts/benchmark_budget.py",
@@ -116,13 +116,65 @@
       "evidence": [
         {
           "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
-          "version": "repo-file-v1:sha256:3722cab29a9ed4b3871f8427a13226152ee02e11bee1b72132ca33ff15246715"
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
+        }
+      ]
+    },
+    {
+      "id": "claim_8764d57f4e8d471588d1ede326b29f53",
+      "statement": "Deep workload groups preserve frozen questions, source text, and operation order; fresh grouped or extended-readiness conditions must retain the original timed-out attempt and cannot replace its default-budget outcome.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L81-L100",
+          "version": "repo-lines-v1:sha256:586e65d0d4605b4dcc5df57ab6b10aa0bd48b19d1f9a4cac0073583189ed0d8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZWVmMWUyNmQ2NjMxYjU0OGZiYjNkYTlhZjg5YTMyNjE0ZmNkMjY1ZmJkNjg3ZmY2MGY3MDA4MjBkZDQyZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzAxZTZhZTYxZDU3ZTM4MjA2Y2JjYThjNDBlMWRmODM2YTlhZDY3NGQwODg2NmI5YWVkNjQxNzVhNTQ5ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZjIxMzk3OWVmYmQ5NzJmNGJkNmY2OTMyNDFjZGY4NGU2ODlmZWYyYmFjYzgyNGRmMGYxZDVlM2MxN2MwZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYzEwMjA4ZTJkMjNmMDFiOWM2ZTAwNjJlOWNjOTU2M2RmNDkwMzcyOGFiNmQ4OWVjZjNjYzgxODE0YThlZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbc1b64cdb944a2bb28e69d13880ed6e",
+      "statement": "Deep action timeouts terminate the child process group, retain captured logs, and block later queries whose ingestion scope failed.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark-deep-unit.py#L39-L67",
+          "version": "repo-lines-v1:sha256:c0a6c38a3ed1c0212800ffeb166e4014d0e8eeb2799009e0e8fd3faa4cc400e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYjhkOTBmOTYyZThkNzhkMzIwMWEwZWMzZmE1YjlhNDAyNTRlMWY5ZjRjYjRhY2RhZjY1MGE2YzViYmFhNzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5MTUzYTk5YzU1ZmYyY2Q0MTk3ZGMzNjU2ZTljMDViMjRkN2RiMWYyYmExNTIyYjE0NWY0ZTE4YTM5YzNkY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5MWQzYjcxNzRmZjRiNDEzYTFiNWM4MTBmZGFhMDI2YTdjODY2MDQ5MjllOTFmOWJlYjYyYzA5OGM1MWQ5YWMifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_runner/runtime.py#L43-L76",
+          "version": "repo-lines-v1:sha256:496fd941f8435cca74025075e26064cc67cafc907014d1593d1089ca941fbaf5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmYzcwMGRlMWZiODc3NWM0OTA0NDg0N2U5ZjM4YTdlMDYyYjBmNWJiN2Q3MjFkZjI1M2Q3ZWMxYjRmZTVlZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmNTZiMTliMmUxZTliNTRmOGFiZGNjNWZkMzgwYzkxN2U1YTY5ZTczZGY5MWVkMTdiOTY3OWRiNDQzMzMxZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwYjcwZTJlZjJjMjlhYTMxY2IzNzA0MzNmZDE5NjAwODA3YzYzODVkNWYzNDQ2ODcwODc3MGU4YmMzMjhhNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db8b17eb90ba458281eb78fbbb4336e0",
+      "statement": "Scoring revisions 4 and 5 normalize valid English month-name dates and align Cinder module and Lumen retention fact checks with the questions; they apply uniformly offline without changing original native results or answers.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/scoring-contract-v5.json",
+          "version": "repo-file-v1:sha256:c0be50ffeb651458218fc96c03f6517341e71f0e7e5f4577161f60615d1dc4d9"
+        },
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L229-L254",
+          "version": "repo-lines-v1:sha256:0ab081b98fac9c7177b5512149aac7e037e46655a8e5e9db58a9437ed4bfcaad:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MTM5MWZjZTMyNzE4YjFjNGQyYWE2YjlhZWU3OWIwZTJmYWYyMTU5ZDc5MmE1NjZkOGNiOGNjYmM0MGQ5ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YjgwN2MxZDM4NzExZmE3NTM2OWNjNjk0MjRiY2RkN2NlN2U4YjQ1ODE0MGMzYWU1NGZmZjdhMWQ3NjRiNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlY2FlM2JmYTZiODJlYjU2MWYzMzNkNjNmZTA2NGU4NjFhZDRiOTExNzNkNzgwNmYzZTQ3MjAwYzI2NmEzNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExNjNhOWZhMWQwNWE5NjFjY2M3MmEwMTVmMWVjZmRjYjE4OGFiYzRkYWQwMmUwMWIzN2VhZDY4YjVhNDMzMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_098f7e5165cb4c3db83a7ff4f62e34f1",
+      "statement": "QMD reanswer compares retained and current suites after applying the reviewed answer contract, allowing scoring-only changes while rejecting changed native test input.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark-qmd-host.py#L20-L24",
+          "version": "repo-lines-v1:sha256:105235a10340c481e3e73f17acb80806f5f10367b2e8cbc27fb3fd3ce97652c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2VkNjQ4MTUyNzA5YWQ2MTMwZmVkYmZlZjJhMDE5YTY2ZGIxYWRmNzQ0NmJmYjM5Njg1ODFkODBjNjFkMTZiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFjNjk2ZmJlMDg4MjE5NWJlM2Q1YjYxMzk1NzNkMGEwMGUzMWQzYzBmOWE0OTU3ZjY0ZjZhMDEwY2MzYWE1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRkMjhjOTJiODVmOTQ4MDBhODRiMzU5OTFiZGQxYThmMzFiOGFlMTY5ODlkYjU2ODVlMThlNDliZDU2MGQzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODkzYmQ2NmUyYmI3MWYzYjhhOTI0MDY0YmJmN2IwN2M1OTAzYTc3M2ZhNGY4YzM1NDYwNjAzODY2NzFkM2E3MyJ9"
+        },
+        {
+          "resource": "repo://scripts/benchmark-qmd-host.py#L65-L77",
+          "version": "repo-lines-v1:sha256:497ef769d3853a16e83d1dadf98063e8f2064acb75298e79344dbd14770c1df8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0NzI0YzAyMTgzNjM5Y2Q3ZWYyNTJlMzIyZThkMGEyZmM4OGU4MjcwNTY4ODViZTllYjc4M2ExMzhiMzkzY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYjMzM2Y3MjhhMjQzODkzMzRkMmQ4YzY4OTEzNjdkOTVlNjFlYjVmZmYwN2Y1OWRkMzFiNzhlMzYxYzU1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhNTk1Njc5N2VmMTk3NGZjMmRmYTBhYjU5MjliMGNmOTg5YzExZDJiNDg1MTI2ZWZhMWIxNmI0ZmY1N2U5YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ZWRhNWE3NmZlOTAwZDY0YzYyN2Q0NmNmOTUwY2FiNjc5YjBjYjdkZTRmYzIwMTgxZTNjNzVlOTI5MTc1OTYifQ"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-07T22:06:36.328Z"
+    "at": "2026-10-08T02:56:52.103Z"
   }
 }
