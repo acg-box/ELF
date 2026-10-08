@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:2e3479eaf172bfef8ae2f4b2d269f5dbf283690c86d8474f1da7ad623e09507f",
+  "pageVersion": "sha256:1bca0c8e03aa8f39c8888604f8726cfb700f0a7bf64b1d4ba7b497c25b0d5d0b",
   "claims": [
     {
       "id": "claim_b2092c21a8fb49378b24e596378c2f93",
@@ -98,15 +98,19 @@
     },
     {
       "id": "claim_6e2734b285714a67bce30c8716bb54c1",
-      "statement": "The checked-in budget gateway enforces fixed routes and cumulative accounting with conservative reservations under the campaign's USD 10 ceiling; phase tranches are USD 0.50 for eight-case core or repair phases, USD 1.50 for 24-case common-core, and USD 1 for full deep invocations.",
+      "statement": "The budget gateway enforces fixed routes and cumulative accounting with conservative reservations under a configurable ceiling that defaults to USD 10; the completed October 8 campaign used an explicitly authorized USD 20 ceiling. Phase tranches remain separate from the cumulative limit.",
       "evidence": [
         {
-          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L182-L190",
-          "version": "repo-lines-v1:sha256:8d1d6bfa75ce9270529843b1300b55b73d886f76e563fa3460169c0c310a1330:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMDQ1NmM2MTk3NTY0OTlhZDQ3OTgwM2JkMGJlM2NiNzJiOWM3ZjRkYjc1NThiNWQ3MGE1Y2NiNzhlOTZhNjVlZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzJhMmE2MDJhMzk4OGU4Y2VkOTA0ZDg4NmY2YzcwZGRkNjJjMWMyMTM5OGJmODNkYWIxYmY5ODc2NDJhMThjZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMDZhMmM5NDk5MTlkNTgzNTQ3ZTEyZDE2OTYyOThmNjRlYTIyNWEzYTI3ZmU1MzZkOTQxNDU0M2VlODc2MTk0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTVjMTJhNDZmZWVkZTAwNzFmYjA5ZTgyMDE5ZTgxZjU0ZmQ4ZWMzZmZlMDQ3OTRiMzRkY2I2YWZiZjAzY2ViNyJ9"
+          "resource": "repo://config/benchmark/evidence/2026-10-08-full-native/accounting/summary.json",
+          "version": "repo-file-v1:sha256:523fdddabcb9bcef83fc2cfcfdb6067ca9434b281847ee1656b79aa9cf515c8b"
         },
         {
-          "resource": "repo://scripts/benchmark_budget.py",
-          "version": "repo-file-v1:sha256:a734718440428e8179ac81dcdf688f5d106ce7cdcbf7c70605e9888bc213a355"
+          "resource": "repo://scripts/benchmark_budget.py#L200-L221",
+          "version": "repo-lines-v1:sha256:b86d2fd7e09ed5b18cece6b7fcb9bfe98ac518b95c9cf2679364ec4d81e39bf5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzZWFmMmUwMTlkNzBkYjFiNDcwNzAxNjkyNTRjZjk2ZTY1Yzk4ZTQzMmVmYmIwYTRiYzhiODUzNTc5YWI1MjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNGZjNzViZTEzN2ZmZjY2YWYyYTFhNDVlZDQxMDAyNDBkZmRiMjQxMWY0N2EzZDczZDQzMzJjMGE0ZTY0NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZGE0YmU5MTY0N2NhZDYzYTBiZmI3ODAzNTMyYWE1ODJkMTY1NzE5NGY2ZWNhMWY2YmM2ZTZlZmYwYzkwNTMifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_budget.py#L89-L110",
+          "version": "repo-lines-v1:sha256:976617f58564156e1f8eb5f59156bec4b4cd5d91ca9d773e5ecf6a5c49811d87:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2ODgzYTAzNTg2Yzc3MDIyYWVhZWMyYjg1ZTUzYWIyMzA0MGIxODFmOGQwYmNmYTNiMzU2ZGE0NTNjZDlmMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0NGY5ODQzZjU1MTc0YTJmMzVmYTIyMGJmMjQwMDJkOTliMDBiMjczMDUyZjBkOGNlYzQ1MzhiZWIyNTdkZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYjlhNTA3ZTkwMjZmYTU4YmJiNGQwNjlmNTA0NDJkNmM5MGRlMWY5MjIxNzQwNWQyZjkzN2FiZTRjMDdhMzMifQ"
         }
       ]
     },
@@ -241,10 +245,30 @@
           "version": "repo-lines-v1:sha256:3c4acc8fcaecb0387199e90ee0b89a2af24183e14d7a5738a4a84fb77463fbf6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMDhmODU1NWI5NzIyMjAyM2Q3NjgwZDgyYjFmZTYzMzIxMjAwZjU2YzYzYjhjMzQ4Zjg4NjFhZWIxNTllNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkN2ZhMmIzZjkwYjYzZGFiNWNlZjM5OGE2Y2QxZjllZGRjMTNiZTdjYjQ4Y2ZiYzcxYmNjNjFhNWVmMTcyNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmYmNmYmRkZWQ4NmY3NGI1YzIwNzc2Njk3MTM5ZGIwZjEzNTAzYWY4YmRlMmUyNjRlNDlkYzdmMTU5YzgyMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_7b0745d9a8944a10aa8ba36b5627eba6",
+      "statement": "Deep GBrain updates refresh stale embeddings with the supported embed --source flag before readback, while other scoped commands use --source-id.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L145-L177",
+          "version": "repo-lines-v1:sha256:39763abe8ccdc795ca36ff0da01abfcc80bff53b9d839fe973c5edc6ba1a1611:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkNjNlZjQ1YTUyMzZhZWIyYzViN2U3MmJmMTZlZDE1N2I5ZWEyZTU5NjY5YTAwYzQ5Njk0N2I2ZDNmZjNlY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNTNjMWExNTJlYmYwOThmOGRhNDViM2FjMDg0MzRmZTBlMjk2NTNhZmQ3Mjc5YTE0YzRiNzZmYzdkNDVjOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5OWU4Mzg2ODEwMWM1MzlkNzhkOTJmOGQ4YzIyN2VmNjk1MmJiMzcwMGU2OGVlMTA1NWYyMDg0MTBkN2U4ZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjOTY4NzYzNDdlMDRhYWZkYzRiZjU5ODU0MjRkNDViMGY3YWY0NmI0NDcwNzM1OGUwYjhlNzI1MGJkNmQ1ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ad6cf84fc40422eaabb51bd3f22425e",
+      "statement": "The deep Mem0 adapter uses native extraction during ingestion, retains extracted memory IDs and progress, and searches with user_id filters and top_k=5.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L180-L212",
+          "version": "repo-lines-v1:sha256:b6772db9edd0a1e2730d56051cb825e02fadfe63020403770ef4a9a812007ef8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMTc5YjhjMjhiZTdlYWEwOGE1OWY0MTUwY2JhODVhZjRiZjllNjdiOTQzM2RjYzVmYWU5N2Q4MTU0ZjUwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMTk2MjAwMDVmMzc2NjliMmExZTllMjlhNjgwODRiYTcxOTZkNjZiNTE2YzJjM2JiZjE3MDE2NzdjMTYxMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGEwMGEyYWRiMDJkNWIyY2UwNWFlMmIwNjZiYjQxMGExNTFkYzdmODBhMGJmZWIxNjM3NTFlZjkzMzNlNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxYWYzYTJmZGU5ZmRlNGM3NWZjYTJjOTBiYTAyZTJjZDk2YzdiMWQ1ZTAwNTU5MDVkODM1ZGY3OTNmNzQzMTMifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-08T09:01:01.458Z"
+    "at": "2026-10-08T21:07:20.478Z"
   }
 }

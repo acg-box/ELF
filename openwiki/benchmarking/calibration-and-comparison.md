@@ -5,7 +5,7 @@ description: Verified API spend, native index readiness, real repository repairs
 tags: [benchmark, memory, cost]
 verified:
   - by: openwiki/0.7.1
-    at: 2026-10-08T09:01:01.458Z
+    at: 2026-10-08T21:07:20.478Z
 sources:
   - id: openwiki-source-edb430929cfea30c15990b19
     resource: repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs
@@ -13,6 +13,8 @@ sources:
     resource: repo://config/benchmark/evidence/2026-10-07-repository-replay/accounting.json
   - id: openwiki-source-dd90a0a1f5aa2e36fb27d874
     resource: repo://config/benchmark/evidence/2026-10-07/summary.json
+  - id: openwiki-source-41de5f94ac6ea55c66eee31a
+    resource: repo://config/benchmark/evidence/2026-10-08-full-native/accounting/summary.json
   - id: openwiki-source-f84e324a6d6a488fafbdcb87
     resource: repo://config/benchmark/scoring-contract-v5.json
   - id: openwiki-source-87dc0453116a4d53c0b0b603
@@ -47,10 +49,13 @@ sources:
     resource: repo://scripts/benchmark-qmd-host.py
   - id: openwiki-source-24b7ca16c2008e1ef8843ea9
     resource: repo://scripts/tests/test_benchmark_graphrag.py
-generated: { by: "codex", at: "2026-10-08T09:01:01.458Z" }
+generated: { by: "codex", at: "2026-10-08T21:07:20.478Z" }
 ---
 
 # Benchmark calibration and fair product comparison
+
+For the closed October 8 campaign, use [full native results](full-native-results.md).
+The pilot observations below remain historical evidence.
 
 The initial October 7 native calibration cost **$0.016648811** for **393 provider requests**,
 including earlier samples and follow-ups. The cumulative admission ceiling was
@@ -220,10 +225,10 @@ negative retrieval fixtures do not establish access-control behavior.
 
 Use `cargo make benchmark-budget` for paid execution. The checked-in gateway
 fixes the model routes and keeps cumulative actual costs and conservative
-reservations under the USD 10 ceiling, including prior pilots. Eight-case core suites and repair
+reservations under a configurable ceiling, including prior pilots. The CLI default is USD 10; the completed October 8 campaign used an explicitly authorized USD 20 ceiling. Eight-case core suites and repair
 phases admit at most USD 0.50 of new exposure. The 24-case common-core suite
 admits USD 1.50; a full deep invocation admits USD 1. These are separate phase
-limits inside the same USD 10 cumulative ceiling. Unknown costs retain their reservations. Buffered SSE does not
+limits inside the selected cumulative ceiling. Unknown costs retain their reservations. Buffered SSE does not
 measure time to first token.
 
 Profiles matter when comparing results. ELF uses native note ingestion, worker
@@ -233,5 +238,12 @@ hierarchy, graph, transport, and maintenance deviations for other products.
 A timeout or broken adapter remains incomplete execution. A legacy exact-text
 update metric can fail even when delete-and-insert replacement succeeds; retain
 operation acknowledgements, actual readback, and reader answers separately.
+
+The deep GBrain adapter refreshes stale update embeddings with the supported
+`embed --source` flag before readback; other source-scoped commands retain
+`--source-id`. The deep Mem0 adapter searches with `filters={"user_id": scope}`
+and `top_k=5`, matching the pinned native SDK. Its ingestion uses native
+extraction (`infer=True`) and retains progress plus extracted memory IDs.
+These adapter boundaries differ from the initial extraction-disabled pilot.
 
 See [quickstart](../quickstart.md) for repository commands and documentation owners.

@@ -14,15 +14,15 @@ sources:
     resource: repo://scripts/benchmark_replay/cli.py
   - id: openwiki-source-6edf395d285ada6626e2d809
     resource: repo://scripts/benchmark_runner/cli.py
-generated: { by: "codex", at: "2026-10-08T02:56:52.103Z" }
+generated: { by: "codex", at: "2026-10-08T21:07:20.478Z" }
 verified:
   - by: openwiki/0.7.1
-    at: 2026-10-08T09:01:01.458Z
+    at: 2026-10-08T21:07:20.478Z
 ---
 
 # ELF documentation and benchmark entrypoints
 
-This focused wiki covers benchmark calibration. It is not a complete regeneration
+This focused wiki covers benchmark protocols, calibration, and closed campaign results. It is not a complete regeneration
 of the existing architecture documentation.
 
 ## Find the correct owner
@@ -35,6 +35,8 @@ of the existing architecture documentation.
   commands, baselines, replay receipts, and interpretation limits.
 - [Full comparison protocol](../docs/runbook/benchmarking/full_comparison.md):
   fixed coverage, native profiles, budget controls, deep workloads, and acceptance.
+- [Full native results](benchmarking/full-native-results.md): closed October 8
+  execution, retained measurement gaps, costs, and product implications.
 - [Calibration and comparison](benchmarking/calibration-and-comparison.md): measured
   spend, lifecycle behavior, scoring repairs, and unmeasured workflows.
 - [Repository repair runbook](../docs/runbook/benchmarking/repository_memory_replay.md):
@@ -63,7 +65,8 @@ Time and unit limits do not cap every product's internal API cost.
 The current manifest fixes DeepSeek V4.1 Flash and the DeepSeek route, with
 Qwen3 Embedding 8B through DeepInfra where external embeddings apply. Paid work
 must use the cumulative ledger through `cargo make benchmark-budget`. Time
-limits alone do not enforce the USD 10 ceiling. Keep prior spend and reservations
+limits alone do not enforce a spending ceiling. The gateway defaults to USD 10;
+the October 8 campaign explicitly used an authorized USD 20 ceiling. Keep prior spend and reservations
 for unknown costs in that same ledger.
 
 | Task | Purpose |
