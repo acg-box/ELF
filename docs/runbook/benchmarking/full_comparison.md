@@ -235,6 +235,15 @@ revision changes the blinded product input. Preserve original bundles and use
 `--rescore` to apply the same revision to every retained condition without paid
 calls. Use `--reanswer` only when shared-reader responses need regeneration.
 
+### Calendar date scoring (revision 4)
+
+Revision 4 accepts valid English month-name dates as their ISO equivalents in
+required and forbidden answer facts. It does not infer ambiguous numeric dates
+or accept invalid dates. The Vega migration question does not require ISO
+formatting. Preserve each original bundle and apply the revision uniformly with
+`--rescore`. This offline step changes no native result, answer, or API cost.
+
+
 The legacy update metric accepts only the native operation types `update`,
 `replace`, and `reindex_update`. It also requires exact replacement text in the
 retrieved context. A `delete_then_insert` operation receives zero on this metric

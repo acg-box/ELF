@@ -1,6 +1,6 @@
 {
   "schema": "elf.benchmark_manifest/v4",
-  "answer_contract": "config/benchmark/scoring-contract-v3.json",
+  "answer_contract": "config/benchmark/scoring-contract-v4.json",
   "runner": {
     "capacity": 1,
     "fallback_capacity": 1,

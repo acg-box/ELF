@@ -19,4 +19,8 @@ def review_suite(suite, contract):
     reviewed["answer_contract_revision"] = contract["revision"]
     if contract.get("source_trace_measurement"):
         reviewed["source_trace_measurement"] = contract["source_trace_measurement"]
+    if contract.get("calendar_date_normalization"):
+        if contract['calendar_date_normalization'] != 'unambiguous_english_month_names':
+            raise ValueError('unknown calendar date normalization')
+        reviewed['calendar_date_normalization'] = contract['calendar_date_normalization']
     return reviewed

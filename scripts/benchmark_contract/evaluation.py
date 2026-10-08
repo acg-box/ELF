@@ -107,7 +107,8 @@ def evaluate_unit(
                     / len(native_contexts) if native_contexts else None
                 )
             answer_correct, unsupported_error, forbidden_answer = _answer_scores(
-                qrels, raw_job.get("answer")
+                qrels, raw_job.get("answer"),
+                canonical_dates=suite.get('calendar_date_normalization') == 'unambiguous_english_month_names',
             )
             update_success, delete_success, missing_operations = _operation_scores(
                 list(qrels.get("required_operations") or []),
@@ -285,4 +286,3 @@ def evaluate_unit(
         "provider_usage": unit.get("provider_usage") or {},
         "phases": phases,
     }
-

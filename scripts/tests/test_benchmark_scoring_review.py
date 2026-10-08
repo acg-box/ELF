@@ -58,12 +58,38 @@ class ScoringReviewTests(BenchmarkCase):
             {"text": "docs/legacy/meridian-unsafe.md", "supported": True})[0], 0.0)
 
     def test_review_preserves_exact_product_payload(self):
-        contract = load_json(REPO / "config/benchmark/answer-contract-v2.json")
+        contract = load_json(REPO / "config/benchmark/scoring-contract-v4.json")
         with tempfile.TemporaryDirectory() as directory:
             for key, suite in self.suites.items():
                 before = materialize_product_fixtures(suite, Path(directory) / key / "before")
                 after = materialize_product_fixtures(review_suite(suite, contract), Path(directory) / key / "after")
                 self.assertEqual([p.read_bytes() for p in before], [p.read_bytes() for p in after])
+
+    def test_calendar_dates_are_opt_in_and_preserve_wrong_answers(self):
+        facts = {"answer_facts": ["2026-09-30"]}
+        for text in ("September 30, 2026", "Sep. 30th 2026", "30 September 2026", "30th Sept. 2026"):
+            answer = {"text": text, "supported": True}
+            self.assertEqual(_answer_scores(facts, answer)[0], 0.0)
+            self.assertEqual(_answer_scores(facts, answer, canonical_dates=True)[0], 1.0)
+        for text in ("September 29, 2026", "September 31, 2026", "09/30/2026", "30/09/2026"):
+            self.assertEqual(_answer_scores(facts, {"text": text}, canonical_dates=True)[0], 0.0)
+        self.assertEqual(_answer_scores({"answer_facts": ["2024-02-29"]},
+            {"text": "February 29, 2024"}, canonical_dates=True)[0], 1.0)
+        self.assertEqual(_answer_scores({"answer_facts": ["2026-03-01"]},
+            {"text": "February 29, 2026"}, canonical_dates=True)[0], 0.0)
+        self.assertEqual(_answer_scores({"answer_facts": ["v3"], "forbidden_answer_facts": ["2026-09-30"]},
+            {"text": "v3 September 30, 2026"}, canonical_dates=True), (0.0, None, ["2026-09-30"]))
+
+    def test_calendar_date_revision_applies_to_unit_evaluation(self):
+        contract = load_json(REPO / "config/benchmark/scoring-contract-v4.json")
+        suite = review_suite(self.subset("knowledge-structure-v1", 8), contract)
+        unit = self.completed_unit("elf", suite)
+        index = next(i for i, job in enumerate(suite["jobs"]) if job["job_id"] == "knowledge-vega-api-map")
+        unit["phases"]["warm"]["jobs"][index]["answer"] = {
+            "text": "v3 signed service credentials September 30, 2026", "supported": True}
+        self.assertEqual(next(row["answer_correct"] for row in evaluate_unit(suite, unit, self.targets["elf"])["phases"]["warm"]["jobs"] if row["job_id"] == "knowledge-vega-api-map"), 1.0)
+        suite.pop("calendar_date_normalization")
+        self.assertEqual(next(row["answer_correct"] for row in evaluate_unit(suite, unit, self.targets["elf"])["phases"]["warm"]["jobs"] if row["job_id"] == "knowledge-vega-api-map"), 0.0)
 
     def test_review_rejects_a_different_question(self):
         contract = load_json(REPO / "config/benchmark/answer-contract-v2.json")
