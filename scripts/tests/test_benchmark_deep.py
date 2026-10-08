@@ -15,6 +15,28 @@ from benchmark_deep.fixtures import workload
 
 
 class DeepContractTests(unittest.TestCase):
+    def test_mem0_deep_query_uses_native_filter_and_result_limit(self):
+        from benchmark_deep.drivers import mem0_action
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+
+        class NativeMemory:
+            def search(self, query, *, filters, top_k):
+                self_request.assertEqual(query, "Find the approved value")
+                self_request.assertEqual(top_k, 5)
+                return {"results": [{"memory": filters["user_id"],
+                    "metadata": {"evidence_id": "source"}}]}
+
+        self_request = self
+        memory_class = SimpleNamespace(from_config=Mock(return_value=NativeMemory()))
+        with patch.dict(sys.modules, {"mem0": SimpleNamespace(Memory=memory_class)}), \
+                patch("benchmark_targets.mem0.mem0_config", return_value={}), \
+                patch("benchmark_targets.unit_runtime.wait_port"):
+            for scope in ("scope-a", "scope-b"):
+                result = mem0_action({"action": "query", "scope": scope,
+                    "question": "Find the approved value"}, Path("/unused"))
+                self.assertEqual(result["contexts"], [{"evidence_id": "source", "text": scope}])
+
     def test_hindsight_readiness_uses_the_deep_action_budget(self):
         from benchmark_deep.drivers import hindsight_action, INGEST_TIMEOUT_SECONDS, ACTION_TIMEOUT_SECONDS
 

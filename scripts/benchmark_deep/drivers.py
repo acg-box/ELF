@@ -196,7 +196,7 @@ def mem0_action(action, root):
             (root / (scope + "-mem0-progress.json")).write_text(json.dumps(receipts))
         return {"native": receipts, "extracted_id_count": sum(map(len, ids.values()))}
     if kind == "query":
-        native = memory.search(action["question"], user_id=scope, limit=5)
+        native = memory.search(action["question"], filters={"user_id": scope}, top_k=5)
         return {"native": native, "contexts": mem0_contexts(mem0_entries(native))}
     ids = json.loads(path.read_text())[action["evidence_id"]]
     if not ids:
