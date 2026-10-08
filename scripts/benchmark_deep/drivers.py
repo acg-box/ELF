@@ -52,7 +52,10 @@ def rust_action(target, action, root):
     if action["action"] != "ingest":
         args += ["--reuse-index"]
     with (receipt / "process.log").open("w") as log:
-        result = subprocess.run(args, env=env, stdout=log, stderr=subprocess.STDOUT,
+        # The ELF image config resolves config/local/tokenizer.wordlevel.json from /.
+        # The parent action launcher runs from /opt inside the deep-test mount.
+        result = subprocess.run(args, env=env, cwd="/" if target == "elf" else None,
+            stdout=log, stderr=subprocess.STDOUT,
             timeout=INGEST_TIMEOUT_SECONDS if action["action"] == "ingest" else ACTION_TIMEOUT_SECONDS)
     if not (receipt / "evidence.json").exists():
         raise RuntimeError(f"native {target} process exited {result.returncode}; see process.log")

@@ -15,6 +15,23 @@ from benchmark_deep.fixtures import workload
 
 
 class DeepContractTests(unittest.TestCase):
+    def test_elf_native_process_uses_image_config_working_directory(self):
+        from benchmark_deep.drivers import rust_action
+        import subprocess
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            def native(args, **kwargs):
+                self.assertEqual(kwargs["cwd"], "/")
+                self.assertEqual(args[args.index("--config") + 1], "/opt/elf/elf.docker.toml")
+                Path(args[args.index("--evidence-out") + 1]).write_text(
+                    json.dumps({"jobs": [{"contexts": []}]}))
+                return subprocess.CompletedProcess(args, 0)
+            with patch("benchmark_deep.drivers.subprocess.run", side_effect=native):
+                result = rust_action("elf", {"scope": "session", "action": "ingest",
+                    "items": [], "operation_id": "operation-000"}, root)
+            self.assertEqual(result["process_exit"], 0)
+
     def test_fixed_groups_preserve_every_case_and_native_dependency(self):
         inputs, oracle = workload()
         combined = {}
