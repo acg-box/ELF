@@ -184,7 +184,7 @@
         "knowledge-structure-v1",
         "repository-knowledge-v1"
       ],
-      "image": "elf-benchmark-graphrag:v8",
+      "image": "elf-benchmark-graphrag:v9",
       "dockerfile": "docker/benchmark/graphrag.Dockerfile",
       "pin": {
         "kind": "python_package",

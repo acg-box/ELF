@@ -268,13 +268,16 @@ def _run_cli(
     timeout: int,
 ) -> float:
     started = time.monotonic()
+    env = os.environ.copy()
     if command[0] == str(GRAPHRAG_EXECUTABLE):
-        command = [sys.executable, str(Path(__file__).with_name("graphrag_transport.py")), *command[1:]]
+        command = [sys.executable, "-m", "benchmark_targets.graphrag_transport", *command[1:]]
+        module_root = str(Path(__file__).resolve().parents[1])
+        env["PYTHONPATH"] = module_root + (os.pathsep + env["PYTHONPATH"] if env.get("PYTHONPATH") else "")
     try:
         completed = subprocess.run(
             command,
             cwd=cwd,
-            env=os.environ.copy(),
+            env=env,
             check=False,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,

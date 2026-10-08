@@ -21,6 +21,23 @@ OPENVIKING = load_script(
 
 
 class BenchmarkAdaptersTests(BenchmarkCase):
+    def test_graphrag_cli_does_not_shadow_the_native_package(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            packages = root / 'packages'
+            cli = packages / 'graphrag/cli'
+            cli.mkdir(parents=True)
+            (packages / 'graphrag/__init__.py').write_text('')
+            (cli / '__init__.py').write_text('')
+            (cli / 'main.py').write_text('def app(): print("native-cli-resolved")\n')
+            (packages / 'litellm.py').write_text('def completion(**kwargs): pass\nasync def acompletion(**kwargs): pass\n')
+            state = root / 'state'
+            state.mkdir()
+            with mock.patch.dict(GRAPHRAG.os.environ, {'PYTHONPATH': str(packages)}):
+                GRAPHRAG._run_cli([str(GRAPHRAG.GRAPHRAG_EXECUTABLE), '--help'], cwd=state,
+                    stdout_path=root / 'stdout.log', stderr_path=root / 'stderr.log', timeout=5)
+            self.assertEqual((root / 'stdout.log').read_text().strip(), 'native-cli-resolved')
+
     def test_graphrag_retains_native_failure_logs_without_credentials(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory); (root / "logs").mkdir()
