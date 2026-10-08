@@ -76,6 +76,25 @@ class DeepContractTests(unittest.TestCase):
             self.assertEqual(len(imports), 1)
             self.assertEqual(imports[0].kwargs["timeout"], INGEST_TIMEOUT_SECONDS)
 
+    def test_gbrain_update_refresh_uses_embed_source_flag(self):
+        from benchmark_deep.drivers import gbrain_action
+
+        def native(home, args):
+            if args[0] == "embed":
+                self.assertNotIn("--source-id", args)
+                self.assertEqual(args[args.index("--source") + 1], "mutations")
+                return {"embedded": 1}, 1
+            return {"revision": "r1"}, 1
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "gbrain-ready").write_text("initialized")
+            with patch("benchmark_targets.gbrain.invoke", side_effect=native):
+                result = gbrain_action({"scope": "mutations", "action": "update",
+                    "evidence_id": "source", "text": "corrected"}, root)
+            self.assertEqual(result["refresh"], {"embedded": 1})
+            self.assertEqual(result["readback"]["revision"], "r1")
+
     def test_gbrain_cli_preserves_default_and_explicit_deadlines(self):
         from benchmark_targets.gbrain import invoke
         import subprocess

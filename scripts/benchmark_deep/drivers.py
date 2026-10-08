@@ -171,7 +171,8 @@ def gbrain_action(action, root):
     native, _ = invoke(home, args)
     refresh = None
     if kind == "update":
-        refresh, _ = invoke(home, ["embed", "--stale", "--max-usd", "0.05", *suffix])
+        refresh, _ = invoke(home, ["embed", "--stale", "--max-usd", "0.05",
+            "--source", scope, "--json"])
     readback, _ = invoke(home, ["get", action["evidence_id"], "--include-content", "--include-deleted", *suffix])
     return {"native": native, "refresh": refresh, "readback": readback}
 
