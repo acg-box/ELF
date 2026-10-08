@@ -182,8 +182,11 @@ part of the measured configuration. It is not an upstream product release.
 The cumulative API limit is USD 10, including prior pilot spend. Reconcile
 completed requests with explicit provider costs. Keep conservative reservations
 for unknown costs and in-flight requests. Allow only one active budget gateway;
-use at most USD 0.50 of new exposure for a core suite or repair phase, and
-USD 1 for a full 1,000-document deep invocation. The cumulative USD 10 limit
+use at most USD 0.50 of new exposure for an eight-case core suite or repair
+phase, USD 1.50 for the 24-case common-core suite, and USD 1 for a full
+1,000-document deep invocation. The larger common-core tranche follows its
+threefold case count; it does not change model output limits or remove earlier
+failures. The cumulative USD 10 limit
 applies to all invocations. A cost stop remains
 incomplete coverage. It does not justify silently shrinking the matrix.
 
