@@ -13,7 +13,7 @@ from typing import Any
 from .unit_runtime import sanitized_error, write_json
 
 
-def invoke(home: Path, arguments: list[str], *, json_output: bool = True) -> tuple[Any, float]:
+def invoke(home: Path, arguments: list[str], *, json_output: bool = True, timeout: int = 180) -> tuple[Any, float]:
     env = dict(os.environ, GBRAIN_HOME=str(home),
                OPENROUTER_API_KEY=os.environ["EMBEDDING_API_KEY"],
                OPENROUTER_BASE_URL=os.environ["EMBEDDING_API_BASE"])
@@ -21,7 +21,7 @@ def invoke(home: Path, arguments: list[str], *, json_output: bool = True) -> tup
     result = subprocess.run(
         ["bun", "run", "src/cli.ts", *arguments],
         cwd=os.environ.get("GBRAIN_REPO_DIR", "/opt/gbrain"),
-        env=env, text=True, capture_output=True, timeout=180,
+        env=env, text=True, capture_output=True, timeout=timeout,
     )
     if result.returncode:
         raise RuntimeError(sanitized_error(RuntimeError(

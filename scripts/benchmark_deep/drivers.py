@@ -155,7 +155,8 @@ def gbrain_action(action, root):
                 "commit", "-m", "Add synthetic benchmark corpus"]):
             subprocess.run(["git", "-C", str(content), *args], check=True, capture_output=True)
         registered, _ = invoke(home, ["sources", "add", scope, "--path", str(content)], json_output=False)
-        native, elapsed = invoke(home, ["import", str(content), *suffix])
+        native, elapsed = invoke(home, ["import", str(content), *suffix],
+            timeout=INGEST_TIMEOUT_SECONDS)
         return {"native": native, "registered": registered, "native_ms": elapsed}
     if kind == "query":
         native, elapsed = invoke(home, ["search", action["question"], "--limit", "5",

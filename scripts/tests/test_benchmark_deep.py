@@ -15,6 +15,31 @@ from benchmark_deep.fixtures import workload
 
 
 class DeepContractTests(unittest.TestCase):
+    def test_gbrain_import_uses_deep_ingestion_budget(self):
+        from benchmark_deep.drivers import gbrain_action, INGEST_TIMEOUT_SECONDS
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "gbrain-ready").write_text("initialized")
+            with patch("benchmark_targets.gbrain.invoke", return_value=({}, 1)) as invoke, \
+                    patch("benchmark_deep.drivers.subprocess.run"):
+                gbrain_action({"scope": "scale-100", "action": "ingest", "items": []}, root)
+            imports = [call for call in invoke.call_args_list if call.args[1][0] == "import"]
+            self.assertEqual(len(imports), 1)
+            self.assertEqual(imports[0].kwargs["timeout"], INGEST_TIMEOUT_SECONDS)
+
+    def test_gbrain_cli_preserves_default_and_explicit_deadlines(self):
+        from benchmark_targets.gbrain import invoke
+        import subprocess
+
+        with patch.dict(os.environ, {"EMBEDDING_API_KEY": "offline-test", "EMBEDDING_API_BASE": "http://offline.invalid"}), \
+                patch("benchmark_targets.gbrain.subprocess.run",
+                    return_value=subprocess.CompletedProcess([], 0, "{}", "")) as run:
+            invoke(Path("/unused"), ["search", "example"])
+            self.assertEqual(run.call_args.kwargs["timeout"], 180)
+            invoke(Path("/unused"), ["import", "/unused"], timeout=5400)
+            self.assertEqual(run.call_args.kwargs["timeout"], 5400)
+
     def test_elf_native_process_uses_image_config_working_directory(self):
         from benchmark_deep.drivers import rust_action
         import subprocess
