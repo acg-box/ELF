@@ -1,0 +1,46 @@
+{
+  "schema": "elf.full_native_campaign/v1",
+  "status": "execution_closed_with_measurement_gaps",
+  "date": "2026-10-08",
+  "budget_ceiling_usd": 20,
+  "original_core": {
+    "planned_units": 64,
+    "planned_cases": 768,
+    "native_cold_completed": 740,
+    "native_warm_completed": 739,
+    "isolated_answers": 739
+  },
+  "recovery_conditions_terminal": 5,
+  "repair_common_trials": 102,
+  "repair_native_letta_trials": 6,
+  "cost": {
+    "paid_usd": 8.742426971000059,
+    "conservative_exposure_usd": 9.027322870999996,
+    "ceiling_usd": 20,
+    "requests": 33552
+  },
+  "boundary": "All registered execution queues terminated. Some planned queries were blocked by native preparation failures or deadlines. Execution closure does not mean every query was measured or passed. Each attempt and its costs remain separate.",
+  "files": {
+    "accounting/summary.json": "523fdddabcb9bcef83fc2cfcfdb6067ca9434b281847ee1656b79aa9cf515c8b",
+    "accounting/usage.jsonl.gz": "015ffeb99a9013e5582b7ee0669c659f4381d0bc49f7bf41c37d2debfe9a3823",
+    "answer-review.json": "5bca25b3481521301aa282de51500ae19dc3ee64471ae686bd77bdbe7947c8cb",
+    "core/cases.jsonl.gz": "a1b415370c86db5d9536f33444090e50372a5a3b9322226d3ea4cac1f35473d4",
+    "core/summary.json": "7c14435d1104594be2d1583b8899faaf218b9bd38c103bc78f80bb67b453df6e",
+    "cost-attribution.json": "7378a4fb13897a27853f9f69336b253924b2ae900c5f0ce2e602e11438c272b9",
+    "deep/cases.jsonl.gz": "a8891aefeab4cd528797431df3805956052e2e5ad428cd39f5b5d09f56585d12",
+    "deep/summary.json": "f29283633b6efe29a3554e64ccf6f0b02705caa9859a812d25e06eef84ae75f0",
+    "execution-selection.json": "a219990ef98b8b14e6d462dda5f5854fe75b5d573490964565ef0def5daa2b0d",
+    "native-mutations.json": "ab4d00691816d13ed59aada200f71b6941fc548ee1646e1379f30335fdefc134",
+    "operations/operations.jsonl.gz": "070cf590b03b2f4bba3ba91f8f3c08b3da763bbc9774ddbe5aaf4abfe0c120d4",
+    "operations/summary.json": "e3273545cc05819610d9d475e805889a574214047108e2d0087ac87aa0408145",
+    "provenance.json": "88b4f6d9c9843c055525c1974ffb0670482c9e7daca1b1c354a033bd60d8f0eb",
+    "recoveries.json": "2b92e0634e8049fd073816da1e74f4dda74b277f4903fba3f9f65991d8003a75",
+    "repair/summary.json": "ed1df20e7752d92ef4a73ebf09ffc2cd6c8b2ec16a04eed30986a1a66189e4a0",
+    "repair/trials.jsonl.gz": "4acd5556c065a4e5ed7f51141488469ab1c1c155d9bbdee89455e15456f45316",
+    "repair-completion.json": "c5ad5b0694af49a10703031f0e08c8d459de07df6bd8d459bfb64977d92ca419",
+    "repeats/cases.jsonl.gz": "2f1c807e03b4add9eb256ee312978fd93399cb687552e27df7df738936ac3b22",
+    "repeats/summary.json": "b2347839ed2be020fabae8157fdc51f2e43d4e56729cf44b4038113651f2ff84",
+    "repeats.json": "4558468f86fc758330a07191501ee89c73d2a1e9ddb6a7aaacdccd9499868521",
+    "token-usage.json": "f8741c44e8b27ac78f54664b2394edfbe790d5914b099f10f259bc88e59bf287"
+  }
+}

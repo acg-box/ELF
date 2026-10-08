@@ -1,0 +1,1443 @@
+{
+  "not_final": false,
+  "attempts": [
+    {
+      "bundle": "qmd-metal-deep-v2-isolated-reader/bundle.json",
+      "source_sha256": "929c44feada5a4bc224e7ffb108758ece336ea4cfbafb51239c445508caf569c",
+      "target": {
+        "adapter": "native_hybrid_query_with_reranking",
+        "build_target": "qmd-runtime",
+        "dockerfile": "docker/benchmark/Dockerfile",
+        "id": "qmd",
+        "image": "elf-benchmark-qmd:v6",
+        "native_deviations": {
+          "retrieval": "native_local_embedding_query_expansion_and_reranking"
+        },
+        "pin": {
+          "kind": "git",
+          "source": "https://github.com/tobi/qmd.git",
+          "value": "facd35e01359e59d938bc9418e93fb9318addee3"
+        },
+        "role": "local_repository_and_document_search",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-057",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.084150124996086
+            },
+            {
+              "operation_id": "operation-058",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.138028666988248
+            },
+            {
+              "operation_id": "operation-059",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.144786459000898
+            },
+            {
+              "operation_id": "operation-060",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.150809083002969
+            },
+            {
+              "operation_id": "operation-061",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 7.85296666699287
+            },
+            {
+              "operation_id": "operation-062",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.118800500000361
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-069",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.058480583000346
+            },
+            {
+              "operation_id": "operation-070",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.120494583999971
+            },
+            {
+              "operation_id": "operation-071",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.1033319999987725
+            },
+            {
+              "operation_id": "operation-072",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.0228572499909205
+            },
+            {
+              "operation_id": "operation-073",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 7.193066958003328
+            },
+            {
+              "operation_id": "operation-074",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 2.3233856250008103
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "files-deep-v2-isolated-reader/bundle.json",
+      "source_sha256": "e032bb9f3cf2a84832f37fd13be6c26037cdb81a8584d0d75f5c4426b6b69ba2",
+      "target": {
+        "adapter": "files-search",
+        "id": "files-search",
+        "pin": {
+          "kind": "benchmark_source_commit"
+        },
+        "score_eligible": true,
+        "suites": []
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-057",
+              "status": "completed",
+              "duration_seconds": 0.0069848749990342185
+            },
+            {
+              "operation_id": "operation-058",
+              "status": "completed",
+              "duration_seconds": 0.007520958999521099
+            },
+            {
+              "operation_id": "operation-059",
+              "status": "completed",
+              "duration_seconds": 0.006851458994788118
+            },
+            {
+              "operation_id": "operation-060",
+              "status": "completed",
+              "duration_seconds": 0.007114583990187384
+            },
+            {
+              "operation_id": "operation-061",
+              "status": "completed",
+              "duration_seconds": 0.007301541991182603
+            },
+            {
+              "operation_id": "operation-062",
+              "status": "completed",
+              "duration_seconds": 0.0070684579986846074
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-069",
+              "status": "completed",
+              "duration_seconds": 0.007228415997815318
+            },
+            {
+              "operation_id": "operation-070",
+              "status": "completed",
+              "duration_seconds": 0.007066417005262338
+            },
+            {
+              "operation_id": "operation-071",
+              "status": "completed",
+              "duration_seconds": 0.007062167002004571
+            },
+            {
+              "operation_id": "operation-072",
+              "status": "completed",
+              "duration_seconds": 0.007036708004307002
+            },
+            {
+              "operation_id": "operation-073",
+              "status": "completed",
+              "duration_seconds": 0.007460332999471575
+            },
+            {
+              "operation_id": "operation-074",
+              "status": "completed",
+              "duration_seconds": 0.006916040991200134
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "no-memory-deep-v2-isolated-reader/bundle.json",
+      "source_sha256": "335819610b1e379a66d91a618cf0d98f91b0718289d25f553314abc456ed901f",
+      "target": {
+        "adapter": "no-memory",
+        "id": "no-memory",
+        "pin": {
+          "kind": "benchmark_source_commit"
+        },
+        "score_eligible": true,
+        "suites": []
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": [
+            {
+              "operation_id": "operation-057",
+              "status": "completed",
+              "duration_seconds": 0.007211250005639158
+            },
+            {
+              "operation_id": "operation-058",
+              "status": "completed",
+              "duration_seconds": 0.007391167004243471
+            },
+            {
+              "operation_id": "operation-059",
+              "status": "completed",
+              "duration_seconds": 0.00754241700633429
+            },
+            {
+              "operation_id": "operation-060",
+              "status": "completed",
+              "duration_seconds": 0.00691641699813772
+            },
+            {
+              "operation_id": "operation-061",
+              "status": "completed",
+              "duration_seconds": 0.006806874996982515
+            },
+            {
+              "operation_id": "operation-062",
+              "status": "completed",
+              "duration_seconds": 0.007160541994380765
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-069",
+              "status": "completed",
+              "duration_seconds": 0.007140334011637606
+            },
+            {
+              "operation_id": "operation-070",
+              "status": "completed",
+              "duration_seconds": 0.007362375006778166
+            },
+            {
+              "operation_id": "operation-071",
+              "status": "completed",
+              "duration_seconds": 0.007043416000669822
+            },
+            {
+              "operation_id": "operation-072",
+              "status": "completed",
+              "duration_seconds": 0.007161250003264286
+            },
+            {
+              "operation_id": "operation-073",
+              "status": "completed",
+              "duration_seconds": 0.007758874999126419
+            },
+            {
+              "operation_id": "operation-074",
+              "status": "completed",
+              "duration_seconds": 0.007116374996257946
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "elf-deep-v4/bundle.json",
+      "source_sha256": "1bc9120deb3134614fa8e0c83483ad63f2c5e3ff44ebcd4ef759a4f6839fe72f",
+      "target": {
+        "adapter": "elf",
+        "build_target": "elf-runtime",
+        "dockerfile": "docker/benchmark/Dockerfile",
+        "id": "elf",
+        "image": "elf-benchmark-elf:full-v2",
+        "native_deviations": {
+          "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+          "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+        },
+        "pin": {
+          "kind": "benchmark_source_commit"
+        },
+        "role": "source_linked_agent_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": null,
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "gbrain-deep-v4-ingest-deadline/bundle.json",
+      "source_sha256": "0a8350f6200f74d7599f039903d3a12e3b79e5ad32b00f8785ea37c89f9416e0",
+      "target": {
+        "adapter": "native_hybrid_search_after_index_refresh",
+        "dockerfile": "docker/benchmark/gbrain.Dockerfile",
+        "id": "gbrain",
+        "image": "elf-benchmark-gbrain:v1",
+        "native_deviations": {
+          "deletion": "Native logical deletion is measured; physical erasure is not claimed.",
+          "mutation": "Warm queries follow explicit native stale-embedding refresh; immediate readback is retained separately."
+        },
+        "pin": {
+          "kind": "git",
+          "release": "v0.60.102.0",
+          "source": "https://github.com/garrytan/gbrain.git",
+          "value": "5b5891069413b28b2fe3a50675116d67d5a1e145"
+        },
+        "role": "knowledge_and_agent_memory",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "failed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-057",
+              "status": "failed",
+              "duration_seconds": 1.9178229620156344
+            },
+            {
+              "operation_id": "operation-058",
+              "status": "failed",
+              "duration_seconds": 1.9726637410058174
+            },
+            {
+              "operation_id": "operation-059",
+              "status": "failed",
+              "duration_seconds": 1.9792523990035988
+            },
+            {
+              "operation_id": "operation-060",
+              "status": "failed",
+              "duration_seconds": 1.9271067080262583
+            },
+            {
+              "operation_id": "operation-061",
+              "status": "failed",
+              "duration_seconds": 1.9991395400138572
+            },
+            {
+              "operation_id": "operation-062",
+              "status": "failed",
+              "duration_seconds": 1.9587682260025758
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-069",
+              "status": "completed",
+              "duration_seconds": 2.3802664389950223
+            },
+            {
+              "operation_id": "operation-070",
+              "status": "completed",
+              "duration_seconds": 2.4222903399786446
+            },
+            {
+              "operation_id": "operation-071",
+              "status": "completed",
+              "duration_seconds": 2.363408511009766
+            },
+            {
+              "operation_id": "operation-072",
+              "status": "completed",
+              "duration_seconds": 2.411220111011062
+            },
+            {
+              "operation_id": "operation-073",
+              "status": "completed",
+              "duration_seconds": 2.3893149890063796
+            },
+            {
+              "operation_id": "operation-074",
+              "status": "completed",
+              "duration_seconds": 2.347996341995895
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "hindsight-deep-v4-readiness-budget/bundle.json",
+      "source_sha256": "659b1c255b743914e8353e7d4993037ca1afe3dbc26c708e0f902037a08c1cac",
+      "target": {
+        "adapter": "native_retain_recall_after_consolidation",
+        "dockerfile": "docker/benchmark/http.Dockerfile",
+        "id": "hindsight",
+        "image": "elf-benchmark-http:v8",
+        "native_deviations": {
+          "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+          "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+        },
+        "pin": {
+          "kind": "container_image",
+          "platform": "linux/arm64",
+          "release": "0.10.2",
+          "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+        },
+        "role": "bank_scoped_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-057",
+              "status": "completed",
+              "duration_seconds": 29.82805749902036
+            },
+            {
+              "operation_id": "operation-058",
+              "status": "completed",
+              "duration_seconds": 13.69649002701044
+            },
+            {
+              "operation_id": "operation-059",
+              "status": "completed",
+              "duration_seconds": 20.51351905000047
+            },
+            {
+              "operation_id": "operation-060",
+              "status": "completed",
+              "duration_seconds": 10.203869037999539
+            },
+            {
+              "operation_id": "operation-061",
+              "status": "completed",
+              "duration_seconds": 10.790838464017725
+            },
+            {
+              "operation_id": "operation-062",
+              "status": "completed",
+              "duration_seconds": 12.837109287007479
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-069",
+              "status": "completed",
+              "duration_seconds": 1.0467762100161053
+            },
+            {
+              "operation_id": "operation-070",
+              "status": "completed",
+              "duration_seconds": 1.0437106990139
+            },
+            {
+              "operation_id": "operation-071",
+              "status": "completed",
+              "duration_seconds": 1.0715178019891027
+            },
+            {
+              "operation_id": "operation-072",
+              "status": "completed",
+              "duration_seconds": 1.0569454559881706
+            },
+            {
+              "operation_id": "operation-073",
+              "status": "completed",
+              "duration_seconds": 1.0397457679791842
+            },
+            {
+              "operation_id": "operation-074",
+              "status": "completed",
+              "duration_seconds": 1.0611316790163983
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "mem0-deep-v4-native-filters/bundle.json",
+      "source_sha256": "3128906aa4a8aa87cc23cb0dc989a1edf3c0de69a34c68dc7e876316d852c608",
+      "target": {
+        "adapter": "native_extraction",
+        "dockerfile": "docker/benchmark/mem0.Dockerfile",
+        "id": "mem0",
+        "image": "elf-benchmark-mem0:v2",
+        "pin": {
+          "kind": "python_package",
+          "lock": "config/benchmark/locks/mem0.txt",
+          "value": "mem0ai==2.2.1"
+        },
+        "role": "semantic_agent_memory",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-057",
+              "status": "completed",
+              "duration_seconds": 2.520895466004731
+            },
+            {
+              "operation_id": "operation-058",
+              "status": "completed",
+              "duration_seconds": 2.5357657199783716
+            },
+            {
+              "operation_id": "operation-059",
+              "status": "completed",
+              "duration_seconds": 2.2530796930077486
+            },
+            {
+              "operation_id": "operation-060",
+              "status": "completed",
+              "duration_seconds": 1.9407489919976797
+            },
+            {
+              "operation_id": "operation-061",
+              "status": "completed",
+              "duration_seconds": 2.328833464998752
+            },
+            {
+              "operation_id": "operation-062",
+              "status": "completed",
+              "duration_seconds": 2.7443766469950788
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-069",
+              "status": "completed",
+              "duration_seconds": 0.5331052900000941
+            },
+            {
+              "operation_id": "operation-070",
+              "status": "completed",
+              "duration_seconds": 0.5181437440041918
+            },
+            {
+              "operation_id": "operation-071",
+              "status": "completed",
+              "duration_seconds": 0.5760972950083669
+            },
+            {
+              "operation_id": "operation-072",
+              "status": "completed",
+              "duration_seconds": 0.5305684900085907
+            },
+            {
+              "operation_id": "operation-073",
+              "status": "completed",
+              "duration_seconds": 0.5596997039974667
+            },
+            {
+              "operation_id": "operation-074",
+              "status": "completed",
+              "duration_seconds": 0.5320822039793711
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "sag-engine-deep-v3/bundle.json",
+      "source_sha256": "84d6d653e3940b2dc82ac994922cb21a239441afcc38ec2aa6117068702a46e7",
+      "target": {
+        "adapter": "native_extract_full_expand",
+        "dockerfile": "docker/benchmark/sag-engine.Dockerfile",
+        "id": "sag-engine",
+        "image": "elf-benchmark-sag-engine:v3",
+        "native_deviations": {
+          "delete": "Native durable delete with a data-source fence and monotonically increasing tokens from the single-writer action order.",
+          "identity": "Current independent SAG engine; not the retired SAG v1 adapter.",
+          "retries": "One native retry and bounded provider output under the shared gateway.",
+          "structured_output": "Native json_object mode for the selected model route."
+        },
+        "pin": {
+          "kind": "python_package",
+          "lock": "config/benchmark/locks/sag-engine.txt",
+          "source": "https://github.com/Zleap-AI/zleap",
+          "value": "zleap-sag==0.13.0"
+        },
+        "role": "structured_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "elf-deep-behavior-v2-local-tokenizer/bundle.json",
+      "source_sha256": "74f3c9ac8f2cc8d56ba3f617a8c1daa18ccda900592500ea420e0ff678382361",
+      "target": {
+        "adapter": "elf",
+        "build_target": "elf-runtime",
+        "dockerfile": "docker/benchmark/Dockerfile",
+        "id": "elf",
+        "image": "elf-benchmark-elf:full-v2",
+        "native_deviations": {
+          "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+          "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+        },
+        "pin": {
+          "kind": "benchmark_source_commit"
+        },
+        "role": "source_linked_agent_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "behavior",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-035",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.4360703059937805
+            },
+            {
+              "operation_id": "operation-036",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 7.624303327000234
+            },
+            {
+              "operation_id": "operation-037",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.786420686985366
+            },
+            {
+              "operation_id": "operation-038",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 3.0914462529763114
+            },
+            {
+              "operation_id": "operation-039",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 4.952974895015359
+            },
+            {
+              "operation_id": "operation-040",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 2.999345018994063
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-047",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 2.073301733005792
+            },
+            {
+              "operation_id": "operation-048",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 1.404454919975251
+            },
+            {
+              "operation_id": "operation-049",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 1.3385226329846773
+            },
+            {
+              "operation_id": "operation-050",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 1.4526995320047718
+            },
+            {
+              "operation_id": "operation-051",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 1.353555495996261
+            },
+            {
+              "operation_id": "operation-052",
+              "status": "completed",
+              "process_exit": 0,
+              "duration_seconds": 2.221068760001799
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "elf-deep-scale-1000-extended-v1/bundle.json",
+      "source_sha256": "029925cb352308f6a7f86dd32f405e30425c8b97d3844de44a06ea813cdfa27b",
+      "target": {
+        "adapter": "elf",
+        "build_target": "elf-runtime",
+        "dockerfile": "docker/benchmark/Dockerfile",
+        "id": "elf",
+        "image": "elf-benchmark-elf:full-v2",
+        "native_deviations": {
+          "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+          "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+        },
+        "pin": {
+          "kind": "benchmark_source_commit"
+        },
+        "role": "source_linked_agent_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "scale-1000",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "sag-engine-deep-behavior-v1/bundle.json",
+      "source_sha256": "a90bf5252575a32c84276b72e419f573e4938f639ec287ee8a15f44bf4a9f882",
+      "target": {
+        "adapter": "native_extract_full_expand",
+        "dockerfile": "docker/benchmark/sag-engine.Dockerfile",
+        "id": "sag-engine",
+        "image": "elf-benchmark-sag-engine:v3",
+        "native_deviations": {
+          "delete": "Native durable delete with a data-source fence and monotonically increasing tokens from the single-writer action order.",
+          "identity": "Current independent SAG engine; not the retired SAG v1 adapter.",
+          "retries": "One native retry and bounded provider output under the shared gateway.",
+          "structured_output": "Native json_object mode for the selected model route."
+        },
+        "pin": {
+          "kind": "python_package",
+          "lock": "config/benchmark/locks/sag-engine.txt",
+          "source": "https://github.com/Zleap-AI/zleap",
+          "value": "zleap-sag==0.13.0"
+        },
+        "role": "structured_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "behavior",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-035",
+              "status": "completed",
+              "duration_seconds": 6.297997290996136
+            },
+            {
+              "operation_id": "operation-036",
+              "status": "completed",
+              "duration_seconds": 4.462316656979965
+            },
+            {
+              "operation_id": "operation-037",
+              "status": "completed",
+              "duration_seconds": 8.47484142400208
+            },
+            {
+              "operation_id": "operation-038",
+              "status": "completed",
+              "duration_seconds": 12.428713150991825
+            },
+            {
+              "operation_id": "operation-039",
+              "status": "completed",
+              "duration_seconds": 8.455392522999318
+            },
+            {
+              "operation_id": "operation-040",
+              "status": "completed",
+              "duration_seconds": 7.504240216017934
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-047",
+              "status": "completed",
+              "duration_seconds": 1.1716947120148689
+            },
+            {
+              "operation_id": "operation-048",
+              "status": "completed",
+              "duration_seconds": 1.1636979210015852
+            },
+            {
+              "operation_id": "operation-049",
+              "status": "completed",
+              "duration_seconds": 1.1671852250001393
+            },
+            {
+              "operation_id": "operation-050",
+              "status": "completed",
+              "duration_seconds": 1.156212639005389
+            },
+            {
+              "operation_id": "operation-051",
+              "status": "completed",
+              "duration_seconds": 1.1618154760217294
+            },
+            {
+              "operation_id": "operation-052",
+              "status": "completed",
+              "duration_seconds": 1.1740372060157824
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "gbrain-deep-v3/bundle.json",
+      "source_sha256": "e6091d60db2e68c91a7ce8826c21790ff0d448d72ea5921883249de79a38c8be",
+      "target": {
+        "adapter": "native_hybrid_search_after_index_refresh",
+        "dockerfile": "docker/benchmark/gbrain.Dockerfile",
+        "id": "gbrain",
+        "image": "elf-benchmark-gbrain:v1",
+        "native_deviations": {
+          "deletion": "Native logical deletion is measured; physical erasure is not claimed.",
+          "mutation": "Warm queries follow explicit native stale-embedding refresh; immediate readback is retained separately."
+        },
+        "pin": {
+          "kind": "git",
+          "release": "v0.60.102.0",
+          "source": "https://github.com/garrytan/gbrain.git",
+          "value": "5b5891069413b28b2fe3a50675116d67d5a1e145"
+        },
+        "role": "knowledge_and_agent_memory",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "hindsight-deep-v3/bundle.json",
+      "source_sha256": "41521ccefdf777523596c7afbe51c7b5f5eb632321bfb94af544992b28a9ad96",
+      "target": {
+        "adapter": "native_retain_recall_after_consolidation",
+        "dockerfile": "docker/benchmark/http.Dockerfile",
+        "id": "hindsight",
+        "image": "elf-benchmark-http:v8",
+        "native_deviations": {
+          "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+          "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+        },
+        "pin": {
+          "kind": "container_image",
+          "platform": "linux/arm64",
+          "release": "0.10.2",
+          "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+        },
+        "role": "bank_scoped_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "mem0-deep-v3/bundle.json",
+      "source_sha256": "e4e300f4aa11495e318cade1d3b50914371a65782068534e86575f0925fe1cf2",
+      "target": {
+        "adapter": "native_extraction",
+        "dockerfile": "docker/benchmark/mem0.Dockerfile",
+        "id": "mem0",
+        "image": "elf-benchmark-mem0:v2",
+        "pin": {
+          "kind": "python_package",
+          "lock": "config/benchmark/locks/mem0.txt",
+          "value": "mem0ai==2.2.1"
+        },
+        "role": "semantic_agent_memory",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "all",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "elf-deep-behavior-v1/bundle.json",
+      "source_sha256": "59fc3a19f72b53167305ac467935a18b08714f1fe5f99255caa426520118a567",
+      "target": {
+        "adapter": "elf",
+        "build_target": "elf-runtime",
+        "dockerfile": "docker/benchmark/Dockerfile",
+        "id": "elf",
+        "image": "elf-benchmark-elf:full-v2",
+        "native_deviations": {
+          "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+          "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+        },
+        "pin": {
+          "kind": "benchmark_source_commit"
+        },
+        "role": "source_linked_agent_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "behavior",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "blocked_by_ingest": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": [
+            {
+              "operation_id": "operation-035",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-036",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-037",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-038",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-039",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-040",
+              "status": "blocked_by_ingest"
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "blocked_by_ingest": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 0,
+          "operations": [
+            {
+              "operation_id": "operation-047",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-048",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-049",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-050",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-051",
+              "status": "blocked_by_ingest"
+            },
+            {
+              "operation_id": "operation-052",
+              "status": "blocked_by_ingest"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "elf-deep-scale-1000-extended-v2-provider-recovery/bundle.json",
+      "source_sha256": "6b16bc5001a0b81d61ceac4ecda341384031cedef09799098220ce4b0969913d",
+      "target": {
+        "adapter": "elf",
+        "build_target": "elf-runtime",
+        "dockerfile": "docker/benchmark/Dockerfile",
+        "id": "elf",
+        "image": "elf-benchmark-elf:full-v2",
+        "native_deviations": {
+          "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+          "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+        },
+        "pin": {
+          "kind": "benchmark_source_commit"
+        },
+        "role": "source_linked_agent_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "scale-1000",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "gbrain-deep-mutations-v1-supported-embed-source/bundle.json",
+      "source_sha256": "8d4287ac1af0b1657d77cb7560c3160feb7aa8c3b4892ffa4fff7c79e11d98f0",
+      "target": {
+        "adapter": "native_hybrid_search_after_index_refresh",
+        "dockerfile": "docker/benchmark/gbrain.Dockerfile",
+        "id": "gbrain",
+        "image": "elf-benchmark-gbrain:v1",
+        "native_deviations": {
+          "deletion": "Native logical deletion is measured; physical erasure is not claimed.",
+          "mutation": "Warm queries follow explicit native stale-embedding refresh; immediate readback is retained separately."
+        },
+        "pin": {
+          "kind": "git",
+          "release": "v0.60.102.0",
+          "source": "https://github.com/garrytan/gbrain.git",
+          "value": "5b5891069413b28b2fe3a50675116d67d5a1e145"
+        },
+        "role": "knowledge_and_agent_memory",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "mutations",
+      "mutations": {
+        "update": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-001",
+              "status": "completed",
+              "duration_seconds": 4.879976352996891
+            },
+            {
+              "operation_id": "operation-002",
+              "status": "completed",
+              "duration_seconds": 4.752958024997497
+            },
+            {
+              "operation_id": "operation-003",
+              "status": "completed",
+              "duration_seconds": 6.942818637005985
+            },
+            {
+              "operation_id": "operation-004",
+              "status": "completed",
+              "duration_seconds": 5.1312364600016735
+            },
+            {
+              "operation_id": "operation-005",
+              "status": "completed",
+              "duration_seconds": 4.99092983402079
+            },
+            {
+              "operation_id": "operation-006",
+              "status": "completed",
+              "duration_seconds": 5.1567809309926815
+            }
+          ]
+        },
+        "delete": {
+          "native_statuses": {
+            "completed": 6
+          },
+          "post_operation_queries": 6,
+          "strict_correct": 6,
+          "operations": [
+            {
+              "operation_id": "operation-013",
+              "status": "completed",
+              "duration_seconds": 2.3732684510177933
+            },
+            {
+              "operation_id": "operation-014",
+              "status": "completed",
+              "duration_seconds": 2.3176333909796085
+            },
+            {
+              "operation_id": "operation-015",
+              "status": "completed",
+              "duration_seconds": 2.298027327982709
+            },
+            {
+              "operation_id": "operation-016",
+              "status": "completed",
+              "duration_seconds": 2.356192725012079
+            },
+            {
+              "operation_id": "operation-017",
+              "status": "completed",
+              "duration_seconds": 2.3915652630093973
+            },
+            {
+              "operation_id": "operation-018",
+              "status": "completed",
+              "duration_seconds": 2.312319093005499
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bundle": "hindsight-deep-scale-1000-v1-provider-recovery/bundle.json",
+      "source_sha256": "08edee76f70c5838b5d43f0c652d2e9f5f0fc3bbbc9749665b4d89706ee08676",
+      "target": {
+        "adapter": "native_retain_recall_after_consolidation",
+        "dockerfile": "docker/benchmark/http.Dockerfile",
+        "id": "hindsight",
+        "image": "elf-benchmark-http:v8",
+        "native_deviations": {
+          "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+          "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+        },
+        "pin": {
+          "kind": "container_image",
+          "platform": "linux/arm64",
+          "release": "0.10.2",
+          "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+        },
+        "role": "bank_scoped_memory_and_knowledge",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "scale-1000",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    },
+    {
+      "bundle": "mem0-deep-scale-1000-v1-transport-recovery/bundle.json",
+      "source_sha256": "42c0013ebb40debebbb35f57da8f8740f540d38dfcb9de928a1cb82559ae71ee",
+      "target": {
+        "adapter": "native_extraction",
+        "dockerfile": "docker/benchmark/mem0.Dockerfile",
+        "id": "mem0",
+        "image": "elf-benchmark-mem0:v2",
+        "pin": {
+          "kind": "python_package",
+          "lock": "config/benchmark/locks/mem0.txt",
+          "value": "mem0ai==2.2.1"
+        },
+        "role": "semantic_agent_memory",
+        "score_eligible": true,
+        "suites": [
+          "common-core-v1",
+          "memory-lifecycle-v1",
+          "knowledge-structure-v1",
+          "repository-knowledge-v1"
+        ]
+      },
+      "group": "scale-1000",
+      "mutations": {
+        "update": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        },
+        "delete": {
+          "native_statuses": {},
+          "post_operation_queries": 0,
+          "strict_correct": 0,
+          "operations": []
+        }
+      }
+    }
+  ],
+  "boundary": "Adapter operation status and subsequent answer correctness are separate evidence. Completed status alone does not prove successful native semantic readback. Failed update refresh remains failed even when the later answer is correct. Baseline mutations do not represent external product persistence."
+}

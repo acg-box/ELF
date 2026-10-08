@@ -1,0 +1,665 @@
+{
+  "schema": "elf.full_run_selection/v1",
+  "policy": "These complete condition bundles were selected by protocol and runtime validity before final scores. Keep invalid attempts separately. Any replacement must record a concrete protocol or execution defect and rerun the entire affected condition.",
+  "reader_revision": "isolated_case_v1",
+  "core_units": [
+    {
+      "target": "elf",
+      "suite": "common-core-v1",
+      "native_bundle": "elf-48-reanswered/bundle.json",
+      "final_reader_bundle": "elf-48-reanswered-isolated-reader/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/02654f7bc863898a/bundle.json"
+    },
+    {
+      "target": "elf",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "elf-48-reanswered/bundle.json",
+      "final_reader_bundle": "elf-48-reanswered-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/02654f7bc863898a/bundle.json"
+    },
+    {
+      "target": "elf",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "elf-48-reanswered/bundle.json",
+      "final_reader_bundle": "elf-48-reanswered-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/02654f7bc863898a/bundle.json"
+    },
+    {
+      "target": "elf",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "elf-48-reanswered/bundle.json",
+      "final_reader_bundle": "elf-48-reanswered-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/02654f7bc863898a/bundle.json"
+    },
+    {
+      "target": "mem0",
+      "suite": "common-core-v1",
+      "native_bundle": "mem0-native/bundle.json",
+      "final_reader_bundle": "mem0-native-isolated-reader/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/3ae5e287a6930cbd/bundle.json"
+    },
+    {
+      "target": "mem0",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "mem0-native/bundle.json",
+      "final_reader_bundle": "mem0-native-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/3ae5e287a6930cbd/bundle.json"
+    },
+    {
+      "target": "mem0",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "mem0-knowledge-structure-v1-auth-retry/bundle.json",
+      "final_reader_bundle": "mem0-knowledge-structure-v1-auth-retry/bundle.json",
+      "planned_cases": 8,
+      "replacement_reason": "Team authentication failed before the product run or provider gateway started. Retain original diagnostic log; execute the unchanged whole unit after authentication recovery.",
+      "final_scoring_bundle": "scoring-v5/857c16829ae0c0bb/bundle.json"
+    },
+    {
+      "target": "mem0",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/mem0-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/mem0-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/b428b2b72911794e/bundle.json"
+    },
+    {
+      "target": "qmd",
+      "suite": "common-core-v1",
+      "native_bundle": "qmd-metal-48/bundle.json",
+      "final_reader_bundle": "qmd-48-isolated-reader/bundle.json",
+      "planned_cases": 24
+    },
+    {
+      "target": "qmd",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "qmd-metal-48/bundle.json",
+      "final_reader_bundle": "qmd-48-isolated-reader/bundle.json",
+      "planned_cases": 8
+    },
+    {
+      "target": "qmd",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "qmd-metal-48/bundle.json",
+      "final_reader_bundle": "qmd-48-isolated-reader/bundle.json",
+      "planned_cases": 8
+    },
+    {
+      "target": "qmd",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "qmd-metal-48/bundle.json",
+      "final_reader_bundle": "qmd-48-isolated-reader/bundle.json",
+      "planned_cases": 8
+    },
+    {
+      "target": "lightrag",
+      "suite": "common-core-v1",
+      "native_bundle": "native-final-matrix/lightrag-common-core-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/lightrag-common-core-v1/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/3314c85983b32e71/bundle.json"
+    },
+    {
+      "target": "lightrag",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "native-final-matrix/lightrag-memory-lifecycle-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/lightrag-memory-lifecycle-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/3add51f3fd3df385/bundle.json"
+    },
+    {
+      "target": "lightrag",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/lightrag-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/lightrag-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/ea1a014d308925ed/bundle.json"
+    },
+    {
+      "target": "lightrag",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/lightrag-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/lightrag-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/8b6f5d18e895d9d4/bundle.json"
+    },
+    {
+      "target": "openviking",
+      "suite": "common-core-v1",
+      "native_bundle": "native-final-matrix/openviking-common-core-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/openviking-common-core-v1/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/03b0cd98b3e792c6/bundle.json"
+    },
+    {
+      "target": "openviking",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "openviking-memory-lifecycle-v1-shutdown-fixed/bundle.json",
+      "final_reader_bundle": "openviking-memory-lifecycle-v1-shutdown-fixed/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/d28a77e0dfb49534/bundle.json"
+    },
+    {
+      "target": "openviking",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/openviking-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/openviking-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/13db7675be70abef/bundle.json"
+    },
+    {
+      "target": "openviking",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/openviking-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/openviking-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/c04fe92b40e8d474/bundle.json"
+    },
+    {
+      "target": "graphrag",
+      "suite": "common-core-v1",
+      "native_bundle": "native-final-matrix/graphrag-common-core-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/graphrag-common-core-v1/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/357c872603345f77/bundle.json"
+    },
+    {
+      "target": "graphrag",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "graphrag-memory-lifecycle-v1-json-mode/bundle.json",
+      "final_reader_bundle": "graphrag-memory-lifecycle-v1-json-mode/bundle.json",
+      "planned_cases": 8,
+      "replacement_reason": "Native community report generation sent strict JSON Schema and received provider HTTP 400. The fixed DeepSeek endpoint advertises JSON mode but not structured_outputs. A transport shim sends JSON object plus the original schema while native GraphRAG typed validation remains; offline sync/async SDK checks passed."
+    },
+    {
+      "target": "graphrag",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/graphrag-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/graphrag-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/335c3308fe3f9a06/bundle.json"
+    },
+    {
+      "target": "graphrag",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "graphrag-repository-knowledge-v1-package-fixed/bundle.json",
+      "final_reader_bundle": "graphrag-repository-knowledge-v1-package-fixed/bundle.json",
+      "planned_cases": 8,
+      "replacement_reason": "The v8 transport wrapper executed as a file and shadowed the installed graphrag package with the sibling adapter module. Native init failed before measurement. v9 uses module execution; native help and matching init passed without network access. Rerun the whole suite."
+    },
+    {
+      "target": "graphiti",
+      "suite": "common-core-v1",
+      "native_bundle": "native-final-matrix/graphiti-common-core-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/graphiti-common-core-v1/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/07b9af592198026a/bundle.json"
+    },
+    {
+      "target": "graphiti",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "native-final-matrix/graphiti-memory-lifecycle-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/graphiti-memory-lifecycle-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/a1cbcd8d886a6a4f/bundle.json"
+    },
+    {
+      "target": "graphiti",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/graphiti-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/graphiti-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/0d03d5432a3dd0ba/bundle.json"
+    },
+    {
+      "target": "graphiti",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/graphiti-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/graphiti-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/b2de8ade03d89427/bundle.json"
+    },
+    {
+      "target": "pageindex",
+      "suite": "common-core-v1",
+      "native_bundle": "pageindex-common-core-v1-auth-retry/bundle.json",
+      "final_reader_bundle": "pageindex-common-core-v1-auth-retry/bundle.json",
+      "planned_cases": 24,
+      "replacement_reason": "Team authentication failed before the product run or provider gateway started. Retain original diagnostic log; execute the unchanged whole unit after authentication recovery.",
+      "final_scoring_bundle": "scoring-v5/4183d51220581965/bundle.json"
+    },
+    {
+      "target": "pageindex",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "native-final-matrix/pageindex-memory-lifecycle-v1/bundle.json",
+      "final_reader_bundle": "pageindex-memory-lifecycle-v1-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/e5cb35ddd0645835/bundle.json"
+    },
+    {
+      "target": "pageindex",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/pageindex-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/pageindex-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/72e2773f53f015e2/bundle.json"
+    },
+    {
+      "target": "pageindex",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/pageindex-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/pageindex-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/b8f74a6673d030a1/bundle.json"
+    },
+    {
+      "target": "openkb",
+      "suite": "common-core-v1",
+      "native_bundle": "openkb-common-core-v1-auth-retry/bundle.json",
+      "final_reader_bundle": "openkb-common-core-v1-auth-retry/bundle.json",
+      "planned_cases": 24,
+      "replacement_reason": "Team authentication failed before the product run or provider gateway started. Retain original diagnostic log; execute the unchanged whole unit after authentication recovery.",
+      "final_scoring_bundle": "scoring-v5/3b9d2b7d6f053dc9/bundle.json"
+    },
+    {
+      "target": "openkb",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "native-final-matrix/openkb-memory-lifecycle-v1/bundle.json",
+      "final_reader_bundle": "openkb-memory-lifecycle-v1-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/c0db928ce57bf53a/bundle.json"
+    },
+    {
+      "target": "openkb",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/openkb-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/openkb-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/fe72db1221058827/bundle.json"
+    },
+    {
+      "target": "openkb",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/openkb-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/openkb-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/8bbaaf4cd8d0c103/bundle.json"
+    },
+    {
+      "target": "honcho",
+      "suite": "common-core-v1",
+      "native_bundle": "honcho-common-core-v1-auth-retry/bundle.json",
+      "final_reader_bundle": "honcho-common-core-v1-auth-retry/bundle.json",
+      "planned_cases": 24,
+      "replacement_reason": "Team authentication failed before the product run or provider gateway started. Retain original diagnostic log; execute the unchanged whole unit after authentication recovery.",
+      "final_scoring_bundle": "scoring-v5/78b2f8e5b0c53000/bundle.json"
+    },
+    {
+      "target": "honcho",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "native-final-matrix/honcho-memory-lifecycle-v1/bundle.json",
+      "final_reader_bundle": "honcho-memory-lifecycle-v1-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/3c57377e3f94be9d/bundle.json"
+    },
+    {
+      "target": "honcho",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/honcho-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/honcho-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/c6cc6badc94d805e/bundle.json"
+    },
+    {
+      "target": "honcho",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/honcho-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/honcho-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/c59c327783ba2bbe/bundle.json"
+    },
+    {
+      "target": "gbrain",
+      "suite": "common-core-v1",
+      "native_bundle": "gbrain-48/bundle.json",
+      "final_reader_bundle": "gbrain-48-isolated-reader/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/639e26d15a9dda25/bundle.json"
+    },
+    {
+      "target": "gbrain",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "gbrain-48/bundle.json",
+      "final_reader_bundle": "gbrain-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/639e26d15a9dda25/bundle.json"
+    },
+    {
+      "target": "gbrain",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "gbrain-48/bundle.json",
+      "final_reader_bundle": "gbrain-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/639e26d15a9dda25/bundle.json"
+    },
+    {
+      "target": "gbrain",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "gbrain-48/bundle.json",
+      "final_reader_bundle": "gbrain-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/639e26d15a9dda25/bundle.json"
+    },
+    {
+      "target": "hindsight",
+      "suite": "common-core-v1",
+      "native_bundle": "hindsight-provenance-48/bundle.json",
+      "final_reader_bundle": "hindsight-provenance-48-isolated-reader/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/41f3e2a7cc5057fb/bundle.json"
+    },
+    {
+      "target": "hindsight",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "hindsight-provenance-48/bundle.json",
+      "final_reader_bundle": "hindsight-provenance-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/41f3e2a7cc5057fb/bundle.json"
+    },
+    {
+      "target": "hindsight",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "hindsight-provenance-48/bundle.json",
+      "final_reader_bundle": "hindsight-provenance-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/41f3e2a7cc5057fb/bundle.json"
+    },
+    {
+      "target": "hindsight",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "hindsight-provenance-48/bundle.json",
+      "final_reader_bundle": "hindsight-provenance-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/41f3e2a7cc5057fb/bundle.json"
+    },
+    {
+      "target": "sag-engine",
+      "suite": "common-core-v1",
+      "native_bundle": "native-final-matrix/sag-engine-common-core-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/sag-engine-common-core-v1/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/69f2eb7a58fd48d1/bundle.json"
+    },
+    {
+      "target": "sag-engine",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "sag-engine-memory-lifecycle-v1-fence-fixed/bundle.json",
+      "final_reader_bundle": "sag-engine-memory-lifecycle-v1-fence-fixed/bundle.json",
+      "planned_cases": 8,
+      "replacement_reason": "Native delete rejected the adapter source-specific fence. The pinned SDK requires fence_scope=data_source_id and a fresh increasing token for each distinct operation. Two consecutive native delete operations passed the zero-provider contract check with scope tokens 1 and 2.",
+      "final_scoring_bundle": "scoring-v5/43efd0e702ea6cb6/bundle.json"
+    },
+    {
+      "target": "sag-engine",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/sag-engine-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/sag-engine-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8
+    },
+    {
+      "target": "sag-engine",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/sag-engine-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/sag-engine-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/ed72f167fdfa711c/bundle.json"
+    },
+    {
+      "target": "memos",
+      "suite": "common-core-v1",
+      "native_bundle": "native-final-matrix/memos-common-core-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/memos-common-core-v1/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/91a01c2055aeb978/bundle.json"
+    },
+    {
+      "target": "memos",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "memos-memory-lifecycle-v1-id-delete/bundle.json",
+      "final_reader_bundle": "memos-memory-lifecycle-v1-id-delete/bundle.json",
+      "planned_cases": 8,
+      "replacement_reason": "The pinned native filter-delete API partially deletes text and returns failure after accessing missing pref_mem. Use supported exact memory ID delete with source-filtered before/after readback; retain the original condition as a diagnostic. Native embedding timeout of five seconds also triggered retries and empty search while the gateway observed successful provider responses in 5-16 seconds. The replacement condition uses the supported MOS_EMBEDDER_TIMEOUT=90 setting.",
+      "final_scoring_bundle": "scoring-v5/8cd5c0db0292d658/bundle.json"
+    },
+    {
+      "target": "memos",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "native-final-matrix/memos-knowledge-structure-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/memos-knowledge-structure-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/6dba72835d059554/bundle.json"
+    },
+    {
+      "target": "memos",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/memos-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/memos-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/134e028f5b93f881/bundle.json"
+    },
+    {
+      "target": "files-search",
+      "suite": "common-core-v1",
+      "native_bundle": "native-final-matrix/files-search-common-core-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/files-search-common-core-v1/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/6fa9cce7161e0fb8/bundle.json"
+    },
+    {
+      "target": "files-search",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "native-final-matrix/files-search-memory-lifecycle-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/files-search-memory-lifecycle-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/629c98999864b5da/bundle.json"
+    },
+    {
+      "target": "files-search",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "files-search-knowledge-structure-v1-auth-retry/bundle.json",
+      "final_reader_bundle": "files-search-knowledge-structure-v1-auth-retry/bundle.json",
+      "planned_cases": 8,
+      "replacement_reason": "Team authentication failed before the product run or provider gateway started. Retain original diagnostic log; execute the unchanged whole unit after authentication recovery.",
+      "final_scoring_bundle": "scoring-v5/65b2a0cebb6f38bf/bundle.json"
+    },
+    {
+      "target": "files-search",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "native-final-matrix/files-search-repository-knowledge-v1/bundle.json",
+      "final_reader_bundle": "native-final-matrix/files-search-repository-knowledge-v1/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/393cfd091df784f0/bundle.json"
+    },
+    {
+      "target": "no-memory",
+      "suite": "common-core-v1",
+      "native_bundle": "no-memory-48/bundle.json",
+      "final_reader_bundle": "no-memory-48-isolated-reader/bundle.json",
+      "planned_cases": 24,
+      "final_scoring_bundle": "scoring-v5/141a9cd720e807f1/bundle.json"
+    },
+    {
+      "target": "no-memory",
+      "suite": "memory-lifecycle-v1",
+      "native_bundle": "no-memory-48/bundle.json",
+      "final_reader_bundle": "no-memory-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/141a9cd720e807f1/bundle.json"
+    },
+    {
+      "target": "no-memory",
+      "suite": "knowledge-structure-v1",
+      "native_bundle": "no-memory-48/bundle.json",
+      "final_reader_bundle": "no-memory-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/141a9cd720e807f1/bundle.json"
+    },
+    {
+      "target": "no-memory",
+      "suite": "repository-knowledge-v1",
+      "native_bundle": "no-memory-48/bundle.json",
+      "final_reader_bundle": "no-memory-48-isolated-reader/bundle.json",
+      "planned_cases": 8,
+      "final_scoring_bundle": "scoring-v5/141a9cd720e807f1/bundle.json"
+    }
+  ],
+  "deep": {
+    "qmd": "qmd-metal-deep-v2-isolated-reader/bundle.json",
+    "files-search": "files-deep-v2-isolated-reader/bundle.json",
+    "no-memory": "no-memory-deep-v2-isolated-reader/bundle.json",
+    "elf": "elf-deep-v4/bundle.json",
+    "gbrain": "gbrain-deep-v4-ingest-deadline/bundle.json",
+    "hindsight": "hindsight-deep-v4-readiness-budget/bundle.json",
+    "mem0": "mem0-deep-v4-native-filters/bundle.json",
+    "sag-engine": "sag-engine-deep-v3/bundle.json"
+  },
+  "common_replay_conditions": [
+    "no-memory",
+    "files-search",
+    "git-memory",
+    "elf",
+    "qmd",
+    "gbrain",
+    "hindsight",
+    "mem0",
+    "lightrag",
+    "openviking",
+    "graphrag",
+    "graphiti",
+    "pageindex",
+    "openkb",
+    "honcho",
+    "sag-engine",
+    "memos"
+  ],
+  "native_agent_condition": "letta-code-native",
+  "budget_ceiling_usd": 20,
+  "deep_supplements": {
+    "elf": [
+      {
+        "group": "behavior",
+        "bundle": "elf-deep-behavior-v2-local-tokenizer/bundle.json",
+        "planned_queries": 42,
+        "reason": "Measure unchanged non-scale cases in fresh state after the combined run showed prior scale index backlog delaying session readiness. The first fresh-state attempt failed all ingestion because the launcher changed cwd to /opt. The follow-up fixes only ELF native cwd to /, retains the first attempt, and repeats all 42 cases before any answer-based selection.",
+        "setup_failed_bundle": "elf-deep-behavior-v1/bundle.json",
+        "setup_fix_audit": "elf-deep-tokenizer-setup-audit.json"
+      },
+      {
+        "group": "scale-1000",
+        "bundle": "elf-deep-scale-1000-extended-v1/bundle.json",
+        "planned_queries": 10,
+        "reason": "Measure eventual retrieval under an explicitly extended 14400-second ingestion deadline. Preserve the original 5400-second failure; do not combine latency as the same condition."
+      }
+    ],
+    "sag-engine": [
+      {
+        "group": "behavior",
+        "bundle": "sag-engine-deep-behavior-v1/bundle.json",
+        "planned_queries": 42,
+        "reason": "Pre-register all 42 unchanged non-scale questions in fresh shared state before the combined run ends. Large-scale native ingestion consumes the common wall budget and can delay independent behavior coverage. Keep combined 62-case results and this whole behavior condition separate; never select favorable cases or replace the original scale outcome."
+      }
+    ]
+  },
+  "admission_tranches_usd": {
+    "eight_case_core_or_repair": 0.5,
+    "common_core_24_cases": 1.5,
+    "native_deep": 1.0,
+    "cumulative_ceiling": 20,
+    "reason": "Common-core has three times the cases of the other core suites. The tranche scales with that count; per-request output limits and the cumulative ceiling do not change."
+  },
+  "pending_execution_retries": [
+    {
+      "target": "lightrag",
+      "suite": "knowledge-structure-v1",
+      "first_bundle": "native-final-matrix/lightrag-knowledge-structure-v1/bundle.json",
+      "retry_bundle": "lightrag-knowledge-structure-v1-provider-retry/bundle.json",
+      "policy": "One full-suite repeat selected before its outcome because actual upstream HTTP 429 and 504 prevented two native cases. Preserve and report both attempts, including any repeat failures; never select the better case scores. Same provider route, model caps, native image and workload.",
+      "first_scoring_bundle": "scoring-v5/ea1a014d308925ed/bundle.json"
+    },
+    {
+      "target": "sag-engine",
+      "suite": "knowledge-structure-v1",
+      "first_bundle": "native-final-matrix/sag-engine-knowledge-structure-v1/bundle.json",
+      "retry_bundle": "sag-engine-knowledge-structure-v1-transport-retry/bundle.json",
+      "policy": "One full-suite unchanged repeat after LLMRetryExhaustedError coincided with uncertain gateway requests 13105/13106 and five subsequent pre-execution team authentication failures. Preserve all raw partial native receipts and both attempt outcomes. Never select cases by their scores.",
+      "confirmed_external_cause": "The user confirmed a network interruption and subsequent recovery. Preserve the interrupted attempt and execute the unchanged full suite once after recovery.",
+      "retry_scoring_bundle": "scoring-v5/b0edaaf1375b60d6/bundle.json"
+    },
+    {
+      "target": "lightrag",
+      "suite": "common-core-v1",
+      "first_bundle": "native-final-matrix/lightrag-common-core-v1/bundle.json",
+      "retry_bundle": "lightrag-common-core-v1-provider-retry/bundle.json",
+      "policy": "One unchanged full-suite repeat selected before its outcome after upstream embedding HTTP 429 caused a native relationship-index flush failure in the Quartz case. Retain both complete attempts and costs. Do not replace individual unfavorable cases or choose the better score.",
+      "first_scoring_bundle": "scoring-v5/3314c85983b32e71/bundle.json"
+    },
+    {
+      "target": "graphrag",
+      "suite": "memory-lifecycle-v1",
+      "first_bundle": "graphrag-memory-lifecycle-v1-json-mode/bundle.json",
+      "retry_bundle": "graphrag-memory-lifecycle-v1-case-isolated/bundle.json",
+      "policy": "Retain native no-entities failure; execute all independent lifecycle cases under adapter failure isolation. Preserve both whole attempts, no best-case splicing. Native GraphRAG 3.2.0, inputs, model, route, extraction settings, and deadlines unchanged; v10 only isolates case failures.",
+      "selection_kind": "coverage_followup_after_case_isolation_fix",
+      "source_audit": "graphrag-memory-no-entities-audit.json"
+    },
+    {
+      "target": "graphrag",
+      "suite": "repository-knowledge-v1",
+      "first_bundle": "graphrag-repository-knowledge-v1-package-fixed/bundle.json",
+      "retry_bundle": "graphrag-repository-knowledge-v1-case-isolated/bundle.json",
+      "policy": "Retain native no-relationships failure; execute every independent repository case with adapter failure isolation. Preserve both complete attempts. Product extraction, model, provider, inputs and deadlines stay unchanged.",
+      "selection_kind": "coverage_followup_after_case_isolation_fix",
+      "source_audit": "graphrag-repository-no-relationships-audit.json"
+    }
+  ],
+  "scoring_revision": 5,
+  "deep_execution_repeats": [
+    {
+      "target": "gbrain",
+      "first_bundle": "gbrain-deep-v3/bundle.json",
+      "repeat_bundle": "gbrain-deep-v4-ingest-deadline/bundle.json",
+      "audit": "gbrain-deep-timeout-audit.json",
+      "reason": "Repeat the complete unchanged 62-query condition after repairing hidden 180-second CLI import timeout to honor the declared 5400-second deep ingest budget. Native image, workload, provider, model, and global 7200-second limit unchanged. Preserve initial controlled-stop artifact and all costs."
+    },
+    {
+      "target": "hindsight",
+      "first_bundle": "hindsight-deep-v3/bundle.json",
+      "repeat_bundle": "hindsight-deep-v4-readiness-budget/bundle.json",
+      "audit": "hindsight-deep-readiness-timeout-audit.json",
+      "reason": "Repeat all 62 unchanged queries after passing the declared deep action budget to the shared readiness helper instead of inheriting the 180-second small-corpus default. Original successful imports, readiness failure, controlled stop, and costs remain separate. Native image/model/provider/workload and overall 7200-second deadline unchanged."
+    },
+    {
+      "target": "mem0",
+      "first_bundle": "mem0-deep-v3/bundle.json",
+      "repeat_bundle": "mem0-deep-v4-native-filters/bundle.json",
+      "audit": "mem0-deep-search-filter-audit.json",
+      "reason": "Repeat all 62 unchanged queries after fixing deep search to use pinned Mem0 SDK filters={user_id: scope} and top_k=5, consistent with the native core adapter. Original imports, rejected query arguments, controlled stop, and all costs remain separate. Image, inference behavior, model/provider, workload, and deadlines unchanged."
+    }
+  ],
+  "budget_authorizations": [
+    {
+      "at_unix": 1791476539.7283368,
+      "previous_ceiling_usd": 10,
+      "ceiling_usd": 20,
+      "user_instruction": "\u8d39\u7528\u6269\u5927\u5141\u8bb8\u5230$20",
+      "scope": "Cumulative campaign API expenditure, including previous attempts, failed requests, and unknown reservations."
+    }
+  ],
+  "provider_recovery_plan": "provider-recovery-plan.json",
+  "provider_recovery_boundary": "Additional whole attempts for provider-blocked execution, kept separate from original conditions. Must audit provider-recovery-complete.json and actual terminal bundles before final completion."
+}

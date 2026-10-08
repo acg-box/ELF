@@ -1,0 +1,204 @@
+{
+  "not_final": false,
+  "generated_at_unix": 1791493447.2556841,
+  "ceiling_usd": 20,
+  "policy": "Retain each whole condition. Bundle presence is not queue completion. Do not combine favorable cases or treat a scoped recovery as a complete original run.",
+  "recoveries": [
+    {
+      "condition": "graphrag-memory-lifecycle-v2-provider-recovery",
+      "reason": "One whole unchanged condition after confirmed provider HTTP 429 prevented execution. Preserve the prior failure and every cost. No case splicing, model change, provider change, or higher per-request token limit.",
+      "first": {
+        "source_bundle": "graphrag-memory-lifecycle-v1-case-isolated/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "b43e8c90fcd7afc2921af05c34d2942da2d1fd968bb55c5f2d64fce826dfc2e3",
+        "status": "configuration_or_execution_failed",
+        "suite": "memory-lifecycle-v1",
+        "target": "graphrag"
+      },
+      "recovery": {
+        "source_bundle": "graphrag-memory-lifecycle-v2-provider-recovery/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "8d1d69ae2aee3a463c2de32c61b736bd3f465f283bf1cdec79ffd0c9c186a1c4",
+        "status": "failed",
+        "suite": "memory-lifecycle-v1",
+        "target": "graphrag",
+        "native_completed": {
+          "cold": 4,
+          "warm": 4
+        },
+        "reader_protocol_valid": true,
+        "answered": 4,
+        "correct": 4,
+        "cleanup_passed": true
+      },
+      "queue_receipt": {
+        "name": "graphrag-memory-lifecycle-v2-provider-recovery",
+        "started": 1791487378.508416,
+        "finished": 1791488057.1476521,
+        "exit_code": 105
+      }
+    },
+    {
+      "condition": "elf-deep-scale-1000-extended-v2-provider-recovery",
+      "reason": "One whole unchanged condition after confirmed provider HTTP 429 prevented execution. Preserve the prior failure and every cost. No case splicing, model change, provider change, or higher per-request token limit.",
+      "first": {
+        "source_bundle": "elf-deep-scale-1000-extended-v1/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "029925cb352308f6a7f86dd32f405e30425c8b97d3844de44a06ea813cdfa27b",
+        "status": "terminal",
+        "planned": 10,
+        "native_completed": 0,
+        "answered": 0,
+        "correct": 0,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "scale-1000",
+        "duration_seconds": 305.26376683299895
+      },
+      "recovery": {
+        "source_bundle": "elf-deep-scale-1000-extended-v2-provider-recovery/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "6b16bc5001a0b81d61ceac4ecda341384031cedef09799098220ce4b0969913d",
+        "status": "terminal",
+        "planned": 10,
+        "native_completed": 0,
+        "answered": 0,
+        "correct": 0,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "scale-1000",
+        "duration_seconds": 189.49645833301474
+      },
+      "queue_receipt": {
+        "name": "elf-deep-scale-1000-extended-v2-provider-recovery",
+        "started": 1791488057.1479769,
+        "finished": 1791488255.387809,
+        "exit_code": 105
+      }
+    },
+    {
+      "condition": "gbrain-deep-mutations-v1-supported-embed-source",
+      "reason": "Native update embedding rejected --source-id in all six operations. Use the frozen CLI supported --source flag, retain the original failures, and execute the complete independent mutation group. Do not combine results with the original full condition.",
+      "first": {
+        "source_bundle": "gbrain-deep-v4-ingest-deadline/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "0a8350f6200f74d7599f039903d3a12e3b79e5ad32b00f8785ea37c89f9416e0",
+        "status": "terminal",
+        "planned": 62,
+        "native_completed": 62,
+        "answered": 62,
+        "correct": 55,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "all",
+        "duration_seconds": 2657.1670534590085
+      },
+      "recovery": {
+        "source_bundle": "gbrain-deep-mutations-v1-supported-embed-source/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "8d4287ac1af0b1657d77cb7560c3160feb7aa8c3b4892ffa4fff7c79e11d98f0",
+        "status": "terminal",
+        "planned": 12,
+        "native_completed": 12,
+        "answered": 12,
+        "correct": 12,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "mutations",
+        "duration_seconds": 288.75584041699767
+      },
+      "queue_receipt": {
+        "name": "gbrain-deep-mutations-v1-supported-embed-source",
+        "started": 1791488255.3881118,
+        "finished": 1791488552.596257,
+        "exit_code": 0
+      }
+    },
+    {
+      "condition": "hindsight-deep-scale-1000-v1-provider-recovery",
+      "reason": "A separately retained whole scale-1000 condition after native HTTP 500 wrapped confirmed upstream embedding HTTP 429 engine_overloaded. Keep the original failure and every cost. Preserve model, provider, per-request token limit and default ingestion deadline; no case splicing.",
+      "first": {
+        "source_bundle": "hindsight-deep-v4-readiness-budget/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "659b1c255b743914e8353e7d4993037ca1afe3dbc26c708e0f902037a08c1cac",
+        "status": "terminal",
+        "planned": 62,
+        "native_completed": 52,
+        "answered": 52,
+        "correct": 52,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "all",
+        "duration_seconds": 3589.674797582993
+      },
+      "recovery": {
+        "source_bundle": "hindsight-deep-scale-1000-v1-provider-recovery/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "08edee76f70c5838b5d43f0c652d2e9f5f0fc3bbbc9749665b4d89706ee08676",
+        "status": "terminal",
+        "planned": 10,
+        "native_completed": 0,
+        "answered": 0,
+        "correct": 0,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "scale-1000",
+        "duration_seconds": 30.242549084010534
+      },
+      "queue_receipt": {
+        "name": "hindsight-deep-scale-1000-v1-provider-recovery",
+        "started": 1791488552.596577,
+        "finished": 1791488592.613805,
+        "exit_code": 105
+      }
+    },
+    {
+      "condition": "mem0-deep-scale-1000-v1-transport-recovery",
+      "reason": "One independent whole scale-1000 retry after native server disconnected without sending a response. Failing endpoint is unknown; do not claim provider attribution. Retain the original failure and all costs. Same frozen model, provider, per-request token limit and ingestion deadline; no quality-driven retry or case splicing.",
+      "first": {
+        "source_bundle": "mem0-deep-v4-native-filters/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "3128906aa4a8aa87cc23cb0dc989a1edf3c0de69a34c68dc7e876316d852c608",
+        "status": "terminal",
+        "planned": 62,
+        "native_completed": 52,
+        "answered": 52,
+        "correct": 43,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "all",
+        "duration_seconds": 3534.684245416982
+      },
+      "recovery": {
+        "source_bundle": "mem0-deep-scale-1000-v1-transport-recovery/bundle.json",
+        "queue_terminal": true,
+        "bundle_present": true,
+        "source_sha256": "42c0013ebb40debebbb35f57da8f8740f540d38dfcb9de928a1cb82559ae71ee",
+        "status": "terminal",
+        "planned": 10,
+        "native_completed": 0,
+        "answered": 0,
+        "correct": 0,
+        "cleanup_passed": true,
+        "execution_error_present": false,
+        "workload_group": "scale-1000",
+        "duration_seconds": 4758.88749283299
+      },
+      "queue_receipt": {
+        "name": "mem0-deep-scale-1000-v1-transport-recovery",
+        "started": 1791488592.614069,
+        "finished": 1791493358.788115,
+        "exit_code": 105
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "not_final": false,
+  "records": 108,
+  "conditions": [
+    {
+      "condition": "no-memory",
+      "cohort": "historical_protocol_v2",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "files-search",
+      "cohort": "historical_protocol_v2",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "git-memory",
+      "cohort": "historical_protocol_v2",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "elf",
+      "cohort": "historical_protocol_v2",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "qmd",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "gbrain",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "hindsight",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "mem0",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "lightrag",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "openviking",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "graphrag",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "graphiti",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "pageindex",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "openkb",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "honcho",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "sag-engine",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "memos",
+      "cohort": "full_campaign",
+      "planned": 6,
+      "retained": 6
+    },
+    {
+      "condition": "letta-code-native",
+      "cohort": "native_letta",
+      "planned": 6,
+      "retained": 6
+    }
+  ],
+  "trials_sha256": "cd89335d2b870cd48f018a71acc4da2df8a521ae715ca92d8ff678536d0c0dc3",
+  "boundary": "Native Letta and the common JSON-action agent are separate conditions. Historical common-agent trials use an earlier image. Passing repair checks alone does not establish native session continuity. Raw traces and provider reasoning are excluded.",
+  "snapshot_status": "closed_campaign_with_retained_failures"
+}

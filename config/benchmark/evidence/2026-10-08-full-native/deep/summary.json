@@ -1,0 +1,180 @@
+{
+  "not_final": false,
+  "records": 860,
+  "attempts": [
+    {
+      "bundle": "qmd-metal-deep-v2-isolated-reader/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "929c44feada5a4bc224e7ffb108758ece336ea4cfbafb51239c445508caf569c",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "files-deep-v2-isolated-reader/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "e032bb9f3cf2a84832f37fd13be6c26037cdb81a8584d0d75f5c4426b6b69ba2",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "no-memory-deep-v2-isolated-reader/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "335819610b1e379a66d91a618cf0d98f91b0718289d25f553314abc456ed901f",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "elf-deep-v4/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "1bc9120deb3134614fa8e0c83483ad63f2c5e3ff44ebcd4ef759a4f6839fe72f",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "gbrain-deep-v4-ingest-deadline/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "0a8350f6200f74d7599f039903d3a12e3b79e5ad32b00f8785ea37c89f9416e0",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "hindsight-deep-v4-readiness-budget/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "659b1c255b743914e8353e7d4993037ca1afe3dbc26c708e0f902037a08c1cac",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "mem0-deep-v4-native-filters/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "3128906aa4a8aa87cc23cb0dc989a1edf3c0de69a34c68dc7e876316d852c608",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "sag-engine-deep-v3/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "84d6d653e3940b2dc82ac994922cb21a239441afcc38ec2aa6117068702a46e7",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "elf-deep-behavior-v2-local-tokenizer/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 42,
+      "source_bundle_sha256": "74f3c9ac8f2cc8d56ba3f617a8c1daa18ccda900592500ea420e0ff678382361",
+      "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608",
+      "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "elf-deep-scale-1000-extended-v1/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 10,
+      "source_bundle_sha256": "029925cb352308f6a7f86dd32f405e30425c8b97d3844de44a06ea813cdfa27b",
+      "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176",
+      "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "sag-engine-deep-behavior-v1/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 42,
+      "source_bundle_sha256": "a90bf5252575a32c84276b72e419f573e4938f639ec287ee8a15f44bf4a9f882",
+      "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608",
+      "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "gbrain-deep-v3/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "e6091d60db2e68c91a7ce8826c21790ff0d448d72ea5921883249de79a38c8be",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "hindsight-deep-v3/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "41521ccefdf777523596c7afbe51c7b5f5eb632321bfb94af544992b28a9ad96",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "mem0-deep-v3/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 62,
+      "source_bundle_sha256": "e4e300f4aa11495e318cade1d3b50914371a65782068534e86575f0925fe1cf2",
+      "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427",
+      "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "elf-deep-behavior-v1/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 42,
+      "source_bundle_sha256": "59fc3a19f72b53167305ac467935a18b08714f1fe5f99255caa426520118a567",
+      "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608",
+      "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "elf-deep-scale-1000-extended-v2-provider-recovery/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 10,
+      "source_bundle_sha256": "6b16bc5001a0b81d61ceac4ecda341384031cedef09799098220ce4b0969913d",
+      "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176",
+      "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "gbrain-deep-mutations-v1-supported-embed-source/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 12,
+      "source_bundle_sha256": "8d4287ac1af0b1657d77cb7560c3160feb7aa8c3b4892ffa4fff7c79e11d98f0",
+      "workload_sha256": "8d4ce9ea0565d5bd0c12e3ae69b639964131f5437ae44bd43abbddc0378bbf84",
+      "oracle_sha256": "407c11f07d06d3cbad37489efb666c3d23dcdc80d14a9a4c4e22779d2de3ed85",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "hindsight-deep-scale-1000-v1-provider-recovery/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 10,
+      "source_bundle_sha256": "08edee76f70c5838b5d43f0c652d2e9f5f0fc3bbbc9749665b4d89706ee08676",
+      "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176",
+      "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+      "cleanup_passed": true
+    },
+    {
+      "bundle": "mem0-deep-scale-1000-v1-transport-recovery/bundle.json",
+      "state": "retained_terminal_bundle",
+      "planned": 10,
+      "source_bundle_sha256": "42c0013ebb40debebbb35f57da8f8740f540d38dfcb9de928a1cb82559ae71ee",
+      "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176",
+      "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+      "cleanup_passed": true
+    }
+  ],
+  "cases_sha256": "c6d3d8cf4cce291ad8c5207b860e8fe74d941447512ff04e57042e7dfdeb4571",
+  "boundary": "Each attempt is separate. Pending attempts have no exported cases. Contexts are native query outputs, not a claim that all text entered the bounded reader prompt. Raw logs and provider reasoning are excluded.",
+  "snapshot_status": "closed_campaign_with_retained_failures"
+}

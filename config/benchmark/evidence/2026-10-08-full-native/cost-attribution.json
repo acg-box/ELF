@@ -1,0 +1,1361 @@
+{
+  "not_final": false,
+  "generated_at_unix": 1791493447.692317,
+  "ledger_requests": 33552,
+  "prior_paid_usd": 0.002103636,
+  "scope": "Current campaign top-level logs; older pilot logs remain unattributed here. Each ledger request counted once. Native and reader chat within one invocation are not separated by this audit.",
+  "groups": {
+    "unattributed": {
+      "requests": 1345,
+      "reported_cost_usd": 0.09229327899999983,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1096,
+        "chat": 249
+      }
+    },
+    "elf-48.log": {
+      "requests": 386,
+      "reported_cost_usd": 0.006182298000000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 381,
+        "chat": 5
+      }
+    },
+    "gbrain-48.log": {
+      "requests": 321,
+      "reported_cost_usd": 0.009511490000000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 308,
+        "chat": 13
+      }
+    },
+    "answer-and-baselines.log": {
+      "requests": 39,
+      "reported_cost_usd": 0.017295872,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 37,
+        "embedding": 2
+      }
+    },
+    "mem0-native.log": {
+      "requests": 345,
+      "reported_cost_usd": 0.02025873799999999,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 246,
+        "chat": 99
+      }
+    },
+    "hindsight-48.log": {
+      "requests": 523,
+      "reported_cost_usd": 0.050415710000000065,
+      "unknown_or_pending": 14,
+      "held_reservation_usd": 0.0118466,
+      "kinds": {
+        "embedding": 373,
+        "chat": 150
+      }
+    },
+    "hindsight-provenance-48.log": {
+      "requests": 759,
+      "reported_cost_usd": 0.07628901200000003,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008432,
+      "kinds": {
+        "embedding": 537,
+        "chat": 222
+      }
+    },
+    "graphiti-current-full.log": {
+      "requests": 5,
+      "reported_cost_usd": 1.957e-05,
+      "unknown_or_pending": 3,
+      "held_reservation_usd": 0.041702699999999995,
+      "kinds": {
+        "embedding": 1,
+        "chat": 4
+      }
+    },
+    "openviking-current-full.log": {
+      "requests": 2,
+      "reported_cost_usd": 1.8370000000000002e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 1
+      }
+    },
+    "openkb-current-full.log": {
+      "requests": 2,
+      "reported_cost_usd": 2.6170000000000002e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 1
+      }
+    },
+    "honcho-current-full.log": {
+      "requests": 107,
+      "reported_cost_usd": 0.004533511999999999,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 98,
+        "chat": 9
+      }
+    },
+    "lightrag-current-full.log": {
+      "requests": 475,
+      "reported_cost_usd": 0.23823931599999987,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 302,
+        "chat": 173
+      }
+    },
+    "qmd-current-full.log": {
+      "requests": 2,
+      "reported_cost_usd": 1.3569999999999999e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 1
+      }
+    },
+    "sag-engine-current-full.log": {
+      "requests": 111,
+      "reported_cost_usd": 0.011935325999999991,
+      "unknown_or_pending": 8,
+      "held_reservation_usd": 0.006780399999999999,
+      "kinds": {
+        "embedding": 85,
+        "chat": 26
+      }
+    },
+    "pageindex-current-full.log": {
+      "requests": 2,
+      "reported_cost_usd": 1.3569999999999999e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 1
+      }
+    },
+    "elf-deep-v2.log": {
+      "requests": 492,
+      "reported_cost_usd": 0.00014465000000000053,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008369000000000001,
+      "kinds": {
+        "embedding": 492
+      }
+    },
+    "graphiti-corrected-48.log": {
+      "requests": 535,
+      "reported_cost_usd": 0.1359833480000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 263,
+        "chat": 272
+      }
+    },
+    "openviking-corrected-48.log": {
+      "requests": 197,
+      "reported_cost_usd": 0.114172434,
+      "unknown_or_pending": 7,
+      "held_reservation_usd": 0.0085997,
+      "kinds": {
+        "embedding": 139,
+        "chat": 58
+      }
+    },
+    "qmd-metal-48-answers.log": {
+      "requests": 12,
+      "reported_cost_usd": 0.0092172,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 12
+      }
+    },
+    "qmd-metal-deep-v2-answers.log": {
+      "requests": 16,
+      "reported_cost_usd": 0.00747885,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 16
+      }
+    },
+    "files-deep-v2-answers.log": {
+      "requests": 16,
+      "reported_cost_usd": 0.006102425999999999,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 16
+      }
+    },
+    "no-memory-deep-v2-answers.log": {
+      "requests": 16,
+      "reported_cost_usd": 0.0018203880000000003,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 16
+      }
+    },
+    "native-final-honcho-memory-lifecycle-v1.log": {
+      "requests": 33,
+      "reported_cost_usd": 0.002155148,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 30,
+        "chat": 3
+      }
+    },
+    "native-final-pageindex-memory-lifecycle-v1.log": {
+      "requests": 57,
+      "reported_cost_usd": 0.011917696000000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 56
+      }
+    },
+    "native-final-openkb-memory-lifecycle-v1.log": {
+      "requests": 176,
+      "reported_cost_usd": 0.06600509800000004,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 175
+      }
+    },
+    "native-final-openviking-memory-lifecycle-v1.log": {
+      "requests": 178,
+      "reported_cost_usd": 0.09155695000000005,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 123,
+        "chat": 55
+      }
+    },
+    "native-final-lightrag-memory-lifecycle-v1.log": {
+      "requests": 133,
+      "reported_cost_usd": 0.04562885800000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 82,
+        "chat": 51
+      }
+    },
+    "native-final-memos-memory-lifecycle-v1.log": {
+      "requests": 168,
+      "reported_cost_usd": 0.028154312000000018,
+      "unknown_or_pending": 9,
+      "held_reservation_usd": 0.007697800000000001,
+      "kinds": {
+        "embedding": 119,
+        "chat": 49
+      }
+    },
+    "native-final-graphiti-memory-lifecycle-v1.log": {
+      "requests": 156,
+      "reported_cost_usd": 0.028322672000000014,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 83,
+        "chat": 73
+      }
+    },
+    "native-final-graphrag-memory-lifecycle-v1.log": {
+      "requests": 9,
+      "reported_cost_usd": 0.004342387999999999,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0156735,
+      "kinds": {
+        "embedding": 2,
+        "chat": 7
+      }
+    },
+    "native-final-sag-engine-memory-lifecycle-v1.log": {
+      "requests": 65,
+      "reported_cost_usd": 0.00599186,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 47,
+        "chat": 18
+      }
+    },
+    "native-final-files-search-memory-lifecycle-v1.log": {
+      "requests": 10,
+      "reported_cost_usd": 0.0014396200000000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 9
+      }
+    },
+    "native-final-honcho-repository-knowledge-v1.log": {
+      "requests": 39,
+      "reported_cost_usd": 0.00215155,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 30,
+        "chat": 9
+      }
+    },
+    "native-final-pageindex-repository-knowledge-v1.log": {
+      "requests": 64,
+      "reported_cost_usd": 0.012141346000000004,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 63
+      }
+    },
+    "native-final-openkb-repository-knowledge-v1.log": {
+      "requests": 181,
+      "reported_cost_usd": 0.06835220799999998,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 180
+      }
+    },
+    "elf-deep-v3.log": {
+      "requests": 268,
+      "reported_cost_usd": 7.862999999999997e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 268
+      }
+    },
+    "elf-48-reanswered-isolated-reader.log": {
+      "requests": 48,
+      "reported_cost_usd": 0.010226184000000003,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 48
+      }
+    },
+    "native-final-openviking-repository-knowledge-v1.log": {
+      "requests": 280,
+      "reported_cost_usd": 0.14860930400000008,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 186,
+        "chat": 94
+      }
+    },
+    "elf-deep-v4.log": {
+      "requests": 3402,
+      "reported_cost_usd": 0.0025055300000000175,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 3392,
+        "chat": 10
+      }
+    },
+    "native-final-lightrag-repository-knowledge-v1.log": {
+      "requests": 130,
+      "reported_cost_usd": 0.06123558800000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 80,
+        "chat": 50
+      }
+    },
+    "native-final-memos-repository-knowledge-v1.log": {
+      "requests": 143,
+      "reported_cost_usd": 0.03755257800000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 71,
+        "chat": 72
+      }
+    },
+    "native-final-graphiti-repository-knowledge-v1.log": {
+      "requests": 171,
+      "reported_cost_usd": 0.038653906000000016,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 95,
+        "chat": 76
+      }
+    },
+    "native-final-graphrag-repository-knowledge-v1.log": {
+      "requests": 2,
+      "reported_cost_usd": 2.0170000000000002e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 1
+      }
+    },
+    "native-final-sag-engine-repository-knowledge-v1.log": {
+      "requests": 166,
+      "reported_cost_usd": 0.022349233999999996,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 113,
+        "chat": 53
+      }
+    },
+    "native-final-files-search-repository-knowledge-v1.log": {
+      "requests": 10,
+      "reported_cost_usd": 0.0012945699999999999,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 9
+      }
+    },
+    "native-final-mem0-repository-knowledge-v1.log": {
+      "requests": 79,
+      "reported_cost_usd": 0.0037816399999999993,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 54,
+        "chat": 25
+      }
+    },
+    "native-final-honcho-knowledge-structure-v1.log": {
+      "requests": 34,
+      "reported_cost_usd": 0.001692374,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 25,
+        "chat": 9
+      }
+    },
+    "native-final-pageindex-knowledge-structure-v1.log": {
+      "requests": 71,
+      "reported_cost_usd": 0.014727010000000007,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 70
+      }
+    },
+    "native-final-openkb-knowledge-structure-v1.log": {
+      "requests": 237,
+      "reported_cost_usd": 0.126236296,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 236
+      }
+    },
+    "native-final-openviking-knowledge-structure-v1.log": {
+      "requests": 262,
+      "reported_cost_usd": 0.24764440199999993,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 172,
+        "chat": 90
+      }
+    },
+    "native-final-lightrag-knowledge-structure-v1.log": {
+      "requests": 172,
+      "reported_cost_usd": 0.15607571199999998,
+      "unknown_or_pending": 21,
+      "held_reservation_usd": 0.0182693,
+      "kinds": {
+        "embedding": 111,
+        "chat": 61
+      }
+    },
+    "native-final-memos-knowledge-structure-v1.log": {
+      "requests": 172,
+      "reported_cost_usd": 0.11012127200000006,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 94,
+        "chat": 78
+      }
+    },
+    "native-final-graphiti-knowledge-structure-v1.log": {
+      "requests": 203,
+      "reported_cost_usd": 0.08652802399999998,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 109,
+        "chat": 94
+      }
+    },
+    "native-final-graphrag-knowledge-structure-v1.log": {
+      "requests": 162,
+      "reported_cost_usd": 0.22283949999999997,
+      "unknown_or_pending": 3,
+      "held_reservation_usd": 0.0033344000000000004,
+      "kinds": {
+        "embedding": 52,
+        "chat": 110
+      }
+    },
+    "native-final-sag-engine-knowledge-structure-v1.log": {
+      "requests": 117,
+      "reported_cost_usd": 0.026913017999999993,
+      "unknown_or_pending": 3,
+      "held_reservation_usd": 0.0276649,
+      "kinds": {
+        "embedding": 87,
+        "chat": 30
+      }
+    },
+    "native-final-openviking-common-core-v1.log": {
+      "requests": 681,
+      "reported_cost_usd": 0.7384752380000003,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008664000000000001,
+      "kinds": {
+        "embedding": 436,
+        "chat": 245
+      }
+    },
+    "native-final-lightrag-common-core-v1.log": {
+      "requests": 440,
+      "reported_cost_usd": 0.431721,
+      "unknown_or_pending": 7,
+      "held_reservation_usd": 0.006113800000000001,
+      "kinds": {
+        "embedding": 268,
+        "chat": 172
+      }
+    },
+    "native-final-memos-common-core-v1.log": {
+      "requests": 498,
+      "reported_cost_usd": 0.15065127,
+      "unknown_or_pending": 4,
+      "held_reservation_usd": 0.0034382,
+      "kinds": {
+        "embedding": 259,
+        "chat": 239
+      }
+    },
+    "native-final-graphiti-common-core-v1.log": {
+      "requests": 526,
+      "reported_cost_usd": 0.11108596000000019,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 271,
+        "chat": 255
+      }
+    },
+    "native-final-graphrag-common-core-v1.log": {
+      "requests": 443,
+      "reported_cost_usd": 0.24107246600000004,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008421,
+      "kinds": {
+        "embedding": 146,
+        "chat": 297
+      }
+    },
+    "native-final-sag-engine-common-core-v1.log": {
+      "requests": 621,
+      "reported_cost_usd": 0.09601369800000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 428,
+        "chat": 193
+      }
+    },
+    "native-final-files-search-common-core-v1.log": {
+      "requests": 26,
+      "reported_cost_usd": 0.008490370000000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 25
+      }
+    },
+    "sag-engine-knowledge-structure-v1-transport-retry.log": {
+      "requests": 234,
+      "reported_cost_usd": 0.083136774,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 164,
+        "chat": 70
+      }
+    },
+    "openkb-common-core-v1-auth-retry.log": {
+      "requests": 602,
+      "reported_cost_usd": 0.5132358399999994,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 601
+      }
+    },
+    "pageindex-common-core-v1-auth-retry.log": {
+      "requests": 196,
+      "reported_cost_usd": 0.07281473799999998,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 195
+      }
+    },
+    "honcho-common-core-v1-auth-retry.log": {
+      "requests": 98,
+      "reported_cost_usd": 0.008593869999999998,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 73,
+        "chat": 25
+      }
+    },
+    "mem0-knowledge-structure-v1-auth-retry.log": {
+      "requests": 113,
+      "reported_cost_usd": 0.012290010000000004,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 75,
+        "chat": 38
+      }
+    },
+    "files-search-knowledge-structure-v1-auth-retry.log": {
+      "requests": 10,
+      "reported_cost_usd": 0.002812588,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1,
+        "chat": 9
+      }
+    },
+    "openviking-memory-lifecycle-v1-shutdown-fixed.log": {
+      "requests": 288,
+      "reported_cost_usd": 0.32087133000000023,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 192,
+        "chat": 96
+      }
+    },
+    "memos-memory-lifecycle-v1-id-delete.log": {
+      "requests": 144,
+      "reported_cost_usd": 0.06759922400000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 70,
+        "chat": 74
+      }
+    },
+    "graphrag-memory-lifecycle-v1-json-mode.log": {
+      "requests": 20,
+      "reported_cost_usd": 0.022524068,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 7,
+        "chat": 13
+      }
+    },
+    "sag-engine-memory-lifecycle-v1-fence-fixed.log": {
+      "requests": 171,
+      "reported_cost_usd": 0.04667171600000003,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 117,
+        "chat": 54
+      }
+    },
+    "graphrag-repository-knowledge-v1-package-fixed.log": {
+      "requests": 20,
+      "reported_cost_usd": 0.019448210000000004,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 7,
+        "chat": 13
+      }
+    },
+    "elf-deep-behavior-v1.log": {
+      "requests": 48,
+      "reported_cost_usd": 1.624e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 48
+      }
+    },
+    "gbrain-48-isolated-reader.log": {
+      "requests": 48,
+      "reported_cost_usd": 0.017984976,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 48
+      }
+    },
+    "hindsight-provenance-48-isolated-reader.log": {
+      "requests": 48,
+      "reported_cost_usd": 0.021054959999999998,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 48
+      }
+    },
+    "mem0-native-isolated-reader.log": {
+      "requests": 32,
+      "reported_cost_usd": 0.011001876,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 32
+      }
+    },
+    "no-memory-48-isolated-reader.log": {
+      "requests": 48,
+      "reported_cost_usd": 0.0085545,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 48
+      }
+    },
+    "honcho-memory-lifecycle-v1-isolated-reader.log": {
+      "requests": 8,
+      "reported_cost_usd": 0.0031101,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 8
+      }
+    },
+    "openkb-memory-lifecycle-v1-isolated-reader.log": {
+      "requests": 8,
+      "reported_cost_usd": 0.005991012,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 8
+      }
+    },
+    "pageindex-memory-lifecycle-v1-isolated-reader.log": {
+      "requests": 8,
+      "reported_cost_usd": 0.00242298,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 8
+      }
+    },
+    "qmd-48-isolated-reader.log": {
+      "requests": 48,
+      "reported_cost_usd": 0.018960576000000003,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 48
+      }
+    },
+    "qmd-metal-deep-v2-isolated-reader.log": {
+      "requests": 62,
+      "reported_cost_usd": 0.02058709199999999,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 62
+      }
+    },
+    "files-deep-v2-isolated-reader.log": {
+      "requests": 62,
+      "reported_cost_usd": 0.014786340000000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 62
+      }
+    },
+    "no-memory-deep-v2-isolated-reader.log": {
+      "requests": 62,
+      "reported_cost_usd": 0.010837800000000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 62
+      }
+    },
+    "gbrain-deep-v3.log": {
+      "requests": 138,
+      "reported_cost_usd": 7.908000000000009e-05,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 138
+      }
+    },
+    "hindsight-deep-v3.log": {
+      "requests": 326,
+      "reported_cost_usd": 0.250335578,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 126,
+        "embedding": 200
+      }
+    },
+    "mem0-deep-v3.log": {
+      "requests": 1631,
+      "reported_cost_usd": 0.2972335100000016,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 1087,
+        "chat": 544
+      }
+    },
+    "sag-engine-deep-v3.log": {
+      "requests": 2582,
+      "reported_cost_usd": 0.24576172799999924,
+      "unknown_or_pending": 6,
+      "held_reservation_usd": 0.012242,
+      "kinds": {
+        "embedding": 2127,
+        "chat": 455
+      }
+    },
+    "letta-native-repair.log": {
+      "requests": 119,
+      "reported_cost_usd": 0.076015302,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 119
+      }
+    },
+    "replay-qmd-run-1.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.004052106,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-qmd-run-2.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.0033812219999999997,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-gbrain-retrieve.log": {
+      "requests": 48,
+      "reported_cost_usd": 0.00013816000000000002,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 48
+      }
+    },
+    "replay-gbrain-run-1.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.005065386,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-gbrain-run-2.log": {
+      "requests": 13,
+      "reported_cost_usd": 0.0030465359999999994,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 13
+      }
+    },
+    "replay-hindsight-retrieve.log": {
+      "requests": 307,
+      "reported_cost_usd": 0.052941416000000026,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 55,
+        "embedding": 252
+      }
+    },
+    "replay-hindsight-run-1.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.0034881960000000003,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-hindsight-run-2.log": {
+      "requests": 13,
+      "reported_cost_usd": 0.0043813559999999994,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 13
+      }
+    },
+    "replay-mem0-retrieve.log": {
+      "requests": 102,
+      "reported_cost_usd": 0.02162218,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 72,
+        "chat": 30
+      }
+    },
+    "replay-mem0-run-1.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.0057738600000000005,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-mem0-run-2.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.00409029,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-lightrag-retrieve.log": {
+      "requests": 200,
+      "reported_cost_usd": 0.1891816160000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 48,
+        "embedding": 152
+      }
+    },
+    "replay-lightrag-run-1.log": {
+      "requests": 4,
+      "reported_cost_usd": 0.000677142,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 4
+      }
+    },
+    "replay-openviking-retrieve.log": {
+      "requests": 237,
+      "reported_cost_usd": 0.11775031099999994,
+      "unknown_or_pending": 2,
+      "held_reservation_usd": 0.0017393,
+      "kinds": {
+        "embedding": 160,
+        "chat": 77
+      }
+    },
+    "replay-openviking-run-1.log": {
+      "requests": 12,
+      "reported_cost_usd": 0.006135408,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 12
+      }
+    },
+    "replay-openviking-run-2.log": {
+      "requests": 15,
+      "reported_cost_usd": 0.003968412,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 15
+      }
+    },
+    "replay-graphrag-retrieve.log": {
+      "requests": 162,
+      "reported_cost_usd": 0.16618842799999997,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 117,
+        "embedding": 45
+      }
+    },
+    "replay-graphrag-run-1.log": {
+      "requests": 16,
+      "reported_cost_usd": 0.004444896,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 16
+      }
+    },
+    "replay-graphrag-run-2.log": {
+      "requests": 15,
+      "reported_cost_usd": 0.004827414,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 15
+      }
+    },
+    "replay-graphiti-retrieve.log": {
+      "requests": 347,
+      "reported_cost_usd": 0.10607682800000003,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 134,
+        "embedding": 213
+      }
+    },
+    "replay-pageindex-retrieve.log": {
+      "requests": 86,
+      "reported_cost_usd": 0.034851528000000014,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 86
+      }
+    },
+    "replay-pageindex-run-1.log": {
+      "requests": 12,
+      "reported_cost_usd": 0.006081516000000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 12
+      }
+    },
+    "replay-pageindex-run-2.log": {
+      "requests": 15,
+      "reported_cost_usd": 0.004397508,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 15
+      }
+    },
+    "replay-openkb-retrieve.log": {
+      "requests": 284,
+      "reported_cost_usd": 0.25298973599999997,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 284
+      }
+    },
+    "replay-openkb-run-1.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.006874692,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-openkb-run-2.log": {
+      "requests": 12,
+      "reported_cost_usd": 0.0037486559999999995,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 12
+      }
+    },
+    "replay-honcho-retrieve.log": {
+      "requests": 23,
+      "reported_cost_usd": 0.00013654000000000002,
+      "unknown_or_pending": 5,
+      "held_reservation_usd": 0.0369807,
+      "kinds": {
+        "embedding": 18,
+        "chat": 5
+      }
+    },
+    "replay-honcho-run-1.log": {
+      "requests": 15,
+      "reported_cost_usd": 0.005423405999999999,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 15
+      }
+    },
+    "replay-honcho-run-2.log": {
+      "requests": 15,
+      "reported_cost_usd": 0.009207966000000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 15
+      }
+    },
+    "replay-sag-engine-retrieve.log": {
+      "requests": 149,
+      "reported_cost_usd": 0.055378578000000005,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 101,
+        "chat": 48
+      }
+    },
+    "replay-sag-engine-run-1.log": {
+      "requests": 12,
+      "reported_cost_usd": 0.005324316,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 12
+      }
+    },
+    "replay-sag-engine-run-2.log": {
+      "requests": 14,
+      "reported_cost_usd": 0.004021755,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 14
+      }
+    },
+    "replay-memos-retrieve.log": {
+      "requests": 190,
+      "reported_cost_usd": 0.08451796399999999,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0009578000000000001,
+      "kinds": {
+        "embedding": 124,
+        "chat": 66
+      }
+    },
+    "replay-memos-run-1.log": {
+      "requests": 16,
+      "reported_cost_usd": 0.006166200000000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 16
+      }
+    },
+    "replay-memos-run-2.log": {
+      "requests": 12,
+      "reported_cost_usd": 0.00314238,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "chat": 12
+      }
+    },
+    "lightrag-knowledge-structure-v1-provider-retry.log": {
+      "requests": 166,
+      "reported_cost_usd": 0.096335494,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 100,
+        "chat": 66
+      }
+    },
+    "lightrag-common-core-v1-provider-retry.log": {
+      "requests": 448,
+      "reported_cost_usd": 0.19985280199999989,
+      "unknown_or_pending": 7,
+      "held_reservation_usd": 0.0060552,
+      "kinds": {
+        "embedding": 275,
+        "chat": 173
+      }
+    },
+    "elf-deep-scale-1000-extended-v1.log": {
+      "requests": 58,
+      "reported_cost_usd": 1.7039999999999996e-05,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008367,
+      "kinds": {
+        "embedding": 58
+      }
+    },
+    "graphrag-memory-lifecycle-v1-case-isolated.log": {
+      "requests": 2,
+      "reported_cost_usd": 1.83e-05,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008388000000000001,
+      "kinds": {
+        "embedding": 1,
+        "chat": 1
+      }
+    },
+    "graphrag-repository-knowledge-v1-case-isolated.log": {
+      "requests": 115,
+      "reported_cost_usd": 0.05075817200000002,
+      "unknown_or_pending": 4,
+      "held_reservation_usd": 0.0034143999999999997,
+      "kinds": {
+        "embedding": 47,
+        "chat": 68
+      }
+    },
+    "elf-deep-behavior-v2-local-tokenizer.log": {
+      "requests": 203,
+      "reported_cost_usd": 0.005658280000000001,
+      "unknown_or_pending": 0,
+      "held_reservation_usd": 0.0,
+      "kinds": {
+        "embedding": 161,
+        "chat": 42
+      }
+    },
+    "gbrain-deep-v4-ingest-deadline.log": {
+      "requests": 1285,
+      "reported_cost_usd": 0.008330263999999999,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008624,
+      "kinds": {
+        "embedding": 1223,
+        "chat": 62
+      }
+    },
+    "hindsight-deep-v4-readiness-budget.log": {
+      "requests": 1478,
+      "reported_cost_usd": 0.3408045160000002,
+      "unknown_or_pending": 35,
+      "held_reservation_usd": 0.030139600000000006,
+      "kinds": {
+        "chat": 421,
+        "embedding": 1057
+      }
+    },
+    "mem0-deep-v4-native-filters.log": {
+      "requests": 1383,
+      "reported_cost_usd": 0.1267860800000003,
+      "unknown_or_pending": 6,
+      "held_reservation_usd": 0.0051592,
+      "kinds": {
+        "embedding": 907,
+        "chat": 476
+      }
+    },
+    "sag-engine-deep-behavior-v1.log": {
+      "requests": 395,
+      "reported_cost_usd": 0.061380208000000075,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008668,
+      "kinds": {
+        "embedding": 238,
+        "chat": 157
+      }
+    },
+    "graphrag-memory-lifecycle-v2-provider-recovery.log": {
+      "requests": 123,
+      "reported_cost_usd": 0.059295568,
+      "unknown_or_pending": 4,
+      "held_reservation_usd": 0.0034898,
+      "kinds": {
+        "embedding": 49,
+        "chat": 74
+      }
+    },
+    "elf-deep-scale-1000-extended-v2-provider-recovery.log": {
+      "requests": 71,
+      "reported_cost_usd": 2.058000000000001e-05,
+      "unknown_or_pending": 1,
+      "held_reservation_usd": 0.0008576,
+      "kinds": {
+        "embedding": 71
+      }
+    },
+    "gbrain-deep-mutations-v1-supported-embed-source.log": {
+      "requests": 40,
+      "reported_cost_usd": 0.00107674,
+      "unknown_or_pending": 4,
+      "held_reservation_usd": 0.0033708,
+      "kinds": {
+        "embedding": 28,
+        "chat": 12
+      }
+    },
+    "hindsight-deep-scale-1000-v1-provider-recovery.log": {
+      "requests": 10,
+      "reported_cost_usd": 0.002693796,
+      "unknown_or_pending": 6,
+      "held_reservation_usd": 0.005325600000000001,
+      "kinds": {
+        "chat": 4,
+        "embedding": 6
+      }
+    },
+    "mem0-deep-scale-1000-v1-transport-recovery.log": {
+      "requests": 1816,
+      "reported_cost_usd": 0.156349824000001,
+      "unknown_or_pending": 20,
+      "held_reservation_usd": 0.017249300000000006,
+      "kinds": {
+        "embedding": 1217,
+        "chat": 599
+      }
+    }
+  },
+  "ambiguous": []
+}

@@ -6,6 +6,12 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-10-08
+
+- Published the full registered native memory comparison with separate failed
+  attempts, deep lifecycle results, repair limitations, and cumulative request
+  accounting. Preserved historical pilot evidence and unmeasured scope.
+
 ## 2026-10-07
 
 - Added paired historical repository repair trials and retained both diagnostic

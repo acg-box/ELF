@@ -1,0 +1,167 @@
+{
+  "not_final": false,
+  "attempts": [
+    {
+      "target": "lightrag",
+      "suite": "knowledge-structure-v1",
+      "role": "first",
+      "source_bundle": "scoring-v5/ea1a014d308925ed/bundle.json",
+      "status": "failed",
+      "case_records": 16,
+      "source_sha256": "5c90e0c0b0cb4dc3175f0ec1042d8bb9939694a5dcb4d5f129e4e3e34f21eeb2",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": {
+        "batch_size": 1,
+        "max_tokens": 4096,
+        "revision": "isolated_case_v1"
+      }
+    },
+    {
+      "target": "lightrag",
+      "suite": "knowledge-structure-v1",
+      "role": "repeat",
+      "source_bundle": "lightrag-knowledge-structure-v1-provider-retry/bundle.json",
+      "status": "failed",
+      "case_records": 16,
+      "source_sha256": "a02103ea0f36661fd45a5c0c181c8614aacee2a741150e88cd6e4161788b9127",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": {
+        "batch_size": 1,
+        "max_tokens": 4096,
+        "revision": "isolated_case_v1"
+      }
+    },
+    {
+      "target": "sag-engine",
+      "suite": "knowledge-structure-v1",
+      "role": "first",
+      "source_bundle": "native-final-matrix/sag-engine-knowledge-structure-v1/bundle.json",
+      "status": "failed",
+      "case_records": 16,
+      "source_sha256": "c9bbc99cb9003015f6677d064511cb978df07284e18a07ceb080f222d83fd4e0",
+      "scoring_revision": 4,
+      "cleanup_passed": true,
+      "reader_protocol": null
+    },
+    {
+      "target": "sag-engine",
+      "suite": "knowledge-structure-v1",
+      "role": "repeat",
+      "source_bundle": "scoring-v5/b0edaaf1375b60d6/bundle.json",
+      "status": "completed",
+      "case_records": 16,
+      "source_sha256": "b1f5dc5038ac085a1219abfeaca0f563bb2e769316ddd656f71744d1d0e43163",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": {
+        "batch_size": 1,
+        "max_tokens": 4096,
+        "revision": "isolated_case_v1"
+      }
+    },
+    {
+      "target": "lightrag",
+      "suite": "common-core-v1",
+      "role": "first",
+      "source_bundle": "scoring-v5/3314c85983b32e71/bundle.json",
+      "status": "failed",
+      "case_records": 48,
+      "source_sha256": "4c31a6f5593c99ef123056ecc1b63053699aba3548d5a9fb2e47325353d182bd",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": {
+        "batch_size": 1,
+        "max_tokens": 4096,
+        "revision": "isolated_case_v1"
+      }
+    },
+    {
+      "target": "lightrag",
+      "suite": "common-core-v1",
+      "role": "repeat",
+      "source_bundle": "lightrag-common-core-v1-provider-retry/bundle.json",
+      "status": "completed",
+      "case_records": 48,
+      "source_sha256": "89e3e69917ae099f1bb9aa5bcb9124dffd039b3c7767d9226a0995eb731f01a5",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": {
+        "batch_size": 1,
+        "max_tokens": 4096,
+        "revision": "isolated_case_v1"
+      }
+    },
+    {
+      "target": "graphrag",
+      "suite": "memory-lifecycle-v1",
+      "role": "first",
+      "source_bundle": "graphrag-memory-lifecycle-v1-json-mode/bundle.json",
+      "status": "failed",
+      "case_records": 16,
+      "source_sha256": "a5df2549986d717aa5d19ad4644f7fb735b881b7a7290271f45400c1ba2615ea",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": null
+    },
+    {
+      "target": "graphrag",
+      "suite": "memory-lifecycle-v1",
+      "role": "repeat",
+      "source_bundle": "graphrag-memory-lifecycle-v1-case-isolated/bundle.json",
+      "status": "configuration_or_execution_failed",
+      "case_records": 0,
+      "source_sha256": "b43e8c90fcd7afc2921af05c34d2942da2d1fd968bb55c5f2d64fce826dfc2e3",
+      "scoring_revision": 5
+    },
+    {
+      "target": "graphrag",
+      "suite": "repository-knowledge-v1",
+      "role": "first",
+      "source_bundle": "graphrag-repository-knowledge-v1-package-fixed/bundle.json",
+      "status": "failed",
+      "case_records": 16,
+      "source_sha256": "2c214bb20eccd787a0434453e3ddc7bb34e16ed2409a64b30a3e95955e28ac29",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": null
+    },
+    {
+      "target": "graphrag",
+      "suite": "repository-knowledge-v1",
+      "role": "repeat",
+      "source_bundle": "graphrag-repository-knowledge-v1-case-isolated/bundle.json",
+      "status": "failed",
+      "case_records": 16,
+      "source_sha256": "8898db0220336a11501934a6878a8700c24dbac79a1e23d476078fc32bbb4a1f",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": {
+        "batch_size": 1,
+        "max_tokens": 4096,
+        "revision": "isolated_case_v1"
+      }
+    },
+    {
+      "target": "graphrag",
+      "suite": "memory-lifecycle-v1",
+      "role": "repeat",
+      "source_bundle": "graphrag-memory-lifecycle-v2-provider-recovery/bundle.json",
+      "status": "failed",
+      "case_records": 16,
+      "source_sha256": "8d1d69ae2aee3a463c2de32c61b736bd3f465f283bf1cdec79ffd0c9c186a1c4",
+      "scoring_revision": 5,
+      "cleanup_passed": true,
+      "reader_protocol": {
+        "batch_size": 1,
+        "max_tokens": 4096,
+        "revision": "isolated_case_v1"
+      }
+    }
+  ],
+  "records": 224,
+  "cases_sha256": "b05c74d384985980a68587515c038645984c2da500d610f69ddb5f401c130597",
+  "boundary": "Both whole attempts are retained, including failed and pending attempts. No favorable case splicing. Original scoring revisions remain explicit. Failure details are in separate reviewed audits; raw provider replies and reasoning are excluded.",
+  "snapshot_status": "closed_campaign_with_retained_failures"
+}

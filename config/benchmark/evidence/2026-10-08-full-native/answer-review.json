@@ -1,0 +1,156 @@
+{
+  "schema": "elf.manual_answer_review/v1",
+  "boundary": "Secondary explicit review findings. Preserve deterministic scores and original answers. These findings do not silently change canonical scores or product selection.",
+  "findings": [
+    {
+      "target": "openviking",
+      "suite": "common-core-v1",
+      "job_id": "core-resume-solstice",
+      "source_bundle": "native-final-matrix/openviking-common-core-v1/bundle.json",
+      "source_sha256": "03b0cd98b3e792c6207f1633c338bcb750c11e86634374c1ebc7304b5462dfe7",
+      "deterministic_answer_correct": 0,
+      "answer": {
+        "supported": true,
+        "text": "The Solstice release stopped after packaging and checksum recording; the next step is to obtain release approval before publishing."
+      },
+      "finding": "lexical_false_negative",
+      "reason": "The answer states packaging and checksum recording completed, then release approval before publishing. Checksum recording expresses the same requested fact as the plural checksums.",
+      "review_scope": "This explicit answer only; not a general semantic scoring policy."
+    },
+    {
+      "target": "memos",
+      "suite": "common-core-v1",
+      "job_id": "core-resume-mica",
+      "source_bundle": "native-final-matrix/memos-common-core-v1/bundle.json",
+      "source_sha256": "91a01c2055aeb97820ab1cb442fdd8763ee876ee04fe753cdee7f8648dfe981e",
+      "deterministic_answer_correct": 0,
+      "answer": {
+        "supported": true,
+        "text": "The API guide conversion and internal link validation are complete; the next step is to review the Mica deployment guide with the operations team."
+      },
+      "finding": "lexical_false_negative",
+      "reason": "API guide conversion and internal link validation expresses the completed guide conversion and internal links check, and the answer supplies deployment guide review with the operations team as the next step.",
+      "review_scope": "This explicit answer only; preserve the deterministic score and apply any future scoring policy uniformly."
+    },
+    {
+      "target": "memos",
+      "suite": "common-core-v1",
+      "job_id": "core-scope-birch",
+      "source_bundle": "native-final-matrix/memos-common-core-v1/bundle.json",
+      "source_sha256": "91a01c2055aeb97820ab1cb442fdd8763ee876ee04fe753cdee7f8648dfe981e",
+      "deterministic_answer_correct": 0,
+      "answer": {
+        "supported": true,
+        "text": "The approved cache uses a 15-minute TTL."
+      },
+      "finding": "lexical_false_negative",
+      "reason": "15-minute TTL and 15 minute TTL express the same requested cache lifetime; only hyphenation differs.",
+      "review_scope": "This explicit answer only; preserve the deterministic score and apply any future scoring policy uniformly."
+    },
+    {
+      "target": "openkb",
+      "suite": "common-core-v1",
+      "job_id": "core-scope-birch",
+      "source_bundle": "openkb-common-core-v1-auth-retry/bundle.json",
+      "source_sha256": "3b9d2b7d6f053dc956a1339063b746f205d5f1a38accb8ddb129c6405a53ff65",
+      "deterministic_answer_correct": 0,
+      "answer": {
+        "supported": true,
+        "text": "The approved cache within the Birch project scope uses a 15-minute TTL."
+      },
+      "finding": "lexical_false_negative",
+      "reason": "15-minute TTL and 15 minute TTL express the same requested cache lifetime; only hyphenation differs. Native context also states the 15-minute lifetime.",
+      "review_scope": "This explicit answer only; preserve the deterministic score and apply any future scoring policy uniformly."
+    },
+    {
+      "target": "honcho",
+      "suite": "common-core-v1",
+      "job_id": "core-resume-mica",
+      "source_bundle": "honcho-common-core-v1-auth-retry/bundle.json",
+      "source_sha256": "78b2f8e5b0c530004a95d67aaf75b81787e9de2bd56b6b6ab4b4b1bc64ce1d3c",
+      "deterministic_answer_correct": 0,
+      "answer": {
+        "supported": true,
+        "text": "The API guide conversion and internal link checks are complete; the next step is to review the deployment guide with the operations team."
+      },
+      "finding": "lexical_false_negative",
+      "reason": "Internal link checks expresses the same completed check as internal links. The answer also states API guide conversion and deployment guide review with operations as the next step.",
+      "review_scope": "This explicit answer only; preserve the deterministic score and apply any future scoring policy uniformly."
+    },
+    {
+      "target": "memos",
+      "suite": "memory-lifecycle-v1",
+      "job_id": "memory-scope-forget-private",
+      "source_bundle": "memos-memory-lifecycle-v1-id-delete/bundle.json",
+      "source_sha256": "8cd5c0db0292d6582856b46afb3e22e7098b5edbe016cd6b1f9e0c8a71a7a449",
+      "deterministic_answer_correct": 0,
+      "answer": {
+        "supported": true,
+        "text": "The approved Birch team decision uses a 15-minute cache TTL."
+      },
+      "finding": "lexical_false_negative",
+      "reason": "15-minute cache TTL and 15 minute cache TTL express the same requested approved cache lifetime; only hyphenation differs.",
+      "review_scope": "This explicit answer only; preserve the deterministic score and apply any future scoring policy uniformly."
+    },
+    {
+      "target": "mem0",
+      "suite": "common-core-v1",
+      "job_id": "core-scope-birch",
+      "source_bundle": "scoring-v5/3ae5e287a6930cbd/bundle.json",
+      "source_sha256": "eb72abb88de4745a454c613e36f23437343e4a31b70c6242d93a6dd4f5f57c11",
+      "answer": {
+        "supported": true,
+        "text": "The approved cache configuration uses a 15-minute TTL."
+      },
+      "deterministic_answer_correct": 0,
+      "finding": "lexical_false_negative",
+      "reason": "The supported answer states the approved cache lifetime as 15-minute TTL. The required literal differs only in hyphenation.",
+      "review_scope": "This explicit answer only. Preserve canonical deterministic scores and original answers."
+    },
+    {
+      "target": "mem0",
+      "suite": "memory-lifecycle-v1",
+      "job_id": "memory-scope-forget-private",
+      "source_bundle": "scoring-v5/3ae5e287a6930cbd/bundle.json",
+      "source_sha256": "eb72abb88de4745a454c613e36f23437343e4a31b70c6242d93a6dd4f5f57c11",
+      "answer": {
+        "supported": true,
+        "text": "The approved Birch team decision specifies a cache TTL of 15 minutes."
+      },
+      "deterministic_answer_correct": 0,
+      "finding": "lexical_false_negative",
+      "reason": "Cache TTL of 15 minutes expresses the required 15 minute cache TTL. The supplied context gives the same approved team decision.",
+      "review_scope": "This explicit answer only. Preserve canonical deterministic scores and original answers."
+    },
+    {
+      "target": "hindsight",
+      "suite": "common-core-v1",
+      "job_id": "core-scope-birch",
+      "source_bundle": "scoring-v5/41f3e2a7cc5057fb/bundle.json",
+      "source_sha256": "83c459ee24070c1a0e8acad3b9df93cd7c398ad2e285c7478c424949cfc02b55",
+      "answer": {
+        "supported": true,
+        "text": "Within the Birch project, the approved cache uses a 15-minute TTL."
+      },
+      "deterministic_answer_correct": 0,
+      "finding": "lexical_false_negative",
+      "reason": "The supported answer states the approved cache lifetime as 15-minute TTL. The required literal differs only in hyphenation.",
+      "review_scope": "This explicit answer only. Preserve canonical deterministic scores and original answers."
+    },
+    {
+      "target": "mem0",
+      "suite": "common-core-v1",
+      "job_id": "core-scope-orion",
+      "source_bundle": "scoring-v5/3ae5e287a6930cbd/bundle.json",
+      "source_sha256": "eb72abb88de4745a454c613e36f23437343e4a31b70c6242d93a6dd4f5f57c11",
+      "answer": {
+        "supported": true,
+        "text": "completed successfully on 2026-07-24"
+      },
+      "deterministic_answer_correct": 0,
+      "finding": "lexical_false_negative",
+      "reason": "The question identifies the Orion deployment. The answer completed successfully on 2026-07-24 supplies both requested outcome and date, but omits the noun deployment required by the literal scorer.",
+      "review_scope": "This explicit answer only. Preserve canonical deterministic scores and original answers."
+    }
+  ]
+}
