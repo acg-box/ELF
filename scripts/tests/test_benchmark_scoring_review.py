@@ -1,6 +1,6 @@
 """Keep scoring repairs uniform and separate from immutable product input."""
 
-from scripts.tests.benchmark_support import BenchmarkCase, REPO
+from scripts.tests.benchmark_support import BenchmarkCase, REPO, load_script
 from benchmark_contract import evaluate_unit, load_json, materialize_product_fixtures
 from benchmark_contract.review import review_suite
 from benchmark_contract.metrics import _answer_scores, _operation_scores
@@ -97,3 +97,25 @@ class ScoringReviewTests(BenchmarkCase):
         suite["jobs"][1]["query"] = "A different question"
         with self.assertRaisesRegex(ValueError, "question differs"):
             review_suite(suite, contract)
+
+    def test_qmd_reanswer_accepts_only_reviewed_scoring_changes(self):
+        import copy
+        qmd = load_script("benchmark_qmd_scoring", "scripts/benchmark-qmd-host.py")
+        old_contract = load_json(REPO / "config/benchmark/scoring-contract-v3.json")
+        new_contract = load_json(REPO / "config/benchmark/scoring-contract-v4.json")
+        for original in self.suites.values():
+            old_suite = review_suite(original, old_contract)
+            current = review_suite(original, new_contract)
+            native = self.completed_unit("qmd", old_suite)
+            prior = {"suite": old_suite, "unit_result": native}
+            snapshot = copy.deepcopy(prior)
+            self.assertIs(qmd.reuse_native_result(prior, current, new_contract), native)
+            self.assertEqual(prior, snapshot)
+            changed = copy.deepcopy(current)
+            changed["jobs"][0]["corpus"][0]["text"] += " Altered source."
+            with self.assertRaisesRegex(ValueError, "suite changed"):
+                qmd.reuse_native_result(prior, changed, new_contract)
+            changed = copy.deepcopy(current)
+            changed["jobs"][0]["query"] += " Different question."
+            with self.assertRaisesRegex(ValueError, "suite changed"):
+                qmd.reuse_native_result(prior, changed, new_contract)

@@ -17,6 +17,13 @@ from benchmark_runner.providers import provider_environment
 from benchmark_runner.runtime import REPO, source_fingerprint, write_json
 
 
+def reuse_native_result(prior, suite, contract):
+    """Allow reviewed scoring changes while retaining the frozen native input."""
+    if review_suite(prior["suite"], contract) != suite:
+        raise ValueError("QMD suite changed since native retrieval")
+    return prior["unit_result"]
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkout", type=Path, required=True)
@@ -47,7 +54,7 @@ def main():
         "target": target, "platform": platform.platform(), "models": models,
         "adapter_sha256": hashlib.sha256(args.adapter.read_bytes()).hexdigest(),
         "dependency_lock_sha256": hashlib.sha256((args.checkout / "package-lock.json").read_bytes()).hexdigest(),
-        "native_only": args.native_only, "units": []}
+        "native_only": args.native_only, "answer_contract": contract, "units": []}
     retained = None
     if args.reanswer:
         retained = json.loads((args.reanswer / "bundle.json").read_text())
@@ -64,9 +71,7 @@ def main():
             raw = run_rust_target("qmd", unit / "input", unit / "artifacts", unit / "state")
         else:
             prior = next(u for u in retained["units"] if u["suite"]["suite_id"] == suite["suite_id"])
-            if prior["suite"] != suite:
-                raise ValueError("QMD suite changed since native retrieval")
-            raw = prior["unit_result"]
+            raw = reuse_native_result(prior, suite, contract)
         write_json(unit / "native-result.json", raw)
         if provider:
             raw = attach_shared_answers(suite, raw, provider, manifest["runner"]["context_budget_chars"])
