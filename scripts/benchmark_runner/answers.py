@@ -56,12 +56,12 @@ def _api_endpoint(base: str, resource: str) -> str:
 def attach_shared_answers(
     suite: dict[str, Any], unit: dict[str, Any], env: dict[str, str], context_budget: int
 ) -> dict[str, Any]:
-    if unit.get("result_class") != "completed" or not unit.get("score_eligible"):
+    if not unit.get("score_eligible"):
         return unit
     try:
         cases = answer_cases(suite, unit, context_budget)
     except NativeContextError as error:
-        return failure_unit(
+        failed = failure_unit(
             {
                 "id": unit["target"],
                 "adapter": unit.get("native_mode"),
@@ -71,8 +71,66 @@ def attach_shared_answers(
             "adapter_failed",
             str(error),
         )
+        failed["native_retrieval"] = copy.deepcopy(unit)
+        return failed
     if not cases:
         return unit
+    original = copy.deepcopy(unit)
+    unit = copy.deepcopy(unit)
+    responses: list[dict[str, Any]] = []
+    failures = []
+    by_id = {row["job_id"]: row for row in unit["phases"]["warm"]["jobs"]}
+    for case in cases:
+        row = by_id[case["case_id"]]
+        row.pop("answer", None)
+        try:
+            native = request_answers([case], env)
+            responses.append(native)
+            choice = native["choices"][0]
+            if choice.get("finish_reason") == "length":
+                raise ValueError("shared answer exhausted its output token limit")
+            content = choice["message"]["content"]
+            if not isinstance(content, str) or not content.strip():
+                raise ValueError("shared answer returned no content")
+            decoded = json.loads(content)["answers"]
+            if (not isinstance(decoded, list) or len(decoded) != 1
+                    or not isinstance(decoded[0], dict)
+                    or decoded[0].get("case_id") != case["case_id"]):
+                raise ValueError("shared answer case identities differ from the request")
+            answer = decoded[0]
+            text, supported = answer.get("text"), answer.get("supported")
+            if not isinstance(text, str) or not text.strip():
+                raise ValueError(f"shared answer returned empty text for {case['case_id']}")
+            if not isinstance(supported, bool):
+                raise TypeError(f"shared answer returned non-boolean supported for {case['case_id']}")
+            if not supported and text.strip().casefold() != "unknown":
+                raise ValueError(f"unsupported shared answer did not say unknown for {case['case_id']}")
+            row["answer"] = {"text": text, "supported": supported}
+        except Exception as error:
+            message = f"shared target-blind answer request failed: {type(error).__name__}: {error}"
+            failures.append({"case_id": case["case_id"], "message": message})
+            row.update(classification="provider_failed", failure=message)
+    if responses:
+        unit["provider_raw"] = {"shared_answer": responses[0] if len(responses) == 1 else {"batches": responses}}
+    unit["provider_usage"] = {
+        f"shared_answer_{index + 1}": response.get("usage") or {}
+        for index, response in enumerate(responses)
+    }
+    unit["answer_protocol"] = {"revision": "isolated_case_v1", "batch_size": ANSWER_BATCH_SIZE, "max_tokens": 4096}
+    if failures:
+        unit["native_retrieval"] = original
+        unit["answer_errors"] = failures
+        unit["result_class"] = "provider_failed"
+        unit["phases"]["warm"]["status"] = "provider_failed"
+        unit["failure"] = {"classification": "provider_failed", "message": failures[0]["message"]}
+    return unit
+
+
+
+ANSWER_BATCH_SIZE = 1
+
+
+def request_answers(cases: list[dict[str, Any]], env: dict[str, str]) -> dict[str, Any]:
     prompt = {
         "instruction": (
             "Answer each case only from its supplied context. Return one JSON object "
@@ -101,55 +159,5 @@ def attach_shared_answers(
         },
         method="POST",
     )
-    native: dict[str, Any] | None = None
-    try:
-        with urllib.request.urlopen(request, timeout=remaining_seconds(300)) as response:
-            native = json.loads(response.read().decode())
-        unit["provider_raw"] = {"shared_answer": native}
-        content = native["choices"][0]["message"]["content"]
-        decoded = json.loads(content)
-        answers = decoded["answers"]
-        if not isinstance(answers, list):
-            raise TypeError("answers is not a list")
-        by_id = {
-            row.get("case_id"): row
-            for row in answers
-            if isinstance(row, dict) and isinstance(row.get("case_id"), str)
-        }
-        for row in unit["phases"]["warm"]["jobs"]:
-            if row.get("classification") == "completed":
-                answer = by_id.get(row.get("job_id"))
-                if answer is None:
-                    raise ValueError(f"shared answer omitted case {row.get('job_id')}")
-                text = answer.get("text")
-                supported = answer.get("supported")
-                if not isinstance(text, str) or not text.strip():
-                    raise ValueError(
-                        f"shared answer returned empty text for {row.get('job_id')}"
-                    )
-                if not isinstance(supported, bool):
-                    raise TypeError(
-                        f"shared answer returned non-boolean supported for {row.get('job_id')}"
-                    )
-                if not supported and text.strip().casefold() != "unknown":
-                    raise ValueError(
-                        f"unsupported shared answer did not say unknown for {row.get('job_id')}"
-                    )
-                row["answer"] = {
-                    "text": text,
-                    "supported": supported,
-                }
-        unit["provider_usage"] = {"shared_answer": native.get("usage") or {}}
-        return unit
-    except Exception as error:
-        message = f"shared target-blind answer request failed: {type(error).__name__}: {error}"
-        failed = failure_unit(
-            {"id": unit["target"], "adapter": unit.get("native_mode"), "score_eligible": unit.get("score_eligible")},
-            suite,
-            "provider_failed",
-            message,
-        )
-        if native is not None:
-            failed["provider_raw"] = {"shared_answer": native}
-        return failed
-
+    with urllib.request.urlopen(request, timeout=remaining_seconds(300)) as response:
+        return json.loads(response.read().decode())

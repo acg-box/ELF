@@ -36,6 +36,8 @@ pub(crate) fn run_qmd(args: QmdArgs) -> Result<()> {
 		metadata: Some(serde_json::json!({
 			"index_reused": args.reuse_index,
 			"lexical_only": args.lexical_only,
+			"rerank": args.rerank,
+			"shared_index": args.shared_index,
 		})),
 	})
 }

@@ -1,6 +1,6 @@
 FROM python:3.13-slim-bookworm
 
-ARG HONCHO_REVISION=93dcf59c4a4225bb020b20c628799737fefae318
+ARG HONCHO_REVISION=06ed1929cf017c333a87c41d130bb6a0605d91c0
 
 COPY --from=ghcr.io/astral-sh/uv:0.9.24 /uv /bin/uv
 

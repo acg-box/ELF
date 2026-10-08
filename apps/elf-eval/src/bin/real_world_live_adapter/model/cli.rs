@@ -64,6 +64,12 @@ pub(crate) struct QmdArgs {
 	/// Use qmd's native BM25 path for non-measured architecture readiness.
 	#[arg(long, default_value_t = false)]
 	pub(crate) lexical_only: bool,
+	/// Use native query expansion and reranking with the hybrid index.
+	#[arg(long, default_value_t = false, conflicts_with = "lexical_only")]
+	pub(crate) rerank: bool,
+	/// Keep job collections in one native database for namespace measurements.
+	#[arg(long)]
+	pub(crate) shared_index: bool,
 }
 
 #[derive(Debug, Parser)]

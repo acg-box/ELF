@@ -1,0 +1,32 @@
+{
+  "not_final": false,
+  "generated_at_unix": 1791493447.8479638,
+  "prior_paid_usd": 0.002103636,
+  "recorded_requests": 33552,
+  "groups": {
+    "embedding": {
+      "requests": 22501,
+      "requests_without_usage": 177,
+      "requests_without_cost": 177,
+      "reported_cost_usd": 0.015488149999999763,
+      "reserved_unknown_usd": 0.15574529999999992,
+      "prompt_tokens": 1548149,
+      "cached_prompt_tokens": 0,
+      "completion_tokens": 0,
+      "reasoning_tokens": 0
+    },
+    "chat": {
+      "requests": 11051,
+      "requests_without_usage": 12,
+      "requests_without_cost": 12,
+      "reported_cost_usd": 8.724835185000003,
+      "reserved_unknown_usd": 0.12915059999999998,
+      "prompt_tokens": 33473316,
+      "cached_prompt_tokens": 25301470,
+      "completion_tokens": 9120610,
+      "reasoning_tokens": 7018025
+    }
+  },
+  "recorded_chat_cache_hit_ratio": 0.7558698397254697,
+  "boundary": "Token counts cover usage receipts present in this cumulative ledger. Missing receipts and spend before the ledger are not assigned zero token usage. Provider-reported costs already include caching effects. Local compute, CI, and Codex orchestration are excluded."
+}

@@ -73,6 +73,10 @@ a language migration or another runtime.
 | Owner | Responsibility |
 | --- | --- |
 | `scripts/benchmark_replay/` | Own the bounded historical repair pilot, source snapshots, memory conditions, agent tools, and isolated checks within the existing Python benchmark. |
+| `scripts/benchmark_deep/` | Define blinded shared-store workloads and native actions across client-process boundaries. The host retains the answer oracle. |
+| `scripts/benchmark-deep.py` | Execute and score scale, continuity, conflict, namespace, and mutation workloads. |
+| `scripts/benchmark_budget.py` | Reserve cumulative API cost, constrain provider routes, isolate credentials, and retain usage receipts. |
+| `scripts/benchmark-qmd-host.py` | Execute the same QMD suite contract on a prepared host runtime and record local model and binary hashes. |
 | `scripts/benchmark-runner.py` | Dispatch the host CLI. |
 | `scripts/benchmark_runner/cli.py` | Parse options and assemble one run. |
 | `scripts/benchmark_runner/runtime.py` | Resolve the repository root, run host commands, write artifacts, and identify source content. |
@@ -80,6 +84,7 @@ a language migration or another runtime.
 | `scripts/benchmark_runner/docker.py` | Build images and inspect, log, and clean up run-owned Compose projects. |
 | `scripts/benchmark_runner/execution.py` | Schedule units and preserve timeout, cleanup, and acceptance results. |
 | `scripts/benchmark_runner/answers.py` | Request shared answers and preserve typed failures and raw provider evidence. |
+| `scripts/benchmark_runner/reanswer.py` | Produce derived rescoring or reanswering evidence without changing prior measurements. |
 | `scripts/benchmark_contract/fixtures.py` | Validate manifests/suites and create opaque, scoring-blind product fixtures. |
 | `scripts/benchmark_contract/metrics.py` | Compute the existing metric and mutation-receipt oracles. |
 | `scripts/benchmark_contract/evaluation.py` | Apply coverage and eligibility gates before scoring. |
@@ -94,7 +99,9 @@ The host scheduler can see scoring authority. Product adapters receive opaque
 fixtures. Do not move qrels or expected answers into product-side helpers. Typed
 failures must remain outside quality denominators.
 
-LightRAG owns per-job cold/warm isolation. The generic Rust-target runner now serves
+LightRAG owns per-job cold/warm isolation and native HTTP document mutations. It
+uses returned native chunk text and checks document absence after deletion.
+The generic Rust-target runner serves
 ELF and qmd only; its unreachable LightRAG path is removed. Mem0 owns its native
 memory IDs and mutation receipts in a separate target module. All three receive
 input, artifact, and state paths explicitly.

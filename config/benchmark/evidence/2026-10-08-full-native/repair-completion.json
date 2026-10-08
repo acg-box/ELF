@@ -1,0 +1,13 @@
+{
+  "scope": "common repair only",
+  "retained": 102,
+  "passed": 89,
+  "classifications": {
+    "completed": 86,
+    "turn_limit": 5,
+    "blocked_by_native_retrieval": 11
+  },
+  "source_audit_sha256": "9c8bdaa3df7383ff53b49eff14e765a47dc6c0069e672220452a20fe00583042",
+  "boundary": "All registered trial records exist. Native retrieval blocks are not executed repair failures. Historical and full-campaign images differ. Deep and core followups remain incomplete.",
+  "not_final": false
+}

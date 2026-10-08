@@ -4,17 +4,19 @@ from __future__ import annotations
 
 import dataclasses
 import hashlib
+import importlib.metadata
 import json
 import os
 import subprocess
+import sys
 import time
+import urllib.request
 from enum import Enum
 from pathlib import Path
 from typing import Any, Callable
 
 
-OPENVIKING_REVISION = "a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b"
-OPENVIKING_REPO = Path(os.environ.get("OPENVIKING_REPO_DIR", "/opt/openviking"))
+OPENVIKING_VERSION = "0.4.23"
 EMBEDDING_DIMENSION_TRANSPORT = "explicit_openai_compatible_dimensions"
 FORBIDDEN_FIXTURE_KEYS = {
     "expected_answer",
@@ -110,29 +112,17 @@ def _load_jobs(input_dir: Path) -> list[dict[str, Any]]:
     return jobs
 
 
-def _verify_revision() -> None:
-    revision_file = OPENVIKING_REPO / "REVISION"
-    if revision_file.is_file():
-        if revision_file.read_text(encoding="utf-8").strip() == OPENVIKING_REVISION:
-            return
-        raise OpenVikingAdapterFailure(
-            "OpenViking runtime revision file does not match the frozen revision"
-        )
-    completed = subprocess.run(
-        ["git", "-C", str(OPENVIKING_REPO), "rev-parse", "HEAD"],
-        check=False,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-        text=True,
-    )
-    if completed.returncode or completed.stdout.strip() != OPENVIKING_REVISION:
-        raise OpenVikingAdapterFailure(
-            "OpenViking checkout does not match the frozen revision"
-        )
+def _verify_runtime() -> None:
+    if importlib.metadata.version("openviking") != OPENVIKING_VERSION:
+        raise OpenVikingAdapterFailure("OpenViking installed package differs from its frozen version")
 
 
 def _required_environment() -> dict[str, str]:
     names = (
+        "CHAT_API_BASE",
+        "CHAT_API_KEY",
+        "CHAT_MODEL",
+        "CHAT_REASONING_EFFORT",
         "EMBEDDING_API_BASE",
         "EMBEDDING_API_KEY",
         "EMBEDDING_MODEL",
@@ -179,11 +169,15 @@ def _write_config(state_dir: Path) -> Path:
                 "text_source": "content_only",
                 "max_concurrent": 2,
             },
-            "auto_generate_l0": False,
-            "auto_generate_l1": False,
-            "default_search_mode": "fast",
-            "vlm": {},
-            "query_planner": {},
+            "auto_generate_l0": True,
+            "auto_generate_l1": True,
+            "default_search_mode": "thinking",
+            "vlm": {
+                "provider": "openai", "api_base": environment["CHAT_API_BASE"],
+                "api_key": environment["CHAT_API_KEY"], "model": environment["CHAT_MODEL"],
+                "reasoning_effort": environment["CHAT_REASONING_EFFORT"],
+                "max_tokens": 8192, "max_concurrent": 1, "max_retries": 1, "timeout": 90,
+            },
             "rerank": {},
         },
     )
@@ -222,15 +216,39 @@ def _install_explicit_dimension_embedder() -> None:
 
 
 def _open_client(native_dir: Path) -> Any:
-    _install_explicit_dimension_embedder()
     try:
-        from openviking import OpenViking
+        from openviking import SyncHTTPClient
     except Exception as error:
-        raise OpenVikingProductFailure(
+        raise OpenVikingAdapterFailure(
             f"OpenViking SDK import failed: {type(error).__name__}: {error}"
         ) from error
-    client = OpenViking(path=str(native_dir))
-    _native_call("initialize", client.initialize)
+    log = (native_dir.parent / "server.log").open("a")
+    process = subprocess.Popen([sys.executable, "-c",
+        "from benchmark_targets.openviking import _install_explicit_dimension_embedder; "
+        "_install_explicit_dimension_embedder(); "
+        "from openviking_cli.server_bootstrap import main; main()",
+        "--config", os.environ["OPENVIKING_CONFIG_FILE"], "--host", "127.0.0.1", "--port", "1933"],
+        stdout=log, stderr=subprocess.STDOUT,
+        env={**os.environ, "PYTHONPATH": str(Path(__file__).resolve().parents[1])})
+    deadline = time.monotonic() + 120
+    try:
+        while True:
+            if process.poll() is not None:
+                raise OpenVikingProductFailure("Native HTTP server exited during startup; see server.log")
+            try:
+                with urllib.request.urlopen("http://127.0.0.1:1933/health", timeout=2):
+                    break
+            except OSError:
+                if time.monotonic() >= deadline:
+                    raise TimeoutError("OpenViking HTTP startup exceeded 120 seconds")
+                time.sleep(1)
+        client = SyncHTTPClient(url="http://127.0.0.1:1933", account="elfbench", user="elfbench")
+        _native_call("initialize", client.initialize)
+    except BaseException:
+        _stop_server(process, log)
+        raise
+    client._benchmark_server = process
+    client._benchmark_server_log = log
     return client
 
 
@@ -261,36 +279,26 @@ def _ingest_job(
     add_results: list[Any] = []
     job_source = source_dir / key
     job_source.mkdir(parents=True, exist_ok=True)
-    _native_call("mkdir", client.mkdir, target_root)
-
+    by_name = {}
     for item_index, item in enumerate(job["corpus"]["items"]):
         name_digest = hashlib.sha256(item["evidence_id"].encode("utf-8")).hexdigest()[:20]
         source_path = job_source / f"source-{item_index:04d}-{name_digest}.txt"
         source_path.write_text(item["text"], encoding="utf-8")
-        target_uri = f"{target_root}/{source_path.name}"
-        added = _native_call(
-            "add_resource",
-            client.add_resource,
-            str(source_path),
-            to=target_uri,
-            wait=True,
-            timeout=300,
-            build_index=True,
-            summarize=False,
-        )
-        _assert_add_result_ready(added)
-        add_results.append(added)
-        root_uri = added.get("root_uri") if isinstance(added, dict) else None
-        if not isinstance(root_uri, str) or not root_uri:
-            raise OpenVikingAdapterFailure(
-                "OpenViking add_resource returned no native root_uri"
-            )
-        if root_uri in source_map:
-            raise OpenVikingAdapterFailure(
-                f"OpenViking returned duplicate native root_uri: {root_uri}"
-            )
-        source_map[root_uri] = item["evidence_id"]
+        by_name[source_path.stem] = item["evidence_id"]
         source_paths[item["evidence_id"]] = str(source_path)
+    added = _native_call("add_resource directory", client.add_resource,
+        str(job_source), to=target_root, wait=True, timeout=300)
+    _assert_add_result_ready(added)
+    add_results.append(added)
+    target_root = added["root_uri"]
+    listing = _native_call("list imported resources", client.ls, target_root, recursive=True)
+    for row in listing:
+        name = row.get("name")
+        if row.get("isDir") and name in by_name:
+            source_map[row["uri"]] = by_name[name]
+    if set(source_map.values()) != set(source_paths):
+        raise OpenVikingAdapterFailure("Directory import did not expose every native source identity")
+    _write_json(raw_dir / f"{key}-listing.json", listing)
 
     _write_json(raw_dir / f"{key}-add.json", native_json(add_results))
     return target_root, source_map, source_paths
@@ -452,8 +460,6 @@ def _apply_operations(
                     to=root_uri,
                     wait=True,
                     timeout=300,
-                    build_index=True,
-                    summarize=False,
                 )
                 _assert_add_result_ready(native_response)
                 returned_uri = (
@@ -518,13 +524,12 @@ def _query_job(
 ) -> dict[str, Any]:
     started = time.monotonic()
     found = _native_call(
-        "find",
-        client.find,
+        "search",
+        client.search,
         job["prompt"]["content"],
         target_uri=target_root,
         limit=5,
-        score_threshold=0.0,
-        level=[2],
+        options={"score_threshold": 0.0, "level": [2]},
     )
     latency_ms = (time.monotonic() - started) * 1000.0
     _write_json(raw_path, native_json(found))
@@ -545,15 +550,38 @@ def _query_job(
     }
 
 
-def _close_client(client: Any) -> None:
-    _native_call("close", client.close)
+def _stop_server(process: Any, log: Any) -> dict[str, Any]:
+    """Reap the owned server after its acknowledged native work has drained."""
+    forced = False
+    try:
+        process.terminate()
+        try:
+            process.wait(timeout=60)
+        except subprocess.TimeoutExpired:
+            forced = True
+            process.kill()
+            process.wait(timeout=15)
+    finally:
+        log.close()
+    return {"grace_seconds": 60, "forced_kill": forced, "exit_code": process.returncode}
+
+
+def _close_client(client: Any) -> dict[str, Any]:
+    receipt = {"server_owned": False}
+    try:
+        _native_call("close", client.close)
+    finally:
+        process = getattr(client, "_benchmark_server", None)
+        if process is not None:
+            receipt = _stop_server(process, client._benchmark_server_log)
+    return receipt
 
 
 def _run_openviking(
     input_dir: Path, artifacts: Path, state_dir: Path
 ) -> dict[str, Any]:
     """Run cold ingest/query and warm query against the same native state."""
-    _verify_revision()
+    _verify_runtime()
     jobs = _load_jobs(input_dir)
     state_dir.mkdir(parents=True, exist_ok=True)
     _write_config(state_dir)
@@ -567,6 +595,7 @@ def _run_openviking(
     source_paths: list[dict[str, str]] = []
     cold_rows: list[dict[str, Any]] = []
     ingest_duration_ms = 0.0
+    shutdowns = []
     client = _open_client(state_dir / "native")
     try:
         for index, job in enumerate(jobs):
@@ -593,10 +622,11 @@ def _run_openviking(
                 )
             )
     finally:
-        _close_client(client)
+        shutdowns.append(_close_client(client))
+        _write_json(artifacts / "raw/openviking-shutdowns.json", shutdowns)
 
     receipt = {
-        "revision": OPENVIKING_REVISION,
+        "package_version": OPENVIKING_VERSION,
         "corpus_sha256": _corpus_hash(jobs),
         "targets": targets,
         "source_maps": source_maps,
@@ -650,15 +680,17 @@ def _run_openviking(
                 )
             )
     finally:
-        _close_client(client)
+        shutdowns.append(_close_client(client))
+        _write_json(artifacts / "raw/openviking-shutdowns.json", shutdowns)
 
     return {
         "schema": "elf.benchmark_unit_result/v4",
         "target": "openviking",
-        "native_mode": "external_embedding",
+        "native_mode": "native_hierarchy_thinking_search",
         "score_eligible": True,
         "result_class": "completed",
         "warm_reused_state": True,
+        "server_shutdowns": shutdowns,
         "ingest_count": 1,
         "ingest_duration_ms": round(ingest_duration_ms, 3),
         "phases": {
@@ -667,7 +699,7 @@ def _run_openviking(
                 "jobs": cold_rows,
                 "adapter_metadata": {
                     "index_reused": False,
-                    "revision": OPENVIKING_REVISION,
+                    "package_version": OPENVIKING_VERSION,
                     "embedding_dimensions": int(
                         os.environ["EMBEDDING_DIMENSIONS"]
                     ),
@@ -679,7 +711,7 @@ def _run_openviking(
                 "jobs": warm_rows,
                 "adapter_metadata": {
                     "index_reused": True,
-                    "revision": OPENVIKING_REVISION,
+                    "package_version": OPENVIKING_VERSION,
                     "embedding_dimensions": int(
                         os.environ["EMBEDDING_DIMENSIONS"]
                     ),
@@ -702,3 +734,9 @@ def run_openviking(
         raise OpenVikingAdapterFailure(
             f"OpenViking adapter failed: {type(error).__name__}: {error}"
         ) from error
+    finally:
+        server_log = state_dir / "server.log"
+        if server_log.exists():
+            destination = artifacts / "raw/openviking-server.log"
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text(server_log.read_text())

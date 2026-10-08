@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:51aaab82c0882825bba6d8776775d782d84b2bd5975e4530b015bd6c3f17f3e9",
+  "pageVersion": "sha256:1bca0c8e03aa8f39c8888604f8726cfb700f0a7bf64b1d4ba7b497c25b0d5d0b",
   "claims": [
     {
       "id": "claim_b2092c21a8fb49378b24e596378c2f93",
@@ -17,8 +17,8 @@
       "statement": "The shared-answer scorer uses normalized required fact strings and forbidden fact checks rather than a paid model judge.",
       "evidence": [
         {
-          "resource": "repo://scripts/benchmark_contract/metrics.py#L59-L85",
-          "version": "repo-lines-v1:sha256:8a2acb1af779b527f496f259f3b892eef3cb77297557ea09cfc1663dfdfbe01f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNDZhMjAzYmEzNDdmN2NkNjZmZGQ2ZTdiNTU2ZDZlOWJiNjMzMjcxNmNkMzJiM2MyMmZkMTc4ZDg3NmM4N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2ODlkY2U1ZjA2OTQwOGY2YTFhNzA5MDQ1MTZjOWY2MDJiNDQ1Njg1OTdkMjA5M2Q0ZWYzZGI1MDU3M2ZiMjkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdkODM1ZTVkMWJhYmNhN2NiNmY2MGM2OWQ0MjQ2ZmI5MzllZmI4ZGE5MjcyNGUwYzhjNjU2OWZiYTY3ZDE2MDEifQ"
+          "resource": "repo://scripts/benchmark_contract/metrics.py#L62-L108",
+          "version": "repo-lines-v1:sha256:d67215ee0dc79194e49d2f2065c2252863b1789b76cf0d59fe28c01fdacdd493:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlNDZhMjAzYmEzNDdmN2NkNjZmZGQ2ZTdiNTU2ZDZlOWJiNjMzMjcxNmNkMzJiM2MyMmZkMTc4ZDg3NmM4N2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmMmVjMGI2N2E3MzY4Y2FiYWI0NDgzYzQ0YWNjNDRmNzRlYzVkZTE4YjUzZTk2MjBmYmQ2MzNiMDFmMjI5ZGIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQxMjUwZTRlOWUzN2YxNWE5NjI3NTRhMGNjYmE2YzJhMTZhYjQxNzVjMTkxYjJjOTg5ZTViMDQxNTJiMjc1YjMifQ"
         }
       ]
     },
@@ -54,11 +54,15 @@
     },
     {
       "id": "claim_c5b129bca45649ba894011ec77553c96",
-      "statement": "The native benchmark adapter drains its dedicated worker queues before readiness and returns an error for failed jobs or a 180-second drain timeout.",
+      "statement": "The native benchmark adapter drains its worker queues and fails on failed jobs or an indexing deadline; ELF_REAL_WORLD_INDEX_TIMEOUT_SECONDS overrides the 180-second default, and deep runs default to 5400 seconds with an explicit configurable ingestion deadline.",
       "evidence": [
         {
-          "resource": "repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs#L25-L71",
-          "version": "repo-lines-v1:sha256:b006aba7cb1428827725292084480865aaa203d9fa714fd1b2866dbd68e5d33b:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI4NzY2YzJmM2IyOTc4ZWFjYmU3ZDdhODg3NzIxZjI5NmJlOGNkMWU0OWFmYjY3M2MwYmI2ZTg1YTlhMWQwNGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxMmNhMzQ1Y2NmNzViZjljMDgwNmJjZTY5NWJlOGRlODA4Yjc5OTg0MjUxYTdhNTRkMjAyY2Y2MTAxZGQ0NTEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVkM2IzNGEwYWRkYWNjNDFhODU4NzQxMTY0M2FkOTc2ZWJiZDkxYTAzMzFlMDNkOTdjMWQxMTBmZjdkNzc1YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjA1Mjk5ODY2NjExYjk5NDgyNmFjMjgyMzk4ZTNkODQ3NDFmOGI5MDkwMTQ3MTA0ZTE2MTU4NTc1OWI1MzAzNTEifQ"
+          "resource": "repo://apps/elf-eval/src/bin/real_world_live_adapter/service_runtime.rs",
+          "version": "repo-file-v1:sha256:0b67f0a7e7afdaeef8cc91300190d53862398c1f3e3fea102ef2a077f754b65d"
+        },
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L67-L100",
+          "version": "repo-lines-v1:sha256:b7f2eafcad28ea7b929de7fa8e15f713328a3ad27ea06bff770700b6ebe8fa41:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0NThmZmI5YTQ5MzhiMTE5MmUxNzI2ZDRjNDA0YjE4OWQ4NmMzYWVkYWJjZTdlN2VkYThhMmVkZTA5NTMzZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzAxZTZhZTYxZDU3ZTM4MjA2Y2JjYThjNDBlMWRmODM2YTlhZDY3NGQwODg2NmI5YWVkNjQxNzVhNTQ5ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImMyM2ExYzMyZmUwZTFlNjU4MGVjMTNmYWJhNWY0ZDgwMjAyZmFlMzUyOGZmNzllM2M4OThiNDZjNzg4NzU3NWIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYzEwMjA4ZTJkMjNmMDFiOWM2ZTAwNjJlOWNjOTU2M2RmNDkwMzcyOGFiNmQ4OWVjZjNjYzgxODE0YThlZjUifQ"
         }
       ]
     },
@@ -71,10 +75,200 @@
           "version": "repo-lines-v1:sha256:fb8ac5102e336d77951f5f4c8fdab593ed8126e41b16c0b44cb66689765f3eca:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2M2I1MDlmNTEzYzE1YjM5NDNlZjc3MmU1MzU2YjI3ZDc0OGI1ZTZhYzVhMzIzNTZiOGZjM2NjNTQyMjMzNzAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3MTU0Zjk1MmJjYmRiMGRmYzc5ZDI2MjY1Yjk4MjNmN2I4ODRhMmFlNjVjMmZmOWU0MjU3YmRkZThiYWJhMGMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhOWM4NmY3ZGQxMjU4ZGZlMGNiMjU3NDVkOTY3MzJlODAyNWI4ZDVmNDE5NzUzMTk2ODkzY2NmZDg3NjcwZTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
+    },
+    {
+      "id": "claim_0f18d596618f4f509fdfe0b051ad02f5",
+      "statement": "The full comparison protocol assigns 48 core cases to fourteen products and two baselines, with 64 product/suite units; the default all-group deep workload contains 62 questions covering scale, cross-session use, authority, isolation, and mutation.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
+        }
+      ]
+    },
+    {
+      "id": "claim_4d9fe24b801f40e8af96e20e5a9e92f9",
+      "statement": "The final shared-reader protocol uses one case per request and deep scores require the expected value in that case's supplied context; earlier batched answers are protocol diagnostics.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
+        }
+      ]
+    },
+    {
+      "id": "claim_6e2734b285714a67bce30c8716bb54c1",
+      "statement": "The budget gateway enforces fixed routes and cumulative accounting with conservative reservations under a configurable ceiling that defaults to USD 10; the completed October 8 campaign used an explicitly authorized USD 20 ceiling. Phase tranches remain separate from the cumulative limit.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/evidence/2026-10-08-full-native/accounting/summary.json",
+          "version": "repo-file-v1:sha256:523fdddabcb9bcef83fc2cfcfdb6067ca9434b281847ee1656b79aa9cf515c8b"
+        },
+        {
+          "resource": "repo://scripts/benchmark_budget.py#L200-L221",
+          "version": "repo-lines-v1:sha256:b86d2fd7e09ed5b18cece6b7fcb9bfe98ac518b95c9cf2679364ec4d81e39bf5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMzZWFmMmUwMTlkNzBkYjFiNDcwNzAxNjkyNTRjZjk2ZTY1Yzk4ZTQzMmVmYmIwYTRiYzhiODUzNTc5YWI1MjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNGZjNzViZTEzN2ZmZjY2YWYyYTFhNDVlZDQxMDAyNDBkZmRiMjQxMWY0N2EzZDczZDQzMzJjMGE0ZTY0NzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhlZGE0YmU5MTY0N2NhZDYzYTBiZmI3ODAzNTMyYWE1ODJkMTY1NzE5NGY2ZWNhMWY2YmM2ZTZlZmYwYzkwNTMifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_budget.py#L89-L110",
+          "version": "repo-lines-v1:sha256:976617f58564156e1f8eb5f59156bec4b4cd5d91ca9d773e5ecf6a5c49811d87:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2ODgzYTAzNTg2Yzc3MDIyYWVhZWMyYjg1ZTUzYWIyMzA0MGIxODFmOGQwYmNmYTNiMzU2ZGE0NTNjZDlmMjkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI0NGY5ODQzZjU1MTc0YTJmMzVmYTIyMGJmMjQwMDJkOTliMDBiMjczMDUyZjBkOGNlYzQ1MzhiZWIyNTdkZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjAxYjlhNTA3ZTkwMjZmYTU4YmJiNGQwNjlmNTA0NDJkNmM5MGRlMWY5MjIxNzQwNWQyZjkzN2FiZTRjMDdhMzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d003e5f382a44a57a863a19dcb48e4b0",
+      "statement": "The full comparison measures ELF note ingestion rather than its document API, and distinguishes native operation readback from legacy exact-text update metrics and core negative retrieval fixtures from access controls.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md",
+          "version": "repo-file-v1:sha256:234fab6fcc2d7f2ae5a013f7b151887be9443ce6013eb7085a8336d113543532"
+        }
+      ]
+    },
+    {
+      "id": "claim_8764d57f4e8d471588d1ede326b29f53",
+      "statement": "Deep workload groups preserve frozen questions, source text, and operation order; fresh grouped or extended-readiness conditions must retain the original timed-out attempt and cannot replace its default-budget outcome.",
+      "evidence": [
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L81-L100",
+          "version": "repo-lines-v1:sha256:586e65d0d4605b4dcc5df57ab6b10aa0bd48b19d1f9a4cac0073583189ed0d8e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZWVmMWUyNmQ2NjMxYjU0OGZiYjNkYTlhZjg5YTMyNjE0ZmNkMjY1ZmJkNjg3ZmY2MGY3MDA4MjBkZDQyZTIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg3MzAxZTZhZTYxZDU3ZTM4MjA2Y2JjYThjNDBlMWRmODM2YTlhZDY3NGQwODg2NmI5YWVkNjQxNzVhNTQ5ZTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijk3ZjIxMzk3OWVmYmQ5NzJmNGJkNmY2OTMyNDFjZGY4NGU2ODlmZWYyYmFjYzgyNGRmMGYxZDVlM2MxN2MwZTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlYzEwMjA4ZTJkMjNmMDFiOWM2ZTAwNjJlOWNjOTU2M2RmNDkwMzcyOGFiNmQ4OWVjZjNjYzgxODE0YThlZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbc1b64cdb944a2bb28e69d13880ed6e",
+      "statement": "Deep action timeouts terminate the child process group, retain captured logs, and block later queries whose ingestion scope failed.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark-deep-unit.py#L39-L67",
+          "version": "repo-lines-v1:sha256:c0a6c38a3ed1c0212800ffeb166e4014d0e8eeb2799009e0e8fd3faa4cc400e9:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwYjhkOTBmOTYyZThkNzhkMzIwMWEwZWMzZmE1YjlhNDAyNTRlMWY5ZjRjYjRhY2RhZjY1MGE2YzViYmFhNzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY5MTUzYTk5YzU1ZmYyY2Q0MTk3ZGMzNjU2ZTljMDViMjRkN2RiMWYyYmExNTIyYjE0NWY0ZTE4YTM5YzNkY2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5MWQzYjcxNzRmZjRiNDEzYTFiNWM4MTBmZGFhMDI2YTdjODY2MDQ5MjllOTFmOWJlYjYyYzA5OGM1MWQ5YWMifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_runner/runtime.py#L43-L76",
+          "version": "repo-lines-v1:sha256:496fd941f8435cca74025075e26064cc67cafc907014d1593d1089ca941fbaf5:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRmYzcwMGRlMWZiODc3NWM0OTA0NDg0N2U5ZjM4YTdlMDYyYjBmNWJiN2Q3MjFkZjI1M2Q3ZWMxYjRmZTVlZmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNmNTZiMTliMmUxZTliNTRmOGFiZGNjNWZkMzgwYzkxN2U1YTY5ZTczZGY5MWVkMTdiOTY3OWRiNDQzMzMxZWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIwYjcwZTJlZjJjMjlhYTMxY2IzNzA0MzNmZDE5NjAwODA3YzYzODVkNWYzNDQ2ODcwODc3MGU4YmMzMjhhNjcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db8b17eb90ba458281eb78fbbb4336e0",
+      "statement": "Scoring revisions 4 and 5 normalize valid English month-name dates and align Cinder module and Lumen retention fact checks with the questions; they apply uniformly offline without changing original native results or answers.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/scoring-contract-v5.json",
+          "version": "repo-file-v1:sha256:c0be50ffeb651458218fc96c03f6517341e71f0e7e5f4577161f60615d1dc4d9"
+        },
+        {
+          "resource": "repo://docs/runbook/benchmarking/full_comparison.md#L229-L254",
+          "version": "repo-lines-v1:sha256:0ab081b98fac9c7177b5512149aac7e037e46655a8e5e9db58a9437ed4bfcaad:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk3MTM5MWZjZTMyNzE4YjFjNGQyYWE2YjlhZWU3OWIwZTJmYWYyMTU5ZDc5MmE1NjZkOGNiOGNjYmM0MGQ5ZjAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0YjgwN2MxZDM4NzExZmE3NTM2OWNjNjk0MjRiY2RkN2NlN2U4YjQ1ODE0MGMzYWU1NGZmZjdhMWQ3NjRiNjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRlY2FlM2JmYTZiODJlYjU2MWYzMzNkNjNmZTA2NGU4NjFhZDRiOTExNzNkNzgwNmYzZTQ3MjAwYzI2NmEzNGEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjExNjNhOWZhMWQwNWE5NjFjY2M3MmEwMTVmMWVjZmRjYjE4OGFiYzRkYWQwMmUwMWIzN2VhZDY4YjVhNDMzMzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_098f7e5165cb4c3db83a7ff4f62e34f1",
+      "statement": "QMD reanswer compares retained and current suites after applying the reviewed answer contract, allowing scoring-only changes while rejecting changed native test input.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark-qmd-host.py#L20-L24",
+          "version": "repo-lines-v1:sha256:105235a10340c481e3e73f17acb80806f5f10367b2e8cbc27fb3fd3ce97652c9:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiY2VkNjQ4MTUyNzA5YWQ2MTMwZmVkYmZlZjJhMDE5YTY2ZGIxYWRmNzQ0NmJmYjM5Njg1ODFkODBjNjFkMTZiOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiZTFjNjk2ZmJlMDg4MjE5NWJlM2Q1YjYxMzk1NzNkMGEwMGUzMWQzYzBmOWE0OTU3ZjY0ZjZhMDEwY2MzYWE1OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTRkMjhjOTJiODVmOTQ4MDBhODRiMzU5OTFiZGQxYThmMzFiOGFlMTY5ODlkYjU2ODVlMThlNDliZDU2MGQzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODkzYmQ2NmUyYmI3MWYzYjhhOTI0MDY0YmJmN2IwN2M1OTAzYTc3M2ZhNGY4YzM1NDYwNjAzODY2NzFkM2E3MyJ9"
+        },
+        {
+          "resource": "repo://scripts/benchmark-qmd-host.py#L65-L77",
+          "version": "repo-lines-v1:sha256:497ef769d3853a16e83d1dadf98063e8f2064acb75298e79344dbd14770c1df8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0NzI0YzAyMTgzNjM5Y2Q3ZWYyNTJlMzIyZThkMGEyZmM4OGU4MjcwNTY4ODViZTllYjc4M2ExMzhiMzkzY2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYwYjMzM2Y3MjhhMjQzODkzMzRkMmQ4YzY4OTEzNjdkOTVlNjFlYjVmZmYwN2Y1OWRkMzFiNzhlMzYxYzU1NmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRhNTk1Njc5N2VmMTk3NGZjMmRmYTBhYjU5MjliMGNmOTg5YzExZDJiNDg1MTI2ZWZhMWIxNmI0ZmY1N2U5YjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI3ZWRhNWE3NmZlOTAwZDY0YzYyN2Q0NmNmOTUwY2FiNjc5YjBjYjdkZTRmYzIwMTgxZTNjNzVlOTI5MTc1OTYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_1c66b55434824a0684f6a44ffc64b5af",
+      "statement": "Deep GBrain imports use the declared ingestion timeout, and deep Hindsight readiness waits use the ingestion or mutation action budget; ordinary helper calls retain their 180-second defaults and the outer action deadline still bounds total execution.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark-deep-unit.py#L45-L59",
+          "version": "repo-lines-v1:sha256:6613353463d784752643908b97f2dd0c6331673986f978e08c8c115fd9fef29c:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyNDI3OWJiOWUwYmE4YTNlODMwOWEyY2UzYzFmMTA0ODhiMWQ1OGYxYmE1NDQxMzM4ZjAxNzZjNGFjNGVlNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImMyN2I4OTI0NDQzMjdkMTM1Y2JmNmI2MjQzYjE0MTQ4NTIzMTViODJmNTRkNGYyNDgxOTg2YmRmNzVlY2YwYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUwMDJhYjBlOWEzNzFmODMyMjdiNmNiNjJiODRhMjY3MTFkOGI2YmI5ZjRmNjc4ZDM1NjMxMjFhM2UzZGU5ZmEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEyNzkxODBkNWE0OGNlZWU0ZDZmMjk2ZTQ3OTc5NzRlNGE4YmZhYmNiNDVjMjJiYWY4ZDJmNGU5YTc3YTZlNjcifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L14-L15",
+          "version": "repo-lines-v1:sha256:f0a12d469b2c1ef542bf4685c3c5601c32cc9c2ec051147cbdc46eb3f906b7c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMzBjY2I1ZDk0MmJlYWI4N2M1Yzg0OTQ5MDQ5NjdlYzdjZTU4YzAyZjcyNzAyY2FiZjlkMmE0Y2RlOWYxOTY5MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTkxNDI0YzNhZjQxYWE4YTY2OGQ0NTU2OGYwMjM3YmFhMGQzYTM2ZTg5MmMzZWNjN2JiMzNiZTM2ODRlNGJmMyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTkxYmYzZDk2ZjFiMTE5Njg4ZGVlYTlhMDA0YjJiM2ZlYmIxODBiYjhmYjIzNDQ2MjU2MTRhZGM4NTk1NjNhYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOTc5NjhmMGEyNDJmOTAyMTg4MTI5MDUyOTBhODc2YjllNmYxZTc0MzY1MWM5MjhkMjFhZmFlMmNiYTA1NGYyMyJ9"
+        },
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L157-L160",
+          "version": "repo-lines-v1:sha256:60091d7aecae1762bd3804edc88f79202140e8353b8f621d587483a653cc8128:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTgyM2MxMjdkNmI0MjRlMTVjNWY0YTY4NDgyYmQ2N2UwZTVmMjk1YTZlZTQ5ODM5YmUwOTcyNDVlMTNjMzgzZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYjBjMjU4NTliNTU5MGYxYzM5YWFkMjgxNWZhNzAxMmM0ZDYxMGE4ZDNkMjhiNTMzZmFhMzNmYzdjM2NmMTQ4OSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZGNiMDdkMDYwNjVkMzk2MzVhYWFhMjdhMTFhZjU1N2ZmODMxN2ZmYTlhOWJjYzVkNjlhZGFkMzFiZTBjZTAxOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDc5ZjMyOTBiYjhiMjE4M2I4MzNjZjg1NGMwY2FmMmZmYjQ3NmJkZGNkNjdiNzFiZDdjOTQxM2QzMDBjNjhiMSJ9"
+        },
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L70-L99",
+          "version": "repo-lines-v1:sha256:8aa7681583630087964d8b9ac8a08f8136fb458b649e0b207bd34a1302c06e84:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNlOGQ4NTIwZDYxODhhMTg0NmRjNmEwYjM3MzBjYTdjMGQ5ZjlmZWI2ODJjNjAwZThmNDRlMWYxY2FjYTMwY2EiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0ZmRiMjRjZTllNjkyNmFlNWIzY2U4NDE5ODI4MDJjMmZhOTQwMjVlNGJhMGJiNTkxOTM2YzY4MjQwNzU0OTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiZDNjYjExNTE3YmNjNDhmMTU0OTNlMDJkYWVmNDJmMTE0NzFhNmE5YWUxODEzZDQyMjc5ZWNiZmVkN2ZkZmIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRjZWI2MGJjOTZjZmZkMjhiMDViMTQxY2ViOWVkOGIzZDNjOGUzOWQ1YjRkMjFmOTZhMzQwYmNhZGRiYTg5NDIifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_targets/gbrain.py#L16-L25",
+          "version": "repo-lines-v1:sha256:bb487541bc75bd8a1ad831072c4bae398d9491bce52772ec61e3f0b2eee063d9:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFkZGYxODU5ZjI4MzkzNDRjMmEwYWI0MDgxMGZlMWRjNTZmNTFkZDcwNWVkNmFlNzM4MTM0NjMzNjIzZTdkZWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwYzFmMTg4ZjE0MmVkN2E4MjQ2ODBiMjA3MTcyYzU1MTliYzYxNGE0OGZkYTdjZjE2N2VkYjhkZGY3OTk1NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU3NDBiMWZiNmVmMmU4ZGU4MDM4YTZmOTlkYTZkZDAxOTlhMzJkMWQ5ZDZiYWUyYjZiZGM5NzJmNTI4YWQwMGQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUyY2M5OTUxMDAxNjBjZjE5M2U0ZGFmN2UwYTJhNjhiNmJkMjJlMzkyOTYyZThkNmFiYWQ4NzQyNzdiM2MzOWIifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_targets/hindsight.py#L36-L47",
+          "version": "repo-lines-v1:sha256:3bf7771708c9f45b28fe13f0da76051d3b01c55711329e80b22382f298c63dfb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkyOTM1MTNkMmEzMGQwZGQxNjNlNjM3ZTcyYjM0ZmY0MGZjNjE5MjhlZTVmNGNlOTcxMDk3NDU4ZGI5ZTgxZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MGZmNjdiNzFiNmRlMTkyZGRkNGRkMTJhOWFlMzQyYzE2Y2QyMmFhYWI5MGQ1MTIxZDQ5NDNmNjNhMjA3ZDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZmYzE5MTVlNWI4YzgyYmU4OGMyMGE1M2JkMTQyNDIxZmUwOGM0Y2M1ODgwZTQ4ZmU4OTBhMzAxZDU0NzdhYjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzMzEzOWRkMjZkYWQ0NzQ0MGRhZWYzNmRiYzUzNDcyOTU4NjQ5MDIyZTg0NmZjZjg2YTliNTllM2ViYzQ1NGQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_65f3ad6579eb444d8694532be0a142c9",
+      "statement": "The ELF deep subprocess runs from the container root so the image configuration resolves the bundled relative tokenizer path, independent of the deep launcher's directory.",
+      "evidence": [
+        {
+          "resource": "repo://config/local/elf.docker.toml#L86-L90",
+          "version": "repo-lines-v1:sha256:3682bd40dea16d1b7abd13181a7689603dcb84bb647c35390d0808233d2dce86:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZmRiYjA1MDI5MTZlODNjY2FkOWFmZTIyMjNmNDRhZWZjODRiZTJmZGRiYjFlZDgyMmNhYTAyZWFlYTA0M2NjOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNmI1NTZhOWZiNzY5M2M2MTgwNTMwZDQwMzFhZjY2ZGQ0MzYzNDdlZmM1M2FiNzE0OWY4NWRmZjMxMzFhZjNiZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmYxNDE3MzI5MDZlYjQ2YzE4NzQ0NTgwMzRkZDc3ZDg5NTA3ZmIxZjgwNzA5YjMxZDMwNDAwZDJlOTI2MDgyYiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMWIyNGE5ZGIwNTY0YjgwOTgyMjI4MDFkNmZlYThjMmY5ZWU4ZDc1YzgwODlmNzkxMGM1M2Q1NGU3YzgyMDkwYiJ9"
+        },
+        {
+          "resource": "repo://docker/benchmark/Dockerfile#L46-L57",
+          "version": "repo-lines-v1:sha256:9dfac183051bf6cb65606eba6e41f54ac91fdf709ec87616ad62500fabaeb751:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhOGMzZjdlZDk2NjQ2NWNlNGM5OWFmM2FlZTQyNmUzZjQ3NWYxMmZhNGM5MWFjNDVjMGVmYmRhYTcxMTdlMGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4YjdiNzY0Njc1OWVjYjU2YmNhNDY3OWQxYzQ5ODA2NWQ5NDUzN2Q0YmEyMDBmOTQ1YTBlNjU1YmE1MTUyMjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFmMTVjY2EwMjMzNGQ4MmYzNjk4MzM4MGRiMWY4YzljYThmMTZmODZjZTU1ZmU0NzBiOGI5YzVmM2VlZjI1YTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNlNWU0ZWFhMDJiODcwYjllMGMzYzkzNGFmZGNlMjFjOTMxMzk4ODc4MzAyMTM1OWFlMmU2NDA5ZjYxYWI5NTIifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L41-L59",
+          "version": "repo-lines-v1:sha256:0d32cf5d49248bcddfd0da66453e790baee2a3dbdeed077ce4ed0d22d1abd43e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM3NmFhZGM1OThlN2Y1YTAwOTc5NjE5MWNhYjJmOTFkM2UzMmY3MDE5NmYzZDQ4OTFmNWNlZDYyZDNkN2JhYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhYjBiZmJjMWViMTNjMmY4ZjI1ZWMwNTY2YjJmMTM4MTU1NTkzZjY1OTU5ZDFmMzk0OTE5OGViOTE1NjIyM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNjMzlhZTIwMjA1YjU1NjNiOTM2YWFiMTNmNDAxM2EyYzljMzRhYTBjOGUxNWNmMzExY2I1OTQ2NDZlMjYyNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiM2UxZGU5NGMwMDJjNmUwNzg3ZTdjMDI5OWRhM2Y5Y2VmNjk1OTMzOWQ0NDVjYTdlZDM3MGY3NTFkMGI2YTQifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_64555354c4e34be59ebc57ca5e4b1985",
+      "statement": "GraphRAG retains per-case cold and warm failures while continuing independent cases, skips warm index reuse after a cold failure, preserves completed operation evidence after warm failure, and keeps the unit failed when any case fails.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_targets/graphrag.py#L557-L569",
+          "version": "repo-lines-v1:sha256:ddcc944dac07ff700e126cf68a0408271e0001532adb808bd2e73dceaceb1fc8:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmZjc5MGNhMmY0NDY0NTEwNzFiZGEzZDBjZWM4YjBhNjQ4NzExY2JlODI3MjYyMjM5YzIzMDZmNWM5YjM1ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRmYmQwMDkzMTRiYzI3MDg0MTY3MzRhMDJhZTVmZjM5YTFlNDhhMDUwYmU5MWY0M2IyZmFhOTIwMDJjNjJiZmMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVmZjgxOWVkNWUyZDQ3YTAwYzA2NDMyNGUwZDg5N2IxOGVlMWIzY2FiZjg4NDdjOWRkNzc0NmU2OTQ4NWE0NWYifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_targets/graphrag.py#L592-L616",
+          "version": "repo-lines-v1:sha256:222dadf913d81a65adeaf56c666231e145b4dc3d4b4243e211c4a856c55680d3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU4N2IxNTQ2ZWE0MmU1OWRhYWZiYTk1NGI2NjliMWQ4OGRhMzQ5NjM5ZmVmMDNkMDgzNTFjYjcyYjU5OTdkZDgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYyNzVjZTI3MmQ0NmYwNzJkNjgyZDYwYmEzYWE2YTIzYjg3NGFiZWQ2ZGMxNjhhNDgwMTYwMzVjY2U4OGM1ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2YjJkMDZmMzIyNTljYjk3MjhmMTVjOTk1MzI3ZGI1YTExYTk5ZGYxNmJhZjFiYTQ3MWE3ZjE1ODNhYjYyZGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4MWE5MGJkZDlmMDRhMTRkYmEyZWRjMmI2Yjk1N2E2ODQ3NzU5MzRhYjg0YTVjY2EyNzY0MWQ2OWI4MDc0YzUifQ"
+        },
+        {
+          "resource": "repo://scripts/benchmark_targets/graphrag.py#L640-L726",
+          "version": "repo-lines-v1:sha256:f4dcc20f9ae128916ec0b058075b489303deaa1291c53ebc8ee431ca925678f1:eyJzZWxlY3RlZExpbmVDb3VudCI6ODcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkOWM1MjA5YjAzNjVlYWJiZmU0ZGY1MTA2N2FhNmExMTg0ZGMxM2U2Mjk4NTIxYjA2NjQ1OWFhNTZkNDRmODAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ4OTNmNDBlMzc4MWViODk2YzgyZDA0NmEwODA2N2ExMWUzNWNkZjJmMWRmYWYyNmZlYTkwYjhkYjY2NzY0MTMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NTI1MDEwOGVmYzFmNWRlNmU2ZTNkODU2NjhhMjk0NmI5ZWVmN2ViZjA3OWRhZTFlYmY5MDg5NjIwMjgxMDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://scripts/tests/test_benchmark_graphrag.py#L13-L66",
+          "version": "repo-lines-v1:sha256:3c4acc8fcaecb0387199e90ee0b89a2af24183e14d7a5738a4a84fb77463fbf6:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcwMDhmODU1NWI5NzIyMjAyM2Q3NjgwZDgyYjFmZTYzMzIxMjAwZjU2YzYzYjhjMzQ4Zjg4NjFhZWIxNTllNTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkN2ZhMmIzZjkwYjYzZGFiNWNlZjM5OGE2Y2QxZjllZGRjMTNiZTdjYjQ4Y2ZiYzcxYmNjNjFhNWVmMTcyNjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmYmNmYmRkZWQ4NmY3NGI1YzIwNzc2Njk3MTM5ZGIwZjEzNTAzYWY4YmRlMmUyNjRlNDlkYzdmMTU5YzgyMzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_7b0745d9a8944a10aa8ba36b5627eba6",
+      "statement": "Deep GBrain updates refresh stale embeddings with the supported embed --source flag before readback, while other scoped commands use --source-id.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L145-L177",
+          "version": "repo-lines-v1:sha256:39763abe8ccdc795ca36ff0da01abfcc80bff53b9d839fe973c5edc6ba1a1611:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkNjNlZjQ1YTUyMzZhZWIyYzViN2U3MmJmMTZlZDE1N2I5ZWEyZTU5NjY5YTAwYzQ5Njk0N2I2ZDNmZjNlY2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlNTNjMWExNTJlYmYwOThmOGRhNDViM2FjMDg0MzRmZTBlMjk2NTNhZmQ3Mjc5YTE0YzRiNzZmYzdkNDVjOTIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc5OWU4Mzg2ODEwMWM1MzlkNzhkOTJmOGQ4YzIyN2VmNjk1MmJiMzcwMGU2OGVlMTA1NWYyMDg0MTBkN2U4ZmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRjOTY4NzYzNDdlMDRhYWZkYzRiZjU5ODU0MjRkNDViMGY3YWY0NmI0NDcwNzM1OGUwYjhlNzI1MGJkNmQ1ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ad6cf84fc40422eaabb51bd3f22425e",
+      "statement": "The deep Mem0 adapter uses native extraction during ingestion, retains extracted memory IDs and progress, and searches with user_id filters and top_k=5.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/benchmark_deep/drivers.py#L180-L212",
+          "version": "repo-lines-v1:sha256:b6772db9edd0a1e2730d56051cb825e02fadfe63020403770ef4a9a812007ef8:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjMTc5YjhjMjhiZTdlYWEwOGE1OWY0MTUwY2JhODVhZjRiZjllNjdiOTQzM2RjYzVmYWU5N2Q4MTU0ZjUwZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFkMTk2MjAwMDVmMzc2NjliMmExZTllMjlhNjgwODRiYTcxOTZkNjZiNTE2YzJjM2JiZjE3MDE2NzdjMTYxMDciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NGEwMGEyYWRiMDJkNWIyY2UwNWFlMmIwNjZiYjQxMGExNTFkYzdmODBhMGJmZWIxNjM3NTFlZjkzMzNlNTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjkxYWYzYTJmZGU5ZmRlNGM3NWZjYTJjOTBiYTAyZTJjZDk2YzdiMWQ1ZTAwNTU5MDVkODM1ZGY3OTNmNzQzMTMifQ"
+        }
+      ]
     }
   ],
   "verification": {
     "by": "openwiki/0.7.1",
-    "at": "2026-10-07T16:16:48.378Z"
+    "at": "2026-10-08T21:07:20.478Z"
   }
 }

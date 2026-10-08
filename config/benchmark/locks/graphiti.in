@@ -1,1 +1,3 @@
-graphiti-core[falkordb]==0.21.0
+graphiti-core[falkordb]>=0.30,<0.31
+# Graphiti imports httpx directly; OpenAI 3 uses httpx2 and no longer supplies it.
+httpx>=0.28,<0.29

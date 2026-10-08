@@ -9,8 +9,8 @@ from typing import Any
 
 from .unit_runtime import classify_failure, combined_status, run_command, wait_port
 
-ADAPTER = Path("/usr/local/bin/real_world_live_adapter")
-QMD_REVISION = "e428df76bc0274d9e93eb7ca3e95673315c42e90"
+ADAPTER = Path(os.environ.get("BENCHMARK_NATIVE_ADAPTER", "/usr/local/bin/real_world_live_adapter"))
+QMD_REVISION = "facd35e01359e59d938bc9418e93fb9318addee3"
 
 def native_operation_receipts(
     target: str, phase: str, fixture: dict[str, Any] | None
@@ -111,6 +111,14 @@ def run_rust_target(target: str, input_dir: Path, artifacts: Path, state_root: P
     }
     ingest_duration_ms = 0.0
     env = os.environ.copy()
+    qmd_mode = os.environ.get("QMD_BENCHMARK_MODE", "hybrid_rerank")
+    if target == "qmd" and qmd_mode not in {"lexical", "hybrid_rerank"}:
+        raise ValueError("unsupported QMD benchmark mode")
+    qmd_models = None
+    if target == "qmd" and qmd_mode == "hybrid_rerank":
+        qmd_models = json.loads(Path(os.environ.get("QMD_MODEL_MANIFEST", "/opt/qmd-models.json")).read_text())
+        for role in ("embed", "generate", "rerank"):
+            env[f"QMD_{role.upper()}_MODEL"] = qmd_models[role]["path"]
     if target == "elf":
         env["ELF_REAL_WORLD_EXTERNAL_EMBEDDING"] = "1"
 
@@ -140,10 +148,10 @@ def run_rust_target(target: str, input_dir: Path, artifacts: Path, state_root: P
             command.extend(
                 (
                     "--qmd-dir",
-                    "/opt/qmd",
+                    os.environ.get("QMD_CHECKOUT", "/opt/qmd"),
                     "--qmd-revision",
                     QMD_REVISION,
-                    "--lexical-only",
+                    "--lexical-only" if qmd_mode == "lexical" else "--rerank",
                 )
             )
         if phase == "warm":
@@ -168,7 +176,7 @@ def run_rust_target(target: str, input_dir: Path, artifacts: Path, state_root: P
     return {
         "schema": "elf.benchmark_unit_result/v4",
         "target": target,
-        "native_mode": "lexical" if target == "qmd" else "external_embedding",
+        "native_mode": qmd_mode if target == "qmd" else "external_embedding",
         "score_eligible": True,
         "result_class": combined_status(phases),
         "warm_reused_state": warm_reused,
@@ -176,6 +184,5 @@ def run_rust_target(target: str, input_dir: Path, artifacts: Path, state_root: P
         "ingest_duration_ms": round(ingest_duration_ms, 3),
         "ingest_duration_measurement": "cold adapter wall time minus native query latency",
         "phases": phases,
+        "model_assets": qmd_models,
     }
-
-

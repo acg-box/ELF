@@ -105,11 +105,12 @@ pub(super) fn elf_replay_command(trace_id: Uuid, project_id: &str) -> String {
 	)
 }
 
-pub(super) fn qmd_replay_command(query: &str, collection: &str) -> String {
+pub(super) fn qmd_replay_command(query: &str, collection: &str, rerank: bool) -> String {
 	format!(
-		"npx tsx src/cli/qmd.ts query {} -c {} --json --no-rerank --min-score 0 -n 5",
-		shell_quote(format!("lex: {query}\nvec: {query}").as_str()),
-		shell_quote(collection)
+		"node dist/cli/qmd.js query {} -c {} --json {} --min-score 0 -n 5",
+		shell_quote(query),
+		shell_quote(collection),
+		if rerank { "" } else { "--no-rerank" }
 	)
 }
 

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d10cbccf8031f908eeff0e9243aceda91df979b4c335c2aea89db95ed0d8f9b6",
+  "claims": [
+    {
+      "id": "claim_00a661f1458c46b89b197bd1e97bff40",
+      "statement": "The closed October 8 campaign retains 768 planned original core answers, 740 completed cold native queries, 739 completed warm native queries, and 739 isolated answers; five recovery conditions are separate from the original selection.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/evidence/2026-10-08-full-native/campaign.json",
+          "version": "repo-file-v1:sha256:6d359d9d4d4f0c39315da5294d14c790cbba205781589f680155a92137d20731"
+        }
+      ]
+    },
+    {
+      "id": "claim_29bb2c1563274eae80e75f771a3d4d14",
+      "statement": "The cumulative campaign reports USD 8.742426971 paid and USD 0.284895900 reserved for unknown costs across 33552 ledger requests, below its USD 20 authorization; provider costs already include cache effects.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/evidence/2026-10-08-full-native/accounting/summary.json",
+          "version": "repo-file-v1:sha256:523fdddabcb9bcef83fc2cfcfdb6067ca9434b281847ee1656b79aa9cf515c8b"
+        }
+      ]
+    },
+    {
+      "id": "claim_251013f734e7431ab0dc82fe0ba05559",
+      "statement": "ELF, Hindsight, and Mem0 scale-1000 recoveries stopped on upstream HTTP 429 before retrieval was measured; the separate GBrain mutation recovery completed six updates, six deletes, and twelve correct answers without replacing the original failed updates.",
+      "evidence": [
+        {
+          "resource": "repo://config/benchmark/evidence/2026-10-08-full-native/native-mutations.json",
+          "version": "repo-file-v1:sha256:ab4d00691816d13ed59aada200f71b6941fc548ee1646e1379f30335fdefc134"
+        },
+        {
+          "resource": "repo://docs/evidence/benchmarking/2026-10-08-full-native-comparison.md#L76-L86",
+          "version": "repo-lines-v1:sha256:76b01b6d56c43a755ecc1db37257d6cb8a2cddbf87408affd0e4fcd5fcc2ab96:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVlNzQwN2ExYzNmNmNkMWI1YjMwNGZiYTQ4NmNiODdkMjhlMmI4ZDEyNzU4Y2YyZjRhZDdhYmQxYTBhOGFhOGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4NDYxNDQ2MzcyYzk0MDgwMTU5MmFlMzYyMmJiMTAzYzQxYjViYmU1MDRjMmExYWY3MDNkY2E1NWYyZmUwNGYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImFiNjVkZDVhZTBmNDY3NWRlM2I3NWVlZDc4OTYwNTYyNTBiN2RhYThkMjU5ZDI5OWJkZWM1NDBiNWU3MTljZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVkZDAzNjM3YWMwNDliZjIxN2NkOWQ2MjMxZmE4Yzk0NTMwNDY0NDU5OTdkOWE1ZWRiYmUyZWI5YzJkOWZiNGIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ea02bb6db09b4ee1ae3651650ca0baf8",
+      "statement": "The 102 common repair trials contain 89 validation passes, 11 native preparation blockers, and two executed validation failures; the small repeated task set and successful file baseline prevent a general memory superiority claim.",
+      "evidence": [
+        {
+          "resource": "repo://docs/evidence/benchmarking/2026-10-08-full-native-comparison.md#L88-L92",
+          "version": "repo-lines-v1:sha256:217b39568549c5fc31c850aea3bea3ac61ece8847a06965c38d7be163730f299:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYTJkNDM5YWUzZWVhNjFkNjE4NzQwMTczN2MyYzU0YjQ2ZDBlYTI0ZmYxMGUyY2JiZjhhZmY1YTNhYzg5NzFkZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWY5ZWY3MWI4MmUwNGNjMWU1MmRiYmRhZjRlMDBhYTgwMzRkOTg3NDMzMTQzZmE0N2E2N2Y1NmViOGFiMWVkZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZWQxZGVhM2I1YzE5OWI4OTk1YjdkNjYxOTliYjE5NTgwMDE3ZGUwYTAyMWE1ZWNlNTVkOWNmMWRkMmZhOWMzMyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYzkyYzBkNWViZjkwYjVhY2YyZDg3OTVjZGE5YjM4NjIxNmRkMWVkNjcyZDk3MTMwNDAyZmFiOWMxOGEwMGFhOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_e1d6218a2a7f49c5b936d925341e8613",
+      "statement": "ELF's independent behavior condition scored 41/42; its failed answer returned unknown despite the required fact appearing in the first supplied context, so the result separates reader failure from missing retrieval evidence.",
+      "evidence": [
+        {
+          "resource": "repo://docs/evidence/benchmarking/2026-10-08-full-native-comparison.md#L100-L106",
+          "version": "repo-lines-v1:sha256:c0615eb1f63cebec64072a88b52f870d24c9d996b91c9731ed2e613312b326f5:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzc2OTdmNGY0OGYyNmRmZjdkMzliNTE4M2YzNzZlNjY0YWQ2YjhlYTM5NDVhYzQ2MGMxNDVmYmY4Y2E2NmM4OSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNzljZjhiNDdhNWM5NGRiN2Q1Yjc4OWYzNTMwNTM1YWNmOGQwYTQ3NzdkNDczYTFjZDdmZTExYmIxZTM5M2YyOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTQwM2FjMjc2YzdiM2Q5NWFhYTBkNjk5ZTM4MzkyMjM0YmFjMDRkZGI1MDAxYzZhMmRlNmRjZDA4NDBiYjY1ZiIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjczMDZiMTU4OTUwNjE4ZTgzN2EyOGY5MGQyZTQzM2Y0ODg4ZGIxNTZjOGQ0Y2Q0NWNiODVmYmE0NTczMmFmNiJ9"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.7.1",
+    "at": "2026-10-08T21:07:20.478Z"
+  }
+}

@@ -21,6 +21,36 @@ OPENVIKING = load_script(
 
 
 class BenchmarkAdaptersTests(BenchmarkCase):
+    def test_graphrag_cli_does_not_shadow_the_native_package(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            packages = root / 'packages'
+            cli = packages / 'graphrag/cli'
+            cli.mkdir(parents=True)
+            (packages / 'graphrag/__init__.py').write_text('')
+            (cli / '__init__.py').write_text('')
+            (cli / 'main.py').write_text('def app(): print("native-cli-resolved")\n')
+            (packages / 'litellm.py').write_text('def completion(**kwargs): pass\nasync def acompletion(**kwargs): pass\n')
+            state = root / 'state'
+            state.mkdir()
+            with mock.patch.dict(GRAPHRAG.os.environ, {'PYTHONPATH': str(packages)}):
+                GRAPHRAG._run_cli([str(GRAPHRAG.GRAPHRAG_EXECUTABLE), '--help'], cwd=state,
+                    stdout_path=root / 'stdout.log', stderr_path=root / 'stderr.log', timeout=5)
+            self.assertEqual((root / 'stdout.log').read_text().strip(), 'native-cli-resolved')
+
+    def test_graphrag_retains_native_failure_logs_without_credentials(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory); (root / "logs").mkdir()
+            (root / "logs/index.log").write_text("native error with local-test-credential")
+            result=types.SimpleNamespace(returncode=1, stdout="pipeline error", stderr="")
+            with mock.patch.object(GRAPHRAG.subprocess, "run", return_value=result), \
+                 mock.patch.dict(GRAPHRAG.os.environ, {"CHAT_API_KEY":"local-test-credential"}):
+                with self.assertRaises(GRAPHRAG.GraphRAGProductFailure):
+                    GRAPHRAG._run_cli([str(GRAPHRAG.GRAPHRAG_EXECUTABLE), "index"], cwd=root,
+                        stdout_path=root / "artifacts/stdout.log", stderr_path=root / "artifacts/stderr.log", timeout=5)
+            self.assertEqual((root / "artifacts/native-logs/index.log").read_text(), "native error with [redacted]")
+            self.assertEqual((root / "artifacts/stdout.log").read_text(), "pipeline error")
+
     def test_graphiti_preserves_the_requested_response_schema(self) -> None:
         class ResponseModel:
             @staticmethod
@@ -37,6 +67,8 @@ class BenchmarkAdaptersTests(BenchmarkCase):
             response_format["json_schema"]["schema"], ResponseModel.model_json_schema()
         )
         self.assertFalse(response_format["json_schema"]["strict"])
+        self.assertEqual(GRAPHITI._chat_response_format(ResponseModel, "json_object"),
+                         {"type": "json_object"})
 
 
     def test_graphiti_rejects_schema_documents_and_preserves_stale_native_contexts(
@@ -87,6 +119,17 @@ class BenchmarkAdaptersTests(BenchmarkCase):
         )
         self.assertEqual(len(native), 1)
 
+
+    def test_openviking_reaps_server_after_graceful_shutdown_timeout(self) -> None:
+        process, log = mock.Mock(), mock.Mock()
+        process.returncode = -9
+        process.wait.side_effect = [OPENVIKING.subprocess.TimeoutExpired("server", 60), -9]
+        receipt = OPENVIKING._stop_server(process, log)
+        self.assertTrue(receipt["forced_kill"])
+        process.terminate.assert_called_once_with()
+        process.kill.assert_called_once_with()
+        self.assertEqual(process.wait.call_args_list, [mock.call(timeout=60), mock.call(timeout=15)])
+        log.close.assert_called_once_with()
 
     def test_openviking_uses_native_uri_prefixes_dimensions_and_mutations(self) -> None:
         source_map = {
@@ -191,6 +234,10 @@ class BenchmarkAdaptersTests(BenchmarkCase):
             with mock.patch.dict(
                 OPENVIKING.os.environ,
                 {
+                    "CHAT_API_BASE": "https://provider.test/v1",
+                    "CHAT_API_KEY": "protected",
+                    "CHAT_MODEL": "deepseek/deepseek-v4.1-flash",
+                    "CHAT_REASONING_EFFORT": "low",
                     "EMBEDDING_API_BASE": "https://provider.test/v1",
                     "EMBEDDING_API_KEY": "protected",
                     "EMBEDDING_MODEL": "Qwen3-Embedding-8B",
@@ -217,6 +264,10 @@ class BenchmarkAdaptersTests(BenchmarkCase):
         )
         self.assertEqual(config["storage"]["vectordb"]["dimension"], 4096)
         self.assertEqual(config["embedding"]["dense"]["dimension"], 4096)
+        self.assertTrue(config["auto_generate_l0"])
+        self.assertTrue(config["auto_generate_l1"])
+        self.assertEqual(config["default_search_mode"], "thinking")
+        self.assertEqual(config["vlm"]["model"], "deepseek/deepseek-v4.1-flash")
 
 
     def test_readiness_repairs_remain_native_and_bounded(self) -> None:
@@ -248,5 +299,23 @@ class BenchmarkAdaptersTests(BenchmarkCase):
         self.assertEqual(call_args["dimensions"], 4096)
         self.assertEqual(call_args["allowed_openai_params"], ["dimensions"])
         self.assertEqual(settings["vector_store"]["vector_size"], 4096)
-
-
+    def test_openviking_directory_ingest_maps_returned_native_identifiers(self):
+        class Client:
+            def __init__(self): self.calls = 0
+            def add_resource(self, path, **kwargs):
+                self.calls += 1
+                self.paths = list(Path(path).glob('*.txt'))
+                return {'status':'success','root_uri':'viking://native/actual',
+                        'queue_status':{'Embedding':{'processed':len(self.paths),'error_count':0}}}
+            def ls(self, uri, recursive):
+                return [{'isDir':True,'name':p.stem,'uri':uri+'/'+p.stem} for p in self.paths]
+        client=Client()
+        job={'job_id':'j_bulk','corpus':{'items':[{'evidence_id':f'e_{i}','text':f'fact {i}'} for i in range(3)]}}
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            uri,mapping,paths=OPENVIKING._ingest_job(client,job,job_index=0,
+                source_dir=root/'sources',raw_dir=root/'raw')
+        self.assertEqual(client.calls,1)
+        self.assertEqual(uri,'viking://native/actual')
+        self.assertEqual(set(mapping.values()),{'e_0','e_1','e_2'})
+        self.assertTrue(all(key.startswith(uri+'/') for key in mapping))

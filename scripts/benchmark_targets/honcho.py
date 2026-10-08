@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 
-HONCHO_REVISION = "93dcf59c4a4225bb020b20c628799737fefae318"
+HONCHO_REVISION = "06ed1929cf017c333a87c41d130bb6a0605d91c0"
 HONCHO_REPO = Path(os.environ.get("HONCHO_REPO_DIR", "/app"))
 
 
@@ -79,11 +79,15 @@ def _search(
     session: Any,
     query: str,
     identity: dict[str, str],
+    *,
+    deleted_scope: bool = False,
 ) -> tuple[list[str], list[dict[str, str]], list[dict[str, Any]], float]:
     started = time.monotonic()
     try:
         messages = session.search(query=query, limit=5)
     except Exception as error:  # noqa: BLE001 - converted to typed product failure
+        if deleted_scope and getattr(error, "status_code", None) == 404:
+            return [], [], [{"deleted_scope_search_http_status": 404}], (time.monotonic() - started) * 1000
         raise HonchoProductFailure(f"Honcho session search failed: {error}") from error
     latency_ms = (time.monotonic() - started) * 1000.0
     evidence_ids: list[str] = []
@@ -92,10 +96,8 @@ def _search(
     for message in messages:
         native.append(_message_json(message))
         evidence_id = identity.get(message.id)
-        if evidence_id is None:
-            continue
         contexts.append({"evidence_id": evidence_id, "text": message.content})
-        if evidence_id not in evidence_ids:
+        if evidence_id is not None and evidence_id not in evidence_ids:
             evidence_ids.append(evidence_id)
     return evidence_ids, contexts, native, latency_ms
 
@@ -218,19 +220,17 @@ def run_honcho(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str, A
                             f"unsupported Honcho operation {operation['type']}"
                         )
 
-            if deleted:
-                evidence_ids, contexts, native_search, latency_ms = [], [], [], 0.0
-            else:
-                evidence_ids, contexts, native_search, latency_ms = _search(
-                    sessions[job_id], job["prompt"]["content"], identities[job_id]
-                )
+            evidence_ids, contexts, native_search, latency_ms = _search(
+                sessions[job_id], job["prompt"]["content"], identities[job_id],
+                deleted_scope=deleted,
+            )
             rows.append(
                 {
                     "job_id": job_id,
                     "classification": "completed",
                     "evidence_ids": evidence_ids,
                     "contexts": contexts,
-                    "returned_count": len(native_search),
+                    "returned_count": sum("id" in row for row in native_search),
                     "latency_ms": latency_ms,
                     "native_status": "completed",
                     "failure": None,

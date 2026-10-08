@@ -1,0 +1,64 @@
+{
+  "schema": "elf.benchmark_answer_contract/v1",
+  "revision": 5,
+  "interpretation": "Deterministic requested-fact checks, not a general semantic judge. Public disclosure requires explicit public-source support; permission for an internal summary does not establish public permission.",
+  "corrections": {
+    "core-scope-nova": {
+      "query": "What public Nova deployment fact remains after the credential was deleted?",
+      "reason": "The source permits an internal project summary only. A public disclosure question has no explicitly authorized public answer.",
+      "qrels": {
+        "answer_facts": [],
+        "expect_unsupported": true
+      }
+    },
+    "knowledge-meridian-recovery": {
+      "query": "If Meridian's canary fails its latency gate, what sequence restores service?",
+      "reason": "The question asks for the recovery sequence, not the deployment percentage or the failure threshold. The drain stem accepts drain, drained, and draining.",
+      "qrels": {
+        "answer_facts": [
+          "drain",
+          "last signed release"
+        ],
+        "relevant_evidence": [
+          "knowledge_meridian_action"
+        ]
+      }
+    },
+    "repo-delete-retired-runbook": {
+      "query": "Which Meridian recovery runbook is active?",
+      "reason": "The requested fact is the active path. The recovery actions are not requested.",
+      "qrels": {
+        "answer_facts": [
+          "docs/runbooks/meridian.md"
+        ]
+      }
+    },
+    "repo-delete-deprecated-module": {
+      "query": "Which module owns Cinder retry policy?",
+      "reason": "The question requests a module identity, not its repository path. Accept cinder-runtime with or without the packages prefix, and reject the retired module identity with or without that prefix.",
+      "qrels": {
+        "answer_facts": [
+          "cinder-runtime"
+        ],
+        "forbidden_answer_facts": [
+          "cinder-legacy"
+        ]
+      }
+    },
+    "knowledge-lumen-handbook": {
+      "query": "How long does Lumen retain operational events, and which exception needs legal approval?",
+      "reason": "The question asks for retention and the exception requiring legal approval. It does not ask for the additional case identifier needed to execute that exception.",
+      "qrels": {
+        "answer_facts": [
+          "30 days",
+          "60 days",
+          "written Legal approval"
+        ]
+      }
+    }
+  },
+  "source_trace_measurement": "native_context_rows",
+  "provenance_correction": "Measure the fraction of returned native context rows that map to a source. Multiple chunks or consolidated facts may share a source; a shared source is not missing provenance.",
+  "calendar_date_normalization": "unambiguous_english_month_names",
+  "date_normalization_boundary": "Validate English month-name calendar dates and canonicalize them to ISO dates for required and forbidden fact matching. Reject invalid dates and do not interpret ambiguous numeric date order. This changes scoring only; preserve original answers and apply uniformly across products."
+}

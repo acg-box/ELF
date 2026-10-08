@@ -16,15 +16,13 @@ pub(crate) fn run_qmd_command(
 	qmd_args: &[&str],
 	log_path: &Path,
 ) -> Result<String> {
-	let mut command = Command::new("npx");
+	let mut command = Command::new("node");
 
 	command
 		.current_dir(&args.qmd_dir)
 		.env("HOME", home_dir)
 		.env("XDG_CACHE_HOME", home_dir.join(".cache"))
-		.env("QMD_FORCE_CPU", "1")
-		.arg("tsx")
-		.arg("src/cli/qmd.ts");
+		.arg("dist/cli/qmd.js");
 
 	for arg in qmd_args {
 		command.arg(arg);

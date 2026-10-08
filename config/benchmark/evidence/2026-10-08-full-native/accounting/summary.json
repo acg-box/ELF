@@ -1,0 +1,40 @@
+{
+  "not_final": false,
+  "generated_at_unix": 1791493448.648221,
+  "ledger_sha256": "36e3579bef1a7483376f3be4b956eaaad743a79d129a61c81a6f598d12234f03",
+  "ceiling_usd": 20,
+  "ledger_metadata_ceiling_usd": 20,
+  "budget_authorizations": [
+    {
+      "at_unix": 1791476539.7283368,
+      "previous_ceiling_usd": 10,
+      "ceiling_usd": 20,
+      "user_instruction": "\u8d39\u7528\u6269\u5927\u5141\u8bb8\u5230$20",
+      "scope": "Cumulative campaign API expenditure, including previous attempts, failed requests, and unknown reservations."
+    }
+  ],
+  "prior_paid_usd": 0.002103636,
+  "reported_paid_usd": 8.742426970999999,
+  "held_unknown_or_pending_usd": 0.2848959,
+  "conservative_exposure_usd": 9.027322870999999,
+  "request_count": 33552,
+  "observed_completion_usd_per_million_tokens": {
+    "0.6": {
+      "requests": 7804,
+      "completion_tokens": 6405790,
+      "reported_completion_cost_usd": 3.8434740000000076,
+      "first_ordinal": 2,
+      "last_ordinal": 33543
+    },
+    "1.2": {
+      "requests": 3235,
+      "completion_tokens": 2714820,
+      "reported_completion_cost_usd": 3.2577839999999996,
+      "first_ordinal": 12063,
+      "last_ordinal": 20717
+    }
+  },
+  "attribution_boundary": "Log filenames identify retained invocation groups. Earlier pilot requests without a current campaign log remain unattributed; this does not exclude their costs. An invocation can contain both native preparation and reader calls.",
+  "boundary": "Reported receipt costs include caching. Different observed billing rates prohibit intrinsic product cost rankings. Unknown costs retain conservative reservations after consumers stopped; this is not a final provider invoice. Local compute, CI and Codex usage are excluded.",
+  "snapshot_status": "closed_campaign_with_retained_failures"
+}

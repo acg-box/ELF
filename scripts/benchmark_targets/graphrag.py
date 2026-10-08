@@ -1,8 +1,9 @@
-"""GraphRAG local-search benchmark adapter for the pinned 3.1.0 API."""
+"""GraphRAG local-search benchmark adapter for the pinned 3.2.0 API."""
 
 from __future__ import annotations
 
 import asyncio
+import copy
 import dataclasses
 import hashlib
 import importlib.metadata
@@ -10,20 +11,23 @@ import json
 import os
 import re
 import subprocess
+import sys
 import time
 from enum import Enum
 from pathlib import Path
 from typing import Any
 
+from benchmark_targets.unit_runtime import combined_status, sanitized_error
 
-GRAPHRAG_VERSION = "3.1.0"
+
+GRAPHRAG_VERSION = "3.2.0"
 GRAPHRAG_EXECUTABLE = Path(
     os.environ.get("GRAPHRAG_EXECUTABLE", "/opt/graphrag-venv/bin/graphrag")
 )
-CHAT_MODEL = "gpt-5.6-luna"
-CHAT_REASONING_EFFORT = "high"
-EMBEDDING_MODEL = "Qwen3-Embedding-8B"
-EMBEDDING_DIMENSIONS = 4096
+CHAT_MODEL = os.environ.get("CHAT_MODEL", "gpt-5.6-luna")
+CHAT_REASONING_EFFORT = os.environ.get("CHAT_REASONING_EFFORT", "high")
+EMBEDDING_MODEL = os.environ.get("EMBEDDING_MODEL", "Qwen3-Embedding-8B")
+EMBEDDING_DIMENSIONS = int(os.environ.get("EMBEDDING_DIMENSIONS", "4096"))
 TOP_K = 5
 FORBIDDEN_FIXTURE_KEYS = {
     "expected_answer",
@@ -266,11 +270,16 @@ def _run_cli(
     timeout: int,
 ) -> float:
     started = time.monotonic()
+    env = os.environ.copy()
+    if command[0] == str(GRAPHRAG_EXECUTABLE):
+        command = [sys.executable, "-m", "benchmark_targets.graphrag_transport", *command[1:]]
+        module_root = str(Path(__file__).resolve().parents[1])
+        env["PYTHONPATH"] = module_root + (os.pathsep + env["PYTHONPATH"] if env.get("PYTHONPATH") else "")
     try:
         completed = subprocess.run(
             command,
             cwd=cwd,
-            env=os.environ.copy(),
+            env=env,
             check=False,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -279,9 +288,21 @@ def _run_cli(
         )
     except subprocess.TimeoutExpired as error:
         stdout_path.parent.mkdir(parents=True, exist_ok=True)
-        stdout_path.write_text(error.stdout or "", encoding="utf-8")
-        stderr_path.write_text(error.stderr or "", encoding="utf-8")
+        stdout_path.write_text((error.stdout or b"").decode(errors="replace") if isinstance(error.stdout, bytes) else error.stdout or "", encoding="utf-8")
+        stderr_path.write_text((error.stderr or b"").decode(errors="replace") if isinstance(error.stderr, bytes) else error.stderr or "", encoding="utf-8")
         raise GraphRAGProductFailure("GraphRAG native operation timed out") from error
+    finally:
+        for source in (cwd / "logs").rglob("*"):
+            if not source.is_file():
+                continue
+            text = source.read_text(errors="replace")
+            for name in ("CHAT_API_KEY", "EMBEDDING_API_KEY"):
+                value = os.environ.get(name)
+                if value:
+                    text = text.replace(value, "[redacted]")
+            output = stdout_path.parent / "native-logs" / source.relative_to(cwd / "logs")
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_text(text)
     stdout_path.parent.mkdir(parents=True, exist_ok=True)
     stdout_path.write_text(completed.stdout, encoding="utf-8")
     stderr_path.write_text(completed.stderr, encoding="utf-8")
@@ -478,11 +499,21 @@ def _query_job(
     evidence_ids = evidence_ids_from_context(
         context_data, tables["text_units"], tables["documents"], source_map
     )
+    contexts = []
+    for source in source_rows[:TOP_K]:
+        text = source.get("text")
+        if not isinstance(text, str):
+            raise GraphRAGAdapterFailure("Native GraphRAG source context omitted text")
+        parents = evidence_ids_from_context({"sources": [source]},
+            tables["text_units"], tables["documents"], source_map)
+        for evidence_id in parents or [None]:
+            contexts.append({"evidence_id": evidence_id, "text": text})
     return (
         {
             "job_id": job["job_id"],
             "classification": "completed",
             "evidence_ids": evidence_ids,
+            "contexts": contexts,
             "returned_count": min(len(source_rows), TOP_K),
             "latency_ms": round(latency_ms, 3),
             "native_status": "completed",
@@ -523,10 +554,28 @@ def _index_readiness(root: Path) -> dict[str, Any]:
     }
 
 
+def _failed_case(job: dict[str, Any], error: Exception) -> dict[str, Any]:
+    if isinstance(error, subprocess.TimeoutExpired):
+        classification = "timeout_failed"
+    elif isinstance(error, GraphRAGProductFailure):
+        classification = "product_failed"
+    else:
+        classification = "adapter_failed"
+    return {
+        "job_id": job["job_id"], "classification": classification,
+        "evidence_ids": [], "contexts": [], "returned_count": 0,
+        "latency_ms": 0, "native_status": "failed",
+        "failure": f"{type(error).__name__}: {sanitized_error(error)}",
+    }
+
+
 def run_graphrag(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str, Any]:
     """Run one cold native index pass and reuse the exact indexes for warm search."""
     _required_environment()
     _verify_version()
+    from benchmark_targets.graphrag_transport import install_json_transport
+
+    install_json_transport()
     jobs = _load_jobs(input_dir)
     state_dir.mkdir(parents=True, exist_ok=True)
     receipt_path = state_dir / "cold-index.json"
@@ -543,20 +592,24 @@ def run_graphrag(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str,
         key = _job_key(index, job["job_id"])
         root = state_dir / "indexes" / key
         roots.append(root)
-        index_latency_ms = _index_job(root, raw_root / "cold" / key, job)
-        native_readiness = _index_readiness(root)
-        native_readiness["index_latency_ms"] = round(index_latency_ms, 3)
-        readiness[job["job_id"]] = native_readiness
-        row, _ = _query_job(
-            root,
-            job,
-            raw_root / "cold" / key / "local-search.json",
-            {
-                _source_key(item["evidence_id"]): item["evidence_id"]
-                for item in job["corpus"]["items"]
-            },
-        )
-        native_readiness["reuse_state_sha256"] = _state_sha256(root)
+        try:
+            index_latency_ms = _index_job(root, raw_root / "cold" / key, job)
+            native_readiness = _index_readiness(root)
+            native_readiness["index_latency_ms"] = round(index_latency_ms, 3)
+            row, _ = _query_job(
+                root,
+                job,
+                raw_root / "cold" / key / "local-search.json",
+                {
+                    _source_key(item["evidence_id"]): item["evidence_id"]
+                    for item in job["corpus"]["items"]
+                },
+            )
+            native_readiness["reuse_state_sha256"] = _state_sha256(root)
+            readiness[job["job_id"]] = native_readiness
+        except Exception as error:
+            row = _failed_case(job, error)
+            _write_json(raw_root / "cold" / key / "failure.json", row)
         cold_rows.append(row)
 
     receipt = {
@@ -570,6 +623,7 @@ def run_graphrag(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str,
                 ],
             }
             for index, job in enumerate(jobs)
+            if job["job_id"] in readiness
         },
     }
     _write_json(receipt_path, receipt)
@@ -586,58 +640,87 @@ def run_graphrag(input_dir: Path, artifacts: Path, state_dir: Path) -> dict[str,
     for index, job in enumerate(jobs):
         root = roots[index]
         key = _job_key(index, job["job_id"])
-        current_hash = _state_sha256(root)
-        expected_hash = receipt["indexes"][job["job_id"]]["output_state_sha256"]
-        if current_hash != expected_hash:
-            raise GraphRAGAdapterFailure(
-                f"GraphRAG warm index changed before reuse for {job['job_id']}"
+        if job["job_id"] not in receipt["indexes"]:
+            row = dict(cold_rows[index], native_status="not_run")
+            warm_rows.append(row)
+            _write_json(raw_root / "warm" / key / "failure.json", row)
+            continue
+        operations = []
+        try:
+            current_hash = _state_sha256(root)
+            expected_hash = receipt["indexes"][job["job_id"]]["output_state_sha256"]
+            if current_hash != expected_hash:
+                raise GraphRAGAdapterFailure(
+                    f"GraphRAG warm index changed before reuse for {job['job_id']}"
+                )
+            warm_readiness[job["job_id"]] = {
+                "output_state_sha256": current_hash,
+                "reused_cold_index": True,
+            }
+            if job.get("operations"):
+                updated = copy.deepcopy(job)
+                items = {item["evidence_id"]: item for item in updated["corpus"]["items"]}
+                for op in job["operations"]:
+                    if op["type"] == "delete":
+                        items.pop(op["evidence_id"])
+                    else:
+                        items[op["evidence_id"]]["text"] = op["text"]
+                updated["corpus"]["items"] = list(items.values())
+                _materialize_job(root, updated)
+                elapsed = _run_cli([str(GRAPHRAG_EXECUTABLE), "index", "--root", str(root), "--method", "standard"],
+                    cwd=root, stdout_path=raw_root / "warm" / key / "reindex.stdout.log",
+                    stderr_path=raw_root / "warm" / key / "reindex.stderr.log", timeout=1800)
+                operations = [{"requested_type": op["type"], "native_type": "rebuild_index",
+                    "classification": "completed", "native_success": True} for op in job["operations"]]
+                warm_readiness[job["job_id"]].update(reindexed=True, reindex_latency_ms=elapsed)
+            row, _ = _query_job(
+                root,
+                job,
+                raw_root / "warm" / key / "local-search.json",
+                {
+                    _source_key(item["evidence_id"]): item["evidence_id"]
+                    for item in job["corpus"]["items"]
+                },
             )
-        warm_readiness[job["job_id"]] = {
-            "output_state_sha256": current_hash,
-            "reused_cold_index": True,
-        }
-        row, _ = _query_job(
-            root,
-            job,
-            raw_root / "warm" / key / "local-search.json",
-            {
-                _source_key(item["evidence_id"]): item["evidence_id"]
-                for item in job["corpus"]["items"]
-            },
-        )
+            row["operations"] = operations
+        except Exception as error:
+            row = _failed_case(job, error)
+            row["operations"] = operations
+            _write_json(raw_root / "warm" / key / "failure.json", row)
         warm_rows.append(row)
     _write_json(raw_root / "warm" / "index-readiness.json", warm_readiness)
 
+    phases = {
+        "cold": {
+            "status": next((row["classification"] for row in cold_rows if row["classification"] != "completed"), "completed"),
+            "jobs": cold_rows,
+            "adapter_metadata": {
+                "index_reused": False,
+                "native_index_count": len(readiness),
+                "graphrag_version": GRAPHRAG_VERSION,
+            },
+        },
+        "warm": {
+            "status": next((row["classification"] for row in warm_rows if row["classification"] != "completed"), "completed"),
+            "jobs": warm_rows,
+            "adapter_metadata": {
+                "index_reused": True,
+                "native_index_count": len(readiness),
+                "graphrag_version": GRAPHRAG_VERSION,
+            },
+        },
+    }
     return {
         "schema": "elf.benchmark_unit_result/v4",
         "target": "graphrag",
         "native_mode": "native_local_search",
         "score_eligible": True,
-        "result_class": "completed",
-        "warm_reused_state": True,
+        "result_class": combined_status(phases),
+        "warm_reused_state": bool(readiness),
         "ingest_count": 1,
         "ingest_duration_ms": round(
             sum(float(value["index_latency_ms"]) for value in readiness.values()),
             3,
         ),
-        "phases": {
-            "cold": {
-                "status": "completed",
-                "jobs": cold_rows,
-                "adapter_metadata": {
-                    "index_reused": False,
-                    "native_index_count": len(roots),
-                    "graphrag_version": GRAPHRAG_VERSION,
-                },
-            },
-            "warm": {
-                "status": "completed",
-                "jobs": warm_rows,
-                "adapter_metadata": {
-                    "index_reused": True,
-                    "native_index_count": len(roots),
-                    "graphrag_version": GRAPHRAG_VERSION,
-                },
-            },
-        },
+        "phases": phases,
     }

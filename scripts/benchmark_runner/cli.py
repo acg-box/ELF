@@ -12,6 +12,7 @@ from typing import Any
 
 from benchmark_report.modes import publish_modes
 from benchmark_contract import evaluate_unit, load_json, materialize_product_fixtures, sha256_json, validate_manifest, validate_suite
+from benchmark_contract.review import review_suite
 from . import runtime
 from .answers import attach_shared_answers, failure_unit
 from .baselines import BASELINES, run_baseline, target_contract
@@ -35,8 +36,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--job-limit", type=int)
     parser.add_argument("--artifact-root", type=Path)
     parser.add_argument("--resume", type=Path, help="Reuse successful receipts from a matching prior run")
+    parser.add_argument("--reanswer", type=Path, help="Recompute all shared answers from a complete retained bundle")
+    parser.add_argument("--rescore", type=Path, help="Apply the current answer contract without provider calls")
     parser.add_argument("--max-seconds", type=int, default=1800)
-    parser.add_argument("--max-units", type=int, default=32)
+    parser.add_argument("--max-units", type=int, default=64)
     parser.add_argument("--skip-build", action="store_true")
     parser.add_argument("--allow-dirty", action="store_true")
     return parser.parse_args()
@@ -72,8 +75,13 @@ def main() -> int:
     args = parse_args()
     if args.max_seconds <= 0 or args.max_units <= 0:
         raise ValueError("budgets must be positive")
+    if getattr(args, "reanswer", None) or getattr(args, "rescore", None):
+        from .reanswer import run
+
+        return run(args)
     manifest = load_json(args.manifest)
     validate_manifest(manifest)
+    answer_contract = load_json(REPO / manifest["answer_contract"]) if manifest.get("answer_contract") else None
     known = {t["id"] for t in manifest["targets"]} | set(BASELINES)
     if args.only_target and args.only_target not in known:
         raise ValueError(f"unknown or retired target: {args.only_target}")
@@ -87,6 +95,7 @@ def main() -> int:
         if entry["id"] in selected:
             original = load_json(REPO / entry["path"])
             validate_suite(original)
+            original = review_suite(original, answer_contract)
             suites[entry["id"]] = select_suite(original, args.mode, args.job_limit)
     targets = [target_contract(name, selected) for name in BASELINES]
     if args.mode != "quick":
@@ -128,6 +137,7 @@ def main() -> int:
                             "embedding_model": manifest["providers"]["embedding"]["model"],
                             "embedding_dimensions": manifest["providers"]["embedding"]["dimensions"]},
         "target_contracts": {t["id"]: t for t in targets}}
+    bundle["answer_contract"] = answer_contract
     write_json(root / "bundle.json", bundle)
     images, digests, failures = {}, {}, {}
     host_env = None
@@ -168,6 +178,8 @@ def main() -> int:
         attempted = 0
         for suite_id, suite in suites.items():
             eligible = [t for t in targets if suite_id in t["suites"]]
+            if not eligible:
+                continue
             section = {"suite_sha256": sha256_json(suite), "scheduled_targets": [t["id"] for t in eligible], "results": []}
             bundle["suite_results"][suite_id] = section
             for target in eligible:

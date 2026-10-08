@@ -135,7 +135,7 @@ class BenchmarkOpenkbTests(BenchmarkCase):
         self.assertEqual(OPENKB._litellm_model("gpt-5.6-luna"), "openai/gpt-5.6-luna")
         self.assertEqual(
             OPENKB._litellm_model("anthropic/claude-example"),
-            "anthropic/claude-example",
+            "openai/anthropic/claude-example",
         )
         jobs = [
             {
@@ -176,4 +176,23 @@ class BenchmarkOpenkbTests(BenchmarkCase):
         self.assertIn("<redacted>", detail)
         self.assertIn("[truncated; inspect the preserved native log]", detail)
 
-
+    def test_independent_cases_do_not_share_a_native_knowledge_base(self):
+        import json
+        calls = []
+        def native(inputs, artifacts, state):
+            jobs = [json.loads(p.read_text()) for p in inputs.glob('*.json')]
+            calls.append((jobs,state))
+            return {'warm_reused_state':True,'ingest_duration_ms':1,
+                'phases':{phase:{'jobs':[{'job_id':jobs[0]['job_id'],'classification':'completed'}]}
+                          for phase in ('cold','warm')}}
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);inputs=root/'input';inputs.mkdir()
+            for i in range(2):
+                (inputs/f'{i}.json').write_text(json.dumps({'job_id':f'j_{i}',
+                    'corpus':{'items':[{'evidence_id':f'e_{i}','text':f'private-{i}'}]}}))
+            with mock.patch.object(OPENKB,'_run_openkb',side_effect=native):
+                result=OPENKB.run_openkb(inputs,root/'artifacts',root/'state')
+        self.assertEqual([len(jobs) for jobs,_ in calls],[1,1])
+        self.assertNotEqual(calls[0][1],calls[1][1])
+        self.assertEqual(result['result_class'],'completed')
+        self.assertEqual(len(result['phases']['warm']['jobs']),2)

@@ -26,7 +26,7 @@ class BenchmarkContractTests(BenchmarkCase):
     def test_manifest_and_exact_four_suites_validate(self) -> None:
         validate_manifest(self.manifest)
         self.assertEqual(set(self.suites), set(SUITE_IDS))
-        self.assertEqual(len(self.manifest["targets"]), 10)
+        self.assertEqual(len(self.manifest["targets"]), 14)
         self.assertTrue({"sag", "letta"}.isdisjoint(
             target["id"] for target in self.manifest["targets"]
         ))
@@ -262,5 +262,4 @@ class BenchmarkContractTests(BenchmarkCase):
         self.assertEqual(
             stale["phases"]["warm"]["jobs"][0]["native_delete_success"], 0.0
         )
-
 

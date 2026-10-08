@@ -1,5 +1,6 @@
 {
   "schema": "elf.benchmark_manifest/v4",
+  "answer_contract": "config/benchmark/scoring-contract-v5.json",
   "runner": {
     "capacity": 1,
     "fallback_capacity": 1,
@@ -11,12 +12,12 @@
   },
   "providers": {
     "chat": {
-      "model": "gpt-5.6-luna",
-      "reasoning_effort": "high"
+      "model": "deepseek/deepseek-v4.1-flash",
+      "reasoning_effort": "low"
     },
     "embedding": {
-      "model": "Qwen3-Embedding-8B",
-      "dimensions": 4096
+      "model": "qwen/qwen3-embedding-8b",
+      "dimensions": 1536
     }
   },
   "metrics": [
@@ -35,131 +36,384 @@
     "provider_usage_when_returned"
   ],
   "failure_classes": {
-    "completed": {"quality_denominator": true},
-    "product_failed": {"quality_denominator": false},
-    "adapter_failed": {"quality_denominator": false},
-    "harness_failed": {"quality_denominator": false},
-    "provider_failed": {"quality_denominator": false},
-    "configuration_failed": {"quality_denominator": false},
-    "timeout_failed": {"quality_denominator": false},
-    "cleanup_failed": {"quality_denominator": false},
-    "not_applicable": {"quality_denominator": false}
+    "completed": {
+      "quality_denominator": true
+    },
+    "product_failed": {
+      "quality_denominator": false
+    },
+    "adapter_failed": {
+      "quality_denominator": false
+    },
+    "harness_failed": {
+      "quality_denominator": false
+    },
+    "provider_failed": {
+      "quality_denominator": false
+    },
+    "configuration_failed": {
+      "quality_denominator": false
+    },
+    "timeout_failed": {
+      "quality_denominator": false
+    },
+    "cleanup_failed": {
+      "quality_denominator": false
+    },
+    "not_applicable": {
+      "quality_denominator": false
+    }
   },
   "targets": [
     {
       "id": "elf",
-      "image": "elf-benchmark-elf:v5",
+      "image": "elf-benchmark-elf:full-v2",
       "dockerfile": "docker/benchmark/Dockerfile",
       "build_target": "elf-runtime",
       "adapter": "elf",
       "role": "source_linked_agent_memory_and_knowledge",
       "score_eligible": true,
-      "suites": ["common-core-v1", "memory-lifecycle-v1", "knowledge-structure-v1", "repository-knowledge-v1"],
-      "pin": {"kind": "benchmark_source_commit"}
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "pin": {
+        "kind": "benchmark_source_commit"
+      },
+      "native_deviations": {
+        "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+        "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+      }
     },
     {
       "id": "mem0",
-      "adapter": "mem0",
+      "image": "elf-benchmark-mem0:v2",
+      "dockerfile": "docker/benchmark/mem0.Dockerfile",
+      "adapter": "native_extraction",
       "role": "semantic_agent_memory",
       "score_eligible": true,
-      "suites": ["common-core-v1", "memory-lifecycle-v1"],
-      "pin": {"kind": "python_package", "value": "mem0ai==2.0.12", "lock": "config/benchmark/locks/mem0.txt"}
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "pin": {
+        "kind": "python_package",
+        "value": "mem0ai==2.2.1",
+        "lock": "config/benchmark/locks/mem0.txt"
+      }
     },
     {
       "id": "qmd",
-      "adapter": "qmd",
+      "image": "elf-benchmark-qmd:v6",
+      "dockerfile": "docker/benchmark/Dockerfile",
+      "build_target": "qmd-runtime",
+      "adapter": "native_hybrid_query_with_reranking",
       "role": "local_repository_and_document_search",
       "score_eligible": true,
-      "suites": ["common-core-v1", "repository-knowledge-v1"],
-      "native_deviations": {"retrieval": "native_bm25_ranked_search"},
-      "pin": {"kind": "git", "source": "https://github.com/tobi/qmd.git", "value": "e428df76bc0274d9e93eb7ca3e95673315c42e90"}
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "native_deviations": {
+        "retrieval": "native_local_embedding_query_expansion_and_reranking"
+      },
+      "pin": {
+        "kind": "git",
+        "source": "https://github.com/tobi/qmd.git",
+        "value": "facd35e01359e59d938bc9418e93fb9318addee3"
+      }
     },
     {
       "id": "lightrag",
       "adapter": "lightrag",
       "role": "graph_assisted_retrieval_and_synthesis",
       "score_eligible": true,
-      "suites": ["common-core-v1", "knowledge-structure-v1"],
-      "pin": {"kind": "container_image", "value": "ghcr.io/hkuds/lightrag@sha256:de09cd75e32b6b45b104625a9fb229f84f3dec4827ecffc825aa4438b196cbe6"}
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "pin": {
+        "kind": "container_image",
+        "release": "v1.5.7",
+        "platform": "linux/arm64",
+        "value": "ghcr.io/hkuds/lightrag@sha256:04716d2f10557342e033395c6490903ed0849a41ac5f89008736a7383e8bad7a"
+      },
+      "image": "elf-benchmark-http:v8",
+      "dockerfile": "docker/benchmark/http.Dockerfile"
     },
     {
       "id": "openviking",
       "adapter": "native_resource_find",
       "role": "context_routing_hierarchy_and_trajectory",
       "score_eligible": true,
-      "suites": ["common-core-v1", "knowledge-structure-v1", "repository-knowledge-v1"],
-      "image": "elf-benchmark-openviking:v4",
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-openviking:v10",
       "dockerfile": "docker/benchmark/openviking.Dockerfile",
-      "pin": {"kind": "git", "source": "https://github.com/volcengine/OpenViking.git", "value": "a0e822a0cd5d02e8ed5330a7f7a6d13279f8308b"}
+      "pin": {
+        "kind": "python_package",
+        "value": "openviking==0.4.23",
+        "lock": "config/benchmark/locks/openviking.txt",
+        "upstream_release_commit": "df32bf6e50a40843438f9491a26069ca4bd08f1f"
+      },
+      "native_deviations": {
+        "mode": "Native L0/L1 summaries and thinking search with the shared model; one concurrent VLM call and one native retry under the gateway limit.",
+        "ingest": "One native directory import per case; source mapping comes from the returned native resource listing."
+      }
     },
     {
       "id": "graphrag",
       "adapter": "native_local_search",
       "role": "graph_assisted_retrieval_and_synthesis",
       "score_eligible": true,
-      "suites": ["common-core-v1", "knowledge-structure-v1"],
-      "image": "elf-benchmark-graphrag:v4",
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-graphrag:v10",
       "dockerfile": "docker/benchmark/graphrag.Dockerfile",
-      "pin": {"kind": "python_package", "value": "graphrag==3.1.0", "lock": "config/benchmark/locks/graphrag.txt"}
+      "pin": {
+        "kind": "python_package",
+        "value": "graphrag==3.2.0",
+        "lock": "config/benchmark/locks/graphrag.txt"
+      },
+      "native_deviations": {
+        "dependency": "Benchmark-only NLTK 3.10 line overrides upstream 3.9 constraint. Retain resolved lock, advisory review, and native compatibility outcomes.",
+        "structured_output": "JSON-object transport with the original output schema in the prompt; GraphRAG still performs native typed response validation. The fixed DeepSeek provider advertises response_format but not structured_outputs."
+      }
     },
     {
       "id": "graphiti",
       "adapter": "native_temporal_graph_search",
       "role": "temporal_knowledge_graph",
       "score_eligible": true,
-      "suites": ["common-core-v1", "memory-lifecycle-v1", "knowledge-structure-v1"],
-      "image": "elf-benchmark-graphiti:v4",
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-graphiti:v7",
       "dockerfile": "docker/benchmark/graphiti.Dockerfile",
       "pin": {
         "kind": "python_package",
-        "value": "graphiti-core[falkordb]==0.21.0",
+        "value": "graphiti-core[falkordb]==0.30.2",
         "lock": "config/benchmark/locks/graphiti.txt",
         "service_image": "falkordb/falkordb@sha256:286d829e23ea4f927d8c06859efb12a3288d00b03746a517f4d8c22b75202015"
+      },
+      "native_deviations": {
+        "structured_output": "Native json_object mode sends the response schema in the prompt and validates the resulting instance. The default json_schema API request failed on the selected model route.",
+        "scope": "Each FalkorDB graph is selected explicitly for readback and removal; cloned-driver native index tasks are drained."
       }
     },
     {
       "id": "pageindex",
-      "adapter": "native_hierarchy_construction",
-      "role": "document_hierarchy_construction",
-      "score_eligible": false,
-      "suites": ["knowledge-structure-v1"],
-      "image": "elf-benchmark-pageindex:v4",
+      "adapter": "native_local_pdf_agent",
+      "role": "document_hierarchy_and_local_agent",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-pageindex:v8",
       "dockerfile": "docker/benchmark/pageindex.Dockerfile",
-      "not_applicable": {
-        "common-core-v1": "The pinned revision constructs a hierarchy but exposes no native ranked retrieval operation."
+      "pin": {
+        "kind": "python_package",
+        "value": "pageindex==0.2.21",
+        "source": "https://github.com/VectifyAI/PageIndex",
+        "lock": "config/benchmark/locks/pageindex.txt"
       },
-      "pin": {"kind": "git", "source": "https://github.com/VectifyAI/PageIndex.git", "value": "f413c66fee0bfbb7291c389333f9cc1adac68d57", "lock": "config/benchmark/locks/pageindex.txt"}
+      "native_deviations": {
+        "input": "One generated text PDF per source document.",
+        "retrieval": "Context comes only from recorded native tool outputs. The native final answer is retained separately."
+      }
     },
     {
       "id": "openkb",
       "adapter": "agent_query_with_native_source_trace",
       "role": "knowledge_base_organization_and_agent_tools",
       "score_eligible": true,
-      "suites": ["common-core-v1", "knowledge-structure-v1", "repository-knowledge-v1"],
-      "image": "elf-benchmark-openkb:v4",
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-openkb:v7",
       "dockerfile": "docker/benchmark/openkb.Dockerfile",
-      "pin": {"kind": "git", "source": "https://github.com/VectifyAI/OpenKB.git", "value": "0d905e40afa6f416c616f00c56a4cd0fd995a787"}
+      "pin": {
+        "kind": "git",
+        "source": "https://github.com/VectifyAI/OpenKB.git",
+        "value": "ac118407eacd995618256f121c21a2d275672f47"
+      },
+      "native_deviations": {
+        "isolation": "One native knowledge base per independent case; cold and warm phases reuse that same knowledge base."
+      }
     },
     {
       "id": "honcho",
       "adapter": "native_hybrid_message_search",
       "role": "reasoning_first_memory_peer_models_and_dreaming",
       "score_eligible": true,
-      "suites": ["common-core-v1", "memory-lifecycle-v1"],
-      "image": "elf-benchmark-honcho:v4",
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-honcho:v7",
       "dockerfile": "docker/benchmark/honcho.Dockerfile",
       "native_deviations": {
         "correction": "The v3 public API appends corrected messages; message update changes metadata only.",
         "delete": "The v3 public API deletes a complete session, not an individual message.",
-        "embedding_dimension": "The pinned self-hosted pgvector bootstrap uses 1536 dimensions, while its HNSW vector and half-vector index limits are below the shared 4096 dimensions; the product must fail closed rather than receive reduced embeddings."
+        "embedding_dimension": "The current comparison uses 1536 dimensions, matching the native pgvector bootstrap.",
+        "reader": "Native hybrid message search feeds the shared reader. Peer chat, dreaming, and its native reasoning answer are not equivalent to this retrieval condition."
       },
-      "pin": {"kind": "git", "source": "https://github.com/plastic-labs/honcho.git", "release": "v3.0.12", "value": "93dcf59c4a4225bb020b20c628799737fefae318"}
+      "pin": {
+        "kind": "git",
+        "source": "https://github.com/plastic-labs/honcho.git",
+        "release": "v3.2.2",
+        "value": "06ed1929cf017c333a87c41d130bb6a0605d91c0"
+      }
+    },
+    {
+      "id": "gbrain",
+      "adapter": "native_hybrid_search_after_index_refresh",
+      "role": "knowledge_and_agent_memory",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-gbrain:v1",
+      "dockerfile": "docker/benchmark/gbrain.Dockerfile",
+      "pin": {
+        "kind": "git",
+        "source": "https://github.com/garrytan/gbrain.git",
+        "value": "5b5891069413b28b2fe3a50675116d67d5a1e145",
+        "release": "v0.60.102.0"
+      },
+      "native_deviations": {
+        "mutation": "Warm queries follow explicit native stale-embedding refresh; immediate readback is retained separately.",
+        "deletion": "Native logical deletion is measured; physical erasure is not claimed."
+      }
+    },
+    {
+      "id": "hindsight",
+      "adapter": "native_retain_recall_after_consolidation",
+      "role": "bank_scoped_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-http:v8",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "pin": {
+        "kind": "container_image",
+        "release": "0.10.2",
+        "platform": "linux/arm64",
+        "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+      },
+      "native_deviations": {
+        "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route.",
+        "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement."
+      }
+    },
+    {
+      "id": "sag-engine",
+      "adapter": "native_extract_full_expand",
+      "role": "structured_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-sag-engine:v3",
+      "dockerfile": "docker/benchmark/sag-engine.Dockerfile",
+      "pin": {
+        "kind": "python_package",
+        "value": "zleap-sag==0.13.0",
+        "source": "https://github.com/Zleap-AI/zleap",
+        "lock": "config/benchmark/locks/sag-engine.txt"
+      },
+      "native_deviations": {
+        "identity": "Current independent SAG engine; not the retired SAG v1 adapter.",
+        "retries": "One native retry and bounded provider output under the shared gateway.",
+        "structured_output": "Native json_object mode for the selected model route.",
+        "delete": "Native durable delete with a data-source fence and monotonically increasing tokens from the single-writer action order."
+      }
+    },
+    {
+      "id": "memos",
+      "adapter": "native_fine_extract_recall",
+      "role": "memory_and_knowledge_cubes",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ],
+      "image": "elf-benchmark-http:v9",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "pin": {
+        "kind": "git",
+        "source": "https://github.com/MemTensor/MemOS",
+        "value": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+        "lock": "config/benchmark/locks/memos.txt",
+        "service_image": "elf-benchmark-memos:v1"
+      },
+      "native_deviations": {
+        "update": "Delete matching source memories, then extract the replacement through the native add API.",
+        "runtime": "Self-hosted product server, Neo4j Community, Qdrant; no hosted MemOS Cloud score.",
+        "delete": "Use native source-filtered readback to obtain exact memory IDs, then call delete_memory with those IDs and verify absence.",
+        "embedding_timeout": "90 seconds through the same bounded gateway; the native five-second default caused retries while successful provider requests took 5-16 seconds."
+      }
     }
   ],
   "suites": [
-    {"id": "common-core-v1", "kind": "retrieval", "path": "config/benchmark/suites/common-core-v1.json"},
-    {"id": "memory-lifecycle-v1", "kind": "memory_lifecycle", "path": "config/benchmark/suites/memory-lifecycle-v1.json"},
-    {"id": "knowledge-structure-v1", "kind": "knowledge_structure", "path": "config/benchmark/suites/knowledge-structure-v1.json"},
-    {"id": "repository-knowledge-v1", "kind": "repository_knowledge", "path": "config/benchmark/suites/repository-knowledge-v1.json"}
+    {
+      "id": "common-core-v1",
+      "kind": "retrieval",
+      "path": "config/benchmark/suites/common-core-v1.json"
+    },
+    {
+      "id": "memory-lifecycle-v1",
+      "kind": "memory_lifecycle",
+      "path": "config/benchmark/suites/memory-lifecycle-v1.json"
+    },
+    {
+      "id": "knowledge-structure-v1",
+      "kind": "knowledge_structure",
+      "path": "config/benchmark/suites/knowledge-structure-v1.json"
+    },
+    {
+      "id": "repository-knowledge-v1",
+      "kind": "repository_knowledge",
+      "path": "config/benchmark/suites/repository-knowledge-v1.json"
+    }
   ]
 }

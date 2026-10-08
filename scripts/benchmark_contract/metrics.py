@@ -3,9 +3,12 @@
 from __future__ import annotations
 
 from typing import Any
+from datetime import date
 import math
 import re
 import statistics
+
+from .fixtures import FAILURE_CLASSES
 
 
 def _dedupe(values: list[str]) -> list[str]:
@@ -60,15 +63,39 @@ def _normalized_text(value: str) -> str:
     return " ".join(re.findall(r"[a-z0-9._:/+-]+", value.casefold()))
 
 
-def _answer_scores(qrels: dict[str, Any], raw_answer: Any) -> tuple[Any, Any, list[str]]:
+_MONTH_NAMES = ('january', 'february', 'march', 'april', 'may', 'june',
+                'july', 'august', 'september', 'october', 'november', 'december')
+_MONTHS = {name: index for index, full in enumerate(_MONTH_NAMES, 1) for name in (full, full[:3])}
+_MONTHS['sept'] = 9
+_MONTH_PATTERN = '|'.join(sorted(_MONTHS, key=len, reverse=True))
+_DATE_PATTERNS = [
+    re.compile(rf'\b(?P<month>{_MONTH_PATTERN})\.?\s+(?P<day>\d{{1,2}})(?:st|nd|rd|th)?(?:,\s*|\s+)(?P<year>\d{{4}})\b', re.I),
+    re.compile(rf'\b(?P<day>\d{{1,2}})(?:st|nd|rd|th)?\s+(?P<month>{_MONTH_PATTERN})\.?(?:,\s*|\s+)(?P<year>\d{{4}})\b', re.I),
+]
+
+
+def _canonical_calendar_dates(value: str) -> str:
+    def replace(match):
+        try:
+            return date(int(match['year']), _MONTHS[match['month'].casefold()], int(match['day'])).isoformat()
+        except ValueError:
+            return match[0]
+    for pattern in _DATE_PATTERNS:
+        value = pattern.sub(replace, value)
+    return value
+
+
+def _answer_scores(qrels: dict[str, Any], raw_answer: Any, *, canonical_dates: bool = False) -> tuple[Any, Any, list[str]]:
     if not isinstance(raw_answer, dict):
         return None, None, []
     text = str(raw_answer.get("text") or "")
-    normalized = _normalized_text(text)
+    def normalize(value):
+        return _normalized_text(_canonical_calendar_dates(value) if canonical_dates else value)
+    normalized = normalize(text)
     forbidden = [
         fact
         for fact in qrels.get("forbidden_answer_facts") or []
-        if _normalized_text(str(fact)) in normalized
+        if normalize(str(fact)) in normalized
     ]
     if qrels.get("expect_unsupported"):
         unsupported_error = (
@@ -76,7 +103,7 @@ def _answer_scores(qrels: dict[str, Any], raw_answer: Any) -> tuple[Any, Any, li
         )
         return float(not unsupported_error), float(unsupported_error), forbidden
     facts = [str(fact) for fact in qrels.get("answer_facts") or []]
-    correct = bool(facts) and all(_normalized_text(fact) in normalized for fact in facts)
+    correct = bool(facts) and all(normalize(fact) in normalized for fact in facts)
     correct = correct and not forbidden and raw_answer.get("supported") is not False
     return float(correct), None, forbidden
 
@@ -123,7 +150,7 @@ def _operation_scores(
                 for item in rows
                 if isinstance(item, dict)
                 and item.get("requested_type") == requested
-                and item.get("classification") == "completed"
+                and item.get("classification") in FAILURE_CLASSES
             ),
             None,
         )
@@ -133,7 +160,8 @@ def _operation_scores(
             native_type = None
         else:
             native_type = row.get("native_type")
-            value = 1.0 if row.get("native_success") is True else 0.0
+            value = 1.0 if (row.get("classification") == "completed"
+                            and row.get("native_success") is True) else 0.0
         if requested == "update":
             exact = native_type in {"update", "replace", "reindex_update"}
             evidence_id = operation.get("evidence_id") if operation else None
@@ -164,5 +192,3 @@ def _operation_scores(
             )
             delete_values.append(value if exact and readback else 0.0)
     return _mean(update_values), _mean(delete_values), missing
-
-
