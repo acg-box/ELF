@@ -1,0 +1,256 @@
+[
+  {
+    "ending_ordinal": 34394,
+    "name": "elf-scale-1000-nebius-v1",
+    "started_at_unix": 1791510791.6776419,
+    "starting_ordinal": 33643,
+    "status": "terminal"
+  },
+  {
+    "ending_ordinal": 34394,
+    "exit_code": 105,
+    "finished_at_unix": 1791513629.699991,
+    "name": "mem0-scale-1000-nebius-v1",
+    "started_at_unix": 1791513618.3384802,
+    "starting_ordinal": 34395,
+    "status": "terminal",
+    "totals": [
+      8.742659011000098,
+      9.037643311000036
+    ]
+  },
+  {
+    "ending_ordinal": 34394,
+    "exit_code": 105,
+    "finished_at_unix": 1791513638.856492,
+    "name": "hindsight-scale-1000-nebius-v1",
+    "started_at_unix": 1791513629.823319,
+    "starting_ordinal": 34395,
+    "status": "terminal",
+    "totals": [
+      8.742659011000098,
+      9.037643311000036
+    ]
+  },
+  {
+    "ending_ordinal": 34394,
+    "exit_code": 105,
+    "finished_at_unix": 1791513647.886079,
+    "name": "sag-engine-scale-1000-nebius-v1",
+    "started_at_unix": 1791513638.980934,
+    "starting_ordinal": 34395,
+    "status": "terminal",
+    "totals": [
+      8.742659011000098,
+      9.037643311000036
+    ]
+  },
+  {
+    "ending_ordinal": 34396,
+    "exit_code": 105,
+    "finished_at_unix": 1791513667.226649,
+    "name": "graphrag-lifecycle-nebius-v1",
+    "started_at_unix": 1791513654.188514,
+    "starting_ordinal": 34395,
+    "status": "terminal",
+    "totals": [
+      8.742683681000099,
+      9.037667981000036
+    ]
+  },
+  {
+    "ending_ordinal": 34406,
+    "exit_code": 105,
+    "finished_at_unix": 1791513700.268893,
+    "name": "sag-retained-reader-recovery-v1",
+    "started_at_unix": 1791513667.355245,
+    "starting_ordinal": 34397,
+    "status": "terminal",
+    "totals": [
+      8.745746117000097,
+      9.040730417000034
+    ]
+  },
+  {
+    "ending_ordinal": 38427,
+    "exit_code": 0,
+    "finished_at_unix": 1791523395.7826188,
+    "name": "elf-scale-1000-nebius-v2-controller-recovery",
+    "started_at_unix": 1791513700.3951612,
+    "starting_ordinal": 34407,
+    "status": "terminal",
+    "totals": [
+      8.748478117000486,
+      9.043462417000423
+    ]
+  },
+  {
+    "ending_ordinal": 38427,
+    "exit_code": 1,
+    "finished_at_unix": 1791523416.798638,
+    "name": "mem0-scale-1000-nebius-v2-image-recovery",
+    "started_at_unix": 1791523410.649931,
+    "starting_ordinal": 38428,
+    "status": "terminal",
+    "totals": [
+      8.748478117000486,
+      9.043462417000423
+    ]
+  },
+  {
+    "ending_ordinal": 38427,
+    "exit_code": 1,
+    "finished_at_unix": 1791523422.513202,
+    "name": "hindsight-scale-1000-nebius-v2-image-recovery",
+    "started_at_unix": 1791523416.927259,
+    "starting_ordinal": 38428,
+    "status": "terminal",
+    "totals": [
+      8.748478117000486,
+      9.043462417000423
+    ]
+  },
+  {
+    "ending_ordinal": 38427,
+    "exit_code": 1,
+    "finished_at_unix": 1791523428.165282,
+    "name": "sag-engine-scale-1000-nebius-v2-image-recovery",
+    "started_at_unix": 1791523422.6482182,
+    "starting_ordinal": 38428,
+    "status": "terminal",
+    "totals": [
+      8.748478117000486,
+      9.043462417000423
+    ]
+  },
+  {
+    "ending_ordinal": 38427,
+    "exit_code": 1,
+    "finished_at_unix": 1791523434.1211798,
+    "name": "graphrag-lifecycle-nebius-v2-image-recovery",
+    "started_at_unix": 1791523428.298205,
+    "starting_ordinal": 38428,
+    "status": "terminal",
+    "totals": [
+      8.748478117000486,
+      9.043462417000423
+    ]
+  },
+  {
+    "ending_ordinal": 41446,
+    "exit_code": 105,
+    "finished_at_unix": 1791530597.812315,
+    "name": "mem0-scale-1000-nebius-v3-personal-recovery",
+    "started_at_unix": 1791523791.4714398,
+    "starting_ordinal": 38428,
+    "status": "terminal",
+    "totals": [
+      9.173778219000592,
+      9.46876251900053
+    ]
+  },
+  {
+    "ending_ordinal": 45259,
+    "exit_code": 105,
+    "finished_at_unix": 1791541685.7217731,
+    "name": "hindsight-scale-1000-nebius-v3-personal-recovery",
+    "started_at_unix": 1791530597.958784,
+    "starting_ordinal": 41447,
+    "status": "terminal",
+    "totals": [
+      11.65366922500024,
+      11.948653525000177
+    ]
+  },
+  {
+    "ending_ordinal": 48330,
+    "exit_code": 105,
+    "finished_at_unix": 1791551817.282846,
+    "name": "sag-engine-scale-1000-nebius-v3-personal-recovery",
+    "started_at_unix": 1791541685.885671,
+    "starting_ordinal": 45260,
+    "status": "terminal",
+    "totals": [
+      11.943462473000311,
+      12.24017277300025
+    ]
+  },
+  {
+    "ending_ordinal": 48332,
+    "exit_code": 105,
+    "finished_at_unix": 1791551845.1314402,
+    "name": "graphrag-lifecycle-nebius-v3-personal-recovery",
+    "started_at_unix": 1791551817.446111,
+    "starting_ordinal": 48331,
+    "status": "terminal",
+    "totals": [
+      11.943486173000311,
+      12.24103497300025
+    ]
+  },
+  {
+    "ending_ordinal": 53336,
+    "exit_code": 105,
+    "finished_at_unix": 1791566287.447711,
+    "name": "hindsight-scale-1000-nebius-v4-funded-recovery",
+    "started_at_unix": 1791551866.310603,
+    "starting_ordinal": 48333,
+    "status": "terminal",
+    "totals": [
+      13.684882096999809,
+      13.984180196999748
+    ]
+  },
+  {
+    "ending_ordinal": 53446,
+    "exit_code": 105,
+    "finished_at_unix": 1791566943.405204,
+    "name": "graphrag-lifecycle-nebius-v4-transport-recovery",
+    "started_at_unix": 1791566311.9650528,
+    "starting_ordinal": 53337,
+    "status": "terminal",
+    "totals": [
+      13.733626764999801,
+      14.03292486499974
+    ]
+  },
+  {
+    "ending_ordinal": 53562,
+    "exit_code": 105,
+    "finished_at_unix": 1791567535.525121,
+    "name": "sag-engine-scale-1000-nebius-v4-state-continuation",
+    "started_at_unix": 1791566980.650778,
+    "starting_ordinal": 53447,
+    "status": "terminal",
+    "totals": [
+      13.74424383299981,
+      14.04526533299975
+    ]
+  },
+  {
+    "ending_ordinal": 56898,
+    "exit_code": 105,
+    "finished_at_unix": 1791575365.0314932,
+    "name": "hindsight-scale-1000-nebius-v5-state-continuation",
+    "started_at_unix": 1791567556.6629581,
+    "starting_ordinal": 53563,
+    "status": "terminal",
+    "totals": [
+      14.749369878999351,
+      15.06328867899929
+    ]
+  },
+  {
+    "ending_ordinal": 59759,
+    "exit_code": 105,
+    "finished_at_unix": 1791588861.821032,
+    "name": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+    "started_at_unix": 1791575379.93029,
+    "starting_ordinal": 56899,
+    "status": "terminal",
+    "totals": [
+      15.050944542999467,
+      15.365726542999404
+    ]
+  }
+]

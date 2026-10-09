@@ -1,0 +1,12 @@
+{
+  "at_unix": 1791552671.593591,
+  "draft_sha256": {
+    "benchmark-deep.py": "d6ada69e6ffebc18e0b3e5e148a5cafea44b48b80a0f70c9a3d376a78277e2a9",
+    "benchmark_deep/drivers.py": "9c26c37f147eda7766ee977283d2bef900370c846b959d2d43831dcfa1040bee",
+    "benchmark_deep/resume.py": "59e8732c8b2c42a780558e5e3cceb6b5b3e4537fc18606cec6027e607a84507f",
+    "test_benchmark_sag_resume.portable.py": "813ffbe24e8f4cdfa0bcbb0bd87db47027ca2e72bb3362beb41ce62a1fa81113",
+    "test_benchmark_sag_resume.py": "6526184f56ee60dc73766a36140608990497fed92ce910a7fde0d0c227707c4b"
+  },
+  "scope": "Offline receipt prefix, failed/reordered rejection, copy isolation, provenance, and changed-image rejection. Does not prove native resume success.",
+  "tests_passed": 4
+}

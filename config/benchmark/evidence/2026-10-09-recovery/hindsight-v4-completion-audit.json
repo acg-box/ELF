@@ -1,0 +1,21 @@
+{
+  "accepted_source_records": 1000,
+  "at_unix": 1791566328.9441578,
+  "boundary": "Original 14400-second ingest deadline retained. No query measurements completed. Offline restore and task requeue do not establish successful paid consolidation or recall.",
+  "bundle_sha256": "a635d098868221c88db44ff2f7b5788c36846314dd8d8b7471f9a72c50485ad5",
+  "checkpoint_restored_documents": 1000,
+  "checkpoint_sha256": "0ed38069b1d997f7a660199c5c842b5bd6272ade94af2e1007ea4ac4f8f2a0d8",
+  "cleanup_passed": true,
+  "condition": "hindsight-scale-1000-nebius-v4-funded-recovery",
+  "coverage": {
+    "answered": 0,
+    "correct": 0,
+    "native_completed": 0,
+    "planned_queries": 10
+  },
+  "duration_seconds": 14416.634787416988,
+  "exposure_usd": 1.7431452239999805,
+  "failure_class": "native_consolidation_deadline",
+  "native_task_recovery_validated": true,
+  "paid_usd": 1.7413959239999806
+}

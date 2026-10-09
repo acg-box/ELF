@@ -1,0 +1,57 @@
+{
+  "boundary": "Exposure includes in-flight and unknown-cost reservations. All probes and failed attempts count. Host, CI, and orchestration costs are excluded.",
+  "ceiling_usd": 20,
+  "cumulative_exposure_usd": 15.365726542999404,
+  "cumulative_paid_usd": 15.050944542999467,
+  "cumulative_token_usage": {
+    "chat": {
+      "cached_prompt_fraction": 0.6692854470348291,
+      "cached_prompt_tokens": 44088798,
+      "completion_tokens": 13901626,
+      "prompt_tokens": 65874431,
+      "reasoning_tokens": 10296196,
+      "requests_with_cache_details": 17321,
+      "requests_with_usage": 17321,
+      "requests_without_usage": 13,
+      "total_tokens": 79776057
+    },
+    "embedding": {
+      "prompt_tokens": 2581864,
+      "requests_with_usage": 42228,
+      "requests_without_usage": 197,
+      "total_tokens": 2581864
+    }
+  },
+  "original_campaign_request_count": 33552,
+  "recovery_exposure_usd": 6.338403672000404,
+  "recovery_paid_usd": 6.308517572000408,
+  "recovery_token_usage": {
+    "chat": {
+      "cached_prompt_fraction": 0.5798358482416422,
+      "cached_prompt_tokens": 18787328,
+      "completion_tokens": 4781016,
+      "prompt_tokens": 32401115,
+      "reasoning_tokens": 3278171,
+      "requests_with_cache_details": 6282,
+      "requests_with_usage": 6282,
+      "requests_without_usage": 1,
+      "total_tokens": 37182131
+    },
+    "embedding": {
+      "prompt_tokens": 1033715,
+      "requests_with_usage": 19904,
+      "requests_without_usage": 20,
+      "total_tokens": 1033715
+    }
+  },
+  "statuses": {
+    "completed": 26186,
+    "provider_failed": 12,
+    "uncertain": 9
+  },
+  "token_boundary": "Provider-reported usage only. Unknown, failed, and in-flight calls without receipts are excluded from token sums and counted separately. Cached tokens are a subset of prompt tokens; reasoning tokens are a subset of completion tokens. Embedding cache details are not reported. Actual provider costs already include cache pricing.",
+  "usage": {
+    "records": 26207,
+    "uncompressed_sha256": "6db5e1eb43db9d1f165f7a0971fe38ac48670d9e9a0bbdf24c59fe0aa492b334"
+  }
+}

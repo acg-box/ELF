@@ -1,0 +1,21 @@
+{
+  "boundary": "Conditional full-query continuation without source reingestion. Preserve original failure, all API costs, and combined original plus continuation duration.",
+  "ceiling_usd": 20,
+  "jobs": [
+    {
+      "name": "hindsight-scale-1000-nebius-v5-state-continuation",
+      "target": "hindsight",
+      "wrapper": "run-personal-nebius.mts"
+    }
+  ],
+  "registered_at_unix": 1791565943.339391,
+  "required_before_launch": [
+    "Original v4 condition terminal with missing queries and successful cleanup",
+    "Latest checkpoint metadata and archive verified; runtime and cached reranker retained",
+    "GraphRAG and SAG queues terminal; no active paid gateway",
+    "Draft applied to clean task branch, repository contract tests passed, signed source commit",
+    "Cumulative conservative exposure <= 17.5"
+  ],
+  "status": "conditional_after_sag_if_v4_has_missing_queries",
+  "tranche_usd": 2.5
+}

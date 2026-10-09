@@ -1,0 +1,29 @@
+{
+  "boundary": "No query measurements completed. Native rollback coincided with embedding transport exceptions; exact remote cause is not established. Retained state must be verified before resume.",
+  "bundle_sha256": "d6264baba7ced4991fd915d23fe6f79135442a4d96d9fd1bf0474c23dd94315d",
+  "classification": "native_extraction_rolled_back_with_embedding_transport_errors",
+  "cleanup_passed": true,
+  "completed_source_receipts": 512,
+  "condition": "sag-engine-scale-1000-nebius-v3-personal-recovery",
+  "coverage": {
+    "answered": 0,
+    "correct": 0,
+    "native_completed": 0,
+    "planned_queries": 10
+  },
+  "duration_seconds": 10126.005860042002,
+  "ending_ordinal": 48330,
+  "native_ingest_failure": "[extraction_rolled_back] Extract \u5931\u8d25\uff0c\u5173\u7cfb\u4e0e\u5411\u91cf\u53d8\u66f4\u5df2\u5168\u90e8\u56de\u6eda",
+  "paid_increment_usd": 0.28979324800007156,
+  "source": {
+    "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dirty": false,
+    "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "starting_ordinal": 45260,
+  "transport_uncertain_ordinals": [
+    48329,
+    48330
+  ]
+}

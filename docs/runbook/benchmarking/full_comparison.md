@@ -226,6 +226,58 @@ so its usage receipt is available before the response is forwarded.
 cargo make benchmark-budget --ledger tmp/benchmark-costs.json --ceiling 10 --tranche 0.5 -- cargo make benchmark-competitors --mode compare
 ```
 
+## Explicit embedding recovery
+
+The original campaign uses zero gateway retries. For a separately recorded
+recovery condition, `--embedding-429-retries 3` permits at most three additional
+attempts for an embedding request that returns HTTP 429. The default remains
+zero. The model, provider, request body, and scoring do not change.
+
+Each attempt reserves budget and records its own outcome. Failed attempts retain
+their unknown-cost reservation. Rows carry `request_ordinal`, `attempt`, and the
+selected retry delay so one logical request can be audited across attempts.
+Budget exhaustion stops before another provider call.
+
+Backoff is 2, 4, then 8 seconds. A positive numeric `Retry-After` up to 30 seconds
+replaces that delay. Longer or nonnumeric headers are returned to the consumer
+without an automatic retry. Chat responses, HTTP statuses other than 429, and
+uncertain transport failures are not replayed by this policy.
+
+Use the same cumulative ledger and explicitly authorized ceiling. Retain the
+original condition and its costs. A successful recovery does not replace the
+original reliability result or prove that every failed query can be repaired.
+
+## Native state continuation
+
+Use `cargo make benchmark-deep` with `--workload-group scale-1000` for the
+supported continuation modes. Keep the original manifest, models, providers,
+image, workload, and oracle. Select a new artifact root and use the same
+cumulative budget ledger. A previous condition must have passed cleanup and
+must have no completed native queries. Do not use continuation to retry only
+wrong answers or combine it with `--reanswer`.
+
+For SAG, `--resume-sag PATH` points to the previous artifact directory. The
+runner validates the completed source prefix, copies native SQL and vector
+state, hashes the copied files, and uses native `replace_current` for the first
+incomplete source. It then processes every remaining source and runs every
+query. The adapter uses the pinned library's default embedding retry count;
+chat retry settings are separate from this setting and from gateway HTTP 429
+retries.
+
+For Hindsight, `--resume-hindsight PATH` points to a private JSON descriptor.
+The descriptor identifies `original_artifact_root`, `original_bundle_sha256`,
+`archive`, `archive_sha256`, `postgres_runtime`, and `reranker_cache`. Retain a
+consistent native database dump and its matching native runtime and cache.
+Validate restore and interrupted-task recovery before paid execution. The
+runner requires all 50 source batches to have succeeded, restores the native
+worker identity, and completes pending consolidation without source reingestion.
+The descriptor and database dump are local evidence, not public artifacts.
+
+Retain every original failure and uncertain charge. Report continuation time
+and cost separately from the combined path. Never present retained-state
+continuation as fresh-run latency. The [2026-10-09 recovery report](../../evidence/benchmarking/2026-10-09-recovery.md)
+records the tested conditions and their remaining failures.
+
 ## Scoring revisions
 
 Revision 2 corrects three question/oracle mismatches. Revision 3 also measures
@@ -291,3 +343,12 @@ The common repair agent can use any configured native retrieval product:
 prepare a replay with `--target PRODUCT`, retrieve with the same target and
 manifest, then run both repetitions with `--arm PRODUCT`. The reference patch
 and checks remain outside product input.
+
+Use `--embedding-provider nebius` only for a separately registered provider
+condition when the default DeepInfra route cannot complete. Both routes use
+Qwen3 Embedding 8B. The gateway pins the selected provider, disables fallback,
+and preserves caller dimensions and the price ceiling. Chat routing does not
+change. The start record and each attempt retain the requested provider; a
+successful receipt also retains the returned provider. Do not merge these
+results into a DeepInfra condition or infer identical retrieval behavior from
+the model name alone.

@@ -1,0 +1,53 @@
+{
+  "comparability_note": "All four rebuilt image digests differ from historical native images. These are separate rebuilt-image/provider conditions.",
+  "image_rebuilds": [
+    {
+      "digest": "sha256:d89a01f1f3b9b4da1bad16740c30ca5bfe02845a77a9f5211adcbe8582d0a928",
+      "image": "elf-benchmark-mem0:v2",
+      "status": "built",
+      "target": "mem0"
+    },
+    {
+      "digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+      "image": "elf-benchmark-http:v8",
+      "status": "built",
+      "target": "hindsight"
+    },
+    {
+      "digest": "sha256:db1c9ae183e069c4e22621688f3b45eddfb0ad6cf300fc12726a4e7fd9865937",
+      "image": "elf-benchmark-sag-engine:v3",
+      "status": "built",
+      "target": "sag-engine"
+    },
+    {
+      "digest": "sha256:03dacaa4591a5816d436432de1e6810e21296f75640e2e1c3f46280a14fca99f",
+      "image": "elf-benchmark-graphrag:v10",
+      "status": "built",
+      "target": "graphrag"
+    }
+  ],
+  "jobs": [
+    {
+      "name": "mem0-scale-1000-nebius-v2-image-recovery",
+      "target": "mem0",
+      "wrapper": "run-nebius.mts"
+    },
+    {
+      "name": "hindsight-scale-1000-nebius-v2-image-recovery",
+      "target": "hindsight",
+      "wrapper": "run-nebius.mts"
+    },
+    {
+      "name": "sag-engine-scale-1000-nebius-v2-image-recovery",
+      "target": "sag-engine",
+      "wrapper": "run-nebius.mts"
+    },
+    {
+      "name": "graphrag-lifecycle-nebius-v2-image-recovery",
+      "target": "graphrag",
+      "wrapper": "run-nebius.mts"
+    }
+  ],
+  "reason": "Prior conditions could not start because native images were absent. Rebuild pinned repository images, preserve image digests and failed preflight receipts, then execute each full condition. Same models, provider, limits, fixtures and scoring.",
+  "registered_at_unix": 1791513745.970402
+}

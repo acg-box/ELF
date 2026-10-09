@@ -1,0 +1,26 @@
+{
+  "at_unix": 1791560685.8154812,
+  "boundary": "Retain all failed attempts and uncertain reservations. Gateway retries only explicit embedding HTTP 429 within registered limit. Native operation status and terminal coverage determine impact.",
+  "requests": [
+    {
+      "attempt": 1,
+      "kind": "embedding",
+      "ordinal": 50513,
+      "request_ordinal": 50513,
+      "reserved_usd": 0.0008966,
+      "seconds": 90.16538604197558,
+      "status": "uncertain"
+    },
+    {
+      "attempt": 1,
+      "http_status": 520,
+      "kind": "embedding",
+      "ordinal": 50878,
+      "request_ordinal": 50878,
+      "reserved_usd": 0.0008527000000000001,
+      "retry_delay_seconds": null,
+      "seconds": 41.09775950000039,
+      "status": "provider_failed"
+    }
+  ]
+}

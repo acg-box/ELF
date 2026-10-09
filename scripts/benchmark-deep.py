@@ -13,6 +13,8 @@ import time
 from pathlib import Path
 
 from benchmark_deep.fixtures import WORKLOAD_GROUPS, workload
+from benchmark_deep.resume import prepare_sag_resume
+from benchmark_deep.hindsight_resume import prepare_hindsight_resume
 from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS
 from benchmark_runner.answers import ANSWER_BATCH_SIZE, request_answers
 from benchmark_deep.scoring import score_answer
@@ -35,7 +37,13 @@ def main():
     parser.add_argument("--qmd-host", action="store_true")
     parser.add_argument("--native-only", action="store_true")
     parser.add_argument("--reanswer", type=Path)
+    parser.add_argument("--resume-sag", type=Path, help="Continue a retained failed SAG scale-1000 ingest in copied state")
+    parser.add_argument("--resume-hindsight", type=Path, help="Continue a retained Hindsight checkpoint after a failed scale-1000 run")
     args = parser.parse_args()
+    if args.resume_hindsight and (args.target != "hindsight" or args.workload_group != "scale-1000" or args.reanswer or args.resume_sag):
+        parser.error("--resume-hindsight requires Hindsight scale-1000 and cannot combine with other recovery modes")
+    if args.resume_sag and (args.target != "sag-engine" or args.workload_group != "scale-1000" or args.reanswer):
+        parser.error("--resume-sag requires SAG scale-1000 and cannot combine with --reanswer")
     if args.ingest_seconds <= 0:
         parser.error('--ingest-seconds must be positive')
     if args.qmd_host and args.target != "qmd":
@@ -79,8 +87,16 @@ def main():
         "BENCHMARK_DEEP_INGEST_TIMEOUT_SECONDS": str(args.ingest_seconds),
         "BENCHMARK_POSTGRES_PASSWORD": hashlib.sha256(project.encode()).hexdigest()[:24]}
     (root / "artifacts").mkdir()
+    continuation = (prepare_sag_resume(args.resume_sag, root, inputs, oracle, manifest["providers"], digest)
+                    if args.resume_sag else None)
+    hindsight_override = None
+    if args.resume_hindsight:
+        continuation, hindsight_override = prepare_hindsight_resume(
+            args.resume_hindsight, root, inputs, oracle, manifest["providers"], digest, REPO / "scripts")
     compose = REPO / manifest["runner"]["compose_file"]
     prefix = ["docker", "compose", "--project-name", project, "--file", str(compose)]
+    if hindsight_override:
+        prefix.extend(["--file", str(hindsight_override)])
     started = time.monotonic()
     execution_error = None
     try:
@@ -174,6 +190,9 @@ def main():
         "duration_seconds": time.monotonic()-started,
         "coverage": {"planned_queries": len(scores), "native_completed": sum(s["execution"]=="completed" for s in scores),
                      "answered": sum(s["answer"] is not None for s in scores), "correct": sum(s["correct"] is True for s in scores)}}
+    if continuation:
+        bundle["continuation"] = continuation
+        bundle["combined_attempt_duration_seconds"] = continuation["original_duration_seconds"] + bundle["duration_seconds"]
     if retained:
         bundle["retrieval_source"] = retained["source"]
         bundle["retrieval_runtime"] = retained["runtime"]

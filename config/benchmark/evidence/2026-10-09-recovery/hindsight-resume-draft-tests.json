@@ -1,0 +1,13 @@
+{
+  "at_unix": 1791565943.338256,
+  "boundary": "Offline preparation and no-duplicate-ingestion tests. Full repository checks and paid native continuation have not run.",
+  "draft_sha256": {
+    "benchmark-deep.py": "ccac7459116fe6f29f0a6aa6fe2815cd232994fd5a2f16e3b85cd23b5bebfbb8",
+    "drivers.py": "b5c89d1094a0608dd0001a15dda01a8bc022dc770cfb64eb1592e9cd9fe70004",
+    "hindsight_resume.py": "5a2959c43c9c39d453e137f2e81911d3a9c39bba3e2a1d04eac1c92229cfcce4",
+    "start-restored-hindsight.py": "5f8a0d2ce291a49aeccacfd2eb49a850505f42bc95c57a3d465a11c4a802714e",
+    "test_benchmark_hindsight_resume.py": "5e207f06fe7c7c7baeed10beeb05fc7f3f86fc6059eb20eab58c8cc8cb78b011",
+    "test_hindsight_resume_draft.py": "0e35f68e834a2131090bc034e7301170264b702bec7dccbc423acdc5e0032369"
+  },
+  "passed_tests": 3
+}

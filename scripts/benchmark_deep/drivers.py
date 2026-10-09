@@ -74,6 +74,12 @@ def hindsight_action(action, root):
     bank = "/v1/default/banks/deep-" + action["scope"]
     kind = action["action"]
     if kind == "ingest":
+        marker = root / "hindsight-resume.json"
+        if marker.exists():
+            continuation = json.loads(marker.read_text())
+            if continuation["scope"] != action["scope"] or continuation["retained_source_records"] != len(action["items"]):
+                raise ValueError("Hindsight continuation workload changed")
+            return {"native": continuation, "readiness": drain(bank, timeout_seconds=INGEST_TIMEOUT_SECONDS)}
         request("PUT", bank, {})
         receipts = []
         # Native batch calls share the same bank and index; avoid oversized requests.
@@ -219,8 +225,10 @@ async def sag_action(action, root):
     scope, kind = action["scope"], action["action"]
     async with DataEngine(configuration(root / "sag-shared"), data_source_id=scope) as engine:
         if kind == "ingest":
-            receipts = []
-            for item in action["items"]:
+            from benchmark_deep.resume import retained_receipts
+
+            receipts = retained_receipts(action, root)
+            for item in action["items"][len(receipts):]:
                 receipts.append(await ingest(engine, scope, item))
                 (root / (scope + "-sag-progress.json")).write_text(json.dumps(receipts))
             return {"native": receipts}

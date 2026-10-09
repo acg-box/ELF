@@ -1,0 +1,19 @@
+{
+  "at_unix": 1791560497.348799,
+  "boundary": "Read-only source and OpenAPI inspection. No recovery route invoked. A restored condition must preserve native worker identity and validate retry state, cleanup, budget, and all queries. Database restore success does not prove native background resumption.",
+  "image": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1",
+  "native_routes": {
+    "POST /v1/default/banks/{bank_id}/consolidate": "Trigger consolidation of recent memories.",
+    "POST /v1/default/banks/{bank_id}/consolidation/recover": "Reset permanently failed consolidation memories without deleting observations.",
+    "POST /v1/default/banks/{bank_id}/operations/{operation_id}/retry": "Requeue a failed async operation."
+  },
+  "source_evidence": {
+    "worker/main.py": "237-238: worker identity defaults to hostname and supports HINDSIGHT_API_WORKER_ID.",
+    "worker/poller.py": "1279-1402: startup recovers own processing tasks under the native retry budget; exhausted tasks become failed."
+  },
+  "source_sha256": {
+    "config.py": "b534275629100dda24635992f18b4e3f8eda9b5c9ff6dc78e53f77378f78c164",
+    "worker/main.py": "1645bc1e37bdeba5205ca3c021026dbc4149d745fa2c37d068403e45c496b149",
+    "worker/poller.py": "19ef6f6db1c3aa03fa061c21faa2668b5c28f51c7fb7966d791e5776b169168c"
+  }
+}

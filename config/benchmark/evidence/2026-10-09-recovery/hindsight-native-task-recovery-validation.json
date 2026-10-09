@@ -1,0 +1,26 @@
+{
+  "boundary": "Native recover_own_tasks requeues restored interrupted work without running the executor. End-to-end paid consolidation and recall remain unverified.",
+  "chunks": 1000,
+  "documents": 1000,
+  "finished_at_unix": 1791565450.022272,
+  "model_requests": 0,
+  "network": "none",
+  "recovered_processing_tasks": 1,
+  "started_at_unix": 1791565429.347459,
+  "states_after": [
+    {
+      "retry_count": 0,
+      "status": "completed"
+    },
+    {
+      "retry_count": 1,
+      "status": "pending"
+    },
+    {
+      "retry_count": 0,
+      "status": "pending"
+    }
+  ],
+  "task_executions": 0,
+  "validation_container_removed": true
+}

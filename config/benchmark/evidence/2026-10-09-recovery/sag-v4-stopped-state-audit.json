@@ -1,0 +1,19 @@
+{
+  "at_unix": 1791567829.592869,
+  "boundary": "Read-only stopped state retains all completed SQL and vector records; native replace_current must process the first incomplete source. This does not establish full scale coverage.",
+  "completed_receipts": 531,
+  "condition": "sag-engine-scale-1000-nebius-v4-state-continuation",
+  "expected_chunk_ids": 531,
+  "expected_event_ids": 601,
+  "extra_chunk_vectors": 0,
+  "extra_events": 0,
+  "extra_sql_chunks": 1,
+  "missing_chunk_vectors": 0,
+  "missing_event_vectors": 0,
+  "missing_sql_chunks": 0,
+  "missing_sql_events": 0,
+  "receipt_sha256": "ab5d4fbab36fd49be0d45e84adfe0256c8c28be5b15a2109d27a9d327054b8f9",
+  "source_stopped": true,
+  "sqlite_quick_check": "ok",
+  "sqlite_sha256": "90148c15950afb3c5a13cf7625df3092c5b6c95d778dba59f10a57fe9e8f5855"
+}

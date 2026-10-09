@@ -1,0 +1,20 @@
+{
+  "boundary": "Continue 488 remaining sources and execute all 10 queries; preserve failed original and combine duration/cost for interpretation",
+  "ceiling_usd": 20,
+  "jobs": [
+    {
+      "name": "sag-engine-scale-1000-nebius-v4-state-continuation",
+      "target": "sag-engine",
+      "wrapper": "run-personal-nebius.mts"
+    }
+  ],
+  "registered_at_unix": 1791552542.95069,
+  "required_before_launch": [
+    "Hindsight and GraphRAG queues terminal; no active paid gateway",
+    "Resume draft applied, repository checks passed, signed clean source committed",
+    "Retained source state and image revalidated",
+    "Conservative cumulative exposure <= 17.5"
+  ],
+  "status": "awaiting_validated_source_commit_after_transport_queue",
+  "tranche_usd": 2.5
+}

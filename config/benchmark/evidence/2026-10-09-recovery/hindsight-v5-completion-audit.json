@@ -1,0 +1,40 @@
+{
+  "at_unix": 1791575473.809414,
+  "attempt_exposure_usd": 1.018023346000003,
+  "attempt_paid_usd": 1.0051260460000033,
+  "boundary": "All ten measurements are filled in this separate native checkpoint continuation. Preserve the real retrieval miss, original timeouts/budget failure, and uncertain chat reservation. Combined duration includes v4 plus v5; earlier cold attempts remain separate campaign costs.",
+  "bundle_sha256": "396810a461543188f32439c89a4fb479fe00e8877357bf77bd2c5ea9ec91a819",
+  "cleanup_passed": true,
+  "combined_attempt_duration_seconds": 22220.93160654197,
+  "condition": "hindsight-scale-1000-nebius-v5-state-continuation",
+  "coverage": {
+    "answered": 10,
+    "correct": 9,
+    "native_completed": 10,
+    "planned_queries": 10
+  },
+  "duration_seconds": 7804.296819124982,
+  "source": {
+    "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dirty": false,
+    "head": "04b7b2755b02e595ad7e7eeac36f52ff54fd2db3",
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "uncertain_ordinals": [
+    56868
+  ],
+  "wrong_cases": [
+    {
+      "case_id": "case-013",
+      "classification": "retrieval_miss",
+      "expected_service": "Aster-0027",
+      "fact_in_supplied_context": false,
+      "reader_answer": "unknown",
+      "retrieved_services": [
+        "Aster-0427",
+        "Aster-0227",
+        "Aster-0075"
+      ]
+    }
+  ]
+}

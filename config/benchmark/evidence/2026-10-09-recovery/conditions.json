@@ -1,0 +1,790 @@
+[
+  {
+    "answer_error_cases": [],
+    "bundle_sha256": "28c1987594532b4ecf4b5239c64d803849decb33cf6c26b3f6cf31669606321e",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 133.90382158299326,
+    "embedding_429_retries": 3,
+    "embedding_provider": "deepinfra",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "name": "elf-scale-1000-bounded-429-v1",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "blocked_by_ingest": 10,
+      "failed": 1
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "1f0e83db68f73c6dda581849fc8c2a9351ed4e06",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "elf",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 0.0010579800000000024,
+    "attempt_paid_usd": 0.00022118000000000227,
+    "bundle_sha256": "b8d31472d0913a2d1bc1586b9437b44ea724d6cbb62275f6baffd8c6027ce234",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 2337.6020479169965,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "name": "elf-scale-1000-nebius-v1",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "blocked_by_ingest": 10,
+      "failed": 1
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "elf",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 0.0027320000000000196,
+    "attempt_paid_usd": 0.0027320000000000196,
+    "bundle_sha256": "0e71549b0b9dc231e85b441e87a365f75df057d11f3a37e7e676c05aa9f39834",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 10,
+      "correct": 10,
+      "native_completed": 10,
+      "planned_queries": 10
+    },
+    "duration_seconds": 9686.551458834001,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "name": "elf-scale-1000-nebius-v2-controller-recovery",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "completed": 11
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "elf",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "attempt_exposure_usd": 2.4670000000000003e-05,
+    "attempt_paid_usd": 2.4670000000000003e-05,
+    "bundle_sha256": "c939e70b9adca789edcc9c3f5728ccd34c319ccfa841dbc59c73b8c482550d24",
+    "classification": "failed",
+    "cleanup_passed": true,
+    "contract_failures": [
+      "memory-update-channel omitted native ranked contexts after mutation",
+      "memory-update-channel omitted native operations: update",
+      "memory-delete-credential omitted native ranked contexts after mutation",
+      "memory-delete-credential omitted native operations: delete",
+      "memory-correct-cache-ttl omitted native ranked contexts after mutation",
+      "memory-correct-cache-ttl omitted native operations: update",
+      "memory-resume-migration omitted native ranked contexts after mutation",
+      "memory-resume-migration omitted native operations: update",
+      "memory-scope-forget-private omitted native ranked contexts after mutation",
+      "memory-scope-forget-private omitted native operations: delete",
+      "memory-delete-obsolete-plan omitted native ranked contexts after mutation",
+      "memory-delete-obsolete-plan omitted native operations: delete",
+      "memory-update-owner omitted native ranked contexts after mutation",
+      "memory-update-owner omitted native operations: update",
+      "memory-update-and-delete-release omitted native ranked contexts after mutation",
+      "memory-update-and-delete-release omitted native operations: update, delete"
+    ],
+    "duration_seconds": 0.0,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "image_digests": {},
+    "manifest_sha256": "b90a22bbf10cb7914cdac0032a794a2d7c2b460ad571672c9673d181a9e5afec",
+    "name": "graphrag-lifecycle-nebius-v1",
+    "phase_counts": {
+      "cold": {
+        "completed": 0,
+        "failed": 8,
+        "not_applicable": 0,
+        "scheduled": 8,
+        "scored": 0
+      },
+      "warm": {
+        "completed": 0,
+        "failed": 8,
+        "not_applicable": 0,
+        "scheduled": 8,
+        "scored": 0
+      }
+    },
+    "schema": "elf.benchmark_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "suite": "memory-lifecycle-v1"
+  },
+  {
+    "attempt_exposure_usd": 0.048744668000000005,
+    "attempt_paid_usd": 0.048744668000000005,
+    "bundle_sha256": "e7b4426d8f452440d87c1d0467e88a822114a4533a2301330f3a68339cb8a506",
+    "classification": "failed",
+    "cleanup_passed": true,
+    "contract_failures": [
+      "memory-correct-cache-ttl omitted native operations: update",
+      "memory-scope-forget-private omitted native operations: delete",
+      "memory-update-channel omitted native operations: update",
+      "memory-delete-obsolete-plan omitted native operations: delete",
+      "memory-update-and-delete-release omitted native operations: update, delete"
+    ],
+    "duration_seconds": 607.927,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "image_digests": {
+      "graphrag": "sha256:03dacaa4591a5816d436432de1e6810e21296f75640e2e1c3f46280a14fca99f"
+    },
+    "manifest_sha256": "b90a22bbf10cb7914cdac0032a794a2d7c2b460ad571672c9673d181a9e5afec",
+    "name": "graphrag-lifecycle-nebius-v4-transport-recovery",
+    "phase_counts": {
+      "cold": {
+        "completed": 4,
+        "failed": 4,
+        "not_applicable": 0,
+        "scheduled": 8,
+        "scored": 0
+      },
+      "warm": {
+        "completed": 3,
+        "failed": 5,
+        "not_applicable": 0,
+        "scheduled": 8,
+        "scored": 0
+      }
+    },
+    "schema": "elf.benchmark_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "suite": "memory-lifecycle-v1"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 2.4798910060000443,
+    "attempt_paid_usd": 2.4798910060000443,
+    "bundle_sha256": "8974229a9b3bccdef76193fc47e74c1d5f46adbb3dde88fed0e1374cec33514f",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 11083.774687917,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 143,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "name": "hindsight-scale-1000-nebius-v3-personal-recovery",
+    "native_execution_reused": false,
+    "native_statuses": {},
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "hindsight",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 1.7431452239999805,
+    "attempt_paid_usd": 1.7413959239999806,
+    "bundle_sha256": "a635d098868221c88db44ff2f7b5788c36846314dd8d8b7471f9a72c50485ad5",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 14416.634787416988,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "name": "hindsight-scale-1000-nebius-v4-funded-recovery",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "blocked_by_ingest": 10,
+      "failed": 1
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "hindsight",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 1.018023346000003,
+    "attempt_paid_usd": 1.0051260460000033,
+    "bundle_sha256": "396810a461543188f32439c89a4fb479fe00e8877357bf77bd2c5ea9ec91a819",
+    "cleanup_passed": true,
+    "combined_attempt_duration_seconds": 22220.93160654197,
+    "combined_attempt_exposure_usd": 2.7611685699999837,
+    "combined_attempt_paid_usd": 2.746521969999984,
+    "continuation": {
+      "boundary": "Restore native database and worker identity, finish pending consolidation, then execute every query. No source reingestion. Preserve original cost and elapsed time; this is not fresh-run latency.",
+      "checkpoint_sha256": "0ed38069b1d997f7a660199c5c842b5bd6272ade94af2e1007ea4ac4f8f2a0d8",
+      "mode": "retained_state_continuation",
+      "original_bundle_sha256": "a635d098868221c88db44ff2f7b5788c36846314dd8d8b7471f9a72c50485ad5",
+      "original_duration_seconds": 14416.634787416988,
+      "original_source": {
+        "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "retained_source_records": 1000,
+      "scope": "scale-1000",
+      "target": "hindsight"
+    },
+    "continued_condition": "hindsight-scale-1000-nebius-v4-funded-recovery",
+    "coverage": {
+      "answered": 10,
+      "correct": 9,
+      "native_completed": 10,
+      "planned_queries": 10
+    },
+    "duration_seconds": 7804.296819124982,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "name": "hindsight-scale-1000-nebius-v5-state-continuation",
+    "native_execution_reused": false,
+    "native_state_reused": true,
+    "native_statuses": {
+      "completed": 11
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "04b7b2755b02e595ad7e7eeac36f52ff54fd2db3",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "hindsight",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 0.4253001019999996,
+    "attempt_paid_usd": 0.4253001019999996,
+    "bundle_sha256": "6a9999514658555b86e9ff65c1a69f3fd21127457624571acb77a90f220c6952",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 10,
+      "correct": 7,
+      "native_completed": 10,
+      "planned_queries": 10
+    },
+    "duration_seconds": 6800.74588266699,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:d89a01f1f3b9b4da1bad16740c30ca5bfe02845a77a9f5211adcbe8582d0a928",
+    "name": "mem0-scale-1000-nebius-v3-personal-recovery",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "completed": 11
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "mem0",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 0.2915192479999984,
+    "attempt_paid_usd": 0.2897932479999984,
+    "bundle_sha256": "d6264baba7ced4991fd915d23fe6f79135442a4d96d9fd1bf0474c23dd94315d",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 10126.005860042002,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:db1c9ae183e069c4e22621688f3b45eddfb0ad6cf300fc12726a4e7fd9865937",
+    "name": "sag-engine-scale-1000-nebius-v3-personal-recovery",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "blocked_by_ingest": 10,
+      "failed": 1
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "sag-engine",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 0.012340467999999995,
+    "attempt_paid_usd": 0.010617067999999995,
+    "bundle_sha256": "137fc04ba936a943906a51205e517e9e02a14d22c98c6c9eb41f00ed3fcd3738",
+    "cleanup_passed": true,
+    "combined_attempt_duration_seconds": 10603.551442666998,
+    "combined_attempt_exposure_usd": 0.3038597159999984,
+    "combined_attempt_paid_usd": 0.3004103159999984,
+    "continuation": {
+      "boundary": "Resume native replace_current at the first incomplete source, then run every query. Continuation duration is not fresh-run latency; retain original attempt cost and duration.",
+      "completed_source_records": 512,
+      "mode": "retained_state_continuation",
+      "original_bundle_sha256": "d6264baba7ced4991fd915d23fe6f79135442a4d96d9fd1bf0474c23dd94315d",
+      "original_duration_seconds": 10126.005860042002,
+      "original_source": {
+        "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "receipt_sha256": "79eea9b90345b8cf3fe4ce26fc660a8c1580226062b7e7ae08f2619b701aba2a",
+      "remaining_source_records": 488,
+      "scope": "scale-1000",
+      "state_file_count": 66975,
+      "state_manifest_sha256": "889216ab3e37eac7c404b5c658b85a5c6913724e1f27ffc166ab1910737b1994"
+    },
+    "continued_condition": "sag-engine-scale-1000-nebius-v3-personal-recovery",
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 477.5455826249963,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:db1c9ae183e069c4e22621688f3b45eddfb0ad6cf300fc12726a4e7fd9865937",
+    "name": "sag-engine-scale-1000-nebius-v4-state-continuation",
+    "native_execution_reused": false,
+    "native_state_reused": true,
+    "native_statuses": {
+      "blocked_by_ingest": 10,
+      "failed": 1
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "ac2f53e2b6d7a9c72b0f34c1292dd370c179cabb",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "sag-engine",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 0.302437863999999,
+    "attempt_paid_usd": 0.301574663999999,
+    "bundle_sha256": "4f843b8588085d01a48c6132a4851605da768cba0fda3b4beda7ac813104dd50",
+    "cleanup_passed": true,
+    "combined_attempt_duration_seconds": 24053.675765707972,
+    "combined_attempt_exposure_usd": 0.6062975799999974,
+    "combined_attempt_paid_usd": 0.6019849799999974,
+    "continuation": {
+      "boundary": "Resume native replace_current at the first incomplete source, then run every query. Continuation duration is not fresh-run latency; retain original attempt cost and duration.",
+      "completed_source_records": 531,
+      "mode": "retained_state_continuation",
+      "original_bundle_sha256": "137fc04ba936a943906a51205e517e9e02a14d22c98c6c9eb41f00ed3fcd3738",
+      "original_duration_seconds": 10603.551442666998,
+      "original_source": {
+        "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "dirty": false,
+        "head": "ac2f53e2b6d7a9c72b0f34c1292dd370c179cabb",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "previous_attempt_duration_seconds": 477.5455826249963,
+      "receipt_sha256": "ab5d4fbab36fd49be0d45e84adfe0256c8c28be5b15a2109d27a9d327054b8f9",
+      "remaining_source_records": 469,
+      "scope": "scale-1000",
+      "state_file_count": 69086,
+      "state_manifest_sha256": "b802859a53a953d2efc143477a0be5b29af8dac0631e54dda9c2402f3337861c"
+    },
+    "continued_condition": "sag-engine-scale-1000-nebius-v4-state-continuation",
+    "coverage": {
+      "answered": 10,
+      "correct": 8,
+      "native_completed": 10,
+      "planned_queries": 10
+    },
+    "duration_seconds": 13450.124323040975,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:db1c9ae183e069c4e22621688f3b45eddfb0ad6cf300fc12726a4e7fd9865937",
+    "name": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+    "native_execution_reused": false,
+    "native_state_reused": true,
+    "native_statuses": {
+      "completed": 11
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "956ed016e886727a971a302f617364e86604abe3",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "sag-engine",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "attempt_exposure_usd": 0.003062436,
+    "attempt_paid_usd": 0.003062436,
+    "bundle_sha256": "9f217b33874c74db8282038ee4d6e2cc05ee0a2fcf53156bd5fc4c4f6cfb9ef4",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 10,
+      "correct": 9,
+      "native_completed": 10,
+      "planned_queries": 62
+    },
+    "duration_seconds": 23.94141783300438,
+    "embedding_429_retries": 3,
+    "embedding_provider": "deepinfra",
+    "execution_limits": {
+      "ingest_action_seconds": 5400,
+      "native_total_seconds": 7200,
+      "other_action_seconds": 1200
+    },
+    "exit_code": null,
+    "image_digest": "sha256:40bddfd26978fa9744a1418a787bfbf4f466af6ba098222fd6903439097d6717",
+    "name": "sag-retained-reader-recovery-v1",
+    "native_execution_reused": true,
+    "native_statuses": {
+      "completed": 11
+    },
+    "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "84d6d653e3940b2dc82ac994922cb21a239441afcc38ec2aa6117068702a46e7",
+    "retrieval_runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "retrieval_source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "a3a3e4896239b444473041b88f5c362f8000ff38",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "sag-engine",
+    "workload_group": "all",
+    "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427"
+  }
+]

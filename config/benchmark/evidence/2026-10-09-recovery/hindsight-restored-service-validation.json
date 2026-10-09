@@ -1,0 +1,21 @@
+{
+  "at_unix": 1791565663.0722802,
+  "boundary": "Restored API booted with native PostgreSQL runtime and cached reranker. Worker disabled; loopback stub serves startup verification only. Real provider consolidation and recall remain unverified.",
+  "external_model_calls": 0,
+  "health": {
+    "database": "connected",
+    "db_acquire_ms": 0.4,
+    "db_pool_idle": 5,
+    "db_pool_in_use": 0,
+    "db_pool_max": 100,
+    "db_pool_waiting": 0,
+    "status": "healthy"
+  },
+  "network": "none",
+  "retained_counts": {
+    "chunks": 1000,
+    "documents": 1000
+  },
+  "startup_probe_calls": 1,
+  "validation_container_removed": true
+}

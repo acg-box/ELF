@@ -49,6 +49,18 @@ class BudgetTests(TestCase):
             prepare_request({"n": 2}, "chat")
         self.assertGreater(reservation(10000, "chat", 8192), 0.015)
 
+    def test_explicit_embedding_provider_preserves_model_dimensions_and_no_fallback(self):
+        for provider in ("deepinfra", "nebius"):
+            body, _, output = prepare_request({"input": "fact", "dimensions": 1536,
+                "provider": {"only": ["other"]}}, "embedding", provider)
+            self.assertEqual(body["provider"]["only"], [provider])
+            self.assertFalse(body["provider"]["allow_fallbacks"])
+            self.assertEqual(body["model"], "qwen/qwen3-embedding-8b")
+            self.assertEqual(body["dimensions"], 1536)
+            self.assertEqual(output, 0)
+        body, _, _ = prepare_request({}, "chat", "nebius")
+        self.assertEqual(body["provider"]["only"], ["deepseek"])
+
     def test_buffered_sse_preserves_tool_arguments_usage_and_completion(self):
         result = {"id": "completion", "model": "model", "created": 1,
             "choices": [{"message": {"role": "assistant", "content": None,
@@ -63,3 +75,86 @@ class BudgetTests(TestCase):
         self.assertEqual(last["choices"][0]["finish_reason"], "tool_calls")
         self.assertEqual(last["usage"], result["usage"])
         self.assertEqual(events[2], "data: [DONE]")
+
+
+class EmbeddingRecoveryTests(TestCase):
+    def request(self, responses, kind="embedding", retries=3, tranche=1.0):
+        import contextlib
+        import http.client
+        import io
+        import threading
+        from http.server import ThreadingHTTPServer
+        from unittest.mock import Mock, patch
+        from benchmark_budget import handler_for
+
+        opener = Mock()
+        opener.open.side_effect = responses
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
+            ledger = Ledger(Path(directory) / "ledger.json", 1, tranche)
+            with patch("benchmark_budget.urllib.request.build_opener", return_value=opener), \
+                    patch("benchmark_budget.time.sleep") as sleep:
+                server = ThreadingHTTPServer(("127.0.0.1", 0), handler_for(ledger, "upstream-key", "local-token", retries))
+                thread = threading.Thread(target=server.serve_forever, kwargs={"poll_interval": 0.01})
+                thread.start()
+                client = http.client.HTTPConnection("127.0.0.1", server.server_port, timeout=5)
+                try:
+                    route = "/v1/embeddings" if kind == "embedding" else "/v1/chat/completions"
+                    client.request("POST", route, json.dumps({"input": "synthetic fact"}),
+                        {"Authorization": "Bearer local-token", "Content-Type": "application/json"})
+                    response = client.getresponse()
+                    status, payload = response.status, json.loads(response.read())
+                finally:
+                    client.close()
+                    server.shutdown()
+                    server.server_close()
+                    thread.join()
+                return status, payload, ledger.value, opener.open.call_args_list, sleep.call_args_list
+
+    @staticmethod
+    def failure(status=429, retry_after=None):
+        import io
+        from urllib.error import HTTPError
+
+        headers = {} if retry_after is None else {"Retry-After": retry_after}
+        return HTTPError("https://provider.invalid", status, "failed", headers,
+            io.BytesIO(b'{"error":{"message":"busy upstream-key local-token"}}'))
+
+    @staticmethod
+    def success():
+        import io
+
+        return io.BytesIO(b'{"data":[{"embedding":[0.1]}],"usage":{"cost":0.000001}}')
+
+    def test_embedding_retry_keeps_request_and_charges_separate_attempts(self):
+        status, payload, ledger, calls, sleeps = self.request([self.failure(retry_after="3"), self.success()])
+        self.assertEqual(status, 200)
+        self.assertEqual(payload["data"][0]["embedding"], [0.1])
+        self.assertEqual(calls[0].args[0].data, calls[1].args[0].data)
+        self.assertEqual([c.args[0] for c in sleeps], [3])
+        rows = ledger["requests"]
+        self.assertEqual([r["status"] for r in rows], ["provider_failed", "completed"])
+        self.assertEqual([r["attempt"] for r in rows], [1, 2])
+        self.assertEqual([r["requested_provider"] for r in rows], ["deepinfra", "deepinfra"])
+        self.assertEqual([r["request_ordinal"] for r in rows], [1, 1])
+        self.assertNotIn("upstream-key", rows[0]["provider_error"])
+        self.assertAlmostEqual(totals(ledger)[1], rows[0]["reserved_usd"] + 0.000001)
+
+    def test_retry_stops_at_attempt_cap_and_budget_cap(self):
+        status, _, ledger, calls, sleeps = self.request([self.failure() for _ in range(4)])
+        self.assertEqual((status, len(calls), len(ledger["requests"])), (429, 4, 4))
+        self.assertEqual([c.args[0] for c in sleeps], [2, 4, 8])
+        status, _, ledger, calls, _ = self.request([self.failure()], tranche=0.0015)
+        self.assertEqual((status, len(calls), len(ledger["requests"])), (402, 1, 1))
+
+    def test_no_replay_of_chat_other_errors_or_uncertain_transport(self):
+        for kind, failure, retries, expected in (
+            ("chat", self.failure(), 3, 429),
+            ("embedding", self.failure(503), 3, 503),
+            ("embedding", TimeoutError(), 3, 502),
+            ("embedding", self.failure(), 0, 429),
+            ("embedding", self.failure(retry_after="60"), 3, 429),
+        ):
+            with self.subTest(kind=kind, expected=expected, retries=retries):
+                status, _, ledger, calls, sleeps = self.request([failure], kind, retries)
+                self.assertEqual((status, len(calls), len(ledger["requests"])), (expected, 1, 1))
+                self.assertEqual(sleeps, [])
