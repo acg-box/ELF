@@ -312,3 +312,12 @@ The common repair agent can use any configured native retrieval product:
 prepare a replay with `--target PRODUCT`, retrieve with the same target and
 manifest, then run both repetitions with `--arm PRODUCT`. The reference patch
 and checks remain outside product input.
+
+Use `--embedding-provider nebius` only for a separately registered provider
+condition when the default DeepInfra route cannot complete. Both routes use
+Qwen3 Embedding 8B. The gateway pins the selected provider, disables fallback,
+and preserves caller dimensions and the price ceiling. Chat routing does not
+change. The start record and each attempt retain the requested provider; a
+successful receipt also retains the returned provider. Do not merge these
+results into a DeepInfra condition or infer identical retrieval behavior from
+the model name alone.

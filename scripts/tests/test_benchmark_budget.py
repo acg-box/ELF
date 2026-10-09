@@ -49,6 +49,18 @@ class BudgetTests(TestCase):
             prepare_request({"n": 2}, "chat")
         self.assertGreater(reservation(10000, "chat", 8192), 0.015)
 
+    def test_explicit_embedding_provider_preserves_model_dimensions_and_no_fallback(self):
+        for provider in ("deepinfra", "nebius"):
+            body, _, output = prepare_request({"input": "fact", "dimensions": 1536,
+                "provider": {"only": ["other"]}}, "embedding", provider)
+            self.assertEqual(body["provider"]["only"], [provider])
+            self.assertFalse(body["provider"]["allow_fallbacks"])
+            self.assertEqual(body["model"], "qwen/qwen3-embedding-8b")
+            self.assertEqual(body["dimensions"], 1536)
+            self.assertEqual(output, 0)
+        body, _, _ = prepare_request({}, "chat", "nebius")
+        self.assertEqual(body["provider"]["only"], ["deepseek"])
+
     def test_buffered_sse_preserves_tool_arguments_usage_and_completion(self):
         result = {"id": "completion", "model": "model", "created": 1,
             "choices": [{"message": {"role": "assistant", "content": None,
@@ -122,6 +134,7 @@ class EmbeddingRecoveryTests(TestCase):
         rows = ledger["requests"]
         self.assertEqual([r["status"] for r in rows], ["provider_failed", "completed"])
         self.assertEqual([r["attempt"] for r in rows], [1, 2])
+        self.assertEqual([r["requested_provider"] for r in rows], ["deepinfra", "deepinfra"])
         self.assertEqual([r["request_ordinal"] for r in rows], [1, 1])
         self.assertNotIn("upstream-key", rows[0]["provider_error"])
         self.assertAlmostEqual(totals(ledger)[1], rows[0]["reserved_usd"] + 0.000001)

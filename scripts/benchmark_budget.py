@@ -43,7 +43,7 @@ def reservation(size, kind, output):
     return ((size + 8192) * (0.3 if kind == "chat" else 0.1) + output * 1.2) / 1_000_000
 
 
-def prepare_request(body, kind):
+def prepare_request(body, kind, embedding_provider="deepinfra"):
     body = dict(body)
     streaming = body.get("stream") is True
     body["stream"] = False
@@ -66,7 +66,7 @@ def prepare_request(body, kind):
     else:
         body.pop("stream", None)
         body.update(model=EMBEDDING_MODEL,
-            provider={"only": ["deepinfra"], "allow_fallbacks": False, "max_price": {"prompt": 0.1}})
+            provider={"only": [embedding_provider], "allow_fallbacks": False, "max_price": {"prompt": 0.1}})
     return body, streaming, output
 
 
@@ -128,7 +128,7 @@ def embedding_retry_delay(kind, status, attempt, retries, retry_after):
     return 2 ** (attempt + 1)
 
 
-def handler_for(ledger, key, token, embedding_429_retries=0):
+def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra"):
     opener = urllib.request.build_opener(NoRedirect)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
@@ -166,7 +166,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0):
                 size = int(self.headers.get("Content-Length", "0"))
                 if size <= 0 or size > 262144:
                     return self.error(413, "input_limit")
-                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind)
+                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider)
                 data = json.dumps(body).encode()
             except (ValueError, TypeError) as error:
                 return self.error(400, str(error))
@@ -181,7 +181,8 @@ def handler_for(ledger, key, token, embedding_429_retries=0):
                     return self.error(402, "local_budget_exhausted")
                 if first_ordinal is None:
                     first_ordinal = row["ordinal"]
-                attempt_metadata = {"attempt": attempt + 1, "request_ordinal": first_ordinal}
+                attempt_metadata = {"attempt": attempt + 1, "request_ordinal": first_ordinal,
+                    "requested_provider": embedding_provider if kind == "embedding" else "deepseek"}
                 started = time.monotonic()
                 try:
                     with opener.open(request, timeout=90) as response:
@@ -230,6 +231,7 @@ def main():
     parser.add_argument("--ledger", type=Path, required=True)
     parser.add_argument("--ceiling", type=float, default=10)
     parser.add_argument("--tranche", type=float, default=0.5)
+    parser.add_argument("--embedding-provider", choices=("deepinfra", "nebius"), default="deepinfra")
     parser.add_argument("--embedding-429-retries", type=int, choices=range(4), default=0)
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
@@ -249,7 +251,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -262,6 +264,7 @@ def main():
         print(json.dumps({"event": "budget_start", "ceiling_usd": args.ceiling,
             "tranche_reservation_usd": args.tranche, "paid_total_usd": totals(ledger.value)[0],
             "embedding_429_retries": args.embedding_429_retries,
+            "embedding_provider": args.embedding_provider,
             "transport": "nonstream_upstream_with_optional_buffered_sse"}), flush=True)
         def interrupted(signum, frame):
             raise KeyboardInterrupt
