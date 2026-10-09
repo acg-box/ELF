@@ -219,8 +219,10 @@ async def sag_action(action, root):
     scope, kind = action["scope"], action["action"]
     async with DataEngine(configuration(root / "sag-shared"), data_source_id=scope) as engine:
         if kind == "ingest":
-            receipts = []
-            for item in action["items"]:
+            from benchmark_deep.resume import retained_receipts
+
+            receipts = retained_receipts(action, root)
+            for item in action["items"][len(receipts):]:
                 receipts.append(await ingest(engine, scope, item))
                 (root / (scope + "-sag-progress.json")).write_text(json.dumps(receipts))
             return {"native": receipts}
