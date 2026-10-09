@@ -74,6 +74,11 @@ class ResumeTests(unittest.TestCase):
             copied.write_bytes(b'continued')
             self.assertEqual((state / 'sag-shared/sag.db').read_bytes(), b'retained-native-state')
             self.assertEqual(provenance['original_bundle_sha256'], resume.digest(previous / 'bundle.json'))
+            bundle['combined_attempt_duration_seconds'] = 456
+            (previous / 'bundle.json').write_text(json.dumps(bundle))
+            again = resume.prepare_sag_resume(previous, root / 'another', inputs, {}, {}, 'same-image')
+            self.assertEqual(again['original_duration_seconds'], 456)
+            self.assertEqual(again['previous_attempt_duration_seconds'], 123)
 
     def test_fresh_ingest_has_no_retained_receipts(self):
         with tempfile.TemporaryDirectory() as d:

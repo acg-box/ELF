@@ -25,7 +25,7 @@ def configuration(state):
         embedding=EmbeddingConfig(model=os.environ["EMBEDDING_MODEL"],
             base_url=os.environ["EMBEDDING_API_BASE"], api_key=os.environ["EMBEDDING_API_KEY"],
             schema_dimensions=int(os.environ["EMBEDDING_DIMENSIONS"]),
-            request_dimensions=int(os.environ["EMBEDDING_DIMENSIONS"]), max_retries=1))
+            request_dimensions=int(os.environ["EMBEDDING_DIMENSIONS"])))
 
 
 async def ingest(engine, scope, item):
