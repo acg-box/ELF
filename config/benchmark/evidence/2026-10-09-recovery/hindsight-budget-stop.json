@@ -1,0 +1,12 @@
+{
+  "accepted_source_records": 1000,
+  "action": "Gracefully stop only this condition native unit; existing runner captures logs, cleans project, writes bundle, and controller continues remaining jobs.",
+  "at_unix": 1791541669.047075,
+  "budget_observation": "hindsight-budget-observation.json",
+  "cleanup_passed": true,
+  "condition": "hindsight-scale-1000-nebius-v3-personal-recovery",
+  "native_exit_code": 143,
+  "reason": "Stop ineffective consolidation after repeated confirmed local_budget_exhausted rejections. Preserve this budget-limited attempt; do not classify as provider or product failure.",
+  "status": "terminal_verified",
+  "terminal_bundle_sha256": "8974229a9b3bccdef76193fc47e74c1d5f46adbb3dde88fed0e1374cec33514f"
+}

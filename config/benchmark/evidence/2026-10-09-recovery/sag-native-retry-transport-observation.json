@@ -1,0 +1,17 @@
+{
+  "at_unix": 1791576110.8326342,
+  "boundary": "One embedding request has an unknown charge after 90 seconds. Successful source receipts continued beyond this incident. The running container log tail did not expose a retry event; inspect the complete operation log at termination before attributing recovery to a specific retry. Full scale and query coverage remain pending.",
+  "completed_source_records": 558,
+  "condition": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+  "failed_requests": [
+    {
+      "attempt": 1,
+      "kind": "embedding",
+      "ordinal": 57038,
+      "reserved_usd": 0.0008632000000000001,
+      "seconds": 90.0049420419964,
+      "status": "uncertain"
+    }
+  ],
+  "native_retry_events": []
+}

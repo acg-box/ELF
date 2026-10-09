@@ -1,0 +1,12 @@
+{
+  "at_unix": 1791567157.476753,
+  "boundary": "Native continuation has advanced beyond the retained prefix. This does not prove all remaining records or queries will finish.",
+  "condition": "sag-engine-scale-1000-nebius-v4-state-continuation",
+  "copied_state_file_count": 66975,
+  "copied_state_manifest_sha256": "889216ab3e37eac7c404b5c658b85a5c6913724e1f27ffc166ab1910737b1994",
+  "current_completed_records": 515,
+  "first_incomplete_source_now_completed": true,
+  "original_prefix_records": 512,
+  "original_prefix_unchanged": true,
+  "source_commit": "ac2f53e2b6d7a9c72b0f34c1292dd370c179cabb"
+}

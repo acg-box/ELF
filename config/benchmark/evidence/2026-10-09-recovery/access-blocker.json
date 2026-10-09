@@ -1,12 +1,12 @@
 {
-  "observed_at_unix": 1791523471.877024,
   "authentication_succeeded": true,
-  "read_http_status": 403,
-  "value_returned": false,
+  "observed_at_unix": 1791523471.877024,
   "pending_targets": [
     "mem0",
     "hindsight",
     "sag-engine",
     "graphrag"
-  ]
+  ],
+  "read_http_status": 403,
+  "value_returned": false
 }

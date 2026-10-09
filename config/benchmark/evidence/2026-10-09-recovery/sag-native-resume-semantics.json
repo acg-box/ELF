@@ -1,0 +1,23 @@
+{
+  "boundary": "Source inspection plus stopped-state consistency; actual resumed native execution remains pending.",
+  "finding": "REPLACE_CURRENT captures prior source state, deletes old source chunks and associated event relations, deletes old chunk/event vectors, then writes replacement. The next source can use the existing adapter without manual database mutation.",
+  "image": "elf-benchmark-sag-engine:v3",
+  "image_digest": "sha256:db1c9ae183e069c4e22621688f3b45eddfb0ad6cf300fc12726a4e7fd9865937",
+  "inspected_lines": [
+    [
+      312,
+      333
+    ],
+    [
+      363,
+      418
+    ],
+    [
+      820,
+      846
+    ]
+  ],
+  "observed_at_unix": 1791552542.9508889,
+  "source_module": "zleap.sag._pipeline_adapters",
+  "source_sha256": "628930f6261b8a18b37a61c7a17bb0a74d6f9ea154cb4c76ae6dcd80e8887b5e"
+}

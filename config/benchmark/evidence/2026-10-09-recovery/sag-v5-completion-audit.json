@@ -1,0 +1,60 @@
+{
+  "at_unix": 1791588904.4576719,
+  "attempt_exposure_usd": 0.302437863999999,
+  "attempt_paid_usd": 0.301574663999999,
+  "boundary": "All ten query measurements completed. Retain two retrieval misses and all original failures. Native log confirms one embedding retry at attempt 1/3; it does not prove that three retries outperform one. Combined time includes all three SAG attempts. Six correct supported queries also contain explicitly rejected development alternatives; these context hits are not wrong final answers.",
+  "bundle_sha256": "4f843b8588085d01a48c6132a4851605da768cba0fda3b4beda7ac813104dd50",
+  "cleanup_passed": true,
+  "combined_attempt_duration_seconds": 24053.675765707972,
+  "condition": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+  "coverage": {
+    "answered": 10,
+    "correct": 8,
+    "native_completed": 10,
+    "planned_queries": 10
+  },
+  "duration_seconds": 13450.124323040975,
+  "native_embedding_retry_events": [
+    "Embedding\u8c03\u7528\u5931\u8d25\uff0c0.5s\u540e\u91cd\u8bd5 (\u5c1d\u8bd5 1/3)"
+  ],
+  "operation_log_sha256": "09f2e1dc469ab9a0d8d0d7fb51fbb016b36460582d5f1c57ad43329ec6604a91",
+  "source": {
+    "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dirty": false,
+    "head": "956ed016e886727a971a302f617364e86604abe3",
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "uncertain_ordinals": [
+    57038
+  ],
+  "wrong_cases": [
+    {
+      "case_id": "case-010",
+      "classification": "retrieval_miss",
+      "fact_in_supplied_context": false,
+      "reader_answer": "unknown",
+      "required_evidence_found": false,
+      "retrieved_services": [
+        "Aster-0040",
+        "Aster-0072",
+        "Aster-0096",
+        "Aster-0144",
+        "Aster-0160"
+      ]
+    },
+    {
+      "case_id": "case-011",
+      "classification": "retrieval_miss",
+      "fact_in_supplied_context": false,
+      "reader_answer": "unknown",
+      "required_evidence_found": false,
+      "retrieved_services": [
+        "Aster-0985",
+        "Aster-0929",
+        "Aster-0905",
+        "Aster-0489",
+        "Aster-0969"
+      ]
+    }
+  ]
+}

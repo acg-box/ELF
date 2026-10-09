@@ -1,0 +1,22 @@
+{
+  "at_unix": 1791568131.9116428,
+  "boundary": "A restored native consolidation round completed and requeued remaining work. This proves live continuation progress, not full ingestion readiness or query coverage.",
+  "condition": "hindsight-scale-1000-nebius-v5-state-continuation",
+  "observed_round_transitions": [
+    {
+      "at": "2026-10-09T17:41:33.795711+00:00",
+      "at_unix": 1791567706.115409,
+      "processed": 26,
+      "stage": "consolidating",
+      "total": 1597
+    },
+    {
+      "at": "2026-10-09T17:48:27.218261+00:00",
+      "at_unix": 1791568114.407611,
+      "processed": 13,
+      "stage": "consolidating",
+      "total": 1497
+    }
+  ],
+  "retained_source_records": 1000
+}

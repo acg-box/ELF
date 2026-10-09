@@ -1,0 +1,14 @@
+{
+  "accepted_source_records": 1000,
+  "boundary": "Interim observation. Query scoring has not completed. Ingestion duration includes native consolidation readiness.",
+  "cancelled": 0,
+  "condition": "hindsight-scale-1000-nebius-v3-personal-recovery",
+  "failed": 0,
+  "observed_at_unix": 1791539709.84551,
+  "pending": 0,
+  "processing": 1,
+  "processing_types": [
+    "consolidation"
+  ],
+  "source": "Native Hindsight GET bank operations by status"
+}

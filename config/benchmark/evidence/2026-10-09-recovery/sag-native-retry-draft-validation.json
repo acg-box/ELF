@@ -1,0 +1,14 @@
+{
+  "at_unix": 1791567879.870969,
+  "base_commit": "04b7b2755b02e595ad7e7eeac36f52ff54fd2db3",
+  "boundary": "Offline native configuration and continuation accounting checks. Full repository checks and paid recovery still pending.",
+  "draft_sha256": {
+    "resume.py": "e683e97d2abcb7f14ee882c89dce04a9347ef971f021a9b6df5ff510cfa37cf9",
+    "sag_engine.py": "fa51e87fa39bbd41e1eb2b56f510154cd310559104588d296837607895e43ee5",
+    "test_benchmark_sag_resume.py": "00427ed4d5877333fd4d1690aa369f1bf1f11bf0421c941be0c5e5ffa93ba506"
+  },
+  "native_chat_retries": 1,
+  "native_embedding_retries": 3,
+  "network": "none",
+  "passed_tests": 4
+}

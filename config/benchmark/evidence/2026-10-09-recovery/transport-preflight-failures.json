@@ -1,0 +1,12 @@
+[
+  {
+    "boundary": "Provider preflight failed before native target execution; not a GraphRAG product failure.",
+    "chat_classification": "completed",
+    "classification": "provider_failed",
+    "condition": "graphrag-lifecycle-nebius-v3-personal-recovery",
+    "embedding_duration_seconds": 10.354,
+    "embedding_error": "local_gateway_502_URLError",
+    "native_cases_executed": 0,
+    "stage": "provider_preflight"
+  }
+]

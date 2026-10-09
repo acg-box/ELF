@@ -1,0 +1,12 @@
+{
+  "at_unix": 1791560614.32577,
+  "boundary": "Rounds process at most the configured limit and requeue remaining unconsolidated memories. Progress resets per round and is not a global completion percentage. Require empty native pending/processing/failed/cancelled queues before queries.",
+  "effective_config": {
+    "consolidation_llm_batch_size": 8,
+    "consolidation_llm_parallelism": 4,
+    "consolidation_max_memories_per_round": 100
+  },
+  "source_lines": "2218-2249",
+  "source_module": "hindsight_api.engine.consolidation.consolidator",
+  "source_sha256": "b9534c5c56188427c93c206a026d0fbff27278cae91cd1e3351f3e41e45b5bb4"
+}

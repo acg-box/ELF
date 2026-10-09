@@ -1,0 +1,25 @@
+{
+  "at_unix": 1791567752.104287,
+  "boundary": "Native configuration inspection found the adapter reduces embedding retries below the native default. Retain failed continuation and uncertain charges. Assess a separate default-retry continuation after Hindsight; root remote transport cause is not established.",
+  "bundle_sha256": "137fc04ba936a943906a51205e517e9e02a14d22c98c6c9eb41f00ed3fcd3738",
+  "cleanup_passed": true,
+  "combined_attempt_duration_seconds": 10603.551442666998,
+  "completed_source_records": 531,
+  "condition": "sag-engine-scale-1000-nebius-v4-state-continuation",
+  "coverage": {
+    "answered": 0,
+    "correct": 0,
+    "native_completed": 0,
+    "planned_queries": 10
+  },
+  "duration_seconds": 477.5455826249963,
+  "exposure_usd": 0.012340467999999995,
+  "failure_class": "native_index_rollback_after_embedding_transport_failures",
+  "native_default_embedding_retries": 3,
+  "paid_usd": 0.010617067999999995,
+  "tested_adapter_embedding_retries": 1,
+  "uncertain_embedding_ordinals": [
+    53561,
+    53562
+  ]
+}

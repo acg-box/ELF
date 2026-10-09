@@ -94,6 +94,55 @@
     "finish": {
       "consumer_exit": 105,
       "event": "budget_finish",
+      "paid_total_usd": 11.943486173000311,
+      "reserved_total_usd": 12.24103497300025
+    },
+    "finished_request_states": {
+      "completed": 1,
+      "uncertain": 1
+    },
+    "first_finished_ordinal": 48331,
+    "last_finished_ordinal": 48332,
+    "log": "graphrag-lifecycle-nebius-v3-personal-recovery.log",
+    "log_sha256": "840547ff9b8c0a82b6a1c853406f9b4170ae6418ebf97bad1bf075c3651ca919",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 11.943462473000311,
+      "tranche_reservation_usd": 0.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
+      "paid_total_usd": 13.733626764999801,
+      "reserved_total_usd": 14.03292486499974
+    },
+    "finished_request_states": {
+      "completed": 110
+    },
+    "first_finished_ordinal": 53337,
+    "last_finished_ordinal": 53446,
+    "log": "graphrag-lifecycle-nebius-v4-transport-recovery.log",
+    "log_sha256": "3dc93b2f6c1bd04b69c1661c7df29113bbfaf433b8322b28f6aaea77ffd807b4",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 13.684882096999809,
+      "tranche_reservation_usd": 0.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
       "paid_total_usd": 8.742659011000098,
       "reserved_total_usd": 9.037643311000036
     },
@@ -116,6 +165,81 @@
     "finish": {
       "consumer_exit": 105,
       "event": "budget_finish",
+      "paid_total_usd": 11.65366922500024,
+      "reserved_total_usd": 11.948653525000177
+    },
+    "finished_request_states": {
+      "completed": 3813
+    },
+    "first_finished_ordinal": 41447,
+    "last_finished_ordinal": 45259,
+    "log": "hindsight-scale-1000-nebius-v3-personal-recovery.log",
+    "log_sha256": "a8befa5472e50dafae87c9c09e9729e6288f34fdcca47822620cf32786260050",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 9.173778219000592,
+      "tranche_reservation_usd": 2.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
+      "paid_total_usd": 13.684882096999809,
+      "reserved_total_usd": 13.984180196999748
+    },
+    "finished_request_states": {
+      "completed": 5002,
+      "provider_failed": 1,
+      "uncertain": 1
+    },
+    "first_finished_ordinal": 48333,
+    "last_finished_ordinal": 53336,
+    "log": "hindsight-scale-1000-nebius-v4-funded-recovery.log",
+    "log_sha256": "b30fa632b3db010ccb54d52eeddb5c404550c6dead11c511e0b6ce4709279313",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 11.943486173000311,
+      "tranche_reservation_usd": 4.0,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
+      "paid_total_usd": 14.749369878999351,
+      "reserved_total_usd": 15.06328867899929
+    },
+    "finished_request_states": {
+      "completed": 3335,
+      "uncertain": 1
+    },
+    "first_finished_ordinal": 53563,
+    "last_finished_ordinal": 56898,
+    "log": "hindsight-scale-1000-nebius-v5-state-continuation.log",
+    "log_sha256": "c7665f1a587df383b8db8918570c31669965104dedb5657ece2d40aa8ea62bec",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 13.74424383299981,
+      "tranche_reservation_usd": 2.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
       "paid_total_usd": 8.742659011000098,
       "reserved_total_usd": 9.037643311000036
     },
@@ -130,6 +254,30 @@
       "embedding_provider": "nebius",
       "event": "budget_start",
       "paid_total_usd": 8.742659011000098,
+      "tranche_reservation_usd": 2.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
+      "paid_total_usd": 9.173778219000592,
+      "reserved_total_usd": 9.46876251900053
+    },
+    "finished_request_states": {
+      "completed": 3019
+    },
+    "first_finished_ordinal": 38428,
+    "last_finished_ordinal": 41446,
+    "log": "mem0-scale-1000-nebius-v3-personal-recovery.log",
+    "log_sha256": "af20294e4c7899807b44937bf10844d14f3b2204b1da6e5920308220ea5062a0",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 8.748478117000486,
       "tranche_reservation_usd": 2.5,
       "transport": "nonstream_upstream_with_optional_buffered_sse"
     }
@@ -200,6 +348,81 @@
       "embedding_provider": "nebius",
       "event": "budget_start",
       "paid_total_usd": 8.742659011000098,
+      "tranche_reservation_usd": 2.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
+      "paid_total_usd": 11.943462473000311,
+      "reserved_total_usd": 12.24017277300025
+    },
+    "finished_request_states": {
+      "completed": 3069,
+      "uncertain": 2
+    },
+    "first_finished_ordinal": 45260,
+    "last_finished_ordinal": 48330,
+    "log": "sag-engine-scale-1000-nebius-v3-personal-recovery.log",
+    "log_sha256": "e54150fb69323c3ce66d533b3a7d15378a97f16f14dc83500228e58cc7d24e46",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 11.65366922500024,
+      "tranche_reservation_usd": 2.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
+      "paid_total_usd": 13.74424383299981,
+      "reserved_total_usd": 14.04526533299975
+    },
+    "finished_request_states": {
+      "completed": 114,
+      "uncertain": 2
+    },
+    "first_finished_ordinal": 53447,
+    "last_finished_ordinal": 53562,
+    "log": "sag-engine-scale-1000-nebius-v4-state-continuation.log",
+    "log_sha256": "82419d16e1117a337f89eb1c79bc06d1de1f176c9a34aca88e241762bebb791b",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 13.733626764999801,
+      "tranche_reservation_usd": 2.5,
+      "transport": "nonstream_upstream_with_optional_buffered_sse"
+    }
+  },
+  {
+    "finish": {
+      "consumer_exit": 105,
+      "event": "budget_finish",
+      "paid_total_usd": 15.050944542999467,
+      "reserved_total_usd": 15.365726542999404
+    },
+    "finished_request_states": {
+      "completed": 2860,
+      "uncertain": 1
+    },
+    "first_finished_ordinal": 56899,
+    "last_finished_ordinal": 59759,
+    "log": "sag-engine-scale-1000-nebius-v5-native-retry-continuation.log",
+    "log_sha256": "ab0f7736e7023f85ee6692f832e638e32a26962047816f26c08e848709956bf6",
+    "start": {
+      "ceiling_usd": 20.0,
+      "embedding_429_retries": 3,
+      "embedding_provider": "nebius",
+      "event": "budget_start",
+      "paid_total_usd": 14.749369878999351,
       "tranche_reservation_usd": 2.5,
       "transport": "nonstream_upstream_with_optional_buffered_sse"
     }

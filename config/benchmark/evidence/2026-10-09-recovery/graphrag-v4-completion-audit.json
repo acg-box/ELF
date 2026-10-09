@@ -1,0 +1,42 @@
+{
+  "at_unix": 1791567029.406443,
+  "boundary": "Complete scheduled cold/warm condition retained. Native failures remain missing query measurements, not incorrect answers. Three correct warm answers do not make the entire lifecycle contract pass.",
+  "bundle_sha256": "e7b4426d8f452440d87c1d0467e88a822114a4533a2301330f3a68339cb8a506",
+  "classification": "product_failed",
+  "cleanup_passed": true,
+  "condition": "graphrag-lifecycle-nebius-v4-transport-recovery",
+  "contract_failures": [
+    "memory-correct-cache-ttl omitted native operations: update",
+    "memory-scope-forget-private omitted native operations: delete",
+    "memory-update-channel omitted native operations: update",
+    "memory-delete-obsolete-plan omitted native operations: delete",
+    "memory-update-and-delete-release omitted native operations: update, delete"
+  ],
+  "duration_seconds": 607.927,
+  "exposure_usd": 0.048744668000000005,
+  "paid_usd": 0.048744668000000005,
+  "phase_counts": {
+    "cold": {
+      "completed": 4,
+      "failed": 4,
+      "not_applicable": 0,
+      "scheduled": 8,
+      "scored": 0
+    },
+    "warm": {
+      "completed": 3,
+      "failed": 5,
+      "not_applicable": 0,
+      "scheduled": 8,
+      "scored": 0
+    }
+  },
+  "source": {
+    "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dirty": false,
+    "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "warm_answers_available": 3,
+  "warm_answers_correct": 3
+}

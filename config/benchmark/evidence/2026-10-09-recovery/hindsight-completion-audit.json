@@ -1,0 +1,24 @@
+{
+  "boundary": "1000 source records accepted. Native consolidation encountered local budget rejections. No query measurements completed. This is not evidence of product or upstream provider failure.",
+  "bundle_sha256": "8974229a9b3bccdef76193fc47e74c1d5f46adbb3dde88fed0e1374cec33514f",
+  "classification": "operator_stopped_after_local_tranche_exhaustion",
+  "cleanup_passed": true,
+  "condition": "hindsight-scale-1000-nebius-v3-personal-recovery",
+  "coverage": {
+    "answered": 0,
+    "correct": 0,
+    "native_completed": 0,
+    "planned_queries": 10
+  },
+  "duration_seconds": 11083.774687917,
+  "ending_ordinal": 45259,
+  "native_exit_code": 143,
+  "paid_increment_usd": 2.4798910059996473,
+  "source": {
+    "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "dirty": false,
+    "head": "e1e2d4cf79bc2bcbfeaa356fc85c9de3d773bd5e",
+    "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "starting_ordinal": 41447
+}

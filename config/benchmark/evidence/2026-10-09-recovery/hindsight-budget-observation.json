@@ -1,0 +1,8 @@
+{
+  "boundary": "Gateway rejects reservations before upstream calls. Such rejections are absent from request ledger and must not be described as no native failures. Count is log occurrences, not unique requests.",
+  "condition": "hindsight-scale-1000-nebius-v3-personal-recovery",
+  "disposition": "Await terminal native outcome; preserve budget-limited condition separately.",
+  "local_budget_exhausted_occurrences": 49,
+  "observed_at_unix": 1791541327.0301921,
+  "source": "Native service last 1500 log lines"
+}

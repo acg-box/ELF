@@ -1,0 +1,20 @@
+{
+  "boundary": "Consistent stopped-state validation supports a separate resume condition. Reprocess the first uncompleted source with native replace_current semantics. Preserve all original costs, durations, and failure evidence.",
+  "completed_receipts": 512,
+  "condition": "sag-engine-scale-1000-nebius-v3-personal-recovery",
+  "expected_chunk_ids": 512,
+  "expected_event_ids": 580,
+  "extra_chunk_vectors": 1,
+  "extra_events": 0,
+  "extra_sql_chunks": 1,
+  "missing_chunk_vectors": 0,
+  "missing_event_vectors": 0,
+  "missing_sql_chunks": 0,
+  "missing_sql_events": 0,
+  "observed_at_unix": 1791552142.052514,
+  "receipt_sha256": "79eea9b90345b8cf3fe4ce26fc660a8c1580226062b7e7ae08f2619b701aba2a",
+  "source_stopped": true,
+  "sqlite_quick_check": "ok",
+  "sqlite_sha256": "694ad9e73d339414eb20c0f1aed2f0c7c123260c5dd9c48718e5fc121e07ea5a",
+  "validation_mode": "SQLite read-only connection and network-disabled SAG image with read-only state mount"
+}

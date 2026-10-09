@@ -1,0 +1,9 @@
+{
+  "at_unix": 1791567767.5630348,
+  "boundary": "Read-only native configuration inspection with no network or model calls. Adapter uses one retry; native default is three.",
+  "default_max_retries": 3,
+  "default_timeout": 60,
+  "image_digest": "sha256:db1c9ae183e069c4e22621688f3b45eddfb0ad6cf300fc12726a4e7fd9865937",
+  "source": "class EmbeddingConfig(BaseModel):\n    \"\"\"Embedding \u914d\u7f6e;api_key/base_url \u7559\u7a7a\u65f6\u56de\u9000\u5230 LLM \u7684\u5bf9\u5e94\u503c\u3002\"\"\"\n\n    model_config = ConfigDict(extra=\"forbid\")\n\n    model: str\n    schema_dimensions: int | None = Field(default=None, ge=1)\n    request_dimensions: int | None = Field(default=None, ge=1)\n    max_tokens: int = DEFAULT_EMBEDDING_MAX_TOKENS\n    api_key: str | None = Field(default=None, repr=False)\n    base_url: str | None = None\n    timeout: int = 60\n    max_retries: int = 3\n",
+  "source_sha256": "a1a6e2ad446c6cafe5ed1091bebe46bc6fea54086119cc35bd6556bb41bec0c1"
+}

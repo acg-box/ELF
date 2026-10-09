@@ -1,0 +1,17 @@
+{
+  "at_unix": 1791575291.294872,
+  "boundary": "Native consolidation requeued unresolved memories after an uncertain request. Retain charge reservation; do not infer query completion or remote failure cause.",
+  "condition": "hindsight-scale-1000-nebius-v5-state-continuation",
+  "failed_requests": [
+    {
+      "attempt": 1,
+      "kind": "chat",
+      "ordinal": 56868,
+      "reserved_usd": 0.012897299999999999,
+      "seconds": 90.00447591699776,
+      "status": "uncertain"
+    }
+  ],
+  "native_failed_operations": 0,
+  "native_remaining_requeued": 5
+}

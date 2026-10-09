@@ -1,0 +1,13 @@
+{
+  "jobs": [
+    {
+      "name": "graphrag-lifecycle-nebius-v4-transport-recovery",
+      "target": "graphrag",
+      "wrapper": "run-personal-nebius.mts"
+    }
+  ],
+  "reason": "The v3 GraphRAG attempt failed in embedding preflight without native execution. Retry the full lifecycle suite after current Hindsight execution, within the same cumulative USD 20 ceiling.",
+  "registered_at_unix": 1791552142.0578701,
+  "status": "planned_after_funded_queue",
+  "tranche_usd": 0.5
+}

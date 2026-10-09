@@ -2,13 +2,18 @@
   "boundary": "Coverage disposition only. Do not substitute individual recovery cases into the original scoreboard. Failed model-profile compatibility does not establish universal product incapability.",
   "deep_dispositions": [
     {
-      "disposition": "independent_nebius_recovery_running_or_queued",
+      "condition": "sag-engine-scale-1000-nebius-v3-personal-recovery",
+      "coverage": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned_queries": 10
+      },
+      "disposition": "terminal_extraction_rollback_with_embedding_transport_errors; verified_512_record_continuation_completed_with_index_failure",
+      "followup_condition": "sag-engine-scale-1000-nebius-v4-state-continuation",
       "group": "scale-1000",
       "queries_each": 10,
       "targets": [
-        "elf",
-        "mem0",
-        "hindsight",
         "sag-engine"
       ]
     },
@@ -36,11 +41,140 @@
       "disposition": "adapter_source_flag_fixed; separate_12_query_native_mutation_recovery_passed",
       "group": "mutations",
       "target": "gbrain"
+    },
+    {
+      "condition": "elf-scale-1000-nebius-v2-controller-recovery",
+      "disposition": "independent_recovery_completed_10_of_10_native_answers_10_correct",
+      "group": "scale-1000",
+      "target": "elf"
+    },
+    {
+      "condition": "mem0-scale-1000-nebius-v3-personal-recovery",
+      "coverage": {
+        "answered": 10,
+        "correct": 7,
+        "native_completed": 10,
+        "planned_queries": 10
+      },
+      "disposition": "independent_recovery_completed_10_of_10_native_answers_7_correct; preserve_three_retrieval_misses",
+      "group": "scale-1000",
+      "target": "mem0",
+      "wrong_case_ids": [
+        "case-010",
+        "case-011",
+        "case-012"
+      ]
+    },
+    {
+      "condition": "hindsight-scale-1000-nebius-v3-personal-recovery",
+      "coverage": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned_queries": 10
+      },
+      "disposition": "budget_limited_consolidation_then_operator_stop; preserve_original_failure; funded_v4_followup_also_timed_out",
+      "group": "scale-1000",
+      "target": "hindsight"
+    },
+    {
+      "condition": "hindsight-scale-1000-nebius-v4-funded-recovery",
+      "coverage": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned_queries": 10
+      },
+      "disposition": "native_consolidation_exceeded_14400_second_deadline; original_10_queries_unfilled; separate_checkpoint_continuation_completed_10_queries",
+      "followup_condition": "hindsight-scale-1000-nebius-v5-state-continuation",
+      "group": "scale-1000",
+      "target": "hindsight"
+    },
+    {
+      "condition": "sag-engine-scale-1000-nebius-v4-state-continuation",
+      "coverage": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned_queries": 10
+      },
+      "disposition": "native_index_rollback_after_two_embedding_transport_failures; original_10_queries_unfilled; separate_native_default_retry_continuation_completed_10_queries",
+      "followup_condition": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+      "group": "scale-1000",
+      "target": "sag-engine"
+    },
+    {
+      "condition": "hindsight-scale-1000-nebius-v5-state-continuation",
+      "coverage": {
+        "answered": 10,
+        "correct": 9,
+        "native_completed": 10,
+        "planned_queries": 10
+      },
+      "disposition": "independent_checkpoint_continuation_completed_10_of_10_native_answers_9_correct; preserve_case_013_retrieval_miss",
+      "group": "scale-1000",
+      "target": "hindsight",
+      "wrong_case_ids": [
+        "case-013"
+      ]
+    },
+    {
+      "condition": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+      "coverage": {
+        "answered": 10,
+        "correct": 8,
+        "native_completed": 10,
+        "planned_queries": 10
+      },
+      "disposition": "independent_retained_state_continuation_completed_10_native_answers_8_correct; retain_two_retrieval_misses",
+      "group": "scale-1000",
+      "target": "sag-engine",
+      "wrong_case_ids": [
+        "case-010",
+        "case-011"
+      ]
     }
   ],
   "environment_recovery": {
     "cause": "Gateway/controller absent; native send failure; cause of process loss unknown.",
+    "credential_migration_resolution": "credential-migration-resolution.json",
+    "embedding_transport_incident": {
+      "completed_followup": "GraphRAG full lifecycle repeat and SAG retained-state continuation ended; their independent outcomes retain all original failures.",
+      "followup_needed": [],
+      "observed_recovery": "Hindsight v4 embeddings returned HTTP 200 from ordinal 48336 onward; retain uncertainty reservations.",
+      "uncertain_ordinals": [
+        48329,
+        48330,
+        48331
+      ]
+    },
     "followup_condition": "elf-scale-1000-nebius-v2-controller-recovery",
+    "graphrag_lifecycle_recovery": {
+      "audit": "graphrag-v4-completion-audit.json",
+      "condition": "graphrag-lifecycle-nebius-v4-transport-recovery",
+      "status": "terminal_product_failed",
+      "warm_answered": 3,
+      "warm_correct": 3,
+      "warm_planned": 8
+    },
+    "hindsight_budget_limitation": {
+      "boundary": "Local reservation rejection before upstream submission is not an upstream provider failure. This attempt ended without query measurements; independent later attempts retain separate outcomes.",
+      "condition": "hindsight-scale-1000-nebius-v3-personal-recovery",
+      "funded_followup_plan": "funded-recovery-plan.json",
+      "observation": "hindsight-budget-observation.json",
+      "status": "terminal_operator_stopped_after_budget_rejections",
+      "stop_receipt": "hindsight-budget-stop.json",
+      "tranche_usd": 2.5
+    },
+    "hindsight_native_deadline": {
+      "audit": "hindsight-v4-completion-audit.json",
+      "boundary": "Offline restore and requeue passed without model requests. Separate v5 paid continuation completed all ten queries, with nine correct answers. The original timeout remains unchanged.",
+      "checkpoint_restore_validation": "hindsight-v4-deadline-restore-validation.json",
+      "condition": "hindsight-scale-1000-nebius-v4-funded-recovery",
+      "followup_audit": "hindsight-v5-completion-audit.json",
+      "followup_plan": "hindsight-continuation-plan.json",
+      "native_task_recovery_validation": "hindsight-deadline-task-recovery-validation.json"
+    },
     "image_recovery_plan": "image-recovery-plan.json",
     "interrupted_condition": "elf-scale-1000-nebius-v1",
     "missing_image_attempts": [
@@ -49,9 +183,20 @@
       "sag-engine-scale-1000-nebius-v1",
       "graphrag-lifecycle-nebius-v1"
     ],
+    "personal_recovery_plan": "personal-recovery-plan.json",
+    "sag_native_retry_recovery": {
+      "audit": "sag-v5-completion-audit.json",
+      "boundary": "Retry configuration changes execution resilience, not the model or query workload. No favorable-score selection; all previous attempts retained.",
+      "condition": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+      "native_default_embedding_retries": 3,
+      "plan": "sag-native-retry-plan.json",
+      "preserved_source_records": 531,
+      "previous_adapter_embedding_retries": 1,
+      "status": "terminal_completed_with_two_retrieval_misses"
+    },
     "uncertain_request_ordinal": 34394
   },
-  "not_final": true,
+  "not_final": false,
   "original_core_answer_gaps": [
     {
       "case_id": "core-direct-region",
@@ -90,56 +235,56 @@
     },
     {
       "case_id": "memory-update-channel",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"
     },
     {
       "case_id": "memory-delete-credential",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"
     },
     {
       "case_id": "memory-correct-cache-ttl",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"
     },
     {
       "case_id": "memory-resume-migration",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"
     },
     {
       "case_id": "memory-scope-forget-private",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"
     },
     {
       "case_id": "memory-delete-obsolete-plan",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"
     },
     {
       "case_id": "memory-update-owner",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"
     },
     {
       "case_id": "memory-update-and-delete-release",
-      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "disposition": "complete_independent_repeat_terminal; cold_4_of_8_native; warm_3_of_8_native_and_correct; preserve_remaining_product_and_contract_failures",
       "original_classification": "unit_did_not_produce_case",
       "suite": "memory-lifecycle-v1",
       "target": "graphrag"

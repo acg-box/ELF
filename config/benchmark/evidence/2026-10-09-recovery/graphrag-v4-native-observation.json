@@ -1,0 +1,17 @@
+{
+  "at_unix": 1791566560.7302191,
+  "boundary": "Observed native failures during the fixed complete condition. Do not rerun individual wrong or failed cases for a favorable score.",
+  "condition": "graphrag-lifecycle-nebius-v4-transport-recovery",
+  "failures": [
+    {
+      "classification": "product_failed",
+      "failure": "GraphRAGProductFailure: GraphRAG native operation exited 1",
+      "failure_sha256": "b1e4ead9d6c3ac57c986f907fcb7832e2da11bda75bfbe1704bccc35aff013c8",
+      "job_id": "j_125cf271c1b3cf51cd705459",
+      "native_status": "failed",
+      "no_relationships_detected": true,
+      "phase": "cold"
+    }
+  ],
+  "terminal": false
+}

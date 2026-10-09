@@ -1,0 +1,19 @@
+{
+  "at_unix": 1791588880.338037,
+  "boundary": "Read-only stopped state retains all completed SQL and vector records and the original 531-source receipt prefix. Query coverage and answer correctness require the terminal bundle; storage consistency alone does not establish them.",
+  "completed_receipts": 1000,
+  "condition": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+  "expected_chunk_ids": 1000,
+  "expected_event_ids": 1118,
+  "extra_chunk_vectors": 0,
+  "extra_events": 0,
+  "extra_sql_chunks": 0,
+  "missing_chunk_vectors": 0,
+  "missing_event_vectors": 0,
+  "missing_sql_chunks": 0,
+  "missing_sql_events": 0,
+  "receipt_sha256": "9462e2c9735e0b742c10bb8b105fe6b0e7e05a8205558057f232b05c0117b8f0",
+  "source_stopped": true,
+  "sqlite_quick_check": "ok",
+  "sqlite_sha256": "cc42233b7699beee6da622349fc1bc19a69c368c78cb4f1943af1f3d33162594"
+}

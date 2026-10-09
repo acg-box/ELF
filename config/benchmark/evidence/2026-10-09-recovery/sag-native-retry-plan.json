@@ -1,0 +1,22 @@
+{
+  "boundary": "Separate same-model full-query continuation after repeated embedding transport failures. Preserve every earlier failure and cumulative cost/duration across the entire continuation chain.",
+  "ceiling_usd": 20,
+  "changed_behavior": "Use the pinned native EmbeddingConfig retry default; retain chat and extraction settings.",
+  "jobs": [
+    {
+      "name": "sag-engine-scale-1000-nebius-v5-native-retry-continuation",
+      "target": "sag-engine",
+      "wrapper": "run-personal-nebius.mts"
+    }
+  ],
+  "native_embedding_retries": 3,
+  "previous_embedding_retries": 1,
+  "registered_at_unix": 1791567909.73249,
+  "required_before_launch": [
+    "Hindsight continuation terminal with no in-flight gateway requests",
+    "Cumulative conservative exposure <= 17.5",
+    "Verified 531-source stopped state and unchanged prior artifacts",
+    "Full repository contract tests, signed commit, clean source"
+  ],
+  "tranche_usd": 2.5
+}

@@ -1,0 +1,24 @@
+{
+  "ceiling_usd": 20,
+  "jobs": [
+    {
+      "name": "hindsight-scale-1000-nebius-v4-funded-recovery",
+      "target": "hindsight",
+      "wrapper": "run-hindsight-funded.mts"
+    }
+  ],
+  "launch_requirement": "Personal queue terminal, no active paid gateway, cumulative conservative exposure <= 16.0, source and image identity verified. Do not start with an underfunded tranche.",
+  "reason": "The prior USD 2.50 tranche rejected native consolidation requests before upstream submission. Repeat the complete unchanged scale condition with enough reserved headroom; retain the budget-limited attempt.",
+  "registered_at_unix": 1791541779.8776891,
+  "scope": "One full condition; no selective retries for wrong answers.",
+  "status": "planned_after_personal_queue",
+  "tranche_usd": 4,
+  "unchanged": [
+    "model",
+    "provider",
+    "image",
+    "workload",
+    "ingest timeout",
+    "native timeout"
+  ]
+}

@@ -1,21 +1,14 @@
 {
   "boundary": "Independent recovery conditions. Original campaign artifacts and original denominators remain unchanged. A terminal failed condition does not fill its missing measurements.",
   "cases": {
-    "records": 108,
-    "uncompressed_sha256": "6aa7ee41ee135b619248aec777e8274b784951759374980899050119378788c1"
+    "records": 194,
+    "uncompressed_sha256": "01789a92ae2927504e9f1b6453f2f62407c04aeed610b0dce09abd8715a295cc"
   },
-  "conditions": 5,
-  "generated_at_unix": 1791523490.0475972,
-  "not_final": true,
+  "conditions": 13,
+  "generated_at_unix": 1791588907.903202,
+  "not_final": false,
   "operations": {
-    "records": 44,
-    "uncompressed_sha256": "edbd5c606192eb8b4e9c109ebdc012a1c3ef06ac84010477bb6d2e0cf321711c"
-  },
-  "status": "partial_access_blocked",
-  "remaining_conditions": [
-    "mem0-scale-1000-nebius-v2-image-recovery",
-    "hindsight-scale-1000-nebius-v2-image-recovery",
-    "sag-engine-scale-1000-nebius-v2-image-recovery",
-    "graphrag-lifecycle-nebius-v2-image-recovery"
-  ]
+    "records": 110,
+    "uncompressed_sha256": "df0298fa832f13321a06f341f25bb1288a37416f0e6cd38df93c39077f262b7f"
+  }
 }
