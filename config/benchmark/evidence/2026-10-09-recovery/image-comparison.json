@@ -1,0 +1,31 @@
+[
+  {
+    "boundary": "A changed image digest requires separate provenance even with the same lockfile.",
+    "identical": false,
+    "old_digest": "sha256:81e35732a6c03919431c7b0fbdd50fed1532bbf05cfa009afd6d1b19054ddcdf",
+    "rebuilt_digest": "sha256:d89a01f1f3b9b4da1bad16740c30ca5bfe02845a77a9f5211adcbe8582d0a928",
+    "target": "mem0"
+  },
+  {
+    "boundary": "A changed image digest requires separate provenance even with the same lockfile.",
+    "identical": false,
+    "old_digest": "sha256:383876695bbdac3767195734398f1a870e606b51109fdc8a3481c94a31b0d0e8",
+    "rebuilt_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "target": "hindsight"
+  },
+  {
+    "boundary": "A changed image digest requires separate provenance even with the same lockfile.",
+    "identical": false,
+    "old_digest": "sha256:40bddfd26978fa9744a1418a787bfbf4f466af6ba098222fd6903439097d6717",
+    "rebuilt_digest": "sha256:db1c9ae183e069c4e22621688f3b45eddfb0ad6cf300fc12726a4e7fd9865937",
+    "target": "sag-engine"
+  },
+  {
+    "boundary": "Rebuilt image provenance; do not assert identical native environment.",
+    "old_digest": {
+      "graphrag": "sha256:0fc9b7945637c1390eb5e506606201f38dac9a83da5922c2a3451cd36427addd"
+    },
+    "rebuilt_digest": "sha256:03dacaa4591a5816d436432de1e6810e21296f75640e2e1c3f46280a14fca99f",
+    "target": "graphrag"
+  }
+]

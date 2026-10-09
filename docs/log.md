@@ -6,6 +6,11 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-10-09
+
+- Added a partial recovery checkpoint with complete ELF scale results, retained
+  failures, cumulative accounting, and explicit pending competitor conditions.
+
 ## 2026-10-08
 
 - Published the full registered native memory comparison with separate failed

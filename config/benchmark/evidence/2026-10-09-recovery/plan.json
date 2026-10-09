@@ -1,0 +1,29 @@
+{
+  "conditions": [
+    {
+      "name": "elf-scale-1000-nebius-v1",
+      "target": "elf"
+    },
+    {
+      "name": "mem0-scale-1000-nebius-v1",
+      "target": "mem0"
+    },
+    {
+      "name": "hindsight-scale-1000-nebius-v1",
+      "target": "hindsight"
+    },
+    {
+      "name": "sag-engine-scale-1000-nebius-v1",
+      "target": "sag-engine"
+    }
+  ],
+  "created_at_unix": 1791510790.856523,
+  "cumulative_ceiling_usd": 20,
+  "embedding_429_retries": 3,
+  "embedding_provider": "nebius",
+  "ingest_seconds": 14400,
+  "native_seconds": 18000,
+  "per_condition_tranche_usd": 2.5,
+  "reason": "Separate complete scale-1000 recovery conditions after repeated provider failures or native ingest timeout. Fixed model, dimensions, workload and scoring; changed embedding provider and explicit common extended deadline. Preserve all prior attempts. No quality-driven reruns.",
+  "source_revision": "6e88be4e"
+}

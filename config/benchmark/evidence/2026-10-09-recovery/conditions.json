@@ -1,0 +1,282 @@
+[
+  {
+    "answer_error_cases": [],
+    "bundle_sha256": "28c1987594532b4ecf4b5239c64d803849decb33cf6c26b3f6cf31669606321e",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 133.90382158299326,
+    "embedding_429_retries": 3,
+    "embedding_provider": "deepinfra",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "name": "elf-scale-1000-bounded-429-v1",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "blocked_by_ingest": 10,
+      "failed": 1
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "1f0e83db68f73c6dda581849fc8c2a9351ed4e06",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "elf",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "bundle_sha256": "b8d31472d0913a2d1bc1586b9437b44ea724d6cbb62275f6baffd8c6027ce234",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 10
+    },
+    "duration_seconds": 2337.6020479169965,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "name": "elf-scale-1000-nebius-v1",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "blocked_by_ingest": 10,
+      "failed": 1
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "elf",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "answer_error_cases": [],
+    "bundle_sha256": "0e71549b0b9dc231e85b441e87a365f75df057d11f3a37e7e676c05aa9f39834",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 10,
+      "correct": 10,
+      "native_completed": 10,
+      "planned_queries": 10
+    },
+    "duration_seconds": 9686.551458834001,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "execution_limits": {
+      "ingest_action_seconds": 14400,
+      "native_total_seconds": 18000,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "name": "elf-scale-1000-nebius-v2-controller-recovery",
+    "native_execution_reused": false,
+    "native_statuses": {
+      "completed": 11
+    },
+    "oracle_sha256": "e033c86e2f73a38786be3877d64cddcedf0bd8a2835a2a3b3d52d25d19599076",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "elf",
+    "workload_group": "scale-1000",
+    "workload_sha256": "b95f50d78c071e8df4022f4859458fa33d0f98436e260b1ef208341c11a37176"
+  },
+  {
+    "bundle_sha256": "c939e70b9adca789edcc9c3f5728ccd34c319ccfa841dbc59c73b8c482550d24",
+    "classification": "failed",
+    "cleanup_passed": true,
+    "contract_failures": [
+      "memory-update-channel omitted native ranked contexts after mutation",
+      "memory-update-channel omitted native operations: update",
+      "memory-delete-credential omitted native ranked contexts after mutation",
+      "memory-delete-credential omitted native operations: delete",
+      "memory-correct-cache-ttl omitted native ranked contexts after mutation",
+      "memory-correct-cache-ttl omitted native operations: update",
+      "memory-resume-migration omitted native ranked contexts after mutation",
+      "memory-resume-migration omitted native operations: update",
+      "memory-scope-forget-private omitted native ranked contexts after mutation",
+      "memory-scope-forget-private omitted native operations: delete",
+      "memory-delete-obsolete-plan omitted native ranked contexts after mutation",
+      "memory-delete-obsolete-plan omitted native operations: delete",
+      "memory-update-owner omitted native ranked contexts after mutation",
+      "memory-update-owner omitted native operations: update",
+      "memory-update-and-delete-release omitted native ranked contexts after mutation",
+      "memory-update-and-delete-release omitted native operations: update, delete"
+    ],
+    "duration_seconds": 0.0,
+    "embedding_429_retries": 3,
+    "embedding_provider": "nebius",
+    "image_digests": {},
+    "manifest_sha256": "b90a22bbf10cb7914cdac0032a794a2d7c2b460ad571672c9673d181a9e5afec",
+    "name": "graphrag-lifecycle-nebius-v1",
+    "phase_counts": {
+      "cold": {
+        "completed": 0,
+        "failed": 8,
+        "not_applicable": 0,
+        "scheduled": 8,
+        "scored": 0
+      },
+      "warm": {
+        "completed": 0,
+        "failed": 8,
+        "not_applicable": 0,
+        "scheduled": 8,
+        "scored": 0
+      }
+    },
+    "schema": "elf.benchmark_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "suite": "memory-lifecycle-v1"
+  },
+  {
+    "answer_error_cases": [],
+    "bundle_sha256": "9f217b33874c74db8282038ee4d6e2cc05ee0a2fcf53156bd5fc4c4f6cfb9ef4",
+    "cleanup_passed": true,
+    "coverage": {
+      "answered": 10,
+      "correct": 9,
+      "native_completed": 10,
+      "planned_queries": 62
+    },
+    "duration_seconds": 23.94141783300438,
+    "embedding_429_retries": 3,
+    "embedding_provider": "deepinfra",
+    "execution_limits": {
+      "ingest_action_seconds": 5400,
+      "native_total_seconds": 7200,
+      "other_action_seconds": 1200
+    },
+    "exit_code": null,
+    "image_digest": "sha256:40bddfd26978fa9744a1418a787bfbf4f466af6ba098222fd6903439097d6717",
+    "name": "sag-retained-reader-recovery-v1",
+    "native_execution_reused": true,
+    "native_statuses": {
+      "completed": 11
+    },
+    "oracle_sha256": "002e3ead35e6baedb7b7c5a3877c44c9d3e2de924397497b0b88ce10e7ddcada",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "84d6d653e3940b2dc82ac994922cb21a239441afcc38ec2aa6117068702a46e7",
+    "retrieval_runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "retrieval_source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "a3a3e4896239b444473041b88f5c362f8000ff38",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "schema": "elf.deep_bundle/v2",
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "6e88be4ed98e104258c2f8e35e52ce7b54e955b2",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": "sag-engine",
+    "workload_group": "all",
+    "workload_sha256": "b94032acd757f4ef822098378b25ccc7ea3145011a47c34c41667ecf3e64f427"
+  }
+]

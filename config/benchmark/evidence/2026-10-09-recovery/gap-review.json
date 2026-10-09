@@ -1,0 +1,279 @@
+{
+  "boundary": "Coverage disposition only. Do not substitute individual recovery cases into the original scoreboard. Failed model-profile compatibility does not establish universal product incapability.",
+  "deep_dispositions": [
+    {
+      "disposition": "independent_nebius_recovery_running_or_queued",
+      "group": "scale-1000",
+      "queries_each": 10,
+      "targets": [
+        "elf",
+        "mem0",
+        "hindsight",
+        "sag-engine"
+      ]
+    },
+    {
+      "coverage": {
+        "answered": 10,
+        "correct": 9,
+        "native_completed": 10,
+        "planned_queries": 62
+      },
+      "disposition": "independent_retained_reader_condition_completed_all_10_available_answers; preserve_original_520_and_wrong_answer",
+      "group": "scale-100",
+      "native_retrieval_reused": true,
+      "target": "sag-engine"
+    },
+    {
+      "disposition": "already_measured_in_separate_42_query_conditions",
+      "group": "behavior",
+      "targets": [
+        "elf",
+        "sag-engine"
+      ]
+    },
+    {
+      "disposition": "adapter_source_flag_fixed; separate_12_query_native_mutation_recovery_passed",
+      "group": "mutations",
+      "target": "gbrain"
+    }
+  ],
+  "environment_recovery": {
+    "cause": "Gateway/controller absent; native send failure; cause of process loss unknown.",
+    "followup_condition": "elf-scale-1000-nebius-v2-controller-recovery",
+    "image_recovery_plan": "image-recovery-plan.json",
+    "interrupted_condition": "elf-scale-1000-nebius-v1",
+    "missing_image_attempts": [
+      "mem0-scale-1000-nebius-v1",
+      "hindsight-scale-1000-nebius-v1",
+      "sag-engine-scale-1000-nebius-v1",
+      "graphrag-lifecycle-nebius-v1"
+    ],
+    "uncertain_request_ordinal": 34394
+  },
+  "not_final": true,
+  "original_core_answer_gaps": [
+    {
+      "case_id": "core-direct-region",
+      "disposition": "already_covered_by_separate_complete_common_repeat",
+      "original_classification": "adapter_failed",
+      "suite": "common-core-v1",
+      "target": "lightrag"
+    },
+    {
+      "case_id": "core-unsupported-quartz",
+      "disposition": "already_covered_by_separate_complete_common_repeat",
+      "original_classification": "adapter_failed",
+      "suite": "common-core-v1",
+      "target": "lightrag"
+    },
+    {
+      "case_id": "knowledge-orion-policy-tree",
+      "disposition": "separate_repeat_completed_7_of_8; retain_remaining_output_limit_failure",
+      "original_classification": "provider_failed",
+      "suite": "knowledge-structure-v1",
+      "target": "lightrag"
+    },
+    {
+      "case_id": "knowledge-lumen-handbook",
+      "disposition": "separate_repeat_completed_7_of_8; retain_remaining_output_limit_failure",
+      "original_classification": "adapter_failed",
+      "suite": "knowledge-structure-v1",
+      "target": "lightrag"
+    },
+    {
+      "case_id": "repo-resume-storage-migration",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "adapter_failed",
+      "suite": "repository-knowledge-v1",
+      "target": "lightrag"
+    },
+    {
+      "case_id": "memory-update-channel",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "memory-delete-credential",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "memory-correct-cache-ttl",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "memory-resume-migration",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "memory-scope-forget-private",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "memory-delete-obsolete-plan",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "memory-update-owner",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "memory-update-and-delete-release",
+      "disposition": "planned_alternate_embedding_provider_repeat; preserve_extraction_failures",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "memory-lifecycle-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-change-validation-command",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-delete-retired-runbook",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-resume-storage-migration",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-change-api-version",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-delete-secret-example",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-change-config-default",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-delete-deprecated-module",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "repo-update-release-resume",
+      "disposition": "retain_native_model_profile_failure",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "repository-knowledge-v1",
+      "target": "graphrag"
+    },
+    {
+      "case_id": "knowledge-cobalt-stack",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    },
+    {
+      "case_id": "knowledge-meridian-recovery",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    },
+    {
+      "case_id": "knowledge-orion-policy-tree",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    },
+    {
+      "case_id": "knowledge-kestrel-auth-chain",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    },
+    {
+      "case_id": "knowledge-juniper-ownership-graph",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    },
+    {
+      "case_id": "knowledge-lumen-handbook",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    },
+    {
+      "case_id": "knowledge-vega-api-map",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    },
+    {
+      "case_id": "knowledge-lyra-citation-boundary",
+      "disposition": "already_covered_by_separate_complete_knowledge_repeat",
+      "original_classification": "unit_did_not_produce_case",
+      "suite": "knowledge-structure-v1",
+      "target": "sag-engine"
+    }
+  ],
+  "repair_dispositions": [
+    {
+      "blocked_trials": 5,
+      "disposition": "retain_native_output_limit_failures_under_fixed_model_profile",
+      "target": "lightrag"
+    },
+    {
+      "blocked_trials": 6,
+      "disposition": "retain_native_ExtractedEdges_schema_failure_under_fixed_model_profile",
+      "target": "graphiti"
+    },
+    {
+      "disposition": "retain_executed_validation_failures; do_not_retry_for_better_scores",
+      "targets": [
+        "openkb",
+        "no-memory"
+      ]
+    }
+  ]
+}
