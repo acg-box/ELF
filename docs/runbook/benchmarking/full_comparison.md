@@ -226,6 +226,27 @@ so its usage receipt is available before the response is forwarded.
 cargo make benchmark-budget --ledger tmp/benchmark-costs.json --ceiling 10 --tranche 0.5 -- cargo make benchmark-competitors --mode compare
 ```
 
+## Explicit embedding recovery
+
+The original campaign uses zero gateway retries. For a separately recorded
+recovery condition, `--embedding-429-retries 3` permits at most three additional
+attempts for an embedding request that returns HTTP 429. The default remains
+zero. The model, provider, request body, and scoring do not change.
+
+Each attempt reserves budget and records its own outcome. Failed attempts retain
+their unknown-cost reservation. Rows carry `request_ordinal`, `attempt`, and the
+selected retry delay so one logical request can be audited across attempts.
+Budget exhaustion stops before another provider call.
+
+Backoff is 2, 4, then 8 seconds. A positive numeric `Retry-After` up to 30 seconds
+replaces that delay. Longer or nonnumeric headers are returned to the consumer
+without an automatic retry. Chat responses, HTTP statuses other than 429, and
+uncertain transport failures are not replayed by this policy.
+
+Use the same cumulative ledger and explicitly authorized ceiling. Retain the
+original condition and its costs. A successful recovery does not replace the
+original reliability result or prove that every failed query can be repaired.
+
 ## Scoring revisions
 
 Revision 2 corrects three question/oracle mismatches. Revision 3 also measures

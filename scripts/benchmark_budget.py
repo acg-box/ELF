@@ -117,7 +117,18 @@ class Ledger:
                               "reserved_total_usd": exposure}), flush=True)
 
 
-def handler_for(ledger, key, token):
+def embedding_retry_delay(kind, status, attempt, retries, retry_after):
+    """Retry explicit embedding throttling only; never replay uncertain requests."""
+    if kind != "embedding" or status != 429 or attempt >= retries:
+        return None
+    if retry_after is not None:
+        if not retry_after.isdigit() or not 0 < int(retry_after) <= 30:
+            return None
+        return int(retry_after)
+    return 2 ** (attempt + 1)
+
+
+def handler_for(ledger, key, token, embedding_429_retries=0):
     opener = urllib.request.build_opener(NoRedirect)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
@@ -159,32 +170,48 @@ def handler_for(ledger, key, token):
                 data = json.dumps(body).encode()
             except (ValueError, TypeError) as error:
                 return self.error(400, str(error))
-            row = ledger.reserve(reservation(len(data), kind, output), kind)
-            if row is None:
-                return self.error(402, "local_budget_exhausted")
-            started = time.monotonic()
             request = urllib.request.Request("https://openrouter.ai/api" + self.path,
                 data=data, headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"})
             result = None
-            try:
-                with opener.open(request, timeout=90) as response:
-                    result = json.load(response)
-                usage = result.get("usage") or {}
-                state = "completed" if explicit_cost({"usage": usage}) is not None else "completed_cost_unknown"
-                ledger.finish(row, status=state, http_status=200, usage=usage,
-                    model=result.get("model"), provider=result.get("provider"), seconds=time.monotonic()-started)
-            except urllib.error.HTTPError as error:
+            first_ordinal = None
+            retries = embedding_429_retries if kind == "embedding" else 0
+            for attempt in range(retries + 1):
+                row = ledger.reserve(reservation(len(data), kind, output), kind)
+                if row is None:
+                    return self.error(402, "local_budget_exhausted")
+                if first_ordinal is None:
+                    first_ordinal = row["ordinal"]
+                attempt_metadata = {"attempt": attempt + 1, "request_ordinal": first_ordinal}
+                started = time.monotonic()
                 try:
-                    detail = str(json.load(error).get("error", {}).get("message", ""))
-                except (ValueError, AttributeError):
-                    detail = ""
-                detail = detail.replace(key, "[redacted]").replace(token, "[redacted]")[:600]
-                ledger.finish(row, status="provider_failed", http_status=error.code,
-                    provider_error=detail, seconds=time.monotonic()-started)
-                return self.error(error.code, f"upstream_http_{error.code}: {detail}", error.headers.get("Retry-After"))
-            except Exception as error:
-                ledger.finish(row, status="uncertain", seconds=time.monotonic()-started)
-                return self.error(502, type(error).__name__)
+                    with opener.open(request, timeout=90) as response:
+                        result = json.load(response)
+                    usage = result.get("usage") or {}
+                    state = "completed" if explicit_cost({"usage": usage}) is not None else "completed_cost_unknown"
+                    ledger.finish(row, status=state, http_status=200, usage=usage,
+                        model=result.get("model"), provider=result.get("provider"),
+                        seconds=time.monotonic()-started, **attempt_metadata)
+                    break
+                except urllib.error.HTTPError as error:
+                    try:
+                        detail = str(json.load(error).get("error", {}).get("message", ""))
+                    except (ValueError, AttributeError):
+                        detail = ""
+                    finally:
+                        error.close()
+                    detail = detail.replace(key, "[redacted]").replace(token, "[redacted]")[:600]
+                    retry_after = error.headers.get("Retry-After")
+                    delay = embedding_retry_delay(kind, error.code, attempt, retries, retry_after)
+                    ledger.finish(row, status="provider_failed", http_status=error.code,
+                        provider_error=detail, seconds=time.monotonic()-started,
+                        retry_delay_seconds=delay, **attempt_metadata)
+                    if delay is None:
+                        return self.error(error.code, f"upstream_http_{error.code}: {detail}", retry_after)
+                    time.sleep(delay)
+                except Exception as error:
+                    ledger.finish(row, status="uncertain", seconds=time.monotonic()-started,
+                        **attempt_metadata)
+                    return self.error(502, type(error).__name__)
             try:
                 if streaming and kind == "chat":
                     self.send_response(200)
@@ -203,6 +230,7 @@ def main():
     parser.add_argument("--ledger", type=Path, required=True)
     parser.add_argument("--ceiling", type=float, default=10)
     parser.add_argument("--tranche", type=float, default=0.5)
+    parser.add_argument("--embedding-429-retries", type=int, choices=range(4), default=0)
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
@@ -221,7 +249,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -233,6 +261,7 @@ def main():
             OPENAI_API_KEY=token, OPENAI_BASE_URL=base, OPENAI_API_BASE=base)
         print(json.dumps({"event": "budget_start", "ceiling_usd": args.ceiling,
             "tranche_reservation_usd": args.tranche, "paid_total_usd": totals(ledger.value)[0],
+            "embedding_429_retries": args.embedding_429_retries,
             "transport": "nonstream_upstream_with_optional_buffered_sse"}), flush=True)
         def interrupted(signum, frame):
             raise KeyboardInterrupt
