@@ -74,6 +74,12 @@ def hindsight_action(action, root):
     bank = "/v1/default/banks/deep-" + action["scope"]
     kind = action["action"]
     if kind == "ingest":
+        marker = root / "hindsight-resume.json"
+        if marker.exists():
+            continuation = json.loads(marker.read_text())
+            if continuation["scope"] != action["scope"] or continuation["retained_source_records"] != len(action["items"]):
+                raise ValueError("Hindsight continuation workload changed")
+            return {"native": continuation, "readiness": drain(bank, timeout_seconds=INGEST_TIMEOUT_SECONDS)}
         request("PUT", bank, {})
         receipts = []
         # Native batch calls share the same bank and index; avoid oversized requests.
