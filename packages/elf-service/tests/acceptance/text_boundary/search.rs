@@ -39,6 +39,8 @@ async fn accepts_cyrillic_in_search() {
 	let Some(fixture) = setup::setup_service("text_boundary").await else {
 		return;
 	};
+	fixture.service.qdrant.ensure_collection().await.expect("Create search collection");
+
 	let request = SearchRequest {
 		tenant_id: "t".to_string(),
 		project_id: "p".to_string(),
