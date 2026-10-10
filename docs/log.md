@@ -8,6 +8,12 @@ logs.
 
 ## 2026-10-10
 
+- Add a separate Hindsight/RAGFlow follow-up with common-token-budget retrieval,
+  native answer workflows, and a frozen conversation-memory fixture. Preserve
+  the earlier complex-document scores as historical measurements.
+
+## 2026-10-10
+
 - Added a fresh Hindsight 0.10.3 comparison, a uniform reader output limit, and
   explicit source identities. Preserved all earlier attempts and evaluator gaps.
 

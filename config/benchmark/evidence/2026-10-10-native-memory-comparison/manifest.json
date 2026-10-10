@@ -1,0 +1,28 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "accounting.json": "31d21df1e82d5b20286666bbf82494138ed9c2d0111ca61e9816d49d5cfeddb7",
+    "attempts.jsonl.gz": "5f15bf8e6cf400d9a7d5acd68d4459b3cadac3357277159b7f909e91e9faf9c6",
+    "cases.jsonl.gz": "fe93309887f3d393490de0590c277e12a75383326158f9cee0a3d357000920f0",
+    "chunk-protocol.json": "6eedb38de434ec8059c8e201a77c43dfaba1c652be553c78f36a5266e8ad3db4",
+    "chunk-source-audit.json": "87041e4ffa22cc243fe94c5755f29d14fdc3e99a387ed13fba6a89d1a0ccf8de",
+    "cleanup.json": "78d974968fd1f2645a4d8c4c8033d795a4ffe110a002e2c3d6996f6927dc298c",
+    "completion.json": "40b26ea13f46460fe1360033637b2ab832eb9f9caf1078b93f5ea66e228009ba",
+    "evaluation.json": "9365a866808f14d74562717b7ffbfc4e4490f95c9ca4c53ac02340c2ed52dbe0",
+    "execution.json": "9a1e261bc3b8b5a7d29cc4f4f422211a4c931f536b91a3d1e434696f4975cc6f",
+    "frozen-budget-audit.json": "02d24f15eab6150141154a4a0bfa4e4a317c9bf4e96a1fcfb07ba24d3c3897ca",
+    "memory-fixture.json": "ac16bce766fc54228f9be341eef0324c9563be5766247f657108d93e683804e7",
+    "native-reranker-preflight.json": "4823f76196a7d2c583811bc08d93a472f019e965dc81dce850716a1951a65d1c",
+    "privacy-check.json": "966077316acc348587eb3242883204c5ffff0d2403211278b2625cb9f8a3ba62",
+    "protocol-initial.json": "228c5ffee8e5c192acaf0e9c3492081444e4921da8e67c12c203973aef7f291f",
+    "protocol.json": "b2ffec19f5b1a42bcdbcb331a91a0bea1e14f58529a874734535226410202870",
+    "rag-retrieval-recovery.json": "eaea29948f30cd148be6f4ae2a319b6315543d76f412005429149199738c4c54",
+    "reranker-runtime.json": "7575b9706e9a3b4cbcd71d8dd3343cc8e67774c4a6648915411a152e445f19b1",
+    "runner-hashes.json": "30af93caebf03afd27610dbedda18a99553d10503266ed71dd8582da1e47f818",
+    "runtime.json": "6feea75fe7c74bf897af718ff8d2304957a93059c7116404aaa3927a2651af75",
+    "scoring-rubric.json": "4f8920d2cbcb555f704188a84adeed25422aba0c6d03e9fb3766756224e10240",
+    "source-digests.json": "1a85295d1cf9ea26516700eac5dddc70fcb460d7fe0250028be0d5163875fa7e",
+    "top5-audit.json": "9f8c3cb7d1576f4725bbd98de63008655cea4fb5a0a2a12b2b2929240f1b5f8c",
+    "usage.jsonl.gz": "ef4cffd84dbbb60dda9ae0c7766fead503571ce08a013c211e931b21a19598fb"
+  }
+}

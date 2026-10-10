@@ -47,7 +47,7 @@ def drain(bank, *, timeout_seconds=180):
         time.sleep(1)
 
 
-def contexts_from_native(native):
+def contexts_from_native(native, *, limit=5):
     """Keep derived observations separate from the native facts that support them."""
     rows, seen_facts = [], set()
     source_facts = native.get("source_facts") or {}
@@ -58,7 +58,7 @@ def contexts_from_native(native):
             seen_facts.add(key)
             rows.append({"evidence_id": fact.get("document_id"), "text": fact["text"]})
 
-    for hit in native["results"][:5]:
+    for hit in native["results"] if limit is None else native["results"][:limit]:
         if hit.get("document_id"):
             add_fact(hit)
             continue
@@ -140,3 +140,23 @@ def run_hindsight(inputs: Path, artifacts: Path, state: Path):
         "native_mode": "native_retain_recall_after_consolidation", "score_eligible": True,
         "result_class": "completed", "warm_reused_state": True, "ingest_count": 1,
         "ingest_duration_ms": ingest_ms, "phases": phases}
+
+
+def chunk_contexts_from_native(native):
+    """Present only native source chunks, with identities from returned native facts."""
+    chunks = native.get('chunks') or {}
+    parents = native.get('source_facts') or {}
+    facts = [*native['results'], *parents.values()]
+    sources = {}
+    order = []
+    for fact in facts:
+        chunk_id, source = fact.get('chunk_id'), fact.get('document_id')
+        if chunk_id and source:
+            if chunk_id in sources and sources[chunk_id] != source:
+                raise ValueError('Native chunk has conflicting document identities')
+            sources[chunk_id] = source
+        if chunk_id in chunks and chunk_id not in order:
+            order.append(chunk_id)
+    order.extend(k for k in chunks if k not in order)
+    return [{'evidence_id': sources.get(k), 'text': chunks[k]['text'],
+             'native_chunk_id': k, 'native_truncated': chunks[k].get('truncated', False)} for k in order]

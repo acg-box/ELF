@@ -1,0 +1,22 @@
+{
+  "hindsight_version": "0.10.3",
+  "ragflow_version": "1.0.0-rc1",
+  "context_tokens": 4096,
+  "tokenizer": "cl100k_base proxy; not claimed to equal DeepSeek tokenization",
+  "hindsight_budget": "high",
+  "rag_page_size": 100,
+  "rag_threshold": 0.0,
+  "rag_vector_weight": 0.3,
+  "reader_max_tokens": 8192,
+  "native_max_tokens": 8192,
+  "chat": "deepseek/deepseek-v4.1-flash",
+  "embedding": "qwen/qwen3-embedding-8b",
+  "embedding_dimensions": 1536,
+  "excluded_pdf_cases": [
+    "complex-002",
+    "complex-005",
+    "complex-020",
+    "complex-023"
+  ],
+  "native_boundary": "Native reflect versus native retrieval-chat; different internal algorithms with metered costs. No full Agent workflow claim."
+}

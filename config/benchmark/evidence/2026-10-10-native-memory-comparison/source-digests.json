@@ -1,0 +1,20 @@
+{
+  "frozen_workloads_sha256": "de553e09cd9ebe9710255a43ba8ac79e163a5e9ff26a853d06354f3b40515208",
+  "pdf_fixtures": {
+    "e_255d68caea01e4bc6add58b1.pdf": "fda4147d6b71dcca680aac08e5a56c4111554673468a8ac6938a9cf48bc85c3b",
+    "e_4b51c2f07fe6d33137c84359.pdf": "20308d5f7ca96bd2c5f0173384b226e0638bcc53eb21c51888ab09cc7b776fd9",
+    "e_6f96a2af3365edd7577ea147.pdf": "b143b346bce6c562090985dba20bb1e7b41fdec75d024fb9b727c261721cae94",
+    "e_7fe00361fcf964b12aea766c.pdf": "64315188d250aaa66f2421f8a4d6d97f35be6dd6c82d6837e85f78c0b5b2b3ba",
+    "e_adf880c03e4b6091d62cdf6f.pdf": "1a725101dad8384590645d1ad7efefb9b9f2be782262c980294f8f2a755a2fa0",
+    "e_ae3fdb9cb12196ce9ae4b945.pdf": "4a6827387967c8358987ef29d778d40f25c7e422b317311e3fac2303aabce193",
+    "e_f361397d877f4c9074ab359a.pdf": "fc7f0df02bb34fe9d8fbe9a78a55575d61e70238374f7362013341f016b28532",
+    "e_f78b8623bff0267bf5e45c2b.pdf": "187743852f9469472bff10a9cbfa41f633fc4ce62e6ca7760f45f4632baba978"
+  },
+  "source_files": {
+    "scripts/benchmark-native-comparison.py": "5b512dbad0b346a1776969c2750086692f2db4e7f00cae1b378280b67f245561",
+    "scripts/benchmark-native-retrieval.py": "a0a71b2027fc30f0002c0bff5f9c4a82fe0ec6a6200ca8b9383e40f5c0bf5c53",
+    "scripts/benchmark_deep/memory_comparison.py": "1b02a3c885d433a80ee54f120161939750aa538d8c2264a8bded47d5d9fb7582",
+    "scripts/benchmark_deep/native_sidecar.py": "834e8689b55d5a0c577061e847fa5c817cff8a3f8a8b0c4903b9b679a14d8a6a",
+    "scripts/benchmark_targets/hindsight.py": "530af356f6620c4bd2b42a285434c819b741a9b2e9d88247ef9a60209d91359b"
+  }
+}
