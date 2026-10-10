@@ -8,9 +8,10 @@ from benchmark_budget import prepare_request
 class RagflowContextTests(unittest.TestCase):
     def test_go_terminal_ingestion_receipt_does_not_wait_for_removed_run_field(self):
         docs = [{'id':'native-a','ingestion_status':'COMPLETED','chunk_count':1}]
-        with patch('benchmark_targets.ragflow.request', return_value={'docs':docs}), \
+        with patch('benchmark_targets.ragflow.request', return_value={'docs':docs}) as api, \
              patch('benchmark_targets.ragflow.time.sleep', side_effect=AssertionError('Unexpected wait')):
             self.assertEqual(wait_parsed('dataset', ['native-a']), docs)
+            api.assert_called_once_with('GET', '/datasets/dataset/documents?page_size=100')
         with patch('benchmark_targets.ragflow.request', return_value={'docs':[{'id':'native-a','ingestion_status':'FAILED'}]}):
             with self.assertRaisesRegex(RuntimeError, 'parsing failed'):
                 wait_parsed('dataset', ['native-a'])

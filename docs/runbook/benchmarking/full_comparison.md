@@ -352,3 +352,9 @@ change. The start record and each attempt retain the requested provider; a
 successful receipt also retains the returned provider. Do not merge these
 results into a DeepInfra condition or infer identical retrieval behavior from
 the model name alone.
+
+## RAGFlow document comparison
+
+Use the [RAGFlow native Docker benchmark](ragflow.md) for the separate pinned
+RAGFlow 1.0 condition. Its behavior and document-precision results do not alter
+the original full campaign or establish OCR and native synthesis quality.

@@ -36,7 +36,7 @@ def upload(dataset, item):
 def wait_parsed(dataset, ids):
     deadline = time.monotonic() + float(os.environ.get('BENCHMARK_DEEP_INGEST_TIMEOUT_SECONDS', '1200'))
     while True:
-        data = request('GET', f'/datasets/{dataset}/documents?page_size=1000')
+        data = request('GET', f'/datasets/{dataset}/documents?page_size=100')
         docs = [d for d in data['docs'] if d['id'] in ids]
         if any(str(d.get('ingestion_status', d.get('run'))).upper() in ('FAIL', 'FAILED', 'CANCELED', '4') for d in docs):
             raise RuntimeError('RAGFlow native parsing failed: ' + json.dumps(docs))
