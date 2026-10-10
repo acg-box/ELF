@@ -77,3 +77,5 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 - [RAGFlow document parser intervention](2026-10-10-ragflow-ocr.md) compares free-parser and Mistral OCR inputs.
 - [Mixed-page, Chinese, and table parser comparison](2026-10-10-parser-stress.md) tests page-wise free OCR against fresh DeepDOC and Mistral conditions.
+
+- [Matched Hindsight and RAGFlow system comparison](2026-10-10-final-system-comparison.md) compares native answers and retrieval with identical OCR inputs.

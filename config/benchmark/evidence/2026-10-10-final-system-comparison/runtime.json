@@ -1,0 +1,98 @@
+[
+  {
+    "name": "elf-final-system-ragflow-cpu-1",
+    "id": "535ee304d82d772bbbfe6689849cba02cac989d6c6c078ed7006191699246482",
+    "image_reference": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b",
+    "image_id": "sha256:c51ce53db95348aa8a4b2f0dab64f1e6b279efc8b07ad43aaac62f8426989076",
+    "started_at": "2026-10-10T11:15:45.641085966Z",
+    "labels": {
+      "com.docker.compose.project": "elf-final-system"
+    },
+    "architecture": "amd64",
+    "os": "linux"
+  },
+  {
+    "name": "elf-final-system-mysql-1",
+    "id": "ab676f87d8c351cdcf2f42cdc48714f2cc281a6a8306e391989dc5123d09a4ed",
+    "image_reference": "mysql:8.0.40",
+    "image_id": "sha256:f6e7cfd1cb86c0741bf55f72560ce6d7799ada94a51f8f192a4d3b689b8496b4",
+    "started_at": "2026-10-10T11:15:34.999278424Z",
+    "labels": {
+      "com.docker.compose.project": "elf-final-system"
+    },
+    "architecture": "arm64",
+    "os": "linux"
+  },
+  {
+    "name": "elf-final-system-minio-1",
+    "id": "de95292109dd70bd1a04782f757274ce8cd21dfa209b57f086387f57063943a3",
+    "image_reference": "pgsty/silo:RELEASE.2026-08-06T00-00-00Z",
+    "image_id": "sha256:076b58f8af6b053ac40d21e87e83d1bcbc1e4d7a651d12a3be0c551e92e91fbf",
+    "started_at": "2026-10-10T11:15:35.00380423Z",
+    "labels": {
+      "com.docker.compose.project": "elf-final-system"
+    },
+    "architecture": "arm64",
+    "os": "linux"
+  },
+  {
+    "name": "elf-final-system-kvrocks-1",
+    "id": "4d815e3cf909fe6ec323776275558fb373fe27f9f0e49404da8c736310e225b7",
+    "image_reference": "apache/kvrocks:2.16.0",
+    "image_id": "sha256:fd8e71ce4fce556a7522c01fff3dbfbd2da580f22920d151f7f2f06790b3074f",
+    "started_at": "2026-10-10T11:15:34.992120193Z",
+    "labels": {
+      "com.docker.compose.project": "elf-final-system"
+    },
+    "architecture": "arm64",
+    "os": "linux"
+  },
+  {
+    "name": "elf-final-system-infinity-1",
+    "id": "185b2bffe7bcb77ce4ac6f45aadbd021a5fe4855377f36d473a2f5a4f5d67005",
+    "image_reference": "infiniflow/infinity:v0.7.3-x64-v3",
+    "image_id": "sha256:34d7607d8966f4598735df886beb51a8c9ac7a7217be4ca0a8fbd5d78270214f",
+    "started_at": "2026-10-10T11:15:35.015837769Z",
+    "labels": {
+      "com.docker.compose.project": "elf-final-system"
+    },
+    "architecture": "amd64",
+    "os": "linux"
+  },
+  {
+    "name": "elf-final-system-clickhouse-1",
+    "id": "ed2a354c3bfa70d0721a1c250d2ace0416de456807e9d96f4d1d074a75a7cfff",
+    "image_reference": "clickhouse/clickhouse-server:26.5.5.8",
+    "image_id": "sha256:00763be2865b44f777df4340fbdd52f6d70a97f58b17a6ee8db91a8e7965912d",
+    "started_at": "2026-10-10T11:15:34.967327113Z",
+    "labels": {
+      "com.docker.compose.project": "elf-final-system"
+    },
+    "architecture": "arm64",
+    "os": "linux"
+  },
+  {
+    "name": "elf-final-system-nats-1",
+    "id": "01323072333bbeffcf59813e5ebd57130e0d22923b5952baf70d4b0bbab462b4",
+    "image_reference": "nats:2.14.2",
+    "image_id": "sha256:eff3cf3c1e911779b9fbfe69ca703bb69a2b7407e6227e3f9b70ebbca6f0a54d",
+    "started_at": "2026-10-10T11:15:34.842487668Z",
+    "labels": {
+      "com.docker.compose.project": "elf-final-system"
+    },
+    "architecture": "arm64",
+    "os": "linux"
+  },
+  {
+    "name": "elf-final-system-hindsight",
+    "id": "b86b305b32f83aaae2eaa83a4385f5432fc2e6cc4365b439894f72a9e0aa034f",
+    "image_reference": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+    "image_id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+    "started_at": "2026-10-10T13:16:03.773813787Z",
+    "labels": {
+      "elf.benchmark": "final-system"
+    },
+    "architecture": "arm64",
+    "os": "linux"
+  }
+]

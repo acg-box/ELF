@@ -12,6 +12,17 @@ from benchmark_budget import Ledger, buffered_events, prepare_request, reservati
 
 
 class BudgetTests(TestCase):
+    def test_lower_price_caps_bind_routing_and_full_output_reservation(self):
+        body, _, output = prepare_request({}, "chat", chat_max_tokens=943718,
+            force_chat_max_tokens=True, reasoning_effort="max",
+            chat_prompt_price=0.15, chat_completion_price=0.6)
+        self.assertEqual(body["provider"]["max_price"], {"prompt": 0.15, "completion": 0.6})
+        self.assertEqual(body["max_tokens"], 943718)
+        self.assertEqual(body["provider"]["only"], ["deepseek"])
+        self.assertFalse(body["provider"]["allow_fallbacks"])
+        self.assertEqual(reservation(10000, "chat", output, 0.15, 0.6),
+                         reservation(10000, "chat", output) / 2)
+
     def test_unknown_and_invalid_costs_cannot_release_reservations(self):
         for cost in (None, -1, math.nan, "0"):
             ledger = {"prior_paid_usd": 0.1, "requests": [{
@@ -56,6 +67,12 @@ class BudgetTests(TestCase):
         self.assertEqual(body["reasoning"], {"effort": "max"})
         self.assertGreater(reservation(10000, "chat", output), 1.13)
         self.assertNotIn("max_completion_tokens", body)
+
+    def test_capability_profile_overrides_native_internal_output_limits(self):
+        body, _, limit = prepare_request({"max_tokens": 4096}, "chat", chat_max_tokens=943718,
+                                         reasoning_effort="max", force_chat_max_tokens=True)
+        self.assertEqual(limit, 943718)
+        self.assertEqual(body["reasoning"], {"effort": "max"})
 
     def test_explicit_embedding_provider_preserves_model_dimensions_and_no_fallback(self):
         for provider in ("deepinfra", "nebius"):

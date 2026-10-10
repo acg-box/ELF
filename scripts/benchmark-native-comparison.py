@@ -146,7 +146,7 @@ def wait_rag(state,auth):
     raise TimeoutError('RAGFlow parsing exceeds 2400s')
 
 
-def ingest_hindsight(root,scope,items):
+def ingest_hindsight(root,scope,items,timeout_seconds=1800):
     bank='/v1/default/banks/native-'+scope
     done=root/(scope+'-hindsight-ingest.json')
     if done.exists():return bank
@@ -157,12 +157,12 @@ def ingest_hindsight(root,scope,items):
         result,_=api(HS,bank+'/memories',{'async':True,'items':records})
         save(retained,result)
     start=time.monotonic()
-    while time.monotonic()-start<1800:
+    while time.monotonic()-start<timeout_seconds:
         states={s:api(HS,bank+'/operations?status='+s+'&limit=1')[0] for s in ('pending','processing','failed')}
         if states['failed']['operations']:raise RuntimeError('Hindsight ingest operation failed')
         if not any(states[s]['operations'] for s in ('pending','processing')):save(done,states);return bank
         time.sleep(3)
-    raise TimeoutError('Hindsight consolidation exceeds 1800s')
+    raise TimeoutError(f'Hindsight consolidation exceeds {timeout_seconds}s')
 
 
 def labeled(rows):

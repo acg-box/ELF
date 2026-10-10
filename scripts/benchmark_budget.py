@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import nullcontext
 import json
 import math
 import os
@@ -39,11 +40,11 @@ def totals(ledger):
     return paid, exposure
 
 
-def reservation(size, kind, output):
-    return ((size + 8192) * (0.3 if kind == "chat" else 0.1) + output * 1.2) / 1_000_000
+def reservation(size, kind, output, chat_prompt_price=0.3, chat_completion_price=1.2):
+    return ((size + 8192) * (chat_prompt_price if kind == "chat" else 0.1) + output * chat_completion_price) / 1_000_000
 
 
-def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, reasoning_effort="low"):
+def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2):
     body = dict(body)
     streaming = body.get("stream") is True
     body["stream"] = False
@@ -57,10 +58,12 @@ def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimens
         if body.get("n", 1) != 1:
             raise ValueError("multiple_choices_not_allowed")
         output = min(chat_max_tokens, int(body.get("max_tokens") or body.get("max_completion_tokens") or chat_max_tokens))
+        if force_chat_max_tokens:
+            output = chat_max_tokens
         if output <= 0:
             raise ValueError("invalid_output_limit")
         body.update(model=CHAT_MODEL, max_tokens=output, reasoning={"effort": reasoning_effort},
-            provider={"only": ["deepseek"], "allow_fallbacks": False, "max_price": {"prompt": 0.3, "completion": 1.2}})
+            provider={"only": ["deepseek"], "allow_fallbacks": False, "max_price": {"prompt": chat_prompt_price, "completion": chat_completion_price}})
         body.pop("max_completion_tokens", None)
         body.pop("reasoning_effort", None)
     else:
@@ -130,8 +133,9 @@ def embedding_retry_delay(kind, status, attempt, retries, retry_after):
     return 2 ** (attempt + 1)
 
 
-def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low"):
+def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2):
     opener = urllib.request.build_opener(NoRedirect)
+    maximum_profile_lock = threading.Lock()
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
             pass
@@ -159,6 +163,11 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 "object": "model", "created": 0, "owned_by": "benchmark-route"}]})
 
         def do_POST(self):
+            # Full provider-output reservations are large; keep this opt-in profile serial.
+            with maximum_profile_lock if force_chat_max_tokens else nullcontext():
+                self.process_post()
+
+        def process_post(self):
             if not self.authenticated():
                 return self.error(401, "unauthorized")
             kind = {"/v1/chat/completions": "chat", "/v1/embeddings": "embedding"}.get(self.path)
@@ -168,7 +177,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 size = int(self.headers.get("Content-Length", "0"))
                 if size <= 0 or size > 262144:
                     return self.error(413, "input_limit")
-                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider, embedding_dimensions, chat_max_tokens, reasoning_effort)
+                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider, embedding_dimensions, chat_max_tokens, reasoning_effort, force_chat_max_tokens, chat_prompt_price, chat_completion_price)
                 data = json.dumps(body).encode()
             except (ValueError, TypeError) as error:
                 return self.error(400, str(error))
@@ -178,7 +187,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
             first_ordinal = None
             retries = embedding_429_retries if kind == "embedding" else 0
             for attempt in range(retries + 1):
-                row = ledger.reserve(reservation(len(data), kind, output), kind)
+                row = ledger.reserve(reservation(len(data), kind, output, chat_prompt_price, chat_completion_price), kind)
                 if row is None:
                     return self.error(402, "local_budget_exhausted")
                 if first_ordinal is None:
@@ -186,7 +195,8 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 attempt_metadata = {"attempt": attempt + 1, "request_ordinal": first_ordinal,
                     "requested_provider": embedding_provider if kind == "embedding" else "deepseek"}
                 if kind == "chat":
-                    attempt_metadata.update(requested_max_tokens=output, reasoning_effort=body["reasoning"]["effort"])
+                    attempt_metadata.update(requested_max_tokens=output, reasoning_effort=body["reasoning"]["effort"],
+                        max_price=body["provider"]["max_price"])
                 started = time.monotonic()
                 try:
                     with opener.open(request, timeout=request_timeout) as response:
@@ -240,7 +250,10 @@ def main():
                         help="Fix the shared Qwen embedding dimension for clients without a dimension setting")
     parser.add_argument("--embedding-429-retries", type=int, choices=range(4), default=0)
     parser.add_argument("--chat-max-tokens", type=int, default=8192)
+    parser.add_argument("--chat-prompt-price", type=float, default=0.3, help="Enforced provider USD per million input tokens")
+    parser.add_argument("--chat-completion-price", type=float, default=1.2, help="Enforced provider USD per million output tokens")
     parser.add_argument("--request-timeout", type=int, default=90)
+    parser.add_argument("--force-chat-max-tokens", action="store_true", help="Override native internal output limits for a provider-maximum capability profile")
     parser.add_argument("--reasoning-effort", choices=("low", "high", "max"), default="low")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
@@ -248,6 +261,8 @@ def main():
         parser.error("embedding dimensions must be between 1 and 4096")
     if args.chat_max_tokens <= 0 or args.request_timeout <= 0:
         parser.error("chat output and request timeout must be positive")
+    if any(not math.isfinite(p) or p <= 0 for p in (args.chat_prompt_price, args.chat_completion_price)):
+        parser.error("chat prices must be finite and positive")
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
     if not command or not 0 < args.tranche <= args.ceiling or not math.isfinite(args.ceiling):
         parser.error("Provide a command and finite positive limits with tranche <= ceiling")
@@ -264,7 +279,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -277,6 +292,8 @@ def main():
         print(json.dumps({"event": "budget_start", "ceiling_usd": args.ceiling,
             "tranche_reservation_usd": args.tranche, "paid_total_usd": totals(ledger.value)[0],
             "embedding_429_retries": args.embedding_429_retries,
+            "force_chat_max_tokens": args.force_chat_max_tokens,
+            "chat_prompt_price": args.chat_prompt_price, "chat_completion_price": args.chat_completion_price,
             "chat_max_tokens": args.chat_max_tokens, "request_timeout": args.request_timeout, "reasoning_effort": args.reasoning_effort,
             "embedding_provider": args.embedding_provider, "embedding_dimensions": args.embedding_dimensions,
             "transport": "nonstream_upstream_with_optional_buffered_sse"}), flush=True)

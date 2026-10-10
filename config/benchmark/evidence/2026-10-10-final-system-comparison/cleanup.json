@@ -1,0 +1,40 @@
+{
+  "container_names_removed": [
+    "elf-final-system-ragflow-cpu-1",
+    "elf-final-system-mysql-1",
+    "elf-final-system-minio-1",
+    "elf-final-system-kvrocks-1",
+    "elf-final-system-infinity-1",
+    "elf-final-system-clickhouse-1",
+    "elf-final-system-nats-1",
+    "elf-final-system-hindsight"
+  ],
+  "volumes_removed": [
+    "elf-final-system-hindsight-data",
+    "elf-final-system_clickhouse_data",
+    "elf-final-system_infinity_data",
+    "elf-final-system_kvrocks_data",
+    "elf-final-system_minio_data",
+    "elf-final-system_mysql_data",
+    "elf-final-system_nats_data"
+  ],
+  "networks_removed": [
+    "elf-final-system_ragflow"
+  ],
+  "images_removed": [
+    "sha256:c51ce53db95348aa8a4b2f0dab64f1e6b279efc8b07ad43aaac62f8426989076",
+    "sha256:f6e7cfd1cb86c0741bf55f72560ce6d7799ada94a51f8f192a4d3b689b8496b4",
+    "sha256:076b58f8af6b053ac40d21e87e83d1bcbc1e4d7a651d12a3be0c551e92e91fbf",
+    "sha256:fd8e71ce4fce556a7522c01fff3dbfbd2da580f22920d151f7f2f06790b3074f",
+    "sha256:34d7607d8966f4598735df886beb51a8c9ac7a7217be4ca0a8fbd5d78270214f",
+    "sha256:00763be2865b44f777df4340fbdd52f6d70a97f58b17a6ee8db91a8e7965912d",
+    "sha256:eff3cf3c1e911779b9fbfe69ca703bb69a2b7407e6227e3f9b70ebbca6f0a54d",
+    "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926"
+  ],
+  "images_retained": [],
+  "global_prune_used": false,
+  "credentials_removed": true,
+  "unrelated_names_missing_count": 1,
+  "unrelated_identity_drift_count": 2,
+  "unrelated_details": "Private baseline records were retained; unrelated resources were not removed by this cleanup."
+}

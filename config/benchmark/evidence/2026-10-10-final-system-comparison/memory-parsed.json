@@ -1,0 +1,3786 @@
+{
+  "docs": [
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172327,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "ccdacb439f8c4cbc9cd352d0874d45d1",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 356,
+        "ts": "2026-10-10T11:54:05Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_10a8847f903485c5.txt",
+      "meta_fields": {},
+      "name": "m_10a8847f903485c5.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:57",
+      "process_duration": 8.058075698,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 238,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 90,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:05",
+      "update_time": 1791633245701
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172305,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "65beb4752834499b8d48f97f30cf99ba",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 344,
+        "ts": "2026-10-10T11:54:03Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_7a073c47318430f8.txt",
+      "meta_fields": {},
+      "name": "m_7a073c47318430f8.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:54",
+      "process_duration": 9.180607542,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 242,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 91,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:03",
+      "update_time": 1791633243935
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172281,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "22364f0be6b349b09ed66c0d02db6feb",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 260,
+        "ts": "2026-10-10T11:53:08Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_0cf97e4da97e721d.txt",
+      "meta_fields": {},
+      "name": "m_0cf97e4da97e721d.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:01",
+      "process_duration": 7.601700585,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 206,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 81,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:08",
+      "update_time": 1791633188969
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172257,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "cdbf4157dc034ae7a65ecaea2935bef9",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 248,
+        "ts": "2026-10-10T11:53:06Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_11ab570fcca41f15.txt",
+      "meta_fields": {},
+      "name": "m_11ab570fcca41f15.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:52:59",
+      "process_duration": 6.89621161,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 125,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 59,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:06",
+      "update_time": 1791633186718
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172234,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "791304900dda40749c6055bdda098400",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 332,
+        "ts": "2026-10-10T11:53:57Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_b482da0e797a3b49.txt",
+      "meta_fields": {},
+      "name": "m_b482da0e797a3b49.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:29",
+      "process_duration": 28.24764685,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 237,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 90,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:57",
+      "update_time": 1791633237584
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172213,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "77cbd3047d3f48d8a1fbb2b3b70daa01",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 320,
+        "ts": "2026-10-10T11:53:54Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_6bf734c83508b527.txt",
+      "meta_fields": {},
+      "name": "m_6bf734c83508b527.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:21",
+      "process_duration": 33.220862681,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 241,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 92,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:54",
+      "update_time": 1791633234711
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172191,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "404c5dba4b17443a9476be509598c431",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 404,
+        "ts": "2026-10-10T11:54:20Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_60a61eab3b3b1426.txt",
+      "meta_fields": {},
+      "name": "m_60a61eab3b3b1426.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:13",
+      "process_duration": 7.655821295,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 205,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 83,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:20",
+      "update_time": 1791633260933
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172168,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "e4d99ad525b840ddae27138df5850ef7",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 236,
+        "ts": "2026-10-10T11:53:01Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_5cccbe54a3057c9d.txt",
+      "meta_fields": {},
+      "name": "m_5cccbe54a3057c9d.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:52:52",
+      "process_duration": 8.82282779,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 124,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 61,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:01",
+      "update_time": 1791633181279
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172151,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "ebd55b7c0be141ada0943e12b7efdbe8",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 224,
+        "ts": "2026-10-10T11:52:59Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_6e4b0b61170e23a6.txt",
+      "meta_fields": {},
+      "name": "m_6e4b0b61170e23a6.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:52:52",
+      "process_duration": 7.309071436,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 236,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 91,
+      "type": "doc",
+      "update_date": "2026-10-10 11:52:59",
+      "update_time": 1791633179730
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172132,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "b8381631f84d421cbdcaef61c9e29cdb",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 392,
+        "ts": "2026-10-10T11:54:18Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_89c1a1e6265841f0.txt",
+      "meta_fields": {},
+      "name": "m_89c1a1e6265841f0.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:11",
+      "process_duration": 7.407691854,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 240,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 92,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:18",
+      "update_time": 1791633258584
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172105,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "6ae31a944ca14240b4260aeaec29afb0",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 442,
+        "ts": "2026-10-10T11:54:35Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_9757cd3f6fff2b1a.txt",
+      "meta_fields": {},
+      "name": "m_9757cd3f6fff2b1a.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:28",
+      "process_duration": 7.415167771,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 205,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 81,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:35",
+      "update_time": 1791633275932
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172085,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "b140afb82ac24cba9fcd6707a61cffc0",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 440,
+        "ts": "2026-10-10T11:54:34Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_ea0fb41d60279977.txt",
+      "meta_fields": {},
+      "name": "m_ea0fb41d60279977.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:26",
+      "process_duration": 7.398278672,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 123,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 61,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:34",
+      "update_time": 1791633274140
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172067,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "e34f5adacd6046919e04f4a37f5940da",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 296,
+        "ts": "2026-10-10T11:53:21Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_4a54af2b364be476.txt",
+      "meta_fields": {},
+      "name": "m_4a54af2b364be476.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:14",
+      "process_duration": 7.136300341,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 237,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 90,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:21",
+      "update_time": 1791633201443
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172044,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "c25bff3f31d04f4e91099aba69d49ec9",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 284,
+        "ts": "2026-10-10T11:53:16Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_70bd88efee712a9a.txt",
+      "meta_fields": {},
+      "name": "m_70bd88efee712a9a.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:09",
+      "process_duration": 7.036918835,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 241,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 90,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:16",
+      "update_time": 1791633196062
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172025,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "aba344567e3648e4a8f34dd28d992282",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 428,
+        "ts": "2026-10-10T11:54:28Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_f7ff6441bdd98e53.txt",
+      "meta_fields": {},
+      "name": "m_f7ff6441bdd98e53.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:20",
+      "process_duration": 7.455870774,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 204,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 80,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:28",
+      "update_time": 1791633268444
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:52",
+      "create_time": 1791633172005,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "e7f4ba59899c4475bb370422a2b025b7",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 272,
+        "ts": "2026-10-10T11:53:14Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_eb85892166acc8ef.txt",
+      "meta_fields": {},
+      "name": "m_eb85892166acc8ef.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:06",
+      "process_duration": 7.459117326,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 124,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 60,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:14",
+      "update_time": 1791633194251
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:51",
+      "create_time": 1791633171984,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "441e005b1ec748acaf4802d8a2612ff5",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 308,
+        "ts": "2026-10-10T11:53:29Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_d6297f549707f98d.txt",
+      "meta_fields": {},
+      "name": "m_d6297f549707f98d.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:53:16",
+      "process_duration": 13.162045249,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 237,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 90,
+      "type": "doc",
+      "update_date": "2026-10-10 11:53:29",
+      "update_time": 1791633209283
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:51",
+      "create_time": 1791633171959,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "cd57254806fc404999befb9a5484d54d",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 380,
+        "ts": "2026-10-10T11:54:13Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_99ab4da076b7c734.txt",
+      "meta_fields": {},
+      "name": "m_99ab4da076b7c734.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:05",
+      "process_duration": 7.42614769,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 241,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 90,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:13",
+      "update_time": 1791633253191
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:51",
+      "create_time": 1791633171932,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "c3ec9898b94946de860bf50750dbd487",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 416,
+        "ts": "2026-10-10T11:54:26Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_d7a9d1f22107f233.txt",
+      "meta_fields": {},
+      "name": "m_d7a9d1f22107f233.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:18",
+      "process_duration": 8.024540337,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 205,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 82,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:26",
+      "update_time": 1791633266664
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:52:51",
+      "create_time": 1791633171908,
+      "created_by": "f6f4c04005e147dd9fcd8e04c8173371",
+      "dataset_id": "6cc67a5e96da45189cb9608a387d93be",
+      "id": "f59a3f7bcb3b4343add2b45e813c4086",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "id": 368,
+        "ts": "2026-10-10T11:54:11Z",
+        "event_type": 2,
+        "component": "",
+        "phase": 0,
+        "message": "Task completed."
+      },
+      "location": "m_c558d1541c4b9d0f.txt",
+      "meta_fields": {},
+      "name": "m_c558d1541c4b9d0f.txt",
+      "nickname": "Native benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:54:03",
+      "process_duration": 7.124601149,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 124,
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": "",
+      "token_count": 62,
+      "type": "doc",
+      "update_date": "2026-10-10 11:54:11",
+      "update_time": 1791633251120
+    }
+  ],
+  "has_active_tasks": false,
+  "total": 20
+}

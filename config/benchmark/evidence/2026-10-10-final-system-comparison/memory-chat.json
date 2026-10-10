@@ -1,0 +1,48 @@
+{
+  "create_date": "2026-10-10T13:02:17Z",
+  "create_time": 1791637337531,
+  "dataset_ids": [
+    "6cc67a5e96da45189cb9608a387d93be"
+  ],
+  "description": "A helpful Assistant",
+  "do_refer": "1",
+  "icon": "",
+  "id": "96fe06da61864bf69fbbf6975a3133c0",
+  "kb_names": [
+    "native-final-memory"
+  ],
+  "llm_id": "deepseek/deepseek-v4.1-flash@native_benchmark@OpenAI-API-Compatible",
+  "llm_setting": {
+    "max_tokens": 943718,
+    "temperature": 0.1
+  },
+  "meta_data_filter": {},
+  "name": "final-memory",
+  "prompt_config": {
+    "empty_response": "unknown",
+    "parameters": [
+      {
+        "key": "knowledge",
+        "optional": false
+      }
+    ],
+    "prologue": "Hi! I'm your assistant. What can I do for you?",
+    "quote": true,
+    "refine_multiturn": false,
+    "system": "Answer the question using only stored evidence. Return concise requested values. If there is no supported answer, say exactly unknown. Do not invent facts. Cite your sources when available.\nEvidence:\n{knowledge}",
+    "tts": false
+  },
+  "prompt_type": "simple",
+  "rerank_candidates_count": 64,
+  "rerank_id": "cross-encoder/ms-marco-MiniLM-L-6-v2@native_cpu@VLLM",
+  "similarity_threshold": 0,
+  "status": "1",
+  "tenant_id": "f6f4c04005e147dd9fcd8e04c8173371",
+  "tenant_llm_id": "abd66d9efdeb437180f965dc3462a0be",
+  "tenant_rerank_id": "b3ed9a307d0c4b8993364659a911379e",
+  "top_k": 1024,
+  "top_n": 20,
+  "update_date": "2026-10-10T13:02:17Z",
+  "update_time": 1791637337531,
+  "vector_similarity_weight": 0.3
+}

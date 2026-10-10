@@ -1,0 +1,27 @@
+{
+  "bank_id": "native-final-documents",
+  "total_nodes": 131,
+  "total_links": 1716,
+  "total_documents": 14,
+  "nodes_by_fact_type": {
+    "observation": 52,
+    "world": 79
+  },
+  "links_by_link_type": {
+    "temporal": 1328,
+    "semantic": 317,
+    "entity": 71
+  },
+  "links_by_fact_type": {},
+  "links_breakdown": {},
+  "pending_operations": 0,
+  "failed_operations": 0,
+  "operations_by_status": {
+    "completed": 4
+  },
+  "last_consolidated_at": "2026-10-10T11:52:48.062304+00:00",
+  "last_memory_write_at": "2026-10-10T11:52:48.025387+00:00",
+  "pending_consolidation": 0,
+  "failed_consolidation": 0,
+  "total_observations": 52
+}

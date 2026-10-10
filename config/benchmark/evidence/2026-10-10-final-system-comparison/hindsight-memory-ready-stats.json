@@ -1,0 +1,28 @@
+{
+  "bank_id": "native-final-memory",
+  "total_nodes": 99,
+  "total_links": 1604,
+  "total_documents": 20,
+  "nodes_by_fact_type": {
+    "observation": 32,
+    "world": 67
+  },
+  "links_by_link_type": {
+    "caused_by": 13,
+    "semantic": 458,
+    "temporal": 1035,
+    "entity": 98
+  },
+  "links_by_fact_type": {},
+  "links_breakdown": {},
+  "pending_operations": 0,
+  "failed_operations": 0,
+  "operations_by_status": {
+    "completed": 4
+  },
+  "last_consolidated_at": "2026-10-10T12:13:17.592092+00:00",
+  "last_memory_write_at": "2026-10-10T12:13:17.574233+00:00",
+  "pending_consolidation": 0,
+  "failed_consolidation": 0,
+  "total_observations": 32
+}

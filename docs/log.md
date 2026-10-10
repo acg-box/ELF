@@ -8,6 +8,9 @@ logs.
 
 ## 2026-10-10
 
+- Add a matched system comparison of Hindsight and RAGFlow with shared Mistral
+  annotations, maximum model output, and separate native and retrieval scores.
+
 - Add a separate mixed-page, Chinese, and table parser comparison. Repair the
   free baseline's whole-document OCR decision, preserve earlier measurements,
   and record matched native RAGFlow runs under the cumulative USD 20 ceiling.
