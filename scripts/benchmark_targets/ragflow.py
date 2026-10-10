@@ -83,8 +83,8 @@ def run_action(action, root: Path):
                 'boundary': 'Dataset-scoped hybrid retrieval. No ACL revocation or native synthesis claim.'}
     old_id = state['documents'][action['evidence_id']]
     deleted = request('DELETE', f'/datasets/{dataset}/documents', {'ids': [old_id]})
-    readback = request('GET', f'/datasets/{dataset}/documents?id={old_id}')
-    if readback['docs']:
+    readback = request('GET', f'/datasets/{dataset}/documents?page_size=100')
+    if any(doc['id'] == old_id for doc in readback['docs']):
         raise RuntimeError('Deleted RAGFlow document is still listed')
     del state['documents'][action['evidence_id']]
     native = {'deleted_id': old_id, 'delete': deleted, 'deleted_document_readback': readback}

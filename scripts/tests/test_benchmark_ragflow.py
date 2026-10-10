@@ -1,11 +1,23 @@
 """Keep RAGFlow evidence mapping independent of source text and unknown hits."""
 import unittest
+import json
+import tempfile
+from pathlib import Path
 from unittest.mock import patch
-from benchmark_targets.ragflow import contexts_from_chunks, wait_parsed
+from benchmark_targets.ragflow import contexts_from_chunks, wait_parsed, run_action
 from benchmark_budget import prepare_request
 
 
 class RagflowContextTests(unittest.TestCase):
+    def test_delete_checks_owned_dataset_listing_without_looking_up_removed_id(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'ragflow-scope.json').write_text(json.dumps({'dataset_id':'dataset','documents':{'source':'old'}}))
+            with patch('benchmark_targets.ragflow.request', side_effect=[True, {'docs':[{'id':'other'}]}]) as api:
+                run_action({'action':'delete','scope':'scope','evidence_id':'source'}, root)
+                self.assertEqual(api.call_args.args, ('GET','/datasets/dataset/documents?page_size=100'))
+            self.assertEqual(json.loads((root / 'ragflow-scope.json').read_text())['documents'], {})
+
     def test_go_terminal_ingestion_receipt_does_not_wait_for_removed_run_field(self):
         docs = [{'id':'native-a','ingestion_status':'COMPLETED','chunk_count':1}]
         with patch('benchmark_targets.ragflow.request', return_value={'docs':docs}) as api, \

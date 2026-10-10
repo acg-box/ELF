@@ -25,7 +25,7 @@ def main():
     parser.add_argument('--public-key', required=True, type=Path,
                         help='conf/public.pem from the pinned native server image')
     parser.add_argument('--url', default='http://127.0.0.1:19380')
-    parser.add_argument('--workload-group', choices=('behavior','documents','scale-100'), default='behavior')
+    parser.add_argument('--workload-group', choices=('behavior','mutations','documents','scale-100'), default='behavior')
     args = parser.parse_args()
     auth = None
     def api(method, path, value=None):
