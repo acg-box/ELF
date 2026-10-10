@@ -1,0 +1,17 @@
+{
+  "attempts": {
+    "behavior-v1": "Compose service misplaced; zero native queries and zero provider calls.",
+    "behavior-v2": "Model instance selector omitted; zero native queries and zero provider calls.",
+    "behavior-v3": "OpenAI driver rejected local gateway; stopped with zero queries and zero provider calls.",
+    "behavior-v4": "Native six-document ingestion completed; controller did not recognize Go COMPLETED status. Stopped; no queries.",
+    "behavior-v5": "Invalid page size returned only ten documents; stopped after six valid cross-session queries. Original results retained.",
+    "behavior-v6": "All queries ran. Native delete succeeded but old-ID readback rejected deleted objects; all mutation operations marked failed. Only 30 nonmutation cases are used for behavior comparison.",
+    "mutations-v1": "Full independent mutation group after corrected listing readback. Not selective wrong-answer recovery."
+  },
+  "latest_release": "v1.0.0-rc1",
+  "latest_release_checked_at": "2026-10-09",
+  "opensearch_boundary": "Official Go image startup failure; not retrieval quality. Infinity used in completed conditions.",
+  "opensearch_failure": "Failed to initialize configuration, get environments error: not implemented: opensearch",
+  "preflight_lock": "One duplicate launch refused the existing ledger lock; no requests submitted.",
+  "source_commit": "14bb02ee4584c1ab18f0c722c48beecd6bbf9860"
+}

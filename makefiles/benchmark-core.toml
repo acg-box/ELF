@@ -227,3 +227,7 @@ command = "python3"
 [tasks.benchmark-replay]
 args    = ["scripts/benchmark-repository-memory.py", "${@}"]
 command = "python3"
+
+[tasks.benchmark-ragflow]
+args    = ["scripts/benchmark-ragflow.py", "${@}"]
+command = "python3"

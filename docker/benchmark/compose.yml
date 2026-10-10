@@ -383,6 +383,16 @@ services:
       - --target
       - honcho
 
+  ragflow-unit:
+    <<: *unit
+    environment:
+      <<: *unit-environment
+      RAGFLOW_URL: http://ragflow-cpu:9380
+      RAGFLOW_API_KEY: ${RAGFLOW_API_KEY:-}
+      RAGFLOW_EMBEDDING_MODEL: ${RAGFLOW_EMBEDDING_MODEL:-}
+    networks:
+      - ragflow-benchmark
+
 volumes:
   postgres-data:
   qdrant-data:
@@ -391,3 +401,8 @@ volumes:
   falkordb-data:
   honcho-postgres-data:
   honcho-redis-data:
+
+networks:
+  ragflow-benchmark:
+    external: true
+    name: ${RAGFLOW_NETWORK:-elf-ragflow-benchmark_ragflow}

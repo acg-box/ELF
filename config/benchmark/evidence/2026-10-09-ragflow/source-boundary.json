@@ -1,0 +1,7 @@
+{
+  "behavior_start": "27826aa9",
+  "document_and_mutation_recovery_source": "3955059f",
+  "diff_sha256": "ee7721c2b337c868b4d50ce253327cd10a4340851383715f9ceb99c4792f87d7",
+  "diff": "diff --git a/scripts/benchmark_targets/ragflow.py b/scripts/benchmark_targets/ragflow.py\nindex 3baf9f17..a8df12d4 100644\n--- a/scripts/benchmark_targets/ragflow.py\n+++ b/scripts/benchmark_targets/ragflow.py\n@@ -83,8 +83,8 @@ def run_action(action, root: Path):\n                 'boundary': 'Dataset-scoped hybrid retrieval. No ACL revocation or native synthesis claim.'}\n     old_id = state['documents'][action['evidence_id']]\n     deleted = request('DELETE', f'/datasets/{dataset}/documents', {'ids': [old_id]})\n-    readback = request('GET', f'/datasets/{dataset}/documents?id={old_id}')\n-    if readback['docs']:\n+    readback = request('GET', f'/datasets/{dataset}/documents?page_size=100')\n+    if any(doc['id'] == old_id for doc in readback['docs']):\n         raise RuntimeError('Deleted RAGFlow document is still listed')\n     del state['documents'][action['evidence_id']]\n     native = {'deleted_id': old_id, 'delete': deleted, 'deleted_document_readback': readback}\n",
+  "boundary": "Only mutation readback changed in these execution paths. Behavior mutation tail is excluded; nonmutation prefix retained. Complete independent mutation recovery used clean source."
+}

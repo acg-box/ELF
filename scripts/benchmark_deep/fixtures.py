@@ -6,6 +6,7 @@ import hashlib
 import random
 
 WORKLOAD_GROUPS = {
+    'documents': {'documents'},
     'scale-100': {'scale-100'},
     'scale-1000': {'scale-1000'},
     'session': {'session'},
@@ -21,6 +22,10 @@ def opaque(value):
 
 
 def workload(group='all'):
+    if group == 'documents':
+        from .documents import workload as documents_workload
+
+        return documents_workload()
     if group != 'all' and group not in WORKLOAD_GROUPS:
         raise ValueError(f'Unknown workload group: {group}')
     actions, oracle = [], {}
