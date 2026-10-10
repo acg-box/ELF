@@ -26,7 +26,7 @@ from benchmark_runner.runtime import REPO, command, source_fingerprint, write_js
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--target", required=True, choices=("elf", "qmd", "hindsight", "gbrain", "mem0", "sag-engine", *BASELINES))
+    parser.add_argument("--target", required=True, choices=("elf", "qmd", "ragflow", "hindsight", "gbrain", "mem0", "sag-engine", *BASELINES))
     parser.add_argument("--manifest", required=True, type=Path)
     parser.add_argument("--artifact-root", required=True, type=Path)
     parser.add_argument("--max-seconds", type=int, default=7200)

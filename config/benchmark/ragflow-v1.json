@@ -1,0 +1,110 @@
+{
+  "schema": "elf.benchmark_manifest/v4",
+  "answer_contract": "config/benchmark/scoring-contract-v5.json",
+  "runner": {
+    "capacity": 1,
+    "fallback_capacity": 1,
+    "compose_file": "docker/benchmark/compose.yml",
+    "image": "elf-benchmark-unit:v4",
+    "unit_timeout_seconds": 3600,
+    "context_budget_chars": 12000,
+    "seed": 260813
+  },
+  "providers": {
+    "chat": {
+      "model": "deepseek/deepseek-v4.1-flash",
+      "reasoning_effort": "low"
+    },
+    "embedding": {
+      "model": "qwen/qwen3-embedding-8b",
+      "dimensions": 1536
+    }
+  },
+  "metrics": [
+    "expected_evidence_recall_at_5",
+    "ndcg_at_5",
+    "forbidden_or_stale_evidence_hit_rate",
+    "source_or_citation_trace_rate",
+    "programmatic_answer_correctness",
+    "native_correction_and_update_success",
+    "native_deletion_or_forgetting_success",
+    "privacy_scope_violation_rate",
+    "unsupported_answer_rate",
+    "cold_ingest_duration",
+    "warm_query_latency",
+    "completed_and_typed_failure_counts",
+    "provider_usage_when_returned"
+  ],
+  "failure_classes": {
+    "completed": {
+      "quality_denominator": true
+    },
+    "product_failed": {
+      "quality_denominator": false
+    },
+    "adapter_failed": {
+      "quality_denominator": false
+    },
+    "harness_failed": {
+      "quality_denominator": false
+    },
+    "provider_failed": {
+      "quality_denominator": false
+    },
+    "configuration_failed": {
+      "quality_denominator": false
+    },
+    "timeout_failed": {
+      "quality_denominator": false
+    },
+    "cleanup_failed": {
+      "quality_denominator": false
+    },
+    "not_applicable": {
+      "quality_denominator": false
+    }
+  },
+  "targets": [
+    {
+      "id": "ragflow",
+      "adapter": "native_document_hybrid_retrieval",
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": [],
+      "image": "elf-benchmark-http:v8",
+      "pin": {
+        "kind": "container_image",
+        "release": "v1.0.0-rc1",
+        "platform": "linux/amd64",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "native_deviations": {
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update.",
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured."
+      }
+    }
+  ],
+  "suites": [
+    {
+      "id": "common-core-v1",
+      "kind": "retrieval",
+      "path": "config/benchmark/suites/common-core-v1.json"
+    },
+    {
+      "id": "memory-lifecycle-v1",
+      "kind": "memory_lifecycle",
+      "path": "config/benchmark/suites/memory-lifecycle-v1.json"
+    },
+    {
+      "id": "knowledge-structure-v1",
+      "kind": "knowledge_structure",
+      "path": "config/benchmark/suites/knowledge-structure-v1.json"
+    },
+    {
+      "id": "repository-knowledge-v1",
+      "kind": "repository_knowledge",
+      "path": "config/benchmark/suites/repository-knowledge-v1.json"
+    }
+  ]
+}

@@ -106,6 +106,10 @@ def hindsight_action(action, root):
 
 
 def run_action(target, action, root):
+    if target == "ragflow":
+        from benchmark_targets.ragflow import run_action as ragflow_action
+
+        return ragflow_action(action, root)
     if target in {"files-search", "no-memory"}:
         from benchmark_runner.baselines import retrieve
 
