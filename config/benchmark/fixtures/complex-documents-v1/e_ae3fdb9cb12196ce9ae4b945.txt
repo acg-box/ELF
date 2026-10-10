@@ -1,0 +1,46 @@
+Juniper table 0
+Approved operations manual / controlled synthetic benchmark
+
+
+Regional escalation matrix. Only the approved columns may be used. A dash indicates
+no published value. The footnote changes the South overflow rule.
+
+
+                       Approved routing                                   Historical - do not use
+
+
+ Region               Primary queue           Overflow queue           Old queue                    Hours
+
+
+ North                NORTH-0-731             NBACK-0-428              OLDN-0-154                   4
+
+
+
+
+ South                SOUTH-0-862             SBACK-0-593 *            OLDS-0-267                   12
+
+
+
+
+ East                 EAST-0-915              EBACK-0-346              OLDE-0-782                   8
+
+
+
+
+ West                 WEST-0-624              -                        OLDW-0-853                   24
+
+
+
+
+* For the South region, use overflow only after 18:00 UTC. Before that time, use the
+South primary queue.
+
+
+The Hours column specifies the response window. It does not specify the overflow
+activation time.
+
+
+
+
+Juniper table 0 | Revision 4 | Page 1
+

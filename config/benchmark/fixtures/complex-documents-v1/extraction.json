@@ -1,0 +1,54 @@
+{
+  "documents": [
+    {
+      "evidence_id": "e_ae3fdb9cb12196ce9ae4b945",
+      "mode": "poppler-layout",
+      "duration_seconds": 0.011534739984199405,
+      "sha256": "5322d5d5d90cf06363a4390de87b4dab6708cce92aeb8e2f991321bf67fc3f8a"
+    },
+    {
+      "evidence_id": "e_6f96a2af3365edd7577ea147",
+      "mode": "poppler-layout",
+      "duration_seconds": 0.003945427015423775,
+      "sha256": "a576376e32cf9cc1286964738a81d7f8db8cf0ec969c1e82ca0210e194c13dde"
+    },
+    {
+      "evidence_id": "e_f78b8623bff0267bf5e45c2b",
+      "mode": "poppler-layout",
+      "duration_seconds": 0.0037157179904170334,
+      "sha256": "a1d83f511b9369f38af477d29b1ea9ff4dcbb2672081fb70518369db20614038"
+    },
+    {
+      "evidence_id": "e_adf880c03e4b6091d62cdf6f",
+      "mode": "poppler-layout",
+      "duration_seconds": 0.0035265099722892046,
+      "sha256": "82d342cfa841869beaae4869c466836b057abff290c5c0a916e8da38b22085bf"
+    },
+    {
+      "evidence_id": "e_f361397d877f4c9074ab359a",
+      "mode": "poppler-layout",
+      "duration_seconds": 0.00391938496613875,
+      "sha256": "c982305f7a192bf36dddd1a62be72ed125f28261d301643f41c2e672b55d5363"
+    },
+    {
+      "evidence_id": "e_4b51c2f07fe6d33137c84359",
+      "mode": "poppler-layout",
+      "duration_seconds": 0.0046507210354320705,
+      "sha256": "a806d826cbf07ccccd5c2b1b7f88bf13f2bbca55ae0939e0f7dab6ee37c87479"
+    },
+    {
+      "evidence_id": "e_7fe00361fcf964b12aea766c",
+      "mode": "tesseract-5-psm3",
+      "duration_seconds": 0.6047025890438817,
+      "sha256": "4f587b270a3494e74f92c2e798ebdbb60953c03b3c72c96ebd9351d198aca235"
+    },
+    {
+      "evidence_id": "e_255d68caea01e4bc6add58b1",
+      "mode": "tesseract-5-psm3",
+      "duration_seconds": 0.5844413280137815,
+      "sha256": "41515c2516ad814c2e0f1b2139515404027010c9510fe9fc8568fbe1c1b4f318"
+    }
+  ],
+  "poppler": "pdftotext version 22.12.0\nCopyright 2005-2022 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n",
+  "tesseract": "tesseract 5.3.0\n leptonica-1.82.0\n  libgif 5.2.1 : libjpeg 6b (libjpeg-turbo 2.1.2) : libpng 1.6.39 : libtiff 4.5.0 : zlib 1.2.13 : libwebp 1.2.4 : libopenjp2 2.5.0\n Found NEON\n Found OpenMP 201511\n Found libarchive 3.6.2 zlib/1.2.13 liblzma/5.4.1 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.4\n Found libcurl/7.88.1 OpenSSL/3.0.22 zlib/1.2.13 brotli/1.0.9 zstd/1.5.4 libidn2/2.3.3 libpsl/0.21.2 (+libidn2/2.3.3) libssh2/1.10.0 nghttp2/1.52.0 librtmp/2.3 OpenLDAP/2.5.13\n"
+}

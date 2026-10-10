@@ -1,0 +1,290 @@
+[
+  {
+    "evidence_id": "e_ae3fdb9cb12196ce9ae4b945",
+    "name": "Juniper table 0",
+    "kind": "table",
+    "file": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+    "sha256": "4a6827387967c8358987ef29d778d40f25c7e422b317311e3fac2303aabce193",
+    "questions": [
+      {
+        "lane": "table_row",
+        "question": "For Juniper table 0, what is the approved South primary queue?",
+        "facts": [
+          "SOUTH-0-862"
+        ],
+        "forbidden": [
+          "OLDS-0-267",
+          "NORTH-0-731"
+        ]
+      },
+      {
+        "lane": "table_footnote",
+        "question": "For Juniper table 0, which South queue applies at 19:00 UTC?",
+        "facts": [
+          "SBACK-0-593"
+        ],
+        "forbidden": [
+          "SOUTH-0-862"
+        ]
+      },
+      {
+        "lane": "table_missing",
+        "question": "For Juniper table 0, what is the approved West overflow queue?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "e_6f96a2af3365edd7577ea147",
+    "name": "Juniper table 1",
+    "kind": "table",
+    "file": "e_6f96a2af3365edd7577ea147.pdf",
+    "sha256": "b143b346bce6c562090985dba20bb1e7b41fdec75d024fb9b727c261721cae94",
+    "questions": [
+      {
+        "lane": "table_row",
+        "question": "For Juniper table 1, what is the approved South primary queue?",
+        "facts": [
+          "SOUTH-1-862"
+        ],
+        "forbidden": [
+          "OLDS-1-267",
+          "NORTH-1-731"
+        ]
+      },
+      {
+        "lane": "table_footnote",
+        "question": "For Juniper table 1, which South queue applies at 19:00 UTC?",
+        "facts": [
+          "SBACK-1-593"
+        ],
+        "forbidden": [
+          "SOUTH-1-862"
+        ]
+      },
+      {
+        "lane": "table_missing",
+        "question": "For Juniper table 1, what is the approved West overflow queue?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "e_f78b8623bff0267bf5e45c2b",
+    "name": "Juniper columns 0",
+    "kind": "columns",
+    "file": "e_f78b8623bff0267bf5e45c2b.pdf",
+    "sha256": "187743852f9469472bff10a9cbfa41f633fc4ce62e6ca7760f45f4632baba978",
+    "questions": [
+      {
+        "lane": "columns_binding",
+        "question": "For Juniper columns 0, what is the current signed Atlas release?",
+        "facts": [
+          "ALPHA-0-472"
+        ],
+        "forbidden": [
+          "OLD-0-351",
+          "BETA-0-683"
+        ]
+      },
+      {
+        "lane": "columns_complete",
+        "question": "For Juniper columns 0, give both the current Boreal release and the required Atlas rollback inspection.",
+        "facts": [
+          "BETA-0-683",
+          "CHECK-0-925"
+        ],
+        "forbidden": [
+          "STALE-0-746",
+          "SKIP-0-268"
+        ]
+      },
+      {
+        "lane": "columns_absent",
+        "question": "For Juniper columns 0, what is the signed launch date?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "e_adf880c03e4b6091d62cdf6f",
+    "name": "Juniper columns 1",
+    "kind": "columns",
+    "file": "e_adf880c03e4b6091d62cdf6f.pdf",
+    "sha256": "1a725101dad8384590645d1ad7efefb9b9f2be782262c980294f8f2a755a2fa0",
+    "questions": [
+      {
+        "lane": "columns_binding",
+        "question": "For Juniper columns 1, what is the current signed Atlas release?",
+        "facts": [
+          "ALPHA-1-472"
+        ],
+        "forbidden": [
+          "OLD-1-351",
+          "BETA-1-683"
+        ]
+      },
+      {
+        "lane": "columns_complete",
+        "question": "For Juniper columns 1, give both the current Boreal release and the required Atlas rollback inspection.",
+        "facts": [
+          "BETA-1-683",
+          "CHECK-1-925"
+        ],
+        "forbidden": [
+          "STALE-1-746",
+          "SKIP-1-268"
+        ]
+      },
+      {
+        "lane": "columns_absent",
+        "question": "For Juniper columns 1, what is the signed launch date?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "e_f361397d877f4c9074ab359a",
+    "name": "Juniper crosspage 0",
+    "kind": "crosspage",
+    "file": "e_f361397d877f4c9074ab359a.pdf",
+    "sha256": "fc7f0df02bb34fe9d8fbe9a78a55575d61e70238374f7362013341f016b28532",
+    "questions": [
+      {
+        "lane": "cross_page_list",
+        "question": "For Juniper crosspage 0, list the complete two-entry return exception identifiers.",
+        "facts": [
+          "CUSTOM-0-837",
+          "DEFECT-0-462"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "cross_page_revision",
+        "question": "For Juniper crosspage 0, what is the revision 4 escalation queue?",
+        "facts": [
+          "FINAL-0-759"
+        ],
+        "forbidden": [
+          "RETIRED-0-283"
+        ]
+      },
+      {
+        "lane": "cross_page_absent",
+        "question": "For Juniper crosspage 0, what is the signed extended-warranty code?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "e_4b51c2f07fe6d33137c84359",
+    "name": "Juniper crosspage 1",
+    "kind": "crosspage",
+    "file": "e_4b51c2f07fe6d33137c84359.pdf",
+    "sha256": "20308d5f7ca96bd2c5f0173384b226e0638bcc53eb21c51888ab09cc7b776fd9",
+    "questions": [
+      {
+        "lane": "cross_page_list",
+        "question": "For Juniper crosspage 1, list the complete two-entry return exception identifiers.",
+        "facts": [
+          "CUSTOM-1-837",
+          "DEFECT-1-462"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "cross_page_revision",
+        "question": "For Juniper crosspage 1, what is the revision 4 escalation queue?",
+        "facts": [
+          "FINAL-1-759"
+        ],
+        "forbidden": [
+          "RETIRED-1-283"
+        ]
+      },
+      {
+        "lane": "cross_page_absent",
+        "question": "For Juniper crosspage 1, what is the signed extended-warranty code?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "e_7fe00361fcf964b12aea766c",
+    "name": "Juniper scan 2",
+    "kind": "scan",
+    "file": "e_7fe00361fcf964b12aea766c.pdf",
+    "sha256": "64315188d250aaa66f2421f8a4d6d97f35be6dd6c82d6837e85f78c0b5b2b3ba",
+    "questions": [
+      {
+        "lane": "scan_row",
+        "question": "For Juniper scan 2, what is the approved South primary queue?",
+        "facts": [
+          "SOUTH-2-862"
+        ],
+        "forbidden": [
+          "OLDS-2-267",
+          "NORTH-2-731"
+        ]
+      },
+      {
+        "lane": "scan_footnote",
+        "question": "For Juniper scan 2, which South queue applies at 19:00 UTC?",
+        "facts": [
+          "SBACK-2-593"
+        ],
+        "forbidden": [
+          "SOUTH-2-862"
+        ]
+      },
+      {
+        "lane": "scan_missing",
+        "question": "For Juniper scan 2, what is the approved West overflow queue?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "e_255d68caea01e4bc6add58b1",
+    "name": "Juniper scan 3",
+    "kind": "scan",
+    "file": "e_255d68caea01e4bc6add58b1.pdf",
+    "sha256": "fda4147d6b71dcca680aac08e5a56c4111554673468a8ac6938a9cf48bc85c3b",
+    "questions": [
+      {
+        "lane": "scan_row",
+        "question": "For Juniper scan 3, what is the approved South primary queue?",
+        "facts": [
+          "SOUTH-3-862"
+        ],
+        "forbidden": [
+          "OLDS-3-267",
+          "NORTH-3-731"
+        ]
+      },
+      {
+        "lane": "scan_footnote",
+        "question": "For Juniper scan 3, which South queue applies at 19:00 UTC?",
+        "facts": [
+          "SBACK-3-593"
+        ],
+        "forbidden": [
+          "SOUTH-3-862"
+        ]
+      },
+      {
+        "lane": "scan_missing",
+        "question": "For Juniper scan 3, what is the approved West overflow queue?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  }
+]

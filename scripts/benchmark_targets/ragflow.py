@@ -1,6 +1,7 @@
 """RAGFlow 1.0 native document ingestion, retrieval, and source lifecycle."""
 from __future__ import annotations
 
+import base64
 import json
 import os
 import time
@@ -25,9 +26,13 @@ def request(method, path, value=None, *, data=None, content_type='application/js
 
 def upload(dataset, item):
     boundary = 'elf-' + uuid.uuid4().hex
+    binary = 'file_base64' in item
+    extension = item.get('file_extension', '.txt') if binary else '.txt'
+    content_type = item.get('content_type', 'application/octet-stream') if binary else 'text/plain'
+    payload = base64.b64decode(item['file_base64'], validate=True) if binary else item['text'].encode()
     body = (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; '
-            f'filename="{item["evidence_id"]}.txt"\r\nContent-Type: text/plain\r\n\r\n'
-            + item['text'] + f'\r\n--{boundary}--\r\n').encode()
+            f'filename="{item["evidence_id"]}{extension}"\r\nContent-Type: {content_type}\r\n\r\n').encode()
+    body += payload + f'\r\n--{boundary}--\r\n'.encode()
     docs = request('POST', f'/datasets/{dataset}/documents', data=body,
                    content_type='multipart/form-data; boundary=' + boundary)
     return docs[0]['id']
