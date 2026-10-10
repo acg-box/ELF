@@ -1,0 +1,50 @@
+{
+  "first_ordinal": 63027,
+  "last_ordinal": 64558,
+  "new_paid_usd": 0.923024362,
+  "cumulative_paid_usd": 16.939534869999687,
+  "cumulative_exposure_usd": 19.06735396999953,
+  "ceiling_usd": 20,
+  "archived_failed_attempts": 34,
+  "failed_attempt_paid_usd": 6.0600000000000004e-06,
+  "statuses": {
+    "completed": 1530,
+    "provider_failed": 1,
+    "uncertain": 1
+  },
+  "phases": {
+    "ragflow-documents-ingest-phase": {
+      "first_ordinal": 63028,
+      "last_ordinal": 63055,
+      "seconds": 87.58319745800691,
+      "paid_usd": 5.054e-05,
+      "requests": 28
+    },
+    "hindsight-documents-ingest-phase": {
+      "first_ordinal": 63056,
+      "started_at": 1791631049.778346,
+      "start_clock_source": "Native operation creation timestamp; controller handoff retained the existing ingestion",
+      "last_ordinal": 63263,
+      "seconds": 2121.834895133972,
+      "paid_usd": 0.233271042,
+      "requests": 208
+    },
+    "hindsight-memory-ingest-phase": {
+      "first_ordinal": 63304,
+      "started_at": 1791633280.393538,
+      "last_ordinal": 63475,
+      "seconds": 1119.0923569202423,
+      "paid_usd": 0.108600958,
+      "requests": 172
+    },
+    "ragflow-memory-ingest-phase": {
+      "first_ordinal": 63264,
+      "started_at": 1791633171.810873,
+      "last_ordinal": 63303,
+      "seconds": 108.38553190231323,
+      "paid_usd": 1.656e-05,
+      "requests": 40
+    }
+  },
+  "outside_query_windows": 0.34199943
+}

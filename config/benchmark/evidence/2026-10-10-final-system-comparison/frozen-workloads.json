@@ -1,0 +1,1420 @@
+{
+  "documents": {
+    "items": [
+      {
+        "evidence_id": "e_ae3fdb9cb12196ce9ae4b945",
+        "text": "<file name=\"e_ae3fdb9cb12196ce9ae4b945.pdf\">\n# Juniper table 0\n\nApproved operations manual / controlled synthetic benchmark\n\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\n\nApproved routing\nHistorical - do not use\n\n|  Region | Primary queue | Overflow queue | Old queue | Hours  |\n| --- | --- | --- | --- | --- |\n|  North | NORTH-0-731 | NBACK-0-428 | OLDN-0-154 | 4  |\n|  South | SOUTH-0-862 | SBACK-0-593 * | OLDS-0-267 | 12  |\n|  East | EAST-0-915 | EBACK-0-346 | OLDE-0-782 | 8  |\n|  West | WEST-0-624 | - | OLDW-0-853 | 24  |\n\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the South primary queue.\n\nThe Hours column specifies the response window. It does not specify the overflow activation time.\n\nJuniper table 0 | Revision 4 | Page 1\n</file>"
+      },
+      {
+        "evidence_id": "e_6f96a2af3365edd7577ea147",
+        "text": "<file name=\"e_6f96a2af3365edd7577ea147.pdf\">\n# Juniper table 1\n\nApproved operations manual / controlled synthetic benchmark\n\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\n\nApproved routing\nHistorical - do not use\n\n|  Region | Primary queue | Overflow queue | Old queue | Hours  |\n| --- | --- | --- | --- | --- |\n|  North | NORTH-1-731 | NBACK-1-428 | OLDN-1-154 | 4  |\n|  South | SOUTH-1-862 | SBACK-1-593 * | OLDS-1-267 | 12  |\n|  East | EAST-1-915 | EBACK-1-346 | OLDE-1-782 | 8  |\n|  West | WEST-1-624 | - | OLDW-1-853 | 24  |\n\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the South primary queue.\n\nThe Hours column specifies the response window. It does not specify the overflow activation time.\n\nJuniper table 1 | Revision 4 | Page 1\n</file>"
+      },
+      {
+        "evidence_id": "e_f78b8623bff0267bf5e45c2b",
+        "text": "<file name=\"e_f78b8623bff0267bf5e45c2b.pdf\">\nJuniper columns 0\nRevision 4\nPage 1\n\n# Juniper columns 0\n\nApproved operations manual / controlled synthetic benchmark\n\n## CURRENT - SIGNED\n\nThe Atlas migration uses release ALPHA-0-472.\n\nThe Boreal migration uses release BETA-0-683.\n\nAn Atlas rollback must first complete inspection CHECK-0-925.\n\nThese signed instructions override the archived material in the adjacent column.\n\nAfter inspection, the operator must record the result and notify the service owner.\n\n## ARCHIVED - DO NOT APPLY\n\nAn old Atlas draft used release OLD-0-351.\n\nThe old Boreal draft used release STALE-0-746.\n\nThe retired Atlas inspection was SKIP-0-268.\n\nThis column exists for historical reference. It is not authorization for current operations.\n\nDraft values cannot override signed instructions.\n</file>"
+      },
+      {
+        "evidence_id": "e_adf880c03e4b6091d62cdf6f",
+        "text": "<file name=\"e_adf880c03e4b6091d62cdf6f.pdf\">\nJuniper columns 1\nRevision 4\nPage 1\n\n# Juniper columns 1\n\nApproved operations manual / controlled synthetic benchmark\n\n## CURRENT - SIGNED\n\nThe Atlas migration uses release ALPHA-1-472.\n\nThe Boreal migration uses release BETA-1-683.\n\nAn Atlas rollback must first complete inspection CHECK-1-925.\n\nThese signed instructions override the archived material in the adjacent column.\n\nAfter inspection, the operator must record the result and notify the service owner.\n\n## ARCHIVED - DO NOT APPLY\n\nAn old Atlas draft used release OLD-1-351.\n\nThe old Boreal draft used release STALE-1-746.\n\nThe retired Atlas inspection was SKIP-1-268.\n\nThis column exists for historical reference. It is not authorization for current operations.\n\nDraft values cannot override signed instructions.\n</file>"
+      },
+      {
+        "evidence_id": "e_f361397d877f4c9074ab359a",
+        "text": "<file name=\"e_f361397d877f4c9074ab359a.pdf\">\n# Juniper crosspage 0\n\nApproved operations manual / controlled synthetic benchmark\n\n1. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n2. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n3. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n4. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n5. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n6. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n7. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n8. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n12. Return policy: standard goods have a 7-day limit. The complete exception list has exactly two entries. The first is custom goods, identified by\n\nCUSTOM-0-837. The second exception continues on the next page.\n\nJuniper crosspage 0 | Revision 4 | Page 1\n# Juniper crosspage 0\n\nApproved operations manual / controlled synthetic benchmark\n\n12. Return policy (continued): quality defects use DEFECT-0-462 and are exempt from the 7-day limit. Both identifiers are required for a complete exception list.\n\n13. The revised escalation queue is FINAL-0-759. Earlier revision 3 used RETIRED-0-283, which is no longer valid.\n\n14. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n15. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n16. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n17. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n18. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n19. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\nJuniper crosspage 0 | Revision 4 | Page 2\n</file>"
+      },
+      {
+        "evidence_id": "e_4b51c2f07fe6d33137c84359",
+        "text": "<file name=\"e_4b51c2f07fe6d33137c84359.pdf\">\n# Juniper crosspage 1\n\nApproved operations manual / controlled synthetic benchmark\n\n1. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n2. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n3. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n4. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n5. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n6. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n7. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n8. Operating requirement: record the request, verify the product identity, and retain the signed receipt. These procedural requirements do not add exceptions to the return policy.\n\n12. Return policy: standard goods have a 7-day limit. The complete exception list has exactly two entries. The first is custom goods, identified by\n\nCUSTOM-1-837. The second exception continues on the next page.\n\nJuniper crosspage 1 | Revision 4 | Page 1\n# Juniper crosspage 1\n\nApproved operations manual / controlled synthetic benchmark\n\n12. Return policy (continued): quality defects use DEFECT-1-462 and are exempt from the 7-day limit. Both identifiers are required for a complete exception list.\n\n13. The revised escalation queue is FINAL-1-759. Earlier revision 3 used RETIRED-1-283, which is no longer valid.\n\n14. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n15. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n16. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n17. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n18. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\n19. Administrative note: keep this record with the signed receipt and make it available to the operations owner.\n\nJuniper crosspage 1 | Revision 4 | Page 2\n</file>"
+      },
+      {
+        "evidence_id": "e_7fe00361fcf964b12aea766c",
+        "text": "<file name=\"e_7fe00361fcf964b12aea766c.pdf\">\n# Juniper scan 2\n\nApproved operations manual / controlled synthetic benchmark\n\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\n\nApproved routing\nHistorical - do not use\n\n|  Region | Primary queue | Overflow queue | Old queue | Hours  |\n| --- | --- | --- | --- | --- |\n|  North | NORTH-2-731 | NBACK-2-428 | OLDN-2-154 | 4  |\n|  South | SOUTH-2-862 | SBACK-2-593 * | OLDS-2-267 | 12  |\n|  East | EAST-2-915 | EBACK-2-346 | OLDE-2-782 | 8  |\n|  West | WEST-2-624 | - | OLDW-2-853 | 24  |\n\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the South primary queue.\n\nThe Hours column specifies the response window. It does not specify the overflow activation time.\n\nJuniper scan 2 | Revision 4 | Page 1\n</file>"
+      },
+      {
+        "evidence_id": "e_255d68caea01e4bc6add58b1",
+        "text": "<file name=\"e_255d68caea01e4bc6add58b1.pdf\">\n# Juniper scan 3\n\nApproved operations manual / controlled synthetic benchmark\n\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\n\nApproved routing\nHistorical - do not use\n\n|  Region | Primary queue | Overflow queue | Old queue | Hours  |\n| --- | --- | --- | --- | --- |\n|  North | NORTH-3-731 | NBACK-3-428 | OLDN-3-154 | 4  |\n|  South | SOUTH-3-862 | SBACK-3-593 * | OLDS-3-267 | 12  |\n|  East | EAST-3-915 | EBACK-3-346 | OLDE-3-782 | 8  |\n|  West | WEST-3-624 | - | OLDW-3-853 | 24  |\n\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the South primary queue.\n\nThe Hours column specifies the response window. It does not specify the overflow activation time.\n\nJuniper scan 3 | Revision 4 | Page 1\n</file>"
+      },
+      {
+        "evidence_id": "p_e7ce1eebc94674c92dc4",
+        "text": "<file name=\"p_e7ce1eebc94674c92dc4.pdf\">\n# Harbor mixed A\n\nControlled synthetic parser diagnostic / signed revision 7\n\nSigned dispatch policy. Pages 2 and 3 contain scanned operational records.\n\nDay dispatch queue: DAY-A-731.\n\nThe day queue applies before 18:00 UTC.\n\nAt and after 18:00 UTC, use the night queue on page 2.\n\nRetired queue OLD-A-114 is not approved.\n\nThe approval code and deadline are on the signed image on page 3.\n\nHarbor mixed A | Revision 7 | Page 1\n# Harbor mixed A\n\nControlled synthetic parser diagnostic / signed revision 7\n\nNIGHT DISPATCH - SIGNED SCAN\n\nNight dispatch queue: NIGHT-A-864.\n\nOn-duty dispatcher: Clara Lin.\n\nEffective at and after 18:00 UTC.\n\nThis signed record overrides the retired day-only draft.\n\nHarbor mixed A | Revision 7 | Page 2\n# Harbor mixed A\n\nControlled synthetic parser diagnostic / signed revision 7\n\nThe title is real PDF text; the signed body below is a raster image.\n\nSIGNED APPROVAL RECORD\n\nApproval code: SIGN-A-529.\n\nApproved deadline: 2026-11-17.\n\nOnly the approval code above authorizes execution.\n\nPrevious unsigned drafts do not authorize deployment.\n\nHarbor mixed A | Revision 7 | Page 3\n</file>"
+      },
+      {
+        "evidence_id": "p_370c062d41f913dd59b8",
+        "text": "<file name=\"p_370c062d41f913dd59b8.pdf\">\n# Harbor mixed B\n\nControlled synthetic parser diagnostic / signed revision 7\n\nSigned dispatch policy. Pages 2 and 3 contain scanned operational records.\n\nDay dispatch queue: DAY-B-731.\n\nThe day queue applies before 18:00 UTC.\n\nAt and after 18:00 UTC, use the night queue on page 2.\n\nRetired queue OLD-B-114 is not approved.\n\nThe approval code and deadline are on the signed image on page 3.\n\nHarbor mixed B | Revision 7 | Page 1\n# Harbor mixed B\n\nControlled synthetic parser diagnostic / signed revision 7\n\nNIGHT DISPATCH - SIGNED SCAN\n\nNight dispatch queue: NIGHT-B-864.\n\nOn-duty dispatcher: Nolan Wu.\n\nEffective at and after 18:00 UTC.\n\nThis signed record overrides the retired day-only draft.\n\nHarbor mixed B | Revision 7 | Page 2\n# Harbor mixed B\n\nControlled synthetic parser diagnostic / signed revision 7\n\nThe title is real PDF text; the signed body below is a raster image.\n\nSIGNED APPROVAL RECORD\n\nApproval code: SIGN-B-529.\n\nApproved deadline: 2026-11-23.\n\nOnly the approval code above authorizes execution.\n\nPrevious unsigned drafts do not authorize deployment.\n\nHarbor mixed B | Revision 7 | Page 3\n</file>"
+      },
+      {
+        "evidence_id": "p_e68ae9579fbc4c1d0579",
+        "text": "<file name=\"p_e68ae9579fbc4c1d0579.pdf\">\n\u6f84\u6c5f\u9a8c\u6536 A\n\nControlled synthetic parser diagnostic / signed revision 7\n\n\u5de5\u7a0b\u9a8c\u6536\u901a\u77e5\uff08\u6b63\u5f0f\u7b7e\u7f72\u7248\uff09\n\n\u5f53\u524d\u8d1f\u8d23\u4eba\uff1a\u6797\u60a6\n\n\u5907\u7528\u8d1f\u8d23\u4eba\uff1a\u9648\u6d69\uff08\u4ec5\u5728\u8d1f\u8d23\u4eba\u8bf7\u5047\u65f6\u4ee3\u7406\uff09\n\n\u9884\u7b97\u4e0a\u9650\uff1a\u4eba\u6c11\u5e01 4800 \u5143\n\n\u9a8c\u6536\u5730\u70b9\uff1a\u4e0a\u6d77\u5e02\u6d66\u4e1c\u65b0\u533a\n\n\u7d27\u6025\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a24 \u5c0f\u65f6\n\n\u666e\u901a\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a72 \u5c0f\u65f6\n\n\u7d27\u6025\u4e8b\u9879\u4e0e\u666e\u901a\u4e8b\u9879\u9002\u7528\u4e0d\u540c\u5904\u7406\u65f6\u9650\uff0c\u8bf7\u52ff\u6df7\u7528\u3002\n\n\u672c\u901a\u77e5\u672a\u516c\u5e03\u8054\u7cfb\u7535\u8bdd\u3002\n\n\u6f84\u6c5f\u9a8c\u6536 A | Revision 7 | Page 1\n</file>"
+      },
+      {
+        "evidence_id": "p_154452ff7c7dca8097fd",
+        "text": "<file name=\"p_154452ff7c7dca8097fd.pdf\">\n\u6f84\u6c5f\u9a8c\u6536 B\n\nControlled synthetic parser diagnostic / signed revision 7\n\n\u5de5\u7a0b\u9a8c\u6536\u901a\u77e5\uff08\u6b63\u5f0f\u7b7e\u7f72\u7248\uff09\n\n\u5f53\u524d\u8d1f\u8d23\u4eba\uff1a\u5468\u5b81\n\n\u5907\u7528\u8d1f\u8d23\u4eba\uff1a\u8bb8\u5c9a\uff08\u4ec5\u5728\u8d1f\u8d23\u4eba\u8bf7\u5047\u65f6\u4ee3\u7406\uff09\n\n\u9884\u7b97\u4e0a\u9650\uff1a\u4eba\u6c11\u5e01 6200 \u5143\n\n\u9a8c\u6536\u5730\u70b9\uff1a\u82cf\u5dde\u5e02\u5de5\u4e1a\u56ed\u533a\n\n\u7d27\u6025\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a36 \u5c0f\u65f6\n\n\u666e\u901a\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a96 \u5c0f\u65f6\n\n\u7d27\u6025\u4e8b\u9879\u4e0e\u666e\u901a\u4e8b\u9879\u9002\u7528\u4e0d\u540c\u5904\u7406\u65f6\u9650\uff0c\u8bf7\u52ff\u6df7\u7528\u3002\n\n\u672c\u901a\u77e5\u672a\u516c\u5e03\u8054\u7cfb\u7535\u8bdd\u3002\n\n\u6f84\u6c5f\u9a8c\u6536 B | Revision 7 | Page 1\n</file>"
+      },
+      {
+        "evidence_id": "p_0775dffd822295ef2634",
+        "text": "<file name=\"p_0775dffd822295ef2634.pdf\">\n# Cedar matrix A\n\nControlled synthetic parser diagnostic / signed revision 7\n\nCurrent signed values apply. Archived fees are historical references only.\n\n|  Region | Tier | Current signed |   | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\n|  East | Basic | 210 | 4 | 21 | Signed  |\n|   |  Pro | 420 | 8 | 42 | Signed  |\n|  West | Basic | 310 | 6 | 31 | Signed  |\n|   |  Pro * | 620 | 12 | 62 | Signed  |\n\nThe West region continues on page 2 with its Enterprise tier.\n\n* The dated fee adjustment is on page 2. Limits do not change.\n\nCedar matrix A | Revision 7 | Page 1\n# Cedar matrix A\n\nControlled synthetic parser diagnostic / signed revision 7\n\nCurrent signed values apply. Archived fees are historical references only.\n\n|  Region | Tier | Current signed |  | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\n\nContinuation: the first row below belongs to West.\n\n|  West | Enterprise | 930 | 18 | 93 | Signed  |\n| --- | --- | --- | --- | --- | --- |\n|  South | Basic | 410 | 7 | 41 | Draft  |\n|   |  Pro | 820 | 14 | 82 | Draft  |\n\n* From 2026-11-01, West Pro uses fee 680 CNY instead of 620 CNY.\n\nIts limit remains 12. This dated note overrides the main table fee.\n\nDraft rows are not approved. No bank-routing number is published.\n\nCedar matrix A | Revision 7 | Page 2\n</file>"
+      },
+      {
+        "evidence_id": "p_77bc298f7e82fc0cc561",
+        "text": "<file name=\"p_77bc298f7e82fc0cc561.pdf\">\n# Cedar matrix B\n\nControlled synthetic parser diagnostic / signed revision 7\n\nCurrent signed values apply. Archived fees are historical references only.\n\n|  Region | Tier | Current signed |   | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\n|  East | Basic | 1210 | 4 | 1021 | Signed  |\n|   |  Pro | 1420 | 8 | 1042 | Signed  |\n|  West | Basic | 1310 | 6 | 1031 | Signed  |\n|   |  Pro * | 1620 | 12 | 1062 | Signed  |\n\nThe West region continues on page 2 with its Enterprise tier.\n\n* The dated fee adjustment is on page 2. Limits do not change.\n\nCedar matrix B | Revision 7 | Page 1\n# Cedar matrix B\n\nControlled synthetic parser diagnostic / signed revision 7\n\nCurrent signed values apply. Archived fees are historical references only.\n\n|  Region | Tier | Current signed |   | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\n\nContinuation: the first row below belongs to West.\n\n|  West | Enterprise | 1930 | 18 | 1093 | Signed  |\n| --- | --- | --- | --- | --- | --- |\n|  South | Basic | 1410 | 7 | 1041 | Draft  |\n|   |  Pro | 1820 | 14 | 1082 | Draft  |\n\n* From 2026-11-01, West Pro uses fee 1680 CNY instead of 1620 CNY.\n\nIts limit remains 12. This dated note overrides the main table fee.\n\nDraft rows are not approved. No bank-routing number is published.\n\nCedar matrix B | Revision 7 | Page 2\n</file>"
+      }
+    ],
+    "queries": [
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-000",
+        "lane": "table_row",
+        "question": "For Juniper table 0, what is the approved South primary queue?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-001",
+        "lane": "table_footnote",
+        "question": "For Juniper table 0, which South queue applies at 19:00 UTC?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-003",
+        "lane": "table_row",
+        "question": "For Juniper table 1, what is the approved South primary queue?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-004",
+        "lane": "table_footnote",
+        "question": "For Juniper table 1, which South queue applies at 19:00 UTC?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-006",
+        "lane": "columns_binding",
+        "question": "For Juniper columns 0, what is the current signed Atlas release?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-007",
+        "lane": "columns_complete",
+        "question": "For Juniper columns 0, give both the current Boreal release and the required Atlas rollback inspection."
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-008",
+        "lane": "columns_absent",
+        "question": "For Juniper columns 0, what is the signed launch date?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-009",
+        "lane": "columns_binding",
+        "question": "For Juniper columns 1, what is the current signed Atlas release?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-010",
+        "lane": "columns_complete",
+        "question": "For Juniper columns 1, give both the current Boreal release and the required Atlas rollback inspection."
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-011",
+        "lane": "columns_absent",
+        "question": "For Juniper columns 1, what is the signed launch date?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-012",
+        "lane": "cross_page_list",
+        "question": "For Juniper crosspage 0, list the complete two-entry return exception identifiers."
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-013",
+        "lane": "cross_page_revision",
+        "question": "For Juniper crosspage 0, what is the revision 4 escalation queue?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-014",
+        "lane": "cross_page_absent",
+        "question": "For Juniper crosspage 0, what is the signed extended-warranty code?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-015",
+        "lane": "cross_page_list",
+        "question": "For Juniper crosspage 1, list the complete two-entry return exception identifiers."
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-016",
+        "lane": "cross_page_revision",
+        "question": "For Juniper crosspage 1, what is the revision 4 escalation queue?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-017",
+        "lane": "cross_page_absent",
+        "question": "For Juniper crosspage 1, what is the signed extended-warranty code?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-018",
+        "lane": "scan_row",
+        "question": "For Juniper scan 2, what is the approved South primary queue?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-019",
+        "lane": "scan_footnote",
+        "question": "For Juniper scan 2, which South queue applies at 19:00 UTC?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-021",
+        "lane": "scan_row",
+        "question": "For Juniper scan 3, what is the approved South primary queue?"
+      },
+      {
+        "action": "query",
+        "scope": "complex-documents",
+        "case_id": "complex-022",
+        "lane": "scan_footnote",
+        "question": "For Juniper scan 3, which South queue applies at 19:00 UTC?"
+      },
+      {
+        "case_id": "stress-000",
+        "question": "Harbor mixed A: Which queue applies at 19:00 UTC?",
+        "lane": "mixed_scan_page"
+      },
+      {
+        "case_id": "stress-001",
+        "question": "Harbor mixed A: What is the signed approval code?",
+        "lane": "mixed_image_body"
+      },
+      {
+        "case_id": "stress-002",
+        "question": "Harbor mixed A: Who is the on-duty dispatcher?",
+        "lane": "mixed_scan_name"
+      },
+      {
+        "case_id": "stress-003",
+        "question": "Harbor mixed A: Give the day dispatch queue and the approved deadline.",
+        "lane": "mixed_cross_page"
+      },
+      {
+        "case_id": "stress-004",
+        "question": "Harbor mixed A: What is the published dispatcher phone number?",
+        "lane": "mixed_absent"
+      },
+      {
+        "case_id": "stress-005",
+        "question": "Harbor mixed B: Which queue applies at 19:00 UTC?",
+        "lane": "mixed_scan_page"
+      },
+      {
+        "case_id": "stress-006",
+        "question": "Harbor mixed B: What is the signed approval code?",
+        "lane": "mixed_image_body"
+      },
+      {
+        "case_id": "stress-007",
+        "question": "Harbor mixed B: Who is the on-duty dispatcher?",
+        "lane": "mixed_scan_name"
+      },
+      {
+        "case_id": "stress-008",
+        "question": "Harbor mixed B: Give the day dispatch queue and the approved deadline.",
+        "lane": "mixed_cross_page"
+      },
+      {
+        "case_id": "stress-009",
+        "question": "Harbor mixed B: What is the published dispatcher phone number?",
+        "lane": "mixed_absent"
+      },
+      {
+        "case_id": "stress-010",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u5f53\u524d\u8d1f\u8d23\u4eba\u662f\u8c01\uff1f\u8bf7\u53ea\u7ed9\u59d3\u540d\u3002",
+        "lane": "chinese_name"
+      },
+      {
+        "case_id": "stress-011",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u4eba\u6c11\u5e01\u9884\u7b97\u4e0a\u9650\u662f\u591a\u5c11\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002",
+        "lane": "chinese_amount"
+      },
+      {
+        "case_id": "stress-012",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u9a8c\u6536\u5730\u70b9\u5728\u54ea\u91cc\uff1f",
+        "lane": "chinese_place"
+      },
+      {
+        "case_id": "stress-013",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u7d27\u6025\u4e8b\u9879\u7684\u5904\u7406\u65f6\u9650\u662f\u591a\u5c11\u5c0f\u65f6\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002",
+        "lane": "chinese_condition"
+      },
+      {
+        "case_id": "stress-014",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u8d1f\u8d23\u4eba\u7684\u8054\u7cfb\u7535\u8bdd\u662f\u4ec0\u4e48\uff1f\u672a\u63d0\u4f9b\u5219\u56de\u7b54 unknown\u3002",
+        "lane": "chinese_absent"
+      },
+      {
+        "case_id": "stress-015",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u5f53\u524d\u8d1f\u8d23\u4eba\u662f\u8c01\uff1f\u8bf7\u53ea\u7ed9\u59d3\u540d\u3002",
+        "lane": "chinese_name"
+      },
+      {
+        "case_id": "stress-016",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u4eba\u6c11\u5e01\u9884\u7b97\u4e0a\u9650\u662f\u591a\u5c11\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002",
+        "lane": "chinese_amount"
+      },
+      {
+        "case_id": "stress-017",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u9a8c\u6536\u5730\u70b9\u5728\u54ea\u91cc\uff1f",
+        "lane": "chinese_place"
+      },
+      {
+        "case_id": "stress-018",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u7d27\u6025\u4e8b\u9879\u7684\u5904\u7406\u65f6\u9650\u662f\u591a\u5c11\u5c0f\u65f6\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002",
+        "lane": "chinese_condition"
+      },
+      {
+        "case_id": "stress-019",
+        "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u8d1f\u8d23\u4eba\u7684\u8054\u7cfb\u7535\u8bdd\u662f\u4ec0\u4e48\uff1f\u672a\u63d0\u4f9b\u5219\u56de\u7b54 unknown\u3002",
+        "lane": "chinese_absent"
+      },
+      {
+        "case_id": "stress-020",
+        "question": "Cedar matrix A: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only.",
+        "lane": "table_merged_header"
+      },
+      {
+        "case_id": "stress-021",
+        "question": "Cedar matrix A: What is the current signed East Pro limit? Return the number only.",
+        "lane": "table_merged_region"
+      },
+      {
+        "case_id": "stress-022",
+        "question": "Cedar matrix A: What is the signed West Enterprise fee in CNY? Return the number only.",
+        "lane": "table_continuation"
+      },
+      {
+        "case_id": "stress-023",
+        "question": "Cedar matrix A: What West Pro fee in CNY applies on 2026-11-02? Return the number only.",
+        "lane": "table_footnote"
+      },
+      {
+        "case_id": "stress-024",
+        "question": "Cedar matrix A: What is the published bank-routing number?",
+        "lane": "table_absent"
+      },
+      {
+        "case_id": "stress-025",
+        "question": "Cedar matrix B: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only.",
+        "lane": "table_merged_header"
+      },
+      {
+        "case_id": "stress-026",
+        "question": "Cedar matrix B: What is the current signed East Pro limit? Return the number only.",
+        "lane": "table_merged_region"
+      },
+      {
+        "case_id": "stress-027",
+        "question": "Cedar matrix B: What is the signed West Enterprise fee in CNY? Return the number only.",
+        "lane": "table_continuation"
+      },
+      {
+        "case_id": "stress-028",
+        "question": "Cedar matrix B: What West Pro fee in CNY applies on 2026-11-02? Return the number only.",
+        "lane": "table_footnote"
+      },
+      {
+        "case_id": "stress-029",
+        "question": "Cedar matrix B: What is the published bank-routing number?",
+        "lane": "table_absent"
+      }
+    ],
+    "oracle": {
+      "complex-000": {
+        "lane": "table_row",
+        "facts": [
+          "SOUTH-0-862"
+        ],
+        "forbidden": [
+          "OLDS-0-267",
+          "NORTH-0-731"
+        ],
+        "evidence": [
+          "e_ae3fdb9cb12196ce9ae4b945"
+        ],
+        "supported": true
+      },
+      "complex-001": {
+        "lane": "table_footnote",
+        "facts": [
+          "SBACK-0-593"
+        ],
+        "forbidden": [
+          "SOUTH-0-862"
+        ],
+        "evidence": [
+          "e_ae3fdb9cb12196ce9ae4b945"
+        ],
+        "supported": true
+      },
+      "complex-003": {
+        "lane": "table_row",
+        "facts": [
+          "SOUTH-1-862"
+        ],
+        "forbidden": [
+          "OLDS-1-267",
+          "NORTH-1-731"
+        ],
+        "evidence": [
+          "e_6f96a2af3365edd7577ea147"
+        ],
+        "supported": true
+      },
+      "complex-004": {
+        "lane": "table_footnote",
+        "facts": [
+          "SBACK-1-593"
+        ],
+        "forbidden": [
+          "SOUTH-1-862"
+        ],
+        "evidence": [
+          "e_6f96a2af3365edd7577ea147"
+        ],
+        "supported": true
+      },
+      "complex-006": {
+        "lane": "columns_binding",
+        "facts": [
+          "ALPHA-0-472"
+        ],
+        "forbidden": [
+          "OLD-0-351",
+          "BETA-0-683"
+        ],
+        "evidence": [
+          "e_f78b8623bff0267bf5e45c2b"
+        ],
+        "supported": true
+      },
+      "complex-007": {
+        "lane": "columns_complete",
+        "facts": [
+          "BETA-0-683",
+          "CHECK-0-925"
+        ],
+        "forbidden": [
+          "STALE-0-746",
+          "SKIP-0-268"
+        ],
+        "evidence": [
+          "e_f78b8623bff0267bf5e45c2b"
+        ],
+        "supported": true
+      },
+      "complex-008": {
+        "lane": "columns_absent",
+        "facts": [],
+        "forbidden": [],
+        "evidence": [],
+        "supported": false
+      },
+      "complex-009": {
+        "lane": "columns_binding",
+        "facts": [
+          "ALPHA-1-472"
+        ],
+        "forbidden": [
+          "OLD-1-351",
+          "BETA-1-683"
+        ],
+        "evidence": [
+          "e_adf880c03e4b6091d62cdf6f"
+        ],
+        "supported": true
+      },
+      "complex-010": {
+        "lane": "columns_complete",
+        "facts": [
+          "BETA-1-683",
+          "CHECK-1-925"
+        ],
+        "forbidden": [
+          "STALE-1-746",
+          "SKIP-1-268"
+        ],
+        "evidence": [
+          "e_adf880c03e4b6091d62cdf6f"
+        ],
+        "supported": true
+      },
+      "complex-011": {
+        "lane": "columns_absent",
+        "facts": [],
+        "forbidden": [],
+        "evidence": [],
+        "supported": false
+      },
+      "complex-012": {
+        "lane": "cross_page_list",
+        "facts": [
+          "CUSTOM-0-837",
+          "DEFECT-0-462"
+        ],
+        "forbidden": [],
+        "evidence": [
+          "e_f361397d877f4c9074ab359a"
+        ],
+        "supported": true
+      },
+      "complex-013": {
+        "lane": "cross_page_revision",
+        "facts": [
+          "FINAL-0-759"
+        ],
+        "forbidden": [
+          "RETIRED-0-283"
+        ],
+        "evidence": [
+          "e_f361397d877f4c9074ab359a"
+        ],
+        "supported": true
+      },
+      "complex-014": {
+        "lane": "cross_page_absent",
+        "facts": [],
+        "forbidden": [],
+        "evidence": [],
+        "supported": false
+      },
+      "complex-015": {
+        "lane": "cross_page_list",
+        "facts": [
+          "CUSTOM-1-837",
+          "DEFECT-1-462"
+        ],
+        "forbidden": [],
+        "evidence": [
+          "e_4b51c2f07fe6d33137c84359"
+        ],
+        "supported": true
+      },
+      "complex-016": {
+        "lane": "cross_page_revision",
+        "facts": [
+          "FINAL-1-759"
+        ],
+        "forbidden": [
+          "RETIRED-1-283"
+        ],
+        "evidence": [
+          "e_4b51c2f07fe6d33137c84359"
+        ],
+        "supported": true
+      },
+      "complex-017": {
+        "lane": "cross_page_absent",
+        "facts": [],
+        "forbidden": [],
+        "evidence": [],
+        "supported": false
+      },
+      "complex-018": {
+        "lane": "scan_row",
+        "facts": [
+          "SOUTH-2-862"
+        ],
+        "forbidden": [
+          "OLDS-2-267",
+          "NORTH-2-731"
+        ],
+        "evidence": [
+          "e_7fe00361fcf964b12aea766c"
+        ],
+        "supported": true
+      },
+      "complex-019": {
+        "lane": "scan_footnote",
+        "facts": [
+          "SBACK-2-593"
+        ],
+        "forbidden": [
+          "SOUTH-2-862"
+        ],
+        "evidence": [
+          "e_7fe00361fcf964b12aea766c"
+        ],
+        "supported": true
+      },
+      "complex-021": {
+        "lane": "scan_row",
+        "facts": [
+          "SOUTH-3-862"
+        ],
+        "forbidden": [
+          "OLDS-3-267",
+          "NORTH-3-731"
+        ],
+        "evidence": [
+          "e_255d68caea01e4bc6add58b1"
+        ],
+        "supported": true
+      },
+      "complex-022": {
+        "lane": "scan_footnote",
+        "facts": [
+          "SBACK-3-593"
+        ],
+        "forbidden": [
+          "SOUTH-3-862"
+        ],
+        "evidence": [
+          "e_255d68caea01e4bc6add58b1"
+        ],
+        "supported": true
+      },
+      "stress-000": {
+        "facts": [
+          "NIGHT-A-864"
+        ],
+        "forbidden": [
+          "DAY-A-731"
+        ],
+        "lane": "mixed_scan_page",
+        "supported": true,
+        "evidence": [
+          "p_e7ce1eebc94674c92dc4"
+        ]
+      },
+      "stress-001": {
+        "facts": [
+          "SIGN-A-529"
+        ],
+        "forbidden": [],
+        "lane": "mixed_image_body",
+        "supported": true,
+        "evidence": [
+          "p_e7ce1eebc94674c92dc4"
+        ]
+      },
+      "stress-002": {
+        "facts": [
+          "Clara Lin"
+        ],
+        "forbidden": [],
+        "lane": "mixed_scan_name",
+        "supported": true,
+        "evidence": [
+          "p_e7ce1eebc94674c92dc4"
+        ]
+      },
+      "stress-003": {
+        "facts": [
+          "DAY-A-731",
+          "2026-11-17"
+        ],
+        "forbidden": [],
+        "lane": "mixed_cross_page",
+        "supported": true,
+        "evidence": [
+          "p_e7ce1eebc94674c92dc4"
+        ]
+      },
+      "stress-004": {
+        "facts": [],
+        "forbidden": [],
+        "lane": "mixed_absent",
+        "supported": false,
+        "evidence": []
+      },
+      "stress-005": {
+        "facts": [
+          "NIGHT-B-864"
+        ],
+        "forbidden": [
+          "DAY-B-731"
+        ],
+        "lane": "mixed_scan_page",
+        "supported": true,
+        "evidence": [
+          "p_370c062d41f913dd59b8"
+        ]
+      },
+      "stress-006": {
+        "facts": [
+          "SIGN-B-529"
+        ],
+        "forbidden": [],
+        "lane": "mixed_image_body",
+        "supported": true,
+        "evidence": [
+          "p_370c062d41f913dd59b8"
+        ]
+      },
+      "stress-007": {
+        "facts": [
+          "Nolan Wu"
+        ],
+        "forbidden": [],
+        "lane": "mixed_scan_name",
+        "supported": true,
+        "evidence": [
+          "p_370c062d41f913dd59b8"
+        ]
+      },
+      "stress-008": {
+        "facts": [
+          "DAY-B-731",
+          "2026-11-23"
+        ],
+        "forbidden": [],
+        "lane": "mixed_cross_page",
+        "supported": true,
+        "evidence": [
+          "p_370c062d41f913dd59b8"
+        ]
+      },
+      "stress-009": {
+        "facts": [],
+        "forbidden": [],
+        "lane": "mixed_absent",
+        "supported": false,
+        "evidence": []
+      },
+      "stress-010": {
+        "facts": [
+          "\u6797\u60a6"
+        ],
+        "forbidden": [
+          "\u9648\u6d69"
+        ],
+        "lane": "chinese_name",
+        "supported": true,
+        "evidence": [
+          "p_e68ae9579fbc4c1d0579"
+        ]
+      },
+      "stress-011": {
+        "facts": [
+          "4800"
+        ],
+        "forbidden": [],
+        "lane": "chinese_amount",
+        "supported": true,
+        "evidence": [
+          "p_e68ae9579fbc4c1d0579"
+        ]
+      },
+      "stress-012": {
+        "facts": [
+          "\u4e0a\u6d77\u5e02\u6d66\u4e1c\u65b0\u533a"
+        ],
+        "forbidden": [],
+        "lane": "chinese_place",
+        "supported": true,
+        "evidence": [
+          "p_e68ae9579fbc4c1d0579"
+        ]
+      },
+      "stress-013": {
+        "facts": [
+          "24"
+        ],
+        "forbidden": [
+          "72"
+        ],
+        "lane": "chinese_condition",
+        "supported": true,
+        "evidence": [
+          "p_e68ae9579fbc4c1d0579"
+        ]
+      },
+      "stress-014": {
+        "facts": [],
+        "forbidden": [],
+        "lane": "chinese_absent",
+        "supported": false,
+        "evidence": []
+      },
+      "stress-015": {
+        "facts": [
+          "\u5468\u5b81"
+        ],
+        "forbidden": [
+          "\u8bb8\u5c9a"
+        ],
+        "lane": "chinese_name",
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "stress-016": {
+        "facts": [
+          "6200"
+        ],
+        "forbidden": [],
+        "lane": "chinese_amount",
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "stress-017": {
+        "facts": [
+          "\u82cf\u5dde\u5e02\u5de5\u4e1a\u56ed\u533a"
+        ],
+        "forbidden": [],
+        "lane": "chinese_place",
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "stress-018": {
+        "facts": [
+          "36"
+        ],
+        "forbidden": [
+          "96"
+        ],
+        "lane": "chinese_condition",
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "stress-019": {
+        "facts": [],
+        "forbidden": [],
+        "lane": "chinese_absent",
+        "supported": false,
+        "evidence": []
+      },
+      "stress-020": {
+        "facts": [
+          "420"
+        ],
+        "forbidden": [
+          "42"
+        ],
+        "lane": "table_merged_header",
+        "supported": true,
+        "evidence": [
+          "p_0775dffd822295ef2634"
+        ]
+      },
+      "stress-021": {
+        "facts": [
+          "8"
+        ],
+        "forbidden": [],
+        "lane": "table_merged_region",
+        "supported": true,
+        "evidence": [
+          "p_0775dffd822295ef2634"
+        ]
+      },
+      "stress-022": {
+        "facts": [
+          "930"
+        ],
+        "forbidden": [
+          "93"
+        ],
+        "lane": "table_continuation",
+        "supported": true,
+        "evidence": [
+          "p_0775dffd822295ef2634"
+        ]
+      },
+      "stress-023": {
+        "facts": [
+          "680"
+        ],
+        "forbidden": [
+          "620"
+        ],
+        "lane": "table_footnote",
+        "supported": true,
+        "evidence": [
+          "p_0775dffd822295ef2634"
+        ]
+      },
+      "stress-024": {
+        "facts": [],
+        "forbidden": [],
+        "lane": "table_absent",
+        "supported": false,
+        "evidence": []
+      },
+      "stress-025": {
+        "facts": [
+          "1420"
+        ],
+        "forbidden": [
+          "1042"
+        ],
+        "lane": "table_merged_header",
+        "supported": true,
+        "evidence": [
+          "p_77bc298f7e82fc0cc561"
+        ]
+      },
+      "stress-026": {
+        "facts": [
+          "8"
+        ],
+        "forbidden": [],
+        "lane": "table_merged_region",
+        "supported": true,
+        "evidence": [
+          "p_77bc298f7e82fc0cc561"
+        ]
+      },
+      "stress-027": {
+        "facts": [
+          "1930"
+        ],
+        "forbidden": [
+          "1093"
+        ],
+        "lane": "table_continuation",
+        "supported": true,
+        "evidence": [
+          "p_77bc298f7e82fc0cc561"
+        ]
+      },
+      "stress-028": {
+        "facts": [
+          "1680"
+        ],
+        "forbidden": [
+          "1620"
+        ],
+        "lane": "table_footnote",
+        "supported": true,
+        "evidence": [
+          "p_77bc298f7e82fc0cc561"
+        ]
+      },
+      "stress-029": {
+        "facts": [],
+        "forbidden": [],
+        "lane": "table_absent",
+        "supported": false,
+        "evidence": []
+      }
+    }
+  },
+  "memory": {
+    "items": [
+      {
+        "evidence_id": "m_c558d1541c4b9d0f",
+        "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+        "timestamp": "2026-08-01T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_d7a9d1f22107f233",
+        "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "timestamp": "2026-08-08T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_99ab4da076b7c734",
+        "text": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "timestamp": "2026-08-15T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_d6297f549707f98d",
+        "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+        "timestamp": "2026-08-22T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_eb85892166acc8ef",
+        "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+        "timestamp": "2026-08-01T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_f7ff6441bdd98e53",
+        "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "timestamp": "2026-08-08T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_70bd88efee712a9a",
+        "text": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "timestamp": "2026-08-15T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_4a54af2b364be476",
+        "text": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+        "timestamp": "2026-08-22T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_ea0fb41d60279977",
+        "text": "2026-08-01. Neri started project Reed. They chose BATCH-2-741 for batch delivery. The initial retry policy was RETRY-2-108.",
+        "timestamp": "2026-08-01T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_9757cd3f6fff2b1a",
+        "text": "2026-08-08. Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages. The team tested REPLAY-2-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "timestamp": "2026-08-08T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_89c1a1e6265841f0",
+        "text": "2026-08-15. Neri approved switching Reed from BATCH-2-741 to STREAM-2-286. This supersedes the August 1 delivery decision. The cause was the GATE-2-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "timestamp": "2026-08-15T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_6e4b0b61170e23a6",
+        "text": "2026-08-22. Neri reviewed Reed. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-2-907, superseding RETRY-2-108. No budget owner has been appointed.",
+        "timestamp": "2026-08-22T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_5cccbe54a3057c9d",
+        "text": "2026-08-01. Tala started project Sable. They chose BATCH-3-741 for batch delivery. The initial retry policy was RETRY-3-108.",
+        "timestamp": "2026-08-01T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_60a61eab3b3b1426",
+        "text": "2026-08-08. Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages. The team tested REPLAY-3-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "timestamp": "2026-08-08T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_6bf734c83508b527",
+        "text": "2026-08-15. Tala approved switching Sable from BATCH-3-741 to STREAM-3-286. This supersedes the August 1 delivery decision. The cause was the GATE-3-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "timestamp": "2026-08-15T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_b482da0e797a3b49",
+        "text": "2026-08-22. Tala reviewed Sable. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-3-907, superseding RETRY-3-108. No budget owner has been appointed.",
+        "timestamp": "2026-08-22T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_11ab570fcca41f15",
+        "text": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+        "timestamp": "2026-08-01T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_0cf97e4da97e721d",
+        "text": "2026-08-08. Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages. The team tested REPLAY-4-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "timestamp": "2026-08-08T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_7a073c47318430f8",
+        "text": "2026-08-15. Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286. This supersedes the August 1 delivery decision. The cause was the GATE-4-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "timestamp": "2026-08-15T12:00:00Z"
+      },
+      {
+        "evidence_id": "m_10a8847f903485c5",
+        "text": "2026-08-22. Devon reviewed Cedar. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-4-907, superseding RETRY-4-108. No budget owner has been appointed.",
+        "timestamp": "2026-08-22T12:00:00Z"
+      }
+    ],
+    "queries": [
+      {
+        "case_id": "memory-0-0",
+        "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project?",
+        "lane": "updates",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-0-1",
+        "question": "For the next outage on Larch, which recovery procedure should Mara use, and which outage gate led to the delivery-mode change?",
+        "lane": "cross_session",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-0-2",
+        "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+        "lane": "temporal",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-0-3",
+        "question": "Who is the appointed budget owner for Mara's Larch project as of August 22?",
+        "lane": "abstention",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-1-0",
+        "question": "As of August 22, what delivery mode and retry policy apply to Ivo's Cobalt project?",
+        "lane": "updates",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-1-1",
+        "question": "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?",
+        "lane": "cross_session",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-1-2",
+        "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+        "lane": "temporal",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-1-3",
+        "question": "Who is the appointed budget owner for Ivo's Cobalt project as of August 22?",
+        "lane": "abstention",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-2-0",
+        "question": "As of August 22, what delivery mode and retry policy apply to Neri's Reed project?",
+        "lane": "updates",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-2-1",
+        "question": "For the next outage on Reed, which recovery procedure should Neri use, and which outage gate led to the delivery-mode change?",
+        "lane": "cross_session",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-2-2",
+        "question": "What delivery mode was still approved for Neri's Reed project immediately after the August 8 meeting?",
+        "lane": "temporal",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-2-3",
+        "question": "Who is the appointed budget owner for Neri's Reed project as of August 22?",
+        "lane": "abstention",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-3-0",
+        "question": "As of August 22, what delivery mode and retry policy apply to Tala's Sable project?",
+        "lane": "updates",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-3-1",
+        "question": "For the next outage on Sable, which recovery procedure should Tala use, and which outage gate led to the delivery-mode change?",
+        "lane": "cross_session",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-3-2",
+        "question": "What delivery mode was still approved for Tala's Sable project immediately after the August 8 meeting?",
+        "lane": "temporal",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-3-3",
+        "question": "Who is the appointed budget owner for Tala's Sable project as of August 22?",
+        "lane": "abstention",
+        "split": "test"
+      },
+      {
+        "case_id": "memory-4-0",
+        "question": "As of August 22, what delivery mode and retry policy apply to Devon's Cedar project?",
+        "lane": "updates",
+        "split": "dev"
+      },
+      {
+        "case_id": "memory-4-1",
+        "question": "For the next outage on Cedar, which recovery procedure should Devon use, and which outage gate led to the delivery-mode change?",
+        "lane": "cross_session",
+        "split": "dev"
+      },
+      {
+        "case_id": "memory-4-2",
+        "question": "What delivery mode was still approved for Devon's Cedar project immediately after the August 8 meeting?",
+        "lane": "temporal",
+        "split": "dev"
+      },
+      {
+        "case_id": "memory-4-3",
+        "question": "Who is the appointed budget owner for Devon's Cedar project as of August 22?",
+        "lane": "abstention",
+        "split": "dev"
+      }
+    ],
+    "oracle": {
+      "memory-0-0": {
+        "facts": [
+          "STREAM-0-286",
+          "RETRY-0-907"
+        ],
+        "forbidden": [
+          "BATCH-0-741",
+          "RETRY-0-108"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_c558d1541c4b9d0f",
+          "m_d7a9d1f22107f233",
+          "m_99ab4da076b7c734",
+          "m_d6297f549707f98d"
+        ]
+      },
+      "memory-0-1": {
+        "facts": [
+          "REPLAY-0-632",
+          "GATE-0-519"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "m_c558d1541c4b9d0f",
+          "m_d7a9d1f22107f233",
+          "m_99ab4da076b7c734",
+          "m_d6297f549707f98d"
+        ]
+      },
+      "memory-0-2": {
+        "facts": [
+          "BATCH-0-741"
+        ],
+        "forbidden": [
+          "STREAM-0-286"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_c558d1541c4b9d0f",
+          "m_d7a9d1f22107f233",
+          "m_99ab4da076b7c734",
+          "m_d6297f549707f98d"
+        ]
+      },
+      "memory-0-3": {
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      },
+      "memory-1-0": {
+        "facts": [
+          "STREAM-1-286",
+          "RETRY-1-907"
+        ],
+        "forbidden": [
+          "BATCH-1-741",
+          "RETRY-1-108"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_eb85892166acc8ef",
+          "m_f7ff6441bdd98e53",
+          "m_70bd88efee712a9a",
+          "m_4a54af2b364be476"
+        ]
+      },
+      "memory-1-1": {
+        "facts": [
+          "REPLAY-1-632",
+          "GATE-1-519"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "m_eb85892166acc8ef",
+          "m_f7ff6441bdd98e53",
+          "m_70bd88efee712a9a",
+          "m_4a54af2b364be476"
+        ]
+      },
+      "memory-1-2": {
+        "facts": [
+          "BATCH-1-741"
+        ],
+        "forbidden": [
+          "STREAM-1-286"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_eb85892166acc8ef",
+          "m_f7ff6441bdd98e53",
+          "m_70bd88efee712a9a",
+          "m_4a54af2b364be476"
+        ]
+      },
+      "memory-1-3": {
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      },
+      "memory-2-0": {
+        "facts": [
+          "STREAM-2-286",
+          "RETRY-2-907"
+        ],
+        "forbidden": [
+          "BATCH-2-741",
+          "RETRY-2-108"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_ea0fb41d60279977",
+          "m_9757cd3f6fff2b1a",
+          "m_89c1a1e6265841f0",
+          "m_6e4b0b61170e23a6"
+        ]
+      },
+      "memory-2-1": {
+        "facts": [
+          "REPLAY-2-632",
+          "GATE-2-519"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "m_ea0fb41d60279977",
+          "m_9757cd3f6fff2b1a",
+          "m_89c1a1e6265841f0",
+          "m_6e4b0b61170e23a6"
+        ]
+      },
+      "memory-2-2": {
+        "facts": [
+          "BATCH-2-741"
+        ],
+        "forbidden": [
+          "STREAM-2-286"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_ea0fb41d60279977",
+          "m_9757cd3f6fff2b1a",
+          "m_89c1a1e6265841f0",
+          "m_6e4b0b61170e23a6"
+        ]
+      },
+      "memory-2-3": {
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      },
+      "memory-3-0": {
+        "facts": [
+          "STREAM-3-286",
+          "RETRY-3-907"
+        ],
+        "forbidden": [
+          "BATCH-3-741",
+          "RETRY-3-108"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_5cccbe54a3057c9d",
+          "m_60a61eab3b3b1426",
+          "m_6bf734c83508b527",
+          "m_b482da0e797a3b49"
+        ]
+      },
+      "memory-3-1": {
+        "facts": [
+          "REPLAY-3-632",
+          "GATE-3-519"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "m_5cccbe54a3057c9d",
+          "m_60a61eab3b3b1426",
+          "m_6bf734c83508b527",
+          "m_b482da0e797a3b49"
+        ]
+      },
+      "memory-3-2": {
+        "facts": [
+          "BATCH-3-741"
+        ],
+        "forbidden": [
+          "STREAM-3-286"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_5cccbe54a3057c9d",
+          "m_60a61eab3b3b1426",
+          "m_6bf734c83508b527",
+          "m_b482da0e797a3b49"
+        ]
+      },
+      "memory-3-3": {
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      },
+      "memory-4-0": {
+        "facts": [
+          "STREAM-4-286",
+          "RETRY-4-907"
+        ],
+        "forbidden": [
+          "BATCH-4-741",
+          "RETRY-4-108"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_11ab570fcca41f15",
+          "m_0cf97e4da97e721d",
+          "m_7a073c47318430f8",
+          "m_10a8847f903485c5"
+        ]
+      },
+      "memory-4-1": {
+        "facts": [
+          "REPLAY-4-632",
+          "GATE-4-519"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "m_11ab570fcca41f15",
+          "m_0cf97e4da97e721d",
+          "m_7a073c47318430f8",
+          "m_10a8847f903485c5"
+        ]
+      },
+      "memory-4-2": {
+        "facts": [
+          "BATCH-4-741"
+        ],
+        "forbidden": [
+          "STREAM-4-286"
+        ],
+        "supported": true,
+        "evidence": [
+          "m_11ab570fcca41f15",
+          "m_0cf97e4da97e721d",
+          "m_7a073c47318430f8",
+          "m_10a8847f903485c5"
+        ]
+      },
+      "memory-4-3": {
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      }
+    }
+  }
+}

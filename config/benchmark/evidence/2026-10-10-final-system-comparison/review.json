@@ -1,0 +1,2242 @@
+[
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-000",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Correct requested queue; other queues are explicitly historical or apply before the stated time, not competing answers.",
+    "answer_sha256": "c80edd82c4b2a9993fb3ea5fbe433bdfe14c913e7c6282d61005d99e7caf1350"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-001",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Correct requested queue; other queues are explicitly historical or apply before the stated time, not competing answers.",
+    "answer_sha256": "f774f5eff5931ac5ad83244b85b17cb58b4559980c3a0d5f64b75e43ea5a53b1"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-000",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Requested value matches the original source.",
+    "answer_sha256": "3a302b07811e61f261fa6013c24e3dd431ef1cc3f1cac09a2097f35d88df9ba8"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-001",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Requested value matches the original source.",
+    "answer_sha256": "075bc184d8825ca99d1034b31e50bac0d5634bbd16739e43612ec65c00a15052"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-000",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Requested value matches the original source.",
+    "answer_sha256": "70979b8ba9252c0b9f3b91257122b10df744f38b4ee166651e20fe05206d4ea4"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-001",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Requested value matches the original source.",
+    "answer_sha256": "913264d11191ca53aeb9f208c6707dec2ef68b221df0475e5527ae9ecbf01d4c"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-000",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Requested value matches the original source.",
+    "answer_sha256": "3a302b07811e61f261fa6013c24e3dd431ef1cc3f1cac09a2097f35d88df9ba8"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-001",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Requested value matches the original source.",
+    "answer_sha256": "075bc184d8825ca99d1034b31e50bac0d5634bbd16739e43612ec65c00a15052"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-003",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Correct primary queue; historical and other-document queues are explicitly excluded.",
+    "answer_sha256": "4b28c01307867aa3d163aab04a089937ac92a7792cb30b7a5aa67676b9c60459"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-003",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Correct primary queue; historical and other-document queues are explicitly excluded.",
+    "answer_sha256": "8c0245ad0e551c76f5ebeb1ab3a230c2a2ea164b2fced151ef0b511ffd466c96"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-003",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Correct primary queue; historical and other-document queues are explicitly excluded.",
+    "answer_sha256": "a1c75fc1b51e95d06e2b029ccc029aef14815bb33a7c3abc7cbcc493f6151585"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-003",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Correct primary queue; historical and other-document queues are explicitly excluded.",
+    "answer_sha256": "8c0245ad0e551c76f5ebeb1ab3a230c2a2ea164b2fced151ef0b511ffd466c96"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-004",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f77280d77c100fc268fa859002a78986e8b13362bdea9f8d971e7c5de0f15358"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-004",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f77280d77c100fc268fa859002a78986e8b13362bdea9f8d971e7c5de0f15358"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-004",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d409eb2f9a91a6fb635e1814712288f4abcd02259cd6b3633f9363099e40168a"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-004",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e53f4d029b5d03cb78a653d1283a68df7f140c4ae2842ea8b04ea945a2af99cd"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-006",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d745f929391d1d174d7e0a99527def0b1a62c44767417b2b6207fb71d851d7ec"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-006",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d745f929391d1d174d7e0a99527def0b1a62c44767417b2b6207fb71d851d7ec"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-006",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "298b195b10f22ac043a584027db95713933c582e42106164037987b75a4101be"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-006",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "7cae37ba7fbead15de276b4d952f80fd700a5b9b55391dab7eab3aeefbc6a1e4"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-007",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "be72a6e575cdf2afa9e1f91027734ebc23dbedc1b19cd54c0ef2e5ae4e3fb4c7"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-007",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "be72a6e575cdf2afa9e1f91027734ebc23dbedc1b19cd54c0ef2e5ae4e3fb4c7"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-007",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "9b0e479f0c885f5aa8a4dfdd6cd654f963a5e53ef87c839f3f3b15aeb5b7b464"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-007",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c2a51b6d6499157963d88a62b9a0072a5ec96918dc2b33bef5fe0fac4e066a70"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-008",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-008",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-008",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "1da9e4973ec746e10f189e8dadcfb4fcedd5c7438545f75b8030c7a06718148d"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-008",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-009",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "dc2be9c079198a6344c49975b4bd3836dcb1980f7f11e50d170ed75341b587ce"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-009",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "dc2be9c079198a6344c49975b4bd3836dcb1980f7f11e50d170ed75341b587ce"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-009",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2b82b3c4f5c6b638a54412e342dd4c12d343f8c6482f6ae71b35577241b3b69c"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-009",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b9c5d447a5a6e2d1b3a26ec33c2476cac3623e1323bd46bf13085d30f7c93f1a"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-010",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d50e34250dedf1de065732b98996e32858f905bf42ccc02c8567d520c08e85e1"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-010",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "36ac1f43a96d220b1fa7e90b6474dcea5efda12ec1134ba2c8286b3205af00bf"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-010",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "1dc5d28468ee5f400c0f74ef9b1564da20c112cb0e0fde2a3974c51e9951928a"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-010",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "1913805100f6ad7cb7d589f85a1e00255574bfc9043f04bafc161c9f5721b0f5"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-011",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-011",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-011",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c20ca62ab1f69b765bbda81770f3e1581cd0fc010a3aae25b9faa9b86207aa5a"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-011",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "18b96f0b712f017967dea4f61bc3256e555a96c11763b2a65f21de4ca2440958"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "18b96f0b712f017967dea4f61bc3256e555a96c11763b2a65f21de4ca2440958"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "82b2cee1a053db81a97cc9e047f03ddd9d7789cf0db1d38d61480aca7f8cd2cc"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "65ff1df59ae41ff1e7efe651c3be9b5d72a40b53ca8ac65249514427cc16c475"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-013",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3c667d9e3a7ab3bdcaa0a4a59de79e43a4d1a42d807c82654029fb56f54c79aa"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-013",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3c667d9e3a7ab3bdcaa0a4a59de79e43a4d1a42d807c82654029fb56f54c79aa"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-013",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "7847ee040ecbed01a2b39e586ab381aed6acd1ab8d2fc9841c2ddcba15f2a811"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-013",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d9b10cc3ee755bc22416aed5bd2b08ce133d8f7bbe86c5b00488ff5070a24fe5"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-014",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-014",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-014",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "8a289d7bb089e959b9e1ca59211fe3a85ac020d38e98e2294f76f47ba15b439e"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-014",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "4e67c30f0b62cfeb77cc4647e626f1ad9ae5e6cf4766d06498d282adbfab38d6"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "4e67c30f0b62cfeb77cc4647e626f1ad9ae5e6cf4766d06498d282adbfab38d6"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e5fb18117366aa6c572254765930fb82d01ee2e0476c391bfe2f927b5f33bb4f"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "dbf8b53ca71c5f65041f55f593f75c9b47233eb2bff8d776d83c9f0df15c909b"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-016",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a7a62f80732c3571bc51a70b577f0d87a13b3523f46a3c4d874d574122ca6b69"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-016",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a7a62f80732c3571bc51a70b577f0d87a13b3523f46a3c4d874d574122ca6b69"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-016",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d189951a591c8207fb63b3d1c7b7ea66fef85ec1c474b26dadded13b1c005130"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-016",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "aaccd38d774dcbb7bf1e8e17d777d7cfe009c226552c6471b7b1d7da8025ae30"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-017",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-017",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-017",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "1c8e5f8981603616a11ed1a2860a53ae34935720d03ece560f4dd2679f063b92"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-017",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-018",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "5bfe5fde8f1af5a6204207a07a396a208b54af491acd984836ee8b4f2c61923d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-018",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "5bfe5fde8f1af5a6204207a07a396a208b54af491acd984836ee8b4f2c61923d"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-018",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f143033315005eab6a0a15941d45a2352ff40e6a85cdfdaca85ae671529a0ee3"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-018",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f527981f422f14a9b4816129f3eaabdea35e942c9477769ec900be99fd53e286"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-019",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "9cf0f9b454c20568b224de69dcd015ec2796a46d95e62669e96a15c754be3ead"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-019",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "9cf0f9b454c20568b224de69dcd015ec2796a46d95e62669e96a15c754be3ead"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-019",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "68162d6e999d91868f120b2fe653cecd4afa049ec1fc7262fcf8e68b9ff29891"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-019",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "8ece67de9b2187e35a947b8d55feadc3af34f9b5ff42765960dbd9ea3561e881"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-021",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "15b66c1416d3438faf8012f287c1a45ea3caed99e866743f129dad081da0b3a8"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-021",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "15b66c1416d3438faf8012f287c1a45ea3caed99e866743f129dad081da0b3a8"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-021",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "9b7966879c238466b081d6293a41e8a9fa2da3617c4e3e700d13110ce237a048"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-021",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "8098d96602121650c197a99fa81d2a673ee8c68c8d99822e7e686d1607465f30"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "complex-022",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "bbff400ba752bde1be37e85ea55765aa5ad2d3be23d530f6e8110e013b068274"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "complex-022",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "bbff400ba752bde1be37e85ea55765aa5ad2d3be23d530f6e8110e013b068274"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "complex-022",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "fe91ea5ccbf3cc9be683b3288373ecfeafd888c669e1298bf9209a731b3fb142"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "complex-022",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f03c51f31264596456d7752e6c03a790d983c5fa64f52cdca9d4c52cf1bc2237"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b02b073eb210831233aee8917f35f3043edbcb34ee8edf8cf0b17a5f1a75688b"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b02b073eb210831233aee8917f35f3043edbcb34ee8edf8cf0b17a5f1a75688b"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-000",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a6ce1684ac0c8c1a06a2a3391e0bd03285bf458f743a0a4564f4ef2874d93c78"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2b2779e890ea675b64e37d7db16d2ee3a8ecf3d7f409035c33d7f354e734938b"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0bec1d7f3b0a61548de0b32ca124df175584c90008e366e198b684ed86f2b6c8"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0bec1d7f3b0a61548de0b32ca124df175584c90008e366e198b684ed86f2b6c8"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c110ded7d3f8d13dab29d3d47e585fd7bc688e8c3f5066107597313d2af17d9f"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3c7637a6b961dc655061b9348cde748e100deaabc74b85bc6ef1fc222689411f"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0a9a53cd7a5ae32f712d4401253916c6bfc63809cdf978f1cd8b0c6c07a6825b"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0a9a53cd7a5ae32f712d4401253916c6bfc63809cdf978f1cd8b0c6c07a6825b"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e7e993c6845e4b11714fce770f35ae4e94e05b34597009bfdc2723e1d17b1c5d"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "268947c8488d72bf12b1d6505ee38ec4e121e7cc289d6daea00307c2de78b91a"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a4508210ce85c6c49f0fdfddc3bcc7c96566a501044f8085f323fffa619e90ec"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "9927278abc46aadab9082bbf850d8613e6ede8a2feaf8980caf9391c48ca5272"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e217820826fe1a199af69ae8397e4df38ecb6839add68614a30f91cbd6e571ac"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "bc3a4d988e062a959db235a885539b741599294045151c20b41b83625caec8f1"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-004",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "55567a89fc5286c97662d9ba42094c232a9ecb499a123eb5a545477466ed15d1"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b8a94ed5d226f5053a5cdb3d14373a2448b1c3a8c48a9929674c142583cfb5a2"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b8a94ed5d226f5053a5cdb3d14373a2448b1c3a8c48a9929674c142583cfb5a2"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-005",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d59c3211aec24f2f53176a8ecb8cb39b10c5a0f88368458a8bb8162305ba3ac8"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-005",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e7e20ec6b84f871aae8855139ceecbd82e4fe15623044adebca759c528fb3cb7"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b1a74e09190b99b904aeca7f10e9d17da518a865a1df37874234ce2c81a8a9bd"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b1a74e09190b99b904aeca7f10e9d17da518a865a1df37874234ce2c81a8a9bd"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "71e29d06c9b98946f010dd9b1ba66af7862f8e6bf75563d9dd18d385ba1be2b1"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "35ab943126b32adaec062692991f6f85e64d4d769e0ac3b3b58c10dda6e9cf54"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "5ae7f2fe5572b26255cae21577112c524e88d33693977bf118c37f6313749b10"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "5ae7f2fe5572b26255cae21577112c524e88d33693977bf118c37f6313749b10"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f46e1310cb287cdfe170c7ed19fe97b3ed5a5ca22f8a9474092fe35fad49cfdc"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "25d5592b9ff9e3d21f19ee873940d792057dc55c48231ce7ab7f71c0e747cdfd"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "dfbe6784c4a9e04e5ca311f3cb644da8cb3088cfc651d0dd15a56e2d69c61b34"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "dfbe6784c4a9e04e5ca311f3cb644da8cb3088cfc651d0dd15a56e2d69c61b34"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e9d3f2be21d6c715c43f6f84c35ff6b3f8574dbe9682b9d72e0deb54dbc411ac"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "1ab4cb55b885865d90ef634cb5116859ec94dc1877c7749949561b7de4e91f1d"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-009",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d9f7d987e6539fc4539f9d9cce490a93a953affaf113b56bfcab75afc3b4e93a"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2b1f0ec2a9c1bd95d49711d8532a5075c9c5ca506fbca70f6d12820993bc59b6"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2b1f0ec2a9c1bd95d49711d8532a5075c9c5ca506fbca70f6d12820993bc59b6"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-010",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "eb8c139d446819a4134cc5e2fe864ecb7b593b60d36c0cf1ed0639b66240c763"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "bd02e1647620373e624ea369c825a206e0dc433d8751e3aae5a707769390b5c7"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "dea1ae8613ee2a5ef5504d98bd969bd46b4c75e9c898341f497c74684599030c"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "dea1ae8613ee2a5ef5504d98bd969bd46b4c75e9c898341f497c74684599030c"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "30d8b6e13ca2a4f9d441184e011a563a10dbe9dbfaecc09541675a4684860655"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "23efa1e13b4597ab7f9a112daf5d346d68fd3536aa86a9726921599cc0a7725d"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "daa20476b8eff715c0def3a0ed2ba254fda89ff5948945731426c5478fbf6154"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "daa20476b8eff715c0def3a0ed2ba254fda89ff5948945731426c5478fbf6154"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "992fc9dc85958aafcbd139533848edb17b6859d15a7fd7d3e661513039826de7"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b1c55da84ce29db35a0c4ed0c683dff7da0b97d3f30a13ef00946d9655b59ab7"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "100c4572227dff5badae89cf6f63a435a4f751b5bb507a878dbc5c9c25e57bb4"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-014",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "574a7dcb1ff462edf1cc98c3a26a9080394353a6028490196faf2da7ea4c2085"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d3baee63177e207dfaddab2167d939407c0a67cc4624427d216317c5cb8d373c"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d3baee63177e207dfaddab2167d939407c0a67cc4624427d216317c5cb8d373c"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d3baee63177e207dfaddab2167d939407c0a67cc4624427d216317c5cb8d373c"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "acda4c23c225dd193be6f4a55d36a4e594457d1dbee99d79e5dc27f770e662ce"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "350326701b83f92f4bd6bb18f07601ca15889e36c2e72e905d69a761ba15bbf1"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "350326701b83f92f4bd6bb18f07601ca15889e36c2e72e905d69a761ba15bbf1"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "350326701b83f92f4bd6bb18f07601ca15889e36c2e72e905d69a761ba15bbf1"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "7afd14c505c8147d022d725ca59c79a153bc7e19b4b40ec0ed2acdb6a349fdd8"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f6a320e8a66394dabfa05ebe2c3dab8f641863ab14a928029ab3d6fc9c79c449"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f6a320e8a66394dabfa05ebe2c3dab8f641863ab14a928029ab3d6fc9c79c449"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "998057f019783487c2fe2d236d4abb041db2a50686fdc48c176caca987389d21"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e969c8576b54bd7832fc3fbe6517f4a5d41eb9ba0235c43d1aff666d812a5915"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "76a50887d8f1c2e9301755428990ad81479ee21c25b43215cf524541e0503269"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "76a50887d8f1c2e9301755428990ad81479ee21c25b43215cf524541e0503269"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "76a50887d8f1c2e9301755428990ad81479ee21c25b43215cf524541e0503269"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "648a1e37538a1efb94793d8173bfbe7389e462a1e85e5b7bde18334a20ad0882"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-019",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "58f42dca1131adeca2cc2adad4d85e44c5599b6bbb17442cf3ae489a93274ef0"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "ffcb9df630e22d3d3228c773ac9c1ccc47e91f4642f2db598536d1b490de6ac3"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "7aba2db651c444d3042602b9a9820d77e2e8bb2ea361e0b9b5de759bc4b82f87"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "bff3992c1d4f9aa5a7945023e32989d83c60ae06b21fd37904de6dbfd67694a3"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "bff3992c1d4f9aa5a7945023e32989d83c60ae06b21fd37904de6dbfd67694a3"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-022",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "987a3d70d4798c9a19df3d4eb8216912fe25f7755339c2365cce8ce04ab461e5"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "40d4b2586325183c86573fca40a4c9ab76f58834d513f63d3783bd9b876bc8ca"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a4c6af0cb6f02dff01ba174e4cf11f24f73d9ed16ca7a1e3c9d831c0139faa5c"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a4c6af0cb6f02dff01ba174e4cf11f24f73d9ed16ca7a1e3c9d831c0139faa5c"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a4c6af0cb6f02dff01ba174e4cf11f24f73d9ed16ca7a1e3c9d831c0139faa5c"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "19a7d13fb86402a3bcb9796e72e82bdb7b8fa1a91fb96739b544e58bd072b827"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-024",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-024",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-024",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3dc369340dd135bc22a472c2c70a2dfd9969ddf4751a08cf6a292a9c01d223c8"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-024",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3141d9c749e88ee5550192703c3e025a9b3446ec543f17a923cb24e7b61dfece"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3141d9c749e88ee5550192703c3e025a9b3446ec543f17a923cb24e7b61dfece"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3141d9c749e88ee5550192703c3e025a9b3446ec543f17a923cb24e7b61dfece"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d450e48db3dc62733a37019619113645035141f0b51e614015b8585f2d53c9f3"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "7aba2db651c444d3042602b9a9820d77e2e8bb2ea361e0b9b5de759bc4b82f87"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "70fa656aa0391eb9ef7bbc9c7e6771ec09e7d5d7ab1fcbbde2480d21263ee79a"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "70fa656aa0391eb9ef7bbc9c7e6771ec09e7d5d7ab1fcbbde2480d21263ee79a"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "70fa656aa0391eb9ef7bbc9c7e6771ec09e7d5d7ab1fcbbde2480d21263ee79a"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3de2f2ce845811d6e41d5563d85ca041ac06f5885944835a0266a58013c8767b"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0ebe0fb634f8e4aca93dcdea090d01120e73df4c7da22888c595b593da608c78"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0ebe0fb634f8e4aca93dcdea090d01120e73df4c7da22888c595b593da608c78"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-028",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "fecf15ad1336cf422ca2d617a1065789b2471dfa1c76fc8fe031cf5d52bddeaa"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "6305aaee5d73afc7c1ed8d90227b55fd0126c723039aa90c283030240ddcc889"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "stress-029",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "stress-029",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "stress-029",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "60b50b269bb2c4c34f1753733f8d5ac4c771739d6109bc7dcc2e0f1591f6aa78"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "stress-029",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0eb66b17a9febfba75fb5445b2adab7ffded92cc79e576adf5b58e1939272ac4"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-4-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "47a4f45a3104839dbc691778af8592ac656bf64c9b9aab3071a98300324d145f"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-4-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "ce304bc570dc6a273b4a74bc95390fc1cfaa3f712643f1106016a496213d061a"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-4-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0a9ee5fdb4702e18aa05539d5f72be331fe6df8c2025408ef936a73f9b8a6467"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-4-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e2fed175b21c06ffed0f0addb60a2711487daea3a0fd754043a06374b847ef1a"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-4-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "8a18ad38253a028525fb2eab567d1a062cb29a81ee36a32777ca1710b9a2bd2d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-4-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c907b48a2cd9a8c986653a3a4e30a8a327ccf1cdd2ea66bf078f9abe558cf0ce"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-4-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "246a6604b880947f48c6626b5f0545132066ee5450af363b8b6a915c12b98a54"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-4-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e6015a455a5db09f6086525f4fa881de76eb49d4c47f92d4e59c99632608bd21"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-4-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-4-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-4-2",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0ce98f26af64c0ad4653947a420b7ed00af9a00615af535339800f3fa82f675b"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-4-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "8b54c85bc7504b6acdd16ed16be830eb57c0d9896204ec5b46d30f72bda292cd"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-4-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-4-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-4-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "09bf8598720834b9c9fa173e26482c97b3c28707b7cdfc6788f9f57f4661a78c"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-4-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "8f04b6c5dc569b3d5997a29d5224ef08fc1211fb5be1bba30c92947807aae492"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-0-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "eefd0a2b71c340bcfdec730fb468de2a61969c065b8163df09326f891de6d625"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-0-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "48ddc70c14ffa6be2e85cf7ecfb04e16dd761846be4ad3d52ddd331f9310ff67"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-0-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "72e431f80ede7b8170f26cf43c1b4821daaa33e4f2fa108469fb54d229831228"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-0-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "df0da255541092dc7611b9a0e16cb5a1e98aff9ac45218ba58731545d6f01418"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-0-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "75093fde8109a5b83aef1627795fca04e6b55d70791950fad5c2fd9391ecb0b6"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-0-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "162ac51710684aa0e2b407f3701a485f061868c051049ebbd7e5d563346bf18d"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-0-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d5c39e11813365af2ff8aa243a3d8e4f15363608dd7acf90677f239585e51b4e"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-0-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "de0d3108989bafd69a07efe44699fa9811c200b1d1f76a1cb0054ba7af1dc819"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-0-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-0-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-0-2",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "610c350a167fc9917acb60ca6f2ef017f18b2652d0468e56dc62aa81f11bdb3b"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-0-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "2ec8e88772e8a609e1a5a0876eb4a9bc65f43df26096f76489710c95a6a4c22e"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-0-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-0-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-0-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "60375b532e19912a03b8d2ce19b270f2ceabe6115073b35cab381dc60a06452d"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-0-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c3b54d16705ffa1d163717d3a34c2f308754ad9f895a04f3ba0c8278af41445c"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-1-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "040eacbdbcb1a21a1ce498a4cd9b120249d85d31d1757548a7050f8242d9a1ae"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-1-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "040eacbdbcb1a21a1ce498a4cd9b120249d85d31d1757548a7050f8242d9a1ae"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-1-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a345a1a2008d37ad042d4dd37f3ae527a3e8ad4f6d78c1016ee6cc244d8b30ff"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-1-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "6cf5f86ec0ba30e1f74de675052409e710581326d74547317cd867a43cb440c5"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-1-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "33e25b030dfa36ee80fd556249cead081397e7f6de5301adfb87ea8f21411e08"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-1-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "6428942854097c9936e01472a38ac51ac56a0ee0082b86c070796a7170f19cee"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-1-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "5f76f85a9b1f14802e97b66eeadb2f6e7618676321134f46e0bcace087a543c1"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-1-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "33a5fe2132afab6abcec716c7c8e71db1539833a0e6d9400a1885431833990b8"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-1-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "34c24adef16fba9e230ee929dc83403ec8680e857f8b2ebf41c3b5b7ff45a392"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-1-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "34c24adef16fba9e230ee929dc83403ec8680e857f8b2ebf41c3b5b7ff45a392"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-1-2",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "1a42da81ec197a3c0d4141b6e079540a8f5fae982f6c1984a2bb9fa1311ffc72"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-1-2",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "9ec77fa1b59b1e2e7abd20338716c86a95547542858c59393c06d6f112b02e7e"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-1-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-1-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-1-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a6dc4badafc641281e84de944ed4576acd259be9c8d40e95da0860ecec4455d2"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-1-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "7bdd2ab030bdaced313f6f461c83130a9a6ac69e295a9556ff716049339e049b"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-2-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "18f9cf37153225a817338d3c09577331f476da4fde355d6e18aab0c120487344"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-2-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "18f9cf37153225a817338d3c09577331f476da4fde355d6e18aab0c120487344"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-2-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "cb749bc43a9ed13547383a80d4190cdf8607757155e22a4bc629c5b1ddf6e784"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-2-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "df2cb8af2dd753fbd8e5db08c74904c340f4afceab34a2c11fb1349504e8bac0"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-2-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "7ef29c3cac0545d14d1fff14f0d1223ee4ede154d040852b19d9769ba799f509"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-2-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "3a131749370f1edfcd0742ad0798b0b487f8f1ea6c8f61eee29bc56af4637781"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-2-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "320925cfff9fc49612d26c39c3f410d25d2a207670bc38aae592e7857a971ced"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-2-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "527841a726d8d108452b3850aaaa22e1452b32eae8bfff1a3860ed3db21da4c1"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-2-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-2-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-2-2",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "d62f52515f0441ac3e5c6442518961ed0db7811db262368cab68d86b64ee4e28"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-2-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "53299dd3ffaed4efff28ea29dfe5856017bf6005a24bef2fc2375455516abdd9"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-2-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-2-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-2-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "6348f293e4a9116558cf10d28467117fa92debc099f8cecd5ec1c25796e546ad"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-2-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e7a512a4a2424234ee89bca5f71968228377b0da11599573ff9379eece84433a"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-3-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "a36ceef87bd77b96a23e97dc4f258067e214287064a43fc5600b10e6388e4c7c"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-3-0",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "ff8f6082ac8e2934dbeb7064d6753341cd781b13128c5ddfdd667f7b88b769e9"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-3-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "664608209503201af417eb8e859c019cd12e636952c2ea78982df3aaca4655d5"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-3-0",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "ea8faf01c9dcb476cb2903ca375781e9c3f14ac9829d5d65e1ba922878fda6f0"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-3-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "03f80d990782d124d1a3e53f5d8d73dff96ff85d832a74cb59c4197fb67cb1aa"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-3-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "0f183b664db57bac7f756b404057b4ccc89369fc664864706e3f22d333229fce"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-3-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "5a295aeffbe192820d2020daaf0c799a9a5401e8acc63c8809995b0d3781b6d6"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-3-1",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "105fd70bc22a2e14f18c56ad20344cf26bd46bf56f75e73d3aa64c97617449dc"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-3-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-3-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-3-2",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "6106e3b0faf2674457716dddca6201ebb74f1724e97d8872eee097cf554d0f5e"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-3-2",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "c3307b9765c42beef4b6984711baf705d6f4cd62cad28e23b5f43d5a0708f80d"
+  },
+  {
+    "condition": "hindsight-retrieval",
+    "case_id": "memory-3-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "ragflow-retrieval",
+    "case_id": "memory-3-3",
+    "strict_correct": true,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "hindsight-native",
+    "case_id": "memory-3-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "e58d433c0df19fbe384dce44faf13146ae3abd6caba0fa624ab83b064b031b6d"
+  },
+  {
+    "condition": "ragflow-native",
+    "case_id": "memory-3-3",
+    "strict_correct": false,
+    "correct": true,
+    "reason": "Reviewer verified complete requested values against source. Additional historical or conditional alternatives are clearly excluded; supported absence statements are accepted.",
+    "answer_sha256": "9b6c2b104ff764a649e679834b629f81da8a0cf2266485d44bad06439dc66838"
+  }
+]

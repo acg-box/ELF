@@ -1,0 +1,16 @@
+{
+  "reason": "One transport-uncertain request retained its full reservation; subsequent chat requests failed local budget admission. Tighten enforced routing price caps to the current DeepSeek weekend prices while retaining all prior reservations.",
+  "completed_preserved": 221,
+  "failed_preserved": 34,
+  "old_caps": {
+    "prompt": 0.3,
+    "completion": 1.2
+  },
+  "new_caps": {
+    "prompt": 0.15,
+    "completion": 0.6
+  },
+  "output_max_unchanged": 943718,
+  "provider_unchanged": "deepseek",
+  "uncertain_ordinal": 64299
+}

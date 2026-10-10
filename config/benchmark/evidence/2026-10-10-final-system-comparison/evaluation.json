@@ -1,0 +1,287 @@
+{
+  "planned_outputs": 280,
+  "retained_outputs": 280,
+  "reviewed_outputs": 280,
+  "conditions": {
+    "hindsight-native": {
+      "splits": {
+        "documents": {
+          "count": 50,
+          "completed": 50,
+          "strict_correct": 21,
+          "reviewed_correct": 50
+        },
+        "memory": {
+          "count": 16,
+          "completed": 16,
+          "strict_correct": 4,
+          "reviewed_correct": 16
+        },
+        "development": {
+          "count": 4,
+          "completed": 4,
+          "strict_correct": 1,
+          "reviewed_correct": 4
+        }
+      },
+      "query_paid_usd": 0.4298383780000005,
+      "input_tokens": 3478961,
+      "cached_input_tokens": 1770496,
+      "output_tokens": 281294,
+      "chat_requests": 268,
+      "embedding_requests": 366,
+      "tool_calls": {
+        "search_observations": 149,
+        "recall": 217,
+        "expand": 22
+      },
+      "reviewed": 70,
+      "categories": {
+        "legacy_documents": {
+          "count": 20,
+          "correct": 20
+        },
+        "updates": {
+          "count": 4,
+          "correct": 4
+        },
+        "cross_session": {
+          "count": 4,
+          "correct": 4
+        },
+        "temporal": {
+          "count": 4,
+          "correct": 4
+        },
+        "abstention": {
+          "count": 4,
+          "correct": 4
+        },
+        "mixed": {
+          "count": 10,
+          "correct": 10
+        },
+        "chinese": {
+          "count": 10,
+          "correct": 10
+        },
+        "table": {
+          "count": 10,
+          "correct": 10
+        }
+      },
+      "median_answer_characters": 843.5,
+      "median_query_seconds": 35.859767125482904,
+      "max_common_context_tokens": 0,
+      "truncated_common_contexts": 0,
+      "weighted_score": 100.0
+    },
+    "hindsight-retrieval": {
+      "splits": {
+        "documents": {
+          "count": 50,
+          "completed": 50,
+          "strict_correct": 50,
+          "reviewed_correct": 50
+        },
+        "memory": {
+          "count": 16,
+          "completed": 16,
+          "strict_correct": 12,
+          "reviewed_correct": 16
+        },
+        "development": {
+          "count": 4,
+          "completed": 4,
+          "strict_correct": 3,
+          "reviewed_correct": 4
+        }
+      },
+      "query_paid_usd": 0.05522913000000003,
+      "input_tokens": 266739,
+      "cached_input_tokens": 0,
+      "output_tokens": 25683,
+      "chat_requests": 70,
+      "embedding_requests": 70,
+      "tool_calls": {},
+      "reviewed": 70,
+      "categories": {
+        "legacy_documents": {
+          "count": 20,
+          "correct": 20
+        },
+        "updates": {
+          "count": 4,
+          "correct": 4
+        },
+        "cross_session": {
+          "count": 4,
+          "correct": 4
+        },
+        "temporal": {
+          "count": 4,
+          "correct": 4
+        },
+        "abstention": {
+          "count": 4,
+          "correct": 4
+        },
+        "mixed": {
+          "count": 10,
+          "correct": 10
+        },
+        "chinese": {
+          "count": 10,
+          "correct": 10
+        },
+        "table": {
+          "count": 10,
+          "correct": 10
+        }
+      },
+      "median_answer_characters": 11.0,
+      "median_query_seconds": 5.936596353974892,
+      "max_common_context_tokens": 4096,
+      "truncated_common_contexts": 50,
+      "weighted_score": 100.0
+    },
+    "ragflow-native": {
+      "splits": {
+        "documents": {
+          "count": 50,
+          "completed": 50,
+          "strict_correct": 47,
+          "reviewed_correct": 50
+        },
+        "memory": {
+          "count": 16,
+          "completed": 16,
+          "strict_correct": 7,
+          "reviewed_correct": 16
+        },
+        "development": {
+          "count": 4,
+          "completed": 4,
+          "strict_correct": 2,
+          "reviewed_correct": 4
+        }
+      },
+      "query_paid_usd": 0.05254693800000001,
+      "input_tokens": 332491,
+      "cached_input_tokens": 52736,
+      "output_tokens": 17695,
+      "chat_requests": 70,
+      "embedding_requests": 70,
+      "tool_calls": {},
+      "reviewed": 70,
+      "categories": {
+        "legacy_documents": {
+          "count": 20,
+          "correct": 20
+        },
+        "updates": {
+          "count": 4,
+          "correct": 4
+        },
+        "cross_session": {
+          "count": 4,
+          "correct": 4
+        },
+        "temporal": {
+          "count": 4,
+          "correct": 4
+        },
+        "abstention": {
+          "count": 4,
+          "correct": 4
+        },
+        "mixed": {
+          "count": 10,
+          "correct": 10
+        },
+        "chinese": {
+          "count": 10,
+          "correct": 10
+        },
+        "table": {
+          "count": 10,
+          "correct": 10
+        }
+      },
+      "median_answer_characters": 63.0,
+      "median_query_seconds": 5.354845645517344,
+      "max_common_context_tokens": 0,
+      "truncated_common_contexts": 0,
+      "weighted_score": 100.0
+    },
+    "ragflow-retrieval": {
+      "splits": {
+        "documents": {
+          "count": 50,
+          "completed": 50,
+          "strict_correct": 50,
+          "reviewed_correct": 50
+        },
+        "memory": {
+          "count": 16,
+          "completed": 16,
+          "strict_correct": 13,
+          "reviewed_correct": 16
+        },
+        "development": {
+          "count": 4,
+          "completed": 4,
+          "strict_correct": 3,
+          "reviewed_correct": 4
+        }
+      },
+      "query_paid_usd": 0.043410486,
+      "input_tokens": 206149,
+      "cached_input_tokens": 23552,
+      "output_tokens": 26903,
+      "chat_requests": 70,
+      "embedding_requests": 70,
+      "tool_calls": {},
+      "reviewed": 70,
+      "categories": {
+        "legacy_documents": {
+          "count": 20,
+          "correct": 20
+        },
+        "updates": {
+          "count": 4,
+          "correct": 4
+        },
+        "cross_session": {
+          "count": 4,
+          "correct": 4
+        },
+        "temporal": {
+          "count": 4,
+          "correct": 4
+        },
+        "abstention": {
+          "count": 4,
+          "correct": 4
+        },
+        "mixed": {
+          "count": 10,
+          "correct": 10
+        },
+        "chinese": {
+          "count": 10,
+          "correct": 10
+        },
+        "table": {
+          "count": 10,
+          "correct": 10
+        }
+      },
+      "median_answer_characters": 11.0,
+      "median_query_seconds": 6.006006500479998,
+      "max_common_context_tokens": 4096,
+      "truncated_common_contexts": 32,
+      "weighted_score": 100.0
+    }
+  }
+}
