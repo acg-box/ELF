@@ -6,7 +6,7 @@ resource: docs/runbook/integration-testing.md
 status: active
 authority: procedural
 owner: runbook
-last_verified: 2026-06-18
+last_verified: 2026-10-10
 tags:
   - docs
   - runbook

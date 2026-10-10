@@ -34,7 +34,7 @@ pub(super) fn validate_write_scope(cfg: &Config, scope: &str) -> Result<()> {
 }
 
 pub(super) fn validate_text(input: &str, kind: TextKind, field: &str) -> Result<()> {
-	text_validation::text_validation(input, kind)
+	text_validation::validate(input, kind)
 		.map_err(|_| Error::InvalidText { field: field.to_string() })
 }
 

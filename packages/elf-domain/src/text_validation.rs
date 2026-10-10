@@ -21,7 +21,7 @@ pub enum TextRejectReason {
 }
 
 /// Validate text without normalization, transliteration, or language detection.
-pub fn text_validation(input: &str, kind: TextKind) -> Result<(), TextRejectReason> {
+pub fn validate(input: &str, kind: TextKind) -> Result<(), TextRejectReason> {
 	for ch in input.chars() {
 		if ch.is_control() && !matches!(ch, '\n' | '\r' | '\t') {
 			return Err(TextRejectReason::DisallowedControlChar);
@@ -39,12 +39,12 @@ pub fn text_validation(input: &str, kind: TextKind) -> Result<(), TextRejectReas
 
 /// Whether Unicode natural-language text has a valid storage format.
 pub fn is_valid_text(input: &str) -> bool {
-	text_validation(input, TextKind::NaturalLanguage).is_ok()
+	validate(input, TextKind::NaturalLanguage).is_ok()
 }
 
 /// Whether an identifier has a valid format, regardless of script.
 pub fn is_valid_identifier(input: &str) -> bool {
-	text_validation(input, TextKind::Identifier).is_ok()
+	validate(input, TextKind::Identifier).is_ok()
 }
 
 /// Return the first invalid string's JSON path, preserving the caller's field context.

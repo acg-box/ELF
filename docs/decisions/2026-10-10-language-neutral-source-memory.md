@@ -40,6 +40,16 @@ or retain an external source. Event quotes are checked against extraction input;
 write-policy transformations remain recorded in their audit. Derived memory is
 allowed to change without changing its original source record.
 
+## Extraction contract ownership
+
+Generate the built-in JSON Schema from the Rust extraction types. Field descriptions
+state the evidence-binding rules. Do not maintain a second illustrative object that
+can drift from the decoder. Unknown extraction fields fail explicitly instead of
+silently dropping an incorrectly wrapped subject. Facts and relation surfaces remain
+verbatim-bound to note text or evidence; this change does not weaken that rule to
+increase benchmark scores. Profiles can omit optional graph details when the source
+does not support them.
+
 ## Relation time contract
 
 The relation decoder and built-in extraction instructions share one format:

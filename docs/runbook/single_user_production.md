@@ -6,7 +6,7 @@ resource: docs/runbook/single_user_production.md
 status: active
 authority: procedural
 owner: runbook
-last_verified: 2026-06-18
+last_verified: 2026-10-10
 tags:
   - docs
   - runbook

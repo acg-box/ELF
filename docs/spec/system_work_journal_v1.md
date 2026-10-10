@@ -6,7 +6,7 @@ resource: docs/spec/system_work_journal_v1.md
 status: active
 authority: normative
 owner: spec
-last_verified: 2026-07-04
+last_verified: 2026-10-10
 tags:
   - docs
   - spec

@@ -6,7 +6,7 @@ resource: docs/spec/system_elf_memory_service_v2.md
 status: active
 authority: normative
 owner: spec
-last_verified: 2026-06-23
+last_verified: 2026-10-10
 tags:
   - docs
   - spec

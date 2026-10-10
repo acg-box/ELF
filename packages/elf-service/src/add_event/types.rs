@@ -1,3 +1,4 @@
+use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use time::OffsetDateTime;
@@ -81,26 +82,35 @@ pub struct AddEventResponse {
 	pub ingestion_profile: Option<IngestionProfileRef>,
 }
 
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, JsonSchema, Serialize)]
+#[serde(deny_unknown_fields)]
 pub(super) struct ExtractorOutput {
 	pub notes: Vec<ExtractedNote>,
 }
 
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, JsonSchema, Serialize)]
+#[serde(deny_unknown_fields)]
 pub(super) struct ExtractedNote {
+	/// One of preference, constraint, decision, profile, fact, or plan.
+	#[schemars(required)]
 	pub r#type: Option<String>,
 	pub key: Option<String>,
+	/// A concise reusable note, at most MAX_NOTE_CHARS characters.
+	#[schemars(required)]
 	pub text: Option<String>,
 	pub structured: Option<StructuredFields>,
 	pub importance: Option<f32>,
 	pub confidence: Option<f32>,
 	pub ttl_days: Option<i64>,
 	pub scope_suggestion: Option<String>,
+	/// One or two verbatim source quotes that support this note.
+	#[schemars(required)]
 	pub evidence: Option<Vec<EvidenceQuote>>,
 	pub reason: Option<String>,
 }
 
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, Deserialize, JsonSchema, Serialize)]
+#[serde(deny_unknown_fields)]
 pub(super) struct EvidenceQuote {
 	pub message_index: usize,
 	pub quote: String,

@@ -6,7 +6,7 @@ resource: docs/runbook/agent_skills_cookbook.md
 status: active
 authority: procedural
 owner: runbook
-last_verified: 2026-06-23
+last_verified: 2026-10-10
 tags:
   - docs
   - runbook

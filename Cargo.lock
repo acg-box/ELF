@@ -1093,6 +1093,7 @@ dependencies = [
  "elf-testkit",
  "elf-worker",
  "qdrant-client",
+ "schemars",
  "serde",
  "serde_json",
  "sqlx",
