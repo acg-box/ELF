@@ -1,0 +1,62 @@
+{
+  "source_commit": "45663eb4c04e5bb3082b8f7463b0deb48404fe00",
+  "image": "elf-matched-service:20261010",
+  "chat": "deepseek/deepseek-v4.1-flash",
+  "reasoning_effort": "max",
+  "provider_output_maximum": 943718,
+  "embedding": "qwen/qwen3-embedding-8b",
+  "dimensions": 1536,
+  "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "independent_ceiling_usd": 10,
+  "primary": "ELF Context Pack (limit 32), hydrate only selected references, same external reader without extra context truncation.",
+  "secondary": "Formal native retrieval (12 hits, 60 candidates per source), same reader, 4096 cl100k_base context tokens.",
+  "ingest": "Unchanged OCR annotations and dated memory records in Source Library; memory records also use native events ingestion.",
+  "defaults": "elf.example.toml; real GPT-2 tokenizer at frozen revision; mandatory reject_non_english=true; memory and ranking defaults retained.",
+  "tokenizer": {
+    "url": "https://huggingface.co/openai-community/gpt2/resolve/607a30d783dfa663caf39e06633721c8d4cfcd7e/tokenizer.json",
+    "sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6"
+  },
+  "boundary": "ELF has no native final-answer API. Neither condition claims native reflect equivalence. No manual knowledge pages or oracle-directed structures.",
+  "execution": "Serial queries; preserve all completed answers; retry failures only; development cases excluded from score.",
+  "limitations": "Known small synthetic suites; asynchronous comparison with saved competitor results; no general superiority claim.",
+  "source_hashes": {
+    "documents": {
+      "e_ae3fdb9cb12196ce9ae4b945": "6e05480d5cc654dd42bba35d2c4549269fd3bcccdb0bbc8a58e0e6d6d5ebe350",
+      "e_6f96a2af3365edd7577ea147": "df6433b1e1a475e7b04683f972c5c6a068cfedd3c8f920580c218188b23e6563",
+      "e_f78b8623bff0267bf5e45c2b": "90bdca8d376182af9990e55bfe3906d8ef9bd412b829353334c7ee0061334aef",
+      "e_adf880c03e4b6091d62cdf6f": "8fa93ebc4cfd017eed2c1c034af24a05410b30dcb6c1f2e438ee7b3fccbc1003",
+      "e_f361397d877f4c9074ab359a": "4bfe395457fe647d47c0407f8d56e8e42f4ee2a24e963b084c4b4cead0eb832b",
+      "e_4b51c2f07fe6d33137c84359": "98afbd8fc9d08a47c96d6baea2f7279891d1756a99b2d2082a63563751d78877",
+      "e_7fe00361fcf964b12aea766c": "f65f38e0b672a27f17198344b8cbbb291a613296648771629f0ed8198cccb013",
+      "e_255d68caea01e4bc6add58b1": "f5b87561a021f0463ec5b1b1290fdf3488eafe7b98c80cbb9c7d33443ad16d08",
+      "p_e7ce1eebc94674c92dc4": "9e79254e7b61a52d2295c0b8f531423945b7cc7c6ca646d646196f790e360b64",
+      "p_370c062d41f913dd59b8": "111eda7cfc24238bfbd22dc09ea8cd8daaee308af52f4f4d1d0c80ca7b39e553",
+      "p_e68ae9579fbc4c1d0579": "4682b0ada22379e06a92d0ffc71d51200461be1250ceb86c744c787ea4b3f180",
+      "p_154452ff7c7dca8097fd": "3e353004a60f8cb09ee44b9cb17b25c4dbd3250a7c7fbfab9a447635fe7be9fc",
+      "p_0775dffd822295ef2634": "2c30a2e3e87a3fd4dcf319df652e21e7a22f0d6ecb3b63ac0437f69c34c0b03f",
+      "p_77bc298f7e82fc0cc561": "9302729d4380917d723246eb705ed82deb919467fcba691de9bf544b3c2fb2f5"
+    },
+    "memory": {
+      "m_c558d1541c4b9d0f": "c558d1541c4b9d0f9434a1cf35ee6d489a2dd8ae150074a7bfd61f5597d71aa0",
+      "m_d7a9d1f22107f233": "d7a9d1f22107f233338c525a7e55d34acfe90630c27e4fe9f29b7f5f2aef29af",
+      "m_99ab4da076b7c734": "99ab4da076b7c734f32dc02f77e229037d19cc0083ac69c89a704b03fa15ec1c",
+      "m_d6297f549707f98d": "d6297f549707f98dc69a487f0b81c8af2e02a8e083f9875ecdafddd9ed7e38f2",
+      "m_eb85892166acc8ef": "eb85892166acc8efb24c985b46b0548b05a16ead96df701b9c2aa55da3f08a2b",
+      "m_f7ff6441bdd98e53": "f7ff6441bdd98e539ebcb54cc67a849c51784261d6431ec4f668f3390bcb1b22",
+      "m_70bd88efee712a9a": "70bd88efee712a9a2350516152ef85c7b371579022c2a8ee15f7eba2823ae176",
+      "m_4a54af2b364be476": "4a54af2b364be4763105262a57d08f8d654f30b407e9bc0edf21d23574e64fca",
+      "m_ea0fb41d60279977": "ea0fb41d602799772f65a44002dd20057ca2e32abc86cc1c0233e52aa8618b66",
+      "m_9757cd3f6fff2b1a": "9757cd3f6fff2b1ad89eff933e18b08bf4671cc3cd8f8147047d28ff8aafc6e6",
+      "m_89c1a1e6265841f0": "89c1a1e6265841f02c14f441873fb3b48d16df40fb213fdb6def8edf63e96ca9",
+      "m_6e4b0b61170e23a6": "6e4b0b61170e23a6eb3059b7bc75c71339a023b2f931252772fc4325d38c60b4",
+      "m_5cccbe54a3057c9d": "5cccbe54a3057c9d2b8db0d1a79ca630da02676fe8910ab9d7df864ca3b4ca1c",
+      "m_60a61eab3b3b1426": "60a61eab3b3b14260d789b52e5e6f96cb98504a6a82835637eea12adf8e0b975",
+      "m_6bf734c83508b527": "6bf734c83508b527ae2e4d85e2769cb56fbe29541bc481af32be9c62d084a847",
+      "m_b482da0e797a3b49": "b482da0e797a3b492419e7860fde58194b9d71f8ee4dece6387b39e4ac69d6b4",
+      "m_11ab570fcca41f15": "11ab570fcca41f156987dc88cb670c813be2866849f45fad2da24b41f37e1967",
+      "m_0cf97e4da97e721d": "0cf97e4da97e721da909c1010d1da2ba65d0fce77f0b273aab9332ad24250072",
+      "m_7a073c47318430f8": "7a073c47318430f81088a265b30707d0c7862cd4af265519f472dfd0731a68ad",
+      "m_10a8847f903485c5": "10a8847f903485c54b821f8541608a0d111d3e5a9d9a86f0344b919852b53d0e"
+    }
+  }
+}

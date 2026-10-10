@@ -56,6 +56,18 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /
 CMD ["python3", "/opt/benchmark/benchmark-unit.py", "--target", "elf"]
 
+FROM elf-builder AS elf-service-builder
+RUN --mount=type=cache,id=elf-benchmark-cargo-registry,target=/usr/local/cargo/registry \
+  --mount=type=cache,id=elf-benchmark-cargo-git,target=/usr/local/cargo/git \
+  --mount=type=cache,id=elf-benchmark-cargo-target,target=/src/target \
+  cargo build --locked --release -p elf-api -p elf-worker \
+  && install -D /src/target/release/elf-api /out/elf-api \
+  && install -D /src/target/release/elf-worker /out/elf-worker
+
+FROM elf-runtime AS elf-service-runtime
+COPY --from=elf-service-builder /out/elf-api /usr/local/bin/elf-api
+COPY --from=elf-service-builder /out/elf-worker /usr/local/bin/elf-worker
+
 FROM qmd-builder AS qmd-runtime
 
 RUN apt-get update \

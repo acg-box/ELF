@@ -1,0 +1,21 @@
+{
+  "owned_containers_removed": true,
+  "containers": [
+    "elf-matched-api",
+    "elf-matched-worker",
+    "elf-matched-db",
+    "elf-matched-qdrant",
+    "elf-matched-sidecar"
+  ],
+  "network_removed": true,
+  "anonymous_volumes_removed_with_owned_containers": true,
+  "owned_images_removed": [
+    "sha256:9c7106a7bb2672aa83cfcf3a1921102efcfc2d5442040edc06d5b0974ce370a7",
+    "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926"
+  ],
+  "credentials_removed": true,
+  "shared_images_and_build_cache_preserved": true,
+  "readback_remaining_owned_containers": 0,
+  "readback_remaining_owned_networks": 0,
+  "readback_new_remaining_volumes": 0
+}

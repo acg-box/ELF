@@ -103,7 +103,7 @@ class BudgetTests(TestCase):
 
 
 class EmbeddingRecoveryTests(TestCase):
-    def request(self, responses, kind="embedding", retries=3, tranche=1.0):
+    def request(self, responses, kind="embedding", retries=3, tranche=1.0, record=False):
         import contextlib
         import http.client
         import io
@@ -118,7 +118,8 @@ class EmbeddingRecoveryTests(TestCase):
             ledger = Ledger(Path(directory) / "ledger.json", 1, tranche)
             with patch("benchmark_budget.urllib.request.build_opener", return_value=opener), \
                     patch("benchmark_budget.time.sleep") as sleep:
-                server = ThreadingHTTPServer(("127.0.0.1", 0), handler_for(ledger, "upstream-key", "local-token", retries))
+                server = ThreadingHTTPServer(("127.0.0.1", 0), handler_for(ledger, "upstream-key", "local-token", retries,
+                    receipt_dir=Path(directory) / "receipts" if record else None))
                 thread = threading.Thread(target=server.serve_forever, kwargs={"poll_interval": 0.01})
                 thread.start()
                 client = http.client.HTTPConnection("127.0.0.1", server.server_port, timeout=5)
@@ -133,6 +134,14 @@ class EmbeddingRecoveryTests(TestCase):
                     server.shutdown()
                     server.server_close()
                     thread.join()
+                if record:
+                    receipt = Path(directory) / 'receipts/1.json'
+                    recorded = json.loads(receipt.read_text())
+                    self.assertEqual(recorded['response'], payload)
+                    self.assertEqual(recorded['request']['input'], 'synthetic fact')
+                    self.assertNotIn('upstream-key', receipt.read_text())
+                    self.assertNotIn('local-token', receipt.read_text())
+                    self.assertEqual(receipt.stat().st_mode & 0o777, 0o600)
                 return status, payload, ledger.value, opener.open.call_args_list, sleep.call_args_list
 
     @staticmethod
@@ -149,6 +158,10 @@ class EmbeddingRecoveryTests(TestCase):
         import io
 
         return io.BytesIO(b'{"data":[{"embedding":[0.1]}],"usage":{"cost":0.000001}}')
+
+    def test_private_receipt_preserves_provider_response_without_authentication(self):
+        status, *_ = self.request([self.success()], record=True)
+        self.assertEqual(status, 200)
 
     def test_embedding_retry_keeps_request_and_charges_separate_attempts(self):
         status, payload, ledger, calls, sleeps = self.request([self.failure(retry_after="3"), self.success()])
