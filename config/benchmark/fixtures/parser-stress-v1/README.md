@@ -67,3 +67,29 @@ shared reader after retrieval and native RAGFlow chat answer all 30 questions.
 The original OCR annotations, free page receipts, native chunks, and all answer
 attempts must be retained. Key-span retention measures presence of selected
 values, not full character error rate or table reconstruction accuracy.
+
+## Output-limit profiles
+
+The legacy runner and budget gateway default to 8,192 output tokens. For a
+provider-maximum run, first obtain the model's current context and completion
+limits from its provider catalog. Use a new artifact directory. Pass the same
+completion limit as `--chat-max-tokens` to the budget gateway and
+`--max-output-tokens` to the parser runner. Pass the catalog context limit as
+`--model-context-tokens`. The gateway records the effective output limit in
+each paid chat receipt and reserves the full possible charge before sending.
+The cumulative monetary ceiling still applies. Use `--workers 1` when concurrent
+worst-case reservations cannot fit the remaining budget. `--request-timeout`
+controls the gateway transport timeout, not the token budget; retain failed or
+uncertain requests in the ledger.
+
+For the 2026-10-10 run, the catalog reported 943,718 completion tokens and a
+1,048,576-token context. These are a dated snapshot, not permanent defaults.
+A matched rerun can reuse the private auth, dataset-state, and parser-output
+files from the original artifact directory while the owned runtime is alive.
+Use fresh chat and case files. Do not copy completed case files into the new
+profile or replace the old protocol. The formal capability run also passes
+`--reasoning-effort max` to both the gateway and runner. It uses the highest
+available reasoning setting and provider output limit. The original low-effort
+run is a separate cohort; the comparison changes two settings and cannot
+isolate which setting caused a difference. A single sample does not establish
+the best result across repeated generations.

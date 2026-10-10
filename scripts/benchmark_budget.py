@@ -43,7 +43,7 @@ def reservation(size, kind, output):
     return ((size + 8192) * (0.3 if kind == "chat" else 0.1) + output * 1.2) / 1_000_000
 
 
-def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimensions=None):
+def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, reasoning_effort="low"):
     body = dict(body)
     streaming = body.get("stream") is True
     body["stream"] = False
@@ -56,10 +56,10 @@ def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimens
                 raise ValueError("text_only_benchmark_profile")
         if body.get("n", 1) != 1:
             raise ValueError("multiple_choices_not_allowed")
-        output = min(8192, int(body.get("max_tokens") or body.get("max_completion_tokens") or 8192))
+        output = min(chat_max_tokens, int(body.get("max_tokens") or body.get("max_completion_tokens") or chat_max_tokens))
         if output <= 0:
             raise ValueError("invalid_output_limit")
-        body.update(model=CHAT_MODEL, max_tokens=output, reasoning={"effort": "low"},
+        body.update(model=CHAT_MODEL, max_tokens=output, reasoning={"effort": reasoning_effort},
             provider={"only": ["deepseek"], "allow_fallbacks": False, "max_price": {"prompt": 0.3, "completion": 1.2}})
         body.pop("max_completion_tokens", None)
         body.pop("reasoning_effort", None)
@@ -130,7 +130,7 @@ def embedding_retry_delay(kind, status, attempt, retries, retry_after):
     return 2 ** (attempt + 1)
 
 
-def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None):
+def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low"):
     opener = urllib.request.build_opener(NoRedirect)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
@@ -168,7 +168,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 size = int(self.headers.get("Content-Length", "0"))
                 if size <= 0 or size > 262144:
                     return self.error(413, "input_limit")
-                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider, embedding_dimensions)
+                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider, embedding_dimensions, chat_max_tokens, reasoning_effort)
                 data = json.dumps(body).encode()
             except (ValueError, TypeError) as error:
                 return self.error(400, str(error))
@@ -185,9 +185,11 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                     first_ordinal = row["ordinal"]
                 attempt_metadata = {"attempt": attempt + 1, "request_ordinal": first_ordinal,
                     "requested_provider": embedding_provider if kind == "embedding" else "deepseek"}
+                if kind == "chat":
+                    attempt_metadata.update(requested_max_tokens=output, reasoning_effort=body["reasoning"]["effort"])
                 started = time.monotonic()
                 try:
-                    with opener.open(request, timeout=90) as response:
+                    with opener.open(request, timeout=request_timeout) as response:
                         result = json.load(response)
                     usage = result.get("usage") or {}
                     state = "completed" if explicit_cost({"usage": usage}) is not None else "completed_cost_unknown"
@@ -237,10 +239,15 @@ def main():
     parser.add_argument("--embedding-dimensions", type=int,
                         help="Fix the shared Qwen embedding dimension for clients without a dimension setting")
     parser.add_argument("--embedding-429-retries", type=int, choices=range(4), default=0)
+    parser.add_argument("--chat-max-tokens", type=int, default=8192)
+    parser.add_argument("--request-timeout", type=int, default=90)
+    parser.add_argument("--reasoning-effort", choices=("low", "high", "max"), default="low")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if args.embedding_dimensions is not None and not 1 <= args.embedding_dimensions <= 4096:
         parser.error("embedding dimensions must be between 1 and 4096")
+    if args.chat_max_tokens <= 0 or args.request_timeout <= 0:
+        parser.error("chat output and request timeout must be positive")
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
     if not command or not 0 < args.tranche <= args.ceiling or not math.isfinite(args.ceiling):
         parser.error("Provide a command and finite positive limits with tranche <= ceiling")
@@ -257,7 +264,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -270,6 +277,7 @@ def main():
         print(json.dumps({"event": "budget_start", "ceiling_usd": args.ceiling,
             "tranche_reservation_usd": args.tranche, "paid_total_usd": totals(ledger.value)[0],
             "embedding_429_retries": args.embedding_429_retries,
+            "chat_max_tokens": args.chat_max_tokens, "request_timeout": args.request_timeout, "reasoning_effort": args.reasoning_effort,
             "embedding_provider": args.embedding_provider, "embedding_dimensions": args.embedding_dimensions,
             "transport": "nonstream_upstream_with_optional_buffered_sse"}), flush=True)
         def interrupted(signum, frame):

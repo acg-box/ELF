@@ -99,20 +99,27 @@ def start_hindsight(root):
     with (root/'hindsight-start.log').open('w') as f:subprocess.run(cmd+[HS_IMAGE],env=env,stdout=f,stderr=subprocess.STDOUT,check=True)
 
 
-def register(root):
+def register(root, context_tokens=32768):
     password=secrets.token_hex(20)
     encrypted=subprocess.check_output(['openssl','pkeyutl','-encrypt','-pubin','-inkey',str(root/'stack/public.pem'),'-pkeyopt','rsa_padding_mode:pkcs1'],input=base64.b64encode(password.encode()))
     _,headers=api(RF,'/users',{'nickname':'Native benchmark','email':'native-'+secrets.token_hex(8)+'@example.test','password':base64.b64encode(encrypted).decode()})
     auth=next(v for k,v in headers.items() if k.lower()=='authorization')
     token,_=api(RF,'/system/tokens',{},token=auth)
     auth='Bearer '+token['token']
-    api(RF,'/providers',{'provider_name':'OpenAI-API-Compatible'},method='PUT',token=auth)
-    api(RF,'/providers/OpenAI-API-Compatible/instances',{'instance_name':'native_benchmark','api_key':os.environ['LITELLM_API_KEY'],
-        'base_url':os.environ['LITELLM_BASE_URL'].replace('127.0.0.1','host.docker.internal'),
-        'model_info':[{'model_name':EMB,'model_type':['embedding'],'max_tokens':8192,'extra':{'max_dimension':1536,'dimensions':[1536]}},
-                      {'model_name':CHAT,'model_type':['chat'],'max_tokens':32768}]},token=auth)
+    configure_rag_provider(auth, context_tokens=context_tokens)
     path=root/'private-auth.json';save(path,{'authorization':auth});path.chmod(0o600)
     return auth
+
+
+def configure_rag_provider(auth, update=False, context_tokens=32768):
+    # A resumed budget gateway has a new ephemeral token and may use a new port.
+    if not update:
+        api(RF,'/providers',{'provider_name':'OpenAI-API-Compatible'},method='PUT',token=auth)
+    path='/providers/OpenAI-API-Compatible/instances'+('/native_benchmark' if update else '')
+    api(RF,path,{'instance_name':'native_benchmark','api_key':os.environ['LITELLM_API_KEY'],
+        'base_url':os.environ['LITELLM_BASE_URL'].replace('127.0.0.1','host.docker.internal'),
+        'model_info':[{'model_name':EMB,'model_type':['embedding'],'max_tokens':8192,'extra':{'max_dimension':1536,'dimensions':[1536]}},
+                      {'model_name':CHAT,'model_type':['chat'],'max_tokens':context_tokens}]},method='PUT' if update else 'POST',token=auth)
 
 
 def ingest_rag(root,auth,scope,items):
@@ -194,10 +201,10 @@ def run_case(root,condition,q,expected,call,scorer=score):
     save(path,value);print(json.dumps({k:value[k] for k in ('condition','case_id','status','correct','seconds')}),flush=True)
 
 
-def shared_answer(q,rows,native):
+def shared_answer(q,rows,native,max_tokens=8192,reasoning_effort="low",timeout=300):
     budget,_=api(SIDE,'/tokens',{'text':labeled(rows),'max_tokens':4096})
-    env={'BENCHMARK_CHAT_API_BASE':os.environ['LITELLM_BASE_URL'],'BENCHMARK_CHAT_API_KEY':os.environ['LITELLM_API_KEY'],'BENCHMARK_CHAT_MODEL':CHAT,'BENCHMARK_CHAT_REASONING_EFFORT':'low'}
-    answer=request_answers([{'case_id':q['case_id'],'question':q['question'],'context':budget['text']}],env,max_tokens=8192)
+    env={'BENCHMARK_CHAT_API_BASE':os.environ['LITELLM_BASE_URL'],'BENCHMARK_CHAT_API_KEY':os.environ['LITELLM_API_KEY'],'BENCHMARK_CHAT_MODEL':CHAT,'BENCHMARK_CHAT_REASONING_EFFORT':reasoning_effort}
+    answer=request_answers([{'case_id':q['case_id'],'question':q['question'],'context':budget['text']}],env,max_tokens=max_tokens,timeout=timeout)
     try:
         parsed=decode_answer(answer,q['case_id'])
     except (ValueError,KeyError,TypeError,IndexError) as error:

@@ -6,8 +6,8 @@ import tempfile
 from unittest import TestCase
 from unittest.mock import patch
 
-from benchmark_deep import page_ocr, parser_stress
 from scripts.tests.benchmark_support import REPO, load_script
+from benchmark_deep import page_ocr, parser_stress
 
 
 class PageOCRTests(TestCase):
@@ -57,6 +57,13 @@ class PageOCRTests(TestCase):
         self.assertTrue(parser_stress.span_present('420 8 42', '42'))
         self.assertFalse(parser_stress.span_present('420 8', '42'))
         self.assertTrue(parser_stress.span_present('1,420 CNY', '1420'))
+
+    def test_identifier_fidelity_is_separate_from_the_frozen_normalized_score(self):
+        expected = {'supported': True, 'facts': ['NIGHT-A-864'], 'forbidden': []}
+        self.assertTrue(parser_stress.score(expected, 'NIG HT-A-864'))
+        self.assertFalse(parser_stress.identifiers_exact(expected, 'NIG HT-A-864'))
+        self.assertTrue(parser_stress.identifiers_exact(expected, 'NIGHT-A-864 [ID:0]'))
+        self.assertFalse(parser_stress.identifiers_exact(expected, 'XNIGHT-A-864'))
 
     def test_stress_sources_do_not_include_oracle_and_require_matching_extraction(self):
         import hashlib

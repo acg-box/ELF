@@ -32,7 +32,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--artifact-root', type=Path, required=True)
     parser.add_argument('--fixture-root', type=Path, help='Use the new parser stress fixture and all three parsers')
+    parser.add_argument("--max-output-tokens", type=int, default=8192)
+    parser.add_argument("--model-context-tokens", type=int, default=32768)
+    parser.add_argument("--workers", type=int, default=3)
+    parser.add_argument("--reasoning-effort", choices=("low", "high", "max"), default="low")
+    parser.add_argument("--answer-timeout", type=int, default=600)
     args = parser.parse_args()
+    if not 0 < args.max_output_tokens < args.model_context_tokens or args.workers < 1 or args.answer_timeout <= 0:
+        parser.error("Require positive workers and output smaller than model context")
     root = args.artifact_root.resolve()
     source, oracle = (parser_stress.workload(args.fixture_root, root / 'free')
                       if args.fixture_root else workload())
@@ -51,10 +58,10 @@ def main():
         'ocr_source': 'OpenRouter file annotations only, no generated assistant rewriting or answer-oracle enrichment.',
         'ocr_version': 'mistral-ocr engine; underlying model version not exposed in receipts.',
         'chat': common.CHAT, 'embedding': common.EMB, 'embedding_dimensions': 1536,
-        'context_tokens': 4096, 'tokenizer': 'cl100k_base', 'reader_max_tokens': 8192,
+        'context_tokens': 4096, 'tokenizer': 'cl100k_base', 'reader_max_tokens': args.max_output_tokens,
         'rag_page_size': 64, 'rag_threshold': 0.0, 'rag_vector_weight': 0.3,
-        'top_k': 1024, 'native_top_n': 20, 'native_max_tokens': 8192,
-        'execution': (f'{len(names)} concurrent parser lanes; per-case cost windows overlap; no isolated latency comparison.' if args.fixture_root else
+        'top_k': 1024, 'native_top_n': 20, 'native_max_tokens': args.max_output_tokens,
+        'execution': (f'{min(args.workers, len(names))} concurrent parser lanes; per-case cost windows overlap; no isolated latency comparison.' if args.fixture_root else
                       'Two concurrent parser lanes; per-case cost windows overlap; no isolated latency comparison.'),
         'reranker': 'cross-encoder/ms-marco-MiniLM-L-6-v2',
         'queries': queries, 'oracle': oracle,
@@ -63,9 +70,18 @@ def main():
     }
     if args.fixture_root:
         protocol['scoring'] = 'NFKC/casefold/whitespace normalization; numeric digit boundaries; citations removed; exact unknown for absent facts.'
+    if args.max_output_tokens != 8192 or args.model_context_tokens != 32768 or args.reasoning_effort != "low":
+        protocol['model_context_tokens'] = args.model_context_tokens
+        protocol['reasoning_effort'] = args.reasoning_effort
+        protocol['answer_timeout_seconds'] = args.answer_timeout
+        protocol['profile'] = 'Explicit output and reasoning profile; same parsed datasets; fresh answers.'
     common.freeze(root / 'protocol.json', protocol)
     auth_file = root / 'private-auth.json'
-    auth = json.loads(auth_file.read_text())['authorization'] if auth_file.exists() else common.register(root)
+    if auth_file.exists():
+        auth = json.loads(auth_file.read_text())['authorization']
+        common.configure_rag_provider(auth, update=True, context_tokens=args.model_context_tokens)
+    else:
+        auth = common.register(root, context_tokens=args.model_context_tokens)
     common.api(common.SIDE, '/tokens', {'text': 'readiness'})
     if not (root / 'vllm-preflight.json').exists():
         common.api(common.RF, '/providers', {'provider_name': 'VLLM'}, method='PUT', token=auth)
@@ -87,9 +103,9 @@ def main():
             chat = json.loads(chat_path.read_text())
         else:
             chat, _ = common.api(common.RF, '/chats', {
-                'name': 'parser-' + name, 'dataset_ids': [state['dataset_id']],
+                'name': 'parser-' + name + '-' + hashlib.sha256(str(root).encode()).hexdigest()[:8], 'dataset_ids': [state['dataset_id']],
                 'llm_id': common.CHAT + '@native_benchmark@OpenAI-API-Compatible',
-                'llm_setting': {'temperature': 0.1, 'max_tokens': 8192},
+                'llm_setting': {'temperature': 0.1, 'max_tokens': args.max_output_tokens},
                 'similarity_threshold': 0.0, 'vector_similarity_weight': 0.3,
                 'top_n': 20, 'top_k': 1024, 'rerank_id': rerank,
                 'prompt_config': {'system': common.INSTRUCTION + '\nEvidence:\n{knowledge}',
@@ -104,12 +120,12 @@ def main():
                     'page': 1, 'page_size': 64, 'similarity_threshold': 0.0,
                     'vector_similarity_weight': 0.3, 'top_k': 1024, 'rerank_id': rerank}, token=auth)
                 rows = [{'evidence_id': inverse.get(c['document_id']), 'text': c['content']} for c in native['chunks']]
-                return common.shared_answer(q, rows, native)
+                return common.shared_answer(q, rows, native, max_tokens=args.max_output_tokens, reasoning_effort=args.reasoning_effort, timeout=args.answer_timeout)
 
             def native_answer():
                 native, _ = common.api(common.RF, '/chat/completions', {
                     'chat_id': chat['id'], 'messages': [{'role': 'user', 'content': q['question']}],
-                    'stream': False, 'max_tokens': 8192, 'store_history_messages': False}, token=auth, timeout=600)
+                    'stream': False, 'max_tokens': args.max_output_tokens, 'store_history_messages': False}, token=auth, timeout=args.answer_timeout)
                 text = native.get('answer') or native.get('content')
                 if not text or '**ERROR**' in text:
                     raise common.AnswerContractError('Native chat returned no usable answer', {'native': native})
@@ -117,7 +133,7 @@ def main():
 
             common.run_case(root, name + '-retrieval', q, oracle[q['case_id']], retrieve, scorer)
             common.run_case(root, name + '-native-chat', q, oracle[q['case_id']], native_answer, scorer)
-    with ThreadPoolExecutor(max_workers=len(names)) as pool:
+    with ThreadPoolExecutor(max_workers=min(args.workers, len(names))) as pool:
         futures = [pool.submit(run_lane, name, state) for name, state in states.items()]
         for future in futures:
             future.result()

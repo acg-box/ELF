@@ -39,6 +39,17 @@ def span_present(text, fact):
     return contains(text, fact)
 
 
+def identifier_values(expected):
+    """Identify the fixture's machine-readable queue and approval values."""
+    return [f for f in expected['facts'] if re.fullmatch(r'[A-Z]+-[A-Z]-\d+', f)]
+
+
+def identifiers_exact(expected, text):
+    """Audit literal usability separately from the frozen whitespace-normalized score."""
+    return all(re.search(r'(?<![\w-])' + re.escape(f) + r'(?![\w-])', text)
+               for f in identifier_values(expected))
+
+
 def workload(fixture_root, free_root):
     items, queries, oracle = [], [], {}
     for doc in json.loads((fixture_root / 'oracle-source.json').read_text()):
