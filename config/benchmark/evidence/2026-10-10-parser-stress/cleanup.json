@@ -1,0 +1,122 @@
+{
+  "containers_removed": 8,
+  "container_names": [
+    "elf-parser-stress-ragflow-cpu-1",
+    "elf-parser-stress-minio-1",
+    "elf-parser-stress-mysql-1",
+    "elf-parser-stress-nats-1",
+    "elf-parser-stress-kvrocks-1",
+    "elf-parser-stress-clickhouse-1",
+    "elf-parser-stress-infinity-1",
+    "elf-parser-stress-reranker"
+  ],
+  "volumes_removed": [
+    "elf-parser-stress_minio_data",
+    "elf-parser-stress_clickhouse_data",
+    "elf-parser-stress_infinity_data",
+    "elf-parser-stress_kvrocks_data",
+    "elf-parser-stress_mysql_data",
+    "elf-parser-stress_nats_data"
+  ],
+  "networks_removed": [
+    "elf-parser-stress_ragflow"
+  ],
+  "images_removed": [
+    "sha256:e6e7ac4c96027d29c799b3ae87791af93b64a2c797fb2130c0f9004f763c5536",
+    "sha256:c51ce53db95348aa8a4b2f0dab64f1e6b279efc8b07ad43aaac62f8426989076",
+    "sha256:076b58f8af6b053ac40d21e87e83d1bcbc1e4d7a651d12a3be0c551e92e91fbf",
+    "sha256:f6e7cfd1cb86c0741bf55f72560ce6d7799ada94a51f8f192a4d3b689b8496b4",
+    "sha256:eff3cf3c1e911779b9fbfe69ca703bb69a2b7407e6227e3f9b70ebbca6f0a54d",
+    "sha256:fd8e71ce4fce556a7522c01fff3dbfbd2da580f22920d151f7f2f06790b3074f",
+    "sha256:00763be2865b44f777df4340fbdd52f6d70a97f58b17a6ee8db91a8e7965912d",
+    "sha256:34d7607d8966f4598735df886beb51a8c9ac7a7217be4ca0a8fbd5d78270214f",
+    "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926"
+  ],
+  "images_retained": [],
+  "prior_container_ids_missing": [
+    "310501e42d1c"
+  ],
+  "unrelated_containers_preserved": false,
+  "global_prune_used": false,
+  "credentials_removed": true,
+  "method": "Compose removed selected services; remaining owned profile services were inspected and removed by exact name",
+  "all_prior_service_names_present": true,
+  "unrelated_identity_drift": [
+    {
+      "name": "oixcloud-helper",
+      "old_id": "310501e42d1c",
+      "new_id": "24b8746fd1e6de8c2fde921517f0d06ab0d547955220879f90bede5159ecc88a",
+      "same_image_reference": true,
+      "status": "Up About an hour (healthy)"
+    }
+  ],
+  "targeted_build_cache_id": "q7kpe14axia5y20vegw8254xe",
+  "build_cache_cleanup_output": "ID\t\t\t\t\t\tRECLAIMABLE\tSIZE\t\tLAST ACCESSED\nq7kpe14axia5y20vegw8254xe               \ttrue \t\t66.74MB   \tAbout an hour ago\nTotal:\t66.74MB\n",
+  "targeted_build_cache_removed": true,
+  "docker_space_before": [
+    {
+      "Active": "15",
+      "Reclaimable": "4.626GB (31%)",
+      "Size": "14.82GB",
+      "TotalCount": "48",
+      "Type": "Images"
+    },
+    {
+      "Active": "17",
+      "Reclaimable": "0B (0%)",
+      "Size": "52.48MB",
+      "TotalCount": "17",
+      "Type": "Containers"
+    },
+    {
+      "Active": "10",
+      "Reclaimable": "16.07GB (75%)",
+      "Size": "21.38GB",
+      "TotalCount": "80",
+      "Type": "Local Volumes"
+    },
+    {
+      "Active": "0",
+      "Reclaimable": "31.21GB",
+      "Size": "33.47GB",
+      "TotalCount": "208",
+      "Type": "Build Cache"
+    }
+  ],
+  "docker_space_after": [
+    {
+      "Active": "7",
+      "Reclaimable": "4.56GB (51%)",
+      "Size": "8.916GB",
+      "TotalCount": "39",
+      "Type": "Images"
+    },
+    {
+      "Active": "9",
+      "Reclaimable": "0B (0%)",
+      "Size": "1.078MB",
+      "TotalCount": "9",
+      "Type": "Containers"
+    },
+    {
+      "Active": "4",
+      "Reclaimable": "16.07GB (81%)",
+      "Size": "19.74GB",
+      "TotalCount": "74",
+      "Type": "Local Volumes"
+    },
+    {
+      "Active": "0",
+      "Reclaimable": "31.21GB",
+      "Size": "33.41GB",
+      "TotalCount": "207",
+      "Type": "Build Cache"
+    }
+  ],
+  "private_files_removed": [
+    "parser-stress-comparison/private-auth.json",
+    "parser-stress-comparison/stack/.env",
+    "parser-stress-maximum/private-auth.json",
+    "parser-stress-best/private-auth.json"
+  ]
+}

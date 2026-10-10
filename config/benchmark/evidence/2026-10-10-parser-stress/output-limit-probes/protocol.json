@@ -1,0 +1,598 @@
+{
+  "scope": "Parser intervention only; RAGFlow 1.0.0-rc1 with unchanged native retrieval and answer settings.",
+  "historical_baseline": "None; all three conditions use a fresh matched fixture.",
+  "boundary": "Both new conditions upload text/plain .txt sources. Includes representation and downstream text chunking changes; not a native DeepDOC model-weight upgrade.",
+  "selection": "All 30 frozen new diagnostic questions; no exclusions or answer-driven tuning.",
+  "ocr_source": "OpenRouter file annotations only, no generated assistant rewriting or answer-oracle enrichment.",
+  "ocr_version": "mistral-ocr engine; underlying model version not exposed in receipts.",
+  "chat": "deepseek/deepseek-v4.1-flash",
+  "embedding": "qwen/qwen3-embedding-8b",
+  "embedding_dimensions": 1536,
+  "context_tokens": 4096,
+  "tokenizer": "cl100k_base",
+  "reader_max_tokens": 943718,
+  "rag_page_size": 64,
+  "rag_threshold": 0.0,
+  "rag_vector_weight": 0.3,
+  "top_k": 1024,
+  "native_top_n": 20,
+  "native_max_tokens": 943718,
+  "execution": "1 concurrent parser lanes; per-case cost windows overlap; no isolated latency comparison.",
+  "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "queries": [
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-000",
+      "lane": "mixed_scan_page",
+      "question": "Harbor mixed A: Which queue applies at 19:00 UTC?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-001",
+      "lane": "mixed_image_body",
+      "question": "Harbor mixed A: What is the signed approval code?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-002",
+      "lane": "mixed_scan_name",
+      "question": "Harbor mixed A: Who is the on-duty dispatcher?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-003",
+      "lane": "mixed_cross_page",
+      "question": "Harbor mixed A: Give the day dispatch queue and the approved deadline."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-004",
+      "lane": "mixed_absent",
+      "question": "Harbor mixed A: What is the published dispatcher phone number?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-005",
+      "lane": "mixed_scan_page",
+      "question": "Harbor mixed B: Which queue applies at 19:00 UTC?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-006",
+      "lane": "mixed_image_body",
+      "question": "Harbor mixed B: What is the signed approval code?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-007",
+      "lane": "mixed_scan_name",
+      "question": "Harbor mixed B: Who is the on-duty dispatcher?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-008",
+      "lane": "mixed_cross_page",
+      "question": "Harbor mixed B: Give the day dispatch queue and the approved deadline."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-009",
+      "lane": "mixed_absent",
+      "question": "Harbor mixed B: What is the published dispatcher phone number?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-010",
+      "lane": "chinese_name",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u5f53\u524d\u8d1f\u8d23\u4eba\u662f\u8c01\uff1f\u8bf7\u53ea\u7ed9\u59d3\u540d\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-011",
+      "lane": "chinese_amount",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u4eba\u6c11\u5e01\u9884\u7b97\u4e0a\u9650\u662f\u591a\u5c11\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-012",
+      "lane": "chinese_place",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u9a8c\u6536\u5730\u70b9\u5728\u54ea\u91cc\uff1f"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-013",
+      "lane": "chinese_condition",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u7d27\u6025\u4e8b\u9879\u7684\u5904\u7406\u65f6\u9650\u662f\u591a\u5c11\u5c0f\u65f6\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-014",
+      "lane": "chinese_absent",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 A: \u8d1f\u8d23\u4eba\u7684\u8054\u7cfb\u7535\u8bdd\u662f\u4ec0\u4e48\uff1f\u672a\u63d0\u4f9b\u5219\u56de\u7b54 unknown\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-015",
+      "lane": "chinese_name",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u5f53\u524d\u8d1f\u8d23\u4eba\u662f\u8c01\uff1f\u8bf7\u53ea\u7ed9\u59d3\u540d\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-016",
+      "lane": "chinese_amount",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u4eba\u6c11\u5e01\u9884\u7b97\u4e0a\u9650\u662f\u591a\u5c11\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-017",
+      "lane": "chinese_place",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u9a8c\u6536\u5730\u70b9\u5728\u54ea\u91cc\uff1f"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-018",
+      "lane": "chinese_condition",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u7d27\u6025\u4e8b\u9879\u7684\u5904\u7406\u65f6\u9650\u662f\u591a\u5c11\u5c0f\u65f6\uff1f\u8bf7\u53ea\u7ed9\u6570\u5b57\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-019",
+      "lane": "chinese_absent",
+      "question": "\u6f84\u6c5f\u9a8c\u6536 B: \u8d1f\u8d23\u4eba\u7684\u8054\u7cfb\u7535\u8bdd\u662f\u4ec0\u4e48\uff1f\u672a\u63d0\u4f9b\u5219\u56de\u7b54 unknown\u3002"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-020",
+      "lane": "table_merged_header",
+      "question": "Cedar matrix A: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-021",
+      "lane": "table_merged_region",
+      "question": "Cedar matrix A: What is the current signed East Pro limit? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-022",
+      "lane": "table_continuation",
+      "question": "Cedar matrix A: What is the signed West Enterprise fee in CNY? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-023",
+      "lane": "table_footnote",
+      "question": "Cedar matrix A: What West Pro fee in CNY applies on 2026-11-02? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-024",
+      "lane": "table_absent",
+      "question": "Cedar matrix A: What is the published bank-routing number?"
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-025",
+      "lane": "table_merged_header",
+      "question": "Cedar matrix B: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-026",
+      "lane": "table_merged_region",
+      "question": "Cedar matrix B: What is the current signed East Pro limit? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-027",
+      "lane": "table_continuation",
+      "question": "Cedar matrix B: What is the signed West Enterprise fee in CNY? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-028",
+      "lane": "table_footnote",
+      "question": "Cedar matrix B: What West Pro fee in CNY applies on 2026-11-02? Return the number only."
+    },
+    {
+      "action": "query",
+      "scope": "parser-stress",
+      "case_id": "stress-029",
+      "lane": "table_absent",
+      "question": "Cedar matrix B: What is the published bank-routing number?"
+    }
+  ],
+  "oracle": {
+    "stress-000": {
+      "lane": "mixed_scan_page",
+      "facts": [
+        "NIGHT-A-864"
+      ],
+      "forbidden": [
+        "DAY-A-731"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_e7ce1eebc94674c92dc4"
+      ]
+    },
+    "stress-001": {
+      "lane": "mixed_image_body",
+      "facts": [
+        "SIGN-A-529"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_e7ce1eebc94674c92dc4"
+      ]
+    },
+    "stress-002": {
+      "lane": "mixed_scan_name",
+      "facts": [
+        "Clara Lin"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_e7ce1eebc94674c92dc4"
+      ]
+    },
+    "stress-003": {
+      "lane": "mixed_cross_page",
+      "facts": [
+        "DAY-A-731",
+        "2026-11-17"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_e7ce1eebc94674c92dc4"
+      ]
+    },
+    "stress-004": {
+      "lane": "mixed_absent",
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "stress-005": {
+      "lane": "mixed_scan_page",
+      "facts": [
+        "NIGHT-B-864"
+      ],
+      "forbidden": [
+        "DAY-B-731"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_370c062d41f913dd59b8"
+      ]
+    },
+    "stress-006": {
+      "lane": "mixed_image_body",
+      "facts": [
+        "SIGN-B-529"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_370c062d41f913dd59b8"
+      ]
+    },
+    "stress-007": {
+      "lane": "mixed_scan_name",
+      "facts": [
+        "Nolan Wu"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_370c062d41f913dd59b8"
+      ]
+    },
+    "stress-008": {
+      "lane": "mixed_cross_page",
+      "facts": [
+        "DAY-B-731",
+        "2026-11-23"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_370c062d41f913dd59b8"
+      ]
+    },
+    "stress-009": {
+      "lane": "mixed_absent",
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "stress-010": {
+      "lane": "chinese_name",
+      "facts": [
+        "\u6797\u60a6"
+      ],
+      "forbidden": [
+        "\u9648\u6d69"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_e68ae9579fbc4c1d0579"
+      ]
+    },
+    "stress-011": {
+      "lane": "chinese_amount",
+      "facts": [
+        "4800"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_e68ae9579fbc4c1d0579"
+      ]
+    },
+    "stress-012": {
+      "lane": "chinese_place",
+      "facts": [
+        "\u4e0a\u6d77\u5e02\u6d66\u4e1c\u65b0\u533a"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_e68ae9579fbc4c1d0579"
+      ]
+    },
+    "stress-013": {
+      "lane": "chinese_condition",
+      "facts": [
+        "24"
+      ],
+      "forbidden": [
+        "72"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_e68ae9579fbc4c1d0579"
+      ]
+    },
+    "stress-014": {
+      "lane": "chinese_absent",
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "stress-015": {
+      "lane": "chinese_name",
+      "facts": [
+        "\u5468\u5b81"
+      ],
+      "forbidden": [
+        "\u8bb8\u5c9a"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_154452ff7c7dca8097fd"
+      ]
+    },
+    "stress-016": {
+      "lane": "chinese_amount",
+      "facts": [
+        "6200"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_154452ff7c7dca8097fd"
+      ]
+    },
+    "stress-017": {
+      "lane": "chinese_place",
+      "facts": [
+        "\u82cf\u5dde\u5e02\u5de5\u4e1a\u56ed\u533a"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_154452ff7c7dca8097fd"
+      ]
+    },
+    "stress-018": {
+      "lane": "chinese_condition",
+      "facts": [
+        "36"
+      ],
+      "forbidden": [
+        "96"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_154452ff7c7dca8097fd"
+      ]
+    },
+    "stress-019": {
+      "lane": "chinese_absent",
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "stress-020": {
+      "lane": "table_merged_header",
+      "facts": [
+        "420"
+      ],
+      "forbidden": [
+        "42"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_0775dffd822295ef2634"
+      ]
+    },
+    "stress-021": {
+      "lane": "table_merged_region",
+      "facts": [
+        "8"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_0775dffd822295ef2634"
+      ]
+    },
+    "stress-022": {
+      "lane": "table_continuation",
+      "facts": [
+        "930"
+      ],
+      "forbidden": [
+        "93"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_0775dffd822295ef2634"
+      ]
+    },
+    "stress-023": {
+      "lane": "table_footnote",
+      "facts": [
+        "680"
+      ],
+      "forbidden": [
+        "620"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_0775dffd822295ef2634"
+      ]
+    },
+    "stress-024": {
+      "lane": "table_absent",
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "stress-025": {
+      "lane": "table_merged_header",
+      "facts": [
+        "1420"
+      ],
+      "forbidden": [
+        "1042"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_77bc298f7e82fc0cc561"
+      ]
+    },
+    "stress-026": {
+      "lane": "table_merged_region",
+      "facts": [
+        "8"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "p_77bc298f7e82fc0cc561"
+      ]
+    },
+    "stress-027": {
+      "lane": "table_continuation",
+      "facts": [
+        "1930"
+      ],
+      "forbidden": [
+        "1093"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_77bc298f7e82fc0cc561"
+      ]
+    },
+    "stress-028": {
+      "lane": "table_footnote",
+      "facts": [
+        "1680"
+      ],
+      "forbidden": [
+        "1620"
+      ],
+      "supported": true,
+      "evidence": [
+        "p_77bc298f7e82fc0cc561"
+      ]
+    },
+    "stress-029": {
+      "lane": "table_absent",
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    }
+  },
+  "source_hashes": {
+    "free": {
+      "p_e7ce1eebc94674c92dc4": "a4c28a62ded53275ad6ec379ad0363ccabf3013a8d9f72e5c3f9b2fe964d4dc7",
+      "p_370c062d41f913dd59b8": "37205e3e5894171c2406e0eb6cd9148f2fee186acabe44c930c73da76e983244",
+      "p_e68ae9579fbc4c1d0579": "e3fd18208b8dbb6f0cb59b14dc199658f1a4be96f0bf55d08fbbf7b940473d3e",
+      "p_154452ff7c7dca8097fd": "7225a65a746e53bd1d49505716d11d95428291bdd84ce5aba00b0bca6442fafc",
+      "p_0775dffd822295ef2634": "65904566e7733ee52a49c7883343e93ede323b639b5bca0ba588d6256695534b",
+      "p_77bc298f7e82fc0cc561": "fa1f46a4d1362008373f07ff703b2ea63f6d3a7329cd9c4b6362fe1e61de4bcf"
+    },
+    "mistral-ocr": {
+      "p_e7ce1eebc94674c92dc4": "9e79254e7b61a52d2295c0b8f531423945b7cc7c6ca646d646196f790e360b64",
+      "p_370c062d41f913dd59b8": "111eda7cfc24238bfbd22dc09ea8cd8daaee308af52f4f4d1d0c80ca7b39e553",
+      "p_e68ae9579fbc4c1d0579": "4682b0ada22379e06a92d0ffc71d51200461be1250ceb86c744c787ea4b3f180",
+      "p_154452ff7c7dca8097fd": "3e353004a60f8cb09ee44b9cb17b25c4dbd3250a7c7fbfab9a447635fe7be9fc",
+      "p_0775dffd822295ef2634": "2c30a2e3e87a3fd4dcf319df652e21e7a22f0d6ecb3b63ac0437f69c34c0b03f",
+      "p_77bc298f7e82fc0cc561": "9302729d4380917d723246eb705ed82deb919467fcba691de9bf544b3c2fb2f5"
+    },
+    "deepdoc": {
+      "p_e7ce1eebc94674c92dc4": "423c67191bd765732ebd7ad19c88a17898339ce75bac8ebdd97b30409b553cf3",
+      "p_370c062d41f913dd59b8": "f7986f345a3cd7c8a9057e1bd5e8c317479510da63cc14f952f0b568506d13c8",
+      "p_e68ae9579fbc4c1d0579": "77d3b44e475f69001ada9b4b8956381f43387558cc1517125816239da5ba2ca9",
+      "p_154452ff7c7dca8097fd": "7b1149df9543aa554cf953179053ab47e84d50cd98a2ff54fb9d652c7ce75574",
+      "p_0775dffd822295ef2634": "4a19a15aa62489a4673060801d2b15a8178c853b0ca2902b76b3dc557e6dd9de",
+      "p_77bc298f7e82fc0cc561": "8af9de2e62b46de5d7fdec1ca611a19814dbb6a0485b6405f774d8ca11896b10"
+    }
+  },
+  "scoring": "NFKC/casefold/whitespace normalization; numeric digit boundaries; citations removed; exact unknown for absent facts.",
+  "model_context_tokens": 1048576,
+  "reasoning_effort": "low",
+  "profile": "Provider maximum output; same parsed datasets and answer settings; fresh answers."
+}

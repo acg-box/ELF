@@ -1,0 +1,326 @@
+{
+  "expected_answers": 180,
+  "retained_answers": 180,
+  "scores": {
+    "deepdoc-native-chat": {
+      "completed": 30,
+      "failed": 0,
+      "correct": 27,
+      "categories": {
+        "mixed": {
+          "correct": 10,
+          "count": 10
+        },
+        "chinese": {
+          "correct": 10,
+          "count": 10
+        },
+        "table": {
+          "correct": 7,
+          "count": 10
+        }
+      },
+      "median_seconds": 5.157487124961335,
+      "max_common_tokens": null,
+      "shared_reader_truncated": 0
+    },
+    "deepdoc-retrieval": {
+      "completed": 30,
+      "failed": 0,
+      "correct": 29,
+      "categories": {
+        "mixed": {
+          "correct": 10,
+          "count": 10
+        },
+        "chinese": {
+          "correct": 10,
+          "count": 10
+        },
+        "table": {
+          "correct": 9,
+          "count": 10
+        }
+      },
+      "median_seconds": 5.218343457992887,
+      "max_common_tokens": 1998,
+      "shared_reader_truncated": 0
+    },
+    "free-native-chat": {
+      "completed": 30,
+      "failed": 0,
+      "correct": 26,
+      "categories": {
+        "mixed": {
+          "correct": 10,
+          "count": 10
+        },
+        "chinese": {
+          "correct": 8,
+          "count": 10
+        },
+        "table": {
+          "correct": 8,
+          "count": 10
+        }
+      },
+      "median_seconds": 5.199619896011427,
+      "max_common_tokens": null,
+      "shared_reader_truncated": 0
+    },
+    "free-retrieval": {
+      "completed": 30,
+      "failed": 0,
+      "correct": 28,
+      "categories": {
+        "mixed": {
+          "correct": 10,
+          "count": 10
+        },
+        "chinese": {
+          "correct": 8,
+          "count": 10
+        },
+        "table": {
+          "correct": 10,
+          "count": 10
+        }
+      },
+      "median_seconds": 5.380538479017559,
+      "max_common_tokens": 1730,
+      "shared_reader_truncated": 0
+    },
+    "mistral-ocr-native-chat": {
+      "completed": 30,
+      "failed": 0,
+      "correct": 30,
+      "categories": {
+        "mixed": {
+          "correct": 10,
+          "count": 10
+        },
+        "chinese": {
+          "correct": 10,
+          "count": 10
+        },
+        "table": {
+          "correct": 10,
+          "count": 10
+        }
+      },
+      "median_seconds": 5.268273208494065,
+      "max_common_tokens": null,
+      "shared_reader_truncated": 0
+    },
+    "mistral-ocr-retrieval": {
+      "completed": 30,
+      "failed": 0,
+      "correct": 30,
+      "categories": {
+        "mixed": {
+          "correct": 10,
+          "count": 10
+        },
+        "chinese": {
+          "correct": 10,
+          "count": 10
+        },
+        "table": {
+          "correct": 10,
+          "count": 10
+        }
+      },
+      "median_seconds": 5.06564172898652,
+      "max_common_tokens": 1963,
+      "shared_reader_truncated": 0
+    }
+  },
+  "wrong_or_failed": [
+    {
+      "condition": "deepdoc-native-chat",
+      "case_id": "stress-021",
+      "question": "Cedar matrix A: What is the current signed East Pro limit? Return the number only.",
+      "text": "12 [ID:5]",
+      "expected": {
+        "lane": "table_merged_region",
+        "facts": [
+          "8"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "p_0775dffd822295ef2634"
+        ]
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "deepdoc-native-chat",
+      "case_id": "stress-024",
+      "question": "Cedar matrix A: What is the published bank-routing number?",
+      "text": "No bank-routing number is published for Cedar matrix A [ID:1][ID:2].",
+      "expected": {
+        "lane": "table_absent",
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "deepdoc-native-chat",
+      "case_id": "stress-025",
+      "question": "Cedar matrix B: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only.",
+      "text": "1620",
+      "expected": {
+        "lane": "table_merged_header",
+        "facts": [
+          "1420"
+        ],
+        "forbidden": [
+          "1042"
+        ],
+        "supported": true,
+        "evidence": [
+          "p_77bc298f7e82fc0cc561"
+        ]
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "deepdoc-retrieval",
+      "case_id": "stress-025",
+      "question": "Cedar matrix B: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only.",
+      "text": "620",
+      "expected": {
+        "lane": "table_merged_header",
+        "facts": [
+          "1420"
+        ],
+        "forbidden": [
+          "1042"
+        ],
+        "supported": true,
+        "evidence": [
+          "p_77bc298f7e82fc0cc561"
+        ]
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "free-native-chat",
+      "case_id": "stress-015",
+      "question": "澄江验收 B: 当前负责人是谁？请只给姓名。",
+      "text": "周末 [ID:1]",
+      "expected": {
+        "lane": "chinese_name",
+        "facts": [
+          "周宁"
+        ],
+        "forbidden": [
+          "许岚"
+        ],
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "free-native-chat",
+      "case_id": "stress-016",
+      "question": "澄江验收 B: 人民币预算上限是多少？请只给数字。",
+      "text": "unknown",
+      "expected": {
+        "lane": "chinese_amount",
+        "facts": [
+          "6200"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "free-native-chat",
+      "case_id": "stress-024",
+      "question": "Cedar matrix A: What is the published bank-routing number?",
+      "text": "unknown — Cedar matrix A states no bank-routing number is published .",
+      "expected": {
+        "lane": "table_absent",
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "free-native-chat",
+      "case_id": "stress-029",
+      "question": "Cedar matrix B: What is the published bank-routing number?",
+      "text": "Unknown — no bank-routing number is published [ID:0].",
+      "expected": {
+        "lane": "table_absent",
+        "facts": [],
+        "forbidden": [],
+        "supported": false,
+        "evidence": []
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "free-retrieval",
+      "case_id": "stress-015",
+      "question": "澄江验收 B: 当前负责人是谁？请只给姓名。",
+      "text": "周末",
+      "expected": {
+        "lane": "chinese_name",
+        "facts": [
+          "周宁"
+        ],
+        "forbidden": [
+          "许岚"
+        ],
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "status": "completed",
+      "error": null
+    },
+    {
+      "condition": "free-retrieval",
+      "case_id": "stress-016",
+      "question": "澄江验收 B: 人民币预算上限是多少？请只给数字。",
+      "text": "unknown",
+      "expected": {
+        "lane": "chinese_amount",
+        "facts": [
+          "6200"
+        ],
+        "forbidden": [],
+        "supported": true,
+        "evidence": [
+          "p_154452ff7c7dca8097fd"
+        ]
+      },
+      "status": "completed",
+      "error": null
+    }
+  ]
+}

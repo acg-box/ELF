@@ -1,0 +1,50 @@
+{
+  "deepdoc-native-chat": {
+    "paid_usd": 0.015868247999999998,
+    "input_tokens": 84656,
+    "cached_input_tokens": 21376,
+    "output_tokens": 10649,
+    "max_output_tokens": 2603,
+    "requests": 60
+  },
+  "deepdoc-retrieval": {
+    "paid_usd": 0.026907419999999994,
+    "input_tokens": 35066,
+    "cached_input_tokens": 0,
+    "output_tokens": 36208,
+    "max_output_tokens": 8399,
+    "requests": 60
+  },
+  "free-native-chat": {
+    "paid_usd": 0.010747139999999999,
+    "input_tokens": 86442,
+    "cached_input_tokens": 39040,
+    "output_tokens": 5995,
+    "max_output_tokens": 623,
+    "requests": 60
+  },
+  "free-retrieval": {
+    "paid_usd": 0.010324320000000001,
+    "input_tokens": 38800,
+    "cached_input_tokens": 0,
+    "output_tokens": 7636,
+    "max_output_tokens": 759,
+    "requests": 60
+  },
+  "mistral-ocr-native-chat": {
+    "paid_usd": 0.011613059999999998,
+    "input_tokens": 91194,
+    "cached_input_tokens": 39680,
+    "output_tokens": 6407,
+    "max_output_tokens": 1097,
+    "requests": 60
+  },
+  "mistral-ocr-retrieval": {
+    "paid_usd": 0.010449719999999997,
+    "input_tokens": 44844,
+    "cached_input_tokens": 0,
+    "output_tokens": 6334,
+    "max_output_tokens": 422,
+    "requests": 60
+  }
+}

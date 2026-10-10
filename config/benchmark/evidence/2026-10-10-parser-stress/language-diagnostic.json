@@ -1,0 +1,159 @@
+[
+  {
+    "language": "eng+chi_sim",
+    "post_hoc": false,
+    "documents": [
+      {
+        "source": "p_e7ce1eebc94674c92dc4",
+        "retained": 9,
+        "total": 9,
+        "missing": [],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_370c062d41f913dd59b8",
+        "retained": 9,
+        "total": 9,
+        "missing": [],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_e68ae9579fbc4c1d0579",
+        "retained": 8,
+        "total": 8,
+        "missing": [],
+        "rmb_label_present": true
+      },
+      {
+        "source": "p_154452ff7c7dca8097fd",
+        "retained": 6,
+        "total": 8,
+        "missing": [
+          "周宁",
+          "许岚"
+        ],
+        "rmb_label_present": false
+      },
+      {
+        "source": "p_0775dffd822295ef2634",
+        "retained": 12,
+        "total": 12,
+        "missing": [],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_77bc298f7e82fc0cc561",
+        "retained": 12,
+        "total": 12,
+        "missing": [],
+        "rmb_label_present": null
+      }
+    ]
+  },
+  {
+    "language": "chi_sim+eng",
+    "post_hoc": true,
+    "documents": [
+      {
+        "source": "p_e7ce1eebc94674c92dc4",
+        "retained": 9,
+        "total": 9,
+        "missing": [],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_370c062d41f913dd59b8",
+        "retained": 9,
+        "total": 9,
+        "missing": [],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_e68ae9579fbc4c1d0579",
+        "retained": 8,
+        "total": 8,
+        "missing": [],
+        "rmb_label_present": true
+      },
+      {
+        "source": "p_154452ff7c7dca8097fd",
+        "retained": 6,
+        "total": 8,
+        "missing": [
+          "周宁",
+          "许岚"
+        ],
+        "rmb_label_present": false
+      },
+      {
+        "source": "p_0775dffd822295ef2634",
+        "retained": 12,
+        "total": 12,
+        "missing": [],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_77bc298f7e82fc0cc561",
+        "retained": 12,
+        "total": 12,
+        "missing": [],
+        "rmb_label_present": null
+      }
+    ]
+  },
+  {
+    "language": "chi_sim",
+    "post_hoc": true,
+    "documents": [
+      {
+        "source": "p_e7ce1eebc94674c92dc4",
+        "retained": 8,
+        "total": 9,
+        "missing": [
+          "SIGN-A-529"
+        ],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_370c062d41f913dd59b8",
+        "retained": 8,
+        "total": 9,
+        "missing": [
+          "SIGN-B-529"
+        ],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_e68ae9579fbc4c1d0579",
+        "retained": 8,
+        "total": 8,
+        "missing": [],
+        "rmb_label_present": true
+      },
+      {
+        "source": "p_154452ff7c7dca8097fd",
+        "retained": 6,
+        "total": 8,
+        "missing": [
+          "周宁",
+          "许岚"
+        ],
+        "rmb_label_present": true
+      },
+      {
+        "source": "p_0775dffd822295ef2634",
+        "retained": 12,
+        "total": 12,
+        "missing": [],
+        "rmb_label_present": null
+      },
+      {
+        "source": "p_77bc298f7e82fc0cc561",
+        "retained": 12,
+        "total": 12,
+        "missing": [],
+        "rmb_label_present": null
+      }
+    ]
+  }
+]

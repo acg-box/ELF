@@ -1,0 +1,20 @@
+{
+  "config/benchmark/fixtures/parser-stress-v1/Parser.Dockerfile": "4c97da37578a6e87726738260b9da810fa52c4d7ad9832430cd84b92a9d17535",
+  "config/benchmark/fixtures/parser-stress-v1/README.md": "539bb4e08e6ac05b425e79e087003d92120d4cce377deb3f247421a2e6ea9ffb",
+  "config/benchmark/fixtures/parser-stress-v1/generate.py": "a2da0b2b00936848a7d208e5a43e6eca243e02b09524a150d03ab1aa04203218",
+  "config/benchmark/fixtures/parser-stress-v1/oracle-source.json": "98e7e128e5c9ea26181e6c81698ed439f31b9e87562724f393ab0196b95721d6",
+  "config/benchmark/fixtures/parser-stress-v1/p_0775dffd822295ef2634.pdf": "c17164262d6cdf7ad336e69509ba6573bf9a939727fb497c3ad643a42c524b82",
+  "config/benchmark/fixtures/parser-stress-v1/p_154452ff7c7dca8097fd.pdf": "353b34d2308d8a5233be68294fec3976160f31e45568eec88f018844242de863",
+  "config/benchmark/fixtures/parser-stress-v1/p_370c062d41f913dd59b8.pdf": "5f26d53ee8600567fb6dcb3759ccc734ac7e211169bfd86d6286195b3bdc0b34",
+  "config/benchmark/fixtures/parser-stress-v1/p_77bc298f7e82fc0cc561.pdf": "38f4b4e447ff484952faf8ecc87eef6dffce9c591e27762787584cfd184b9419",
+  "config/benchmark/fixtures/parser-stress-v1/p_e68ae9579fbc4c1d0579.pdf": "144dd5d202741a6ca350725d016de1425fcc6f678b15a296e1a9e50f760f71ab",
+  "config/benchmark/fixtures/parser-stress-v1/p_e7ce1eebc94674c92dc4.pdf": "9a2e9971db7b53f8c7ed5143f2043a9fa7ad78cdd52013096657694a83aa740c",
+  "scripts/benchmark-document-ocr.py": "d7e2315db30890f1b35855a78a8bb9d7f4c34b19173982aeefecfdad229ebb3b",
+  "scripts/benchmark-native-comparison.py": "fd31be2102c1fca2e073605ff78343d8fa20bee45329bbe330edfbdc8f825128",
+  "scripts/benchmark-ragflow-parsers.py": "8bffaac3809980fcec134df59e3b627c321f14d6e6c74f4c13d24cdc14f4e4a8",
+  "scripts/benchmark_budget.py": "a8d615579dc3397e3893a3d2f025e6035e76655c36f5e2599f071577fdfada47",
+  "scripts/benchmark_deep/native_sidecar.py": "834e8689b55d5a0c577061e847fa5c817cff8a3f8a8b0c4903b9b679a14d8a6a",
+  "scripts/benchmark_deep/page_ocr.py": "4f644340ae30df1f31085fc765bb303e3e6c83fbaa91bbb783b7d5de8e30976f",
+  "scripts/benchmark_deep/parser_stress.py": "0d50eaaba837740f9c04a324ae51c47780ffe1e13168f0ed8bd643e65b23d791",
+  "scripts/benchmark_runner/answers.py": "41bbe197e63bd94bd602180dd8d52cb5dddcdefe8bd59488715ab91844b7e17c"
+}

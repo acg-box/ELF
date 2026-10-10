@@ -1,0 +1,30 @@
+{
+  "first_ordinal": 62667,
+  "last_ordinal": 63026,
+  "by_kind": {
+    "chat": {
+      "requests": 180,
+      "paid_usd": 0.085876788,
+      "statuses": {
+        "completed": 180
+      },
+      "input_tokens": 377690,
+      "cached_input_tokens": 100096,
+      "output_tokens": 73229
+    },
+    "embedding": {
+      "requests": 180,
+      "paid_usd": 3.312e-05,
+      "statuses": {
+        "completed": 180
+      },
+      "input_tokens": 3312,
+      "cached_input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "new_paid_usd": 0.085909908,
+  "cumulative_paid_usd": 16.01651050799961,
+  "cumulative_conservative_exposure_usd": 17.004390807999453,
+  "ceiling_usd": 20
+}
