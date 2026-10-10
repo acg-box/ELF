@@ -57,6 +57,12 @@ class BudgetTests(TestCase):
         self.assertGreater(reservation(10000, "chat", output), 1.13)
         self.assertNotIn("max_completion_tokens", body)
 
+    def test_capability_profile_overrides_native_internal_output_limits(self):
+        body, _, limit = prepare_request({"max_tokens": 4096}, "chat", chat_max_tokens=943718,
+                                         reasoning_effort="max", force_chat_max_tokens=True)
+        self.assertEqual(limit, 943718)
+        self.assertEqual(body["reasoning"], {"effort": "max"})
+
     def test_explicit_embedding_provider_preserves_model_dimensions_and_no_fallback(self):
         for provider in ("deepinfra", "nebius"):
             body, _, output = prepare_request({"input": "fact", "dimensions": 1536,
