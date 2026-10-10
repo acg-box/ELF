@@ -22,10 +22,14 @@ from benchmark_runner.runtime import REPO
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--artifact-root', required=True, type=Path)
+    parser.add_argument('--manifest', type=Path, default=Path('config/benchmark/ragflow-v1.json'))
     parser.add_argument('--public-key', required=True, type=Path,
                         help='conf/public.pem from the pinned native server image')
     parser.add_argument('--url', default='http://127.0.0.1:19380')
-    parser.add_argument('--workload-group', choices=('behavior','mutations','documents','scale-100'), default='behavior')
+    parser.add_argument('--workload-group', choices=('behavior','mutations','documents','complex-documents','scale-100'), default='behavior')
+    parser.add_argument("--ingest-seconds", type=int, default=600)
+    parser.add_argument("--source-labels", action="store_true")
+    parser.add_argument("--reader-max-tokens", type=int, choices=(4096, 8192), default=4096)
     args = parser.parse_args()
     auth = None
     def api(method, path, value=None):
@@ -58,8 +62,8 @@ def main():
     env = {**os.environ, 'RAGFLOW_API_KEY':token['token'],
            'RAGFLOW_EMBEDDING_MODEL':'qwen/qwen3-embedding-8b@elf_benchmark@OpenAI-API-Compatible'}
     result = subprocess.run(['cargo','make','benchmark-deep','--target','ragflow',
-        '--manifest','config/benchmark/ragflow-v1.json','--artifact-root',str(args.artifact_root),
-        '--workload-group',args.workload_group,'--max-seconds','2400','--ingest-seconds','600'],cwd=REPO,env=env)
+        '--manifest',str(args.manifest),'--artifact-root',str(args.artifact_root),
+        '--workload-group',args.workload_group,'--max-seconds','2400','--ingest-seconds',str(args.ingest_seconds), '--reader-max-tokens',str(args.reader_max_tokens), *(['--source-labels'] if args.source_labels else [])],cwd=REPO,env=env)
     return result.returncode
 
 

@@ -6,7 +6,15 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-10-10
+
+- Added a fresh Hindsight 0.10.3 comparison, a uniform reader output limit, and
+  explicit source identities. Preserved all earlier attempts and evaluator gaps.
+
 ## 2026-10-09
+
+- Added a separate complex PDF/OCR comparison and fixed source fixtures. Preserved
+  the prior text-only evidence and documented native ingestion continuation.
 
 - Added a partial recovery checkpoint with complete ELF scale results, retained
   failures, cumulative accounting, and explicit pending competitor conditions.

@@ -1,0 +1,84 @@
+{
+  "diagnostic_empty_cell_rows": 12,
+  "groups": [
+    {
+      "condition": "elf-reader8k-v1",
+      "groups": {
+        "absent": [
+          4,
+          4
+        ],
+        "columns": [
+          2,
+          4
+        ],
+        "crosspage": [
+          4,
+          4
+        ],
+        "scan": [
+          2,
+          4
+        ],
+        "table": [
+          3,
+          4
+        ]
+      }
+    },
+    {
+      "condition": "ragflow-reader8k-v1",
+      "groups": {
+        "absent": [
+          4,
+          4
+        ],
+        "columns": [
+          4,
+          4
+        ],
+        "crosspage": [
+          3,
+          4
+        ],
+        "scan": [
+          2,
+          4
+        ],
+        "table": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "condition": "hindsight-provenance-v2",
+      "groups": {
+        "absent": [
+          4,
+          4
+        ],
+        "columns": [
+          0,
+          4
+        ],
+        "crosspage": [
+          2,
+          4
+        ],
+        "scan": [
+          1,
+          4
+        ],
+        "table": [
+          1,
+          4
+        ]
+      }
+    }
+  ],
+  "no_extra_answer_identifiers": true,
+  "primary_answered": 72,
+  "primary_scored": 60,
+  "raw_native_payloads_unchanged": true
+}

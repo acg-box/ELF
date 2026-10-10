@@ -1,0 +1,6 @@
+{
+  "boundary": "Same sources and shared reader. RAGFlow raw PDFs; ELF and Hindsight use a free Poppler/Tesseract parser. Repeated rows and missing conditions are not independent questions.",
+  "case_rows": 288,
+  "conditions": 12,
+  "unique_questions": 24
+}

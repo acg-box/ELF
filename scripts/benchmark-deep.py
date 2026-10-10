@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -14,10 +15,12 @@ from pathlib import Path
 
 from benchmark_deep.fixtures import WORKLOAD_GROUPS, workload
 from benchmark_deep.resume import prepare_sag_resume
+from benchmark_deep.ragflow_resume import prepare_ragflow_resume
 from benchmark_deep.hindsight_resume import prepare_hindsight_resume
 from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS
 from benchmark_runner.answers import ANSWER_BATCH_SIZE, request_answers
 from benchmark_deep.scoring import score_answer
+from benchmark_deep.contexts import reader_context
 from benchmark_runner.baselines import BASELINES, target_contract
 from benchmark_runner.docker import TARGET_IMAGE_ENV, cleanup_project, compose_project_logs, image_id
 from benchmark_runner.providers import provider_environment
@@ -36,10 +39,25 @@ def main():
                         help="Run a fixed group in fresh native state; default is all groups")
     parser.add_argument("--qmd-host", action="store_true")
     parser.add_argument("--native-only", action="store_true")
+    parser.add_argument("--reader-max-tokens", type=int, choices=(4096, 8192),
+                        help="Shared reader output limit; default 4096 or inherited on replay")
+    parser.add_argument("--source-labels", action=argparse.BooleanOptionalAction, default=None,
+                        help="Expose native source identities to the shared reader; inherited on replay")
     parser.add_argument("--reanswer", type=Path)
+    parser.add_argument("--refresh-hindsight-contexts", action="store_true",
+                        help="Reformat retained native recall responses with separate observations and source facts")
+    parser.add_argument("--retry-answer-errors", action="store_true",
+                        help="With --reanswer, preserve every completed answer and retry only missing reader outputs")
     parser.add_argument("--resume-sag", type=Path, help="Continue a retained failed SAG scale-1000 ingest in copied state")
     parser.add_argument("--resume-hindsight", type=Path, help="Continue a retained Hindsight checkpoint after a failed scale-1000 run")
+    parser.add_argument("--resume-ragflow", type=Path, help="Continue retained native PDF parsing, then rerun all questions")
     args = parser.parse_args()
+    if args.refresh_hindsight_contexts and (not args.reanswer or args.target != "hindsight" or args.retry_answer_errors):
+        parser.error("--refresh-hindsight-contexts requires a full Hindsight --reanswer replay")
+    if args.retry_answer_errors and not args.reanswer:
+        parser.error("--retry-answer-errors requires --reanswer")
+    if args.resume_ragflow and (args.target != "ragflow" or args.reanswer or args.resume_sag or args.resume_hindsight):
+        parser.error("--resume-ragflow requires RAGFlow and cannot combine with other recovery modes")
     if args.resume_hindsight and (args.target != "hindsight" or args.workload_group != "scale-1000" or args.reanswer or args.resume_sag):
         parser.error("--resume-hindsight requires Hindsight scale-1000 and cannot combine with other recovery modes")
     if args.resume_sag and (args.target != "sag-engine" or args.workload_group != "scale-1000" or args.reanswer):
@@ -65,14 +83,20 @@ def main():
             raise ValueError('Reanswer must preserve the retained workload group')
         inputs = json.loads((args.reanswer / "input/workload.json").read_text())
         oracle = json.loads((args.reanswer / "oracle.json").read_text())
-        if retained["target"]["id"] != args.target or retained["providers"] != manifest["providers"]:
-            raise ValueError("Reanswer must preserve target and providers")
+        if retained["target"]["id"] != args.target or retained["target"].get("pin") != target.get("pin") or retained["target"].get("image") != target.get("image") or retained["providers"] != manifest["providers"]:
+            raise ValueError("Reanswer must preserve target, image pin, and providers")
         if hashlib.sha256(json.dumps(inputs, sort_keys=True).encode()).hexdigest() != retained["workload_sha256"]:
             raise ValueError("Retained deep workload changed")
         if (inputs, oracle) != workload(workload_group):
             raise ValueError("Reanswer requires the unchanged versioned workload and oracle")
     else:
         inputs, oracle = workload(workload_group)
+    source_labels = args.source_labels if args.source_labels is not None else bool((retained or {}).get("answer_protocol", {}).get("source_labels"))
+    reader_max_tokens = args.reader_max_tokens or (retained or {}).get("answer_protocol", {}).get("max_tokens", 4096)
+    if args.retry_answer_errors and reader_max_tokens != retained.get("answer_protocol", {}).get("max_tokens", 4096):
+        parser.error("Reader error recovery must preserve the output limit; use full replay to change it")
+    if args.retry_answer_errors and source_labels != bool(retained.get("answer_protocol", {}).get("source_labels")):
+        parser.error("Reader error recovery must preserve the context protocol")
     write_json(root / "input/workload.json", inputs)
     write_json(root / "oracle.json", oracle)
     image = target.get("image", manifest["runner"]["image"])
@@ -82,6 +106,8 @@ def main():
     provider = {} if args.native_only else provider_environment(dict(os.environ), manifest["providers"], inside_container=not args.qmd_host)
     env = {**os.environ, **provider,
         "BENCHMARK_IMAGE": image,
+        **({"HINDSIGHT_SERVER_IMAGE": target["pin"]["value"]}
+           if args.target == "hindsight" and target.get("pin", {}).get("kind") == "container_image" else {}),
         **({TARGET_IMAGE_ENV[args.target]: image} if args.target in TARGET_IMAGE_ENV else {}),
         "BENCHMARK_INPUT_HOST": str(root / "input"), "BENCHMARK_ARTIFACT_HOST": str(root / "artifacts"),
         "BENCHMARK_DEEP_INGEST_TIMEOUT_SECONDS": str(args.ingest_seconds),
@@ -89,6 +115,8 @@ def main():
     (root / "artifacts").mkdir()
     continuation = (prepare_sag_resume(args.resume_sag, root, inputs, oracle, manifest["providers"], digest)
                     if args.resume_sag else None)
+    if args.resume_ragflow:
+        continuation = prepare_ragflow_resume(args.resume_ragflow, root, inputs, oracle, manifest["providers"], digest)
     hindsight_override = None
     if args.resume_hindsight:
         continuation, hindsight_override = prepare_hindsight_resume(
@@ -132,21 +160,29 @@ def main():
         write_json(root / "cleanup.json", cleanup)
     raw_path = root / "artifacts/deep-result.json"
     native = retained["native"] if retained else (json.loads(raw_path.read_text()) if raw_path.exists() else {"results": []})
+    if args.refresh_hindsight_contexts:
+        from benchmark_targets.hindsight import contexts_from_native
+        native = copy.deepcopy(native)
+        for row in native["results"]:
+            if row.get("case_id") and row.get("status") == "completed":
+                row["contexts"] = contexts_from_native(row["native"])
     by_id = {r["case_id"]: r for r in native["results"] if r.get("case_id")}
     host = None if args.native_only else provider_environment(dict(os.environ), manifest["providers"], inside_container=False)
     queries = [a for a in inputs["actions"] if a["action"] == "query"]
-    answers, responses = {}, []
+    answers = ({s["case_id"]: s["answer"] for s in retained["scores"] if s["answer"] is not None}
+               if args.retry_answer_errors else {})
+    responses = []
     answer_errors = []
     available = []
     for query in queries:
         row = by_id.get(query["case_id"], {})
-        if row.get("status") == "completed":
-            context = "\n".join(c["text"] for c in row.get("contexts", []))[:12000]
+        if row.get("status") == "completed" and query["case_id"] not in answers:
+            context = reader_context(row.get("contexts", []), source_labels)
             available.append({"case_id": query["case_id"], "question": query["question"], "context": [context]})
     for offset in range(0, 0 if args.native_only else len(available), ANSWER_BATCH_SIZE):
         batch = available[offset:offset+ANSWER_BATCH_SIZE]
         try:
-            response = request_answers(batch, host)
+            response = request_answers(batch, host, max_tokens=reader_max_tokens)
             responses.append(response)
             write_json(root / "answer-responses.json", responses)
             choice = response["choices"][0]
@@ -165,7 +201,7 @@ def main():
     for case_id, expected in oracle.items():
         row, answer = by_id.get(case_id, {}), answers.get(case_id)
         contexts = row.get("contexts", [])
-        supplied_context = "\n".join(c["text"] for c in contexts)[:12000]
+        supplied_context = reader_context(contexts, source_labels)
         context = supplied_context.casefold()
         correctness = score_answer(expected, answer, supplied_context)
         scores.append({"case_id": case_id, "lane": expected["lane"],
@@ -175,7 +211,9 @@ def main():
             "duration_seconds": row.get("duration_seconds")})
     bundle = {"schema": "elf.deep_bundle/v2", "target": target, "image_digest": digest,
         "workload_group": workload_group,
-        "answer_protocol": {"revision": "isolated_case_v1", "batch_size": ANSWER_BATCH_SIZE,
+        "answer_protocol": {"revision": "source_labeled_case_v1" if source_labels else "isolated_case_v1",
+                            "source_labels": source_labels, "batch_size": ANSWER_BATCH_SIZE,
+                            "max_tokens": reader_max_tokens,
                             "grounding": "Expected factual values must occur in the case's supplied context."},
         "providers": manifest["providers"], "source": source,
         "execution_limits": (retained.get("execution_limits", {"status": "not_recorded_in_original_bundle"})
@@ -194,9 +232,18 @@ def main():
         bundle["continuation"] = continuation
         bundle["combined_attempt_duration_seconds"] = continuation["original_duration_seconds"] + bundle["duration_seconds"]
     if retained:
-        bundle["retrieval_source"] = retained["source"]
-        bundle["retrieval_runtime"] = retained["runtime"]
+        bundle["retrieval_source"] = retained.get("retrieval_source", retained["source"])
+        bundle["retrieval_runtime"] = retained.get("retrieval_runtime", retained["runtime"])
         bundle["retrieval_bundle_sha256"] = hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest()
+    if args.refresh_hindsight_contexts:
+        bundle["context_recovery"] = {"revision": "hindsight_separate_observations_v1",
+            "boundary": "Reformat the same top-five native hits; retain each source fact once. No corpus or oracle fallback and no new retrieval.",
+            "source_bundle_sha256": hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest()}
+    if args.retry_answer_errors:
+        bundle["answer_recovery"] = {"mode": "missing_outputs_only",
+            "source_bundle_sha256": hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest(),
+            "retained_completed_answers": sum(s["answer"] is not None for s in retained["scores"]),
+            "retried_cases": [q["case_id"] for q in available]}
     write_json(root / "bundle.json", bundle)
     print(json.dumps(bundle["coverage"]))
     passed = (all(s["execution"] == "completed" for s in scores) if args.native_only

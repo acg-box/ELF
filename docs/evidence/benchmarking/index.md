@@ -9,6 +9,8 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [Complex PDF and OCR comparison](2026-10-09-complex-documents.md): native parsing, free-parser comparators, retained timeout, and bounded accounting.
+
 - [Repository memory repair pilot](2026-10-07-repository-replay.md): real source edits, indexing-readiness repair, bounded format recovery, and API accounting.
 
 - [Bounded native calibration](2026-10-07-bounded-calibration.md): API accounting, lifecycle visibility, competitor-mode limits, and question repairs.

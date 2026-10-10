@@ -1,0 +1,2097 @@
+[
+  {
+    "answer_errors": [
+      {
+        "cases": [
+          "complex-007"
+        ],
+        "failure": "Shared reader exceeded its output limit"
+      }
+    ],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": {
+      "mode": "missing_outputs_only",
+      "retained_completed_answers": 22,
+      "retried_cases": [
+        "complex-007",
+        "complex-020"
+      ],
+      "source_bundle_sha256": "fb09528fc0dab8e24d3d61c555f39d45d67557d772c42531268335e885b9b8ca"
+    },
+    "bundle_sha256": "7225d8603528a556f119c7b0b12c9253e55af704df80ed798606ad4f9a8fd4ba",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-68d2e5e54a22-postgres-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopped \n Container elfdeep-68d2e5e54a22-qdrant-1 Removing \n Container elfdeep-68d2e5e54a22-qdrant-1 Removed \n Container elfdeep-68d2e5e54a22-postgres-1 Stopped \n Container elfdeep-68d2e5e54a22-postgres-1 Removing \n Container elfdeep-68d2e5e54a22-postgres-1 Removed \n Volume elfdeep-68d2e5e54a22_qdrant-data Removing \n Network elfdeep-68d2e5e54a22_default Removing \n Volume elfdeep-68d2e5e54a22_qdrant-data Removed \n Volume elfdeep-68d2e5e54a22_postgres-data Removing \n Volume elfdeep-68d2e5e54a22_postgres-data Removed \n Network elfdeep-68d2e5e54a22_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 23,
+      "correct": 15,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 33.415653834003024,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 900,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 1,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "elf-errors-v3",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "fb09528fc0dab8e24d3d61c555f39d45d67557d772c42531268335e885b9b8ca",
+    "retrieval_source": {
+      "content_sha256": "c102fede88d7894187b91837cc0696820a844eac9b72c60a42a530feb0e6b108",
+      "dirty": true,
+      "head": "d9397ffae631c37d0d51bb2262d274f5f3d19bbb",
+      "status_sha256": "4897e9e86c1ac96a5ab80c1c2e263e945837c0246b8820bc4a31f3cdfc5f68a0"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "810430165a741bc71b0113037f7fb25c7269b9c243947dc9e34665bbdb45acbf",
+      "dirty": true,
+      "head": "1dff934e1fe09e1fe5e06b55f2dc09e50ab413be",
+      "status_sha256": "ffdba1ab4c5352d0e304eed841fd55aef26a00409db5e2d57b12a836afde6fdf"
+    },
+    "target": {
+      "adapter": "elf",
+      "build_target": "elf-runtime",
+      "dockerfile": "docker/benchmark/Dockerfile",
+      "id": "elf",
+      "image": "elf-benchmark-elf:full-v2",
+      "native_deviations": {
+        "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+        "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+      },
+      "pin": {
+        "kind": "benchmark_source_commit"
+      },
+      "role": "source_linked_agent_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [
+      {
+        "cases": [
+          "complex-007"
+        ],
+        "failure": "Shared reader exceeded its output limit"
+      },
+      {
+        "cases": [
+          "complex-020"
+        ],
+        "failure": "Shared reader exceeded its output limit"
+      }
+    ],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "fb09528fc0dab8e24d3d61c555f39d45d67557d772c42531268335e885b9b8ca",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-68d2e5e54a22-postgres-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopped \n Container elfdeep-68d2e5e54a22-qdrant-1 Removing \n Container elfdeep-68d2e5e54a22-qdrant-1 Removed \n Container elfdeep-68d2e5e54a22-postgres-1 Stopped \n Container elfdeep-68d2e5e54a22-postgres-1 Removing \n Container elfdeep-68d2e5e54a22-postgres-1 Removed \n Volume elfdeep-68d2e5e54a22_qdrant-data Removing \n Network elfdeep-68d2e5e54a22_default Removing \n Volume elfdeep-68d2e5e54a22_qdrant-data Removed \n Volume elfdeep-68d2e5e54a22_postgres-data Removing \n Volume elfdeep-68d2e5e54a22_postgres-data Removed \n Network elfdeep-68d2e5e54a22_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 22,
+      "correct": 14,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 156.1261231660028,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 900,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 1,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 1,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "elf-labeled-v2",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "7441bfe9e47b3482ba74970f0b360a215f81294051f13c6992c27fabc9557c43",
+    "retrieval_source": {
+      "content_sha256": "c102fede88d7894187b91837cc0696820a844eac9b72c60a42a530feb0e6b108",
+      "dirty": true,
+      "head": "d9397ffae631c37d0d51bb2262d274f5f3d19bbb",
+      "status_sha256": "4897e9e86c1ac96a5ab80c1c2e263e945837c0246b8820bc4a31f3cdfc5f68a0"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "810430165a741bc71b0113037f7fb25c7269b9c243947dc9e34665bbdb45acbf",
+      "dirty": true,
+      "head": "4ed9851f35f8583e764a6be2852c84ed52a96282",
+      "status_sha256": "ffdba1ab4c5352d0e304eed841fd55aef26a00409db5e2d57b12a836afde6fdf"
+    },
+    "target": {
+      "adapter": "elf",
+      "build_target": "elf-runtime",
+      "dockerfile": "docker/benchmark/Dockerfile",
+      "id": "elf",
+      "image": "elf-benchmark-elf:full-v2",
+      "native_deviations": {
+        "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+        "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+      },
+      "pin": {
+        "kind": "benchmark_source_commit"
+      },
+      "role": "source_linked_agent_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "max_tokens": 8192,
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "a5e10940543c37fa7690b6a3574de764b0da6d1d82afaac8ebabd07141d1e19f",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-68d2e5e54a22-postgres-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopped \n Container elfdeep-68d2e5e54a22-qdrant-1 Removing \n Container elfdeep-68d2e5e54a22-qdrant-1 Removed \n Container elfdeep-68d2e5e54a22-postgres-1 Stopped \n Container elfdeep-68d2e5e54a22-postgres-1 Removing \n Container elfdeep-68d2e5e54a22-postgres-1 Removed \n Volume elfdeep-68d2e5e54a22_qdrant-data Removing \n Network elfdeep-68d2e5e54a22_default Removing \n Volume elfdeep-68d2e5e54a22_qdrant-data Removed \n Volume elfdeep-68d2e5e54a22_postgres-data Removing \n Volume elfdeep-68d2e5e54a22_postgres-data Removed \n Network elfdeep-68d2e5e54a22_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 24,
+      "correct": 17,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 166.40232504199957,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 900,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "elf-reader8k-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "fb09528fc0dab8e24d3d61c555f39d45d67557d772c42531268335e885b9b8ca",
+    "retrieval_source": {
+      "content_sha256": "c102fede88d7894187b91837cc0696820a844eac9b72c60a42a530feb0e6b108",
+      "dirty": true,
+      "head": "d9397ffae631c37d0d51bb2262d274f5f3d19bbb",
+      "status_sha256": "4897e9e86c1ac96a5ab80c1c2e263e945837c0246b8820bc4a31f3cdfc5f68a0"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "810430165a741bc71b0113037f7fb25c7269b9c243947dc9e34665bbdb45acbf",
+      "dirty": true,
+      "head": "d84610b190937702e6c54cc07ff79492143624f9",
+      "status_sha256": "ffdba1ab4c5352d0e304eed841fd55aef26a00409db5e2d57b12a836afde6fdf"
+    },
+    "target": {
+      "adapter": "elf",
+      "build_target": "elf-runtime",
+      "dockerfile": "docker/benchmark/Dockerfile",
+      "id": "elf",
+      "image": "elf-benchmark-elf:full-v2",
+      "native_deviations": {
+        "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+        "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+      },
+      "pin": {
+        "kind": "benchmark_source_commit"
+      },
+      "role": "source_linked_agent_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [
+      {
+        "cases": [
+          "complex-006"
+        ],
+        "failure": "Shared reader exceeded its output limit"
+      }
+    ],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "revision": "isolated_case_v1"
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "7441bfe9e47b3482ba74970f0b360a215f81294051f13c6992c27fabc9557c43",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-68d2e5e54a22-postgres-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopping \n Container elfdeep-68d2e5e54a22-qdrant-1 Stopped \n Container elfdeep-68d2e5e54a22-qdrant-1 Removing \n Container elfdeep-68d2e5e54a22-qdrant-1 Removed \n Container elfdeep-68d2e5e54a22-postgres-1 Stopped \n Container elfdeep-68d2e5e54a22-postgres-1 Removing \n Container elfdeep-68d2e5e54a22-postgres-1 Removed \n Volume elfdeep-68d2e5e54a22_qdrant-data Removing \n Network elfdeep-68d2e5e54a22_default Removing \n Volume elfdeep-68d2e5e54a22_qdrant-data Removed \n Volume elfdeep-68d2e5e54a22_postgres-data Removing \n Volume elfdeep-68d2e5e54a22_postgres-data Removed \n Network elfdeep-68d2e5e54a22_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 23,
+      "correct": 16,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 492.3921677090111,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 900,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 1,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "elf-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": null,
+    "retrieval_source": null,
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "c102fede88d7894187b91837cc0696820a844eac9b72c60a42a530feb0e6b108",
+      "dirty": true,
+      "head": "d9397ffae631c37d0d51bb2262d274f5f3d19bbb",
+      "status_sha256": "4897e9e86c1ac96a5ab80c1c2e263e945837c0246b8820bc4a31f3cdfc5f68a0"
+    },
+    "target": {
+      "adapter": "elf",
+      "build_target": "elf-runtime",
+      "dockerfile": "docker/benchmark/Dockerfile",
+      "id": "elf",
+      "image": "elf-benchmark-elf:full-v2",
+      "native_deviations": {
+        "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+        "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+      },
+      "pin": {
+        "kind": "benchmark_source_commit"
+      },
+      "role": "source_linked_agent_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "max_tokens": 8192,
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "9c480e452197f566236530dd5b76479afd4dbed9ad7d333293fac21f10ae3d35",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-9e14513c2930-hindsight-1 Stopping \n Container elfdeep-9e14513c2930-hindsight-1 Stopped \n Container elfdeep-9e14513c2930-hindsight-1 Removing \n Container elfdeep-9e14513c2930-hindsight-1 Removed \n Network elfdeep-9e14513c2930_default Removing \n Network elfdeep-9e14513c2930_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 24,
+      "correct": 9,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 750.8351509589702,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 1200,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "hindsight-0103-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": null,
+    "retrieval_source": null,
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "1c68238a8e6acf3adaade3cec248fa29e56aed17ef433d131d0900c9ef32c8e3",
+      "dirty": true,
+      "head": "6289de4d557707f9d8c7b80cc20cdf3e7a514e01",
+      "status_sha256": "f2a2e30c683987f7a4c44e401acd680f29fc25e87124311266b4ad8ceb075db8"
+    },
+    "target": {
+      "adapter": "native_retain_recall_after_consolidation",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "id": "hindsight",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+        "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/arm64",
+        "release": "0.10.3",
+        "value": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba"
+      },
+      "role": "bank_scoped_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "f40283b00977c3863e456d69fcb253ed046ffe2cb229f7f47535aefc136712f7",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-a5ac9f5da841-hindsight-1 Stopping \n Container elfdeep-a5ac9f5da841-hindsight-1 Stopped \n Container elfdeep-a5ac9f5da841-hindsight-1 Removing \n Container elfdeep-a5ac9f5da841-hindsight-1 Removed \n Network elfdeep-a5ac9f5da841_default Removing \n Network elfdeep-a5ac9f5da841_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 24,
+      "correct": 9,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 119.70203062501969,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 900,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "hindsight-labeled-v2",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "0943d7d190440b56ea332c0c194183dc18934e345c1c5cbe0bd0d3f2e5cc770f",
+    "retrieval_source": {
+      "content_sha256": "f25c2c9f897bbefffd84ad88cea5145a2b5c60c99806172ee337633c9ab10307",
+      "dirty": true,
+      "head": "89619cc5bcdf6fbe3475f38ebeeb7bc253fb55ef",
+      "status_sha256": "f49d295c42c4397915a94b71617e816531ced81540612e4b6c986700ddebec05"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "810430165a741bc71b0113037f7fb25c7269b9c243947dc9e34665bbdb45acbf",
+      "dirty": true,
+      "head": "4ed9851f35f8583e764a6be2852c84ed52a96282",
+      "status_sha256": "ffdba1ab4c5352d0e304eed841fd55aef26a00409db5e2d57b12a836afde6fdf"
+    },
+    "target": {
+      "adapter": "native_retain_recall_after_consolidation",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "id": "hindsight",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+        "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/arm64",
+        "release": "0.10.2",
+        "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+      },
+      "role": "bank_scoped_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "max_tokens": 8192,
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "99145acba2031bc005244c1fb30181412705ca3fbc918196dd3c606dad10ba9d",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-9e14513c2930-hindsight-1 Stopping \n Container elfdeep-9e14513c2930-hindsight-1 Stopped \n Container elfdeep-9e14513c2930-hindsight-1 Removing \n Container elfdeep-9e14513c2930-hindsight-1 Removed \n Network elfdeep-9e14513c2930_default Removing \n Network elfdeep-9e14513c2930_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": {
+      "boundary": "Reformat the same top-five native hits; retain each source fact once. No corpus or oracle fallback and no new retrieval.",
+      "revision": "hindsight_separate_observations_v1",
+      "source_bundle_sha256": "9c480e452197f566236530dd5b76479afd4dbed9ad7d333293fac21f10ae3d35"
+    },
+    "continuation": null,
+    "coverage": {
+      "answered": 24,
+      "correct": 9,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 113.87718449998647,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 1200,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "hindsight-provenance-v2",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "9c480e452197f566236530dd5b76479afd4dbed9ad7d333293fac21f10ae3d35",
+    "retrieval_source": {
+      "content_sha256": "1c68238a8e6acf3adaade3cec248fa29e56aed17ef433d131d0900c9ef32c8e3",
+      "dirty": true,
+      "head": "6289de4d557707f9d8c7b80cc20cdf3e7a514e01",
+      "status_sha256": "f2a2e30c683987f7a4c44e401acd680f29fc25e87124311266b4ad8ceb075db8"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "50d19cfac4f98c5037469f62ea6da5d59ec82135b119b82cfd6d7189996f85fa",
+      "dirty": true,
+      "head": "f31e5de4792e415110b5f85017899244e280c87c",
+      "status_sha256": "2f9fb1242db2c9835ed59b10f503e0fbfa8d6ddda8511ea92794af4e8958aaaa"
+    },
+    "target": {
+      "adapter": "native_retain_recall_after_consolidation",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "id": "hindsight",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+        "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/arm64",
+        "release": "0.10.3",
+        "value": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba"
+      },
+      "role": "bank_scoped_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "max_tokens": 8192,
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "76e908555bfae4795d022d23ece04bb3a6e29ad98a20725f1a3ffa6bf276a9e8",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-a5ac9f5da841-hindsight-1 Stopping \n Container elfdeep-a5ac9f5da841-hindsight-1 Stopped \n Container elfdeep-a5ac9f5da841-hindsight-1 Removing \n Container elfdeep-a5ac9f5da841-hindsight-1 Removed \n Network elfdeep-a5ac9f5da841_default Removing \n Network elfdeep-a5ac9f5da841_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 24,
+      "correct": 10,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 118.53368791699177,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 900,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "hindsight-reader8k-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "f40283b00977c3863e456d69fcb253ed046ffe2cb229f7f47535aefc136712f7",
+    "retrieval_source": {
+      "content_sha256": "f25c2c9f897bbefffd84ad88cea5145a2b5c60c99806172ee337633c9ab10307",
+      "dirty": true,
+      "head": "89619cc5bcdf6fbe3475f38ebeeb7bc253fb55ef",
+      "status_sha256": "f49d295c42c4397915a94b71617e816531ced81540612e4b6c986700ddebec05"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "fb8c4f382b1b304f6a00e79716a2ac8accd9feeb771bd0fa7dc1d695111d5095",
+      "dirty": true,
+      "head": "557ccb54b4ba226c94ba84dd701222dca74b4fb3",
+      "status_sha256": "bf76b575a565bf964fc40d6d4c20a4c93c23fcb5a1ef1c77b1feefd98749b9a3"
+    },
+    "target": {
+      "adapter": "native_retain_recall_after_consolidation",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "id": "hindsight",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+        "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/arm64",
+        "release": "0.10.2",
+        "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+      },
+      "role": "bank_scoped_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [
+      {
+        "cases": [
+          "complex-012"
+        ],
+        "failure": "Shared reader exceeded its output limit"
+      }
+    ],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "revision": "isolated_case_v1"
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "0943d7d190440b56ea332c0c194183dc18934e345c1c5cbe0bd0d3f2e5cc770f",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-a5ac9f5da841-hindsight-1 Stopping \n Container elfdeep-a5ac9f5da841-hindsight-1 Stopped \n Container elfdeep-a5ac9f5da841-hindsight-1 Removing \n Container elfdeep-a5ac9f5da841-hindsight-1 Removed \n Network elfdeep-a5ac9f5da841_default Removing \n Network elfdeep-a5ac9f5da841_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 23,
+      "correct": 7,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 696.0926460830378,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 900,
+      "native_total_seconds": 1800,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 1,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "hindsight-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": null,
+    "retrieval_source": null,
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "f25c2c9f897bbefffd84ad88cea5145a2b5c60c99806172ee337633c9ab10307",
+      "dirty": true,
+      "head": "89619cc5bcdf6fbe3475f38ebeeb7bc253fb55ef",
+      "status_sha256": "f49d295c42c4397915a94b71617e816531ced81540612e4b6c986700ddebec05"
+    },
+    "target": {
+      "adapter": "native_retain_recall_after_consolidation",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "id": "hindsight",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+        "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/arm64",
+        "release": "0.10.2",
+        "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+      },
+      "role": "bank_scoped_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "max_tokens": 8192,
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "12ad72e6b005106b43753caec1355d629330a8e84a9f8ff7187b79eeed0fdc98",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 24,
+      "correct": 17,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 123.20469487499213,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 1800,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 1,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "ragflow-reader8k-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": "8244d8bb26fbc6fc85806b468125cea64b6a568527be1bd58addb16a4b18eaac",
+    "retrieval_source": {
+      "content_sha256": "250eba4b96543bbff3f0515129f1339fe2f6fddd3b7388cbd8d43201a4f7788f",
+      "dirty": true,
+      "head": "4ed9851f35f8583e764a6be2852c84ed52a96282",
+      "status_sha256": "4897e9e86c1ac96a5ab80c1c2e263e945837c0246b8820bc4a31f3cdfc5f68a0"
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "3a3cfaafcdca9b34b24599a1ee9f05c88b8bd3233b518b53511f71ac65cafd13",
+      "dirty": true,
+      "head": "0b9b068d50efc9b2276e9cb2d1784186e90f66db",
+      "status_sha256": "ffdba1ab4c5352d0e304eed841fd55aef26a00409db5e2d57b12a836afde6fdf"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Original PDF ingestion with the general DeepDOC pipeline, followed by the isolated shared text reader. Native agent and synthesis are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "revision": "source_labeled_case_v1",
+      "source_labels": true
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "8244d8bb26fbc6fc85806b468125cea64b6a568527be1bd58addb16a4b18eaac",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": 796.7641336669913,
+    "context_recovery": null,
+    "continuation": {
+      "boundary": "Wait for retained native parsing, then rerun every question. Not a fresh ingestion or selective wrong-answer retry.",
+      "kind": "ragflow_retained_ingestion",
+      "original_bundle_sha256": "f4ad1c4df5806e95ae09e6323077b69c0c395364b5b6944475eb046cbb7e28eb",
+      "original_duration_seconds": 600.901209292002,
+      "scope": "complex-documents"
+    },
+    "coverage": {
+      "answered": 24,
+      "correct": 16,
+      "native_completed": 24,
+      "planned_queries": 24
+    },
+    "duration_seconds": 195.86292437498923,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 1800,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 2,
+        "correct": 2,
+        "native_completed": 2,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 2,
+        "correct": 0,
+        "native_completed": 2,
+        "planned": 2
+      }
+    },
+    "name": "ragflow-recovery-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": null,
+    "retrieval_source": null,
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "250eba4b96543bbff3f0515129f1339fe2f6fddd3b7388cbd8d43201a4f7788f",
+      "dirty": true,
+      "head": "4ed9851f35f8583e764a6be2852c84ed52a96282",
+      "status_sha256": "4897e9e86c1ac96a5ab80c1c2e263e945837c0246b8820bc4a31f3cdfc5f68a0"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Original PDF ingestion with the general DeepDOC pipeline, followed by the isolated shared text reader. Native agent and synthesis are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  },
+  {
+    "answer_errors": [],
+    "answer_protocol": {
+      "batch_size": 1,
+      "grounding": "Expected factual values must occur in the case's supplied context.",
+      "revision": "isolated_case_v1"
+    },
+    "answer_recovery": null,
+    "bundle_sha256": "f4ad1c4df5806e95ae09e6323077b69c0c395364b5b6944475eb046cbb7e28eb",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "combined_attempt_duration_seconds": null,
+    "context_recovery": null,
+    "continuation": null,
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 24
+    },
+    "duration_seconds": 600.901209292002,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "columns_absent": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "columns_binding": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "columns_complete": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "cross_page_absent": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "cross_page_list": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "cross_page_revision": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "scan_footnote": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "scan_missing": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "scan_row": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "table_footnote": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "table_missing": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      },
+      "table_row": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 2
+      }
+    },
+    "name": "ragflow-v1",
+    "native_operations": {
+      "blocked_by_ingest": 24,
+      "failed": 1
+    },
+    "oracle_sha256": "2f8579b0a4198294e63bda86991ff66e1fee1de29a58898868036f84359bfb57",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "retrieval_bundle_sha256": null,
+    "retrieval_source": null,
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "702940f2101d980a4ff26f8252bbf66897fdb760",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "complex-documents",
+    "workload_sha256": "0621e84e45ac1472720540befb467aab459d8beb9959f14ebd32592e1f2c2770"
+  }
+]

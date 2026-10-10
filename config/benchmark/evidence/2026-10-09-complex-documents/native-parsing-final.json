@@ -1,0 +1,7161 @@
+{
+  "chunks": {
+    "2ed9c8d7c83b4ed68f56d9c9cda32f9f": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "d989977c810762f4",
+          "content_with_weight": "Juniper scan 2\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\nHistorical-donotuse\nApprovedrouting",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-d989977c810762f4",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              37,
+              153,
+              26,
+              45
+            ],
+            [
+              1,
+              38,
+              287,
+              52,
+              67
+            ],
+            [
+              1,
+              37,
+              425,
+              85,
+              116
+            ],
+            [
+              1,
+              366,
+              463,
+              140,
+              151
+            ],
+            [
+              1,
+              132,
+              210,
+              142,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 4,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "b585d5fa560dc89d",
+          "content_with_weight": "<table><caption>*For the South region, use overflow only after 18:00 UTC. Before that time, use the Southprimaryqueue.</caption><tr><td >Region</td><td >Primaryqueue</td><td >Overflowqueue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-2-731</td><td >NBACK-2-428</td><td >OLDN-2-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-2-862</td><td >SBACK-2-593*</td><td >OLDS-2-267</td><td >12</td></tr><tr><td >East</td><td >EAST-2-915</td><td >EBACK-2-346</td><td >OLDE-2-782</td><td >B</td></tr><tr><td >West</td><td >WEST-2-624</td><td ></td><td >OLDW-2-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-b585d5fa560dc89d",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              38,
+              570,
+              163,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 5,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "de994429e9cf1144",
+          "content_with_weight": "The Hours column specifies the response window. It does not specify the overflow\nactivationtime.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-de994429e9cf1144",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              406,
+              454,
+              471
+            ],
+            [
+              1,
+              40,
+              109,
+              473,
+              485
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 6,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 3,
+        "chunk_method": "general",
+        "content_hash": "a5e8d3313a453a65259770a4d2e6a68e",
+        "create_date": "2026-10-10T11:12:38",
+        "create_time": 1791601958165,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "2ed9c8d7c83b4ed68f56d9c9cda32f9f",
+        "ingestion_status": "COMPLETED",
+        "location": "e_7fe00361fcf964b12aea766c.pdf",
+        "name": "e_7fe00361fcf964b12aea766c.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:24:36",
+        "process_duration": 527.739500232,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 132187,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 249,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:33:24",
+        "update_time": 1791603204058
+      },
+      "total": 3
+    },
+    "3cc1999f86bc4d34988394568b849218": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "66c178893456d492",
+          "content_with_weight": "Juniper table 0\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-66c178893456d492",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              155,
+              25,
+              43
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              64
+            ],
+            [
+              1,
+              40,
+              427,
+              85,
+              100
+            ],
+            [
+              1,
+              40,
+              335,
+              102,
+              114
+            ],
+            [
+              1,
+              133,
+              212,
+              141,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 10,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "5aff2595f812723f",
+          "content_with_weight": "<table><caption>Historical - do not use</caption><tr><td >Region</td><td >Primary queue</td><td >Overflow queue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-0-731</td><td >NBACK-0-428</td><td >OLDN-0-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-0-862</td><td >SBACK-0-593 *</td><td >OLDS-0-267</td><td >12</td></tr><tr><td >East</td><td >EAST-0-915</td><td >EBACK-0-346</td><td >OLDE-0-782</td><td >8</td></tr><tr><td >West</td><td >WEST-0-624</td><td ></td><td >OLDW-0-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-5aff2595f812723f",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              39,
+              571,
+              164,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 11,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "7bd0291faf4a3951",
+          "content_with_weight": "* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-7bd0291faf4a3951",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              411,
+              406,
+              417
+            ],
+            [
+              1,
+              40,
+              138,
+              420,
+              434
+            ],
+            [
+              1,
+              41,
+              405,
+              457,
+              468
+            ],
+            [
+              1,
+              39,
+              109,
+              472,
+              484
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 12,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 3,
+        "chunk_method": "general",
+        "content_hash": "92bb253280c454dfd79eda13899aa3b6",
+        "create_date": "2026-10-10T11:12:37",
+        "create_time": 1791601957999,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "3cc1999f86bc4d34988394568b849218",
+        "ingestion_status": "COMPLETED",
+        "location": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+        "name": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:33:24",
+        "process_duration": 361.360575986,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 2366,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 249,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:39:25",
+        "update_time": 1791603565464
+      },
+      "total": 3
+    },
+    "6058c0de8a204ddb9a6dc14d5329cff5": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "66c178893456d492",
+          "content_with_weight": "Juniper table 0\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-66c178893456d492",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              155,
+              25,
+              43
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              64
+            ],
+            [
+              1,
+              40,
+              427,
+              85,
+              100
+            ],
+            [
+              1,
+              40,
+              335,
+              102,
+              114
+            ],
+            [
+              1,
+              133,
+              212,
+              141,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 10,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "a2bf37567550e931",
+          "content_with_weight": "Juniper table 1\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-a2bf37567550e931",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              154,
+              25,
+              43
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              64
+            ],
+            [
+              1,
+              40,
+              427,
+              85,
+              100
+            ],
+            [
+              1,
+              40,
+              335,
+              102,
+              114
+            ],
+            [
+              1,
+              133,
+              212,
+              141,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 13,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "d989977c810762f4",
+          "content_with_weight": "Juniper scan 2\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\nHistorical-donotuse\nApprovedrouting",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-d989977c810762f4",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              37,
+              153,
+              26,
+              45
+            ],
+            [
+              1,
+              38,
+              287,
+              52,
+              67
+            ],
+            [
+              1,
+              37,
+              425,
+              85,
+              116
+            ],
+            [
+              1,
+              366,
+              463,
+              140,
+              151
+            ],
+            [
+              1,
+              132,
+              210,
+              142,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 4,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "9ca959afef5d9846",
+          "content_with_weight": "Juniper scan 3\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\nHistorical-donotuse\nApprovedrouting",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_255d68caea01e4bc6add58b1.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-9ca959afef5d9846",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              37,
+              152,
+              26,
+              45
+            ],
+            [
+              1,
+              38,
+              287,
+              52,
+              67
+            ],
+            [
+              1,
+              37,
+              425,
+              85,
+              116
+            ],
+            [
+              1,
+              366,
+              463,
+              140,
+              151
+            ],
+            [
+              1,
+              132,
+              210,
+              142,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 7,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "9b785f4708200f9b",
+          "content_with_weight": "Juniper columns 1\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED\nARCHIVED - DO NOT APPLY\nThe Atlas migration uses release\nAn old Atlas draft used release\nALPHA-1-472.\nOLD-1-351.\nThe Boreal migration uses release\nThe old Boreal draft used release\nBETA-1-683.\nSTALE-1-746.\nThe retired Atlas inspection was\nAn Atlas rollback must first\ncomplete inspection CHECK-1-925.\nSKIP-1-268.\nThis column exists for historical\nThese signed instructions override\nthe archived material in the\nreference. It is not authorization\nadjacent column.\nfor current operations.\nDraft values cannot override signed\nAfter inspection, the operator must\ninstructions.\nrecord the result and notify the\nservice owner.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_adf880c03e4b6091d62cdf6f.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-9b785f4708200f9b",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              42,
+              183,
+              28,
+              42
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              65
+            ],
+            [
+              1,
+              41,
+              157,
+              91,
+              103
+            ],
+            [
+              1,
+              322,
+              487,
+              91,
+              103
+            ],
+            [
+              1,
+              40,
+              189,
+              119,
+              134
+            ],
+            [
+              1,
+              322,
+              459,
+              121,
+              132
+            ],
+            [
+              1,
+              40,
+              106,
+              136,
+              147
+            ],
+            [
+              1,
+              321,
+              375,
+              136,
+              147
+            ],
+            [
+              1,
+              41,
+              195,
+              163,
+              175
+            ],
+            [
+              1,
+              322,
+              471,
+              163,
+              175
+            ],
+            [
+              1,
+              40,
+              100,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              386,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              466,
+              204,
+              218
+            ],
+            [
+              1,
+              41,
+              161,
+              205,
+              217
+            ],
+            [
+              1,
+              39,
+              199,
+              218,
+              233
+            ],
+            [
+              1,
+              321,
+              377,
+              220,
+              231
+            ],
+            [
+              1,
+              322,
+              462,
+              246,
+              258
+            ],
+            [
+              1,
+              41,
+              195,
+              247,
+              259
+            ],
+            [
+              1,
+              40,
+              163,
+              262,
+              274
+            ],
+            [
+              1,
+              321,
+              464,
+              262,
+              274
+            ],
+            [
+              1,
+              40,
+              118,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              420,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              481,
+              302,
+              316
+            ],
+            [
+              1,
+              40,
+              196,
+              303,
+              316
+            ],
+            [
+              1,
+              320,
+              376,
+              318,
+              331
+            ],
+            [
+              1,
+              40,
+              178,
+              320,
+              330
+            ],
+            [
+              1,
+              40,
+              107,
+              335,
+              346
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 1,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "c402dbcbcd45bce1",
+          "content_with_weight": "Juniper columns 0\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED\nARCHIVED - DO NOT APPLY\nThe Atlas migration uses release\nAn old Atlas draft used release\nALPHA-0-472.\nOLD-0-351.\nThe Boreal migration uses release\nThe old Boreal draft used release\nBETA-0-683.\nSTALE-0-746.\nThe retired Atlas inspection was\nAn Atlas rollback must first\nSKIP-0-268.\ncomplete inspection CHECK-0-925.\nThis column exists for historical\nThese signed instructions override\nthe archived material in the\nreference. It is not authorization\nadjacent column.\nfor current operations.\nDraft values cannot override signed\nAfter inspection, the operator must\ninstructions.\nrecord the result and notify the\nservice owner.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_f78b8623bff0267bf5e45c2b.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-c402dbcbcd45bce1",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              42,
+              183,
+              28,
+              42
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              65
+            ],
+            [
+              1,
+              41,
+              157,
+              91,
+              103
+            ],
+            [
+              1,
+              322,
+              487,
+              91,
+              103
+            ],
+            [
+              1,
+              40,
+              189,
+              119,
+              134
+            ],
+            [
+              1,
+              322,
+              459,
+              121,
+              132
+            ],
+            [
+              1,
+              40,
+              106,
+              136,
+              147
+            ],
+            [
+              1,
+              321,
+              375,
+              136,
+              147
+            ],
+            [
+              1,
+              41,
+              195,
+              163,
+              175
+            ],
+            [
+              1,
+              322,
+              471,
+              163,
+              175
+            ],
+            [
+              1,
+              40,
+              100,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              386,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              466,
+              204,
+              218
+            ],
+            [
+              1,
+              41,
+              161,
+              205,
+              217
+            ],
+            [
+              1,
+              321,
+              377,
+              220,
+              231
+            ],
+            [
+              1,
+              41,
+              198,
+              221,
+              232
+            ],
+            [
+              1,
+              322,
+              462,
+              246,
+              258
+            ],
+            [
+              1,
+              41,
+              195,
+              247,
+              259
+            ],
+            [
+              1,
+              40,
+              163,
+              262,
+              274
+            ],
+            [
+              1,
+              321,
+              464,
+              262,
+              274
+            ],
+            [
+              1,
+              40,
+              118,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              420,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              481,
+              302,
+              317
+            ],
+            [
+              1,
+              40,
+              196,
+              303,
+              316
+            ],
+            [
+              1,
+              320,
+              376,
+              318,
+              331
+            ],
+            [
+              1,
+              40,
+              178,
+              320,
+              330
+            ],
+            [
+              1,
+              40,
+              107,
+              335,
+              346
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 0,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "3d5cd8c9d823a1e0",
+          "content_with_weight": "Juniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-0-837. The second exception continues on the next page.\nJuniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-0-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-0-759. Earlier revision 3 used\nRETIRED-0-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\n16. Administrative note: keep this record with the signed receipt and make it\n17. Administrative note: keep this record with the signed receipt and make it\n18. Administrative note: keep this record with the signed receipt and make it\n19. Administrative note: keep this record with the signed receipt and make it",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_f361397d877f4c9074ab359a.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-3d5cd8c9d823a1e0",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              198,
+              27,
+              47
+            ],
+            [
+              1,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              1,
+              40,
+              380,
+              93,
+              105
+            ],
+            [
+              1,
+              41,
+              405,
+              109,
+              120
+            ],
+            [
+              1,
+              40,
+              115,
+              122,
+              137
+            ],
+            [
+              1,
+              40,
+              379,
+              151,
+              163
+            ],
+            [
+              1,
+              40,
+              115,
+              180,
+              194
+            ],
+            [
+              1,
+              41,
+              379,
+              208,
+              220
+            ],
+            [
+              1,
+              40,
+              115,
+              236,
+              251
+            ],
+            [
+              1,
+              41,
+              379,
+              265,
+              277
+            ],
+            [
+              1,
+              40,
+              115,
+              294,
+              308
+            ],
+            [
+              1,
+              40,
+              379,
+              322,
+              334
+            ],
+            [
+              1,
+              40,
+              115,
+              351,
+              364
+            ],
+            [
+              1,
+              40,
+              380,
+              378,
+              392
+            ],
+            [
+              1,
+              40,
+              115,
+              409,
+              421
+            ],
+            [
+              1,
+              41,
+              379,
+              436,
+              448
+            ],
+            [
+              1,
+              41,
+              115,
+              467,
+              478
+            ],
+            [
+              1,
+              40,
+              379,
+              494,
+              505
+            ],
+            [
+              1,
+              39,
+              115,
+              523,
+              535
+            ],
+            [
+              1,
+              42,
+              400,
+              623,
+              633
+            ],
+            [
+              1,
+              41,
+              318,
+              637,
+              649
+            ],
+            [
+              1,
+              40,
+              342,
+              684,
+              698
+            ],
+            [
+              2,
+              40,
+              198,
+              27,
+              45
+            ],
+            [
+              2,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              2,
+              40,
+              425,
+              93,
+              105
+            ],
+            [
+              2,
+              41,
+              361,
+              109,
+              120
+            ],
+            [
+              2,
+              42,
+              365,
+              169,
+              180
+            ],
+            [
+              2,
+              41,
+              225,
+              184,
+              196
+            ],
+            [
+              2,
+              41,
+              378,
+              243,
+              255
+            ],
+            [
+              2,
+              40,
+              191,
+              259,
+              271
+            ],
+            [
+              2,
+              40,
+              379,
+              304,
+              319
+            ],
+            [
+              2,
+              42,
+              378,
+              368,
+              380
+            ],
+            [
+              2,
+              42,
+              379,
+              430,
+              442
+            ],
+            [
+              2,
+              42,
+              378,
+              492,
+              503
+            ],
+            [
+              2,
+              41,
+              379,
+              553,
+              567
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 3,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "6c6b8a00ce896968",
+          "content_with_weight": "Juniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-1-837. The second exception continues on the next page.\nJuniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-1-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-1-759. Earlier revision 3 used\nRETIRED-1-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\n16. Administrative note: keep this record with the signed receipt and make it\n17. Administrative note: keep this record with the signed receipt and make it\n18. Administrative note: keep this record with the signed receipt and make it\n19. Administrative note: keep this record with the signed receipt and make it",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_4b51c2f07fe6d33137c84359.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-6c6b8a00ce896968",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              197,
+              27,
+              45
+            ],
+            [
+              1,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              1,
+              40,
+              380,
+              93,
+              105
+            ],
+            [
+              1,
+              41,
+              405,
+              109,
+              120
+            ],
+            [
+              1,
+              40,
+              115,
+              122,
+              137
+            ],
+            [
+              1,
+              40,
+              379,
+              151,
+              163
+            ],
+            [
+              1,
+              40,
+              115,
+              180,
+              194
+            ],
+            [
+              1,
+              41,
+              379,
+              208,
+              220
+            ],
+            [
+              1,
+              40,
+              115,
+              236,
+              251
+            ],
+            [
+              1,
+              41,
+              379,
+              265,
+              277
+            ],
+            [
+              1,
+              40,
+              115,
+              294,
+              308
+            ],
+            [
+              1,
+              40,
+              379,
+              322,
+              334
+            ],
+            [
+              1,
+              40,
+              115,
+              351,
+              364
+            ],
+            [
+              1,
+              40,
+              380,
+              378,
+              392
+            ],
+            [
+              1,
+              40,
+              115,
+              409,
+              421
+            ],
+            [
+              1,
+              41,
+              379,
+              436,
+              448
+            ],
+            [
+              1,
+              41,
+              115,
+              467,
+              478
+            ],
+            [
+              1,
+              40,
+              379,
+              494,
+              505
+            ],
+            [
+              1,
+              39,
+              115,
+              523,
+              535
+            ],
+            [
+              1,
+              42,
+              400,
+              623,
+              633
+            ],
+            [
+              1,
+              41,
+              318,
+              637,
+              649
+            ],
+            [
+              1,
+              40,
+              342,
+              684,
+              698
+            ],
+            [
+              2,
+              40,
+              197,
+              27,
+              45
+            ],
+            [
+              2,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              2,
+              40,
+              425,
+              93,
+              105
+            ],
+            [
+              2,
+              41,
+              361,
+              109,
+              120
+            ],
+            [
+              2,
+              42,
+              365,
+              169,
+              180
+            ],
+            [
+              2,
+              41,
+              225,
+              184,
+              196
+            ],
+            [
+              2,
+              41,
+              378,
+              243,
+              255
+            ],
+            [
+              2,
+              40,
+              191,
+              259,
+              271
+            ],
+            [
+              2,
+              40,
+              379,
+              304,
+              319
+            ],
+            [
+              2,
+              42,
+              378,
+              368,
+              380
+            ],
+            [
+              2,
+              42,
+              379,
+              430,
+              442
+            ],
+            [
+              2,
+              42,
+              378,
+              492,
+              503
+            ],
+            [
+              2,
+              41,
+              379,
+              553,
+              567
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 2,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "b585d5fa560dc89d",
+          "content_with_weight": "<table><caption>*For the South region, use overflow only after 18:00 UTC. Before that time, use the Southprimaryqueue.</caption><tr><td >Region</td><td >Primaryqueue</td><td >Overflowqueue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-2-731</td><td >NBACK-2-428</td><td >OLDN-2-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-2-862</td><td >SBACK-2-593*</td><td >OLDS-2-267</td><td >12</td></tr><tr><td >East</td><td >EAST-2-915</td><td >EBACK-2-346</td><td >OLDE-2-782</td><td >B</td></tr><tr><td >West</td><td >WEST-2-624</td><td ></td><td >OLDW-2-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-b585d5fa560dc89d",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              38,
+              570,
+              163,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 5,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "8173443277e1c933",
+          "content_with_weight": "<table><caption>*For the South region, use overflow only after 18:00 UTC. Before that time, use the Southprimaryqueue.</caption><tr><td >Region</td><td >Primaryqueue</td><td >Overflowqueue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-3-731</td><td >NBACK-3-428</td><td >OLDN-3-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-3-862</td><td >SBACK-3-593*</td><td >OLDS-3-267</td><td >12</td></tr><tr><td >East</td><td >EAST-3-915</td><td >EBACK-3-346</td><td >OLDE-3-782</td><td >B</td></tr><tr><td >West</td><td >WEST-3-624</td><td ></td><td >OLDW-3-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_255d68caea01e4bc6add58b1.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-8173443277e1c933",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              38,
+              570,
+              163,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 8,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "7c1f8d440e53c5fa",
+          "content_with_weight": "<table><caption>Historical - do not use</caption><tr><td >Region</td><td >Primary queue</td><td >Overflow queue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-1-731</td><td >NBACK-1-428</td><td >OLDN-1-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-1-862</td><td >SBACK-1-593 *</td><td >OLDS-1-267</td><td >12</td></tr><tr><td >East</td><td >EAST-1-915</td><td >EBACK-1-346</td><td >OLDE-1-782</td><td >8</td></tr><tr><td >West</td><td >WEST-1-624</td><td ></td><td >OLDW-1-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-7c1f8d440e53c5fa",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              39,
+              571,
+              164,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 14,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "5aff2595f812723f",
+          "content_with_weight": "<table><caption>Historical - do not use</caption><tr><td >Region</td><td >Primary queue</td><td >Overflow queue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-0-731</td><td >NBACK-0-428</td><td >OLDN-0-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-0-862</td><td >SBACK-0-593 *</td><td >OLDS-0-267</td><td >12</td></tr><tr><td >East</td><td >EAST-0-915</td><td >EBACK-0-346</td><td >OLDE-0-782</td><td >8</td></tr><tr><td >West</td><td >WEST-0-624</td><td ></td><td >OLDW-0-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-5aff2595f812723f",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              39,
+              571,
+              164,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 11,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "0e4550b8a59fa382",
+          "content_with_weight": "The Hours column specifies the response window. It does not specify the overflow\nactivationtime.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_255d68caea01e4bc6add58b1.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-0e4550b8a59fa382",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              406,
+              454,
+              471
+            ],
+            [
+              1,
+              40,
+              109,
+              473,
+              485
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 9,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "de994429e9cf1144",
+          "content_with_weight": "The Hours column specifies the response window. It does not specify the overflow\nactivationtime.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-de994429e9cf1144",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              406,
+              454,
+              471
+            ],
+            [
+              1,
+              40,
+              109,
+              473,
+              485
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 6,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "7bd0291faf4a3951",
+          "content_with_weight": "* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-7bd0291faf4a3951",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              411,
+              406,
+              417
+            ],
+            [
+              1,
+              40,
+              138,
+              420,
+              434
+            ],
+            [
+              1,
+              41,
+              405,
+              457,
+              468
+            ],
+            [
+              1,
+              39,
+              109,
+              472,
+              484
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 12,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "8ce3f24f52d0aa88",
+          "content_with_weight": "* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-8ce3f24f52d0aa88",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              411,
+              406,
+              417
+            ],
+            [
+              1,
+              40,
+              138,
+              420,
+              434
+            ],
+            [
+              1,
+              41,
+              405,
+              457,
+              468
+            ],
+            [
+              1,
+              39,
+              109,
+              472,
+              484
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 15,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 1,
+        "chunk_method": "general",
+        "content_hash": "36ee897aa99ffb01d87a415975ca269e",
+        "create_date": "2026-10-10T11:12:38",
+        "create_time": 1791601958094,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "6058c0de8a204ddb9a6dc14d5329cff5",
+        "ingestion_status": "COMPLETED",
+        "location": "e_adf880c03e4b6091d62cdf6f.pdf",
+        "name": "e_adf880c03e4b6091d62cdf6f.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:12:38",
+        "process_duration": 358.664266006,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 2234,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 199,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:18:36",
+        "update_time": 1791602316972
+      },
+      "total": 16
+    },
+    "6ceeb6a86896403aa194c8cd05fbaf02": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "a2bf37567550e931",
+          "content_with_weight": "Juniper table 1\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-a2bf37567550e931",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              154,
+              25,
+              43
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              64
+            ],
+            [
+              1,
+              40,
+              427,
+              85,
+              100
+            ],
+            [
+              1,
+              40,
+              335,
+              102,
+              114
+            ],
+            [
+              1,
+              133,
+              212,
+              141,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 13,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "7c1f8d440e53c5fa",
+          "content_with_weight": "<table><caption>Historical - do not use</caption><tr><td >Region</td><td >Primary queue</td><td >Overflow queue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-1-731</td><td >NBACK-1-428</td><td >OLDN-1-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-1-862</td><td >SBACK-1-593 *</td><td >OLDS-1-267</td><td >12</td></tr><tr><td >East</td><td >EAST-1-915</td><td >EBACK-1-346</td><td >OLDE-1-782</td><td >8</td></tr><tr><td >West</td><td >WEST-1-624</td><td ></td><td >OLDW-1-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-7c1f8d440e53c5fa",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              39,
+              571,
+              164,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 14,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "8ce3f24f52d0aa88",
+          "content_with_weight": "* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-8ce3f24f52d0aa88",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              411,
+              406,
+              417
+            ],
+            [
+              1,
+              40,
+              138,
+              420,
+              434
+            ],
+            [
+              1,
+              41,
+              405,
+              457,
+              468
+            ],
+            [
+              1,
+              39,
+              109,
+              472,
+              484
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 15,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 3,
+        "chunk_method": "general",
+        "content_hash": "67c10d38a7fa5b472b0691f8a48c4fe4",
+        "create_date": "2026-10-10T11:12:38",
+        "create_time": 1791601958037,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "6ceeb6a86896403aa194c8cd05fbaf02",
+        "ingestion_status": "COMPLETED",
+        "location": "e_6f96a2af3365edd7577ea147.pdf",
+        "name": "e_6f96a2af3365edd7577ea147.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:33:24",
+        "process_duration": 361.303632262,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 2364,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 251,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:39:26",
+        "update_time": 1791603566101
+      },
+      "total": 3
+    },
+    "aab7fe83fa784fd98b62f37b9ef6dd55": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "3d5cd8c9d823a1e0",
+          "content_with_weight": "Juniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-0-837. The second exception continues on the next page.\nJuniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-0-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-0-759. Earlier revision 3 used\nRETIRED-0-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\n16. Administrative note: keep this record with the signed receipt and make it\n17. Administrative note: keep this record with the signed receipt and make it\n18. Administrative note: keep this record with the signed receipt and make it\n19. Administrative note: keep this record with the signed receipt and make it",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_f361397d877f4c9074ab359a.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-3d5cd8c9d823a1e0",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              198,
+              27,
+              47
+            ],
+            [
+              1,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              1,
+              40,
+              380,
+              93,
+              105
+            ],
+            [
+              1,
+              41,
+              405,
+              109,
+              120
+            ],
+            [
+              1,
+              40,
+              115,
+              122,
+              137
+            ],
+            [
+              1,
+              40,
+              379,
+              151,
+              163
+            ],
+            [
+              1,
+              40,
+              115,
+              180,
+              194
+            ],
+            [
+              1,
+              41,
+              379,
+              208,
+              220
+            ],
+            [
+              1,
+              40,
+              115,
+              236,
+              251
+            ],
+            [
+              1,
+              41,
+              379,
+              265,
+              277
+            ],
+            [
+              1,
+              40,
+              115,
+              294,
+              308
+            ],
+            [
+              1,
+              40,
+              379,
+              322,
+              334
+            ],
+            [
+              1,
+              40,
+              115,
+              351,
+              364
+            ],
+            [
+              1,
+              40,
+              380,
+              378,
+              392
+            ],
+            [
+              1,
+              40,
+              115,
+              409,
+              421
+            ],
+            [
+              1,
+              41,
+              379,
+              436,
+              448
+            ],
+            [
+              1,
+              41,
+              115,
+              467,
+              478
+            ],
+            [
+              1,
+              40,
+              379,
+              494,
+              505
+            ],
+            [
+              1,
+              39,
+              115,
+              523,
+              535
+            ],
+            [
+              1,
+              42,
+              400,
+              623,
+              633
+            ],
+            [
+              1,
+              41,
+              318,
+              637,
+              649
+            ],
+            [
+              1,
+              40,
+              342,
+              684,
+              698
+            ],
+            [
+              2,
+              40,
+              198,
+              27,
+              45
+            ],
+            [
+              2,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              2,
+              40,
+              425,
+              93,
+              105
+            ],
+            [
+              2,
+              41,
+              361,
+              109,
+              120
+            ],
+            [
+              2,
+              42,
+              365,
+              169,
+              180
+            ],
+            [
+              2,
+              41,
+              225,
+              184,
+              196
+            ],
+            [
+              2,
+              41,
+              378,
+              243,
+              255
+            ],
+            [
+              2,
+              40,
+              191,
+              259,
+              271
+            ],
+            [
+              2,
+              40,
+              379,
+              304,
+              319
+            ],
+            [
+              2,
+              42,
+              378,
+              368,
+              380
+            ],
+            [
+              2,
+              42,
+              379,
+              430,
+              442
+            ],
+            [
+              2,
+              42,
+              378,
+              492,
+              503
+            ],
+            [
+              2,
+              41,
+              379,
+              553,
+              567
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 3,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 1,
+        "chunk_method": "general",
+        "content_hash": "e84b2ee673babcf6d4800f12d8fdae33",
+        "create_date": "2026-10-10T11:12:38",
+        "create_time": 1791601958119,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "aab7fe83fa784fd98b62f37b9ef6dd55",
+        "ingestion_status": "COMPLETED",
+        "location": "e_f361397d877f4c9074ab359a.pdf",
+        "name": "e_f361397d877f4c9074ab359a.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:18:36",
+        "process_duration": 360.69973999,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 3110,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 465,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:24:36",
+        "update_time": 1791602676827
+      },
+      "total": 1
+    },
+    "ad66157ecc8645ffb28f1d877f1117ef": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "6c6b8a00ce896968",
+          "content_with_weight": "Juniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-1-837. The second exception continues on the next page.\nJuniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-1-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-1-759. Earlier revision 3 used\nRETIRED-1-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\n16. Administrative note: keep this record with the signed receipt and make it\n17. Administrative note: keep this record with the signed receipt and make it\n18. Administrative note: keep this record with the signed receipt and make it\n19. Administrative note: keep this record with the signed receipt and make it",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_4b51c2f07fe6d33137c84359.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-6c6b8a00ce896968",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              197,
+              27,
+              45
+            ],
+            [
+              1,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              1,
+              40,
+              380,
+              93,
+              105
+            ],
+            [
+              1,
+              41,
+              405,
+              109,
+              120
+            ],
+            [
+              1,
+              40,
+              115,
+              122,
+              137
+            ],
+            [
+              1,
+              40,
+              379,
+              151,
+              163
+            ],
+            [
+              1,
+              40,
+              115,
+              180,
+              194
+            ],
+            [
+              1,
+              41,
+              379,
+              208,
+              220
+            ],
+            [
+              1,
+              40,
+              115,
+              236,
+              251
+            ],
+            [
+              1,
+              41,
+              379,
+              265,
+              277
+            ],
+            [
+              1,
+              40,
+              115,
+              294,
+              308
+            ],
+            [
+              1,
+              40,
+              379,
+              322,
+              334
+            ],
+            [
+              1,
+              40,
+              115,
+              351,
+              364
+            ],
+            [
+              1,
+              40,
+              380,
+              378,
+              392
+            ],
+            [
+              1,
+              40,
+              115,
+              409,
+              421
+            ],
+            [
+              1,
+              41,
+              379,
+              436,
+              448
+            ],
+            [
+              1,
+              41,
+              115,
+              467,
+              478
+            ],
+            [
+              1,
+              40,
+              379,
+              494,
+              505
+            ],
+            [
+              1,
+              39,
+              115,
+              523,
+              535
+            ],
+            [
+              1,
+              42,
+              400,
+              623,
+              633
+            ],
+            [
+              1,
+              41,
+              318,
+              637,
+              649
+            ],
+            [
+              1,
+              40,
+              342,
+              684,
+              698
+            ],
+            [
+              2,
+              40,
+              197,
+              27,
+              45
+            ],
+            [
+              2,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              2,
+              40,
+              425,
+              93,
+              105
+            ],
+            [
+              2,
+              41,
+              361,
+              109,
+              120
+            ],
+            [
+              2,
+              42,
+              365,
+              169,
+              180
+            ],
+            [
+              2,
+              41,
+              225,
+              184,
+              196
+            ],
+            [
+              2,
+              41,
+              378,
+              243,
+              255
+            ],
+            [
+              2,
+              40,
+              191,
+              259,
+              271
+            ],
+            [
+              2,
+              40,
+              379,
+              304,
+              319
+            ],
+            [
+              2,
+              42,
+              378,
+              368,
+              380
+            ],
+            [
+              2,
+              42,
+              379,
+              430,
+              442
+            ],
+            [
+              2,
+              42,
+              378,
+              492,
+              503
+            ],
+            [
+              2,
+              41,
+              379,
+              553,
+              567
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 2,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 1,
+        "chunk_method": "general",
+        "content_hash": "c601eba593d4ee03491708f80e4fc367",
+        "create_date": "2026-10-10T11:12:38",
+        "create_time": 1791601958140,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "ad66157ecc8645ffb28f1d877f1117ef",
+        "ingestion_status": "COMPLETED",
+        "location": "e_4b51c2f07fe6d33137c84359.pdf",
+        "name": "e_4b51c2f07fe6d33137c84359.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:18:37",
+        "process_duration": 359.22481462,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 3105,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 466,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:24:36",
+        "update_time": 1791602676256
+      },
+      "total": 1
+    },
+    "cd1560b16bda488ab141261e973b5702": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "c402dbcbcd45bce1",
+          "content_with_weight": "Juniper columns 0\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED\nARCHIVED - DO NOT APPLY\nThe Atlas migration uses release\nAn old Atlas draft used release\nALPHA-0-472.\nOLD-0-351.\nThe Boreal migration uses release\nThe old Boreal draft used release\nBETA-0-683.\nSTALE-0-746.\nThe retired Atlas inspection was\nAn Atlas rollback must first\nSKIP-0-268.\ncomplete inspection CHECK-0-925.\nThis column exists for historical\nThese signed instructions override\nthe archived material in the\nreference. It is not authorization\nadjacent column.\nfor current operations.\nDraft values cannot override signed\nAfter inspection, the operator must\ninstructions.\nrecord the result and notify the\nservice owner.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_f78b8623bff0267bf5e45c2b.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-c402dbcbcd45bce1",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              42,
+              183,
+              28,
+              42
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              65
+            ],
+            [
+              1,
+              41,
+              157,
+              91,
+              103
+            ],
+            [
+              1,
+              322,
+              487,
+              91,
+              103
+            ],
+            [
+              1,
+              40,
+              189,
+              119,
+              134
+            ],
+            [
+              1,
+              322,
+              459,
+              121,
+              132
+            ],
+            [
+              1,
+              40,
+              106,
+              136,
+              147
+            ],
+            [
+              1,
+              321,
+              375,
+              136,
+              147
+            ],
+            [
+              1,
+              41,
+              195,
+              163,
+              175
+            ],
+            [
+              1,
+              322,
+              471,
+              163,
+              175
+            ],
+            [
+              1,
+              40,
+              100,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              386,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              466,
+              204,
+              218
+            ],
+            [
+              1,
+              41,
+              161,
+              205,
+              217
+            ],
+            [
+              1,
+              321,
+              377,
+              220,
+              231
+            ],
+            [
+              1,
+              41,
+              198,
+              221,
+              232
+            ],
+            [
+              1,
+              322,
+              462,
+              246,
+              258
+            ],
+            [
+              1,
+              41,
+              195,
+              247,
+              259
+            ],
+            [
+              1,
+              40,
+              163,
+              262,
+              274
+            ],
+            [
+              1,
+              321,
+              464,
+              262,
+              274
+            ],
+            [
+              1,
+              40,
+              118,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              420,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              481,
+              302,
+              317
+            ],
+            [
+              1,
+              40,
+              196,
+              303,
+              316
+            ],
+            [
+              1,
+              320,
+              376,
+              318,
+              331
+            ],
+            [
+              1,
+              40,
+              178,
+              320,
+              330
+            ],
+            [
+              1,
+              40,
+              107,
+              335,
+              346
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 0,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 1,
+        "chunk_method": "general",
+        "content_hash": "1df9612ddfe77f97907c6ab5ccc2258c",
+        "create_date": "2026-10-10T11:12:38",
+        "create_time": 1791601958069,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "cd1560b16bda488ab141261e973b5702",
+        "ingestion_status": "COMPLETED",
+        "location": "e_f78b8623bff0267bf5e45c2b.pdf",
+        "name": "e_f78b8623bff0267bf5e45c2b.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:12:38",
+        "process_duration": 357.788403949,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 2237,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 199,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:18:36",
+        "update_time": 1791602316073
+      },
+      "total": 1
+    },
+    "e422c004fd8449c6b8bbe2258ca16ed6": {
+      "chunks": [
+        {
+          "available_int": 1,
+          "chunk_id": "66c178893456d492",
+          "content_with_weight": "Juniper table 0\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-66c178893456d492",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              155,
+              25,
+              43
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              64
+            ],
+            [
+              1,
+              40,
+              427,
+              85,
+              100
+            ],
+            [
+              1,
+              40,
+              335,
+              102,
+              114
+            ],
+            [
+              1,
+              133,
+              212,
+              141,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 10,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "a2bf37567550e931",
+          "content_with_weight": "Juniper table 1\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-a2bf37567550e931",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              154,
+              25,
+              43
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              64
+            ],
+            [
+              1,
+              40,
+              427,
+              85,
+              100
+            ],
+            [
+              1,
+              40,
+              335,
+              102,
+              114
+            ],
+            [
+              1,
+              133,
+              212,
+              141,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 13,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "d989977c810762f4",
+          "content_with_weight": "Juniper scan 2\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\nHistorical-donotuse\nApprovedrouting",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-d989977c810762f4",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              37,
+              153,
+              26,
+              45
+            ],
+            [
+              1,
+              38,
+              287,
+              52,
+              67
+            ],
+            [
+              1,
+              37,
+              425,
+              85,
+              116
+            ],
+            [
+              1,
+              366,
+              463,
+              140,
+              151
+            ],
+            [
+              1,
+              132,
+              210,
+              142,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 4,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "9ca959afef5d9846",
+          "content_with_weight": "Juniper scan 3\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates no published value. The footnote changes the South overflow rule.\nHistorical-donotuse\nApprovedrouting",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_255d68caea01e4bc6add58b1.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-9ca959afef5d9846",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              37,
+              152,
+              26,
+              45
+            ],
+            [
+              1,
+              38,
+              287,
+              52,
+              67
+            ],
+            [
+              1,
+              37,
+              425,
+              85,
+              116
+            ],
+            [
+              1,
+              366,
+              463,
+              140,
+              151
+            ],
+            [
+              1,
+              132,
+              210,
+              142,
+              153
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 7,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "9b785f4708200f9b",
+          "content_with_weight": "Juniper columns 1\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED\nARCHIVED - DO NOT APPLY\nThe Atlas migration uses release\nAn old Atlas draft used release\nALPHA-1-472.\nOLD-1-351.\nThe Boreal migration uses release\nThe old Boreal draft used release\nBETA-1-683.\nSTALE-1-746.\nThe retired Atlas inspection was\nAn Atlas rollback must first\ncomplete inspection CHECK-1-925.\nSKIP-1-268.\nThis column exists for historical\nThese signed instructions override\nthe archived material in the\nreference. It is not authorization\nadjacent column.\nfor current operations.\nDraft values cannot override signed\nAfter inspection, the operator must\ninstructions.\nrecord the result and notify the\nservice owner.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_adf880c03e4b6091d62cdf6f.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-9b785f4708200f9b",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              42,
+              183,
+              28,
+              42
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              65
+            ],
+            [
+              1,
+              41,
+              157,
+              91,
+              103
+            ],
+            [
+              1,
+              322,
+              487,
+              91,
+              103
+            ],
+            [
+              1,
+              40,
+              189,
+              119,
+              134
+            ],
+            [
+              1,
+              322,
+              459,
+              121,
+              132
+            ],
+            [
+              1,
+              40,
+              106,
+              136,
+              147
+            ],
+            [
+              1,
+              321,
+              375,
+              136,
+              147
+            ],
+            [
+              1,
+              41,
+              195,
+              163,
+              175
+            ],
+            [
+              1,
+              322,
+              471,
+              163,
+              175
+            ],
+            [
+              1,
+              40,
+              100,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              386,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              466,
+              204,
+              218
+            ],
+            [
+              1,
+              41,
+              161,
+              205,
+              217
+            ],
+            [
+              1,
+              39,
+              199,
+              218,
+              233
+            ],
+            [
+              1,
+              321,
+              377,
+              220,
+              231
+            ],
+            [
+              1,
+              322,
+              462,
+              246,
+              258
+            ],
+            [
+              1,
+              41,
+              195,
+              247,
+              259
+            ],
+            [
+              1,
+              40,
+              163,
+              262,
+              274
+            ],
+            [
+              1,
+              321,
+              464,
+              262,
+              274
+            ],
+            [
+              1,
+              40,
+              118,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              420,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              481,
+              302,
+              316
+            ],
+            [
+              1,
+              40,
+              196,
+              303,
+              316
+            ],
+            [
+              1,
+              320,
+              376,
+              318,
+              331
+            ],
+            [
+              1,
+              40,
+              178,
+              320,
+              330
+            ],
+            [
+              1,
+              40,
+              107,
+              335,
+              346
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 1,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "c402dbcbcd45bce1",
+          "content_with_weight": "Juniper columns 0\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED\nARCHIVED - DO NOT APPLY\nThe Atlas migration uses release\nAn old Atlas draft used release\nALPHA-0-472.\nOLD-0-351.\nThe Boreal migration uses release\nThe old Boreal draft used release\nBETA-0-683.\nSTALE-0-746.\nThe retired Atlas inspection was\nAn Atlas rollback must first\nSKIP-0-268.\ncomplete inspection CHECK-0-925.\nThis column exists for historical\nThese signed instructions override\nthe archived material in the\nreference. It is not authorization\nadjacent column.\nfor current operations.\nDraft values cannot override signed\nAfter inspection, the operator must\ninstructions.\nrecord the result and notify the\nservice owner.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_f78b8623bff0267bf5e45c2b.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-c402dbcbcd45bce1",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              42,
+              183,
+              28,
+              42
+            ],
+            [
+              1,
+              41,
+              290,
+              53,
+              65
+            ],
+            [
+              1,
+              41,
+              157,
+              91,
+              103
+            ],
+            [
+              1,
+              322,
+              487,
+              91,
+              103
+            ],
+            [
+              1,
+              40,
+              189,
+              119,
+              134
+            ],
+            [
+              1,
+              322,
+              459,
+              121,
+              132
+            ],
+            [
+              1,
+              40,
+              106,
+              136,
+              147
+            ],
+            [
+              1,
+              321,
+              375,
+              136,
+              147
+            ],
+            [
+              1,
+              41,
+              195,
+              163,
+              175
+            ],
+            [
+              1,
+              322,
+              471,
+              163,
+              175
+            ],
+            [
+              1,
+              40,
+              100,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              386,
+              178,
+              189
+            ],
+            [
+              1,
+              321,
+              466,
+              204,
+              218
+            ],
+            [
+              1,
+              41,
+              161,
+              205,
+              217
+            ],
+            [
+              1,
+              321,
+              377,
+              220,
+              231
+            ],
+            [
+              1,
+              41,
+              198,
+              221,
+              232
+            ],
+            [
+              1,
+              322,
+              462,
+              246,
+              258
+            ],
+            [
+              1,
+              41,
+              195,
+              247,
+              259
+            ],
+            [
+              1,
+              40,
+              163,
+              262,
+              274
+            ],
+            [
+              1,
+              321,
+              464,
+              262,
+              274
+            ],
+            [
+              1,
+              40,
+              118,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              420,
+              278,
+              289
+            ],
+            [
+              1,
+              321,
+              481,
+              302,
+              317
+            ],
+            [
+              1,
+              40,
+              196,
+              303,
+              316
+            ],
+            [
+              1,
+              320,
+              376,
+              318,
+              331
+            ],
+            [
+              1,
+              40,
+              178,
+              320,
+              330
+            ],
+            [
+              1,
+              40,
+              107,
+              335,
+              346
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 0,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "3d5cd8c9d823a1e0",
+          "content_with_weight": "Juniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-0-837. The second exception continues on the next page.\nJuniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-0-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-0-759. Earlier revision 3 used\nRETIRED-0-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\n16. Administrative note: keep this record with the signed receipt and make it\n17. Administrative note: keep this record with the signed receipt and make it\n18. Administrative note: keep this record with the signed receipt and make it\n19. Administrative note: keep this record with the signed receipt and make it",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_f361397d877f4c9074ab359a.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-3d5cd8c9d823a1e0",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              198,
+              27,
+              47
+            ],
+            [
+              1,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              1,
+              40,
+              380,
+              93,
+              105
+            ],
+            [
+              1,
+              41,
+              405,
+              109,
+              120
+            ],
+            [
+              1,
+              40,
+              115,
+              122,
+              137
+            ],
+            [
+              1,
+              40,
+              379,
+              151,
+              163
+            ],
+            [
+              1,
+              40,
+              115,
+              180,
+              194
+            ],
+            [
+              1,
+              41,
+              379,
+              208,
+              220
+            ],
+            [
+              1,
+              40,
+              115,
+              236,
+              251
+            ],
+            [
+              1,
+              41,
+              379,
+              265,
+              277
+            ],
+            [
+              1,
+              40,
+              115,
+              294,
+              308
+            ],
+            [
+              1,
+              40,
+              379,
+              322,
+              334
+            ],
+            [
+              1,
+              40,
+              115,
+              351,
+              364
+            ],
+            [
+              1,
+              40,
+              380,
+              378,
+              392
+            ],
+            [
+              1,
+              40,
+              115,
+              409,
+              421
+            ],
+            [
+              1,
+              41,
+              379,
+              436,
+              448
+            ],
+            [
+              1,
+              41,
+              115,
+              467,
+              478
+            ],
+            [
+              1,
+              40,
+              379,
+              494,
+              505
+            ],
+            [
+              1,
+              39,
+              115,
+              523,
+              535
+            ],
+            [
+              1,
+              42,
+              400,
+              623,
+              633
+            ],
+            [
+              1,
+              41,
+              318,
+              637,
+              649
+            ],
+            [
+              1,
+              40,
+              342,
+              684,
+              698
+            ],
+            [
+              2,
+              40,
+              198,
+              27,
+              45
+            ],
+            [
+              2,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              2,
+              40,
+              425,
+              93,
+              105
+            ],
+            [
+              2,
+              41,
+              361,
+              109,
+              120
+            ],
+            [
+              2,
+              42,
+              365,
+              169,
+              180
+            ],
+            [
+              2,
+              41,
+              225,
+              184,
+              196
+            ],
+            [
+              2,
+              41,
+              378,
+              243,
+              255
+            ],
+            [
+              2,
+              40,
+              191,
+              259,
+              271
+            ],
+            [
+              2,
+              40,
+              379,
+              304,
+              319
+            ],
+            [
+              2,
+              42,
+              378,
+              368,
+              380
+            ],
+            [
+              2,
+              42,
+              379,
+              430,
+              442
+            ],
+            [
+              2,
+              42,
+              378,
+              492,
+              503
+            ],
+            [
+              2,
+              41,
+              379,
+              553,
+              567
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 3,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "6c6b8a00ce896968",
+          "content_with_weight": "Juniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-1-837. The second exception continues on the next page.\nJuniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-1-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-1-759. Earlier revision 3 used\nRETIRED-1-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\n16. Administrative note: keep this record with the signed receipt and make it\n17. Administrative note: keep this record with the signed receipt and make it\n18. Administrative note: keep this record with the signed receipt and make it\n19. Administrative note: keep this record with the signed receipt and make it",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_4b51c2f07fe6d33137c84359.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-6c6b8a00ce896968",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              197,
+              27,
+              45
+            ],
+            [
+              1,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              1,
+              40,
+              380,
+              93,
+              105
+            ],
+            [
+              1,
+              41,
+              405,
+              109,
+              120
+            ],
+            [
+              1,
+              40,
+              115,
+              122,
+              137
+            ],
+            [
+              1,
+              40,
+              379,
+              151,
+              163
+            ],
+            [
+              1,
+              40,
+              115,
+              180,
+              194
+            ],
+            [
+              1,
+              41,
+              379,
+              208,
+              220
+            ],
+            [
+              1,
+              40,
+              115,
+              236,
+              251
+            ],
+            [
+              1,
+              41,
+              379,
+              265,
+              277
+            ],
+            [
+              1,
+              40,
+              115,
+              294,
+              308
+            ],
+            [
+              1,
+              40,
+              379,
+              322,
+              334
+            ],
+            [
+              1,
+              40,
+              115,
+              351,
+              364
+            ],
+            [
+              1,
+              40,
+              380,
+              378,
+              392
+            ],
+            [
+              1,
+              40,
+              115,
+              409,
+              421
+            ],
+            [
+              1,
+              41,
+              379,
+              436,
+              448
+            ],
+            [
+              1,
+              41,
+              115,
+              467,
+              478
+            ],
+            [
+              1,
+              40,
+              379,
+              494,
+              505
+            ],
+            [
+              1,
+              39,
+              115,
+              523,
+              535
+            ],
+            [
+              1,
+              42,
+              400,
+              623,
+              633
+            ],
+            [
+              1,
+              41,
+              318,
+              637,
+              649
+            ],
+            [
+              1,
+              40,
+              342,
+              684,
+              698
+            ],
+            [
+              2,
+              40,
+              197,
+              27,
+              45
+            ],
+            [
+              2,
+              42,
+              289,
+              54,
+              66
+            ],
+            [
+              2,
+              40,
+              425,
+              93,
+              105
+            ],
+            [
+              2,
+              41,
+              361,
+              109,
+              120
+            ],
+            [
+              2,
+              42,
+              365,
+              169,
+              180
+            ],
+            [
+              2,
+              41,
+              225,
+              184,
+              196
+            ],
+            [
+              2,
+              41,
+              378,
+              243,
+              255
+            ],
+            [
+              2,
+              40,
+              191,
+              259,
+              271
+            ],
+            [
+              2,
+              40,
+              379,
+              304,
+              319
+            ],
+            [
+              2,
+              42,
+              378,
+              368,
+              380
+            ],
+            [
+              2,
+              42,
+              379,
+              430,
+              442
+            ],
+            [
+              2,
+              42,
+              378,
+              492,
+              503
+            ],
+            [
+              2,
+              41,
+              379,
+              553,
+              567
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 2,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "b585d5fa560dc89d",
+          "content_with_weight": "<table><caption>*For the South region, use overflow only after 18:00 UTC. Before that time, use the Southprimaryqueue.</caption><tr><td >Region</td><td >Primaryqueue</td><td >Overflowqueue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-2-731</td><td >NBACK-2-428</td><td >OLDN-2-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-2-862</td><td >SBACK-2-593*</td><td >OLDS-2-267</td><td >12</td></tr><tr><td >East</td><td >EAST-2-915</td><td >EBACK-2-346</td><td >OLDE-2-782</td><td >B</td></tr><tr><td >West</td><td >WEST-2-624</td><td ></td><td >OLDW-2-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-b585d5fa560dc89d",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              38,
+              570,
+              163,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 5,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "8173443277e1c933",
+          "content_with_weight": "<table><caption>*For the South region, use overflow only after 18:00 UTC. Before that time, use the Southprimaryqueue.</caption><tr><td >Region</td><td >Primaryqueue</td><td >Overflowqueue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-3-731</td><td >NBACK-3-428</td><td >OLDN-3-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-3-862</td><td >SBACK-3-593*</td><td >OLDS-3-267</td><td >12</td></tr><tr><td >East</td><td >EAST-3-915</td><td >EBACK-3-346</td><td >OLDE-3-782</td><td >B</td></tr><tr><td >West</td><td >WEST-3-624</td><td ></td><td >OLDW-3-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_255d68caea01e4bc6add58b1.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-8173443277e1c933",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              38,
+              570,
+              163,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 8,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "7c1f8d440e53c5fa",
+          "content_with_weight": "<table><caption>Historical - do not use</caption><tr><td >Region</td><td >Primary queue</td><td >Overflow queue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-1-731</td><td >NBACK-1-428</td><td >OLDN-1-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-1-862</td><td >SBACK-1-593 *</td><td >OLDS-1-267</td><td >12</td></tr><tr><td >East</td><td >EAST-1-915</td><td >EBACK-1-346</td><td >OLDE-1-782</td><td >8</td></tr><tr><td >West</td><td >WEST-1-624</td><td ></td><td >OLDW-1-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-7c1f8d440e53c5fa",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              39,
+              571,
+              164,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 14,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "5aff2595f812723f",
+          "content_with_weight": "<table><caption>Historical - do not use</caption><tr><td >Region</td><td >Primary queue</td><td >Overflow queue</td><td >Old queue</td><td >Hours</td></tr><tr><td >North</td><td >NORTH-0-731</td><td >NBACK-0-428</td><td >OLDN-0-154</td><td >4</td></tr><tr><td >South</td><td >SOUTH-0-862</td><td >SBACK-0-593 *</td><td >OLDS-0-267</td><td >12</td></tr><tr><td >East</td><td >EAST-0-915</td><td >EBACK-0-346</td><td >OLDE-0-782</td><td >8</td></tr><tr><td >West</td><td >WEST-0-624</td><td ></td><td >OLDW-0-853</td><td >24</td></tr></table>",
+          "doc_type_kwd": "table",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-5aff2595f812723f",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              39,
+              571,
+              164,
+              390
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 11,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "0e4550b8a59fa382",
+          "content_with_weight": "The Hours column specifies the response window. It does not specify the overflow\nactivationtime.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_255d68caea01e4bc6add58b1.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-0e4550b8a59fa382",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              406,
+              454,
+              471
+            ],
+            [
+              1,
+              40,
+              109,
+              473,
+              485
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 9,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "de994429e9cf1144",
+          "content_with_weight": "The Hours column specifies the response window. It does not specify the overflow\nactivationtime.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_7fe00361fcf964b12aea766c.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-de994429e9cf1144",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              40,
+              406,
+              454,
+              471
+            ],
+            [
+              1,
+              40,
+              109,
+              473,
+              485
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 6,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "7bd0291faf4a3951",
+          "content_with_weight": "* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-7bd0291faf4a3951",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              411,
+              406,
+              417
+            ],
+            [
+              1,
+              40,
+              138,
+              420,
+              434
+            ],
+            [
+              1,
+              41,
+              405,
+              457,
+              468
+            ],
+            [
+              1,
+              39,
+              109,
+              472,
+              484
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 12,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        },
+        {
+          "available_int": 1,
+          "chunk_id": "8ce3f24f52d0aa88",
+          "content_with_weight": "* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.",
+          "doc_type_kwd": "text",
+          "docnm_kwd": "e_6f96a2af3365edd7577ea147.pdf",
+          "entities_kwd": [],
+          "entity_kwd": [],
+          "entity_type_kwd": [],
+          "from_entity_kwd": [],
+          "image_id": "a14df2317216449dbb35abdf9e46ae73-8ce3f24f52d0aa88",
+          "important_kwd": [],
+          "name_kwd": [],
+          "positions": [
+            [
+              1,
+              41,
+              411,
+              406,
+              417
+            ],
+            [
+              1,
+              40,
+              138,
+              420,
+              434
+            ],
+            [
+              1,
+              41,
+              405,
+              457,
+              468
+            ],
+            [
+              1,
+              39,
+              109,
+              472,
+              484
+            ]
+          ],
+          "question_kwd": [],
+          "raptor_kwd": [],
+          "removed_kwd": [],
+          "row_id()": 15,
+          "source_id": [],
+          "tag_kwd": [],
+          "to_entity_kwd": [],
+          "toc_kwd": []
+        }
+      ],
+      "doc": {
+        "chunk_count": 3,
+        "chunk_method": "general",
+        "content_hash": "a04b85b19c8cdb6a7a1b595915fceaa7",
+        "create_date": "2026-10-10T11:12:38",
+        "create_time": 1791601958189,
+        "created_by": "72439b3d1fe244c1ab1259b094210f18",
+        "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+        "id": "e422c004fd8449c6b8bbe2258ca16ed6",
+        "ingestion_status": "COMPLETED",
+        "location": "e_255d68caea01e4bc6add58b1.pdf",
+        "name": "e_255d68caea01e4bc6add58b1.pdf",
+        "parser_config": {
+          "Extractor:AutoExtractDefault": {
+            "keywords": {
+              "top_n": 0
+            },
+            "llm_id": "",
+            "metadata": {
+              "built_in_metadata": [],
+              "enabled": false,
+              "metadata": []
+            },
+            "questions": {
+              "top_n": 0
+            },
+            "summary": {
+              "enabled": false
+            },
+            "tags": {
+              "tag_file_id": "",
+              "top_n": 0
+            }
+          },
+          "File": {},
+          "GeneralChunker:SixApplesFall": {
+            "children_delimiters": [],
+            "chunk_token_size": 512,
+            "delimiters": [
+              "\n",
+              "!",
+              "?",
+              ";",
+              "\u3002",
+              "\uff1b",
+              "\uff01",
+              "\uff1f"
+            ],
+            "image_context_size": 0,
+            "overlapped_percent": 0,
+            "table_context_size": 0
+          },
+          "Parser:HipSignsRhyme": {
+            "doc": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "doc"
+              ]
+            },
+            "docx": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "docx"
+              ],
+              "vlm": {}
+            },
+            "html": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "htm",
+                "html"
+              ]
+            },
+            "markdown": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "md",
+                "markdown",
+                "mdx"
+              ],
+              "vlm": {}
+            },
+            "pdf": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "pages": [
+                [
+                  1,
+                  100000
+                ]
+              ],
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "pdf"
+              ],
+              "vlm": {}
+            },
+            "spreadsheet": {
+              "flatten_media_to_text": false,
+              "output_format": "json",
+              "parse_method": "DeepDOC",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "xls",
+                "xlsx",
+                "csv"
+              ],
+              "vlm": {}
+            },
+            "text&code": {
+              "output_format": "json",
+              "preprocess": [
+                "main_content"
+              ],
+              "suffix": [
+                "txt",
+                "py",
+                "js",
+                "java",
+                "c",
+                "cpp",
+                "h",
+                "php",
+                "go",
+                "ts",
+                "sh",
+                "cs",
+                "kt",
+                "sql"
+              ]
+            }
+          },
+          "Tokenizer:LegalReadersDecide": {
+            "fields": "text",
+            "filename_embd_weight": 0.1,
+            "search_method": [
+              "embedding",
+              "full_text"
+            ]
+          },
+          "parent_child": {
+            "children_delimiter": "\n",
+            "use_parent_child": false
+          }
+        },
+        "pipeline_id": null,
+        "process_begin_at": "2026-10-10T11:24:36",
+        "process_duration": 527.865873466,
+        "progress": 1.0,
+        "progress_msg": null,
+        "size": 132491,
+        "source_type": "local",
+        "status": "1",
+        "suffix": "pdf",
+        "thumbnail": null,
+        "token_count": 248,
+        "type": "pdf",
+        "update_date": "2026-10-10T11:33:24",
+        "update_time": 1791603204735
+      },
+      "total": 16
+    }
+  },
+  "documents": [
+    {
+      "chunk_count": 3,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:38",
+      "create_time": 1791601958189,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "e422c004fd8449c6b8bbe2258ca16ed6",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 84,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:33:24+08:00"
+      },
+      "location": "e_255d68caea01e4bc6add58b1.pdf",
+      "meta_fields": {},
+      "name": "e_255d68caea01e4bc6add58b1.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:24:36",
+      "process_duration": 527.865873466,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 132491,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 248,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:33:24",
+      "update_time": 1791603204735
+    },
+    {
+      "chunk_count": 3,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:38",
+      "create_time": 1791601958165,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "2ed9c8d7c83b4ed68f56d9c9cda32f9f",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 78,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:33:24+08:00"
+      },
+      "location": "e_7fe00361fcf964b12aea766c.pdf",
+      "meta_fields": {},
+      "name": "e_7fe00361fcf964b12aea766c.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:24:36",
+      "process_duration": 527.739500232,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 132187,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 249,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:33:24",
+      "update_time": 1791603204058
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:38",
+      "create_time": 1791601958140,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "ad66157ecc8645ffb28f1d877f1117ef",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 55,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:24:36+08:00"
+      },
+      "location": "e_4b51c2f07fe6d33137c84359.pdf",
+      "meta_fields": {},
+      "name": "e_4b51c2f07fe6d33137c84359.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:18:37",
+      "process_duration": 359.22481462,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 3105,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 466,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:24:36",
+      "update_time": 1791602676256
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:38",
+      "create_time": 1791601958119,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "aab7fe83fa784fd98b62f37b9ef6dd55",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 60,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:24:36+08:00"
+      },
+      "location": "e_f361397d877f4c9074ab359a.pdf",
+      "meta_fields": {},
+      "name": "e_f361397d877f4c9074ab359a.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:18:36",
+      "process_duration": 360.69973999,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 3110,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 465,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:24:36",
+      "update_time": 1791602676827
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:38",
+      "create_time": 1791601958094,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "6058c0de8a204ddb9a6dc14d5329cff5",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 36,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:18:36+08:00"
+      },
+      "location": "e_adf880c03e4b6091d62cdf6f.pdf",
+      "meta_fields": {},
+      "name": "e_adf880c03e4b6091d62cdf6f.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:12:38",
+      "process_duration": 358.664266006,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 2234,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 199,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:18:36",
+      "update_time": 1791602316972
+    },
+    {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:38",
+      "create_time": 1791601958069,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "cd1560b16bda488ab141261e973b5702",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 30,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:18:36+08:00"
+      },
+      "location": "e_f78b8623bff0267bf5e45c2b.pdf",
+      "meta_fields": {},
+      "name": "e_f78b8623bff0267bf5e45c2b.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:12:38",
+      "process_duration": 357.788403949,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 2237,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 199,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:18:36",
+      "update_time": 1791602316073
+    },
+    {
+      "chunk_count": 3,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:38",
+      "create_time": 1791601958037,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "6ceeb6a86896403aa194c8cd05fbaf02",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 104,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:39:26+08:00"
+      },
+      "location": "e_6f96a2af3365edd7577ea147.pdf",
+      "meta_fields": {},
+      "name": "e_6f96a2af3365edd7577ea147.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:33:24",
+      "process_duration": 361.303632262,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 2364,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 251,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:39:26",
+      "update_time": 1791603566101
+    },
+    {
+      "chunk_count": 3,
+      "chunk_method": "general",
+      "create_date": "2026-10-10 11:12:37",
+      "create_time": 1791601957999,
+      "created_by": "72439b3d1fe244c1ab1259b094210f18",
+      "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+      "id": "3cc1999f86bc4d34988394568b849218",
+      "ingestion_status": "COMPLETED",
+      "latest_ingestion_event": {
+        "component": "",
+        "event_type": 2,
+        "id": 103,
+        "message": "Task completed.",
+        "phase": 0,
+        "ts": "2026-10-10T11:39:25+08:00"
+      },
+      "location": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+      "meta_fields": {},
+      "name": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+      "nickname": "ELF Benchmark",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general",
+      "pipeline_id": "",
+      "pipeline_name": "",
+      "process_begin_at": "2026-10-10 11:33:24",
+      "process_duration": 361.360575986,
+      "progress": 1,
+      "progress_msg": "",
+      "size": 2366,
+      "status": "1",
+      "suffix": "pdf",
+      "thumbnail": "",
+      "token_count": 249,
+      "type": "pdf",
+      "update_date": "2026-10-10 11:39:25",
+      "update_time": 1791603565464
+    }
+  ]
+}

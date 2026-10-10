@@ -6,6 +6,7 @@ import hashlib
 import random
 
 WORKLOAD_GROUPS = {
+    'complex-documents': {'complex-documents'},
     'documents': {'documents'},
     'scale-100': {'scale-100'},
     'scale-1000': {'scale-1000'},
@@ -22,6 +23,10 @@ def opaque(value):
 
 
 def workload(group='all'):
+    if group == 'complex-documents':
+        from .complex_documents import workload as complex_workload
+
+        return complex_workload()
     if group == 'documents':
         from .documents import workload as documents_workload
 

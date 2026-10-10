@@ -1,0 +1,157 @@
+{
+  "excluded_cases": [
+    "complex-002",
+    "complex-005",
+    "complex-020",
+    "complex-023"
+  ],
+  "exclusion_reason": "Explicit empty cell has ambiguous supported-vs-unknown oracle; exclude uniformly after evaluator audit. Original scores retained.",
+  "primary_conditions": [
+    "ragflow-reader8k-v1",
+    "hindsight-provenance-v2",
+    "elf-reader8k-v1"
+  ],
+  "results": {
+    "elf-reader8k-v1": {
+      "answered": 20,
+      "correct": 15,
+      "lanes": {
+        "columns_absent": {
+          "correct": 2,
+          "planned": 2
+        },
+        "columns_binding": {
+          "correct": 1,
+          "planned": 2
+        },
+        "columns_complete": {
+          "correct": 1,
+          "planned": 2
+        },
+        "cross_page_absent": {
+          "correct": 2,
+          "planned": 2
+        },
+        "cross_page_list": {
+          "correct": 2,
+          "planned": 2
+        },
+        "cross_page_revision": {
+          "correct": 2,
+          "planned": 2
+        },
+        "scan_footnote": {
+          "correct": 0,
+          "planned": 2
+        },
+        "scan_row": {
+          "correct": 2,
+          "planned": 2
+        },
+        "table_footnote": {
+          "correct": 1,
+          "planned": 2
+        },
+        "table_row": {
+          "correct": 2,
+          "planned": 2
+        }
+      },
+      "planned": 20
+    },
+    "hindsight-provenance-v2": {
+      "answered": 20,
+      "correct": 8,
+      "lanes": {
+        "columns_absent": {
+          "correct": 2,
+          "planned": 2
+        },
+        "columns_binding": {
+          "correct": 0,
+          "planned": 2
+        },
+        "columns_complete": {
+          "correct": 0,
+          "planned": 2
+        },
+        "cross_page_absent": {
+          "correct": 2,
+          "planned": 2
+        },
+        "cross_page_list": {
+          "correct": 1,
+          "planned": 2
+        },
+        "cross_page_revision": {
+          "correct": 1,
+          "planned": 2
+        },
+        "scan_footnote": {
+          "correct": 0,
+          "planned": 2
+        },
+        "scan_row": {
+          "correct": 1,
+          "planned": 2
+        },
+        "table_footnote": {
+          "correct": 0,
+          "planned": 2
+        },
+        "table_row": {
+          "correct": 1,
+          "planned": 2
+        }
+      },
+      "planned": 20
+    },
+    "ragflow-reader8k-v1": {
+      "answered": 20,
+      "correct": 13,
+      "lanes": {
+        "columns_absent": {
+          "correct": 2,
+          "planned": 2
+        },
+        "columns_binding": {
+          "correct": 2,
+          "planned": 2
+        },
+        "columns_complete": {
+          "correct": 2,
+          "planned": 2
+        },
+        "cross_page_absent": {
+          "correct": 2,
+          "planned": 2
+        },
+        "cross_page_list": {
+          "correct": 2,
+          "planned": 2
+        },
+        "cross_page_revision": {
+          "correct": 1,
+          "planned": 2
+        },
+        "scan_footnote": {
+          "correct": 2,
+          "planned": 2
+        },
+        "scan_row": {
+          "correct": 0,
+          "planned": 2
+        },
+        "table_footnote": {
+          "correct": 0,
+          "planned": 2
+        },
+        "table_row": {
+          "correct": 0,
+          "planned": 2
+        }
+      },
+      "planned": 20
+    }
+  }
+}
