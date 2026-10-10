@@ -1,0 +1,307 @@
+{
+  "conditions": {
+    "elf-documents-pack-reader": {
+      "count": 50,
+      "scored_count": 50,
+      "completed": 50,
+      "strict_correct": 48,
+      "reviewed_correct": 50,
+      "accuracy": 1.0,
+      "median_seconds": 4.269181562500307,
+      "p95_seconds": 19.558443791989703,
+      "paid_usd": 0.03601388,
+      "input_tokens": 267520,
+      "output_tokens": 13270,
+      "cached_input_tokens": 81280,
+      "lanes": {
+        "chinese_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_amount": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_condition": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_name": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_place": {
+          "total": 2,
+          "correct": 2
+        },
+        "columns_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "columns_binding": {
+          "total": 2,
+          "correct": 2
+        },
+        "columns_complete": {
+          "total": 2,
+          "correct": 2
+        },
+        "cross_page_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "cross_page_list": {
+          "total": 2,
+          "correct": 2
+        },
+        "cross_page_revision": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_cross_page": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_image_body": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_scan_name": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_scan_page": {
+          "total": 2,
+          "correct": 2
+        },
+        "scan_footnote": {
+          "total": 2,
+          "correct": 2
+        },
+        "scan_row": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_continuation": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_footnote": {
+          "total": 4,
+          "correct": 4
+        },
+        "table_merged_header": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_merged_region": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_row": {
+          "total": 2,
+          "correct": 2
+        }
+      }
+    },
+    "elf-documents-retrieval-reader": {
+      "count": 50,
+      "scored_count": 50,
+      "completed": 50,
+      "strict_correct": 48,
+      "reviewed_correct": 50,
+      "accuracy": 1.0,
+      "median_seconds": 4.313626374991145,
+      "p95_seconds": 20.291758415987715,
+      "paid_usd": 0.017250686,
+      "input_tokens": 234353,
+      "output_tokens": 13308,
+      "cached_input_tokens": 175232,
+      "lanes": {
+        "chinese_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_amount": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_condition": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_name": {
+          "total": 2,
+          "correct": 2
+        },
+        "chinese_place": {
+          "total": 2,
+          "correct": 2
+        },
+        "columns_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "columns_binding": {
+          "total": 2,
+          "correct": 2
+        },
+        "columns_complete": {
+          "total": 2,
+          "correct": 2
+        },
+        "cross_page_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "cross_page_list": {
+          "total": 2,
+          "correct": 2
+        },
+        "cross_page_revision": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_cross_page": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_image_body": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_scan_name": {
+          "total": 2,
+          "correct": 2
+        },
+        "mixed_scan_page": {
+          "total": 2,
+          "correct": 2
+        },
+        "scan_footnote": {
+          "total": 2,
+          "correct": 2
+        },
+        "scan_row": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_absent": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_continuation": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_footnote": {
+          "total": 4,
+          "correct": 4
+        },
+        "table_merged_header": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_merged_region": {
+          "total": 2,
+          "correct": 2
+        },
+        "table_row": {
+          "total": 2,
+          "correct": 2
+        }
+      }
+    },
+    "elf-memory-pack-reader": {
+      "count": 20,
+      "scored_count": 16,
+      "completed": 20,
+      "strict_correct": 12,
+      "reviewed_correct": 16,
+      "accuracy": 1.0,
+      "median_seconds": 8.482485708489548,
+      "p95_seconds": 25.344939999980852,
+      "paid_usd": 0.01024211,
+      "input_tokens": 33317,
+      "output_tokens": 10364,
+      "cached_input_tokens": 5760,
+      "lanes": {
+        "abstention": {
+          "total": 4,
+          "correct": 4
+        },
+        "cross_session": {
+          "total": 4,
+          "correct": 4
+        },
+        "temporal": {
+          "total": 4,
+          "correct": 4
+        },
+        "updates": {
+          "total": 4,
+          "correct": 4
+        }
+      }
+    },
+    "elf-memory-retrieval-reader": {
+      "count": 20,
+      "scored_count": 16,
+      "completed": 20,
+      "strict_correct": 12,
+      "reviewed_correct": 16,
+      "accuracy": 1.0,
+      "median_seconds": 9.096717853506561,
+      "p95_seconds": 33.70860829204321,
+      "paid_usd": 0.01428818,
+      "input_tokens": 35322,
+      "output_tokens": 15195,
+      "cached_input_tokens": 0,
+      "lanes": {
+        "abstention": {
+          "total": 4,
+          "correct": 4
+        },
+        "cross_session": {
+          "total": 4,
+          "correct": 4
+        },
+        "temporal": {
+          "total": 4,
+          "correct": 4
+        },
+        "updates": {
+          "total": 4,
+          "correct": 4
+        }
+      }
+    }
+  },
+  "weighted_scores": {
+    "pack-reader": 100.0,
+    "retrieval-reader": 100.0
+  },
+  "ingestion": {
+    "documents_accepted": 34,
+    "documents_rejected": 0,
+    "events_accepted": 20,
+    "events_failed": 0,
+    "note_operations": {
+      "UPDATE": 21,
+      "ADD": 37,
+      "REJECTED": 1
+    }
+  }
+}

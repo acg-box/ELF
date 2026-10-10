@@ -1,0 +1,33 @@
+{
+  "files_checked": [
+    "accounting.json",
+    "attempts.jsonl.gz",
+    "cases.jsonl.gz",
+    "cleanup.json",
+    "comparison-controls.json",
+    "database-stats.json",
+    "evaluation.json",
+    "extraction-diagnostics.json",
+    "frozen-workloads.json",
+    "harness-sources.json",
+    "ingestion.jsonl.gz",
+    "probe-ingestion.jsonl.gz",
+    "probe-provider-receipts.jsonl.gz",
+    "protocol.json",
+    "provider-receipts.jsonl.gz",
+    "review.json",
+    "run-completed.json",
+    "runtime-config.json",
+    "runtime.json",
+    "source-integrity.json",
+    "stopped-probe.json",
+    "tokenizer-receipt.json",
+    "usage.jsonl.gz",
+    "validation.json",
+    "verify.py"
+  ],
+  "compressed_files_decompressed": true,
+  "secret_patterns_found": 0,
+  "personal_absolute_paths_found": 0,
+  "authentication_files_excluded": true
+}

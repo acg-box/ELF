@@ -1,0 +1,37 @@
+{
+  "same_frozen_inputs": true,
+  "unchanged_query_functions": {
+    "retrieve": true,
+    "answer": true
+  },
+  "unchanged_supporting_scripts": {
+    "scripts/benchmark_budget.py": "c5bed46950b9c9be4b28630439afda452ec7e776db246a19fe5bc840ce447ea2",
+    "scripts/benchmark-system-comparison.py": "80a1aa814b723c7f80212f57d8e7ff7a170f36a63fbb73fa50a4e3d87e317df4",
+    "scripts/benchmark-native-comparison.py": "a4b44adbd7c678a0472fb575bcd35a5268cd5014bae4310d191b2133dbad1c5b",
+    "scripts/benchmark_deep/native_sidecar.py": "834e8689b55d5a0c577061e847fa5c817cff8a3f8a8b0c4903b9b679a14d8a6a"
+  },
+  "new_database": true,
+  "same_provider_routing": true,
+  "same_reader_context_limits": true,
+  "intervention": "ELF source/text/extraction contracts only; no source translation or answer-oracle changes.",
+  "post_image_correction": {
+    "commit": "c3f158083082a03d7b0736bbdd7c491d5461bc1b",
+    "runtime_files": [
+      "packages/elf-storage/src/docs/documents.rs"
+    ],
+    "test_files": [
+      "packages/elf-service/src/add_event/tests.rs",
+      "packages/elf-service/tests/acceptance/docs_extension_v1/lifecycle/immutable_sources.rs"
+    ],
+    "added_sql": "title = EXCLUDED.title,",
+    "scope": "Metadata-only update on source identity conflict; matched fixtures insert each source once. Focused repeated-capture integration test passed.",
+    "patch_sha256": "fd77f7931b7c4c76f8c842ef2e291251bad742d5fda2b8e07867a14830975437"
+  },
+  "post_measurement_provenance": {
+    "commit": "59e1e69f680d47e7ee81e943e7d257ba8338764c",
+    "scope": "Stored event evidence adds caller message ID, role, timestamp, original/input BLAKE3 hashes and the matching write-policy audit. Metadata control-character validation is also added. No extraction prompt, retrieval or reader changes.",
+    "validation": "454 unit tests and 94 integration tests passed; final focused source-provenance regressions passed.",
+    "measured_rows_backfilled": false,
+    "full_paid_benchmark_repeated_after_metadata_change": false
+  }
+}

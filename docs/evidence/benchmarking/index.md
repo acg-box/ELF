@@ -9,6 +9,8 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [Language-neutral source memory regression](2026-10-10-elf-language-provenance.md): immutable sources, multilingual extraction, matched answer scores, provenance, and cumulative cost.
+
 - [ELF matched document and memory comparison](2026-10-10-elf-matched.md): formal API results, language boundaries, extraction failures, and independent accounting.
 
 - [Native Hindsight and RAGFlow comparison](2026-10-10-native-memory-comparison.md): token-budget retrieval, native answers, and separate document and conversation workloads.

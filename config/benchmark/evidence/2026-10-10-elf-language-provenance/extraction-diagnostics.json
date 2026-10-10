@@ -1,0 +1,1297 @@
+{
+  "operations": {
+    "UPDATE": 21,
+    "ADD": 37,
+    "REJECTED": 1
+  },
+  "rejected": [
+    {
+      "evidence_id": "m_11ab570fcca41f15",
+      "reason_code": "REJECT_STRUCTURED_INVALID",
+      "field_path": "structured.relations[0].subject.canonical",
+      "reason": "Captures the chosen batch delivery identifier for project Cedar."
+    }
+  ],
+  "notes": [
+    {
+      "note_id": "9da122d9-d8d7-4989-a69c-17bcda54d31f",
+      "text": "Mara started project Larch on 2026-08-01.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "2026-08-01. Mara started project Larch.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:16:57.688007+00:00",
+      "updated_at": "2026-10-10T18:16:57.688007+00:00"
+    },
+    {
+      "note_id": "6f580495-9a4c-4243-8e70-8a5382268a71",
+      "text": "For project Larch, Mara chose BATCH-0-741 for batch delivery on 2026-08-01.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "Mara started project Larch. They chose BATCH-0-741 for batch delivery.",
+            "message_index": 0
+          },
+          {
+            "quote": "2026-08-01.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:16:57.688008+00:00",
+      "updated_at": "2026-10-10T18:16:57.688008+00:00"
+    },
+    {
+      "note_id": "24c8596a-a75d-4cf7-9617-d62e0edbe292",
+      "text": "The team tested REPLAY-0-632, which restored the missing updates.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "The team tested REPLAY-0-632, which restored the missing updates.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:17:36.101219+00:00",
+      "updated_at": "2026-10-10T18:17:36.101219+00:00"
+    },
+    {
+      "note_id": "50f558e8-24fd-450b-be6a-08327236de62",
+      "text": "No change of delivery mode was approved at this meeting (2026-08-08).",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "No change of delivery mode was approved at this meeting.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:17:36.10122+00:00",
+      "updated_at": "2026-10-10T18:17:36.10122+00:00"
+    },
+    {
+      "note_id": "130ec5f9-9357-425a-871d-5d63027e5517",
+      "text": "On 2026-08-15, Mara approved switching Larch from BATCH-0-741 to STREAM-0-286, superseding the August 1 delivery decision.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Approved migration from BATCH-0-741 to STREAM-0-286 supersedes the August 1 delivery decision.",
+        "evidence": [
+          {
+            "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:18:26.766534+00:00",
+      "updated_at": "2026-10-10T18:18:26.766534+00:00"
+    },
+    {
+      "note_id": "ff2205bc-1f86-4456-97fe-99e32bc538d5",
+      "text": "The Larch switch to STREAM-0-286 was caused by the GATE-0-519 outages recorded on August 8.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Root cause of the approved switch.",
+        "evidence": [
+          {
+            "quote": "The cause was the GATE-0-519 outages recorded on August 8",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:18:26.766535+00:00",
+      "updated_at": "2026-10-10T18:18:26.766535+00:00"
+    },
+    {
+      "note_id": "9695f3e4-30f8-473f-beb7-9776c716efb6",
+      "text": "Keep the successful recovery procedure from the GATE-0-519 incident (August 8 outages).",
+      "status": "active",
+      "source_ref": {
+        "reason": "Requires retaining the recovery procedure from the GATE-0-519 incident.",
+        "evidence": [
+          {
+            "quote": "keep the successful recovery procedure from that incident.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:18:26.766536+00:00",
+      "updated_at": "2026-10-10T18:18:26.766536+00:00"
+    },
+    {
+      "note_id": "882729bf-5f44-4229-b251-6e360891fa9a",
+      "text": "The retry policy is now RETRY-0-907, superseding RETRY-0-108 (as of 2026-08-22).",
+      "status": "active",
+      "source_ref": {
+        "reason": "Explicit supersession decision that governs future retry behavior.",
+        "evidence": [
+          {
+            "quote": "The retry policy is now RETRY-0-907, superseding RETRY-0-108.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:19:12.95827+00:00",
+      "updated_at": "2026-10-10T18:19:12.95827+00:00"
+    },
+    {
+      "note_id": "5920b8fb-eecb-47d7-af91-3a058d9c35ed",
+      "text": "For the next outage, use the recovery procedure validated on August 8 (per decision on 2026-08-22).",
+      "status": "active",
+      "source_ref": {
+        "reason": "Specifies which recovery procedure to apply during the next outage.",
+        "evidence": [
+          {
+            "quote": "For the next outage, use the recovery procedure validated on August 8.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:19:12.958271+00:00",
+      "updated_at": "2026-10-10T18:19:12.958271+00:00"
+    },
+    {
+      "note_id": "b7fd6dca-81eb-487b-bc2d-7e3250a63475",
+      "text": "Mara reviewed Larch; keep the August 15 delivery choice. No budget owner has been appointed (2026-08-22).",
+      "status": "active",
+      "source_ref": {
+        "reason": "Records the Larch review outcome, retained delivery choice, and open budget ownership.",
+        "evidence": [
+          {
+            "quote": "Mara reviewed Larch. Keep the August 15 delivery choice.",
+            "message_index": 0
+          },
+          {
+            "quote": "No budget owner has been appointed.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:19:12.958272+00:00",
+      "updated_at": "2026-10-10T18:19:12.958272+00:00"
+    },
+    {
+      "note_id": "89fb8ae8-0ab1-4667-8fd9-0761f425c548",
+      "text": "On 2026-08-01, Ivo started project Cobalt.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Records the start of a named project and its owner.",
+        "evidence": [
+          {
+            "quote": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:19:30.621598+00:00",
+      "updated_at": "2026-10-10T18:19:30.621598+00:00"
+    },
+    {
+      "note_id": "feaccc15-d242-43c2-8957-e356f9b088b0",
+      "text": "Project Cobalt chose BATCH-1-741 for batch delivery.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Documents the selected batch delivery identifier for project Cobalt.",
+        "evidence": [
+          {
+            "quote": "Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:19:30.621599+00:00",
+      "updated_at": "2026-10-10T18:19:30.621599+00:00"
+    },
+    {
+      "note_id": "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2",
+      "text": "On 2026-08-08, Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "2026-08-08. Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:17:36.101218+00:00",
+      "updated_at": "2026-10-10T18:27:57.265785+00:00"
+    },
+    {
+      "note_id": "eba6000c-d5bb-4b23-8fae-b1688a457d23",
+      "text": "Project Cobalt's initial retry policy was RETRY-1-108.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Captures the initial retry policy identifier for project Cobalt.",
+        "evidence": [
+          {
+            "quote": "The initial retry policy was RETRY-1-108.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:19:30.6216+00:00",
+      "updated_at": "2026-10-10T18:19:30.6216+00:00"
+    },
+    {
+      "note_id": "91f5acee-ebf5-402e-bc72-a7cb4f0a14b6",
+      "text": "The cause of the Cobalt switch was the GATE-1-519 outages recorded on August 8.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "The cause was the GATE-1-519 outages recorded on August 8",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:20:44.50657+00:00",
+      "updated_at": "2026-10-10T18:20:44.50657+00:00"
+    },
+    {
+      "note_id": "01646cb5-2daa-44e7-8a83-3f58abdd7779",
+      "text": "As of 2026-08-22, for the next outage, use the recovery procedure validated on August 8.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "For the next outage, use the recovery procedure validated on August 8.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:21:24.590332+00:00",
+      "updated_at": "2026-10-10T18:21:24.590332+00:00"
+    },
+    {
+      "note_id": "8b3c3e12-8b54-413d-866e-e26aeafa4c29",
+      "text": "The initial retry policy for project Reed was RETRY-2-108.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "The initial retry policy was RETRY-2-108.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:21:56.442926+00:00",
+      "updated_at": "2026-10-10T18:21:56.442926+00:00"
+    },
+    {
+      "note_id": "b50f835f-89bc-4bab-9cd4-68cb981395bd",
+      "text": "For the next outage, use the recovery procedure validated on August 8.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "For the next outage, use the recovery procedure validated on August 8.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:23:46.429887+00:00",
+      "updated_at": "2026-10-10T18:23:46.429887+00:00"
+    },
+    {
+      "note_id": "1d2f9438-6f1f-45d9-ab45-1d89c0b2ffee",
+      "text": "On 2026-08-01, Tala started project Sable.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "2026-08-01. Tala started project Sable.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:24:10.357082+00:00",
+      "updated_at": "2026-10-10T18:24:10.357082+00:00"
+    },
+    {
+      "note_id": "7d2f6cda-f402-4a74-8cd2-dbeda18963fa",
+      "text": "For the next outage, use the recovery procedure validated on August 8.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "For the next outage, use the recovery procedure validated on August 8.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:26:56.896059+00:00",
+      "updated_at": "2026-10-10T18:26:56.896059+00:00"
+    },
+    {
+      "note_id": "a26bbb33-10c3-4f44-97f6-e5a72d578a8e",
+      "text": "2026-08-15: Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286, superseding the August 1 delivery decision.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Approved change of Cedar from BATCH-4-741 to STREAM-4-286, superseding the August 1 delivery decision.",
+        "evidence": [
+          {
+            "quote": "Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286. This supersedes the August 1 delivery decision.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:23:03.865791+00:00",
+      "updated_at": "2026-10-10T18:28:22.940645+00:00"
+    },
+    {
+      "note_id": "6026863a-2032-463a-8a3c-e590d87edb3b",
+      "text": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:20:44.506569+00:00",
+      "updated_at": "2026-10-10T18:20:44.506569+00:00"
+    },
+    {
+      "note_id": "57ab7a17-b4da-48e6-a294-74d78f5ed1b4",
+      "text": "Neri started project Reed on 2026-08-01.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "2026-08-01. Neri started project Reed.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:21:56.442924+00:00",
+      "updated_at": "2026-10-10T18:21:56.442924+00:00"
+    },
+    {
+      "note_id": "ace1d8d9-7ffe-4c28-988b-69f134d53918",
+      "text": "Keep the August 15 delivery choice.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "Keep the August 15 delivery choice.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:23:46.429886+00:00",
+      "updated_at": "2026-10-10T18:23:46.429886+00:00"
+    },
+    {
+      "note_id": "8a3161a2-1a8e-4f87-8964-77f9ffba47ac",
+      "text": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286 on 2026-08-15; this supersedes the August 1 delivery decision.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286. This supersedes the August 1 delivery decision.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:26:14.446587+00:00",
+      "updated_at": "2026-10-10T18:26:14.446587+00:00"
+    },
+    {
+      "note_id": "f1584b98-6365-4f7f-b3df-b6c97f23969f",
+      "text": "Tala reviewed Sable; keep the August 15 delivery choice (as of 2026-08-22).",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "Tala reviewed Sable. Keep the August 15 delivery choice.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:26:56.896058+00:00",
+      "updated_at": "2026-10-10T18:26:56.896058+00:00"
+    },
+    {
+      "note_id": "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce",
+      "text": "The retry policy is now RETRY-3-907, superseding RETRY-3-108. No budget owner has been appointed.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "The retry policy is now RETRY-3-907, superseding RETRY-3-108.",
+            "message_index": 0
+          },
+          {
+            "quote": "No budget owner has been appointed.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:16:57.688009+00:00",
+      "updated_at": "2026-10-10T18:26:56.89606+00:00"
+    },
+    {
+      "note_id": "ec7220fe-6cdf-4515-bb6d-888e90c3518b",
+      "text": "Devon started project Cedar on 2026-08-01.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Records project ownership and start date for later reference.",
+        "evidence": [
+          {
+            "quote": "2026-08-01. Devon started project Cedar.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:27:17.819593+00:00",
+      "updated_at": "2026-10-10T18:27:17.819593+00:00"
+    },
+    {
+      "note_id": "3f2c0c36-e54d-493c-a03c-cb44dfdb18a9",
+      "text": "The cause was the GATE-4-519 outages recorded on August 8.",
+      "status": "active",
+      "source_ref": {
+        "reason": "GATE-4-519 outages on August 8 caused the Cedar switch.",
+        "evidence": [
+          {
+            "quote": "The cause was the GATE-4-519 outages recorded on August 8",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:28:22.940646+00:00",
+      "updated_at": "2026-10-10T18:28:22.940646+00:00"
+    },
+    {
+      "note_id": "8f93f771-cc99-46cb-9d75-b4780b879476",
+      "text": "On 2026-08-22, after Ivo reviewed Cobalt, keep the August 15 delivery choice.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "Ivo reviewed Cobalt. Keep the August 15 delivery choice.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:21:24.590331+00:00",
+      "updated_at": "2026-10-10T18:21:24.590331+00:00"
+    },
+    {
+      "note_id": "7fdf800e-4aa8-41d1-86e5-1d3653173029",
+      "text": "Project Reed chose BATCH-2-741 for batch delivery.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "They chose BATCH-2-741 for batch delivery.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:21:56.442925+00:00",
+      "updated_at": "2026-10-10T18:21:56.442925+00:00"
+    },
+    {
+      "note_id": "03f6bd62-55a5-4e96-9b5a-24f349602255",
+      "text": "The switch from BATCH-2-741 to STREAM-2-286 was caused by GATE-2-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Explains the rationale for the switch and preserves the successful recovery procedure.",
+        "evidence": [
+          {
+            "quote": "The cause was the GATE-2-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:23:03.865792+00:00",
+      "updated_at": "2026-10-10T18:23:03.865792+00:00"
+    },
+    {
+      "note_id": "e13e5df7-6aad-412d-86e0-c88451b3913c",
+      "text": "On 2026-08-01, Tala chose BATCH-3-741 for batch delivery.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "They chose BATCH-3-741 for batch delivery.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:24:10.357083+00:00",
+      "updated_at": "2026-10-10T18:24:10.357083+00:00"
+    },
+    {
+      "note_id": "c75ae8ed-300e-45ba-87ec-73de021de374",
+      "text": "The cause was the GATE-3-519 outages recorded on August 8.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "The cause was the GATE-3-519 outages recorded on August 8",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:26:14.446588+00:00",
+      "updated_at": "2026-10-10T18:26:14.446588+00:00"
+    },
+    {
+      "note_id": "22972e97-e199-4034-b7f0-b224160198da",
+      "text": "Project Cedar's initial retry policy was RETRY-4-108.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Records the initial retry policy identifier for project Cedar.",
+        "evidence": [
+          {
+            "quote": "The initial retry policy was RETRY-4-108.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:27:17.819595+00:00",
+      "updated_at": "2026-10-10T18:27:17.819595+00:00"
+    },
+    {
+      "note_id": "331d3965-21a6-4c67-bd36-aff72e80d5ac",
+      "text": "Keep the successful recovery procedure from the August 8 GATE-4-519 incident.",
+      "status": "active",
+      "source_ref": {
+        "reason": "Recovery procedure from the GATE-4-519 incident should be retained.",
+        "evidence": [
+          {
+            "quote": "keep the successful recovery procedure from that incident",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:28:22.940647+00:00",
+      "updated_at": "2026-10-10T18:28:22.940647+00:00"
+    },
+    {
+      "note_id": "e31827d6-7571-4367-813d-21df937cfe12",
+      "text": "Devon reviewed Cedar; keep the August 15 delivery choice. No budget owner has been appointed.",
+      "status": "active",
+      "source_ref": {
+        "reason": "",
+        "evidence": [
+          {
+            "quote": "Devon reviewed Cedar. Keep the August 15 delivery choice.",
+            "message_index": 0
+          },
+          {
+            "quote": "No budget owner has been appointed.",
+            "message_index": 0
+          }
+        ],
+        "ingestion_profile": {
+          "id": "default",
+          "version": 2
+        }
+      },
+      "created_at": "2026-10-10T18:29:15.057564+00:00",
+      "updated_at": "2026-10-10T18:29:15.057564+00:00"
+    }
+  ],
+  "graph_facts": [
+    {
+      "fact_id": "be045486-7009-475c-9735-99f836e10350",
+      "subject_entity_id": "528e82ff-af84-47ed-a979-b99e5ec255b9",
+      "predicate": "started",
+      "object_entity_id": "1db1a8ee-30e6-4559-a889-175f5e26962e",
+      "object_value": null,
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "8382b41a-0fcb-4ec4-9e39-ef5f4e30484c",
+      "subject_entity_id": "528e82ff-af84-47ed-a979-b99e5ec255b9",
+      "predicate": "chose",
+      "object_entity_id": null,
+      "object_value": "BATCH-0-741",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "af938ae4-c033-494b-bde9-d9c9e2fb136a",
+      "subject_entity_id": "06171652-d93b-4e61-b224-b74d967b6d11",
+      "predicate": "was",
+      "object_entity_id": null,
+      "object_value": "RETRY-0-108",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "8621f5b5-20cc-4a27-bd4b-fc020bdf51f2",
+      "subject_entity_id": "721787ad-a0f8-4e43-bc42-01e579f8dbe9",
+      "predicate": "lost updates during",
+      "object_entity_id": "52bc9738-56cf-45ea-9a7b-8825a4ef1e22",
+      "object_value": null,
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "e001ce71-e662-4889-9ecb-2f297b990e01",
+      "subject_entity_id": "e54ff62e-1780-4b31-b643-4b22b495b39f",
+      "predicate": "restored",
+      "object_entity_id": null,
+      "object_value": "the missing updates",
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "f8e76416-dd20-421a-a2e4-386e12223d1f",
+      "subject_entity_id": "528e82ff-af84-47ed-a979-b99e5ec255b9",
+      "predicate": "approved switching",
+      "object_entity_id": null,
+      "object_value": "Larch",
+      "valid_from": "2026-08-15T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "ed5391fe-ffa3-4826-b117-c3ff337deefc",
+      "subject_entity_id": "f171cdac-fce3-4f1b-8270-66ee3e8ac93f",
+      "predicate": "superseding",
+      "object_entity_id": null,
+      "object_value": "RETRY-0-108",
+      "valid_from": "2026-08-22T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "b4fb4185-fabf-4487-a2d0-95095bbbbc6f",
+      "subject_entity_id": "d28518c5-a638-43f8-ad28-ca87f99094d3",
+      "predicate": "validated",
+      "object_entity_id": null,
+      "object_value": "August 8",
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "1cf8985c-3840-40c4-b7df-a187ad824946",
+      "subject_entity_id": "528e82ff-af84-47ed-a979-b99e5ec255b9",
+      "predicate": "reviewed",
+      "object_entity_id": "5587911e-6a33-4878-bc6f-a4f89cae8571",
+      "object_value": null,
+      "valid_from": "2026-08-22T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "6c7a910d-b405-4dcf-a0fb-84653c59682c",
+      "subject_entity_id": "e5efd54f-0b54-4368-84d2-78e464da7225",
+      "predicate": "started",
+      "object_entity_id": "2c891d29-f185-498b-b0e0-840c493d0394",
+      "object_value": null,
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "e49941ff-3c2e-4672-96d3-bd53124f8897",
+      "subject_entity_id": "2c891d29-f185-498b-b0e0-840c493d0394",
+      "predicate": "chose",
+      "object_entity_id": "1545e3eb-5df4-4e5d-a848-4dc98a32d6c3",
+      "object_value": null,
+      "valid_from": "2026-10-10T18:19:30.621599+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "8944ab4f-640f-49dd-92bf-3b13d821c516",
+      "subject_entity_id": "2c891d29-f185-498b-b0e0-840c493d0394",
+      "predicate": "was",
+      "object_entity_id": "2b039011-3d5d-430b-9cb6-9e81c2fcbe81",
+      "object_value": null,
+      "valid_from": "2026-10-10T18:19:30.6216+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "8c93faf8-60f6-4006-81fc-a6cbeea2cb25",
+      "subject_entity_id": "1545e3eb-5df4-4e5d-a848-4dc98a32d6c3",
+      "predicate": "lost updates during",
+      "object_entity_id": "29958991-6711-4a0b-bbad-166023dca632",
+      "object_value": null,
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "161683a8-c5d8-4cf0-a53a-d6594a1b6930",
+      "subject_entity_id": "705b30f0-8eaa-4399-9db1-5e87ab265d1a",
+      "predicate": "restored",
+      "object_entity_id": null,
+      "object_value": "the missing updates",
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "8918a073-d34f-4486-b209-109153c0894b",
+      "subject_entity_id": "f23c9fef-3178-4820-9043-974efe738c55",
+      "predicate": "started",
+      "object_entity_id": "20214b33-c0d3-4082-89b5-0a844e32a7d2",
+      "object_value": null,
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "55c4909d-ea13-43b0-9eb9-d9deb09a4996",
+      "subject_entity_id": "20214b33-c0d3-4082-89b5-0a844e32a7d2",
+      "predicate": "chose",
+      "object_entity_id": "ece934be-a07e-4c4c-aee4-d6215e0f889f",
+      "object_value": null,
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "0ec1ba1b-f1bf-4da4-a715-fa59a6a1ecce",
+      "subject_entity_id": "1ea25501-c079-45ef-8186-27d27d89ebbe",
+      "predicate": "was",
+      "object_entity_id": null,
+      "object_value": "RETRY-2-108",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "bbfef8c3-4ff8-44db-9fad-f53d7ec5a8b5",
+      "subject_entity_id": "f23c9fef-3178-4820-9043-974efe738c55",
+      "predicate": "switching Reed from BATCH-2-741 to",
+      "object_entity_id": "42aa71de-629e-424d-b293-0e4109bc866f",
+      "object_value": null,
+      "valid_from": "2026-08-15T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "c10d80a6-252f-442c-8d2c-5a326d49ffdd",
+      "subject_entity_id": "f23c9fef-3178-4820-9043-974efe738c55",
+      "predicate": "supersedes",
+      "object_entity_id": null,
+      "object_value": "the August 1 delivery decision",
+      "valid_from": "2026-08-15T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "adf440b0-29d4-44de-9f18-b3a71c8a7e96",
+      "subject_entity_id": "5d7b7480-ab00-4e9d-90c1-b80f8f3782b2",
+      "predicate": "outages recorded on",
+      "object_entity_id": null,
+      "object_value": "August 8",
+      "valid_from": "2026-10-10T18:23:03.865792+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "26231c8d-2479-46f1-b014-4a1073dfc7a8",
+      "subject_entity_id": "7a651a1c-321e-452b-817a-09ce8bb9c405",
+      "predicate": "is now",
+      "object_entity_id": null,
+      "object_value": "RETRY-2-907",
+      "valid_from": "2026-10-10T18:23:46.429885+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "e1a4e9bf-acd7-4db8-944f-d9c832458ce1",
+      "subject_entity_id": "7a651a1c-321e-452b-817a-09ce8bb9c405",
+      "predicate": "superseding",
+      "object_entity_id": "acf16393-e977-4eb7-b292-d2127bc32702",
+      "object_value": null,
+      "valid_from": "2026-10-10T18:23:46.429886+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "d08cf9c5-640a-4e75-99ca-113f40febd5a",
+      "subject_entity_id": "feba84b2-21c1-456a-868a-0fadc2dc9e9a",
+      "predicate": "started",
+      "object_entity_id": "f6abee4e-5896-4e6b-9882-52f613cc321c",
+      "object_value": null,
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "7300f26a-7e27-4500-9ba7-633f7f7c74a2",
+      "subject_entity_id": "feba84b2-21c1-456a-868a-0fadc2dc9e9a",
+      "predicate": "chose",
+      "object_entity_id": null,
+      "object_value": "BATCH-3-741",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "bb73bd41-c85f-4566-bc88-58b4fd995ca7",
+      "subject_entity_id": "06171652-d93b-4e61-b224-b74d967b6d11",
+      "predicate": "was",
+      "object_entity_id": null,
+      "object_value": "RETRY-3-108",
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "b20dace9-93dc-4de3-9ae0-195711e83be5",
+      "subject_entity_id": "feba84b2-21c1-456a-868a-0fadc2dc9e9a",
+      "predicate": "reported",
+      "object_entity_id": "5cf9a8bb-1f64-4cd5-a026-a1d4677c0ae4",
+      "object_value": null,
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "5467e0b2-5711-42b4-9bd5-e69c5a081665",
+      "subject_entity_id": "8c96e09f-eb8c-4249-bf9e-ce036ec4f65f",
+      "predicate": "restored",
+      "object_entity_id": null,
+      "object_value": "missing updates",
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "fa53a3db-39a3-4fcf-a430-bc892359256d",
+      "subject_entity_id": "feba84b2-21c1-456a-868a-0fadc2dc9e9a",
+      "predicate": "approved",
+      "object_entity_id": null,
+      "object_value": "switching Sable from BATCH-3-741 to STREAM-3-286",
+      "valid_from": "2026-08-15T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "10c73b13-600d-47f1-b5ce-64b262b75453",
+      "subject_entity_id": "e63f45d4-77ba-43cc-97fd-07ca1446c7a7",
+      "predicate": "switching",
+      "object_entity_id": null,
+      "object_value": "from BATCH-3-741 to STREAM-3-286",
+      "valid_from": "2026-08-15T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "590332c7-7554-4e49-b5de-52b2cf6f7902",
+      "subject_entity_id": "4477b2e8-3bf1-4f64-8388-aea7ea92f277",
+      "predicate": "recorded on",
+      "object_entity_id": null,
+      "object_value": "August 8",
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "19a520a1-87e5-4f46-ae57-0d34661f7519",
+      "subject_entity_id": "feba84b2-21c1-456a-868a-0fadc2dc9e9a",
+      "predicate": "reviewed",
+      "object_entity_id": "e63f45d4-77ba-43cc-97fd-07ca1446c7a7",
+      "object_value": null,
+      "valid_from": "2026-10-10T18:26:56.896058+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "06df9388-90ea-424a-a8b5-12dd4d556cc5",
+      "subject_entity_id": "1ea25501-c079-45ef-8186-27d27d89ebbe",
+      "predicate": "is now",
+      "object_entity_id": null,
+      "object_value": "RETRY-3-907",
+      "valid_from": "2026-10-10T18:26:56.89606+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "0c3739bd-c02e-48e1-90e7-21327bb22bfd",
+      "subject_entity_id": "d5f909b6-cd5f-4841-b799-f9a3a6c76d9f",
+      "predicate": "superseding",
+      "object_entity_id": null,
+      "object_value": "RETRY-3-108",
+      "valid_from": "2026-10-10T18:26:56.896061+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "b16c6590-63d1-434b-8c36-d3c313a43b55",
+      "subject_entity_id": "4a5937d0-0fde-42d1-8208-bf93d39fcf03",
+      "predicate": "started",
+      "object_entity_id": "905dd761-8979-41c7-95f0-7004421d37c2",
+      "object_value": null,
+      "valid_from": "2026-08-01T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "054ccaa0-d6a6-4d25-952e-c06d03873d38",
+      "subject_entity_id": "1ea25501-c079-45ef-8186-27d27d89ebbe",
+      "predicate": "was",
+      "object_entity_id": null,
+      "object_value": "RETRY-4-108",
+      "valid_from": "2026-10-10T18:27:17.819595+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "1a77e42e-184b-4ffd-b4d1-24e7f18f5a76",
+      "subject_entity_id": "4a5937d0-0fde-42d1-8208-bf93d39fcf03",
+      "predicate": "approved",
+      "object_entity_id": "a1d0260a-99fd-4953-bdfc-2eda98f83ba6",
+      "object_value": null,
+      "valid_from": "2026-08-15T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "8c8b90a8-8af7-4da5-ad76-a135e0184ae7",
+      "subject_entity_id": "a1d0260a-99fd-4953-bdfc-2eda98f83ba6",
+      "predicate": "switching",
+      "object_entity_id": null,
+      "object_value": "STREAM-4-286",
+      "valid_from": "2026-08-15T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "e4e2acc9-e2f5-4d4d-8732-40df0abfc898",
+      "subject_entity_id": "f93c5a08-e79e-4959-8ed1-ba3775849b34",
+      "predicate": "recorded on",
+      "object_entity_id": null,
+      "object_value": "August 8",
+      "valid_from": "2026-08-08T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "8d7b4ea4-91e3-4a5e-9a7d-5b91dab5978c",
+      "subject_entity_id": "2614784f-5061-498a-af02-67dc3baef17a",
+      "predicate": "superseding",
+      "object_entity_id": "f6ef0543-4a64-47bb-92cd-8eb587857f7f",
+      "object_value": null,
+      "valid_from": "2026-08-22T00:00:00+00:00",
+      "valid_to": null
+    },
+    {
+      "fact_id": "c257d818-c38a-4f01-85cb-483838a642a0",
+      "subject_entity_id": "4a5937d0-0fde-42d1-8208-bf93d39fcf03",
+      "predicate": "reviewed",
+      "object_entity_id": "a1d0260a-99fd-4953-bdfc-2eda98f83ba6",
+      "object_value": null,
+      "valid_from": "2026-08-22T00:00:00+00:00",
+      "valid_to": null
+    }
+  ],
+  "graph_evidence": [
+    {
+      "fact_id": "be045486-7009-475c-9735-99f836e10350",
+      "note_id": "9da122d9-d8d7-4989-a69c-17bcda54d31f"
+    },
+    {
+      "fact_id": "8382b41a-0fcb-4ec4-9e39-ef5f4e30484c",
+      "note_id": "6f580495-9a4c-4243-8e70-8a5382268a71"
+    },
+    {
+      "fact_id": "af938ae4-c033-494b-bde9-d9c9e2fb136a",
+      "note_id": "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce"
+    },
+    {
+      "fact_id": "8621f5b5-20cc-4a27-bd4b-fc020bdf51f2",
+      "note_id": "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2"
+    },
+    {
+      "fact_id": "e001ce71-e662-4889-9ecb-2f297b990e01",
+      "note_id": "24c8596a-a75d-4cf7-9617-d62e0edbe292"
+    },
+    {
+      "fact_id": "f8e76416-dd20-421a-a2e4-386e12223d1f",
+      "note_id": "130ec5f9-9357-425a-871d-5d63027e5517"
+    },
+    {
+      "fact_id": "ed5391fe-ffa3-4826-b117-c3ff337deefc",
+      "note_id": "882729bf-5f44-4229-b251-6e360891fa9a"
+    },
+    {
+      "fact_id": "b4fb4185-fabf-4487-a2d0-95095bbbbc6f",
+      "note_id": "5920b8fb-eecb-47d7-af91-3a058d9c35ed"
+    },
+    {
+      "fact_id": "1cf8985c-3840-40c4-b7df-a187ad824946",
+      "note_id": "b7fd6dca-81eb-487b-bc2d-7e3250a63475"
+    },
+    {
+      "fact_id": "6c7a910d-b405-4dcf-a0fb-84653c59682c",
+      "note_id": "89fb8ae8-0ab1-4667-8fd9-0761f425c548"
+    },
+    {
+      "fact_id": "e49941ff-3c2e-4672-96d3-bd53124f8897",
+      "note_id": "feaccc15-d242-43c2-8957-e356f9b088b0"
+    },
+    {
+      "fact_id": "8944ab4f-640f-49dd-92bf-3b13d821c516",
+      "note_id": "eba6000c-d5bb-4b23-8fae-b1688a457d23"
+    },
+    {
+      "fact_id": "8c93faf8-60f6-4006-81fc-a6cbeea2cb25",
+      "note_id": "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2"
+    },
+    {
+      "fact_id": "161683a8-c5d8-4cf0-a53a-d6594a1b6930",
+      "note_id": "24c8596a-a75d-4cf7-9617-d62e0edbe292"
+    },
+    {
+      "fact_id": "8918a073-d34f-4486-b209-109153c0894b",
+      "note_id": "57ab7a17-b4da-48e6-a294-74d78f5ed1b4"
+    },
+    {
+      "fact_id": "55c4909d-ea13-43b0-9eb9-d9deb09a4996",
+      "note_id": "7fdf800e-4aa8-41d1-86e5-1d3653173029"
+    },
+    {
+      "fact_id": "0ec1ba1b-f1bf-4da4-a715-fa59a6a1ecce",
+      "note_id": "8b3c3e12-8b54-413d-866e-e26aeafa4c29"
+    },
+    {
+      "fact_id": "bbfef8c3-4ff8-44db-9fad-f53d7ec5a8b5",
+      "note_id": "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    },
+    {
+      "fact_id": "c10d80a6-252f-442c-8d2c-5a326d49ffdd",
+      "note_id": "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    },
+    {
+      "fact_id": "adf440b0-29d4-44de-9f18-b3a71c8a7e96",
+      "note_id": "03f6bd62-55a5-4e96-9b5a-24f349602255"
+    },
+    {
+      "fact_id": "26231c8d-2479-46f1-b014-4a1073dfc7a8",
+      "note_id": "882729bf-5f44-4229-b251-6e360891fa9a"
+    },
+    {
+      "fact_id": "e1a4e9bf-acd7-4db8-944f-d9c832458ce1",
+      "note_id": "882729bf-5f44-4229-b251-6e360891fa9a"
+    },
+    {
+      "fact_id": "d08cf9c5-640a-4e75-99ca-113f40febd5a",
+      "note_id": "1d2f9438-6f1f-45d9-ab45-1d89c0b2ffee"
+    },
+    {
+      "fact_id": "7300f26a-7e27-4500-9ba7-633f7f7c74a2",
+      "note_id": "e13e5df7-6aad-412d-86e0-c88451b3913c"
+    },
+    {
+      "fact_id": "bb73bd41-c85f-4566-bc88-58b4fd995ca7",
+      "note_id": "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce"
+    },
+    {
+      "fact_id": "b20dace9-93dc-4de3-9ae0-195711e83be5",
+      "note_id": "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2"
+    },
+    {
+      "fact_id": "5467e0b2-5711-42b4-9bd5-e69c5a081665",
+      "note_id": "24c8596a-a75d-4cf7-9617-d62e0edbe292"
+    },
+    {
+      "fact_id": "fa53a3db-39a3-4fcf-a430-bc892359256d",
+      "note_id": "8a3161a2-1a8e-4f87-8964-77f9ffba47ac"
+    },
+    {
+      "fact_id": "10c73b13-600d-47f1-b5ce-64b262b75453",
+      "note_id": "8a3161a2-1a8e-4f87-8964-77f9ffba47ac"
+    },
+    {
+      "fact_id": "590332c7-7554-4e49-b5de-52b2cf6f7902",
+      "note_id": "c75ae8ed-300e-45ba-87ec-73de021de374"
+    },
+    {
+      "fact_id": "19a520a1-87e5-4f46-ae57-0d34661f7519",
+      "note_id": "f1584b98-6365-4f7f-b3df-b6c97f23969f"
+    },
+    {
+      "fact_id": "06df9388-90ea-424a-a8b5-12dd4d556cc5",
+      "note_id": "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce"
+    },
+    {
+      "fact_id": "0c3739bd-c02e-48e1-90e7-21327bb22bfd",
+      "note_id": "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce"
+    },
+    {
+      "fact_id": "b16c6590-63d1-434b-8c36-d3c313a43b55",
+      "note_id": "ec7220fe-6cdf-4515-bb6d-888e90c3518b"
+    },
+    {
+      "fact_id": "054ccaa0-d6a6-4d25-952e-c06d03873d38",
+      "note_id": "22972e97-e199-4034-b7f0-b224160198da"
+    },
+    {
+      "fact_id": "1a77e42e-184b-4ffd-b4d1-24e7f18f5a76",
+      "note_id": "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    },
+    {
+      "fact_id": "8c8b90a8-8af7-4da5-ad76-a135e0184ae7",
+      "note_id": "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    },
+    {
+      "fact_id": "e4e2acc9-e2f5-4d4d-8732-40df0abfc898",
+      "note_id": "3f2c0c36-e54d-493c-a03c-cb44dfdb18a9"
+    },
+    {
+      "fact_id": "8d7b4ea4-91e3-4a5e-9a7d-5b91dab5978c",
+      "note_id": "882729bf-5f44-4229-b251-6e360891fa9a"
+    },
+    {
+      "fact_id": "c257d818-c38a-4f01-85cb-483838a642a0",
+      "note_id": "e31827d6-7571-4367-813d-21df937cfe12"
+    }
+  ]
+}

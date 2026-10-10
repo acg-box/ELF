@@ -8,6 +8,10 @@ logs.
 
 ## 2026-10-10
 
+- Record the language-neutral source-memory decision and matched regression. Keep
+  historical measurements unchanged, separate strict and reviewed scores, and
+  document metadata follow-up validation and cumulative USD 10 accounting.
+
 - Add ELF formal-API evidence on the same frozen document and memory workloads,
   with separate Context Pack and retrieval-reader conditions and a new USD 10 ledger.
 
