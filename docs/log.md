@@ -8,6 +8,9 @@ logs.
 
 ## 2026-10-09
 
+- Added a separate complex PDF/OCR comparison and fixed source fixtures. Preserved
+  the prior text-only evidence and documented native ingestion continuation.
+
 - Added a partial recovery checkpoint with complete ELF scale results, retained
   failures, cumulative accounting, and explicit pending competitor conditions.
 
