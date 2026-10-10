@@ -233,7 +233,7 @@ fn dreaming_pack_items_only_include_active_review_states() {
 }
 
 #[test]
-fn validation_rejects_empty_or_non_english_task_and_query() {
+fn validation_rejects_empty_or_invalid_text_task_and_query() {
 	let mut req = base_request();
 
 	req.task = "   ".to_string();
@@ -244,27 +244,27 @@ fn validation_rejects_empty_or_non_english_task_and_query() {
 	));
 
 	req.task = "Find current source-backed decisions.".to_string();
-	req.query = Some("決定".to_string());
+	req.query = Some("決定\0".to_string());
 
 	assert!(matches!(
 		validation::validate_context_pack_request(&req),
-		Err(Error::NonEnglishInput { field }) if field == "$.query"
+		Err(Error::InvalidText { field }) if field == "$.query"
 	));
 
 	req.query = None;
-	req.title = Some("決定".to_string());
+	req.title = Some("決定\0".to_string());
 
 	assert!(matches!(
 		validation::validate_context_pack_request(&req),
-		Err(Error::NonEnglishInput { field }) if field == "$.title"
+		Err(Error::InvalidText { field }) if field == "$.title"
 	));
 
 	req.title = None;
-	req.graph_subject = Some(GraphQueryEntityRef::Surface { surface: "決定".to_string() });
+	req.graph_subject = Some(GraphQueryEntityRef::Surface { surface: "決定\0".to_string() });
 
 	assert!(matches!(
 		validation::validate_context_pack_request(&req),
-		Err(Error::NonEnglishInput { field }) if field == "$.graph_subject.surface"
+		Err(Error::InvalidText { field }) if field == "$.graph_subject.surface"
 	));
 }
 

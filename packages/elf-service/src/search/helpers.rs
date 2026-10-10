@@ -3,7 +3,7 @@ use crate::{
 	search::{
 		Condition, Filter, MinShould, ORG_PROJECT_ID, PayloadLevel, RawSearchPath, Result,
 		SEARCH_RETRIEVAL_TRAJECTORY_SCHEMA_V1, SearchItem, SearchTrajectoryStage,
-		SearchTrajectorySummary, SearchTrajectorySummaryStage, english_gate,
+		SearchTrajectorySummary, SearchTrajectorySummaryStage, text_validation,
 	},
 };
 
@@ -31,8 +31,8 @@ pub(super) fn validate_search_request_inputs(
 			message: "tenant_id, project_id, and agent_id are required.".to_string(),
 		});
 	}
-	if !english_gate::is_english_natural_language(query) {
-		return Err(Error::NonEnglishInput { field: "$.query".to_string() });
+	if !text_validation::is_valid_text(query) {
+		return Err(Error::InvalidText { field: "$.query".to_string() });
 	}
 
 	Ok(())

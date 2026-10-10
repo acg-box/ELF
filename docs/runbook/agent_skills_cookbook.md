@@ -6,7 +6,7 @@ resource: docs/runbook/agent_skills_cookbook.md
 status: active
 authority: procedural
 owner: runbook
-last_verified: 2026-06-23
+last_verified: 2026-10-10
 tags:
   - docs
   - runbook
@@ -36,7 +36,7 @@ MCP tools must:
 
 Hard guarantees that must be enforced by ELF (server-side), not by skills:
 
-- English-only input boundary.
+- Language-neutral text contract.
 - Tenant/project/agent scoping and sharing grants.
 - Size caps and quotas.
 - Deterministic behavior where specified (e.g., `elf_notes_ingest` never calls an LLM).
@@ -105,7 +105,7 @@ Goal: Persist a long evidence source in Doc Extension v1 and store compact facts
 
 Steps:
 
-1. Canonicalize upstream inputs to English (ELF rejects non-English at the API boundary).
+1. Keep source text unchanged; use translated summaries only as derived content with source references.
 2. Store the long evidence with `elf_docs_put`.
 3. Extract a small number of durable facts (agent-side) and write them via `elf_notes_ingest`.
 4. Attach a `source_ref` pointer (`source_ref.ref.doc_id` + optional selector hints) to each note.
@@ -387,7 +387,7 @@ System:
 You are a memory normalization engine for a facts-first agent memory system.
 Output must be valid JSON only.
 Output must match the schema described below exactly.
-All text must be English only.
+Text may use any language; source quotes must remain verbatim.
 Each note text must be a single compact sentence.
 Prefer stable keys only for durable truths (preferences, constraints, decisions, profiles).
 
@@ -429,7 +429,7 @@ System:
 
 You are a memory consolidation engine.
 Decide a minimal set of safe changes to reduce duplicates and keep stable keys accurate.
-All output must be English only.
+Output may use any language; preserve original names and quotes.
 
 User:
 

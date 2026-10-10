@@ -45,7 +45,7 @@ use crate::{
 use chunking::{load_tokenizer, split_tokens_by_offsets};
 use elf_config::Config;
 use elf_domain::{
-	english_gate,
+	text_validation,
 	writegate::{self, WritePolicyAudit},
 };
 use elf_storage::{

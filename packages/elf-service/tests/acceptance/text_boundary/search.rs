@@ -1,10 +1,10 @@
-use crate::acceptance::english_only_boundary::setup;
+use crate::acceptance::text_boundary::setup;
 use elf_service::{Error, SearchRequest};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
-async fn rejects_non_english_in_search() {
-	let Some(fixture) = setup::setup_service("english_only_boundary").await else {
+async fn rejects_invalid_text_in_search() {
+	let Some(fixture) = setup::setup_service("text_boundary").await else {
 		return;
 	};
 	let request = SearchRequest {
@@ -14,7 +14,7 @@ async fn rejects_non_english_in_search() {
 		token_id: None,
 		read_profile: "private_only".to_string(),
 		payload_level: Default::default(),
-		query: "안녕하세요".to_string(),
+		query: "안녕하세요\0".to_string(),
 		top_k: Some(5),
 		candidate_k: Some(10),
 		filter: None,
@@ -24,10 +24,10 @@ async fn rejects_non_english_in_search() {
 	let result = fixture.service.search(request).await;
 
 	match result {
-		Err(Error::NonEnglishInput { field }) => {
+		Err(Error::InvalidText { field }) => {
 			assert_eq!(field, "$.query");
 		},
-		other => panic!("Expected NonEnglishInput, got {other:?}"),
+		other => panic!("Expected InvalidText, got {other:?}"),
 	}
 
 	fixture.test_db.cleanup().await.expect("Failed to cleanup test database.");
@@ -35,10 +35,13 @@ async fn rejects_non_english_in_search() {
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
-async fn rejects_cyrillic_in_search() {
-	let Some(fixture) = setup::setup_service("english_only_boundary").await else {
+async fn accepts_cyrillic_in_search() {
+	let Some(fixture) = setup::setup_service("text_boundary").await else {
 		return;
 	};
+
+	fixture.service.qdrant.ensure_collection().await.expect("Create search collection");
+
 	let request = SearchRequest {
 		tenant_id: "t".to_string(),
 		project_id: "p".to_string(),
@@ -55,12 +58,6 @@ async fn rejects_cyrillic_in_search() {
 	};
 	let result = fixture.service.search(request).await;
 
-	match result {
-		Err(Error::NonEnglishInput { field }) => {
-			assert_eq!(field, "$.query");
-		},
-		other => panic!("Expected NonEnglishInput, got {other:?}"),
-	}
-
+	result.expect("Multilingual input must reach the service successfully.");
 	fixture.test_db.cleanup().await.expect("Failed to cleanup test database.");
 }

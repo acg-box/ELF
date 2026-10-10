@@ -3,8 +3,8 @@ use crate::writegate::{Deserialize, Serialize};
 /// Reasons a note can be rejected by the write gate.
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 pub enum RejectCode {
-	/// The note text failed the English gate.
-	RejectNonEnglish,
+	/// The note text contains unsupported control characters.
+	RejectInvalidText,
 	/// The note text exceeded the configured length limit.
 	RejectTooLong,
 	/// The note text appears to contain secret material.

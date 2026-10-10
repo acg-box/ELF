@@ -1,0 +1,25 @@
+{
+  "owned_containers_removed": true,
+  "benchmark_containers": [
+    "elf-matched-api",
+    "elf-matched-worker",
+    "elf-matched-db",
+    "elf-matched-qdrant",
+    "elf-matched-sidecar"
+  ],
+  "final_test_containers": [
+    "elf-language-final-test-db",
+    "elf-language-final-test-qdrant"
+  ],
+  "network_removed": true,
+  "anonymous_volumes_removed": true,
+  "owned_images_removed": [
+    "sha256:082220bbcfeaa69f95f9c388a545445c11bc427cb500d2dd96a3282252078d45",
+    "sha256:53f360362a682b49fc1dad806adc2f00525c85051748b235bd60f2a7ffa311ef",
+    "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+    "sha256:ded450449389629287123b794d48afa3385c2cb7a33854569da9b40c9e1b2133"
+  ],
+  "retained_images": [],
+  "credentials_removed": true,
+  "shared_images_and_build_cache_preserved": true
+}

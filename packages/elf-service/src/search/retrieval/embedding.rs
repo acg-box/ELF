@@ -3,7 +3,7 @@ use crate::{
 	search::{
 		BM25_MODEL, BM25_VECTOR_NAME, DENSE_VECTOR_NAME, Document, ElfService, Filter, Fusion,
 		PrefetchQueryBuilder, Query, QueryEmbedding, QueryPointsBuilder, Result, ScoredPoint,
-		english_gate, ranking, slice,
+		ranking, slice, text_validation,
 	},
 };
 
@@ -16,14 +16,14 @@ impl ElfService {
 		let context = self.cfg.context.as_ref()?;
 		let descriptions = context.project_descriptions.as_ref()?;
 		let key = format!("{tenant_id}:{project_id}");
-		let mut saw_non_english = false;
+		let mut saw_invalid_text = false;
 
 		if let Some(value) = descriptions.get(&key) {
 			let trimmed = value.trim();
 
 			if !trimmed.is_empty() {
-				if !english_gate::is_english_natural_language(trimmed) {
-					saw_non_english = true;
+				if !text_validation::is_valid_text(trimmed) {
+					saw_invalid_text = true;
 				} else {
 					return Some(trimmed);
 				}
@@ -33,19 +33,19 @@ impl ElfService {
 			let trimmed = value.trim();
 
 			if !trimmed.is_empty() {
-				if !english_gate::is_english_natural_language(trimmed) {
-					saw_non_english = true;
+				if !text_validation::is_valid_text(trimmed) {
+					saw_invalid_text = true;
 				} else {
 					return Some(trimmed);
 				}
 			}
 		}
 
-		if saw_non_english {
+		if saw_invalid_text {
 			tracing::warn!(
 				tenant_id = %tenant_id,
 				project_id = %project_id,
-				"Project context description is non-English. Skipping context."
+				"Project context description contains unsupported controls. Skipping context."
 			);
 		}
 

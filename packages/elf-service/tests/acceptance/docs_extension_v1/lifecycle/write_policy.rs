@@ -1,11 +1,11 @@
 use std::time::Duration;
 
 use crate::acceptance::docs_extension_v1::{self, DocsContext};
-use elf_service::{DocsExcerptsGetRequest, DocsPutRequest};
+use elf_service::{DocsExcerptsGetRequest, DocsPutRequest, Error};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL (or ELF_QDRANT_GRPC_URL) to run this test."]
-async fn docs_put_applies_write_policy_and_excerpt_by_chunk_id_is_verified() {
+async fn docs_put_rejects_rewriting_and_verifies_separate_derivative() {
 	let Some(ctx) = docs_extension_v1::setup_docs_context().await else { return };
 	let DocsContext { test_db, service } = ctx;
 	let content = "Alpha normal text then secret sk-abcdef and trailing content.";
@@ -16,7 +16,7 @@ async fn docs_put_applies_write_policy_and_excerpt_by_chunk_id_is_verified() {
 		"exclusions": [{"start": start, "end": end}],
 	}))
 	.expect("Failed to build write_policy.");
-	let put = service
+	let rejected = service
 		.docs_put(DocsPutRequest {
 			tenant_id: "t".to_string(),
 			project_id: "p".to_string(),
@@ -33,7 +33,16 @@ async fn docs_put_applies_write_policy_and_excerpt_by_chunk_id_is_verified() {
 			content: content.to_string(),
 		})
 		.await
-		.expect("Failed to put doc with write policy.");
+		.expect_err("Original source must not be rewritten.");
+
+	assert!(matches!(rejected, Error::InvalidRequest { message } if message.contains("immutable")));
+
+	let put = docs_extension_v1::put_test_doc_with(
+        &service, "owner", "project_shared", Some("knowledge"), "Permitted derivative",
+        serde_json::json!({"schema":"doc_source_ref/v1","doc_type":"knowledge","ts":"2026-02-25T12:00:00Z",
+            "derived_from":{"ref":"external://original-source","transformation":"excluded sensitive span"}}),
+        "Alpha normal text then secret  and trailing content.",
+    ).await;
 	let (handle, shutdown) = docs_extension_v1::spawn_doc_worker(&service).await;
 
 	assert!(
@@ -79,13 +88,8 @@ async fn docs_put_applies_write_policy_and_excerpt_by_chunk_id_is_verified() {
 
 	assert_eq!(excerpt.locator.span_id, captured_chunk_span.span_id);
 	assert_eq!(excerpt.verification.content_hash, put.content_hash);
-	assert!(put.write_policy_audit.is_some());
-	assert_eq!(put.source_capture.policy_spans.len(), 1);
-	assert_eq!(put.source_capture.policy_spans[0].status, "excluded");
-	assert_eq!(
-		put.source_capture.policy_spans[0].reason_code.as_deref(),
-		Some("WRITE_POLICY_EXCLUSION")
-	);
+	assert!(put.write_policy_audit.is_none());
+	assert!(put.source_capture.policy_spans.is_empty());
 
 	let _ = shutdown.send(());
 

@@ -10,7 +10,7 @@ use elf_api::{routes, state::AppState};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_GRPC_URL (or ELF_QDRANT_URL) to run."]
-async fn rejects_non_english_in_search() {
+async fn rejects_invalid_text_in_search() {
 	let Some((test_db, qdrant_url, collection)) = helpers::test_env().await else {
 		return;
 	};
@@ -21,7 +21,7 @@ async fn rejects_non_english_in_search() {
 	for mode in ["quick_find", "planned_search"] {
 		let payload = serde_json::json!({
 			"mode": mode,
-			"query": "안녕하세요",
+			"query": "안녕하세요\0",
 			"top_k": 5,
 			"candidate_k": 10,
 		});
@@ -49,7 +49,7 @@ async fn rejects_non_english_in_search() {
 			.expect("Failed to read response body.");
 		let json: Value = serde_json::from_slice(&body).expect("Failed to parse response.");
 
-		assert_eq!(json["error_code"], "NON_ENGLISH_INPUT");
+		assert_eq!(json["error_code"], "INVALID_TEXT");
 		assert_eq!(json["fields"][0], "$.query");
 	}
 
@@ -58,7 +58,7 @@ async fn rejects_non_english_in_search() {
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_GRPC_URL (or ELF_QDRANT_URL) to run."]
-async fn rejects_cyrillic_in_search() {
+async fn rejects_control_in_cyrillic_in_search() {
 	let Some((test_db, qdrant_url, collection)) = helpers::test_env().await else {
 		return;
 	};
@@ -69,7 +69,7 @@ async fn rejects_cyrillic_in_search() {
 	for mode in ["quick_find", "planned_search"] {
 		let payload = serde_json::json!({
 			"mode": mode,
-			"query": "Привет",
+			"query": "Привет\0",
 			"top_k": 5,
 			"candidate_k": 10,
 		});
@@ -97,7 +97,7 @@ async fn rejects_cyrillic_in_search() {
 			.expect("Failed to read response body.");
 		let json: Value = serde_json::from_slice(&body).expect("Failed to parse response.");
 
-		assert_eq!(json["error_code"], "NON_ENGLISH_INPUT");
+		assert_eq!(json["error_code"], "INVALID_TEXT");
 		assert_eq!(json["fields"][0], "$.query");
 	}
 

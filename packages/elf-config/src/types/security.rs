@@ -2,11 +2,10 @@ use serde::Deserialize;
 
 /// Request security, evidence, and auth settings.
 #[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct Security {
 	/// Whether services must bind only to loopback interfaces.
 	pub bind_localhost_only: bool,
-	/// Whether non-English input is rejected at the API boundary.
-	pub reject_non_english: bool,
 	/// Whether secret-like text is redacted before write.
 	pub redact_secrets_on_write: bool,
 	/// Minimum number of quotes required for evidence binding.

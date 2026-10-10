@@ -18,7 +18,7 @@ pub(crate) fn test_lifecycle_config() -> Lifecycle {
 pub(crate) fn test_security_config() -> Security {
 	Security {
 		bind_localhost_only: true,
-		reject_non_english: true,
+
 		redact_secrets_on_write: true,
 		evidence_min_quotes: 1,
 		evidence_max_quotes: 2,

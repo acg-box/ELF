@@ -4,10 +4,10 @@ pub type Result<T, E = Error> = std::result::Result<T, E>;
 /// Errors returned by ELF service APIs.
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
-	/// The request contained non-English input in the named field path.
-	#[error("Non-English input detected at {field}.")]
-	NonEnglishInput {
-		/// Field path that failed the English gate.
+	/// The request contained invalid text in the named field path.
+	#[error("Invalid text format at {field}.")]
+	InvalidText {
+		/// Field path that failed text format validation.
 		field: String,
 	},
 	/// The request payload was invalid.

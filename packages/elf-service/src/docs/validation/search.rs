@@ -1,7 +1,7 @@
 use crate::docs::validation::{
 	DOC_STATUSES, DocType, DocsSearchL0Filters, DocsSearchL0FiltersParsed,
 	DocsSearchL0RangesParsed, DocsSearchL0Request, DocsSparseMode, Error, OffsetDateTime, Result,
-	Rfc3339, english_gate,
+	Rfc3339, text_validation,
 };
 
 pub(in crate::docs) fn validate_docs_search_l0(
@@ -39,8 +39,8 @@ pub(in crate::docs) fn validate_docs_search_l0_query(req: &DocsSearchL0Request) 
 	if req.query.trim().is_empty() {
 		return Err(Error::InvalidRequest { message: "query must be non-empty.".to_string() });
 	}
-	if !english_gate::is_english_natural_language(req.query.as_str()) {
-		return Err(Error::NonEnglishInput { field: "$.query".to_string() });
+	if !text_validation::is_valid_text(req.query.as_str()) {
+		return Err(Error::InvalidText { field: "$.query".to_string() });
 	}
 
 	Ok(())

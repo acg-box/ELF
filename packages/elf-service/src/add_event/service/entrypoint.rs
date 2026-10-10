@@ -38,8 +38,8 @@ impl ElfService {
 		let extracted_raw = self.providers.extractor.extract(&llm_cfg, &extractor_messages).await?;
 		let max_notes = self.cfg.memory.max_notes_per_add_event as usize;
 		let mut extracted: ExtractorOutput = serde_json::from_value(extracted_raw.clone())
-			.map_err(|_| Error::InvalidRequest {
-				message: "Extractor output is missing notes array.".to_string(),
+			.map_err(|error| Error::InvalidRequest {
+				message: format!("Extractor output does not match the memory schema: {error}"),
 			})?;
 
 		if extracted.notes.len() > max_notes {

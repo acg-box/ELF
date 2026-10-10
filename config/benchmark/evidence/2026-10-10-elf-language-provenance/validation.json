@@ -1,0 +1,33 @@
+{
+  "product_revision": "59e1e69f680d47e7ee81e943e7d257ba8338764c",
+  "measured_revision": "3ef9b7d69d6dc3835cdc01b2ba0e928647356e84",
+  "checks": {
+    "unit": {
+      "log_sha256": "1fa477f7ac3183d00438dbfe3a1aa1e82b6909178f6199af5a0040a885ed59d5",
+      "passed_tests": 454
+    },
+    "integration": {
+      "log_sha256": "e52cd02168d845fc5400888916ce8a45b8aa0c7c7af51d17cedb4ff020140f6f",
+      "passed_tests": 94
+    },
+    "focused_provenance": {
+      "log_sha256": "7022071ed5bc1dfa492bf28fa5ff2151f2b073510e1c289bdee54f32c665352b",
+      "passed_tests": 2
+    },
+    "lint": {
+      "log_sha256": "d1b626dc3ffbfae696c9235cf767c731868b75bdd24e55a80d4d02b4c9d1749f",
+      "passed_tests": null
+    },
+    "benchmark_contract": {
+      "log_sha256": "941ad101d8c2501599c06a263166d3ba34e8beb42f3dde7a01a4be1ecff056e0",
+      "passed_tests": 156
+    },
+    "tooling": {
+      "log_sha256": "ca8374cbe143c60274c13ca980f0d8da516e8f3d3e67421d539d0946a86ece3c",
+      "passed_tests": 3
+    }
+  },
+  "unique_unit_and_integration_tests": 548,
+  "focused_tests_overlap": true,
+  "paid_repeat_after_metadata_change": false
+}

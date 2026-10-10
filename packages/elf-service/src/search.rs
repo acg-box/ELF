@@ -64,7 +64,7 @@ use crate::{
 use cache::{fetch_cache_payload, store_cache_payload};
 use db_helpers::{fetch_chunks_by_pair, fetch_note_vectors_for_diversity};
 use elf_config::{Config, SearchCache};
-use elf_domain::english_gate;
+use elf_domain::text_validation;
 use elf_storage::{
 	models::MemoryNote,
 	qdrant::{BM25_MODEL, BM25_VECTOR_NAME, DENSE_VECTOR_NAME},

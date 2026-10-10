@@ -4,7 +4,7 @@ use serde_json::Value;
 
 use crate::search::ExpansionMode;
 use elf_config::{Config, SearchDynamic};
-use elf_domain::english_gate;
+use elf_domain::text_validation;
 
 pub fn resolve_expansion_mode(cfg: &Config) -> ExpansionMode {
 	match cfg.search.expansion.mode.as_str() {
@@ -48,7 +48,7 @@ pub fn normalize_queries(
 pub fn push_query(out: &mut Vec<String>, seen: &mut HashSet<String>, value: &str) {
 	let trimmed = value.trim();
 
-	if trimmed.is_empty() || !english_gate::is_english_natural_language(trimmed) {
+	if trimmed.is_empty() || !text_validation::is_valid_text(trimmed) {
 		return;
 	}
 
@@ -71,8 +71,8 @@ pub fn build_expansion_messages(
 		.unwrap_or_else(|_| "{\"queries\": [\"string\"]}".to_string());
 	let system_prompt = "You are a query expansion engine for a memory retrieval system. \
 Output must be valid JSON only and must match the provided schema exactly. \
-Generate short English-only query variations that preserve the original intent. \
-Do not include any non-English text. Do not add explanations or extra fields.";
+Generate short query variations that preserve the original intent and exact names. Use the query language; add cross-language equivalents only when useful. \
+Do not add explanations or extra fields.";
 	let user_prompt = format!(
 		"Return JSON matching this exact schema:\n{schema}\nConstraints:\n- MAX_QUERIES = {max}\n- INCLUDE_ORIGINAL = {include}\nOriginal query:\n{query}",
 		schema = schema_text,

@@ -43,7 +43,7 @@ async fn static_keys_org_shared_events_ingest_requires_admin() {
 		"dry_run": true,
 		"messages": [{
 			"role": "user",
-			"content": "こんにちは"
+			"content": "こんにちは\0"
 		}]
 	});
 	let response_user = app

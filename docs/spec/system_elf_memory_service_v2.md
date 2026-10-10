@@ -6,7 +6,7 @@ resource: docs/spec/system_elf_memory_service_v2.md
 status: active
 authority: normative
 owner: spec
-last_verified: 2026-06-23
+last_verified: 2026-10-10
 tags:
   - docs
   - spec
@@ -27,8 +27,8 @@ Defines: ELF Memory Service v2.0 API semantics, ingestion boundaries, and storag
 Description: ELF means Evidence-linked fact memory for agents.
 
 Audience: Implementation LLM or engineer agent.
-Language: English only.
-Contract: English-only API inputs and outputs. Reject non-English input at the API boundary.
+Language: Unicode text in any language.
+Contract: Preserve source text; accept multilingual inputs and outputs.
 Implementation target: Rust is recommended. The spec is language agnostic.
 
 Core idea:
@@ -41,7 +41,7 @@ Core idea:
 
 Core vs Extensions:
 - ELF Core is the high-trust, facts-first memory service defined by this specification.
-  - It owns: notes/events ingestion semantics, scopes/sharing, search, auditability, and the English gate.
+  - It owns: notes/events ingestion semantics, scopes/sharing, search, auditability, and the text-format contract.
   - It must remain simple, deterministic where specified, and operable without any optional components.
 - ELF Extensions are optional capability modules that may evolve independently without changing Core semantics.
   - Extensions must not weaken Core invariants or introduce hidden dependencies into Core flows.
@@ -72,9 +72,10 @@ I2. Qdrant is derived and rebuildable:
 I3. Online retrieval:
     - Qdrant returns candidate chunk_ids.
     - Postgres returns authoritative notes and re-validates status, TTL, and scope.
-I4. English-only contract:
-    - Any API input that fails the English gate (defined below) must be rejected with HTTP 422.
-    - Upstream agents must canonicalize to English before calling ELF.
+I4. Language-neutral contract:
+    - Validate text format, not language. See Section 3.
+    - Preserve original source bytes and verbatim evidence quotes.
+
 I5. add_note must not call any LLM under any circumstance.
 I6. add_event must call the LLM extractor and must bind evidence with verbatim substring checks.
 
@@ -283,7 +284,6 @@ purge_deprecated_after_days = 180
 
 [security]
 bind_localhost_only = true
-reject_non_english = true
 redact_secrets_on_write = true
 # Evidence rules for add_event
 evidence_min_quotes = 1
@@ -330,44 +330,31 @@ read_profile = "private_only|private_plus_project|all_scopes"
 - elf-api, elf-worker, and elf-mcp are separate binaries.
 - Each binary requires a config path via --config or -c.
 - Startup must fail with a clear error if any required config field is missing.
-- security.reject_non_english must be true. Startup must fail if it is false.
+- Remove the obsolete `security.reject_non_english` configuration field. Unknown security fields fail validation.
 
 ============================================================
-3. ENGLISH GATE (ENGLISH-ONLY BOUNDARY)
+3. LANGUAGE-NEUTRAL TEXT CONTRACT
 ============================================================
-Policy:
-- ELF is English-only. All externally supplied text fields must be English.
-- Translation or multilingual retrieval is out of scope and must be handled upstream.
-
-English gate algorithm (normative):
-1) Normalize:
-   - Apply Unicode NFKC normalization.
-   - Reject if the normalized text contains control characters or zero-width/invisible
-     characters (implementation-defined denylist).
-2) Script gate (hard reject):
-   - Reject if any codepoint is in a disallowed script.
-   - Normative allowlist:
-     - Allow: Latin, Common, Inherited.
-     - Reject: any other script (e.g., Han, Hiragana, Katakana, Hangul, Cyrillic, Arabic).
-3) Language identification gate (LID) (conditional reject):
-   - Only apply LID to natural-language fields (note text, query, doc text). Do not
-     apply LID to structured identifiers (urls, ids, keys) to avoid false rejects.
-   - Only apply LID when the input is sufficiently long and letter-dense
-     (implementation-defined thresholds).
-   - If LID classifies the text as NOT English with confidence >= threshold, reject.
-   - If LID is low-confidence/unknown, do not reject (to avoid false positives).
-
-Fields to check:
-- add_note: notes[].text, notes[].key (optional), source_ref string fields if any
-- add_event: messages[].content
-- search: query
+- Accept Unicode text in all languages. Do not normalize or translate source bytes.
+- Reject control characters other than LF, CR, and tab with HTTP 422 and
+  `INVALID_TEXT`. Identifier fields also reject invisible directional controls,
+  zero-width space, word joiner, and byte-order marks. Natural text permits these
+  format characters because source languages and documents can require them.
+- Apply this contract to notes, events, queries, quotes, names, and source metadata.
+- Extraction can prefer English summaries. Preserve original names and copy
+  evidence quotes verbatim. English is a generation preference, not a write rule.
+- Source Library captures preserve submitted UTF-8 bytes, hashes, and offsets.
+  A changed source creates a new content-addressed record. Derived translations
+  or summaries must reference the original and must not replace it.
+- Multilingual retrieval quality depends on the configured embedding and reranker.
+  API acceptance does not guarantee equal retrieval quality across languages.
 
 Error response:
 HTTP 422
 {
-  "error_code": "NON_ENGLISH_INPUT",
-  "message": "Non-English input detected; upstream must canonicalize to English before calling ELF.",
-  "fields": ["$.messages[2].content", "$.notes[0].text"]
+  "error_code": "INVALID_TEXT",
+  "message": "Input contains unsupported control characters.",
+  "fields": ["$.messages[2].content"]
 }
 
 ============================================================
@@ -382,7 +369,7 @@ HTTP 422
 - plan
 
 4.2 Canonical note
-- A note is a short English sentence and must be <= max_note_chars.
+- A note is a short sentence in any language and must be <= max_note_chars.
 - Format is not enforced. Recommended prefixes for consistency:
   "Preference: ...", "Constraint: ...", "Decision: ...", "Profile: ...", "Fact: ...", "Plan: ..."
 
@@ -410,6 +397,22 @@ Recommended shape (informative):
 
 Defined resolvers:
 - `elf_doc_ext/v1`: Doc Extension v1 document pointer resolver. Defined in `docs/spec/system_source_ref_doc_pointer_v1.md`.
+
+Stored event-derived notes retain provenance in `source_ref.evidence[].source`:
+- `schema`: `elf.event_source/v1`.
+- `message_id` and `timestamp`: the caller's original `msg_id` and `ts`, or null.
+- `role`: the original message role.
+- `hash_algorithm`: `blake3`; `content_hash`: original message UTF-8 content hash.
+- `extraction_content_hash`: UTF-8 hash after the event write policy. Evidence
+  quotes bind to this input; it equals the original hash when content is unchanged.
+- `write_policy_audit`: the audit for that message, or null if no policy was supplied.
+
+The service constructs this metadata. It does not ask the extractor to invent IDs
+or hashes. A caller locator does not grant access or authenticate an external
+source. Retain the source in Source Library or upstream; the event endpoint does
+not automatically archive complete transcripts. Existing stored evidence is not
+backfilled with invented identifiers.
+
 
 Resolver tiers (informative):
 - reproducible: dereference is stable and replayable given (ref + state) (example: fs_git with a commit SHA).
@@ -667,7 +670,7 @@ Rules:
 - Core blocks are small read-only operating context, separate from archival note search.
 - Core blocks must not be indexed into Qdrant or returned by archival search unless a future explicit contract says so.
 - source_ref must be a JSON object and is returned with block readback.
-- scope, write permission, English gate, auth, and shared-grant rules apply.
+- scope, write permission, text-format contract, auth, and shared-grant rules apply.
 
 Indexes:
 - uq_core_memory_blocks_active_key: (tenant_id, project_id, agent_id, scope, key) WHERE status = 'active'
@@ -850,7 +853,7 @@ Ignore reason codes:
 9. WRITEGATE (SERVER SIDE, ALWAYS ON)
 ============================================================
 Reject a note if any of the following are true:
-- The note contains non-English input (fails the English gate).
+- The note contains unsupported control characters.
 - The type is not in the 6-type allowlist.
 - The scope is not allowed or write not allowed.
 - The text length is greater than max_note_chars.
@@ -860,7 +863,7 @@ Reject a note if any of the following are true:
 On rejection:
 - op = REJECTED
 - reason_code is one of:
-  REJECT_NON_ENGLISH, REJECT_TOO_LONG, REJECT_SECRET, REJECT_INVALID_TYPE,
+  REJECT_INVALID_TEXT, REJECT_TOO_LONG, REJECT_SECRET, REJECT_INVALID_TYPE,
   REJECT_SCOPE_DENIED, REJECT_EMPTY
 
 ============================================================
@@ -944,7 +947,7 @@ Periodic cleanup:
 Input:
 - tenant_id, project_id, agent_id
 - read_profile
-- query (English only)
+- query (in any language)
 - mode (`quick_find` or `planned_search`) - required
 - optional top_k, candidate_k, filter, record_hits
 
@@ -962,7 +965,7 @@ Config:
 - search.explain.retention_days
 
 Steps:
-1) English-only boundary check.
+1) Language-neutral text validation.
 2) Resolve allowed_scopes = scopes.read_profiles[read_profile].
 3) Resolve expansion mode:
    - off: use only original query.
@@ -974,7 +977,7 @@ Steps:
      and the expansion cache schema version (hardcoded), plus max_queries and include_original.
    - If search.cache.enabled and a non-expired cache entry exists, use cached queries.
    - On cache miss, call the LLM expansion prompt and receive queries[].
-     - Deduplicate, drop any non-English variants (English gate), and cap at max_queries.
+     - Deduplicate, drop variants with invalid text format, and cap at max_queries.
      - Ensure original query is present when include_original = true.
    - If search.cache.enabled and payload size is within max_payload_bytes (when set),
      store the expanded queries with TTL = expansion_ttl_days.
@@ -1088,7 +1091,7 @@ Admin Source Library read-only mirror:
 Behavior:
 - These endpoints mirror the public Source Library document metadata, L0 search, and
   excerpt hydration reads for local admin viewer use.
-- They are read-only and must use the same scope, read_profile, English gate, and
+- They are read-only and must use the same scope, read_profile, text-format contract, and
   source/excerpt verification rules as the public `/v2/docs/*` routes.
 - They must not create, mutate, delete, or reindex source documents.
 
@@ -1291,7 +1294,7 @@ Headers:
 
 Body:
 {
-  "query": "English-only",
+  "query": "Unicode",
   "mode": "quick_find",
   "top_k": 12,
   "candidate_k": 60,
@@ -1721,7 +1724,7 @@ Search creation and graph query endpoints also require:
 Header rules:
 - Headers must be valid UTF-8 strings.
 - Headers must be non-empty and at most 128 characters.
-- Headers must pass the English identifier gate (no non-Latin scripts, no zero-width/control characters).
+- Headers must pass the identifier text-format contract in Section 3. HTTP header encoding rules also apply.
 
 Authentication:
 - security.auth_mode = "off": no auth header is required.
@@ -1739,7 +1742,7 @@ Body:
     {
       "type": "preference|constraint|decision|profile|fact|plan",
       "key": "string|null",
-      "text": "English-only sentence",
+      "text": "Unicode sentence",
       "importance": 0.0,
       "confidence": 0.0,
       "ttl_days": 180,
@@ -1771,8 +1774,8 @@ Body:
               }|null,
               "value": "string|null"
             },
-            "valid_from": "ISO8601 datetime|null",
-            "valid_to": "ISO8601 datetime|null"
+            "valid_from": "RFC3339 timestamp or YYYY-MM-DD UTC day boundary|null",
+            "valid_to": "RFC3339 timestamp or YYYY-MM-DD UTC day boundary|null"
           }
         ]|null
       }|null,
@@ -1816,7 +1819,7 @@ Body:
   "messages": [
     {
       "role": "user|assistant|tool",
-      "content": "English-only",
+      "content": "Unicode",
       "ts": "optional",
       "msg_id": "optional",
       "write_policy": "optional"
@@ -2254,7 +2257,7 @@ Headers:
 Body:
 {
   "mode": "quick_find",
-  "query": "English-only",
+  "query": "Unicode",
   "top_k": 12,
   "candidate_k": 60,
   "payload_level": "l0",
@@ -2529,7 +2532,7 @@ GET /health
 
 Error body:
 {
-  "error_code": "NON_ENGLISH_INPUT|SCOPE_DENIED|INVALID_REQUEST|INTERNAL_ERROR",
+  "error_code": "INVALID_TEXT|SCOPE_DENIED|INVALID_REQUEST|INTERNAL_ERROR",
   "message": "Human readable string.",
   "fields": ["$.headers.X-ELF-Tenant-Id", "$.notes[0].text"]
 }
@@ -2546,15 +2549,15 @@ Schema:
 
 Hard rules:
 - queries.length <= MAX_QUERIES
-- Each query must be English only and must not contain any non-English text.
+- Queries may use any language; preserve original names and intent.
 - Each query must be a single sentence.
 - Include the original query unless INCLUDE_ORIGINAL is false.
 
 System prompt (Expansion):
 "You are a query expansion engine for a memory retrieval system.
 Output must be valid JSON only and must match the provided schema exactly.
-Generate short English-only query variations that preserve the original intent.
-Do not include any non-English text. Do not add explanations or extra fields."
+Generate short Unicode query variations that preserve the original intent.
+Preserve original names. Do not add explanations or extra fields."
 
 User prompt template:
 "Return JSON matching this exact schema:
@@ -2631,7 +2634,7 @@ Schema:
     {
       "type": "preference|constraint|decision|profile|fact|plan",
       "key": "string|null",
-      "text": "English-only sentence <= MAX_NOTE_CHARS",
+      "text": "Unicode sentence <= MAX_NOTE_CHARS",
       "importance": 0.0,
       "confidence": 0.0,
       "ttl_days": number|null,
@@ -2662,8 +2665,8 @@ Schema:
               }|null,
               "value": "string|null"
             },
-            "valid_from": "ISO8601 datetime|null",
-            "valid_to": "ISO8601 datetime|null"
+            "valid_from": "RFC3339 timestamp or YYYY-MM-DD UTC day boundary|null",
+            "valid_to": "RFC3339 timestamp or YYYY-MM-DD UTC day boundary|null"
           }
         ]|null
       }|null,
@@ -2681,7 +2684,7 @@ Notes:
 
 Hard rules:
 - notes.length <= MAX_NOTES
-- text must be English-only (must pass the English gate)
+- text must be Unicode (must pass the text-format contract)
 - each note must be one sentence
 - evidence must be 1..2 quotes
 - each evidence.quote must be a verbatim substring of messages[message_index].content
@@ -2692,7 +2695,7 @@ System prompt (Extractor):
 "You are a memory extraction engine for an agent memory system.
 Output must be valid JSON only and must match the provided schema exactly.
 Extract at most MAX_NOTES high-signal, cross-session reusable memory notes from the given messages.
-Each note must be one English sentence and must not contain any non-English text.
+Prefer concise English summaries, but preserve original names and verbatim source-language evidence.
 Preserve numbers, dates, percentages, currency amounts, tickers, URLs, and code snippets exactly.
 Never store secrets or PII: API keys, tokens, private keys, seed phrases, passwords, bank IDs, personal addresses.
 For every note, provide 1 to 2 evidence quotes copied verbatim from the input messages and include the message_index.
@@ -2713,8 +2716,8 @@ Here are the messages as JSON:
 ============================================================
 A. add_note does not call LLM:
 - Instrument LLM client call count. It must remain 0 during add_note tests.
-B. English-only boundary:
-- Any input that fails the English gate (Section 3) in add_note, add_event, or search
+B. Language-neutral boundary:
+- Any input that fails the text-format contract (Section 3) in add_note, add_event, or search
   returns HTTP 422 with a JSONPath-like field path.
 C. Evidence binding:
 - If extractor evidence.quote is not a substring -> REJECTED with REJECT_EVIDENCE_MISMATCH.

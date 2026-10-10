@@ -1,7 +1,7 @@
 use std::collections::{HashMap, HashSet};
 
 use elf_config::Context;
-use elf_domain::english_gate;
+use elf_domain::text_validation;
 
 pub(crate) fn build_scope_context_boost_by_scope<'a>(
 	tokens: &[String],
@@ -35,7 +35,7 @@ fn scope_description_boost(tokens: &[String], description: &str, weight: f32) ->
 
 	let trimmed = description.trim();
 
-	if trimmed.is_empty() || !english_gate::is_english_natural_language(trimmed) {
+	if trimmed.is_empty() || !text_validation::is_valid_text(trimmed) {
 		return 0.0;
 	}
 

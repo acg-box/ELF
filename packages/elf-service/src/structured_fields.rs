@@ -1,5 +1,7 @@
 //! Structured-field validation and persistence helpers.
 
+pub(crate) mod relation_time;
+
 mod persistence;
 mod types;
 mod validation;

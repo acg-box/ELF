@@ -63,6 +63,7 @@ impl ElfService {
 		let result = self
 			.apply_extracted_note_decision(
 				req,
+				message_texts,
 				ingestion_profile,
 				&mut tx,
 				&ctx,

@@ -99,7 +99,7 @@ pub(in crate::ingestion_profiles) async fn seed_default_profile(
 	project_id: &str,
 ) -> Result<()> {
 	let profile =
-		serde_json::to_value(profile::builtin_profile_v1()).map_err(|_| Error::InvalidRequest {
+		serde_json::to_value(profile::builtin_profile()).map_err(|_| Error::InvalidRequest {
 			message: "Failed to serialize default ingestion profile.".to_string(),
 		})?;
 

@@ -2,7 +2,7 @@ use serde_json::Value;
 
 use crate::{Error, Result};
 use elf_config::Config;
-use elf_domain::english_gate::{self, EnglishGateKind};
+use elf_domain::text_validation::{self, TextKind};
 
 pub(super) fn normalize_required(raw: &str, field: &str) -> Result<String> {
 	let trimmed = raw.trim();
@@ -33,9 +33,9 @@ pub(super) fn validate_write_scope(cfg: &Config, scope: &str) -> Result<()> {
 	Ok(())
 }
 
-pub(super) fn validate_english(input: &str, kind: EnglishGateKind, field: &str) -> Result<()> {
-	english_gate::english_gate(input, kind)
-		.map_err(|_| Error::NonEnglishInput { field: field.to_string() })
+pub(super) fn validate_text(input: &str, kind: TextKind, field: &str) -> Result<()> {
+	text_validation::validate(input, kind)
+		.map_err(|_| Error::InvalidText { field: field.to_string() })
 }
 
 pub(super) fn validate_source_ref(source_ref: &Value) -> Result<()> {

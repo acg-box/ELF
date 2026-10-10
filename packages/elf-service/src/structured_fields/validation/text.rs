@@ -1,5 +1,5 @@
 use crate::{Error, Result};
-use elf_domain::english_gate;
+use elf_domain::text_validation;
 
 const MAX_ITEM_CHARS: usize = 1_000;
 
@@ -14,8 +14,8 @@ pub(super) fn validate_text_field(value: &str, label: &str) -> Result<()> {
 			message: format!("{label} must be at most {MAX_ITEM_CHARS} characters."),
 		});
 	}
-	if !english_gate::is_english_natural_language(trimmed) {
-		return Err(Error::NonEnglishInput { field: label.to_string() });
+	if !text_validation::is_valid_text(trimmed) {
+		return Err(Error::InvalidText { field: label.to_string() });
 	}
 
 	Ok(())

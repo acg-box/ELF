@@ -329,7 +329,6 @@ evidence_max_quote_chars = 320
 evidence_max_quotes      = 2
 evidence_min_quotes      = 1
 redact_secrets_on_write  = true
-reject_non_english       = true
 TOML
 
 if command -v taplo >/dev/null 2>&1; then

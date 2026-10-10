@@ -1,16 +1,16 @@
-use crate::work_journal::validation::{Error, Map, Result, Value, english_gate, writegate};
+use crate::work_journal::validation::{Error, Map, Result, Value, text_validation, writegate};
 
 pub(in crate::work_journal) fn validate_identifier(text: &str, field: &str) -> Result<()> {
-	if text.trim().is_empty() || !english_gate::is_english_identifier(text.trim()) {
-		return Err(Error::NonEnglishInput { field: field.to_string() });
+	if text.trim().is_empty() || !text_validation::is_valid_identifier(text.trim()) {
+		return Err(Error::InvalidText { field: field.to_string() });
 	}
 
 	Ok(())
 }
 
 pub(super) fn validate_natural_language(text: &str, field: &str) -> Result<()> {
-	if !english_gate::is_english_natural_language(text) {
-		return Err(Error::NonEnglishInput { field: field.to_string() });
+	if !text_validation::is_valid_text(text) {
+		return Err(Error::InvalidText { field: field.to_string() });
 	}
 
 	Ok(())

@@ -15,12 +15,11 @@ pub(crate) const TRACE_GATE_CONFIG_TOML: &str =
 pub(crate) const SAMPLE_CONFIG_TEMPLATE_TOML: &str =
 	include_str!("../fixtures/sample_config.template.toml");
 
-pub(crate) fn sample_toml(reject_non_english: bool) -> String {
-	sample_toml_with_recursive(reject_non_english, false, 2, 4, 32, 256)
+pub(crate) fn sample_toml() -> String {
+	sample_toml_with_recursive(false, 2, 4, 32, 256)
 }
 
 pub(crate) fn sample_toml_with_recursive(
-	reject_non_english: bool,
 	recursive_enabled: bool,
 	max_depth: i64,
 	max_children_per_node: i64,
@@ -45,25 +44,16 @@ pub(crate) fn sample_toml_with_recursive(
 	recursive.insert("max_nodes_per_scope".to_string(), Value::Integer(max_nodes_per_scope));
 	recursive.insert("max_total_nodes".to_string(), Value::Integer(max_total_nodes));
 
-	let security = root
-		.get_mut("security")
-		.and_then(Value::as_table_mut)
-		.expect("Template config must include [security].");
-
-	security.insert("reject_non_english".to_string(), Value::Boolean(reject_non_english));
-
 	toml::to_string(&value).expect("Failed to render template config.")
 }
 
 pub(crate) fn sample_toml_with_cache(
-	reject_non_english: bool,
 	expansion_ttl_days: i64,
 	rerank_ttl_days: i64,
 	cache_enabled: bool,
 ) -> String {
-	let mut value: Value =
-		toml::from_str(&sample_toml_with_recursive(reject_non_english, false, 2, 4, 32, 256))
-			.expect("Failed to parse template config.");
+	let mut value: Value = toml::from_str(&sample_toml_with_recursive(false, 2, 4, 32, 256))
+		.expect("Failed to parse template config.");
 	let root = value.as_table_mut().expect("Template config must be a table.");
 	let search = root
 		.get_mut("search")
@@ -131,7 +121,7 @@ pub(crate) fn assert_missing_field_error(result: Result<Config, Error>, field: &
 }
 
 pub(crate) fn base_config() -> Config {
-	let payload = sample_toml(true);
+	let payload = sample_toml();
 
 	toml::from_str(&payload).expect("Failed to parse test config.")
 }

@@ -1,5 +1,5 @@
 use crate::{Error, Result, add_event::types::AddEventRequest};
-use elf_domain::english_gate;
+use elf_domain::text_validation;
 
 pub(in crate::add_event) fn validate_add_event_request(req: &AddEventRequest) -> Result<()> {
 	if req.messages.is_empty() {
@@ -38,8 +38,22 @@ pub(in crate::add_event) fn validate_add_event_request(req: &AddEventRequest) ->
 	}
 
 	for (idx, msg) in req.messages.iter().enumerate() {
-		if !english_gate::is_english_natural_language(msg.content.as_str()) {
-			return Err(Error::NonEnglishInput { field: format!("$.messages[{idx}].content") });
+		if let Some(id) = msg.msg_id.as_deref()
+			&& !text_validation::is_valid_identifier(id)
+		{
+			return Err(Error::InvalidText { field: format!("$.messages[{idx}].msg_id") });
+		}
+		if let Some(ts) = msg.ts.as_deref()
+			&& !text_validation::is_valid_text(ts)
+		{
+			return Err(Error::InvalidText { field: format!("$.messages[{idx}].ts") });
+		}
+
+		if !text_validation::is_valid_text(msg.role.as_str()) {
+			return Err(Error::InvalidText { field: format!("$.messages[{idx}].role") });
+		}
+		if !text_validation::is_valid_text(msg.content.as_str()) {
+			return Err(Error::InvalidText { field: format!("$.messages[{idx}].content") });
 		}
 	}
 

@@ -1,0 +1,78 @@
+[
+  {
+    "name": "elf-matched-api",
+    "container_id": "466c6411f2b010c8c2cc1bb357df8290356b98e0100ec2bf8fe481e2f45c5bd2",
+    "image_id": "sha256:53f360362a682b49fc1dad806adc2f00525c85051748b235bd60f2a7ffa311ef",
+    "image_ref": "elf-language-service:final",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.revision": "3ef9b7d69d6dc3835cdc01b2ba0e928647356e84"
+    },
+    "mount_types": [
+      "bind"
+    ]
+  },
+  {
+    "name": "elf-matched-worker",
+    "container_id": "a5aa9fc5bcfbc927fad2fae4f4ce5d59d1724405cf2004e17897415c4035a969",
+    "image_id": "sha256:53f360362a682b49fc1dad806adc2f00525c85051748b235bd60f2a7ffa311ef",
+    "image_ref": "elf-language-service:final",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.revision": "3ef9b7d69d6dc3835cdc01b2ba0e928647356e84"
+    },
+    "mount_types": [
+      "bind"
+    ]
+  },
+  {
+    "name": "elf-matched-db",
+    "container_id": "f9eebd833f07b7be70133f69bcd8db2bae7c313f7cf01a048cf5404fe0ba8816",
+    "image_id": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+    "image_ref": "pgvector/pgvector:pg18",
+    "labels": {
+      "elf.benchmark": "elf-matched"
+    },
+    "mount_types": [
+      "volume"
+    ]
+  },
+  {
+    "name": "elf-matched-qdrant",
+    "container_id": "43aa0c9fad4d0825d223b4c8ecd04652ae2b97bc395e7df64e8f31ac7c2c87f7",
+    "image_id": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c",
+    "image_ref": "qdrant/qdrant:v1.18.0",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.description": "Official Qdrant image",
+      "org.opencontainers.image.documentation": "https://qdrant.com/docs",
+      "org.opencontainers.image.source": "https://github.com/qdrant/qdrant",
+      "org.opencontainers.image.title": "Qdrant",
+      "org.opencontainers.image.url": "https://qdrant.com/",
+      "org.opencontainers.image.vendor": "Qdrant",
+      "org.opencontainers.image.version": "v1.18.0"
+    },
+    "mount_types": []
+  },
+  {
+    "name": "elf-matched-sidecar",
+    "container_id": "45487bf9fc865a75c5ded3f7d91c71cd1e663fc87d009e347f1aa1f7f1b0a563",
+    "image_id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+    "image_ref": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.created": "2026-10-08T15:31:07.027Z",
+      "org.opencontainers.image.description": "Hindsight: Agent Memory That Learns",
+      "org.opencontainers.image.licenses": "MIT",
+      "org.opencontainers.image.revision": "eb6df499d35300e5b2f3f029b2e6adda04ed90f8",
+      "org.opencontainers.image.source": "https://github.com/vectorize-io/hindsight",
+      "org.opencontainers.image.title": "hindsight",
+      "org.opencontainers.image.url": "https://github.com/vectorize-io/hindsight",
+      "org.opencontainers.image.version": "0.10.3"
+    },
+    "mount_types": [
+      "bind",
+      "bind"
+    ]
+  }
+]

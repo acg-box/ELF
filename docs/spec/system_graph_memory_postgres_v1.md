@@ -6,7 +6,7 @@ resource: docs/spec/system_graph_memory_postgres_v1.md
 status: active
 authority: normative
 owner: spec
-last_verified: 2026-06-23
+last_verified: 2026-10-10
 tags:
   - docs
   - spec
@@ -32,7 +32,7 @@ Not this document: Graph query runbooks, external comparisons, or service rollou
 Defines: Graph Memory Postgres v1.0 tables, keys, and temporal invariants.
 
 Description: Canonical entity/fact temporal memory schema and invariants for PostgreSQL-backed graph memory.
-Language: English only.
+Language: Unicode text in any language.
 
 Purpose:
 - Persist entities, aliases, temporal facts, and evidence links for ELF graph memory.

@@ -49,7 +49,7 @@ pub(in crate::add_event) fn reject_extracted_note_if_structured_invalid(
 
 fn extract_structured_rejection_field_path(err: &Error) -> Option<String> {
 	match err {
-		Error::NonEnglishInput { field } => Some(field.clone()),
+		Error::InvalidText { field } => Some(field.clone()),
 		Error::InvalidRequest { message } if message.starts_with("structured.") =>
 			message.split_whitespace().next().map(ToString::to_string),
 		_ => None,

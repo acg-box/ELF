@@ -1,12 +1,15 @@
+use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 use time::OffsetDateTime;
 
 /// Structured note fields emitted by extraction and stored alongside a note.
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
+#[serde(deny_unknown_fields)]
 pub struct StructuredFields {
 	/// Optional one-paragraph summary.
 	pub summary: Option<String>,
-	/// Optional fact statements grounded in the note text.
+	/// Each fact must be a verbatim substring of note text or an evidence quote; do not
+	/// paraphrase.
 	pub facts: Option<Vec<String>>,
 	/// Optional concept labels grounded in the note text.
 	pub concepts: Option<Vec<String>>,
@@ -41,9 +44,11 @@ impl StructuredFields {
 }
 
 /// One extracted entity candidate.
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
+#[serde(deny_unknown_fields)]
 pub struct StructuredEntity {
-	/// Canonical surface for the entity.
+	/// Canonical surface for the entity, copied from the note or evidence.
+	#[schemars(required)]
 	pub canonical: Option<String>,
 	/// Optional entity kind such as person or organization.
 	pub kind: Option<String>,
@@ -52,25 +57,33 @@ pub struct StructuredEntity {
 }
 
 /// One extracted relation candidate.
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
-#[serde(default)]
+#[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
+#[serde(default, deny_unknown_fields)]
 pub struct StructuredRelation {
-	/// Relation subject entity.
+	/// Relation subject entity directly with canonical/kind/aliases, never an entity wrapper.
+	#[schemars(required)]
 	pub subject: Option<StructuredEntity>,
-	/// Predicate surface for the relation.
+	/// Predicate copied verbatim from note text or an evidence quote; do not invent a normalized
+	/// label.
+	#[schemars(required)]
 	pub predicate: Option<String>,
-	/// Relation object, either an entity or scalar value.
+	/// Object must contain exactly one non-null entity or value, copied from note text or
+	/// evidence.
+	#[schemars(required)]
 	pub object: Option<StructuredRelationObject>,
-	#[serde(with = "crate::time_serde::option")]
+	#[serde(with = "crate::structured_fields::relation_time")]
+	#[schemars(with = "Option<String>", description = crate::structured_fields::relation_time::FORMAT)]
 	/// Optional validity-window start.
 	pub valid_from: Option<OffsetDateTime>,
-	#[serde(with = "crate::time_serde::option")]
+	#[serde(with = "crate::structured_fields::relation_time")]
+	#[schemars(with = "Option<String>", description = crate::structured_fields::relation_time::FORMAT)]
 	/// Optional validity-window end.
 	pub valid_to: Option<OffsetDateTime>,
 }
 
 /// Extracted relation object.
-#[derive(Clone, Debug, Default, Deserialize, Serialize)]
+#[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
+#[serde(deny_unknown_fields)]
 pub struct StructuredRelationObject {
 	/// Entity-shaped object value.
 	pub entity: Option<StructuredEntity>,
