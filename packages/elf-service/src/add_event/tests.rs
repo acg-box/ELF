@@ -1,4 +1,5 @@
 use crate::add_event::{
+	self,
 	types::{AddEventRequest, EventMessage, ExtractorOutput},
 	validation,
 };
@@ -38,7 +39,7 @@ fn malformed_extracted_entity_is_not_silently_discarded() {
 
 #[test]
 fn extractor_schema_exposes_the_relation_time_contract() {
-	let schema = crate::add_event::extraction_schema();
+	let schema = add_event::extraction_schema();
 	let description =
 		schema["$defs"]["StructuredRelation"]["properties"]["valid_from"]["description"]
 			.as_str()
