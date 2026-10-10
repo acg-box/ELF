@@ -130,7 +130,7 @@ def attach_shared_answers(
 ANSWER_BATCH_SIZE = 1
 
 
-def request_answers(cases: list[dict[str, Any]], env: dict[str, str]) -> dict[str, Any]:
+def request_answers(cases: list[dict[str, Any]], env: dict[str, str], *, max_tokens: int = 4096) -> dict[str, Any]:
     prompt = {
         "instruction": (
             "Answer each case only from its supplied context. Return one JSON object "
@@ -150,7 +150,7 @@ def request_answers(cases: list[dict[str, Any]], env: dict[str, str]) -> dict[st
                 "reasoning_effort": env["BENCHMARK_CHAT_REASONING_EFFORT"],
                 "response_format": {"type": "json_object"},
                 "stream": False,
-                "max_tokens": 4096,
+                "max_tokens": max_tokens,
             }
         ).encode(),
         headers={

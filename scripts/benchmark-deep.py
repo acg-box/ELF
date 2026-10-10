@@ -38,6 +38,8 @@ def main():
                         help="Run a fixed group in fresh native state; default is all groups")
     parser.add_argument("--qmd-host", action="store_true")
     parser.add_argument("--native-only", action="store_true")
+    parser.add_argument("--reader-max-tokens", type=int, choices=(4096, 8192),
+                        help="Shared reader output limit; default 4096 or inherited on replay")
     parser.add_argument("--source-labels", action=argparse.BooleanOptionalAction, default=None,
                         help="Expose native source identities to the shared reader; inherited on replay")
     parser.add_argument("--reanswer", type=Path)
@@ -85,6 +87,9 @@ def main():
     else:
         inputs, oracle = workload(workload_group)
     source_labels = args.source_labels if args.source_labels is not None else bool((retained or {}).get("answer_protocol", {}).get("source_labels"))
+    reader_max_tokens = args.reader_max_tokens or (retained or {}).get("answer_protocol", {}).get("max_tokens", 4096)
+    if args.retry_answer_errors and reader_max_tokens != retained.get("answer_protocol", {}).get("max_tokens", 4096):
+        parser.error("Reader error recovery must preserve the output limit; use full replay to change it")
     if args.retry_answer_errors and source_labels != bool(retained.get("answer_protocol", {}).get("source_labels")):
         parser.error("Reader error recovery must preserve the context protocol")
     write_json(root / "input/workload.json", inputs)
@@ -164,7 +169,7 @@ def main():
     for offset in range(0, 0 if args.native_only else len(available), ANSWER_BATCH_SIZE):
         batch = available[offset:offset+ANSWER_BATCH_SIZE]
         try:
-            response = request_answers(batch, host)
+            response = request_answers(batch, host, max_tokens=reader_max_tokens)
             responses.append(response)
             write_json(root / "answer-responses.json", responses)
             choice = response["choices"][0]
@@ -195,6 +200,7 @@ def main():
         "workload_group": workload_group,
         "answer_protocol": {"revision": "source_labeled_case_v1" if source_labels else "isolated_case_v1",
                             "source_labels": source_labels, "batch_size": ANSWER_BATCH_SIZE,
+                            "max_tokens": reader_max_tokens,
                             "grounding": "Expected factual values must occur in the case's supplied context."},
         "providers": manifest["providers"], "source": source,
         "execution_limits": (retained.get("execution_limits", {"status": "not_recorded_in_original_bundle"})
