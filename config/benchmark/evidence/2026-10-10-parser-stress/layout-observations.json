@@ -1,0 +1,24 @@
+[
+  {
+    "source": "p_0775dffd822295ef2634",
+    "page": 1,
+    "native_chunk_id": "06c2974c7d8a90a6",
+    "source_data_rows": 4,
+    "native_html_rows_with_td": 2,
+    "native_html": "<table><tr><th >Region</th><th >Tier</th><th >Current signed</th><th ></th><th >Archived</th><th >State</th></tr><tr><td rowspan=2 >East West</td><td >Basic Pro Basic</td><td >Fee (CNY) 210 420 310</td><td >Limit 4 8 6</td><td >Old fee 21 42 31</td><td >Signed Signed Signed</td></tr><tr><td >Pro *</td><td >620</td><td >12</td><td >62</td><td >Signed</td></tr></table>",
+    "native_html_sha256": "26b643b4ce7a747ecfa887b79111eb99754c17c53c67ee0cdca39c5394e72fee",
+    "observation": "The original East Basic, East Pro, and West Basic rows are combined into lists in one HTML row. The two original region cells are combined as East West. Header labels occur inside this data row.",
+    "claim_boundary": "Qualitative structure audit after parsing; not a frozen aggregate metric and not by itself proof of a wrong final answer."
+  },
+  {
+    "source": "p_77bc298f7e82fc0cc561",
+    "page": 1,
+    "native_chunk_id": "61e819f403eaed3e",
+    "source_data_rows": 4,
+    "native_html_rows_with_td": 2,
+    "native_html": "<table><tr><th >Region</th><th >Tier</th><th >Current signed</th><th ></th><th >Archived</th><th >State</th></tr><tr><td >East West</td><td >Basic Pro Basic</td><td >Fee (CNY) 1210 1420 1310</td><td >Limit 4 8 6</td><td >Old fee 1021 1042 1031</td><td >Signed Signed Signed</td></tr><tr><td ></td><td >Pro *</td><td >1620</td><td >12</td><td >1062</td><td >Signed</td></tr></table>",
+    "native_html_sha256": "e0f3bd9eb9da1def8168ba470581431e41d8f13417a337a9b4dfa871839a49e3",
+    "observation": "The original East Basic, East Pro, and West Basic rows are combined into lists in one HTML row. The two original region cells are combined as East West. Header labels occur inside this data row.",
+    "claim_boundary": "Qualitative structure audit after parsing; not a frozen aggregate metric and not by itself proof of a wrong final answer."
+  }
+]

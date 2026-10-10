@@ -1,0 +1,1244 @@
+{
+  "p_e7ce1eebc94674c92dc4": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "5425d6492d6b3c9e",
+        "content_with_weight": "<file name=\"p_e7ce1eebc94674c92dc4.pdf\">\n# Harbor mixed A\nControlled synthetic parser diagnostic / signed revision 7\nSigned dispatch policy. Pages 2 and 3 contain scanned operational records.\nDay dispatch queue: DAY-A-731.\nThe day queue applies before 18:00 UTC.\nAt and after 18:00 UTC, use the night queue on page 2.\nRetired queue OLD-A-114 is not approved.\nThe approval code and deadline are on the signed image on page 3.\nHarbor mixed A | Revision 7 | Page 1\n# Harbor mixed A\nControlled synthetic parser diagnostic / signed revision 7\nNIGHT DISPATCH - SIGNED SCAN\nNight dispatch queue: NIGHT-A-864.\nOn-duty dispatcher: Clara Lin.\nEffective at and after 18:00 UTC.\nThis signed record overrides the retired day-only draft.\nHarbor mixed A | Revision 7 | Page 2\n# Harbor mixed A\nControlled synthetic parser diagnostic / signed revision 7\nThe title is real PDF text\n the signed body below is a raster image.\nSIGNED APPROVAL RECORD\nApproval code: SIGN-A-529.\nApproved deadline: 2026-11-17.\nOnly the approval code above authorizes execution.\nPrevious unsigned drafts do not authorize deployment.\nHarbor mixed A | Revision 7 | Page 3\n</file>",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "p_e7ce1eebc94674c92dc4.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 5,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "022bd3077c230680468fe5f96d99dd5a",
+      "create_date": "2026-10-10T16:49:22",
+      "create_time": 1791622162258,
+      "created_by": "c36a959540674d3f8349a9607869d9c7",
+      "dataset_id": "1add221a78564989b6b163a16a150993",
+      "id": "13328d10994c465abf29cc717007acd2",
+      "ingestion_status": "COMPLETED",
+      "location": "p_e7ce1eebc94674c92dc4.txt",
+      "name": "p_e7ce1eebc94674c92dc4.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T16:49:53",
+      "process_duration": 4.486704717,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1159,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 330,
+      "type": "doc",
+      "update_date": "2026-10-10T16:49:57",
+      "update_time": 1791622197910
+    },
+    "total": 1
+  },
+  "p_370c062d41f913dd59b8": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "b8ab0830e1a780b9",
+        "content_with_weight": "<file name=\"p_370c062d41f913dd59b8.pdf\">\n# Harbor mixed B\nControlled synthetic parser diagnostic / signed revision 7\nSigned dispatch policy. Pages 2 and 3 contain scanned operational records.\nDay dispatch queue: DAY-B-731.\nThe day queue applies before 18:00 UTC.\nAt and after 18:00 UTC, use the night queue on page 2.\nRetired queue OLD-B-114 is not approved.\nThe approval code and deadline are on the signed image on page 3.\nHarbor mixed B | Revision 7 | Page 1\n# Harbor mixed B\nControlled synthetic parser diagnostic / signed revision 7\nNIGHT DISPATCH - SIGNED SCAN\nNight dispatch queue: NIGHT-B-864.\nOn-duty dispatcher: Nolan Wu.\nEffective at and after 18:00 UTC.\nThis signed record overrides the retired day-only draft.\nHarbor mixed B | Revision 7 | Page 2\n# Harbor mixed B\nControlled synthetic parser diagnostic / signed revision 7\nThe title is real PDF text\n the signed body below is a raster image.\nSIGNED APPROVAL RECORD\nApproval code: SIGN-B-529.\nApproved deadline: 2026-11-23.\nOnly the approval code above authorizes execution.\nPrevious unsigned drafts do not authorize deployment.\nHarbor mixed B | Revision 7 | Page 3\n</file>",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "p_370c062d41f913dd59b8.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 0,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "65f29367c5a737a53bc161fcc2076532",
+      "create_date": "2026-10-10T16:49:22",
+      "create_time": 1791622162277,
+      "created_by": "c36a959540674d3f8349a9607869d9c7",
+      "dataset_id": "1add221a78564989b6b163a16a150993",
+      "id": "c3b73478e337420ea176f83df9393722",
+      "ingestion_status": "COMPLETED",
+      "location": "p_370c062d41f913dd59b8.txt",
+      "name": "p_370c062d41f913dd59b8.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T16:49:38",
+      "process_duration": 4.49288897,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1158,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 338,
+      "type": "doc",
+      "update_date": "2026-10-10T16:49:43",
+      "update_time": 1791622183511
+    },
+    "total": 1
+  },
+  "p_e68ae9579fbc4c1d0579": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "4755d26119f96c8e",
+        "content_with_weight": "<file name=\"p_e68ae9579fbc4c1d0579.pdf\">\n\u6f84\u6c5f\u9a8c\u6536 A\nControlled synthetic parser diagnostic / signed revision 7\n\u5de5\u7a0b\u9a8c\u6536\u901a\u77e5\uff08\u6b63\u5f0f\u7b7e\u7f72\u7248\uff09\n\u5f53\u524d\u8d1f\u8d23\u4eba\uff1a\u6797\u60a6\n\u5907\u7528\u8d1f\u8d23\u4eba\uff1a\u9648\u6d69\uff08\u4ec5\u5728\u8d1f\u8d23\u4eba\u8bf7\u5047\u65f6\u4ee3\u7406\uff09\n\u9884\u7b97\u4e0a\u9650\uff1a\u4eba\u6c11\u5e01 4800 \u5143\n\u9a8c\u6536\u5730\u70b9\uff1a\u4e0a\u6d77\u5e02\u6d66\u4e1c\u65b0\u533a\n\u7d27\u6025\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a24 \u5c0f\u65f6\n\u666e\u901a\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a72 \u5c0f\u65f6\n\u7d27\u6025\u4e8b\u9879\u4e0e\u666e\u901a\u4e8b\u9879\u9002\u7528\u4e0d\u540c\u5904\u7406\u65f6\u9650\uff0c\u8bf7\u52ff\u6df7\u7528\n\u672c\u901a\u77e5\u672a\u516c\u5e03\u8054\u7cfb\u7535\u8bdd\n\u6f84\u6c5f\u9a8c\u6536 A | Revision 7 | Page 1\n</file>",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "p_e68ae9579fbc4c1d0579.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 1,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "c4de5cda22dd0072312475cdde1db7d2",
+      "create_date": "2026-10-10T16:49:22",
+      "create_time": 1791622162299,
+      "created_by": "c36a959540674d3f8349a9607869d9c7",
+      "dataset_id": "1add221a78564989b6b163a16a150993",
+      "id": "85bd862df75748beafdb7f9fbd6162e2",
+      "ingestion_status": "COMPLETED",
+      "location": "p_e68ae9579fbc4c1d0579.txt",
+      "name": "p_e68ae9579fbc4c1d0579.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T16:49:43",
+      "process_duration": 4.403548524,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 545,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 165,
+      "type": "doc",
+      "update_date": "2026-10-10T16:49:48",
+      "update_time": 1791622188001
+    },
+    "total": 1
+  },
+  "p_154452ff7c7dca8097fd": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "10d231d621967cf9",
+        "content_with_weight": "<file name=\"p_154452ff7c7dca8097fd.pdf\">\n\u6f84\u6c5f\u9a8c\u6536 B\nControlled synthetic parser diagnostic / signed revision 7\n\u5de5\u7a0b\u9a8c\u6536\u901a\u77e5\uff08\u6b63\u5f0f\u7b7e\u7f72\u7248\uff09\n\u5f53\u524d\u8d1f\u8d23\u4eba\uff1a\u5468\u5b81\n\u5907\u7528\u8d1f\u8d23\u4eba\uff1a\u8bb8\u5c9a\uff08\u4ec5\u5728\u8d1f\u8d23\u4eba\u8bf7\u5047\u65f6\u4ee3\u7406\uff09\n\u9884\u7b97\u4e0a\u9650\uff1a\u4eba\u6c11\u5e01 6200 \u5143\n\u9a8c\u6536\u5730\u70b9\uff1a\u82cf\u5dde\u5e02\u5de5\u4e1a\u56ed\u533a\n\u7d27\u6025\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a36 \u5c0f\u65f6\n\u666e\u901a\u4e8b\u9879\u5904\u7406\u65f6\u9650\uff1a96 \u5c0f\u65f6\n\u7d27\u6025\u4e8b\u9879\u4e0e\u666e\u901a\u4e8b\u9879\u9002\u7528\u4e0d\u540c\u5904\u7406\u65f6\u9650\uff0c\u8bf7\u52ff\u6df7\u7528\n\u672c\u901a\u77e5\u672a\u516c\u5e03\u8054\u7cfb\u7535\u8bdd\n\u6f84\u6c5f\u9a8c\u6536 B | Revision 7 | Page 1\n</file>",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "p_154452ff7c7dca8097fd.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 2,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "40ce9b8e14a76d04842811977ae893f6",
+      "create_date": "2026-10-10T16:49:22",
+      "create_time": 1791622162322,
+      "created_by": "c36a959540674d3f8349a9607869d9c7",
+      "dataset_id": "1add221a78564989b6b163a16a150993",
+      "id": "638e159b53bf49d29b3d512394981646",
+      "ingestion_status": "COMPLETED",
+      "location": "p_154452ff7c7dca8097fd.txt",
+      "name": "p_154452ff7c7dca8097fd.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T16:49:44",
+      "process_duration": 4.605112537,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 545,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 164,
+      "type": "doc",
+      "update_date": "2026-10-10T16:49:49",
+      "update_time": 1791622189399
+    },
+    "total": 1
+  },
+  "p_0775dffd822295ef2634": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "98f49fb9f9f124b3",
+        "content_with_weight": "<file name=\"p_0775dffd822295ef2634.pdf\">\n# Cedar matrix A\nControlled synthetic parser diagnostic / signed revision 7\nCurrent signed values apply. Archived fees are historical references only.\n|  Region | Tier | Current signed |   | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\n|  East | Basic | 210 | 4 | 21 | Signed  |\n|   |  Pro | 420 | 8 | 42 | Signed  |\n|  West | Basic | 310 | 6 | 31 | Signed  |\n|   |  Pro * | 620 | 12 | 62 | Signed  |\nThe West region continues on page 2 with its Enterprise tier.\n* The dated fee adjustment is on page 2. Limits do not change.\nCedar matrix A | Revision 7 | Page 1\n# Cedar matrix A\nControlled synthetic parser diagnostic / signed revision 7\nCurrent signed values apply. Archived fees are historical references only.\n|  Region | Tier | Current signed |  | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\nContinuation: the first row below belongs to West.\n|  West | Enterprise | 930 | 18 | 93 | Signed  |\n| --- | --- | --- | --- | --- | --- |\n|  South | Basic | 410 | 7 | 41 | Draft  |\n|   |  Pro | 820 | 14 | 82 | Draft  |\n* From 2026-11-01, West Pro uses fee 680 CNY instead of 620 CNY.\nIts limit remains 12. This dated note overrides the main table fee.\nDraft rows are not approved. No bank-routing number is published.\nCedar matrix A | Revision 7 | Page 2\n</file>",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "p_0775dffd822295ef2634.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 3,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "f9f9137544262f67854d12dde6fcb86e",
+      "create_date": "2026-10-10T16:49:22",
+      "create_time": 1791622162342,
+      "created_by": "c36a959540674d3f8349a9607869d9c7",
+      "dataset_id": "1add221a78564989b6b163a16a150993",
+      "id": "3efc94a45b8146fcb25ac1874c458cf3",
+      "ingestion_status": "COMPLETED",
+      "location": "p_0775dffd822295ef2634.txt",
+      "name": "p_0775dffd822295ef2634.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T16:49:48",
+      "process_duration": 5.337646567,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1428,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 490,
+      "type": "doc",
+      "update_date": "2026-10-10T16:49:53",
+      "update_time": 1791622193391
+    },
+    "total": 1
+  },
+  "p_77bc298f7e82fc0cc561": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "648a70032f34d758",
+        "content_with_weight": "<file name=\"p_77bc298f7e82fc0cc561.pdf\">\n# Cedar matrix B\nControlled synthetic parser diagnostic / signed revision 7\nCurrent signed values apply. Archived fees are historical references only.\n|  Region | Tier | Current signed |   | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\n|  East | Basic | 1210 | 4 | 1021 | Signed  |\n|   |  Pro | 1420 | 8 | 1042 | Signed  |\n|  West | Basic | 1310 | 6 | 1031 | Signed  |\n|   |  Pro * | 1620 | 12 | 1062 | Signed  |\nThe West region continues on page 2 with its Enterprise tier.\n* The dated fee adjustment is on page 2. Limits do not change.\nCedar matrix B | Revision 7 | Page 1\n# Cedar matrix B\nControlled synthetic parser diagnostic / signed revision 7\nCurrent signed values apply. Archived fees are historical references only.\n|  Region | Tier | Current signed |   | Archived | State  |\n| --- | --- | --- | --- | --- | --- |\n|   |  | Fee (CNY) | Limit | Old fee |   |\nContinuation: the first row below belongs to West.\n|  West | Enterprise | 1930 | 18 | 1093 | Signed  |\n| --- | --- | --- | --- | --- | --- |\n|  South | Basic | 1410 | 7 | 1041 | Draft  |\n|   |  Pro | 1820 | 14 | 1082 | Draft  |\n* From 2026-11-01, West Pro uses fee 1680 CNY instead of 1620 CNY.\nIts limit remains 12. This dated note overrides the main table fee.\nDraft rows are not approved. No bank-routing number is published.\nCedar matrix B | Revision 7 | Page 2\n</file>",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "p_77bc298f7e82fc0cc561.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 4,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "047730a7bdbc1a14cb1b031d6615c9ce",
+      "create_date": "2026-10-10T16:49:22",
+      "create_time": 1791622162363,
+      "created_by": "c36a959540674d3f8349a9607869d9c7",
+      "dataset_id": "1add221a78564989b6b163a16a150993",
+      "id": "b02fd049de2c4203b0be74ca3fed130e",
+      "ingestion_status": "COMPLETED",
+      "location": "p_77bc298f7e82fc0cc561.txt",
+      "name": "p_77bc298f7e82fc0cc561.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T16:49:49",
+      "process_duration": 4.5342601909999996,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1452,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 513,
+      "type": "doc",
+      "update_date": "2026-10-10T16:49:54",
+      "update_time": 1791622194021
+    },
+    "total": 1
+  }
+}

@@ -38,10 +38,13 @@ def main():
     parser.add_argument('--ledger', type=Path, required=True)
     parser.add_argument('--ceiling', type=float, default=20)
     parser.add_argument('--tranche', type=float, default=0.5)
-    parser.add_argument('--limit', type=int, default=8)
+    parser.add_argument('--fixture-root', type=Path, default=ROOT)
+    parser.add_argument('--limit', type=int)
     args = parser.parse_args()
-    if not 1 <= args.limit <= 8 or not 0 < args.tranche <= args.ceiling:
-        parser.error('Use 1..8 documents and positive bounded limits')
+    documents = json.loads((args.fixture_root / 'oracle-source.json').read_text())
+    limit = args.limit if args.limit is not None else len(documents)
+    if not 1 <= limit <= len(documents) or not 0 < args.tranche <= args.ceiling:
+        parser.error('Use a valid document limit and positive bounded limits')
     key = os.environ['OPENROUTER_API_KEY']
     root = args.artifact_root.resolve()
     root.mkdir(parents=True, exist_ok=True)
@@ -52,18 +55,25 @@ def main():
     opener = urllib.request.build_opener(NoRedirect)
     try:
         ledger = Ledger(args.ledger, args.ceiling, args.tranche)
-        for doc in json.loads((ROOT / 'oracle-source.json').read_text())[:args.limit]:
+        for doc in documents[:limit]:
             identity = doc['evidence_id']
             receipt = root / (identity + '.json')
             text_path = root / (identity + '.txt')
-            if text_path.exists():
-                continue
-            raw = (ROOT / doc['file']).read_bytes()
+            raw = (args.fixture_root / doc['file']).read_bytes()
             if hashlib.sha256(raw).hexdigest() != doc['sha256']:
                 raise ValueError('Frozen PDF digest mismatch')
-            pages = 2 if doc['kind'] == 'crosspage' else 1
+            pages = doc.get('pages', 2 if doc['kind'] == 'crosspage' else 1)
+            if not isinstance(pages, int) or not 1 <= pages <= 100:
+                raise ValueError('Fixture must declare a bounded positive page count')
             if receipt.exists():
-                result = json.loads(receipt.read_text())['response']
+                saved = json.loads(receipt.read_text())
+                if saved['source_sha256'] != doc['sha256'] or saved['pages'] != pages:
+                    raise ValueError('Existing OCR receipt belongs to a different source')
+                result = saved['response']
+                if text_path.exists():
+                    if text_path.read_text() != annotation_text(result)[0]:
+                        raise ValueError('Saved OCR text differs from original annotations')
+                    continue
             else:
                 body = {'model': CHAT_MODEL, 'max_tokens': 16, 'stream': False,
                         'reasoning': {'effort': 'low'},

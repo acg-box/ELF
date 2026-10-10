@@ -130,7 +130,7 @@ def attach_shared_answers(
 ANSWER_BATCH_SIZE = 1
 
 
-def request_answers(cases: list[dict[str, Any]], env: dict[str, str], *, max_tokens: int = 4096) -> dict[str, Any]:
+def request_answers(cases: list[dict[str, Any]], env: dict[str, str], *, max_tokens: int = 4096, timeout: int = 300) -> dict[str, Any]:
     prompt = {
         "instruction": (
             "Answer each case only from its supplied context. Return one JSON object "
@@ -159,5 +159,5 @@ def request_answers(cases: list[dict[str, Any]], env: dict[str, str], *, max_tok
         },
         method="POST",
     )
-    with urllib.request.urlopen(request, timeout=remaining_seconds(300)) as response:
+    with urllib.request.urlopen(request, timeout=remaining_seconds(timeout)) as response:
         return json.loads(response.read().decode())

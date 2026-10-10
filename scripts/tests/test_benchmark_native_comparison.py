@@ -51,6 +51,25 @@ class NativeComparisonTests(unittest.TestCase):
         self.assertTrue(module.score(e,'new-code'))
         self.assertFalse(module.score(e,'new-code or old-code'))
 
+    def test_failed_native_receipt_survives_a_missing_answer_retry(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base=Path(directory);root=base/'run'
+            ledger=base/'cost-calibration/budget-ledger.json'
+            ledger.parent.mkdir();ledger.write_text(json.dumps({'requests':[]}))
+            q={'case_id':'case','question':'Which value?','lane':'table'}
+            expected={'supported':True,'facts':['8'],'forbidden':[]}
+            receipt={'native':{'answer':'**ERROR** provider timeout'}}
+            def failure():raise module.AnswerContractError('No usable answer',receipt)
+            module.run_case(root,'native',q,expected,failure)
+            module.run_case(root,'native',q,expected,lambda:{'text':'8'})
+            attempts=list((root/'attempts/native').glob('*.json'))
+            self.assertEqual(len(attempts),1)
+            self.assertEqual(json.loads(attempts[0].read_text())['failed_receipt'],receipt)
+            self.assertTrue(json.loads((root/'cases/native/case.json').read_text())['correct'])
+            def must_not_repeat():raise AssertionError('Do not select a better completed answer')
+            module.run_case(root,'native',q,expected,must_not_repeat)
+            self.assertEqual(len(list((root/'attempts/native').glob('*.json'))),1)
+
     def test_fixture_has_separate_dev_entity_and_no_oracle_in_sources(self):
         data,oracle=workload()
         self.assertEqual(len(data['items']),20)

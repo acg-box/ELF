@@ -1,0 +1,1442 @@
+[
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "63563bc2da67011fee3509d0eb3f5aaef2b460a2305f0b146074c7c3e2905a51"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "9e380de2a01808089282e43e8c8b6161a3b3637dd2416191e52f73b15d361e41"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "4be0b66d86e39bbae5567fc10a160c89c20e86d8f18d336458ac95764a154473"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bc3a4d988e062a959db235a885539b741599294045151c20b41b83625caec8f1"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "9b2b30dc47c048353b358dd6494f738370caf2816c343285828e38ea1a0aeba1"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "35ab943126b32adaec062692991f6f85e64d4d769e0ac3b3b58c10dda6e9cf54"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "64d3dea74239656a6cd01f3f5b083bb1dd459c287e4454160f6f3243a2875960"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2bb4d404cb47ca51efa7192128de1510e05f833639f71a9092ed03d6ed5dad2e"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bd02e1647620373e624ea369c825a206e0dc433d8751e3aae5a707769390b5c7"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "23efa1e13b4597ab7f9a112daf5d346d68fd3536aa86a9726921599cc0a7725d"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "8c2ed6264e01e919e217b700383592097f68670a1b88f4b1b7fabfd56a1e6d25"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "100c4572227dff5badae89cf6f63a435a4f751b5bb507a878dbc5c9c25e57bb4"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-015",
+    "strict_correct": false,
+    "semantic_correct": false,
+    "reason": "Wrong Chinese name inherited from OCR",
+    "answer_sha256": "7b798d771f4885e139fcdddff7a13336fc8677139391d0fee9c88913486157ff"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-016",
+    "strict_correct": false,
+    "semantic_correct": false,
+    "reason": "Refusal on a supported amount after OCR lost its currency label",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "c570f45d5160bc1519ecac1a44dc29be84300f0bb26695bcc29583e95fc2bc5f"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "f72a261e1227b6cbca57f7c506c7133c14b7d391d3ff068a7e3d2d6791484855"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "40d4b2586325183c86573fca40a4c9ab76f58834d513f63d3783bd9b876bc8ca"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "19a7d13fb86402a3bcb9796e72e82bdb7b8fa1a91fb96739b544e58bd072b827"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-024",
+    "strict_correct": false,
+    "semantic_correct": true,
+    "reason": "Explicit supported absence statement; semantically correct but not exact unknown",
+    "answer_sha256": "2d468d104a63f86f229eec0d093f5f04efb8fb3027343f69c5b82a3187297687"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "3141d9c749e88ee5550192703c3e025a9b3446ec543f17a923cb24e7b61dfece"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "3de2f2ce845811d6e41d5563d85ca041ac06f5885944835a0266a58013c8767b"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "ef67d0aedd9db4854ad319a8cb2dc9445a772b6756da8158ee8c986963e11f72"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-029",
+    "strict_correct": false,
+    "semantic_correct": true,
+    "reason": "Explicit supported absence statement; semantically correct but not exact unknown",
+    "answer_sha256": "62f948c18c0f07e1c962a9f47b4d33c20aada8528d34c9e14a7a0dd38ecd762a"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b02b073eb210831233aee8917f35f3043edbcb34ee8edf8cf0b17a5f1a75688b"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0bec1d7f3b0a61548de0b32ca124df175584c90008e366e198b684ed86f2b6c8"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0a9a53cd7a5ae32f712d4401253916c6bfc63809cdf978f1cd8b0c6c07a6825b"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "a4508210ce85c6c49f0fdfddc3bcc7c96566a501044f8085f323fffa619e90ec"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b8a94ed5d226f5053a5cdb3d14373a2448b1c3a8c48a9929674c142583cfb5a2"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b1a74e09190b99b904aeca7f10e9d17da518a865a1df37874234ce2c81a8a9bd"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "5ae7f2fe5572b26255cae21577112c524e88d33693977bf118c37f6313749b10"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "e68e3501708b1f3b6f7adacb4069c8ff9a624082d95ca51ac2366f94ef90a6c5"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2b1f0ec2a9c1bd95d49711d8532a5075c9c5ca506fbca70f6d12820993bc59b6"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "dea1ae8613ee2a5ef5504d98bd969bd46b4c75e9c898341f497c74684599030c"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "daa20476b8eff715c0def3a0ed2ba254fda89ff5948945731426c5478fbf6154"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-015",
+    "strict_correct": false,
+    "semantic_correct": false,
+    "reason": "Wrong Chinese name inherited from OCR",
+    "answer_sha256": "709b90ebf308c71e01262344c5814f49b51339662fe3173054e5f719a37df7ec"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-016",
+    "strict_correct": false,
+    "semantic_correct": false,
+    "reason": "Refusal on a supported amount after OCR lost its currency label",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "f6a320e8a66394dabfa05ebe2c3dab8f641863ab14a928029ab3d6fc9c79c449"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "76a50887d8f1c2e9301755428990ad81479ee21c25b43215cf524541e0503269"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bff3992c1d4f9aa5a7945023e32989d83c60ae06b21fd37904de6dbfd67694a3"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "a4c6af0cb6f02dff01ba174e4cf11f24f73d9ed16ca7a1e3c9d831c0139faa5c"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-024",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "3141d9c749e88ee5550192703c3e025a9b3446ec543f17a923cb24e7b61dfece"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "70fa656aa0391eb9ef7bbc9c7e6771ec09e7d5d7ab1fcbbde2480d21263ee79a"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0ebe0fb634f8e4aca93dcdea090d01120e73df4c7da22888c595b593da608c78"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-029",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "7d6237be3e39bfb9f9af99be175ca3f97c1621e70889430a2aeb6b1f0ad8f484"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "9e380de2a01808089282e43e8c8b6161a3b3637dd2416191e52f73b15d361e41"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "268947c8488d72bf12b1d6505ee38ec4e121e7cc289d6daea00307c2de78b91a"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bc3a4d988e062a959db235a885539b741599294045151c20b41b83625caec8f1"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "f7cc63cfab079a61e722e125db6804f7883ed6e455e33375b52a164bdea153eb"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "88dca6f5ad24030fadff1e5e754617dec59dd0cd93686201663ec20271a7a17e"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "25d5592b9ff9e3d21f19ee873940d792057dc55c48231ce7ab7f71c0e747cdfd"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "764c356f3315b2d1827862f3fedb49347b0c894f8d09c42ff1aeccd5a39485d0"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bd02e1647620373e624ea369c825a206e0dc433d8751e3aae5a707769390b5c7"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "23efa1e13b4597ab7f9a112daf5d346d68fd3536aa86a9726921599cc0a7725d"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "8c2ed6264e01e919e217b700383592097f68670a1b88f4b1b7fabfd56a1e6d25"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "100c4572227dff5badae89cf6f63a435a4f751b5bb507a878dbc5c9c25e57bb4"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "acda4c23c225dd193be6f4a55d36a4e594457d1dbee99d79e5dc27f770e662ce"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "7afd14c505c8147d022d725ca59c79a153bc7e19b4b40ec0ed2acdb6a349fdd8"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "330507a231b58ce6f42492bd7a3a0f8305633ceda0bef681cfa10a74918bc288"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "648a1e37538a1efb94793d8173bfbe7389e462a1e85e5b7bde18334a20ad0882"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "7aba2db651c444d3042602b9a9820d77e2e8bb2ea361e0b9b5de759bc4b82f87"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "40d4b2586325183c86573fca40a4c9ab76f58834d513f63d3783bd9b876bc8ca"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "19a7d13fb86402a3bcb9796e72e82bdb7b8fa1a91fb96739b544e58bd072b827"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-024",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "3141d9c749e88ee5550192703c3e025a9b3446ec543f17a923cb24e7b61dfece"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "7aba2db651c444d3042602b9a9820d77e2e8bb2ea361e0b9b5de759bc4b82f87"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "3de2f2ce845811d6e41d5563d85ca041ac06f5885944835a0266a58013c8767b"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "6305aaee5d73afc7c1ed8d90227b55fd0126c723039aa90c283030240ddcc889"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-029",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b02b073eb210831233aee8917f35f3043edbcb34ee8edf8cf0b17a5f1a75688b"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0bec1d7f3b0a61548de0b32ca124df175584c90008e366e198b684ed86f2b6c8"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0a9a53cd7a5ae32f712d4401253916c6bfc63809cdf978f1cd8b0c6c07a6825b"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "9927278abc46aadab9082bbf850d8613e6ede8a2feaf8980caf9391c48ca5272"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b8a94ed5d226f5053a5cdb3d14373a2448b1c3a8c48a9929674c142583cfb5a2"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b1a74e09190b99b904aeca7f10e9d17da518a865a1df37874234ce2c81a8a9bd"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "5ae7f2fe5572b26255cae21577112c524e88d33693977bf118c37f6313749b10"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "83ac3289c63ca2a1bc5e0f79236a6b2ebfb17e1cdd892ec494b0ea2efc215a3b"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2b1f0ec2a9c1bd95d49711d8532a5075c9c5ca506fbca70f6d12820993bc59b6"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "dea1ae8613ee2a5ef5504d98bd969bd46b4c75e9c898341f497c74684599030c"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "daa20476b8eff715c0def3a0ed2ba254fda89ff5948945731426c5478fbf6154"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "d3baee63177e207dfaddab2167d939407c0a67cc4624427d216317c5cb8d373c"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "350326701b83f92f4bd6bb18f07601ca15889e36c2e72e905d69a761ba15bbf1"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "f6a320e8a66394dabfa05ebe2c3dab8f641863ab14a928029ab3d6fc9c79c449"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "76a50887d8f1c2e9301755428990ad81479ee21c25b43215cf524541e0503269"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bff3992c1d4f9aa5a7945023e32989d83c60ae06b21fd37904de6dbfd67694a3"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "a4c6af0cb6f02dff01ba174e4cf11f24f73d9ed16ca7a1e3c9d831c0139faa5c"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-024",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-025",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "3141d9c749e88ee5550192703c3e025a9b3446ec543f17a923cb24e7b61dfece"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "70fa656aa0391eb9ef7bbc9c7e6771ec09e7d5d7ab1fcbbde2480d21263ee79a"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0ebe0fb634f8e4aca93dcdea090d01120e73df4c7da22888c595b593da608c78"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-029",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "semantic_correct": false,
+    "reason": "Split identifier is not a copyable exact source code",
+    "answer_sha256": "6c8168b5f671219ad9c675b5bb3fd648d9ba567ac88d6a3e04361f698f6a5416"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "3c7637a6b961dc655061b9348cde748e100deaabc74b85bc6ef1fc222689411f"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "594f52edb4093d39531f9e0f803893ba41490aca7506010d41b5413ff0dbb9d9"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "4344767e0918434f066ea716ebbb80ee19818bc22221b8950dfe31b85cdec1e2"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "4843353da45e3e1e2c8becc5d85ba83f538fba7313f54c3497a66ff41f6831ab"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "semantic_correct": false,
+    "reason": "Split identifier is not a copyable exact source code",
+    "answer_sha256": "9c03bd75e268cd1060dfa280b44048752237a09753f7be7fbd1f3fb88ecaf2a1"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "25d5592b9ff9e3d21f19ee873940d792057dc55c48231ce7ab7f71c0e747cdfd"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "764c356f3315b2d1827862f3fedb49347b0c894f8d09c42ff1aeccd5a39485d0"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bd02e1647620373e624ea369c825a206e0dc433d8751e3aae5a707769390b5c7"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "23efa1e13b4597ab7f9a112daf5d346d68fd3536aa86a9726921599cc0a7725d"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b1c55da84ce29db35a0c4ed0c683dff7da0b97d3f30a13ef00946d9655b59ab7"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "a9b61388530f28437d776d3460241adc657cea788fdc95fa6b0d1351c9cb4342"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0ab04abee99d3b84e390b4c05cdaf2fc4d208e94451fccacbd62455a62ba05c4"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "7edb32935e669df9985abc81313411fdb2d1db05b5f1860afd37ee2ff5bfafad"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "f72a261e1227b6cbca57f7c506c7133c14b7d391d3ff068a7e3d2d6791484855"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "cb8741190a987f97d3a2a55b830e1a7fef3939a4ead8c51608cc4b44a53f08a9"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b04022d84e9e60f7623b5aa02c1ac818a119d1e17bd5fc9b69fe697c2df8605d"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-021",
+    "strict_correct": false,
+    "semantic_correct": false,
+    "reason": "Wrong value for the requested table row",
+    "answer_sha256": "af389e3c05e18263c23fa30beef0d77181e175d1f0917f9de674d8531a7ab8d6"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bff3992c1d4f9aa5a7945023e32989d83c60ae06b21fd37904de6dbfd67694a3"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "19a7d13fb86402a3bcb9796e72e82bdb7b8fa1a91fb96739b544e58bd072b827"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-024",
+    "strict_correct": false,
+    "semantic_correct": true,
+    "reason": "Explicit supported absence statement; semantically correct but not exact unknown",
+    "answer_sha256": "3371a21437df48cc57dd43c49c05416d99ecbcf3abe316c7678a50b96cb7c0f7"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-025",
+    "strict_correct": false,
+    "semantic_correct": false,
+    "reason": "Wrong value for the requested table row",
+    "answer_sha256": "3ce59e84971bc7e65e82559e90b01dbc96e5000411cb2748c35044baf5db753e"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bd78ca8a87a38a294f398b07551af2017995cc39e5084325d2b7b86ba0fb3507"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "70fa656aa0391eb9ef7bbc9c7e6771ec09e7d5d7ab1fcbbde2480d21263ee79a"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "ef67d0aedd9db4854ad319a8cb2dc9445a772b6756da8158ee8c986963e11f72"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-029",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-000",
+    "strict_correct": true,
+    "semantic_correct": false,
+    "reason": "Split identifier is not a copyable exact source code",
+    "answer_sha256": "d8a700623126976a742b9713a5f4968301f847c77e56d053aec8c9aed3634aa8"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-001",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0bec1d7f3b0a61548de0b32ca124df175584c90008e366e198b684ed86f2b6c8"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-002",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0a9a53cd7a5ae32f712d4401253916c6bfc63809cdf978f1cd8b0c6c07a6825b"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-003",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "1f4390bd15974d080d9f6b27b2d428fde50c34e105483f71d1fd4b96331588e8"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-004",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-005",
+    "strict_correct": true,
+    "semantic_correct": false,
+    "reason": "Split identifier is not a copyable exact source code",
+    "answer_sha256": "b4ced207b812e8599a579ffaabac9d7ecf6e2cab534b890d4de4ffac5e41ea2f"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-006",
+    "strict_correct": true,
+    "semantic_correct": false,
+    "reason": "Split identifier is not a copyable exact source code",
+    "answer_sha256": "8d460f1cbc9e11a404156d85088efc7ea23bb23334c62821323fae0f1cac7cf8"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-007",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "5ae7f2fe5572b26255cae21577112c524e88d33693977bf118c37f6313749b10"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-008",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "e68e3501708b1f3b6f7adacb4069c8ff9a624082d95ca51ac2366f94ef90a6c5"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-009",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-010",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2b1f0ec2a9c1bd95d49711d8532a5075c9c5ca506fbca70f6d12820993bc59b6"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-011",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "dea1ae8613ee2a5ef5504d98bd969bd46b4c75e9c898341f497c74684599030c"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-012",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "daa20476b8eff715c0def3a0ed2ba254fda89ff5948945731426c5478fbf6154"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-013",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "c2356069e9d1e79ca924378153cfbbfb4d4416b1f99d41a2940bfdb66c5319db"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-014",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-015",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "d3baee63177e207dfaddab2167d939407c0a67cc4624427d216317c5cb8d373c"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-016",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "350326701b83f92f4bd6bb18f07601ca15889e36c2e72e905d69a761ba15bbf1"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-017",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "f6a320e8a66394dabfa05ebe2c3dab8f641863ab14a928029ab3d6fc9c79c449"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-018",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "76a50887d8f1c2e9301755428990ad81479ee21c25b43215cf524541e0503269"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-019",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-020",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-021",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-022",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "bff3992c1d4f9aa5a7945023e32989d83c60ae06b21fd37904de6dbfd67694a3"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-023",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "a4c6af0cb6f02dff01ba174e4cf11f24f73d9ed16ca7a1e3c9d831c0139faa5c"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-024",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-025",
+    "strict_correct": false,
+    "semantic_correct": false,
+    "reason": "Wrong value for the requested table row",
+    "answer_sha256": "524148f24802f8c68974c2e1ecc8b8f47d0d60b7a0d1948951c050a25b5a8e59"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-026",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-027",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "70fa656aa0391eb9ef7bbc9c7e6771ec09e7d5d7ab1fcbbde2480d21263ee79a"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-028",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "0ebe0fb634f8e4aca93dcdea090d01120e73df4c7da22888c595b593da608c78"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-029",
+    "strict_correct": true,
+    "semantic_correct": true,
+    "reason": "Requested values and source support verified",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  }
+]

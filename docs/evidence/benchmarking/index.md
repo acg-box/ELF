@@ -76,3 +76,4 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 - [Benchmark recovery checkpoint, 2026-10-09](2026-10-09-recovery.md): Separate ELF and SAG recovery results; competitor execution remains access-blocked.
 
 - [RAGFlow document parser intervention](2026-10-10-ragflow-ocr.md) compares free-parser and Mistral OCR inputs.
+- [Mixed-page, Chinese, and table parser comparison](2026-10-10-parser-stress.md) tests page-wise free OCR against fresh DeepDOC and Mistral conditions.

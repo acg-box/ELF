@@ -1,0 +1,41 @@
+{
+  "first_ordinal": 62236,
+  "last_ordinal": 63026,
+  "by_kind": {
+    "chat": {
+      "requests": 374,
+      "paid_usd": 0.190963842,
+      "statuses": {
+        "completed": 373,
+        "uncertain": 1
+      },
+      "input_tokens": 783495,
+      "cached_input_tokens": 225664,
+      "output_tokens": 177687
+    },
+    "document_ocr": {
+      "requests": 6,
+      "paid_usd": 0.0243606,
+      "statuses": {
+        "completed_cost_unknown": 6
+      },
+      "input_tokens": 2020,
+      "cached_input_tokens": 0,
+      "output_tokens": 96
+    },
+    "embedding": {
+      "requests": 411,
+      "paid_usd": 0.00012103,
+      "statuses": {
+        "completed": 411
+      },
+      "input_tokens": 12103,
+      "cached_input_tokens": 0,
+      "output_tokens": 0
+    }
+  },
+  "new_paid_usd": 0.215445472,
+  "cumulative_paid_usd": 16.01651050799961,
+  "cumulative_conservative_exposure_usd": 17.004390807999453,
+  "ceiling_usd": 20
+}

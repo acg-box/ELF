@@ -1,0 +1,326 @@
+[
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-000",
+    "expected_identifiers": [
+      "NIGHT-A-864"
+    ],
+    "exact": false,
+    "answer": "At 19:00 UTC, the night queue applies: NIG HT-A-864 [ID:0]."
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-001",
+    "expected_identifiers": [
+      "SIGN-A-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-A-529 [ID:0]"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-003",
+    "expected_identifiers": [
+      "DAY-A-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-A-731 [ID:0]. Approved deadline: 2026-11-17 [ID:0]."
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-005",
+    "expected_identifiers": [
+      "NIGHT-B-864"
+    ],
+    "exact": false,
+    "answer": "At 19:00 UTC, the night queue applies: NIG HT-B-864 [ID:0]."
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-006",
+    "expected_identifiers": [
+      "SIGN-B-529"
+    ],
+    "exact": false,
+    "answer": "SIG N-B-529 [ID:0]"
+  },
+  {
+    "condition": "deepdoc-native-chat",
+    "case_id": "stress-008",
+    "expected_identifiers": [
+      "DAY-B-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-B-731 [ID:0]. Approved deadline: 2026-11-23 [ID:0]."
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-000",
+    "expected_identifiers": [
+      "NIGHT-A-864"
+    ],
+    "exact": false,
+    "answer": "NIG HT-A-864"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-001",
+    "expected_identifiers": [
+      "SIGN-A-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-A-529"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-003",
+    "expected_identifiers": [
+      "DAY-A-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-A-731. Approved deadline: 2026-11-17."
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-005",
+    "expected_identifiers": [
+      "NIGHT-B-864"
+    ],
+    "exact": false,
+    "answer": "NIG HT-B-864"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-006",
+    "expected_identifiers": [
+      "SIGN-B-529"
+    ],
+    "exact": false,
+    "answer": "SIG N-B-529"
+  },
+  {
+    "condition": "deepdoc-retrieval",
+    "case_id": "stress-008",
+    "expected_identifiers": [
+      "DAY-B-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-B-731. Approved deadline: 2026-11-23."
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-000",
+    "expected_identifiers": [
+      "NIGHT-A-864"
+    ],
+    "exact": true,
+    "answer": "NIGHT-A-864 [ID:0]"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-001",
+    "expected_identifiers": [
+      "SIGN-A-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-A-529 [ID:0]"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-003",
+    "expected_identifiers": [
+      "DAY-A-731"
+    ],
+    "exact": true,
+    "answer": "Harbor mixed A day dispatch queue: DAY-A-731 [ID:0].  \nApproved deadline: 2026-11-17 [ID:0]."
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-005",
+    "expected_identifiers": [
+      "NIGHT-B-864"
+    ],
+    "exact": true,
+    "answer": "NIGHT-B-864 [ID:0]."
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-006",
+    "expected_identifiers": [
+      "SIGN-B-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-B-529 [ID:0]"
+  },
+  {
+    "condition": "free-native-chat",
+    "case_id": "stress-008",
+    "expected_identifiers": [
+      "DAY-B-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-B-731 [ID:0]. Approved deadline: 2026-11-23 [ID:0]."
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-000",
+    "expected_identifiers": [
+      "NIGHT-A-864"
+    ],
+    "exact": true,
+    "answer": "NIGHT-A-864"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-001",
+    "expected_identifiers": [
+      "SIGN-A-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-A-529"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-003",
+    "expected_identifiers": [
+      "DAY-A-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-A-731. Approved deadline: 2026-11-17."
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-005",
+    "expected_identifiers": [
+      "NIGHT-B-864"
+    ],
+    "exact": true,
+    "answer": "NIGHT-B-864"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-006",
+    "expected_identifiers": [
+      "SIGN-B-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-B-529"
+  },
+  {
+    "condition": "free-retrieval",
+    "case_id": "stress-008",
+    "expected_identifiers": [
+      "DAY-B-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-B-731; Approved deadline: 2026-11-23."
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-000",
+    "expected_identifiers": [
+      "NIGHT-A-864"
+    ],
+    "exact": true,
+    "answer": "At 19:00 UTC, the night queue applies: NIGHT-A-864 [ID:0]."
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-001",
+    "expected_identifiers": [
+      "SIGN-A-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-A-529 [ID:0]"
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-003",
+    "expected_identifiers": [
+      "DAY-A-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-A-731 [ID:0]. Approved deadline: 2026-11-17 [ID:0]."
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-005",
+    "expected_identifiers": [
+      "NIGHT-B-864"
+    ],
+    "exact": true,
+    "answer": "At 19:00 UTC, the night dispatch queue NIGHT-B-864 applies [ID:0]."
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-006",
+    "expected_identifiers": [
+      "SIGN-B-529"
+    ],
+    "exact": true,
+    "answer": "The signed approval code is SIGN-B-529 [ID:0]."
+  },
+  {
+    "condition": "mistral-ocr-native-chat",
+    "case_id": "stress-008",
+    "expected_identifiers": [
+      "DAY-B-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-B-731 [ID:0]. Approved deadline: 2026-11-23 [ID:0]."
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-000",
+    "expected_identifiers": [
+      "NIGHT-A-864"
+    ],
+    "exact": true,
+    "answer": "NIGHT-A-864"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-001",
+    "expected_identifiers": [
+      "SIGN-A-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-A-529"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-003",
+    "expected_identifiers": [
+      "DAY-A-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-A-731. Approved deadline: 2026-11-17."
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-005",
+    "expected_identifiers": [
+      "NIGHT-B-864"
+    ],
+    "exact": true,
+    "answer": "NIGHT-B-864"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-006",
+    "expected_identifiers": [
+      "SIGN-B-529"
+    ],
+    "exact": true,
+    "answer": "SIGN-B-529"
+  },
+  {
+    "condition": "mistral-ocr-retrieval",
+    "case_id": "stress-008",
+    "expected_identifiers": [
+      "DAY-B-731"
+    ],
+    "exact": true,
+    "answer": "Day dispatch queue: DAY-B-731. Approved deadline: 2026-11-23."
+  }
+]

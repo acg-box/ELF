@@ -1,0 +1,476 @@
+{
+  "free": [
+    {
+      "embedding_model": "qwen/qwen3-embedding-8b@native_benchmark@OpenAI-API-Compatible",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "。",
+            "；",
+            "！",
+            "？"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general"
+    }
+  ],
+  "mistral-ocr": [
+    {
+      "embedding_model": "qwen/qwen3-embedding-8b@native_benchmark@OpenAI-API-Compatible",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "。",
+            "；",
+            "！",
+            "？"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general"
+    }
+  ],
+  "deepdoc": [
+    {
+      "embedding_model": "qwen/qwen3-embedding-8b@native_benchmark@OpenAI-API-Compatible",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "。",
+            "；",
+            "！",
+            "？"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "parser_id": "general"
+    }
+  ]
+}

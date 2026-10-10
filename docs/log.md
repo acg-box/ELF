@@ -8,6 +8,10 @@ logs.
 
 ## 2026-10-10
 
+- Add a separate mixed-page, Chinese, and table parser comparison. Repair the
+  free baseline's whole-document OCR decision, preserve earlier measurements,
+  and record matched native RAGFlow runs under the cumulative USD 20 ceiling.
+
 - Add an isolated RAGFlow parser intervention with original OpenRouter OCR
   annotations, a fixed free-parser control, and cumulative per-page accounting.
   Preserve the prior DeepDOC comparison as historical evidence.
