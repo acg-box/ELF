@@ -44,6 +44,16 @@ class ReaderRecoveryTests(unittest.TestCase):
             self.assertEqual(result['coverage']['correct'], 1)
             self.assertEqual(result['retrieval_source'], {'commit': 'original-native'})
             self.assertEqual(result['answer_recovery']['retried_cases'], ['b'])
+            # A replay must not relabel old retrieval as a different product image.
+            changed = json.loads(manifest.read_text())
+            changed['targets'][0]['pin'] = {'kind': 'container_image', 'value': 'new-version'}
+            manifest.write_text(json.dumps(changed))
+            bad_argv = list(argv)
+            bad_argv[bad_argv.index('--artifact-root') + 1] = str(root / 'mislabelled')
+            with patch.object(sys, 'argv', bad_argv):
+                with self.assertRaisesRegex(ValueError, 'image pin'):
+                    module.main()
+
 
 
 if __name__ == '__main__':
