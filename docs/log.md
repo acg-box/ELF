@@ -8,6 +8,9 @@ logs.
 
 ## 2026-10-10
 
+- Add ELF formal-API evidence on the same frozen document and memory workloads,
+  with separate Context Pack and retrieval-reader conditions and a new USD 10 ledger.
+
 - Add a matched system comparison of Hindsight and RAGFlow with shared Mistral
   annotations, maximum model output, and separate native and retrieval scores.
 

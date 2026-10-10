@@ -1,0 +1,258 @@
+{
+  "service": {
+    "admin_bind": "127.0.0.1:51891",
+    "http_bind": "0.0.0.0:51892",
+    "log_level": "info",
+    "mcp_bind": "127.0.0.1:51893"
+  },
+  "storage": {
+    "postgres": {
+      "dsn": "postgres://postgres:[redacted]@elf-matched-db:5432/elf",
+      "pool_max_conns": 10
+    },
+    "qdrant": {
+      "collection": "mem_notes_v2",
+      "docs_collection": "doc_chunks_v1",
+      "url": "http://elf-matched-qdrant:6334",
+      "vector_dim": 1536
+    }
+  },
+  "mcp": {
+    "agent_id": "local-agent",
+    "project_id": "local-project",
+    "read_profile": "private_plus_project",
+    "tenant_id": "local-tenant"
+  },
+  "providers": {
+    "embedding": {
+      "default_headers": {},
+      "api_base": "http://host.docker.internal:58536/v1",
+      "api_key": "[redacted]",
+      "model": "qwen/qwen3-embedding-8b",
+      "provider_id": "openai",
+      "path": "/embeddings",
+      "timeout_ms": 3600000,
+      "dimensions": 1536
+    },
+    "rerank": {
+      "default_headers": {},
+      "api_base": "http://elf-matched-sidecar:8899/v1",
+      "api_key": "[redacted]",
+      "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "provider_id": "openai",
+      "path": "/rerank",
+      "timeout_ms": 3600000
+    },
+    "llm_extractor": {
+      "default_headers": {},
+      "api_base": "http://host.docker.internal:58536/v1",
+      "api_key": "[redacted]",
+      "model": "deepseek/deepseek-v4.1-flash",
+      "provider_id": "openai",
+      "path": "/chat/completions",
+      "timeout_ms": 3600000,
+      "temperature": 0.1
+    }
+  },
+  "scopes": {
+    "allowed": [
+      "agent_private",
+      "org_shared",
+      "project_shared"
+    ],
+    "read_profiles": {
+      "all_scopes": [
+        "agent_private",
+        "org_shared",
+        "project_shared"
+      ],
+      "private_only": [
+        "agent_private"
+      ],
+      "private_plus_project": [
+        "agent_private",
+        "project_shared"
+      ]
+    },
+    "precedence": {
+      "agent_private": 30,
+      "org_shared": 10,
+      "project_shared": 20
+    },
+    "write_allowed": {
+      "agent_private": true,
+      "org_shared": true,
+      "project_shared": true
+    }
+  },
+  "memory": {
+    "candidate_k": 60,
+    "dup_sim_threshold": 0.92,
+    "max_note_chars": 240,
+    "max_notes_per_add_event": 3,
+    "top_k": 12,
+    "update_sim_threshold": 0.85,
+    "policy": {
+      "rules": [
+        {
+          "min_confidence": 0.9,
+          "min_importance": 0.75,
+          "note_type": "preference",
+          "scope": "agent_private"
+        }
+      ]
+    }
+  },
+  "chunking": {
+    "enabled": true,
+    "max_tokens": 512,
+    "overlap_tokens": 128,
+    "tokenizer_repo": "/experiment/tokenizer.json"
+  },
+  "search": {
+    "expansion": {
+      "include_original": true,
+      "max_queries": 4,
+      "mode": "dynamic"
+    },
+    "dynamic": {
+      "min_candidates": 10,
+      "min_top_score": 0.12
+    },
+    "prefilter": {
+      "max_candidates": 0
+    },
+    "cache": {
+      "enabled": true,
+      "expansion_ttl_days": 7,
+      "max_payload_bytes": 262144,
+      "rerank_ttl_days": 7
+    },
+    "explain": {
+      "candidate_retention_days": 2,
+      "capture_candidates": false,
+      "retention_days": 7,
+      "write_mode": "outbox"
+    },
+    "recursive": {
+      "enabled": false,
+      "max_children_per_node": 4,
+      "max_depth": 2,
+      "max_nodes_per_scope": 32,
+      "max_total_nodes": 256
+    },
+    "graph_context": {
+      "enabled": false,
+      "max_evidence_notes_per_fact": 16,
+      "max_facts_per_item": 16
+    }
+  },
+  "ranking": {
+    "recency_tau_days": 60,
+    "tie_breaker_weight": 0.1,
+    "deterministic": {
+      "enabled": false,
+      "lexical": {
+        "enabled": false,
+        "max_query_terms": 16,
+        "max_text_terms": 1024,
+        "min_ratio": 0.3,
+        "weight": 0.05
+      },
+      "hits": {
+        "enabled": false,
+        "half_saturation": 8.0,
+        "last_hit_tau_days": 14.0,
+        "weight": 0.05
+      },
+      "decay": {
+        "enabled": false,
+        "tau_days": 30.0,
+        "weight": 0.05
+      }
+    },
+    "blend": {
+      "enabled": true,
+      "rerank_normalization": "rank",
+      "retrieval_normalization": "rank",
+      "segments": [
+        {
+          "max_retrieval_rank": 3,
+          "retrieval_weight": 0.8
+        },
+        {
+          "max_retrieval_rank": 10,
+          "retrieval_weight": 0.5
+        },
+        {
+          "max_retrieval_rank": 1000000,
+          "retrieval_weight": 0.2
+        }
+      ]
+    },
+    "diversity": {
+      "enabled": true,
+      "max_skips": 64,
+      "mmr_lambda": 0.7,
+      "sim_threshold": 0.88
+    },
+    "retrieval_sources": {
+      "fusion_priority": 1,
+      "fusion_weight": 1.0,
+      "structured_field_priority": 0,
+      "structured_field_weight": 1.0
+    }
+  },
+  "lifecycle": {
+    "ttl_days": {
+      "constraint": 0,
+      "decision": 0,
+      "fact": 180,
+      "plan": 14,
+      "preference": 0,
+      "profile": 0
+    },
+    "purge_deleted_after_days": 30,
+    "purge_deprecated_after_days": 180
+  },
+  "security": {
+    "auth_mode": "static_keys",
+    "bind_localhost_only": false,
+    "evidence_max_quote_chars": 320,
+    "evidence_max_quotes": 2,
+    "evidence_min_quotes": 1,
+    "redact_secrets_on_write": true,
+    "reject_non_english": true,
+    "auth_keys": [
+      {
+        "token_id": "documents",
+        "token": "[redacted]",
+        "tenant_id": "matched",
+        "project_id": "documents",
+        "agent_id": "benchmark",
+        "read_profile": "private_only",
+        "role": "user"
+      },
+      {
+        "token_id": "memory",
+        "token": "[redacted]",
+        "tenant_id": "matched",
+        "project_id": "memory",
+        "agent_id": "benchmark",
+        "read_profile": "private_only",
+        "role": "user"
+      }
+    ]
+  },
+  "context": {
+    "scope_boost_weight": 0.05,
+    "project_descriptions": {
+      "t:p": "Example project context description."
+    },
+    "scope_descriptions": {
+      "agent_private": "Personal notes for a single agent.",
+      "org_shared": "Organization-wide policies and shared operating context.",
+      "project_shared": "Project-specific shared notes and technical context."
+    }
+  }
+}

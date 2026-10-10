@@ -133,7 +133,7 @@ def embedding_retry_delay(kind, status, attempt, retries, retry_after):
     return 2 ** (attempt + 1)
 
 
-def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2):
+def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, receipt_dir=None):
     opener = urllib.request.build_opener(NoRedirect)
     maximum_profile_lock = threading.Lock()
     class Handler(BaseHTTPRequestHandler):
@@ -201,6 +201,11 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 try:
                     with opener.open(request, timeout=request_timeout) as response:
                         result = json.load(response)
+                    if receipt_dir is not None:
+                        receipt_dir.mkdir(parents=True, exist_ok=True)
+                        receipt_path = receipt_dir / (str(row['ordinal']) + '.json')
+                        receipt_path.write_text(json.dumps({'request':body,'response':result},indent=2)+'\n')
+                        receipt_path.chmod(0o600)
                     usage = result.get("usage") or {}
                     state = "completed" if explicit_cost({"usage": usage}) is not None else "completed_cost_unknown"
                     ledger.finish(row, status=state, http_status=200, usage=usage,
@@ -242,6 +247,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument("--receipt-dir", type=Path, help="Optional private provider request/response evidence directory; excludes authentication headers")
     parser.add_argument("--ledger", type=Path, required=True)
     parser.add_argument("--ceiling", type=float, default=10)
     parser.add_argument("--tranche", type=float, default=0.5)
@@ -279,7 +285,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price, args.receipt_dir))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()

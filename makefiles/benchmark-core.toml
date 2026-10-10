@@ -251,3 +251,7 @@ command = "python3"
 [tasks.benchmark-system-comparison]
 args    = ["scripts/benchmark-system-comparison.py", "${@}"]
 command = "python3"
+
+[tasks.benchmark-elf-matched]
+args    = ["scripts/benchmark-elf-matched.py", "${@}"]
+command = "python3"

@@ -9,6 +9,8 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [ELF matched document and memory comparison](2026-10-10-elf-matched.md): formal API results, language boundaries, extraction failures, and independent accounting.
+
 - [Native Hindsight and RAGFlow comparison](2026-10-10-native-memory-comparison.md): token-budget retrieval, native answers, and separate document and conversation workloads.
 
 - [Complex PDF and OCR comparison](2026-10-09-complex-documents.md): native parsing, free-parser comparators, retained timeout, and bounded accounting.
