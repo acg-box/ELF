@@ -2,23 +2,13 @@
 //!
 //! This is a derived graph value. Original timestamp text remains in the source
 //! evidence. Other API timestamps continue to require RFC 3339.
-use schemars::{Schema, SchemaGenerator};
 use serde::{Deserialize as _, Deserializer, Serializer, de::Error};
-use serde_json::Value;
 use time::{Date, OffsetDateTime, format_description::well_known::Rfc3339, macros};
 
 use crate::time_serde::option;
 
 /// The wire contract shared by extraction instructions and the decoder.
 pub(crate) const FORMAT: &str = "RFC 3339 timestamp with timezone, or YYYY-MM-DD interpreted as the start of that UTC day; null if unknown";
-
-pub fn json_schema(generator: &mut SchemaGenerator) -> Schema {
-	let mut schema = generator.subschema_for::<Option<String>>();
-
-	schema.insert("description".to_string(), Value::String(FORMAT.to_string()));
-
-	schema
-}
 
 pub fn serialize<S>(value: &Option<OffsetDateTime>, serializer: S) -> Result<S::Ok, S::Error>
 where

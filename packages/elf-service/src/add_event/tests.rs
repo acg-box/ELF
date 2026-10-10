@@ -35,3 +35,14 @@ fn malformed_extracted_entity_is_not_silently_discarded() {
 
 	assert!(error.to_string().contains("unknown field `entity`"));
 }
+
+#[test]
+fn extractor_schema_exposes_the_relation_time_contract() {
+	let schema = crate::add_event::extraction_schema();
+	let description =
+		schema["$defs"]["StructuredRelation"]["properties"]["valid_from"]["description"]
+			.as_str()
+			.expect("Date contract description");
+
+	assert!(description.contains("YYYY-MM-DD"), "{description}");
+}

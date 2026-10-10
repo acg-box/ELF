@@ -72,11 +72,11 @@ pub struct StructuredRelation {
 	#[schemars(required)]
 	pub object: Option<StructuredRelationObject>,
 	#[serde(with = "crate::structured_fields::relation_time")]
-	#[schemars(schema_with = "crate::structured_fields::relation_time::json_schema")]
+	#[schemars(with = "Option<String>", description = crate::structured_fields::relation_time::FORMAT)]
 	/// Optional validity-window start.
 	pub valid_from: Option<OffsetDateTime>,
 	#[serde(with = "crate::structured_fields::relation_time")]
-	#[schemars(schema_with = "crate::structured_fields::relation_time::json_schema")]
+	#[schemars(with = "Option<String>", description = crate::structured_fields::relation_time::FORMAT)]
 	/// Optional validity-window end.
 	pub valid_to: Option<OffsetDateTime>,
 }
