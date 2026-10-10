@@ -14,6 +14,7 @@ from pathlib import Path
 
 from benchmark_deep.fixtures import WORKLOAD_GROUPS, workload
 from benchmark_deep.resume import prepare_sag_resume
+from benchmark_deep.ragflow_resume import prepare_ragflow_resume
 from benchmark_deep.hindsight_resume import prepare_hindsight_resume
 from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS
 from benchmark_runner.answers import ANSWER_BATCH_SIZE, request_answers
@@ -39,7 +40,10 @@ def main():
     parser.add_argument("--reanswer", type=Path)
     parser.add_argument("--resume-sag", type=Path, help="Continue a retained failed SAG scale-1000 ingest in copied state")
     parser.add_argument("--resume-hindsight", type=Path, help="Continue a retained Hindsight checkpoint after a failed scale-1000 run")
+    parser.add_argument("--resume-ragflow", type=Path, help="Continue retained native PDF parsing, then rerun all questions")
     args = parser.parse_args()
+    if args.resume_ragflow and (args.target != "ragflow" or args.reanswer or args.resume_sag or args.resume_hindsight):
+        parser.error("--resume-ragflow requires RAGFlow and cannot combine with other recovery modes")
     if args.resume_hindsight and (args.target != "hindsight" or args.workload_group != "scale-1000" or args.reanswer or args.resume_sag):
         parser.error("--resume-hindsight requires Hindsight scale-1000 and cannot combine with other recovery modes")
     if args.resume_sag and (args.target != "sag-engine" or args.workload_group != "scale-1000" or args.reanswer):
@@ -89,6 +93,8 @@ def main():
     (root / "artifacts").mkdir()
     continuation = (prepare_sag_resume(args.resume_sag, root, inputs, oracle, manifest["providers"], digest)
                     if args.resume_sag else None)
+    if args.resume_ragflow:
+        continuation = prepare_ragflow_resume(args.resume_ragflow, root, inputs, oracle, manifest["providers"], digest)
     hindsight_override = None
     if args.resume_hindsight:
         continuation, hindsight_override = prepare_hindsight_resume(

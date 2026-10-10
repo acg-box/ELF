@@ -62,6 +62,13 @@ def contexts_from_chunks(chunks, mapping):
 def run_action(action, root: Path):
     path = root / ('ragflow-' + action['scope'] + '.json')
     kind = action['action']
+    if kind == 'ingest' and (root / 'ragflow-resume.json').exists():
+        state = json.loads(path.read_text())
+        parsed = wait_parsed(state['dataset_id'], list(state['documents'].values()))
+        chunks = {native_id: request('GET', f'/datasets/{state["dataset_id"]}/documents/{native_id}/chunks?page_size=100')
+                  for native_id in state['documents'].values()}
+        return {'native': {'documents': parsed, 'chunks': chunks,
+                           'continuation': json.loads((root / 'ragflow-resume.json').read_text())}}
     if kind == 'ingest':
         dataset = request('POST', '/datasets', {
             'name': 'elf-' + action['scope'] + '-' + uuid.uuid4().hex[:10],

@@ -1,10 +1,14 @@
 """Protect raw PDF transport and the independent source/answer boundary."""
 import base64
 import unittest
+import json
+from pathlib import Path
+import tempfile
 from unittest.mock import patch
 
 from benchmark_deep.complex_documents import workload
 from benchmark_targets import ragflow
+from benchmark_deep.ragflow_resume import prepare_ragflow_resume
 
 
 class ComplexDocumentsTests(unittest.TestCase):
@@ -27,6 +31,26 @@ class ComplexDocumentsTests(unittest.TestCase):
             self.assertEqual(set(item), {'evidence_id', 'text', 'file_base64', 'file_extension', 'content_type'})
             self.assertTrue(base64.b64decode(item['file_base64']).startswith(b'%PDF-'))
         self.assertEqual(sum(not v['supported'] for v in oracle.values()), 8)
+
+    def test_continuation_rejects_changed_sources_and_preserves_native_ids(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            old, new = root / 'old', root / 'new'
+            (old / 'input').mkdir(parents=True)
+            state = old / 'artifacts/deep-state'
+            state.mkdir(parents=True)
+            inputs = {'actions': [{'action': 'ingest', 'scope': 'docs', 'items': [{'evidence_id': 'e_one'}]}]}
+            (old / 'input/workload.json').write_text(json.dumps(inputs))
+            (old / 'oracle.json').write_text('{}')
+            (old / 'bundle.json').write_text(json.dumps({'target': {'id': 'ragflow'}, 'providers': {}, 'image_digest': 'image', 'duration_seconds': 600}))
+            native = {'dataset_id': 'native-dataset', 'documents': {'e_one': 'native-doc'}}
+            (state / 'ragflow-docs.json').write_text(json.dumps(native))
+            continuation = prepare_ragflow_resume(old, new, inputs, {}, {}, 'image')
+            self.assertEqual(continuation['original_duration_seconds'], 600)
+            self.assertEqual(json.loads((new / 'artifacts/deep-state/ragflow-docs.json').read_text()), native)
+            inputs['actions'][0]['items'][0]['evidence_id'] = 'changed'
+            with self.assertRaisesRegex(ValueError, 'unchanged workload'):
+                prepare_ragflow_resume(old, root / 'bad', inputs, {}, {}, 'image')
 
 
 if __name__ == '__main__':
