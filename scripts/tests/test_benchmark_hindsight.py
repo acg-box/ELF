@@ -18,14 +18,29 @@ class HindsightTests(BenchmarkCase):
             row, _ = hindsight.recall(job, "/bank", [])
         self.assertEqual(row["evidence_ids"], ["e_one"])
         self.assertIn("Combined native fact", row["contexts"][0]["text"])
-        self.assertIn("Native parent fact", row["contexts"][0]["text"])
+        self.assertNotIn("Native parent fact", row["contexts"][0]["text"])
+        self.assertIsNone(row["contexts"][0]["evidence_id"])
+        self.assertEqual(row["contexts"][0]["source_evidence_ids"], ["e_one"])
+        self.assertEqual(row["contexts"][1], {"evidence_id": "e_one", "text": "Native parent fact"})
         self.assertNotIn("substitute", row["contexts"][0]["text"])
         self.assertIn("source_facts", request.call_args.args[2]["include"])
         native["source_facts"] = {}
         with patch.object(hindsight, "request", return_value=native):
             row, _ = hindsight.recall(job, "/bank", [])
         self.assertEqual(row["evidence_ids"], [])
-        self.assertEqual(row["contexts"], [{"evidence_id": None, "text": "Combined native fact"}])
+        self.assertEqual(row["contexts"], [{"evidence_id": None, "text": "Derived observation: Combined native fact", "source_evidence_ids": []}])
+
+    def test_observation_is_not_broadcast_to_each_document_and_facts_are_deduplicated(self):
+        native = {"results": [
+            {"text": "Derived summary", "source_fact_ids": ["f1", "f2"]},
+            {"text": "Second summary", "source_fact_ids": ["f1", "f2"]}],
+            "source_facts": {"f1": {"document_id": "a", "text": "A"},
+                             "f2": {"document_id": "b", "text": "B"}}}
+        rows = hindsight.contexts_from_native(native)
+        self.assertEqual(len(rows), 4)
+        self.assertEqual([r["text"] for r in rows if r["evidence_id"]], ["A", "B"])
+        self.assertTrue(all(r["evidence_id"] is None for r in rows if "summary" in r["text"]))
+        self.assertEqual(rows[0]["source_evidence_ids"], ["a", "b"])
 
     def test_drain_waits_for_processing_and_rejects_cancelled_work(self):
         calls = []

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -43,12 +44,16 @@ def main():
     parser.add_argument("--source-labels", action=argparse.BooleanOptionalAction, default=None,
                         help="Expose native source identities to the shared reader; inherited on replay")
     parser.add_argument("--reanswer", type=Path)
+    parser.add_argument("--refresh-hindsight-contexts", action="store_true",
+                        help="Reformat retained native recall responses with separate observations and source facts")
     parser.add_argument("--retry-answer-errors", action="store_true",
                         help="With --reanswer, preserve every completed answer and retry only missing reader outputs")
     parser.add_argument("--resume-sag", type=Path, help="Continue a retained failed SAG scale-1000 ingest in copied state")
     parser.add_argument("--resume-hindsight", type=Path, help="Continue a retained Hindsight checkpoint after a failed scale-1000 run")
     parser.add_argument("--resume-ragflow", type=Path, help="Continue retained native PDF parsing, then rerun all questions")
     args = parser.parse_args()
+    if args.refresh_hindsight_contexts and (not args.reanswer or args.target != "hindsight" or args.retry_answer_errors):
+        parser.error("--refresh-hindsight-contexts requires a full Hindsight --reanswer replay")
     if args.retry_answer_errors and not args.reanswer:
         parser.error("--retry-answer-errors requires --reanswer")
     if args.resume_ragflow and (args.target != "ragflow" or args.reanswer or args.resume_sag or args.resume_hindsight):
@@ -155,6 +160,12 @@ def main():
         write_json(root / "cleanup.json", cleanup)
     raw_path = root / "artifacts/deep-result.json"
     native = retained["native"] if retained else (json.loads(raw_path.read_text()) if raw_path.exists() else {"results": []})
+    if args.refresh_hindsight_contexts:
+        from benchmark_targets.hindsight import contexts_from_native
+        native = copy.deepcopy(native)
+        for row in native["results"]:
+            if row.get("case_id") and row.get("status") == "completed":
+                row["contexts"] = contexts_from_native(row["native"])
     by_id = {r["case_id"]: r for r in native["results"] if r.get("case_id")}
     host = None if args.native_only else provider_environment(dict(os.environ), manifest["providers"], inside_container=False)
     queries = [a for a in inputs["actions"] if a["action"] == "query"]
@@ -224,6 +235,10 @@ def main():
         bundle["retrieval_source"] = retained.get("retrieval_source", retained["source"])
         bundle["retrieval_runtime"] = retained.get("retrieval_runtime", retained["runtime"])
         bundle["retrieval_bundle_sha256"] = hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest()
+    if args.refresh_hindsight_contexts:
+        bundle["context_recovery"] = {"revision": "hindsight_separate_observations_v1",
+            "boundary": "Reformat the same top-five native hits; retain each source fact once. No corpus or oracle fallback and no new retrieval.",
+            "source_bundle_sha256": hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest()}
     if args.retry_answer_errors:
         bundle["answer_recovery"] = {"mode": "missing_outputs_only",
             "source_bundle_sha256": hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest(),

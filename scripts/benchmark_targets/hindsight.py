@@ -47,6 +47,30 @@ def drain(bank, *, timeout_seconds=180):
         time.sleep(1)
 
 
+def contexts_from_native(native):
+    """Keep derived observations separate from the native facts that support them."""
+    rows, seen_facts = [], set()
+    source_facts = native.get("source_facts") or {}
+
+    def add_fact(fact):
+        key = (fact.get("document_id"), fact["text"])
+        if key not in seen_facts:
+            seen_facts.add(key)
+            rows.append({"evidence_id": fact.get("document_id"), "text": fact["text"]})
+
+    for hit in native["results"][:5]:
+        if hit.get("document_id"):
+            add_fact(hit)
+            continue
+        parents = [source_facts[fact_id] for fact_id in hit.get("source_fact_ids") or []
+                   if fact_id in source_facts and source_facts[fact_id].get("document_id")]
+        rows.append({"evidence_id": None, "text": "Derived observation: " + hit["text"],
+                     "source_evidence_ids": list(dict.fromkeys(p["document_id"] for p in parents))})
+        for parent in parents:
+            add_fact(parent)
+    return rows
+
+
 def recall(job, bank, operations):
     started = time.monotonic()
     native = request("POST", bank + "/memories/recall", {
@@ -54,21 +78,7 @@ def recall(job, bank, operations):
         "trace": True,
         "include": {"source_facts": {"max_tokens": 8192}},
     })
-    ranked = native["results"][:5]
-    rows = []
-    source_facts = native.get("source_facts") or {}
-    for hit in ranked:
-        if hit.get("document_id"):
-            rows.append({"evidence_id": hit["document_id"], "text": hit["text"]})
-            continue
-        parents = [source_facts[fact_id] for fact_id in hit.get("source_fact_ids") or []
-                   if fact_id in source_facts and source_facts[fact_id].get("document_id")]
-        if not parents:
-            rows.append({"evidence_id": None, "text": hit["text"]})
-            continue
-        for parent in parents:
-            rows.append({"evidence_id": parent["document_id"],
-                "text": "Observation: " + hit["text"] + "\nSource fact: " + parent["text"]})
+    rows = contexts_from_native(native)
     return {
         "job_id": job["job_id"], "classification": "completed",
         "evidence_ids": list(dict.fromkeys(r["evidence_id"] for r in rows if r["evidence_id"])),
