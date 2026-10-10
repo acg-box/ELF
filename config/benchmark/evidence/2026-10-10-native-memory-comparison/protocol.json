@@ -1,0 +1,31 @@
+{
+  "additional_raw_chunk_condition": "chunk-protocol.json",
+  "chat": "deepseek/deepseek-v4.1-flash",
+  "conditions": [
+    "hindsight-recall-budget",
+    "hindsight-recall-chunks",
+    "hindsight-reflect",
+    "ragflow-native-chat",
+    "ragflow-retrieval-rerank"
+  ],
+  "context_tokens": 4096,
+  "embedding": "qwen/qwen3-embedding-8b",
+  "embedding_dimensions": 1536,
+  "excluded_pdf_cases": [
+    "complex-002",
+    "complex-005",
+    "complex-020",
+    "complex-023"
+  ],
+  "hindsight_budget": "high",
+  "hindsight_version": "0.10.3",
+  "native_boundary": "Native reflect versus native retrieval-chat; different internal algorithms with metered costs. No full Agent workflow claim.",
+  "native_max_tokens": 8192,
+  "parallel_clients_maximum": 3,
+  "rag_page_size": 64,
+  "rag_threshold": 0.0,
+  "rag_vector_weight": 0.3,
+  "ragflow_version": "1.0.0-rc1",
+  "reader_max_tokens": 8192,
+  "tokenizer": "cl100k_base proxy; not claimed to equal DeepSeek tokenization"
+}

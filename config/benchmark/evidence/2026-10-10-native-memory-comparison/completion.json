@@ -1,0 +1,25 @@
+{
+  "archived_failed_attempts": 52,
+  "conditions": {
+    "hindsight-recall-budget": 40,
+    "hindsight-recall-chunks": 40,
+    "hindsight-reflect": 40,
+    "ragflow-native-chat": 40,
+    "ragflow-retrieval-rerank": 40
+  },
+  "discarded_completed_answers": 0,
+  "final_cases": 200,
+  "format_failure_limit": "The first KeyError: 0 reader response body was not persisted by the initial parser. Its failure metadata and metered charge are retained. Later contract failures retain raw receipts.",
+  "ragflow_candidate_recovery": "All initial page_size=100 calls were rejected before retrieval. The final page_size=64 condition completed all frozen queries.",
+  "raw_chunk_recovery": "The recall API uses text; reflect trace chunks use chunk_text. Initial field-mapping errors are archived; no completed answer was replaced.",
+  "completed_controller_snapshot_rows_preserved": 200,
+  "replacement_controller_exit_code": 0,
+  "recovery_exit_codes": [
+    0,
+    0,
+    0
+  ],
+  "gateway_closed": true,
+  "initial_gateway_child_exit_code": 104,
+  "supervisor_boundary": "The initial consumer was superseded during setup. Its intentionally stopped wrapper exits 104 on teardown; the replacement controller and all recovery commands exit 0."
+}

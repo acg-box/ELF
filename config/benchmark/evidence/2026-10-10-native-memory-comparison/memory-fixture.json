@@ -1,0 +1,488 @@
+{
+  "items": [
+    {
+      "evidence_id": "m_c558d1541c4b9d0f",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_d7a9d1f22107f233",
+      "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_99ab4da076b7c734",
+      "text": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_eb85892166acc8ef",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_f7ff6441bdd98e53",
+      "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_70bd88efee712a9a",
+      "text": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_4a54af2b364be476",
+      "text": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_ea0fb41d60279977",
+      "text": "2026-08-01. Neri started project Reed. They chose BATCH-2-741 for batch delivery. The initial retry policy was RETRY-2-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_9757cd3f6fff2b1a",
+      "text": "2026-08-08. Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages. The team tested REPLAY-2-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_89c1a1e6265841f0",
+      "text": "2026-08-15. Neri approved switching Reed from BATCH-2-741 to STREAM-2-286. This supersedes the August 1 delivery decision. The cause was the GATE-2-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_6e4b0b61170e23a6",
+      "text": "2026-08-22. Neri reviewed Reed. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-2-907, superseding RETRY-2-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_5cccbe54a3057c9d",
+      "text": "2026-08-01. Tala started project Sable. They chose BATCH-3-741 for batch delivery. The initial retry policy was RETRY-3-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_60a61eab3b3b1426",
+      "text": "2026-08-08. Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages. The team tested REPLAY-3-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_6bf734c83508b527",
+      "text": "2026-08-15. Tala approved switching Sable from BATCH-3-741 to STREAM-3-286. This supersedes the August 1 delivery decision. The cause was the GATE-3-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_b482da0e797a3b49",
+      "text": "2026-08-22. Tala reviewed Sable. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-3-907, superseding RETRY-3-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_11ab570fcca41f15",
+      "text": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_0cf97e4da97e721d",
+      "text": "2026-08-08. Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages. The team tested REPLAY-4-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_7a073c47318430f8",
+      "text": "2026-08-15. Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286. This supersedes the August 1 delivery decision. The cause was the GATE-4-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_10a8847f903485c5",
+      "text": "2026-08-22. Devon reviewed Cedar. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-4-907, superseding RETRY-4-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    }
+  ],
+  "oracle": {
+    "memory-0-0": {
+      "evidence": [
+        "m_c558d1541c4b9d0f",
+        "m_d7a9d1f22107f233",
+        "m_99ab4da076b7c734",
+        "m_d6297f549707f98d"
+      ],
+      "facts": [
+        "STREAM-0-286",
+        "RETRY-0-907"
+      ],
+      "forbidden": [
+        "BATCH-0-741",
+        "RETRY-0-108"
+      ],
+      "supported": true
+    },
+    "memory-0-1": {
+      "evidence": [
+        "m_c558d1541c4b9d0f",
+        "m_d7a9d1f22107f233",
+        "m_99ab4da076b7c734",
+        "m_d6297f549707f98d"
+      ],
+      "facts": [
+        "REPLAY-0-632",
+        "GATE-0-519"
+      ],
+      "forbidden": [],
+      "supported": true
+    },
+    "memory-0-2": {
+      "evidence": [
+        "m_c558d1541c4b9d0f",
+        "m_d7a9d1f22107f233",
+        "m_99ab4da076b7c734",
+        "m_d6297f549707f98d"
+      ],
+      "facts": [
+        "BATCH-0-741"
+      ],
+      "forbidden": [
+        "STREAM-0-286"
+      ],
+      "supported": true
+    },
+    "memory-0-3": {
+      "evidence": [],
+      "facts": [],
+      "forbidden": [],
+      "supported": false
+    },
+    "memory-1-0": {
+      "evidence": [
+        "m_eb85892166acc8ef",
+        "m_f7ff6441bdd98e53",
+        "m_70bd88efee712a9a",
+        "m_4a54af2b364be476"
+      ],
+      "facts": [
+        "STREAM-1-286",
+        "RETRY-1-907"
+      ],
+      "forbidden": [
+        "BATCH-1-741",
+        "RETRY-1-108"
+      ],
+      "supported": true
+    },
+    "memory-1-1": {
+      "evidence": [
+        "m_eb85892166acc8ef",
+        "m_f7ff6441bdd98e53",
+        "m_70bd88efee712a9a",
+        "m_4a54af2b364be476"
+      ],
+      "facts": [
+        "REPLAY-1-632",
+        "GATE-1-519"
+      ],
+      "forbidden": [],
+      "supported": true
+    },
+    "memory-1-2": {
+      "evidence": [
+        "m_eb85892166acc8ef",
+        "m_f7ff6441bdd98e53",
+        "m_70bd88efee712a9a",
+        "m_4a54af2b364be476"
+      ],
+      "facts": [
+        "BATCH-1-741"
+      ],
+      "forbidden": [
+        "STREAM-1-286"
+      ],
+      "supported": true
+    },
+    "memory-1-3": {
+      "evidence": [],
+      "facts": [],
+      "forbidden": [],
+      "supported": false
+    },
+    "memory-2-0": {
+      "evidence": [
+        "m_ea0fb41d60279977",
+        "m_9757cd3f6fff2b1a",
+        "m_89c1a1e6265841f0",
+        "m_6e4b0b61170e23a6"
+      ],
+      "facts": [
+        "STREAM-2-286",
+        "RETRY-2-907"
+      ],
+      "forbidden": [
+        "BATCH-2-741",
+        "RETRY-2-108"
+      ],
+      "supported": true
+    },
+    "memory-2-1": {
+      "evidence": [
+        "m_ea0fb41d60279977",
+        "m_9757cd3f6fff2b1a",
+        "m_89c1a1e6265841f0",
+        "m_6e4b0b61170e23a6"
+      ],
+      "facts": [
+        "REPLAY-2-632",
+        "GATE-2-519"
+      ],
+      "forbidden": [],
+      "supported": true
+    },
+    "memory-2-2": {
+      "evidence": [
+        "m_ea0fb41d60279977",
+        "m_9757cd3f6fff2b1a",
+        "m_89c1a1e6265841f0",
+        "m_6e4b0b61170e23a6"
+      ],
+      "facts": [
+        "BATCH-2-741"
+      ],
+      "forbidden": [
+        "STREAM-2-286"
+      ],
+      "supported": true
+    },
+    "memory-2-3": {
+      "evidence": [],
+      "facts": [],
+      "forbidden": [],
+      "supported": false
+    },
+    "memory-3-0": {
+      "evidence": [
+        "m_5cccbe54a3057c9d",
+        "m_60a61eab3b3b1426",
+        "m_6bf734c83508b527",
+        "m_b482da0e797a3b49"
+      ],
+      "facts": [
+        "STREAM-3-286",
+        "RETRY-3-907"
+      ],
+      "forbidden": [
+        "BATCH-3-741",
+        "RETRY-3-108"
+      ],
+      "supported": true
+    },
+    "memory-3-1": {
+      "evidence": [
+        "m_5cccbe54a3057c9d",
+        "m_60a61eab3b3b1426",
+        "m_6bf734c83508b527",
+        "m_b482da0e797a3b49"
+      ],
+      "facts": [
+        "REPLAY-3-632",
+        "GATE-3-519"
+      ],
+      "forbidden": [],
+      "supported": true
+    },
+    "memory-3-2": {
+      "evidence": [
+        "m_5cccbe54a3057c9d",
+        "m_60a61eab3b3b1426",
+        "m_6bf734c83508b527",
+        "m_b482da0e797a3b49"
+      ],
+      "facts": [
+        "BATCH-3-741"
+      ],
+      "forbidden": [
+        "STREAM-3-286"
+      ],
+      "supported": true
+    },
+    "memory-3-3": {
+      "evidence": [],
+      "facts": [],
+      "forbidden": [],
+      "supported": false
+    },
+    "memory-4-0": {
+      "evidence": [
+        "m_11ab570fcca41f15",
+        "m_0cf97e4da97e721d",
+        "m_7a073c47318430f8",
+        "m_10a8847f903485c5"
+      ],
+      "facts": [
+        "STREAM-4-286",
+        "RETRY-4-907"
+      ],
+      "forbidden": [
+        "BATCH-4-741",
+        "RETRY-4-108"
+      ],
+      "supported": true
+    },
+    "memory-4-1": {
+      "evidence": [
+        "m_11ab570fcca41f15",
+        "m_0cf97e4da97e721d",
+        "m_7a073c47318430f8",
+        "m_10a8847f903485c5"
+      ],
+      "facts": [
+        "REPLAY-4-632",
+        "GATE-4-519"
+      ],
+      "forbidden": [],
+      "supported": true
+    },
+    "memory-4-2": {
+      "evidence": [
+        "m_11ab570fcca41f15",
+        "m_0cf97e4da97e721d",
+        "m_7a073c47318430f8",
+        "m_10a8847f903485c5"
+      ],
+      "facts": [
+        "BATCH-4-741"
+      ],
+      "forbidden": [
+        "STREAM-4-286"
+      ],
+      "supported": true
+    },
+    "memory-4-3": {
+      "evidence": [],
+      "facts": [],
+      "forbidden": [],
+      "supported": false
+    }
+  },
+  "queries": [
+    {
+      "case_id": "memory-0-0",
+      "lane": "updates",
+      "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-0-1",
+      "lane": "cross_session",
+      "question": "For the next outage on Larch, which recovery procedure should Mara use, and which outage gate led to the delivery-mode change?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-0-2",
+      "lane": "temporal",
+      "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-0-3",
+      "lane": "abstention",
+      "question": "Who is the appointed budget owner for Mara's Larch project as of August 22?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-0",
+      "lane": "updates",
+      "question": "As of August 22, what delivery mode and retry policy apply to Ivo's Cobalt project?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-1",
+      "lane": "cross_session",
+      "question": "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-2",
+      "lane": "temporal",
+      "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-3",
+      "lane": "abstention",
+      "question": "Who is the appointed budget owner for Ivo's Cobalt project as of August 22?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-0",
+      "lane": "updates",
+      "question": "As of August 22, what delivery mode and retry policy apply to Neri's Reed project?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-1",
+      "lane": "cross_session",
+      "question": "For the next outage on Reed, which recovery procedure should Neri use, and which outage gate led to the delivery-mode change?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-2",
+      "lane": "temporal",
+      "question": "What delivery mode was still approved for Neri's Reed project immediately after the August 8 meeting?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-3",
+      "lane": "abstention",
+      "question": "Who is the appointed budget owner for Neri's Reed project as of August 22?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-0",
+      "lane": "updates",
+      "question": "As of August 22, what delivery mode and retry policy apply to Tala's Sable project?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-1",
+      "lane": "cross_session",
+      "question": "For the next outage on Sable, which recovery procedure should Tala use, and which outage gate led to the delivery-mode change?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-2",
+      "lane": "temporal",
+      "question": "What delivery mode was still approved for Tala's Sable project immediately after the August 8 meeting?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-3",
+      "lane": "abstention",
+      "question": "Who is the appointed budget owner for Tala's Sable project as of August 22?",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-4-0",
+      "lane": "updates",
+      "question": "As of August 22, what delivery mode and retry policy apply to Devon's Cedar project?",
+      "split": "dev"
+    },
+    {
+      "case_id": "memory-4-1",
+      "lane": "cross_session",
+      "question": "For the next outage on Cedar, which recovery procedure should Devon use, and which outage gate led to the delivery-mode change?",
+      "split": "dev"
+    },
+    {
+      "case_id": "memory-4-2",
+      "lane": "temporal",
+      "question": "What delivery mode was still approved for Devon's Cedar project immediately after the August 8 meeting?",
+      "split": "dev"
+    },
+    {
+      "case_id": "memory-4-3",
+      "lane": "abstention",
+      "question": "Who is the appointed budget owner for Devon's Cedar project as of August 22?",
+      "split": "dev"
+    }
+  ]
+}

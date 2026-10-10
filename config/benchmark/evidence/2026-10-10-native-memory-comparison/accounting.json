@@ -1,0 +1,32 @@
+{
+  "boundary": "Benchmark API requests only. Concurrent ordinal windows cannot be summed as exclusive per-product costs. Failed request reservations remain included in exposure.",
+  "by_kind": {
+    "chat": {
+      "cached_prompt_tokens": 527104,
+      "completion_tokens": 311058,
+      "paid_usd": 0.393052362,
+      "prompt_tokens": 1892679,
+      "requests": 350
+    },
+    "embedding": {
+      "cached_prompt_tokens": 0,
+      "completion_tokens": 0,
+      "paid_usd": 0.00025875,
+      "prompt_tokens": 25875,
+      "requests": 674
+    }
+  },
+  "ceiling_usd": 20,
+  "cumulative_exposure_usd": 16.04536855999948,
+  "cumulative_paid_usd": 15.728059059999538,
+  "first_ordinal": 61012,
+  "incremental_exposure_usd": 0.39583861200002346,
+  "incremental_paid_usd": 0.393311112000017,
+  "last_ordinal": 62035,
+  "new_requests": 1024,
+  "statuses": {
+    "completed": 1021,
+    "provider_failed": 3
+  },
+  "tranche_usd": 1.5
+}

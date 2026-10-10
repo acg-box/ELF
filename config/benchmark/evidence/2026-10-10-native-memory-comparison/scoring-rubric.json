@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-10-10T05:39:45.219887+00:00",
+  "workload_sha256": "de553e09cd9ebe9710255a43ba8ac79e163a5e9ff26a853d06354f3b40515208",
+  "scoring": {
+    "automatic": "Strict requested-value matching, with forbidden stale values rejected; unknown must be exact after citation removal.",
+    "primary": "Review all completed answers against the frozen sources and question. Accept qualified historical mentions when the current answer is unambiguous. Accept a supported statement that no budget owner was appointed, or an explicit statement of missing information, as valid abstention. Reject unsupported proposed names, contradictory assignments, and values attached to the wrong source. Record every override with a reason.",
+    "source_support": "For shared readers use only supplied context; for native answers inspect native citations/tool trace. Report answer correctness and traceable support separately.",
+    "errors": "API and schema errors are missing outputs, not quality failures. Keep attempts; retry missing outputs only without selecting among completed answers.",
+    "splits": "PDFs are diagnostic, because their previous answers were examined. New memory test contains 16 cases in four independent entity groups; 4 Devon development cases are excluded. No performance claim of statistical significance."
+  }
+}

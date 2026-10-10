@@ -1,0 +1,4 @@
+{
+  "page_size": 64,
+  "reason": "The native rerank candidate limit is 64; page_size=100 fails validation before retrieval. No completed answer is replaced. All other retrieval/reader settings are unchanged."
+}

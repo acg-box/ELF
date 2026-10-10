@@ -235,3 +235,7 @@ command = "python3"
 [tasks.benchmark-native-comparison]
 args    = ["scripts/benchmark-native-comparison.py", "${@}"]
 command = "python3"
+
+[tasks.benchmark-native-retrieval]
+args    = ["scripts/benchmark-native-retrieval.py", "${@}"]
+command = "python3"

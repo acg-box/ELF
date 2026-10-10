@@ -1,0 +1,50 @@
+{
+  "removed_images": [
+    {
+      "reference": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b",
+      "image_id": "sha256:c51ce53db95348aa8a4b2f0dab64f1e6b279efc8b07ad43aaac62f8426989076"
+    },
+    {
+      "reference": "mysql:8.0.40",
+      "image_id": "sha256:f6e7cfd1cb86c0741bf55f72560ce6d7799ada94a51f8f192a4d3b689b8496b4"
+    },
+    {
+      "reference": "pgsty/silo:RELEASE.2026-08-06T00-00-00Z",
+      "image_id": "sha256:076b58f8af6b053ac40d21e87e83d1bcbc1e4d7a651d12a3be0c551e92e91fbf"
+    },
+    {
+      "reference": "infiniflow/infinity:v0.7.3-x64-v3",
+      "image_id": "sha256:34d7607d8966f4598735df886beb51a8c9ac7a7217be4ca0a8fbd5d78270214f"
+    },
+    {
+      "reference": "clickhouse/clickhouse-server:26.5.5.8",
+      "image_id": "sha256:00763be2865b44f777df4340fbdd52f6d70a97f58b17a6ee8db91a8e7965912d"
+    },
+    {
+      "reference": "apache/kvrocks:2.16.0",
+      "image_id": "sha256:fd8e71ce4fce556a7522c01fff3dbfbd2da580f22920d151f7f2f06790b3074f"
+    },
+    {
+      "reference": "nats:2.14.2",
+      "image_id": "sha256:eff3cf3c1e911779b9fbfe69ca703bb69a2b7407e6227e3f9b70ebbca6f0a54d"
+    },
+    {
+      "reference": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+      "image_id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926"
+    }
+  ],
+  "kept_images": [],
+  "task_containers_remaining": [],
+  "task_volumes_remaining": [],
+  "task_networks_remaining": [],
+  "gateway_lock_remaining": false,
+  "global_prune": false,
+  "task_containers_removed": 8,
+  "task_volumes_removed": 7,
+  "task_networks_removed": 1,
+  "unrelated_services_checked": 8,
+  "unrelated_services_running": true,
+  "unrelated_services_started_before_task": true,
+  "private_identity_receipt_sha256": "66d6e914e479f34613ae2493054c0c85099357ebb8e61d27b59c503c55a95871",
+  "temporary_native_auth_deleted": true
+}

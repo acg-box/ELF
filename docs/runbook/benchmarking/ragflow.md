@@ -167,6 +167,13 @@ configuration refers to that gateway; a new gateway does not automatically
 update a retained container or provider instance. Do not silently re-ingest a
 bank or select a better completed answer during recovery.
 
+For the native source-chunk supplement, run `cargo make
+benchmark-native-retrieval --target hindsight --artifact-root /absolute/path/to/run`
+inside the same live budget environment. Use `--target ragflow` to recover
+missing reranked-retrieval outputs with the final 64-chunk request limit. Both
+commands preserve completed answers and retain failed attempts. They require
+the same native stores and gateway; they do not recreate cleaned-up services.
+
 After pending native operations finish and usage accounting settles, remove only
 this experiment's containers, networks, volumes, and newly downloaded images.
 The controller does not remove an operator-provided RAGFlow deployment.

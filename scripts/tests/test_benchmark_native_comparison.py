@@ -2,9 +2,10 @@
 import importlib.util
 from pathlib import Path
 import unittest
+import json
 import tempfile
 from benchmark_deep.memory_comparison import workload
-from benchmark_targets.hindsight import contexts_from_native
+from benchmark_targets.hindsight import contexts_from_native, chunk_contexts_from_native
 
 path=Path(__file__).resolve().parents[1]/'benchmark-native-comparison.py'
 spec=importlib.util.spec_from_file_location('native_comparison',path)
@@ -12,6 +13,19 @@ module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
 
 
 class NativeComparisonTests(unittest.TestCase):
+    def test_raw_chunks_use_native_text_and_source_identity(self):
+        native={'results':[{'document_id':'doc-b','chunk_id':'b','text':'Compressed fact'}],
+                'source_facts':{'f':{'document_id':'doc-a','chunk_id':'a','text':'Parent fact'}},
+                'chunks':{'a':{'text':'Original A','chunk_index':0},'b':{'text':'Original B','chunk_index':0}}}
+        rows=chunk_contexts_from_native(native)
+        self.assertEqual([(r['evidence_id'],r['text']) for r in rows],[('doc-b','Original B'),('doc-a','Original A')])
+        self.assertNotIn('Compressed fact',str(rows))
+
+    def test_raw_chunks_reject_conflicting_native_sources(self):
+        native={'results':[{'document_id':'a','chunk_id':'c'},{'document_id':'b','chunk_id':'c'}],
+                'chunks':{'c':{'text':'Original'}}}
+        with self.assertRaises(ValueError):chunk_contexts_from_native(native)
+
     def test_full_native_budget_keeps_sixth_fact(self):
         native={'results':[{'document_id':f'd{i}','text':str(i)} for i in range(7)]}
         self.assertEqual(len(contexts_from_native(native)),5)
@@ -24,6 +38,13 @@ class NativeComparisonTests(unittest.TestCase):
             module.freeze(path,{'items':['original']})
             with self.assertRaises(ValueError):
                 module.freeze(path,{'items':['changed']})
+
+    def test_reader_accepts_one_identified_object_without_selecting_an_answer(self):
+        answer={'case_id':'case','text':'value','supported':True}
+        for shape in (answer,[answer]):
+            response={'choices':[{'finish_reason':'stop','message':{'content':json.dumps({'answers':shape})}}]}
+            self.assertEqual(module.decode_answer(response,'case'),answer)
+            with self.assertRaises(ValueError):module.decode_answer(response,'other')
 
     def test_current_answer_rejects_stale_addition(self):
         e={'supported':True,'facts':['new-code'],'forbidden':['old-code']}

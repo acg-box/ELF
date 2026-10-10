@@ -1,0 +1,19 @@
+{
+  "condition": "hindsight-recall-chunks",
+  "scope": "All frozen questions; no answer selection or source enrichment.",
+  "boundary": "Added after native API/trace inspection and initial answer inspection. Exploratory capability correction, not an independently preregistered comparison.",
+  "budget": "high",
+  "max_tokens": 4096,
+  "include": {
+    "chunks": {
+      "max_tokens": 8192
+    },
+    "source_facts": {
+      "max_tokens": 8192
+    }
+  },
+  "reader_context_tokens": 4096,
+  "reader_max_tokens": 8192,
+  "tokenizer": "cl100k_base",
+  "presentation": "Native raw chunks only, ordered by first occurrence in returned native facts; remaining returned chunks retain native order. No corpus or oracle lookup."
+}

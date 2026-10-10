@@ -140,3 +140,23 @@ def run_hindsight(inputs: Path, artifacts: Path, state: Path):
         "native_mode": "native_retain_recall_after_consolidation", "score_eligible": True,
         "result_class": "completed", "warm_reused_state": True, "ingest_count": 1,
         "ingest_duration_ms": ingest_ms, "phases": phases}
+
+
+def chunk_contexts_from_native(native):
+    """Present only native source chunks, with identities from returned native facts."""
+    chunks = native.get('chunks') or {}
+    parents = native.get('source_facts') or {}
+    facts = [*native['results'], *parents.values()]
+    sources = {}
+    order = []
+    for fact in facts:
+        chunk_id, source = fact.get('chunk_id'), fact.get('document_id')
+        if chunk_id and source:
+            if chunk_id in sources and sources[chunk_id] != source:
+                raise ValueError('Native chunk has conflicting document identities')
+            sources[chunk_id] = source
+        if chunk_id in chunks and chunk_id not in order:
+            order.append(chunk_id)
+    order.extend(k for k in chunks if k not in order)
+    return [{'evidence_id': sources.get(k), 'text': chunks[k]['text'],
+             'native_chunk_id': k, 'native_truncated': chunks[k].get('truncated', False)} for k in order]

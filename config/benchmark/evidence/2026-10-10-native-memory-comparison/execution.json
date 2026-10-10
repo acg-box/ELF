@@ -1,0 +1,6 @@
+{
+  "parallel_product_lanes": 2,
+  "serial_within_product": true,
+  "cost_attribution": "Cumulative metered cost is authoritative. Per-case ordinal windows can overlap and must not be summed as exclusive per-product costs.",
+  "latency_boundary": "Observed latency includes concurrent parsing/queries on the same host and gateway. Not an isolated performance comparison."
+}

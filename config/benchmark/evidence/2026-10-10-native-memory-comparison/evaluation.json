@@ -1,0 +1,2147 @@
+{
+  "reviewer": "Codex agent; semantic review is not an independent blinded human assessment. All answers remain inspectable.",
+  "rubric": "scoring-rubric.json",
+  "primary_question_count": 36,
+  "development_question_count": 4,
+  "conditions": {
+    "hindsight-recall-budget": {
+      "pdf": {
+        "correct": 20,
+        "total": 20,
+        "strict_correct": 20,
+        "partial_answers": 0
+      },
+      "memory_test": {
+        "correct": 12,
+        "total": 16,
+        "strict_correct": 8,
+        "partial_answers": 3
+      },
+      "memory_dev": {
+        "correct": 3,
+        "total": 4,
+        "strict_correct": 2,
+        "partial_answers": 1
+      },
+      "observed_median_seconds": 7.841837457992369,
+      "reader_context": {
+        "median_tokens_before_cap": 4335.0,
+        "maximum_tokens_before_cap": 4798,
+        "truncated_cases": 20
+      }
+    },
+    "hindsight-recall-chunks": {
+      "pdf": {
+        "correct": 20,
+        "total": 20,
+        "strict_correct": 20,
+        "partial_answers": 0
+      },
+      "memory_test": {
+        "correct": 16,
+        "total": 16,
+        "strict_correct": 12,
+        "partial_answers": 0
+      },
+      "memory_dev": {
+        "correct": 4,
+        "total": 4,
+        "strict_correct": 3,
+        "partial_answers": 0
+      },
+      "observed_median_seconds": 6.767344604508253,
+      "reader_context": {
+        "median_tokens_before_cap": 1956.0,
+        "maximum_tokens_before_cap": 2519,
+        "truncated_cases": 0
+      }
+    },
+    "hindsight-reflect": {
+      "pdf": {
+        "correct": 20,
+        "total": 20,
+        "strict_correct": 3,
+        "partial_answers": 0
+      },
+      "memory_test": {
+        "correct": 16,
+        "total": 16,
+        "strict_correct": 4,
+        "partial_answers": 0
+      },
+      "memory_dev": {
+        "correct": 3,
+        "total": 4,
+        "strict_correct": 0,
+        "partial_answers": 1
+      },
+      "observed_median_seconds": 26.294194187008543,
+      "native_tools": {
+        "recall": 87,
+        "search_observations": 84
+      }
+    },
+    "ragflow-native-chat": {
+      "pdf": {
+        "correct": 16,
+        "total": 20,
+        "strict_correct": 16,
+        "partial_answers": 2
+      },
+      "memory_test": {
+        "correct": 16,
+        "total": 16,
+        "strict_correct": 8,
+        "partial_answers": 0
+      },
+      "memory_dev": {
+        "correct": 4,
+        "total": 4,
+        "strict_correct": 2,
+        "partial_answers": 0
+      },
+      "observed_median_seconds": 6.7663298540282995
+    },
+    "ragflow-retrieval-rerank": {
+      "pdf": {
+        "correct": 14,
+        "total": 20,
+        "strict_correct": 14,
+        "partial_answers": 0
+      },
+      "memory_test": {
+        "correct": 16,
+        "total": 16,
+        "strict_correct": 12,
+        "partial_answers": 0
+      },
+      "memory_dev": {
+        "correct": 4,
+        "total": 4,
+        "strict_correct": 3,
+        "partial_answers": 0
+      },
+      "observed_median_seconds": 7.332185812992975,
+      "reader_context": {
+        "median_tokens_before_cap": 1457.5,
+        "maximum_tokens_before_cap": 2723,
+        "truncated_cases": 0
+      }
+    }
+  },
+  "reviews": [
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-000",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-001",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-003",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-004",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-006",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-007",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-008",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-009",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-010",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-011",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-012",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-013",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-014",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-015",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-016",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-017",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-018",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-019",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-021",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "complex-022",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-0-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The answer assigns Cobalt's retry policy to Larch."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-0-1",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": true,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Correct route category/date/gate, but the requested queue or recovery identifier is omitted."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-0-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-0-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-1-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-1-1",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": true,
+      "literal_fact_support_in_returned_evidence": false,
+      "reason": "Correct route category/date/gate, but the requested queue or recovery identifier is omitted."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-1-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-1-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-2-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-2-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-2-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-2-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-3-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-3-1",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": true,
+      "literal_fact_support_in_returned_evidence": false,
+      "reason": "Correct route category/date/gate, but the requested queue or recovery identifier is omitted."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-3-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-3-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-4-0",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-4-1",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": true,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Correct route category/date/gate, but the requested queue or recovery identifier is omitted."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-4-2",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-budget",
+      "case_id": "memory-4-3",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-000",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-001",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-003",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-004",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-006",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-007",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-008",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-009",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-010",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-011",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-012",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-013",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-014",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-015",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-016",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-017",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-018",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-019",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-021",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "complex-022",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-0-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-0-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-0-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-0-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-1-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-1-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-1-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-1-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-2-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-2-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-2-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-2-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-3-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-3-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-3-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-3-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-4-0",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-4-1",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-4-2",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-recall-chunks",
+      "case_id": "memory-4-3",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-000",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-001",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-003",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-004",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-006",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-007",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-008",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-009",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-010",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-011",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-012",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-013",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-014",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-015",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-016",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-017",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-018",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-019",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-021",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-022",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-0-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-0-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-0-2",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-0-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-1-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-1-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-1-2",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-1-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-2-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-2-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-2-2",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-2-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-3-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-3-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-3-2",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-3-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-4-0",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-4-1",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": true,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Correct route category/date/gate, but the requested queue or recovery identifier is omitted."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-4-2",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "memory-4-3",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-000",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-001",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": true,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Correct route category/date/gate, but the requested queue or recovery identifier is omitted."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-003",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-004",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": true,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Correct route category/date/gate, but the requested queue or recovery identifier is omitted."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-006",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-007",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-008",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-009",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-010",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-011",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-012",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-013",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-014",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-015",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-016",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-017",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-018",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-019",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-021",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "complex-022",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-0-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-0-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-0-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-0-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-1-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-1-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-1-2",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-1-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-2-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-2-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-2-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-2-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-3-0",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-3-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-3-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-3-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-4-0",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested current/historical value is unambiguous. Other values are explicitly labeled historical, inactive, or from another source."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-4-1",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-4-2",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-native-chat",
+      "case_id": "memory-4-3",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-000",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-001",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-003",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-004",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-006",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-007",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-008",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-009",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-010",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-011",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-012",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-013",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-014",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-015",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-016",
+      "split": "diagnostic",
+      "strict_correct": false,
+      "requested_answer_correct": false,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "Abstains on an answerable document question; parse context has a misleading historical caption or lacks the revision marker."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-017",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-018",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-019",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-021",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "complex-022",
+      "split": "diagnostic",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-0-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-0-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-0-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-0-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-1-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-1-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-1-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-1-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-2-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-2-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-2-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-2-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-3-0",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-3-1",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-3-2",
+      "split": "test",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-3-3",
+      "split": "test",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-4-0",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-4-1",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-4-2",
+      "split": "dev",
+      "strict_correct": true,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": true,
+      "reason": "The requested values are correct and are supported by the returned evidence."
+    },
+    {
+      "condition": "ragflow-retrieval-rerank",
+      "case_id": "memory-4-3",
+      "split": "dev",
+      "strict_correct": false,
+      "requested_answer_correct": true,
+      "partial_answer": false,
+      "literal_fact_support_in_returned_evidence": null,
+      "reason": "Explicit absence or explained unknown is correct; the frozen rubric does not require the literal word unknown alone."
+    }
+  ],
+  "limits": [
+    "Requested-value accuracy is separate from fluency and correctness of all extra prose.",
+    "A route category without its requested identifier is recorded as partial, not full credit.",
+    "The raw-chunk condition is an exploratory addition after initial outputs were inspected.",
+    "Raw-chunk recall returns all 20 short conversation records or all 8 PDF text records here; this is not evidence of large-corpus retrieval superiority."
+  ],
+  "ancillary_observations": [
+    {
+      "condition": "hindsight-reflect",
+      "case_id": "complex-013",
+      "note": "The requested queue is correct, but the explanation mentions Page 1 with item 13; item 13 is on Page 2 of the fixture. Requested-value accuracy does not certify every page reference."
+    }
+  ]
+}
