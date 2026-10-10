@@ -5,7 +5,7 @@ description: Run RAGFlow document retrieval through the shared bounded benchmark
 status: active
 authority: informative
 owner: benchmark
-last_verified: 2026-10-09
+last_verified: 2026-10-10
 source_refs:
   - config/benchmark/ragflow-v1.json
 code_refs:
@@ -79,7 +79,7 @@ spreadsheet parsing test. Existing `all` workloads remain unchanged.
 ## Complex PDF comparison
 
 Use `--workload-group complex-documents --manifest
-config/benchmark/ragflow-pdf-v1.json --ingest-seconds 1800 --source-labels --reader-max-tokens 8192` with
+config/benchmark/complex-documents-v1.json --ingest-seconds 1800 --source-labels --reader-max-tokens 8192` with
 `cargo make benchmark-ragflow`. The fixture has eight PDFs and 24 questions.
 RAGFlow receives binary PDF uploads. ELF and Hindsight receive the corresponding
 fixed Poppler/Tesseract text when the same workload group and `--source-labels` are used with
@@ -117,6 +117,12 @@ the original condition, recovery metadata, and paid requests in the evidence.
 For this version of the fixture, exclude the four ambiguous empty-cell cases
 listed in the evidence report from the primary score. Keep all 24 raw rows and
 report the 20-case primary denominator explicitly.
+
+For Hindsight results produced before the separate-observation formatter, use
+`--reanswer ORIGINAL --refresh-hindsight-contexts` to rebuild reader contexts
+from the retained native API responses. This requires a full replay and cannot
+combine with missing-output-only recovery. It retains the same native top-five
+hits and records the context transformation separately from retrieval.
 
 The continuation records original and recovery durations. Native processing can
 continue between the two client runs, so use native event timestamps or the full

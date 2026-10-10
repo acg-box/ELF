@@ -1,0 +1,90 @@
+[
+  {
+    "expected_identifiers": 2,
+    "listed_extra_chunks": 13,
+    "missing_identifiers": [],
+    "name": "Juniper scan 3",
+    "present_identifiers": 2,
+    "types": [
+      "text",
+      "table",
+      "text"
+    ]
+  },
+  {
+    "expected_identifiers": 2,
+    "listed_extra_chunks": 0,
+    "missing_identifiers": [],
+    "name": "Juniper scan 2",
+    "present_identifiers": 2,
+    "types": [
+      "text",
+      "table",
+      "text"
+    ]
+  },
+  {
+    "expected_identifiers": 3,
+    "listed_extra_chunks": 0,
+    "missing_identifiers": [],
+    "name": "Juniper crosspage 1",
+    "present_identifiers": 3,
+    "types": [
+      "text"
+    ]
+  },
+  {
+    "expected_identifiers": 3,
+    "listed_extra_chunks": 0,
+    "missing_identifiers": [],
+    "name": "Juniper crosspage 0",
+    "present_identifiers": 3,
+    "types": [
+      "text"
+    ]
+  },
+  {
+    "expected_identifiers": 3,
+    "listed_extra_chunks": 15,
+    "missing_identifiers": [],
+    "name": "Juniper columns 1",
+    "present_identifiers": 3,
+    "types": [
+      "text"
+    ]
+  },
+  {
+    "expected_identifiers": 3,
+    "listed_extra_chunks": 0,
+    "missing_identifiers": [],
+    "name": "Juniper columns 0",
+    "present_identifiers": 3,
+    "types": [
+      "text"
+    ]
+  },
+  {
+    "expected_identifiers": 2,
+    "listed_extra_chunks": 0,
+    "missing_identifiers": [],
+    "name": "Juniper table 1",
+    "present_identifiers": 2,
+    "types": [
+      "text",
+      "table",
+      "text"
+    ]
+  },
+  {
+    "expected_identifiers": 2,
+    "listed_extra_chunks": 0,
+    "missing_identifiers": [],
+    "name": "Juniper table 0",
+    "present_identifiers": 2,
+    "types": [
+      "text",
+      "table",
+      "text"
+    ]
+  }
+]

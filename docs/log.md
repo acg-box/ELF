@@ -6,6 +6,11 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-10-10
+
+- Added a fresh Hindsight 0.10.3 comparison, a uniform reader output limit, and
+  explicit source identities. Preserved all earlier attempts and evaluator gaps.
+
 ## 2026-10-09
 
 - Added a separate complex PDF/OCR comparison and fixed source fixtures. Preserved

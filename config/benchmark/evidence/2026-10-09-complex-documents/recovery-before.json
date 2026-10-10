@@ -1,0 +1,1514 @@
+[
+  {
+    "chunk_count": 3,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:38",
+    "create_time": 1791601958189,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "e422c004fd8449c6b8bbe2258ca16ed6",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 84,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:33:24+08:00"
+    },
+    "location": "e_255d68caea01e4bc6add58b1.pdf",
+    "meta_fields": {},
+    "name": "e_255d68caea01e4bc6add58b1.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:24:36",
+    "process_duration": 527.865873466,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 132491,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 248,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:33:24",
+    "update_time": 1791603204735
+  },
+  {
+    "chunk_count": 3,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:38",
+    "create_time": 1791601958165,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "2ed9c8d7c83b4ed68f56d9c9cda32f9f",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 78,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:33:24+08:00"
+    },
+    "location": "e_7fe00361fcf964b12aea766c.pdf",
+    "meta_fields": {},
+    "name": "e_7fe00361fcf964b12aea766c.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:24:36",
+    "process_duration": 527.739500232,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 132187,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 249,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:33:24",
+    "update_time": 1791603204058
+  },
+  {
+    "chunk_count": 1,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:38",
+    "create_time": 1791601958140,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "ad66157ecc8645ffb28f1d877f1117ef",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 55,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:24:36+08:00"
+    },
+    "location": "e_4b51c2f07fe6d33137c84359.pdf",
+    "meta_fields": {},
+    "name": "e_4b51c2f07fe6d33137c84359.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:18:37",
+    "process_duration": 359.22481462,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 3105,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 466,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:24:36",
+    "update_time": 1791602676256
+  },
+  {
+    "chunk_count": 1,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:38",
+    "create_time": 1791601958119,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "aab7fe83fa784fd98b62f37b9ef6dd55",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 60,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:24:36+08:00"
+    },
+    "location": "e_f361397d877f4c9074ab359a.pdf",
+    "meta_fields": {},
+    "name": "e_f361397d877f4c9074ab359a.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:18:36",
+    "process_duration": 360.69973999,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 3110,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 465,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:24:36",
+    "update_time": 1791602676827
+  },
+  {
+    "chunk_count": 1,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:38",
+    "create_time": 1791601958094,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "6058c0de8a204ddb9a6dc14d5329cff5",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 36,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:18:36+08:00"
+    },
+    "location": "e_adf880c03e4b6091d62cdf6f.pdf",
+    "meta_fields": {},
+    "name": "e_adf880c03e4b6091d62cdf6f.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:12:38",
+    "process_duration": 358.664266006,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 2234,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 199,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:18:36",
+    "update_time": 1791602316972
+  },
+  {
+    "chunk_count": 1,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:38",
+    "create_time": 1791601958069,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "cd1560b16bda488ab141261e973b5702",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 30,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:18:36+08:00"
+    },
+    "location": "e_f78b8623bff0267bf5e45c2b.pdf",
+    "meta_fields": {},
+    "name": "e_f78b8623bff0267bf5e45c2b.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:12:38",
+    "process_duration": 357.788403949,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 2237,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 199,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:18:36",
+    "update_time": 1791602316073
+  },
+  {
+    "chunk_count": 3,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:38",
+    "create_time": 1791601958037,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "6ceeb6a86896403aa194c8cd05fbaf02",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 104,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:39:26+08:00"
+    },
+    "location": "e_6f96a2af3365edd7577ea147.pdf",
+    "meta_fields": {},
+    "name": "e_6f96a2af3365edd7577ea147.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:33:24",
+    "process_duration": 361.303632262,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 2364,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 251,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:39:26",
+    "update_time": 1791603566101
+  },
+  {
+    "chunk_count": 3,
+    "chunk_method": "general",
+    "create_date": "2026-10-10 11:12:37",
+    "create_time": 1791601957999,
+    "created_by": "72439b3d1fe244c1ab1259b094210f18",
+    "dataset_id": "a14df2317216449dbb35abdf9e46ae73",
+    "id": "3cc1999f86bc4d34988394568b849218",
+    "ingestion_status": "COMPLETED",
+    "latest_ingestion_event": {
+      "component": "",
+      "event_type": 2,
+      "id": 103,
+      "message": "Task completed.",
+      "phase": 0,
+      "ts": "2026-10-10T11:39:25+08:00"
+    },
+    "location": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+    "meta_fields": {},
+    "name": "e_ae3fdb9cb12196ce9ae4b945.pdf",
+    "nickname": "ELF Benchmark",
+    "parser_config": {
+      "Extractor:AutoExtractDefault": {
+        "keywords": {
+          "top_n": 0
+        },
+        "llm_id": "",
+        "metadata": {
+          "built_in_metadata": [],
+          "enabled": false,
+          "metadata": []
+        },
+        "questions": {
+          "top_n": 0
+        },
+        "summary": {
+          "enabled": false
+        },
+        "tags": {
+          "tag_file_id": "",
+          "top_n": 0
+        }
+      },
+      "File": {},
+      "GeneralChunker:SixApplesFall": {
+        "children_delimiters": [],
+        "chunk_token_size": 512,
+        "delimiters": [
+          "\n",
+          "!",
+          "?",
+          ";",
+          "\u3002",
+          "\uff1b",
+          "\uff01",
+          "\uff1f"
+        ],
+        "image_context_size": 0,
+        "overlapped_percent": 0,
+        "table_context_size": 0
+      },
+      "Parser:HipSignsRhyme": {
+        "doc": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "doc"
+          ]
+        },
+        "docx": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "docx"
+          ],
+          "vlm": {}
+        },
+        "html": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "htm",
+            "html"
+          ]
+        },
+        "markdown": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "md",
+            "markdown",
+            "mdx"
+          ],
+          "vlm": {}
+        },
+        "pdf": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "pages": [
+            [
+              1,
+              100000
+            ]
+          ],
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "pdf"
+          ],
+          "vlm": {}
+        },
+        "spreadsheet": {
+          "flatten_media_to_text": false,
+          "output_format": "json",
+          "parse_method": "DeepDOC",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "xls",
+            "xlsx",
+            "csv"
+          ],
+          "vlm": {}
+        },
+        "text&code": {
+          "output_format": "json",
+          "preprocess": [
+            "main_content"
+          ],
+          "suffix": [
+            "txt",
+            "py",
+            "js",
+            "java",
+            "c",
+            "cpp",
+            "h",
+            "php",
+            "go",
+            "ts",
+            "sh",
+            "cs",
+            "kt",
+            "sql"
+          ]
+        }
+      },
+      "Tokenizer:LegalReadersDecide": {
+        "fields": "text",
+        "filename_embd_weight": 0.1,
+        "search_method": [
+          "embedding",
+          "full_text"
+        ]
+      },
+      "parent_child": {
+        "children_delimiter": "\n",
+        "use_parent_child": false
+      }
+    },
+    "parser_id": "general",
+    "pipeline_id": "",
+    "pipeline_name": "",
+    "process_begin_at": "2026-10-10 11:33:24",
+    "process_duration": 361.360575986,
+    "progress": 1,
+    "progress_msg": "",
+    "size": 2366,
+    "status": "1",
+    "suffix": "pdf",
+    "thumbnail": "",
+    "token_count": 249,
+    "type": "pdf",
+    "update_date": "2026-10-10 11:39:25",
+    "update_time": 1791603565464
+  }
+]

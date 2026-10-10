@@ -1,0 +1,98 @@
+{
+  "image_actions": [
+    {
+      "action": "removed",
+      "id": "sha256:fd8e71ce4fce556a7522c01fff3dbfbd2da580f22920d151f7f2f06790b3074f",
+      "output": "Untagged: apache/kvrocks:2.16.0\nUntagged: apache/kvrocks@sha256:9e632c317c83c80d92f1c9d22ac6aa9f64d149e1f04ff2af5f15a5768a01c4b7\nDeleted: sha256:fd8e71ce4fce556a7522c01fff3dbfbd2da580f22920d151f7f2f06790b3074f\nDeleted: sha256:9702ef40933165e823ac6987b245b2fd64704cc03b2dccb325413a44ae5f9a1e\nDeleted: sha256:cefa924f8355cb904bc7ce52ee7fffd6ffa19d3c1e1472c4a9b8ea857e36aaa4\nDeleted: sha256:72c5dbc46f20a0aadab8b042fddd34efa2358eb5c4d86a71a369fa2c3fdf56fa\nDeleted: sha256:bbd346bcd864c724293f54a2cb7e4c5cece575f99d3defcb3d68646a02ac7ae6\nDeleted: sha256:bb9605b6e17437bd1362d5596f5293d6c9dd11e6c42d213f7e38e5dcea7b284b\nDeleted: sha256:c8b8e49f41eebc1e165ec30852816f836813d905bc0dab35c90243700ef5eb13\nDeleted: sha256:4b8111b4e6ad158181261ce88d55e4eb7e53d66a754d6b67498b94f4d03697b0\n",
+      "reference": "apache/kvrocks:2.16.0"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:00763be2865b44f777df4340fbdd52f6d70a97f58b17a6ee8db91a8e7965912d",
+      "output": "Untagged: clickhouse/clickhouse-server:26.5.5.8\nUntagged: clickhouse/clickhouse-server@sha256:894ae0107b1cedc3c537521539a7ecc76fe0ee6e31efbb2af2c84ab858cb32a4\nDeleted: sha256:00763be2865b44f777df4340fbdd52f6d70a97f58b17a6ee8db91a8e7965912d\nDeleted: sha256:f5967e3fad2dcaf36bc63911af453cdc28b95894faa30cde4e2a03ad80738567\nDeleted: sha256:479d7ec3ac378e25836c6a17176d0cad168f85c89f0805bfeb8dde22149f73b9\nDeleted: sha256:c022c3ef3f7bcd3eb007da88239299b1295cc1de6388e2f93907d05aa60c60a1\nDeleted: sha256:b1d66379dafc96ea5290c8f494c18d2a37484136bc849dbe0c4bb0f3393b1d86\nDeleted: sha256:a53b8edfede5fdc687dae0a608a3d15ce0fde290707aa1f800a33579ab72d1b7\nDeleted: sha256:19e31f3d079a32dc6861c4c8d0a370af078038af42265900c49b95a22e6e57ae\nDeleted: sha256:85e1c86c114773cb9513d00c5b1d067d8b506626ece66d710a0e513c632f971f\nDeleted: sha256:950c7920b732ec806270fae89e7b37d93d64f8fcf5e406f2a13d5ce749e748e5\nDeleted: sha256:974321c29426b41e2ebec1f044ebf72125c7a2a7580fc723025a81e32f0ce41e\nDeleted: sha256:41f90a44eac639567fb6d2a9657b720fdfa70d65d5b58f6c84de189b29e0bcca\nDeleted: sha256:51ac65eda65f11fcff046218961ade89580d5400827c2e79bcfcfc93ae4abdb4\n",
+      "reference": "clickhouse/clickhouse-server:26.5.5.8"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:65e5b70ad5296efacdaaae4c0368860865de3090ad3b4716a742c5254dabf79a",
+      "output": "Untagged: elf-complex-parser:experiment\nDeleted: sha256:65e5b70ad5296efacdaaae4c0368860865de3090ad3b4716a742c5254dabf79a\n",
+      "reference": "elf-complex-parser:experiment"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:34d7607d8966f4598735df886beb51a8c9ac7a7217be4ca0a8fbd5d78270214f",
+      "output": "Untagged: infiniflow/infinity:v0.7.3-x64-v3\nUntagged: infiniflow/infinity@sha256:6640409359e6d515287d6255657ee78a86fdce996196fbb4d371a2e39243309f\nDeleted: sha256:34d7607d8966f4598735df886beb51a8c9ac7a7217be4ca0a8fbd5d78270214f\nDeleted: sha256:571a80b63f9f6f00d4b187c8504a817e31a79ba74ba58a04be590bbc83d0010c\nDeleted: sha256:8f77e6a8aa9af31d57251dd81a3623e5a5a02f7548c0f6a4e4ddb40ceca7b06d\nDeleted: sha256:509057f7991bc05b328e85a17771f3baae1ce3a038b2d971868cf75f134c9e30\nDeleted: sha256:beb59027b96ddbf30ac9c80b527668fe7011f4f553fe83f5e59199e9a84fb5ca\n",
+      "reference": "infiniflow/infinity:v0.7.3-x64-v3"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:c51ce53db95348aa8a4b2f0dab64f1e6b279efc8b07ad43aaac62f8426989076",
+      "output": "Untagged: infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b\nDeleted: sha256:c51ce53db95348aa8a4b2f0dab64f1e6b279efc8b07ad43aaac62f8426989076\nDeleted: sha256:ef94bd9151973197bf9e2c332f4bb7426d1a397a9d44fd63afe0b59c6f043e35\nDeleted: sha256:08731b325630315ffb308b6d2253479d817e42af149d0cec5f3a1d969a73e008\nDeleted: sha256:f202b0b9ff8493857d4e0df7d1ab6f1cea25b4dd686184ab2267f5686b2ad9bd\nDeleted: sha256:1f26795f4f6afb0d529d2fcbba31f7f0a58ea6bcbe68d0cd64f5f89c32229446\nDeleted: sha256:b986af5d4c82a09cf103883ed4b09a8aad1a366f20d0e68ab13dec4277455eac\nDeleted: sha256:4a84e8330462aac253326285ebb0d93769654c99e42191651cc391a3dfa7d7d3\nDeleted: sha256:c79132339c81ea84fa59f24b4d4e987d852025e88aa1c9e2888a9b6d25febc1a\nDeleted: sha256:9b411e6b08b72978af37b7ac9cb91291ded4c3f8f2b40fc32df97f4eed83d38c\nDeleted: sha256:35ccd7b3d151fbe23c691df7c9328af67c368d7cade40e011829edd1a5900af9\nDeleted: sha256:11452cb0aeb523efe0b69794a96217a7f390e820bde21a4db0f063623ae7c35d\nDeleted: sha256:d2a6cd94987aea1236939c93fee75d0daeadb4d74a814fc89517f9a51268fe0a\nDeleted: sha256:35ecaf13f0753ab69e960de54729f65c11f6741450f44e8c8cdde0034625b9a9\nDeleted: sha256:2f6023bb2a635ced5186ec8d8c1d8ef3e99588876f4c8f67e389b48d00e2b9eb\nDeleted: sha256:d6641ae5cc607bea55072f977192fa112826f4535dcd238d7e8535991db56470\nDeleted: sha256:e8decb2350da4cbbec206c2ad357c730ffb780b2691a066194c651a06af90614\nDeleted: sha256:b008736653822febe558f07d88436f9be8c1181a388a2635312cdfe0b5307284\nDeleted: sha256:dc4cd7a3f7b2fd69156694948b15db8a5b5fe96266c7b476ffa658d6410e2cbd\nDeleted: sha256:5596b4be2f3c5e62b7418c26e0c2072c8962af7cb5f78adaf0b017c8fe0e0cf4\nDeleted: sha256:c61e711ab2f15c8040ba42eaa7c2eb84e501ace69bea17a0288e127729c59b74\nDeleted: sha256:ef40c13fca77fae678b8640d2206aff4f95164a90821edf55254b5cd2af9bd8c\nDeleted: sha256:d67e03c47909602c3a618a7a45b22119c1c8690b15df4c7de112b209642cdf0b\nDeleted: sha256:b1b709120013c0012263fc2b4408b38613952083289840798a0efa752f70e63d\nDeleted: sha256:b9a65b3c65ab22d490085bd0bf5490e2409da8748b406870f2463bdc41cd6795\n",
+      "reference": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:f6e7cfd1cb86c0741bf55f72560ce6d7799ada94a51f8f192a4d3b689b8496b4",
+      "output": "Untagged: mysql:8.0.40\nUntagged: mysql@sha256:d58ac93387f644e4e040c636b8f50494e78e5afc27ca0a87348b2f577da2b7ff\nDeleted: sha256:f6e7cfd1cb86c0741bf55f72560ce6d7799ada94a51f8f192a4d3b689b8496b4\nDeleted: sha256:df0b74fb6417a41dc16267bf6359ee34ce4e7f7545fcef81eed0821cf9767cdb\nDeleted: sha256:07fa585e5358ff14407b885950a9c55b773a3c32d41e293c0e3de5f9391bbcd6\nDeleted: sha256:043533d2f534ecc485ab8ed33158acb54f683992e1828c0dc157dc52e4aedfb5\nDeleted: sha256:803e2ae525e86b61ea4100e431174fc6467918def0e794eacefb62c4777091db\nDeleted: sha256:e51493669ad0be06a0f166db6efce530769ca4cf6553f9fb1b81adeb43b90eb9\nDeleted: sha256:cfb846e1f9ba7d69c869f9ac1f8db5c6d5e8f32928be71fbd2cc8e306de24df1\nDeleted: sha256:86079d828089e57fd19e4630c62b52c03ff61ba0595defbf9c0ae6419cd898e8\nDeleted: sha256:ea4b9fbcfe609d14d9280f6e5bacfc573d87e976fb68cd0553171f20a7325303\nDeleted: sha256:052f26263cbaf0b412d8a087fc3d73241fdc557d403abcff251d4f84cd522318\nDeleted: sha256:593ced537103e48d8c684b7ad87a2ae30e3da21610e07753326da0addc92db4c\nDeleted: sha256:8a7fc4e79c3df2ed0346372128b2c01489dc517219a8fd7f12bb95c3ea83ecbc\n",
+      "reference": "mysql:8.0.40"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:eff3cf3c1e911779b9fbfe69ca703bb69a2b7407e6227e3f9b70ebbca6f0a54d",
+      "output": "Untagged: nats:2.14.2\nUntagged: nats@sha256:bbfbb6c4cdaeb8a2e3ca57d3de30463a66a6c5181f324f3b680bcf858833d377\nDeleted: sha256:eff3cf3c1e911779b9fbfe69ca703bb69a2b7407e6227e3f9b70ebbca6f0a54d\nDeleted: sha256:cb1f1b186aebe7c3c5f47bb04ebe893b46bc49a9d8cd736898ec7bddff5c9bfa\nDeleted: sha256:24288f394e39ceee3d711baaf21ef5a36ef21e18bb1596de81527e82863eead3\n",
+      "reference": "nats:2.14.2"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:076b58f8af6b053ac40d21e87e83d1bcbc1e4d7a651d12a3be0c551e92e91fbf",
+      "output": "Untagged: pgsty/silo:RELEASE.2026-08-06T00-00-00Z\nUntagged: pgsty/silo@sha256:29a498b24669cae1fed11c1a2fb2b3d73c68829a0a9c0b14e71b386671d38fac\nDeleted: sha256:076b58f8af6b053ac40d21e87e83d1bcbc1e4d7a651d12a3be0c551e92e91fbf\nDeleted: sha256:6c229b5b0d97190b6a3247447918c9aa2384a4ec7aeb6f8070a9ae1810eb281d\nDeleted: sha256:2d525dce9c68d7b08373eb77f3c6b06078bb32b80be18dd3e8b60308796847e3\nDeleted: sha256:ab07044be0a731597f44cad9064ef6e2185e5208a3dcf827563719dd86284c6b\nDeleted: sha256:12e03586991687cac9ee1fec74c4f880a07f113be4f427e77c147913ef251071\nDeleted: sha256:778b1fa7ae3bfd506b36bb3c7f8eabb611eda46a09b27ab8d6fcc29b70654bf6\nDeleted: sha256:aab741849cbe9d690c689734eaf677fcf80ff10136b596a247f248ee9ae3b9da\nDeleted: sha256:be1e074ca5c258e90326d52dde9c2f4eb8fa444e1245cc74f76c67fb862d3e77\nDeleted: sha256:c3dc5d3339b84005f5c37f52b7eb1891c1581287a40b11b558e450925853f548\nDeleted: sha256:7b48990ed476cc06f354ad643b9a227d2c1958039b46aabb8136e1f5a59fe010\nDeleted: sha256:4ecec40eb4f68a00522ca8da840748322b59a58427a69e533ccea4ef1636dbf1\n",
+      "reference": "pgsty/silo:RELEASE.2026-08-06T00-00-00Z"
+    },
+    {
+      "action": "removed",
+      "id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+      "output": "Untagged: ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba\nDeleted: sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926\nDeleted: sha256:4ef53dcb71622e25611ac9ebc0420035ae01299b8c1973519daa0a181ea4fce6\nDeleted: sha256:fee9fca983af40b78e1ff224cc10720f4f24d1a34d6fa0308e1a261e1bbba66b\nDeleted: sha256:dfcabe35b9b80e3029f80a938779b306c0e560e20055dc705a4d11c3c281ce48\nDeleted: sha256:89cdf927fc84ccec88fe429bcc71142a16605767676ccbd18d31f6412b7e9d7b\nDeleted: sha256:16e0102bb65a85bbf1f9010c714e5714adf49f74d116fcb33296cd0d65e56339\nDeleted: sha256:ee90d9de0a189010fffded569b9d39f6911bc52a6beff011c00a0e6655032e50\nDeleted: sha256:c8963355d5aab152a0a709cd5bb1c00d6822af50fbdb43b82745e52ca8ebbaa6\nDeleted: sha256:224a5c91a1e064f9a38b238f767189fd9d5dbeb2b64084f08f29084fb26a28b8\nDeleted: sha256:975667b2d7bf53db5a75a30f4a518ca79b67120d114adb0ccd93c666839b36f4\nDeleted: sha256:ba05aed3136083d73a0760953dfff7bb05623cc0e22b83d66c166cbda0fb6283\nDeleted: sha256:5e9344fba14b1c4744663c7d19d04c4af7f0b317c6c98acb8c06fead5a86e952\nDeleted: sha256:72f1531ec396bdf9a72e1a3ef2684f9d234c945254386d3b2856bb02ae9da17c\nDeleted: sha256:18838b344a4071313eb6565a7f038109133ca1140fde1b893379bb28f51019e9\nDeleted: sha256:d56f3ef93cdbb488901458a99792ca94da8f04e62568056ff3729d1315bd8050\nDeleted: sha256:f43bb89cf5491116aa4b60b840122c48635c231e74448d214a07f58284064191\nDeleted: sha256:daf77d51389ff943d19f1b867fbf6deb34d32cef7a6b3e2ef5b2715619ff02d3\nDeleted: sha256:461723a8079444e11cc24e628d0dfc8c4c1b25176bcd37ee711ddbfa070f1396\nDeleted: sha256:e66ffedac139ff7a544e7df88b4f333d1366775a13254a8d685a691c4443f80f\nDeleted: sha256:e06e0a0f4d1d1b2a34b2224be1c792e3fd03caf44b5d8d6f838c00acbc9f14d2\n",
+      "reference": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba"
+    }
+  ],
+  "initial_transient_boundary": "Initial inventory contained one extra transient container. It is not among the task stack IDs or cleanup targets. Its identity was not captured before it disappeared; the eight named existing services retain their prior start times.",
+  "native_benchmark_project_checks": {
+    "elfdeep-68d2e5e54a22": {
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    },
+    "elfdeep-9e14513c2930": {
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    },
+    "elfdeep-9f4099adf4a5": {
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    },
+    "elfdeep-a5ac9f5da841": {
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    },
+    "elfdeep-bd987f64f026": {
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    }
+  },
+  "native_session_file_removed": true,
+  "parser_build_cache_removed": {
+    "id": "2ihw0y3gtd0s47dwji2bwa58i",
+    "reported_reclaimed": "37.08MB"
+  },
+  "project": "elf-complex-documents",
+  "remaining_project_containers": [],
+  "remaining_project_networks": [],
+  "remaining_project_volumes": [],
+  "removed_stack_containers": 7,
+  "removed_stack_volumes": 6,
+  "verified_existing_service_count": 8
+}
