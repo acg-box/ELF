@@ -383,15 +383,6 @@ services:
       - --target
       - honcho
 
-volumes:
-  postgres-data:
-  qdrant-data:
-  lightrag-data:
-  lightrag-inputs:
-  falkordb-data:
-  honcho-postgres-data:
-  honcho-redis-data:
-
   ragflow-unit:
     <<: *unit
     environment:
@@ -401,6 +392,15 @@ volumes:
       RAGFLOW_EMBEDDING_MODEL: ${RAGFLOW_EMBEDDING_MODEL:-}
     networks:
       - ragflow-benchmark
+
+volumes:
+  postgres-data:
+  qdrant-data:
+  lightrag-data:
+  lightrag-inputs:
+  falkordb-data:
+  honcho-postgres-data:
+  honcho-redis-data:
 
 networks:
   ragflow-benchmark:
