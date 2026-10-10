@@ -8,6 +8,10 @@ logs.
 
 ## 2026-10-10
 
+- Add an isolated RAGFlow parser intervention with original OpenRouter OCR
+  annotations, a fixed free-parser control, and cumulative per-page accounting.
+  Preserve the prior DeepDOC comparison as historical evidence.
+
 - Add a separate Hindsight/RAGFlow follow-up with common-token-budget retrieval,
   native answer workflows, and a frozen conversation-memory fixture. Preserve
   the earlier complex-document scores as historical measurements.

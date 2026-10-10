@@ -239,3 +239,11 @@ command = "python3"
 [tasks.benchmark-native-retrieval]
 args    = ["scripts/benchmark-native-retrieval.py", "${@}"]
 command = "python3"
+
+[tasks.benchmark-document-ocr]
+args    = ["scripts/benchmark-document-ocr.py", "${@}"]
+command = "python3"
+
+[tasks.benchmark-ragflow-parsers]
+args    = ["scripts/benchmark-ragflow-parsers.py", "${@}"]
+command = "python3"

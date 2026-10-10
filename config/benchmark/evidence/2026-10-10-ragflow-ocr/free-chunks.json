@@ -1,0 +1,2118 @@
+{
+  "e_255d68caea01e4bc6add58b1": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "585dd96fec634a64",
+        "content_with_weight": "Juniper scan 3\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing Historical - do not use\nRegion Primary queue Overflow queue Old queue Hours\nNorth NORTH-3-731 NBACK-3-428 OLDN-3-154 4\nSouth SOUTH-3-862 SBACK-3-593 * OLDS-3-267 12\nEast EAST-3-915 EBACK-3-346 OLDE-3-782 8\nWest WEST-3-624 : OLDW-3-853 24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper scan 3 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_255d68caea01e4bc6add58b1.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 3,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "cae9b3173aaf4193534a369b08d419d4",
+      "create_date": "2026-10-10T15:30:56",
+      "create_time": 1791617456168,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "ed4347e28bc24d349021c216d2375dd8",
+      "ingestion_status": "COMPLETED",
+      "location": "e_255d68caea01e4bc6add58b1.txt",
+      "name": "e_255d68caea01e4bc6add58b1.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:31:01",
+      "process_duration": 7.178073983,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 727,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 245,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:08",
+      "update_time": 1791617468955
+    },
+    "total": 1
+  },
+  "e_4b51c2f07fe6d33137c84359": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "462611f8dff4ce05",
+        "content_with_weight": "Juniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-1-837. The second exception continues on the next page.\nJuniper crosspage 1 | Revision 4 | Page 1\n\fJuniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-1-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-1-759. Earlier revision 3 used\nRETIRED-1-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n16. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_4b51c2f07fe6d33137c84359.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 0,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "6d21239557bfeed2",
+        "content_with_weight": "17. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n18. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n19. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\nJuniper crosspage 1 | Revision 4 | Page 2",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_4b51c2f07fe6d33137c84359.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 1,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 2,
+      "chunk_method": "general",
+      "content_hash": "e12f83f77257722f5c9077ca4f4caec5",
+      "create_date": "2026-10-10T15:30:56",
+      "create_time": 1791617456096,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "eae6a072e2ba4e5696a7abb9c30f15ce",
+      "ingestion_status": "COMPLETED",
+      "location": "e_4b51c2f07fe6d33137c84359.txt",
+      "name": "e_4b51c2f07fe6d33137c84359.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:30:56",
+      "process_duration": 5.432104902,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 2902,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 625,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:01",
+      "update_time": 1791617461717
+    },
+    "total": 2
+  },
+  "e_6f96a2af3365edd7577ea147": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "1387e097b84c8f8f",
+        "content_with_weight": "Juniper table 1\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\n                       Approved routing                                   Historical - do not use\n Region               Primary queue           Overflow queue           Old queue                    Hours\n North                NORTH-1-731             NBACK-1-428              OLDN-1-154                   4\n South                SOUTH-1-862             SBACK-1-593 *            OLDS-1-267                   12\n East                 EAST-1-915              EBACK-1-346              OLDE-1-782                   8\n West                 WEST-1-624              -                        OLDW-1-853                   24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper table 1 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_6f96a2af3365edd7577ea147.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 4,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "488ad697b413fc0e65e8420865321978",
+      "create_date": "2026-10-10T15:30:55",
+      "create_time": 1791617455980,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "6637ba0451d54b919f163bdb715979be",
+      "ingestion_status": "COMPLETED",
+      "location": "e_6f96a2af3365edd7577ea147.txt",
+      "name": "e_6f96a2af3365edd7577ea147.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:31:08",
+      "process_duration": 4.608117485,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1113,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 268,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:13",
+      "update_time": 1791617473611
+    },
+    "total": 1
+  },
+  "e_7fe00361fcf964b12aea766c": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "38e4066c17e0b179",
+        "content_with_weight": "Juniper scan 2\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing Historical - do not use\nRegion Primary queue Overflow queue Old queue Hours\nNorth NORTH-2-731 NBACK-2-428 OLDN-2-154 4\nSouth SOUTH-2-862 SBACK-2-593 * OLDS-2-267 12\nEast EAST-2-915 EBACK-2-346 OLDE-2-782 8\nWest WEST-2-624 : OLDW-2-853 24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper scan 2 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_7fe00361fcf964b12aea766c.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 2,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "fa36ac007fceadd36a790a518b5338a7",
+      "create_date": "2026-10-10T15:30:56",
+      "create_time": 1791617456134,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "193885dafe5946228e8127e100dd370d",
+      "ingestion_status": "COMPLETED",
+      "location": "e_7fe00361fcf964b12aea766c.txt",
+      "name": "e_7fe00361fcf964b12aea766c.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:30:56",
+      "process_duration": 12.008467861,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 727,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 246,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:08",
+      "update_time": 1791617468325
+    },
+    "total": 1
+  },
+  "e_adf880c03e4b6091d62cdf6f": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "cc55f3dda86a5e4b",
+        "content_with_weight": "Juniper columns 1\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED                                              ARCHIVED - DO NOT APPLY\nThe Atlas migration uses release                              An old Atlas draft used release\nALPHA-1-472.                                                  OLD-1-351.\nThe Boreal migration uses release                             The old Boreal draft used release\nBETA-1-683.                                                   STALE-1-746.\nAn Atlas rollback must first                                  The retired Atlas inspection was\ncomplete inspection CHECK-1-925.                              SKIP-1-268.\nThese signed instructions override                            This column exists for historical\nthe archived material in the                                  reference. It is not authorization\nadjacent column.                                              for current operations.\nAfter inspection, the operator must                           Draft values cannot override signed\nrecord the result and notify the                              instructions.\nservice owner.\nJuniper columns 1 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_adf880c03e4b6091d62cdf6f.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 7,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "9687391f1d817902f10fa1dbb9839aca",
+      "create_date": "2026-10-10T15:30:56",
+      "create_time": 1791617456031,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "e76e74efcef74b748a8eacabe26495ce",
+      "ingestion_status": "COMPLETED",
+      "location": "e_adf880c03e4b6091d62cdf6f.txt",
+      "name": "e_adf880c03e4b6091d62cdf6f.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:31:14",
+      "process_duration": 28.919288805,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1192,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 216,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:43",
+      "update_time": 1791617503235
+    },
+    "total": 1
+  },
+  "e_ae3fdb9cb12196ce9ae4b945": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "cc55f3dda86a5e4b",
+        "content_with_weight": "Juniper columns 1\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED                                              ARCHIVED - DO NOT APPLY\nThe Atlas migration uses release                              An old Atlas draft used release\nALPHA-1-472.                                                  OLD-1-351.\nThe Boreal migration uses release                             The old Boreal draft used release\nBETA-1-683.                                                   STALE-1-746.\nAn Atlas rollback must first                                  The retired Atlas inspection was\ncomplete inspection CHECK-1-925.                              SKIP-1-268.\nThese signed instructions override                            This column exists for historical\nthe archived material in the                                  reference. It is not authorization\nadjacent column.                                              for current operations.\nAfter inspection, the operator must                           Draft values cannot override signed\nrecord the result and notify the                              instructions.\nservice owner.\nJuniper columns 1 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_adf880c03e4b6091d62cdf6f.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 7,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "3d9863d0fbaa0f4c",
+        "content_with_weight": "Juniper columns 0\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED                                              ARCHIVED - DO NOT APPLY\nThe Atlas migration uses release                              An old Atlas draft used release\nALPHA-0-472.                                                  OLD-0-351.\nThe Boreal migration uses release                             The old Boreal draft used release\nBETA-0-683.                                                   STALE-0-746.\nAn Atlas rollback must first                                  The retired Atlas inspection was\ncomplete inspection CHECK-0-925.                              SKIP-0-268.\nThese signed instructions override                            This column exists for historical\nthe archived material in the                                  reference. It is not authorization\nadjacent column.                                              for current operations.\nAfter inspection, the operator must                           Draft values cannot override signed\nrecord the result and notify the                              instructions.\nservice owner.\nJuniper columns 0 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f78b8623bff0267bf5e45c2b.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 6,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "1387e097b84c8f8f",
+        "content_with_weight": "Juniper table 1\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\n                       Approved routing                                   Historical - do not use\n Region               Primary queue           Overflow queue           Old queue                    Hours\n North                NORTH-1-731             NBACK-1-428              OLDN-1-154                   4\n South                SOUTH-1-862             SBACK-1-593 *            OLDS-1-267                   12\n East                 EAST-1-915              EBACK-1-346              OLDE-1-782                   8\n West                 WEST-1-624              -                        OLDW-1-853                   24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper table 1 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_6f96a2af3365edd7577ea147.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 4,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "f4130ca56a670077",
+        "content_with_weight": "Juniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-0-837. The second exception continues on the next page.\nJuniper crosspage 0 | Revision 4 | Page 1\n\fJuniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-0-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-0-759. Earlier revision 3 used\nRETIRED-0-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n16. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f361397d877f4c9074ab359a.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 8,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "6265aa92424cabf9",
+        "content_with_weight": "Juniper table 0\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\n                       Approved routing                                   Historical - do not use\n Region               Primary queue           Overflow queue           Old queue                    Hours\n North                NORTH-0-731             NBACK-0-428              OLDN-0-154                   4\n South                SOUTH-0-862             SBACK-0-593 *            OLDS-0-267                   12\n East                 EAST-0-915              EBACK-0-346              OLDE-0-782                   8\n West                 WEST-0-624              -                        OLDW-0-853                   24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper table 0 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 5,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "38e4066c17e0b179",
+        "content_with_weight": "Juniper scan 2\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing Historical - do not use\nRegion Primary queue Overflow queue Old queue Hours\nNorth NORTH-2-731 NBACK-2-428 OLDN-2-154 4\nSouth SOUTH-2-862 SBACK-2-593 * OLDS-2-267 12\nEast EAST-2-915 EBACK-2-346 OLDE-2-782 8\nWest WEST-2-624 : OLDW-2-853 24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper scan 2 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_7fe00361fcf964b12aea766c.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 2,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "585dd96fec634a64",
+        "content_with_weight": "Juniper scan 3\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing Historical - do not use\nRegion Primary queue Overflow queue Old queue Hours\nNorth NORTH-3-731 NBACK-3-428 OLDN-3-154 4\nSouth SOUTH-3-862 SBACK-3-593 * OLDS-3-267 12\nEast EAST-3-915 EBACK-3-346 OLDE-3-782 8\nWest WEST-3-624 : OLDW-3-853 24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper scan 3 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_255d68caea01e4bc6add58b1.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 3,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "462611f8dff4ce05",
+        "content_with_weight": "Juniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-1-837. The second exception continues on the next page.\nJuniper crosspage 1 | Revision 4 | Page 1\n\fJuniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-1-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-1-759. Earlier revision 3 used\nRETIRED-1-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n16. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_4b51c2f07fe6d33137c84359.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 0,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "c266212e0410ffc1",
+        "content_with_weight": "17. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n18. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n19. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\nJuniper crosspage 0 | Revision 4 | Page 2",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f361397d877f4c9074ab359a.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 9,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "6d21239557bfeed2",
+        "content_with_weight": "17. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n18. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n19. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\nJuniper crosspage 1 | Revision 4 | Page 2",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_4b51c2f07fe6d33137c84359.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 1,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "329a6bac9ff80fd87cdb02352f6427a8",
+      "create_date": "2026-10-10T15:30:55",
+      "create_time": 1791617455940,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "db337051386845f78eb5ff3597d9c566",
+      "ingestion_status": "COMPLETED",
+      "location": "e_ae3fdb9cb12196ce9ae4b945.txt",
+      "name": "e_ae3fdb9cb12196ce9ae4b945.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:31:08",
+      "process_duration": 5.846977303,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1113,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 266,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:14",
+      "update_time": 1791617474240
+    },
+    "total": 10
+  },
+  "e_f361397d877f4c9074ab359a": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "f4130ca56a670077",
+        "content_with_weight": "Juniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-0-837. The second exception continues on the next page.\nJuniper crosspage 0 | Revision 4 | Page 1\n\fJuniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-0-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-0-759. Earlier revision 3 used\nRETIRED-0-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n16. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f361397d877f4c9074ab359a.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 8,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "c266212e0410ffc1",
+        "content_with_weight": "17. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n18. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n19. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\nJuniper crosspage 0 | Revision 4 | Page 2",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f361397d877f4c9074ab359a.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 9,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 2,
+      "chunk_method": "general",
+      "content_hash": "da527d40813b25b0ec579008a119bcb8",
+      "create_date": "2026-10-10T15:30:56",
+      "create_time": 1791617456071,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "18c61ed20e354716bd2687048c24c6d2",
+      "ingestion_status": "COMPLETED",
+      "location": "e_f361397d877f4c9074ab359a.txt",
+      "name": "e_f361397d877f4c9074ab359a.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:31:38",
+      "process_duration": 8.510893405000001,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 2902,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 624,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:46",
+      "update_time": 1791617506974
+    },
+    "total": 2
+  },
+  "e_f78b8623bff0267bf5e45c2b": {
+    "chunks": [
+      {
+        "available_int": 1,
+        "chunk_id": "cc55f3dda86a5e4b",
+        "content_with_weight": "Juniper columns 1\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED                                              ARCHIVED - DO NOT APPLY\nThe Atlas migration uses release                              An old Atlas draft used release\nALPHA-1-472.                                                  OLD-1-351.\nThe Boreal migration uses release                             The old Boreal draft used release\nBETA-1-683.                                                   STALE-1-746.\nAn Atlas rollback must first                                  The retired Atlas inspection was\ncomplete inspection CHECK-1-925.                              SKIP-1-268.\nThese signed instructions override                            This column exists for historical\nthe archived material in the                                  reference. It is not authorization\nadjacent column.                                              for current operations.\nAfter inspection, the operator must                           Draft values cannot override signed\nrecord the result and notify the                              instructions.\nservice owner.\nJuniper columns 1 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_adf880c03e4b6091d62cdf6f.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 7,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "3d9863d0fbaa0f4c",
+        "content_with_weight": "Juniper columns 0\nApproved operations manual / controlled synthetic benchmark\nCURRENT - SIGNED                                              ARCHIVED - DO NOT APPLY\nThe Atlas migration uses release                              An old Atlas draft used release\nALPHA-0-472.                                                  OLD-0-351.\nThe Boreal migration uses release                             The old Boreal draft used release\nBETA-0-683.                                                   STALE-0-746.\nAn Atlas rollback must first                                  The retired Atlas inspection was\ncomplete inspection CHECK-0-925.                              SKIP-0-268.\nThese signed instructions override                            This column exists for historical\nthe archived material in the                                  reference. It is not authorization\nadjacent column.                                              for current operations.\nAfter inspection, the operator must                           Draft values cannot override signed\nrecord the result and notify the                              instructions.\nservice owner.\nJuniper columns 0 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f78b8623bff0267bf5e45c2b.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 6,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "1387e097b84c8f8f",
+        "content_with_weight": "Juniper table 1\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\n                       Approved routing                                   Historical - do not use\n Region               Primary queue           Overflow queue           Old queue                    Hours\n North                NORTH-1-731             NBACK-1-428              OLDN-1-154                   4\n South                SOUTH-1-862             SBACK-1-593 *            OLDS-1-267                   12\n East                 EAST-1-915              EBACK-1-346              OLDE-1-782                   8\n West                 WEST-1-624              -                        OLDW-1-853                   24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper table 1 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_6f96a2af3365edd7577ea147.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 4,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "f4130ca56a670077",
+        "content_with_weight": "Juniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-0-837. The second exception continues on the next page.\nJuniper crosspage 0 | Revision 4 | Page 1\n\fJuniper crosspage 0\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-0-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-0-759. Earlier revision 3 used\nRETIRED-0-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n16. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f361397d877f4c9074ab359a.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 8,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "6265aa92424cabf9",
+        "content_with_weight": "Juniper table 0\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\n                       Approved routing                                   Historical - do not use\n Region               Primary queue           Overflow queue           Old queue                    Hours\n North                NORTH-0-731             NBACK-0-428              OLDN-0-154                   4\n South                SOUTH-0-862             SBACK-0-593 *            OLDS-0-267                   12\n East                 EAST-0-915              EBACK-0-346              OLDE-0-782                   8\n West                 WEST-0-624              -                        OLDW-0-853                   24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper table 0 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_ae3fdb9cb12196ce9ae4b945.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 5,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "38e4066c17e0b179",
+        "content_with_weight": "Juniper scan 2\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing Historical - do not use\nRegion Primary queue Overflow queue Old queue Hours\nNorth NORTH-2-731 NBACK-2-428 OLDN-2-154 4\nSouth SOUTH-2-862 SBACK-2-593 * OLDS-2-267 12\nEast EAST-2-915 EBACK-2-346 OLDE-2-782 8\nWest WEST-2-624 : OLDW-2-853 24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper scan 2 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_7fe00361fcf964b12aea766c.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 2,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "585dd96fec634a64",
+        "content_with_weight": "Juniper scan 3\nApproved operations manual / controlled synthetic benchmark\nRegional escalation matrix. Only the approved columns may be used. A dash indicates\nno published value. The footnote changes the South overflow rule.\nApproved routing Historical - do not use\nRegion Primary queue Overflow queue Old queue Hours\nNorth NORTH-3-731 NBACK-3-428 OLDN-3-154 4\nSouth SOUTH-3-862 SBACK-3-593 * OLDS-3-267 12\nEast EAST-3-915 EBACK-3-346 OLDE-3-782 8\nWest WEST-3-624 : OLDW-3-853 24\n* For the South region, use overflow only after 18:00 UTC. Before that time, use the\nSouth primary queue.\nThe Hours column specifies the response window. It does not specify the overflow\nactivation time.\nJuniper scan 3 | Revision 4 | Page 1",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_255d68caea01e4bc6add58b1.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 3,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "462611f8dff4ce05",
+        "content_with_weight": "Juniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n1. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n2. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n3. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n4. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n5. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n6. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n7. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n8. Operating requirement: record the request, verify the product identity, and\nretain the signed receipt. These procedural requirements do not add exceptions to\nthe return policy.\n12. Return policy: standard goods have a 7-day limit. The complete exception list\nhas exactly two entries. The first is custom goods, identified by\nCUSTOM-1-837. The second exception continues on the next page.\nJuniper crosspage 1 | Revision 4 | Page 1\n\fJuniper crosspage 1\nApproved operations manual / controlled synthetic benchmark\n12. Return policy (continued): quality defects use DEFECT-1-462 and are exempt from\nthe 7-day limit. Both identifiers are required for a complete exception list.\n13. The revised escalation queue is FINAL-1-759. Earlier revision 3 used\nRETIRED-1-283, which is no longer valid.\n14. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n15. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n16. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_4b51c2f07fe6d33137c84359.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 0,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "c266212e0410ffc1",
+        "content_with_weight": "17. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n18. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n19. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\nJuniper crosspage 0 | Revision 4 | Page 2",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_f361397d877f4c9074ab359a.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 9,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      },
+      {
+        "available_int": 1,
+        "chunk_id": "6d21239557bfeed2",
+        "content_with_weight": "17. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n18. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\n19. Administrative note: keep this record with the signed receipt and make it\navailable to the operations owner.\nJuniper crosspage 1 | Revision 4 | Page 2",
+        "doc_type_kwd": "text",
+        "docnm_kwd": "e_4b51c2f07fe6d33137c84359.txt",
+        "entities_kwd": [],
+        "entity_kwd": [],
+        "entity_type_kwd": [],
+        "from_entity_kwd": [],
+        "image_id": "",
+        "important_kwd": [],
+        "name_kwd": [],
+        "positions": null,
+        "question_kwd": [],
+        "raptor_kwd": [],
+        "removed_kwd": [],
+        "row_id()": 1,
+        "source_id": [],
+        "tag_kwd": [],
+        "to_entity_kwd": [],
+        "toc_kwd": []
+      }
+    ],
+    "doc": {
+      "chunk_count": 1,
+      "chunk_method": "general",
+      "content_hash": "c149860cda9d6ef84c877aff73e4f7fa",
+      "create_date": "2026-10-10T15:30:56",
+      "create_time": 1791617456005,
+      "created_by": "edf7f7f3cdf84aee9da64170fc4e9573",
+      "dataset_id": "f5220276b38148389c292aa82a171e72",
+      "id": "fc664387bf0b4add8b233d0783c0e44d",
+      "ingestion_status": "COMPLETED",
+      "location": "e_f78b8623bff0267bf5e45c2b.txt",
+      "name": "e_f78b8623bff0267bf5e45c2b.txt",
+      "parser_config": {
+        "Extractor:AutoExtractDefault": {
+          "keywords": {
+            "top_n": 0
+          },
+          "llm_id": "",
+          "metadata": {
+            "built_in_metadata": [],
+            "enabled": false,
+            "metadata": []
+          },
+          "questions": {
+            "top_n": 0
+          },
+          "summary": {
+            "enabled": false
+          },
+          "tags": {
+            "tag_file_id": "",
+            "top_n": 0
+          }
+        },
+        "File": {},
+        "GeneralChunker:SixApplesFall": {
+          "children_delimiters": [],
+          "chunk_token_size": 512,
+          "delimiters": [
+            "\n",
+            "!",
+            "?",
+            ";",
+            "\u3002",
+            "\uff1b",
+            "\uff01",
+            "\uff1f"
+          ],
+          "image_context_size": 0,
+          "overlapped_percent": 0,
+          "table_context_size": 0
+        },
+        "Parser:HipSignsRhyme": {
+          "doc": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "doc"
+            ]
+          },
+          "docx": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "docx"
+            ],
+            "vlm": {}
+          },
+          "html": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "htm",
+              "html"
+            ]
+          },
+          "markdown": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "md",
+              "markdown",
+              "mdx"
+            ],
+            "vlm": {}
+          },
+          "pdf": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "pages": [
+              [
+                1,
+                100000
+              ]
+            ],
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "pdf"
+            ],
+            "vlm": {}
+          },
+          "spreadsheet": {
+            "flatten_media_to_text": false,
+            "output_format": "json",
+            "parse_method": "DeepDOC",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "xls",
+              "xlsx",
+              "csv"
+            ],
+            "vlm": {}
+          },
+          "text&code": {
+            "output_format": "json",
+            "preprocess": [
+              "main_content"
+            ],
+            "suffix": [
+              "txt",
+              "py",
+              "js",
+              "java",
+              "c",
+              "cpp",
+              "h",
+              "php",
+              "go",
+              "ts",
+              "sh",
+              "cs",
+              "kt",
+              "sql"
+            ]
+          }
+        },
+        "Tokenizer:LegalReadersDecide": {
+          "fields": "text",
+          "filename_embd_weight": 0.1,
+          "search_method": [
+            "embedding",
+            "full_text"
+          ]
+        },
+        "parent_child": {
+          "children_delimiter": "\n",
+          "use_parent_child": false
+        }
+      },
+      "pipeline_id": null,
+      "process_begin_at": "2026-10-10T15:31:13",
+      "process_duration": 24.715463806,
+      "progress": 1.0,
+      "progress_msg": null,
+      "size": 1192,
+      "source_type": "local",
+      "status": "1",
+      "suffix": "txt",
+      "thumbnail": null,
+      "token_count": 216,
+      "type": "doc",
+      "update_date": "2026-10-10T15:31:38",
+      "update_time": 1791617498399
+    },
+    "total": 10
+  }
+}

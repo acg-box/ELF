@@ -1,0 +1,25 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "accounting.json": "29b83b409887e9f0b9b6da0354b9d704ab980d0df77249683e967a3a17eb52e0",
+    "attempts.jsonl.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "cases.jsonl.gz": "fa647361136a185d4dbe6d2f8f0fd492c56bd736b2853f69c889b451538d2867",
+    "cleanup.json": "e5fe80a68118c1fedd99619203efdf0e0504e44bba5d292cc4ed2355ea033b1b",
+    "completion.json": "adf49308b01f14ee9310c8c22acc60054f636a6948e1b55dbf3d8e827203df45",
+    "evaluation.json": "d3d592c3299221577f4cf3f43ec6c3dd35bf75f6bb237e3aad33dd6c248c2679",
+    "free-chunks.json": "a8327c63b09b6549e95e1439efc8f46ec24710ab033cc22fce7e18771f2ff565",
+    "free-parsed.json": "4720411434de72658f5624d8f07e9cbf64e02003fbd1ceaf783df72aa51bdcab",
+    "mistral-ocr-chunks.json": "3ac548a5ab9aef766381adbac18fa182a3d699bf66adf6dd219e7d6a3f52403d",
+    "mistral-ocr-parsed.json": "aac64db58c70d2558932facfe692726799b9d663dacb896b6bd4edc9e0bc44d7",
+    "ocr-accounting.json": "6a611e948155c982d04818507311b03574c07324ece11f72a638c77e98d29996",
+    "ocr-receipts.jsonl.gz": "4b8ad399e3941a2d65a86d2f70c62a0627af7c3dd35b454c979215625b2ac314",
+    "parser-outputs.jsonl.gz": "87a0c3cd748adc589400deba05a599bd3fd83ff15641ecf5dd34fa9b18dd3aad",
+    "privacy-check.json": "b91a488bd97361ee906e0547e8f389d56420ac6c9e8dc7db6bf2dfc95181430e",
+    "protocol.json": "cdf0fec8ca1420f8e5dc96bf3cfa6c2f80ab0cd57424d32e9d38f82692af5c97",
+    "reranker-runtime.json": "7656bb1867ef9b96e46df21c27cd49e1382816a4cf7f87846ab6c79b244e8af7",
+    "runtime.json": "9d0b5857053097eb69c3be362a19562b6672fbdd9167b0cad8fb84f37e7539ba",
+    "source-audit.json": "bdc41003f9d567ebef55c9bcbd12229f223463ae63a88cfff945ab4b9746ed07",
+    "source-digests.json": "ebd271aad29881952bc632238ff9c782b71d22d21ffffa6c7e677a7a3c41b548",
+    "usage.jsonl.gz": "6d7c0f322718dade1ca66a680304ac562c740daee366d0e314155901475fea7f"
+  }
+}

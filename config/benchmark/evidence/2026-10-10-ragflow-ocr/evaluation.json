@@ -1,0 +1,660 @@
+{
+  "conditions": {
+    "free-native-chat": {
+      "categories": {
+        "columns": {
+          "correct": 6,
+          "total": 6
+        },
+        "cross_page": {
+          "correct": 6,
+          "total": 6
+        },
+        "digital_table": {
+          "correct": 4,
+          "total": 4
+        },
+        "scan": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "correct": 20,
+      "observed_median_seconds": 6.555970520508708,
+      "total": 20
+    },
+    "free-retrieval": {
+      "categories": {
+        "columns": {
+          "correct": 6,
+          "total": 6
+        },
+        "cross_page": {
+          "correct": 6,
+          "total": 6
+        },
+        "digital_table": {
+          "correct": 4,
+          "total": 4
+        },
+        "scan": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "correct": 20,
+      "observed_median_seconds": 6.177602415991714,
+      "total": 20
+    },
+    "mistral-ocr-native-chat": {
+      "categories": {
+        "columns": {
+          "correct": 6,
+          "total": 6
+        },
+        "cross_page": {
+          "correct": 6,
+          "total": 6
+        },
+        "digital_table": {
+          "correct": 4,
+          "total": 4
+        },
+        "scan": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "correct": 20,
+      "observed_median_seconds": 5.937451229518047,
+      "total": 20
+    },
+    "mistral-ocr-retrieval": {
+      "categories": {
+        "columns": {
+          "correct": 6,
+          "total": 6
+        },
+        "cross_page": {
+          "correct": 6,
+          "total": 6
+        },
+        "digital_table": {
+          "correct": 4,
+          "total": 4
+        },
+        "scan": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "correct": 20,
+      "observed_median_seconds": 5.948395999497734,
+      "total": 20
+    }
+  },
+  "reviewer": "Codex agent; not an independent blinded human review.",
+  "reviews": [
+    {
+      "case_id": "complex-000",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-001",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-003",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-004",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-006",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-007",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-008",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-009",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-010",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-011",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-012",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-013",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-014",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-015",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-016",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-017",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-018",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-019",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-021",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-022",
+      "condition": "free-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-000",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-001",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-003",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-004",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-006",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-007",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-008",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-009",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-010",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-011",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-012",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-013",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-014",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-015",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-016",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-017",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-018",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-019",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-021",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-022",
+      "condition": "free-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-000",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-001",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-003",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-004",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-006",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-007",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-008",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-009",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-010",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-011",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-012",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-013",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-014",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-015",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-016",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-017",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-018",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-019",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-021",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-022",
+      "condition": "mistral-ocr-native-chat",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-000",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-001",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-003",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-004",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-006",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-007",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-008",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-009",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-010",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-011",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-012",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-013",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-014",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-015",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-016",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-017",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-018",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-019",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-021",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    },
+    {
+      "case_id": "complex-022",
+      "condition": "mistral-ocr-retrieval",
+      "reason": "Requested values match the frozen source oracle; no contradictory requested value is asserted.",
+      "requested_answer_correct": true,
+      "strict_correct": true
+    }
+  ],
+  "rubric": "../2026-10-10-native-memory-comparison/scoring-rubric.json"
+}

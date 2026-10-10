@@ -179,3 +179,24 @@ this experiment's containers, networks, volumes, and newly downloaded images.
 The controller does not remove an operator-provided RAGFlow deployment.
 See [the protocol](../../evidence/benchmarking/2026-10-10-native-memory-comparison.md)
 for workloads, scoring, and scope limits.
+
+## External OCR comparison
+
+Use `cargo make benchmark-document-ocr --artifact-root /absolute/path/to/run/ocr
+--ledger /absolute/path/to/budget-ledger.json --ceiling 20 --tranche 0.50`
+with Personal Infisical injecting the OpenRouter key into that command only.
+Use `--limit 1` for a first-page fixture probe. This command uses the existing
+cumulative ledger lock; do not run it with another active budget gateway.
+It saves original file annotations and source text, not an assistant rewrite.
+The file-parser engine does not expose a specific OCR model version.
+
+Prepare the same isolated RAGFlow server and tokenizer/reranker sidecar described
+above. The Hindsight image can run only `python /native-sidecar.py`; its memory
+API and database are not needed. Keep its port 19889 and `/experiment` log mount.
+Then run `cargo make benchmark-ragflow-parsers --artifact-root
+/absolute/path/to/run` inside the regular text-only `benchmark-budget` gateway.
+The artifact root must contain `ocr/` and `stack/public.pem`. Keep the same live
+gateway for recovery. The command preserves completed answers and saves native
+chunks for both the free-parser and Mistral OCR datasets. See
+[the parser intervention report](../../evidence/benchmarking/2026-10-10-ragflow-ocr.md)
+for the comparison boundary and accounting.
