@@ -5,7 +5,7 @@ use crate::recall_debug::{
 
 pub(super) fn public_error_class(err: &Error) -> &'static str {
 	match err {
-		Error::NonEnglishInput { .. } => "validation_non_english_input",
+		Error::InvalidText { .. } => "validation_invalid_text_input",
 		Error::InvalidRequest { .. } => "validation_invalid_request",
 		Error::ScopeDenied { .. } => "scope_denied",
 		Error::NotFound { .. } => "not_found",

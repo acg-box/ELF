@@ -22,7 +22,7 @@ pub(super) struct IngestionProfileV1 {
 }
 impl IngestionProfileV1 {
 	pub(super) fn with_defaults(self) -> Self {
-		let defaults = builtin_profile_v1();
+		let defaults = builtin_profile();
 		let mut merged = defaults;
 
 		if self.schema_version != 0 {
@@ -63,14 +63,14 @@ pub(super) fn parse_profile(profile: Value) -> Result<IngestionProfileV1> {
 	Ok(parsed)
 }
 
-pub(super) fn builtin_profile_v1() -> IngestionProfileV1 {
+pub(super) fn builtin_profile() -> IngestionProfileV1 {
 	IngestionProfileV1 {
 		schema_version: 1,
 		prompt_schema: Some(builtin_profile_schema()),
 		prompt_system_template: Some(
 			"You are a memory extraction engine for an agent memory system. Output must be valid JSON only and must match the provided schema exactly. \
 Extract at most MAX_NOTES high-signal, cross-session reusable memory notes from the given messages. \
-Each note must be one English sentence and must not contain any non-English text. \
+Prefer concise English summaries, but preserve original names, identifiers, and quoted evidence in their source language. Never translate evidence quotes. \
 The structured field is optional. If present, summary must be short, facts must be short sentences supported by the evidence quotes, and concepts must be short phrases. \
 structured.entities and structured.relations should mirror the structured schema with optional entity and relation metadata and relation timestamps. \
 Preserve numbers, dates, percentages, currency amounts, tickers, URLs, and code snippets exactly. \
@@ -100,7 +100,7 @@ fn builtin_profile_schema() -> Value {
 			{
 				"type": "preference|constraint|decision|profile|fact|plan",
 				"key": "string|null",
-				"text": "English-only sentence <= MAX_NOTE_CHARS",
+				"text": "Concise sentence <= MAX_NOTE_CHARS; prefer English and preserve source names",
 				"structured": {
 					"summary": "string|null",
 					"facts": "string[]|null",
@@ -128,8 +128,8 @@ fn builtin_profile_schema() -> Value {
 								},
 								"value": "string|null"
 							},
-							"valid_from": "string|null",
-							"valid_to": "string|null"
+							"valid_from": crate::structured_fields::relation_time::FORMAT,
+							"valid_to": crate::structured_fields::relation_time::FORMAT
 						}
 					]
 				},

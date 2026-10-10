@@ -4,7 +4,7 @@ use crate::helpers;
 
 #[test]
 fn cache_ttl_must_be_positive() {
-	let payload = helpers::sample_toml_with_cache(true, 0, 7, true);
+	let payload = helpers::sample_toml_with_cache(0, 7, true);
 	let path = helpers::write_temp_config(payload);
 	let result = elf_config::load(&path);
 

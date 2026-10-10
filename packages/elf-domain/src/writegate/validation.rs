@@ -1,12 +1,12 @@
-use crate::writegate::{Config, NoteInput, RejectCode, english_gate};
+use crate::writegate::{Config, NoteInput, RejectCode, text_validation};
 
 /// Validates note content and metadata against ELF write-gate rules.
 pub fn writegate(note: &NoteInput, cfg: &Config) -> Result<(), RejectCode> {
 	if note.text.trim().is_empty() {
 		return Err(RejectCode::RejectEmpty);
 	}
-	if !english_gate::is_english_natural_language(note.text.as_str()) {
-		return Err(RejectCode::RejectNonEnglish);
+	if !text_validation::is_valid_text(note.text.as_str()) {
+		return Err(RejectCode::RejectInvalidText);
 	}
 	if note.text.chars().count() as u32 > cfg.memory.max_note_chars {
 		return Err(RejectCode::RejectTooLong);

@@ -62,7 +62,7 @@ async fn static_keys_admin_required_for_org_shared_writes_ingest_checks(app: &Ro
 		"notes": [{
 			"type": "fact",
 			"key": null,
-			"text": "你好",
+			"text": "你好\0",
 			"importance": 0.5,
 			"confidence": 0.9,
 			"ttl_days": null,
@@ -100,7 +100,7 @@ async fn static_keys_admin_required_for_org_shared_writes_ingest_checks(app: &Ro
 	let admin_ingest_json: Value =
 		serde_json::from_slice(&admin_ingest_body).expect("Failed to parse response.");
 
-	assert_eq!(admin_ingest_json["error_code"], "NON_ENGLISH_INPUT");
+	assert_eq!(admin_ingest_json["error_code"], "INVALID_TEXT");
 }
 
 async fn static_keys_admin_required_for_org_shared_writes_publish_checks(

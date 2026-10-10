@@ -1,9 +1,9 @@
 use crate::docs::{self, DocType, DocsPutRequest, Error};
-use elf_domain::writegate::{WritePolicy, WritePolicyAudit, WriteSpan};
+use elf_domain::writegate::{WritePolicy, WriteSpan};
 
 #[test]
-fn validate_docs_put_applies_write_policy_and_includes_audit() {
-	let validated = docs::validate_docs_put(&DocsPutRequest {
+fn validate_docs_put_rejects_source_rewriting() {
+	let err = docs::validate_docs_put(&DocsPutRequest {
 		tenant_id: "t".to_string(),
 		project_id: "p".to_string(),
 		agent_id: "a".to_string(),
@@ -21,14 +21,9 @@ fn validate_docs_put_applies_write_policy_and_includes_audit() {
 		}),
 		content: "Hello sk-abcdefghijklmnopqrstuvwxyz!".to_string(),
 	})
-	.expect("Expected valid write policy transformation.");
-	let expected_audit = WritePolicyAudit {
-		exclusions: vec![WriteSpan { start: 6, end: 35 }],
-		..Default::default()
-	};
+	.expect_err("Source bytes must not be rewritten.");
 
-	assert_eq!(validated.content, "Hello !".to_string());
-	assert_eq!(validated.write_policy_audit.unwrap_or_default(), expected_audit);
+	assert!(matches!(err, Error::InvalidRequest { message } if message.contains("immutable")));
 }
 
 #[test]

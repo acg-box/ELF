@@ -21,8 +21,7 @@ fn build_service_with_spy(spy: Arc<SpyExtractor>) -> ElfService {
 }
 
 #[tokio::test]
-async fn add_note_does_not_call_llm() {
-	let cfg = config::test_config();
+async fn invalid_note_does_not_call_llm() {
 	let spy = Arc::new(SpyExtractor::new());
 	let service = build_service_with_spy(spy.clone());
 	let req = AddNoteRequest {
@@ -33,7 +32,7 @@ async fn add_note_does_not_call_llm() {
 		notes: vec![AddNoteInput {
 			r#type: "fact".to_string(),
 			key: None,
-			text: "こんにちは".to_string(),
+			text: "こんにちは\0".to_string(),
 			structured: None,
 			importance: 0.5,
 			confidence: 0.5,
@@ -44,8 +43,7 @@ async fn add_note_does_not_call_llm() {
 	};
 	let result = service.add_note(req).await;
 
-	assert!(cfg.security.reject_non_english);
-	assert!(matches!(result, Err(Error::NonEnglishInput { .. })));
+	assert!(matches!(result, Err(Error::InvalidText { .. })));
 	assert_eq!(spy.count(), 0);
 }
 

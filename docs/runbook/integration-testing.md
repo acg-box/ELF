@@ -181,7 +181,6 @@ evidence_max_quote_chars = 320
 evidence_max_quotes      = 2
 evidence_min_quotes      = 1
 redact_secrets_on_write  = true
-reject_non_english       = true
 ```
 
 ## Step 2: Start the worker and API
@@ -240,7 +239,7 @@ curl -sS http://127.0.0.1:51892/v2/notes/ingest \
 
 Record the returned `note_id` values from `results[].note_id`. These are required for the evaluation dataset and cleanup.
 
-Note: Requests reject non-English content. Use English-only text and keys.
+Note: Requests accept multilingual content. Unsupported control characters remain invalid.
 
 ## Step 4: Create the evaluation dataset
 
@@ -316,7 +315,7 @@ curl -sS -X DELETE http://127.0.0.1:51892/v2/notes/NOTE_ID_2 \
 ## Integration test scheduling decision for Doc v1 acceptance checks
 
 The Doc v1 acceptance coverage in `packages/elf-service/tests/acceptance/docs_extension_v1.rs`
-(filter behavior, source_ref non-English boundary, and Qdrant payload-index assertions) remains
+(filter behavior, source_ref text-format boundary, and Qdrant payload-index assertions) remains
 `#[ignore]` by design and is not enabled in default CI because it requires external PostgreSQL/Qdrant
 services and acceptance-style provisioning. Run it intentionally with:
 

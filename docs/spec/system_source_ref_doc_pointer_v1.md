@@ -189,11 +189,11 @@ The agent SHOULD:
 - Preserve `content_hash` and `excerpt_hash` returned by Doc Extension v1 when storing derived facts or when building audit trails.
 
 ============================================================
-5. English-only boundary interaction (normative)
+5. Language-neutral boundary interaction (normative)
 ============================================================
 
-- ELF Core note fields (`notes[].text`, `notes[].key`, and other natural-language fields) MUST comply with the English-only boundary defined by the ELF Memory Service v2 spec.
-- Doc Extension v1 MAY store original long-form evidence; agents should store English facts in ELF notes and keep originals in docs.
+- ELF Core note fields (`notes[].text`, `notes[].key`, and other natural-language fields) MUST comply with the language-neutral text contract defined by the ELF Memory Service v2 spec.
+- Doc Extension v1 MAY store original long-form evidence; agents may derive concise facts in ELF notes and must keep originals in docs.
 - `source_ref` pointers are metadata and MAY contain identifiers/URIs that are not English sentences.
 
 ============================================================

@@ -5,6 +5,7 @@ import hashlib
 import importlib.util
 import json
 import os
+import subprocess
 from pathlib import Path
 import time
 import urllib.error
@@ -67,19 +68,24 @@ def answer(q, rows, native, pack):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--artifact-root',type=Path,required=True)
+    parser.add_argument('--image',required=True,help='ELF service image labeled with its source revision')
     parser.add_argument('--limit',type=int,default=0,help='Maximum new queries per condition; zero runs all')
     args=parser.parse_args();root=args.artifact_root.resolve();root.mkdir(parents=True,exist_ok=True)
+    elf_runtime.IMAGE=args.image
+    image=json.loads(elf_runtime.docker('image','inspect',args.image))[0]
+    source_commit=image['Config']['Labels']['org.opencontainers.image.revision']
+    subprocess.run(['git','cat-file','-e',source_commit+'^{commit}'],cwd=common.REPO,check=True)
     elf_runtime.prepare_tokenizer(root)
     data=system.suites();common.freeze(root/'frozen-workloads.json',data)
     common.freeze(root/'protocol.json',{
-        'source_commit':'45663eb4c04e5bb3082b8f7463b0deb48404fe00',
+        'source_commit':source_commit,'image_id':image['Id'],
         'image':elf_runtime.IMAGE,'chat':common.CHAT,'reasoning_effort':'max',
         'provider_output_maximum':system.MAX_OUTPUT,'embedding':common.EMB,'dimensions':1536,
         'reranker':'cross-encoder/ms-marco-MiniLM-L-6-v2','independent_ceiling_usd':10,
         'primary':'ELF Context Pack (limit 32), hydrate only selected references, same external reader without extra context truncation.',
         'secondary':'Formal native retrieval (12 hits, 60 candidates per source), same reader, 4096 cl100k_base context tokens.',
         'ingest':'Unchanged OCR annotations and dated memory records in Source Library; memory records also use native events ingestion.',
-        'defaults':'elf.example.toml; real GPT-2 tokenizer at frozen revision; mandatory reject_non_english=true; memory and ranking defaults retained.',
+        'defaults':'elf.example.toml; real GPT-2 tokenizer at frozen revision; language-neutral text contract; builtin extraction profile v2; memory and ranking defaults retained; knowledge documents use 2048-token chunks with 256-token overlap.',
         'tokenizer':json.loads((root/'tokenizer-receipt.json').read_text()),
         'boundary':'ELF has no native final-answer API. Neither condition claims native reflect equivalence. No manual knowledge pages or oracle-directed structures.',
         'execution':'Serial queries; preserve all completed answers; retry failures only; development cases excluded from score.',

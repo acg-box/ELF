@@ -6,7 +6,7 @@ use crate::{
 	Error, Result,
 	progressive_search::{storage::hash, types::session::HitItem},
 };
-use elf_domain::english_gate;
+use elf_domain::text_validation;
 
 pub(crate) async fn record_detail_hits<'e, E>(
 	executor: E,
@@ -17,8 +17,8 @@ pub(crate) async fn record_detail_hits<'e, E>(
 where
 	E: PgExecutor<'e>,
 {
-	if !english_gate::is_english_natural_language(query) {
-		return Err(Error::NonEnglishInput { field: "$.query".to_string() });
+	if !text_validation::is_valid_text(query) {
+		return Err(Error::InvalidText { field: "$.query".to_string() });
 	}
 
 	let query_hash = hash::hash_query(query);

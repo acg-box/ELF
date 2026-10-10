@@ -56,8 +56,8 @@ use elf_domain::{
 		ConsolidationInputRef, ConsolidationLineage, ConsolidationReviewAction,
 		ConsolidationReviewState,
 	},
-	english_gate,
 	knowledge::{KnowledgePageKind, KnowledgeSourceKind},
+	text_validation,
 	writegate::WritePolicy,
 };
 use elf_service::{

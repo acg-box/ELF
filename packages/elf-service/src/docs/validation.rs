@@ -1,5 +1,5 @@
 mod excerpts;
-mod non_english;
+mod invalid_text;
 mod put;
 mod search;
 mod source_ref;
@@ -16,5 +16,5 @@ use crate::docs::{
 	DocsSearchL0Filters, DocsSearchL0FiltersParsed, DocsSearchL0RangesParsed, DocsSearchL0Request,
 	DocsSparseMode, Error, Map, OffsetDateTime, Result, Rfc3339, SOURCE_LIBRARY_FIELD_KEYS,
 	SOURCE_LIBRARY_KINDS, SOURCE_LIBRARY_TRUST_LABELS, TextQuoteSelector, ValidatedDocsPut, Value,
-	english_gate, writegate,
+	text_validation, writegate,
 };

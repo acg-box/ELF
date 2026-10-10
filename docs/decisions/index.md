@@ -11,3 +11,5 @@ planning artifacts under `docs/reference/plans/`.
 - `2026-06-08-agent-memory-selection.md`: Accepted decision to keep ELF as the
   evidence-bound memory core while using external memory systems as adapters,
   baselines, and derived patterns.
+- `2026-10-10-language-neutral-source-memory.md`: Language-neutral text contract,
+  immutable source content, relation time semantics, and profile migration.

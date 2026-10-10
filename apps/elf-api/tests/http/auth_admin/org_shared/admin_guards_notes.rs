@@ -43,7 +43,7 @@ async fn static_keys_org_shared_ingest_requires_admin() {
 		"notes": [{
 			"type": "fact",
 			"key": null,
-			"text": "你好",
+			"text": "你好\0",
 			"importance": 0.5,
 			"confidence": 0.9,
 			"ttl_days": null,

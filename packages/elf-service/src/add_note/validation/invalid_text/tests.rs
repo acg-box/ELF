@@ -1,5 +1,5 @@
 use crate::{
-	add_note::validation::non_english,
+	add_note::validation::invalid_text,
 	structured_fields::{
 		StructuredEntity, StructuredFields, StructuredRelation, StructuredRelationObject,
 	},
@@ -9,12 +9,12 @@ use crate::{
 fn source_ref_path_escapes_quotes_and_backslashes() {
 	let value = serde_json::json!({
 		"hint\"s": {
-			"quote\\path": "你好世界",
+			"quote\\path": "你好世界\0",
 		},
 	});
 
 	assert_eq!(
-		non_english::find_non_english_path(&value, "$.source_ref"),
+		invalid_text::find_invalid_path(&value, "$.source_ref"),
 		Some("$.source_ref[\"hint\\\"s\"][\"quote\\\\path\"]".to_string())
 	);
 }
@@ -25,7 +25,7 @@ fn structured_relation_object_entity_alias_reports_precise_path() {
 		relations: Some(vec![StructuredRelation {
 			object: Some(StructuredRelationObject {
 				entity: Some(StructuredEntity {
-					aliases: Some(vec!["English alias".to_string(), "你好世界".to_string()]),
+					aliases: Some(vec!["English alias".to_string(), "你好世界\0".to_string()]),
 					..StructuredEntity::default()
 				}),
 				..StructuredRelationObject::default()
@@ -36,10 +36,7 @@ fn structured_relation_object_entity_alias_reports_precise_path() {
 	};
 
 	assert_eq!(
-		non_english::find_non_english_path_in_structured(
-			Some(&structured),
-			"$.notes[0].structured",
-		),
+		invalid_text::find_invalid_path_in_structured(Some(&structured), "$.notes[0].structured",),
 		Some("$.notes[0].structured.relations[0].object.entity.aliases[1]".to_string())
 	);
 }

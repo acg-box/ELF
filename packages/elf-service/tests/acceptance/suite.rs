@@ -4,7 +4,6 @@ mod chunking;
 #[path = "suite/config.rs"] mod config;
 mod consolidation;
 mod docs_extension_v1;
-mod english_only_boundary;
 mod evidence_binding;
 mod graph_ingestion;
 mod idempotency;
@@ -16,6 +15,7 @@ mod rebuild_qdrant;
 #[path = "suite/runtime.rs"] mod runtime;
 mod sot_vectors;
 mod structured_field_retrieval;
+mod text_boundary;
 mod trace_admin_observability;
 mod work_journal;
 

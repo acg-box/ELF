@@ -4,14 +4,11 @@ name    = "elf-domain"
 version = "0.2.0"
 
 [dependencies]
-regex                 = { workspace = true }
-serde                 = { workspace = true }
-serde_json            = { workspace = true }
-time                  = { workspace = true }
-unicode-normalization = { workspace = true }
-unicode-script        = { workspace = true }
-uuid                  = { workspace = true }
-whatlang              = { workspace = true }
+regex      = { workspace = true }
+serde      = { workspace = true }
+serde_json = { workspace = true }
+time       = { workspace = true }
+uuid       = { workspace = true }
 
 elf-config = { workspace = true }
 

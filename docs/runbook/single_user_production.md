@@ -188,7 +188,7 @@ pkill -f "target/debug/elf-mcp -c elf.production.toml" || true
 
 On startup, `elf-api` and `elf-worker` initialize the Postgres schema and ensure the Qdrant
 collections and docs payload indexes exist. Startup fails closed if the config file is missing,
-required config is absent, `security.reject_non_english` is false, vector dimensions mismatch, or
+required config is absent, obsolete security fields are present, vector dimensions mismatch, or
 loopback/auth rules are violated.
 
 ## 4. Health And Migration Checks
@@ -693,8 +693,8 @@ For batch backfill and benchmark reports, use the wrappers documented in
 ## 11. Failure And Secret Rules
 
 - Missing or invalid config fails startup.
-- `security.reject_non_english = false` fails config validation.
-- Non-English API inputs fail with HTTP 422.
+- Remove `security.reject_non_english`; unknown security fields fail config validation.
+- Unsupported control characters fail with HTTP 422 and `INVALID_TEXT`.
 - API binds outside loopback fail unless authenticated static-key mode is configured; admin bind is
   loopback-only.
 - `add_note` is deterministic and does not call an LLM. `add_event` requires the configured LLM

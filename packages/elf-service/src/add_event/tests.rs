@@ -1,13 +1,10 @@
-use crate::{
-	Error,
-	add_event::{
-		types::{AddEventRequest, EventMessage},
-		validation,
-	},
+use crate::add_event::{
+	types::{AddEventRequest, EventMessage},
+	validation,
 };
 
 #[test]
-fn rejects_long_non_english_message_content() {
+fn accepts_long_french_message_content() {
 	let req = AddEventRequest {
 			tenant_id: "t".to_string(),
 			project_id: "p".to_string(),
@@ -24,11 +21,6 @@ fn rejects_long_non_english_message_content() {
 					write_policy: None,
 				}],
 			};
-	let err =
-		validation::validate_add_event_request(&req).expect_err("Expected English gate rejection.");
 
-	assert!(matches!(
-		err,
-		Error::NonEnglishInput { field } if field == "$.messages[0].content"
-	));
+	validation::validate_add_event_request(&req).expect("French text must be accepted.");
 }

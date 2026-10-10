@@ -111,7 +111,7 @@ Request-controlled fields:
 Rules:
 
 - `source_refs` must be a non-empty JSON array of non-empty JSON objects.
-- The English gate applies to body, title, list text, and identifier-like source-ref strings.
+- The language-neutral text contract applies to body, title, list text, and identifier-like source-ref strings.
 - `write_policy` is applied before persistence.
 - If durable `body` or list text still contains secret markers after write-policy application,
   the request is rejected.

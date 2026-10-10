@@ -16,7 +16,7 @@ use crate::{
 	search,
 };
 use elf_config::Config;
-use elf_domain::english_gate::EnglishGateKind;
+use elf_domain::text_validation::TextKind;
 
 pub(in crate::core_blocks) fn prepare_get_request(
 	cfg: &Config,
@@ -53,9 +53,9 @@ pub(in crate::core_blocks) fn prepare_upsert_request(
 		if scope == "org_shared" { ORG_PROJECT_ID.to_string() } else { requested_project_id };
 
 	normalize::validate_write_scope(cfg, scope.as_str())?;
-	normalize::validate_english(key.as_str(), EnglishGateKind::Identifier, "$.key")?;
-	normalize::validate_english(title.as_str(), EnglishGateKind::NaturalLanguage, "$.title")?;
-	normalize::validate_english(content.as_str(), EnglishGateKind::NaturalLanguage, "$.content")?;
+	normalize::validate_text(key.as_str(), TextKind::Identifier, "$.key")?;
+	normalize::validate_text(title.as_str(), TextKind::NaturalLanguage, "$.title")?;
+	normalize::validate_text(content.as_str(), TextKind::NaturalLanguage, "$.content")?;
 	normalize::validate_source_ref(&req.source_ref)?;
 
 	if content.chars().count() > MAX_CORE_BLOCK_CONTENT_CHARS {
@@ -94,11 +94,7 @@ pub(in crate::core_blocks) fn prepare_attach_request(
 		.transpose()?
 		.unwrap_or_else(|| "core block attachment".to_string());
 
-	normalize::validate_english(
-		target_agent_id.as_str(),
-		EnglishGateKind::Identifier,
-		"$.target_agent_id",
-	)?;
+	normalize::validate_text(target_agent_id.as_str(), TextKind::Identifier, "$.target_agent_id")?;
 
 	Ok(PreparedAttachRequest {
 		tenant_id,

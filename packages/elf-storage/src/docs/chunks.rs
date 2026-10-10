@@ -1,14 +1,14 @@
 use sqlx::PgExecutor;
 use uuid::Uuid;
 
-use crate::{Result, models::DocChunk};
+use crate::{Error, Result, models::DocChunk};
 
 /// Inserts one document chunk row.
 pub async fn insert_doc_chunk<'e, E>(executor: E, chunk: &DocChunk) -> Result<()>
 where
 	E: PgExecutor<'e>,
 {
-	sqlx::query(
+	let written = sqlx::query(
 		"\
 INSERT INTO doc_chunks (
 	chunk_id,
@@ -22,13 +22,13 @@ INSERT INTO doc_chunks (
 )
 VALUES ($1,$2,$3,$4,$5,$6,$7,$8)
 ON CONFLICT (chunk_id) DO UPDATE
-SET
-	doc_id = EXCLUDED.doc_id,
-	chunk_index = EXCLUDED.chunk_index,
-	start_offset = EXCLUDED.start_offset,
-	end_offset = EXCLUDED.end_offset,
-	chunk_text = EXCLUDED.chunk_text,
-	chunk_hash = EXCLUDED.chunk_hash",
+SET chunk_id = EXCLUDED.chunk_id
+WHERE doc_chunks.doc_id = EXCLUDED.doc_id
+  AND doc_chunks.chunk_index = EXCLUDED.chunk_index
+  AND doc_chunks.start_offset = EXCLUDED.start_offset
+  AND doc_chunks.end_offset = EXCLUDED.end_offset
+  AND doc_chunks.chunk_text = EXCLUDED.chunk_text
+  AND doc_chunks.chunk_hash = EXCLUDED.chunk_hash",
 	)
 	.bind(chunk.chunk_id)
 	.bind(chunk.doc_id)
@@ -40,6 +40,12 @@ SET
 	.bind(chunk.created_at)
 	.execute(executor)
 	.await?;
+
+	if written.rows_affected() != 1 {
+		return Err(Error::Conflict(
+			"Source chunk identity cannot overwrite immutable content or offsets.".to_string(),
+		));
+	}
 
 	Ok(())
 }

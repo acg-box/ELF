@@ -29,7 +29,7 @@ fn accepts_identifier_like_source_ref_ref_field() {
 }
 
 #[test]
-fn rejects_non_english_source_ref_hints_quote() {
+fn accepts_original_chinese_source_ref_quote() {
 	let req = AddNoteRequest {
 		tenant_id: "t".to_string(),
 		project_id: "p".to_string(),
@@ -47,19 +47,12 @@ fn rejects_non_english_source_ref_hints_quote() {
 			write_policy: None,
 		}],
 	};
-	let err = validation::validate_add_note_request(&req)
-		.expect_err("Expected non-English free-text under source_ref.hints.quote to be rejected.");
 
-	match err {
-		Error::NonEnglishInput { field } => {
-			assert_eq!(field, "$.notes[0].source_ref[\"hints\"][\"quote\"]")
-		},
-		other => panic!("Unexpected error: {other:?}"),
-	}
+	validation::validate_add_note_request(&req).expect("Original Chinese quotes must be accepted.");
 }
 
 #[test]
-fn rejects_long_non_english_note_text() {
+fn accepts_long_french_note_text() {
 	let req = AddNoteRequest {
 			tenant_id: "t".to_string(),
 			project_id: "p".to_string(),
@@ -78,13 +71,8 @@ fn rejects_long_non_english_note_text() {
 					write_policy: None,
 				}],
 			};
-	let err =
-		validation::validate_add_note_request(&req).expect_err("Expected English gate rejection.");
 
-	assert!(matches!(
-		err,
-		Error::NonEnglishInput { field } if field == "$.notes[0].text"
-	));
+	validation::validate_add_note_request(&req).expect("French text must be accepted.");
 }
 
 #[test]

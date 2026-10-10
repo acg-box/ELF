@@ -298,3 +298,10 @@ logs.
 - Added the R1 local background organizer benchmark evidence report and linked the
   model ladder boundary from the source-backed product, consolidation, memory
   summary, and Work Journal specs.
+
+## 2026-10-10: Separate source evidence from language preferences
+
+- Replace the English-only API boundary with a shared text-format contract.
+- Record immutable source content and relation date semantics in
+  `docs/decisions/2026-10-10-language-neutral-source-memory.md`.
+- Update current specifications and runbooks; preserve historical measurements.

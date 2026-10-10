@@ -23,10 +23,10 @@ impl ApiError {
 impl From<Error> for ApiError {
 	fn from(err: Error) -> Self {
 		match err {
-			Error::NonEnglishInput { field } => json_error(
+			Error::InvalidText { field } => json_error(
 				StatusCode::UNPROCESSABLE_ENTITY,
-				"NON_ENGLISH_INPUT",
-				"Non-English input detected; upstream must canonicalize to English before calling ELF.",
+				"INVALID_TEXT",
+				"Text contains invalid storage or identifier controls.",
 				Some(vec![field]),
 			),
 			Error::InvalidRequest { message } =>

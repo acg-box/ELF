@@ -10,7 +10,7 @@ use elf_api::{routes, state::AppState};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_GRPC_URL (or ELF_QDRANT_URL) to run."]
-async fn rejects_non_english_in_add_note() {
+async fn rejects_invalid_text_in_add_event() {
 	let Some((test_db, qdrant_url, collection)) = helpers::test_env().await else {
 		return;
 	};
@@ -19,21 +19,17 @@ async fn rejects_non_english_in_add_note() {
 	let app = routes::router(state);
 	let payload = serde_json::json!({
 		"scope": "agent_private",
-		"notes": [{
-			"type": "fact",
-			"key": null,
-			"text": "你好",
-			"importance": 0.5,
-			"confidence": 0.9,
-			"ttl_days": null,
-			"source_ref": {}
+		"dry_run": true,
+		"messages": [{
+			"role": "user",
+			"content": "こんにちは\0"
 		}]
 	});
 	let response = app
 		.oneshot(
 			Request::builder()
 				.method("POST")
-				.uri("/v2/notes/ingest")
+				.uri("/v2/events/ingest")
 				.header("X-ELF-Tenant-Id", "t")
 				.header("X-ELF-Project-Id", "p")
 				.header("X-ELF-Agent-Id", "a")
@@ -42,7 +38,7 @@ async fn rejects_non_english_in_add_note() {
 				.expect("Failed to build request."),
 		)
 		.await
-		.expect("Failed to call add_note.");
+		.expect("Failed to call add_event.");
 
 	assert_eq!(response.status(), StatusCode::UNPROCESSABLE_ENTITY);
 
@@ -51,15 +47,15 @@ async fn rejects_non_english_in_add_note() {
 		.expect("Failed to read response body.");
 	let json: Value = serde_json::from_slice(&body).expect("Failed to parse response.");
 
-	assert_eq!(json["error_code"], "NON_ENGLISH_INPUT");
-	assert_eq!(json["fields"][0], "$.notes[0].text");
+	assert_eq!(json["error_code"], "INVALID_TEXT");
+	assert_eq!(json["fields"][0], "$.messages[0].content");
 
 	test_db.cleanup().await.expect("Failed to cleanup test database.");
 }
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_GRPC_URL (or ELF_QDRANT_URL) to run."]
-async fn rejects_cyrillic_in_add_note() {
+async fn rejects_control_in_cyrillic_in_add_event() {
 	let Some((test_db, qdrant_url, collection)) = helpers::test_env().await else {
 		return;
 	};
@@ -68,21 +64,17 @@ async fn rejects_cyrillic_in_add_note() {
 	let app = routes::router(state);
 	let payload = serde_json::json!({
 		"scope": "agent_private",
-		"notes": [{
-			"type": "fact",
-			"key": null,
-			"text": "Привет мир",
-			"importance": 0.5,
-			"confidence": 0.9,
-			"ttl_days": null,
-			"source_ref": {}
+		"dry_run": true,
+		"messages": [{
+			"role": "user",
+			"content": "Это не английский текст.\0"
 		}]
 	});
 	let response = app
 		.oneshot(
 			Request::builder()
 				.method("POST")
-				.uri("/v2/notes/ingest")
+				.uri("/v2/events/ingest")
 				.header("X-ELF-Tenant-Id", "t")
 				.header("X-ELF-Project-Id", "p")
 				.header("X-ELF-Agent-Id", "a")
@@ -91,7 +83,7 @@ async fn rejects_cyrillic_in_add_note() {
 				.expect("Failed to build request."),
 		)
 		.await
-		.expect("Failed to call add_note.");
+		.expect("Failed to call add_event.");
 
 	assert_eq!(response.status(), StatusCode::UNPROCESSABLE_ENTITY);
 
@@ -100,8 +92,8 @@ async fn rejects_cyrillic_in_add_note() {
 		.expect("Failed to read response body.");
 	let json: Value = serde_json::from_slice(&body).expect("Failed to parse response.");
 
-	assert_eq!(json["error_code"], "NON_ENGLISH_INPUT");
-	assert_eq!(json["fields"][0], "$.notes[0].text");
+	assert_eq!(json["error_code"], "INVALID_TEXT");
+	assert_eq!(json["fields"][0], "$.messages[0].content");
 
 	test_db.cleanup().await.expect("Failed to cleanup test database.");
 }

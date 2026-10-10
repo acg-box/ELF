@@ -1,8 +1,8 @@
 use crate::docs::validation::{
 	DEFAULT_DOC_MAX_BYTES, DocType, DocsPutRequest, Error, OffsetDateTime, Result, Rfc3339,
-	ValidatedDocsPut, english_gate, non_english,
+	ValidatedDocsPut, invalid_text,
 	source_ref::{self},
-	writegate,
+	text_validation, writegate,
 };
 
 pub(in crate::docs) fn validate_docs_put(req: &DocsPutRequest) -> Result<ValidatedDocsPut> {
@@ -61,6 +61,13 @@ pub(in crate::docs) fn validate_docs_put(req: &DocsPutRequest) -> Result<Validat
 		writegate::apply_write_policy(req.content.as_str(), req.write_policy.as_ref()).map_err(
 			|err| Error::InvalidRequest { message: format!("write_policy is invalid: {err:?}") },
 		)?;
+
+	if write_policy.transformed != req.content {
+		return Err(Error::InvalidRequest {
+            message: "Source Library content is immutable; store transformed text as a separate derived record with a source reference.".to_string(),
+        });
+	}
+
 	let write_policy_audit =
 		if req.write_policy.is_some() { Some(write_policy.audit) } else { None };
 	let content = write_policy.transformed;
@@ -77,18 +84,18 @@ pub(in crate::docs) fn validate_docs_put(req: &DocsPutRequest) -> Result<Validat
 		return Err(Error::InvalidRequest { message: "content contains secrets.".to_string() });
 	}
 
-	if let Some(found) = non_english::find_non_english_path(&req.source_ref, "$.source_ref") {
-		return Err(Error::NonEnglishInput { field: found });
+	if let Some(found) = invalid_text::find_invalid_path(&req.source_ref, "$.source_ref") {
+		return Err(Error::InvalidText { field: found });
 	}
 
-	if !english_gate::is_english_natural_language(content.as_str()) {
-		return Err(Error::NonEnglishInput { field: "$.content".to_string() });
+	if !text_validation::is_valid_text(content.as_str()) {
+		return Err(Error::InvalidText { field: "$.content".to_string() });
 	}
 
 	if let Some(title) = req.title.as_ref()
-		&& !english_gate::is_english_natural_language(title.as_str())
+		&& !text_validation::is_valid_text(title.as_str())
 	{
-		return Err(Error::NonEnglishInput { field: "$.title".to_string() });
+		return Err(Error::InvalidText { field: "$.title".to_string() });
 	}
 
 	Ok(ValidatedDocsPut { doc_type, content, write_policy_audit })

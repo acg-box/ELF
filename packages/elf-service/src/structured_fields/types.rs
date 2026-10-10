@@ -61,10 +61,10 @@ pub struct StructuredRelation {
 	pub predicate: Option<String>,
 	/// Relation object, either an entity or scalar value.
 	pub object: Option<StructuredRelationObject>,
-	#[serde(with = "crate::time_serde::option")]
+	#[serde(with = "crate::structured_fields::relation_time")]
 	/// Optional validity-window start.
 	pub valid_from: Option<OffsetDateTime>,
-	#[serde(with = "crate::time_serde::option")]
+	#[serde(with = "crate::structured_fields::relation_time")]
 	/// Optional validity-window end.
 	pub valid_to: Option<OffsetDateTime>,
 }

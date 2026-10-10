@@ -87,7 +87,7 @@ pub struct KnowledgePageSearchRequest {
 	pub agent_id: String,
 	/// Read profile controlling source visibility.
 	pub read_profile: String,
-	/// English-only query for page title, key, heading, or section content.
+	/// Unicode query for page title, key, heading, or section content.
 	pub query: String,
 	/// Optional page-kind filter.
 	pub page_kind: Option<KnowledgePageKind>,

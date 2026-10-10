@@ -1,6 +1,6 @@
 use crate::docs::validation::{
 	DEFAULT_L0_MAX_BYTES, DEFAULT_L1_MAX_BYTES, DEFAULT_L2_MAX_BYTES, DEFAULT_MAX_CHUNKS_PER_DOC,
-	DocChunkingProfile, DocType, Error, Result, TextQuoteSelector, english_gate,
+	DocChunkingProfile, DocType, Error, Result, TextQuoteSelector, text_validation,
 };
 
 pub(in crate::docs) fn resolve_doc_chunking_profile(doc_type: DocType) -> DocChunkingProfile {
@@ -36,26 +36,26 @@ pub(in crate::docs) fn validate_docs_excerpts_get(
 	}
 
 	if let Some(quote) = quote {
-		validate_quote_selector_english(quote)?;
+		validate_quote_selector_text(quote)?;
 	}
 
 	Ok(())
 }
 
-pub(in crate::docs) fn validate_quote_selector_english(quote: &TextQuoteSelector) -> Result<()> {
-	if !english_gate::is_english_natural_language(quote.exact.as_str()) {
-		return Err(Error::NonEnglishInput { field: "$.quote.exact".to_string() });
+pub(in crate::docs) fn validate_quote_selector_text(quote: &TextQuoteSelector) -> Result<()> {
+	if !text_validation::is_valid_text(quote.exact.as_str()) {
+		return Err(Error::InvalidText { field: "$.quote.exact".to_string() });
 	}
 
 	if let Some(prefix) = quote.prefix.as_ref()
-		&& !english_gate::is_english_natural_language(prefix.as_str())
+		&& !text_validation::is_valid_text(prefix.as_str())
 	{
-		return Err(Error::NonEnglishInput { field: "$.quote.prefix".to_string() });
+		return Err(Error::InvalidText { field: "$.quote.prefix".to_string() });
 	}
 	if let Some(suffix) = quote.suffix.as_ref()
-		&& !english_gate::is_english_natural_language(suffix.as_str())
+		&& !text_validation::is_valid_text(suffix.as_str())
 	{
-		return Err(Error::NonEnglishInput { field: "$.quote.suffix".to_string() });
+		return Err(Error::InvalidText { field: "$.quote.suffix".to_string() });
 	}
 
 	Ok(())

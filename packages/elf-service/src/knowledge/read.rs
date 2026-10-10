@@ -2,8 +2,8 @@ use crate::knowledge::{
 	ElfService, Error, KnowledgePage, KnowledgePageGetRequest, KnowledgePageKind,
 	KnowledgePageLintFindingResponse, KnowledgePageResponse, KnowledgePageSearchRequest,
 	KnowledgePageSearchResponse, KnowledgePageSourceRefResponse, KnowledgePageSummary,
-	KnowledgePagesListRequest, KnowledgePagesListResponse, Result, access, english_gate, knowledge,
-	search,
+	KnowledgePagesListRequest, KnowledgePagesListResponse, Result, access, knowledge, search,
+	text_validation,
 };
 
 impl ElfService {
@@ -56,8 +56,8 @@ impl ElfService {
 		crate::knowledge::validate_non_empty("read_profile", req.read_profile.as_str())?;
 		crate::knowledge::validate_non_empty("query", req.query.as_str())?;
 
-		if !english_gate::is_english_natural_language(req.query.as_str()) {
-			return Err(Error::NonEnglishInput { field: "$.query".to_string() });
+		if !text_validation::is_valid_text(req.query.as_str()) {
+			return Err(Error::InvalidText { field: "$.query".to_string() });
 		}
 
 		let allowed_scopes =

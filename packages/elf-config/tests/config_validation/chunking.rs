@@ -19,7 +19,7 @@ fn chunking_config_requires_valid_bounds() {
 
 #[test]
 fn chunking_tokenizer_repo_cannot_be_empty_or_whitespace() {
-	let mut payload = helpers::sample_toml(true);
+	let mut payload = helpers::sample_toml();
 
 	payload = payload.replace("tokenizer_repo = \"REPLACE_ME\"", "tokenizer_repo = \"   \"");
 
@@ -33,7 +33,7 @@ fn chunking_tokenizer_repo_cannot_be_empty_or_whitespace() {
 
 #[test]
 fn chunking_tokenizer_repo_is_required() {
-	let mut payload = helpers::sample_toml(true);
+	let mut payload = helpers::sample_toml();
 
 	payload = payload.replace("tokenizer_repo = \"REPLACE_ME\"\n", "");
 

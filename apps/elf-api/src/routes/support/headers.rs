@@ -1,7 +1,8 @@
 use crate::routes::{
 	HEADER_AGENT_ID, HEADER_PROJECT_ID, HEADER_READ_PROFILE, HEADER_TENANT_ID, HeaderMap,
-	MAX_CONTEXT_HEADER_CHARS, StatusCode, english_gate,
+	MAX_CONTEXT_HEADER_CHARS, StatusCode,
 	support::errors::{self, ApiError},
+	text_validation,
 };
 
 #[derive(Clone, Debug)]
@@ -58,12 +59,11 @@ pub(in super::super) fn required_header(
 			Some(vec![format!("$.headers.{name}")]),
 		));
 	}
-	if !english_gate::is_english_identifier(trimmed) {
+	if !text_validation::is_valid_identifier(trimmed) {
 		return Err(errors::json_error(
 			StatusCode::UNPROCESSABLE_ENTITY,
-			"NON_ENGLISH_INPUT",
-			"Non-English input detected; upstream must canonicalize to English before calling ELF."
-				.to_string(),
+			"INVALID_TEXT",
+			"Input contains unsupported control characters.".to_string(),
 			Some(vec![format!("$.headers.{name}")]),
 		));
 	}

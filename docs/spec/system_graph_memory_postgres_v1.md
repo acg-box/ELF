@@ -32,7 +32,7 @@ Not this document: Graph query runbooks, external comparisons, or service rollou
 Defines: Graph Memory Postgres v1.0 tables, keys, and temporal invariants.
 
 Description: Canonical entity/fact temporal memory schema and invariants for PostgreSQL-backed graph memory.
-Language: English only.
+Language: Unicode text in any language.
 
 Purpose:
 - Persist entities, aliases, temporal facts, and evidence links for ELF graph memory.

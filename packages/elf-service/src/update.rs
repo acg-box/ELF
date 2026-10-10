@@ -8,7 +8,7 @@ use uuid::Uuid;
 
 use crate::{ElfService, Error, InsertVersionArgs, NoteOp, Result, access::ORG_PROJECT_ID};
 use elf_domain::{
-	english_gate, ttl,
+	text_validation, ttl,
 	writegate::{self, NoteInput},
 };
 use elf_storage::models::MemoryNote;
@@ -74,8 +74,8 @@ impl ElfService {
 
 		let prev_snapshot = crate::note_snapshot(&note);
 		let candidate_text = if let Some(text) = text_update.as_ref() {
-			if !english_gate::is_english_natural_language(text) {
-				return Err(Error::NonEnglishInput { field: "$.text".to_string() });
+			if !text_validation::is_valid_text(text) {
+				return Err(Error::InvalidText { field: "$.text".to_string() });
 			}
 
 			text.clone()

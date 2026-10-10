@@ -47,12 +47,12 @@ use elf_domain::{
 		ConsolidationMarkerSeverity, ConsolidationMarkers, ConsolidationProposalDiff,
 		ConsolidationSourceKind, ConsolidationSourceSnapshot,
 	},
-	english_gate,
 	knowledge::{
 		KNOWLEDGE_PAGE_CONTRACT_SCHEMA_V1, KNOWLEDGE_PAGE_REBUILD_SCHEMA_V1,
 		KNOWLEDGE_PAGE_SOURCE_COVERAGE_SCHEMA_V1, KNOWLEDGE_PAGE_VERSION_DIFF_SCHEMA_V1,
 		KNOWLEDGE_PAGE_WATCH_REBUILD_SCHEMA_V1, KnowledgePageKind, KnowledgeSourceKind,
 	},
+	text_validation,
 };
 use elf_storage::{
 	knowledge::{

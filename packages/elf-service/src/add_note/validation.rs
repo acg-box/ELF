@@ -1,4 +1,4 @@
-mod non_english;
+mod invalid_text;
 
 use crate::{
 	Error, NoteOp, Result,
@@ -7,8 +7,8 @@ use crate::{
 };
 use elf_config::Config;
 use elf_domain::{
-	english_gate,
 	memory_policy::MemoryPolicyDecision,
+	text_validation,
 	writegate::{self, NoteInput, WritePolicy, WritePolicyAudit, WritePolicyError},
 };
 
@@ -44,26 +44,25 @@ pub(super) fn validate_add_note_request(req: &AddNoteRequest) -> Result<()> {
 				message: "source_ref must be a JSON object.".to_string(),
 			});
 		}
-		if !english_gate::is_english_natural_language(note.text.as_str()) {
-			return Err(Error::NonEnglishInput { field: format!("$.notes[{idx}].text") });
+		if !text_validation::is_valid_text(note.text.as_str()) {
+			return Err(Error::InvalidText { field: format!("$.notes[{idx}].text") });
 		}
 
 		if let Some(key) = note.key.as_ref()
-			&& !english_gate::is_english_identifier(key)
+			&& !text_validation::is_valid_identifier(key)
 		{
-			return Err(Error::NonEnglishInput { field: format!("$.notes[{idx}].key") });
+			return Err(Error::InvalidText { field: format!("$.notes[{idx}].key") });
 		}
-		if let Some(path) = non_english::find_non_english_path_in_structured(
+		if let Some(path) = invalid_text::find_invalid_path_in_structured(
 			note.structured.as_ref(),
 			&format!("$.notes[{idx}].structured"),
 		) {
-			return Err(Error::NonEnglishInput { field: path });
+			return Err(Error::InvalidText { field: path });
 		}
-		if let Some(path) = non_english::find_non_english_path(
-			&note.source_ref,
-			&format!("$.notes[{idx}].source_ref"),
-		) {
-			return Err(Error::NonEnglishInput { field: path });
+		if let Some(path) =
+			invalid_text::find_invalid_path(&note.source_ref, &format!("$.notes[{idx}].source_ref"))
+		{
+			return Err(Error::InvalidText { field: path });
 		}
 	}
 
@@ -138,7 +137,7 @@ pub(super) fn apply_write_policy_to_note(
 
 fn extract_structured_rejection_field_path(err: &Error) -> Option<String> {
 	match err {
-		Error::NonEnglishInput { field } => Some(field.clone()),
+		Error::InvalidText { field } => Some(field.clone()),
 		Error::InvalidRequest { message } if message.starts_with("structured.") =>
 			message.split_whitespace().next().map(ToString::to_string),
 		_ => None,

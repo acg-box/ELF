@@ -3,12 +3,6 @@ use std::collections::HashSet;
 use crate::{Config, Error, Result};
 
 pub(super) fn validate(cfg: &Config) -> Result<()> {
-	if !cfg.security.reject_non_english {
-		return Err(Error::Validation {
-			message: "security.reject_non_english must be true.".to_string(),
-		});
-	}
-
 	let auth_mode = cfg.security.auth_mode.trim();
 
 	if !matches!(auth_mode, "off" | "static_keys") {

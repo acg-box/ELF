@@ -3,7 +3,7 @@ use sqlx::PgExecutor;
 use time::OffsetDateTime;
 use uuid::Uuid;
 
-use crate::{Result, models::DocDocument};
+use crate::{Error, Result, models::DocDocument};
 
 /// Normalizes absent document source metadata to an empty JSON object.
 pub fn normalize_source_ref(source_ref: Option<Value>) -> Value {
@@ -15,7 +15,7 @@ pub async fn insert_doc_document<'e, E>(executor: E, doc: &DocDocument) -> Resul
 where
 	E: PgExecutor<'e>,
 {
-	sqlx::query(
+	let written = sqlx::query(
 		"\
 INSERT INTO doc_documents (
 	doc_id,
@@ -36,18 +36,17 @@ INSERT INTO doc_documents (
 VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
 ON CONFLICT (doc_id) DO UPDATE
 SET
-	tenant_id = EXCLUDED.tenant_id,
-	project_id = EXCLUDED.project_id,
-	agent_id = EXCLUDED.agent_id,
-	scope = EXCLUDED.scope,
-	doc_type = EXCLUDED.doc_type,
-	status = EXCLUDED.status,
-	title = EXCLUDED.title,
-	source_ref = EXCLUDED.source_ref,
-	content = EXCLUDED.content,
-	content_bytes = EXCLUDED.content_bytes,
-	content_hash = EXCLUDED.content_hash,
-	updated_at = EXCLUDED.updated_at",
+    status = EXCLUDED.status,
+    source_ref = EXCLUDED.source_ref,
+    updated_at = EXCLUDED.updated_at
+WHERE doc_documents.content = EXCLUDED.content
+  AND doc_documents.content_hash = EXCLUDED.content_hash
+  AND doc_documents.content_bytes = EXCLUDED.content_bytes
+  AND doc_documents.tenant_id = EXCLUDED.tenant_id
+  AND doc_documents.project_id = EXCLUDED.project_id
+  AND doc_documents.agent_id = EXCLUDED.agent_id
+  AND doc_documents.scope = EXCLUDED.scope
+  AND doc_documents.doc_type = EXCLUDED.doc_type",
 	)
 	.bind(doc.doc_id)
 	.bind(doc.tenant_id.as_str())
@@ -65,6 +64,12 @@ SET
 	.bind(doc.updated_at)
 	.execute(executor)
 	.await?;
+
+	if written.rows_affected() != 1 {
+		return Err(Error::Conflict(
+			"Source document identity cannot overwrite immutable content or ownership.".to_string(),
+		));
+	}
 
 	Ok(())
 }

@@ -13,7 +13,7 @@ fn required_config_fields_must_be_explicit() {
 	];
 
 	for (path, field) in cases {
-		let payload = helpers::remove_required_config_key(&helpers::sample_toml(true), path);
+		let payload = helpers::remove_required_config_key(&helpers::sample_toml(), path);
 		let config_path = helpers::write_temp_config(payload);
 		let result = elf_config::load(&config_path);
 
@@ -40,20 +40,11 @@ fn docker_local_config_is_strict_valid() {
 }
 
 #[test]
-fn reject_non_english_must_be_true() {
-	let payload = helpers::sample_toml(false);
-	let path = helpers::write_temp_config(payload);
-	let result = elf_config::load(&path);
+fn obsolete_language_toggle_is_rejected() {
+	let payload =
+		helpers::sample_toml().replace("[security]", "[security]\nreject_non_english = true");
 
-	fs::remove_file(&path).expect("Failed to remove test config.");
-
-	let err = result.expect_err("Expected reject_non_english validation error.");
-	let message = err.to_string();
-
-	assert!(
-		message.contains("security.reject_non_english must be true."),
-		"Unexpected error message: {message}"
-	);
+	assert!(toml::from_str::<elf_config::Config>(&payload).is_err());
 }
 
 #[test]

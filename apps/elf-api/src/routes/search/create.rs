@@ -14,7 +14,7 @@ use crate::routes::{
 		(status = 400, description = "Invalid request.", body = ErrorBody),
 		(status = 401, description = "Authentication required.", body = ErrorBody),
 		(status = 403, description = "Scope denied.", body = ErrorBody),
-		(status = 422, description = "Non-English input rejected.", body = ErrorBody),
+		(status = 422, description = "Invalid text format rejected.", body = ErrorBody),
 		(status = 500, description = "Internal error.", body = ErrorBody),
 	)
 )]

@@ -18,7 +18,7 @@ pub use self::{
 use regex::Regex;
 use serde::{Deserialize, Serialize};
 
-use crate::english_gate;
+use crate::text_validation;
 use elf_config::Config;
 
 #[cfg(test)] mod tests;

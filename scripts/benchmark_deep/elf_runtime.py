@@ -10,7 +10,7 @@ import time
 import urllib.request
 
 PREFIX = 'elf-matched'
-IMAGE = 'elf-matched-service:20261010'
+IMAGE = None  # Selected explicitly by the matched runner.
 LABEL = 'elf.benchmark=elf-matched'
 
 
