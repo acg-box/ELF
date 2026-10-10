@@ -25,7 +25,7 @@ async fn multilingual_source_versions_preserve_bytes_and_citation_offsets() {
 		"owner",
 		"project_shared",
 		Some("knowledge"),
-		"原文",
+		"更新后的标题",
 		source.clone(),
 		original,
 	)
@@ -49,6 +49,8 @@ async fn multilingual_source_versions_preserve_bytes_and_citation_offsets() {
 		.expect("Read original")
 		.expect("Original exists");
 
+	assert_eq!(stored.title.as_deref(), Some("更新后的标题"));
+	assert_eq!(stored.source_ref["title"], "更新后的标题");
 	assert_eq!(stored.content.as_bytes(), original.as_bytes());
 	assert_eq!(stored.content_hash, blake3::hash(original.as_bytes()).to_hex().to_string());
 

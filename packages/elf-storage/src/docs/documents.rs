@@ -37,6 +37,7 @@ VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14)
 ON CONFLICT (doc_id) DO UPDATE
 SET
     status = EXCLUDED.status,
+    title = EXCLUDED.title,
     source_ref = EXCLUDED.source_ref,
     updated_at = EXCLUDED.updated_at
 WHERE doc_documents.content = EXCLUDED.content
