@@ -1,10 +1,20 @@
 """Keep RAGFlow evidence mapping independent of source text and unknown hits."""
 import unittest
-from benchmark_targets.ragflow import contexts_from_chunks
+from unittest.mock import patch
+from benchmark_targets.ragflow import contexts_from_chunks, wait_parsed
 from benchmark_budget import prepare_request
 
 
 class RagflowContextTests(unittest.TestCase):
+    def test_go_terminal_ingestion_receipt_does_not_wait_for_removed_run_field(self):
+        docs = [{'id':'native-a','ingestion_status':'COMPLETED','chunk_count':1}]
+        with patch('benchmark_targets.ragflow.request', return_value={'docs':docs}), \
+             patch('benchmark_targets.ragflow.time.sleep', side_effect=AssertionError('Unexpected wait')):
+            self.assertEqual(wait_parsed('dataset', ['native-a']), docs)
+        with patch('benchmark_targets.ragflow.request', return_value={'docs':[{'id':'native-a','ingestion_status':'FAILED'}]}):
+            with self.assertRaisesRegex(RuntimeError, 'parsing failed'):
+                wait_parsed('dataset', ['native-a'])
+
     def test_dimension_profile_is_explicit_and_preserves_default(self):
         body = {'input': ['example'], 'dimensions': 4096}
         default, _, _ = prepare_request(body, 'embedding')

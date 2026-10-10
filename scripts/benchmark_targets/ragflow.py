@@ -40,7 +40,7 @@ def wait_parsed(dataset, ids):
         docs = [d for d in data['docs'] if d['id'] in ids]
         if any(str(d.get('ingestion_status', d.get('run'))).upper() in ('FAIL', 'FAILED', 'CANCELED', '4') for d in docs):
             raise RuntimeError('RAGFlow native parsing failed: ' + json.dumps(docs))
-        if len(docs) == len(ids) and all(str(d.get('ingestion_status', d.get('run'))).upper() in ('DONE', 'SUCCEEDED', 'SUCCESS', '3') for d in docs):
+        if len(docs) == len(ids) and all(str(d.get('ingestion_status', d.get('run'))).upper() in ('COMPLETED', 'DONE', 'SUCCEEDED', 'SUCCESS', '3') for d in docs):
             return docs
         if time.monotonic() >= deadline:
             raise TimeoutError('RAGFlow document parsing did not finish')
