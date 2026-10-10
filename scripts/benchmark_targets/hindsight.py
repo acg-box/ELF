@@ -47,7 +47,7 @@ def drain(bank, *, timeout_seconds=180):
         time.sleep(1)
 
 
-def contexts_from_native(native):
+def contexts_from_native(native, *, limit=5):
     """Keep derived observations separate from the native facts that support them."""
     rows, seen_facts = [], set()
     source_facts = native.get("source_facts") or {}
@@ -58,7 +58,7 @@ def contexts_from_native(native):
             seen_facts.add(key)
             rows.append({"evidence_id": fact.get("document_id"), "text": fact["text"]})
 
-    for hit in native["results"][:5]:
+    for hit in native["results"] if limit is None else native["results"][:limit]:
         if hit.get("document_id"):
             add_fact(hit)
             continue

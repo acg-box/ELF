@@ -143,3 +143,32 @@ condition, preserve sanitized evidence and provider accounting, then remove
 the task-owned server containers, network, and volumes. Remove images downloaded
 only for this experiment after checking that no other container uses them.
 Preserve unrelated projects and caches whose ownership is not established.
+
+
+## Native Hindsight/RAGFlow follow-up
+
+`cargo make benchmark-native-comparison --artifact-root /absolute/path/to/run`
+uses a prepared, isolated RAGFlow server on loopback port 19380. Put its pinned
+`conf/public.pem` at `run/stack/public.pem`. Use the service setup above, with a
+separate Compose project. The controller starts the pinned Hindsight server on
+loopback ports 19888 and 19889. The latter serves the common tokenizer and a
+local reranker from that image. No host Python package installation is needed.
+
+Run this command inside `cargo make benchmark-budget`, with the same cumulative
+ledger, `--ceiling 20 --tranche 1.50 --embedding-provider nebius
+--embedding-dimensions 1536`. Use Personal Infisical injection as above. The
+artifact root must be private: it contains a native test-user session token.
+Never publish `private-auth.json` or environment files. Export only reviewed,
+credential-free evidence after the run. Remove the session file during cleanup.
+
+The command preserves completed cases in its artifact root. Keep the same live
+gateway and native services while continuing interrupted work. Native service
+configuration refers to that gateway; a new gateway does not automatically
+update a retained container or provider instance. Do not silently re-ingest a
+bank or select a better completed answer during recovery.
+
+After pending native operations finish and usage accounting settles, remove only
+this experiment's containers, networks, volumes, and newly downloaded images.
+The controller does not remove an operator-provided RAGFlow deployment.
+See [the protocol](../../evidence/benchmarking/2026-10-10-native-memory-comparison.md)
+for workloads, scoring, and scope limits.
