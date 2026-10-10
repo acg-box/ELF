@@ -213,8 +213,8 @@ def main():
         bundle["continuation"] = continuation
         bundle["combined_attempt_duration_seconds"] = continuation["original_duration_seconds"] + bundle["duration_seconds"]
     if retained:
-        bundle["retrieval_source"] = retained["source"]
-        bundle["retrieval_runtime"] = retained["runtime"]
+        bundle["retrieval_source"] = retained.get("retrieval_source", retained["source"])
+        bundle["retrieval_runtime"] = retained.get("retrieval_runtime", retained["runtime"])
         bundle["retrieval_bundle_sha256"] = hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest()
     if args.retry_answer_errors:
         bundle["answer_recovery"] = {"mode": "missing_outputs_only",
