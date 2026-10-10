@@ -234,11 +234,13 @@ def main():
     parser.add_argument("--ceiling", type=float, default=10)
     parser.add_argument("--tranche", type=float, default=0.5)
     parser.add_argument("--embedding-provider", choices=("deepinfra", "nebius"), default="deepinfra")
-    parser.add_argument("--embedding-dimensions", type=int, choices=range(1, 4097),
+    parser.add_argument("--embedding-dimensions", type=int,
                         help="Fix the shared Qwen embedding dimension for clients without a dimension setting")
     parser.add_argument("--embedding-429-retries", type=int, choices=range(4), default=0)
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    if args.embedding_dimensions is not None and not 1 <= args.embedding_dimensions <= 4096:
+        parser.error("embedding dimensions must be between 1 and 4096")
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
     if not command or not 0 < args.tranche <= args.ceiling or not math.isfinite(args.ceiling):
         parser.error("Provide a command and finite positive limits with tranche <= ceiling")
