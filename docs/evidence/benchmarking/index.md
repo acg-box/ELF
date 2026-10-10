@@ -74,3 +74,5 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 - [Full native memory benchmark, 2026-10-08](2026-10-08-full-native-comparison.md): Complete registered execution, retained measurement gaps, and cumulative cost evidence.
 
 - [Benchmark recovery checkpoint, 2026-10-09](2026-10-09-recovery.md): Separate ELF and SAG recovery results; competitor execution remains access-blocked.
+
+- [RAGFlow document parser intervention](2026-10-10-ragflow-ocr.md) compares free-parser and Mistral OCR inputs.

@@ -1,0 +1,37 @@
+{
+  "boundary": "OCR conservative reserves remain retained. Per-case ordinal windows overlap; do not sum as exclusive condition costs.",
+  "by_kind": {
+    "chat": {
+      "cached_input_tokens": 32512,
+      "input_tokens": 306672,
+      "output_tokens": 18637,
+      "paid_usd": 0.052403736,
+      "requests": 80
+    },
+    "document_ocr": {
+      "cached_input_tokens": 0,
+      "input_tokens": 3022,
+      "output_tokens": 128,
+      "paid_usd": 0.020530100000000003,
+      "requests": 8
+    },
+    "embedding": {
+      "cached_input_tokens": 0,
+      "input_tokens": 7214,
+      "output_tokens": 0,
+      "paid_usd": 7.214e-05,
+      "requests": 112
+    }
+  },
+  "ceiling_usd": 20,
+  "cumulative_exposure_usd": 16.420148435999483,
+  "cumulative_paid_usd": 15.801065035999578,
+  "first_ordinal": 62036,
+  "incremental_exposure_usd": 0.3747798760000016,
+  "incremental_paid_usd": 0.07300597600004011,
+  "last_ordinal": 62235,
+  "statuses": {
+    "completed": 192,
+    "completed_cost_unknown": 8
+  }
+}

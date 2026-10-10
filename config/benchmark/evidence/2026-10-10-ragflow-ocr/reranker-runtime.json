@@ -1,0 +1,13 @@
+{
+  "packages": {
+    "sentence-transformers": "5.7.0",
+    "tiktoken": "0.12.0",
+    "transformers": "5.12.1"
+  },
+  "weights": [
+    {
+      "sha256": "821d1aa69520101d6e0737f78a042ae25b19e5cb9160701909d10434f4aeb0ae",
+      "snapshot": "233902d25c440f23af6f7d6e94d2946bac0bee0a"
+    }
+  ]
+}

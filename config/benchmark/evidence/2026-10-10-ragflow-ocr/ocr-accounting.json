@@ -1,0 +1,64 @@
+{
+  "billing_method": "usage.cost minus usage.cost_details.upstream_inference_cost; all records imply USD 0.002 per page",
+  "engine": "mistral-ocr",
+  "model_version": "not exposed",
+  "records": [
+    {
+      "implied_ocr_fee": 0.002,
+      "inference_cost": 5.715e-05,
+      "pages": 1,
+      "source": "e_255d68caea01e4bc6add58b1",
+      "total_cost": 0.00205715
+    },
+    {
+      "implied_ocr_fee": 0.004,
+      "inference_cost": 0.0001047,
+      "pages": 2,
+      "source": "e_4b51c2f07fe6d33137c84359",
+      "total_cost": 0.0041047
+    },
+    {
+      "implied_ocr_fee": 0.0019999999999999996,
+      "inference_cost": 5.7e-05,
+      "pages": 1,
+      "source": "e_6f96a2af3365edd7577ea147",
+      "total_cost": 0.002057
+    },
+    {
+      "implied_ocr_fee": 0.002,
+      "inference_cost": 5.685e-05,
+      "pages": 1,
+      "source": "e_7fe00361fcf964b12aea766c",
+      "total_cost": 0.00205685
+    },
+    {
+      "implied_ocr_fee": 0.002,
+      "inference_cost": 4.65e-05,
+      "pages": 1,
+      "source": "e_adf880c03e4b6091d62cdf6f",
+      "total_cost": 0.0020465
+    },
+    {
+      "implied_ocr_fee": 0.002,
+      "inference_cost": 5.715e-05,
+      "pages": 1,
+      "source": "e_ae3fdb9cb12196ce9ae4b945",
+      "total_cost": 0.00205715
+    },
+    {
+      "implied_ocr_fee": 0.004,
+      "inference_cost": 0.00010425,
+      "pages": 2,
+      "source": "e_f361397d877f4c9074ab359a",
+      "total_cost": 0.00410425
+    },
+    {
+      "implied_ocr_fee": 0.002,
+      "inference_cost": 4.65e-05,
+      "pages": 1,
+      "source": "e_f78b8623bff0267bf5e45c2b",
+      "total_cost": 0.0020465
+    }
+  ],
+  "reserve_policy": "Retain original conservative reservations."
+}
