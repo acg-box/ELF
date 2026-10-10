@@ -41,10 +41,14 @@ def main():
     parser.add_argument("--source-labels", action=argparse.BooleanOptionalAction, default=None,
                         help="Expose native source identities to the shared reader; inherited on replay")
     parser.add_argument("--reanswer", type=Path)
+    parser.add_argument("--retry-answer-errors", action="store_true",
+                        help="With --reanswer, preserve every completed answer and retry only missing reader outputs")
     parser.add_argument("--resume-sag", type=Path, help="Continue a retained failed SAG scale-1000 ingest in copied state")
     parser.add_argument("--resume-hindsight", type=Path, help="Continue a retained Hindsight checkpoint after a failed scale-1000 run")
     parser.add_argument("--resume-ragflow", type=Path, help="Continue retained native PDF parsing, then rerun all questions")
     args = parser.parse_args()
+    if args.retry_answer_errors and not args.reanswer:
+        parser.error("--retry-answer-errors requires --reanswer")
     if args.resume_ragflow and (args.target != "ragflow" or args.reanswer or args.resume_sag or args.resume_hindsight):
         parser.error("--resume-ragflow requires RAGFlow and cannot combine with other recovery modes")
     if args.resume_hindsight and (args.target != "hindsight" or args.workload_group != "scale-1000" or args.reanswer or args.resume_sag):
@@ -81,6 +85,8 @@ def main():
     else:
         inputs, oracle = workload(workload_group)
     source_labels = args.source_labels if args.source_labels is not None else bool((retained or {}).get("answer_protocol", {}).get("source_labels"))
+    if args.retry_answer_errors and source_labels != bool(retained.get("answer_protocol", {}).get("source_labels")):
+        parser.error("Reader error recovery must preserve the context protocol")
     write_json(root / "input/workload.json", inputs)
     write_json(root / "oracle.json", oracle)
     image = target.get("image", manifest["runner"]["image"])
@@ -145,12 +151,14 @@ def main():
     by_id = {r["case_id"]: r for r in native["results"] if r.get("case_id")}
     host = None if args.native_only else provider_environment(dict(os.environ), manifest["providers"], inside_container=False)
     queries = [a for a in inputs["actions"] if a["action"] == "query"]
-    answers, responses = {}, []
+    answers = ({s["case_id"]: s["answer"] for s in retained["scores"] if s["answer"] is not None}
+               if args.retry_answer_errors else {})
+    responses = []
     answer_errors = []
     available = []
     for query in queries:
         row = by_id.get(query["case_id"], {})
-        if row.get("status") == "completed":
+        if row.get("status") == "completed" and query["case_id"] not in answers:
             context = reader_context(row.get("contexts", []), source_labels)
             available.append({"case_id": query["case_id"], "question": query["question"], "context": [context]})
     for offset in range(0, 0 if args.native_only else len(available), ANSWER_BATCH_SIZE):
@@ -208,6 +216,11 @@ def main():
         bundle["retrieval_source"] = retained["source"]
         bundle["retrieval_runtime"] = retained["runtime"]
         bundle["retrieval_bundle_sha256"] = hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest()
+    if args.retry_answer_errors:
+        bundle["answer_recovery"] = {"mode": "missing_outputs_only",
+            "source_bundle_sha256": hashlib.sha256((args.reanswer / "bundle.json").read_bytes()).hexdigest(),
+            "retained_completed_answers": sum(s["answer"] is not None for s in retained["scores"]),
+            "retried_cases": [q["case_id"] for q in available]}
     write_json(root / "bundle.json", bundle)
     print(json.dumps(bundle["coverage"]))
     passed = (all(s["execution"] == "completed" for s in scores) if args.native_only
