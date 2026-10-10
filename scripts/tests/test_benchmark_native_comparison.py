@@ -2,6 +2,7 @@
 import importlib.util
 from pathlib import Path
 import unittest
+import tempfile
 from benchmark_deep.memory_comparison import workload
 from benchmark_targets.hindsight import contexts_from_native
 
@@ -15,6 +16,14 @@ class NativeComparisonTests(unittest.TestCase):
         native={'results':[{'document_id':f'd{i}','text':str(i)} for i in range(7)]}
         self.assertEqual(len(contexts_from_native(native)),5)
         self.assertEqual(len(contexts_from_native(native,limit=None)),7)
+
+    def test_resume_rejects_changed_frozen_workload(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path=Path(directory)/'frozen.json'
+            module.freeze(path,{'items':['original']})
+            module.freeze(path,{'items':['original']})
+            with self.assertRaises(ValueError):
+                module.freeze(path,{'items':['changed']})
 
     def test_current_answer_rejects_stale_addition(self):
         e={'supported':True,'facts':['new-code'],'forbidden':['old-code']}

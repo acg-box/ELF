@@ -197,10 +197,12 @@ def main():
         try:api(SIDE,'/tokens',{'text':'readiness'});break
         except Exception:time.sleep(2)
     else:raise TimeoutError('Tokenizer/reranker sidecar not ready')
-    api(RF,'/providers',{'provider_name':'Jina'},method='PUT',token=auth)
-    api(RF,'/providers/Jina/instances',{'instance_name':'native_cpu','api_key':'local-benchmark-only','base_url':'http://host.docker.internal:19889/v1',
-        'model_info':[{'model_name':'cross-encoder/ms-marco-MiniLM-L-6-v2','model_type':['rerank'],'max_tokens':512}]},token=auth)
-    rerank='cross-encoder/ms-marco-MiniLM-L-6-v2@native_cpu@Jina'
+    if not (root/'vllm-preflight.json').exists():
+        api(RF,'/providers',{'provider_name':'VLLM'},method='PUT',token=auth)
+        result,_=api(RF,'/providers/VLLM/instances',{'instance_name':'native_cpu','api_key':'local-benchmark-only','base_url':'http://host.docker.internal:19889/v1',
+            'model_info':[{'model_name':'cross-encoder/ms-marco-MiniLM-L-6-v2','model_type':['rerank'],'max_tokens':512}]},token=auth)
+        save(root/'vllm-preflight.json',{'configured':True})
+    rerank='cross-encoder/ms-marco-MiniLM-L-6-v2@native_cpu@VLLM'
     for scope in ('memory','pdf'):
         suite=suites[scope]
         state=states[scope];save(root/(scope+'-parsed.json'),wait_rag(state,auth));bank=banks[scope]
