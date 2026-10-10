@@ -28,6 +28,7 @@ def main():
     parser.add_argument('--url', default='http://127.0.0.1:19380')
     parser.add_argument('--workload-group', choices=('behavior','mutations','documents','complex-documents','scale-100'), default='behavior')
     parser.add_argument("--ingest-seconds", type=int, default=600)
+    parser.add_argument("--source-labels", action="store_true")
     args = parser.parse_args()
     auth = None
     def api(method, path, value=None):
@@ -61,7 +62,7 @@ def main():
            'RAGFLOW_EMBEDDING_MODEL':'qwen/qwen3-embedding-8b@elf_benchmark@OpenAI-API-Compatible'}
     result = subprocess.run(['cargo','make','benchmark-deep','--target','ragflow',
         '--manifest',str(args.manifest),'--artifact-root',str(args.artifact_root),
-        '--workload-group',args.workload_group,'--max-seconds','2400','--ingest-seconds',str(args.ingest_seconds)],cwd=REPO,env=env)
+        '--workload-group',args.workload_group,'--max-seconds','2400','--ingest-seconds',str(args.ingest_seconds), *(['--source-labels'] if args.source_labels else [])],cwd=REPO,env=env)
     return result.returncode
 
 

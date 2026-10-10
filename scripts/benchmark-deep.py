@@ -19,6 +19,7 @@ from benchmark_deep.hindsight_resume import prepare_hindsight_resume
 from benchmark_deep.drivers import ACTION_TIMEOUT_SECONDS, INGEST_TIMEOUT_SECONDS
 from benchmark_runner.answers import ANSWER_BATCH_SIZE, request_answers
 from benchmark_deep.scoring import score_answer
+from benchmark_deep.contexts import reader_context
 from benchmark_runner.baselines import BASELINES, target_contract
 from benchmark_runner.docker import TARGET_IMAGE_ENV, cleanup_project, compose_project_logs, image_id
 from benchmark_runner.providers import provider_environment
@@ -37,6 +38,8 @@ def main():
                         help="Run a fixed group in fresh native state; default is all groups")
     parser.add_argument("--qmd-host", action="store_true")
     parser.add_argument("--native-only", action="store_true")
+    parser.add_argument("--source-labels", action=argparse.BooleanOptionalAction, default=None,
+                        help="Expose native source identities to the shared reader; inherited on replay")
     parser.add_argument("--reanswer", type=Path)
     parser.add_argument("--resume-sag", type=Path, help="Continue a retained failed SAG scale-1000 ingest in copied state")
     parser.add_argument("--resume-hindsight", type=Path, help="Continue a retained Hindsight checkpoint after a failed scale-1000 run")
@@ -77,6 +80,7 @@ def main():
             raise ValueError("Reanswer requires the unchanged versioned workload and oracle")
     else:
         inputs, oracle = workload(workload_group)
+    source_labels = args.source_labels if args.source_labels is not None else bool((retained or {}).get("answer_protocol", {}).get("source_labels"))
     write_json(root / "input/workload.json", inputs)
     write_json(root / "oracle.json", oracle)
     image = target.get("image", manifest["runner"]["image"])
@@ -147,7 +151,7 @@ def main():
     for query in queries:
         row = by_id.get(query["case_id"], {})
         if row.get("status") == "completed":
-            context = "\n".join(c["text"] for c in row.get("contexts", []))[:12000]
+            context = reader_context(row.get("contexts", []), source_labels)
             available.append({"case_id": query["case_id"], "question": query["question"], "context": [context]})
     for offset in range(0, 0 if args.native_only else len(available), ANSWER_BATCH_SIZE):
         batch = available[offset:offset+ANSWER_BATCH_SIZE]
@@ -171,7 +175,7 @@ def main():
     for case_id, expected in oracle.items():
         row, answer = by_id.get(case_id, {}), answers.get(case_id)
         contexts = row.get("contexts", [])
-        supplied_context = "\n".join(c["text"] for c in contexts)[:12000]
+        supplied_context = reader_context(contexts, source_labels)
         context = supplied_context.casefold()
         correctness = score_answer(expected, answer, supplied_context)
         scores.append({"case_id": case_id, "lane": expected["lane"],
@@ -181,7 +185,8 @@ def main():
             "duration_seconds": row.get("duration_seconds")})
     bundle = {"schema": "elf.deep_bundle/v2", "target": target, "image_digest": digest,
         "workload_group": workload_group,
-        "answer_protocol": {"revision": "isolated_case_v1", "batch_size": ANSWER_BATCH_SIZE,
+        "answer_protocol": {"revision": "source_labeled_case_v1" if source_labels else "isolated_case_v1",
+                            "source_labels": source_labels, "batch_size": ANSWER_BATCH_SIZE,
                             "grounding": "Expected factual values must occur in the case's supplied context."},
         "providers": manifest["providers"], "source": source,
         "execution_limits": (retained.get("execution_limits", {"status": "not_recorded_in_original_bundle"})

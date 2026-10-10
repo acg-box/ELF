@@ -8,10 +8,19 @@ from unittest.mock import patch
 
 from benchmark_deep.complex_documents import workload
 from benchmark_targets import ragflow
+from benchmark_deep.contexts import reader_context
 from benchmark_deep.ragflow_resume import prepare_ragflow_resume
 
 
 class ComplexDocumentsTests(unittest.TestCase):
+    def test_source_labels_preserve_native_fact_boundaries_without_oracle(self):
+        rows = [{'evidence_id': 'source-a', 'text': 'Title A'}, {'evidence_id': 'source-a', 'text': 'Fact A'}, {'evidence_id': 'source-b', 'text': 'Fact B'}]
+        self.assertEqual(reader_context(rows), 'Title A\nFact A\nFact B')
+        labeled = reader_context(rows, True)
+        self.assertEqual(labeled.count('[Source: source-a]'), 2)
+        self.assertIn('[Source: source-b]\nFact B', labeled)
+        self.assertEqual(len(reader_context([{'text': 'x' * 15000}], True)), 12000)
+
     def test_binary_upload_preserves_bytes_and_opaque_filename(self):
         payload = b'%PDF-1.4\n\x00\xff\xfe\n'
         item = {'evidence_id': 'e_sample', 'text': 'Do not upload this extracted text',
