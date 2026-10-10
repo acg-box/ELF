@@ -1,0 +1,560 @@
+[
+  {
+    "evidence_id": "p_e7ce1eebc94674c92dc4",
+    "name": "Harbor mixed A",
+    "kind": "mixed",
+    "file": "p_e7ce1eebc94674c92dc4.pdf",
+    "pages": 3,
+    "sha256": "9a2e9971db7b53f8c7ed5143f2043a9fa7ad78cdd52013096657694a83aa740c",
+    "anchors": [
+      {
+        "page": 1,
+        "text": "DAY-A-731"
+      },
+      {
+        "page": 1,
+        "text": "OLD-A-114"
+      },
+      {
+        "page": 1,
+        "text": "18:00 UTC"
+      },
+      {
+        "page": 2,
+        "text": "NIGHT-A-864"
+      },
+      {
+        "page": 2,
+        "text": "Clara Lin"
+      },
+      {
+        "page": 2,
+        "text": "NIGHT DISPATCH"
+      },
+      {
+        "page": 3,
+        "text": "SIGN-A-529"
+      },
+      {
+        "page": 3,
+        "text": "2026-11-17"
+      },
+      {
+        "page": 3,
+        "text": "SIGNED APPROVAL RECORD"
+      }
+    ],
+    "questions": [
+      {
+        "lane": "mixed_scan_page",
+        "question": "Harbor mixed A: Which queue applies at 19:00 UTC?",
+        "facts": [
+          "NIGHT-A-864"
+        ],
+        "forbidden": [
+          "DAY-A-731"
+        ]
+      },
+      {
+        "lane": "mixed_image_body",
+        "question": "Harbor mixed A: What is the signed approval code?",
+        "facts": [
+          "SIGN-A-529"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "mixed_scan_name",
+        "question": "Harbor mixed A: Who is the on-duty dispatcher?",
+        "facts": [
+          "Clara Lin"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "mixed_cross_page",
+        "question": "Harbor mixed A: Give the day dispatch queue and the approved deadline.",
+        "facts": [
+          "DAY-A-731",
+          "2026-11-17"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "mixed_absent",
+        "question": "Harbor mixed A: What is the published dispatcher phone number?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "p_370c062d41f913dd59b8",
+    "name": "Harbor mixed B",
+    "kind": "mixed",
+    "file": "p_370c062d41f913dd59b8.pdf",
+    "pages": 3,
+    "sha256": "5f26d53ee8600567fb6dcb3759ccc734ac7e211169bfd86d6286195b3bdc0b34",
+    "anchors": [
+      {
+        "page": 1,
+        "text": "DAY-B-731"
+      },
+      {
+        "page": 1,
+        "text": "OLD-B-114"
+      },
+      {
+        "page": 1,
+        "text": "18:00 UTC"
+      },
+      {
+        "page": 2,
+        "text": "NIGHT-B-864"
+      },
+      {
+        "page": 2,
+        "text": "Nolan Wu"
+      },
+      {
+        "page": 2,
+        "text": "NIGHT DISPATCH"
+      },
+      {
+        "page": 3,
+        "text": "SIGN-B-529"
+      },
+      {
+        "page": 3,
+        "text": "2026-11-23"
+      },
+      {
+        "page": 3,
+        "text": "SIGNED APPROVAL RECORD"
+      }
+    ],
+    "questions": [
+      {
+        "lane": "mixed_scan_page",
+        "question": "Harbor mixed B: Which queue applies at 19:00 UTC?",
+        "facts": [
+          "NIGHT-B-864"
+        ],
+        "forbidden": [
+          "DAY-B-731"
+        ]
+      },
+      {
+        "lane": "mixed_image_body",
+        "question": "Harbor mixed B: What is the signed approval code?",
+        "facts": [
+          "SIGN-B-529"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "mixed_scan_name",
+        "question": "Harbor mixed B: Who is the on-duty dispatcher?",
+        "facts": [
+          "Nolan Wu"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "mixed_cross_page",
+        "question": "Harbor mixed B: Give the day dispatch queue and the approved deadline.",
+        "facts": [
+          "DAY-B-731",
+          "2026-11-23"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "mixed_absent",
+        "question": "Harbor mixed B: What is the published dispatcher phone number?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "p_e68ae9579fbc4c1d0579",
+    "name": "澄江验收 A",
+    "kind": "chinese",
+    "file": "p_e68ae9579fbc4c1d0579.pdf",
+    "pages": 1,
+    "sha256": "144dd5d202741a6ca350725d016de1425fcc6f678b15a296e1a9e50f760f71ab",
+    "anchors": [
+      {
+        "page": 1,
+        "text": "林悦"
+      },
+      {
+        "page": 1,
+        "text": "陈浩"
+      },
+      {
+        "page": 1,
+        "text": "4800"
+      },
+      {
+        "page": 1,
+        "text": "上海市浦东新区"
+      },
+      {
+        "page": 1,
+        "text": "24"
+      },
+      {
+        "page": 1,
+        "text": "72"
+      },
+      {
+        "page": 1,
+        "text": "工程验收通知"
+      },
+      {
+        "page": 1,
+        "text": "紧急事项"
+      }
+    ],
+    "questions": [
+      {
+        "lane": "chinese_name",
+        "question": "澄江验收 A: 当前负责人是谁？请只给姓名。",
+        "facts": [
+          "林悦"
+        ],
+        "forbidden": [
+          "陈浩"
+        ]
+      },
+      {
+        "lane": "chinese_amount",
+        "question": "澄江验收 A: 人民币预算上限是多少？请只给数字。",
+        "facts": [
+          "4800"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "chinese_place",
+        "question": "澄江验收 A: 验收地点在哪里？",
+        "facts": [
+          "上海市浦东新区"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "chinese_condition",
+        "question": "澄江验收 A: 紧急事项的处理时限是多少小时？请只给数字。",
+        "facts": [
+          "24"
+        ],
+        "forbidden": [
+          "72"
+        ]
+      },
+      {
+        "lane": "chinese_absent",
+        "question": "澄江验收 A: 负责人的联系电话是什么？未提供则回答 unknown。",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "p_154452ff7c7dca8097fd",
+    "name": "澄江验收 B",
+    "kind": "chinese",
+    "file": "p_154452ff7c7dca8097fd.pdf",
+    "pages": 1,
+    "sha256": "353b34d2308d8a5233be68294fec3976160f31e45568eec88f018844242de863",
+    "anchors": [
+      {
+        "page": 1,
+        "text": "周宁"
+      },
+      {
+        "page": 1,
+        "text": "许岚"
+      },
+      {
+        "page": 1,
+        "text": "6200"
+      },
+      {
+        "page": 1,
+        "text": "苏州市工业园区"
+      },
+      {
+        "page": 1,
+        "text": "36"
+      },
+      {
+        "page": 1,
+        "text": "96"
+      },
+      {
+        "page": 1,
+        "text": "工程验收通知"
+      },
+      {
+        "page": 1,
+        "text": "紧急事项"
+      }
+    ],
+    "questions": [
+      {
+        "lane": "chinese_name",
+        "question": "澄江验收 B: 当前负责人是谁？请只给姓名。",
+        "facts": [
+          "周宁"
+        ],
+        "forbidden": [
+          "许岚"
+        ]
+      },
+      {
+        "lane": "chinese_amount",
+        "question": "澄江验收 B: 人民币预算上限是多少？请只给数字。",
+        "facts": [
+          "6200"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "chinese_place",
+        "question": "澄江验收 B: 验收地点在哪里？",
+        "facts": [
+          "苏州市工业园区"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "chinese_condition",
+        "question": "澄江验收 B: 紧急事项的处理时限是多少小时？请只给数字。",
+        "facts": [
+          "36"
+        ],
+        "forbidden": [
+          "96"
+        ]
+      },
+      {
+        "lane": "chinese_absent",
+        "question": "澄江验收 B: 负责人的联系电话是什么？未提供则回答 unknown。",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "p_0775dffd822295ef2634",
+    "name": "Cedar matrix A",
+    "kind": "table",
+    "file": "p_0775dffd822295ef2634.pdf",
+    "pages": 2,
+    "sha256": "c17164262d6cdf7ad336e69509ba6573bf9a939727fb497c3ad643a42c524b82",
+    "anchors": [
+      {
+        "page": 1,
+        "text": "Current signed"
+      },
+      {
+        "page": 1,
+        "text": "Fee (CNY)"
+      },
+      {
+        "page": 1,
+        "text": "Archived"
+      },
+      {
+        "page": 1,
+        "text": "420"
+      },
+      {
+        "page": 1,
+        "text": "42"
+      },
+      {
+        "page": 1,
+        "text": "620"
+      },
+      {
+        "page": 2,
+        "text": "Enterprise"
+      },
+      {
+        "page": 2,
+        "text": "930"
+      },
+      {
+        "page": 2,
+        "text": "680"
+      },
+      {
+        "page": 2,
+        "text": "2026-11-01"
+      },
+      {
+        "page": 2,
+        "text": "Draft"
+      },
+      {
+        "page": 2,
+        "text": "limit remains 12"
+      }
+    ],
+    "questions": [
+      {
+        "lane": "table_merged_header",
+        "question": "Cedar matrix A: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only.",
+        "facts": [
+          "420"
+        ],
+        "forbidden": [
+          "42"
+        ]
+      },
+      {
+        "lane": "table_merged_region",
+        "question": "Cedar matrix A: What is the current signed East Pro limit? Return the number only.",
+        "facts": [
+          "8"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "table_continuation",
+        "question": "Cedar matrix A: What is the signed West Enterprise fee in CNY? Return the number only.",
+        "facts": [
+          "930"
+        ],
+        "forbidden": [
+          "93"
+        ]
+      },
+      {
+        "lane": "table_footnote",
+        "question": "Cedar matrix A: What West Pro fee in CNY applies on 2026-11-02? Return the number only.",
+        "facts": [
+          "680"
+        ],
+        "forbidden": [
+          "620"
+        ]
+      },
+      {
+        "lane": "table_absent",
+        "question": "Cedar matrix A: What is the published bank-routing number?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  },
+  {
+    "evidence_id": "p_77bc298f7e82fc0cc561",
+    "name": "Cedar matrix B",
+    "kind": "table",
+    "file": "p_77bc298f7e82fc0cc561.pdf",
+    "pages": 2,
+    "sha256": "38f4b4e447ff484952faf8ecc87eef6dffce9c591e27762787584cfd184b9419",
+    "anchors": [
+      {
+        "page": 1,
+        "text": "Current signed"
+      },
+      {
+        "page": 1,
+        "text": "Fee (CNY)"
+      },
+      {
+        "page": 1,
+        "text": "Archived"
+      },
+      {
+        "page": 1,
+        "text": "1420"
+      },
+      {
+        "page": 1,
+        "text": "1042"
+      },
+      {
+        "page": 1,
+        "text": "1620"
+      },
+      {
+        "page": 2,
+        "text": "Enterprise"
+      },
+      {
+        "page": 2,
+        "text": "1930"
+      },
+      {
+        "page": 2,
+        "text": "1680"
+      },
+      {
+        "page": 2,
+        "text": "2026-11-01"
+      },
+      {
+        "page": 2,
+        "text": "Draft"
+      },
+      {
+        "page": 2,
+        "text": "limit remains 12"
+      }
+    ],
+    "questions": [
+      {
+        "lane": "table_merged_header",
+        "question": "Cedar matrix B: What is the current signed East Pro fee in CNY before the dated adjustment? Return the number only.",
+        "facts": [
+          "1420"
+        ],
+        "forbidden": [
+          "1042"
+        ]
+      },
+      {
+        "lane": "table_merged_region",
+        "question": "Cedar matrix B: What is the current signed East Pro limit? Return the number only.",
+        "facts": [
+          "8"
+        ],
+        "forbidden": []
+      },
+      {
+        "lane": "table_continuation",
+        "question": "Cedar matrix B: What is the signed West Enterprise fee in CNY? Return the number only.",
+        "facts": [
+          "1930"
+        ],
+        "forbidden": [
+          "1093"
+        ]
+      },
+      {
+        "lane": "table_footnote",
+        "question": "Cedar matrix B: What West Pro fee in CNY applies on 2026-11-02? Return the number only.",
+        "facts": [
+          "1680"
+        ],
+        "forbidden": [
+          "1620"
+        ]
+      },
+      {
+        "lane": "table_absent",
+        "question": "Cedar matrix B: What is the published bank-routing number?",
+        "facts": [],
+        "forbidden": []
+      }
+    ]
+  }
+]

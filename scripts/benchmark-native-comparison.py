@@ -172,7 +172,7 @@ def score(expected,text):
     return all(f.casefold() in text.casefold() for f in expected['facts']) and not any(f.casefold() in text.casefold() for f in expected['forbidden'])
 
 
-def run_case(root,condition,q,expected,call):
+def run_case(root,condition,q,expected,call,scorer=score):
     path=root/'cases'/condition/(q['case_id']+'.json')
     if path.exists():
         if json.loads(path.read_text())['status']=='completed':return
@@ -182,7 +182,7 @@ def run_case(root,condition,q,expected,call):
     ledger=root.parent/'cost-calibration/budget-ledger.json'
     first=len(json.loads(ledger.read_text())['requests'])+1
     try:
-        value=call();value.update(status='completed',correct=score(expected,value['text']))
+        value=call();value.update(status='completed',correct=scorer(expected,value['text']))
     except Exception as e:
         msg=str(e)
         for key in ('LITELLM_API_KEY','EMBEDDING_API_KEY','RAGFLOW_API_KEY'):
