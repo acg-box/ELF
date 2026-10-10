@@ -18,6 +18,9 @@ class ComplexDocumentsTests(unittest.TestCase):
         self.assertEqual(reader_context(rows), 'Title A\nFact A\nFact B')
         labeled = reader_context(rows, True)
         self.assertEqual(labeled.count('[Source: source-a]'), 2)
+        unresolved = reader_context([{'text': 'a'}, {'text': 'b'}], True)
+        self.assertIn('[Source identity unavailable; passage 1]', unresolved)
+        self.assertIn('[Source identity unavailable; passage 2]', unresolved)
         self.assertIn('[Source: source-b]\nFact B', labeled)
         self.assertEqual(len(reader_context([{'text': 'x' * 15000}], True)), 12000)
 

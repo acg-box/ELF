@@ -228,7 +228,7 @@ services:
       - elf
 
   hindsight:
-    image: ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1
+    image: ${HINDSIGHT_SERVER_IMAGE:-ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1}
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:

@@ -78,8 +78,8 @@ def main():
             raise ValueError('Reanswer must preserve the retained workload group')
         inputs = json.loads((args.reanswer / "input/workload.json").read_text())
         oracle = json.loads((args.reanswer / "oracle.json").read_text())
-        if retained["target"]["id"] != args.target or retained["providers"] != manifest["providers"]:
-            raise ValueError("Reanswer must preserve target and providers")
+        if retained["target"]["id"] != args.target or retained["target"].get("pin") != target.get("pin") or retained["target"].get("image") != target.get("image") or retained["providers"] != manifest["providers"]:
+            raise ValueError("Reanswer must preserve target, image pin, and providers")
         if hashlib.sha256(json.dumps(inputs, sort_keys=True).encode()).hexdigest() != retained["workload_sha256"]:
             raise ValueError("Retained deep workload changed")
         if (inputs, oracle) != workload(workload_group):
@@ -101,6 +101,8 @@ def main():
     provider = {} if args.native_only else provider_environment(dict(os.environ), manifest["providers"], inside_container=not args.qmd_host)
     env = {**os.environ, **provider,
         "BENCHMARK_IMAGE": image,
+        **({"HINDSIGHT_SERVER_IMAGE": target["pin"]["value"]}
+           if args.target == "hindsight" and target.get("pin", {}).get("kind") == "container_image" else {}),
         **({TARGET_IMAGE_ENV[args.target]: image} if args.target in TARGET_IMAGE_ENV else {}),
         "BENCHMARK_INPUT_HOST": str(root / "input"), "BENCHMARK_ARTIFACT_HOST": str(root / "artifacts"),
         "BENCHMARK_DEEP_INGEST_TIMEOUT_SECONDS": str(args.ingest_seconds),

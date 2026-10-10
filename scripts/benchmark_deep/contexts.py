@@ -2,7 +2,12 @@
 
 
 def reader_context(contexts, source_labels=False):
-    return '\n'.join(
-        (f'[Source: {c.get("evidence_id") or "unresolved"}]\n' if source_labels else '') + c['text']
-        for c in contexts
-    )[:12000]
+    parts = []
+    for index, context in enumerate(contexts):
+        label = ''
+        if source_labels:
+            source = context.get('evidence_id')
+            label = (f'[Source: {source}]\n' if source else
+                     f'[Source identity unavailable; passage {index + 1}]\n')
+        parts.append(label + context['text'])
+    return '\n'.join(parts)[:12000]
