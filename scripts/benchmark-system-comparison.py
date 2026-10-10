@@ -59,6 +59,12 @@ def start_hindsight(root):
         obj = json.loads(existing.stdout)[0]
         if obj['Config']['Labels'].get('elf.benchmark') != 'final-system' or obj['Config']['Image'] != common.HS_IMAGE:
             raise ValueError('Existing container is not owned by this comparison')
+        active = dict(value.split('=', 1) for value in obj['Config']['Env'])
+        if (active.get('HINDSIGHT_API_LLM_API_KEY') == os.environ['LITELLM_API_KEY'] and
+                active.get('HINDSIGHT_API_LLM_BASE_URL') == os.environ['LITELLM_BASE_URL'].replace('127.0.0.1', 'host.docker.internal')):
+            common.ready(common.HS + '/health')
+            common.api(common.SIDE, '/tokens', {'text': 'ready'})
+            return
         # A new gateway requires new injected credentials. Restart only the owned container;
         # its named volume retains native banks and in-flight operation state.
         subprocess.run(['docker', 'stop', HS_NAME], check=True, stdout=subprocess.DEVNULL)
@@ -127,9 +133,17 @@ def main():
         common.save(root / 'reranker-configured.json', {'configured': True})
     ledger = root.parent / 'cost-calibration/budget-ledger.json'
     def metered_phase(name, call):
-        first = len(json.loads(ledger.read_text())['requests']) + 1
-        started = time.monotonic(); value = call()
-        common.save(root / (name + '-phase.json'), {'first_ordinal': first, 'last_ordinal': len(json.loads(ledger.read_text())['requests']), 'seconds': time.monotonic() - started})
+        receipt = root / (name + '-phase.json')
+        if receipt.exists():
+            return call()
+        start_file = root / (name + '-phase-start.json')
+        if not start_file.exists():
+            common.save(start_file, {'first_ordinal': len(json.loads(ledger.read_text())['requests']) + 1,
+                                    'started_at': time.time()})
+        start = json.loads(start_file.read_text())
+        value = call()
+        common.save(receipt, {**start, 'last_ordinal': len(json.loads(ledger.read_text())['requests']),
+                             'seconds': time.time() - start['started_at']})
         return value
     states = {}; banks = {}
     for scope, suite in data.items():
@@ -139,7 +153,7 @@ def main():
             return state
         states[scope] = metered_phase('ragflow-' + scope + '-ingest', ingest_rag)
         banks[scope] = metered_phase('hindsight-' + scope + '-ingest',
-            lambda: common.ingest_hindsight(root, 'final-' + scope, suite['items']))
+            lambda: common.ingest_hindsight(root, 'final-' + scope, suite['items'], timeout_seconds=7200))
     rerank = 'cross-encoder/ms-marco-MiniLM-L-6-v2@native_cpu@VLLM'
     for scope, suite in data.items():
         state = states[scope]; bank = banks[scope]
