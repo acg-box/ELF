@@ -1,0 +1,1088 @@
+[
+  {
+    "answer_errors": [],
+    "bundle_sha256": "1b8ffcfa3f977a3df903c93a19ad2c24b1744987bf9d86721e09304083746b54",
+    "cleanup": {
+      "down_exit_code": 1,
+      "down_output": "validating <workspace>/docker/benchmark/compose.yml: volumes.ragflow-unit additional properties 'environment', 'extra_hosts', 'image', 'init', 'networks', 'volumes' not allowed\n",
+      "inspection_errors": [],
+      "passed": false,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 42
+    },
+    "duration_seconds": 0.26116770901717246,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "authority": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      }
+    },
+    "name": "behavior-v1",
+    "native_operations": {},
+    "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "bd2ea8a0a5301e40774ca3b56ebc928ff76870ed",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "behavior",
+    "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "04cd1d70165f5abf9e688ee771bd7023f2be2c49dfe942cda3b1080a5098e450",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 42
+    },
+    "duration_seconds": 1.0963772080140188,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "authority": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      }
+    },
+    "name": "behavior-v2",
+    "native_operations": {
+      "blocked_by_ingest": 54,
+      "failed": 5
+    },
+    "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "0f5712e0f2516a4c1c0e29cc76caff7836b22ddd",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "behavior",
+    "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "9b47bef0bad9ab7db39560e52453e5c77b6ac799395dda3d82d203e444a8bdfa",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 42
+    },
+    "duration_seconds": 34.32084095804021,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 143,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "authority": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      }
+    },
+    "name": "behavior-v3",
+    "native_operations": {},
+    "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "0f5712e0f2516a4c1c0e29cc76caff7836b22ddd",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "behavior",
+    "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "1a8e240d80ca86e8281514fd44fd58544dbefdcc16ee5439dd947d755a58ccb5",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 0,
+      "correct": 0,
+      "native_completed": 0,
+      "planned_queries": 42
+    },
+    "duration_seconds": 48.74245016701752,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 143,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "authority": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      }
+    },
+    "name": "behavior-v4",
+    "native_operations": {},
+    "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "fb42fcde175b7a90991f76073674e431dcadcc80",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "behavior",
+    "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "ae063b9c72d97f9ba83f2a76ed486826da5174e629dae9277be1a052640d6e11",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 6,
+      "correct": 6,
+      "native_completed": 6,
+      "planned_queries": 42
+    },
+    "duration_seconds": 186.30611483304529,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 143,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "authority": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 6,
+        "correct": 6,
+        "native_completed": 6,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 0,
+        "correct": 0,
+        "native_completed": 0,
+        "planned": 6
+      }
+    },
+    "name": "behavior-v5",
+    "native_operations": {
+      "completed": 7
+    },
+    "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "f086c040fb6b107d37dc405c724d8621cc421a09",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "behavior",
+    "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "78d86bc38373a0d8cba6246f4871d1676688081db13f87f7e5be2998188b1347",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 42,
+      "correct": 24,
+      "native_completed": 42,
+      "planned_queries": 42
+    },
+    "duration_seconds": 430.25416208297247,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 1,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "authority": {
+        "answered": 6,
+        "correct": 0,
+        "native_completed": 6,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 6,
+        "correct": 6,
+        "native_completed": 6,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 6,
+        "correct": 6,
+        "native_completed": 6,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 12,
+        "correct": 12,
+        "native_completed": 12,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 6,
+        "correct": 0,
+        "native_completed": 6,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 6,
+        "correct": 0,
+        "native_completed": 6,
+        "planned": 6
+      }
+    },
+    "name": "behavior-v6",
+    "native_operations": {
+      "completed": 47,
+      "failed": 12
+    },
+    "oracle_sha256": "0b6414514b2c4c931fd5d85cc6497d4f6fe9f319b507fde546b3bdd72125cb59",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "27826aa91e2d00861560ba0f6c35a9eec361ef25",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "behavior",
+    "workload_sha256": "ceec1dfd2852035562e09d7ca0bb43b2a49496803482aaf6fc245b11c84da608"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "37a474e71dcb8284374468d250fe66d70b970a8748f961f67029e50aae614a54",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 12,
+      "correct": 12,
+      "native_completed": 12,
+      "planned_queries": 12
+    },
+    "duration_seconds": 133.073111833015,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "delete_restart": {
+        "answered": 6,
+        "correct": 6,
+        "native_completed": 6,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 6,
+        "correct": 6,
+        "native_completed": 6,
+        "planned": 6
+      }
+    },
+    "name": "mutations-v1",
+    "native_operations": {
+      "completed": 25
+    },
+    "oracle_sha256": "407c11f07d06d3cbad37489efb666c3d23dcdc80d14a9a4c4e22779d2de3ed85",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "3955059ff6ff136f7bbbb50c8b704064ba2786ff",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "mutations",
+    "workload_sha256": "8d4ce9ea0565d5bd0c12e3ae69b639964131f5437ae44bd43abbddc0378bbf84"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "287bbed1bde94cf9d450be3b2beebcf8e7a39044a4d67d4363ea367c4e151038",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": "",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 12,
+      "correct": 12,
+      "native_completed": 12,
+      "planned_queries": 12
+    },
+    "duration_seconds": 107.55774958402617,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 2400,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "document_absent": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      },
+      "document_exceptions": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      },
+      "document_table": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      }
+    },
+    "name": "ragflow-documents-v1",
+    "native_operations": {
+      "completed": 13
+    },
+    "oracle_sha256": "623a4c88139405c1b7731c44ea3dc4ea93807b3398379559f2c6dbf30de36224",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "3955059ff6ff136f7bbbb50c8b704064ba2786ff",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_document_hybrid_retrieval",
+      "id": "ragflow",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "Same isolated shared reader as existing deep workloads; native agent, synthesis, OCR and memory are not measured.",
+        "runtime": "Docker Go server with Infinity; OpenSearch startup rejects this release. AMD64 emulation on ARM is not comparable production latency.",
+        "update": "Native document delete and upload, retaining external evidence identity; not atomic update."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/amd64",
+        "release": "v1.0.0-rc1",
+        "value": "infiniflow/ragflow@sha256:31ccf0336d8910f6d90ac7d4fff766cc0483ec10042b906a377f27bfe09f818b"
+      },
+      "role": "document_knowledge_store",
+      "score_eligible": true,
+      "suites": []
+    },
+    "workload_group": "documents",
+    "workload_sha256": "4456491568d11a2fec9dc049ee35128a3636ca6355796784fec7bc8c7971773a"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "e5967316f238adc61c6783070697b16beb49dec801e9c756e595d8f0a9e07bf2",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-07279722648e-hindsight-1 Stopping \n Container elfdeep-07279722648e-hindsight-1 Stopped \n Container elfdeep-07279722648e-hindsight-1 Removing \n Container elfdeep-07279722648e-hindsight-1 Removed \n Network elfdeep-07279722648e_default Removing \n Network elfdeep-07279722648e_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 12,
+      "correct": 12,
+      "native_completed": 12,
+      "planned_queries": 12
+    },
+    "duration_seconds": 331.97652249998646,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 1200,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:b9699f2fbf973c0807a7aaf9d5831e56dcafd5bad217c4557335828e2a88beb4",
+    "lanes": {
+      "document_absent": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      },
+      "document_exceptions": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      },
+      "document_table": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      }
+    },
+    "name": "hindsight-documents-v1",
+    "native_operations": {
+      "completed": 13
+    },
+    "oracle_sha256": "623a4c88139405c1b7731c44ea3dc4ea93807b3398379559f2c6dbf30de36224",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "3955059ff6ff136f7bbbb50c8b704064ba2786ff",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "native_retain_recall_after_consolidation",
+      "dockerfile": "docker/benchmark/http.Dockerfile",
+      "id": "hindsight",
+      "image": "elf-benchmark-http:v8",
+      "native_deviations": {
+        "reader": "The shared reader scores recalled context. Native reflect is a separate capability measurement.",
+        "reranker": "Native local cross-encoder/ms-marco-MiniLM-L-6-v2 on CPU; shared external embedding route."
+      },
+      "pin": {
+        "kind": "container_image",
+        "platform": "linux/arm64",
+        "release": "0.10.2",
+        "value": "ghcr.io/vectorize-io/hindsight@sha256:07873ca79a79bcb5662c6015bf9e40cf32fc0ae5bd7f5e8e71974fffa48e31c1"
+      },
+      "role": "bank_scoped_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "documents",
+    "workload_sha256": "4456491568d11a2fec9dc049ee35128a3636ca6355796784fec7bc8c7971773a"
+  },
+  {
+    "answer_errors": [],
+    "bundle_sha256": "cced36af8b6db6b6b5d02c1ce703c5687d4e1032e6ad71f9360634d2a1e09d4c",
+    "cleanup": {
+      "down_exit_code": 0,
+      "down_output": " Container elfdeep-0ada55af1dc8-postgres-1 Stopping \n Container elfdeep-0ada55af1dc8-qdrant-1 Stopping \n Container elfdeep-0ada55af1dc8-qdrant-1 Stopped \n Container elfdeep-0ada55af1dc8-qdrant-1 Removing \n Container elfdeep-0ada55af1dc8-qdrant-1 Removed \n Container elfdeep-0ada55af1dc8-postgres-1 Stopped \n Container elfdeep-0ada55af1dc8-postgres-1 Removing \n Container elfdeep-0ada55af1dc8-postgres-1 Removed \n Network elfdeep-0ada55af1dc8_default Removing \n Volume elfdeep-0ada55af1dc8_postgres-data Removing \n Volume elfdeep-0ada55af1dc8_qdrant-data Removing \n Volume elfdeep-0ada55af1dc8_qdrant-data Removed \n Volume elfdeep-0ada55af1dc8_postgres-data Removed \n Network elfdeep-0ada55af1dc8_default Removed \n",
+      "inspection_errors": [],
+      "passed": true,
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      }
+    },
+    "coverage": {
+      "answered": 12,
+      "correct": 12,
+      "native_completed": 12,
+      "planned_queries": 12
+    },
+    "duration_seconds": 142.81667070899857,
+    "execution_error": null,
+    "execution_limits": {
+      "ingest_action_seconds": 600,
+      "native_total_seconds": 1200,
+      "other_action_seconds": 1200
+    },
+    "exit_code": 0,
+    "image_digest": "sha256:fe6b199f6a3dbabfcb87b437c717867da7dacf91100d1ecce53650aa1229b8b7",
+    "lanes": {
+      "document_absent": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      },
+      "document_exceptions": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      },
+      "document_table": {
+        "answered": 4,
+        "correct": 4,
+        "native_completed": 4,
+        "planned": 4
+      }
+    },
+    "name": "elf-documents-v1",
+    "native_operations": {
+      "completed": 13
+    },
+    "oracle_sha256": "623a4c88139405c1b7731c44ea3dc4ea93807b3398379559f2c6dbf30de36224",
+    "providers": {
+      "chat": {
+        "model": "deepseek/deepseek-v4.1-flash",
+        "reasoning_effort": "low"
+      },
+      "embedding": {
+        "dimensions": 1536,
+        "model": "qwen/qwen3-embedding-8b"
+      }
+    },
+    "runtime": {
+      "host_execution": false,
+      "host_qmd": false,
+      "native_only": false,
+      "platform": "macOS-27.2-arm64-arm-64bit-Mach-O"
+    },
+    "source": {
+      "content_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dirty": false,
+      "head": "3955059ff6ff136f7bbbb50c8b704064ba2786ff",
+      "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "target": {
+      "adapter": "elf",
+      "build_target": "elf-runtime",
+      "dockerfile": "docker/benchmark/Dockerfile",
+      "id": "elf",
+      "image": "elf-benchmark-elf:full-v2",
+      "native_deviations": {
+        "ingestion": "Native add_note with 220-character adapter chunks under the measured 240-character note limit; logical sources can produce multiple stored notes.",
+        "retrieval": "Native worker indexing and search_raw; this condition does not benchmark the separate document-ingestion API."
+      },
+      "pin": {
+        "kind": "benchmark_source_commit"
+      },
+      "role": "source_linked_agent_memory_and_knowledge",
+      "score_eligible": true,
+      "suites": [
+        "common-core-v1",
+        "memory-lifecycle-v1",
+        "knowledge-structure-v1",
+        "repository-knowledge-v1"
+      ]
+    },
+    "workload_group": "documents",
+    "workload_sha256": "4456491568d11a2fec9dc049ee35128a3636ca6355796784fec7bc8c7971773a"
+  }
+]

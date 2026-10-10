@@ -1,0 +1,39 @@
+{
+  "at": 1791599878.8394141,
+  "project": "elf-ragflow-benchmark",
+  "containers_removed": 8,
+  "volumes_removed": 7,
+  "network_removed": true,
+  "remaining_project_resources": {
+    "containers": [],
+    "volumes": [],
+    "networks": []
+  },
+  "removed_image_ids": [
+    "sha256:00763be2865b44f777df4340fbdd52f6d70a97f58b17a6ee8db91a8e7965912d",
+    "sha256:076b58f8af6b053ac40d21e87e83d1bcbc1e4d7a651d12a3be0c551e92e91fbf",
+    "sha256:3139e9e87377f73f84859da57fb7828adf79903a06a7d30e916e44f1fcd8b85f",
+    "sha256:34d7607d8966f4598735df886beb51a8c9ac7a7217be4ca0a8fbd5d78270214f",
+    "sha256:c51ce53db95348aa8a4b2f0dab64f1e6b279efc8b07ad43aaac62f8426989076",
+    "sha256:eff3cf3c1e911779b9fbfe69ca703bb69a2b7407e6227e3f9b70ebbca6f0a54d",
+    "sha256:f6e7cfd1cb86c0741bf55f72560ce6d7799ada94a51f8f192a4d3b689b8496b4",
+    "sha256:fd8e71ce4fce556a7522c01fff3dbfbd2da580f22920d151f7f2f06790b3074f"
+  ],
+  "preserved_images": [],
+  "native_session_credentials_removed": true,
+  "boundary": "Only task-owned stack resources and newly downloaded unused images removed. Unrelated projects and unclassified legacy volumes/build caches preserved.",
+  "deep_projects_verified_absent": [
+    "elfdeep-3fa7de42f56d",
+    "elfdeep-3a97e0c7f406",
+    "elfdeep-8bc1eaad4c1e",
+    "elfdeep-07279722648e",
+    "elfdeep-0ada55af1dc8",
+    "elfdeep-1da210ea97ca",
+    "elfdeep-417388401e2b",
+    "elfdeep-e21fa9df196a",
+    "elfdeep-64ee24d0af27",
+    "elfdeep-c861b82ad5cd"
+  ],
+  "docker_usage_before": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          46        15        16.21GB   7.191GB (44%)\nContainers      16        15        14.52MB   350.2kB (2%)\nLocal Volumes   80        10        21.68GB   16.07GB (74%)\nBuild Cache     172       0         28.53GB   26.38GB\n",
+  "docker_usage_after": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          38        7         11.54GB   7.191GB (62%)\nContainers      8         8         886.1kB   0B (0%)\nLocal Volumes   73        3         19.65GB   16.07GB (81%)\nBuild Cache     172       0         28.53GB   26.38GB\n"
+}

@@ -1,0 +1,74 @@
+{
+  "elf": {
+    "boundary": "Historical matched question subset, not a new same-provider run.",
+    "bundle": "elf-deep-behavior-v2-local-tokenizer/bundle.json",
+    "lanes": {
+      "authority": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 6,
+        "correct": 5,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 12,
+        "correct": 12,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      }
+    }
+  },
+  "hindsight": {
+    "boundary": "Historical matched question subset, not a new same-provider run.",
+    "bundle": "hindsight-deep-v4-readiness-budget/bundle.json",
+    "lanes": {
+      "authority": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      },
+      "cross_session": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      },
+      "delete_restart": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      },
+      "native_scope": {
+        "answered": 12,
+        "correct": 12,
+        "planned": 12
+      },
+      "temporal": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      },
+      "update_restart": {
+        "answered": 6,
+        "correct": 6,
+        "planned": 6
+      }
+    }
+  }
+}

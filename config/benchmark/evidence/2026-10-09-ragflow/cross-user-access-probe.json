@@ -1,0 +1,25 @@
+{
+  "at": 1791599090.984094,
+  "boundary": "Separate task-owned native users; generated data only. This is not permission-revocation evidence.",
+  "results": [
+    {
+      "http_status": 200,
+      "method": "GET",
+      "path": "/datasets/20753380f91d486da9b56b34da28af95",
+      "response": {
+        "code": 102,
+        "message": "user 'ad320de9397a416e873f27779c4b93f9' lacks permission for dataset '20753380f91d486da9b56b34da28af95'"
+      }
+    },
+    {
+      "http_status": 200,
+      "method": "POST",
+      "path": "/retrieval",
+      "response": {
+        "code": 102,
+        "data": null,
+        "message": "only owner of dataset 20753380f91d486da9b56b34da28af95 is authorized for this operation"
+      }
+    }
+  ]
+}
