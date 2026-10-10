@@ -55,5 +55,14 @@ async fn chinese_evidence_and_date_only_relations_survive_native_extraction() {
 	assert_eq!(stored, text);
 	assert!(source.to_string().contains(text));
 
+	let origin = &source["evidence"][0]["source"];
+
+	assert_eq!(origin["message_id"], "原文-1");
+	assert_eq!(origin["role"], "user");
+	assert_eq!(origin["timestamp"], "2026-10-01T00:00:00Z");
+	assert_eq!(origin["content_hash"], blake3::hash(text.as_bytes()).to_hex().to_string());
+	assert_eq!(origin["extraction_content_hash"], origin["content_hash"]);
+	assert_eq!(origin["write_policy_audit"], serde_json::Value::Null);
+
 	fixture.test_db.cleanup().await.expect("Cleanup database");
 }

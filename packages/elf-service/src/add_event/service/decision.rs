@@ -7,6 +7,7 @@ use crate::{
 	add_event::{
 		audit, materialize,
 		policy::{self},
+		source_ref,
 		types::{
 			AddEventContext, AddEventRequest, AddEventResult, ExtractedNote, NoteProcessingData,
 			PersistExtractedNoteArgs,
@@ -21,6 +22,7 @@ impl ElfService {
 	pub(in crate::add_event) async fn apply_extracted_note_decision(
 		&self,
 		req: &AddEventRequest,
+		message_texts: &[String],
 		ingestion_profile: &IngestionProfileRef,
 		tx: &mut Transaction<'_, Postgres>,
 		ctx: &AddEventContext<'_>,
@@ -86,7 +88,7 @@ impl ElfService {
 					now,
 				),
 				source_ref: serde_json::json!({
-					"evidence": note_data.evidence.clone(),
+					"evidence": source_ref::evidence_sources(&req.messages, message_texts, &note_data.evidence, write_policy_audits.map(Vec::as_slice))?,
 					"reason": note_data.reason.clone().unwrap_or_default(),
 					"ingestion_profile": serde_json::json!({
 						"id": ingestion_profile.id,

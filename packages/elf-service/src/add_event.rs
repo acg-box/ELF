@@ -6,6 +6,7 @@ mod persistence;
 mod policy;
 mod rejection;
 mod service;
+mod source_ref;
 mod types;
 mod validation;
 

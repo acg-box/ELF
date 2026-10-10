@@ -37,7 +37,11 @@ these checks. A hash of discarded content is not a stored original.
 Events remain an extraction interface, not an automatic transcript archive.
 Callers that need the complete original must also capture it in Source Library
 or retain an external source. Event quotes are checked against extraction input;
-write-policy transformations remain recorded in their audit. Derived memory is
+each stored quote carries the caller message ID and timestamp, the BLAKE3 hash
+of the original message, the hash of the extraction input, and its write-policy
+audit. The two hashes differ when a policy changes the input. Caller message IDs
+are locators, not access grants or proof of an external source's authenticity.
+The hashes permit verification against the retained source. Derived memory is
 allowed to change without changing its original source record.
 
 ## Extraction contract ownership

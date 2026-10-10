@@ -398,6 +398,22 @@ Recommended shape (informative):
 Defined resolvers:
 - `elf_doc_ext/v1`: Doc Extension v1 document pointer resolver. Defined in `docs/spec/system_source_ref_doc_pointer_v1.md`.
 
+Stored event-derived notes retain provenance in `source_ref.evidence[].source`:
+- `schema`: `elf.event_source/v1`.
+- `message_id` and `timestamp`: the caller's original `msg_id` and `ts`, or null.
+- `role`: the original message role.
+- `hash_algorithm`: `blake3`; `content_hash`: original message UTF-8 content hash.
+- `extraction_content_hash`: UTF-8 hash after the event write policy. Evidence
+  quotes bind to this input; it equals the original hash when content is unchanged.
+- `write_policy_audit`: the audit for that message, or null if no policy was supplied.
+
+The service constructs this metadata. It does not ask the extractor to invent IDs
+or hashes. A caller locator does not grant access or authenticate an external
+source. Retain the source in Source Library or upstream; the event endpoint does
+not automatically archive complete transcripts. Existing stored evidence is not
+backfilled with invented identifiers.
+
+
 Resolver tiers (informative):
 - reproducible: dereference is stable and replayable given (ref + state) (example: fs_git with a commit SHA).
 - best_effort: dereference may change over time (example: external conversation thread id); resolvers should expose whether excerpt verification succeeded.
