@@ -50,7 +50,13 @@ not a claim that its network topology was measured.
 
 ## Input and cost controls
 
-`prepare --receipts PATH` reads the previous provider receipts, matches exact
+A public reproduction can import the checked-in receipt bundle directly:
+
+```sh
+cargo make benchmark-retrieval-lab prepare --root /artifacts/retrieval-ablation --receipts /repo/config/benchmark/evidence/2026-10-10-elf-language-provenance/provider-receipts.jsonl.gz
+```
+
+`prepare --receipts PATH` reads a receipt directory or that gzip JSONL bundle, matches exact
 embedding input text, and records each receipt hash. It fails if a vector is
 missing. The ablation reuses the previous native candidate order and asserts that
 its combined context reproduces all 20 previous contexts exactly. It filters

@@ -1,14 +1,27 @@
 """Recover vectors and candidate pools from immutable prior run receipts."""
-import collections
+import gzip
+import json
 import hashlib
 from pathlib import Path
 from .common import EVIDENCE, cases, digest, read, save
 
 
+def receipt_rows(path):
+    path=Path(path)
+    if path.is_file():
+        for line in gzip.decompress(path.read_bytes()).splitlines():
+            row=json.loads(line)
+            value={'request':row['request'],'response':row['response']}
+            original=(json.dumps(value,indent=2)+'\n').encode()
+            yield value,hashlib.sha256(original).hexdigest()
+    else:
+        for item in sorted(path.glob('*.json')):
+            yield read(item),hashlib.sha256(item.read_bytes()).hexdigest()
+
+
 def prepare(root, receipts):
     vectors = {}
-    for path in sorted(Path(receipts).glob('*.json')):
-        value = read(path)
+    for value, receipt_sha in receipt_rows(receipts):
         request, response = value['request'], value['response']
         if 'input' not in request or 'data' not in response:
             continue
@@ -21,7 +34,7 @@ def prepare(root, receipts):
             vector = row['embedding']
             assert len(vector) == 1536
             text = inputs[row['index']]
-            vectors.setdefault(text, {'vector': vector, 'receipt_sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
+            vectors.setdefault(text, {'vector': vector, 'receipt_sha256': receipt_sha})
     suite = read(EVIDENCE / 'frozen-workloads.json')
     notes = read(EVIDENCE / 'extraction-diagnostics.json')['notes']
     corpus = []

@@ -22,5 +22,10 @@
     "latency": 24,
     "ablation": 3
   },
-  "production_code_changed": false
+  "production_code_changed": false,
+  "public_receipt_reproduction": {
+    "vectors": 141,
+    "candidate_pools": 20,
+    "matches_original_inputs": true
+  }
 }

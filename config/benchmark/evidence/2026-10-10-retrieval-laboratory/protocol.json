@@ -10,7 +10,7 @@
     "scripts/retrieval_lab/cli.py": "6f6021d97b10772986a615c4daeda0cb7b0f769773907cd289bef999afc391ce",
     "scripts/retrieval_lab/common.py": "96afa4a4ca0f9a17a7a83b62edcc21c519a08e0ae93b476f0d2a32f236b35931",
     "scripts/retrieval_lab/followup.py": "6664c48909430c24b56ff20eb5c7661de6e0bbb196f48370cc77c01d47258c9b",
-    "scripts/retrieval_lab/prepare.py": "c82a9e0edc71f2b0e778b9d3df3db6fa4b035416a44aee85efd33b6490eb67bd"
+    "scripts/retrieval_lab/prepare.py": "ea3216cefaafcdb1dfc070b5271f325f0033e433c38913fd728d43dc0cd15041"
   },
   "scope": "Frozen native-candidate ablation; separate database API microbenchmarks. Not a live ELF replacement or complete agent benchmark.",
   "dimensions": 1536,
@@ -45,7 +45,7 @@
     "postgres"
   ],
   "sustained_followup": "Three ten-second rounds, eight independent clients, warm repeated 70-query set, 49,999 vectors after matched deletion. Initial 280-query bursts retained but not used as sustained throughput.",
-  "post_followup_source_changes": "Dependency lock capture, explicit client close, per-round failure retention, CLI argument checks and DuckDB answer aggregates; no product changes.",
+  "post_followup_source_changes": "Dependency lock capture, explicit client close, per-round failure retention, CLI argument checks and DuckDB answer aggregates; no product changes. Public gzip receipt import reproduces the measured dataset and candidate pools exactly.",
   "paid_requests": 60,
   "new_embedding_requests": 0
 }
