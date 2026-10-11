@@ -256,11 +256,10 @@ retrieval_normalization = "<REQUIRED_STRING>"
 max_retrieval_rank = <REQUIRED_INT>
 retrieval_weight = <REQUIRED_FLOAT>
 
+# Diversity applies a soft MMR penalty. Similarity does not exclude a fact.
 [ranking.diversity]
 enabled = <REQUIRED_BOOL>
-sim_threshold = <REQUIRED_FLOAT>
 mmr_lambda = <REQUIRED_FLOAT>
-max_skips = <REQUIRED_INT>
 
 [ranking.retrieval_sources]
 fusion_weight = <REQUIRED_FLOAT>

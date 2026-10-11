@@ -72,16 +72,6 @@ fn validate_blend(cfg: &Config) -> Result<()> {
 fn validate_diversity(cfg: &Config) -> Result<()> {
 	let diversity = &cfg.ranking.diversity;
 
-	if !diversity.sim_threshold.is_finite() {
-		return Err(Error::Validation {
-			message: "ranking.diversity.sim_threshold must be a finite number.".to_string(),
-		});
-	}
-	if !(0.0..=1.0).contains(&diversity.sim_threshold) {
-		return Err(Error::Validation {
-			message: "ranking.diversity.sim_threshold must be in the range 0.0-1.0.".to_string(),
-		});
-	}
 	if !diversity.mmr_lambda.is_finite() {
 		return Err(Error::Validation {
 			message: "ranking.diversity.mmr_lambda must be a finite number.".to_string(),

@@ -147,9 +147,7 @@ impl ElfService {
 				})
 				.collect(),
 			diversity_enabled: policies.diversity_policy.enabled,
-			diversity_sim_threshold: policies.diversity_policy.sim_threshold,
 			diversity_mmr_lambda: policies.diversity_policy.mmr_lambda,
-			diversity_max_skips: policies.diversity_policy.max_skips,
 		}
 	}
 

@@ -69,6 +69,7 @@ def answer(q, rows, native, pack):
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--artifact-root',type=Path,required=True)
     parser.add_argument('--image',required=True,help='ELF service image labeled with its source revision')
+    parser.add_argument('--reuse-run',type=Path,help='Reuse verified native state and unchanged document cases; rerun both memory paths')
     parser.add_argument('--limit',type=int,default=0,help='Maximum new queries per condition; zero runs all')
     args=parser.parse_args();root=args.artifact_root.resolve();root.mkdir(parents=True,exist_ok=True)
     elf_runtime.IMAGE=args.image
@@ -100,7 +101,10 @@ def main():
                 detail=error.read().decode()
                 raise ValueError(f'ELF HTTP {error.code}: {detail}') from error
         return call
+    if args.reuse_run:
+        elf_runtime.reuse_run(root,args.reuse_run.resolve())
     for scope,suite in data.items():
+        if args.reuse_run:continue
         api=client(scope)
         for item in suite['items']:
             path=root/'ingest'/scope/(item['evidence_id']+'.json')
@@ -139,7 +143,8 @@ def main():
                     return answer(q,rows,native,pack)
                 common.run_case(root,condition,q,suite['oracle'][q['case_id']],call)
                 new+=1
-    common.save(root/'run-completed.json',{'time':time.time(),'limited':bool(args.limit)})
+    common.save(root/'embedding-state.json',elf_runtime.embedding_state())
+    common.save(root/'run-completed.json',{'time':time.time(),'limited':bool(args.limit),'reused_ingestion':bool(args.reuse_run)})
 
 
 if __name__=='__main__': main()

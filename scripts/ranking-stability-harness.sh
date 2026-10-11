@@ -273,9 +273,7 @@ retrieval_weight   = 0.2
 
 [ranking.diversity]
 enabled       = true
-max_skips     = 64
 mmr_lambda    = 0.7
-sim_threshold = 0.88
 
 [ranking.retrieval_sources]
 fusion_priority           = 1

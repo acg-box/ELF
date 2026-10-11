@@ -58,7 +58,7 @@ fn test_scored_chunk(note_id: Uuid, retrieval_rank: u32, now: OffsetDateTime) ->
 }
 
 #[test]
-fn diversity_selection_skips_high_similarity_when_alternative_exists() {
+fn diversity_keeps_relevant_complementary_notes_despite_high_similarity() {
 	let now = OffsetDateTime::from_unix_timestamp(0).expect("Valid timestamp.");
 	let note_a = Uuid::new_v4();
 	let note_b = Uuid::new_v4();
@@ -74,24 +74,19 @@ fn diversity_selection_skips_high_similarity_when_alternative_exists() {
 	vectors.insert(note_b, vec![0.99, 0.01]);
 	vectors.insert(note_c, vec![0.0, 1.0]);
 
-	let policy = ResolvedDiversityPolicy {
-		enabled: true,
-		sim_threshold: 0.9,
-		mmr_lambda: 0.7,
-		max_skips: 64,
-	};
+	let policy = ResolvedDiversityPolicy { enabled: true, mmr_lambda: 0.7 };
 	let (selected, decisions) = ranking::select_diverse_results(candidates, 2, &policy, &vectors);
 	let selected_ids: Vec<Uuid> = selected.iter().map(|item| item.item.note.note_id).collect();
 
-	assert_eq!(selected_ids, vec![note_a, note_c]);
+	assert_eq!(selected_ids, vec![note_a, note_b]);
 	assert_eq!(
-		decisions.get(&note_b).and_then(|decision| decision.skipped_reason.as_deref()),
-		Some("similarity_threshold")
+		decisions.get(&note_c).and_then(|decision| decision.skipped_reason.as_deref()),
+		Some("lower_mmr")
 	);
 }
 
 #[test]
-fn diversity_selection_backfills_when_max_skips_is_reached() {
+fn diversity_returns_relevant_similar_notes_without_hard_exclusion() {
 	let now = OffsetDateTime::from_unix_timestamp(0).expect("Valid timestamp.");
 	let note_a = Uuid::new_v4();
 	let note_b = Uuid::new_v4();
@@ -101,18 +96,13 @@ fn diversity_selection_backfills_when_max_skips_is_reached() {
 	vectors.insert(note_a, vec![1.0, 0.0]);
 	vectors.insert(note_b, vec![0.99, 0.01]);
 
-	let policy = ResolvedDiversityPolicy {
-		enabled: true,
-		sim_threshold: 0.9,
-		mmr_lambda: 0.7,
-		max_skips: 0,
-	};
+	let policy = ResolvedDiversityPolicy { enabled: true, mmr_lambda: 0.7 };
 	let (selected, decisions) = ranking::select_diverse_results(candidates, 2, &policy, &vectors);
 	let selected_ids: Vec<Uuid> = selected.iter().map(|item| item.item.note.note_id).collect();
 	let selected_reason = decisions.get(&note_b).map(|decision| decision.selected_reason.as_str());
 
 	assert_eq!(selected_ids, vec![note_a, note_b]);
-	assert_eq!(selected_reason, Some("max_skips_backfill"));
+	assert_eq!(selected_reason, Some("mmr"));
 }
 
 #[test]

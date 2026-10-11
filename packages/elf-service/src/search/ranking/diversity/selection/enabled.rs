@@ -83,12 +83,7 @@ pub(super) fn select_diverse_results_enabled(
 				&selected_indices,
 				note_vectors,
 			);
-		let skipped_reason =
-			if similarity.map(|value| value > policy.sim_threshold).unwrap_or(false) {
-				"similarity_threshold"
-			} else {
-				"lower_mmr"
-			};
+		let skipped_reason = "lower_mmr";
 		let redundancy = similarity.unwrap_or(0.0);
 		let mmr_score = policy.mmr_lambda * relevance_by_idx[candidate_idx]
 			- (1.0 - policy.mmr_lambda) * redundancy;
@@ -121,10 +116,7 @@ fn pick_next_candidate(
 	relevance_by_idx: &[f32],
 	policy: &ResolvedDiversityPolicy,
 ) -> Option<(DiversityPick, &'static str)> {
-	let mut best_non_filtered: Option<DiversityPick> = None;
-	let mut best_filtered: Option<DiversityPick> = None;
-	let mut best_any: Option<DiversityPick> = None;
-	let mut filtered_count = 0_u32;
+	let mut best: Option<DiversityPick> = None;
 
 	for (remaining_pos, candidate_idx) in remaining_indices.iter().copied().enumerate() {
 		let note_id = candidates[candidate_idx].item.note.note_id;
@@ -135,16 +127,11 @@ fn pick_next_candidate(
 				selected_indices,
 				note_vectors,
 			);
-		let redundancy = similarity.unwrap_or(0.0);
+		// Similar facts can contain complementary details or different versions.
+		// MMR penalizes redundancy; similarity alone must never exclude a fact.
 		let mmr_score = policy.mmr_lambda * relevance_by_idx[candidate_idx]
-			- (1.0 - policy.mmr_lambda) * redundancy;
-		let high_similarity = similarity.map(|value| value > policy.sim_threshold).unwrap_or(false);
-
-		if high_similarity {
-			filtered_count += 1;
-		}
-
-		let candidate_pick = DiversityPick {
+			- (1.0 - policy.mmr_lambda) * similarity.unwrap_or(0.0);
+		let pick = DiversityPick {
 			remaining_pos,
 			mmr_score,
 			nearest_note_id,
@@ -153,36 +140,10 @@ fn pick_next_candidate(
 			retrieval_rank: candidates[candidate_idx].item.retrieval_rank,
 		};
 
-		if best_any.as_ref().map(|current| candidate_pick.better_than(current)).unwrap_or(true) {
-			best_any = Some(candidate_pick);
-		}
-		if high_similarity {
-			if best_filtered
-				.as_ref()
-				.map(|current| candidate_pick.better_than(current))
-				.unwrap_or(true)
-			{
-				best_filtered = Some(candidate_pick);
-			}
-
-			continue;
-		}
-		if best_non_filtered
-			.as_ref()
-			.map(|current| candidate_pick.better_than(current))
-			.unwrap_or(true)
-		{
-			best_non_filtered = Some(candidate_pick);
+		if best.as_ref().is_none_or(|current| pick.better_than(current)) {
+			best = Some(pick);
 		}
 	}
 
-	if let Some(best) = best_non_filtered {
-		return Some((best, "mmr"));
-	}
-
-	if filtered_count >= policy.max_skips {
-		return best_any.map(|best| (best, "max_skips_backfill"));
-	}
-
-	best_filtered.map(|best| (best, "threshold_backfill"))
+	best.map(|pick| (pick, "mmr"))
 }

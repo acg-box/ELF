@@ -96,12 +96,8 @@ pub struct RankingBlendSegment {
 pub struct RankingDiversity {
 	/// Whether diversity filtering is enabled.
 	pub enabled: bool,
-	/// Similarity threshold above which candidates may be skipped.
-	pub sim_threshold: f32,
 	/// Lambda used by MMR-style balancing.
 	pub mmr_lambda: f32,
-	/// Maximum number of skipped candidates before backfilling.
-	pub max_skips: u32,
 }
 
 /// Source weighting and priority between fusion and structured-field retrieval.

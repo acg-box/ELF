@@ -1,5 +1,9 @@
 """Prove that benchmark hydration cannot substitute source-oracle context."""
 from unittest import TestCase
+from unittest.mock import patch
+from tempfile import TemporaryDirectory
+from pathlib import Path
+import json
 from scripts.tests.benchmark_support import load_script
 
 
@@ -29,3 +33,23 @@ class ElfMatchedTests(TestCase):
             return {'excerpt':'Invalid text','verification':{'verified':False}}
         with self.assertRaisesRegex(ValueError,'Unverified'):
             self.module.retrieve(api,'Question','documents',False,{'d':'source-id'})
+
+
+class ElfReuseTests(TestCase):
+    def test_reuse_rejects_changed_memory_or_vectors_before_copying_answers(self):
+        runtime = load_script('elf_reuse', 'scripts/benchmark-elf-matched.py').elf_runtime
+        with TemporaryDirectory() as directory:
+            root=Path(directory)/'next';previous=Path(directory)/'prior'
+            root.mkdir();previous.mkdir()
+            for folder in [root,previous]:
+                (folder/'frozen-workloads.json').write_text('{}')
+            (previous/'run-completed.json').write_text('{"limited":false}')
+            (previous/'embedding-state.json').write_text('{"hash":"original"}')
+            (previous/'extraction-diagnostics.json').write_text('{"notes":[]}')
+            with patch.object(runtime,'embedding_state',return_value={'hash':'changed'}):
+                with self.assertRaisesRegex(ValueError,'embedding state changed'):
+                    runtime.reuse_run(root,previous)
+            with patch.object(runtime,'embedding_state',return_value={'hash':'original'}), patch.object(runtime,'docker',return_value=json.dumps([{'note_id':'unexpected','text':'Changed'}])):
+                with self.assertRaisesRegex(ValueError,'Memory text or provenance changed'):
+                    runtime.reuse_run(root,previous)
+            self.assertFalse((root/'cases').exists())

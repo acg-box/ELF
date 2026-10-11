@@ -248,12 +248,7 @@ fn test_ranking() -> Ranking {
 				RankingBlendSegment { max_retrieval_rank: 1_000_000, retrieval_weight: 0.2 },
 			],
 		},
-		diversity: RankingDiversity {
-			enabled: true,
-			sim_threshold: 0.88,
-			mmr_lambda: 0.7,
-			max_skips: 64,
-		},
+		diversity: RankingDiversity { enabled: true, mmr_lambda: 0.7 },
 		retrieval_sources: RankingRetrievalSources {
 			fusion_weight: 1.0,
 			structured_field_weight: 1.0,
