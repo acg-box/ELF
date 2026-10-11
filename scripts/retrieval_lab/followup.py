@@ -22,7 +22,7 @@ def followup(root, backend, round_count=3):
         barrier=threading.Barrier(8)
         shared={}
         def worker(worker_id):
-            db=BACKENDS[backend](name)
+            db=BACKENDS[backend](name, queries.shape[1])
             for i in range(10):db.search(queries[(worker_id+i)%len(queries)],None,128)
             barrier.wait()
             if worker_id==0:shared['end']=time.perf_counter()+10
@@ -49,7 +49,7 @@ def followup(root, backend, round_count=3):
         if any(r['failure'] for r in rows):raise RuntimeError('Sustained trial failed; partial measurements retained')
     save(root/'backends'/backend/'sustained.json',{'seconds_per_round':10,'rounds':rounds,'concurrency':8,'ef':128,'filtered':False,'rows_in_table':49999,'complete':True,'boundary':'Runs after the matched deletion probe removed the same exact nearest-neighbor row from each backend.'})
     if backend=='postgres':
-        db=BACKENDS[backend](name)
+        db=BACKENDS[backend](name, queries.shape[1])
         base=read(root/'backends'/backend/'scale-50000.json')
         victim=base['delete_visibility']['victim']
         # Restore the deleted vector identically so original exact qrels apply.

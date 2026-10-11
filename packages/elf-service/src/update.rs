@@ -118,6 +118,13 @@ impl ElfService {
 			});
 		}
 
+		if note.text != next_text {
+			sqlx::query("DELETE FROM memory_note_fields WHERE note_id = $1")
+				.bind(note.note_id)
+				.execute(&mut *tx)
+				.await?;
+		}
+
 		note.text = next_text;
 		note.importance = next_importance;
 		note.confidence = next_confidence;

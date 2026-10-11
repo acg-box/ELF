@@ -80,7 +80,7 @@ def main():
     common.freeze(root/'protocol.json',{
         'source_commit':source_commit,'image_id':image['Id'],
         'image':elf_runtime.IMAGE,'chat':common.CHAT,'reasoning_effort':'max',
-        'provider_output_maximum':system.MAX_OUTPUT,'embedding':common.EMB,'dimensions':1536,
+        'provider_output_maximum':system.MAX_OUTPUT,'embedding':common.EMB,'dimensions':4096,
         'reranker':'cross-encoder/ms-marco-MiniLM-L-6-v2','independent_ceiling_usd':10,
         'primary':'ELF Context Pack (limit 32), hydrate only selected references, same external reader without extra context truncation.',
         'secondary':'Formal native retrieval (12 hits, 60 candidates per source), same reader, 4096 cl100k_base context tokens.',

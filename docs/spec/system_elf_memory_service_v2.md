@@ -167,8 +167,6 @@ org_shared = true
 max_notes_per_add_event = 3
 max_note_chars = 240
 # Similarity thresholds
-dup_sim_threshold = 0.92
-update_sim_threshold = 0.85
 # Retrieval sizes
 candidate_k = 60
 top_k = 12
@@ -641,8 +639,6 @@ details must include:
 - similarity_best
 - key_match
 - matched_dup
-- dup_sim_threshold
-- update_sim_threshold
 - confidence
 - importance
 - structured_present
@@ -825,8 +821,7 @@ MUST NOT:
 Stage-1 (base decision) is computed from resolver outcome + side-effect presence:
 - Add -> remember
 - Update -> update
-- None + (structured_present || graph_present) -> update
-- None + (!structured_present && !graph_present) -> ignore
+- None -> ignore (a duplicate cannot mutate structured fields).
 
 Stage-2 (policy stage) evaluates `memory.policy` rules and may only:
 - keep base decision remember/update
@@ -876,18 +871,18 @@ Order:
 1) Key-based:
    - If key is not null and an active note exists with the same key:
      -> UPDATE in place (same note_id).
-2) Similarity-based (when key is null):
-   - Compute embedding for incoming text.
-   - Compare cosine similarity vs existing active notes in the group using Postgres-stored vec.
-   - If sim >= dup_sim_threshold -> NONE.
-   - Else if sim >= update_sim_threshold -> UPDATE best match in place.
-   - Else -> ADD new note_id.
+2) No matching key:
+   - A supplied key creates a new identity; do not match a different key by similarity.
+   - Without a key, byte-identical text in an active unkeyed note yields NONE.
+   - Otherwise ADD a new note_id. Embedding similarity does not authorize replacement.
+   - NONE does not change text, structured fields, evidence, versions, or the outbox.
 
 On UPDATE:
 - Preserve note_id.
 - Write memory_note_versions with prev and new snapshots.
 - Update memory_notes.text, updated_at, expires_at, source_ref, confidence, importance.
 - Enqueue outbox UPSERT.
+- When the body changes, remove stale structured fields before applying the new extraction.
 
 ============================================================
 11. TTL AND LIFECYCLE

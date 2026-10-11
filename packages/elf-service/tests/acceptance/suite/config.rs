@@ -78,8 +78,6 @@ pub(crate) fn test_config(
 		memory: Memory {
 			max_notes_per_add_event: 3,
 			max_note_chars: 240,
-			dup_sim_threshold: 0.92,
-			update_sim_threshold: 0.85,
 			candidate_k: 60,
 			top_k: 12,
 			policy: MemoryPolicy { rules: vec![] },

@@ -6,13 +6,11 @@ use crate::{
 	add_event::types::{AddEventContext, ExtractedNote},
 	ingest_audit::{self, IngestAuditArgs},
 };
-use elf_config::Config;
 use elf_domain::{memory_policy::MemoryPolicyDecision, writegate::WritePolicyAudit};
 
 #[allow(clippy::too_many_arguments)]
 pub(super) async fn record_ingest_decision(
 	tx: &mut Transaction<'_, Postgres>,
-	cfg: &Config,
 	ctx: &AddEventContext<'_>,
 	note: &ExtractedNote,
 	note_type: &str,
@@ -51,8 +49,6 @@ pub(super) async fn record_ingest_decision(
 		similarity_best,
 		key_match,
 		matched_dup,
-		dup_sim_threshold: cfg.memory.dup_sim_threshold,
-		update_sim_threshold: cfg.memory.update_sim_threshold,
 		confidence: note.confidence.unwrap_or(0.0),
 		importance: note.importance.unwrap_or(0.0),
 		structured_present,

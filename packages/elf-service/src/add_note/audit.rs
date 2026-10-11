@@ -7,13 +7,11 @@ use crate::{
 	ingest_audit::{self, IngestAuditArgs},
 	structured_fields::StructuredFields,
 };
-use elf_config::Config;
 use elf_domain::{memory_policy::MemoryPolicyDecision, writegate::WritePolicyAudit};
 
 #[allow(clippy::too_many_arguments)]
 pub(super) async fn record_ingest_decision(
 	tx: &mut Transaction<'_, Postgres>,
-	cfg: &Config,
 	ctx: &AddNoteContext<'_>,
 	note: &AddNoteInput,
 	note_id: Option<Uuid>,
@@ -47,8 +45,6 @@ pub(super) async fn record_ingest_decision(
 		similarity_best,
 		key_match,
 		matched_dup,
-		dup_sim_threshold: cfg.memory.dup_sim_threshold,
-		update_sim_threshold: cfg.memory.update_sim_threshold,
 		confidence: note.confidence,
 		importance: note.importance,
 		structured_present: note.structured.as_ref().is_some_and(|s| !s.is_effectively_empty()),

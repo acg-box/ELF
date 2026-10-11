@@ -25,7 +25,6 @@ pub(super) async fn handle_rejection_paths(
 
 		audit::record_ingest_decision(
 			tx,
-			cfg,
 			ctx,
 			note,
 			None,
@@ -53,7 +52,6 @@ pub(super) async fn handle_rejection_paths(
 
 		audit::record_ingest_decision(
 			tx,
-			cfg,
 			ctx,
 			note,
 			None,

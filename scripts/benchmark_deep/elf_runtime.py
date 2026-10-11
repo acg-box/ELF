@@ -69,7 +69,7 @@ def start(root, repo, common):
     config = config.replace('postgres://postgres:postgres@127.0.0.1:5432/elf',
                             'postgres://postgres:benchmark-local@elf-matched-db:5432/elf')
     config = config.replace('http://127.0.0.1:6334', 'http://elf-matched-qdrant:6334')
-    config = config.replace('4_096', '1536').replace('tokenizer_repo = "REPLACE_ME"',
+    config = config.replace('tokenizer_repo = "REPLACE_ME"',
                                                   'tokenizer_repo = "/experiment/tokenizer.json"')
     config = config.replace('auth_keys                = []', '')
     config = config.replace('auth_mode                = "off"', 'auth_mode                = "static_keys"')
@@ -81,7 +81,7 @@ def start(root, repo, common):
         values = {'api_base': 'http://elf-matched-sidecar:8899/v1' if name == 'rerank' else base,
                   'api_key': 'local-only' if name == 'rerank' else os.environ['LITELLM_API_KEY'],
                   'model': model, 'provider_id': 'openai', 'path': endpoint, 'timeout_ms': 3600000}
-        if name == 'embedding': values['dimensions'] = 1536
+        if name == 'embedding': values['dimensions'] = 4096
         if name == 'llm_extractor': values['temperature'] = 0.1
         section = f'[providers.{name}]\ndefault_headers = {{}}\n' + ''.join(
             k + ' = ' + json.dumps(v) + '\n' for k, v in values.items()) + '\n'

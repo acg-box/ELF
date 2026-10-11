@@ -35,6 +35,13 @@ pub(super) async fn persist_extracted_note_update(
 
 	let prev_snapshot = crate::note_snapshot(&existing);
 
+	if existing.text != args.text {
+		sqlx::query("DELETE FROM memory_note_fields WHERE note_id = $1")
+			.bind(note_id)
+			.execute(&mut **tx)
+			.await?;
+	}
+
 	existing.text = args.text.to_string();
 	existing.importance = args.importance;
 	existing.confidence = args.confidence;

@@ -30,7 +30,7 @@ def ablation(root):
         old = pools[q['case_id']]
         assert context(old['rows'], encoding)['text'] == old['prior_context']['text'], q['case_id']
         matches += 1
-    save(root / 'context-controls.json', {'prior_combined_contexts_reproduced': matches, 'total': len(pools), 'tokenizer': 'cl100k_base', 'budget': 4096, 'candidate_order': 'Frozen native retrieval order; filter by source type without reranking', 'conditions': ['source', 'memory', 'combined'], 'reader_function': 'Unmodified benchmark_runner.answers.request_answers', 'order': 'Rotate three conditions by query ordinal', 'source_revision': '6cf7bc03a23579cb9415541b04906f2e87485c79'})
+    save(root / 'context-controls.json', {'prior_combined_contexts_reproduced': matches, 'total': len(pools), 'tokenizer': 'cl100k_base', 'budget': 4096, 'candidate_order': 'Frozen native retrieval order; filter by source type without reranking', 'conditions': ['source', 'memory', 'combined'], 'reader_function': 'Unmodified benchmark_runner.answers.request_answers', 'order': 'Rotate three conditions by query ordinal', 'source_revision': read(root / 'input-protocol.json')['source_commit'] if (root / 'input-protocol.json').exists() else '6cf7bc03a23579cb9415541b04906f2e87485c79'})
     for index, q in enumerate(suite['queries']):
         conditions = ['source', 'memory', 'combined']
         conditions = conditions[index % 3:] + conditions[:index % 3]

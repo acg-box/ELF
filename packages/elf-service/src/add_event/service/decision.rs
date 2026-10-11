@@ -114,7 +114,6 @@ impl ElfService {
 
 		audit::record_ingest_decision(
 			tx,
-			&self.cfg,
 			ctx,
 			note,
 			note_data.note_type.as_str(),
@@ -152,8 +151,6 @@ impl ElfService {
 		crate::resolve_update(
 			tx,
 			ResolveUpdateArgs {
-				cfg: &self.cfg,
-				providers: &self.providers,
 				tenant_id: req.tenant_id.as_str(),
 				project_id: if note_data.scope.trim() == "org_shared" {
 					ORG_PROJECT_ID

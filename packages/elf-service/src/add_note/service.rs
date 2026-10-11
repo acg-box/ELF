@@ -101,7 +101,6 @@ impl ElfService {
 
 		audit::record_ingest_decision(
 			&mut tx,
-			&self.cfg,
 			ctx,
 			&note,
 			result.note_id,
@@ -134,8 +133,6 @@ impl ElfService {
 		let decision = crate::resolve_update(
 			&mut **tx,
 			ResolveUpdateArgs {
-				cfg: &self.cfg,
-				providers: &self.providers,
 				tenant_id: ctx.tenant_id,
 				project_id: ctx.project_id,
 				agent_id: ctx.agent_id,
