@@ -49,15 +49,17 @@ class IntegrationPrerequisites(unittest.TestCase):
 
 class RetrievalEvidencePackage(unittest.TestCase):
     def test_published_manifest_files_are_tracked_and_verifiable(self):
-        relative = Path("config/benchmark/evidence/2026-10-10-retrieval-laboratory")
-        manifest = json.loads((ROOT / relative / "manifest.json").read_text())
-        tracked = set(subprocess.check_output(
-            ["git", "ls-files", "--", str(relative)], cwd=ROOT, text=True,
-        ).splitlines())
-        for name in ["manifest.json", *manifest]:
-            self.assertIn(str(relative / name), tracked, "Evidence file must be committed")
-        result = subprocess.run(
-            [sys.executable, str(ROOT / relative / "verify.py")], cwd=ROOT,
-            capture_output=True, text=True, check=False,
-        )
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        for bundle in ["2026-10-10-retrieval-laboratory", "2026-10-11-memory-consistency-4096"]:
+            with self.subTest(bundle=bundle):
+                relative = Path("config/benchmark/evidence") / bundle
+                manifest = json.loads((ROOT / relative / "manifest.json").read_text())
+                tracked = set(subprocess.check_output(
+                    ["git", "ls-files", "--", str(relative)], cwd=ROOT, text=True,
+                ).splitlines())
+                for name in ["manifest.json", *manifest]:
+                    self.assertIn(str(relative / name), tracked, "Evidence file must be committed")
+                result = subprocess.run(
+                    [sys.executable, str(ROOT / relative / "verify.py")], cwd=ROOT,
+                    capture_output=True, text=True, check=False,
+                )
+                self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

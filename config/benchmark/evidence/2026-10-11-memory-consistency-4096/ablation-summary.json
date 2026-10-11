@@ -1,0 +1,41 @@
+{
+  "combined": {
+    "completed": 20,
+    "scored": 16,
+    "strict_correct": 11,
+    "reviewed_correct": 15,
+    "all_reviewed_correct": 19,
+    "mean_context_tokens": 1513.15,
+    "median_seconds": 4.4075744044967,
+    "paid_usd": 0.008785115999999999,
+    "prompt_tokens": 35326,
+    "completion_tokens": 13619,
+    "cached_tokens": 31872
+  },
+  "memory": {
+    "completed": 20,
+    "scored": 16,
+    "strict_correct": 9,
+    "reviewed_correct": 13,
+    "all_reviewed_correct": 16,
+    "mean_context_tokens": 673.65,
+    "median_seconds": 4.314121413481189,
+    "paid_usd": 0.015532269000000001,
+    "prompt_tokens": 17839,
+    "completion_tokens": 24814,
+    "cached_tokens": 13823
+  },
+  "source": {
+    "completed": 20,
+    "scored": 16,
+    "strict_correct": 12,
+    "reviewed_correct": 16,
+    "all_reviewed_correct": 20,
+    "mean_context_tokens": 839.5,
+    "median_seconds": 3.7180869989970233,
+    "paid_usd": 0.00611772,
+    "prompt_tokens": 20916,
+    "completion_tokens": 9044,
+    "cached_tokens": 16640
+  }
+}

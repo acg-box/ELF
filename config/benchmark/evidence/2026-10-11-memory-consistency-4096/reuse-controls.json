@@ -1,0 +1,36 @@
+{
+  "source_commit": "cfb1bc8ed967333e81e101fdf3b0a77e2d01d7ce",
+  "document_cases_reused": 100,
+  "memory_notes_reused": 54,
+  "embedding_state": {
+    "note_embeddings": {
+      "sha256": "a77c3484483f532ade5f973e0b7d8ba2dc80629a6d16fcf161938faf934aefda",
+      "rows": 54,
+      "dimensions": [
+        4096
+      ]
+    },
+    "note_chunk_embeddings": {
+      "sha256": "31c6a182cb590a43d090716f281663441769e6382ee3146658a22428b8111d71",
+      "rows": 54,
+      "dimensions": [
+        4096
+      ]
+    },
+    "note_field_embeddings": {
+      "sha256": "09502f95125ad470938aff514864427ba0be0cb6253fa0580064d0162442f192",
+      "rows": 217,
+      "dimensions": [
+        4096
+      ]
+    },
+    "doc_chunk_embeddings": {
+      "sha256": "dc1ba4d5606085c9d8ae33f6cceccb43a4b662904f4c8b298b5bee853543b37d",
+      "rows": 34,
+      "dimensions": [
+        4096
+      ]
+    }
+  },
+  "new_extraction_calls": 0
+}

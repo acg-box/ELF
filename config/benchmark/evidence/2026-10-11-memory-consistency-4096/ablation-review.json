@@ -1,0 +1,542 @@
+[
+  {
+    "condition": "combined",
+    "case_id": "memory-0-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "eefd0a2b71c340bcfdec730fb468de2a61969c065b8163df09326f891de6d625"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-0-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "b4204397fbdbe7d6f9409b6f77fad2b72eeade43a2e65f74262ed0daf30a35b9"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-0-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-0-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "040eacbdbcb1a21a1ce498a4cd9b120249d85d31d1757548a7050f8242d9a1ae"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "a7fb2327de70adc6ef70854ea4cf7a83a97595a392657c37ffcba78e59456326"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "aebf4f31c54c7a9b9297b01cd011aa295952d107b6d99e2f786de864c7d46538"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "b79edb52d357eb94b8bbdaa3b92856b15fe42fa283bf72a65a7c59b1d0e028f9"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "d2e50603e19978d16c0a37c9d8afbde4b00775f09b049df621aa729565c08bf2"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "ff8f6082ac8e2934dbeb7064d6753341cd781b13128c5ddfdd667f7b88b769e9"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-1",
+    "strict_correct": false,
+    "correct": false,
+    "reviewed_correct": false,
+    "reason": "Fails the frozen text rubric; no permitted correction applied.",
+    "answer_sha256": "811809cdb1e3180807852e57bb4bf3a88dd66a87a83ca9af0ee4e786691940b1"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "1a85a718cdc67486e37dfc3db927011124bd7a2fca3c6a86316a75a27942d29f"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "73cf3bc3c1d7297d67e2344dfdf0cb380deb36dbba9167a2094e52748db97412"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586"
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "f9a7b57a116b2f58d13b1ba291ed9166ed04ed573ef7fab4ad4807911271e8d1"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-1",
+    "strict_correct": false,
+    "correct": false,
+    "reviewed_correct": false,
+    "reason": "Fails the frozen text rubric; no permitted correction applied.",
+    "answer_sha256": "21eacfcb2307598a10b8ce2aafaa4c378aa7791e52f5b9217aadaf3233426bed"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "25184a268cdc47750786607979f84f0bed3ad103d0716c085830f5233ba0ac50"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "0e1951f31490019198ddccec521a81121a497738abab113ad8e738842b83ff5e"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "34c24adef16fba9e230ee929dc83403ec8680e857f8b2ebf41c3b5b7ff45a392"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "b79edb52d357eb94b8bbdaa3b92856b15fe42fa283bf72a65a7c59b1d0e028f9"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-1",
+    "strict_correct": false,
+    "correct": false,
+    "reviewed_correct": false,
+    "reason": "Fails the frozen text rubric; no permitted correction applied.",
+    "answer_sha256": "0673458fce8e3b2d87a77d87498b77ad30a01d275dd5e26ed027bb3dc7ec7642"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "ff8f6082ac8e2934dbeb7064d6753341cd781b13128c5ddfdd667f7b88b769e9"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-1",
+    "strict_correct": false,
+    "correct": false,
+    "reviewed_correct": false,
+    "reason": "Fails the frozen text rubric; no permitted correction applied.",
+    "answer_sha256": "c9f8269108a51afc2b48a414ac42bee862cd8b7a56fe505812f0bb8546c00e11"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "1bca045da9097e1698c9786d0bb10f63fe4c8ef2a463a5f76dd10be81181b85c"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-0",
+    "strict_correct": false,
+    "correct": false,
+    "reviewed_correct": false,
+    "reason": "Fails the frozen text rubric; no permitted correction applied.",
+    "answer_sha256": "f3479f5fa2ed077dba38a9c9503896f7069f13785907fb64db26bd6f5b4062ea"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "9f2554c20eb55908d58f9bc6971294ae0162e81857c96d1aa9aa9d6381dac2c5"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586"
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-3",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "f9a7b57a116b2f58d13b1ba291ed9166ed04ed573ef7fab4ad4807911271e8d1"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "a7c87c10b1aa65997eb53142e950916ec4cb26a7e6966c349c1c824f4fb181e8"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "36941cefdc95b062174555682772b2bd4e61a7883763fbfb834f76cfe1687749"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "33e25b030dfa36ee80fd556249cead081397e7f6de5301adfb87ea8f21411e08"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "34c24adef16fba9e230ee929dc83403ec8680e857f8b2ebf41c3b5b7ff45a392"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "b79edb52d357eb94b8bbdaa3b92856b15fe42fa283bf72a65a7c59b1d0e028f9"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "236203c73c865e1e164585b2505b317c9f5135d6e394183337ba998500d747da"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "0fcba7a3c1ac678164564be0a4688d84d5cf69fe1932f8de65272a3754b01435"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "03f80d990782d124d1a3e53f5d8d73dff96ff85d832a74cb59c4197fb67cb1aa"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-0",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "be1c5f95127b92213d146e9d71f5a63210fe6d7430ca958a0bb702d02c1aaf3d"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-1",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "ab2e5c260319ebdab1444e7fcf37bed2461a05334e943de20f5655a0c1975439"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-2",
+    "strict_correct": true,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "Matches the frozen text rubric.",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "strict_correct": false,
+    "correct": true,
+    "reviewed_correct": true,
+    "reason": "The selected evidence explicitly states no owner has been appointed. Same historical known-absence correction; raw support flag retained.",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d"
+  }
+]

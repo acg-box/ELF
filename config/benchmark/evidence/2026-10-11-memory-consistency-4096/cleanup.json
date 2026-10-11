@@ -1,0 +1,56 @@
+{
+  "removed_containers": [
+    "elf-matched-api",
+    "elf-matched-worker",
+    "elf-matched-sidecar",
+    "elf-matched-db",
+    "elf-matched-qdrant",
+    "elf-lab-qdrant",
+    "elf-lab-infinity"
+  ],
+  "removed_volumes": [
+    "5d19946a1761cf231d337a78fb5e7db38d39f1e95557757efbb796f216716763"
+  ],
+  "removed_networks": [
+    "elf-matched",
+    "elf-retrieval-lab_default"
+  ],
+  "removed_images": [
+    {
+      "image": "elf-memory-consistency:4096",
+      "image_id": "sha256:875ec5d86e368758934bc77d2dca750a792a7fc376bb1cb07207beeddb06cadb"
+    },
+    {
+      "image": "elf-memory-consistency:4096-context",
+      "image_id": "sha256:4b95a6b587d9832ef93a89625457c92d6399b87b92420ecb4da781b1a8cf2aaf"
+    },
+    {
+      "image": "elf-memory-consistency:4096-final",
+      "image_id": "sha256:ca35f66b664715c9417235ed2aea87203f7a253aed70b68c02512f02a9696b19"
+    },
+    {
+      "image": "elf-memory-consistency:4096-selection",
+      "image_id": "sha256:c846186dba88eb240003ce87c1053517bf22a278b97294e30fe59fafc2399ce1"
+    },
+    {
+      "image": "elf-retrieval-lab:20261010",
+      "image_id": "sha256:38ac1fee4f4a43cf119998a601c262071786ac271ec5d046789b72f28c955469"
+    },
+    {
+      "image": "elf-lab-infinity:0.7.4-arm64-glibc",
+      "image_id": "sha256:2e3e79adb6b36d10e9f34535a9b50b59ed971877f9545b1c085381ca304cf907"
+    },
+    {
+      "image": "qdrant/qdrant:v1.19.2",
+      "image_id": "sha256:2ca0be6b5b2a5c55549ec0c84ce5610ef0c2145b6b36ff6efb515ca971566ba0"
+    },
+    {
+      "image": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+      "image_id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926"
+    }
+  ],
+  "retained_images": [],
+  "unrelated_resources_preserved": true,
+  "global_prune_used": false,
+  "raw_evidence_and_embedding_cache_retained": true
+}

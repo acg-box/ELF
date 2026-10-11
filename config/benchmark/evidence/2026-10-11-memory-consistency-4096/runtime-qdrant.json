@@ -1,0 +1,9 @@
+{
+  "name": "elf-lab-qdrant",
+  "container_id": "8c7b783678bf523a0544b1177d70794b07f0b4f2b990f96de44894ad1c7f2dd2",
+  "image_id": "sha256:2ca0be6b5b2a5c55549ec0c84ce5610ef0c2145b6b36ff6efb515ca971566ba0",
+  "image_ref": "qdrant/qdrant:v1.19.2",
+  "memory_limit": 4294967296,
+  "nano_cpus": 4000000000,
+  "architecture": "arm64"
+}

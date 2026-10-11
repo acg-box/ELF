@@ -158,3 +158,20 @@ Publish a separate dated evidence report. Preserve earlier reports unchanged.
 After collecting receipts and resource measurements, remove only this run's
 containers, volumes, images, and temporary credentials. Keep reusable frozen
 embedding receipts and the cumulative cost ledger.
+
+## Compare a memory-selection change without re-extraction
+
+Use `benchmark-elf-matched --reuse-run PREVIOUS --artifact-root NEXT --image IMAGE`
+only while the same task-owned PostgreSQL and Qdrant fixture remains available.
+First retain `embedding-state.json`, `extraction-diagnostics.json`, and
+`source-integrity.json` from the completed previous run. The runner verifies the
+canonical vector hashes, note bodies and provenance, and original document
+hashes before it reuses them. It does not call ingestion again.
+
+The runner retains completed document answers with their original source
+revision in `reused_from`, then reruns both memory query paths. Report that
+lineage explicitly; do not describe reused answers as new calls on the new
+binary. This mode isolates memory selection and avoids repeated extraction.
+Hard similarity suppression is removed from selection. MMR still applies a
+soft redundancy penalty, controlled by `mmr_lambda`; `sim_threshold` and
+`max_skips` are no longer active settings.

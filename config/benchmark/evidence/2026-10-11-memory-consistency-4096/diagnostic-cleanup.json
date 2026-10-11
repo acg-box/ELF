@@ -1,0 +1,34 @@
+[
+  {
+    "name": "elf-matched-api",
+    "id": "b2cd06ecaecae5d592b81a60311f446576546cde8716d82128d7a2c0d621a363",
+    "image": "sha256:4b95a6b587d9832ef93a89625457c92d6399b87b92420ecb4da781b1a8cf2aaf",
+    "volumes": []
+  },
+  {
+    "name": "elf-matched-worker",
+    "id": "43bbb96a92735d29ecc8259950cecde56a7270084498c601fa5a552913ac159e",
+    "image": "sha256:4b95a6b587d9832ef93a89625457c92d6399b87b92420ecb4da781b1a8cf2aaf",
+    "volumes": []
+  },
+  {
+    "name": "elf-matched-sidecar",
+    "id": "9abd51f6f2d65ef0b85a6dcd7cd01884edff33f55a95331dd21b414c89eaaae0",
+    "image": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+    "volumes": []
+  },
+  {
+    "name": "elf-matched-qdrant",
+    "id": "8dd0332bd78ddcd30b91f978d7e9c82705ba831965636fe654e83593368dfa04",
+    "image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c",
+    "volumes": []
+  },
+  {
+    "name": "elf-matched-db",
+    "id": "511b3ecacad0a2281375cda05255ac56d74db328c06d5cb9eb27990714ff0886",
+    "image": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+    "volumes": [
+      "4f5af39c1baf7d30515bad097dafe93ef6524115198831144285665055299491"
+    ]
+  }
+]
