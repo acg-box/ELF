@@ -1,0 +1,34 @@
+name: elf-retrieval-lab
+services:
+  infinity:
+    profiles: [infinity]
+    image: elf-lab-infinity:0.7.4-arm64-glibc
+    build:
+      context: ../..
+      dockerfile: docker/retrieval-lab/Infinity.Dockerfile
+    container_name: elf-lab-infinity
+    cpus: 4
+    mem_limit: 4g
+    ports:
+      - "127.0.0.1:19869:23817"
+      - "127.0.0.1:19870:23820"
+  qdrant:
+    profiles: [qdrant]
+    image: qdrant/qdrant:v1.19.2
+    container_name: elf-lab-qdrant
+    cpus: 4
+    mem_limit: 4g
+    ports:
+      - "127.0.0.1:19865:6333"
+      - "127.0.0.1:19866:6334"
+  postgres:
+    profiles: [postgres]
+    image: pgvector/pgvector:pg18
+    container_name: elf-lab-postgres
+    cpus: 4
+    mem_limit: 4g
+    shm_size: 1g
+    environment:
+      POSTGRES_PASSWORD: lab-only-local
+    ports:
+      - "127.0.0.1:19867:5432"

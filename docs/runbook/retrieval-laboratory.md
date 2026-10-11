@@ -27,6 +27,27 @@ that directory at `/artifacts`. Paths supplied to this command are container
 paths. Phases are `prepare`, `ablation`, `backend`, `followup`, and `analyze`.
 Run reference checks with `cargo make test-retrieval-lab`.
 
+The Compose file records the equivalent server settings used in the measurement.
+Start one server at a time, for example:
+
+```sh
+docker compose -f docker/retrieval-lab/compose.yaml --profile infinity up -d --build infinity
+cargo make benchmark-retrieval-lab backend --backend infinity --root /artifacts/retrieval-ablation
+cargo make benchmark-retrieval-lab followup --backend infinity --root /artifacts/retrieval-ablation
+docker compose -f docker/retrieval-lab/compose.yaml stop infinity
+```
+
+Repeat for `qdrant` and `postgres`; both have published images and need no build.
+The PostgreSQL password in this isolated fixture is `lab-only-local`. It is not
+a production credential. Infinity's recorded image is ARM64; do not present an
+emulated run on another architecture as a native performance comparison. Use a
+fresh artifact root for a new trial, and preserve old attempts. After collection,
+`docker compose -f docker/retrieval-lab/compose.yaml down -v` removes only this
+Compose project's containers, network and anonymous volumes. Check ownership and
+active use before removing task-built images. The measured run used equivalent
+individual Docker commands on the default bridge; Compose is a reproduction aid,
+not a claim that its network topology was measured.
+
 ## Input and cost controls
 
 `prepare --receipts PATH` reads the previous provider receipts, matches exact
