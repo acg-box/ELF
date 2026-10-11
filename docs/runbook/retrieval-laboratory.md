@@ -77,6 +77,12 @@ review corrections separate, using the previous report's review rubric.
 ## Full-dimension memory regression
 
 The matched ELF runner uses Qwen3-Embedding-8B with all 4,096 dimensions.
+Default extraction profile v3 preserves subject and incident context. Existing
+pinned profiles stay pinned. Model-generated keys are retained as
+`source_ref.extracted_key` hints; only caller-authorized `add_note` keys can
+replace a note. Automatic extraction uses unkeyed, exact-text deduplication.
+Do not repair old derived notes by guessing from their corrupted fields. Use
+accepted original sources and retain prior evidence when re-extracting them.
 Keep PostgreSQL as the source of truth and Qdrant as the production index.
 Do not truncate, pad, or reuse a 1,536-dimensional vector as a 4,096-dimensional
 vector. Old receipts remain valid only for their recorded configuration.
