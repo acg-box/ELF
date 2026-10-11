@@ -25,7 +25,8 @@ def prepare(root, receipts, native_run=None, fill_missing=False):
     evidence = Path(native_run) if native_run else EVIDENCE
     dimension = read(evidence / "protocol.json").get("dimensions", 1536) if native_run else 1536
     vectors = {}
-    for value, receipt_sha in receipt_rows(receipts):
+    from itertools import chain
+    for value, receipt_sha in chain(receipt_rows(receipts), receipt_rows(root / "filled-embeddings")):
         request, response = value['request'], value['response']
         if 'input' not in request or 'data' not in response:
             continue
@@ -62,7 +63,7 @@ def prepare(root, receipts, native_run=None, fill_missing=False):
             with urllib.request.urlopen(req, timeout=3600) as response:
                 value = json.load(response)
             receipt = {'request':request,'response':value}
-            save(root / 'filled-embeddings' / f'{offset:04}.json', receipt)
+            save(root / 'filled-embeddings' / (digest(json.dumps(inputs)) + '.json'), receipt)
             receipt_sha = hashlib.sha256((json.dumps(receipt,indent=2)+'\n').encode()).hexdigest()
             if sorted(row['index'] for row in value['data']) != list(range(len(inputs))):
                 raise ValueError('Incomplete embedding response')

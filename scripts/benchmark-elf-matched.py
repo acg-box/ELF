@@ -85,7 +85,7 @@ def main():
         'primary':'ELF Context Pack (limit 32), hydrate only selected references, same external reader without extra context truncation.',
         'secondary':'Formal native retrieval (12 hits, 60 candidates per source), same reader, 4096 cl100k_base context tokens.',
         'ingest':'Unchanged OCR annotations and dated memory records in Source Library; memory records also use native events ingestion.',
-        'defaults':'elf.example.toml; real GPT-2 tokenizer at frozen revision; language-neutral text contract; builtin extraction profile v2; memory and ranking defaults retained; knowledge documents use 2048-token chunks with 256-token overlap.',
+        'defaults':'elf.example.toml; real GPT-2 tokenizer at frozen revision; language-neutral text contract; builtin extraction profile v3; memory and ranking defaults retained; knowledge documents use 2048-token chunks with 256-token overlap.',
         'tokenizer':json.loads((root/'tokenizer-receipt.json').read_text()),
         'boundary':'ELF has no native final-answer API. Neither condition claims native reflect equivalence. No manual knowledge pages or oracle-directed structures.',
         'execution':'Serial queries; preserve all completed answers; retry failures only; development cases excluded from score.',

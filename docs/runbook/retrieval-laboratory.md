@@ -74,6 +74,26 @@ lower the model's output allowance to fit a smaller reservation tranche.
 Retain failed receipts before an explicit retry. Keep strict scores and semantic
 review corrections separate, using the previous report's review rubric.
 
+## Full-dimension memory regression
+
+The matched ELF runner uses Qwen3-Embedding-8B with all 4,096 dimensions.
+Keep PostgreSQL as the source of truth and Qdrant as the production index.
+Do not truncate, pad, or reuse a 1,536-dimensional vector as a 4,096-dimensional
+vector. Old receipts remain valid only for their recorded configuration.
+
+For a new matched run, use a fresh artifact directory and retain native state,
+source-integrity checks, cases, and provider receipts. Pass `--native-run PATH`
+to `prepare` to import that run instead of the historical fixture. Missing exact
+inputs stop preparation. `--fill-missing` explicitly permits generation through
+the same budget gateway; completed receipts are reused on restart. All backends
+use the resulting shared dataset, including its recorded dimensions.
+
+The current laboratory client has a 4 GiB limit to hold 50,000 full-dimensional
+vectors and the independent exact reference. Record this change when comparing
+with older 2 GiB client runs. Compare Qdrant and Infinity sequentially. Do not run
+the ordinary pgvector HNSW adapter at 4,096 dimensions: its vector index limit is
+2,000, and the halfvec index limit is 4,000. Do not change dimensions to bypass it.
+
 ## Database controls
 
 Use isolated containers, each limited to four CPUs and 4 GiB RAM. Run measured
