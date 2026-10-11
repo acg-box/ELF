@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/HelixDB/helix-foundry",
+  "revision": "84899851d845d1db98f9e328634f14e0ed4ad7b7",
+  "inspected": [
+    "README.md",
+    "docs/GUIDE.md",
+    "packages/shared/src/ontology.ts",
+    "apps/api/src/routes/ontology.ts",
+    "services/executor/src/engine.ts"
+  ],
+  "observations": [
+    "Object mappings name a dataset, primary key, and properties; relationships map source and target columns.",
+    "DuckDB executor runs declared-input SQL over versioned Parquet snapshots.",
+    "HelixDB stores workspace metadata, jobs, proposals, objects and edges.",
+    "Publication and edited overlays have hashes, input versions, generations, and audit history."
+  ],
+  "elf_relevance": "External domain identities and typed relation ownership are useful contracts. Business ontology definitions, connector mappings, business metrics, and actions remain application-owned. No dependency adoption or Foundry runtime benchmark was performed."
+}

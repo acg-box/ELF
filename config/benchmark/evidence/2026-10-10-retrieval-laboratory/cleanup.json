@@ -1,0 +1,21 @@
+{
+  "owned_containers_removed": [
+    "elf-lab-infinity",
+    "elf-lab-qdrant",
+    "elf-lab-postgres"
+  ],
+  "anonymous_volumes_removed": [
+    "010bbfd8848a10eb52a2b7f08b353844bd6ba992cb028a82705cdcce2f23cd91"
+  ],
+  "owned_images_removed": [
+    "sha256:119bf5c9cab3e67ebb9c93a143881f127d7bceaa56e86dcbfc1edc8bee1ccb92",
+    "sha256:1f18654569cc6544b722911b56d6abb845d62e8a4bbbf855a167ee65c2e00858",
+    "sha256:2ca0be6b5b2a5c55549ec0c84ce5610ef0c2145b6b36ff6efb515ca971566ba0",
+    "sha256:dfa951c33b7faa553765f7fc06cff54895c7b635da9003a9cbd5039eafd05acd",
+    "sha256:1698578b9b0e9cb87383a963dc8201d7d655da91e9d1b43208d4089d13967989"
+  ],
+  "retained_images": [],
+  "shared_services_images_and_build_cache_preserved": true,
+  "provider_consumer_exited": true,
+  "new_network_created": false
+}

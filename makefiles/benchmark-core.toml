@@ -255,3 +255,30 @@ command = "python3"
 [tasks.benchmark-elf-matched]
 args    = ["scripts/benchmark-elf-matched.py", "${@}"]
 command = "python3"
+
+[tasks.benchmark-retrieval-lab]
+args = [
+	"run",
+	"--rm",
+	"--cpus",
+	"4",
+	"--memory",
+	"2g",
+	"--add-host",
+	"host.docker.internal:host-gateway",
+	"-e",
+	"LITELLM_API_KEY",
+	"-e",
+	"LITELLM_BASE_URL",
+	"-v",
+	"${CARGO_MAKE_WORKING_DIRECTORY}:/repo:ro",
+	"-v",
+	"${ELF_LAB_ARTIFACTS}:/artifacts",
+	"elf-retrieval-lab:20261010",
+	"${@}",
+]
+command = "docker"
+
+[tasks.build-retrieval-lab]
+args    = ["build", "-f", "docker/retrieval-lab/Dockerfile", "-t", "elf-retrieval-lab:20261010", "."]
+command = "docker"

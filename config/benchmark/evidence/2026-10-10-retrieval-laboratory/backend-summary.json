@@ -1,0 +1,330 @@
+{
+  "latency": [
+    {
+      "backend": "infinity",
+      "n": 10000,
+      "filtered": false,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 0.9943,
+      "median_ms": 1.088,
+      "p95_ms": 1.315,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 10000,
+      "filtered": false,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 0.9957,
+      "median_ms": 0.88,
+      "p95_ms": 1.601,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 10000,
+      "filtered": false,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 1.364,
+      "p95_ms": 1.829,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "infinity",
+      "n": 10000,
+      "filtered": false,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 0.9986,
+      "median_ms": 1.345,
+      "p95_ms": 1.759,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 10000,
+      "filtered": false,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 0.9986,
+      "median_ms": 1.033,
+      "p95_ms": 2.12,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 10000,
+      "filtered": false,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 1.56,
+      "p95_ms": 2.136,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "infinity",
+      "n": 10000,
+      "filtered": true,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 3.42,
+      "p95_ms": 4.066,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 10000,
+      "filtered": true,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 2.377,
+      "p95_ms": 2.85,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 10000,
+      "filtered": true,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 1.142,
+      "p95_ms": 1.546,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "infinity",
+      "n": 10000,
+      "filtered": true,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 5.508,
+      "p95_ms": 6.542,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 10000,
+      "filtered": true,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 2.361,
+      "p95_ms": 3.29,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 10000,
+      "filtered": true,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 1.182,
+      "p95_ms": 1.633,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "infinity",
+      "n": 50000,
+      "filtered": false,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 0.9743,
+      "median_ms": 1.328,
+      "p95_ms": 1.54,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 50000,
+      "filtered": false,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 0.9871,
+      "median_ms": 2.221,
+      "p95_ms": 2.851,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 50000,
+      "filtered": false,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 0.99,
+      "median_ms": 1.441,
+      "p95_ms": 1.761,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "infinity",
+      "n": 50000,
+      "filtered": false,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 0.9986,
+      "median_ms": 1.682,
+      "p95_ms": 2.041,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 50000,
+      "filtered": false,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 0.9957,
+      "median_ms": 3.04,
+      "p95_ms": 3.864,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 50000,
+      "filtered": false,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 0.9986,
+      "median_ms": 2.068,
+      "p95_ms": 2.703,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "infinity",
+      "n": 50000,
+      "filtered": true,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 3.134,
+      "p95_ms": 5.179,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 50000,
+      "filtered": true,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 20.541,
+      "p95_ms": 21.996,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 50000,
+      "filtered": true,
+      "ef": 64,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 0.993,
+      "p95_ms": 1.261,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "infinity",
+      "n": 50000,
+      "filtered": true,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 4.537,
+      "p95_ms": 7.605,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "postgres",
+      "n": 50000,
+      "filtered": true,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 20.721,
+      "p95_ms": 22.126,
+      "minimum_returned": 10
+    },
+    {
+      "backend": "qdrant",
+      "n": 50000,
+      "filtered": true,
+      "ef": 128,
+      "samples": 210,
+      "recall_at_10": 1.0,
+      "median_ms": 1.329,
+      "p95_ms": 1.678,
+      "minimum_returned": 10
+    }
+  ],
+  "throughput": [
+    {
+      "backend": "qdrant",
+      "n": 10000,
+      "build_seconds": 5.187727117969189,
+      "queries": 280,
+      "seconds": 0.2490460709668696,
+      "qps": 1124.2899713814325,
+      "all_returned_10": true,
+      "delete_ms": 9.628967964090407
+    },
+    {
+      "backend": "qdrant",
+      "n": 50000,
+      "build_seconds": 44.07333577296231,
+      "queries": 280,
+      "seconds": 0.21846700098831207,
+      "qps": 1281.6580935945558,
+      "all_returned_10": true,
+      "delete_ms": 18.56960100121796
+    },
+    {
+      "backend": "infinity",
+      "n": 10000,
+      "build_seconds": 8.080415989970788,
+      "queries": 280,
+      "seconds": 0.10381276597036049,
+      "qps": 2697.163469085706,
+      "all_returned_10": true,
+      "delete_ms": 2.383710991125554
+    },
+    {
+      "backend": "infinity",
+      "n": 50000,
+      "build_seconds": 41.73453267698642,
+      "queries": 280,
+      "seconds": 0.11187310697278008,
+      "qps": 2502.835646355357,
+      "all_returned_10": true,
+      "delete_ms": 4.03962901327759
+    },
+    {
+      "backend": "postgres",
+      "n": 10000,
+      "build_seconds": 13.414259303011931,
+      "queries": 280,
+      "seconds": 0.06347281800117344,
+      "qps": 4411.337148995395,
+      "all_returned_10": true,
+      "delete_ms": 38.37112401379272
+    },
+    {
+      "backend": "postgres",
+      "n": 50000,
+      "build_seconds": 78.97231582400855,
+      "queries": 280,
+      "seconds": 0.13681768701644614,
+      "qps": 2046.5190291248139,
+      "all_returned_10": true,
+      "delete_ms": 199.09591902978718
+    }
+  ]
+}

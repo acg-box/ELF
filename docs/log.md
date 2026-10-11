@@ -8,6 +8,10 @@ logs.
 
 ## 2026-10-10
 
+- Add frozen memory ablation and cached-vector backend evidence. Separate note
+  correctness from source fallback, single-query latency from sustained load,
+  and default PostgreSQL plans from a diagnostic HNSW tradeoff.
+
 - Record the language-neutral source-memory decision and matched regression. Keep
   historical measurements unchanged, separate strict and reviewed scores, and
   document metadata follow-up validation and cumulative USD 10 accounting.

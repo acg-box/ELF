@@ -24,4 +24,5 @@ Routes to: Runbook concepts under `docs/runbook/`.
 - `competitive_parity_testing.md`: Docker-only parity gate operation.
 - `external_memory_pattern_radar.md`: weekly upstream memory-pattern radar workflow.
 - `benchmarking/index.md`: benchmark runbooks and suite interpretation.
+- [Retrieval laboratory](retrieval-laboratory.md): frozen memory ablation, cached vectors, and database comparisons.
 - `development/index.md`: repository-development runbooks.

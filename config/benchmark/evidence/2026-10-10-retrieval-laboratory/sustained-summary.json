@@ -1,0 +1,41 @@
+{
+  "infinity": {
+    "qps_rounds": [
+      1386.4369040142624,
+      1424.5479665583164,
+      1395.230353053549
+    ],
+    "median_qps": 1395.230353053549,
+    "seconds_per_round": 10,
+    "rounds": 3,
+    "concurrency": 8,
+    "total_successful_requests": 42080,
+    "failures": 0
+  },
+  "qdrant": {
+    "qps_rounds": [
+      2495.5661334673387,
+      2470.3223246080847,
+      2680.641541189613
+    ],
+    "median_qps": 2495.5661334673387,
+    "seconds_per_round": 10,
+    "rounds": 3,
+    "concurrency": 8,
+    "total_successful_requests": 76502,
+    "failures": 0
+  },
+  "postgres": {
+    "qps_rounds": [
+      3072.0138469890544,
+      3066.734144932632,
+      3101.0396272459116
+    ],
+    "median_qps": 3072.0138469890544,
+    "seconds_per_round": 10,
+    "rounds": 3,
+    "concurrency": 8,
+    "total_successful_requests": 92434,
+    "failures": 0
+  }
+}

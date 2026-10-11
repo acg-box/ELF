@@ -1,0 +1,15 @@
+{
+  "prior_combined_contexts_reproduced": 20,
+  "total": 20,
+  "tokenizer": "cl100k_base",
+  "budget": 4096,
+  "candidate_order": "Frozen native retrieval order; filter by source type without reranking",
+  "conditions": [
+    "source",
+    "memory",
+    "combined"
+  ],
+  "reader_function": "Unmodified benchmark_runner.answers.request_answers",
+  "order": "Rotate three conditions by query ordinal",
+  "source_revision": "6cf7bc03a23579cb9415541b04906f2e87485c79"
+}
