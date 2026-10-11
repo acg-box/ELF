@@ -87,3 +87,24 @@ command = "bash"
 [tasks.test-tooling]
 args    = ["-m", "unittest", "scripts/tests/test_tooling.py"]
 command = "python3"
+
+[tasks.test-retrieval-lab]
+args = [
+	"run",
+	"--rm",
+	"--cpus",
+	"4",
+	"--memory",
+	"2g",
+	"-v",
+	"${CARGO_MAKE_WORKING_DIRECTORY}:/repo:ro",
+	"-e",
+	"PYTHONPATH=/repo/scripts",
+	"--entrypoint",
+	"python",
+	"elf-retrieval-lab:20261010",
+	"-m",
+	"unittest",
+	"scripts/tests/test_retrieval_lab.py",
+]
+command = "docker"
