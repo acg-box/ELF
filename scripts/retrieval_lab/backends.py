@@ -62,6 +62,9 @@ class Qdrant:
         fil=models.Filter(must=[models.FieldCondition(key='tenant',match=models.MatchValue(value=tenant))])
         return [x.id for x in self.client.query_points(self.name,query=models.Document(text=lexical(query),model='qdrant/bm25'),using='bm25',query_filter=fil,limit=k,with_payload=False).points]
 
+    def close(self):
+        self.client.close()
+
     def delete(self, identity):
         self.client.delete(self.name, points_selector=models.PointIdsList(points=[identity]),wait=True)
 
@@ -101,6 +104,9 @@ class Infinity:
 
     def text(self, query, tenant, k=60):
         return self.get().output(['id']).match_text('body',lexical(query),k).filter('tenant = '+str(int(tenant))).to_result()[0]['id']
+
+    def close(self):
+        self.client.disconnect()
 
     def delete(self, identity):
         self.get().delete('id = '+str(int(identity)))
@@ -145,6 +151,9 @@ class Postgres:
         terms=sorted(set(lexical(query).split()))
         tsquery=' | '.join("'"+word+"'" for word in terms)
         return [r[0] for r in self.client.execute(f"SELECT id FROM {self.name}, to_tsquery('simple', %s) q WHERE tenant=%s AND lex @@ q ORDER BY ts_rank_cd(lex,q) DESC,id LIMIT %s",(tsquery,tenant,k)).fetchall()]
+
+    def close(self):
+        self.client.close()
 
     def delete(self,identity):
         self.client.execute(f'DELETE FROM {self.name} WHERE id=%s',(identity,))

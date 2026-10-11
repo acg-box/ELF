@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "reference_tests": {
+      "log_sha256": "f6cd2db474184f25f8f25dd7fb4f4fb7dad75a2cc75d2fd499a477d776849ec1",
+      "passed": 5
+    },
+    "tooling": {
+      "log_sha256": "9960b0b9ebd9d825e5cadd2d88b43455e4c9d271e7d9dcec1992e5863ffae038",
+      "passed": 3
+    },
+    "docs": {
+      "log_sha256": "f1f9641937da28fa89da61aa214c1c2e445b3e802a44e5b1d11e8871df1edccf"
+    },
+    "format": {
+      "log_sha256": "282cf7cdb257715d0cf1f820f335e555ac58e57ed6e85ef414992cbae0d73522"
+    },
+    "duckdb_analysis": {
+      "log_sha256": "e9a276634b23378701590ed8cec51d4578157e415ab3f51bed1c4290391b52ea"
+    }
+  },
+  "public_sql_groups": {
+    "latency": 24,
+    "ablation": 3
+  },
+  "production_code_changed": false
+}

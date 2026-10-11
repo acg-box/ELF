@@ -1,0 +1,98 @@
+[
+  {
+    "backend": "infinity",
+    "mode": "dense",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "postgres",
+    "mode": "dense",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "qdrant",
+    "mode": "dense",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "infinity",
+    "mode": "hybrid",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "postgres",
+    "mode": "hybrid",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "qdrant",
+    "mode": "hybrid",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "infinity",
+    "mode": "dense",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.7083333333333334,
+    "fact_coverage": 0.8333333333333334
+  },
+  {
+    "backend": "postgres",
+    "mode": "dense",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.7083333333333334,
+    "fact_coverage": 0.8333333333333334
+  },
+  {
+    "backend": "qdrant",
+    "mode": "dense",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.7083333333333334,
+    "fact_coverage": 0.8333333333333334
+  },
+  {
+    "backend": "infinity",
+    "mode": "hybrid",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.8333333333333334,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "postgres",
+    "mode": "hybrid",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.7291666666666666,
+    "fact_coverage": 0.6666666666666666
+  },
+  {
+    "backend": "qdrant",
+    "mode": "hybrid",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.8333333333333334,
+    "fact_coverage": 1.0
+  }
+]

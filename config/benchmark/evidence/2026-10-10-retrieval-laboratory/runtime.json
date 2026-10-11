@@ -1,0 +1,93 @@
+{
+  "images": {
+    "infiniflow/infinity:v0.7.4-arm64": {
+      "Id": "sha256:1f18654569cc6544b722911b56d6abb845d62e8a4bbbf855a167ee65c2e00858",
+      "RepoDigests": [
+        "infiniflow/infinity@sha256:6a9e6402bb7642008dbc20367a1626da54bf0aed197fa8853560e92b9f55e801"
+      ],
+      "Architecture": "arm64",
+      "Os": "linux",
+      "Created": "2026-10-09T04:01:46.637325841Z"
+    },
+    "elf-lab-infinity:0.7.4-arm64-glibc": {
+      "Id": "sha256:119bf5c9cab3e67ebb9c93a143881f127d7bceaa56e86dcbfc1edc8bee1ccb92",
+      "RepoDigests": [],
+      "Architecture": "arm64",
+      "Os": "linux",
+      "Created": "2026-10-10T22:09:21.705746417-04:00"
+    },
+    "qdrant/qdrant:v1.19.2": {
+      "Id": "sha256:2ca0be6b5b2a5c55549ec0c84ce5610ef0c2145b6b36ff6efb515ca971566ba0",
+      "RepoDigests": [
+        "qdrant/qdrant@sha256:b7b0444c4c351c970b98e90a6f89c2ee4287c65b44e52b4cb503fa5b2aa927ad"
+      ],
+      "Architecture": "arm64",
+      "Os": "linux",
+      "Created": "2026-10-05T13:50:33.025249893Z"
+    },
+    "pgvector/pgvector:pg18": {
+      "Id": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+      "RepoDigests": [
+        "pgvector/pgvector@sha256:2ba9ca5f2e7daa0f0e7723cba1ee9167bab54efd3640516a44ac1a928dd67e7a"
+      ],
+      "Architecture": "arm64",
+      "Os": "linux",
+      "Created": "2026-08-13T21:28:04.803847094Z"
+    },
+    "elf-retrieval-lab:20261010": {
+      "Id": "sha256:1698578b9b0e9cb87383a963dc8201d7d655da91e9d1b43208d4089d13967989",
+      "RepoDigests": [],
+      "Architecture": "arm64",
+      "Os": "linux",
+      "Created": "2026-10-10T22:10:42.088049627-04:00"
+    }
+  },
+  "docker": "aarch64 16 16818663424 29.4.0",
+  "host_architecture": "arm64",
+  "server_limits": {
+    "cpus": 4,
+    "memory_gib": 4
+  },
+  "client_limits": {
+    "cpus": 4,
+    "memory_gib": 2
+  },
+  "infinity_binary_sha256": "b9ce5eafa15686ec1853986e61c86774ad98b6f6a6317a1a17172e7ae16fe770",
+  "infinity_repacked_binary_identical": true,
+  "infinity_stock_failure": "glibc 2.38 required; official ARM64 Ubuntu 22.04 runtime provides 2.35",
+  "paid_baseline_usd": 0.274436132,
+  "ablation_client_image": {
+    "Id": "sha256:1698578b9b0e9cb87383a963dc8201d7d655da91e9d1b43208d4089d13967989",
+    "RepoDigests": [],
+    "Architecture": "arm64",
+    "Os": "linux",
+    "Created": "2026-10-10T22:10:42.088049627-04:00"
+  },
+  "backend_client_image": {
+    "Id": "sha256:dfa951c33b7faa553765f7fc06cff54895c7b635da9003a9cbd5039eafd05acd",
+    "RepoDigests": [],
+    "Architecture": "arm64",
+    "Os": "linux",
+    "Created": "2026-10-10T22:15:54.500824949-04:00"
+  },
+  "postgres_version": "18.6",
+  "pgvector_version": "0.8.6",
+  "benchmark_source_revision": "9651530f",
+  "backend_order": [
+    "infinity",
+    "qdrant",
+    "postgres"
+  ],
+  "backend_timing_overlap": false,
+  "provider_requests_settled_before_backend_measurements": true,
+  "transport": {
+    "infinity": "Thrift",
+    "qdrant": "gRPC",
+    "postgres": "PostgreSQL wire protocol with pgvector numpy adapter"
+  },
+  "sustained_order": [
+    "postgres",
+    "qdrant",
+    "infinity"
+  ]
+}

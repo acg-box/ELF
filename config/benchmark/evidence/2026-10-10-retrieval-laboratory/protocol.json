@@ -1,0 +1,51 @@
+{
+  "base_source_revision": "6cf7bc03a23579cb9415541b04906f2e87485c79",
+  "base_harness_revision": "9651530f",
+  "source_hashes": {
+    "scripts/retrieval_lab/__init__.py": "6648be73468c853bc8d9f83371288db5f56c857d4831bb27f86e886940672c15",
+    "scripts/retrieval_lab/ablation.py": "007ada067f950a6ed8960f1c831e142a8969c2a5bc361814d353be9993740549",
+    "scripts/retrieval_lab/analyze.py": "70ad376e305be38dcd83ec2c9bd069a903aeaca1a87b2b2f4d9a6c8e12c57e78",
+    "scripts/retrieval_lab/backends.py": "e7379f668b5563c7b8844c9823239d5de39516635b8976a62575e17f6f68a1f1",
+    "scripts/retrieval_lab/benchmark.py": "56c32d756670bcbea0eb90db54bdfdea6c094ee240acf478b07611f1b84d8d1b",
+    "scripts/retrieval_lab/cli.py": "6f6021d97b10772986a615c4daeda0cb7b0f769773907cd289bef999afc391ce",
+    "scripts/retrieval_lab/common.py": "96afa4a4ca0f9a17a7a83b62edcc21c519a08e0ae93b476f0d2a32f236b35931",
+    "scripts/retrieval_lab/followup.py": "6664c48909430c24b56ff20eb5c7661de6e0bbb196f48370cc77c01d47258c9b",
+    "scripts/retrieval_lab/prepare.py": "c82a9e0edc71f2b0e778b9d3df3db6fa4b035416a44aee85efd33b6490eb67bd"
+  },
+  "scope": "Frozen native-candidate ablation; separate database API microbenchmarks. Not a live ELF replacement or complete agent benchmark.",
+  "dimensions": 1536,
+  "hnsw": {
+    "m": 16,
+    "ef_construction": 200,
+    "ef_search": [
+      64,
+      128
+    ]
+  },
+  "scale_sizes": [
+    10000,
+    50000
+  ],
+  "scale_generator": "Seeded mixture of cached real vectors with Gaussian noise; synthetic geometry, not a large real corpus.",
+  "server_limits": {
+    "cpu": 4,
+    "memory_gib": 4
+  },
+  "client_limits": {
+    "cpu": 4,
+    "memory_gib": 2
+  },
+  "rounds_per_query": 3,
+  "filter_selectivity": 0.1,
+  "shared_lexical_input": true,
+  "hybrid": "Separate native lexical and dense queries, common client RRF(k=60), top 10. PostgreSQL uses built-in simple FTS rather than a BM25 extension.",
+  "order": [
+    "infinity",
+    "qdrant",
+    "postgres"
+  ],
+  "sustained_followup": "Three ten-second rounds, eight independent clients, warm repeated 70-query set, 49,999 vectors after matched deletion. Initial 280-query bursts retained but not used as sustained throughput.",
+  "post_followup_source_changes": "Dependency lock capture, explicit client close, per-round failure retention, CLI argument checks and DuckDB answer aggregates; no product changes.",
+  "paid_requests": 60,
+  "new_embedding_requests": 0
+}

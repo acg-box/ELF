@@ -9,6 +9,8 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [Frozen memory ablation and retrieval backends](2026-10-10-retrieval-laboratory.md): source versus note contribution, cached-vector database comparison, sustained load, and ontology boundaries.
+
 - [Language-neutral source memory regression](2026-10-10-elf-language-provenance.md): immutable sources, multilingual extraction, matched answer scores, provenance, and cumulative cost.
 
 - [ELF matched document and memory comparison](2026-10-10-elf-matched.md): formal API results, language boundaries, extraction failures, and independent accounting.

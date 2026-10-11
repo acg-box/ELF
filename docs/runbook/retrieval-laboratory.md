@@ -24,7 +24,7 @@ the boundary if the native SDK is removed. Do not migrate unrelated scripts.
 Build with `cargo make build-retrieval-lab`. Set `ELF_LAB_ARTIFACTS` to an absolute
 artifact directory. `cargo make benchmark-retrieval-lab PHASE --root PATH` mounts
 that directory at `/artifacts`. Paths supplied to this command are container
-paths. Phases are `prepare`, `ablation`, `backend`, and `analyze`.
+paths. Phases are `prepare`, `ablation`, `backend`, `followup`, and `analyze`.
 Run reference checks with `cargo make test-retrieval-lab`.
 
 ## Input and cost controls
@@ -84,6 +84,14 @@ p50/p95, recall@10, underfilled results, eight-client throughput, index-build
 wall time, and deletion visibility. Include API transport/client overhead in
 latencies; Infinity uses Thrift, Qdrant gRPC, and PostgreSQL its wire protocol.
 Results on this shared ARM Docker host are not hardware-general performance claims.
+
+The initial 280-query concurrency burst is a short probe, not sustained throughput.
+`followup --backend NAME` measures three ten-second, eight-client rounds against
+49,999 rows after the deletion probe. Completed and failed rounds remain in the
+artifacts. Each worker owns and closes its client. PostgreSQL also gets a separate
+forced-HNSW filtered diagnostic, with planner changes confined to that connection.
+Report its recall tradeoff alongside the default-plan result; do not recommend
+those switches globally.
 
 ## Analysis and retention
 

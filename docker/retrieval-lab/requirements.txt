@@ -4,3 +4,4 @@ psycopg[binary]==3.3.6
 duckdb==1.5.6
 tiktoken==0.14.0
 numpy==1.26.4
+pgvector==0.4.2

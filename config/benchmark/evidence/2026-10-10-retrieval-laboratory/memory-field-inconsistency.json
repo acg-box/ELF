@@ -1,0 +1,34 @@
+{
+  "observed_note": {
+    "note_id": "882729bf-5f44-4229-b251-6e360891fa9a",
+    "key": "retry-policy-RETRY-0-907",
+    "text": "The retry policy is now RETRY-0-907, superseding RETRY-0-108 (as of 2026-08-22).",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+        }
+      ],
+      "ingestion_profile": {
+        "id": "default",
+        "version": 2
+      },
+      "reason": "Explicit supersession decision that governs future retry behavior."
+    },
+    "structured": {
+      "concepts": [
+        "retry policy"
+      ],
+      "entities": null,
+      "facts": [
+        "The retry policy is now RETRY-4-907, superseding RETRY-4-108."
+      ],
+      "relations": null,
+      "summary": "Retry policy updated to RETRY-4-907, superseding RETRY-4-108."
+    }
+  },
+  "source_revision": "3ef9b7d69d6dc3835cdc01b2ba0e928647356e84",
+  "current_source_candidate": "packages/elf-service/src/add_event/materialize/none.rs",
+  "interpretation": "Existing text/evidence use RETRY-0, structured facts/summary use RETRY-4. The no-text-change branch can overwrite structured fields. This is a candidate mechanism from source review, not a newly reproduced storage test. No product patch is included."
+}

@@ -1,0 +1,16 @@
+{
+  "qdrant_first_sustained_attempt": {
+    "completed_round_qps": [
+      2751.773943591217,
+      2489.4703784530343
+    ],
+    "failed_round": 2,
+    "failure": "grpc.StatusCode.INTERNAL: Exception deserializing response!",
+    "server_oom": false,
+    "server_restarts": 0,
+    "root_cause": "Unconfirmed. Retained as a client-path failure, not proof of a server defect."
+  },
+  "followup_harness_change": "Explicit client close per worker and per-round result persistence; no SDK or server version change.",
+  "qdrant_retry": "Three ten-second rounds completed without errors.",
+  "infinity_client_cpu_probe": "Server sampled near four CPU cores while client stayed near 0.4 core; the observed Infinity throughput ceiling was not a saturated Python client in this probe."
+}

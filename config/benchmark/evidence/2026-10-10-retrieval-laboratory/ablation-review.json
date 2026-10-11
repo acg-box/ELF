@@ -1,0 +1,482 @@
+[
+  {
+    "condition": "source",
+    "case_id": "memory-0-0",
+    "answer_sha256": "f9a7b57a116b2f58d13b1ba291ed9166ed04ed573ef7fab4ad4807911271e8d1",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-1",
+    "answer_sha256": "840af4a76184ba6442ed191a4a62a1c5228412e06fc072fb9a47da3bafa490ee",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-2",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-3",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-0",
+    "answer_sha256": "36941cefdc95b062174555682772b2bd4e61a7883763fbfb834f76cfe1687749",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-1",
+    "answer_sha256": "bd3079ed8c87455531b0660041ae3953cec037da273b60df8b9e2a25921ee40c",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-2",
+    "answer_sha256": "34c24adef16fba9e230ee929dc83403ec8680e857f8b2ebf41c3b5b7ff45a392",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-0",
+    "answer_sha256": "88def1e600bf352486d087479886d840930a3f07d4e22f8f0d66d566efc81687",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-1",
+    "answer_sha256": "64d6f09ede27fb2a6aaab6d90d830bcff25a29a3712acaa0a48b0ab8b1ea8c5c",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-2",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-0",
+    "answer_sha256": "c1104982bf7b22f514bccb2ccdbf3981cf62fd8600c245b71ffae2af386fd6e5",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "answer_sha256": "77f43013d74c001a6c71ed1e07f4e11ec97fe4aef85af2b6ec59ebc62cae944c",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-2",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-0",
+    "answer_sha256": "be1c5f95127b92213d146e9d71f5a63210fe6d7430ca958a0bb702d02c1aaf3d",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-1",
+    "answer_sha256": "28d03aac22085407db6506f6bf887a1f799f428b5dc2078b243b5295168fe144",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-2",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-0",
+    "answer_sha256": "48ddc70c14ffa6be2e85cf7ecfb04e16dd761846be4ad3d52ddd331f9310ff67",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-1",
+    "answer_sha256": "cc9fd0b3f711e186f9110b318db33299fd798a2f9a80301f15bce2cdf5f71b33",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-2",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-0-3",
+    "answer_sha256": "f9dd00a2e0c8047843ce7a993a8db9f4eea93e8f24fe6ac550ff2c445f7923bb",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-0",
+    "answer_sha256": "f7fe16e2991935103d377ef07f630161dcb8560e93e1e78e2c1765525f647717",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-1",
+    "answer_sha256": "b5a889af21c52fb7fd17454f984506c5107120bb6475040f90d38d16ee037573",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-2",
+    "answer_sha256": "34c24adef16fba9e230ee929dc83403ec8680e857f8b2ebf41c3b5b7ff45a392",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-1-3",
+    "answer_sha256": "ca1cb81407da9a6a4e3fc78b85ce27ac31847ff108e7cab4950f22b9c4301d6d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-0",
+    "answer_sha256": "d4d28ccb9aa5026ceae6a221a05c0491d9eab83405f096839a4ae1aa8cb5b155",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-1",
+    "answer_sha256": "bc5bcbc52eead7eebb16320c0dbdcb11af901e0b62c401e4bd736df153c40062",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-2",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-2-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-0",
+    "answer_sha256": "a6a5ef7294d62d7063d9a6e169b2994ab612ce00f8d09102a494a45646b37e86",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-1",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-2",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-3-3",
+    "answer_sha256": "f9dd00a2e0c8047843ce7a993a8db9f4eea93e8f24fe6ac550ff2c445f7923bb",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-0",
+    "answer_sha256": "678a183813362bec856c89456e8b2aab613557fb5f29885b4065642b43ea8cb4",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-1",
+    "answer_sha256": "a74146141bcbf619bb5ecc80adf5e841df247cd88b23f635a86c04bbbfcc77cb",
+    "strict_correct": false,
+    "reviewed_correct": false,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-2",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "memory",
+    "case_id": "memory-4-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-0-0",
+    "answer_sha256": "48ddc70c14ffa6be2e85cf7ecfb04e16dd761846be4ad3d52ddd331f9310ff67",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-0-1",
+    "answer_sha256": "0944154e0681ccb0a8f063a57953b9a5db4bf5a677f8cfefa31968f584e76d38",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-0-2",
+    "answer_sha256": "51b38f61f586be980e2cfb9bddf1f9c75e10fb228d2fda90e0b42e13e8812594",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-0-3",
+    "answer_sha256": "f9dd00a2e0c8047843ce7a993a8db9f4eea93e8f24fe6ac550ff2c445f7923bb",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-0",
+    "answer_sha256": "36941cefdc95b062174555682772b2bd4e61a7883763fbfb834f76cfe1687749",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-1",
+    "answer_sha256": "1a1db992589c5fccacd2b88ff7499adef24572fcff40af4c2e3afb0e49d625eb",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-2",
+    "answer_sha256": "34c24adef16fba9e230ee929dc83403ec8680e857f8b2ebf41c3b5b7ff45a392",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-1-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-0",
+    "answer_sha256": "b79edb52d357eb94b8bbdaa3b92856b15fe42fa283bf72a65a7c59b1d0e028f9",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-1",
+    "answer_sha256": "691c9e1c359c2ebf876acd559be37296e6e76977aa03d2f7619c8667e7adc6c7",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-2",
+    "answer_sha256": "932ad5675ec2da63d1ce8f058f7f54dfe922348af6637f7aae86d26063224162",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-2-3",
+    "answer_sha256": "b23a6a8439c0dde5515893e7c90c1e3233b8616e634470f20dc4928bcf3609bc",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-0",
+    "answer_sha256": "246e4dcd9d309147e0bb426e0aa0a7dd2da26fe510424e70c5558f0ba18df757",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-1",
+    "answer_sha256": "03f80d990782d124d1a3e53f5d8d73dff96ff85d832a74cb59c4197fb67cb1aa",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-2",
+    "answer_sha256": "72fb231d806490adda31cb2099ebbe98904c952f08ea5cdc7ce9b1d055e690a0",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-3-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-0",
+    "answer_sha256": "06d6ab5ac864d01fb217b63f94ba0e8c498bd5ec23a294f9752e2fe7a36c0b15",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-1",
+    "answer_sha256": "a76aeade56697b2644dce44220f1783f60756de6921e20130f227753e2a11940",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-2",
+    "answer_sha256": "32c3bf7b7570f37f626f15d68584385f977e646d0df0f552782dd900e09f1586",
+    "strict_correct": true,
+    "reviewed_correct": true,
+    "reason": "Unchanged strict scorer."
+  },
+  {
+    "condition": "combined",
+    "case_id": "memory-4-3",
+    "answer_sha256": "f7854089e722a8918b31af9a73a1eedd2088f78744832a4f29e42c08e0d61a9d",
+    "strict_correct": false,
+    "reviewed_correct": true,
+    "reason": "Source-supported known absence; the frozen oracle expects unknown. Same review rule as prior matched reports."
+  }
+]

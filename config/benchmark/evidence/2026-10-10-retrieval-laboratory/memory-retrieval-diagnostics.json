@@ -1,0 +1,298 @@
+[
+  {
+    "case_id": "memory-0-0",
+    "fact": "STREAM-0-286",
+    "in_persisted_note_text": [
+      "130ec5f9-9357-425a-871d-5d63027e5517",
+      "ff2205bc-1f86-4456-97fe-99e32bc538d5"
+    ],
+    "in_selected_note_text": [
+      "130ec5f9-9357-425a-871d-5d63027e5517"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "130ec5f9-9357-425a-871d-5d63027e5517"
+    ]
+  },
+  {
+    "case_id": "memory-0-0",
+    "fact": "RETRY-0-907",
+    "in_persisted_note_text": [
+      "882729bf-5f44-4229-b251-6e360891fa9a"
+    ],
+    "in_selected_note_text": [
+      "882729bf-5f44-4229-b251-6e360891fa9a"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "882729bf-5f44-4229-b251-6e360891fa9a"
+    ]
+  },
+  {
+    "case_id": "memory-0-1",
+    "fact": "REPLAY-0-632",
+    "in_persisted_note_text": [
+      "24c8596a-a75d-4cf7-9617-d62e0edbe292"
+    ],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-0-1",
+    "fact": "GATE-0-519",
+    "in_persisted_note_text": [
+      "ff2205bc-1f86-4456-97fe-99e32bc538d5",
+      "9695f3e4-30f8-473f-beb7-9776c716efb6"
+    ],
+    "in_selected_note_text": [
+      "9695f3e4-30f8-473f-beb7-9776c716efb6",
+      "ff2205bc-1f86-4456-97fe-99e32bc538d5"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "9695f3e4-30f8-473f-beb7-9776c716efb6",
+      "ff2205bc-1f86-4456-97fe-99e32bc538d5"
+    ]
+  },
+  {
+    "case_id": "memory-0-2",
+    "fact": "BATCH-0-741",
+    "in_persisted_note_text": [
+      "6f580495-9a4c-4243-8e70-8a5382268a71",
+      "130ec5f9-9357-425a-871d-5d63027e5517"
+    ],
+    "in_selected_note_text": [
+      "130ec5f9-9357-425a-871d-5d63027e5517",
+      "6f580495-9a4c-4243-8e70-8a5382268a71"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "130ec5f9-9357-425a-871d-5d63027e5517",
+      "6f580495-9a4c-4243-8e70-8a5382268a71"
+    ]
+  },
+  {
+    "case_id": "memory-1-0",
+    "fact": "STREAM-1-286",
+    "in_persisted_note_text": [
+      "6026863a-2032-463a-8a3c-e590d87edb3b"
+    ],
+    "in_selected_note_text": [
+      "6026863a-2032-463a-8a3c-e590d87edb3b"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "6026863a-2032-463a-8a3c-e590d87edb3b"
+    ]
+  },
+  {
+    "case_id": "memory-1-0",
+    "fact": "RETRY-1-907",
+    "in_persisted_note_text": [],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-1-1",
+    "fact": "REPLAY-1-632",
+    "in_persisted_note_text": [],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-1-1",
+    "fact": "GATE-1-519",
+    "in_persisted_note_text": [
+      "91f5acee-ebf5-402e-bc72-a7cb4f0a14b6"
+    ],
+    "in_selected_note_text": [
+      "91f5acee-ebf5-402e-bc72-a7cb4f0a14b6"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "91f5acee-ebf5-402e-bc72-a7cb4f0a14b6"
+    ]
+  },
+  {
+    "case_id": "memory-1-2",
+    "fact": "BATCH-1-741",
+    "in_persisted_note_text": [
+      "feaccc15-d242-43c2-8957-e356f9b088b0",
+      "6026863a-2032-463a-8a3c-e590d87edb3b"
+    ],
+    "in_selected_note_text": [
+      "6026863a-2032-463a-8a3c-e590d87edb3b",
+      "feaccc15-d242-43c2-8957-e356f9b088b0"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "6026863a-2032-463a-8a3c-e590d87edb3b",
+      "89fb8ae8-0ab1-4667-8fd9-0761f425c548",
+      "feaccc15-d242-43c2-8957-e356f9b088b0"
+    ]
+  },
+  {
+    "case_id": "memory-2-0",
+    "fact": "STREAM-2-286",
+    "in_persisted_note_text": [
+      "03f6bd62-55a5-4e96-9b5a-24f349602255"
+    ],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-2-0",
+    "fact": "RETRY-2-907",
+    "in_persisted_note_text": [],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-2-1",
+    "fact": "REPLAY-2-632",
+    "in_persisted_note_text": [],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-2-1",
+    "fact": "GATE-2-519",
+    "in_persisted_note_text": [
+      "03f6bd62-55a5-4e96-9b5a-24f349602255"
+    ],
+    "in_selected_note_text": [
+      "03f6bd62-55a5-4e96-9b5a-24f349602255"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "03f6bd62-55a5-4e96-9b5a-24f349602255"
+    ]
+  },
+  {
+    "case_id": "memory-2-2",
+    "fact": "BATCH-2-741",
+    "in_persisted_note_text": [
+      "7fdf800e-4aa8-41d1-86e5-1d3653173029",
+      "03f6bd62-55a5-4e96-9b5a-24f349602255"
+    ],
+    "in_selected_note_text": [
+      "7fdf800e-4aa8-41d1-86e5-1d3653173029"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "7fdf800e-4aa8-41d1-86e5-1d3653173029"
+    ]
+  },
+  {
+    "case_id": "memory-3-0",
+    "fact": "STREAM-3-286",
+    "in_persisted_note_text": [
+      "8a3161a2-1a8e-4f87-8964-77f9ffba47ac"
+    ],
+    "in_selected_note_text": [
+      "8a3161a2-1a8e-4f87-8964-77f9ffba47ac"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "8a3161a2-1a8e-4f87-8964-77f9ffba47ac"
+    ]
+  },
+  {
+    "case_id": "memory-3-0",
+    "fact": "RETRY-3-907",
+    "in_persisted_note_text": [
+      "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce"
+    ],
+    "in_selected_note_text": [
+      "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "07fbb9eb-e4ac-40a0-8b20-1fe5f4c791ce"
+    ]
+  },
+  {
+    "case_id": "memory-3-1",
+    "fact": "REPLAY-3-632",
+    "in_persisted_note_text": [],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-3-1",
+    "fact": "GATE-3-519",
+    "in_persisted_note_text": [
+      "c75ae8ed-300e-45ba-87ec-73de021de374"
+    ],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": [
+      "9695f3e4-30f8-473f-beb7-9776c716efb6",
+      "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2"
+    ]
+  },
+  {
+    "case_id": "memory-3-2",
+    "fact": "BATCH-3-741",
+    "in_persisted_note_text": [
+      "8a3161a2-1a8e-4f87-8964-77f9ffba47ac",
+      "e13e5df7-6aad-412d-86e0-c88451b3913c"
+    ],
+    "in_selected_note_text": [
+      "8a3161a2-1a8e-4f87-8964-77f9ffba47ac",
+      "e13e5df7-6aad-412d-86e0-c88451b3913c"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "8a3161a2-1a8e-4f87-8964-77f9ffba47ac",
+      "e13e5df7-6aad-412d-86e0-c88451b3913c"
+    ]
+  },
+  {
+    "case_id": "memory-4-0",
+    "fact": "STREAM-4-286",
+    "in_persisted_note_text": [
+      "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    ],
+    "in_selected_note_text": [
+      "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    ]
+  },
+  {
+    "case_id": "memory-4-0",
+    "fact": "RETRY-4-907",
+    "in_persisted_note_text": [],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": [
+      "882729bf-5f44-4229-b251-6e360891fa9a"
+    ]
+  },
+  {
+    "case_id": "memory-4-1",
+    "fact": "REPLAY-4-632",
+    "in_persisted_note_text": [],
+    "in_selected_note_text": [],
+    "in_selected_note_structured_or_evidence": []
+  },
+  {
+    "case_id": "memory-4-1",
+    "fact": "GATE-4-519",
+    "in_persisted_note_text": [
+      "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2",
+      "3f2c0c36-e54d-493c-a03c-cb44dfdb18a9",
+      "331d3965-21a6-4c67-bd36-aff72e80d5ac"
+    ],
+    "in_selected_note_text": [
+      "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2",
+      "3f2c0c36-e54d-493c-a03c-cb44dfdb18a9"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2",
+      "3f2c0c36-e54d-493c-a03c-cb44dfdb18a9"
+    ]
+  },
+  {
+    "case_id": "memory-4-2",
+    "fact": "BATCH-4-741",
+    "in_persisted_note_text": [
+      "f948b873-0a7b-4bfc-8cb7-5afb9adfb0d2",
+      "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    ],
+    "in_selected_note_text": [
+      "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    ],
+    "in_selected_note_structured_or_evidence": [
+      "a26bbb33-10c3-4f44-97f6-e5a72d578a8e"
+    ]
+  }
+]
