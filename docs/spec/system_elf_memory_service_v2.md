@@ -868,9 +868,14 @@ Resolution namespace group:
 (tenant_id, project_id, agent_id, scope, type)
 
 Order:
-1) Key-based:
+1) Caller-authorized key-based writes (`add_note`):
    - If key is not null and an active note exists with the same key:
      -> UPDATE in place (same note_id).
+Automatic `add_event` extraction does not grant update authority to model-generated
+keys. Store that hint in source_ref.extracted_key, persist an unkeyed note, and
+apply exact-text deduplication. Consolidation requires the existing explicit
+review or update API.
+
 2) No matching key:
    - A supplied key creates a new identity; do not match a different key by similarity.
    - Without a key, byte-identical text in an active unkeyed note yields NONE.

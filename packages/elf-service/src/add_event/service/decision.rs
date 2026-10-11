@@ -35,7 +35,7 @@ impl ElfService {
 		dry_run: bool,
 		write_policy_audits: Option<&Vec<WritePolicyAudit>>,
 	) -> Result<AddEventResult> {
-		let decision = self.resolve_extracted_note_update(note, req, note_data, tx, now).await?;
+		let decision = self.resolve_extracted_note_update(req, note_data, tx, now).await?;
 		let metadata = decision.metadata();
 		let base_decision = policy::base_decision_for_update(
 			&decision,
@@ -74,7 +74,7 @@ impl ElfService {
 				req,
 				project_id,
 				structured: note_data.structured.as_ref(),
-				key: note.key.as_deref(),
+				key: None,
 				reason: note.reason.as_ref(),
 				note_type,
 				text: note_data.text.as_str(),
@@ -90,6 +90,7 @@ impl ElfService {
 				source_ref: serde_json::json!({
 					"evidence": source_ref::evidence_sources(&req.messages, message_texts, &note_data.evidence, write_policy_audits.map(Vec::as_slice))?,
 					"reason": note_data.reason.clone().unwrap_or_default(),
+					"extracted_key": note.key,
 					"ingestion_profile": serde_json::json!({
 						"id": ingestion_profile.id,
 						"version": ingestion_profile.version,
@@ -142,7 +143,6 @@ impl ElfService {
 
 	async fn resolve_extracted_note_update(
 		&self,
-		note: &ExtractedNote,
 		req: &AddEventRequest,
 		note_data: &NoteProcessingData,
 		tx: &mut PgConnection,
@@ -160,7 +160,7 @@ impl ElfService {
 				agent_id: req.agent_id.as_str(),
 				scope: note_data.scope.as_str(),
 				note_type: note_data.note_type.as_str(),
-				key: note.key.as_deref(),
+				key: None,
 				text: note_data.text.as_str(),
 				now,
 			},

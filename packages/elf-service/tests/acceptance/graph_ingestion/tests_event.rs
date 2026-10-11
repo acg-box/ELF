@@ -71,3 +71,65 @@ async fn add_event_persists_graph_relations() {
 
 	test_db.cleanup().await.expect("Failed to cleanup test database.");
 }
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant."]
+async fn extracted_keys_cannot_overwrite_distinct_subjects() {
+	let test_db = tests_helpers::build_test_db("extracted_key_authority")
+		.await
+		.expect("Database is required.");
+	let mut identities = Vec::new();
+
+	for text in ["Project Alpha uses RETRY-A.", "Project Beta uses RETRY-B."] {
+		let payload = serde_json::json!({"notes":[{
+			"type":"fact", "key":"retry_policy.version", "text":text,
+			"importance":0.8,"confidence":0.9,
+			"structured":{"facts":[text]},
+			"evidence":[{"message_index":0,"quote":text}]
+		}]});
+		let service = tests_helpers::build_service_with_extractor_payload(&test_db, payload).await;
+		let request = AddEventRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			scope: Some("agent_private".into()),
+			dry_run: Some(false),
+			ingestion_profile: None,
+			messages: vec![EventMessage {
+				role: "user".into(),
+				content: text.into(),
+				ts: None,
+				msg_id: Some(text.into()),
+				write_policy: None,
+			}],
+		};
+		let result = service.add_event(request.clone()).await.expect("Store extracted fact.");
+
+		assert_eq!(result.results[0].op, NoteOp::Add);
+
+		let id = result.results[0].note_id.expect("Persisted identity.");
+
+		identities.push(id);
+
+		let (stored, key, hint): (String, Option<String>, Option<String>) = sqlx::query_as(
+			"SELECT text,key,source_ref->>'extracted_key' FROM memory_notes WHERE note_id=$1",
+		)
+		.bind(id)
+		.fetch_one(&service.db.pool)
+		.await
+		.expect("Read memory identity.");
+
+		assert_eq!(stored, text);
+		assert_eq!(key, None);
+		assert_eq!(hint.as_deref(), Some("retry_policy.version"));
+
+		let duplicate = service.add_event(request).await.expect("Repeat extraction.");
+
+		assert_eq!(duplicate.results[0].op, NoteOp::None);
+		assert_eq!(duplicate.results[0].note_id, Some(id));
+	}
+
+	assert_ne!(identities[0], identities[1]);
+
+	test_db.cleanup().await.expect("Cleanup database.");
+}

@@ -71,7 +71,7 @@ pub(super) fn builtin_profile() -> IngestionProfileV1 {
 			"You are a memory extraction engine for an agent memory system. Output must be valid JSON only and must match the provided schema exactly. \
 Extract at most MAX_NOTES high-signal, cross-session reusable memory notes from the given messages. \
 Make each note understandable and retrievable without the surrounding conversation. Preserve the explicit subject, project or system, and identifiers that distinguish it from similar facts. Resolve pronouns only from the supplied messages; do not invent missing context. Keep a recovery action together with its incident, affected system, and outcome when the input connects them. \
-Use a key only for a stable subject-and-property identity. Include the subject in the key; do not use a shared property name or its changing value alone. Use null when that identity is uncertain. \
+An optional key is only a descriptive hint, not authority to replace an existing memory. Include its subject and use null when the identity is uncertain. \
 Prefer concise English summaries, but preserve original names, identifiers, and quoted evidence in their source language. Never translate evidence quotes. \
 The structured field is optional. If present, summary must be short, facts must be verbatim substrings of note text or evidence quotes, and concepts must be short phrases. \
 For each relation, subject is directly an entity object with canonical, kind, and aliases; never wrap subject in another entity field. The object provides exactly one non-null entity or value. Subject canonical, predicate, and object canonical/value must occur verbatim in note text or an evidence quote. Omit optional relations when this cannot be satisfied. \
