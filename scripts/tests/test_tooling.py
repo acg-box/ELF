@@ -1,7 +1,9 @@
-"""Regression checks for explicit integration prerequisites."""
+"""Regression checks for repository tooling and published evidence."""
 
+import json
 import os
 import subprocess
+import sys
 import tomllib
 import unittest
 from pathlib import Path
@@ -43,3 +45,19 @@ class IntegrationPrerequisites(unittest.TestCase):
         for name in ("ELF_QDRANT_GRPC_URL", "ELF_QDRANT_URL"):
             result = self.run_guard({"ELF_PG_DSN": "postgres://unused", name: "http://unused"})
             self.assertEqual(result.returncode, 0, result.stderr)
+
+
+class RetrievalEvidencePackage(unittest.TestCase):
+    def test_published_manifest_files_are_tracked_and_verifiable(self):
+        relative = Path("config/benchmark/evidence/2026-10-10-retrieval-laboratory")
+        manifest = json.loads((ROOT / relative / "manifest.json").read_text())
+        tracked = set(subprocess.check_output(
+            ["git", "ls-files", "--", str(relative)], cwd=ROOT, text=True,
+        ).splitlines())
+        for name in ["manifest.json", *manifest]:
+            self.assertIn(str(relative / name), tracked, "Evidence file must be committed")
+        result = subprocess.run(
+            [sys.executable, str(ROOT / relative / "verify.py")], cwd=ROOT,
+            capture_output=True, text=True, check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)

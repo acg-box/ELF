@@ -1,0 +1,71 @@
+[cargo-make] INFO - cargo make 0.37.24
+[cargo-make] INFO - 
+[cargo-make] INFO - Build File: Makefile.toml
+[cargo-make] INFO - Task: benchmark-retrieval-lab
+[cargo-make] INFO - Profile: development
+[cargo-make] INFO - Execute Command: "docker" "run" "--rm" "--cpus" "4" "--memory" "2g" "--add-host" "host.docker.internal:host-gateway" "-e" "LITELLM_API_KEY" "-e" "LITELLM_BASE_URL" "-v" "<local-path>" "-v" "<local-path>" "elf-retrieval-lab:20261010" "followup" "--backend" "qdrant" "--root" "/artifacts/retrieval-ablation"
+{"backend": "qdrant", "round": 0, "qps": 2751.773943591217}
+{"backend": "qdrant", "round": 1, "qps": 2489.4703784530343}
+Traceback (most recent call last):
+  File "/repo/scripts/benchmark-retrieval-lab.py", line 5, in <module>
+    main()
+  File "/repo/scripts/retrieval_lab/cli.py", line 29, in main
+    followup(args.root, args.backend)
+  File "/repo/scripts/retrieval_lab/followup.py", line 33, in followup
+    rows=list(pool.map(worker,range(8)))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/repo/scripts/retrieval_lab/followup.py", line 28, in worker
+    hits,ms=measured(lambda:db.search(queries[i%len(queries)],None,128))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/repo/scripts/retrieval_lab/benchmark.py", line 26, in measured
+    start=time.perf_counter_ns();value=call()
+                                       ^^^^^^
+  File "/repo/scripts/retrieval_lab/followup.py", line 28, in <lambda>
+    hits,ms=measured(lambda:db.search(queries[i%len(queries)],None,128))
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/repo/scripts/retrieval_lab/backends.py", line 58, in search
+    return [x.id for x in self.client.query_points(self.name, query=vector.tolist(), using='dense',query_filter=fil,
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/qdrant_client/qdrant_client.py", line 423, in query_points
+    return self._client.query_points(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/qdrant_client/qdrant_remote.py", line 543, in query_points
+    res: grpc.QueryResponse = self.grpc_points.Query(
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/grpc/_interceptor.py", line 276, in __call__
+    response, ignored_call = self._with_call(
+                             ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/grpc/_interceptor.py", line 331, in _with_call
+    return call.result(), call
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/grpc/_channel.py", line 447, in result
+    raise self
+  File "/usr/local/lib/python3.12/site-packages/grpc/_interceptor.py", line 314, in continuation
+    response, call = self._thunk(new_method).with_call(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/grpc/_channel.py", line 1182, in with_call
+    return _end_unary_response_blocking(state, call, True, None)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/grpc/_channel.py", line 999, in _end_unary_response_blocking
+    raise _InactiveRpcError(state)  # pytype: disable=not-instantiable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+grpc._channel._InactiveRpcError: <_InactiveRpcError of RPC that terminated with:
+	status = StatusCode.INTERNAL
+	details = "Exception deserializing response!"
+	debug_error_string = "None"
+>
+Error while executing command, exit code: 1
