@@ -97,7 +97,7 @@ the ordinary pgvector HNSW adapter at 4,096 dimensions: its vector index limit i
 ## Database controls
 
 Use isolated containers, each limited to four CPUs and 4 GiB RAM. Run measured
-backend phases sequentially. The client image is limited to four CPUs and 2 GiB.
+backend phases sequentially. The client image uses four CPUs and 4 GiB; the historical 1,536-dimensional run used 2 GiB.
 Record server image digests, architecture, client versions, resource samples,
 and deployment failures. No foreign containers or shared image caches may be
 removed. Database containers use these loopback-only host ports:

@@ -117,7 +117,6 @@ impl ElfService {
 				reason_code: None,
 			});
 		}
-
 		if note.text != next_text {
 			sqlx::query("DELETE FROM memory_note_fields WHERE note_id = $1")
 				.bind(note.note_id)

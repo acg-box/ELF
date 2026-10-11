@@ -84,6 +84,7 @@ where
 		key_match: existing.is_some() && key.is_some(),
 		matched_dup: existing.is_some() && key.is_none(),
 	};
+
 	Ok(match existing {
 		Some(note_id) if key.is_some() => UpdateDecision::Update { note_id, metadata },
 		Some(note_id) => UpdateDecision::None { note_id, metadata },

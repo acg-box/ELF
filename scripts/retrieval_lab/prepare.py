@@ -5,6 +5,7 @@ import hashlib
 import os
 import urllib.request
 from pathlib import Path
+from itertools import chain
 from .common import EVIDENCE, cases, digest, read, save
 
 
@@ -23,9 +24,10 @@ def receipt_rows(path):
 
 def prepare(root, receipts, native_run=None, fill_missing=False):
     evidence = Path(native_run) if native_run else EVIDENCE
-    dimension = read(evidence / "protocol.json").get("dimensions", 1536) if native_run else 1536
+    dimension = read(evidence / "protocol.json")["dimensions"] if native_run else 1536
+    if native_run and dimension != 4096:
+        raise ValueError("New native runs require full 4096-dimensional Qwen embeddings")
     vectors = {}
-    from itertools import chain
     for value, receipt_sha in chain(receipt_rows(receipts), receipt_rows(root / "filled-embeddings")):
         request, response = value['request'], value['response']
         if 'input' not in request or 'data' not in response:
@@ -63,8 +65,9 @@ def prepare(root, receipts, native_run=None, fill_missing=False):
             with urllib.request.urlopen(req, timeout=3600) as response:
                 value = json.load(response)
             receipt = {'request':request,'response':value}
-            save(root / 'filled-embeddings' / (digest(json.dumps(inputs)) + '.json'), receipt)
-            receipt_sha = hashlib.sha256((json.dumps(receipt,indent=2)+'\n').encode()).hexdigest()
+            receipt_path = root / 'filled-embeddings' / (digest(json.dumps(inputs)) + '.json')
+            save(receipt_path, receipt)
+            receipt_sha = hashlib.sha256(receipt_path.read_bytes()).hexdigest()
             if sorted(row['index'] for row in value['data']) != list(range(len(inputs))):
                 raise ValueError('Incomplete embedding response')
             for row in value['data']:
