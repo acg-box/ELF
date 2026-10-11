@@ -263,7 +263,7 @@ args = [
 	"--cpus",
 	"4",
 	"--memory",
-	"2g",
+	"4g",
 	"--add-host",
 	"host.docker.internal:host-gateway",
 	"-e",

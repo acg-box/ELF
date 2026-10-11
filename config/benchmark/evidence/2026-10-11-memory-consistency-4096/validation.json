@@ -1,0 +1,30 @@
+{
+  "runtime_source_commit": "7798cc12dd81930e4e10c89bfb5dfc4ae7ac32f1",
+  "commands": [
+    {
+      "command": "cargo make test-rust-all",
+      "result": "passed",
+      "tests": 550,
+      "log_sha256": "3802b842ff5707a23442bb23bbe18a8b0991c73dca5f947a8a2c8b5d19e3748d"
+    },
+    {
+      "command": "cargo make test-benchmark-runner-contract",
+      "result": "passed",
+      "tests": 157,
+      "log_sha256": "c55ffae326f1e573940ebfce64dd8900e9480c731fc78a9b23acf4a58936cd76"
+    },
+    {
+      "command": "cargo make lint-rust",
+      "result": "passed",
+      "tests": null,
+      "log_sha256": "216dbdeafb08787f15606ec7beacbb8cfc220997d255fe35e6d8f34b2fe5a3a9"
+    },
+    {
+      "command": "cargo make check-format",
+      "result": "passed",
+      "tests": null,
+      "log_sha256": "417fa1192f8af1fb098ef7f856b81e6f80afcb46d20df0adcf79c9f9afaf0d26"
+    }
+  ],
+  "rust_tests_skipped": 0
+}

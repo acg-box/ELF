@@ -37,7 +37,7 @@ async fn chinese_evidence_and_date_only_relations_survive_native_extraction() {
 		.await
 		.expect("Extract and persist Chinese evidence");
 
-	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 2);
+	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 3);
 	assert_eq!(
 		result.extracted["notes"][0]["structured"]["relations"][0]["valid_from"],
 		"2026-10-01T00:00:00Z"

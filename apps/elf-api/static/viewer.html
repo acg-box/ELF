@@ -2130,7 +2130,7 @@
 					["qdrant", `${qdrant.collection || "none"} / vector_dim ${qdrant.vector_dim || "none"}`],
 					["policy_id", ranking.policy_id],
 					["blend", `enabled ${blend.enabled ?? "none"} / ${blend.retrieval_normalization || "none"} -> ${blend.rerank_normalization || "none"}`],
-					["diversity", `enabled ${diversity.enabled ?? "none"} / sim ${diversity.sim_threshold ?? "none"}`],
+					["diversity", `enabled ${diversity.enabled ?? "none"} / MMR lambda ${diversity.mmr_lambda ?? "none"}`],
 					["source_weights", `fusion ${retrievalSources.fusion_weight ?? "none"} / structured ${retrievalSources.structured_field_weight ?? "none"} / recursive ${retrievalSources.recursive_weight ?? "none"}`],
 					["override", ranking.override ? "present" : "none"]
 				])

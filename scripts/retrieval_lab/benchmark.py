@@ -45,7 +45,7 @@ def benchmark(root,backend):
     results=[]
     small_path=folder/'quality.json'
     if not small_path.exists():
-        db=BACKENDS[backend]('elf_lab_real')
+        db=BACKENDS[backend]('elf_lab_real', base.shape[1])
         rows=[{**r,'tenant':int(r['scope']=='memory')} for r in corpus]
         start=time.monotonic();state=db.create(rows,base,hybrid=True);build=time.monotonic()-start
         for q,vec in zip(queries,qvectors):
@@ -68,7 +68,7 @@ def benchmark(root,backend):
         if path.exists():continue
         vectors=scale_data(base,n);tenants=np.arange(n,dtype=np.int32)%10
         rows=[{'id':i,'tenant':int(tenants[i])} for i in range(n)]
-        name='elf_lab_'+str(n);db=BACKENDS[backend](name)
+        name='elf_lab_'+str(n);db=BACKENDS[backend](name, base.shape[1])
         start=time.monotonic();state=db.create(rows,vectors);build=time.monotonic()-start
         print(json.dumps({'backend':backend,'phase':'indexed','n':n,'build_seconds':build,'state':state}),flush=True)
         reference={(i,filtered):exact(vectors,q,tenants,i%10 if filtered else None) for i,q in enumerate(qvectors) for filtered in [False,True]}
@@ -88,7 +88,7 @@ def benchmark(root,backend):
                 results.append({'query':i,'filtered':filtered,'repeat':repeat,'ef':ef,'ids':hits,'exact_ids':truth,'recall_at_10':len(set(hits)&set(truth))/len(truth),'returned':len(hits),'ms':ms})
         local=threading.local()
         def parallel(i):
-            if not hasattr(local,'db'):local.db=BACKENDS[backend](name)
+            if not hasattr(local,'db'):local.db=BACKENDS[backend](name, base.shape[1])
             return local.db.search(qvectors[i%len(queries)],None,128)
         with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
             list(pool.map(parallel,range(16)))
@@ -98,7 +98,7 @@ def benchmark(root,backend):
         after=db.search(qvectors[0],None,128)
         delete_ms=(time.monotonic()-start)*1000
         assert victim not in after,'Deleted row remains visible after synchronous delete'
-        save(path,{'n':n,'dimension':1536,'synthetic':True,'generator':'seeded mixture of cached real vectors plus Gaussian noise; not a real large corpus',
+        save(path,{'n':n,'dimension':int(base.shape[1]),'synthetic':True,'generator':'seeded mixture of cached real vectors plus Gaussian noise; not a real large corpus',
             'vector_sha256':hashlib.sha256(vectors.tobytes()).hexdigest(),'query_sha256':hashlib.sha256(qvectors.tobytes()).hexdigest(),
             'build_seconds':build,'state':state,'plans':db.plans(qvectors[0]) if hasattr(db,'plans') else None,'rows':results,'concurrency_8':{'queries':280,'seconds':seconds,'qps':280/seconds,'all_returned_10':all(len(x)==10 for x in outputs)},
             'delete_visibility':{'victim':victim,'absent':True,'delete_and_query_ms':delete_ms}})

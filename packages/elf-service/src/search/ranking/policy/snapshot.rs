@@ -83,9 +83,7 @@ pub fn build_config_snapshot(
 				},
 				"diversity": {
 					"enabled": diversity_policy.enabled,
-					"sim_threshold": diversity_policy.sim_threshold,
 					"mmr_lambda": diversity_policy.mmr_lambda,
-					"max_skips": diversity_policy.max_skips,
 				},
 				"retrieval_sources": {
 					"fusion_weight": retrieval_sources_policy.fusion_weight,
@@ -183,9 +181,7 @@ pub fn build_policy_snapshot(
 				},
 				"diversity": {
 					"enabled": diversity_policy.enabled,
-					"sim_threshold": diversity_policy.sim_threshold,
 					"mmr_lambda": diversity_policy.mmr_lambda,
-					"max_skips": diversity_policy.max_skips,
 				},
 				"retrieval_sources": {
 					"fusion_weight": retrieval_sources_policy.fusion_weight,

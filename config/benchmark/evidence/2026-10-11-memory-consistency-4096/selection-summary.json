@@ -1,0 +1,26 @@
+{
+  "elf-documents-pack-reader": {
+    "scored": 50,
+    "strict_correct": 48,
+    "reviewed_correct": 50,
+    "median_seconds": 5.021365937514929
+  },
+  "elf-documents-retrieval-reader": {
+    "scored": 50,
+    "strict_correct": 47,
+    "reviewed_correct": 50,
+    "median_seconds": 5.237626207963331
+  },
+  "elf-memory-pack-reader": {
+    "scored": 16,
+    "strict_correct": 12,
+    "reviewed_correct": 16,
+    "median_seconds": 9.25591477099806
+  },
+  "elf-memory-retrieval-reader": {
+    "scored": 16,
+    "strict_correct": 11,
+    "reviewed_correct": 15,
+    "median_seconds": 15.938372042030096
+  }
+}

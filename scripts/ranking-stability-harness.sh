@@ -178,11 +178,9 @@ project_shared = true
 
 [memory]
 candidate_k             = ${CANDIDATE_K}
-dup_sim_threshold       = 0.92
 max_note_chars          = 240
 max_notes_per_add_event = 3
 top_k                   = ${TOP_K}
-update_sim_threshold    = 0.85
 
 [memory.policy]
 
@@ -275,9 +273,7 @@ retrieval_weight   = 0.2
 
 [ranking.diversity]
 enabled       = true
-max_skips     = 64
 mmr_lambda    = 0.7
-sim_threshold = 0.88
 
 [ranking.retrieval_sources]
 fusion_priority           = 1

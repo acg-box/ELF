@@ -54,21 +54,8 @@ pub fn resolve_diversity_policy(
 	override_: Option<&DiversityRankingOverride>,
 ) -> Result<ResolvedDiversityPolicy> {
 	let enabled = override_.and_then(|value| value.enabled).unwrap_or(cfg.enabled);
-	let sim_threshold =
-		override_.and_then(|value| value.sim_threshold).unwrap_or(cfg.sim_threshold);
 	let mmr_lambda = override_.and_then(|value| value.mmr_lambda).unwrap_or(cfg.mmr_lambda);
-	let max_skips = override_.and_then(|value| value.max_skips).unwrap_or(cfg.max_skips);
 
-	if !sim_threshold.is_finite() {
-		return Err(Error::InvalidRequest {
-			message: "ranking.diversity.sim_threshold must be a finite number.".to_string(),
-		});
-	}
-	if !(0.0..=1.0).contains(&sim_threshold) {
-		return Err(Error::InvalidRequest {
-			message: "ranking.diversity.sim_threshold must be in the range 0.0-1.0.".to_string(),
-		});
-	}
 	if !mmr_lambda.is_finite() {
 		return Err(Error::InvalidRequest {
 			message: "ranking.diversity.mmr_lambda must be a finite number.".to_string(),
@@ -80,7 +67,7 @@ pub fn resolve_diversity_policy(
 		});
 	}
 
-	Ok(ResolvedDiversityPolicy { enabled, sim_threshold, mmr_lambda, max_skips })
+	Ok(ResolvedDiversityPolicy { enabled, mmr_lambda })
 }
 
 pub fn resolve_retrieval_sources_policy(

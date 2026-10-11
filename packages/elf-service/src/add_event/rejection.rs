@@ -37,7 +37,6 @@ pub(super) async fn record_extracted_note_rejections(
 
 		audit::record_ingest_decision(
 			tx,
-			cfg,
 			ctx,
 			note,
 			note_data.note_type.as_str(),
@@ -74,7 +73,6 @@ pub(super) async fn record_extracted_note_rejections(
 
 		audit::record_ingest_decision(
 			tx,
-			cfg,
 			ctx,
 			note,
 			note_data.note_type.as_str(),
@@ -112,7 +110,6 @@ pub(super) async fn record_extracted_note_rejections(
 
 		audit::record_ingest_decision(
 			tx,
-			cfg,
 			ctx,
 			note,
 			note_data.note_type.as_str(),

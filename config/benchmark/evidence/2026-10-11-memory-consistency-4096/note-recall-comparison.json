@@ -1,0 +1,474 @@
+{
+  "baseline": {
+    "rows": [
+      {
+        "case_id": "memory-0-0",
+        "split": "test",
+        "trace_id": "91c926d1-151e-4af7-bf90-aa614d98b153",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-0-286",
+          "RETRY-0-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "RETRY-0-907"
+        ]
+      },
+      {
+        "case_id": "memory-0-1",
+        "split": "test",
+        "trace_id": "12a7573c-cbc9-4144-8ad7-7c31a14d5d1f",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-0-632",
+          "GATE-0-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "REPLAY-0-632"
+        ]
+      },
+      {
+        "case_id": "memory-0-2",
+        "split": "test",
+        "trace_id": "f54bc133-0218-43a0-bde9-b86cd43e4e43",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-0-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-0-3",
+        "split": "test",
+        "trace_id": "e4fe5e83-eec4-4ec1-8bda-8139bcc992e4",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-1-0",
+        "split": "test",
+        "trace_id": "ff58b0ff-8bbf-4945-bc17-e44ac7e5a30c",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-1-286",
+          "RETRY-1-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "RETRY-1-907"
+        ]
+      },
+      {
+        "case_id": "memory-1-1",
+        "split": "test",
+        "trace_id": "c2a3ceab-8c3c-4d10-8128-dbc4fd2f51bf",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-1-632",
+          "GATE-1-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-1-2",
+        "split": "test",
+        "trace_id": "ebdeda75-a756-4e27-8681-7578d80fca35",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-1-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-1-3",
+        "split": "test",
+        "trace_id": "0fddbce2-543d-4d20-851d-2f15101ac132",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-2-0",
+        "split": "test",
+        "trace_id": "26de4d43-57c6-4e09-a3fe-db1dd796d18f",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-2-286",
+          "RETRY-2-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-2-1",
+        "split": "test",
+        "trace_id": "e6d63dec-18b9-46b2-aa6c-d18367bd2d47",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-2-632",
+          "GATE-2-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "REPLAY-2-632"
+        ]
+      },
+      {
+        "case_id": "memory-2-2",
+        "split": "test",
+        "trace_id": "86c5dc66-5d73-4288-aa54-48c0b15ad96d",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-2-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-2-3",
+        "split": "test",
+        "trace_id": "57857a92-7bfc-4d76-89e4-485e170d4ac2",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-3-0",
+        "split": "test",
+        "trace_id": "dbaf1eb7-8d03-4e5b-8990-ceaf8cd32cb4",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-3-286",
+          "RETRY-3-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-3-1",
+        "split": "test",
+        "trace_id": "41657b70-29e4-4350-834a-f2deb60a50d3",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-3-632",
+          "GATE-3-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "REPLAY-3-632"
+        ]
+      },
+      {
+        "case_id": "memory-3-2",
+        "split": "test",
+        "trace_id": "5a9460f3-b7c4-4beb-b340-a9557376dc23",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-3-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-3-3",
+        "split": "test",
+        "trace_id": "e43355b9-bf00-4728-8c91-128e07b84dcd",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-4-0",
+        "split": "dev",
+        "trace_id": "37401aa6-10cb-4013-b949-05c8e86bb4f9",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-4-286",
+          "RETRY-4-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "RETRY-4-907"
+        ]
+      },
+      {
+        "case_id": "memory-4-1",
+        "split": "dev",
+        "trace_id": "175d3b5c-6626-445f-8e52-ca9406d3ff10",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-4-632",
+          "GATE-4-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-4-2",
+        "split": "dev",
+        "trace_id": "3a230934-155b-4da0-87d9-d538c9f3932d",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-4-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-4-3",
+        "split": "dev",
+        "trace_id": "56ab9f46-780e-48f0-8bfa-0fc8ac197cb3",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      }
+    ],
+    "scored_supported": 12,
+    "scored_supported_fully_covered": 7
+  },
+  "selection": {
+    "rows": [
+      {
+        "case_id": "memory-0-0",
+        "split": "test",
+        "trace_id": "e2fc37e1-b03b-4d76-8ec0-56d1ff3e0c8f",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-0-286",
+          "RETRY-0-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-0-1",
+        "split": "test",
+        "trace_id": "cbda873e-e60f-4586-afb8-0ae419515ca2",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-0-632",
+          "GATE-0-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "REPLAY-0-632"
+        ]
+      },
+      {
+        "case_id": "memory-0-2",
+        "split": "test",
+        "trace_id": "6ed50760-1f31-4af1-ba15-ff58d521799e",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-0-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-0-3",
+        "split": "test",
+        "trace_id": "1eea7f9f-ed7f-457a-8471-9164c3479896",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-1-0",
+        "split": "test",
+        "trace_id": "33440e77-e40e-40f2-9756-1b8f68ebe305",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-1-286",
+          "RETRY-1-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-1-1",
+        "split": "test",
+        "trace_id": "d10833b5-e0c5-467f-9b21-d12f29960f6d",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-1-632",
+          "GATE-1-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-1-2",
+        "split": "test",
+        "trace_id": "8f0d995b-e6e7-4ed0-9625-182065595872",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-1-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-1-3",
+        "split": "test",
+        "trace_id": "3af98a7d-4cb2-4594-85e3-ebda8e0b5e79",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-2-0",
+        "split": "test",
+        "trace_id": "0b5ee869-e54a-4e96-aba8-aaf4ba795576",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-2-286",
+          "RETRY-2-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-2-1",
+        "split": "test",
+        "trace_id": "9a20d2b5-c55c-494c-8f46-f94319318d21",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-2-632",
+          "GATE-2-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "REPLAY-2-632"
+        ]
+      },
+      {
+        "case_id": "memory-2-2",
+        "split": "test",
+        "trace_id": "c80196f8-8e78-4fad-a874-37be71ab90e3",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-2-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-2-3",
+        "split": "test",
+        "trace_id": "af27047d-ce26-4b9a-afdd-66324f42c998",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-3-0",
+        "split": "test",
+        "trace_id": "cc7aca60-99dc-462f-b608-7eb6b683f44b",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-3-286",
+          "RETRY-3-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-3-1",
+        "split": "test",
+        "trace_id": "c118de68-58c0-4ac9-9def-b2824b2296ff",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-3-632",
+          "GATE-3-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "REPLAY-3-632"
+        ]
+      },
+      {
+        "case_id": "memory-3-2",
+        "split": "test",
+        "trace_id": "a1e4cf6f-34a9-4c52-8cac-ea43094e5a63",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-3-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-3-3",
+        "split": "test",
+        "trace_id": "1371d561-c884-46a2-adea-b0efcdd26ede",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-4-0",
+        "split": "dev",
+        "trace_id": "1ab10ad9-556c-4d6b-ada6-1b5a25011940",
+        "note_count": 12,
+        "expected_facts": [
+          "STREAM-4-286",
+          "RETRY-4-907"
+        ],
+        "expected_supported": true,
+        "missing_facts": [
+          "RETRY-4-907"
+        ]
+      },
+      {
+        "case_id": "memory-4-1",
+        "split": "dev",
+        "trace_id": "c2cd3695-bdb2-4621-914e-a2f08ffd5532",
+        "note_count": 12,
+        "expected_facts": [
+          "REPLAY-4-632",
+          "GATE-4-519"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-4-2",
+        "split": "dev",
+        "trace_id": "c9bd191c-066f-4ab4-ba70-d44f1d90e7f4",
+        "note_count": 12,
+        "expected_facts": [
+          "BATCH-4-741"
+        ],
+        "expected_supported": true,
+        "missing_facts": []
+      },
+      {
+        "case_id": "memory-4-3",
+        "split": "dev",
+        "trace_id": "27844b08-54bd-4505-ad92-da94c44f1553",
+        "note_count": 12,
+        "expected_facts": [],
+        "expected_supported": false,
+        "missing_facts": []
+      }
+    ],
+    "scored_supported": 12,
+    "scored_supported_fully_covered": 9
+  }
+}

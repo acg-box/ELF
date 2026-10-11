@@ -8,6 +8,8 @@ def main():
     parser.add_argument('phase', choices=['prepare', 'ablation', 'backend', 'analyze', 'followup'])
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--receipts', type=Path)
+    parser.add_argument('--native-run', type=Path)
+    parser.add_argument('--fill-missing', action='store_true', help='Explicitly authorize missing exact-input embeddings through the budget gateway')
     parser.add_argument('--backend', choices=['qdrant', 'infinity', 'postgres'])
     parser.add_argument('--rounds', type=int, choices=range(1,4), default=3)
     args = parser.parse_args()
@@ -18,7 +20,7 @@ def main():
     args.root.mkdir(parents=True, exist_ok=True)
     if args.phase == 'prepare':
         from .prepare import prepare
-        prepare(args.root, args.receipts)
+        prepare(args.root, args.receipts, args.native_run, args.fill_missing)
     elif args.phase == 'ablation':
         from .ablation import ablation
         ablation(args.root)

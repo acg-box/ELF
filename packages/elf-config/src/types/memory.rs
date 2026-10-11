@@ -7,10 +7,6 @@ pub struct Memory {
 	pub max_notes_per_add_event: u32,
 	/// Maximum character length for an individual note.
 	pub max_note_chars: u32,
-	/// Similarity threshold for duplicate detection.
-	pub dup_sim_threshold: f32,
-	/// Similarity threshold for update-vs-insert decisions.
-	pub update_sim_threshold: f32,
 	/// Candidate pool size used before final top-k selection.
 	pub candidate_k: u32,
 	/// Final top-k size for note retrieval.

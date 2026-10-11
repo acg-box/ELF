@@ -74,10 +74,36 @@ lower the model's output allowance to fit a smaller reservation tranche.
 Retain failed receipts before an explicit retry. Keep strict scores and semantic
 review corrections separate, using the previous report's review rubric.
 
+## Full-dimension memory regression
+
+The matched ELF runner uses Qwen3-Embedding-8B with all 4,096 dimensions.
+Default extraction profile v3 preserves subject and incident context. Existing
+pinned profiles stay pinned. Model-generated keys are retained as
+`source_ref.extracted_key` hints; only caller-authorized `add_note` keys can
+replace a note. Automatic extraction uses unkeyed, exact-text deduplication.
+Do not repair old derived notes by guessing from their corrupted fields. Use
+accepted original sources and retain prior evidence when re-extracting them.
+Keep PostgreSQL as the source of truth and Qdrant as the production index.
+Do not truncate, pad, or reuse a 1,536-dimensional vector as a 4,096-dimensional
+vector. Old receipts remain valid only for their recorded configuration.
+
+For a new matched run, use a fresh artifact directory and retain native state,
+source-integrity checks, cases, and provider receipts. Pass `--native-run PATH`
+to `prepare` to import that run instead of the historical fixture. Missing exact
+inputs stop preparation. `--fill-missing` explicitly permits generation through
+the same budget gateway; completed receipts are reused on restart. All backends
+use the resulting shared dataset, including its recorded dimensions.
+
+The current laboratory client has a 4 GiB limit to hold 50,000 full-dimensional
+vectors and the independent exact reference. Record this change when comparing
+with older 2 GiB client runs. Compare Qdrant and Infinity sequentially. Do not run
+the ordinary pgvector HNSW adapter at 4,096 dimensions: its vector index limit is
+2,000, and the halfvec index limit is 4,000. Do not change dimensions to bypass it.
+
 ## Database controls
 
 Use isolated containers, each limited to four CPUs and 4 GiB RAM. Run measured
-backend phases sequentially. The client image is limited to four CPUs and 2 GiB.
+backend phases sequentially. The client image uses four CPUs and 4 GiB; the historical 1,536-dimensional run used 2 GiB.
 Record server image digests, architecture, client versions, resource samples,
 and deployment failures. No foreign containers or shared image caches may be
 removed. Database containers use these loopback-only host ports:
@@ -132,3 +158,20 @@ Publish a separate dated evidence report. Preserve earlier reports unchanged.
 After collecting receipts and resource measurements, remove only this run's
 containers, volumes, images, and temporary credentials. Keep reusable frozen
 embedding receipts and the cumulative cost ledger.
+
+## Compare a memory-selection change without re-extraction
+
+Use `benchmark-elf-matched --reuse-run PREVIOUS --artifact-root NEXT --image IMAGE`
+only while the same task-owned PostgreSQL and Qdrant fixture remains available.
+First retain `embedding-state.json`, `extraction-diagnostics.json`, and
+`source-integrity.json` from the completed previous run. The runner verifies the
+canonical vector hashes, note bodies and provenance, and original document
+hashes before it reuses them. It does not call ingestion again.
+
+The runner retains completed document answers with their original source
+revision in `reused_from`, then reruns both memory query paths. Report that
+lineage explicitly; do not describe reused answers as new calls on the new
+binary. This mode isolates memory selection and avoids repeated extraction.
+Hard similarity suppression is removed from selection. MMR still applies a
+soft redundancy penalty, controlled by `mmr_lambda`; `sim_threshold` and
+`max_skips` are no longer active settings.

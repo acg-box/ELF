@@ -1,0 +1,11 @@
+{
+  "tests_passed": 550,
+  "tests_skipped": 0,
+  "removed_containers": [
+    "elf-4096-test-pg",
+    "elf-4096-test-qdrant"
+  ],
+  "removed_volumes": [
+    "76fe66273737a3aedf0d4fa11f357402309d5d0d6d4e11336e26e9939b7e1670"
+  ]
+}

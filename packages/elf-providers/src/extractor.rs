@@ -36,6 +36,12 @@ pub async fn extract(cfg: &LlmProviderConfig, messages: &[Value]) -> Result<Valu
 }
 
 fn parse_extractor_json(json: Value) -> Result<Value> {
+	if json.pointer("/choices/0/finish_reason").and_then(Value::as_str) == Some("error") {
+		return Err(Error::InvalidResponse {
+			message: "Extractor completion failed upstream.".to_string(),
+		});
+	}
+
 	if let Some(content) = json
 		.get("choices")
 		.and_then(|v| v.as_array())
@@ -51,6 +57,14 @@ fn parse_extractor_json(json: Value) -> Result<Value> {
 		return Ok(parsed);
 	}
 
+	// A provider envelope with no content is not a direct extraction object.
+	// Returning it would bypass the bounded parse retry and misclassify an
+	// upstream error as an invalid memory request.
+	if json.get("choices").is_some() {
+		return Err(Error::InvalidResponse {
+			message: "Extractor response is missing completion content.".to_string(),
+		});
+	}
 	if json.is_object() {
 		return Ok(json);
 	}
@@ -63,6 +77,21 @@ fn parse_extractor_json(json: Value) -> Result<Value> {
 #[cfg(test)]
 mod tests {
 	use crate::extractor;
+
+	#[test]
+	fn rejects_failed_completion_envelope_instead_of_returning_it_as_memory() {
+		let json = serde_json::json!({"choices":[{"finish_reason":"error","error":{"code":502},"message":{"content":null}}]});
+
+		assert!(extractor::parse_extractor_json(json).is_err());
+		assert!(extractor::parse_extractor_json(serde_json::json!({"choices":[]})).is_err());
+	}
+
+	#[test]
+	fn accepts_direct_extraction_objects() {
+		let json = serde_json::json!({"notes":[]});
+
+		assert_eq!(extractor::parse_extractor_json(json.clone()).expect("Direct JSON"), json);
+	}
 
 	#[test]
 	fn parses_choice_content_json() {

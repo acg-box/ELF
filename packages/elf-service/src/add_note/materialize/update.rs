@@ -57,6 +57,13 @@ pub(in crate::add_note) async fn handle_add_note_update(
 	)
 	.await?;
 
+	if existing.text != note.text {
+		sqlx::query("DELETE FROM memory_note_fields WHERE note_id = $1")
+			.bind(note_id)
+			.execute(&mut **tx)
+			.await?;
+	}
+
 	existing.text = note.text.clone();
 	existing.importance = note.importance;
 	existing.confidence = note.confidence;
@@ -135,7 +142,10 @@ fn note_update_is_unchanged(
 	});
 	let float_eps = 1e-6_f32;
 
-	existing.text == note.text
+	note.structured
+		.as_ref()
+		.is_none_or(|fields| fields.is_effectively_empty() && !fields.has_graph_fields())
+		&& existing.text == note.text
 		&& (existing.importance - note.importance).abs() <= float_eps
 		&& (existing.confidence - note.confidence).abs() <= float_eps
 		&& expires_match

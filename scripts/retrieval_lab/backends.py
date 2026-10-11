@@ -10,7 +10,7 @@ from pgvector.psycopg import register_vector
 from qdrant_client import QdrantClient, models
 
 HOST = 'host.docker.internal'
-DIM = 1536
+DEFAULT_DIM = 4096
 
 
 def lexical(text):
@@ -26,14 +26,15 @@ def rrf(lists, k=10):
 
 
 class Qdrant:
-    def __init__(self, name):
+    def __init__(self, name, dimension=DEFAULT_DIM):
+        self.dimension = dimension
         self.name = name
         self.client = QdrantClient(host=HOST, port=19865, grpc_port=19866, prefer_grpc=True, timeout=600, cloud_inference=True)
 
     def create(self, rows, vectors, hybrid=False):
         if self.client.collection_exists(self.name):
             raise ValueError('Refuse to replace an existing benchmark collection')
-        self.client.create_collection(self.name, vectors_config={'dense': models.VectorParams(size=DIM, distance=models.Distance.COSINE)},
+        self.client.create_collection(self.name, vectors_config={'dense': models.VectorParams(size=self.dimension, distance=models.Distance.COSINE)},
             sparse_vectors_config={'bm25': models.SparseVectorParams(modifier=models.Modifier.IDF)} if hybrid else None,
             hnsw_config=models.HnswConfigDiff(m=16, ef_construct=200, max_indexing_threads=4, full_scan_threshold=10),
             optimizers_config=models.OptimizersConfigDiff(indexing_threshold=1, max_optimization_threads=1), shard_number=1)
@@ -70,14 +71,15 @@ class Qdrant:
 
 
 class Infinity:
-    def __init__(self, name):
+    def __init__(self, name, dimension=DEFAULT_DIM):
+        self.dimension = dimension
         self.name=name
         self.client=infinity.connect(NetworkAddress(HOST,19869))
         self.db=self.client.get_database('default_db')
         self.table=None
 
     def create(self, rows, vectors, hybrid=False):
-        schema={'id':{'type':'integer'},'tenant':{'type':'integer'},'vec':{'type':f'vector,{DIM},float'}}
+        schema={'id':{'type':'integer'},'tenant':{'type':'integer'},'vec':{'type':f'vector,{self.dimension},float'}}
         if hybrid:schema['body']={'type':'varchar'}
         self.table=self.db.create_table(self.name,schema,ConflictType.Error)
         for offset in range(0,len(rows),256):
@@ -113,7 +115,8 @@ class Infinity:
 
 
 class Postgres:
-    def __init__(self,name):
+    def __init__(self,name,dimension=DEFAULT_DIM):
+        self.dimension=dimension
         assert re.fullmatch('[a-z0-9_]+',name)
         self.name=name
         self.client=psycopg.connect(host=HOST,port=19867,user='postgres',password='lab-only-local',dbname='postgres',autocommit=True)
@@ -124,7 +127,7 @@ class Postgres:
 
     def create(self,rows,vectors,hybrid=False):
         self.client.execute('CREATE EXTENSION IF NOT EXISTS vector')
-        self.client.execute(f'CREATE TABLE {self.name} (id integer PRIMARY KEY, tenant integer NOT NULL, vec vector({DIM}), body text, lex tsvector)')
+        self.client.execute(f'CREATE TABLE {self.name} (id integer PRIMARY KEY, tenant integer NOT NULL, vec vector({self.dimension}), body text, lex tsvector)')
         with self.client.cursor().copy(f'COPY {self.name} (id,tenant,vec,body) FROM STDIN') as copy:
             for row,vector in zip(rows,vectors):
                 copy.write_row((row['id'],row['tenant'],str(vector.tolist()),lexical(row.get('text','')) if hybrid else ''))

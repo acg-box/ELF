@@ -27,9 +27,7 @@ pub struct ResolvedBlendPolicy {
 #[derive(Clone, Debug)]
 pub struct ResolvedDiversityPolicy {
 	pub enabled: bool,
-	pub sim_threshold: f32,
 	pub mmr_lambda: f32,
-	pub max_skips: u32,
 }
 
 #[derive(Clone, Debug)]

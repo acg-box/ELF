@@ -69,12 +69,8 @@ pub struct BlendSegmentOverride {
 pub struct DiversityRankingOverride {
 	/// Enables or disables diversity selection.
 	pub enabled: Option<bool>,
-	/// Similarity threshold for duplicate suppression.
-	pub sim_threshold: Option<f32>,
 	/// MMR lambda value.
 	pub mmr_lambda: Option<f32>,
-	/// Maximum number of candidates to skip while selecting diverse results.
-	pub max_skips: Option<u32>,
 }
 
 /// Retrieval-source weighting override supplied on a search request.

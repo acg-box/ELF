@@ -108,18 +108,13 @@ pub(super) fn apply_policy_ignore_adjustments(
 
 pub(super) fn base_decision_for_update(
 	decision: &UpdateDecision,
-	structured_present: bool,
-	graph_present: bool,
+	_structured_present: bool,
+	_graph_present: bool,
 ) -> MemoryPolicyDecision {
 	match decision {
 		UpdateDecision::Update { .. } => MemoryPolicyDecision::Update,
 		UpdateDecision::Add { .. } => MemoryPolicyDecision::Remember,
-		UpdateDecision::None { .. } =>
-			if structured_present || graph_present {
-				MemoryPolicyDecision::Update
-			} else {
-				MemoryPolicyDecision::Ignore
-			},
+		UpdateDecision::None { .. } => MemoryPolicyDecision::Ignore,
 	}
 }
 

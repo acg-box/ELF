@@ -70,18 +70,13 @@ pub(super) fn ignore_reason_code_for_policy(
 
 pub(super) fn base_decision_for_update(
 	decision: &UpdateDecision,
-	structured_present: bool,
-	graph_present: bool,
+	_structured_present: bool,
+	_graph_present: bool,
 ) -> MemoryPolicyDecision {
 	match decision {
 		UpdateDecision::Update { .. } => MemoryPolicyDecision::Update,
 		UpdateDecision::Add { .. } => MemoryPolicyDecision::Remember,
-		UpdateDecision::None { .. } =>
-			if structured_present || graph_present {
-				MemoryPolicyDecision::Update
-			} else {
-				MemoryPolicyDecision::Ignore
-			},
+		UpdateDecision::None { .. } => MemoryPolicyDecision::Ignore,
 	}
 }
 
@@ -128,22 +123,17 @@ pub(super) async fn apply_policy_result(
 					policy_decision,
 				)
 				.await?,
-			UpdateDecision::None { .. } => {
-				let (mut none_result, note_version_id) = materialize::handle_add_note_none(
-					tx,
-					ctx,
-					note,
-					note_id,
-					ctx.now,
-					ctx.embed_version,
+			UpdateDecision::None { .. } => (
+				AddNoteResult {
+					note_id: Some(note_id),
+					op: NoteOp::None,
 					policy_decision,
-				)
-				.await?;
-
-				none_result.policy_decision = policy_decision;
-
-				(none_result, note_version_id)
-			},
+					reason_code: None,
+					field_path: None,
+					write_policy_audit: None,
+				},
+				None,
+			),
 		};
 		let note_op = result.op;
 

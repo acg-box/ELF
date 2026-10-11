@@ -31,12 +31,7 @@ pub(crate) fn memory_policy_ranking_config() -> Ranking {
 			retrieval_normalization: "rank".to_string(),
 			segments: vec![RankingBlendSegment { max_retrieval_rank: 10, retrieval_weight: 0.5 }],
 		},
-		diversity: RankingDiversity {
-			enabled: true,
-			sim_threshold: 0.88,
-			mmr_lambda: 0.7,
-			max_skips: 64,
-		},
+		diversity: RankingDiversity { enabled: true, mmr_lambda: 0.7 },
 		retrieval_sources: RankingRetrievalSources {
 			fusion_weight: 1.0,
 			structured_field_weight: 1.0,

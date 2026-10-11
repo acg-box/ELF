@@ -9,6 +9,7 @@ mod graph_ingestion;
 mod idempotency;
 mod knowledge_pages;
 mod memory_history;
+mod memory_identity;
 mod outbox_consistency;
 #[path = "suite/providers.rs"] mod providers;
 mod rebuild_qdrant;

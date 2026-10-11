@@ -78,8 +78,6 @@ pub(crate) fn test_config(
 		memory: Memory {
 			max_notes_per_add_event: 3,
 			max_note_chars: 240,
-			dup_sim_threshold: 0.92,
-			update_sim_threshold: 0.85,
 			candidate_k: 60,
 			top_k: 12,
 			policy: MemoryPolicy { rules: vec![] },
@@ -250,12 +248,7 @@ fn test_ranking() -> Ranking {
 				RankingBlendSegment { max_retrieval_rank: 1_000_000, retrieval_weight: 0.2 },
 			],
 		},
-		diversity: RankingDiversity {
-			enabled: true,
-			sim_threshold: 0.88,
-			mmr_lambda: 0.7,
-			max_skips: 64,
-		},
+		diversity: RankingDiversity { enabled: true, mmr_lambda: 0.7 },
 		retrieval_sources: RankingRetrievalSources {
 			fusion_weight: 1.0,
 			structured_field_weight: 1.0,

@@ -1,0 +1,66 @@
+[
+  {
+    "backend": "infinity",
+    "mode": "dense",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "qdrant",
+    "mode": "dense",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "infinity",
+    "mode": "hybrid",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "qdrant",
+    "mode": "hybrid",
+    "scope": "documents",
+    "questions": 50,
+    "source_coverage": 1.0,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "infinity",
+    "mode": "dense",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.6666666666666666,
+    "fact_coverage": 0.6666666666666666
+  },
+  {
+    "backend": "qdrant",
+    "mode": "dense",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.6666666666666666,
+    "fact_coverage": 0.6666666666666666
+  },
+  {
+    "backend": "infinity",
+    "mode": "hybrid",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.7708333333333334,
+    "fact_coverage": 1.0
+  },
+  {
+    "backend": "qdrant",
+    "mode": "hybrid",
+    "scope": "memory",
+    "questions": 16,
+    "source_coverage": 0.7708333333333334,
+    "fact_coverage": 0.9166666666666666
+  }
+]

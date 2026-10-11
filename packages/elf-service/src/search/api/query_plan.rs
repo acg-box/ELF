@@ -150,12 +150,8 @@ pub struct QueryPlanRerankPolicy {
 	pub blend_segments: Vec<QueryPlanBlendSegment>,
 	/// Whether diversity ranking was enabled.
 	pub diversity_enabled: bool,
-	/// Diversity similarity threshold.
-	pub diversity_sim_threshold: f32,
 	/// Diversity MMR lambda.
 	pub diversity_mmr_lambda: f32,
-	/// Diversity max-skips limit.
-	pub diversity_max_skips: u32,
 }
 
 /// Budget snapshot used during search.
