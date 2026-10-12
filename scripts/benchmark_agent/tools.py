@@ -1,10 +1,10 @@
 """Read-only adapters over public ELF APIs, with explicit ablation boundaries."""
 import copy
-import json
 import urllib.error
 
 
 def schemas(condition):
+    if condition=='initial':return []
     definitions=[('search_notes','Search stored memories. Returns note ids and summaries.',{'query':{'type':'string'}},['query']),
                  ('get_note','Read a memory including its derived structured fields. In source-enabled runs it includes original provenance.',{'note_id':{'type':'string'}},['note_id'])]
     if condition in ('source','both'):

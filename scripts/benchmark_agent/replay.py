@@ -13,7 +13,7 @@ def signature(messages):
 
 
 class Replay:
-    def __init__(self, receipt_file, upstream, token, log):
+    def __init__(self, receipt_file, upstream, token, log, query_receipts=None):
         self.extractions={}; self.vectors={}; self.upstream=upstream; self.token=token; self.log=log
         self.lock=threading.Lock()
         for line in gzip.decompress(receipt_file.read_bytes()).splitlines():
@@ -33,6 +33,14 @@ class Replay:
                 except (KeyError,TypeError,ValueError):continue
                 # Later successful replay of an identical source supersedes a failed attempt.
                 self.extractions[signature(request['messages'])]=(response,row['ordinal'])
+        if query_receipts is not None:
+            for path in sorted(query_receipts.glob('*.json'),key=lambda p:int(p.stem)):
+                row=json.loads(path.read_text());request,response=row['request'],row['response']
+                if 'input' not in request or request.get('dimensions')!=4096:continue
+                inputs=request['input'] if isinstance(request['input'],list) else [request['input']]
+                for item in response.get('data',[]):
+                    assert len(item['embedding'])==4096
+                    self.vectors.setdefault(inputs[item['index']],(item['embedding'],int(path.stem)))
 
     def record(self,row):
         with self.lock:
