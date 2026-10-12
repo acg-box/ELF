@@ -1,0 +1,24 @@
+{
+  "removed_container_ids": [
+    "29ad1635d19a5dd2dd2d3adc62b42e9570f3bd0e0c90cc12a8aaed75b45dde46",
+    "7911097212a0c73f2a06e9fc3ce14f1ed9328c43b21b753f43752282573b0772",
+    "8ae098b89c71c783b7eaa55f196169e8f352ce426e4540534ad15832b3b22269",
+    "b9e616460bdcaa3316e0bc89b75e6d707679708bfaa0df43b4cc66b1882dc6f6",
+    "fe7fd4c4249040afe7341fc57a7b3150c30375a2744fa9f3ecce87f83e95ced1"
+  ],
+  "removed_anonymous_volumes": [
+    "6fe692cc1f9ee620150debd0236a06e090de641ea7fb870591115c8afd67e440"
+  ],
+  "removed_network": "elf-matched",
+  "removed_image_references": [
+    "elf-agent-evidence:current",
+    "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba"
+  ],
+  "unrelated_containers_preserved": 10,
+  "base_images_preserved": [
+    "pgvector/pgvector:pg18",
+    "qdrant/qdrant:v1.18.0"
+  ],
+  "retained_local_fixture_dump": true,
+  "global_prune": false
+}

@@ -1,0 +1,11 @@
+{
+  "failed_ordinal": 1577,
+  "provider_unchanged": "deepseek",
+  "model_unchanged": "deepseek/deepseek-v4.1-flash",
+  "endpoint_max_output_tokens": 393216,
+  "prompt_price_per_million": 0.3,
+  "completion_price_per_million": 1.2,
+  "catalog": "provider-catalog.json",
+  "conservative_failure_reservation_retained_usd": 0.5691777,
+  "no_completed_answers_before_adjustment": true
+}

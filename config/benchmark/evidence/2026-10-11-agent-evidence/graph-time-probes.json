@@ -1,0 +1,436 @@
+[
+  {
+    "request": {
+      "subject": {
+        "surface": "Larch"
+      },
+      "as_of": null,
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-10-12T02:40:34.832392839Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-10-12T02:40:34.832392839Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 2,
+        "requested_limit": 50,
+        "returned_rows": 2,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "54eff30c-03bf-4b25-8955-093b7e2c5b29"
+          ],
+          "fact_id": "02ceb3ef-8ba4-4649-b585-75bc6f857acb",
+          "object": {
+            "value": "from BATCH-0-741 to STREAM-0-286"
+          },
+          "predicate": "switching",
+          "predicate_id": "6717aa39-8e7e-41f0-ac7c-7c7606a78950",
+          "scope": "agent_private",
+          "temporal_status": "current",
+          "valid_from": "2026-10-12T02:33:27.610584Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f"
+          ],
+          "fact_id": "55fd8156-b797-4532-b61e-72f30c35535e",
+          "object": {
+            "entity": {
+              "canonical": "GATE-0-519",
+              "entity_id": "d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+              "kind": "incident"
+            }
+          },
+          "predicate": "was caused by",
+          "predicate_id": "b38ce054-b560-47f7-a7d6-84dbf700bf59",
+          "scope": "agent_private",
+          "temporal_status": "current",
+          "valid_from": "2026-10-12T02:33:27.610584Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "3a3a192a-4dbb-422e-a7b5-7d21312589fa",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Larch",
+        "entity_id": "913f71b5-43b4-413b-8218-0c05ebc721c4",
+        "kind": "project"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Larch"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "8ea563e0-db34-4888-a607-4e57c6bd0800",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Larch",
+        "entity_id": "913f71b5-43b4-413b-8218-0c05ebc721c4",
+        "kind": "project"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Cobalt"
+      },
+      "as_of": null,
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-10-12T02:40:34.844054624Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-10-12T02:40:34.844054624Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "d73f62dd-c63b-41ce-b83b-54d1820be1d0",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Cobalt",
+        "entity_id": "c00d18fd-46ad-4af6-8046-a8bc87e42646",
+        "kind": "project"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Cobalt"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "c57f2e3b-16f2-4ab0-9249-92c3da7d3dad",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Cobalt",
+        "entity_id": "c00d18fd-46ad-4af6-8046-a8bc87e42646",
+        "kind": "project"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Reed"
+      },
+      "as_of": null,
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-10-12T02:40:34.85237519Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-10-12T02:40:34.85237519Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "7c5f26f8-c7d5-4713-bb15-57f5ee829b8d",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Reed",
+        "entity_id": "8fad5c26-5cee-44a2-ac5b-18053f16af66",
+        "kind": "person"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Reed"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "e7195020-430d-4b17-8ae4-6336291b216c",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Reed",
+        "entity_id": "8fad5c26-5cee-44a2-ac5b-18053f16af66",
+        "kind": "person"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Sable"
+      },
+      "as_of": null,
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-10-12T02:40:34.85664087Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-10-12T02:40:34.85664087Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 50,
+        "returned_rows": 1,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "e2ed68fb-9957-43f9-a067-5fb5268f63db"
+          ],
+          "fact_id": "15c4f231-8834-4662-a518-fdf5dbc80e2f",
+          "object": {
+            "value": "the August 15 delivery choice"
+          },
+          "predicate": "keep",
+          "predicate_id": "c35fd377-0a89-4df0-92dd-5e5e5b04e190",
+          "scope": "agent_private",
+          "temporal_status": "current",
+          "valid_from": "2026-10-12T02:33:32.534658Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "5e4256ef-3cce-4e7a-93c4-7d7b6b3d895e",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Sable",
+        "entity_id": "7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+        "kind": "system"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Sable"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "86982f74-022a-4dda-8a4c-15895933d1bc",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Sable",
+        "entity_id": "7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+        "kind": "system"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Cedar"
+      },
+      "as_of": null,
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-10-12T02:40:34.862998681Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-10-12T02:40:34.862998681Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "55620683-c54b-439f-9507-09995e9437c3",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Cedar",
+        "entity_id": "0491d0c4-b1ab-4cef-91b0-5a711995487f",
+        "kind": "system"
+      },
+      "truncated": false
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "surface": "Cedar"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 50,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 50,
+        "returned_rows": 0,
+        "schema": "elf.graph_query/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "0d2c1ecf-d212-4353-bea9-df437f7e4c15",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Cedar",
+        "entity_id": "0491d0c4-b1ab-4cef-91b0-5a711995487f",
+        "kind": "system"
+      },
+      "truncated": false
+    }
+  }
+]

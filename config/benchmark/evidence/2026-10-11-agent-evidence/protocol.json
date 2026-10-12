@@ -1,0 +1,22 @@
+{
+  "runtime_revision": "b8e6eb14f8b6122f5e2a5f963e34137d67b057b1",
+  "image_id": "sha256:ea7e43d04b25ef536205cfffedfcf888c30bbcb41e37192f27863579b54127ec",
+  "conditions": [
+    "notes",
+    "source",
+    "graph",
+    "both"
+  ],
+  "model": "deepseek/deepseek-v4.1-flash",
+  "embedding": "qwen/qwen3-embedding-8b",
+  "dimensions": 4096,
+  "max_rounds": 12,
+  "max_tool_calls": 24,
+  "max_output_tokens": 393216,
+  "reasoning": "max",
+  "scope": "20 frozen memory questions; 16 scored and 4 development; no competitor rerun",
+  "fixture": "Native ingestion with receipt-replayed extraction, not new extraction evaluation; exact cached embeddings reused. All conditions share initial notes. Fresh native identities and ingestion timestamps.",
+  "source_tools": "Public document search and verified excerpts only; no hidden message-id to document-id map.",
+  "graph_tools": "Public outgoing graph query by surface or returned entity id; follow object entities and evidence-note ids.",
+  "generation": "Wrong factual answers are retained. Transport/contract failures require explicit retained-attempt retry."
+}

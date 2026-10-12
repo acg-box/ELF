@@ -103,7 +103,7 @@ class BudgetTests(TestCase):
 
 
 class EmbeddingRecoveryTests(TestCase):
-    def request(self, responses, kind="embedding", retries=3, tranche=1.0, record=False):
+    def request(self, responses, kind="embedding", retries=3, tranche=1.0, record=False, request_max_bytes=262144, text="synthetic fact"):
         import contextlib
         import http.client
         import io
@@ -119,13 +119,13 @@ class EmbeddingRecoveryTests(TestCase):
             with patch("benchmark_budget.urllib.request.build_opener", return_value=opener), \
                     patch("benchmark_budget.time.sleep") as sleep:
                 server = ThreadingHTTPServer(("127.0.0.1", 0), handler_for(ledger, "upstream-key", "local-token", retries,
-                    receipt_dir=Path(directory) / "receipts" if record else None))
+                    receipt_dir=Path(directory) / "receipts" if record else None, request_max_bytes=request_max_bytes))
                 thread = threading.Thread(target=server.serve_forever, kwargs={"poll_interval": 0.01})
                 thread.start()
                 client = http.client.HTTPConnection("127.0.0.1", server.server_port, timeout=5)
                 try:
                     route = "/v1/embeddings" if kind == "embedding" else "/v1/chat/completions"
-                    client.request("POST", route, json.dumps({"input": "synthetic fact"}),
+                    client.request("POST", route, json.dumps({"input": text}),
                         {"Authorization": "Bearer local-token", "Content-Type": "application/json"})
                     response = client.getresponse()
                     status, payload = response.status, json.loads(response.read())
@@ -162,6 +162,13 @@ class EmbeddingRecoveryTests(TestCase):
     def test_private_receipt_preserves_provider_response_without_authentication(self):
         status, *_ = self.request([self.success()], record=True)
         self.assertEqual(status, 200)
+
+    def test_larger_agent_history_requires_explicit_limit_and_cost_reservation(self):
+        status,_,ledger,calls,_=self.request([],text='x'*300000)
+        self.assertEqual((status,len(ledger['requests']),len(calls)),(413,0,0))
+        status,_,ledger,calls,_=self.request([self.success()],text='x'*300000,request_max_bytes=1048576)
+        self.assertEqual((status,len(ledger['requests']),len(calls)),(200,1,1))
+        self.assertGreater(ledger['requests'][0]['reserved_usd'],0.03)
 
     def test_embedding_retry_keeps_request_and_charges_separate_attempts(self):
         status, payload, ledger, calls, sleeps = self.request([self.failure(retry_after="3"), self.success()])

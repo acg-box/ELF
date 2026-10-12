@@ -1,0 +1,4578 @@
+[
+  {
+    "request": {
+      "subject": {
+        "entity_id": "f7012cd6-1e14-411b-beae-fbc283eb7af0"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "e2ed68fb-9957-43f9-a067-5fb5268f63db"
+          ],
+          "fact_id": "398ea42c-f87a-4734-b6f2-65a98aff6d7d",
+          "object": {
+            "entity": {
+              "canonical": "recovery procedure",
+              "entity_id": "80da64af-800f-4e09-9aec-42ba6d462314",
+              "kind": "procedure"
+            }
+          },
+          "predicate": "use",
+          "predicate_cardinality": "multi",
+          "predicate_id": "6f91eedf-a6e3-40d2-b3d7-a016b18ba325",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.534659Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "6b626864-7cff-4978-8052-536e6e6f8b8b",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "next outage",
+        "entity_id": "f7012cd6-1e14-411b-beae-fbc283eb7af0",
+        "kind": "event"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "e2ed68fb-9957-43f9-a067-5fb5268f63db"
+            ],
+            "fact_id": "398ea42c-f87a-4734-b6f2-65a98aff6d7d",
+            "predicate": "use",
+            "source_node_id": "entity:f7012cd6-1e14-411b-beae-fbc283eb7af0",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:80da64af-800f-4e09-9aec-42ba6d462314",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "procedure",
+            "label": "recovery procedure",
+            "node_id": "entity:80da64af-800f-4e09-9aec-42ba6d462314",
+            "node_type": "entity"
+          },
+          {
+            "kind": "event",
+            "label": "next outage",
+            "node_id": "entity:f7012cd6-1e14-411b-beae-fbc283eb7af0",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "85001056-2b92-4aa7-a742-4f3d9c46f96b"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "4f9221ae-f045-40a3-a419-07af63c35aa3",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "project Reed",
+        "entity_id": "85001056-2b92-4aa7-a742-4f3d9c46f96b",
+        "kind": "project"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "project",
+            "label": "project Reed",
+            "node_id": "entity:85001056-2b92-4aa7-a742-4f3d9c46f96b",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "ecbb1c03-58b8-465c-8ab3-c8cfb6d5ba1f"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "4e7d5d65-ced4-411e-88ef-5946d800569b",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-0-108",
+        "entity_id": "ecbb1c03-58b8-465c-8ab3-c8cfb6d5ba1f",
+        "kind": "policy"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "policy",
+            "label": "RETRY-0-108",
+            "node_id": "entity:ecbb1c03-58b8-465c-8ab3-c8cfb6d5ba1f",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "a1458fbb-55bb-4fc8-b27d-6718e21457d3"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "1b069182-b394-4beb-af9b-fff700a427d2"
+          ],
+          "fact_id": "124bee4c-7dec-425b-8961-a7b0aba75c44",
+          "object": {
+            "value": "the missing updates"
+          },
+          "predicate": "restored",
+          "predicate_cardinality": "multi",
+          "predicate_id": "7c225d1a-e662-43ac-8c82-7956a4dfa999",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:27.343803Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "b4190ce7-0c19-4b6b-9f30-cf7b4d055086",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "REPLAY-0-632",
+        "entity_id": "a1458fbb-55bb-4fc8-b27d-6718e21457d3",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "1b069182-b394-4beb-af9b-fff700a427d2"
+            ],
+            "fact_id": "124bee4c-7dec-425b-8961-a7b0aba75c44",
+            "predicate": "restored",
+            "source_node_id": "entity:a1458fbb-55bb-4fc8-b27d-6718e21457d3",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:the missing updates",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "REPLAY-0-632",
+            "node_id": "entity:a1458fbb-55bb-4fc8-b27d-6718e21457d3",
+            "node_type": "subject"
+          },
+          {
+            "label": "the missing updates",
+            "node_id": "value:the missing updates",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "90c4a3e0-e0bf-40cd-bfe7-9e39826196fe"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "870a8ad9-5e81-4dad-8037-ac102531f827",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "BATCH-2-741",
+        "entity_id": "90c4a3e0-e0bf-40cd-bfe7-9e39826196fe",
+        "kind": "identifier"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "identifier",
+            "label": "BATCH-2-741",
+            "node_id": "entity:90c4a3e0-e0bf-40cd-bfe7-9e39826196fe",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "5ec7d28d-f6a1-499e-804c-9e053ed98bf4"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "90c62130-f8ab-4e52-9a3d-4b6f961d8a7e",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "STREAM-2-286",
+        "entity_id": "5ec7d28d-f6a1-499e-804c-9e053ed98bf4"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "label": "STREAM-2-286",
+            "node_id": "entity:5ec7d28d-f6a1-499e-804c-9e053ed98bf4",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "9f7908dc-f8db-4759-acfa-f25cd6612d51"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "ccf1d5d1-0bd7-48c8-87a2-40592d366bf3",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "GATE-2-519",
+        "entity_id": "9f7908dc-f8db-4759-acfa-f25cd6612d51"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "label": "GATE-2-519",
+            "node_id": "entity:9f7908dc-f8db-4759-acfa-f25cd6612d51",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "91aaca7f-b714-44ac-8659-8887d21c8381"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "511f206b-6499-40f6-8b65-8b621f703fd4",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-2-108",
+        "entity_id": "91aaca7f-b714-44ac-8659-8887d21c8381",
+        "kind": "identifier"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "identifier",
+            "label": "RETRY-2-108",
+            "node_id": "entity:91aaca7f-b714-44ac-8659-8887d21c8381",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "13769855-4c9f-4ff3-a417-d50db5104bee"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "7fa1eddf-8899-4d81-93cf-5de0c41944c8"
+          ],
+          "fact_id": "2fb0ddfc-e341-462c-81ff-5199fff7fc0d",
+          "object": {
+            "value": "RETRY-2-108"
+          },
+          "predicate": "superseding",
+          "predicate_cardinality": "multi",
+          "predicate_id": "87638179-d363-4ce9-b8c6-577c37dd7118",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:31.045113Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "08ae5e11-e17c-4c1b-ab63-8d3b08ac46c3",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-2-907",
+        "entity_id": "13769855-4c9f-4ff3-a417-d50db5104bee"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "7fa1eddf-8899-4d81-93cf-5de0c41944c8"
+            ],
+            "fact_id": "2fb0ddfc-e341-462c-81ff-5199fff7fc0d",
+            "predicate": "superseding",
+            "source_node_id": "entity:13769855-4c9f-4ff3-a417-d50db5104bee",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:RETRY-2-108",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "label": "RETRY-2-907",
+            "node_id": "entity:13769855-4c9f-4ff3-a417-d50db5104bee",
+            "node_type": "subject"
+          },
+          {
+            "label": "RETRY-2-108",
+            "node_id": "value:RETRY-2-108",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "d18efdff-59c7-4c1f-8c73-e5acf2f8b9de"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "4f2dafc0-3847-44db-a05e-7d979b86002c"
+          ],
+          "fact_id": "003c1ecc-69d7-4cf2-805b-820b3bc0dc61",
+          "object": {
+            "entity": {
+              "canonical": "GATE-0-519",
+              "entity_id": "d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+              "kind": "incident"
+            }
+          },
+          "predicate": "lost updates during",
+          "predicate_cardinality": "multi",
+          "predicate_id": "f592d155-5cb7-42c4-8642-802c16446313",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:27.343802Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "de61b3d3-05a7-442b-8153-b02c366cc92a",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "BATCH-0-741",
+        "entity_id": "d18efdff-59c7-4c1f-8c73-e5acf2f8b9de",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "4f2dafc0-3847-44db-a05e-7d979b86002c"
+            ],
+            "fact_id": "003c1ecc-69d7-4cf2-805b-820b3bc0dc61",
+            "predicate": "lost updates during",
+            "source_node_id": "entity:d18efdff-59c7-4c1f-8c73-e5acf2f8b9de",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "BATCH-0-741",
+            "node_id": "entity:d18efdff-59c7-4c1f-8c73-e5acf2f8b9de",
+            "node_type": "subject"
+          },
+          {
+            "kind": "incident",
+            "label": "GATE-0-519",
+            "node_id": "entity:d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+            "node_type": "entity"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "23a04bd9-2e83-4efd-bbad-a58af02d7c74"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 4,
+        "requested_limit": 100,
+        "returned_rows": 4,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "b7e807a5-7c24-46f2-a266-cff768cf05fb"
+          ],
+          "fact_id": "4ed86fb1-9dbd-461a-b5e8-9aeba4ffb294",
+          "object": {
+            "entity": {
+              "canonical": "Sable",
+              "entity_id": "7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+              "kind": "system"
+            }
+          },
+          "predicate": "reviewed",
+          "predicate_cardinality": "multi",
+          "predicate_id": "a943f1a3-49c5-4b0c-a7c7-cbe2e050ba1d",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.534659Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "73d1e03c-4e93-4d16-a15a-19f22fa14dcd"
+          ],
+          "fact_id": "7024cfd4-e32c-4084-b0c9-3c0d19a4ddd5",
+          "object": {
+            "value": "BATCH-3-741"
+          },
+          "predicate": "chose",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ec247d29-99b2-4dda-8308-1f9f4cb86e06",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:31.390008Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "95af588e-cd32-43c5-b302-d827794dee02"
+          ],
+          "fact_id": "0cc2c087-d905-4df3-bd4c-796310640af9",
+          "object": {
+            "entity": {
+              "canonical": "STREAM-3-286",
+              "entity_id": "29e4cd8d-60ff-4ff4-b899-8e4a0dc740c9",
+              "kind": "system"
+            }
+          },
+          "predicate": "approved switching",
+          "predicate_cardinality": "multi",
+          "predicate_id": "966e06f6-2e80-4063-ad2e-3fa08def3ddd",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-15T00:00:00Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c"
+          ],
+          "fact_id": "0a278597-d1da-4df8-93e2-95440dea21d6",
+          "object": {
+            "entity": {
+              "canonical": "Project Sable",
+              "entity_id": "35171384-6d04-4105-9186-ccc81c4d9fb8",
+              "kind": "project"
+            }
+          },
+          "predicate": "started",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ea852e1c-b280-4098-8d0a-af72bdb4e05e",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-01T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "66d97ca8-1b37-4db2-acdd-2024b0f32a02",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Tala",
+        "entity_id": "23a04bd9-2e83-4efd-bbad-a58af02d7c74",
+        "kind": "person"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 2,
+        "evidence_link_count": 4,
+        "fact_count": 4,
+        "future_count": 2,
+        "historical_count": 0,
+        "inferred_count": 4,
+        "sourced_count": 4,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "b7e807a5-7c24-46f2-a266-cff768cf05fb"
+            ],
+            "fact_id": "4ed86fb1-9dbd-461a-b5e8-9aeba4ffb294",
+            "predicate": "reviewed",
+            "source_node_id": "entity:23a04bd9-2e83-4efd-bbad-a58af02d7c74",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+            "temporal_status": "future"
+          },
+          {
+            "evidence_note_ids": [
+              "73d1e03c-4e93-4d16-a15a-19f22fa14dcd"
+            ],
+            "fact_id": "7024cfd4-e32c-4084-b0c9-3c0d19a4ddd5",
+            "predicate": "chose",
+            "source_node_id": "entity:23a04bd9-2e83-4efd-bbad-a58af02d7c74",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:BATCH-3-741",
+            "temporal_status": "future"
+          },
+          {
+            "evidence_note_ids": [
+              "95af588e-cd32-43c5-b302-d827794dee02"
+            ],
+            "fact_id": "0cc2c087-d905-4df3-bd4c-796310640af9",
+            "predicate": "approved switching",
+            "source_node_id": "entity:23a04bd9-2e83-4efd-bbad-a58af02d7c74",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:29e4cd8d-60ff-4ff4-b899-8e4a0dc740c9",
+            "temporal_status": "current"
+          },
+          {
+            "evidence_note_ids": [
+              "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c"
+            ],
+            "fact_id": "0a278597-d1da-4df8-93e2-95440dea21d6",
+            "predicate": "started",
+            "source_node_id": "entity:23a04bd9-2e83-4efd-bbad-a58af02d7c74",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:35171384-6d04-4105-9186-ccc81c4d9fb8",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "person",
+            "label": "Tala",
+            "node_id": "entity:23a04bd9-2e83-4efd-bbad-a58af02d7c74",
+            "node_type": "subject"
+          },
+          {
+            "kind": "system",
+            "label": "STREAM-3-286",
+            "node_id": "entity:29e4cd8d-60ff-4ff4-b899-8e4a0dc740c9",
+            "node_type": "entity"
+          },
+          {
+            "kind": "project",
+            "label": "Project Sable",
+            "node_id": "entity:35171384-6d04-4105-9186-ccc81c4d9fb8",
+            "node_type": "entity"
+          },
+          {
+            "kind": "system",
+            "label": "Sable",
+            "node_id": "entity:7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+            "node_type": "entity"
+          },
+          {
+            "label": "BATCH-3-741",
+            "node_id": "value:BATCH-3-741",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "8c673841-f63e-41af-91dc-85ee50295346"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 2,
+        "requested_limit": 100,
+        "returned_rows": 2,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af"
+          ],
+          "fact_id": "93d48a2e-f614-4cfa-a985-55c37d5df4e6",
+          "object": {
+            "entity": {
+              "canonical": "Reed",
+              "entity_id": "8fad5c26-5cee-44a2-ac5b-18053f16af66",
+              "kind": "person"
+            }
+          },
+          "predicate": "reviewed",
+          "predicate_cardinality": "multi",
+          "predicate_id": "a943f1a3-49c5-4b0c-a7c7-cbe2e050ba1d",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:31.045115Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08"
+          ],
+          "fact_id": "760acf7f-1963-4016-a54b-10e9a62a9ecb",
+          "object": {
+            "entity": {
+              "canonical": "project Reed",
+              "entity_id": "85001056-2b92-4aa7-a742-4f3d9c46f96b",
+              "kind": "project"
+            }
+          },
+          "predicate": "started",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ea852e1c-b280-4098-8d0a-af72bdb4e05e",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-01T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "3ee3ffb3-a9d6-4a9d-87ba-2e391de3b7ae",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Neri",
+        "entity_id": "8c673841-f63e-41af-91dc-85ee50295346",
+        "kind": "person"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 1,
+        "evidence_link_count": 2,
+        "fact_count": 2,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 2,
+        "sourced_count": 2,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af"
+            ],
+            "fact_id": "93d48a2e-f614-4cfa-a985-55c37d5df4e6",
+            "predicate": "reviewed",
+            "source_node_id": "entity:8c673841-f63e-41af-91dc-85ee50295346",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:8fad5c26-5cee-44a2-ac5b-18053f16af66",
+            "temporal_status": "future"
+          },
+          {
+            "evidence_note_ids": [
+              "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08"
+            ],
+            "fact_id": "760acf7f-1963-4016-a54b-10e9a62a9ecb",
+            "predicate": "started",
+            "source_node_id": "entity:8c673841-f63e-41af-91dc-85ee50295346",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:85001056-2b92-4aa7-a742-4f3d9c46f96b",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "project",
+            "label": "project Reed",
+            "node_id": "entity:85001056-2b92-4aa7-a742-4f3d9c46f96b",
+            "node_type": "entity"
+          },
+          {
+            "kind": "person",
+            "label": "Neri",
+            "node_id": "entity:8c673841-f63e-41af-91dc-85ee50295346",
+            "node_type": "subject"
+          },
+          {
+            "kind": "person",
+            "label": "Reed",
+            "node_id": "entity:8fad5c26-5cee-44a2-ac5b-18053f16af66",
+            "node_type": "entity"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "8fad5c26-5cee-44a2-ac5b-18053f16af66"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "967a43cd-6865-4ba6-9b46-cd3990830d09",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Reed",
+        "entity_id": "8fad5c26-5cee-44a2-ac5b-18053f16af66",
+        "kind": "person"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "person",
+            "label": "Reed",
+            "node_id": "entity:8fad5c26-5cee-44a2-ac5b-18053f16af66",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "3da198ca-0745-4203-a95a-c01d7e7ef231"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "09ecaa04-14f5-4852-91ef-5ee9ddffb2ee",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "STREAM-0-286",
+        "entity_id": "3da198ca-0745-4203-a95a-c01d7e7ef231",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "STREAM-0-286",
+            "node_id": "entity:3da198ca-0745-4203-a95a-c01d7e7ef231",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "d1ab83f5-9db7-48ed-b868-90d1d3759f2b"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "0ecd78bd-e636-444f-a354-fb0d376458ac"
+          ],
+          "fact_id": "54e3329f-8a3f-4374-b1e2-57b2ece37d0a",
+          "object": {
+            "value": "2026-08-08"
+          },
+          "predicate": "recorded on",
+          "predicate_cardinality": "multi",
+          "predicate_id": "d4d7c86f-f956-4f53-8079-deaefad21fc6",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:27.610585Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "911a7a79-4d83-4231-affb-ac66a100197b",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "GATE-0-519",
+        "entity_id": "d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+        "kind": "incident"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "0ecd78bd-e636-444f-a354-fb0d376458ac"
+            ],
+            "fact_id": "54e3329f-8a3f-4374-b1e2-57b2ece37d0a",
+            "predicate": "recorded on",
+            "source_node_id": "entity:d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:2026-08-08",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "incident",
+            "label": "GATE-0-519",
+            "node_id": "entity:d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+            "node_type": "subject"
+          },
+          {
+            "label": "2026-08-08",
+            "node_id": "value:2026-08-08",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "7a1e4dbb-bbae-449f-a173-d7fb1afffc96"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "e2ed68fb-9957-43f9-a067-5fb5268f63db"
+          ],
+          "fact_id": "15c4f231-8834-4662-a518-fdf5dbc80e2f",
+          "object": {
+            "value": "the August 15 delivery choice"
+          },
+          "predicate": "keep",
+          "predicate_cardinality": "multi",
+          "predicate_id": "c35fd377-0a89-4df0-92dd-5e5e5b04e190",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.534658Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "bd77f272-712e-4d48-8b95-db432135ce75",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Sable",
+        "entity_id": "7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "e2ed68fb-9957-43f9-a067-5fb5268f63db"
+            ],
+            "fact_id": "15c4f231-8834-4662-a518-fdf5dbc80e2f",
+            "predicate": "keep",
+            "source_node_id": "entity:7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:the August 15 delivery choice",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "Sable",
+            "node_id": "entity:7a1e4dbb-bbae-449f-a173-d7fb1afffc96",
+            "node_type": "subject"
+          },
+          {
+            "label": "the August 15 delivery choice",
+            "node_id": "value:the August 15 delivery choice",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "7e093464-cfe4-4b8b-8b79-a5fb4d578612"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "54eff30c-03bf-4b25-8955-093b7e2c5b29"
+          ],
+          "fact_id": "e36b521e-34bb-473c-92bc-8dbc0a8c3bcc",
+          "object": {
+            "value": "switching Larch from BATCH-0-741 to STREAM-0-286"
+          },
+          "predicate": "approved",
+          "predicate_cardinality": "multi",
+          "predicate_id": "49460dc0-117e-4a70-89d4-a88dc00ad42c",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:27.610583Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "ebd7f742-6523-4056-99d1-c435c9be88f4",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Mara",
+        "entity_id": "7e093464-cfe4-4b8b-8b79-a5fb4d578612",
+        "kind": "person"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "54eff30c-03bf-4b25-8955-093b7e2c5b29"
+            ],
+            "fact_id": "e36b521e-34bb-473c-92bc-8dbc0a8c3bcc",
+            "predicate": "approved",
+            "source_node_id": "entity:7e093464-cfe4-4b8b-8b79-a5fb4d578612",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:switching Larch from BATCH-0-741 to STREAM-0-286",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "person",
+            "label": "Mara",
+            "node_id": "entity:7e093464-cfe4-4b8b-8b79-a5fb4d578612",
+            "node_type": "subject"
+          },
+          {
+            "label": "switching Larch from BATCH-0-741 to STREAM-0-286",
+            "node_id": "value:switching Larch from BATCH-0-741 to STREAM-0-286",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "913f71b5-43b4-413b-8218-0c05ebc721c4"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 2,
+        "requested_limit": 100,
+        "returned_rows": 2,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "54eff30c-03bf-4b25-8955-093b7e2c5b29"
+          ],
+          "fact_id": "02ceb3ef-8ba4-4649-b585-75bc6f857acb",
+          "object": {
+            "value": "from BATCH-0-741 to STREAM-0-286"
+          },
+          "predicate": "switching",
+          "predicate_cardinality": "multi",
+          "predicate_id": "6717aa39-8e7e-41f0-ac7c-7c7606a78950",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:27.610584Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f"
+          ],
+          "fact_id": "55fd8156-b797-4532-b61e-72f30c35535e",
+          "object": {
+            "entity": {
+              "canonical": "GATE-0-519",
+              "entity_id": "d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+              "kind": "incident"
+            }
+          },
+          "predicate": "was caused by",
+          "predicate_cardinality": "multi",
+          "predicate_id": "b38ce054-b560-47f7-a7d6-84dbf700bf59",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:27.610584Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "c062ad33-c7b8-4f4d-a404-93e14c5a6940",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Larch",
+        "entity_id": "913f71b5-43b4-413b-8218-0c05ebc721c4",
+        "kind": "project"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 2,
+        "fact_count": 2,
+        "future_count": 2,
+        "historical_count": 0,
+        "inferred_count": 2,
+        "sourced_count": 2,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "54eff30c-03bf-4b25-8955-093b7e2c5b29"
+            ],
+            "fact_id": "02ceb3ef-8ba4-4649-b585-75bc6f857acb",
+            "predicate": "switching",
+            "source_node_id": "entity:913f71b5-43b4-413b-8218-0c05ebc721c4",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:from BATCH-0-741 to STREAM-0-286",
+            "temporal_status": "future"
+          },
+          {
+            "evidence_note_ids": [
+              "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f"
+            ],
+            "fact_id": "55fd8156-b797-4532-b61e-72f30c35535e",
+            "predicate": "was caused by",
+            "source_node_id": "entity:913f71b5-43b4-413b-8218-0c05ebc721c4",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "project",
+            "label": "Larch",
+            "node_id": "entity:913f71b5-43b4-413b-8218-0c05ebc721c4",
+            "node_type": "subject"
+          },
+          {
+            "kind": "incident",
+            "label": "GATE-0-519",
+            "node_id": "entity:d1ab83f5-9db7-48ed-b868-90d1d3759f2b",
+            "node_type": "entity"
+          },
+          {
+            "label": "from BATCH-0-741 to STREAM-0-286",
+            "node_id": "value:from BATCH-0-741 to STREAM-0-286",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "52a015be-44b0-4029-ad5e-ae179f64cc4b"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "6a3e5817-506e-4525-9922-d33bab4cfc40"
+          ],
+          "fact_id": "539064e4-8a77-409f-bcab-116f947996f3",
+          "object": {
+            "value": "August 8"
+          },
+          "predicate": "outages recorded on",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ac353674-eddd-4088-b383-4a38f68ec7e3",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-08T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "23b52171-196d-4a1b-9aed-18b4c8304eb0",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "GATE-4-519",
+        "entity_id": "52a015be-44b0-4029-ad5e-ae179f64cc4b",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 1,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "6a3e5817-506e-4525-9922-d33bab4cfc40"
+            ],
+            "fact_id": "539064e4-8a77-409f-bcab-116f947996f3",
+            "predicate": "outages recorded on",
+            "source_node_id": "entity:52a015be-44b0-4029-ad5e-ae179f64cc4b",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:August 8",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "GATE-4-519",
+            "node_id": "entity:52a015be-44b0-4029-ad5e-ae179f64cc4b",
+            "node_type": "subject"
+          },
+          {
+            "label": "August 8",
+            "node_id": "value:August 8",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "35ac4520-f4bd-42f7-bd2c-4100788ebf3b"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "a35a02ca-8583-4b6f-ac2d-c94494cd5882"
+          ],
+          "fact_id": "94e3f8a2-7a01-4cbc-ad9f-679067535495",
+          "object": {
+            "value": "BATCH-1-741"
+          },
+          "predicate": "chose",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ec247d29-99b2-4dda-8308-1f9f4cb86e06",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:28.12131Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "28c2d917-3133-41af-a346-2c59fb8175ec",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "project Cobalt",
+        "entity_id": "35ac4520-f4bd-42f7-bd2c-4100788ebf3b",
+        "kind": "project"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "a35a02ca-8583-4b6f-ac2d-c94494cd5882"
+            ],
+            "fact_id": "94e3f8a2-7a01-4cbc-ad9f-679067535495",
+            "predicate": "chose",
+            "source_node_id": "entity:35ac4520-f4bd-42f7-bd2c-4100788ebf3b",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:BATCH-1-741",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "project",
+            "label": "project Cobalt",
+            "node_id": "entity:35ac4520-f4bd-42f7-bd2c-4100788ebf3b",
+            "node_type": "subject"
+          },
+          {
+            "label": "BATCH-1-741",
+            "node_id": "value:BATCH-1-741",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "35171384-6d04-4105-9186-ccc81c4d9fb8"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "24b387ad-76c8-4e78-b032-4101f39fc568"
+          ],
+          "fact_id": "08fb4131-a7f0-478b-bfad-b21ad8a73e1f",
+          "object": {
+            "value": "RETRY-3-108"
+          },
+          "predicate": "initial retry policy",
+          "predicate_cardinality": "multi",
+          "predicate_id": "f720a866-1379-434f-b0af-4d0f44d2dc0c",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:31.390009Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "b31f458c-8c7a-429d-bcb6-7267ddd20bcb",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Project Sable",
+        "entity_id": "35171384-6d04-4105-9186-ccc81c4d9fb8",
+        "kind": "project"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "24b387ad-76c8-4e78-b032-4101f39fc568"
+            ],
+            "fact_id": "08fb4131-a7f0-478b-bfad-b21ad8a73e1f",
+            "predicate": "initial retry policy",
+            "source_node_id": "entity:35171384-6d04-4105-9186-ccc81c4d9fb8",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:RETRY-3-108",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "project",
+            "label": "Project Sable",
+            "node_id": "entity:35171384-6d04-4105-9186-ccc81c4d9fb8",
+            "node_type": "subject"
+          },
+          {
+            "label": "RETRY-3-108",
+            "node_id": "value:RETRY-3-108",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "10b1e8e7-be9e-4583-a3a2-5c407de320da"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "42a27cce-84e4-49bb-a448-5b3aa34870cb"
+          ],
+          "fact_id": "952abdf4-a8c6-4a61-a6db-9486bca346ee",
+          "object": {
+            "value": "the missing updates"
+          },
+          "predicate": "restored",
+          "predicate_cardinality": "multi",
+          "predicate_id": "7c225d1a-e662-43ac-8c82-7956a4dfa999",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-08T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "b3a3edb8-c062-41d9-942d-918199f95228",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "REPLAY-1-632",
+        "entity_id": "10b1e8e7-be9e-4583-a3a2-5c407de320da",
+        "kind": "replay"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 1,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "42a27cce-84e4-49bb-a448-5b3aa34870cb"
+            ],
+            "fact_id": "952abdf4-a8c6-4a61-a6db-9486bca346ee",
+            "predicate": "restored",
+            "source_node_id": "entity:10b1e8e7-be9e-4583-a3a2-5c407de320da",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:the missing updates",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "replay",
+            "label": "REPLAY-1-632",
+            "node_id": "entity:10b1e8e7-be9e-4583-a3a2-5c407de320da",
+            "node_type": "subject"
+          },
+          {
+            "label": "the missing updates",
+            "node_id": "value:the missing updates",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "14d46c88-b61d-412c-b601-371e75a1d937"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "32c22cc4-37a0-47ad-9b33-ecda576b720d",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "REPLAY-3-632",
+        "entity_id": "14d46c88-b61d-412c-b601-371e75a1d937"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "label": "REPLAY-3-632",
+            "node_id": "entity:14d46c88-b61d-412c-b601-371e75a1d937",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "99ec80e8-2ba1-4c8b-80ba-d5cbd2c2d15f"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "42a27cce-84e4-49bb-a448-5b3aa34870cb"
+          ],
+          "fact_id": "f11a7c27-5f92-4d82-9043-c066c4c5df75",
+          "object": {
+            "entity": {
+              "canonical": "GATE-1-519",
+              "entity_id": "a683585e-6f2c-4858-9fdb-8ab36f82d1f6",
+              "kind": "system"
+            }
+          },
+          "predicate": "lost updates during",
+          "predicate_cardinality": "multi",
+          "predicate_id": "f592d155-5cb7-42c4-8642-802c16446313",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-08T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "c6bbc368-3e4e-4a08-8ff9-4811f987cb6d",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "BATCH-1-741",
+        "entity_id": "99ec80e8-2ba1-4c8b-80ba-d5cbd2c2d15f",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 1,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "42a27cce-84e4-49bb-a448-5b3aa34870cb"
+            ],
+            "fact_id": "f11a7c27-5f92-4d82-9043-c066c4c5df75",
+            "predicate": "lost updates during",
+            "source_node_id": "entity:99ec80e8-2ba1-4c8b-80ba-d5cbd2c2d15f",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:a683585e-6f2c-4858-9fdb-8ab36f82d1f6",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "BATCH-1-741",
+            "node_id": "entity:99ec80e8-2ba1-4c8b-80ba-d5cbd2c2d15f",
+            "node_type": "subject"
+          },
+          {
+            "kind": "system",
+            "label": "GATE-1-519",
+            "node_id": "entity:a683585e-6f2c-4858-9fdb-8ab36f82d1f6",
+            "node_type": "entity"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "246106f6-b33d-4504-8cf0-e84737c68c89"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "2991e094-87fa-472f-a45b-d045367d1633",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "STREAM-1-286",
+        "entity_id": "246106f6-b33d-4504-8cf0-e84737c68c89",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "STREAM-1-286",
+            "node_id": "entity:246106f6-b33d-4504-8cf0-e84737c68c89",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "07967d1c-7310-4201-baf6-dda5d8036bf3"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 4,
+        "requested_limit": 100,
+        "returned_rows": 4,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "669022de-9d4b-42f7-8414-96d7bc4b0dca"
+          ],
+          "fact_id": "f2fe1cc0-00a1-4906-aafb-69493b88045f",
+          "object": {
+            "entity": {
+              "canonical": "Cedar",
+              "entity_id": "0491d0c4-b1ab-4cef-91b0-5a711995487f",
+              "kind": "system"
+            }
+          },
+          "predicate": "reviewed",
+          "predicate_cardinality": "multi",
+          "predicate_id": "a943f1a3-49c5-4b0c-a7c7-cbe2e050ba1d",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:33.346053Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "3ec0746b-8f46-46ce-b3e9-acd36779144d"
+          ],
+          "fact_id": "00592a0c-500d-4f33-aa5f-65f8353aa7af",
+          "object": {
+            "value": "BATCH-4-741"
+          },
+          "predicate": "chose",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ec247d29-99b2-4dda-8308-1f9f4cb86e06",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.747544Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "217676ac-dcc0-4a8d-8143-691cc5189123"
+          ],
+          "fact_id": "015b6039-2379-454e-bf8f-e47b948891dd",
+          "object": {
+            "value": "switching Cedar from BATCH-4-741 to STREAM-4-286"
+          },
+          "predicate": "approved",
+          "predicate_cardinality": "multi",
+          "predicate_id": "49460dc0-117e-4a70-89d4-a88dc00ad42c",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-15T00:00:00Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "ecbe520f-ac9a-467e-9aa6-33e48cb39b36"
+          ],
+          "fact_id": "ccba4726-978d-4cb3-addf-a58f24d07a38",
+          "object": {
+            "entity": {
+              "canonical": "project Cedar",
+              "entity_id": "55bb9691-e3a6-4429-afc8-b19bb1e67f75",
+              "kind": "project"
+            }
+          },
+          "predicate": "started",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ea852e1c-b280-4098-8d0a-af72bdb4e05e",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-01T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "ecdbc680-69f6-443e-b6d5-89e571b63b6e",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Devon",
+        "entity_id": "07967d1c-7310-4201-baf6-dda5d8036bf3",
+        "kind": "person"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 2,
+        "evidence_link_count": 4,
+        "fact_count": 4,
+        "future_count": 2,
+        "historical_count": 0,
+        "inferred_count": 4,
+        "sourced_count": 4,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "669022de-9d4b-42f7-8414-96d7bc4b0dca"
+            ],
+            "fact_id": "f2fe1cc0-00a1-4906-aafb-69493b88045f",
+            "predicate": "reviewed",
+            "source_node_id": "entity:07967d1c-7310-4201-baf6-dda5d8036bf3",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:0491d0c4-b1ab-4cef-91b0-5a711995487f",
+            "temporal_status": "future"
+          },
+          {
+            "evidence_note_ids": [
+              "3ec0746b-8f46-46ce-b3e9-acd36779144d"
+            ],
+            "fact_id": "00592a0c-500d-4f33-aa5f-65f8353aa7af",
+            "predicate": "chose",
+            "source_node_id": "entity:07967d1c-7310-4201-baf6-dda5d8036bf3",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:BATCH-4-741",
+            "temporal_status": "future"
+          },
+          {
+            "evidence_note_ids": [
+              "217676ac-dcc0-4a8d-8143-691cc5189123"
+            ],
+            "fact_id": "015b6039-2379-454e-bf8f-e47b948891dd",
+            "predicate": "approved",
+            "source_node_id": "entity:07967d1c-7310-4201-baf6-dda5d8036bf3",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:switching Cedar from BATCH-4-741 to STREAM-4-286",
+            "temporal_status": "current"
+          },
+          {
+            "evidence_note_ids": [
+              "ecbe520f-ac9a-467e-9aa6-33e48cb39b36"
+            ],
+            "fact_id": "ccba4726-978d-4cb3-addf-a58f24d07a38",
+            "predicate": "started",
+            "source_node_id": "entity:07967d1c-7310-4201-baf6-dda5d8036bf3",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:55bb9691-e3a6-4429-afc8-b19bb1e67f75",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "Cedar",
+            "node_id": "entity:0491d0c4-b1ab-4cef-91b0-5a711995487f",
+            "node_type": "entity"
+          },
+          {
+            "kind": "person",
+            "label": "Devon",
+            "node_id": "entity:07967d1c-7310-4201-baf6-dda5d8036bf3",
+            "node_type": "subject"
+          },
+          {
+            "kind": "project",
+            "label": "project Cedar",
+            "node_id": "entity:55bb9691-e3a6-4429-afc8-b19bb1e67f75",
+            "node_type": "entity"
+          },
+          {
+            "label": "BATCH-4-741",
+            "node_id": "value:BATCH-4-741",
+            "node_type": "value"
+          },
+          {
+            "label": "switching Cedar from BATCH-4-741 to STREAM-4-286",
+            "node_id": "value:switching Cedar from BATCH-4-741 to STREAM-4-286",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "0491d0c4-b1ab-4cef-91b0-5a711995487f"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "d0b3d0f8-984f-4930-b62e-655d2718405e",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Cedar",
+        "entity_id": "0491d0c4-b1ab-4cef-91b0-5a711995487f",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "Cedar",
+            "node_id": "entity:0491d0c4-b1ab-4cef-91b0-5a711995487f",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "a683585e-6f2c-4858-9fdb-8ab36f82d1f6"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "5d74fbae-4345-4b06-aa70-126d4d830861"
+          ],
+          "fact_id": "7ff28728-e273-4aa7-a61c-bdba28fbec97",
+          "object": {
+            "value": "August 8"
+          },
+          "predicate": "outages recorded on",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ac353674-eddd-4088-b383-4a38f68ec7e3",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-08T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "6f9b9e1b-0dcf-48a4-99e9-18d7ac948263",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "GATE-1-519",
+        "entity_id": "a683585e-6f2c-4858-9fdb-8ab36f82d1f6",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 1,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "5d74fbae-4345-4b06-aa70-126d4d830861"
+            ],
+            "fact_id": "7ff28728-e273-4aa7-a61c-bdba28fbec97",
+            "predicate": "outages recorded on",
+            "source_node_id": "entity:a683585e-6f2c-4858-9fdb-8ab36f82d1f6",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:August 8",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "GATE-1-519",
+            "node_id": "entity:a683585e-6f2c-4858-9fdb-8ab36f82d1f6",
+            "node_type": "subject"
+          },
+          {
+            "label": "August 8",
+            "node_id": "value:August 8",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "85b810c4-d568-4b15-9327-3aa2d9c40f21"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "ec743737-a8a2-493e-9851-252096268afe",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-1-108",
+        "entity_id": "85b810c4-d568-4b15-9327-3aa2d9c40f21",
+        "kind": "policy"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "policy",
+            "label": "RETRY-1-108",
+            "node_id": "entity:85b810c4-d568-4b15-9327-3aa2d9c40f21",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "088b521b-cbf0-4042-adf2-1a6fece7a7f8"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "0d3d9682-a529-48fc-9180-b82fe74b62aa"
+          ],
+          "fact_id": "cb07306f-4b3b-4433-8a44-df0201a6898a",
+          "object": {
+            "value": "RETRY-1-108"
+          },
+          "predicate": "superseding",
+          "predicate_cardinality": "multi",
+          "predicate_id": "87638179-d363-4ce9-b8c6-577c37dd7118",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-22T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "5229df7a-0995-420b-a15c-5db82cd8a867",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-1-907",
+        "entity_id": "088b521b-cbf0-4042-adf2-1a6fece7a7f8",
+        "kind": "policy"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 1,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "0d3d9682-a529-48fc-9180-b82fe74b62aa"
+            ],
+            "fact_id": "cb07306f-4b3b-4433-8a44-df0201a6898a",
+            "predicate": "superseding",
+            "source_node_id": "entity:088b521b-cbf0-4042-adf2-1a6fece7a7f8",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:RETRY-1-108",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "policy",
+            "label": "RETRY-1-907",
+            "node_id": "entity:088b521b-cbf0-4042-adf2-1a6fece7a7f8",
+            "node_type": "subject"
+          },
+          {
+            "label": "RETRY-1-108",
+            "node_id": "value:RETRY-1-108",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "a0297de8-ed54-42a8-a89c-d17184e61951"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "bc86124c-b0d8-429c-9164-3b70c9bd2dd8",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "BATCH-3-741",
+        "entity_id": "a0297de8-ed54-42a8-a89c-d17184e61951",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "BATCH-3-741",
+            "node_id": "entity:a0297de8-ed54-42a8-a89c-d17184e61951",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "33f2579b-4e8d-4ef7-bd5b-26abeca7a216"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 3,
+        "requested_limit": 100,
+        "returned_rows": 3,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "df5f4ac6-21a5-4e53-a980-f88fdf72acb2"
+          ],
+          "fact_id": "0bb566a0-21df-48f4-a072-314d19b01061",
+          "object": {
+            "entity": {
+              "canonical": "Cobalt",
+              "entity_id": "c00d18fd-46ad-4af6-8046-a8bc87e42646",
+              "kind": "project"
+            }
+          },
+          "predicate": "reviewed",
+          "predicate_cardinality": "multi",
+          "predicate_id": "a943f1a3-49c5-4b0c-a7c7-cbe2e050ba1d",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-22T00:00:00Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "5d69f3cf-dbb1-4eb7-8132-e261fea77c62"
+          ],
+          "fact_id": "acf5f08d-672f-45f3-9f7d-dd2670ece207",
+          "object": {
+            "entity": {
+              "canonical": "Cobalt",
+              "entity_id": "c00d18fd-46ad-4af6-8046-a8bc87e42646",
+              "kind": "project"
+            }
+          },
+          "predicate": "approved switching",
+          "predicate_cardinality": "multi",
+          "predicate_id": "966e06f6-2e80-4063-ad2e-3fa08def3ddd",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-15T00:00:00Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "6d44123c-308a-471d-a522-5ffa7201d8ea"
+          ],
+          "fact_id": "1f4893dc-9212-4841-8bd8-00f6a983982a",
+          "object": {
+            "entity": {
+              "canonical": "project Cobalt",
+              "entity_id": "35ac4520-f4bd-42f7-bd2c-4100788ebf3b",
+              "kind": "project"
+            }
+          },
+          "predicate": "started",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ea852e1c-b280-4098-8d0a-af72bdb4e05e",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-01T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "dac567d8-f8fd-49ac-8750-976ae429c646",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Ivo",
+        "entity_id": "33f2579b-4e8d-4ef7-bd5b-26abeca7a216",
+        "kind": "person"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 3,
+        "evidence_link_count": 3,
+        "fact_count": 3,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 3,
+        "sourced_count": 3,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "df5f4ac6-21a5-4e53-a980-f88fdf72acb2"
+            ],
+            "fact_id": "0bb566a0-21df-48f4-a072-314d19b01061",
+            "predicate": "reviewed",
+            "source_node_id": "entity:33f2579b-4e8d-4ef7-bd5b-26abeca7a216",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:c00d18fd-46ad-4af6-8046-a8bc87e42646",
+            "temporal_status": "current"
+          },
+          {
+            "evidence_note_ids": [
+              "5d69f3cf-dbb1-4eb7-8132-e261fea77c62"
+            ],
+            "fact_id": "acf5f08d-672f-45f3-9f7d-dd2670ece207",
+            "predicate": "approved switching",
+            "source_node_id": "entity:33f2579b-4e8d-4ef7-bd5b-26abeca7a216",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:c00d18fd-46ad-4af6-8046-a8bc87e42646",
+            "temporal_status": "current"
+          },
+          {
+            "evidence_note_ids": [
+              "6d44123c-308a-471d-a522-5ffa7201d8ea"
+            ],
+            "fact_id": "1f4893dc-9212-4841-8bd8-00f6a983982a",
+            "predicate": "started",
+            "source_node_id": "entity:33f2579b-4e8d-4ef7-bd5b-26abeca7a216",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:35ac4520-f4bd-42f7-bd2c-4100788ebf3b",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "person",
+            "label": "Ivo",
+            "node_id": "entity:33f2579b-4e8d-4ef7-bd5b-26abeca7a216",
+            "node_type": "subject"
+          },
+          {
+            "kind": "project",
+            "label": "project Cobalt",
+            "node_id": "entity:35ac4520-f4bd-42f7-bd2c-4100788ebf3b",
+            "node_type": "entity"
+          },
+          {
+            "kind": "project",
+            "label": "Cobalt",
+            "node_id": "entity:c00d18fd-46ad-4af6-8046-a8bc87e42646",
+            "node_type": "entity"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "c00d18fd-46ad-4af6-8046-a8bc87e42646"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "ce76c5b1-dcf9-49c0-8d7e-929534ddcd91",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "Cobalt",
+        "entity_id": "c00d18fd-46ad-4af6-8046-a8bc87e42646",
+        "kind": "project"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "project",
+            "label": "Cobalt",
+            "node_id": "entity:c00d18fd-46ad-4af6-8046-a8bc87e42646",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "80da64af-800f-4e09-9aec-42ba6d462314"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+            "0682bed1-e9ad-4e30-b3a4-a155920d1371"
+          ],
+          "fact_id": "49bab659-91b8-4ecd-a18f-9c17966b0790",
+          "object": {
+            "value": "August 8"
+          },
+          "predicate": "validated on",
+          "predicate_cardinality": "multi",
+          "predicate_id": "eed6c521-8aaf-44c0-9b3a-d5a0a392486e",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:28.833299Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "cb843597-e4c8-40c6-a578-76ecd6c65268",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "recovery procedure",
+        "entity_id": "80da64af-800f-4e09-9aec-42ba6d462314",
+        "kind": "procedure"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 2,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+              "0682bed1-e9ad-4e30-b3a4-a155920d1371"
+            ],
+            "fact_id": "49bab659-91b8-4ecd-a18f-9c17966b0790",
+            "predicate": "validated on",
+            "source_node_id": "entity:80da64af-800f-4e09-9aec-42ba6d462314",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:August 8",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "procedure",
+            "label": "recovery procedure",
+            "node_id": "entity:80da64af-800f-4e09-9aec-42ba6d462314",
+            "node_type": "subject"
+          },
+          {
+            "label": "August 8",
+            "node_id": "value:August 8",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "29e4cd8d-60ff-4ff4-b899-8e4a0dc740c9"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "6077da1e-ae26-4903-8184-e1fab1835db5",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "STREAM-3-286",
+        "entity_id": "29e4cd8d-60ff-4ff4-b899-8e4a0dc740c9",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "STREAM-3-286",
+            "node_id": "entity:29e4cd8d-60ff-4ff4-b899-8e4a0dc740c9",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "b786a6f5-07b2-41d4-add7-e9a5f687067a"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "931e4c7d-fbb7-46c5-915e-24d8e9949c33"
+          ],
+          "fact_id": "57349de7-d9a5-4e16-823d-641e9fc17cf0",
+          "object": {
+            "value": "August 8"
+          },
+          "predicate": "outages recorded on",
+          "predicate_cardinality": "multi",
+          "predicate_id": "ac353674-eddd-4088-b383-4a38f68ec7e3",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "current",
+          "valid_from": "2026-08-08T00:00:00Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "310317aa-bc0f-4162-8f77-a86fccf5fe6d",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "GATE-3-519",
+        "entity_id": "b786a6f5-07b2-41d4-add7-e9a5f687067a",
+        "kind": "system"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 1,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "931e4c7d-fbb7-46c5-915e-24d8e9949c33"
+            ],
+            "fact_id": "57349de7-d9a5-4e16-823d-641e9fc17cf0",
+            "predicate": "outages recorded on",
+            "source_node_id": "entity:b786a6f5-07b2-41d4-add7-e9a5f687067a",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:August 8",
+            "temporal_status": "current"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "GATE-3-519",
+            "node_id": "entity:b786a6f5-07b2-41d4-add7-e9a5f687067a",
+            "node_type": "subject"
+          },
+          {
+            "label": "August 8",
+            "node_id": "value:August 8",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "467d027d-71a9-4cb5-82c0-f8d339430f62"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "7ba43413-7b5c-472c-aa7d-9365089a6b3d",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-3-907",
+        "entity_id": "467d027d-71a9-4cb5-82c0-f8d339430f62",
+        "kind": "policy identifier"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "policy identifier",
+            "label": "RETRY-3-907",
+            "node_id": "entity:467d027d-71a9-4cb5-82c0-f8d339430f62",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "b6e574ba-d7d0-4899-9f64-37842b4afe98"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 2,
+        "requested_limit": 100,
+        "returned_rows": 2,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "2b018f1c-1294-4765-bf4f-1c0b0ed0e592"
+          ],
+          "fact_id": "e1fc6189-5ab2-46e5-9988-4410a0ae2e2e",
+          "object": {
+            "entity": {
+              "canonical": "RETRY-3-108",
+              "entity_id": "ce527c4d-7c60-4a13-8449-e3194b279b67",
+              "kind": "policy identifier"
+            }
+          },
+          "predicate": "superseding",
+          "predicate_cardinality": "multi",
+          "predicate_id": "87638179-d363-4ce9-b8c6-577c37dd7118",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.534658Z",
+          "valid_to": null
+        },
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "2b018f1c-1294-4765-bf4f-1c0b0ed0e592"
+          ],
+          "fact_id": "301bce01-e714-4f22-9208-0257b8a4ff50",
+          "object": {
+            "value": "RETRY-3-907"
+          },
+          "predicate": "is now",
+          "predicate_cardinality": "multi",
+          "predicate_id": "7d3b7fd4-888e-42cf-b5b2-435b2e265d06",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.534657Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "f00af180-b35d-4952-8cc4-d7700bbf5cb1",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "retry policy",
+        "entity_id": "b6e574ba-d7d0-4899-9f64-37842b4afe98",
+        "kind": "policy"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 2,
+        "fact_count": 2,
+        "future_count": 2,
+        "historical_count": 0,
+        "inferred_count": 2,
+        "sourced_count": 2,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "2b018f1c-1294-4765-bf4f-1c0b0ed0e592"
+            ],
+            "fact_id": "e1fc6189-5ab2-46e5-9988-4410a0ae2e2e",
+            "predicate": "superseding",
+            "source_node_id": "entity:b6e574ba-d7d0-4899-9f64-37842b4afe98",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:ce527c4d-7c60-4a13-8449-e3194b279b67",
+            "temporal_status": "future"
+          },
+          {
+            "evidence_note_ids": [
+              "2b018f1c-1294-4765-bf4f-1c0b0ed0e592"
+            ],
+            "fact_id": "301bce01-e714-4f22-9208-0257b8a4ff50",
+            "predicate": "is now",
+            "source_node_id": "entity:b6e574ba-d7d0-4899-9f64-37842b4afe98",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:RETRY-3-907",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "policy",
+            "label": "retry policy",
+            "node_id": "entity:b6e574ba-d7d0-4899-9f64-37842b4afe98",
+            "node_type": "subject"
+          },
+          {
+            "kind": "policy identifier",
+            "label": "RETRY-3-108",
+            "node_id": "entity:ce527c4d-7c60-4a13-8449-e3194b279b67",
+            "node_type": "entity"
+          },
+          {
+            "label": "RETRY-3-907",
+            "node_id": "value:RETRY-3-907",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "ce527c4d-7c60-4a13-8449-e3194b279b67"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "7fb5b934-49ca-47b4-beec-72f37a09b650",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-3-108",
+        "entity_id": "ce527c4d-7c60-4a13-8449-e3194b279b67",
+        "kind": "policy identifier"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "policy identifier",
+            "label": "RETRY-3-108",
+            "node_id": "entity:ce527c4d-7c60-4a13-8449-e3194b279b67",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "002df636-1cf0-427f-8ecf-cabd81c99cd0"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "0fd5f7e8-cf7b-4e90-ad2a-2c1334d33916",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-4-108",
+        "entity_id": "002df636-1cf0-427f-8ecf-cabd81c99cd0",
+        "kind": "policy"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "policy",
+            "label": "RETRY-4-108",
+            "node_id": "entity:002df636-1cf0-427f-8ecf-cabd81c99cd0",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "c604c45f-1b18-4ffd-8c01-d089d3d0c44f"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "166d371a-46e2-48cc-a1ed-0b7067892c8d",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "August 15",
+        "entity_id": "c604c45f-1b18-4ffd-8c01-d089d3d0c44f",
+        "kind": "date"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "date",
+            "label": "August 15",
+            "node_id": "entity:c604c45f-1b18-4ffd-8c01-d089d3d0c44f",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "38253f3c-60d4-4fda-8c19-3c5f3c6dd0db"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "f2b85ea4-cd52-4da1-9a4f-f28ecea08253",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "August 8",
+        "entity_id": "38253f3c-60d4-4fda-8c19-3c5f3c6dd0db",
+        "kind": "date"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "date",
+            "label": "August 8",
+            "node_id": "entity:38253f3c-60d4-4fda-8c19-3c5f3c6dd0db",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "4cb5942a-61a7-43d6-8057-d27117ac96bd"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "ef582051-9389-4946-85e6-984478e1231d"
+          ],
+          "fact_id": "aaf2f626-81a2-4ed0-9f15-e3772665b9b2",
+          "object": {
+            "value": "RETRY-4-108"
+          },
+          "predicate": "superseding",
+          "predicate_cardinality": "multi",
+          "predicate_id": "87638179-d363-4ce9-b8c6-577c37dd7118",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:33.346055Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "89d4ff02-8194-45f4-9f74-12b71cee10e3",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "RETRY-4-907",
+        "entity_id": "4cb5942a-61a7-43d6-8057-d27117ac96bd",
+        "kind": "policy"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "ef582051-9389-4946-85e6-984478e1231d"
+            ],
+            "fact_id": "aaf2f626-81a2-4ed0-9f15-e3772665b9b2",
+            "predicate": "superseding",
+            "source_node_id": "entity:4cb5942a-61a7-43d6-8057-d27117ac96bd",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:RETRY-4-108",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "policy",
+            "label": "RETRY-4-907",
+            "node_id": "entity:4cb5942a-61a7-43d6-8057-d27117ac96bd",
+            "node_type": "subject"
+          },
+          {
+            "label": "RETRY-4-108",
+            "node_id": "value:RETRY-4-108",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "55bb9691-e3a6-4429-afc8-b19bb1e67f75"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "49f00edc-4daa-4da3-8596-f45b6e829e2c"
+          ],
+          "fact_id": "88ed3bae-a3ed-415d-be16-7842b09e35c7",
+          "object": {
+            "value": "RETRY-4-108"
+          },
+          "predicate": "initial retry policy",
+          "predicate_cardinality": "multi",
+          "predicate_id": "f720a866-1379-434f-b0af-4d0f44d2dc0c",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.747545Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "c9036a0d-c5d6-4d1b-9ae7-03695b723e52",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "project Cedar",
+        "entity_id": "55bb9691-e3a6-4429-afc8-b19bb1e67f75",
+        "kind": "project"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "49f00edc-4daa-4da3-8596-f45b6e829e2c"
+            ],
+            "fact_id": "88ed3bae-a3ed-415d-be16-7842b09e35c7",
+            "predicate": "initial retry policy",
+            "source_node_id": "entity:55bb9691-e3a6-4429-afc8-b19bb1e67f75",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:RETRY-4-108",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "project",
+            "label": "project Cedar",
+            "node_id": "entity:55bb9691-e3a6-4429-afc8-b19bb1e67f75",
+            "node_type": "subject"
+          },
+          {
+            "label": "RETRY-4-108",
+            "node_id": "value:RETRY-4-108",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "93de2c22-10a7-4c62-b0be-71d2f831f7ff"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "41df3621-38d2-4a50-bbf1-a5f0535e4af8"
+          ],
+          "fact_id": "4ef824bf-b334-4bfe-a1a1-4257992b48c7",
+          "object": {
+            "value": "the missing updates"
+          },
+          "predicate": "restored",
+          "predicate_cardinality": "multi",
+          "predicate_id": "7c225d1a-e662-43ac-8c82-7956a4dfa999",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.940828Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "e745e8a4-945f-4c49-b8cf-1bfc80b6490e",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "REPLAY-4-632",
+        "entity_id": "93de2c22-10a7-4c62-b0be-71d2f831f7ff"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "41df3621-38d2-4a50-bbf1-a5f0535e4af8"
+            ],
+            "fact_id": "4ef824bf-b334-4bfe-a1a1-4257992b48c7",
+            "predicate": "restored",
+            "source_node_id": "entity:93de2c22-10a7-4c62-b0be-71d2f831f7ff",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "value:the missing updates",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "label": "REPLAY-4-632",
+            "node_id": "entity:93de2c22-10a7-4c62-b0be-71d2f831f7ff",
+            "node_type": "subject"
+          },
+          {
+            "label": "the missing updates",
+            "node_id": "value:the missing updates",
+            "node_type": "value"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "93265a29-3bf4-4cc2-90ce-8d8b56532051"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 1,
+        "requested_limit": 100,
+        "returned_rows": 1,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [
+        {
+          "actor": "benchmark",
+          "evidence_note_ids": [
+            "41df3621-38d2-4a50-bbf1-a5f0535e4af8"
+          ],
+          "fact_id": "1a85d344-2679-4659-ad91-c2b8276d8f8a",
+          "object": {
+            "entity": {
+              "canonical": "GATE-4-519",
+              "entity_id": "52a015be-44b0-4029-ad5e-ae179f64cc4b",
+              "kind": "system"
+            }
+          },
+          "predicate": "lost updates during",
+          "predicate_cardinality": "multi",
+          "predicate_id": "f592d155-5cb7-42c4-8642-802c16446313",
+          "predicate_status": "pending",
+          "scope": "agent_private",
+          "status_markers": [
+            "sourced",
+            "inferred"
+          ],
+          "superseded_by_fact_ids": [],
+          "supersedes_fact_ids": [],
+          "temporal_status": "future",
+          "valid_from": "2026-10-12T02:33:32.940827Z",
+          "valid_to": null
+        }
+      ],
+      "request_id": "0e91afb7-744c-4ddf-a4ba-0c5241b8ce28",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "BATCH-4-741",
+        "entity_id": "93265a29-3bf4-4cc2-90ce-8d8b56532051",
+        "kind": "identifier"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 1,
+        "fact_count": 1,
+        "future_count": 1,
+        "historical_count": 0,
+        "inferred_count": 1,
+        "sourced_count": 1,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [
+          {
+            "evidence_note_ids": [
+              "41df3621-38d2-4a50-bbf1-a5f0535e4af8"
+            ],
+            "fact_id": "1a85d344-2679-4659-ad91-c2b8276d8f8a",
+            "predicate": "lost updates during",
+            "source_node_id": "entity:93265a29-3bf4-4cc2-90ce-8d8b56532051",
+            "status_markers": [
+              "sourced",
+              "inferred"
+            ],
+            "target_node_id": "entity:52a015be-44b0-4029-ad5e-ae179f64cc4b",
+            "temporal_status": "future"
+          }
+        ],
+        "nodes": [
+          {
+            "kind": "system",
+            "label": "GATE-4-519",
+            "node_id": "entity:52a015be-44b0-4029-ad5e-ae179f64cc4b",
+            "node_type": "entity"
+          },
+          {
+            "kind": "identifier",
+            "label": "BATCH-4-741",
+            "node_id": "entity:93265a29-3bf4-4cc2-90ce-8d8b56532051",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "request": {
+      "subject": {
+        "entity_id": "e3421dc0-2e6b-496b-927a-344dccd1135a"
+      },
+      "as_of": "2026-08-22T23:59:59Z",
+      "limit": 100,
+      "explain": true
+    },
+    "response": {
+      "as_of": "2026-08-22T23:59:59Z",
+      "explain": {
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "as_of": "2026-08-22T23:59:59Z",
+        "effective_scopes": [
+          "agent_private"
+        ],
+        "queried_rows": 0,
+        "requested_limit": 100,
+        "returned_rows": 0,
+        "schema": "elf.graph_report/v1",
+        "truncated": false
+      },
+      "facts": [],
+      "request_id": "9acc0634-a364-4fe0-ae3c-42ad969b7585",
+      "schema": "elf.graph_report/v1",
+      "scopes": [
+        "agent_private"
+      ],
+      "subject": {
+        "canonical": "STREAM-4-286",
+        "entity_id": "e3421dc0-2e6b-496b-927a-344dccd1135a",
+        "kind": "identifier"
+      },
+      "summary": {
+        "ambiguous_count": 0,
+        "current_count": 0,
+        "evidence_link_count": 0,
+        "fact_count": 0,
+        "future_count": 0,
+        "historical_count": 0,
+        "inferred_count": 0,
+        "sourced_count": 0,
+        "stale_count": 0,
+        "superseded_count": 0
+      },
+      "topic_map": {
+        "edges": [],
+        "nodes": [
+          {
+            "kind": "identifier",
+            "label": "STREAM-4-286",
+            "node_id": "entity:e3421dc0-2e6b-496b-927a-344dccd1135a",
+            "node_type": "subject"
+          }
+        ]
+      }
+    }
+  }
+]

@@ -1,0 +1,72 @@
+{
+  "facts": 37,
+  "entity_objects": 16,
+  "scalar_objects": 21,
+  "facts_effective_after_fixture": 23,
+  "project_paths": [
+    {
+      "project": "Larch",
+      "start_entities": [
+        "Larch"
+      ],
+      "reachable_entities": [
+        "Larch",
+        "GATE-0-519"
+      ],
+      "recovery_entity_reachable": false
+    },
+    {
+      "project": "Cobalt",
+      "start_entities": [
+        "project Cobalt",
+        "Cobalt"
+      ],
+      "reachable_entities": [
+        "project Cobalt",
+        "Cobalt"
+      ],
+      "recovery_entity_reachable": false
+    },
+    {
+      "project": "Reed",
+      "start_entities": [
+        "project Reed",
+        "Reed"
+      ],
+      "reachable_entities": [
+        "project Reed",
+        "Reed"
+      ],
+      "recovery_entity_reachable": false
+    },
+    {
+      "project": "Sable",
+      "start_entities": [
+        "Sable",
+        "Project Sable"
+      ],
+      "reachable_entities": [
+        "Project Sable",
+        "Sable"
+      ],
+      "recovery_entity_reachable": false
+    },
+    {
+      "project": "Cedar",
+      "start_entities": [
+        "Cedar",
+        "project Cedar"
+      ],
+      "reachable_entities": [
+        "Cedar",
+        "project Cedar"
+      ],
+      "recovery_entity_reachable": false
+    }
+  ],
+  "direct_doc_resolvers": 0,
+  "notes": 54,
+  "predicate_statuses": {
+    "pending": 17
+  }
+}

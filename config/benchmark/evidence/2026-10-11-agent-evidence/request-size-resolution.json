@@ -1,0 +1,13 @@
+{
+  "case": "source/memory-2-1",
+  "cause": "The local budget gateway rejected the JSON request before provider dispatch. Its 256 KiB guard was designed for single-pass readers.",
+  "previous_bytes": 262144,
+  "request_max_bytes": 1048576,
+  "trace_sha256": "49b37edead1a3f633c110ee8d32090578ae5f42685ec993d2bb4e0c96f2fb04d",
+  "retained_turns": 5,
+  "retained_tool_calls": 24,
+  "resume": "Continue the original conversation. Do not replay prior model responses or tools. Mark total wall latency unavailable.",
+  "last_paid_ordinal_before_rejection": 1980,
+  "max_output_tokens": 393216,
+  "cumulative_ceiling_usd": 10
+}

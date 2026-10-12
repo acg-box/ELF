@@ -1,0 +1,1955 @@
+[
+  {
+    "field_id": "6fa867af-c750-43db-87da-33b8755fb58e",
+    "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Mara started project Larch on 2026-08-01.",
+    "created_at": "2026-10-12T02:33:27.064498+00:00",
+    "updated_at": "2026-10-12T02:33:27.064498+00:00"
+  },
+  {
+    "field_id": "04379adc-7aad-41a1-992f-d80b67f2882f",
+    "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "2026-08-01. Mara started project Larch.",
+    "created_at": "2026-10-12T02:33:27.064498+00:00",
+    "updated_at": "2026-10-12T02:33:27.064498+00:00"
+  },
+  {
+    "field_id": "d7d6c47e-d596-4da7-bc54-85e4d35addb5",
+    "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "project start",
+    "created_at": "2026-10-12T02:33:27.064498+00:00",
+    "updated_at": "2026-10-12T02:33:27.064498+00:00"
+  },
+  {
+    "field_id": "28f7fa1f-7d56-4459-951e-3a762feefb5f",
+    "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "project Larch",
+    "created_at": "2026-10-12T02:33:27.064498+00:00",
+    "updated_at": "2026-10-12T02:33:27.064498+00:00"
+  },
+  {
+    "field_id": "347133b6-4175-4f28-9f4d-3d4e867f1a31",
+    "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "For project Larch, BATCH-0-741 was chosen for batch delivery.",
+    "created_at": "2026-10-12T02:33:27.064499+00:00",
+    "updated_at": "2026-10-12T02:33:27.064499+00:00"
+  },
+  {
+    "field_id": "6ed3515e-a24e-453d-822b-584293958073",
+    "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "chose BATCH-0-741 for batch delivery",
+    "created_at": "2026-10-12T02:33:27.064499+00:00",
+    "updated_at": "2026-10-12T02:33:27.064499+00:00"
+  },
+  {
+    "field_id": "885ba82f-ad0a-49cb-9bad-56eb145a211f",
+    "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "batch delivery",
+    "created_at": "2026-10-12T02:33:27.064499+00:00",
+    "updated_at": "2026-10-12T02:33:27.064499+00:00"
+  },
+  {
+    "field_id": "6e46930b-5496-4668-988b-64969375d00e",
+    "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "BATCH-0-741",
+    "created_at": "2026-10-12T02:33:27.064499+00:00",
+    "updated_at": "2026-10-12T02:33:27.064499+00:00"
+  },
+  {
+    "field_id": "ba8826b3-1cde-451c-a8c6-ef13cc60a32d",
+    "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Project Larch's initial retry policy was RETRY-0-108.",
+    "created_at": "2026-10-12T02:33:27.0645+00:00",
+    "updated_at": "2026-10-12T02:33:27.0645+00:00"
+  },
+  {
+    "field_id": "a8eca7f8-84f9-4b6c-acd4-f44aad7b5fb8",
+    "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "initial retry policy was RETRY-0-108",
+    "created_at": "2026-10-12T02:33:27.0645+00:00",
+    "updated_at": "2026-10-12T02:33:27.0645+00:00"
+  },
+  {
+    "field_id": "bbea0653-6bf8-499a-a7de-276a87a6c8e2",
+    "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:27.0645+00:00",
+    "updated_at": "2026-10-12T02:33:27.0645+00:00"
+  },
+  {
+    "field_id": "3a20f1a1-c299-49f5-b02d-69e9cc940d12",
+    "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "RETRY-0-108",
+    "created_at": "2026-10-12T02:33:27.0645+00:00",
+    "updated_at": "2026-10-12T02:33:27.0645+00:00"
+  },
+  {
+    "field_id": "306cb33e-2ad5-4580-96e4-d16f3c8bf077",
+    "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "BATCH-0-741 lost updates during GATE-0-519 outages, as reported by Mara on 2026-08-08.",
+    "created_at": "2026-10-12T02:33:27.343802+00:00",
+    "updated_at": "2026-10-12T02:33:27.343802+00:00"
+  },
+  {
+    "field_id": "15822ece-8dbb-4357-b4d4-5bdba458122d",
+    "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "BATCH-0-741 lost updates during GATE-0-519 outages",
+    "created_at": "2026-10-12T02:33:27.343802+00:00",
+    "updated_at": "2026-10-12T02:33:27.343802+00:00"
+  },
+  {
+    "field_id": "007c5c79-5ca2-4643-bece-ce330519bcba",
+    "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "update loss",
+    "created_at": "2026-10-12T02:33:27.343802+00:00",
+    "updated_at": "2026-10-12T02:33:27.343802+00:00"
+  },
+  {
+    "field_id": "3229dffe-17cc-4913-aaa1-c5680f2835dc",
+    "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:27.343802+00:00",
+    "updated_at": "2026-10-12T02:33:27.343802+00:00"
+  },
+  {
+    "field_id": "6509f6b7-37ef-4c09-8730-5f07408ec161",
+    "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "REPLAY-0-632 was tested on 2026-08-08 and restored the missing updates lost by BATCH-0-741 during GATE-0-519 outages.",
+    "created_at": "2026-10-12T02:33:27.343803+00:00",
+    "updated_at": "2026-10-12T02:33:27.343803+00:00"
+  },
+  {
+    "field_id": "6b0e2021-c1dc-4c9d-9636-107e277b2718",
+    "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "restored the missing updates",
+    "created_at": "2026-10-12T02:33:27.343803+00:00",
+    "updated_at": "2026-10-12T02:33:27.343803+00:00"
+  },
+  {
+    "field_id": "4b411825-f1aa-4ff9-ad1c-81d27d5ad7f3",
+    "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "replay",
+    "created_at": "2026-10-12T02:33:27.343803+00:00",
+    "updated_at": "2026-10-12T02:33:27.343803+00:00"
+  },
+  {
+    "field_id": "af5a2829-dcc1-42aa-9069-c29ae0cca4d2",
+    "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "recovery",
+    "created_at": "2026-10-12T02:33:27.343803+00:00",
+    "updated_at": "2026-10-12T02:33:27.343803+00:00"
+  },
+  {
+    "field_id": "ce1890c4-f706-40c5-ac09-49f7cafa14d5",
+    "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+    "created_at": "2026-10-12T02:33:27.343804+00:00",
+    "updated_at": "2026-10-12T02:33:27.343804+00:00"
+  },
+  {
+    "field_id": "d125dc9a-5477-407e-83e7-639fde51e6b0",
+    "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "No change of delivery mode was approved",
+    "created_at": "2026-10-12T02:33:27.343804+00:00",
+    "updated_at": "2026-10-12T02:33:27.343804+00:00"
+  },
+  {
+    "field_id": "ee39d3ec-5f6c-400c-9976-a00ac34d5968",
+    "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery mode",
+    "created_at": "2026-10-12T02:33:27.343804+00:00",
+    "updated_at": "2026-10-12T02:33:27.343804+00:00"
+  },
+  {
+    "field_id": "3c47d919-1be4-4ed7-83f1-a54c1569dfa9",
+    "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "approval",
+    "created_at": "2026-10-12T02:33:27.343804+00:00",
+    "updated_at": "2026-10-12T02:33:27.343804+00:00"
+  },
+  {
+    "field_id": "faf3a901-e08a-4447-8407-a32861c2cda6",
+    "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286 on 2026-08-15, superseding the August 1 delivery decision.",
+    "created_at": "2026-10-12T02:33:27.610583+00:00",
+    "updated_at": "2026-10-12T02:33:27.610583+00:00"
+  },
+  {
+    "field_id": "e9111280-4b6a-4134-8b25-3451b17c914e",
+    "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286",
+    "created_at": "2026-10-12T02:33:27.610583+00:00",
+    "updated_at": "2026-10-12T02:33:27.610583+00:00"
+  },
+  {
+    "field_id": "592321eb-61bc-494f-bc7b-9af1957bc2a1",
+    "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "This supersedes the August 1 delivery decision",
+    "created_at": "2026-10-12T02:33:27.610583+00:00",
+    "updated_at": "2026-10-12T02:33:27.610583+00:00"
+  },
+  {
+    "field_id": "5fde9d7e-68d9-4185-9db8-899ad2eb2122",
+    "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery decision",
+    "created_at": "2026-10-12T02:33:27.610583+00:00",
+    "updated_at": "2026-10-12T02:33:27.610583+00:00"
+  },
+  {
+    "field_id": "cad6cc2a-a74a-4c6e-a74d-59df2bda6c4d",
+    "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "switching",
+    "created_at": "2026-10-12T02:33:27.610583+00:00",
+    "updated_at": "2026-10-12T02:33:27.610583+00:00"
+  },
+  {
+    "field_id": "7894b35c-1add-4dd9-a93a-fa296e9dbe4b",
+    "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Larch's switch from BATCH-0-741 to STREAM-0-286 was caused by GATE-0-519 outages recorded on 2026-08-08.",
+    "created_at": "2026-10-12T02:33:27.610584+00:00",
+    "updated_at": "2026-10-12T02:33:27.610584+00:00"
+  },
+  {
+    "field_id": "6ee9c983-3850-4786-96a7-869ca41fc1b9",
+    "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The cause was the GATE-0-519 outages recorded on August 8",
+    "created_at": "2026-10-12T02:33:27.610584+00:00",
+    "updated_at": "2026-10-12T02:33:27.610584+00:00"
+  },
+  {
+    "field_id": "82253ee6-9644-4d53-a5b4-abc8c9a0149b",
+    "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:27.610584+00:00",
+    "updated_at": "2026-10-12T02:33:27.610584+00:00"
+  },
+  {
+    "field_id": "0c2ea463-f3cc-46e8-ac6f-b07f26d80571",
+    "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "cause",
+    "created_at": "2026-10-12T02:33:27.610584+00:00",
+    "updated_at": "2026-10-12T02:33:27.610584+00:00"
+  },
+  {
+    "field_id": "e34cf624-35aa-4839-8d38-7fda1f1b939c",
+    "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Retain the successful recovery procedure from the GATE-0-519 incident recorded on 2026-08-08, which caused the Larch switch to STREAM-0-286.",
+    "created_at": "2026-10-12T02:33:27.610585+00:00",
+    "updated_at": "2026-10-12T02:33:27.610585+00:00"
+  },
+  {
+    "field_id": "4202afd9-53fc-47a8-be73-6c3864d04c42",
+    "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "keep the successful recovery procedure from that incident",
+    "created_at": "2026-10-12T02:33:27.610585+00:00",
+    "updated_at": "2026-10-12T02:33:27.610585+00:00"
+  },
+  {
+    "field_id": "baefb513-b749-496a-8606-454e5941089c",
+    "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:27.610585+00:00",
+    "updated_at": "2026-10-12T02:33:27.610585+00:00"
+  },
+  {
+    "field_id": "1032c745-6973-49b9-8084-1cd4c3440441",
+    "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "incident",
+    "created_at": "2026-10-12T02:33:27.610585+00:00",
+    "updated_at": "2026-10-12T02:33:27.610585+00:00"
+  },
+  {
+    "field_id": "df5d15b3-fbe8-4f4f-86aa-20fc978b02dc",
+    "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Larch retry policy updated to RETRY-0-907, superseding RETRY-0-108, as of 2026-08-22.",
+    "created_at": "2026-10-12T02:33:27.811912+00:00",
+    "updated_at": "2026-10-12T02:33:27.811912+00:00"
+  },
+  {
+    "field_id": "021f7c47-6e69-426f-8070-3234089ee845",
+    "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The retry policy is now RETRY-0-907, superseding RETRY-0-108.",
+    "created_at": "2026-10-12T02:33:27.811912+00:00",
+    "updated_at": "2026-10-12T02:33:27.811912+00:00"
+  },
+  {
+    "field_id": "a4f00a4f-2b93-4560-b97b-02f853a376b4",
+    "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:27.811912+00:00",
+    "updated_at": "2026-10-12T02:33:27.811912+00:00"
+  },
+  {
+    "field_id": "7e4ed1e8-ce3d-41cf-a29b-2df7235e90d5",
+    "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "Larch",
+    "created_at": "2026-10-12T02:33:27.811912+00:00",
+    "updated_at": "2026-10-12T02:33:27.811912+00:00"
+  },
+  {
+    "field_id": "21908ae7-268f-4e4c-b30a-2b3056acfd65",
+    "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "For Larch's next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T02:33:27.811913+00:00",
+    "updated_at": "2026-10-12T02:33:27.811913+00:00"
+  },
+  {
+    "field_id": "7219b93f-d300-4afc-8972-f9ca82d189a8",
+    "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T02:33:27.811913+00:00",
+    "updated_at": "2026-10-12T02:33:27.811913+00:00"
+  },
+  {
+    "field_id": "74f8de17-c209-411b-b26f-68c901748996",
+    "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:27.811913+00:00",
+    "updated_at": "2026-10-12T02:33:27.811913+00:00"
+  },
+  {
+    "field_id": "a008a893-35c8-41ba-a8e8-8b2460c8874d",
+    "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:27.811913+00:00",
+    "updated_at": "2026-10-12T02:33:27.811913+00:00"
+  },
+  {
+    "field_id": "80863b64-319e-4cb9-8aab-d6497ab8f89f",
+    "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "On 2026-08-22, Mara reviewed Larch and kept the August 15 delivery choice; no budget owner has been appointed.",
+    "created_at": "2026-10-12T02:33:27.811914+00:00",
+    "updated_at": "2026-10-12T02:33:27.811914+00:00"
+  },
+  {
+    "field_id": "804dc2db-f34d-4c1a-bd4e-26ee188068fc",
+    "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice.",
+    "created_at": "2026-10-12T02:33:27.811914+00:00",
+    "updated_at": "2026-10-12T02:33:27.811914+00:00"
+  },
+  {
+    "field_id": "5b8f1c54-e8be-496c-bd33-d310f125d033",
+    "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "No budget owner has been appointed.",
+    "created_at": "2026-10-12T02:33:27.811914+00:00",
+    "updated_at": "2026-10-12T02:33:27.811914+00:00"
+  },
+  {
+    "field_id": "09fa1188-e105-4b69-bbad-0fd79880e38f",
+    "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery choice",
+    "created_at": "2026-10-12T02:33:27.811914+00:00",
+    "updated_at": "2026-10-12T02:33:27.811914+00:00"
+  },
+  {
+    "field_id": "a70cf2c7-379d-4754-8a6b-8a9096f33c60",
+    "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "budget owner",
+    "created_at": "2026-10-12T02:33:27.811914+00:00",
+    "updated_at": "2026-10-12T02:33:27.811914+00:00"
+  },
+  {
+    "field_id": "32c7f479-592a-4d95-a719-cebbb7bb8d34",
+    "note_id": "6d44123c-308a-471d-a522-5ffa7201d8ea",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Ivo started project Cobalt on 2026-08-01.",
+    "created_at": "2026-10-12T02:33:28.121309+00:00",
+    "updated_at": "2026-10-12T02:33:28.121309+00:00"
+  },
+  {
+    "field_id": "becb2ae8-c7a6-43da-b0fc-15768a23d6ac",
+    "note_id": "6d44123c-308a-471d-a522-5ffa7201d8ea",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Ivo started project Cobalt",
+    "created_at": "2026-10-12T02:33:28.121309+00:00",
+    "updated_at": "2026-10-12T02:33:28.121309+00:00"
+  },
+  {
+    "field_id": "b67966a4-162a-4eaf-9aa7-0be5bdf49a3c",
+    "note_id": "a35a02ca-8583-4b6f-ac2d-c94494cd5882",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "BATCH-1-741 was chosen for batch delivery for project Cobalt.",
+    "created_at": "2026-10-12T02:33:28.12131+00:00",
+    "updated_at": "2026-10-12T02:33:28.12131+00:00"
+  },
+  {
+    "field_id": "7d3a14eb-6bc4-4cb8-a07c-30d1b0a8a266",
+    "note_id": "a35a02ca-8583-4b6f-ac2d-c94494cd5882",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "chose BATCH-1-741 for batch delivery",
+    "created_at": "2026-10-12T02:33:28.12131+00:00",
+    "updated_at": "2026-10-12T02:33:28.12131+00:00"
+  },
+  {
+    "field_id": "25c1a396-b350-4db1-bab5-22f2b18d0b51",
+    "note_id": "a35a02ca-8583-4b6f-ac2d-c94494cd5882",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "batch delivery",
+    "created_at": "2026-10-12T02:33:28.12131+00:00",
+    "updated_at": "2026-10-12T02:33:28.12131+00:00"
+  },
+  {
+    "field_id": "284f7edb-75e4-4c00-a315-09663297f3dd",
+    "note_id": "bcd54ab9-ed7a-4320-8803-ad4bb8c21271",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Project Cobalt's initial retry policy was RETRY-1-108.",
+    "created_at": "2026-10-12T02:33:28.121311+00:00",
+    "updated_at": "2026-10-12T02:33:28.121311+00:00"
+  },
+  {
+    "field_id": "e89f979a-edb2-44e2-844a-b2ee8b158fc7",
+    "note_id": "bcd54ab9-ed7a-4320-8803-ad4bb8c21271",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The initial retry policy was RETRY-1-108.",
+    "created_at": "2026-10-12T02:33:28.121311+00:00",
+    "updated_at": "2026-10-12T02:33:28.121311+00:00"
+  },
+  {
+    "field_id": "45e2e903-03fe-46b5-bbb2-604659091a9c",
+    "note_id": "bcd54ab9-ed7a-4320-8803-ad4bb8c21271",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:28.121311+00:00",
+    "updated_at": "2026-10-12T02:33:28.121311+00:00"
+  },
+  {
+    "field_id": "6a787049-a7c5-4b0b-9902-714b6e4c36e4",
+    "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "On 2026-08-08, Ivo reported BATCH-1-741 lost updates during GATE-1-519 outages; testing REPLAY-1-632 restored the missing updates.",
+    "created_at": "2026-10-12T02:33:28.415199+00:00",
+    "updated_at": "2026-10-12T02:33:28.415199+00:00"
+  },
+  {
+    "field_id": "d5ba90ed-a51d-407b-946b-04cc600aded7",
+    "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Ivo reported BATCH-1-741 lost updates during GATE-1-519 outages",
+    "created_at": "2026-10-12T02:33:28.415199+00:00",
+    "updated_at": "2026-10-12T02:33:28.415199+00:00"
+  },
+  {
+    "field_id": "8aa55b93-cadb-4d73-bee5-ae50828eb0e5",
+    "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "the team tested REPLAY-1-632, which restored the missing updates",
+    "created_at": "2026-10-12T02:33:28.415199+00:00",
+    "updated_at": "2026-10-12T02:33:28.415199+00:00"
+  },
+  {
+    "field_id": "aa0983f9-771e-4665-a1ed-959581a15b0e",
+    "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "lost updates",
+    "created_at": "2026-10-12T02:33:28.415199+00:00",
+    "updated_at": "2026-10-12T02:33:28.415199+00:00"
+  },
+  {
+    "field_id": "680d0ddb-4681-458c-9f3e-243e6c5df53a",
+    "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "GATE-1-519 outages",
+    "created_at": "2026-10-12T02:33:28.415199+00:00",
+    "updated_at": "2026-10-12T02:33:28.415199+00:00"
+  },
+  {
+    "field_id": "cb32c77c-f14b-4ea3-8584-22413d7456ad",
+    "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "replay",
+    "created_at": "2026-10-12T02:33:28.415199+00:00",
+    "updated_at": "2026-10-12T02:33:28.415199+00:00"
+  },
+  {
+    "field_id": "228a29b4-67e7-4d29-8de2-5d696dc46f17",
+    "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "GATE-1-519 outages recorded on August 8 caused the Cobalt switch from BATCH-1-741 to STREAM-1-286; the successful recovery procedure from that incident should be kept.",
+    "created_at": "2026-10-12T02:33:28.621742+00:00",
+    "updated_at": "2026-10-12T02:33:28.621742+00:00"
+  },
+  {
+    "field_id": "420fb6a9-7166-4255-b67b-ff4c210ea95a",
+    "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The cause was the GATE-1-519 outages recorded on August 8",
+    "created_at": "2026-10-12T02:33:28.621742+00:00",
+    "updated_at": "2026-10-12T02:33:28.621742+00:00"
+  },
+  {
+    "field_id": "a8c9a4f2-6082-41f1-902a-6753d88f2d32",
+    "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "keep the successful recovery procedure from that incident",
+    "created_at": "2026-10-12T02:33:28.621742+00:00",
+    "updated_at": "2026-10-12T02:33:28.621742+00:00"
+  },
+  {
+    "field_id": "4a4d2dbb-1b98-41f1-8df1-2b1254fab3dc",
+    "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "incident cause",
+    "created_at": "2026-10-12T02:33:28.621742+00:00",
+    "updated_at": "2026-10-12T02:33:28.621742+00:00"
+  },
+  {
+    "field_id": "f5c16bf2-2819-473b-9786-40b18a4fdf3a",
+    "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:28.621742+00:00",
+    "updated_at": "2026-10-12T02:33:28.621742+00:00"
+  },
+  {
+    "field_id": "301251a1-b787-4e62-a6ac-30803963f43a",
+    "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:28.621742+00:00",
+    "updated_at": "2026-10-12T02:33:28.621742+00:00"
+  },
+  {
+    "field_id": "7367deae-da29-431e-b0c3-81d91ec7f973",
+    "note_id": "0d3d9682-a529-48fc-9180-b82fe74b62aa",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Retry policy updated to RETRY-1-907, superseding RETRY-1-108 as of 2026-08-22.",
+    "created_at": "2026-10-12T02:33:28.833298+00:00",
+    "updated_at": "2026-10-12T02:33:28.833298+00:00"
+  },
+  {
+    "field_id": "54942e5a-cb04-45aa-a3b5-ba93f789f758",
+    "note_id": "0d3d9682-a529-48fc-9180-b82fe74b62aa",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The retry policy is now RETRY-1-907, superseding RETRY-1-108.",
+    "created_at": "2026-10-12T02:33:28.833298+00:00",
+    "updated_at": "2026-10-12T02:33:28.833298+00:00"
+  },
+  {
+    "field_id": "14b9023b-1672-4726-a3b8-6313cc0c141c",
+    "note_id": "0d3d9682-a529-48fc-9180-b82fe74b62aa",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:28.833298+00:00",
+    "updated_at": "2026-10-12T02:33:28.833298+00:00"
+  },
+  {
+    "field_id": "09bf3890-0ebe-43f0-adbb-93e19a801e1a",
+    "note_id": "016a97a4-4a24-4e9b-9a17-1ec45f03624e",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "BATCH-2-741 was chosen for batch delivery for project Reed.",
+    "created_at": "2026-10-12T02:33:29.400787+00:00",
+    "updated_at": "2026-10-12T02:33:29.400787+00:00"
+  },
+  {
+    "field_id": "798a47ba-4d1c-4140-8481-863f94b0fc09",
+    "note_id": "016a97a4-4a24-4e9b-9a17-1ec45f03624e",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "BATCH-2-741 for batch delivery",
+    "created_at": "2026-10-12T02:33:29.400787+00:00",
+    "updated_at": "2026-10-12T02:33:29.400787+00:00"
+  },
+  {
+    "field_id": "43bd7683-cae5-4c7d-90f0-d093eed92db5",
+    "note_id": "016a97a4-4a24-4e9b-9a17-1ec45f03624e",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "batch delivery",
+    "created_at": "2026-10-12T02:33:29.400787+00:00",
+    "updated_at": "2026-10-12T02:33:29.400787+00:00"
+  },
+  {
+    "field_id": "899a62a3-0700-4052-809b-24f9f297a209",
+    "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "On 2026-08-15 Neri approved switching Reed from BATCH-2-741 to STREAM-2-286; this supersedes the August 1 delivery decision.",
+    "created_at": "2026-10-12T02:33:30.423713+00:00",
+    "updated_at": "2026-10-12T02:33:30.423713+00:00"
+  },
+  {
+    "field_id": "92c341b8-aef4-447e-99e0-9965c8c14afa",
+    "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Neri approved switching Reed from BATCH-2-741 to STREAM-2-286",
+    "created_at": "2026-10-12T02:33:30.423713+00:00",
+    "updated_at": "2026-10-12T02:33:30.423713+00:00"
+  },
+  {
+    "field_id": "246886b5-9b44-4d5d-b8e1-6e95d11f2be9",
+    "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "This supersedes the August 1 delivery decision",
+    "created_at": "2026-10-12T02:33:30.423713+00:00",
+    "updated_at": "2026-10-12T02:33:30.423713+00:00"
+  },
+  {
+    "field_id": "fed9a815-b6a0-400b-882e-7b6581d3e87f",
+    "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery decision",
+    "created_at": "2026-10-12T02:33:30.423713+00:00",
+    "updated_at": "2026-10-12T02:33:30.423713+00:00"
+  },
+  {
+    "field_id": "13cfa985-58a4-4fce-9fed-9382f77ae308",
+    "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "switching",
+    "created_at": "2026-10-12T02:33:30.423713+00:00",
+    "updated_at": "2026-10-12T02:33:30.423713+00:00"
+  },
+  {
+    "field_id": "65e78866-1c0a-4833-97fa-e37ac5ce6cd6",
+    "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "BATCH-2-741",
+    "created_at": "2026-10-12T02:33:30.423713+00:00",
+    "updated_at": "2026-10-12T02:33:30.423713+00:00"
+  },
+  {
+    "field_id": "2a81a4a9-7efb-4363-976e-97498f0f5789",
+    "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+    "field_kind": "concept",
+    "item_index": 3,
+    "text": "STREAM-2-286",
+    "created_at": "2026-10-12T02:33:30.423713+00:00",
+    "updated_at": "2026-10-12T02:33:30.423713+00:00"
+  },
+  {
+    "field_id": "d0130eb1-5b7b-4a4a-89e4-607ae9c34006",
+    "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "The retry policy was updated to RETRY-2-907, replacing RETRY-2-108, as of 2026-08-22.",
+    "created_at": "2026-10-12T02:33:31.045113+00:00",
+    "updated_at": "2026-10-12T02:33:31.045113+00:00"
+  },
+  {
+    "field_id": "1048aed5-fb24-416c-a576-0de87c4a558c",
+    "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "RETRY-2-907",
+    "created_at": "2026-10-12T02:33:31.045113+00:00",
+    "updated_at": "2026-10-12T02:33:31.045113+00:00"
+  },
+  {
+    "field_id": "f8d19019-7b50-4d3f-9c10-224e5b7735f7",
+    "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "RETRY-2-108",
+    "created_at": "2026-10-12T02:33:31.045113+00:00",
+    "updated_at": "2026-10-12T02:33:31.045113+00:00"
+  },
+  {
+    "field_id": "8a6e11eb-145e-4a60-83a4-b856d197e667",
+    "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:31.045113+00:00",
+    "updated_at": "2026-10-12T02:33:31.045113+00:00"
+  },
+  {
+    "field_id": "31768295-c7bb-4ea2-ad05-282f3a1f74a2",
+    "note_id": "24b387ad-76c8-4e78-b032-4101f39fc568",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Project Sable's initial retry policy was RETRY-3-108.",
+    "created_at": "2026-10-12T02:33:31.390009+00:00",
+    "updated_at": "2026-10-12T02:33:31.390009+00:00"
+  },
+  {
+    "field_id": "0ba32d24-d5a7-4ce2-8eec-8c0d034c97f6",
+    "note_id": "24b387ad-76c8-4e78-b032-4101f39fc568",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "initial retry policy was RETRY-3-108",
+    "created_at": "2026-10-12T02:33:31.390009+00:00",
+    "updated_at": "2026-10-12T02:33:31.390009+00:00"
+  },
+  {
+    "field_id": "dd3ac776-a2b8-4e26-bf6e-33b6da00f349",
+    "note_id": "24b387ad-76c8-4e78-b032-4101f39fc568",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:31.390009+00:00",
+    "updated_at": "2026-10-12T02:33:31.390009+00:00"
+  },
+  {
+    "field_id": "8a82f0d2-0a7f-446a-af39-a20e491cbad0",
+    "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "GATE-3-519 outages recorded on August 8 caused the Sable switch from BATCH-3-741 to STREAM-3-286; the successful recovery procedure from that incident should be kept.",
+    "created_at": "2026-10-12T02:33:32.357449+00:00",
+    "updated_at": "2026-10-12T02:33:32.357449+00:00"
+  },
+  {
+    "field_id": "a66f7fa3-496d-444f-89b9-9d6fb64a6feb",
+    "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The cause was the GATE-3-519 outages recorded on August 8",
+    "created_at": "2026-10-12T02:33:32.357449+00:00",
+    "updated_at": "2026-10-12T02:33:32.357449+00:00"
+  },
+  {
+    "field_id": "4e5fb740-b14c-473a-9a31-8097b8b6c64c",
+    "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "keep the successful recovery procedure from that incident",
+    "created_at": "2026-10-12T02:33:32.357449+00:00",
+    "updated_at": "2026-10-12T02:33:32.357449+00:00"
+  },
+  {
+    "field_id": "f6fd4317-4698-48f9-b4b1-0a2e7c90b351",
+    "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:32.357449+00:00",
+    "updated_at": "2026-10-12T02:33:32.357449+00:00"
+  },
+  {
+    "field_id": "485f328f-59df-4f97-bec2-e50b75b92476",
+    "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:32.357449+00:00",
+    "updated_at": "2026-10-12T02:33:32.357449+00:00"
+  },
+  {
+    "field_id": "771cac99-5c8d-4937-8432-db85b78510f8",
+    "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Tala reviewed Sable on 2026-08-22; no budget owner has been appointed for Sable.",
+    "created_at": "2026-10-12T02:33:32.534659+00:00",
+    "updated_at": "2026-10-12T02:33:32.534659+00:00"
+  },
+  {
+    "field_id": "2a929374-4fbe-4a94-b9c8-9fa286242226",
+    "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Tala reviewed Sable",
+    "created_at": "2026-10-12T02:33:32.534659+00:00",
+    "updated_at": "2026-10-12T02:33:32.534659+00:00"
+  },
+  {
+    "field_id": "66fe7060-984a-4c7c-9032-b2404d3f9e66",
+    "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "no budget owner has been appointed",
+    "created_at": "2026-10-12T02:33:32.534659+00:00",
+    "updated_at": "2026-10-12T02:33:32.534659+00:00"
+  },
+  {
+    "field_id": "59f907f9-ad18-4417-a346-f6cde25cc53b",
+    "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "budget owner",
+    "created_at": "2026-10-12T02:33:32.534659+00:00",
+    "updated_at": "2026-10-12T02:33:32.534659+00:00"
+  },
+  {
+    "field_id": "def4f11a-acf2-4c93-be8b-b98c206cbbf1",
+    "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "Sable",
+    "created_at": "2026-10-12T02:33:32.534659+00:00",
+    "updated_at": "2026-10-12T02:33:32.534659+00:00"
+  },
+  {
+    "field_id": "efe04099-3f49-439c-86ed-0845b6a648b7",
+    "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "Tala",
+    "created_at": "2026-10-12T02:33:32.534659+00:00",
+    "updated_at": "2026-10-12T02:33:32.534659+00:00"
+  },
+  {
+    "field_id": "7464b98f-77ec-413c-b40f-3eb75cfbba2a",
+    "note_id": "49f00edc-4daa-4da3-8596-f45b6e829e2c",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "The initial retry policy for project Cedar was RETRY-4-108.",
+    "created_at": "2026-10-12T02:33:32.747545+00:00",
+    "updated_at": "2026-10-12T02:33:32.747545+00:00"
+  },
+  {
+    "field_id": "af3ceee1-5e39-44ce-b5fb-810883954f1b",
+    "note_id": "49f00edc-4daa-4da3-8596-f45b6e829e2c",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The initial retry policy was RETRY-4-108",
+    "created_at": "2026-10-12T02:33:32.747545+00:00",
+    "updated_at": "2026-10-12T02:33:32.747545+00:00"
+  },
+  {
+    "field_id": "38278712-6753-47c8-8bd4-012f2d36afa6",
+    "note_id": "49f00edc-4daa-4da3-8596-f45b6e829e2c",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:32.747545+00:00",
+    "updated_at": "2026-10-12T02:33:32.747545+00:00"
+  },
+  {
+    "field_id": "d483f33a-d64b-44d8-9e00-562aa6e1d06e",
+    "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Devon reviewed Cedar on 2026-08-22; the August 15 delivery choice should be kept.",
+    "created_at": "2026-10-12T02:33:33.346053+00:00",
+    "updated_at": "2026-10-12T02:33:33.346053+00:00"
+  },
+  {
+    "field_id": "643b85b8-f7b3-4446-a14e-d779cc9bc81d",
+    "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Devon reviewed Cedar.",
+    "created_at": "2026-10-12T02:33:33.346053+00:00",
+    "updated_at": "2026-10-12T02:33:33.346053+00:00"
+  },
+  {
+    "field_id": "2f6b2034-b861-4693-bca6-3573e4d51439",
+    "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "Keep the August 15 delivery choice.",
+    "created_at": "2026-10-12T02:33:33.346053+00:00",
+    "updated_at": "2026-10-12T02:33:33.346053+00:00"
+  },
+  {
+    "field_id": "f5c647b3-4f61-40b3-a866-802d956fa837",
+    "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery choice",
+    "created_at": "2026-10-12T02:33:33.346053+00:00",
+    "updated_at": "2026-10-12T02:33:33.346053+00:00"
+  },
+  {
+    "field_id": "2d6b172d-a079-4508-8e5d-bcb61e410ac9",
+    "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "No change of delivery mode was approved at the 2026-08-08 meeting about the BATCH-1-741 lost updates.",
+    "created_at": "2026-10-12T02:33:28.4152+00:00",
+    "updated_at": "2026-10-12T02:33:28.4152+00:00"
+  },
+  {
+    "field_id": "534e0bfb-c4d9-4f0e-9391-a15e2b487702",
+    "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "No change of delivery mode was approved at this meeting.",
+    "created_at": "2026-10-12T02:33:28.4152+00:00",
+    "updated_at": "2026-10-12T02:33:28.4152+00:00"
+  },
+  {
+    "field_id": "f6c831d6-451a-43ec-b451-951b479e8a99",
+    "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery mode",
+    "created_at": "2026-10-12T02:33:28.4152+00:00",
+    "updated_at": "2026-10-12T02:33:28.4152+00:00"
+  },
+  {
+    "field_id": "20bfd777-f0f5-4c2c-896b-c74365fe6c30",
+    "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "no change approved",
+    "created_at": "2026-10-12T02:33:28.4152+00:00",
+    "updated_at": "2026-10-12T02:33:28.4152+00:00"
+  },
+  {
+    "field_id": "d81b342d-e61d-4246-8eb4-097d456f761f",
+    "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286 on 2026-08-15; this supersedes the August 1 delivery decision.",
+    "created_at": "2026-10-12T02:33:28.621741+00:00",
+    "updated_at": "2026-10-12T02:33:28.621741+00:00"
+  },
+  {
+    "field_id": "42c4707d-9566-4e00-9652-a8035dd5fb0f",
+    "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286",
+    "created_at": "2026-10-12T02:33:28.621741+00:00",
+    "updated_at": "2026-10-12T02:33:28.621741+00:00"
+  },
+  {
+    "field_id": "5ca14303-5805-4465-89c2-9b0c113bcad7",
+    "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "This supersedes the August 1 delivery decision",
+    "created_at": "2026-10-12T02:33:28.621741+00:00",
+    "updated_at": "2026-10-12T02:33:28.621741+00:00"
+  },
+  {
+    "field_id": "42994be5-6bcd-4d65-a073-bfcc3068cbb3",
+    "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery decision",
+    "created_at": "2026-10-12T02:33:28.621741+00:00",
+    "updated_at": "2026-10-12T02:33:28.621741+00:00"
+  },
+  {
+    "field_id": "632329d5-5a24-4c20-9393-91b2159c65ed",
+    "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "supersession",
+    "created_at": "2026-10-12T02:33:28.621741+00:00",
+    "updated_at": "2026-10-12T02:33:28.621741+00:00"
+  },
+  {
+    "field_id": "f9385f89-3112-4045-8a1a-7e90e7000f03",
+    "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "stream migration",
+    "created_at": "2026-10-12T02:33:28.621741+00:00",
+    "updated_at": "2026-10-12T02:33:28.621741+00:00"
+  },
+  {
+    "field_id": "14f322b8-066e-440e-bef6-a18a3d5ac12f",
+    "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "On 2026-08-22, Ivo reviewed Cobalt; the August 15 delivery choice is kept; no budget owner has been appointed.",
+    "created_at": "2026-10-12T02:33:28.8333+00:00",
+    "updated_at": "2026-10-12T02:33:28.8333+00:00"
+  },
+  {
+    "field_id": "7cdac9a9-0e1c-42c7-9d76-93a617555a33",
+    "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Keep the August 15 delivery choice.",
+    "created_at": "2026-10-12T02:33:28.8333+00:00",
+    "updated_at": "2026-10-12T02:33:28.8333+00:00"
+  },
+  {
+    "field_id": "6d075425-fc31-48ec-b8d0-962879bf5bb7",
+    "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "No budget owner has been appointed.",
+    "created_at": "2026-10-12T02:33:28.8333+00:00",
+    "updated_at": "2026-10-12T02:33:28.8333+00:00"
+  },
+  {
+    "field_id": "a3c99886-766a-4740-8803-21a0b7e7897e",
+    "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery choice",
+    "created_at": "2026-10-12T02:33:28.8333+00:00",
+    "updated_at": "2026-10-12T02:33:28.8333+00:00"
+  },
+  {
+    "field_id": "8689e807-a337-4caf-b624-3ecc4bfdc93f",
+    "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "budget owner",
+    "created_at": "2026-10-12T02:33:28.8333+00:00",
+    "updated_at": "2026-10-12T02:33:28.8333+00:00"
+  },
+  {
+    "field_id": "b6f76318-0411-476e-9bd3-07233fe5d441",
+    "note_id": "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Neri started project Reed on 2026-08-01.",
+    "created_at": "2026-10-12T02:33:29.400786+00:00",
+    "updated_at": "2026-10-12T02:33:29.400786+00:00"
+  },
+  {
+    "field_id": "51503d21-199c-41e0-8d39-a315dfa1b72b",
+    "note_id": "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Neri started project Reed",
+    "created_at": "2026-10-12T02:33:29.400786+00:00",
+    "updated_at": "2026-10-12T02:33:29.400786+00:00"
+  },
+  {
+    "field_id": "5651a8cd-7013-45d0-8bd9-9d08e69d2d6b",
+    "note_id": "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "project initiation",
+    "created_at": "2026-10-12T02:33:29.400786+00:00",
+    "updated_at": "2026-10-12T02:33:29.400786+00:00"
+  },
+  {
+    "field_id": "cb520e61-c12a-4908-811e-1f2a6620eea2",
+    "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Retain the successful recovery procedure from the GATE-2-519 incident (outages recorded on August 8).",
+    "created_at": "2026-10-12T02:33:30.423715+00:00",
+    "updated_at": "2026-10-12T02:33:30.423715+00:00"
+  },
+  {
+    "field_id": "bd8a27ff-145c-42e6-9396-64a4e3f41bc4",
+    "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "keep the successful recovery procedure from that incident",
+    "created_at": "2026-10-12T02:33:30.423715+00:00",
+    "updated_at": "2026-10-12T02:33:30.423715+00:00"
+  },
+  {
+    "field_id": "4f8d5fee-0250-4e7a-9197-3145fa464eaf",
+    "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "GATE-2-519",
+    "created_at": "2026-10-12T02:33:30.423715+00:00",
+    "updated_at": "2026-10-12T02:33:30.423715+00:00"
+  },
+  {
+    "field_id": "32fb7496-8769-4e1f-a2c1-9e998f551990",
+    "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:30.423715+00:00",
+    "updated_at": "2026-10-12T02:33:30.423715+00:00"
+  },
+  {
+    "field_id": "95bdf637-f847-435d-aa85-e68998200175",
+    "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "retention",
+    "created_at": "2026-10-12T02:33:30.423715+00:00",
+    "updated_at": "2026-10-12T02:33:30.423715+00:00"
+  },
+  {
+    "field_id": "b38348a4-7422-4421-a2d7-b9dcca9d1370",
+    "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "As of 2026-08-22, the August 15 delivery choice stands, Neri reviewed Reed, and no budget owner has been appointed.",
+    "created_at": "2026-10-12T02:33:31.045115+00:00",
+    "updated_at": "2026-10-12T02:33:31.045115+00:00"
+  },
+  {
+    "field_id": "865868c8-2d4f-4ca8-928c-f00decfe57d2",
+    "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Keep the August 15 delivery choice",
+    "created_at": "2026-10-12T02:33:31.045115+00:00",
+    "updated_at": "2026-10-12T02:33:31.045115+00:00"
+  },
+  {
+    "field_id": "fcbfe5a2-510a-4959-b02d-6f99f9f550da",
+    "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "Neri reviewed Reed",
+    "created_at": "2026-10-12T02:33:31.045115+00:00",
+    "updated_at": "2026-10-12T02:33:31.045115+00:00"
+  },
+  {
+    "field_id": "155c7ca0-525c-499f-8241-9c85c4f83960",
+    "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+    "field_kind": "fact",
+    "item_index": 2,
+    "text": "No budget owner has been appointed",
+    "created_at": "2026-10-12T02:33:31.045115+00:00",
+    "updated_at": "2026-10-12T02:33:31.045115+00:00"
+  },
+  {
+    "field_id": "ea5aea67-0de3-4b99-91e5-ddef1d023874",
+    "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery choice",
+    "created_at": "2026-10-12T02:33:31.045115+00:00",
+    "updated_at": "2026-10-12T02:33:31.045115+00:00"
+  },
+  {
+    "field_id": "261425a5-9182-4f82-bbb6-d3d6c5d2bce3",
+    "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "budget owner",
+    "created_at": "2026-10-12T02:33:31.045115+00:00",
+    "updated_at": "2026-10-12T02:33:31.045115+00:00"
+  },
+  {
+    "field_id": "861cc8a3-9f35-4fc9-990e-b0eb763a105f",
+    "note_id": "73d1e03c-4e93-4d16-a15a-19f22fa14dcd",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Tala chose BATCH-3-741 for batch delivery on project Sable.",
+    "created_at": "2026-10-12T02:33:31.390008+00:00",
+    "updated_at": "2026-10-12T02:33:31.390008+00:00"
+  },
+  {
+    "field_id": "25240d8b-9fae-4378-9389-1a872da2f6ba",
+    "note_id": "73d1e03c-4e93-4d16-a15a-19f22fa14dcd",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "chose BATCH-3-741 for batch delivery",
+    "created_at": "2026-10-12T02:33:31.390008+00:00",
+    "updated_at": "2026-10-12T02:33:31.390008+00:00"
+  },
+  {
+    "field_id": "8d682897-a6ef-4718-ba74-6a1d9229be99",
+    "note_id": "73d1e03c-4e93-4d16-a15a-19f22fa14dcd",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "batch delivery",
+    "created_at": "2026-10-12T02:33:31.390008+00:00",
+    "updated_at": "2026-10-12T02:33:31.390008+00:00"
+  },
+  {
+    "field_id": "c0c93eca-22e3-4b31-87ce-186f2018dfd9",
+    "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "On 2026-08-08, the team tested REPLAY-3-632, which restored the missing updates.",
+    "created_at": "2026-10-12T02:33:31.581675+00:00",
+    "updated_at": "2026-10-12T02:33:31.581675+00:00"
+  },
+  {
+    "field_id": "c25e0638-e4d3-4f55-a4bb-3de4039975d8",
+    "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The team tested REPLAY-3-632, which restored the missing updates.",
+    "created_at": "2026-10-12T02:33:31.581675+00:00",
+    "updated_at": "2026-10-12T02:33:31.581675+00:00"
+  },
+  {
+    "field_id": "9a645c20-9ea1-4806-b2f6-0feb629bca0e",
+    "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "missing updates",
+    "created_at": "2026-10-12T02:33:31.581675+00:00",
+    "updated_at": "2026-10-12T02:33:31.581675+00:00"
+  },
+  {
+    "field_id": "845dbb45-575c-4272-8422-e07c946e9ad6",
+    "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "tested",
+    "created_at": "2026-10-12T02:33:31.581675+00:00",
+    "updated_at": "2026-10-12T02:33:31.581675+00:00"
+  },
+  {
+    "field_id": "42b2b244-956c-403f-b203-7d6a6f144c2f",
+    "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286 on 2026-08-15, superseding the August 1 delivery decision.",
+    "created_at": "2026-10-12T02:33:33.110747+00:00",
+    "updated_at": "2026-10-12T02:33:33.110747+00:00"
+  },
+  {
+    "field_id": "33858cd1-3aea-4a1c-86d5-3a46dec29c92",
+    "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286",
+    "created_at": "2026-10-12T02:33:33.110747+00:00",
+    "updated_at": "2026-10-12T02:33:33.110747+00:00"
+  },
+  {
+    "field_id": "457f0e75-4536-494d-bbdf-a6f400b8f750",
+    "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "This supersedes the August 1 delivery decision",
+    "created_at": "2026-10-12T02:33:33.110747+00:00",
+    "updated_at": "2026-10-12T02:33:33.110747+00:00"
+  },
+  {
+    "field_id": "aa62efd7-f765-41c1-b5f0-1def21a88e11",
+    "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery decision",
+    "created_at": "2026-10-12T02:33:33.110747+00:00",
+    "updated_at": "2026-10-12T02:33:33.110747+00:00"
+  },
+  {
+    "field_id": "952e3e08-cdfc-40eb-8879-a3d89378b5f1",
+    "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "supersession",
+    "created_at": "2026-10-12T02:33:33.110747+00:00",
+    "updated_at": "2026-10-12T02:33:33.110747+00:00"
+  },
+  {
+    "field_id": "3bb64907-2a3b-4398-a60f-724a6bdc1941",
+    "note_id": "ef582051-9389-4946-85e6-984478e1231d",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "The retry policy is now RETRY-4-907, superseding RETRY-4-108.",
+    "created_at": "2026-10-12T02:33:33.346055+00:00",
+    "updated_at": "2026-10-12T02:33:33.346055+00:00"
+  },
+  {
+    "field_id": "e13ee0a0-1dca-4185-ab3a-e4e60bb5c544",
+    "note_id": "ef582051-9389-4946-85e6-984478e1231d",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The retry policy is now RETRY-4-907, superseding RETRY-4-108.",
+    "created_at": "2026-10-12T02:33:33.346055+00:00",
+    "updated_at": "2026-10-12T02:33:33.346055+00:00"
+  },
+  {
+    "field_id": "c28969c3-f187-407d-b0d8-5c03c31d49ac",
+    "note_id": "ef582051-9389-4946-85e6-984478e1231d",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:33.346055+00:00",
+    "updated_at": "2026-10-12T02:33:33.346055+00:00"
+  },
+  {
+    "field_id": "2cc3165d-ae7d-48d2-8441-d3f46d4975bb",
+    "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Directive: for the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T02:33:28.833299+00:00",
+    "updated_at": "2026-10-12T02:33:28.833299+00:00"
+  },
+  {
+    "field_id": "fb6f005a-f4be-4322-8271-51961484555d",
+    "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T02:33:28.833299+00:00",
+    "updated_at": "2026-10-12T02:33:28.833299+00:00"
+  },
+  {
+    "field_id": "64417257-ab24-4bbe-8995-8dc673205dfb",
+    "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "outage recovery",
+    "created_at": "2026-10-12T02:33:28.833299+00:00",
+    "updated_at": "2026-10-12T02:33:28.833299+00:00"
+  },
+  {
+    "field_id": "2b603361-a46a-4b9e-9dfc-1e669f9f3fec",
+    "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:28.833299+00:00",
+    "updated_at": "2026-10-12T02:33:28.833299+00:00"
+  },
+  {
+    "field_id": "b0870fa2-2c28-4125-9e22-6c82bc05c480",
+    "note_id": "7f4c9f60-a744-4cc3-b337-327e3cfe9718",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Project Reed's initial retry policy was RETRY-2-108.",
+    "created_at": "2026-10-12T02:33:29.400788+00:00",
+    "updated_at": "2026-10-12T02:33:29.400788+00:00"
+  },
+  {
+    "field_id": "ca24408c-250c-42e9-9efa-470135f71dbf",
+    "note_id": "7f4c9f60-a744-4cc3-b337-327e3cfe9718",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "RETRY-2-108",
+    "created_at": "2026-10-12T02:33:29.400788+00:00",
+    "updated_at": "2026-10-12T02:33:29.400788+00:00"
+  },
+  {
+    "field_id": "26e776dd-4871-4748-8bea-665f72c51d9c",
+    "note_id": "7f4c9f60-a744-4cc3-b337-327e3cfe9718",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:29.400788+00:00",
+    "updated_at": "2026-10-12T02:33:29.400788+00:00"
+  },
+  {
+    "field_id": "23f9eaf8-4eaa-4987-bcc2-fb486391a760",
+    "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "GATE-2-519 outages recorded on August 8 caused the Reed switch from BATCH-2-741 to STREAM-2-286.",
+    "created_at": "2026-10-12T02:33:30.423714+00:00",
+    "updated_at": "2026-10-12T02:33:30.423714+00:00"
+  },
+  {
+    "field_id": "9a404cce-c4d4-439a-96c8-1e50aaaac232",
+    "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The cause was the GATE-2-519 outages recorded on August 8",
+    "created_at": "2026-10-12T02:33:30.423714+00:00",
+    "updated_at": "2026-10-12T02:33:30.423714+00:00"
+  },
+  {
+    "field_id": "154ab62b-d24d-4322-ba40-a404ff1da2b8",
+    "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "GATE-2-519",
+    "created_at": "2026-10-12T02:33:30.423714+00:00",
+    "updated_at": "2026-10-12T02:33:30.423714+00:00"
+  },
+  {
+    "field_id": "486ff87a-a8d7-43f3-960a-1182fb6dd6f7",
+    "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "outages",
+    "created_at": "2026-10-12T02:33:30.423714+00:00",
+    "updated_at": "2026-10-12T02:33:30.423714+00:00"
+  },
+  {
+    "field_id": "50b839c8-cdf0-48bf-bf0b-40aa1d50c688",
+    "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "cause",
+    "created_at": "2026-10-12T02:33:30.423714+00:00",
+    "updated_at": "2026-10-12T02:33:30.423714+00:00"
+  },
+  {
+    "field_id": "a9bd0512-f206-4ba9-aa7c-73680ce12166",
+    "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "For the next outage, the instructed recovery procedure is the one validated on August 8.",
+    "created_at": "2026-10-12T02:33:31.045114+00:00",
+    "updated_at": "2026-10-12T02:33:31.045114+00:00"
+  },
+  {
+    "field_id": "629e4c95-7f2e-4b56-bef3-46ee71e3bd68",
+    "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "recovery procedure validated on August 8",
+    "created_at": "2026-10-12T02:33:31.045114+00:00",
+    "updated_at": "2026-10-12T02:33:31.045114+00:00"
+  },
+  {
+    "field_id": "d55e957a-1bdb-4cdd-aa6e-d41b9bff2664",
+    "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "outage recovery",
+    "created_at": "2026-10-12T02:33:31.045114+00:00",
+    "updated_at": "2026-10-12T02:33:31.045114+00:00"
+  },
+  {
+    "field_id": "10a5ec9a-7ace-463a-b111-9fbffbb63614",
+    "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:31.045114+00:00",
+    "updated_at": "2026-10-12T02:33:31.045114+00:00"
+  },
+  {
+    "field_id": "6174f4e1-3725-4f4e-8535-d34b45a0055c",
+    "note_id": "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Tala started project Sable on 2026-08-01.",
+    "created_at": "2026-10-12T02:33:31.390007+00:00",
+    "updated_at": "2026-10-12T02:33:31.390007+00:00"
+  },
+  {
+    "field_id": "2c6c46b3-69c2-43d0-a381-1497fc05aa84",
+    "note_id": "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Tala started project Sable",
+    "created_at": "2026-10-12T02:33:31.390007+00:00",
+    "updated_at": "2026-10-12T02:33:31.390007+00:00"
+  },
+  {
+    "field_id": "6d012307-951a-4c0a-b7bb-64b0b7d726f1",
+    "note_id": "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "project start",
+    "created_at": "2026-10-12T02:33:31.390007+00:00",
+    "updated_at": "2026-10-12T02:33:31.390007+00:00"
+  },
+  {
+    "field_id": "10b6ffba-78f7-4241-a9da-ba11d27df747",
+    "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "On 2026-08-08, Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+    "created_at": "2026-10-12T02:33:31.581674+00:00",
+    "updated_at": "2026-10-12T02:33:31.581674+00:00"
+  },
+  {
+    "field_id": "53b8e185-856e-47bf-8c89-0acd7a876155",
+    "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+    "created_at": "2026-10-12T02:33:31.581674+00:00",
+    "updated_at": "2026-10-12T02:33:31.581674+00:00"
+  },
+  {
+    "field_id": "c161ba67-487b-4bc8-825c-99970599820c",
+    "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "lost updates",
+    "created_at": "2026-10-12T02:33:31.581674+00:00",
+    "updated_at": "2026-10-12T02:33:31.581674+00:00"
+  },
+  {
+    "field_id": "d4108f95-822b-4a3a-9846-2e6e5717c8d8",
+    "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "outages",
+    "created_at": "2026-10-12T02:33:31.581674+00:00",
+    "updated_at": "2026-10-12T02:33:31.581674+00:00"
+  },
+  {
+    "field_id": "2c39db31-91af-4d5b-82b6-c19f07d6acd6",
+    "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286 on 2026-08-15, superseding the August 1 delivery decision.",
+    "created_at": "2026-10-12T02:33:32.357448+00:00",
+    "updated_at": "2026-10-12T02:33:32.357448+00:00"
+  },
+  {
+    "field_id": "a1b809dc-d724-43dc-9b32-e73bfe638126",
+    "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286",
+    "created_at": "2026-10-12T02:33:32.357448+00:00",
+    "updated_at": "2026-10-12T02:33:32.357448+00:00"
+  },
+  {
+    "field_id": "5b637417-b130-49f1-a510-c8fa67c9d52a",
+    "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "This supersedes the August 1 delivery decision",
+    "created_at": "2026-10-12T02:33:32.357448+00:00",
+    "updated_at": "2026-10-12T02:33:32.357448+00:00"
+  },
+  {
+    "field_id": "1c123df2-8d1c-4962-b4c6-0f9de0ba888b",
+    "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery decision",
+    "created_at": "2026-10-12T02:33:32.357448+00:00",
+    "updated_at": "2026-10-12T02:33:32.357448+00:00"
+  },
+  {
+    "field_id": "5a8ace35-db96-4144-8650-8078379c592a",
+    "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "routing change",
+    "created_at": "2026-10-12T02:33:32.357448+00:00",
+    "updated_at": "2026-10-12T02:33:32.357448+00:00"
+  },
+  {
+    "field_id": "cedaed31-38e9-438e-b9db-41df123aae5b",
+    "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Sable's retry policy is now RETRY-3-907, superseding RETRY-3-108 (2026-08-22).",
+    "created_at": "2026-10-12T02:33:32.534657+00:00",
+    "updated_at": "2026-10-12T02:33:32.534657+00:00"
+  },
+  {
+    "field_id": "a658200b-1eb3-49b2-b6ca-9d6e67921ae6",
+    "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Sable's retry policy is now RETRY-3-907",
+    "created_at": "2026-10-12T02:33:32.534657+00:00",
+    "updated_at": "2026-10-12T02:33:32.534657+00:00"
+  },
+  {
+    "field_id": "a97437be-56f8-4a7b-93dc-f571c95bfa9a",
+    "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "superseding RETRY-3-108",
+    "created_at": "2026-10-12T02:33:32.534657+00:00",
+    "updated_at": "2026-10-12T02:33:32.534657+00:00"
+  },
+  {
+    "field_id": "26b1116c-ca06-4244-8e3d-eb012dd95bba",
+    "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+    "field_kind": "fact",
+    "item_index": 2,
+    "text": "2026-08-22",
+    "created_at": "2026-10-12T02:33:32.534657+00:00",
+    "updated_at": "2026-10-12T02:33:32.534657+00:00"
+  },
+  {
+    "field_id": "f6fb3c6f-5d5d-47e9-96dc-93a72c3b5840",
+    "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "retry policy",
+    "created_at": "2026-10-12T02:33:32.534657+00:00",
+    "updated_at": "2026-10-12T02:33:32.534657+00:00"
+  },
+  {
+    "field_id": "b77f6173-d885-4329-b7a4-2d5b70dbdfe9",
+    "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "Sable",
+    "created_at": "2026-10-12T02:33:32.534657+00:00",
+    "updated_at": "2026-10-12T02:33:32.534657+00:00"
+  },
+  {
+    "field_id": "3e1915a8-9459-4897-a743-716c8cf5ecb1",
+    "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Sable decisions: keep the August 15 delivery choice; next outage should use the August 8-validated recovery procedure.",
+    "created_at": "2026-10-12T02:33:32.534658+00:00",
+    "updated_at": "2026-10-12T02:33:32.534658+00:00"
+  },
+  {
+    "field_id": "8aaf94f0-5bd3-4272-a7d2-ba933a22a8e2",
+    "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Keep the August 15 delivery choice",
+    "created_at": "2026-10-12T02:33:32.534658+00:00",
+    "updated_at": "2026-10-12T02:33:32.534658+00:00"
+  },
+  {
+    "field_id": "52c65b37-13f1-4530-b0b6-7161fcd2f97f",
+    "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "For the next outage, use the recovery procedure validated on August 8",
+    "created_at": "2026-10-12T02:33:32.534658+00:00",
+    "updated_at": "2026-10-12T02:33:32.534658+00:00"
+  },
+  {
+    "field_id": "72f9e3af-a6bc-4435-af16-4caa81f009c7",
+    "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery choice",
+    "created_at": "2026-10-12T02:33:32.534658+00:00",
+    "updated_at": "2026-10-12T02:33:32.534658+00:00"
+  },
+  {
+    "field_id": "9a1f69c5-ad7b-4242-afcd-f8124207f6ee",
+    "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:32.534658+00:00",
+    "updated_at": "2026-10-12T02:33:32.534658+00:00"
+  },
+  {
+    "field_id": "3b782269-92e0-425d-86da-3b4fe20e8553",
+    "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:32.534658+00:00",
+    "updated_at": "2026-10-12T02:33:32.534658+00:00"
+  },
+  {
+    "field_id": "91ec3267-592a-44bb-a004-107d958067fa",
+    "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+    "field_kind": "concept",
+    "item_index": 3,
+    "text": "Sable",
+    "created_at": "2026-10-12T02:33:32.534658+00:00",
+    "updated_at": "2026-10-12T02:33:32.534658+00:00"
+  },
+  {
+    "field_id": "16a43c54-74a7-4215-b9f1-97469a2b3090",
+    "note_id": "ecbe520f-ac9a-467e-9aa6-33e48cb39b36",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Devon started project Cedar on 2026-08-01.",
+    "created_at": "2026-10-12T02:33:32.747543+00:00",
+    "updated_at": "2026-10-12T02:33:32.747543+00:00"
+  },
+  {
+    "field_id": "b410f95b-fda5-4902-9e65-9b1e3f1578fd",
+    "note_id": "ecbe520f-ac9a-467e-9aa6-33e48cb39b36",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "Devon started project Cedar",
+    "created_at": "2026-10-12T02:33:32.747543+00:00",
+    "updated_at": "2026-10-12T02:33:32.747543+00:00"
+  },
+  {
+    "field_id": "2465d7a2-d435-4fa8-b953-c98913f04cb5",
+    "note_id": "ecbe520f-ac9a-467e-9aa6-33e48cb39b36",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "project Cedar",
+    "created_at": "2026-10-12T02:33:32.747543+00:00",
+    "updated_at": "2026-10-12T02:33:32.747543+00:00"
+  },
+  {
+    "field_id": "d001c76f-7ffe-4c7f-898e-b39a6d32c3aa",
+    "note_id": "3ec0746b-8f46-46ce-b3e9-acd36779144d",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "Devon chose BATCH-4-741 for batch delivery for project Cedar.",
+    "created_at": "2026-10-12T02:33:32.747544+00:00",
+    "updated_at": "2026-10-12T02:33:32.747544+00:00"
+  },
+  {
+    "field_id": "e0e938dc-9a39-4b57-9ef6-67a108512055",
+    "note_id": "3ec0746b-8f46-46ce-b3e9-acd36779144d",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "chose BATCH-4-741 for batch delivery",
+    "created_at": "2026-10-12T02:33:32.747544+00:00",
+    "updated_at": "2026-10-12T02:33:32.747544+00:00"
+  },
+  {
+    "field_id": "2f7b4949-1113-4c7f-b3c4-e81028c879ca",
+    "note_id": "3ec0746b-8f46-46ce-b3e9-acd36779144d",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "batch delivery",
+    "created_at": "2026-10-12T02:33:32.747544+00:00",
+    "updated_at": "2026-10-12T02:33:32.747544+00:00"
+  },
+  {
+    "field_id": "18b14333-8697-496a-95d0-7e74074b5ace",
+    "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "BATCH-4-741 lost updates during GATE-4-519 outages; REPLAY-4-632 restored the missing updates.",
+    "created_at": "2026-10-12T02:33:32.940827+00:00",
+    "updated_at": "2026-10-12T02:33:32.940827+00:00"
+  },
+  {
+    "field_id": "61330335-73d5-4f99-aac2-b2393b2aef82",
+    "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "BATCH-4-741 lost updates during GATE-4-519 outages",
+    "created_at": "2026-10-12T02:33:32.940827+00:00",
+    "updated_at": "2026-10-12T02:33:32.940827+00:00"
+  },
+  {
+    "field_id": "8cd9cae8-3347-44b2-99de-24f00ab68b9b",
+    "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "REPLAY-4-632, which restored the missing updates",
+    "created_at": "2026-10-12T02:33:32.940827+00:00",
+    "updated_at": "2026-10-12T02:33:32.940827+00:00"
+  },
+  {
+    "field_id": "dc188c98-7eb2-4225-bd39-eec6cfcc9db9",
+    "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "update loss",
+    "created_at": "2026-10-12T02:33:32.940827+00:00",
+    "updated_at": "2026-10-12T02:33:32.940827+00:00"
+  },
+  {
+    "field_id": "26754dfc-a28c-4cf0-b798-162553bf8bfb",
+    "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:32.940827+00:00",
+    "updated_at": "2026-10-12T02:33:32.940827+00:00"
+  },
+  {
+    "field_id": "c51a02ca-32b6-437b-8483-a233b76254e9",
+    "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+    "field_kind": "concept",
+    "item_index": 2,
+    "text": "replay recovery",
+    "created_at": "2026-10-12T02:33:32.940827+00:00",
+    "updated_at": "2026-10-12T02:33:32.940827+00:00"
+  },
+  {
+    "field_id": "96c482ef-b3f6-45a6-adea-d56b672cdabe",
+    "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "No delivery mode change was approved at the 2026-08-08 meeting.",
+    "created_at": "2026-10-12T02:33:32.940828+00:00",
+    "updated_at": "2026-10-12T02:33:32.940828+00:00"
+  },
+  {
+    "field_id": "07504d14-061e-42ed-8515-2430ef10ad10",
+    "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "No change of delivery mode was approved at the 2026-08-08 meeting",
+    "created_at": "2026-10-12T02:33:32.940828+00:00",
+    "updated_at": "2026-10-12T02:33:32.940828+00:00"
+  },
+  {
+    "field_id": "c8718401-4214-49fc-9424-c075b66e0763",
+    "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "delivery mode",
+    "created_at": "2026-10-12T02:33:32.940828+00:00",
+    "updated_at": "2026-10-12T02:33:32.940828+00:00"
+  },
+  {
+    "field_id": "aecabdb7-1d35-4fbd-91e5-f87b23421eae",
+    "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "decision",
+    "created_at": "2026-10-12T02:33:32.940828+00:00",
+    "updated_at": "2026-10-12T02:33:32.940828+00:00"
+  },
+  {
+    "field_id": "e21c2c8e-7818-4d48-90c7-3d2c06637466",
+    "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "GATE-4-519 outages recorded on August 8 caused the Cedar switch; the successful recovery procedure from that incident should be kept.",
+    "created_at": "2026-10-12T02:33:33.110748+00:00",
+    "updated_at": "2026-10-12T02:33:33.110748+00:00"
+  },
+  {
+    "field_id": "a3dc1efd-238e-4989-9935-13ccaa37d405",
+    "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "The cause was the GATE-4-519 outages recorded on August 8",
+    "created_at": "2026-10-12T02:33:33.110748+00:00",
+    "updated_at": "2026-10-12T02:33:33.110748+00:00"
+  },
+  {
+    "field_id": "475f3d74-df47-434e-8a21-396cdf18c14d",
+    "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+    "field_kind": "fact",
+    "item_index": 1,
+    "text": "keep the successful recovery procedure from that incident",
+    "created_at": "2026-10-12T02:33:33.110748+00:00",
+    "updated_at": "2026-10-12T02:33:33.110748+00:00"
+  },
+  {
+    "field_id": "6173b78c-8d5c-417f-8493-7c24e41f2b2f",
+    "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "outage",
+    "created_at": "2026-10-12T02:33:33.110748+00:00",
+    "updated_at": "2026-10-12T02:33:33.110748+00:00"
+  },
+  {
+    "field_id": "2a3cc6ba-453e-4800-95ad-09755de9f3b7",
+    "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+    "field_kind": "concept",
+    "item_index": 1,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:33.110748+00:00",
+    "updated_at": "2026-10-12T02:33:33.110748+00:00"
+  },
+  {
+    "field_id": "ea8a02eb-431d-43d5-8e36-ad0c2939f640",
+    "note_id": "0682bed1-e9ad-4e30-b3a4-a155920d1371",
+    "field_kind": "summary",
+    "item_index": 0,
+    "text": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T02:33:33.346054+00:00",
+    "updated_at": "2026-10-12T02:33:33.346054+00:00"
+  },
+  {
+    "field_id": "0f9d83f3-64e1-4bd1-8431-cdac56bee2f5",
+    "note_id": "0682bed1-e9ad-4e30-b3a4-a155920d1371",
+    "field_kind": "fact",
+    "item_index": 0,
+    "text": "use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T02:33:33.346054+00:00",
+    "updated_at": "2026-10-12T02:33:33.346054+00:00"
+  },
+  {
+    "field_id": "3eac598a-6ce4-488b-b13d-724e8df5e074",
+    "note_id": "0682bed1-e9ad-4e30-b3a4-a155920d1371",
+    "field_kind": "concept",
+    "item_index": 0,
+    "text": "recovery procedure",
+    "created_at": "2026-10-12T02:33:33.346054+00:00",
+    "updated_at": "2026-10-12T02:33:33.346054+00:00"
+  }
+]

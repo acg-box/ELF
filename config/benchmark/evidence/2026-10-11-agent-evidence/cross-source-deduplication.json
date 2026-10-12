@@ -1,0 +1,77 @@
+{
+  "incoming_source": {
+    "evidence_id": "m_60a61eab3b3b1426",
+    "text": "2026-08-08. Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages. The team tested REPLAY-3-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+    "timestamp": "2026-08-08T12:00:00Z"
+  },
+  "incoming_extraction": {
+    "confidence": 0.949999988079071,
+    "evidence": [
+      {
+        "message_index": 0,
+        "quote": "No change of delivery mode was approved at this meeting."
+      },
+      {
+        "message_index": 0,
+        "quote": "2026-08-08."
+      }
+    ],
+    "importance": 0.6000000238418579,
+    "key": "delivery-mode-change-not-approved-2026-08-08",
+    "reason": "Captures the meeting decision that the delivery mode remained unchanged.",
+    "scope_suggestion": "project",
+    "structured": {
+      "concepts": [
+        "delivery mode"
+      ],
+      "entities": null,
+      "facts": [
+        "No change of delivery mode was approved at this meeting."
+      ],
+      "relations": null,
+      "summary": "No change of delivery mode was approved at the 2026-08-08 meeting."
+    },
+    "text": "At the 2026-08-08 meeting, no change of delivery mode was approved.",
+    "ttl_days": null,
+    "type": "decision"
+  },
+  "write_result": {
+    "field_path": null,
+    "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+    "op": "NONE",
+    "policy_decision": "ignore",
+    "reason": "Captures the meeting decision that the delivery mode remained unchanged.",
+    "reason_code": "IGNORE_DUPLICATE",
+    "write_policy_audits": null
+  },
+  "retained_note": {
+    "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+    "text": "At the 2026-08-08 meeting, no change of delivery mode was approved.",
+    "status": "active",
+    "source_ref": {
+      "reason": "",
+      "evidence": [
+        {
+          "quote": "No change of delivery mode was approved at this meeting.",
+          "source": {
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-08T12:00:00Z",
+            "message_id": "m_d7a9d1f22107f233",
+            "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+            "hash_algorithm": "blake3",
+            "write_policy_audit": null,
+            "extraction_content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d"
+          },
+          "message_index": 0
+        }
+      ],
+      "extracted_key": "decision:delivery-mode:no-change",
+      "ingestion_profile": {
+        "id": "default",
+        "version": 3
+      }
+    }
+  },
+  "incoming_source_is_linked": false
+}

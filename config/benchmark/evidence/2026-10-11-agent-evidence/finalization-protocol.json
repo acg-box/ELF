@@ -1,0 +1,4 @@
+{
+  "purpose": "Separate loop termination failure from missing evidence. One final model response from the original exhausted trace, with no additional retrieval. Primary exhausted cases remain unchanged.",
+  "max_output_tokens": 393216
+}

@@ -1,0 +1,12 @@
+{
+  "purpose": "Score complete factual answers with required identifiers present in supplied evidence. Audit claim-to-citation attribution separately; this score is not a claim of perfect provenance.",
+  "rules": [
+    "A complete supported answer must name the requested identifiers and bind them to the correct subject and time.",
+    "Requested identifiers must appear in retrieved note text/structured fields, source quotes/snippets/excerpts, or graph facts. Query echoes, diagnostic strings, guesses, and the hidden oracle are not evidence.",
+    "Mentioning an explicitly superseded value as history is not a current-state error.",
+    "An explicit recorded absence of an appointed owner is valid; a person must not be invented. Calibrated unknown is valid when the available evidence does not establish an appointee.",
+    "Tool/round exhaustion without a submitted answer is an unsuccessful primary workflow. Evidence-only finalization is a separate phase.",
+    "Citation provenance is audited separately; the presence of an identifier alone does not prove complete claim-level entailment.",
+    "Never replace a factual answer with a more favorable sample. Bind every review to condition, case, phase, and answer hash."
+  ]
+}
