@@ -174,12 +174,10 @@ async fn upsert_graph_entity_and_aliases(
 		if let Some(existing) =
 			graph::resolve_entity_by_surface(tx, tenant_id, project_id, surface).await?
 		{
-			if resolved.is_some_and(|id| id != existing.entity_id)
-				|| matches!((&existing.kind, &entity.kind), (Some(a), Some(b)) if a != b)
-			{
+			if resolved.is_some_and(|id| id != existing.entity_id) {
 				return Err(Error::InvalidRequest {
 					message: format!(
-						"{context_path}: declared entity surfaces have conflicting identities or kinds."
+						"{context_path}: declared entity surfaces have conflicting identities."
 					),
 				});
 			}

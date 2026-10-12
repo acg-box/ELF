@@ -42,7 +42,10 @@ only adds serialization and does not equate identities.
 
 Graph ingestion serializes identity resolution within one tenant/project while
 it checks declared surfaces. No fuzzy name matching or automatic merging of
-existing entities is introduced. Extracted aliases must occur in supplied
+existing entities is introduced. Free-text entity kinds are annotations, not
+identity keys. Reusing an existing entity preserves its stored kind even when
+an extractor supplies another label. Conflicting resolved entity IDs still fail.
+Extracted aliases must occur in supplied
 evidence. Named identifiers and relation chains remain extractor assertions;
 source occurrence and lexical validation do not prove semantic equivalence.
 Pending predicates are not automatically promoted to authoritative vocabulary.

@@ -184,15 +184,15 @@ async fn graph_preserves_unknown_time_and_reuses_declared_aliases() {
 	let db = tests_helpers::build_test_db("graph_identity_time").await.expect("Database required.");
 	let service = tests_helpers::build_stub_service(&db).await;
 
-	for (name, aliases, target) in [
-		("Cobalt", vec!["project Cobalt"], "incident Z"),
-		("project Cobalt", vec![], "procedure Y"),
+	for (name, kind, aliases, target) in [
+		("Cobalt", "project", vec!["project Cobalt"], "incident Z"),
+		("project Cobalt", "system", vec![], "procedure Y"),
 	] {
 		let text = format!("Cobalt (project Cobalt) uses {target}.");
 
 		service.add_note(AddNoteRequest {tenant_id:"t".into(),project_id:"p".into(),agent_id:"a".into(),scope:"agent_private".into(),notes:vec![AddNoteInput {
             r#type:"fact".into(),key:None,text:text.clone(),importance:0.8,confidence:0.9,ttl_days:None,write_policy:None,source_ref:serde_json::json!({"quote":text}),
-            structured:Some(serde_json::from_value(serde_json::json!({"relations":[{"subject":{"canonical":name,"kind":"project","aliases":aliases},"predicate":"uses","object":{"entity":{"canonical":target}}}]})).expect("Evidence integrity fixture must succeed.")),
+            structured:Some(serde_json::from_value(serde_json::json!({"relations":[{"subject":{"canonical":name,"kind":kind,"aliases":aliases},"predicate":"uses","object":{"entity":{"canonical":target}}}]})).expect("Evidence integrity fixture must succeed.")),
         }]}).await.expect("Store graph evidence.");
 	}
 
@@ -226,6 +226,7 @@ async fn graph_preserves_unknown_time_and_reuses_declared_aliases() {
 	.expect("Evidence integrity fixture must succeed.");
 
 	assert_eq!(count, 1);
+	assert_eq!(result.subject.kind.as_deref(), Some("project"));
 
 	db.cleanup().await.expect("Clean fixture.");
 }

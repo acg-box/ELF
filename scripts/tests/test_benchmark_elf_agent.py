@@ -131,7 +131,12 @@ class AgentBoundaries(unittest.TestCase):
             with self.assertRaises(ValueError):replay.resolve('/v1/chat/completions',{'messages':[{'role':'user','content':'unseen'}]})
             current=root/'current';current.mkdir()
             (current/'2.json').write_text(json.dumps({'request':{'input':'new query','dimensions':4096},'response':{'data':[{'index':0,'embedding':v}]}}))
+            messages=[{'role':'system','content':'You are a memory extraction engine current'}]
+            response={'choices':[{'message':{'content':'{"notes":[]}'},'finish_reason':'stop'}]}
+            (current/'3.json').write_text(json.dumps({'request':{'messages':messages},'response':response}))
             restarted=Replay(p,'unused','token',root/'replay.jsonl',current)
             self.assertEqual(restarted.resolve('/v1/embeddings',{'input':'new query'})['data'][0]['embedding'],v)
+            live=Replay(p,'unused','token',root/'replay.jsonl',current,live_extraction=True)
+            self.assertEqual(live.resolve('/v1/chat/completions',{'messages':messages}),response)
 
 if __name__=='__main__':unittest.main()

@@ -15,7 +15,7 @@ def signature(messages):
 class Replay:
     def __init__(self, receipt_file, upstream, token, log, query_receipts=None, live_extraction=False, reuse_receipts=()):
         self.extractions={}; self.vectors={}; self.upstream=upstream; self.token=token; self.log=log
-        self.lock=threading.Lock(); self.live_extraction=live_extraction
+        self.lock=threading.Lock(); self.live_extraction=live_extraction; self.current_extractions={}
         for line in gzip.decompress(receipt_file.read_bytes()).splitlines():
             row=json.loads(line);request,response=row['request'],row['response']
             if 'input' in request:
@@ -44,6 +44,9 @@ class Replay:
         if query_receipts is not None:
             for path in sorted(query_receipts.glob('*.json'),key=lambda p:int(p.stem)):
                 row=json.loads(path.read_text());request,response=row['request'],row['response']
+                if request.get('messages'):
+                    self.current_extractions.setdefault(signature(request['messages']),(response,int(path.stem)))
+                    continue
                 if 'input' not in request or request.get('dimensions')!=4096:continue
                 inputs=request['input'] if isinstance(request['input'],list) else [request['input']]
                 for item in response.get('data',[]):
@@ -58,6 +61,10 @@ class Replay:
         if path.endswith('/chat/completions'):
             key=signature(body['messages'])
             if self.live_extraction:
+                if key in self.current_extractions:
+                    response,ordinal=self.current_extractions[key]
+                    self.record({'kind':'extraction','request_sha256':key,'receipt_ordinal':ordinal,'replayed':True,'current_trial':True})
+                    return response
                 request=urllib.request.Request(self.upstream.rstrip('/')+'/chat/completions',data=json.dumps(body).encode(),headers={'Content-Type':'application/json','Authorization':'Bearer '+self.token})
                 with urllib.request.urlopen(request,timeout=3600) as result:response=json.load(result)
                 self.record({'kind':'extraction','request_sha256':key,'response_id':response.get('id'),'replayed':False})
