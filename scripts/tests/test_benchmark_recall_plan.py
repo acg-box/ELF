@@ -25,3 +25,12 @@ class RecallPlanningTests(unittest.TestCase):
         plan['plans'][0]['subjects'] = ['invented answer']
         with self.assertRaises(ValueError):
             RUNNER.validate_recall_plans(plan, work)
+
+    def test_explicit_temporal_target_does_not_change_unspecified_queries(self):
+        query = {'question': 'What was in use then?'}
+        data = {'pack': {}, 'supplemental_recall': {'as_of': None}}
+        self.assertEqual(RUNNER.reader_request(query, data), RUNNER.reader_request(query, data, True))
+        data['supplemental_recall']['as_of'] = '2026-08-08T23:59:59Z'
+        request = RUNNER.reader_request(query, data, True)
+        self.assertEqual(json.loads(request['messages'][1]['content'])['requested_as_of'], data['supplemental_recall']['as_of'])
+        self.assertIn('not the next approval', request['messages'][0]['content'])

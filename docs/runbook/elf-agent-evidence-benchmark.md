@@ -220,3 +220,10 @@ evidence. Neither field certifies answer completeness. Use original statements
 to determine effective dates; a record timestamp is not a fact-validity date.
 Graph-query `temporal_status` is relative to the requested `as_of`; current
 permissions continue to apply to historical reads.
+
+Graph alias lookup now requires caller authority. Existing aliases without
+recorded authority become `unknown`, and extracted aliases remain descriptive.
+Neither can resolve identity. Use a known entity ID or have its owner reassert
+a caller-authorized alias; do not promote every legacy alias as a migration.
+For answers, carry the returned `as_of` as an explicit target instant and keep
+the distinction between an in-use state and evidence of formal approval.

@@ -98,6 +98,7 @@ where
 SELECT alias
 FROM graph_entity_aliases
 WHERE entity_id = $1
+    AND authority = 'caller'
 ORDER BY alias ASC",
 	)
 	.bind(entity_id)

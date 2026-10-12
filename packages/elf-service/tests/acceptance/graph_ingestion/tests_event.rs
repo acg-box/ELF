@@ -292,7 +292,12 @@ async fn extracted_shared_alias_does_not_merge_distinct_canonical_identities() {
 
 	let mut conn = service.db.pool.acquire().await.expect("Connection");
 
-	assert!(graph::resolve_entity_by_surface(&mut conn, "t", "p", "Atlas").await.is_err());
+	assert!(
+		graph::resolve_entity_by_surface(&mut conn, "t", "p", "Atlas")
+			.await
+			.expect("Extracted aliases cannot resolve identity")
+			.is_none()
+	);
 
 	let recalled = service
 		.evidence_recall(EvidenceRecallRequest {

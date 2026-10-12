@@ -1,6 +1,15 @@
 use crate::graph::{self, Error, GraphEntity, PgConnection, Result, Uuid};
 
-/// Resolves an entity surface against canonical names and aliases within one tenant/project.
+/// Authority that can establish an alias as an entity identity selector.
+#[derive(Clone, Copy)]
+pub enum AliasAuthority {
+	/// A caller explicitly declared equivalence.
+	Caller,
+	/// A model extracted a possible alternate name; not identity authority.
+	Extracted,
+}
+
+/// Resolves canonical names and caller-authorized aliases within one tenant/project.
 pub async fn resolve_entity_by_surface(
 	executor: &mut PgConnection,
 	tenant_id: &str,
@@ -38,7 +47,8 @@ FROM graph_entity_aliases gea
 JOIN graph_entities ge ON ge.entity_id = gea.entity_id
 WHERE ge.tenant_id = $1
 	AND ge.project_id = $2
-	AND gea.alias_norm = $3",
+	AND gea.alias_norm = $3
+    AND gea.authority = 'caller'",
 	)
 	.bind(tenant_id)
 	.bind(project_id)
@@ -113,6 +123,7 @@ pub async fn upsert_entity_alias(
 	executor: &mut PgConnection,
 	entity_id: Uuid,
 	alias: &str,
+	authority: AliasAuthority,
 ) -> Result<()> {
 	let alias_norm = graph::normalize_entity_name(alias);
 
@@ -123,16 +134,19 @@ INSERT INTO graph_entity_aliases (
 	entity_id,
 	alias,
 	alias_norm,
+    authority,
 	created_at
 )
-VALUES ($1, $2, $3, $4, now())
+VALUES ($1, $2, $3, $4, $5, now())
 ON CONFLICT (entity_id, alias_norm)
-DO UPDATE SET alias = EXCLUDED.alias",
+DO UPDATE SET alias = EXCLUDED.alias,
+    authority = CASE WHEN graph_entity_aliases.authority = 'caller' THEN 'caller' ELSE EXCLUDED.authority END",
 	)
 	.bind(Uuid::new_v4())
 	.bind(entity_id)
 	.bind(alias)
 	.bind(&alias_norm)
+    .bind(match authority { AliasAuthority::Caller => "caller", AliasAuthority::Extracted => "extracted" })
 	.execute(executor)
 	.await?;
 

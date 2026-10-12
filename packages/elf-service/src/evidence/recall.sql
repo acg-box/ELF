@@ -26,7 +26,7 @@ WITH visible_notes AS MATERIALIZED (
               AND EXISTS (SELECT 1 FROM unnest($6::text[]) s
                   WHERE strpos(lower(ge.canonical), s) > 0
                     OR EXISTS (SELECT 1 FROM graph_entity_aliases a
-                        WHERE a.entity_id = ge.entity_id AND strpos(lower(a.alias), s) > 0))
+                        WHERE a.entity_id = ge.entity_id AND a.authority = 'caller' AND strpos(lower(a.alias), s) > 0))
             ORDER BY ge.entity_id
         ) AS entity_ids
     FROM visible_notes n

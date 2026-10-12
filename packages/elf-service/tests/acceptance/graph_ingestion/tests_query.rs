@@ -5,7 +5,7 @@ use elf_service::{
 	DeleteRequest, ElfService, GraphQueryEntityRef, GraphQueryPredicateRef, GraphQueryRequest,
 	NoteOp, evidence::EvidenceRecallRequest,
 };
-use elf_storage::graph;
+use elf_storage::graph::{self, AliasAuthority};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
@@ -134,7 +134,9 @@ async fn verify_historical_and_incoming_recall(service: &ElfService) {
 		.await
 		.expect("Object entity");
 
-	graph::upsert_entity_alias(&mut conn, bob, "Robert").await.expect("Object alias");
+	graph::upsert_entity_alias(&mut conn, bob, "Robert", AliasAuthority::Caller)
+		.await
+		.expect("Object alias");
 	sqlx::query("UPDATE graph_facts SET object_entity_id=$1, object_value=NULL")
 		.bind(bob)
 		.execute(&mut *conn)
@@ -146,7 +148,7 @@ async fn verify_historical_and_incoming_recall(service: &ElfService) {
 		.expect("Resolve Alice")
 		.expect("Existing subject");
 
-	graph::upsert_entity_alias(&mut conn, alice.entity_id, "Robert")
+	graph::upsert_entity_alias(&mut conn, alice.entity_id, "Robert", AliasAuthority::Caller)
 		.await
 		.expect("Ambiguous alias");
 

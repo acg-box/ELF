@@ -48,7 +48,7 @@ to four literal subjects and an optional `as_of`. This is an on-demand supplemen
 to vector retrieval, not a replacement for it.
 
 - Search readable derived text and incoming/outgoing facts through canonical
-  names and aliases. Keep candidate entity IDs separate, including ambiguous
+  names and caller-authorized aliases. Keep candidate entity IDs separate, including ambiguous
   aliases. Include historical facts as evidence candidates.
 - Select at most twelve notes from at most 128 candidates. Prefer distinct
   source documents before additional notes from a covered source.
@@ -102,3 +102,37 @@ rejected additions. Initial candidates remain frozen; supplemental retrieval
 and historical-reader instructions form the new condition. No factual answer
 is retried to improve a score. The repository-owned Python benchmark remains
 under its checked-in Makefile and module-ownership authority.
+
+## Alias authority and compatible schema upgrade
+
+The trial exposed a generic `Atlas project` node with both an `ACCT-N` alias
+and a South-qualified alias. Its South incident became a false-positive graph
+candidate for North. The alias table did not retain declaration authority.
+
+Add `graph_entity_aliases.authority`: `caller`, `extracted`, or `unknown`.
+Only `caller` aliases can resolve identity or expand recall through an alias.
+Model extraction cannot promote an alias to caller authority or revoke a prior
+caller declaration. Canonical lookups remain exact; distinct candidate IDs are
+not merged. Original-text and note-text discovery still work when no trusted
+alias or semantic edge exists.
+
+The existing `sql/init.sql` composition and `sql/tables/017_graph_entity_aliases.sql`
+own this declarative, repeatable upgrade. `Db::ensure_schema` runs the statements
+under its transaction-scoped advisory lock. The only exercised deployment is the
+owned Docker fixture `elf_context_trial` plus isolated test databases. No shared
+or production database is changed.
+
+Existing aliases receive `unknown`; no historical row is silently promoted,
+deleted, or renamed. An old alias-only lookup can now return no identity. A
+caller can use an explicit entity ID or reassert a known alias through the
+caller-authorized note write path. This conservative behavior change is
+intentional. Tests cover fresh schema creation, pre-column upgrade, repeated
+application, row preservation, and caller authority surviving later extraction.
+Source, note, vector, and existing graph columns must retain their prior
+fingerprints; the new authority column is audited separately.
+
+The reader contract also projects the caller's requested `as_of` into the
+answer input. It requires the state at that instant, separates in-use state
+from formal authorization, and prohibits substituting the next later approval.
+Only changed reader requests need new generation; identical requests can reuse
+their immutable recorded responses. All first-trial failures remain available.

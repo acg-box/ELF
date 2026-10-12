@@ -5,12 +5,14 @@ use std::collections::HashSet;
 use serde::Serialize;
 use serde_json::Value;
 use sqlx::FromRow;
-use time::OffsetDateTime;
+use time::{OffsetDateTime, format_description::well_known::Rfc3339};
 use uuid::Uuid;
 
 use crate::{
 	access::{self, ORG_PROJECT_ID},
-	evidence::{ElfService, Error, EvidencePackRequest, EvidencePackResponse, Result},
+	evidence::{
+		ElfService, Error, EvidencePackRequest, EvidencePackResponse, EvidencePackSource, Result,
+	},
 	search,
 };
 
@@ -170,7 +172,7 @@ impl ElfService {
 
 		// Stable chronological presentation does not infer validity from record timestamps.
 		pack.sources.sort_by(|a, b| {
-			a.source_timestamp.cmp(&b.source_timestamp).then(a.reference.cmp(&b.reference))
+			record_time(a).cmp(&record_time(b)).then(a.reference.cmp(&b.reference))
 		});
 
 		let visible: HashSet<_> = pack.notes.iter().map(|n| n.note_id).collect();
@@ -184,6 +186,10 @@ impl ElfService {
 			pack,
 		})
 	}
+}
+
+fn record_time(source: &EvidencePackSource) -> Option<OffsetDateTime> {
+	source.source_timestamp.as_deref().and_then(|raw| OffsetDateTime::parse(raw, &Rfc3339).ok())
 }
 
 fn source_ids(row: &Row) -> HashSet<String> {
