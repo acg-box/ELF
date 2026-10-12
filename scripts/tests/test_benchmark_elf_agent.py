@@ -9,12 +9,28 @@ import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from benchmark_agent.replay import Replay
+from benchmark_agent.schedule import run_jobs
 from benchmark_agent.tools import project_note,execute,schemas
 from benchmark_agent.runner import parse_answer,finalize_recorded,run
 from benchmark_agent.analysis import case_metrics,evidence_payload
 
 
 class AgentBoundaries(unittest.TestCase):
+    def test_case_scheduler_keeps_jobs_distinct_and_stops_after_failure(self):
+        import threading
+        barrier=threading.Barrier(2);seen=[]
+        def call(job):
+            barrier.wait(timeout=5)
+            seen.append(job)
+        run_jobs(list(range(4)),call,2)
+        self.assertEqual(sorted(seen),list(range(4)))
+        seen=[]
+        def fail(job):
+            seen.append(job)
+            raise RuntimeError('Retain failed case')
+        with self.assertRaises(RuntimeError):run_jobs(list(range(4)),fail,1)
+        self.assertEqual(seen,[0])
+
     def test_native_expansion_only_in_source_conditions(self):
         calls=[]
         def api(path):

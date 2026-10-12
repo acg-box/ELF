@@ -7,6 +7,7 @@ import os
 from pathlib import Path
 
 from benchmark_agent.replay import Replay
+from benchmark_agent.schedule import run_jobs
 from benchmark_agent.runner import run,finalize_recorded,parse_answer,PROMPT,GROUNDED_PROMPT
 from benchmark_agent.analysis import analyze,initial_coverage
 from benchmark_deep import elf_runtime
@@ -26,6 +27,7 @@ def main():
     parser.add_argument('--resume-case',help='Explicit condition/case_id continuation from a retained complete tool batch after an archived transport failure')
     parser.add_argument('--grounded',action='store_true',help='Use native evidence expansion and per-claim citations; retain semantic failures')
     parser.add_argument('--workload',type=Path,help='Frozen compatible workload, including distinct comparison cases')
+    parser.add_argument('--workers',type=int,choices=[1,2],default=1,help='Independent primary cases; controls remain serial. Never changes per-case budgets.')
     args=parser.parse_args();root=args.root.resolve();root.mkdir(parents=True,exist_ok=True)
     if args.phase=='analyze':
         print(json.dumps(analyze(root)['summary'],indent=2));return
@@ -112,30 +114,39 @@ def main():
             missing={r['case_id'] for r in initial_coverage(root,suite) if r['structured_missing']}
             queries=[q for q in queries if q['case_id'] in missing];folder='paged-cases'
             common.freeze(root/'paged-protocol.json',{'cases':sorted(missing),'selection':'Diagnostic subset selected after observing missing identifiers in the initial context; not a new unbiased suite.','tools':'Note search/read plus native cached search-session expansion. No source or graph tools.','initial':'Same twelve notes plus the native initial search_id. In bounded-v2 this capability is already available in primary conditions.','max_output_tokens':args.output_maximum})
-        completed=0
+        jobs=[]
         for index,q in enumerate(queries):
             order=['paged'] if args.phase=='paged' else CONDITIONS[index%4:]+CONDITIONS[:index%4]
-            saved=json.loads((root/'initial'/(q['case_id']+'.json')).read_text());initial=saved['notes']
             for condition in order:
                 path=root/folder/condition/(q['case_id']+'.json')
                 if path.exists():
                     assert json.loads(path.read_text())['status'] in ('completed','tool_budget_exhausted','round_budget_exhausted','invalid_answer'),'Archive failed attempt before retry';continue
-                if args.limit and completed>=args.limit:return
-                prior=None
-                if args.resume_case==condition+'/'+q['case_id']:
-                    prior=json.loads((root/'progress'/condition/(q['case_id']+'.json')).read_text())
-                try:
-                    value=run(api,condition,q['question'],initial,base,token,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(root/'progress'/condition/(q['case_id']+'.json'),trace),initial_search_id=saved['search']['search_id'],prior_trace=prior,grounded=args.grounded)
-                except Exception as error:
-                    value={'status':'failed','error':str(error).replace(token,'[redacted]')}
-                value.update(condition=condition,query=q,expected=suite['oracle'][q['case_id']])
-                if prior is not None:
-                    value['resume_seconds']=value.get('seconds');value['seconds']=None;value['resumed_recorded_turns']=len(prior)
-                if value['status']=='completed':value['strict_correct']=common.score(value['expected'],value['text'])
-                common.save(path,value);completed+=1
-                print(json.dumps({'condition':condition,'case_id':q['case_id'],'status':value['status'],'strict_correct':value.get('strict_correct'),'tools':value.get('tool_calls')}),flush=True)
-                if value['status']=='failed':raise RuntimeError('Agent run stopped; retain failure and progress before retry')
-        elf_runtime.drain();common.save(root/('paged-completed.json' if args.phase=='paged' else 'completed.json'),{'cases':completed,'note':'Exhausted agents are retained outcomes, not rerun answers. Counts exclude resumed cases.'})
+                jobs.append((q,condition,path))
+        planned=len(jobs)
+        if args.limit:jobs=jobs[:args.limit]
+        common.freeze(root/(args.phase+'-execution-policy.json'),{'workers':args.workers,'scope':'Independent cases only. Single-case prompts and tool budgets are unchanged. Concurrent wall latency is not directly comparable to serial latency.'})
+        def execute_case(job):
+            q,condition,path=job
+            saved=json.loads((root/'initial'/(q['case_id']+'.json')).read_text());initial=saved['notes']
+            prior=None
+            if args.resume_case==condition+'/'+q['case_id']:
+                prior=json.loads((root/'progress'/condition/(q['case_id']+'.json')).read_text())
+            try:
+                value=run(api,condition,q['question'],initial,base,token,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(root/'progress'/condition/(q['case_id']+'.json'),trace),initial_search_id=saved['search']['search_id'],prior_trace=prior,grounded=args.grounded)
+            except Exception as error:
+                value={'status':'failed','error':str(error).replace(token,'[redacted]')}
+            value.update(condition=condition,query=q,expected=suite['oracle'][q['case_id']])
+            if prior is not None:
+                value['resume_seconds']=value.get('seconds');value['seconds']=None;value['resumed_recorded_turns']=len(prior)
+            if value['status']=='completed':value['strict_correct']=common.score(value['expected'],value['text'])
+            common.save(path,value)
+            print(json.dumps({'condition':condition,'case_id':q['case_id'],'status':value['status'],'strict_correct':value.get('strict_correct'),'tools':value.get('tool_calls')}),flush=True)
+            if value['status']=='failed':raise RuntimeError('Agent run stopped; retain failure and progress before retry')
+        run_jobs(jobs,execute_case,args.workers)
+        elf_runtime.drain()
+        completion={'cases':len(jobs),'remaining':planned-len(jobs),'note':'Exhausted agents are retained outcomes, not rerun answers. Counts cover only cases executed in this invocation.'}
+        common.save(root/(args.phase+'-invocation-completed.json'),completion)
+        if len(jobs)==planned:common.save(root/('paged-completed.json' if args.phase=='paged' else 'completed.json'),completion)
     replay.server.shutdown()
 
 

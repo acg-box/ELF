@@ -88,6 +88,11 @@ Apply the additive schema before the new application. Older application reads
 remain compatible. This task validates isolated Docker databases, not a
 production rollout or lock duration at production scale.
 
+Existing merged graph identities are not split automatically. The change prevents
+new alias-authorized merges; it cannot reconstruct a lost identity distinction
+from an already merged node. A separate source-backed rebuild is needed for
+affected historical derived data. The benchmark uses a fresh isolated database.
+
 The changed guidance is built-in profile `default` version 5. Existing stored
 versions and default pointers remain unchanged. Existing deployments must
 explicitly opt in. Source bytes and historical benchmark results are retained.
@@ -102,10 +107,17 @@ product evidence verification and persistence. Python only orchestrates the
 existing public APIs, records receipts, and evaluates outputs.
 
 The original twenty questions remain separate from sixteen new contrast cases,
-which were committed before implementation and paid requests. Models, routing,
+which were committed before implementation and paid requests. All conditions
+use the expanded thirty-six-source corpus. Original-question results therefore
+include extra distractors and are not a corpus-identical before/after experiment.
+Models, routing,
 full 4,096-dimensional embeddings, twelve-response/twenty-four-tool ceilings,
 and the cumulative $10 ledger remain fixed. After a final answer, a deterministic
 native binding audit may run; it returns no new facts to the reader and cannot
 replace or resample the answer. Score answer truth, subject/time attribution,
 quote bindings, abstention, graph evidence, and actual cost separately. A
-single known fixture is not a general product ranking.
+single known fixture is not a general product ranking. Primary cases can use two
+independent workers under one locked cost ledger; controls remain serial. Each
+case retains the same prompt, output allowance, and tool limits. Report this
+execution policy with latency; do not compare concurrent wall times directly
+with prior serial measurements.
