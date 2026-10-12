@@ -1,0 +1,167 @@
+use uuid::Uuid;
+
+use crate::acceptance::text_boundary::setup;
+use elf_service::{
+	AddEventRequest, DocsPutRequest, EventMessage, EventSourceDocument, NoteFetchRequest,
+	docs::TextPositionSelector,
+	evidence::{ClaimCitation, ClaimEvidence, ClaimState, EvidenceCheckRequest},
+};
+
+fn claim_request(doc_id: Uuid, content_hash: &str, content: &str) -> EvidenceCheckRequest {
+	let cite = ClaimCitation::Source {
+		doc_id,
+		content_hash: content_hash.to_string(),
+		quote: "林澈担任预算负责人。".into(),
+	};
+
+	EvidenceCheckRequest {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		read_profile: "private_plus_project".into(),
+		claims: vec![
+			ClaimEvidence {
+				text: "白鹭预算负责人是林澈。".into(),
+				state: ClaimState::Supported,
+				citations: vec![cite.clone()],
+			},
+			ClaimEvidence {
+				text: "No source establishes this claim.".into(),
+				state: ClaimState::Absent,
+				citations: vec![],
+			},
+			ClaimEvidence {
+				text: "Unknown appointment.".into(),
+				state: ClaimState::Unknown,
+				citations: vec![],
+			},
+			ClaimEvidence {
+				text: "A real quote does not prove this unrelated claim.".into(),
+				state: ClaimState::Supported,
+				citations: vec![cite],
+			},
+			ClaimEvidence {
+				text: "Forged quote.".into(),
+				state: ClaimState::Supported,
+				citations: vec![ClaimCitation::Source {
+					doc_id,
+					content_hash: content_hash.to_string(),
+					quote: "陈雨担任预算负责人。".into(),
+				}],
+			},
+			ClaimEvidence {
+				text: "Stale hash.".into(),
+				state: ClaimState::Supported,
+				citations: vec![ClaimCitation::Source {
+					doc_id,
+					content_hash: "wrong".into(),
+					quote: content.into(),
+				}],
+			},
+		],
+	}
+}
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
+async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_access() {
+	let content = "2026-08-22。白鹭项目：林澈担任预算负责人。";
+	let payload = serde_json::json!({"notes":[{"type":"fact","text":"林澈担任预算负责人。","importance":0.8,"confidence":0.9,"evidence":[{"message_index":0,"quote":content}]}]});
+	let Some(fixture) = setup::setup_service_with_payload("evidence_read", payload).await else {
+		return;
+	};
+	let service = &fixture.service;
+	let doc = service.docs_put(DocsPutRequest { tenant_id:"t".into(), project_id:"p".into(), agent_id:"a".into(), scope:"agent_private".into(), doc_type:None, title:Some("白鹭项目".into()), write_policy:None, source_ref:serde_json::json!({"schema":"doc_source_ref/v1","doc_type":"knowledge","ts":"2026-08-22T00:00:00Z"}), content:content.into() }).await.expect("Archive original");
+	let event = service
+		.add_event(AddEventRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			scope: Some("agent_private".into()),
+			dry_run: Some(false),
+			ingestion_profile: None,
+			messages: vec![EventMessage {
+				role: "user".into(),
+				content: content.into(),
+				ts: Some("2026-08-22T00:00:00Z".into()),
+				msg_id: Some("egret-record".into()),
+				source_document: Some(EventSourceDocument {
+					doc_id: doc.doc_id,
+					content_hash: doc.content_hash.clone(),
+					position: TextPositionSelector { start: 0, end: content.len() },
+				}),
+				write_policy: None,
+			}],
+		})
+		.await
+		.expect("Extract note");
+	let note_id = event.results[0].note_id.expect("Persisted note");
+	let read = NoteFetchRequest {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		note_id,
+	};
+	let expanded = service
+		.note_evidence(read.clone(), "private_plus_project".into())
+		.await
+		.expect("Expand evidence");
+
+	assert!(expanded.complete);
+	assert_eq!(expanded.sources.len(), 1);
+	assert_eq!(expanded.sources[0].excerpt.excerpt, content);
+	assert_eq!(expanded.sources[0].metadata.content_hash, doc.content_hash);
+
+	let request = claim_request(doc.doc_id, &doc.content_hash, content);
+	let checked = service.evidence_check(request.clone()).await.expect("Check bindings");
+
+	assert_eq!(
+		checked.claims.iter().map(|c| c.binding_verified).collect::<Vec<_>>(),
+		vec![true, false, true, true, false, false]
+	);
+	assert_eq!(checked.semantic_support, "not_evaluated");
+	assert!(
+		service
+			.note_evidence(
+				NoteFetchRequest { agent_id: "other".into(), ..read.clone() },
+				"private_plus_project".into()
+			)
+			.await
+			.is_err()
+	);
+
+	let other = service
+		.evidence_check(EvidenceCheckRequest { agent_id: "other".into(), ..request.clone() })
+		.await
+		.expect("Unreadable bindings fail without source disclosure");
+
+	assert!(!other.claims[0].binding_verified);
+
+	sqlx::query("UPDATE doc_documents SET status='deleted' WHERE doc_id=$1")
+		.bind(doc.doc_id)
+		.execute(&service.db.pool)
+		.await
+		.expect("Revoke source availability");
+
+	let revoked = service
+		.note_evidence(read, "private_plus_project".into())
+		.await
+		.expect("Derived note remains readable");
+
+	assert!(!revoked.complete && revoked.sources.is_empty());
+	assert!(
+		!service.evidence_check(request).await.expect("Recheck current access").claims[0]
+			.binding_verified
+	);
+
+	let original: (String, String) =
+		sqlx::query_as("SELECT content,content_hash FROM doc_documents WHERE doc_id=$1")
+			.bind(doc.doc_id)
+			.fetch_one(&service.db.pool)
+			.await
+			.expect("Original readback");
+
+	assert_eq!(original, (content.into(), doc.content_hash));
+
+	fixture.test_db.cleanup().await.expect("Clean fixture");
+}

@@ -5,7 +5,7 @@ use uuid::Uuid;
 use crate::{
 	Result,
 	add_note::types::AddNoteInput,
-	graph_ingestion,
+	graph_ingestion::{self, EntityIdentityAuthority},
 	structured_fields::{self, StructuredFields},
 };
 
@@ -29,7 +29,15 @@ pub(super) async fn persist_graph_fields_if_present(
 	}
 
 	graph_ingestion::persist_graph_fields_tx(
-		tx, tenant_id, project_id, agent_id, scope, note_id, structured, now,
+		tx,
+		tenant_id,
+		project_id,
+		agent_id,
+		scope,
+		note_id,
+		structured,
+		now,
+		EntityIdentityAuthority::Caller,
 	)
 	.await?;
 

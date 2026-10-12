@@ -79,12 +79,33 @@ pub(super) fn validate_structured_relation(
 			),
 		});
 	}
-	if !quotes::fact_is_evidence_bound(predicate, note_text, evidence_quotes) {
+
+	if let Some(quote) = relation.evidence_quote.as_ref() {
+		text::validate_text_field(quote, &format!("{base}.evidence_quote"))?;
+
+		let subject = subject.canonical.as_deref().unwrap_or_default();
+		let object = object
+			.entity
+			.as_ref()
+			.and_then(|entity| entity.canonical.as_deref())
+			.or(object.value.as_deref())
+			.unwrap_or_default();
+
+		if !evidence_quotes.iter().any(|source| source.contains(quote))
+			|| !quote.contains(subject)
+			|| !quote.contains(object)
+		{
+			return Err(Error::InvalidRequest {
+				message: format!(
+					"{base}.evidence_quote must be an original quote containing both edge endpoints."
+				),
+			});
+		}
+	} else if !quotes::fact_is_evidence_bound(predicate, note_text, evidence_quotes) {
 		return Err(Error::InvalidRequest {
 			message: format!("{base}.predicate is not supported by note text or evidence quotes."),
 		});
 	}
-
 	if let (Some(valid_from), Some(valid_to)) = (relation.valid_from, relation.valid_to)
 		&& valid_to <= valid_from
 	{

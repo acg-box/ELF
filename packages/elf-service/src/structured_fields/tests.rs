@@ -20,7 +20,9 @@ fn structured_relation(
 		concepts: None,
 		entities: None,
 		relations: Some(vec![StructuredRelation {
+			evidence_quote: None,
 			subject: Some(StructuredEntity {
+				entity_id: None,
 				canonical: Some(subject.to_string()),
 				kind: None,
 				aliases: None,
@@ -78,6 +80,7 @@ fn relation_object_requires_exactly_one_of_entity_or_value() {
 		"owns",
 		StructuredRelationObject {
 			entity: Some(StructuredEntity {
+				entity_id: None,
 				canonical: Some("Acme".to_string()),
 				kind: None,
 				aliases: None,
@@ -200,6 +203,7 @@ fn relation_accepts_valid_structured_relation() {
 		"works at",
 		StructuredRelationObject {
 			entity: Some(StructuredEntity {
+				entity_id: None,
 				canonical: Some("acme corp".to_string()),
 				kind: None,
 				aliases: None,
@@ -244,6 +248,43 @@ fn extracted_alias_grounding_uses_entity_normalization() {
 			"Project Larch chose BATCH-1-741.",
 			&serde_json::json!({}),
 			Some(&evidence)
+		)
+		.is_err()
+	);
+}
+
+#[test]
+fn normalized_relation_requires_one_source_quote_for_both_endpoints() {
+	let source =
+		serde_json::json!({"evidence":[{"quote":"REPLAY-5 restored updates lost during GATE-5."}]});
+	let mut structured: StructuredFields = serde_json::from_value(serde_json::json!({
+        "relations": [{"subject":{"canonical":"GATE-5"}, "predicate":"resolved_by", "object":{"entity":{"canonical":"REPLAY-5"}}, "evidence_quote":"REPLAY-5 restored updates lost during GATE-5."}]
+    })).expect("Structured relation");
+
+	assert!(
+		structured_fields::validate_structured_fields(&structured, "Recovery", &source, None)
+			.is_ok()
+	);
+
+	structured.relations.as_mut().unwrap()[0].evidence_quote =
+		Some("REPLAY-5 restored updates.".into());
+
+	assert!(
+		structured_fields::validate_structured_fields(&structured, "GATE-5", &source, None)
+			.is_err()
+	);
+}
+
+#[test]
+fn extractor_cannot_assign_caller_entity_identity() {
+	let structured: StructuredFields = serde_json::from_value(serde_json::json!({"entities":[{"canonical":"Atlas", "entity_id":"00000000-0000-0000-0000-000000000001"}]})).expect("Caller entity");
+
+	assert!(
+		structured_fields::validate_structured_fields(
+			&structured,
+			"Atlas",
+			&serde_json::json!({}),
+			Some(&[])
 		)
 		.is_err()
 	);

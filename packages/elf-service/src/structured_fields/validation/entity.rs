@@ -59,6 +59,13 @@ pub(super) fn validate_extracted_aliases(
 	);
 
 	for entity in entities {
+		if entity.entity_id.is_some() {
+			return Err(Error::InvalidRequest {
+				message: "Automatic extraction cannot assign caller-owned entity identities."
+					.into(),
+			});
+		}
+
 		for alias in entity.aliases.iter().flatten() {
 			let surface = graph::normalize_entity_name(alias);
 

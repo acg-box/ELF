@@ -5,6 +5,7 @@ use elf_service::{
 	AddEventRequest, DocsPutRequest, EventMessage, EventSourceDocument, NoteOp,
 	TextPositionSelector,
 };
+use elf_storage::graph;
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
@@ -246,4 +247,54 @@ async fn event_source_occurrences_link_exact_original_documents() {
 	assert_ne!(ids[0], ids[1]);
 
 	db.cleanup().await.expect("Clean fixture.");
+}
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
+async fn extracted_shared_alias_does_not_merge_distinct_canonical_identities() {
+	let db =
+		tests_helpers::build_test_db("extracted_alias_authority").await.expect("Database required");
+	let payload = serde_json::json!({"notes":[
+		{"type":"fact","text":"North Atlas uses account ACCT-N.","importance":0.8,"confidence":0.9,"evidence":[{"message_index":0,"quote":"North Atlas uses account ACCT-N."}],"structured":{"entities":[{"canonical":"ACCT-N","aliases":["Atlas"]}]}},
+		{"type":"fact","text":"South Atlas uses account ACCT-S.","importance":0.8,"confidence":0.9,"evidence":[{"message_index":0,"quote":"South Atlas uses account ACCT-S."}],"structured":{"entities":[{"canonical":"ACCT-S","aliases":["Atlas"]}]}}
+	]});
+	let service = tests_helpers::build_service_with_extractor_payload(&db, payload).await;
+	let result = service
+		.add_event(AddEventRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			scope: Some("agent_private".into()),
+			dry_run: Some(false),
+			ingestion_profile: None,
+			messages: vec![EventMessage {
+				role: "user".into(),
+				content: "North Atlas uses account ACCT-N. South Atlas uses account ACCT-S.".into(),
+				ts: None,
+				msg_id: Some("accounts".into()),
+				source_document: None,
+				write_policy: None,
+			}],
+		})
+		.await
+		.expect("Retain distinct entities");
+
+	assert!(result.results.iter().all(|r| r.op == NoteOp::Add));
+
+	let count: i64 = sqlx::query_scalar(
+		"SELECT count(*) FROM graph_entities WHERE canonical IN ('ACCT-N','ACCT-S')",
+	)
+	.fetch_one(&service.db.pool)
+	.await
+	.expect("Two canonical identities");
+
+	assert_eq!(count, 2);
+
+	let mut conn = service.db.pool.acquire().await.expect("Connection");
+
+	assert!(graph::resolve_entity_by_surface(&mut conn, "t", "p", "Atlas").await.is_err());
+
+	drop(conn);
+
+	db.cleanup().await.expect("Clean fixture");
 }

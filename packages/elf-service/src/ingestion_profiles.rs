@@ -20,7 +20,7 @@ use types::ResolvedIngestionProfile;
 
 const ADD_EVENT_PIPELINE: &str = "add_event";
 const DEFAULT_PROFILE_ID: &str = "default";
-const DEFAULT_PROFILE_VERSION: i32 = 4;
+const DEFAULT_PROFILE_VERSION: i32 = 5;
 
 pub(crate) async fn resolve_add_event_profile(
 	pool: &PgPool,

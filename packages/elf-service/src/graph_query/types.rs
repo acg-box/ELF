@@ -132,6 +132,8 @@ pub struct GraphQueryFact {
 	pub object: GraphQueryObject,
 	/// Evidence note identifiers supporting the fact.
 	pub evidence_note_ids: Vec<Uuid>,
+	/// Edge-specific quotes from readable supporting notes; legacy links may lack quotes.
+	pub evidence_quotes: Vec<GraphQueryEvidenceQuote>,
 }
 
 /// Object payload returned for a graph fact.
@@ -177,4 +179,13 @@ pub struct GraphQueryExplain {
 	pub returned_rows: usize,
 	/// Whether the result set was truncated by the limit.
 	pub truncated: bool,
+}
+
+/// A verbatim edge quote with its authorized supporting note.
+#[derive(Clone, Debug, Serialize)]
+pub struct GraphQueryEvidenceQuote {
+	/// Supporting note identifier.
+	pub note_id: Uuid,
+	/// Verbatim quote validated at ingestion; semantic entailment remains an assertion.
+	pub quote: String,
 }

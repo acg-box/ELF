@@ -15,6 +15,30 @@ from benchmark_agent.analysis import case_metrics,evidence_payload
 
 
 class AgentBoundaries(unittest.TestCase):
+    def test_native_expansion_only_in_source_conditions(self):
+        calls=[]
+        def api(path):
+            calls.append(path)
+            return {'note':{'note_id':'n','text':'derived'},'sources':[{'excerpt':{'excerpt':'original subject'}}],'complete':True} if path.endswith('/evidence') else {'note_id':'n','text':'derived'}
+        expanded=execute(api,'source','get_note',{'note_id':'n'},True)
+        self.assertEqual(calls[-1],'/v2/notes/n/evidence')
+        self.assertIn('original subject',json.dumps(evidence_payload('get_note',expanded)))
+        notes=execute(api,'notes','get_note',{'note_id':'n'},True)
+        self.assertNotIn('source_evidence',notes)
+        self.assertEqual(calls[-1],'/v2/notes/n')
+
+    def test_grounded_selector_contract_and_failed_audit_do_not_resample(self):
+        schema=next(t['function']['parameters'] for t in schemas('source',True) if t['function']['name']=='read_document')
+        self.assertEqual(len(schema['oneOf']),2)
+        answer={'text':'Wrong but retained.','supported':True,'citations':['n'],'claims':[{'text':'Wrong but retained.','state':'supported','citations':[{'kind':'note','note_id':'n','quote':'not present'}]}]}
+        response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':json.dumps(answer)}}]}
+        with patch('benchmark_agent.runner.urllib.request.urlopen',return_value=io.BytesIO(json.dumps(response).encode())) as call:
+            result=run(lambda *args:(_ for _ in ()).throw(ValueError('audit unavailable')),'notes','question',[],'http://local','token',grounded=True)
+        self.assertEqual(result['text'],answer['text'])
+        self.assertEqual(result['status'],'completed')
+        self.assertIn('claim_binding_error',result)
+        self.assertEqual(call.call_count,1)
+
     def test_query_echo_is_not_retrieved_evidence(self):
         value={'items':[],'query_plan':{'query':'REPLAY-0-632'}}
         self.assertNotIn('REPLAY-0-632',json.dumps(evidence_payload('search_notes',value)))

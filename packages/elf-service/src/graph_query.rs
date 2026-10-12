@@ -9,9 +9,9 @@ mod types;
 mod validation;
 
 pub use types::{
-	GraphQueryEntity, GraphQueryEntityRef, GraphQueryExplain, GraphQueryFact, GraphQueryObject,
-	GraphQueryObjectEntity, GraphQueryPredicate, GraphQueryPredicateRef, GraphQueryRequest,
-	GraphQueryResponse,
+	GraphQueryEntity, GraphQueryEntityRef, GraphQueryEvidenceQuote, GraphQueryExplain,
+	GraphQueryFact, GraphQueryObject, GraphQueryObjectEntity, GraphQueryPredicate,
+	GraphQueryPredicateRef, GraphQueryRequest, GraphQueryResponse,
 };
 
 use std::collections::HashSet;

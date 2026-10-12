@@ -1,11 +1,12 @@
 use crate::{
 	access,
 	graph_query::{
-		self, ElfService, GraphQueryEntity, GraphQueryPredicate, GraphQueryRequest,
-		GraphQueryResponse, GraphQueryRowsFetchParams, OffsetDateTime, Result,
+		self, ElfService, GraphQueryEntity, GraphQueryEvidenceQuote, GraphQueryPredicate,
+		GraphQueryRequest, GraphQueryResponse, GraphQueryRowsFetchParams, OffsetDateTime, Result,
 	},
 	search,
 };
+use elf_storage::graph;
 
 impl ElfService {
 	/// Resolves a subject and returns active graph facts visible to the caller.
@@ -64,7 +65,20 @@ impl ElfService {
 		.await?;
 		let facts = graph_query::graph_query_facts_from_rows(rows, read_at);
 		let queried_rows = facts.len();
-		let (facts, truncated) = graph_query::truncate_graph_query_facts(facts, prepared.limit);
+		let (mut facts, truncated) = graph_query::truncate_graph_query_facts(facts, prepared.limit);
+		let pairs = facts
+			.iter()
+			.flat_map(|fact| {
+				fact.evidence_note_ids.iter().map(move |note_id| (fact.fact_id, *note_id))
+			})
+			.collect::<Vec<_>>();
+
+		for (fact_id, note_id, quote) in graph::fetch_evidence_quotes(&mut conn, &pairs).await? {
+			if let Some(fact) = facts.iter_mut().find(|fact| fact.fact_id == fact_id) {
+				fact.evidence_quotes.push(GraphQueryEvidenceQuote { note_id, quote });
+			}
+		}
+
 		let explain = if prepared.explain {
 			Some(graph_query::build_graph_query_explain(
 				prepared.as_of,

@@ -5,10 +5,12 @@ mod fact;
 mod predicate;
 
 pub use self::{
-	entity::{resolve_entity_by_surface, upsert_entity, upsert_entity_alias},
+	entity::{
+		resolve_entity_by_canonical, resolve_entity_by_surface, upsert_entity, upsert_entity_alias,
+	},
 	fact::{
-		fetch_active_facts_for_subject, insert_fact_with_evidence,
-		supersede_conflicting_active_facts, upsert_fact_with_evidence,
+		fetch_active_facts_for_subject, fetch_evidence_quotes, insert_fact_with_evidence,
+		set_evidence_quote, supersede_conflicting_active_facts, upsert_fact_with_evidence,
 	},
 	predicate::{
 		add_predicate_alias, get_predicate_by_id, list_predicate_aliases,

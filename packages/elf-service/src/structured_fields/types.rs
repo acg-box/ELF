@@ -1,6 +1,7 @@
 use schemars::JsonSchema;
 use serde::{Deserialize, Serialize};
 use time::OffsetDateTime;
+use uuid::Uuid;
 
 /// Structured note fields emitted by extraction and stored alongside a note.
 #[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
@@ -47,6 +48,10 @@ impl StructuredFields {
 #[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
 #[serde(deny_unknown_fields)]
 pub struct StructuredEntity {
+	/// Existing entity identity supplied by the caller, never by automatic extraction.
+	#[serde(skip_serializing_if = "Option::is_none")]
+	#[schemars(skip)]
+	pub entity_id: Option<Uuid>,
 	/// Canonical surface for the entity, copied from the note or evidence.
 	#[schemars(required)]
 	pub canonical: Option<String>,
@@ -60,11 +65,13 @@ pub struct StructuredEntity {
 #[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
 #[serde(default, deny_unknown_fields)]
 pub struct StructuredRelation {
+	/// Verbatim source quote supporting this edge. Required for a normalized predicate.
+	#[serde(skip_serializing_if = "Option::is_none")]
+	pub evidence_quote: Option<String>,
 	/// Relation subject entity directly with canonical/kind/aliases, never an entity wrapper.
 	#[schemars(required)]
 	pub subject: Option<StructuredEntity>,
-	/// Predicate copied verbatim from note text or an evidence quote; do not invent a normalized
-	/// label.
+	/// Predicate surface, or a normalized relation label with an explicit evidence_quote.
 	#[schemars(required)]
 	pub predicate: Option<String>,
 	/// Object must contain exactly one non-null entity or value, copied from note text or

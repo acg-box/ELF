@@ -25,6 +25,7 @@ fn structured_relation_object_entity_alias_reports_precise_path() {
 		relations: Some(vec![StructuredRelation {
 			object: Some(StructuredRelationObject {
 				entity: Some(StructuredEntity {
+					entity_id: None,
 					aliases: Some(vec!["English alias".to_string(), "你好世界\0".to_string()]),
 					..StructuredEntity::default()
 				}),

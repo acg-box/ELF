@@ -7,7 +7,7 @@ import os
 from pathlib import Path
 
 from benchmark_agent.replay import Replay
-from benchmark_agent.runner import run,finalize_recorded,parse_answer,PROMPT
+from benchmark_agent.runner import run,finalize_recorded,parse_answer,PROMPT,GROUNDED_PROMPT
 from benchmark_agent.analysis import analyze,initial_coverage
 from benchmark_deep import elf_runtime
 
@@ -24,6 +24,8 @@ def main():
     parser.add_argument('--reuse-receipts',type=Path,action='append',default=[],help='Reuse only exact full-4096d embedding inputs from a prior gzipped receipt bundle')
     parser.add_argument('--output-maximum',type=int,default=393216)
     parser.add_argument('--resume-case',help='Explicit condition/case_id continuation from a retained complete tool batch after an archived transport failure')
+    parser.add_argument('--grounded',action='store_true',help='Use native evidence expansion and per-claim citations; retain semantic failures')
+    parser.add_argument('--workload',type=Path,help='Frozen compatible workload, including distinct comparison cases')
     args=parser.parse_args();root=args.root.resolve();root.mkdir(parents=True,exist_ok=True)
     if args.phase=='analyze':
         print(json.dumps(analyze(root)['summary'],indent=2));return
@@ -59,7 +61,7 @@ def main():
             progress=root/'progress'/'initial'/(q['case_id']+'.json')
             if progress.exists():
                 raise RuntimeError('A recorded control response requires offline recovery before continuing: '+str(progress))
-            value=run(None,'initial',q['question'],initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],max_rounds=1,max_calls=0,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(progress,trace))
+            value=run(None,'initial',q['question'],initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],max_rounds=1,max_calls=0,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(progress,trace),grounded=args.grounded)
             value.update(condition='initial',query=q,expected=suite['oracle'][q['case_id']])
             value['strict_correct']=value['status']=='completed' and common.score(value['expected'],value['text'])
             common.save(path,value);print(json.dumps({'condition':'initial','case_id':q['case_id'],'status':value['status']}),flush=True)
@@ -70,8 +72,8 @@ def main():
     replay=Replay(frozen/'provider-receipts.jsonl.gz',base,token,root/'replay.jsonl',root/'provider-receipts',live_extraction=args.live_extraction,reuse_receipts=args.reuse_receipts);local=replay.start()
     elf_runtime.IMAGE=args.image
     image=json.loads(elf_runtime.docker('image','inspect',args.image))[0]
-    common.freeze(root/'protocol.json',{'runtime_revision':image['Config']['Labels']['org.opencontainers.image.revision'],'image_id':image['Id'],'conditions':CONDITIONS,'model':common.CHAT,'embedding':common.EMB,'dimensions':4096,'max_rounds':12,'max_tool_calls':24,'max_output_tokens':args.output_maximum,'reasoning':'max','scope':'20 frozen memory questions; 16 scored and 4 development; no competitor rerun','fixture':('Current native extraction from unchanged source documents; exact matching embeddings reused.' if args.live_extraction else 'Native ingestion with receipt-replayed extraction; exact cached embeddings reused.'),'live_extraction':args.live_extraction,'agent_policy':'bounded-v2','agent_prompt':PROMPT,'initial_search_id':True,'reused_embedding_bundles':[str(p) for p in args.reuse_receipts],'source_tools':'Public document search and verified excerpts only; no hidden message-id to document-id map.','graph_tools':'Public outgoing graph query by surface or returned entity id; follow object entities and evidence-note ids. Unknown validity is not current truth.','generation':'Wrong factual answers are retained. Transport/contract failures require explicit retained-attempt retry.'})
-    suite=json.loads((frozen/'frozen-workloads.json').read_text())['memory'];common.freeze(root/'workload.json',suite)
+    common.freeze(root/'protocol.json',{'runtime_revision':image['Config']['Labels']['org.opencontainers.image.revision'],'image_id':image['Id'],'conditions':CONDITIONS,'model':common.CHAT,'embedding':common.EMB,'dimensions':4096,'max_rounds':12,'max_tool_calls':24,'max_output_tokens':args.output_maximum,'reasoning':'max','scope':'Original memory questions and separately scored frozen contrast cases; no competitor rerun' if args.workload else '20 frozen memory questions; 16 scored and 4 development; no competitor rerun','fixture':('Current native extraction from unchanged source documents; exact matching embeddings reused.' if args.live_extraction else 'Native ingestion with receipt-replayed extraction; exact cached embeddings reused.'),'live_extraction':args.live_extraction,'agent_policy':'grounded-v3' if args.grounded else 'bounded-v2','agent_prompt':GROUNDED_PROMPT if args.grounded else PROMPT,'initial_search_id':True,'reused_embedding_bundles':[str(p) for p in args.reuse_receipts],'source_tools':'Native note evidence expansion plus public document search and verified excerpts; no hidden source mapping.' if args.grounded else 'Public document search and verified excerpts only; no hidden message-id to document-id map.','graph_tools':'Public outgoing graph query by surface or returned entity id; follow object entities and evidence-note ids. Unknown validity is not current truth.','generation':'Wrong factual answers are retained. Transport/contract failures require explicit retained-attempt retry.'})
+    suite=json.loads(args.workload.read_text()) if args.workload else json.loads((frozen/'frozen-workloads.json').read_text())['memory'];common.freeze(root/'workload.json',suite)
     elf_runtime.prepare_tokenizer(root)
     os.environ['LITELLM_BASE_URL']=local
     try:auth=elf_runtime.start(root,common.REPO,common)
@@ -123,7 +125,7 @@ def main():
                 if args.resume_case==condition+'/'+q['case_id']:
                     prior=json.loads((root/'progress'/condition/(q['case_id']+'.json')).read_text())
                 try:
-                    value=run(api,condition,q['question'],initial,base,token,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(root/'progress'/condition/(q['case_id']+'.json'),trace),initial_search_id=saved['search']['search_id'],prior_trace=prior)
+                    value=run(api,condition,q['question'],initial,base,token,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(root/'progress'/condition/(q['case_id']+'.json'),trace),initial_search_id=saved['search']['search_id'],prior_trace=prior,grounded=args.grounded)
                 except Exception as error:
                     value={'status':'failed','error':str(error).replace(token,'[redacted]')}
                 value.update(condition=condition,query=q,expected=suite['oracle'][q['case_id']])
