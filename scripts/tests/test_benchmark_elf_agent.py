@@ -36,9 +36,23 @@ class AgentBoundaries(unittest.TestCase):
 
     def test_cached_expansion_is_a_read_without_touch_or_new_search(self):
         calls=[]
-        execute(lambda *args:calls.append(args),'paged','get_search',{'search_id':'session','top_k':24})
+        execute(lambda *args:(calls.append(args) or {}),'paged','get_search',{'search_id':'session','top_k':24})
         self.assertEqual(calls,[('/v2/searches/session?top_k=24&touch=false',)])
-        with self.assertRaises(ValueError):execute(lambda *args:None,'notes','get_search',{'search_id':'session'})
+        self.assertTrue(any(t['function']['name']=='get_search' for t in schemas('notes')))
+
+    def test_original_budget_reserves_a_final_answer_without_more_retrieval(self):
+        call={'id':'a','function':{'name':'get_note','arguments':'{"note_id":"n"}'}}
+        responses=[{'choices':[{'message':{'role':'assistant','tool_calls':[call]}}]},
+                   {'choices':[{'message':{'role':'assistant','content':'{"text":"observed","supported":true,"citations":["n"]}'}}]}]
+        sent=[];executed=[]
+        def reply(request,**kwargs):
+            sent.append(json.loads(request.data));return io.BytesIO(json.dumps(responses.pop(0)).encode())
+        with patch('benchmark_agent.runner.urllib.request.urlopen',side_effect=reply):
+            result=run(lambda *args:(executed.append(args) or {'note_id':'n','text':'observed'}),'notes','question',[],'http://local','token',max_rounds=2,max_calls=1)
+        self.assertEqual((len(sent),len(executed),result['status']),(2,1,'completed'))
+        self.assertNotIn('tools',sent[-1])
+        self.assertEqual(sent[-1]['max_tokens'],393216)
+        self.assertEqual(result['tool_calls'],1)
 
     def test_finalization_preserves_tools_without_supplying_oracle(self):
         message={'role':'assistant','content':None,'tool_calls':[{'id':'a','function':{'name':'get_note','arguments':'{}'}},{'id':'b','function':{'name':'get_note','arguments':'{}'}}]}
@@ -117,7 +131,12 @@ class AgentBoundaries(unittest.TestCase):
             with self.assertRaises(ValueError):replay.resolve('/v1/chat/completions',{'messages':[{'role':'user','content':'unseen'}]})
             current=root/'current';current.mkdir()
             (current/'2.json').write_text(json.dumps({'request':{'input':'new query','dimensions':4096},'response':{'data':[{'index':0,'embedding':v}]}}))
+            messages=[{'role':'system','content':'You are a memory extraction engine current'}]
+            response={'choices':[{'message':{'content':'{"notes":[]}'},'finish_reason':'stop'}]}
+            (current/'3.json').write_text(json.dumps({'request':{'messages':messages},'response':response}))
             restarted=Replay(p,'unused','token',root/'replay.jsonl',current)
             self.assertEqual(restarted.resolve('/v1/embeddings',{'input':'new query'})['data'][0]['embedding'],v)
+            live=Replay(p,'unused','token',root/'replay.jsonl',current,live_extraction=True)
+            self.assertEqual(live.resolve('/v1/chat/completions',{'messages':messages}),response)
 
 if __name__=='__main__':unittest.main()

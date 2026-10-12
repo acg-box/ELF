@@ -2,7 +2,7 @@ use time::OffsetDateTime;
 use uuid::Uuid;
 
 use crate::{
-	RelationTemporalStatus,
+	RelationTemporalStatus, graph,
 	graph_report::{self, GraphReportFactRow, ResolvedGraphReportSubject},
 };
 
@@ -31,7 +31,8 @@ fn row(
 		object_canonical: None,
 		object_kind: None,
 		object_value: Some(object_value.to_string()),
-		valid_from: ts(valid_from),
+		observed_at: ts(valid_from),
+		valid_from: Some(ts(valid_from)),
 		valid_to: valid_to.map(ts),
 		evidence_note_ids: vec![Uuid::from_u128(raw_id + 10_000)],
 		superseded_by_fact_ids: superseded_by,
@@ -100,4 +101,25 @@ fn graph_topic_map_preserves_fact_edges_and_source_markers() {
 	assert_eq!(topic_map.edges[0].predicate, "works at");
 	assert_eq!(topic_map.edges[0].temporal_status, RelationTemporalStatus::Current);
 	assert!(topic_map.edges[0].status_markers.iter().any(|marker| marker == "sourced"));
+}
+
+#[test]
+fn unknown_validity_is_not_current_truth_or_a_future_assertion() {
+	let mut unknown = row(10, "unknown start", 500, None, "active", "single", vec![]);
+
+	unknown.valid_from = None;
+
+	let facts = graph_report::build_report_facts(vec![unknown], ts(100));
+
+	assert_eq!(facts[0].temporal_status, RelationTemporalStatus::Unknown);
+	assert_eq!(facts[0].observed_at, ts(500));
+
+	let summary = graph_report::summarize_report_facts(&facts);
+
+	assert_eq!(summary.unknown_count, 1);
+	assert_eq!(summary.current_count + summary.future_count, 0);
+	assert_eq!(
+		graph::relation_temporal_status(None, Some(ts(50)), ts(100)),
+		RelationTemporalStatus::Historical
+	);
 }

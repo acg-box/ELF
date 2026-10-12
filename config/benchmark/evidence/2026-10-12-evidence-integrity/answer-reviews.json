@@ -1,0 +1,802 @@
+[
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-0-0",
+    "answer_sha256": "748a2d7ebf8b73e85e8c578877946f07913ba66d598464277a91d32966aaf640",
+    "correct": true,
+    "reason": "Names STREAM-0-286 and RETRY-0-907 as current for Larch on August 22. Older values are explicitly historical. Required identifiers were in the read evidence. A redundant Cedar-only citation is recorded separately."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-0-0",
+    "answer_sha256": "b102c15a3f75acb94f882e4d67bd604595cc6f1ef491823b579628a317828200",
+    "correct": true,
+    "reason": "Names both requested current Larch identifiers; old values are explicitly historical. Native source reads support the timeline. One redundant Cedar-only citation remains an attribution defect."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-0-0",
+    "answer_sha256": "2e22dc8efbf31a8e85549f6d4529bf9518728c74fc2e91bf0e179e20324e2643",
+    "correct": true,
+    "reason": "Both requested current Larch identifiers and their supersession dates are correct and present in read evidence. Historical values are labeled. The redundant Cedar-only citation is a separate attribution defect."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-0-0",
+    "answer_sha256": "60a2f6ff30dacb290d35c1a2b2b94d8984a89ec6cd7a80e65d07cfbe3e9de983",
+    "correct": true,
+    "reason": "Both current Larch identifiers are correct and supported by native original-source reads. Prior identifiers are correctly historical. The answer also cites a Cedar-only generic note; audit that attribution separately."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-0-1",
+    "answer_sha256": "9c9427874664a2ef7e4a6670c456f5b49825248aecb899fb8fdf0512546b0f71",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-0-1",
+    "answer_sha256": "fe4338d5f184560f4ae21d97ddbb7f0583514708fb80764764287d6049310da2",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-0-1",
+    "answer_sha256": "ca7419876afd4b8b08642a434c475b734cdf92c03a111bc38b84a5a3a481fc29",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "answer_sha256": "edae900382493b3b88d477a619dae84a2e1a04e8a515cd60e218759d534f044d",
+    "correct": false,
+    "reason": "The recovery and gate identifiers are correct, but the answer says the August 8 no-change records concern other projects and not Larch. The original Larch August 8 record explicitly says no delivery-mode change was approved, and its own derived note remains stored. This unsupported exclusion makes the complete answer incorrect. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-0-2",
+    "answer_sha256": "a62b814a923aa98f55b1943d91ce526eba1a0c35e6e4b8440f9592380338507c",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "answer_sha256": "cef53428640864120bc734bb0b24a29564a56619d98f4e1df79f04f6c950eea3",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-0-2",
+    "answer_sha256": "60db5146e78ea4b834c63c68269f1b5c4df19d1ce4486b5cfec2e748207e3a19",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-0-2",
+    "answer_sha256": "6603e763a852157362d9d5bb5620fa274c8583efc4abf4328f8085256d8d775c",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-0-3",
+    "answer_sha256": "178e410515d042b233819104c8e20a77a5f2d0165988bfde37160e6345aa4fc8",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-0-3",
+    "answer_sha256": "3019e22aba75b737d1174f1e6c95f62faccebcbe0a035f0b61ed64af44fdb583",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-0-3",
+    "answer_sha256": "48cb17d882dfe96bde16087c05c6cd984bde5e24c8d8c59dbd6f9821faa66da6",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-0-3",
+    "answer_sha256": "609249003112d2aa6b43799dcc31d5fea976c38f802dd9c4e51acdf02e5b127b",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-1-0",
+    "answer_sha256": "6281938ba43b5c87e380a7645345938e3ae920d9c8d0704f72d2c430d9b875f0",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-1-0",
+    "answer_sha256": "7bf60b45c4214eec15129eb6c7131b9d786041f8c54dbe7ae57f6cf281b1c42f",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-1-0",
+    "answer_sha256": "7ab0fa2dbce8deded26757206a0f7661e9366f5a9d29ad65fe256bb8fc0a0ba8",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-1-0",
+    "answer_sha256": "79fb986f4b03926e40362faa3c512a89476a09a766567e241415f8c45521f426",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-1-1",
+    "answer_sha256": "9cfc9d36c2658b660b87befab51709b067499ceb6ebd4ff8efa213a9aca09d90",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "answer_sha256": "9dc75c936e616cf2b26ba05b44e2c038bd1ac9d23da09bda8b02b45f0c677c1f",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-1-1",
+    "answer_sha256": "00691b478311948206f03504c6001d61a048411909d813e3b894327c6c8a7409",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-1-2",
+    "answer_sha256": "79f31722995251a5787c7b9ce805a2c76bdaf36af9c1a0c52ba58d305aa023cf",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-1-2",
+    "answer_sha256": "4dbd913eb766a81c492ee309f2ea0be5b80ec7417c9e2ae9b5732f427f86755f",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-1-1",
+    "answer_sha256": "da33326759aa310ea79386fc28bb808eca58c7ed6ee1b0a1424fe3d86981d409",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-1-3",
+    "answer_sha256": "7c9b6aae41aa86efd63bcf0ae720d6bbe5eb050f2dfbaef710b46eb6093843d1",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-1-2",
+    "answer_sha256": "77e4cda8e7414c3f21da54b19e194a91f5f9d36fee10607483093bcabc27092b",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-1-3",
+    "answer_sha256": "d7cf1d93010ba3fe82880f7c431ff3aeacb2cee12c82e2f13581e41c47c987e9",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-1-2",
+    "answer_sha256": "7f8f489fb269b71a3fc72c4e4501ffd510461e5e77838ffe54f3438cc73ad62e",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-1-3",
+    "answer_sha256": "d92a80bffd7348acf36bf2ccbb146dbf21b058142d5b83aacd3a7f419d9219fc",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-1-3",
+    "answer_sha256": "47ff439c240575141b0876367aa1e9d26a7a59e71c12892ca7d03e33e0d04db1",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-2-0",
+    "answer_sha256": "009f632366c00b2951d145f435d3cb45bff28b2496aebbdf3dfe82001775c2e4",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-2-0",
+    "answer_sha256": "78edf23213f52d849d07f513df45df3f1b545e745ae9672c8a812ffc4c64f2aa",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-2-0",
+    "answer_sha256": "2a70702102023db58e8001b8347a1ba81917bc05f92d681a53acd4f04ff9c4e9",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-2-0",
+    "answer_sha256": "bdd4237d6af35652300a644c99f2fcc3009765258c90dcc5520c0f2b240fd139",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-2-1",
+    "answer_sha256": "b3724f1e5f6bfe3a3e8376c3456717265700fad5fe2db7bdd2fe999315af9a83",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-2-1",
+    "answer_sha256": "8984900b8f7cc04b360430d99b6120fcacad2db4be1e3827d2746fa67f5f0ac3",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-2-1",
+    "answer_sha256": "5412ea771bd40d8efa013ed539e13581a4ea811ec2a1171bc95871d85e5ac6b7",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-2-2",
+    "answer_sha256": "65c949ca04fade05b62802e48aa98a61124b37f21b5190fca09d1832ad8dd1e1",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-2-1",
+    "answer_sha256": "0386fa3bd9eb79a3631024b1f071df62fb72e511233db154efa35d9270b5edc3",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-2-2",
+    "answer_sha256": "7ec9ffd3705db800012a9e4e7e3a7f6c8114b4a74b35fe963fd941fbd5e7e4e3",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-2-2",
+    "answer_sha256": "98570d7eea7fedf85148ee6313a935f3fe860bdc153fb51034a0104e4e9e51f9",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-2-2",
+    "answer_sha256": "f090aadb3155f6579916f30db16686527667c75449177013a1fc2df476fbdd30",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-2-3",
+    "answer_sha256": "19e88f98e3bc349964ed32f25cc247115cc9533ffe3569c86dc9f5da6db90a7a",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-2-3",
+    "answer_sha256": "cc98028a70bcac5907740a6bc067b2f9fe6291aafd0f9e6a56ab7bfa89c0f8a7",
+    "correct": true,
+    "reason": "The absence claim agrees with the original target record, but the agent did not receive a target-origin absence statement. Truth agreement is retained for comparison; absence-grounding.json records the unsupported assertion separately. Extraneous other-project citations remain attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-2-3",
+    "answer_sha256": "df8d90b24578366f838cd9edfe38907758010f07ab6c88e88b2200d97624d7ac",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-2-3",
+    "answer_sha256": "930f53160c73c9c3e408f806013e250eb46fce54f823a64f4d0c2cc5cfa6f510",
+    "correct": true,
+    "reason": "The absence claim agrees with the original target record, but the agent did not receive a target-origin absence statement. Truth agreement is retained for comparison; absence-grounding.json records the unsupported assertion separately. Extraneous other-project citations remain attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-3-0",
+    "answer_sha256": "5e309fced570b061565a35e377f30249353f89859661321e6239c62de03e0cac",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-3-0",
+    "answer_sha256": "e6aabfda0eccddcb6fbaad9db83f8b85d14b600a352658f53f6ed96b91944ef3",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-3-0",
+    "answer_sha256": "07ab3c523544b12f1f763540ba47d0a3e7c9a991999378a6009f082fa40db62a",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-3-0",
+    "answer_sha256": "0bcff48d2d41e31c552fb4d90646114492a5ae70b4852d44927db29b99655391",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "answer_sha256": "ddad1ede7773a970a01ea46524765170f260e53a12b0ae1727b7361cb697abd1",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "answer_sha256": "2f5095a4d65e5bb4972eded9c77dd15931dbf929419681385dbb9f82222edf04",
+    "correct": false,
+    "reason": "The requested procedure and gate are correct, but the answer describes the August 22 decisions as reaffirmed later. No source later than August 22 establishes another reaffirmation. Under the complete supported-answer rubric, this added temporal assertion is unsupported; observation timestamps are not reaffirmation events. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-3-1",
+    "answer_sha256": "ff475d4f2a9301a748979b775c119ec73ffeb00b9f7b057ffca7fbd7f56317c7",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-3-2",
+    "answer_sha256": "8b30beff083fd0159dc15d3af6702693494889c82b3719d5390597f40f3655d5",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-3-2",
+    "answer_sha256": "f7170463418e5175f139eeea202e3eda42dc010fb855b0cd8f582c41eaba907a",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "answer_sha256": "972c5b7c418caf72049e4814f5c27500180046fa18ab638a5a30f4033a31e3d0",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-3-2",
+    "answer_sha256": "8b21d575c2705ae3d08450d09ad6db4d407530eb9b6d359e1f9b0d294a10434c",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-3-2",
+    "answer_sha256": "f8956f0839d02fb24f4ff9925aa05f22bb5b609f7e3aade6afff2ffbd07c0636",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-4-0",
+    "answer_sha256": "afb673f4d78d8c7e4f8eaab2e940b288591a9e5a727396a29a1793d87bef397a",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-4-0",
+    "answer_sha256": "21c47f3ac3fea1748da00c38cde5f4d3fd600b88adf00faffa37bd188c218450",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-3-3",
+    "answer_sha256": "9d30ddf1cc349b9ca4ccba6bd5f5e859da360280c60eb295d8fc447fd885a872",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-3-3",
+    "answer_sha256": "9d892230d26aadd6c0254e66acb3d5347cc078776c85c8f72606efeb54dcacef",
+    "correct": true,
+    "reason": "Matches the frozen source fact that Sable has no appointed budget owner. However, the supplied memory/graph evidence has no Sable-specific negative statement; confident absence is therefore an additional grounding failure, recorded separately from truth agreement. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-4-0",
+    "answer_sha256": "74041db5f4147fe12987e1bb2fffc5b2299e8b97b4e65ccc4435e24549c49145",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-3-3",
+    "answer_sha256": "dca4630e0d7051731f0f04f72d8d0869153a11c5f7300968f31b252b77cd83d4",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-3-3",
+    "answer_sha256": "f187eee3cd1c20b6df77fa0fb71f68f795c5c566ca8538d852c853ac20be8411",
+    "correct": true,
+    "reason": "Matches the frozen source truth of no appointed Sable budget owner, but the supplied memories contain no Sable-specific absence evidence. The confident absence statement is a separate grounding failure. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-4-0",
+    "answer_sha256": "6c4649b322fbca700d622fc8614763a759c17d16ef107ad15e1d3218317e0756",
+    "correct": false,
+    "reason": "The current mode and retry policy are correct, but the answer places the original batch choice after the August 8 outage. Cedar chose batch delivery on August 1, before that outage. The added chronology makes the complete answer incorrect."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "answer_sha256": "165a5cd70c635906b465895b346f1eebc97862fb97b25348527b8d162a70b187",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-4-1",
+    "answer_sha256": "e44783334dc71ee1b72ae869976e1dcff741332fa779e95f97f6e906ad4ca9f1",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-4-1",
+    "answer_sha256": "7dd8e922faaf9d9bb1fb24539932d3ef8e4185320a5360a60745d63aa73c46e7",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-4-1",
+    "answer_sha256": "eb2a4693b9bd019241962f46405071d5a63a52b744c514099b6a586f6deaf097",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-4-2",
+    "answer_sha256": "d89f126772100aadcad96875447fa252c6024e61aff9ff25ebf49e2f8bfc8f34",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-4-2",
+    "answer_sha256": "77fe2070230397de450f2b402801374ba01b5357d6db1e0546dba92209f13886",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-4-2",
+    "answer_sha256": "59393b67222b3843a164ceb5a156b3800a6d444a81590b575195cfabbb0864d6",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later."
+  },
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-4-3",
+    "answer_sha256": "1da9573d6dd96cc9874ed98be16650f80eaaba610267601727c839fb316a13b1",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-4-2",
+    "answer_sha256": "60d51ed1b327c4bb79ad66f9694947edfbf52e99d9bad2ff5ffbc99eebaf3802",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "notes",
+    "case_id": "memory-4-3",
+    "answer_sha256": "a200078fc72a4463340dc14808acd2173bf9508e25301944a635acbcced55846",
+    "correct": true,
+    "reason": "The absence agrees with the target original, but no target-origin negative statement was read. Other-topic statements do not establish Cedar absence; the grounding audit records this limitation. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "graph",
+    "case_id": "memory-4-3",
+    "answer_sha256": "d1ce7fb2207d117129ac80c8bdf6bd02d8eec524d6b99fee20556bc4e9948fdf",
+    "correct": true,
+    "reason": "The absence agrees with the target original, but no target-origin negative statement was read. The generic Cobalt note is unsupported evidence for Cedar. The separately named Larch review is a correctly attributed comparison and is not itself flagged as an attribution defect."
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "answer_sha256": "03864bc6e005889a6b785f9db1be472fdc5992bc5f39964f43851fbb011829db",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-0-0",
+    "answer_sha256": "d4556a241edcea005eb7c28146a40119e5297b8f3b73c923f12b717d10ea81e4",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-0-2",
+    "answer_sha256": "cbfdcbea0c9aac66b05b83c58f299bb7a3dcad85f88e1a23a58081a86fcbaaea",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-0-3",
+    "answer_sha256": "28ef9dcf8395d2a0cc333100b96dbf8fd7682f282c468ca57384eaffbabd70dd",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-0-1",
+    "answer_sha256": "a1ed3456606ac2b81f672d7ac91d69b7c76647da666d3fdae1d71c0487bcf5e6",
+    "correct": false,
+    "reason": "The required concrete REPLAY-0-632 identifier is absent from the initial evidence and omitted from the answer. The date and gate reference do not satisfy the same concrete recovery requirement. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-1-0",
+    "answer_sha256": "94032fcdbc053ced075e41f5dcd7623ef411bb400b59d9dfe85b3073f9609781",
+    "correct": true,
+    "reason": "Correct Cobalt current delivery and retry values with explicitly historical predecessors. The Cedar retry citation supports an explicitly attributed decoy comparison; only the generic Cedar delivery directive is extraneous."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-1-1",
+    "answer_sha256": "c86ebe8dfe60a700298bac0ff0a2976bab8c60bc447ee582bbf8abd3d9603b39",
+    "correct": false,
+    "reason": "The answer correctly marks the concrete recovery identifier unknown, but cannot supply required REPLAY-1-632 from the initial context. This is an honest incomplete answer, not full factual success. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-1-2",
+    "answer_sha256": "dbff53c41e47b1e48a2fbbe3ac6c873c281af9a65366d1cfce57f816fcf0bb35",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-1-3",
+    "answer_sha256": "cd926ab9625e672039d1abbba76df144bdad70ba97c4326f0b2fd8b63b0ba3c3",
+    "correct": true,
+    "reason": "Correct recorded absence of an appointed budget owner, or calibrated unknown; no appointee is invented. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-2-0",
+    "answer_sha256": "c4ee9a577a59f90ddd9f33f9b2c6dd674f5367d084e4c570e7b424828f218a40",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-2-1",
+    "answer_sha256": "3b8a09fe652b15beb8029a002b1e286922aa78a6f85294aa28e6c34dc6f97cc9",
+    "correct": false,
+    "reason": "The required REPLAY-2-632 is missing and correctly marked unknown. Explicit Larch, Sable, and Cedar incident comparisons are correctly attributed, but unrelated generic recovery directives are extraneous."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-2-2",
+    "answer_sha256": "d5a3aa2d95e213d688dc54bdce09ebf3cd752afbd69a842fe129a7733849e6cb",
+    "correct": false,
+    "reason": "The required BATCH-2-741 is correct, but the answer inserts the BATCH-3-741/GATE-3-519 incident as background to the Reed meeting. Reed recorded BATCH-2-741/GATE-2-519; the added meeting context belongs to Sable. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-2-3",
+    "answer_sha256": "31e69ea873372c9491a34b5b0832bbacce034733259be3ef26ec7388b58dad98",
+    "correct": true,
+    "reason": "The absence agrees with the target original, but no target-origin negative statement was available. Truth agreement and evidence support remain separate. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-3-0",
+    "answer_sha256": "dbe8103b63b7170961c3d15239d1493c5bd2b03a8c45d9337106b84cbd1e8e26",
+    "correct": false,
+    "reason": "The answer correctly marks the Sable retry update unknown but omits required RETRY-3-907, which is absent from the initial context. The Cedar retry note is used for an explicit correct exclusion; only the generic Cedar delivery directive is extraneous."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-3-1",
+    "answer_sha256": "c574820a52d0c6de80846c8a055a3a49817469c9e68284af7f03f3db4dc575a9",
+    "correct": true,
+    "reason": "Correct concrete recovery procedure and outage gate for the requested subject, supported by identifiers in the read evidence. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-3-2",
+    "answer_sha256": "2cb4cf3c3cf8a49fd1764888b59b26daa2add55900d323a801fb8b0ada67b986",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-3-3",
+    "answer_sha256": "ed9478ed0fbeae08eadf65055f4b2a4e67dd25836db9b8212035827c732f1073",
+    "correct": true,
+    "reason": "The absence agrees with the target original, but no target-origin negative statement was available. Truth agreement and evidence support remain separate. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-4-0",
+    "answer_sha256": "80226d671b92a606afc85801f121af60b8e8b86e8334cd52194747d23d048dbf",
+    "correct": true,
+    "reason": "Correct current mode and retry identifier for the requested subject and date; older values, when present, are explicitly historical."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-4-1",
+    "answer_sha256": "a136c28ab2e23742b3cbe6e9145a422d9fab8a4b3054dbd0a0a7c54aa2213219",
+    "correct": false,
+    "reason": "The concrete REPLAY-4-632 identifier is absent from the initial evidence and correctly marked unknown. This is an honest incomplete answer under the same required-identifier criterion. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-4-2",
+    "answer_sha256": "2439bc119c188000f96ea697740ebb4bb0b56d32b6e635de962aca2b83f9865c",
+    "correct": true,
+    "reason": "Correct delivery mode immediately after August 8; any August 15 switch is explicitly later. Extraneous other-project citations are recorded separately as attribution defects."
+  },
+  {
+    "phase": "primary",
+    "condition": "initial",
+    "case_id": "memory-4-3",
+    "answer_sha256": "ec2837ea4aa729678267434c49e9763e6eee7d90a4b861e9b6a51730ce636e12",
+    "correct": true,
+    "reason": "The absence agrees with the target original, but no target-origin negative statement was available. Truth agreement and evidence support remain separate. Extraneous other-project citations are recorded separately as attribution defects."
+  }
+]

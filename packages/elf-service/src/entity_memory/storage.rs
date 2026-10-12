@@ -26,7 +26,7 @@ pub(super) struct EntityNoteRow {
 	pub(super) fact_scope: String,
 	pub(super) fact_agent_id: String,
 	pub(super) predicate: String,
-	pub(super) valid_from: OffsetDateTime,
+	pub(super) valid_from: Option<OffsetDateTime>,
 	pub(super) valid_to: Option<OffsetDateTime>,
 }
 
@@ -148,7 +148,7 @@ WHERE gf.tenant_id = $1
 	AND n.tenant_id = $1
 	AND (n.project_id = $2 OR (n.project_id = $5 AND n.scope = 'org_shared'))
 	AND n.scope = ANY($4::text[])
-ORDER BY n.updated_at DESC, n.note_id ASC, gf.valid_from DESC, gf.fact_id ASC",
+ORDER BY n.updated_at DESC, n.note_id ASC, gf.valid_from DESC NULLS LAST, gf.fact_id ASC",
 	)
 	.bind(tenant_id)
 	.bind(project_id)

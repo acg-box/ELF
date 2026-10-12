@@ -1,0 +1,57 @@
+{
+  "backup_path": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/evidence-integrity-4096/native-fixture.dump",
+  "sha256": "c1c01e72e06964d6297f67c041ce7038ba36b06d5eae3df619e922988a1c169e",
+  "bytes": 24523029,
+  "container_id": "26a792007bc891f0928d437231da5a69cfe6769793003588eb2ee67a14fe7756",
+  "verified_at": "2026-10-12T07:38:35.621332+00:00",
+  "tables": {
+    "doc_documents": {
+      "rows": 20,
+      "sha256": "bc4a43d438a97f9b911877ee16d2f272722edad5ba0d64313a08a1eaf5037437"
+    },
+    "doc_chunks": {
+      "rows": 20,
+      "sha256": "edad2458245be87ef84a5fde9c9c34feca1e006a4a108bf772660767e2ed1b0b"
+    },
+    "memory_notes": {
+      "rows": 59,
+      "sha256": "05296771261d4c6a62efd59e202cc0c47ee1f6f191ea37399a4c1816d35d7ffe"
+    },
+    "note_embeddings": {
+      "rows": 59,
+      "sha256": "d998afc67c73101b180f6ab4bd1e5c101319360cafe37a0bef61485e2551b5c1"
+    },
+    "note_chunk_embeddings": {
+      "rows": 59,
+      "sha256": "eb02d3f4fa45bd0ceb36f60ac5ffae1d99f3d3ab48cb023d7f1ee596836b3299"
+    },
+    "note_field_embeddings": {
+      "rows": 256,
+      "sha256": "484f34c4e0971cb59373ca48219c0a485fa6e28540c91a314f76b0e74a0daf97"
+    },
+    "doc_chunk_embeddings": {
+      "rows": 20,
+      "sha256": "c67e237486840878f9d2e0c03a8aace164d803281056138ce5144430370e0ab3"
+    },
+    "graph_entities": {
+      "rows": 50,
+      "sha256": "33432dff4b5460aaadb27f6e466477ca08146fc6958e4276c41f43f1b845b578"
+    },
+    "graph_entity_aliases": {
+      "rows": 49,
+      "sha256": "b487f33470e0ed66580edde78a2ee69a8095c5a3d2c86346bba0960ca447d483"
+    },
+    "graph_facts": {
+      "rows": 60,
+      "sha256": "3e484896d85f7381b1700af48d26d57f455a0828db6370b01751f617918b0e70"
+    },
+    "graph_fact_evidence": {
+      "rows": 64,
+      "sha256": "7475cb1052541074446d25695be8dab1117154f503a210876bbef9ae1f9a2a78"
+    }
+  },
+  "restore_database": "elf_integrity_restore_89df5262",
+  "restore_contents_match": true,
+  "restore_database_removed": true,
+  "scope": "Full PostgreSQL custom-format backup restored successfully. Compared original sources, chunks, notes, canonical vectors, and graph data. Qdrant remains a derived index; the canonical vectors are in PostgreSQL."
+}

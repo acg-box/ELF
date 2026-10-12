@@ -49,6 +49,7 @@ SELECT
 	object_entity.canonical AS object_canonical,
 	object_entity.kind AS object_kind,
 	object_value,
+    gf.created_at AS observed_at,
 	valid_from,
 	valid_to,
 	COALESCE(
@@ -83,7 +84,7 @@ WHERE gf.tenant_id = $1
 	AND (gf.project_id = $2 OR (gf.project_id = $10 AND gf.scope = 'org_shared'))
 	AND gf.subject_entity_id = $3
 	AND gf.scope = ANY($4::text[])
-	AND gf.valid_from <= $5
+	AND (gf.valid_from IS NULL OR gf.valid_from <= $5)
 	AND (gf.valid_to IS NULL OR gf.valid_to > $5)
 	AND ($11::uuid IS NULL OR gf.predicate_id = $11)
 	AND (
@@ -109,7 +110,7 @@ WHERE gf.tenant_id = $1
 				))
 			)
 	)
-	ORDER BY gf.valid_from DESC, gf.fact_id ASC
+	ORDER BY gf.valid_from DESC NULLS LAST, gf.fact_id ASC
 	LIMIT $8";
 
 pub(crate) fn resolve_effective_scopes(

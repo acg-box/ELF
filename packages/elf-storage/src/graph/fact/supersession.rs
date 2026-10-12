@@ -6,6 +6,7 @@ pub async fn supersede_conflicting_active_facts(
 	executor: &mut PgConnection,
 	tenant_id: &str,
 	project_id: &str,
+	agent_id: &str,
 	scope: &str,
 	subject_entity_id: Uuid,
 	predicate_id: Uuid,
@@ -23,8 +24,9 @@ WHERE tenant_id = $2
 	AND subject_entity_id = $5
 	AND predicate_id = $6
 	AND valid_to IS NULL
-	AND valid_from <= $1
+	AND valid_from < $1
 	AND fact_id <> $7
+    AND agent_id = $8
 RETURNING fact_id",
 	)
 	.bind(effective_at)
@@ -34,6 +36,7 @@ RETURNING fact_id",
 	.bind(subject_entity_id)
 	.bind(predicate_id)
 	.bind(to_fact_id)
+	.bind(agent_id)
 	.fetch_all(&mut *executor)
 	.await?;
 

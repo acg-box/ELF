@@ -1,4 +1,5 @@
 use time::{Duration, OffsetDateTime};
+use uuid::Uuid;
 
 use crate::graph_memory::helpers;
 use elf_config::Postgres;
@@ -273,4 +274,149 @@ async fn graph_fetch_active_facts_returns_active_window_only() {
 
 	tx.rollback().await.expect("Failed to rollback transaction.");
 	test_db.cleanup().await.expect("Failed to cleanup test database.");
+}
+
+#[tokio::test]
+#[ignore = "Requires external Postgres."]
+async fn graph_schema_upgrade_preserves_rows_and_separates_owner_and_unknown_time() {
+	let base = elf_testkit::env_dsn().expect("Postgres is required.");
+	let test_db = TestDatabase::new(&base).await.expect("Create fixture.");
+	let db = Db::connect(&Postgres { dsn: test_db.dsn().into(), pool_max_conns: 1 })
+		.await
+		.expect("Evidence integrity fixture must succeed.");
+
+	db.ensure_schema(4_096).await.expect("Evidence integrity fixture must succeed.");
+
+	let mut tx = db.pool.begin().await.expect("Evidence integrity fixture must succeed.");
+	let note = helpers::insert_memory_note(&mut tx, "t", "p").await;
+	let other_note = helpers::insert_memory_note(&mut tx, "t", "p").await;
+
+	sqlx::query("UPDATE memory_notes SET agent_id='agent-b' WHERE note_id=$1")
+		.bind(other_note)
+		.execute(&mut *tx)
+		.await
+		.expect("Evidence integrity fixture must succeed.");
+
+	let subject = graph::upsert_entity(&mut tx, "t", "p", "subject", None)
+		.await
+		.expect("Evidence integrity fixture must succeed.");
+	let predicate = graph::resolve_or_register_predicate(&mut tx, "t", "p", "uses")
+		.await
+		.expect("Evidence integrity fixture must succeed.");
+	let start = OffsetDateTime::from_unix_timestamp(100).expect("Valid timestamp.");
+	let old = graph::upsert_fact_with_evidence(
+		&mut tx,
+		"t",
+		"p",
+		"agent-a",
+		"scope-a",
+		subject,
+		"uses",
+		predicate.predicate_id,
+		None,
+		Some("value"),
+		Some(start),
+		None,
+		&[note],
+	)
+	.await
+	.expect("Evidence integrity fixture must succeed.");
+
+	tx.commit().await.expect("Evidence integrity fixture must succeed.");
+
+	assert_legacy_graph_upgrade(&db, old, start).await;
+
+	let mut tx = db.pool.begin().await.expect("Evidence integrity fixture must succeed.");
+	let mut ids = Vec::new();
+
+	for (agent, evidence, time) in [
+		("agent-a", note, None),
+		("agent-a", note, None),
+		("agent-b", other_note, None),
+		("agent-a", note, Some(start + Duration::seconds(1))),
+		("agent-b", other_note, Some(start)),
+	] {
+		ids.push(
+			graph::upsert_fact_with_evidence(
+				&mut tx,
+				"t",
+				"p",
+				agent,
+				"scope-a",
+				subject,
+				"uses",
+				predicate.predicate_id,
+				None,
+				Some("value"),
+				time,
+				None,
+				&[evidence],
+			)
+			.await
+			.expect("Evidence integrity fixture must succeed."),
+		);
+	}
+
+	assert_eq!(ids[0], ids[1]);
+	assert_ne!(ids[0], ids[2]);
+	assert_ne!(ids[0], ids[3]);
+	assert_ne!(old, ids[3]);
+
+	let superseded = graph::supersede_conflicting_active_facts(
+		&mut tx,
+		"t",
+		"p",
+		"agent-a",
+		"scope-a",
+		subject,
+		predicate.predicate_id,
+		ids[3],
+		note,
+		start + Duration::seconds(1),
+	)
+	.await
+	.expect("Supersede only this owner's earlier known assertion.");
+
+	assert_eq!(superseded, vec![old]);
+
+	let remaining: i64 =
+		sqlx::query_scalar("SELECT count(*) FROM graph_facts WHERE valid_to IS NULL")
+			.fetch_one(&mut *tx)
+			.await
+			.expect("Read remaining assertions.");
+
+	assert_eq!(remaining, 4);
+
+	tx.commit().await.expect("Evidence integrity fixture must succeed.");
+
+	let count: i64 = sqlx::query_scalar("SELECT count(*) FROM graph_facts")
+		.fetch_one(&db.pool)
+		.await
+		.expect("Evidence integrity fixture must succeed.");
+
+	assert_eq!(count, 5);
+
+	test_db.cleanup().await.expect("Evidence integrity fixture must succeed.");
+}
+
+async fn assert_legacy_graph_upgrade(db: &Db, old: Uuid, start: OffsetDateTime) {
+	// Recreate only the old graph-table contract in this isolated database.
+	sqlx::raw_sql("ALTER TABLE graph_facts ALTER COLUMN valid_from SET NOT NULL;
+        DROP INDEX uq_graph_facts_active_entity_value;
+        DROP INDEX uq_graph_facts_active_entity_object;
+        CREATE UNIQUE INDEX uq_graph_facts_active_entity_value ON graph_facts(tenant_id,project_id,scope,subject_entity_id,predicate_id,object_value) WHERE valid_to IS NULL AND object_value IS NOT NULL;
+        CREATE UNIQUE INDEX uq_graph_facts_active_entity_object ON graph_facts(tenant_id,project_id,scope,subject_entity_id,predicate_id,object_entity_id) WHERE valid_to IS NULL AND object_entity_id IS NOT NULL;")
+        .execute(&db.pool).await.expect("Evidence integrity fixture must succeed.");
+
+	db.ensure_schema(4_096).await.expect("Upgrade the old schema without deleting facts.");
+	db.ensure_schema(4_096).await.expect("Repeat the repository-owned bootstrap safely.");
+
+	let preserved: Option<OffsetDateTime> =
+		sqlx::query_scalar("SELECT valid_from FROM graph_facts WHERE fact_id=$1")
+			.bind(old)
+			.fetch_one(&db.pool)
+			.await
+			.expect("Evidence integrity fixture must succeed.");
+
+	assert_eq!(preserved, Some(start));
 }

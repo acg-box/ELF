@@ -1,7 +1,10 @@
 use serde_json::Value;
 
 use crate::acceptance::text_boundary::setup;
-use elf_service::{AddEventRequest, EventMessage};
+use elf_service::{
+	AddEventRequest, AdminIngestionProfileDefaultGetRequest,
+	AdminIngestionProfileDefaultSetRequest, EventMessage,
+};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
@@ -31,13 +34,14 @@ async fn chinese_evidence_and_date_only_relations_survive_native_extraction() {
 				content: text.to_string(),
 				ts: Some("2026-10-01T00:00:00Z".to_string()),
 				msg_id: Some("原文-1".to_string()),
+				source_document: None,
 				write_policy: None,
 			}],
 		})
 		.await
 		.expect("Extract and persist Chinese evidence");
 
-	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 3);
+	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 4);
 	assert_eq!(
 		result.extracted["notes"][0]["structured"]["relations"][0]["valid_from"],
 		"2026-10-01T00:00:00Z"
@@ -65,4 +69,60 @@ async fn chinese_evidence_and_date_only_relations_survive_native_extraction() {
 	assert_eq!(origin["write_policy_audit"], serde_json::Value::Null);
 
 	fixture.test_db.cleanup().await.expect("Cleanup database");
+}
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant."]
+async fn new_builtin_profile_preserves_existing_versions_and_pins() {
+	let fixture =
+		setup::setup_service("versioned_profile_upgrade").await.expect("Fixture required.");
+	let legacy = serde_json::json!({"schema_version":1,"prompt_system_template":"Pinned legacy instructions"});
+
+	sqlx::query("INSERT INTO memory_ingestion_profiles (tenant_id,project_id,pipeline,profile_id,version,profile) VALUES ('t','p','add_event','default',3,$1)")
+        .bind(&legacy).execute(&fixture.service.db.pool).await.expect("Seed legacy profile.");
+
+	fixture
+		.service
+		.admin_ingestion_profile_default_set(AdminIngestionProfileDefaultSetRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			profile_id: "default".into(),
+			version: Some(3),
+		})
+		.await
+		.expect("Pin legacy default.");
+
+	let selected = fixture
+		.service
+		.admin_ingestion_profile_default_get(AdminIngestionProfileDefaultGetRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+		})
+		.await
+		.expect("Seed the new builtin without moving the pin.");
+
+	assert_eq!(selected.version, Some(3));
+
+	let profiles: Vec<(i32, Value)> = sqlx::query_as("SELECT version,profile FROM memory_ingestion_profiles WHERE tenant_id='t' AND project_id='p' ORDER BY version")
+        .fetch_all(&fixture.service.db.pool).await.expect("Read immutable versions.");
+
+	assert_eq!(profiles.len(), 2);
+	assert_eq!(profiles[0], (3, legacy));
+	assert_eq!(profiles[1].0, 4);
+	assert_ne!(profiles[1].1, profiles[0].1);
+
+	let activated = fixture
+		.service
+		.admin_ingestion_profile_default_set(AdminIngestionProfileDefaultSetRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			profile_id: "default".into(),
+			version: Some(4),
+		})
+		.await
+		.expect("Explicitly activate the new guidance.");
+
+	assert_eq!(activated.version, Some(4));
+
+	fixture.test_db.cleanup().await.expect("Clean profile fixture.");
 }

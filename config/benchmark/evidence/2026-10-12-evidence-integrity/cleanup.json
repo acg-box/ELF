@@ -1,0 +1,64 @@
+{
+  "verified_at": "2026-10-12T07:39:48.958154+00:00",
+  "removed_containers": [
+    "4273c4f0f5f25991d7c73db6a1a0e901e52048ca375853ead02bd9e4895430cc",
+    "8e45bfc61e537072db54309217c229687db969599856e04812e6ef19f75dcfe9",
+    "ad66c812d4fc120cdbfabdca0048cc14cb63a6e6fb323faf7d848525952d71ec",
+    "a51168eb78acb978aad826e18cb6cd82249c94b7127945d9ec4aa17f5e5a128e",
+    "d3ecf7fa20fc45ce979dbd0315697209f38e42cf66f3f303c9360bbe8dfbcaf5",
+    "26a792007bc891f0928d437231da5a69cfe6769793003588eb2ee67a14fe7756",
+    "3413596c27a910ff97880b77b121558cce64c741c0bb370fa036e76cadefb160"
+  ],
+  "removed_volumes": [
+    "afae2ffd191bd77b6f4c6ca092c50691869f8d3626bbe2bc2f28bc89e0d1eb5e",
+    "b14b59e2a1dd1cde19e871f20a961b74b2f6b028f1755abdbf2b173f9d213375"
+  ],
+  "removed_network": "b9675bf212752fa289fc6384a971b1629470ef2ef187b447c32979e439b9e173",
+  "removed_image_references": [
+    {
+      "reference": "sha256:080f7bc509a088224e602c426de05f64d9486be55b72a615d3033be08c2114dc",
+      "receipt": "Deleted: sha256:080f7bc509a088224e602c426de05f64d9486be55b72a615d3033be08c2114dc"
+    },
+    {
+      "reference": "sha256:5a53a4c46dd85bbfef0653c949b94dc04e76a0b587dc43e217b577cb390e27c7",
+      "receipt": "Deleted: sha256:5a53a4c46dd85bbfef0653c949b94dc04e76a0b587dc43e217b577cb390e27c7"
+    },
+    {
+      "reference": "elf-evidence-integrity:current",
+      "receipt": "Untagged: elf-evidence-integrity:current\nDeleted: sha256:83c92008a9e2eb20775a246ab82777a1d411573a4893d48573c9b908e7161ea7"
+    },
+    {
+      "reference": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+      "receipt": "Untagged: ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba\nDeleted: sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926\nDeleted: sha256:4ef53dcb71622e25611ac9ebc0420035ae01299b8c1973519daa0a181ea4fce6\nDeleted: sha256:fee9fca983af40b78e1ff224cc10720f4f24d1a34d6fa0308e1a261e1bbba66b\nDeleted: sha256:dfcabe35b9b80e3029f80a938779b306c0e560e20055dc705a4d11c3c281ce48\nDeleted: sha256:89cdf927fc84ccec88fe429bcc71142a16605767676ccbd18d31f6412b7e9d7b\nDeleted: sha256:16e0102bb65a85bbf1f9010c714e5714adf49f74d116fcb33296cd0d65e56339\nDeleted: sha256:ee90d9de0a189010fffded569b9d39f6911bc52a6beff011c00a0e6655032e50\nDeleted: sha256:c8963355d5aab152a0a709cd5bb1c00d6822af50fbdb43b82745e52ca8ebbaa6\nDeleted: sha256:224a5c91a1e064f9a38b238f767189fd9d5dbeb2b64084f08f29084fb26a28b8\nDeleted: sha256:975667b2d7bf53db5a75a30f4a518ca79b67120d114adb0ccd93c666839b36f4\nDeleted: sha256:ba05aed3136083d73a0760953dfff7bb05623cc0e22b83d66c166cbda0fb6283\nDeleted: sha256:5e9344fba14b1c4744663c7d19d04c4af7f0b317c6c98acb8c06fead5a86e952\nDeleted: sha256:72f1531ec396bdf9a72e1a3ef2684f9d234c945254386d3b2856bb02ae9da17c\nDeleted: sha256:18838b344a4071313eb6565a7f038109133ca1140fde1b893379bb28f51019e9\nDeleted: sha256:d56f3ef93cdbb488901458a99792ca94da8f04e62568056ff3729d1315bd8050\nDeleted: sha256:f43bb89cf5491116aa4b60b840122c48635c231e74448d214a07f58284064191\nDeleted: sha256:daf77d51389ff943d19f1b867fbf6deb34d32cef7a6b3e2ef5b2715619ff02d3\nDeleted: sha256:461723a8079444e11cc24e628d0dfc8c4c1b25176bcd37ee711ddbfa070f1396\nDeleted: sha256:e66ffedac139ff7a544e7df88b4f333d1366775a13254a8d685a691c4443f80f\nDeleted: sha256:e06e0a0f4d1d1b2a34b2224be1c792e3fd03caf44b5d8d6f838c00acbc9f14d2"
+    }
+  ],
+  "retained_images": [],
+  "unrelated_containers_preserved": [
+    "c3a813d45849bbf1f06f6c2c65cd15b448b4334ab614184e79a424d05a19c1b9",
+    "a494ff780f9a8e8e8fd1055f3607b9d838897d066315b54ed2e323f4592e26dc",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "227dfe94a6dac439a8a867da152e9600a8b524b7eb6519a125ca05afbcce4f60",
+    "d7a61abad1c3d8644cf0918c9e24092430de360ee09079e1e2eaca2dfd7bae7c",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d"
+  ],
+  "remaining_container_ids": [
+    "c3a813d45849bbf1f06f6c2c65cd15b448b4334ab614184e79a424d05a19c1b9",
+    "a494ff780f9a8e8e8fd1055f3607b9d838897d066315b54ed2e323f4592e26dc",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "227dfe94a6dac439a8a867da152e9600a8b524b7eb6519a125ca05afbcce4f60",
+    "d7a61abad1c3d8644cf0918c9e24092430de360ee09079e1e2eaca2dfd7bae7c",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d"
+  ],
+  "global_prune": false,
+  "raw_results_preserved": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/evidence-integrity-4096",
+  "backup_restore_receipt": "backup-receipt.json",
+  "docker_disk_after": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          59        10        10.59GB   6.087GB (57%)\nContainers      10        10        1.84MB    0B (0%)\nLocal Volumes   74        3         22.85GB   19.57GB (85%)\nBuild Cache     506       0         52.75GB   52.33GB"
+}

@@ -62,7 +62,7 @@ pub struct GraphFact {
 	/// Scalar object value for entity-to-value facts.
 	pub object_value: Option<String>,
 	/// Start of the fact validity window.
-	pub valid_from: OffsetDateTime,
+	pub valid_from: Option<OffsetDateTime>,
 	/// End of the fact validity window, if superseded.
 	pub valid_to: Option<OffsetDateTime>,
 	/// Creation timestamp.

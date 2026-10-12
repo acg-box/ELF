@@ -1,3 +1,4 @@
+use serde_json::Value;
 use sqlx::{PgConnection, Postgres, Transaction};
 use time::OffsetDateTime;
 
@@ -35,7 +36,14 @@ impl ElfService {
 		dry_run: bool,
 		write_policy_audits: Option<&Vec<WritePolicyAudit>>,
 	) -> Result<AddEventResult> {
-		let decision = self.resolve_extracted_note_update(req, note_data, tx, now).await?;
+		let source_ref = serde_json::json!({
+			"evidence": source_ref::evidence_sources(&req.messages, message_texts, &note_data.evidence, write_policy_audits.map(Vec::as_slice))?,
+			"reason": note_data.reason.clone().unwrap_or_default(),
+			"extracted_key": note.key,
+			"ingestion_profile": {"id": ingestion_profile.id, "version": ingestion_profile.version},
+		});
+		let decision =
+			self.resolve_extracted_note_update(req, note_data, &source_ref, tx, now).await?;
 		let metadata = decision.metadata();
 		let base_decision = policy::base_decision_for_update(
 			&decision,
@@ -87,15 +95,7 @@ impl ElfService {
 					&self.cfg,
 					now,
 				),
-				source_ref: serde_json::json!({
-					"evidence": source_ref::evidence_sources(&req.messages, message_texts, &note_data.evidence, write_policy_audits.map(Vec::as_slice))?,
-					"reason": note_data.reason.clone().unwrap_or_default(),
-					"extracted_key": note.key,
-					"ingestion_profile": serde_json::json!({
-						"id": ingestion_profile.id,
-						"version": ingestion_profile.version,
-					}),
-				}),
+				source_ref,
 				now,
 				embed_version,
 			};
@@ -145,6 +145,7 @@ impl ElfService {
 		&self,
 		req: &AddEventRequest,
 		note_data: &NoteProcessingData,
+		source_ref: &Value,
 		tx: &mut PgConnection,
 		now: OffsetDateTime,
 	) -> Result<UpdateDecision> {
@@ -162,6 +163,7 @@ impl ElfService {
 				note_type: note_data.note_type.as_str(),
 				key: None,
 				text: note_data.text.as_str(),
+				source_ref,
 				now,
 			},
 		)

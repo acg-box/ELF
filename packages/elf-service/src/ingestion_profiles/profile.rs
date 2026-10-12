@@ -75,6 +75,8 @@ An optional key is only a descriptive hint, not authority to replace an existing
 Prefer concise English summaries, but preserve original names, identifiers, and quoted evidence in their source language. Never translate evidence quotes. \
 The structured field is optional. If present, summary must be short, facts must be verbatim substrings of note text or evidence quotes, and concepts must be short phrases. \
 For each relation, subject is directly an entity object with canonical, kind, and aliases; never wrap subject in another entity field. The object provides exactly one non-null entity or value. Subject canonical, predicate, and object canonical/value must occur verbatim in note text or an evidence quote. Omit optional relations when this cannot be satisfied. \
+Keep a named entity canonical consistent across notes. Use explicit source-backed alternate names as aliases, not separate entities. Use entity objects for linkable identifiers such as systems, incidents, and procedures; scalar values are for literals. Extract each explicitly stated step of a relation chain, but do not invent missing edges or infer equivalence merely from co-occurrence. \
+Set relation valid_from/valid_to only when the source establishes effective dates. Distinguish approval dates, event dates, and observation dates; leave unknown validity null rather than using the message or ingestion timestamp. \
 Preserve numbers, dates, percentages, currency amounts, tickers, URLs, and code snippets exactly. \
 Never store secrets or PII: API keys, tokens, private keys, seed phrases, passwords, bank IDs, personal addresses. \
 For every note, provide 1 to 2 evidence quotes copied verbatim from the input messages and include the message_index. \

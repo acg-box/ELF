@@ -1,3 +1,4 @@
+use time::OffsetDateTime;
 use uuid::Uuid;
 
 use crate::acceptance::graph_ingestion::tests_helpers::{
@@ -96,13 +97,25 @@ pub(in crate::acceptance::graph_ingestion) async fn add_fact_note(
 	predicate: &str,
 	object_value: &str,
 ) -> Uuid {
+	// These fixtures exercise known-time supersession and current-state reads.
+	// Unknown validity is covered separately and must not acquire an implicit start.
+	let mut note = fact_note(key, text, predicate, object_value);
+
+	note.structured
+		.as_mut()
+		.expect("Evidence integrity fixture must succeed.")
+		.relations
+		.as_mut()
+		.expect("Evidence integrity fixture must succeed.")[0]
+		.valid_from = Some(OffsetDateTime::now_utc());
+
 	let response = service
 		.add_note(AddNoteRequest {
 			tenant_id: TEST_TENANT.to_string(),
 			project_id: TEST_PROJECT.to_string(),
 			agent_id: "a".to_string(),
 			scope: TEST_SCOPE.to_string(),
-			notes: vec![fact_note(key, text, predicate, object_value)],
+			notes: vec![note],
 		})
 		.await
 		.expect("add_note failed.");

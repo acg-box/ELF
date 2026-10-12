@@ -85,7 +85,7 @@ const ALL_TOOL_DEFINITIONS: [ToolDefinition; 38] = [
 		"elf_searches_get",
 		HttpMethod::Get,
 		"/v2/searches/{search_id}",
-		"Fetch a search session index view by search_id, including optional trajectory_summary.",
+		"Expand cached results by search_id and top_k before issuing another query. Reuses existing candidates; use touch=false for a read without usage updates.",
 	),
 	ToolDefinition::new(
 		"elf_searches_timeline",

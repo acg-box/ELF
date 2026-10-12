@@ -19,6 +19,7 @@ async fn rejects_invalid_text_in_add_event() {
 			content: "こんにちは\0".to_string(),
 			ts: None,
 			msg_id: None,
+			source_document: None,
 			write_policy: None,
 		}],
 	};
@@ -52,6 +53,7 @@ async fn accepts_cyrillic_in_add_event() {
 			content: "Это не английский текст.".to_string(),
 			ts: None,
 			msg_id: None,
+			source_document: None,
 			write_policy: None,
 		}],
 	};

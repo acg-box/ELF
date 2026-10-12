@@ -6,6 +6,7 @@ use uuid::Uuid;
 
 use crate::{
 	NoteOp,
+	docs::TextPositionSelector,
 	ingestion_profiles::{IngestionProfileRef, IngestionProfileSelector},
 	structured_fields::StructuredFields,
 };
@@ -29,8 +30,23 @@ pub struct EventMessage {
 	pub ts: Option<String>,
 	/// Optional message identifier from the upstream source.
 	pub msg_id: Option<String>,
+	/// Optional caller-owned pointer to the exact original message bytes in Source Library.
+	#[serde(skip_serializing_if = "Option::is_none")]
+	pub source_document: Option<EventSourceDocument>,
 	/// Optional write policy applied before extraction.
 	pub write_policy: Option<WritePolicy>,
+}
+
+/// Exact immutable Source Library span supplied by the caller, never by the extractor.
+#[derive(Clone, Debug, Deserialize, Serialize)]
+#[serde(deny_unknown_fields)]
+pub struct EventSourceDocument {
+	/// Source Library document identifier.
+	pub doc_id: Uuid,
+	/// Expected BLAKE3 hash of the complete original document.
+	pub content_hash: String,
+	/// UTF-8 byte range whose contents equal the original message.
+	pub position: TextPositionSelector,
 }
 
 /// Request payload for event-driven note extraction.

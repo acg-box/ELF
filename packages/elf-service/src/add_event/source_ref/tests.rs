@@ -21,6 +21,7 @@ fn evidence_retains_original_identity_and_the_correct_transform_audit() {
 			content: "untouched".to_string(),
 			ts: None,
 			msg_id: None,
+			source_document: None,
 			write_policy: None,
 		},
 		EventMessage {
@@ -28,6 +29,7 @@ fn evidence_retains_original_identity_and_the_correct_transform_audit() {
 			content: raw.to_string(),
 			ts: Some("2026-10-01".to_string()),
 			msg_id: Some("原文-2".to_string()),
+			source_document: None,
 			write_policy: Some(policy),
 		},
 	];

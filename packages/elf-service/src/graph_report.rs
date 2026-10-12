@@ -58,6 +58,7 @@ SELECT
 	object_entity.canonical AS object_canonical,
 	object_entity.kind AS object_kind,
 	gf.object_value,
+    gf.created_at AS observed_at,
 	gf.valid_from,
 	gf.valid_to,
 	COALESCE(
@@ -130,7 +131,7 @@ WHERE gf.tenant_id = $1
 				))
 			)
 	)
-ORDER BY gf.valid_from DESC, gf.fact_id ASC
+ORDER BY gf.valid_from DESC NULLS LAST, gf.fact_id ASC
 LIMIT $8";
 
 #[cfg(test)] mod tests;

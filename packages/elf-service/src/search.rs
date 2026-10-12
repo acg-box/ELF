@@ -58,7 +58,6 @@ use uuid::Uuid;
 use crate::{
 	ElfService, Result,
 	access::ORG_PROJECT_ID,
-	graph::RelationTemporalStatus,
 	ranking_explain_v2::{SEARCH_RANKING_EXPLAIN_SCHEMA_V2, TraceTermsArgs},
 };
 use cache::{fetch_cache_payload, store_cache_payload};

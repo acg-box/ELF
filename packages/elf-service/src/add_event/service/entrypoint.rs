@@ -25,10 +25,20 @@ impl ElfService {
 			validation::apply_write_policies_to_messages(req.messages.as_slice())?;
 		let message_texts: Vec<String> =
 			messages.iter().map(|message| message.content.clone()).collect();
-		let messages_json =
-			serde_json::to_string(&messages).map_err(|_| Error::InvalidRequest {
+		// The source pointer is a caller-validated envelope, not extractor input.
+		let mut extraction_messages =
+			serde_json::to_value(&messages).map_err(|_| Error::InvalidRequest {
 				message: "Failed to serialize messages for extractor.".to_string(),
 			})?;
+
+		for message in extraction_messages.as_array_mut().expect("Messages serialize as an array") {
+			message
+				.as_object_mut()
+				.expect("Message serializes as an object")
+				.remove("source_document");
+		}
+
+		let messages_json = extraction_messages.to_string();
 		let extractor_messages = resolved_profile.build_extractor_messages(
 			&messages_json,
 			self.cfg.memory.max_notes_per_add_event,

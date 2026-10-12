@@ -6,7 +6,7 @@ resource: docs/spec/system_source_ref_doc_pointer_v1.md
 status: active
 authority: normative
 owner: spec
-last_verified: 2026-10-10
+last_verified: 2026-10-12
 tags:
   - docs
   - spec
@@ -265,3 +265,27 @@ The agent SHOULD:
   }
 }
 ```
+
+## Event ingestion binding
+
+An event message may supply `source_document` with `doc_id`, the complete
+original document `content_hash`, and a UTF-8 byte `position` (`start`, `end`).
+The selected original span must exactly equal the unmodified message content.
+ELF checks tenant, project, source-read authority, note scope, active lifecycle,
+hash, and byte boundaries before persisting derived provenance. It does not
+archive or rewrite the document as a side effect of event ingestion.
+
+The extractor does not receive this pointer and cannot supply or alter it.
+Accepted notes retain the standard resolver envelope under each
+`source_ref.evidence[].source.document`. Clients pass the returned `ref.doc_id`
+and `locator.position` to excerpt retrieval and check `state.content_hash`
+against the returned verification hash. Multiple source messages retain separate
+pointers. Message identity, original hashes, quotes, and transformation audits
+remain alongside each pointer.
+
+Unkeyed note idempotency requires both equal text and equal source occurrences.
+Different upstream message identities remain separate even when their extracted
+sentences are identical. Repeating an occurrence at another batch index does not
+create a new identity. Callers must supply an upstream message ID or document
+span to distinguish otherwise identical anonymous occurrences. Only an explicit
+caller key authorizes replacement; an extractor key remains an audit hint.

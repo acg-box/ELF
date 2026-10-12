@@ -1,0 +1,43 @@
+[
+  {
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "incorrect_claim": "The no-change-of-delivery-mode records concern other projects, not Larch.",
+    "counterevidence_id": "m_d7a9d1f22107f233",
+    "counterevidence": "No change of delivery mode was approved at this meeting.",
+    "retained_note_id": "7d39ef98-d6ac-4e91-af2c-13020c4a4099",
+    "reason": "Required identifier matching alone misses the incorrect extra subject exclusion.",
+    "counterevidence_returned_by": {
+      "tool": "get_search",
+      "top_k": 40,
+      "note_id": "7d39ef98-d6ac-4e91-af2c-13020c4a4099"
+    }
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "incorrect_claim": "The decisions of 2026-08-22 are standing and reaffirmed later.",
+    "exact_answer_phrase": "the decisions of 2026-08-22 (standing, and reaffirmed later)",
+    "counterevidence_id": "m_b482da0e797a3b49",
+    "counterevidence": "2026-08-22. Tala reviewed Sable.",
+    "latest_source_date": "2026-08-22",
+    "reason": "The complete-answer review treats the added later reaffirmation as unsupported. All four Sable source events end on August 22; ingestion/observation timestamps do not establish another decision. Required recovery and gate identifiers are correct."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-0",
+    "incorrect_claim": "Cedar originally chose BATCH-4-741 after the August 8 outage.",
+    "exact_answer_phrase": "chosen by Devon, after BATCH-4-741 lost updates during the GATE-4-519 outages recorded 2026-08-08",
+    "counterevidence_id": "m_11ab570fcca41f15",
+    "counterevidence": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+    "reason": "The original batch choice was on August 1, before the August 8 outage. Current requested identifiers are correct; the added historical ordering is wrong."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-2",
+    "issue": "The answer adds a Sable incident as context to Reed historical state.",
+    "answer_quote": "despite reports such as BATCH-3-741 losing updates during GATE-3-519 outages",
+    "counterevidence_id": "m_9757cd3f6fff2b1a",
+    "counterevidence": "Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages."
+  }
+]

@@ -1,0 +1,108 @@
+{
+  "notes": 59,
+  "entities": 50,
+  "aliases": 49,
+  "nonself_aliases": [
+    {
+      "canonical": "Cobalt",
+      "alias": "project Cobalt"
+    },
+    {
+      "canonical": "recovery procedure",
+      "alias": "recovery procedure validated on August 8"
+    },
+    {
+      "canonical": "Reed",
+      "alias": "project Reed"
+    },
+    {
+      "canonical": "GATE-4-519",
+      "alias": "GATE-4-519 outages"
+    }
+  ],
+  "facts": 60,
+  "unknown_effective_start": 48,
+  "entity_objects": 42,
+  "literal_objects": 18,
+  "projects": [
+    {
+      "project": "Larch",
+      "distinct_project_entities": 2,
+      "project_entities": [
+        {
+          "entity_id": "0de69660-19f2-421c-ab81-7dceda6c46b6",
+          "canonical": "Larch"
+        },
+        {
+          "entity_id": "c9e1bb6c-9bc8-446c-a6f9-59791214d3a3",
+          "canonical": "project Larch"
+        }
+      ],
+      "recovery_targets": [
+        "d247b8c5-e31b-4e39-9903-3c00e57cbf1b"
+      ],
+      "outgoing_recovery_paths_up_to_four_edges": []
+    },
+    {
+      "project": "Cobalt",
+      "distinct_project_entities": 1,
+      "project_entities": [
+        {
+          "entity_id": "587d8d7e-4c86-4daa-932c-f0ea79b4ec61",
+          "canonical": "Cobalt"
+        }
+      ],
+      "recovery_targets": [
+        "6f5df962-2125-4c33-8e2c-cdcb105c66ed"
+      ],
+      "outgoing_recovery_paths_up_to_four_edges": []
+    },
+    {
+      "project": "Reed",
+      "distinct_project_entities": 1,
+      "project_entities": [
+        {
+          "entity_id": "c49d9c27-1b50-465c-9f5f-420f3c2b8a68",
+          "canonical": "Reed"
+        }
+      ],
+      "recovery_targets": [
+        "3954eed1-8465-42ca-8338-3058a691e2be"
+      ],
+      "outgoing_recovery_paths_up_to_four_edges": []
+    },
+    {
+      "project": "Sable",
+      "distinct_project_entities": 2,
+      "project_entities": [
+        {
+          "entity_id": "52deec11-ed00-46b0-8c4f-6d9b325ccacc",
+          "canonical": "project Sable"
+        },
+        {
+          "entity_id": "d673dc92-a304-4e83-ad30-b83070784df2",
+          "canonical": "Sable"
+        }
+      ],
+      "recovery_targets": [
+        "d32a4fc4-522f-4e36-9ca7-422e9aa8f4b3"
+      ],
+      "outgoing_recovery_paths_up_to_four_edges": []
+    },
+    {
+      "project": "Cedar",
+      "distinct_project_entities": 1,
+      "project_entities": [
+        {
+          "entity_id": "b3eca3c4-dc3a-481b-b0ff-8d7d5991e7b3",
+          "canonical": "Cedar"
+        }
+      ],
+      "recovery_targets": [
+        "d47f7e55-3d2b-4865-9827-c5b9929ebe13"
+      ],
+      "outgoing_recovery_paths_up_to_four_edges": []
+    }
+  ],
+  "limits": "Structural paths include all stored candidate facts, including unknown validity. This is not proof of semantic entailment, temporal truth, or successful agent use."
+}

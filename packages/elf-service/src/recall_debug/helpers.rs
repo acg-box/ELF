@@ -76,6 +76,7 @@ pub(super) fn knowledge_freshness(item: &KnowledgePageSearchItem) -> String {
 pub(super) fn graph_temporal_status(status: crate::RelationTemporalStatus) -> String {
 	match status {
 		crate::RelationTemporalStatus::Future => "future",
+		crate::RelationTemporalStatus::Unknown => "unknown",
 		crate::RelationTemporalStatus::Current => "current",
 		crate::RelationTemporalStatus::Historical => "historical",
 	}

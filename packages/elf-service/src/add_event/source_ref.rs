@@ -49,6 +49,13 @@ pub(super) fn evidence_sources(
 					"content_hash": blake3::hash(message.content.as_bytes()).to_hex().to_string(),
 					"extraction_content_hash": blake3::hash(extraction_text.as_bytes()).to_hex().to_string(),
 					"write_policy_audit": audit,
+					"document": message.source_document.as_ref().map(|doc| serde_json::json!({
+						"schema": "source_ref/v1",
+						"resolver": "elf_doc_ext/v1",
+						"ref": {"doc_id": doc.doc_id, "source_record_id": doc.doc_id},
+						"state": {"content_hash": doc.content_hash},
+						"locator": {"position": doc.position},
+					})),
 				}
 			}))
 		})

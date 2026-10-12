@@ -47,6 +47,7 @@ pub(super) fn build_report_facts(
 				predicate_id: row.predicate_id,
 				predicate_status: row.predicate_status,
 				predicate_cardinality: row.predicate_cardinality,
+				observed_at: row.observed_at,
 				valid_from: row.valid_from,
 				valid_to: row.valid_to,
 				temporal_status,
@@ -68,6 +69,7 @@ pub(super) fn summarize_report_facts(facts: &[GraphReportFact]) -> GraphReportSu
 			RelationTemporalStatus::Current => summary.current_count += 1,
 			RelationTemporalStatus::Historical => summary.historical_count += 1,
 			RelationTemporalStatus::Future => summary.future_count += 1,
+			RelationTemporalStatus::Unknown => summary.unknown_count += 1,
 		}
 
 		if !fact.evidence_note_ids.is_empty() {

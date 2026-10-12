@@ -1,8 +1,8 @@
 use crate::{
-	access,
+	access, graph,
 	search::{
-		ElfService, HashMap, OffsetDateTime, RELATION_CONTEXT_SQL, RelationTemporalStatus, Result,
-		ScoredChunk, SearchExplainRelationContext, SearchExplainRelationContextObject,
+		ElfService, HashMap, OffsetDateTime, RELATION_CONTEXT_SQL, Result, ScoredChunk,
+		SearchExplainRelationContext, SearchExplainRelationContextObject,
 		SearchExplainRelationEntityRef, SearchRelationContextRow, Uuid,
 	},
 };
@@ -81,7 +81,7 @@ impl ElfService {
 			)
 			.await?;
 
-		Ok(Self::group_relation_context_rows(rows))
+		Ok(Self::group_relation_context_rows(rows, now))
 	}
 
 	pub(in crate::search) fn relation_context_bounds(&self) -> (i32, i32) {
@@ -125,6 +125,7 @@ impl ElfService {
 
 	pub(in crate::search) fn group_relation_context_rows(
 		rows: Vec<SearchRelationContextRow>,
+		read_at: OffsetDateTime,
 	) -> HashMap<Uuid, Vec<SearchExplainRelationContext>> {
 		let mut relation_context_by_note: HashMap<Uuid, Vec<SearchExplainRelationContext>> =
 			HashMap::new();
@@ -158,11 +159,11 @@ impl ElfService {
 					object,
 					valid_from: row.valid_from,
 					valid_to: row.valid_to,
-					temporal_status: if row.is_current {
-						RelationTemporalStatus::Current
-					} else {
-						RelationTemporalStatus::Historical
-					},
+					temporal_status: graph::relation_temporal_status(
+						row.valid_from,
+						row.valid_to,
+						read_at,
+					),
 					evidence_note_ids: row.evidence_note_ids,
 				},
 			);

@@ -7,8 +7,8 @@ use crate::{
 fn relation_context_rows_without_evidence_are_suppressed() {
 	let now = OffsetDateTime::from_unix_timestamp(100).expect("valid timestamp");
 	let note_id = Uuid::from_u128(1);
-	let contexts =
-		ElfService::group_relation_context_rows(vec![crate::search::SearchRelationContextRow {
+	let contexts = ElfService::group_relation_context_rows(
+		vec![crate::search::SearchRelationContextRow {
 			note_id,
 			fact_id: Uuid::from_u128(2),
 			scope: "project_shared".to_string(),
@@ -19,11 +19,12 @@ fn relation_context_rows_without_evidence_are_suppressed() {
 			object_canonical: None,
 			object_kind: None,
 			object_value: Some("source-bound recall".to_string()),
-			valid_from: now,
+			valid_from: Some(now),
 			valid_to: None,
-			is_current: true,
 			evidence_note_ids: Vec::new(),
-		}]);
+		}],
+		now,
+	);
 
 	assert!(!contexts.contains_key(&note_id));
 }

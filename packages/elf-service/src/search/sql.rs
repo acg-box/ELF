@@ -25,7 +25,7 @@ WITH selected_facts AS (
 		gf.object_value,
 		gf.valid_from,
 		gf.valid_to,
-		(gf.valid_from <= $4 AND (gf.valid_to IS NULL OR gf.valid_to > $4)) AS is_current
+		COALESCE((gf.valid_from <= $4 AND (gf.valid_to IS NULL OR gf.valid_to > $4)), false) AS is_current
 	FROM unnest($7::uuid[]) AS snc(selected_note_id)
 	JOIN memory_notes selected_note
 		ON selected_note.note_id = snc.selected_note_id
@@ -70,12 +70,12 @@ WITH selected_facts AS (
 				)
 			)
 		)
-		AND gf.valid_from <= $4
+		AND (gf.valid_from IS NULL OR gf.valid_from <= $4)
 	ORDER BY
 		snc.selected_note_id,
 		gf.fact_id,
-		(gf.valid_from <= $4 AND (gf.valid_to IS NULL OR gf.valid_to > $4)) DESC,
-		gf.valid_from DESC,
+		COALESCE((gf.valid_from <= $4 AND (gf.valid_to IS NULL OR gf.valid_to > $4)), false) DESC,
+		gf.valid_from DESC NULLS LAST,
 		gf.fact_id ASC
 ),
 ranked_facts AS (
@@ -95,7 +95,7 @@ ranked_facts AS (
 		is_current,
 		ROW_NUMBER() OVER (
 			PARTITION BY selected_note_id
-			ORDER BY is_current DESC, valid_from DESC, fact_id ASC
+			ORDER BY is_current DESC, valid_from DESC NULLS LAST, fact_id ASC
 		) AS fact_rank
 	FROM selected_facts
 ),

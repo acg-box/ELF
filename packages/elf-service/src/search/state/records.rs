@@ -68,9 +68,8 @@ pub(in crate::search) struct SearchRelationContextRow {
 	pub(in crate::search) object_canonical: Option<String>,
 	pub(in crate::search) object_kind: Option<String>,
 	pub(in crate::search) object_value: Option<String>,
-	pub(in crate::search) valid_from: OffsetDateTime,
+	pub(in crate::search) valid_from: Option<OffsetDateTime>,
 	pub(in crate::search) valid_to: Option<OffsetDateTime>,
-	pub(in crate::search) is_current: bool,
 	pub(in crate::search) evidence_note_ids: Vec<Uuid>,
 }
 

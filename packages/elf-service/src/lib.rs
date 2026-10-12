@@ -46,7 +46,9 @@ mod vectors;
 mod write_policy;
 
 pub use self::{
-	add_event::{AddEventRequest, AddEventResponse, AddEventResult, EventMessage},
+	add_event::{
+		AddEventRequest, AddEventResponse, AddEventResult, EventMessage, EventSourceDocument,
+	},
 	add_note::{AddNoteInput, AddNoteRequest, AddNoteResponse, AddNoteResult},
 	admin::RebuildReport,
 	admin_graph_predicates::{

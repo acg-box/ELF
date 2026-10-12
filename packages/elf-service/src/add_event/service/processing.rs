@@ -60,6 +60,23 @@ impl ElfService {
 			return Ok(result);
 		}
 
+		// The pointer is caller input. Validate source ownership, scope, integrity,
+		// and the exact original byte span before persisting derived provenance.
+		for evidence in &note_data.evidence {
+			let message = &req.messages[evidence.message_index];
+
+			if let Some(document) = &message.source_document {
+				self.validate_event_source_document(
+					&mut tx,
+					req,
+					&note_data.scope,
+					message,
+					document,
+				)
+				.await?;
+			}
+		}
+
 		let result = self
 			.apply_extracted_note_decision(
 				req,

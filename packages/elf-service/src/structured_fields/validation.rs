@@ -27,6 +27,10 @@ pub fn validate_structured_fields(
 		quotes::extract_source_ref_quotes(source_ref)
 	};
 
+	if add_event_evidence.is_some() {
+		entity::validate_extracted_aliases(structured, note_text, &evidence_quotes)?;
+	}
+
 	if let Some(summary) = structured.summary.as_ref() {
 		text::validate_text_field(summary, "structured.summary")?;
 	}

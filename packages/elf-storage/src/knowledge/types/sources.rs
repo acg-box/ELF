@@ -105,7 +105,7 @@ pub struct KnowledgeRelationSource {
 	/// Optional scalar object value.
 	pub object_value: Option<String>,
 	/// Fact validity window start.
-	pub valid_from: OffsetDateTime,
+	pub valid_from: Option<OffsetDateTime>,
 	/// Fact validity window end, when historical.
 	pub valid_to: Option<OffsetDateTime>,
 	/// Fact update timestamp.
