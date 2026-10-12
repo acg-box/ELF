@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--resume-case',help='Explicit condition/case_id continuation from a retained complete tool batch after an archived transport failure')
     parser.add_argument('--grounded',action='store_true',help='Use native evidence expansion and per-claim citations; retain semantic failures')
     parser.add_argument('--workload',type=Path,help='Frozen compatible workload, including distinct comparison cases')
+    parser.add_argument('--case-prefix',default='',help='Execute only matching case ids; record selection separately from the frozen workload')
+    parser.add_argument('--conditions',nargs='+',choices=CONDITIONS,default=CONDITIONS,help='Primary arms to execute; never resample existing outcomes')
     parser.add_argument('--workers',type=int,choices=[1,2],default=1,help='Independent primary cases; controls remain serial. Never changes per-case budgets.')
     args=parser.parse_args();root=args.root.resolve();root.mkdir(parents=True,exist_ok=True)
     if args.phase=='analyze':
@@ -109,7 +111,7 @@ def main():
         elf_runtime.drain();common.save(root/'prepared.json',{'notes':persisted_note_count,'same_note_bodies':same_note_bodies,'live_extraction':args.live_extraction})
     else:
         assert (root/'prepared.json').exists()
-        queries=suite['queries'];folder='cases'
+        queries=[q for q in suite['queries'] if q['case_id'].startswith(args.case_prefix)];folder='cases'
         if args.phase=='paged':
             missing={r['case_id'] for r in initial_coverage(root,suite) if r['structured_missing']}
             queries=[q for q in queries if q['case_id'] in missing];folder='paged-cases'
@@ -118,6 +120,7 @@ def main():
         for index,q in enumerate(queries):
             order=['paged'] if args.phase=='paged' else CONDITIONS[index%4:]+CONDITIONS[:index%4]
             for condition in order:
+                if condition not in args.conditions and condition!='paged':continue
                 path=root/folder/condition/(q['case_id']+'.json')
                 if path.exists():
                     assert json.loads(path.read_text())['status'] in ('completed','tool_budget_exhausted','round_budget_exhausted','invalid_answer'),'Archive failed attempt before retry';continue
@@ -144,9 +147,11 @@ def main():
             if value['status']=='failed':raise RuntimeError('Agent run stopped; retain failure and progress before retry')
         run_jobs(jobs,execute_case,args.workers)
         elf_runtime.drain()
-        completion={'cases':len(jobs),'remaining':planned-len(jobs),'note':'Exhausted agents are retained outcomes, not rerun answers. Counts cover only cases executed in this invocation.'}
+        completion={'cases':len(jobs),'remaining':planned-len(jobs),'case_prefix':args.case_prefix,'conditions':args.conditions,'note':'Exhausted agents are retained outcomes, not rerun answers. Counts cover only cases executed in this invocation.'}
         common.save(root/(args.phase+'-invocation-completed.json'),completion)
-        if len(jobs)==planned:common.save(root/('paged-completed.json' if args.phase=='paged' else 'completed.json'),completion)
+        if len(jobs)==planned and not args.case_prefix and args.conditions==CONDITIONS:common.save(root/('paged-completed.json' if args.phase=='paged' else 'completed.json'),completion)
+        selection=root/(args.phase+'-selections.jsonl')
+        with selection.open('a') as stream:stream.write(json.dumps(completion)+'\n')
     replay.server.shutdown()
 
 

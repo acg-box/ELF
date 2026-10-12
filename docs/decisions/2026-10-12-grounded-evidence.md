@@ -123,3 +123,14 @@ input and output cost for each active request. Its default remains one request. 
 case retains the same prompt, output allowance, and tool limits. Report this
 execution policy with latency; do not compare concurrent wall times directly
 with prior serial measurements.
+
+## Cost-based execution amendment
+
+After the four-case pilot, the first original question cost $0.1352 across four
+primary arms. Recovery cases required more calls. Before any contrast reader
+answer, the execution plan was narrowed to 132 cases: all five arms for the
+original twenty questions, and combined source-plus-graph versus initial memory
+for all sixteen contrast questions. The frozen workload and rubric are retained.
+This change selects by suite and capability, not by observed answer quality.
+There is no complete five-arm contrast ablation. Retain every executed answer
+and report the selected matrix with the original and contrast scores separately.
