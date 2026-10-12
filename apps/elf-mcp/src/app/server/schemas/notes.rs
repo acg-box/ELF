@@ -97,12 +97,23 @@ pub(in crate::app::server) fn evidence_check_schema() -> Arc<JsonObject> {
             "type":"object","additionalProperties":false,"required":["text","state","citations"],"properties":{
                 "text":{"type":"string"},"state":{"type":"string","enum":["supported","absent","unknown","conflict"]},
                 "citations":{"type":"array","maxItems":8,"items":{"oneOf":[
+                    {"type":"object","additionalProperties":false,"required":["kind","reference"],"properties":{"kind":{"const":"reference"},"reference":{"type":"string","maxLength":192}}},
                     {"type":"object","additionalProperties":false,"required":["kind","note_id","quote"],"properties":{"kind":{"const":"note"},"note_id":{"type":"string"},"quote":{"type":"string"}}},
                     {"type":"object","additionalProperties":false,"required":["kind","doc_id","content_hash","quote"],"properties":{"kind":{"const":"source"},"doc_id":{"type":"string"},"content_hash":{"type":"string"},"quote":{"type":"string"}}}
                 ]}}
             }
         }}}
     })).expect("Valid evidence check schema"))
+}
+
+pub(in crate::app::server) fn evidence_pack_schema() -> Arc<JsonObject> {
+	Arc::new(serde_json::from_value(serde_json::json!({
+        "type":"object", "additionalProperties":false, "required":["note_ids"],
+        "properties":{
+            "note_ids":{"type":"array","minItems":1,"maxItems":12,"items":{"type":"string","format":"uuid"}},
+            "max_source_bytes":{"type":"integer","minimum":1,"maximum":32_768}
+        }
+    })).expect("Valid evidence pack schema"))
 }
 
 fn notes_structured_entity_schema() -> Value {

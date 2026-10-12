@@ -40,3 +40,7 @@ args = [
 	"memory-quantitative-docker",
 ]
 command = "bash"
+
+[tasks.benchmark-evidence-context]
+args    = ["scripts/benchmark-evidence-context.py", "${@}"]
+command = "python3"

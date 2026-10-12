@@ -1,0 +1,275 @@
+{
+  "facts": 119,
+  "entity_objects": 86,
+  "scalar_objects": 33,
+  "unknown_valid_from": 97,
+  "groups": [
+    {
+      "group": 0,
+      "project": "Larch",
+      "start_entities": [
+        "Larch"
+      ],
+      "directed": [],
+      "undirected": [],
+      "source_incidence": [
+        {
+          "start": "0dffdee0-fdc3-4cf1-ba97-d14cb62a4947",
+          "target": "47183c1d-c1dc-4da5-8138-46d8132c867d",
+          "path": [
+            "b4974e9b-bf63-51ac-9419-b08632a32873",
+            "b4974e9b-bf63-51ac-9419-b08632a32873",
+            "0be90114-0a70-5aff-b5a1-c416f0cf6d34",
+            "0be90114-0a70-5aff-b5a1-c416f0cf6d34"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 1,
+      "project": "Cobalt",
+      "start_entities": [
+        "project Cobalt",
+        "Cobalt"
+      ],
+      "directed": [],
+      "undirected": [],
+      "source_incidence": [
+        {
+          "start": "b88e58dd-e9d9-4f8d-bce5-3a8da02a6b5d",
+          "target": "178c4425-8ffd-4fbd-8509-18c8a5fa6251",
+          "path": [
+            "f6e66d7b-afbd-532d-baff-e10c3242587e",
+            "f6e66d7b-afbd-532d-baff-e10c3242587e",
+            "695171ff-aca3-5c7b-b31c-8e6f2da84483",
+            "695171ff-aca3-5c7b-b31c-8e6f2da84483"
+          ]
+        },
+        {
+          "start": "aa6934fd-6394-4c28-8215-661013beab6e",
+          "target": "178c4425-8ffd-4fbd-8509-18c8a5fa6251",
+          "path": [
+            "0ceb9aef-6778-5cf6-a4a5-d4bc313df631",
+            "0ceb9aef-6778-5cf6-a4a5-d4bc313df631",
+            "695171ff-aca3-5c7b-b31c-8e6f2da84483",
+            "695171ff-aca3-5c7b-b31c-8e6f2da84483"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 2,
+      "project": "Reed",
+      "start_entities": [
+        "Reed"
+      ],
+      "directed": [],
+      "undirected": [],
+      "source_incidence": [
+        {
+          "start": "c930b155-7da3-4673-b5ee-f5db9f29e8e0",
+          "target": "b6080f03-3c62-4e99-9afe-0dd209dcc258",
+          "path": [
+            "6fc05b3a-16f4-549d-8927-4e11ff64ed27",
+            "6fc05b3a-16f4-549d-8927-4e11ff64ed27",
+            "8b17477e-d9d4-5283-b9a1-d5daa7dc6492",
+            "8b17477e-d9d4-5283-b9a1-d5daa7dc6492"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 3,
+      "project": "Sable",
+      "start_entities": [
+        "project Sable",
+        "Sable"
+      ],
+      "directed": [],
+      "undirected": [],
+      "source_incidence": [
+        {
+          "start": "0ae885d1-36ef-4da3-b2ba-b6f5ce1e3f60",
+          "target": "43a5a7f7-8e21-4ade-a3bc-7f710018a2a6",
+          "path": [
+            "ac83044a-3ad5-56a0-b2fa-0dab57b3a784",
+            "ac83044a-3ad5-56a0-b2fa-0dab57b3a784",
+            "3841e274-5173-5c90-8b0b-73522382b129",
+            "3841e274-5173-5c90-8b0b-73522382b129"
+          ]
+        },
+        {
+          "start": "5c7be7cb-6599-4632-900c-4c972c77b78d",
+          "target": "43a5a7f7-8e21-4ade-a3bc-7f710018a2a6",
+          "path": [
+            "1fbe6485-ad5f-5233-83b8-bc5b8208c54c",
+            "1fbe6485-ad5f-5233-83b8-bc5b8208c54c",
+            "3841e274-5173-5c90-8b0b-73522382b129",
+            "3841e274-5173-5c90-8b0b-73522382b129"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 4,
+      "project": "Cedar",
+      "start_entities": [
+        "project Cedar",
+        "Cedar"
+      ],
+      "directed": [],
+      "undirected": [],
+      "source_incidence": [
+        {
+          "start": "6eb8dc94-a7bc-4af2-ae04-2dd35808b4c1",
+          "target": "2077d2bc-70b7-465f-bbb4-716a5bbbedfa",
+          "path": [
+            "69394bc2-752c-5524-858a-dd4576efce81",
+            "69394bc2-752c-5524-858a-dd4576efce81",
+            "80d40823-22ca-5bbb-9a5d-24ea4309ec72",
+            "80d40823-22ca-5bbb-9a5d-24ea4309ec72"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 5,
+      "project": "ACCT-N",
+      "start_entities": [
+        "North division Atlas project (ACCT-N)",
+        "Atlas project (ACCT-N)",
+        "ACCT-N"
+      ],
+      "directed": [],
+      "undirected": [],
+      "source_incidence": [
+        {
+          "start": "24453529-36b7-4f2c-8fd3-9ebcc9c5978e",
+          "target": "00db58ac-d120-4341-a6a8-227beea46316",
+          "path": [
+            "7dc2bec2-e96d-5a0d-ba50-8b978fdb8e17",
+            "7dc2bec2-e96d-5a0d-ba50-8b978fdb8e17",
+            "023d66c1-cbcb-599f-8296-f2551acda2cf",
+            "023d66c1-cbcb-599f-8296-f2551acda2cf"
+          ]
+        },
+        {
+          "start": "cc6b1c44-6edf-4f41-b6e7-afde1709c2b2",
+          "target": "00db58ac-d120-4341-a6a8-227beea46316",
+          "path": [
+            "890ab6f0-85d3-5adf-b405-8c7a5500ef0c",
+            "890ab6f0-85d3-5adf-b405-8c7a5500ef0c",
+            "023d66c1-cbcb-599f-8296-f2551acda2cf",
+            "023d66c1-cbcb-599f-8296-f2551acda2cf"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 6,
+      "project": "ACCT-S",
+      "start_entities": [
+        "ACCT-S"
+      ],
+      "directed": [],
+      "undirected": [],
+      "source_incidence": [
+        {
+          "start": "a7f4aaa2-1e7c-4c9d-95ad-890c883ee58b",
+          "target": "cf7256b5-cc58-4308-b8d7-ebe194498d93",
+          "path": [
+            "db9c2704-b404-5a81-9a01-7e0c1a291d5f",
+            "db9c2704-b404-5a81-9a01-7e0c1a291d5f"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 7,
+      "project": "EGRET-CN",
+      "start_entities": [
+        "白鹭项目",
+        "EGRET-CN"
+      ],
+      "directed": [],
+      "undirected": [
+        {
+          "start": "c50bda5e-eb40-4826-9a80-681777e1e21c",
+          "target": "3a74830c-158c-4f6f-9b97-428c18e0e349",
+          "path": [
+            "4ab4b2ce-780c-4b24-830b-366ed3de969e",
+            "7f8ec317-f7b1-4097-825b-9a4a21f8e87e"
+          ]
+        },
+        {
+          "start": "d9fb91f9-aa78-460d-8ab3-f9c70d514d71",
+          "target": "3a74830c-158c-4f6f-9b97-428c18e0e349",
+          "path": [
+            "7f8ec317-f7b1-4097-825b-9a4a21f8e87e"
+          ]
+        }
+      ],
+      "source_incidence": [
+        {
+          "start": "c50bda5e-eb40-4826-9a80-681777e1e21c",
+          "target": "3a74830c-158c-4f6f-9b97-428c18e0e349",
+          "path": [
+            "0dd8dbcc-5873-5eaf-8576-65a5d0605396",
+            "0dd8dbcc-5873-5eaf-8576-65a5d0605396",
+            "b4605f67-bc94-5f44-97d4-c1cf163a6151",
+            "b4605f67-bc94-5f44-97d4-c1cf163a6151"
+          ]
+        },
+        {
+          "start": "d9fb91f9-aa78-460d-8ab3-f9c70d514d71",
+          "target": "3a74830c-158c-4f6f-9b97-428c18e0e349",
+          "path": [
+            "b4605f67-bc94-5f44-97d4-c1cf163a6151",
+            "b4605f67-bc94-5f44-97d4-c1cf163a6151"
+          ]
+        }
+      ]
+    },
+    {
+      "group": 8,
+      "project": "DELTA-8",
+      "start_entities": [
+        "Delta project DELTA-8",
+        "DELTA-8",
+        "Delta DELTA-8"
+      ],
+      "directed": [],
+      "undirected": [
+        {
+          "start": "84b45844-d20a-4da7-9ef4-9d64b5be6432",
+          "target": "4138161e-805c-461d-9bff-7e23aaab72c2",
+          "path": [
+            "b078c573-4bf4-42e2-87ab-cbaa243708c8",
+            "1733fc20-15da-4029-b539-5ef93bf5028c"
+          ]
+        }
+      ],
+      "source_incidence": [
+        {
+          "start": "7a469061-7838-4b4d-92d1-308157e3ae8b",
+          "target": "4138161e-805c-461d-9bff-7e23aaab72c2",
+          "path": [
+            "9e6780ee-3c75-5795-be9b-47ade3c47056",
+            "9e6780ee-3c75-5795-be9b-47ade3c47056",
+            "b89ecd61-6625-58e0-9339-b5b3d8f734ee",
+            "b89ecd61-6625-58e0-9339-b5b3d8f734ee"
+          ]
+        },
+        {
+          "start": "84b45844-d20a-4da7-9ef4-9d64b5be6432",
+          "target": "4138161e-805c-461d-9bff-7e23aaab72c2",
+          "path": [
+            "5a1836ea-422c-58c3-9ec0-03fb31a0a1f3",
+            "5a1836ea-422c-58c3-9ec0-03fb31a0a1f3"
+          ]
+        }
+      ]
+    }
+  ],
+  "boundary": "Read-only structural diagnosis. Source incidence means shared provenance, not identity, causality, temporal validity, or a permissible new semantic edge. No diagnostic path is passed to the model. Name candidates are tried separately, never merged."
+}

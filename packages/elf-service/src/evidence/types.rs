@@ -56,6 +56,11 @@ pub struct ClaimEvidence {
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
 pub enum ClaimCitation {
+	/// Native locator copied from an evidence pack; current read access is always rechecked.
+	Reference {
+		/// Versioned document/hash/byte-span locator, not an access token.
+		reference: String,
+	},
 	/// Quote from a currently readable note. This is derived evidence.
 	Note {
 		/// Note identifier.
@@ -83,6 +88,8 @@ pub struct ClaimBinding {
 	pub citation_verified: Vec<bool>,
 	/// Whether required evidence is present and every supplied quote resolves.
 	pub binding_verified: bool,
+	/// Resolved exact citations in input order; null for an unreadable or invalid binding.
+	pub resolved_citations: Vec<Option<ClaimCitation>>,
 }
 
 /// Checked source bindings, with an explicit semantic boundary.

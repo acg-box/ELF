@@ -18,6 +18,7 @@ pub(super) fn public_api_router() -> Router<AppState> {
 		.route("/v2/graph/query", routing::post(routes::graph::graph_query))
 		.route("/v2/graph/report", routing::post(routes::graph::graph_report))
 		.route("/v2/notes/{note_id}/evidence", routing::get(routes::evidence::note_evidence))
+		.route("/v2/evidence/pack", routing::post(routes::evidence::evidence_pack))
 		.route("/v2/evidence/check", routing::post(routes::evidence::evidence_check))
 		.route("/v2/notes", routing::get(routes::notes::notes_list))
 		.route(

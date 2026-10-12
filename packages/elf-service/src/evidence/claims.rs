@@ -31,20 +31,29 @@ impl ElfService {
 
 		for (claim_index, claim) in claims.iter().enumerate() {
 			let mut citation_verified = Vec::new();
+			let mut resolved_citations = Vec::new();
 
 			for citation in &claim.citations {
-				let resolved = self.verify_claim_citation(&req, citation).await;
+				let resolved = match citation {
+					ClaimCitation::Reference { reference } =>
+						self.resolve_evidence_reference(&req, reference).await.map(Some),
+					_ => self
+						.verify_claim_citation(&req, citation)
+						.await
+						.map(|verified| verified.then(|| citation.clone())),
+				};
 				let verified = match resolved {
-					Ok(verified) => verified,
+					Ok(resolved) => resolved,
 					Err(
 						Error::NotFound { .. }
 						| Error::InvalidRequest { .. }
 						| Error::ScopeDenied { .. },
-					) => false,
+					) => None,
 					Err(error) => return Err(error),
 				};
 
-				citation_verified.push(verified);
+				citation_verified.push(verified.is_some());
+				resolved_citations.push(verified);
 			}
 
 			let enough = match claim.state {
@@ -54,7 +63,12 @@ impl ElfService {
 			};
 			let binding_verified = enough && citation_verified.iter().all(|verified| *verified);
 
-			bindings.push(ClaimBinding { claim_index, citation_verified, binding_verified });
+			bindings.push(ClaimBinding {
+				claim_index,
+				citation_verified,
+				binding_verified,
+				resolved_citations,
+			});
 		}
 
 		Ok(EvidenceCheckResponse { claims: bindings, semantic_support: "not_evaluated" })
@@ -66,6 +80,7 @@ impl ElfService {
 		citation: &ClaimCitation,
 	) -> Result<bool> {
 		let quote = match citation {
+			ClaimCitation::Reference { .. } => return Ok(false),
 			ClaimCitation::Note { quote, .. } | ClaimCitation::Source { quote, .. } => quote,
 		};
 
@@ -74,6 +89,7 @@ impl ElfService {
 		}
 
 		match citation {
+			ClaimCitation::Reference { .. } => Ok(false),
 			ClaimCitation::Note { note_id, quote } => {
 				let note = self
 					.get_note(NoteFetchRequest {

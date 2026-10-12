@@ -25,8 +25,8 @@ pub(in crate::app::server) use self::{
 		entity_memory_get_schema, recall_debug_panel_schema,
 	},
 	notes::{
-		evidence_check_schema, notes_get_schema, notes_ingest_schema, notes_list_schema,
-		notes_patch_schema, notes_publish_schema, notes_unpublish_schema,
+		evidence_check_schema, evidence_pack_schema, notes_get_schema, notes_ingest_schema,
+		notes_list_schema, notes_patch_schema, notes_publish_schema, notes_unpublish_schema,
 	},
 	search::{
 		searches_create_schema, searches_get_schema, searches_notes_schema,
