@@ -60,8 +60,10 @@ def identifiers(value):
 
 
 def note_evidence(note):
-    return {'text':note.get('text'),'structured':note.get('structured'),
+    result={'text':note.get('text'),'structured':note.get('structured'),
             'quotes':[e['quote'] for e in note.get('source_ref',{}).get('evidence',[]) if 'quote' in e]}
+    if 'source_evidence' in note:result['originals']=[s['excerpt']['excerpt'] for s in note['source_evidence']]
+    return result
 
 
 def evidence_payload(name,result):
@@ -71,7 +73,7 @@ def evidence_payload(name,result):
     if name=='get_note':return note_evidence(result)
     if name=='search_documents':return [i.get('snippet') for i in result['items']]
     if name=='read_document':return result['excerpt']['excerpt']
-    if name=='query_graph':return [{'subject':result.get('subject'),'predicate':f.get('predicate'),'object':f.get('object')} for f in result.get('facts',[])]
+    if name=='query_graph':return [{'subject':result.get('subject'),'predicate':f.get('predicate'),'object':f.get('object'),**({'evidence_quotes':f['evidence_quotes']} if 'evidence_quotes' in f else {})} for f in result.get('facts',[])]
     raise ValueError('Unknown evidence tool: '+name)
 
 
@@ -99,8 +101,9 @@ def case_metrics(case,initial):
                 for evidence in result.get('source_ref',{}).get('evidence',[]):
                     source=evidence.get('source',{});mid=source.get('message_id')
                     if mid:provenance.setdefault(mid,[]).append({'note_id':args['note_id'],'source_hash':source.get('content_hash'),'quote':evidence.get('quote','')})
-            if name=='read_document':
-                metadata=result['metadata'];excerpt=result['excerpt'];mid=metadata.get('source_ref',{}).get('evidence_id')
+            originals=([result] if name=='read_document' else result.get('source_evidence',[]) if name=='get_note' else [])
+            for original in originals:
+                metadata=original['metadata'];excerpt=original['excerpt'];mid=metadata.get('source_ref',{}).get('evidence_id')
                 for source in provenance.get(mid,[]):
                     source_links.append({**source,'message_id':mid,'doc_id':metadata['doc_id'],
                                          'hash_matches':source['source_hash']==metadata['content_hash'],
@@ -163,7 +166,7 @@ def analyze(root):
                             'tool_calls':sum(sum(r['tool_counts'].values()) for r in group),
                             'tool_errors':sum(len(r['tool_errors']) for r in group),
                             'repeated_identical_tool_calls':sum(r['repeated_identical_tool_calls'] for r in group),
-                            'cases_with_document_reads':sum(r['tool_counts'].get('read_document',0)>0 for r in group),
+                            'cases_with_document_reads':sum(r['tool_counts'].get('read_document',0)>0 or bool(r['source_links']) for r in group),
                             'cases_with_verified_provenance_follow':sum(any(l['hash_matches'] and l['verified'] and l['quote_in_excerpt'] for l in r['source_links']) for r in group),
                             'cases_with_graph_queries':sum(r['tool_counts'].get('query_graph',0)>0 for r in group),
                             'cases_with_object_entity_follows':sum(bool(r['graph_object_follows']) for r in group),

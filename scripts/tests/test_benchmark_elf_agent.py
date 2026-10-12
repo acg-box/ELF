@@ -9,12 +9,52 @@ import unittest
 from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from benchmark_agent.replay import Replay
+from benchmark_agent.schedule import run_jobs
 from benchmark_agent.tools import project_note,execute,schemas
 from benchmark_agent.runner import parse_answer,finalize_recorded,run
 from benchmark_agent.analysis import case_metrics,evidence_payload
 
 
 class AgentBoundaries(unittest.TestCase):
+    def test_case_scheduler_keeps_jobs_distinct_and_stops_after_failure(self):
+        import threading
+        barrier=threading.Barrier(2);seen=[]
+        def call(job):
+            barrier.wait(timeout=5)
+            seen.append(job)
+        run_jobs(list(range(4)),call,2)
+        self.assertEqual(sorted(seen),list(range(4)))
+        seen=[]
+        def fail(job):
+            seen.append(job)
+            raise RuntimeError('Retain failed case')
+        with self.assertRaises(RuntimeError):run_jobs(list(range(4)),fail,1)
+        self.assertEqual(seen,[0])
+
+    def test_native_expansion_only_in_source_conditions(self):
+        calls=[]
+        def api(path):
+            calls.append(path)
+            return {'note':{'note_id':'n','text':'derived'},'sources':[{'excerpt':{'excerpt':'original subject'}}],'complete':True} if path.endswith('/evidence') else {'note_id':'n','text':'derived'}
+        expanded=execute(api,'source','get_note',{'note_id':'n'},True)
+        self.assertEqual(calls[-1],'/v2/notes/n/evidence')
+        self.assertIn('original subject',json.dumps(evidence_payload('get_note',expanded)))
+        notes=execute(api,'notes','get_note',{'note_id':'n'},True)
+        self.assertNotIn('source_evidence',notes)
+        self.assertEqual(calls[-1],'/v2/notes/n')
+
+    def test_grounded_selector_contract_and_failed_audit_do_not_resample(self):
+        schema=next(t['function']['parameters'] for t in schemas('source',True) if t['function']['name']=='read_document')
+        self.assertEqual(len(schema['oneOf']),2)
+        answer={'text':'Wrong but retained.','supported':True,'citations':['n'],'claims':[{'text':'Wrong but retained.','state':'supported','citations':[{'kind':'note','note_id':'n','quote':'not present'}]}]}
+        response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':json.dumps(answer)}}]}
+        with patch('benchmark_agent.runner.urllib.request.urlopen',return_value=io.BytesIO(json.dumps(response).encode())) as call:
+            result=run(lambda *args:(_ for _ in ()).throw(ValueError('audit unavailable')),'notes','question',[],'http://local','token',grounded=True)
+        self.assertEqual(result['text'],answer['text'])
+        self.assertEqual(result['status'],'completed')
+        self.assertIn('claim_binding_error',result)
+        self.assertEqual(call.call_count,1)
+
     def test_query_echo_is_not_retrieved_evidence(self):
         value={'items':[],'query_plan':{'query':'REPLAY-0-632'}}
         self.assertNotIn('REPLAY-0-632',json.dumps(evidence_payload('search_notes',value)))
@@ -68,6 +108,24 @@ class AgentBoundaries(unittest.TestCase):
         self.assertEqual([m['tool_call_id'] for m in outputs],['a','b'])
         self.assertEqual(json.loads(outputs[0]['content']),{'text':'observed'})
         self.assertIn('error',json.loads(outputs[1]['content']))
+
+    def test_initial_control_audits_only_after_answer_without_reader_feedback(self):
+        answer={'text':'A claim','supported':True,'citations':['n'],'claims':[{'text':'A claim','state':'supported','citations':[{'kind':'note','note_id':'n','quote':'A claim'}]}]}
+        response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':json.dumps(answer)}}]}
+        requests=[];audits=[]
+        def reply(request,**kwargs):
+            requests.append(json.loads(request.data));return io.BytesIO(json.dumps(response).encode())
+        def audit(path,body):
+            self.assertEqual(len(requests),1);audits.append((path,body))
+            return {'semantic_support':'not_evaluated','claims':[{'binding_verified':False}]}
+        with patch('benchmark_agent.runner.urllib.request.urlopen',side_effect=reply):
+            result=run(audit,'initial','question',[],'http://unused','token',max_rounds=1,max_calls=0,grounded=True)
+        self.assertEqual(len(requests),1)
+        self.assertNotIn('tools',requests[0])
+        self.assertEqual(result['tool_calls'],0)
+        self.assertEqual(result['text'],answer['text'])
+        self.assertEqual(audits,[('/v2/evidence/check',{'claims':answer['claims']})])
+        self.assertFalse(result['claim_bindings']['claims'][0]['binding_verified'])
 
     def test_no_tool_control_retains_invalid_output_without_resampling(self):
         response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':'<invented tool call>'}}]}

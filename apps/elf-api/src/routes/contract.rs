@@ -30,6 +30,7 @@ use crate::routes::{
 	},
 	dreaming::__path_dreaming_review_queue,
 	events::__path_events_ingest,
+	evidence::{__path_evidence_check, __path_note_evidence},
 	graph::{
 		__path_admin_graph_predicate_alias_add, __path_admin_graph_predicate_aliases_list,
 		__path_admin_graph_predicate_patch, __path_admin_graph_predicates_list, __path_graph_query,
@@ -86,6 +87,8 @@ pub const SCALAR_DOCS_PATH: &str = "/docs";
 		health,
 		notes_ingest,
 		events_ingest,
+		note_evidence,
+		evidence_check,
 		docs_put,
 		docs_get,
 		docs_delete,

@@ -1,0 +1,992 @@
+[
+  {
+    "entity_id": "93017ea8-89c1-404b-b980-9a64ea74b2b9",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Mara",
+    "canonical_norm": "mara",
+    "kind": "person",
+    "created_at": "2026-10-12T08:26:20.940397+00:00",
+    "updated_at": "2026-10-12T08:26:20.940397+00:00"
+  },
+  {
+    "entity_id": "0dffdee0-fdc3-4cf1-ba97-d14cb62a4947",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Larch",
+    "canonical_norm": "larch",
+    "kind": "project",
+    "created_at": "2026-10-12T08:26:20.940397+00:00",
+    "updated_at": "2026-10-12T08:26:20.940397+00:00"
+  },
+  {
+    "entity_id": "8d7514d6-c27f-443f-b325-ae38cadfd9dd",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-0-741",
+    "canonical_norm": "batch-0-741",
+    "kind": "batch identifier",
+    "created_at": "2026-10-12T08:26:20.967649+00:00",
+    "updated_at": "2026-10-12T08:26:20.967649+00:00"
+  },
+  {
+    "entity_id": "06714dbe-0a52-4601-a6cc-f76a371ae882",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-0-108",
+    "canonical_norm": "retry-0-108",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T08:26:20.977608+00:00",
+    "updated_at": "2026-10-12T08:26:20.977608+00:00"
+  },
+  {
+    "entity_id": "f860ed53-f293-4e5f-b996-47ab3593396e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-0-519",
+    "canonical_norm": "gate-0-519",
+    "kind": "system",
+    "created_at": "2026-10-12T08:27:03.632767+00:00",
+    "updated_at": "2026-10-12T08:27:03.632767+00:00"
+  },
+  {
+    "entity_id": "47183c1d-c1dc-4da5-8138-46d8132c867d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-0-632",
+    "canonical_norm": "replay-0-632",
+    "kind": "system",
+    "created_at": "2026-10-12T08:27:03.632767+00:00",
+    "updated_at": "2026-10-12T08:27:03.632767+00:00"
+  },
+  {
+    "entity_id": "d00c7563-6027-47c3-b53e-ad0e9637318a",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-0-286",
+    "canonical_norm": "stream-0-286",
+    "kind": null,
+    "created_at": "2026-10-12T08:28:16.78586+00:00",
+    "updated_at": "2026-10-12T08:28:16.78586+00:00"
+  },
+  {
+    "entity_id": "3f90d092-4e22-4b9f-96ae-7222e49d5201",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "August 1 delivery decision",
+    "canonical_norm": "august 1 delivery decision",
+    "kind": "decision",
+    "created_at": "2026-10-12T08:28:16.78586+00:00",
+    "updated_at": "2026-10-12T08:28:16.78586+00:00"
+  },
+  {
+    "entity_id": "55ea777f-3243-4bb9-b13b-315efd3267b9",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-0-907",
+    "canonical_norm": "retry-0-907",
+    "kind": "policy",
+    "created_at": "2026-10-12T08:29:39.108221+00:00",
+    "updated_at": "2026-10-12T08:29:39.108221+00:00"
+  },
+  {
+    "entity_id": "1c500c01-b3f9-4ceb-ad1d-23059eb106c0",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "recovery procedure validated on August 8",
+    "canonical_norm": "recovery procedure validated on august 8",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:29:39.264377+00:00",
+    "updated_at": "2026-10-12T08:29:39.264377+00:00"
+  },
+  {
+    "entity_id": "91df6db0-2809-4a4f-8eb6-15aacc069fec",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Ivo",
+    "canonical_norm": "ivo",
+    "kind": "person",
+    "created_at": "2026-10-12T08:30:41.829072+00:00",
+    "updated_at": "2026-10-12T08:30:41.829072+00:00"
+  },
+  {
+    "entity_id": "b88e58dd-e9d9-4f8d-bce5-3a8da02a6b5d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "project Cobalt",
+    "canonical_norm": "project cobalt",
+    "kind": "project",
+    "created_at": "2026-10-12T08:30:41.829072+00:00",
+    "updated_at": "2026-10-12T08:30:41.829072+00:00"
+  },
+  {
+    "entity_id": "bf688598-6f30-4c82-80d0-993b9ca40e06",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-1-741",
+    "canonical_norm": "batch-1-741",
+    "kind": "batch",
+    "created_at": "2026-10-12T08:30:41.850576+00:00",
+    "updated_at": "2026-10-12T08:30:41.850576+00:00"
+  },
+  {
+    "entity_id": "b2e7823b-ee16-48f8-afd7-bf305ddcbda2",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-1-108",
+    "canonical_norm": "retry-1-108",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T08:30:41.859053+00:00",
+    "updated_at": "2026-10-12T08:30:41.859053+00:00"
+  },
+  {
+    "entity_id": "3735126a-cac0-43de-ad6d-1b8a595f4f90",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-1-519",
+    "canonical_norm": "gate-1-519",
+    "kind": "system",
+    "created_at": "2026-10-12T08:31:23.957617+00:00",
+    "updated_at": "2026-10-12T08:31:23.957617+00:00"
+  },
+  {
+    "entity_id": "178c4425-8ffd-4fbd-8509-18c8a5fa6251",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-1-632",
+    "canonical_norm": "replay-1-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:31:23.957617+00:00",
+    "updated_at": "2026-10-12T08:31:23.957617+00:00"
+  },
+  {
+    "entity_id": "5ba247a1-79d0-4a97-b5f8-888fe3390a87",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "delivery mode",
+    "canonical_norm": "delivery mode",
+    "kind": "configuration",
+    "created_at": "2026-10-12T08:31:23.974223+00:00",
+    "updated_at": "2026-10-12T08:31:23.974223+00:00"
+  },
+  {
+    "entity_id": "aa6934fd-6394-4c28-8215-661013beab6e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Cobalt",
+    "canonical_norm": "cobalt",
+    "kind": "system",
+    "created_at": "2026-10-12T08:33:20.448075+00:00",
+    "updated_at": "2026-10-12T08:33:20.448075+00:00"
+  },
+  {
+    "entity_id": "a37f5085-c95e-4575-8a51-533cb42b2cf7",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-1-286",
+    "canonical_norm": "stream-1-286",
+    "kind": "stream",
+    "created_at": "2026-10-12T08:33:20.448075+00:00",
+    "updated_at": "2026-10-12T08:33:20.448075+00:00"
+  },
+  {
+    "entity_id": "721cdb8e-400a-4e4e-bc11-0f0bdfa617ff",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "successful recovery procedure",
+    "canonical_norm": "successful recovery procedure",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:33:20.470198+00:00",
+    "updated_at": "2026-10-12T08:33:20.470198+00:00"
+  },
+  {
+    "entity_id": "a10531ee-3d20-4fad-a77c-c2f1bf959ee4",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "recovery procedure",
+    "canonical_norm": "recovery procedure",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:34:03.809527+00:00",
+    "updated_at": "2026-10-12T08:34:03.809527+00:00"
+  },
+  {
+    "entity_id": "89a17ce9-1b50-4def-bd94-bb243cc76f62",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-1-907",
+    "canonical_norm": "retry-1-907",
+    "kind": "policy",
+    "created_at": "2026-10-12T08:34:03.809527+00:00",
+    "updated_at": "2026-10-12T08:34:03.809527+00:00"
+  },
+  {
+    "entity_id": "45e6f6e0-e9a1-4a0b-8375-2c2837464557",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "budget owner",
+    "canonical_norm": "budget owner",
+    "kind": "role",
+    "created_at": "2026-10-12T08:34:03.822398+00:00",
+    "updated_at": "2026-10-12T08:34:03.822398+00:00"
+  },
+  {
+    "entity_id": "5984b5e9-4468-4dff-91cd-16e1f963ada7",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Neri",
+    "canonical_norm": "neri",
+    "kind": "person",
+    "created_at": "2026-10-12T08:35:01.133029+00:00",
+    "updated_at": "2026-10-12T08:35:01.133029+00:00"
+  },
+  {
+    "entity_id": "c930b155-7da3-4673-b5ee-f5db9f29e8e0",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Reed",
+    "canonical_norm": "reed",
+    "kind": "project",
+    "created_at": "2026-10-12T08:35:01.133029+00:00",
+    "updated_at": "2026-10-12T08:35:01.133029+00:00"
+  },
+  {
+    "entity_id": "2350d87d-9cc5-4567-a3a4-c46ceabfa013",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-2-741",
+    "canonical_norm": "batch-2-741",
+    "kind": "system",
+    "created_at": "2026-10-12T08:36:04.714726+00:00",
+    "updated_at": "2026-10-12T08:36:04.714726+00:00"
+  },
+  {
+    "entity_id": "6a316987-605f-4026-8e24-beb7ed57dc0e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-2-519",
+    "canonical_norm": "gate-2-519",
+    "kind": "system",
+    "created_at": "2026-10-12T08:36:04.714726+00:00",
+    "updated_at": "2026-10-12T08:36:04.714726+00:00"
+  },
+  {
+    "entity_id": "b6080f03-3c62-4e99-9afe-0dd209dcc258",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-2-632",
+    "canonical_norm": "replay-2-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:36:04.714726+00:00",
+    "updated_at": "2026-10-12T08:36:04.714726+00:00"
+  },
+  {
+    "entity_id": "db98e243-b737-4323-8214-1304d7c58c43",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-2-286",
+    "canonical_norm": "stream-2-286",
+    "kind": null,
+    "created_at": "2026-10-12T08:37:34.4541+00:00",
+    "updated_at": "2026-10-12T08:37:34.4541+00:00"
+  },
+  {
+    "entity_id": "a312ec9b-21a7-49e3-9218-a20bc110eea3",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-2-907",
+    "canonical_norm": "retry-2-907",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T08:38:13.518112+00:00",
+    "updated_at": "2026-10-12T08:38:13.518112+00:00"
+  },
+  {
+    "entity_id": "246b2250-6562-4584-9046-2a82ee0e2cba",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-2-108",
+    "canonical_norm": "retry-2-108",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T08:38:13.518112+00:00",
+    "updated_at": "2026-10-12T08:38:13.518112+00:00"
+  },
+  {
+    "entity_id": "71bb5afb-1d3c-4ef6-868e-e6bdc3927138",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Tala",
+    "canonical_norm": "tala",
+    "kind": "person",
+    "created_at": "2026-10-12T08:39:14.843375+00:00",
+    "updated_at": "2026-10-12T08:39:14.843375+00:00"
+  },
+  {
+    "entity_id": "0ae885d1-36ef-4da3-b2ba-b6f5ce1e3f60",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "project Sable",
+    "canonical_norm": "project sable",
+    "kind": "project",
+    "created_at": "2026-10-12T08:39:14.843375+00:00",
+    "updated_at": "2026-10-12T08:39:14.843375+00:00"
+  },
+  {
+    "entity_id": "15653932-6c81-4d4d-bc86-3eb2f0c7444b",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-3-741",
+    "canonical_norm": "batch-3-741",
+    "kind": "batch identifier",
+    "created_at": "2026-10-12T08:39:15.023272+00:00",
+    "updated_at": "2026-10-12T08:39:15.023272+00:00"
+  },
+  {
+    "entity_id": "0a80b59a-865c-44a8-8e65-8bbe5e45b998",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-3-108",
+    "canonical_norm": "retry-3-108",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T08:39:15.034002+00:00",
+    "updated_at": "2026-10-12T08:39:15.034002+00:00"
+  },
+  {
+    "entity_id": "af3620e6-fe9f-4a25-acc0-dcd665572c24",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-3-519",
+    "canonical_norm": "gate-3-519",
+    "kind": "system",
+    "created_at": "2026-10-12T08:40:01.542135+00:00",
+    "updated_at": "2026-10-12T08:40:01.542135+00:00"
+  },
+  {
+    "entity_id": "43a5a7f7-8e21-4ade-a3bc-7f710018a2a6",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-3-632",
+    "canonical_norm": "replay-3-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:40:01.542135+00:00",
+    "updated_at": "2026-10-12T08:40:01.542135+00:00"
+  },
+  {
+    "entity_id": "5c7be7cb-6599-4632-900c-4c972c77b78d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Sable",
+    "canonical_norm": "sable",
+    "kind": "system",
+    "created_at": "2026-10-12T08:41:04.45148+00:00",
+    "updated_at": "2026-10-12T08:41:04.45148+00:00"
+  },
+  {
+    "entity_id": "d3a43641-6bd5-442a-a9f5-f663edc0155a",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-3-286",
+    "canonical_norm": "stream-3-286",
+    "kind": "system",
+    "created_at": "2026-10-12T08:41:04.45148+00:00",
+    "updated_at": "2026-10-12T08:41:04.45148+00:00"
+  },
+  {
+    "entity_id": "9a878a12-713c-4d87-81a4-592679eff26d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-3-907",
+    "canonical_norm": "retry-3-907",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T08:41:44.761866+00:00",
+    "updated_at": "2026-10-12T08:41:44.761866+00:00"
+  },
+  {
+    "entity_id": "4f8d469c-e685-4320-8af9-5137db9a0964",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Devon",
+    "canonical_norm": "devon",
+    "kind": "person",
+    "created_at": "2026-10-12T08:42:35.435186+00:00",
+    "updated_at": "2026-10-12T08:42:35.435186+00:00"
+  },
+  {
+    "entity_id": "6eb8dc94-a7bc-4af2-ae04-2dd35808b4c1",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "project Cedar",
+    "canonical_norm": "project cedar",
+    "kind": "project",
+    "created_at": "2026-10-12T08:42:35.435186+00:00",
+    "updated_at": "2026-10-12T08:42:35.435186+00:00"
+  },
+  {
+    "entity_id": "18541f2b-dd0a-421c-82d5-a40e10ede963",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-4-741",
+    "canonical_norm": "batch-4-741",
+    "kind": "identifier",
+    "created_at": "2026-10-12T08:42:35.449824+00:00",
+    "updated_at": "2026-10-12T08:42:35.449824+00:00"
+  },
+  {
+    "entity_id": "e5c01cc2-da5c-4907-a5bb-3d851e3f39cb",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-4-108",
+    "canonical_norm": "retry-4-108",
+    "kind": "identifier",
+    "created_at": "2026-10-12T08:42:35.454897+00:00",
+    "updated_at": "2026-10-12T08:42:35.454897+00:00"
+  },
+  {
+    "entity_id": "d60a3420-7d89-4df0-a2ea-dffc459cf4ef",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "initial retry policy",
+    "canonical_norm": "initial retry policy",
+    "kind": "policy",
+    "created_at": "2026-10-12T08:42:35.454897+00:00",
+    "updated_at": "2026-10-12T08:42:35.454897+00:00"
+  },
+  {
+    "entity_id": "7f5f692e-0622-4bc8-9fa0-0611e9c8a33d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-4-519",
+    "canonical_norm": "gate-4-519",
+    "kind": "gate",
+    "created_at": "2026-10-12T08:43:37.248278+00:00",
+    "updated_at": "2026-10-12T08:43:37.248278+00:00"
+  },
+  {
+    "entity_id": "2077d2bc-70b7-465f-bbb4-716a5bbbedfa",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-4-632",
+    "canonical_norm": "replay-4-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:43:37.248278+00:00",
+    "updated_at": "2026-10-12T08:43:37.248278+00:00"
+  },
+  {
+    "entity_id": "39e4fc26-56c5-42de-952d-f9353f177f5c",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Cedar",
+    "canonical_norm": "cedar",
+    "kind": null,
+    "created_at": "2026-10-12T08:45:45.221942+00:00",
+    "updated_at": "2026-10-12T08:45:45.221942+00:00"
+  },
+  {
+    "entity_id": "b80432ca-a371-4bf6-b464-8ec3d4bb755a",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-4-907",
+    "canonical_norm": "retry-4-907",
+    "kind": "policy",
+    "created_at": "2026-10-12T08:45:45.241174+00:00",
+    "updated_at": "2026-10-12T08:45:45.241174+00:00"
+  },
+  {
+    "entity_id": "24453529-36b7-4f2c-8fd3-9ebcc9c5978e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "North division Atlas project (ACCT-N)",
+    "canonical_norm": "north division atlas project (acct-n)",
+    "kind": "project",
+    "created_at": "2026-10-12T08:46:48.885283+00:00",
+    "updated_at": "2026-10-12T08:46:48.885283+00:00"
+  },
+  {
+    "entity_id": "6780b0c8-b5b0-460a-814f-12902c223684",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Alex Rivera",
+    "canonical_norm": "alex rivera",
+    "kind": "person",
+    "created_at": "2026-10-12T08:46:48.885283+00:00",
+    "updated_at": "2026-10-12T08:46:48.885283+00:00"
+  },
+  {
+    "entity_id": "c388f716-4780-45d8-8108-092c3921976a",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-5-741",
+    "canonical_norm": "batch-5-741",
+    "kind": "batch",
+    "created_at": "2026-10-12T08:46:48.885283+00:00",
+    "updated_at": "2026-10-12T08:46:48.885283+00:00"
+  },
+  {
+    "entity_id": "241b4d07-a526-47f8-bb45-2b50faa9c433",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-5-108",
+    "canonical_norm": "retry-5-108",
+    "kind": "retry identifier",
+    "created_at": "2026-10-12T08:46:48.885283+00:00",
+    "updated_at": "2026-10-12T08:46:48.885283+00:00"
+  },
+  {
+    "entity_id": "12749eae-059f-4b96-84d8-3092760f4c00",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "North division",
+    "canonical_norm": "north division",
+    "kind": "division",
+    "created_at": "2026-10-12T08:46:48.910523+00:00",
+    "updated_at": "2026-10-12T08:46:48.910523+00:00"
+  },
+  {
+    "entity_id": "f441d10c-de2d-4890-9e78-0cbb6dc01b3e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "South division",
+    "canonical_norm": "south division",
+    "kind": "division",
+    "created_at": "2026-10-12T08:46:48.910523+00:00",
+    "updated_at": "2026-10-12T08:46:48.910523+00:00"
+  },
+  {
+    "entity_id": "3c4e592b-d247-48ff-a13d-c1c8e786bea8",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Atlas project",
+    "canonical_norm": "atlas project",
+    "kind": "project",
+    "created_at": "2026-10-12T08:47:54.329764+00:00",
+    "updated_at": "2026-10-12T08:47:54.329764+00:00"
+  },
+  {
+    "entity_id": "99134b92-cfee-4161-80c2-cb3534deb960",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-5-519",
+    "canonical_norm": "gate-5-519",
+    "kind": "incident",
+    "created_at": "2026-10-12T08:47:54.329764+00:00",
+    "updated_at": "2026-10-12T08:47:54.329764+00:00"
+  },
+  {
+    "entity_id": "00db58ac-d120-4341-a6a8-227beea46316",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-5-632",
+    "canonical_norm": "replay-5-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:47:54.329764+00:00",
+    "updated_at": "2026-10-12T08:47:54.329764+00:00"
+  },
+  {
+    "entity_id": "f7da6259-3714-4439-a084-143531164860",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Atlas project (ACCT-N)",
+    "canonical_norm": "atlas project (acct-n)",
+    "kind": "project",
+    "created_at": "2026-10-12T08:48:44.8329+00:00",
+    "updated_at": "2026-10-12T08:48:44.8329+00:00"
+  },
+  {
+    "entity_id": "cc6b1c44-6edf-4f41-b6e7-afde1709c2b2",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "ACCT-N",
+    "canonical_norm": "acct-n",
+    "kind": "project",
+    "created_at": "2026-10-12T08:49:12.017867+00:00",
+    "updated_at": "2026-10-12T08:49:12.017867+00:00"
+  },
+  {
+    "entity_id": "ef293bc5-f339-4218-88da-a9a51f2caaba",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-5-286",
+    "canonical_norm": "stream-5-286",
+    "kind": "system",
+    "created_at": "2026-10-12T08:49:12.038837+00:00",
+    "updated_at": "2026-10-12T08:49:12.038837+00:00"
+  },
+  {
+    "entity_id": "f2d44427-254b-4eff-bc96-726179d1f89b",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-5-907",
+    "canonical_norm": "retry-5-907",
+    "kind": "system",
+    "created_at": "2026-10-12T08:49:12.038837+00:00",
+    "updated_at": "2026-10-12T08:49:12.038837+00:00"
+  },
+  {
+    "entity_id": "7f86df27-02de-4e19-931b-d1f513ae2f57",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Jordan Lee",
+    "canonical_norm": "jordan lee",
+    "kind": "person",
+    "created_at": "2026-10-12T08:49:12.056369+00:00",
+    "updated_at": "2026-10-12T08:49:12.056369+00:00"
+  },
+  {
+    "entity_id": "a7f4aaa2-1e7c-4c9d-95ad-890c883ee58b",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "ACCT-S",
+    "canonical_norm": "acct-s",
+    "kind": "project",
+    "created_at": "2026-10-12T08:50:32.195105+00:00",
+    "updated_at": "2026-10-12T08:50:32.195105+00:00"
+  },
+  {
+    "entity_id": "c68ad182-4bb1-4c72-a10a-9d7fe97af4ba",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-6-741",
+    "canonical_norm": "batch-6-741",
+    "kind": "batch identifier",
+    "created_at": "2026-10-12T08:50:32.195105+00:00",
+    "updated_at": "2026-10-12T08:50:32.195105+00:00"
+  },
+  {
+    "entity_id": "a4bc460b-a4db-4bcf-b910-326b4a05f25d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-6-108",
+    "canonical_norm": "retry-6-108",
+    "kind": "retry identifier",
+    "created_at": "2026-10-12T08:50:32.195105+00:00",
+    "updated_at": "2026-10-12T08:50:32.195105+00:00"
+  },
+  {
+    "entity_id": "9756b011-b998-49a7-8426-b4a3bc482cf2",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-6-519",
+    "canonical_norm": "gate-6-519",
+    "kind": "incident",
+    "created_at": "2026-10-12T08:51:03.19046+00:00",
+    "updated_at": "2026-10-12T08:51:03.19046+00:00"
+  },
+  {
+    "entity_id": "cf7256b5-cc58-4308-b8d7-ebe194498d93",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-6-632",
+    "canonical_norm": "replay-6-632",
+    "kind": "recovery procedure",
+    "created_at": "2026-10-12T08:51:03.209479+00:00",
+    "updated_at": "2026-10-12T08:51:03.209479+00:00"
+  },
+  {
+    "entity_id": "f3450695-45c8-4459-934d-05f87d88048e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "team",
+    "canonical_norm": "team",
+    "kind": "team",
+    "created_at": "2026-10-12T08:51:03.219288+00:00",
+    "updated_at": "2026-10-12T08:51:03.219288+00:00"
+  },
+  {
+    "entity_id": "75b78bd4-a30b-4ba9-be00-4b9ae6964f7c",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Alex",
+    "canonical_norm": "alex",
+    "kind": "person",
+    "created_at": "2026-10-12T08:52:37.756347+00:00",
+    "updated_at": "2026-10-12T08:52:37.756347+00:00"
+  },
+  {
+    "entity_id": "54a35585-48a4-48c9-8bd9-e4c2b9c286e8",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-6-286",
+    "canonical_norm": "stream-6-286",
+    "kind": "identifier",
+    "created_at": "2026-10-12T08:52:37.756347+00:00",
+    "updated_at": "2026-10-12T08:52:37.756347+00:00"
+  },
+  {
+    "entity_id": "f04f8321-927f-44db-885b-66040ee8a59f",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-6-907",
+    "canonical_norm": "retry-6-907",
+    "kind": "retry_policy",
+    "created_at": "2026-10-12T08:53:13.126373+00:00",
+    "updated_at": "2026-10-12T08:53:13.126373+00:00"
+  },
+  {
+    "entity_id": "3802123c-6fc9-47e2-8a96-0044c8915be6",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "\u9648\u96e8",
+    "canonical_norm": "\u9648\u96e8",
+    "kind": "person",
+    "created_at": "2026-10-12T08:54:25.932899+00:00",
+    "updated_at": "2026-10-12T08:54:25.932899+00:00"
+  },
+  {
+    "entity_id": "c50bda5e-eb40-4826-9a80-681777e1e21c",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "\u767d\u9e6d\u9879\u76ee",
+    "canonical_norm": "\u767d\u9e6d\u9879\u76ee",
+    "kind": "project",
+    "created_at": "2026-10-12T08:54:25.932899+00:00",
+    "updated_at": "2026-10-12T08:54:25.932899+00:00"
+  },
+  {
+    "entity_id": "d9fb91f9-aa78-460d-8ab3-f9c70d514d71",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "EGRET-CN",
+    "canonical_norm": "egret-cn",
+    "kind": "project_number",
+    "created_at": "2026-10-12T08:54:25.932899+00:00",
+    "updated_at": "2026-10-12T08:54:25.932899+00:00"
+  },
+  {
+    "entity_id": "3e72e8e7-f2f6-42b5-b16b-d7fd3972a450",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-7-519",
+    "canonical_norm": "gate-7-519",
+    "kind": "incident",
+    "created_at": "2026-10-12T08:54:54.886595+00:00",
+    "updated_at": "2026-10-12T08:54:54.886595+00:00"
+  },
+  {
+    "entity_id": "0394bba5-05c6-4906-bd03-34284e4c73e5",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-7-286",
+    "canonical_norm": "stream-7-286",
+    "kind": "system",
+    "created_at": "2026-10-12T08:55:20.79338+00:00",
+    "updated_at": "2026-10-12T08:55:20.79338+00:00"
+  },
+  {
+    "entity_id": "69d6aa9a-77e2-4314-abcb-87e8f31692ba",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-7-741",
+    "canonical_norm": "batch-7-741",
+    "kind": "batch",
+    "created_at": "2026-10-12T08:54:25.949014+00:00",
+    "updated_at": "2026-10-12T08:54:25.949014+00:00"
+  },
+  {
+    "entity_id": "3a74830c-158c-4f6f-9b97-428c18e0e349",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-7-632",
+    "canonical_norm": "replay-7-632",
+    "kind": "recovery_action",
+    "created_at": "2026-10-12T08:54:54.89478+00:00",
+    "updated_at": "2026-10-12T08:54:54.89478+00:00"
+  },
+  {
+    "entity_id": "48e3c43a-9ab4-4a8a-9bd3-63df1688da57",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "\u6797\u6f88",
+    "canonical_norm": "\u6797\u6f88",
+    "kind": "person",
+    "created_at": "2026-10-12T08:56:18.033969+00:00",
+    "updated_at": "2026-10-12T08:56:18.033969+00:00"
+  },
+  {
+    "entity_id": "e9a2ae95-5a3c-4cb9-9e12-1b246e071315",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Morgan",
+    "canonical_norm": "morgan",
+    "kind": "person",
+    "created_at": "2026-10-12T08:57:59.122946+00:00",
+    "updated_at": "2026-10-12T08:57:59.122946+00:00"
+  },
+  {
+    "entity_id": "7a469061-7838-4b4d-92d1-308157e3ae8b",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Delta project DELTA-8",
+    "canonical_norm": "delta project delta-8",
+    "kind": "project",
+    "created_at": "2026-10-12T08:57:59.122946+00:00",
+    "updated_at": "2026-10-12T08:57:59.122946+00:00"
+  },
+  {
+    "entity_id": "e8ab64c7-e5cd-41c0-b1ef-5e1020cc7115",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-8-108",
+    "canonical_norm": "retry-8-108",
+    "kind": "retry_policy",
+    "created_at": "2026-10-12T08:57:59.164623+00:00",
+    "updated_at": "2026-10-12T08:57:59.164623+00:00"
+  },
+  {
+    "entity_id": "84b45844-d20a-4da7-9ef4-9d64b5be6432",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "DELTA-8",
+    "canonical_norm": "delta-8",
+    "kind": "system",
+    "created_at": "2026-10-12T08:58:51.895313+00:00",
+    "updated_at": "2026-10-12T08:58:51.895313+00:00"
+  },
+  {
+    "entity_id": "d0d22f50-c8ce-4c69-b2f3-02591058108f",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-8-519",
+    "canonical_norm": "gate-8-519",
+    "kind": "incident",
+    "created_at": "2026-10-12T08:58:51.895313+00:00",
+    "updated_at": "2026-10-12T08:58:51.895313+00:00"
+  },
+  {
+    "entity_id": "4138161e-805c-461d-9bff-7e23aaab72c2",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-8-632",
+    "canonical_norm": "replay-8-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T08:58:51.895313+00:00",
+    "updated_at": "2026-10-12T08:58:51.895313+00:00"
+  },
+  {
+    "entity_id": "84245f06-67e6-42de-ad96-e75f8e9a9903",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Delta DELTA-8",
+    "canonical_norm": "delta delta-8",
+    "kind": null,
+    "created_at": "2026-10-12T09:00:26.093868+00:00",
+    "updated_at": "2026-10-12T09:00:26.093868+00:00"
+  },
+  {
+    "entity_id": "ef583175-7fcc-4837-bfcc-1d75934d1c46",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "August 15 decision logs",
+    "canonical_norm": "august 15 decision logs",
+    "kind": null,
+    "created_at": "2026-10-12T09:00:26.093868+00:00",
+    "updated_at": "2026-10-12T09:00:26.093868+00:00"
+  },
+  {
+    "entity_id": "924e40f6-7923-47cd-87a8-e8c9eb5ec6ae",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-7-108",
+    "canonical_norm": "retry-7-108",
+    "kind": "retry_strategy",
+    "created_at": "2026-10-12T08:54:25.959828+00:00",
+    "updated_at": "2026-10-12T08:54:25.959828+00:00"
+  },
+  {
+    "entity_id": "ce837361-9b89-4d2c-b423-6789ebb40f1c",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "\u6295\u9012\u6a21\u5f0f",
+    "canonical_norm": "\u6295\u9012\u6a21\u5f0f",
+    "kind": "delivery_mode",
+    "created_at": "2026-10-12T08:54:54.903588+00:00",
+    "updated_at": "2026-10-12T08:54:54.903588+00:00"
+  },
+  {
+    "entity_id": "042bf441-763d-4dd3-954e-d555d47f8b31",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "\u8fd9\u6b21\u4f1a\u8bae",
+    "canonical_norm": "\u8fd9\u6b21\u4f1a\u8bae",
+    "kind": "meeting",
+    "created_at": "2026-10-12T08:54:54.903588+00:00",
+    "updated_at": "2026-10-12T08:54:54.903588+00:00"
+  },
+  {
+    "entity_id": "2af06f3b-2fd1-42bc-afee-1740c2879ddb",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-7-907",
+    "canonical_norm": "retry-7-907",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T08:56:18.012098+00:00",
+    "updated_at": "2026-10-12T08:56:18.012098+00:00"
+  },
+  {
+    "entity_id": "a48ad556-2124-46f4-8c45-4434c647f3d7",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-8-741",
+    "canonical_norm": "batch-8-741",
+    "kind": "delivery_mode",
+    "created_at": "2026-10-12T08:57:59.139237+00:00",
+    "updated_at": "2026-10-12T08:57:59.139237+00:00"
+  },
+  {
+    "entity_id": "718d08fd-490e-477d-b56d-ca4449579441",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "decision log A",
+    "canonical_norm": "decision log a",
+    "kind": "decision_log",
+    "created_at": "2026-10-12T08:59:17.048871+00:00",
+    "updated_at": "2026-10-12T08:59:17.048871+00:00"
+  },
+  {
+    "entity_id": "31125056-97c8-4e5d-90b8-29eadec5efe2",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-8-286",
+    "canonical_norm": "stream-8-286",
+    "kind": null,
+    "created_at": "2026-10-12T08:59:17.048871+00:00",
+    "updated_at": "2026-10-12T08:59:17.048871+00:00"
+  },
+  {
+    "entity_id": "a0dcfa0f-7527-4664-a899-b43f719a9939",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "decision log B",
+    "canonical_norm": "decision log b",
+    "kind": "decision_log",
+    "created_at": "2026-10-12T08:59:17.072922+00:00",
+    "updated_at": "2026-10-12T08:59:17.072922+00:00"
+  },
+  {
+    "entity_id": "b4a87038-9abe-4453-9c7d-83d4ece9ab07",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "QUEUE-8-440",
+    "canonical_norm": "queue-8-440",
+    "kind": null,
+    "created_at": "2026-10-12T08:59:17.072922+00:00",
+    "updated_at": "2026-10-12T08:59:17.072922+00:00"
+  },
+  {
+    "entity_id": "a5e1aaaa-1c59-4652-9a00-a6705b35a09a",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-8-907",
+    "canonical_norm": "retry-8-907",
+    "kind": "policy",
+    "created_at": "2026-10-12T09:00:26.109181+00:00",
+    "updated_at": "2026-10-12T09:00:26.109181+00:00"
+  },
+  {
+    "entity_id": "ef1fd25a-0330-4f93-bf2d-e43301d8a358",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "budget-owner",
+    "canonical_norm": "budget-owner",
+    "kind": "role",
+    "created_at": "2026-10-12T09:00:26.119321+00:00",
+    "updated_at": "2026-10-12T09:00:26.119321+00:00"
+  }
+]

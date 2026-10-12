@@ -4,7 +4,6 @@ pub(in crate::docs) const DEFAULT_DOC_MAX_BYTES: usize = 4 * 1_024 * 1_024;
 pub(in crate::docs) const DEFAULT_MAX_CHUNKS_PER_DOC: usize = 4_096;
 pub(in crate::docs) const DEFAULT_L0_MAX_BYTES: usize = 256;
 pub(in crate::docs) const DEFAULT_L1_MAX_BYTES: usize = 8 * 1_024;
-pub(in crate::docs) const DEFAULT_L2_MAX_BYTES: usize = 32 * 1_024;
 pub(in crate::docs) const DOC_RETRIEVAL_TRAJECTORY_SCHEMA_V1: &str = "doc_retrieval_trajectory/v1";
 pub(in crate::docs) const DOC_SOURCE_REF_SCHEMA_V1: &str = "source_ref/v1";
 pub(in crate::docs) const DOC_SOURCE_REF_RESOLVER_V1: &str = "elf_doc_ext/v1";

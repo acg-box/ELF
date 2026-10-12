@@ -1,0 +1,13 @@
+{
+  "runtime_revision": "a0bb04d3629aaba4b1bdb4e42d929b4bc182be1a",
+  "base_revision": "64ba2fb5185383ab3cdb6f82b61219406ee6f6c2",
+  "fixture_commit": "8975c9a1",
+  "reader_execution_commit": "c81509ad",
+  "budget_gateway_commit": "56f25920",
+  "cohort_selection_commit": "27092af3",
+  "control_audit_commit": "0ecf6ab7",
+  "long_source_fix_commit": "0b41ef27df3d2a0401d185165dde0f200c31e811",
+  "prior_bundle": "2026-10-12-evidence-integrity",
+  "prior_manifest_sha256": "b613fc24083a37e32c1bd18e807a13c1b90fb67f058f04f8670737e62b325bfd",
+  "changes": "Native source expansion, claim quote binding, conservative extracted aliases, source-backed graph edges, fresh v5 extraction, grounded-v3 reader. Same original twenty sources and questions plus sixteen separately scored source/question pairs. Models, dimensions, and budgets retained. No causal isolation of individual changes or competitor rerun."
+}

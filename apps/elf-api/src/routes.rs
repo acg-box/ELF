@@ -9,6 +9,7 @@ mod core_memory;
 mod docs;
 mod dreaming;
 mod events;
+mod evidence;
 mod graph;
 mod health;
 mod ingestion_profiles;

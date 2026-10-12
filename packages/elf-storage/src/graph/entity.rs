@@ -16,27 +16,8 @@ pub async fn resolve_entity_by_surface(
 	}
 
 	let canonical_norm = graph::normalize_entity_name(entity_surface);
-	let canonical = sqlx::query_as::<_, GraphEntity>(
-		"\
-SELECT
-	entity_id,
-	tenant_id,
-	project_id,
-	canonical,
-	canonical_norm,
-	kind,
-	created_at,
-	updated_at
-FROM graph_entities
-WHERE tenant_id = $1
-	AND project_id = $2
-	AND canonical_norm = $3",
-	)
-	.bind(tenant_id)
-	.bind(project_id)
-	.bind(&canonical_norm)
-	.fetch_optional(&mut *executor)
-	.await?;
+	let canonical =
+		resolve_entity_by_canonical(executor, tenant_id, project_id, entity_surface).await?;
 
 	if let Some(entity) = canonical {
 		return Ok(Some(entity));
@@ -156,4 +137,36 @@ DO UPDATE SET alias = EXCLUDED.alias",
 	.await?;
 
 	Ok(())
+}
+
+/// Resolve only the canonical name; extracted aliases do not authorize identity merges.
+pub async fn resolve_entity_by_canonical(
+	executor: &mut PgConnection,
+	tenant_id: &str,
+	project_id: &str,
+	canonical: &str,
+) -> Result<Option<GraphEntity>> {
+	let entity = sqlx::query_as::<_, GraphEntity>(
+		"\
+SELECT
+	entity_id,
+	tenant_id,
+	project_id,
+	canonical,
+	canonical_norm,
+	kind,
+	created_at,
+	updated_at
+FROM graph_entities
+WHERE tenant_id = $1
+	AND project_id = $2
+	AND canonical_norm = $3",
+	)
+	.bind(tenant_id)
+	.bind(project_id)
+	.bind(graph::normalize_entity_name(canonical))
+	.fetch_optional(&mut *executor)
+	.await?;
+
+	Ok(entity)
 }

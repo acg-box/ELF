@@ -5,6 +5,12 @@ use uuid::Uuid;
 use crate::{Error, Result, StructuredFields, structured_fields::StructuredEntity};
 use elf_storage::graph;
 
+#[derive(Clone, Copy)]
+pub(crate) enum EntityIdentityAuthority {
+	Caller,
+	Extracted,
+}
+
 #[allow(clippy::too_many_arguments)]
 pub(crate) async fn persist_graph_fields_tx(
 	tx: &mut Transaction<'_, Postgres>,
@@ -15,19 +21,20 @@ pub(crate) async fn persist_graph_fields_tx(
 	note_id: Uuid,
 	structured: &StructuredFields,
 	now: OffsetDateTime,
+	identity_authority: EntityIdentityAuthority,
 ) -> Result<()> {
 	if !structured.has_graph_fields() {
 		return Ok(());
 	}
 
-	if let Some(entities) = structured.entities.as_ref() {
-		for (entity_idx, entity) in entities.iter().enumerate() {
-			let base_path = format!("structured.entities[{entity_idx}]");
-
-			upsert_graph_entity_and_aliases(tx, tenant_id, project_id, entity, base_path.as_str())
-				.await?;
-		}
-	}
+	persist_entities_tx(
+		tx,
+		tenant_id,
+		project_id,
+		structured.entities.as_deref().unwrap_or_default(),
+		identity_authority,
+	)
+	.await?;
 
 	let relations = structured.relations.as_deref().unwrap_or_default();
 
@@ -46,19 +53,11 @@ pub(crate) async fn persist_graph_fields_tx(
 			project_id,
 			subject,
 			&format!("{relation_path}.subject"),
+			identity_authority,
 		)
 		.await?;
 		let valid_from = relation.valid_from;
 		let valid_to = relation.valid_to;
-
-		if let (Some(valid_from), Some(valid_to)) = (valid_from, valid_to)
-			&& valid_to <= valid_from
-		{
-			return Err(Error::InvalidRequest {
-				message: format!("{relation_path}.valid_to must be greater than valid_from."),
-			});
-		}
-
 		let object = relation.object.as_ref().ok_or_else(|| Error::InvalidRequest {
 			message: format!("{relation_path}.object is required."),
 		})?;
@@ -70,6 +69,7 @@ pub(crate) async fn persist_graph_fields_tx(
 					project_id,
 					entity,
 					&format!("{relation_path}.object.entity"),
+					identity_authority,
 				)
 				.await?;
 
@@ -108,6 +108,11 @@ pub(crate) async fn persist_graph_fields_tx(
 		)
 		.await
 		.map_err(|err| Error::Storage { message: err.to_string() })?;
+
+		if let Some(quote) = relation.evidence_quote.as_deref() {
+			graph::set_evidence_quote(tx, fact_id, note_id, quote).await?;
+		}
+
 		let is_current_truth = predicate_row.status == "active"
 			&& predicate_row.cardinality == "single"
 			&& valid_to.is_none()
@@ -150,14 +155,33 @@ async fn upsert_graph_entity_and_aliases(
 	project_id: &str,
 	entity: &StructuredEntity,
 	context_path: &str,
+	identity_authority: EntityIdentityAuthority,
 ) -> Result<Uuid> {
 	let canonical = entity.canonical.as_deref().ok_or_else(|| Error::InvalidRequest {
 		message: format!("{context_path}.canonical is required."),
 	})?;
 	let canonical = canonical.trim();
+
+	if let Some(id) = entity.entity_id {
+		let exists: bool = sqlx::query_scalar("SELECT EXISTS(SELECT 1 FROM graph_entities WHERE tenant_id = $1 AND project_id = $2 AND entity_id = $3)")
+            .bind(tenant_id).bind(project_id).bind(id).fetch_one(&mut **tx).await?;
+
+		if !exists {
+			return Err(Error::NotFound {
+				message: "Caller entity identity not found in this project.".into(),
+			});
+		}
+		// An explicit identity selects a node; it does not rewrite its names or aliases.
+
+		return Ok(id);
+	}
+
 	let mut surfaces = vec![canonical.to_string()];
 
-	surfaces.extend(entity.aliases.iter().flatten().cloned());
+	if matches!(identity_authority, EntityIdentityAuthority::Caller) {
+		surfaces.extend(entity.aliases.iter().flatten().cloned());
+	}
+
 	surfaces.sort();
 	surfaces.dedup();
 
@@ -171,9 +195,14 @@ async fn upsert_graph_entity_and_aliases(
 	let mut resolved = None;
 
 	for surface in &surfaces {
-		if let Some(existing) =
-			graph::resolve_entity_by_surface(tx, tenant_id, project_id, surface).await?
-		{
+		let existing = match identity_authority {
+			EntityIdentityAuthority::Caller =>
+				graph::resolve_entity_by_surface(tx, tenant_id, project_id, surface).await?,
+			EntityIdentityAuthority::Extracted =>
+				graph::resolve_entity_by_canonical(tx, tenant_id, project_id, surface).await?,
+		};
+
+		if let Some(existing) = existing {
 			if resolved.is_some_and(|id| id != existing.entity_id) {
 				return Err(Error::InvalidRequest {
 					message: format!(
@@ -214,4 +243,26 @@ async fn upsert_graph_entity_and_aliases(
 	}
 
 	Ok(entity_id)
+}
+
+async fn persist_entities_tx(
+	tx: &mut Transaction<'_, Postgres>,
+	tenant_id: &str,
+	project_id: &str,
+	entities: &[StructuredEntity],
+	authority: EntityIdentityAuthority,
+) -> Result<()> {
+	for (index, entity) in entities.iter().enumerate() {
+		upsert_graph_entity_and_aliases(
+			tx,
+			tenant_id,
+			project_id,
+			entity,
+			&format!("structured.entities[{index}]"),
+			authority,
+		)
+		.await?;
+	}
+
+	Ok(())
 }

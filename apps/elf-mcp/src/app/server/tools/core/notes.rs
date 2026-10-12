@@ -7,8 +7,8 @@ use rmcp::{
 use crate::app::server::{
 	ElfMcp, HttpMethod,
 	schemas::{
-		notes_get_schema, notes_list_schema, notes_patch_schema, notes_publish_schema,
-		notes_unpublish_schema,
+		evidence_check_schema, notes_get_schema, notes_list_schema, notes_patch_schema,
+		notes_publish_schema, notes_unpublish_schema,
 	},
 	support,
 };
@@ -34,6 +34,31 @@ impl ElfMcp {
 		let path = format!("/v2/notes/{note_id}");
 
 		self.forward(HttpMethod::Get, &path, JsonObject::new(), None).await
+	}
+
+	#[rmcp::tool(
+        name = "elf_notes_evidence",
+        description = "Read a derived note with bounded, hash-verified original context. Use the original subject and time to assess support; a valid source hash does not prove a claim. Does not modify sources.",
+        input_schema = notes_get_schema()
+    )]
+	async fn elf_notes_evidence(
+		&self,
+		mut params: JsonObject,
+	) -> Result<CallToolResult, ErrorData> {
+		let note_id = support::take_required_string(&mut params, "note_id")?;
+
+		self.forward(
+			HttpMethod::Get,
+			&format!("/v2/notes/{note_id}/evidence"),
+			JsonObject::new(),
+			None,
+		)
+		.await
+	}
+
+	#[rmcp::tool(name = "elf_evidence_check", description = "Check each claim citation against currently readable notes or hash-guarded original quotes. This verifies source bindings, not semantic entailment.", input_schema = evidence_check_schema())]
+	async fn elf_evidence_check(&self, params: JsonObject) -> Result<CallToolResult, ErrorData> {
+		self.forward(HttpMethod::Post, "/v2/evidence/check", params, None).await
 	}
 
 	#[rmcp::tool(

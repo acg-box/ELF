@@ -80,7 +80,7 @@ dimensions. It does not import old reader answers or tool outputs. Changed note
 text and new queries can request new embeddings through the gateway. Record
 fresh extraction and changed derived state as experiment factors.
 
-The new built-in extraction profile is `default` version 4. Existing profile
+The new built-in extraction profile is `default` version 5. Existing profile
 versions and default pointers are retained. Use a fresh fixture, or explicitly
 select and record the intended profile before preparation. The provider receipts
 record the actual prompt and schema; a binary revision alone does not prove
@@ -144,3 +144,25 @@ initial contexts, answers, reviews, and usage. Exclude private runtime config
 and credentials from public bundles. Verify the public evidence offline. After
 collection, remove only this task's owned Docker resources and preserve raw
 results needed for review or later matched trials.
+
+
+## Contextual evidence and contrast cases
+
+Pass `--grounded --workload config/benchmark/grounded-evidence/workload.json`
+to prepare and run the frozen extended workload. Also pass `--grounded` to the
+control phase. Report original and contrast questions separately. The native
+note-evidence endpoint expands source context only in source-enabled arms.
+Notes and graph arms retain their source isolation. A final answer records
+atomic `claims`, exact quotes, and separate absence/unknown/conflict states.
+The post-answer native binding audit uses current permissions and source hashes;
+it does not provide new evidence to the model or certify semantic entailment.
+Keep the existing output allowance and cumulative budget gateway.
+
+Grounded initial-memory controls use the same native post-answer quote audit.
+Keep the fixture API running until these audits finish. The reader still has
+no tools and receives no audit feedback. Source-disabled projections omit
+`source_ref`, including source quotes and timestamps; report that boundary when
+interpreting source-access gains.
+
+See the [retained grounded-evidence trial](../evidence/benchmarking/2026-10-12-grounded-evidence.md)
+for the selected matrix, scores, cost, and offline verification commands.

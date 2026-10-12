@@ -2,7 +2,19 @@ use std::collections::HashMap;
 
 use crate::app::server::HttpMethod;
 
-const ALL_TOOL_DEFINITIONS: [ToolDefinition; 38] = [
+const ALL_TOOL_DEFINITIONS: [ToolDefinition; 40] = [
+	ToolDefinition::new(
+		"elf_notes_evidence",
+		HttpMethod::Get,
+		"/v2/notes/{note_id}/evidence",
+		"Read a derived note with bounded, hash-verified original context. Use the original subject and time to assess support; a valid source hash does not prove a claim. Does not modify sources.",
+	),
+	ToolDefinition::new(
+		"elf_evidence_check",
+		HttpMethod::Post,
+		"/v2/evidence/check",
+		"Check each claim citation against currently readable notes or hash-guarded original quotes. This verifies source bindings, not semantic entailment.",
+	),
 	ToolDefinition::new(
 		"elf_notes_ingest",
 		HttpMethod::Post,

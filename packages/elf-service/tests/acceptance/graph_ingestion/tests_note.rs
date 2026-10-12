@@ -1,4 +1,5 @@
 use time::{OffsetDateTime, format_description::well_known::Rfc3339};
+use uuid::Uuid;
 
 use crate::acceptance::graph_ingestion::tests_helpers;
 use elf_service::{
@@ -229,4 +230,95 @@ async fn graph_preserves_unknown_time_and_reuses_declared_aliases() {
 	assert_eq!(result.subject.kind.as_deref(), Some("project"));
 
 	db.cleanup().await.expect("Clean fixture.");
+}
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
+async fn normalized_relation_chain_retains_edge_quotes_and_caller_identity() {
+	let db = tests_helpers::build_test_db("grounded_chain").await.expect("Database required");
+	let service = tests_helpers::build_stub_service(&db).await;
+	let source = "Alpha suffered GATE-A. REPLAY-A restored updates lost during GATE-A.";
+	let mut request = AddNoteRequest { tenant_id:"t".into(),project_id:"p".into(),agent_id:"a".into(),scope:"agent_private".into(),notes:vec![AddNoteInput {
+        r#type:"fact".into(),key:None,text:source.into(),importance:0.8,confidence:0.9,ttl_days:None,write_policy:None,
+        source_ref:serde_json::json!({"evidence":[{"quote":source}]}),
+        structured:Some(serde_json::from_value(serde_json::json!({"relations":[
+            {"subject":{"canonical":"Alpha"},"predicate":"affected_by","object":{"entity":{"canonical":"GATE-A"}},"evidence_quote":"Alpha suffered GATE-A."},
+            {"subject":{"canonical":"GATE-A"},"predicate":"resolved_by","object":{"entity":{"canonical":"REPLAY-A"}},"evidence_quote":"REPLAY-A restored updates lost during GATE-A."}
+        ]})).expect("Typed relations")),
+    }] };
+	let written = service.add_note(request.clone()).await.expect("Persist chain");
+
+	assert_eq!(written.results[0].op, NoteOp::Add);
+
+	let query = GraphQueryRequest {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		read_profile: "private_plus_project".into(),
+		subject: GraphQueryEntityRef::Surface { surface: "Alpha".into() },
+		predicate: None,
+		scopes: None,
+		as_of: None,
+		limit: Some(10),
+		explain: Some(false),
+	};
+	let first = service.graph_query(query.clone()).await.expect("First hop");
+
+	assert_eq!(first.facts[0].evidence_quotes[0].quote, "Alpha suffered GATE-A.");
+
+	let incident = first.facts[0].object.entity.as_ref().expect("Linkable incident").entity_id;
+	let second = service
+		.graph_query(GraphQueryRequest {
+			subject: GraphQueryEntityRef::EntityId { entity_id: incident },
+			..query.clone()
+		})
+		.await
+		.expect("Second hop");
+
+	assert_eq!(second.facts[0].object.entity.as_ref().expect("Procedure").canonical, "REPLAY-A");
+	assert_eq!(
+		second.facts[0].evidence_quotes[0].note_id,
+		written.results[0].note_id.expect("Note id")
+	);
+	assert_eq!(
+		second.facts[0].evidence_quotes[0].quote,
+		"REPLAY-A restored updates lost during GATE-A."
+	);
+
+	request.notes[0].text = "Shared name uses REPLAY-A.".into();
+	request.notes[0].source_ref =
+		serde_json::json!({"evidence":[{"quote":"Shared name uses REPLAY-A."}]});
+	request.notes[0].structured = Some(serde_json::from_value(serde_json::json!({"relations":[{"subject":{"entity_id":incident,"canonical":"Shared name"},"predicate":"resolved_by","object":{"entity":{"canonical":"REPLAY-A"}},"evidence_quote":"Shared name uses REPLAY-A."}]})).expect("Caller-owned identity"));
+
+	assert_eq!(
+		service.add_note(request.clone()).await.expect("Use explicit identity").results[0].op,
+		NoteOp::Add
+	);
+
+	let count: i64 =
+		sqlx::query_scalar("SELECT count(*) FROM graph_entities WHERE canonical='Shared name'")
+			.fetch_one(&service.db.pool)
+			.await
+			.expect("No accidental alias entity");
+
+	assert_eq!(count, 0);
+
+	request.notes[0].text = "Shared name uses REPLAY-A. Another occurrence.".into();
+	request.notes[0].structured.as_mut().expect("Fields").relations.as_mut().expect("Relations")
+		[0]
+	.subject
+	.as_mut()
+	.expect("Subject")
+	.entity_id = Some(Uuid::new_v4());
+
+	assert!(service.add_note(request).await.is_err());
+
+	let other = service
+		.graph_query(GraphQueryRequest { agent_id: "other".into(), ..query })
+		.await
+		.expect("No readable facts");
+
+	assert!(other.facts.is_empty());
+
+	db.cleanup().await.expect("Clean fixture");
 }

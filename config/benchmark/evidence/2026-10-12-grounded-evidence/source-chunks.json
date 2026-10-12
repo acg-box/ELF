@@ -1,0 +1,362 @@
+[
+  {
+    "chunk_id": "8162e571-c35f-5724-ad28-dea656b137a1",
+    "doc_id": "bc82954e-c401-5c8e-b65d-c8933e3ef02b",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 124,
+    "chunk_text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+    "chunk_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+    "created_at": "2026-10-12T08:25:54.259181+00:00"
+  },
+  {
+    "chunk_id": "0384288a-8000-500d-8e2f-dc5b05d6f144",
+    "doc_id": "0be90114-0a70-5aff-b5a1-c416f0cf6d34",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 205,
+    "chunk_text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+    "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+    "created_at": "2026-10-12T08:26:20.987042+00:00"
+  },
+  {
+    "chunk_id": "53112c13-debf-5c92-b319-1f9565b75c17",
+    "doc_id": "b4974e9b-bf63-51ac-9419-b08632a32873",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 241,
+    "chunk_text": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "chunk_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+    "created_at": "2026-10-12T08:27:03.677302+00:00"
+  },
+  {
+    "chunk_id": "e561f55e-c45c-5cc5-8f30-28e08d802665",
+    "doc_id": "c833f302-431e-5ede-8f6f-9654ff6949f0",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 237,
+    "chunk_text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+    "chunk_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+    "created_at": "2026-10-12T08:28:16.813527+00:00"
+  },
+  {
+    "chunk_id": "32ccc6b9-76cf-5139-9b41-51e161057ca5",
+    "doc_id": "f6e66d7b-afbd-532d-baff-e10c3242587e",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 124,
+    "chunk_text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+    "chunk_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+    "created_at": "2026-10-12T08:29:39.33976+00:00"
+  },
+  {
+    "chunk_id": "2a3b4557-9fec-5cd5-83df-d2bf881fbfba",
+    "doc_id": "695171ff-aca3-5c7b-b31c-8e6f2da84483",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 204,
+    "chunk_text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+    "chunk_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+    "created_at": "2026-10-12T08:30:41.871104+00:00"
+  },
+  {
+    "chunk_id": "4dccb10e-59fb-5e5e-927d-b1b504e3d94a",
+    "doc_id": "0cff314f-7a10-5a96-a842-b03f60e283a2",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 241,
+    "chunk_text": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "chunk_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+    "created_at": "2026-10-12T08:31:23.983679+00:00"
+  },
+  {
+    "chunk_id": "fee24541-f01d-58f1-9f70-8c4b616e41a3",
+    "doc_id": "0ceb9aef-6778-5cf6-a4a5-d4bc313df631",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 237,
+    "chunk_text": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+    "chunk_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+    "created_at": "2026-10-12T08:33:20.477987+00:00"
+  },
+  {
+    "chunk_id": "4e1cc23e-8e74-5bee-b2ef-e62bdafe5194",
+    "doc_id": "c40cbd8a-f9a0-5872-9e8d-32b1b8352bba",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 123,
+    "chunk_text": "2026-08-01. Neri started project Reed. They chose BATCH-2-741 for batch delivery. The initial retry policy was RETRY-2-108.",
+    "chunk_hash": "5d8f7df65ba1b4f27d727ae35e2aa244a26355ac5df36412bdd840c1d8f17f53",
+    "created_at": "2026-10-12T08:34:03.834108+00:00"
+  },
+  {
+    "chunk_id": "d2fd5398-292a-5aca-8d0c-5aa697fb7f70",
+    "doc_id": "8b17477e-d9d4-5283-b9a1-d5daa7dc6492",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 205,
+    "chunk_text": "2026-08-08. Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages. The team tested REPLAY-2-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+    "chunk_hash": "2bf4722d3be2a3268603282610bd6393b4ac38f9d438ab67eb45acf05ef359ba",
+    "created_at": "2026-10-12T08:35:01.165321+00:00"
+  },
+  {
+    "chunk_id": "c45ae405-252e-5cd2-8069-6c66ee550e86",
+    "doc_id": "9f098a2b-e6b3-59e9-90d7-bafe82db8eda",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 240,
+    "chunk_text": "2026-08-15. Neri approved switching Reed from BATCH-2-741 to STREAM-2-286. This supersedes the August 1 delivery decision. The cause was the GATE-2-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "chunk_hash": "fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762",
+    "created_at": "2026-10-12T08:36:04.742839+00:00"
+  },
+  {
+    "chunk_id": "ffc101ac-a65e-5947-90e1-1a6cd7d28c8e",
+    "doc_id": "6fc05b3a-16f4-549d-8927-4e11ff64ed27",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 236,
+    "chunk_text": "2026-08-22. Neri reviewed Reed. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-2-907, superseding RETRY-2-108. No budget owner has been appointed.",
+    "chunk_hash": "6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f",
+    "created_at": "2026-10-12T08:37:34.464737+00:00"
+  },
+  {
+    "chunk_id": "a0e9966d-7c9a-5869-afa2-5c625a9a8082",
+    "doc_id": "ac83044a-3ad5-56a0-b2fa-0dab57b3a784",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 124,
+    "chunk_text": "2026-08-01. Tala started project Sable. They chose BATCH-3-741 for batch delivery. The initial retry policy was RETRY-3-108.",
+    "chunk_hash": "ed28537e4eae6a4b432f8d0ca49112270f35e2e2d5b6ee09382000360d46fb9b",
+    "created_at": "2026-10-12T08:38:13.540342+00:00"
+  },
+  {
+    "chunk_id": "731a67cd-eab9-5353-95b5-40573c3bb48b",
+    "doc_id": "3841e274-5173-5c90-8b0b-73522382b129",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 205,
+    "chunk_text": "2026-08-08. Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages. The team tested REPLAY-3-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+    "chunk_hash": "cff038581c7dfdd6a502e36c9397be99f243a7d9cfc010cd220653b4d6f69811",
+    "created_at": "2026-10-12T08:39:15.178885+00:00"
+  },
+  {
+    "chunk_id": "de082b3f-8e69-542d-b05f-4d10b091a58d",
+    "doc_id": "1fbe6485-ad5f-5233-83b8-bc5b8208c54c",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 241,
+    "chunk_text": "2026-08-15. Tala approved switching Sable from BATCH-3-741 to STREAM-3-286. This supersedes the August 1 delivery decision. The cause was the GATE-3-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "chunk_hash": "56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802",
+    "created_at": "2026-10-12T08:40:01.569745+00:00"
+  },
+  {
+    "chunk_id": "e62dc70a-1e7e-52b9-8cd6-09382b9be235",
+    "doc_id": "60b82a61-2b56-5bc4-a042-8cc7ee23b8e9",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 237,
+    "chunk_text": "2026-08-22. Tala reviewed Sable. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-3-907, superseding RETRY-3-108. No budget owner has been appointed.",
+    "chunk_hash": "e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723",
+    "created_at": "2026-10-12T08:41:04.475197+00:00"
+  },
+  {
+    "chunk_id": "b6a9ad5e-0c72-5380-a915-fc61d2244c55",
+    "doc_id": "69394bc2-752c-5524-858a-dd4576efce81",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 125,
+    "chunk_text": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+    "chunk_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+    "created_at": "2026-10-12T08:41:44.775995+00:00"
+  },
+  {
+    "chunk_id": "befaabf9-6d25-5960-b654-6c71cb9ddb84",
+    "doc_id": "80d40823-22ca-5bbb-9a5d-24ea4309ec72",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 206,
+    "chunk_text": "2026-08-08. Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages. The team tested REPLAY-4-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+    "chunk_hash": "1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a",
+    "created_at": "2026-10-12T08:42:35.462282+00:00"
+  },
+  {
+    "chunk_id": "02cc86f5-1d84-50b2-91de-556abb2ae17e",
+    "doc_id": "557af75b-2868-59e4-82ff-13d478d10d2a",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 242,
+    "chunk_text": "2026-08-15. Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286. This supersedes the August 1 delivery decision. The cause was the GATE-4-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "chunk_hash": "f98ae82be251c974590d48b1a893ad17e1218ec7b0de5d206f76baf8b89f7633",
+    "created_at": "2026-10-12T08:43:37.276048+00:00"
+  },
+  {
+    "chunk_id": "a3b92287-4352-5766-968d-1a82d2d7c66c",
+    "doc_id": "e8f8c1df-73bb-598a-9f8e-11918bb990ce",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 238,
+    "chunk_text": "2026-08-22. Devon reviewed Cedar. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-4-907, superseding RETRY-4-108. No budget owner has been appointed.",
+    "chunk_hash": "064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2",
+    "created_at": "2026-10-12T08:44:05.54888+00:00"
+  },
+  {
+    "chunk_id": "64136413-a56a-5173-8865-405b6ead63ae",
+    "doc_id": "7dc2bec2-e96d-5a0d-ba50-8b978fdb8e17",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 192,
+    "chunk_text": "2026-08-01. The North division Atlas project (ACCT-N), managed by Alex Rivera uses BATCH-5-741 and RETRY-5-108. The North and South divisions have separate Atlas projects and separate budgets.",
+    "chunk_hash": "df26122a316fcff9024e4b01bb71a24aa2067a42082f6021eae4c7996e96bdc8",
+    "created_at": "2026-10-12T08:45:45.257103+00:00"
+  },
+  {
+    "chunk_id": "10cf84c9-3977-50d1-ab46-d0a0bc74ae72",
+    "doc_id": "023d66c1-cbcb-599f-8296-f2551acda2cf",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 233,
+    "chunk_text": "2026-08-08. The North division Atlas project (ACCT-N), managed by Alex Rivera suffered incident GATE-5-519. BATCH-5-741 lost updates. Recovery procedure REPLAY-5-632 restored those updates. The team did not approve a delivery change.",
+    "chunk_hash": "907fd2e261caaccdf643d595d4c090666282b7607c199db4af5ebf877ece67b7",
+    "created_at": "2026-10-12T08:46:48.929769+00:00"
+  },
+  {
+    "chunk_id": "922c340f-db75-569e-9e8a-80247c1d09d9",
+    "doc_id": "3afcc964-23c3-5d0c-8720-60e8126325e0",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 192,
+    "chunk_text": "2026-08-22\u3002\u767d\u9e6d\u9879\u76ee EGRET-CN \u4fdd\u6301 STREAM-7-286\uff0c\u91cd\u8bd5\u7b56\u7565\u6539\u4e3a RETRY-7-907\uff0c\u66ff\u4ee3 RETRY-7-108\u3002\u6797\u6f88\u5df2\u4e8e8\u670820\u65e5\u88ab\u4efb\u547d\u4e3a\u9884\u7b97\u8d1f\u8d23\u4eba\uff1b\u9648\u96e8\u4ecd\u662f\u9879\u76ee\u8d1f\u8d23\u4eba\u3002",
+    "chunk_hash": "93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d",
+    "created_at": "2026-10-12T08:55:20.822752+00:00"
+  },
+  {
+    "chunk_id": "4f2ce416-e9fb-50c5-aa70-dbaae617f732",
+    "doc_id": "48d02284-625c-53e1-bcd5-082fb5f6aa6d",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 217,
+    "chunk_text": "2026-08-15. For the North division Atlas project (ACCT-N), managed by Alex Rivera, Alex approved STREAM-5-286 effective August 15, replacing BATCH-5-741 because of GATE-5-519. Keep REPLAY-5-632 for that incident type.",
+    "chunk_hash": "9c45aebbf2439d75fed30d59996cb571169b0866e24fb33b4c04c8a9007d3f1d",
+    "created_at": "2026-10-12T08:47:54.367935+00:00"
+  },
+  {
+    "chunk_id": "9dd54bfb-b8d6-5b8a-87f4-2d5942bf19ef",
+    "doc_id": "9e6780ee-3c75-5795-be9b-47ade3c47056",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 126,
+    "chunk_text": "2026-08-01. Morgan owns the Delta project DELTA-8. BATCH-8-741 is the approved delivery mode and RETRY-8-108 the retry policy.",
+    "chunk_hash": "4f3d51c7cb039751fc53355ae4848b5c2bed441fdb559de91f72367970b4fde7",
+    "created_at": "2026-10-12T08:56:18.056533+00:00"
+  },
+  {
+    "chunk_id": "c56ad7b9-eb2e-50fb-b9bb-ee39f017076c",
+    "doc_id": "890ab6f0-85d3-5adf-b405-8c7a5500ef0c",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 215,
+    "chunk_text": "2026-08-22. The North division Atlas project (ACCT-N), managed by Alex Rivera retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108. Jordan Lee was appointed budget owner for ACCT-N effective August 20.",
+    "chunk_hash": "69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad",
+    "created_at": "2026-10-12T08:48:44.84894+00:00"
+  },
+  {
+    "chunk_id": "e025e030-b00a-51d6-9c04-c13e6ff034e6",
+    "doc_id": "a8557a54-24b7-53ea-963c-769caafd12cd",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 192,
+    "chunk_text": "2026-08-01. The South division Atlas project (ACCT-S), managed by Alex Rivera uses BATCH-6-741 and RETRY-6-108. The North and South divisions have separate Atlas projects and separate budgets.",
+    "chunk_hash": "2a7fd79aa35e769f0c25d6a36da71931768d09f648c29d8b31f4cb406d06046b",
+    "created_at": "2026-10-12T08:49:12.068463+00:00"
+  },
+  {
+    "chunk_id": "04d007e0-652a-5077-a972-6a61ead74dc9",
+    "doc_id": "1c6fccdd-86e7-5af9-b831-4ab8ccffa023",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 233,
+    "chunk_text": "2026-08-08. The South division Atlas project (ACCT-S), managed by Alex Rivera suffered incident GATE-6-519. BATCH-6-741 lost updates. Recovery procedure REPLAY-6-632 restored those updates. The team did not approve a delivery change.",
+    "chunk_hash": "4a2e4e36b060157419aa69024e0748e652fc41095e8010a19c6468dd640e94af",
+    "created_at": "2026-10-12T08:50:32.229493+00:00"
+  },
+  {
+    "chunk_id": "dee55e0c-2d25-5d44-9a2e-ebbd92c19f4b",
+    "doc_id": "db9c2704-b404-5a81-9a01-7e0c1a291d5f",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 217,
+    "chunk_text": "2026-08-15. For the South division Atlas project (ACCT-S), managed by Alex Rivera, Alex approved STREAM-6-286 effective August 15, replacing BATCH-6-741 because of GATE-6-519. Keep REPLAY-6-632 for that incident type.",
+    "chunk_hash": "e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac",
+    "created_at": "2026-10-12T08:51:03.226381+00:00"
+  },
+  {
+    "chunk_id": "19dc47a7-ad95-5ec8-a556-b8a2f1b06b40",
+    "doc_id": "5737d6bc-b893-5609-9a85-94bf7835219a",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 258,
+    "chunk_text": "2026-08-22. The South division Atlas project (ACCT-S), managed by Alex Rivera retains STREAM-6-286 and adopts RETRY-6-907, replacing RETRY-6-108. No budget owner has been appointed for ACCT-S as of August 22. The appointment for ACCT-N does not cover ACCT-S.",
+    "chunk_hash": "e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee",
+    "created_at": "2026-10-12T08:52:37.779676+00:00"
+  },
+  {
+    "chunk_id": "afa133d8-7a55-5e2c-b29d-66744cb304f8",
+    "doc_id": "0dd8dbcc-5873-5eaf-8576-65a5d0605396",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 125,
+    "chunk_text": "2026-08-01\u3002\u9648\u96e8\u8d1f\u8d23\u767d\u9e6d\u9879\u76ee\uff0c\u9879\u76ee\u7f16\u53f7 EGRET-CN\u3002\u5f53\u524d\u91c7\u7528 BATCH-7-741 \u6295\u9012\uff0c\u91cd\u8bd5\u7b56\u7565 RETRY-7-108\u3002",
+    "chunk_hash": "44bc86e31cbd032ecb9c51d93596486a7db147c1947dc3d10522fae110a95fe4",
+    "created_at": "2026-10-12T08:53:13.139432+00:00"
+  },
+  {
+    "chunk_id": "afa8dc59-73d4-599f-a566-2b7564ba135c",
+    "doc_id": "b4605f67-bc94-5f44-97d4-c1cf163a6151",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 153,
+    "chunk_text": "2026-08-08\u3002\u767d\u9e6d\u9879\u76ee EGRET-CN \u5728 GATE-7-519 \u6545\u969c\u671f\u95f4\u4e22\u5931\u66f4\u65b0\u3002REPLAY-7-632 \u6062\u590d\u4e86\u66f4\u65b0\u3002\u8fd9\u6b21\u4f1a\u8bae\u6ca1\u6709\u6279\u51c6\u6539\u53d8\u6295\u9012\u6a21\u5f0f\u3002",
+    "chunk_hash": "c6f119dc157ed7c733a4990b079f866482f06bf55428939d1ae5e92a15830f97",
+    "created_at": "2026-10-12T08:54:25.970947+00:00"
+  },
+  {
+    "chunk_id": "5c50292d-fd6b-527a-987a-c365db8b355e",
+    "doc_id": "9ae7ee6e-440d-5563-88f6-e8089c595ad5",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 158,
+    "chunk_text": "2026-08-15\u3002\u767d\u9e6d\u9879\u76ee EGRET-CN \u56e0 GATE-7-519 \u6545\u969c\uff0c\u6279\u51c6\u5f53\u5929\u4ece BATCH-7-741 \u5207\u6362\u81f3 STREAM-7-286\u3002\u4e0b\u6b21\u540c\u7c7b\u6545\u969c\u7ee7\u7eed\u4f7f\u7528 REPLAY-7-632\u3002",
+    "chunk_hash": "e3898cc8f849a262256542961531b5d35a696a05c4a5349be17ec777490c5627",
+    "created_at": "2026-10-12T08:54:54.914909+00:00"
+  },
+  {
+    "chunk_id": "4ba91b12-c7d2-5716-b3b9-285a47a5b168",
+    "doc_id": "b89ecd61-6625-58e0-9339-b5b3d8f734ee",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 143,
+    "chunk_text": "2026-08-08. Delta DELTA-8 suffered incident GATE-8-519. REPLAY-8-632 restored missing updates. BATCH-8-741 remained approved after the meeting.",
+    "chunk_hash": "a873ba7f51d4eb63ba10c1f69efd892db8ad88b4f5538ff6da94ec6869e67176",
+    "created_at": "2026-10-12T08:57:59.174087+00:00"
+  },
+  {
+    "chunk_id": "cd05e096-09be-5e9c-9007-c7972f6ffeeb",
+    "doc_id": "5a1836ea-422c-58c3-9ec0-03fb31a0a1f3",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 266,
+    "chunk_text": "2026-08-15. Delta DELTA-8 decision log A approves STREAM-8-286 effective August 15 because of GATE-8-519 and retains REPLAY-8-632. Independent decision log B approves QUEUE-8-440 for the same project effective August 15. Neither log retracts or supersedes the other.",
+    "chunk_hash": "fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd",
+    "created_at": "2026-10-12T08:58:51.927248+00:00"
+  },
+  {
+    "chunk_id": "14a3a6c7-d7f6-5f43-87d5-47b850bcf980",
+    "doc_id": "ded7e3d2-cf01-5b89-a1dd-8675cf44c20d",
+    "chunk_index": 0,
+    "start_offset": 0,
+    "end_offset": 332,
+    "chunk_text": "2026-08-22. Delta DELTA-8 retains both conflicting August 15 decision logs, with no adjudication. The approved retry policy is still RETRY-8-108. RETRY-8-907 is only a proposal for September 1 and has not been approved. This review contains no budget-owner appointment information. It does not establish that the role is unassigned.",
+    "chunk_hash": "9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2",
+    "created_at": "2026-10-12T08:59:17.093554+00:00"
+  }
+]

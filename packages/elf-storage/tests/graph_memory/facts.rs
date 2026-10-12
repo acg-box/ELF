@@ -401,7 +401,8 @@ async fn graph_schema_upgrade_preserves_rows_and_separates_owner_and_unknown_tim
 
 async fn assert_legacy_graph_upgrade(db: &Db, old: Uuid, start: OffsetDateTime) {
 	// Recreate only the old graph-table contract in this isolated database.
-	sqlx::raw_sql("ALTER TABLE graph_facts ALTER COLUMN valid_from SET NOT NULL;
+	sqlx::raw_sql("ALTER TABLE graph_fact_evidence DROP COLUMN quote;
+        ALTER TABLE graph_facts ALTER COLUMN valid_from SET NOT NULL;
         DROP INDEX uq_graph_facts_active_entity_value;
         DROP INDEX uq_graph_facts_active_entity_object;
         CREATE UNIQUE INDEX uq_graph_facts_active_entity_value ON graph_facts(tenant_id,project_id,scope,subject_entity_id,predicate_id,object_value) WHERE valid_to IS NULL AND object_value IS NOT NULL;
@@ -419,4 +420,13 @@ async fn assert_legacy_graph_upgrade(db: &Db, old: Uuid, start: OffsetDateTime) 
 			.expect("Evidence integrity fixture must succeed.");
 
 	assert_eq!(preserved, Some(start));
+
+	let quote: Option<String> =
+		sqlx::query_scalar("SELECT quote FROM graph_fact_evidence WHERE fact_id=$1 LIMIT 1")
+			.bind(old)
+			.fetch_one(&db.pool)
+			.await
+			.expect("Legacy evidence remains present");
+
+	assert_eq!(quote, None);
 }

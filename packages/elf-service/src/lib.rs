@@ -13,6 +13,7 @@ pub mod delete;
 pub mod docs;
 pub mod dreaming_review_queue;
 pub mod entity_memory;
+pub mod evidence;
 pub mod graph;
 pub mod graph_query;
 pub mod graph_report;

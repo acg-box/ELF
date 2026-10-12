@@ -1,0 +1,863 @@
+[
+  {
+    "evidence_id": "e369ba09-78c5-4d4f-8507-8967f8961353",
+    "fact_id": "0ece84fb-9829-4dc3-a4f5-b2ec2a248112",
+    "note_id": "2185c5f0-abb1-4172-9fdf-1c834b8e6005",
+    "quote": "Mara started project Larch.",
+    "created_at": "2026-10-12T08:26:20.940397+00:00"
+  },
+  {
+    "evidence_id": "8eac2694-4ff8-45ed-80c3-37e505e33d47",
+    "fact_id": "b684aaa5-946e-41c4-874e-7fec2a50f107",
+    "note_id": "fd3dc83d-b1a2-4a2e-afa0-cb6c66185071",
+    "quote": "Mara started project Larch. They chose BATCH-0-741 for batch delivery.",
+    "created_at": "2026-10-12T08:26:20.967649+00:00"
+  },
+  {
+    "evidence_id": "515b21f2-41b8-4b27-9c96-1e9380a9d852",
+    "fact_id": "5d644452-49a0-46b8-9f5e-471f67f0492a",
+    "note_id": "97bf3984-fc28-4634-8bcf-234ae5e43cf5",
+    "quote": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+    "created_at": "2026-10-12T08:26:20.977608+00:00"
+  },
+  {
+    "evidence_id": "49b3bd37-f59e-4a5b-9d1c-47512cb06979",
+    "fact_id": "9e345f75-599b-401f-917b-37397e8e4916",
+    "note_id": "bcc30949-3d96-4a43-bcfc-eadb45612fd3",
+    "quote": "Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages.",
+    "created_at": "2026-10-12T08:27:03.632767+00:00"
+  },
+  {
+    "evidence_id": "054d45f8-70d1-45ff-bc7b-11ad1549e8eb",
+    "fact_id": "eafeafd4-7864-4262-950c-ebe43747b34b",
+    "note_id": "bcc30949-3d96-4a43-bcfc-eadb45612fd3",
+    "quote": "Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages.",
+    "created_at": "2026-10-12T08:27:03.632767+00:00"
+  },
+  {
+    "evidence_id": "778c1d03-9eaf-4a1a-8fde-e4707c7a3d4e",
+    "fact_id": "964da3f3-53da-43f5-9a9c-d1eb05bd10bd",
+    "note_id": "bcc30949-3d96-4a43-bcfc-eadb45612fd3",
+    "quote": "The team tested REPLAY-0-632, which restored the missing updates.",
+    "created_at": "2026-10-12T08:27:03.632767+00:00"
+  },
+  {
+    "evidence_id": "44f81af1-d006-44af-891e-0d13aa73f839",
+    "fact_id": "6ad10916-6b62-447c-bf11-5c3e7bf1cc0e",
+    "note_id": "d5474947-051e-431c-b41a-8df3bc472a62",
+    "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.",
+    "created_at": "2026-10-12T08:28:16.78586+00:00"
+  },
+  {
+    "evidence_id": "8e7619c9-096c-4d12-ad97-85f4ecb5c1c0",
+    "fact_id": "5ff0d90d-9939-4dfa-adc7-9673e1d1368f",
+    "note_id": "d5474947-051e-431c-b41a-8df3bc472a62",
+    "quote": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.",
+    "created_at": "2026-10-12T08:28:16.78586+00:00"
+  },
+  {
+    "evidence_id": "b20894d8-8e5d-4b27-b40e-1e6a65ee8f1f",
+    "fact_id": "aba308da-8bc3-4523-b768-221000b94063",
+    "note_id": "d5474947-051e-431c-b41a-8df3bc472a62",
+    "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.",
+    "created_at": "2026-10-12T08:28:16.78586+00:00"
+  },
+  {
+    "evidence_id": "0e46fab0-dc27-4462-ab59-9ffa0910ebd0",
+    "fact_id": "ec26a82d-4234-4465-ae6e-300be2333daa",
+    "note_id": "d5474947-051e-431c-b41a-8df3bc472a62",
+    "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.",
+    "created_at": "2026-10-12T08:28:16.78586+00:00"
+  },
+  {
+    "evidence_id": "4c3cc130-cade-4192-b7e9-a721ce54301a",
+    "fact_id": "fa5d6f60-5396-4d9f-8743-b9967e24ae05",
+    "note_id": "d5474947-051e-431c-b41a-8df3bc472a62",
+    "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision.",
+    "created_at": "2026-10-12T08:28:16.78586+00:00"
+  },
+  {
+    "evidence_id": "e7fc0296-5a44-4e95-9091-1151932ff5b8",
+    "fact_id": "0962659e-5249-4957-9a91-e22929272c6c",
+    "note_id": "b3f17305-d56a-4304-a670-fd62b34dad62",
+    "quote": "The retry policy is now RETRY-0-907, superseding RETRY-0-108.",
+    "created_at": "2026-10-12T08:29:39.108221+00:00"
+  },
+  {
+    "evidence_id": "750b5049-40c9-4b76-a780-39911013a4bb",
+    "fact_id": "c7770341-fb1c-4be3-b050-04e64084502f",
+    "note_id": "3aaca29f-0a2f-4b27-b194-4f0e61801932",
+    "quote": "Mara reviewed Larch.",
+    "created_at": "2026-10-12T08:29:39.264377+00:00"
+  },
+  {
+    "evidence_id": "2df2f560-e708-4823-9bfd-3118004639d6",
+    "fact_id": "1bd68a3d-2459-4e0d-8e40-69d1d80a33cc",
+    "note_id": "3aaca29f-0a2f-4b27-b194-4f0e61801932",
+    "quote": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T08:29:39.264377+00:00"
+  },
+  {
+    "evidence_id": "a4480245-bc01-41c8-bd96-9e965a27e1cb",
+    "fact_id": "cad20eeb-beba-463c-9874-ec0de5ec6909",
+    "note_id": "d8a22a95-eed9-4660-8a06-579eb2537dec",
+    "quote": "2026-08-01. Ivo started project Cobalt.",
+    "created_at": "2026-10-12T08:30:41.829072+00:00"
+  },
+  {
+    "evidence_id": "c820993d-0d49-4cf8-9331-e9ed354b1dce",
+    "fact_id": "27fbe38d-141c-4fa9-b8f0-03afa401380f",
+    "note_id": "4c11604a-cd0b-41e5-a12b-81fc286e9f32",
+    "quote": "Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery.",
+    "created_at": "2026-10-12T08:30:41.850576+00:00"
+  },
+  {
+    "evidence_id": "bc75a39a-7dc9-496f-bf31-8608eeec77cd",
+    "fact_id": "d229a15c-73c7-4dec-af81-6d456b81703f",
+    "note_id": "16e8732e-df1e-4a21-bd3b-ae637d337094",
+    "quote": "Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+    "created_at": "2026-10-12T08:30:41.859053+00:00"
+  },
+  {
+    "evidence_id": "024c0e2c-8d6b-4c50-a2a9-bff7614c43d6",
+    "fact_id": "10de61bf-39ce-40e1-922d-7654b79ed496",
+    "note_id": "fcdbe6f7-6a11-49f9-99d4-2385de9d847e",
+    "quote": "Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages.",
+    "created_at": "2026-10-12T08:31:23.957617+00:00"
+  },
+  {
+    "evidence_id": "4d0c66cd-ff1d-41a2-9eaf-398f5e580ac9",
+    "fact_id": "0c3f9e49-418e-470c-a8e9-7ad05cc5a73e",
+    "note_id": "fcdbe6f7-6a11-49f9-99d4-2385de9d847e",
+    "quote": "Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages.",
+    "created_at": "2026-10-12T08:31:23.957617+00:00"
+  },
+  {
+    "evidence_id": "747ebdcf-8c40-4934-b9a7-4ae3c7ad9301",
+    "fact_id": "1dd1dfe9-68a3-4e32-a491-387e98f65bd2",
+    "note_id": "fcdbe6f7-6a11-49f9-99d4-2385de9d847e",
+    "quote": "The team tested REPLAY-1-632, which restored the missing updates.",
+    "created_at": "2026-10-12T08:31:23.957617+00:00"
+  },
+  {
+    "evidence_id": "7b7fda37-7842-423e-bf60-31265d1e285f",
+    "fact_id": "8b136285-a343-4f43-8b2e-deef534a70a0",
+    "note_id": "c66ddfee-86e9-41d6-b286-0399c81b3d63",
+    "quote": "No change of delivery mode was approved at this meeting.",
+    "created_at": "2026-10-12T08:31:23.974223+00:00"
+  },
+  {
+    "evidence_id": "d99c67f6-c337-4ea5-9a03-0f4f0a5b6bed",
+    "fact_id": "b9d8fdbf-e1a1-462e-9137-0e4e829f3ea0",
+    "note_id": "0350af61-f394-4f1d-972d-27fd13ccb749",
+    "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+    "created_at": "2026-10-12T08:33:20.448075+00:00"
+  },
+  {
+    "evidence_id": "6ab29af3-f357-424b-a136-7ba48a5025b0",
+    "fact_id": "84d4f3b6-d8ae-4739-b02b-3d2624a9274e",
+    "note_id": "0350af61-f394-4f1d-972d-27fd13ccb749",
+    "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+    "created_at": "2026-10-12T08:33:20.448075+00:00"
+  },
+  {
+    "evidence_id": "1fabbbb7-21b7-43af-bee5-4ad83173cca2",
+    "fact_id": "90b95e7a-0a92-4ae1-9db7-80cafe82ed55",
+    "note_id": "0350af61-f394-4f1d-972d-27fd13ccb749",
+    "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+    "created_at": "2026-10-12T08:33:20.448075+00:00"
+  },
+  {
+    "evidence_id": "4de94c35-4ff2-41ce-9ddf-b9d934910ed9",
+    "fact_id": "e043da91-6857-440a-873a-6e8f7a32ce17",
+    "note_id": "0350af61-f394-4f1d-972d-27fd13ccb749",
+    "quote": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision.",
+    "created_at": "2026-10-12T08:33:20.448075+00:00"
+  },
+  {
+    "evidence_id": "a11941c1-2e76-448d-98d8-d53092088067",
+    "fact_id": "a4efe434-8abb-4789-b85f-597434929fe5",
+    "note_id": "99173001-a57f-43c6-b7e5-285572cce0db",
+    "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "created_at": "2026-10-12T08:33:20.462856+00:00"
+  },
+  {
+    "evidence_id": "057d4573-7d7a-4187-abd7-99ee3ed83397",
+    "fact_id": "10411eae-2bb0-4745-985a-7f97395140fc",
+    "note_id": "99173001-a57f-43c6-b7e5-285572cce0db",
+    "quote": "The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "created_at": "2026-10-12T08:33:20.462856+00:00"
+  },
+  {
+    "evidence_id": "c58727f6-fe77-48e7-8ff7-8d6607668a8a",
+    "fact_id": "217bbdf7-c381-440d-8c6f-5b9a6e133ad6",
+    "note_id": "07a3d658-de8b-4620-a8a0-363ac457c5ee",
+    "quote": "The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "created_at": "2026-10-12T08:33:20.470198+00:00"
+  },
+  {
+    "evidence_id": "08fefa7c-ab8b-4d48-a82f-8150bb1a88ea",
+    "fact_id": "8c796dd2-0985-4752-9701-c1fb1f5820dc",
+    "note_id": "867a5fd2-04b8-47b5-9936-5661a847a253",
+    "quote": "Ivo reviewed Cobalt. Keep the August 15 delivery choice.",
+    "created_at": "2026-10-12T08:34:03.791348+00:00"
+  },
+  {
+    "evidence_id": "3face995-53d0-47e2-9757-4798b150949e",
+    "fact_id": "9f66eeae-a1fc-4454-abf1-4d1b3e62b706",
+    "note_id": "d5310813-f436-4ca7-9a9c-6bb95469f443",
+    "quote": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T08:34:03.809527+00:00"
+  },
+  {
+    "evidence_id": "46621274-e293-4f92-9f7b-4bba60d87881",
+    "fact_id": "d2cdd9dc-c516-4346-b051-ff2c64387582",
+    "note_id": "d5310813-f436-4ca7-9a9c-6bb95469f443",
+    "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108.",
+    "created_at": "2026-10-12T08:34:03.809527+00:00"
+  },
+  {
+    "evidence_id": "0eca08a3-7f8a-44f5-8449-4e24509b74f4",
+    "fact_id": "4f1b47e9-f5a9-4c0d-bb62-2deda0905735",
+    "note_id": "e04778b6-dd0c-400d-9005-8d1742e3fe5a",
+    "quote": "Neri started project Reed.",
+    "created_at": "2026-10-12T08:35:01.133029+00:00"
+  },
+  {
+    "evidence_id": "64f0799f-d0c8-4a26-831d-b116e9ed3c42",
+    "fact_id": "91daa09e-b55c-4c9c-afec-670e98a3fb7e",
+    "note_id": "b6bdf752-0d3a-4efc-ba6d-8c7c97be4b6c",
+    "quote": "Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages.",
+    "created_at": "2026-10-12T08:36:04.714726+00:00"
+  },
+  {
+    "evidence_id": "b3cd2493-204d-4feb-9c6a-34f345b760d7",
+    "fact_id": "a9a5e1fc-dd33-4b06-94de-8d7fec10a7cc",
+    "note_id": "b6bdf752-0d3a-4efc-ba6d-8c7c97be4b6c",
+    "quote": "BATCH-2-741 lost updates during GATE-2-519 outages",
+    "created_at": "2026-10-12T08:36:04.714726+00:00"
+  },
+  {
+    "evidence_id": "202bf9b8-1d4b-44a7-a504-88539ea8531f",
+    "fact_id": "1e10b6c5-4f52-4505-aa7a-200e415c022a",
+    "note_id": "b6bdf752-0d3a-4efc-ba6d-8c7c97be4b6c",
+    "quote": "REPLAY-2-632, which restored the missing updates",
+    "created_at": "2026-10-12T08:36:04.714726+00:00"
+  },
+  {
+    "evidence_id": "f38020f9-cf3a-4df7-b756-686b17176208",
+    "fact_id": "9cf50080-c265-43f7-8949-393afcf682eb",
+    "note_id": "ce5ea48c-843a-4e94-8259-20f05b78bc8b",
+    "quote": "The cause was the GATE-2-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "created_at": "2026-10-12T08:37:34.4541+00:00"
+  },
+  {
+    "evidence_id": "2b7a6f09-d81a-4a32-bdd2-8e8f831b6e86",
+    "fact_id": "8fb08cd9-c96d-4837-834f-26ba179e3eb1",
+    "note_id": "464a649f-d6cf-44c3-8ab4-ce7da6177a73",
+    "quote": "Neri reviewed Reed.",
+    "created_at": "2026-10-12T08:38:13.392285+00:00"
+  },
+  {
+    "evidence_id": "6f5b0b3e-2193-4032-b62c-a9c66b83b273",
+    "fact_id": "1bd68a3d-2459-4e0d-8e40-69d1d80a33cc",
+    "note_id": "93e4cb22-3c0e-4dbf-bb80-cb737eecd4bb",
+    "quote": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T08:38:13.509284+00:00"
+  },
+  {
+    "evidence_id": "a05032aa-552b-4673-bb76-4a0fa12575b5",
+    "fact_id": "0e17989c-680c-48bf-9ea4-afaf3f89dcf3",
+    "note_id": "93e4cb22-3c0e-4dbf-bb80-cb737eecd4bb",
+    "quote": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T08:38:13.509284+00:00"
+  },
+  {
+    "evidence_id": "28e17af6-4533-4da7-87ea-448723b69f55",
+    "fact_id": "54195954-164b-41d4-897e-70d7b7af0348",
+    "note_id": "34e78169-dfc9-47db-8f3d-ed2e695bde09",
+    "quote": "The retry policy is now RETRY-2-907, superseding RETRY-2-108.",
+    "created_at": "2026-10-12T08:38:13.518112+00:00"
+  },
+  {
+    "evidence_id": "72697c8f-dab3-4816-bb14-7877c199a24f",
+    "fact_id": "2719a3c4-6d54-4d12-99db-f2e57f5c2a26",
+    "note_id": "79729e9d-e947-48ca-9098-930834d22eea",
+    "quote": "Tala started project Sable.",
+    "created_at": "2026-10-12T08:39:14.843375+00:00"
+  },
+  {
+    "evidence_id": "ec97fb8b-3183-4776-93b2-062729e2f9a6",
+    "fact_id": "d5c2cafd-f4f7-4183-85f7-7156ad563def",
+    "note_id": "0c69eff4-6278-423e-8e90-6ab21662f034",
+    "quote": "Tala started project Sable. They chose BATCH-3-741 for batch delivery.",
+    "created_at": "2026-10-12T08:39:15.023272+00:00"
+  },
+  {
+    "evidence_id": "8abe757c-a932-4eca-a7b6-c273b0c345ff",
+    "fact_id": "9a6f3033-6774-45ae-9374-ee39ee8f3cc5",
+    "note_id": "e6623e27-e9f8-4752-a80f-c12b96ca85e3",
+    "quote": "2026-08-01. Tala started project Sable. They chose BATCH-3-741 for batch delivery. The initial retry policy was RETRY-3-108.",
+    "created_at": "2026-10-12T08:39:15.034002+00:00"
+  },
+  {
+    "evidence_id": "94ce7268-48dd-45c3-84d4-9302a7cea0f1",
+    "fact_id": "231acf84-d69c-4dcb-8371-64fc8753ca39",
+    "note_id": "ae9ae042-e5af-4f76-a049-7de5c1925a03",
+    "quote": "Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+    "created_at": "2026-10-12T08:40:01.542135+00:00"
+  },
+  {
+    "evidence_id": "c99cfa8f-6ef7-49b8-905c-5e30a353f6fb",
+    "fact_id": "bd610ed6-49e8-4fad-94e0-34c812f18b70",
+    "note_id": "ae9ae042-e5af-4f76-a049-7de5c1925a03",
+    "quote": "Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+    "created_at": "2026-10-12T08:40:01.542135+00:00"
+  },
+  {
+    "evidence_id": "a194a7f3-4d82-438d-9171-a1b0033d56fc",
+    "fact_id": "ab08e89b-109d-4fe2-af0f-a7067d1b84c7",
+    "note_id": "ae9ae042-e5af-4f76-a049-7de5c1925a03",
+    "quote": "The team tested REPLAY-3-632, which restored the missing updates.",
+    "created_at": "2026-10-12T08:40:01.542135+00:00"
+  },
+  {
+    "evidence_id": "0589b574-25c3-47cb-b731-65a6de3dfa34",
+    "fact_id": "23c6c9cb-598b-4e06-a0f5-cc3d88c26826",
+    "note_id": "26cb86bc-8484-43d3-9dd3-fd302a01f9d2",
+    "quote": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286",
+    "created_at": "2026-10-12T08:41:04.45148+00:00"
+  },
+  {
+    "evidence_id": "43d14cf2-0bab-4f8f-b27e-78385035048e",
+    "fact_id": "a82d49d9-be08-4651-8f15-56abfbb79521",
+    "note_id": "26cb86bc-8484-43d3-9dd3-fd302a01f9d2",
+    "quote": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286",
+    "created_at": "2026-10-12T08:41:04.45148+00:00"
+  },
+  {
+    "evidence_id": "e35bab3f-7abe-4d75-859d-c9c70f92dbac",
+    "fact_id": "9f66eeae-a1fc-4454-abf1-4d1b3e62b706",
+    "note_id": "6ec46fb0-0a47-45e7-b4df-dba279dfeb00",
+    "quote": "For the next outage, use the recovery procedure validated on August 8.",
+    "created_at": "2026-10-12T08:41:44.751659+00:00"
+  },
+  {
+    "evidence_id": "a3724469-113a-4c99-88ae-c0da7c3b10ab",
+    "fact_id": "ffb28552-7395-4dc6-984b-23760c8ec973",
+    "note_id": "26cb86bc-8484-43d3-9dd3-fd302a01f9d2",
+    "quote": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286",
+    "created_at": "2026-10-12T08:41:04.45148+00:00"
+  },
+  {
+    "evidence_id": "7c02f7e3-be39-4db0-abc8-ed418640367b",
+    "fact_id": "45d62f95-399b-45ad-b9f3-81680a48ed8c",
+    "note_id": "0eb70fd5-f73c-41b0-ae76-8f2fa320a101",
+    "quote": "2026-08-22. Tala reviewed Sable. Keep the August 15 delivery choice.",
+    "created_at": "2026-10-12T08:41:44.734035+00:00"
+  },
+  {
+    "evidence_id": "3880101e-d9e7-40f8-af7e-3625ece78c37",
+    "fact_id": "5cd91af6-95fa-4e20-a9b7-6b7fe37459a8",
+    "note_id": "47a7e16c-b325-4c9e-af02-cf1da4428dbf",
+    "quote": "Devon started project Cedar",
+    "created_at": "2026-10-12T08:42:35.435186+00:00"
+  },
+  {
+    "evidence_id": "2b1eb0a9-3413-4346-a439-e96ed39d31ba",
+    "fact_id": "040b3b87-8168-488b-8120-a5b56d750bc9",
+    "note_id": "6def022d-1adb-4cdc-bc80-e2fa947aa96a",
+    "quote": "The cause was the GATE-3-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "created_at": "2026-10-12T08:41:04.467017+00:00"
+  },
+  {
+    "evidence_id": "071f6b49-3307-423d-b969-d401d2d9c5a8",
+    "fact_id": "19dc4477-370d-4816-ba02-a79a2cc1d884",
+    "note_id": "28713676-ffcd-4c3f-9614-b168d1f05647",
+    "quote": "The retry policy is now RETRY-3-907, superseding RETRY-3-108. No budget owner has been appointed.",
+    "created_at": "2026-10-12T08:41:44.761866+00:00"
+  },
+  {
+    "evidence_id": "e5b32d36-19f7-47d4-a313-240d6fcf29c9",
+    "fact_id": "1edf4bc3-9501-4095-beb4-105a8d7fba84",
+    "note_id": "a2960671-ba5b-49a6-bc18-48a36a4eed19",
+    "quote": "The initial retry policy was RETRY-4-108.",
+    "created_at": "2026-10-12T08:42:35.454897+00:00"
+  },
+  {
+    "evidence_id": "0f6e9a89-b63e-4f9d-9b3b-fa2f1b7fd559",
+    "fact_id": "e2e5eefe-d3c5-462e-aaef-3b5a98f34045",
+    "note_id": "f4b6b5bc-b647-4836-b7b9-e927f3e34b44",
+    "quote": "They chose BATCH-4-741 for batch delivery.",
+    "created_at": "2026-10-12T08:42:35.449824+00:00"
+  },
+  {
+    "evidence_id": "8b36e2e4-0d26-43b6-b608-e71dc4f32555",
+    "fact_id": "5cf29336-a691-4021-a7c9-1de97a1e8360",
+    "note_id": "18ea4ba7-d697-4580-bd28-747c3821869d",
+    "quote": "Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages.",
+    "created_at": "2026-10-12T08:43:37.248278+00:00"
+  },
+  {
+    "evidence_id": "f7716de1-f69f-4fb7-b648-dd3ce7c82fbc",
+    "fact_id": "1ae6e667-6032-4ce5-84af-c077eafea4e3",
+    "note_id": "18ea4ba7-d697-4580-bd28-747c3821869d",
+    "quote": "The team tested REPLAY-4-632, which restored the missing updates.",
+    "created_at": "2026-10-12T08:43:37.248278+00:00"
+  },
+  {
+    "evidence_id": "2414a933-f0cf-4de3-81cf-7e1b06f1c062",
+    "fact_id": "b8d726ec-dafa-432f-8316-4e21ecf27e21",
+    "note_id": "28bf4207-f3d7-4083-bc7d-9961ad0797b3",
+    "quote": "Devon reviewed Cedar.",
+    "created_at": "2026-10-12T08:45:45.221942+00:00"
+  },
+  {
+    "evidence_id": "c741bfd2-2cb5-49c0-83b1-bca003dc64c8",
+    "fact_id": "e6f8cd9a-1604-4712-91e7-a9faea5bb402",
+    "note_id": "28bf4207-f3d7-4083-bc7d-9961ad0797b3",
+    "quote": "the recovery procedure validated on August 8",
+    "created_at": "2026-10-12T08:45:45.221942+00:00"
+  },
+  {
+    "evidence_id": "c1092b6b-4843-4580-9c5a-a85f0597d064",
+    "fact_id": "8de31b82-dc4f-4862-9ebe-a0fdd6d133d4",
+    "note_id": "7d77d648-66cb-4445-9447-3d2c0c2d45f9",
+    "quote": "The retry policy is now RETRY-4-907, superseding RETRY-4-108.",
+    "created_at": "2026-10-12T08:45:45.241174+00:00"
+  },
+  {
+    "evidence_id": "8f5b8053-e97d-497e-98bb-82427fb473c0",
+    "fact_id": "40abf2af-bf3b-4f1c-b58a-50d6e5aa6edf",
+    "note_id": "f1c7eec0-0b06-4ac5-b342-adf63a74cb55",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera uses BATCH-5-741 and RETRY-5-108.",
+    "created_at": "2026-10-12T08:46:48.885283+00:00"
+  },
+  {
+    "evidence_id": "091b14c0-84dc-4999-a35f-dfb1ee6bcfe8",
+    "fact_id": "b72c0cbe-2685-4ce1-897c-6821455dffdd",
+    "note_id": "f1c7eec0-0b06-4ac5-b342-adf63a74cb55",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera uses BATCH-5-741 and RETRY-5-108.",
+    "created_at": "2026-10-12T08:46:48.885283+00:00"
+  },
+  {
+    "evidence_id": "c6455338-7025-4a33-9b16-da9c0340ddc9",
+    "fact_id": "d4c39b84-0fd3-4cc5-a6e2-07945545203f",
+    "note_id": "f1c7eec0-0b06-4ac5-b342-adf63a74cb55",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera uses BATCH-5-741 and RETRY-5-108.",
+    "created_at": "2026-10-12T08:46:48.885283+00:00"
+  },
+  {
+    "evidence_id": "c0589cf3-1263-4fe2-9121-5412f8a5615a",
+    "fact_id": "ca3c4bc5-a778-4365-ba40-5da191bfb394",
+    "note_id": "bba93a36-09fc-424e-95dc-0fcf79296427",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera suffered incident GATE-5-519.",
+    "created_at": "2026-10-12T08:47:54.329764+00:00"
+  },
+  {
+    "evidence_id": "5810b592-3f24-4285-985c-bc07d33f4e34",
+    "fact_id": "e9c2a32c-551d-482f-b20d-4db3b5f430c6",
+    "note_id": "bba93a36-09fc-424e-95dc-0fcf79296427",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera suffered incident GATE-5-519.",
+    "created_at": "2026-10-12T08:47:54.329764+00:00"
+  },
+  {
+    "evidence_id": "f084aa59-bf26-4239-bda1-983573ec3e84",
+    "fact_id": "1a54291f-b0c0-4c78-979a-8323b95ae1ad",
+    "note_id": "bba93a36-09fc-424e-95dc-0fcf79296427",
+    "quote": "BATCH-5-741 lost updates.",
+    "created_at": "2026-10-12T08:47:54.329764+00:00"
+  },
+  {
+    "evidence_id": "86b4421c-b52b-4585-9dc2-a6650268ca2f",
+    "fact_id": "ebc589d7-9813-403f-b728-e774849cad85",
+    "note_id": "bba93a36-09fc-424e-95dc-0fcf79296427",
+    "quote": "Recovery procedure REPLAY-5-632 restored those updates.",
+    "created_at": "2026-10-12T08:47:54.329764+00:00"
+  },
+  {
+    "evidence_id": "c8017d8c-5aca-4478-87c7-4d89890ea69b",
+    "fact_id": "09fd2628-2561-4321-b685-d08014276b26",
+    "note_id": "6f277c0e-7485-4268-984e-23ddf33a4821",
+    "quote": "Keep REPLAY-5-632 for that incident type.",
+    "created_at": "2026-10-12T08:48:44.8329+00:00"
+  },
+  {
+    "evidence_id": "9bf3f4af-fd2b-4b23-8bbb-8a1462f652b5",
+    "fact_id": "8e561962-82f5-4047-86a0-22960f8ba076",
+    "note_id": "35ef5463-494a-4e26-b748-8bfa6d172831",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108.",
+    "created_at": "2026-10-12T08:49:12.017867+00:00"
+  },
+  {
+    "evidence_id": "d114756c-ea45-4a8d-ba11-8e1dc1b8084c",
+    "fact_id": "54e2fe77-78cc-4230-891a-6f0e5ceda377",
+    "note_id": "f3bbbe22-002d-4614-afd4-ae54aceee21e",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108.",
+    "created_at": "2026-10-12T08:49:12.038837+00:00"
+  },
+  {
+    "evidence_id": "ede3f01d-b966-4b55-a59d-f0948054f6f2",
+    "fact_id": "56c95a0f-c877-471e-80f8-9f5182cc35a8",
+    "note_id": "f3bbbe22-002d-4614-afd4-ae54aceee21e",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108.",
+    "created_at": "2026-10-12T08:49:12.038837+00:00"
+  },
+  {
+    "evidence_id": "a9bbccb0-4c7d-45ee-bebc-ee7195330447",
+    "fact_id": "b45c10c1-10df-4f01-b808-4926824964ba",
+    "note_id": "f3bbbe22-002d-4614-afd4-ae54aceee21e",
+    "quote": "The North division Atlas project (ACCT-N), managed by Alex Rivera retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108.",
+    "created_at": "2026-10-12T08:49:12.038837+00:00"
+  },
+  {
+    "evidence_id": "600bcd70-d03c-4f1b-82cb-eb7a42c83145",
+    "fact_id": "37d89e94-4c8a-4ca6-9818-491120bc3bbc",
+    "note_id": "e7120065-5200-4e0f-a0a9-278c7fe5c54e",
+    "quote": "Jordan Lee was appointed budget owner for ACCT-N effective August 20.",
+    "created_at": "2026-10-12T08:49:12.056369+00:00"
+  },
+  {
+    "evidence_id": "68776d8a-d857-409a-aecb-da13658bf772",
+    "fact_id": "af4044b5-5c68-4e7a-833d-2184b48e849d",
+    "note_id": "1d527eac-aa64-4db5-ad7c-6e7a00c2777f",
+    "quote": "2026-08-01. The South division Atlas project (ACCT-S), managed by Alex Rivera uses BATCH-6-741 and RETRY-6-108.",
+    "created_at": "2026-10-12T08:50:32.195105+00:00"
+  },
+  {
+    "evidence_id": "cf3d97de-b1d6-41df-8fc9-cfd1c316294f",
+    "fact_id": "2ec5f832-310e-465d-b850-7b23c734c1df",
+    "note_id": "1d527eac-aa64-4db5-ad7c-6e7a00c2777f",
+    "quote": "2026-08-01. The South division Atlas project (ACCT-S), managed by Alex Rivera uses BATCH-6-741 and RETRY-6-108.",
+    "created_at": "2026-10-12T08:50:32.195105+00:00"
+  },
+  {
+    "evidence_id": "bbf6bde9-3d58-4522-9022-cab4376b9a62",
+    "fact_id": "13d95ffd-063e-48ff-876c-3619e6152c3c",
+    "note_id": "1d527eac-aa64-4db5-ad7c-6e7a00c2777f",
+    "quote": "2026-08-01. The South division Atlas project (ACCT-S), managed by Alex Rivera uses BATCH-6-741 and RETRY-6-108.",
+    "created_at": "2026-10-12T08:50:32.195105+00:00"
+  },
+  {
+    "evidence_id": "90d16897-d6c4-48c7-82d1-e6a8c5abda5f",
+    "fact_id": "478f193f-850b-496f-b745-17f6333929d0",
+    "note_id": "8aca72f7-e77f-4f27-87fb-b8d9de4bd569",
+    "quote": "The South division Atlas project (ACCT-S), managed by Alex Rivera suffered incident GATE-6-519.",
+    "created_at": "2026-10-12T08:51:03.19046+00:00"
+  },
+  {
+    "evidence_id": "f0a37ddb-5c96-43b7-b175-3edca2d7c969",
+    "fact_id": "d8274069-5bff-48c0-85a7-89546cec6bc3",
+    "note_id": "8aca72f7-e77f-4f27-87fb-b8d9de4bd569",
+    "quote": "The South division Atlas project (ACCT-S), managed by Alex Rivera suffered incident GATE-6-519.",
+    "created_at": "2026-10-12T08:51:03.19046+00:00"
+  },
+  {
+    "evidence_id": "3f6f745a-cae7-4a29-9980-03604a1ee1cc",
+    "fact_id": "a34beeb4-e731-4087-87d4-b18b57e1d72b",
+    "note_id": "aec844af-cd23-4373-9b41-c800b5515b2e",
+    "quote": "BATCH-6-741 lost updates.",
+    "created_at": "2026-10-12T08:51:03.209479+00:00"
+  },
+  {
+    "evidence_id": "27b21da3-a2df-4eae-98cc-c70edcdf7bff",
+    "fact_id": "543c7900-97cb-4196-a297-9a4ba782fa9e",
+    "note_id": "aec844af-cd23-4373-9b41-c800b5515b2e",
+    "quote": "Recovery procedure REPLAY-6-632 restored those updates.",
+    "created_at": "2026-10-12T08:51:03.209479+00:00"
+  },
+  {
+    "evidence_id": "b1dbfb3e-d1b3-4e82-a2c6-ceb16eb6ac08",
+    "fact_id": "554a2410-6da3-4792-b05f-6d42a5a4f29b",
+    "note_id": "857351a4-17a3-431a-8237-d827cf5140a2",
+    "quote": "The team did not approve a delivery change.",
+    "created_at": "2026-10-12T08:51:03.219288+00:00"
+  },
+  {
+    "evidence_id": "731c2ae8-162e-4963-ab3f-9bc2b600ebbd",
+    "fact_id": "af4044b5-5c68-4e7a-833d-2184b48e849d",
+    "note_id": "291cd7d3-4957-4cdc-8dd4-d614a084e1d9",
+    "quote": "For the South division Atlas project (ACCT-S), managed by Alex Rivera",
+    "created_at": "2026-10-12T08:52:37.741472+00:00"
+  },
+  {
+    "evidence_id": "93e0d1bc-059e-4fe0-8385-a8e07c9075e1",
+    "fact_id": "1d3f7668-0f3a-4262-b601-b19c47233a6b",
+    "note_id": "a170cbe7-3caa-4ead-9bf1-f416e2f8b30c",
+    "quote": "2026-08-15. For the South division Atlas project (ACCT-S), managed by Alex Rivera, Alex approved STREAM-6-286 effective August 15, replacing BATCH-6-741 because of GATE-6-519.",
+    "created_at": "2026-10-12T08:52:37.756347+00:00"
+  },
+  {
+    "evidence_id": "99e3c0d9-5dd6-4257-9055-58fb43821a2b",
+    "fact_id": "a9fef4cb-27e7-4cbe-b315-65fe250bac12",
+    "note_id": "a170cbe7-3caa-4ead-9bf1-f416e2f8b30c",
+    "quote": "2026-08-15. For the South division Atlas project (ACCT-S), managed by Alex Rivera, Alex approved STREAM-6-286 effective August 15, replacing BATCH-6-741 because of GATE-6-519.",
+    "created_at": "2026-10-12T08:52:37.756347+00:00"
+  },
+  {
+    "evidence_id": "42645a38-fcc6-482e-8afa-ba45d252ec27",
+    "fact_id": "03e6531e-3212-4f38-aa58-9eb8095e5f08",
+    "note_id": "a170cbe7-3caa-4ead-9bf1-f416e2f8b30c",
+    "quote": "replacing BATCH-6-741 because of GATE-6-519",
+    "created_at": "2026-10-12T08:52:37.756347+00:00"
+  },
+  {
+    "evidence_id": "8da38a2d-0ac5-4c02-a40c-a978d7ee6e56",
+    "fact_id": "0e73246f-dfe6-4095-8b9f-20784cd2547e",
+    "note_id": "a9ec16c4-eb2b-4827-8eda-5c4d35d04e97",
+    "quote": "Keep REPLAY-6-632 for that incident type.",
+    "created_at": "2026-10-12T08:52:37.766966+00:00"
+  },
+  {
+    "evidence_id": "d8603ca0-b249-4fa3-9168-4f1b9b006882",
+    "fact_id": "af4044b5-5c68-4e7a-833d-2184b48e849d",
+    "note_id": "d0ffe1b3-21cc-4c0b-b067-94bd3b4ed851",
+    "quote": "The South division Atlas project (ACCT-S), managed by Alex Rivera retains STREAM-6-286 and adopts RETRY-6-907, replacing RETRY-6-108.",
+    "created_at": "2026-10-12T08:53:13.114073+00:00"
+  },
+  {
+    "evidence_id": "5a756a91-7139-42c0-93cc-ecab97c61bd5",
+    "fact_id": "aae385d1-fa38-485a-ae77-c49a1831c3c9",
+    "note_id": "f73ad425-b03c-462c-91c8-b4137be3fce4",
+    "quote": "The South division Atlas project (ACCT-S), managed by Alex Rivera retains STREAM-6-286 and adopts RETRY-6-907, replacing RETRY-6-108.",
+    "created_at": "2026-10-12T08:53:13.126373+00:00"
+  },
+  {
+    "evidence_id": "76df434f-bac5-4a0f-8d28-bbed4b257139",
+    "fact_id": "f2d14af8-e1c2-48d7-a988-d5eecc4675cb",
+    "note_id": "f73ad425-b03c-462c-91c8-b4137be3fce4",
+    "quote": "The South division Atlas project (ACCT-S), managed by Alex Rivera retains STREAM-6-286 and adopts RETRY-6-907, replacing RETRY-6-108.",
+    "created_at": "2026-10-12T08:53:13.126373+00:00"
+  },
+  {
+    "evidence_id": "8a890298-4ff0-4a36-9b70-21a69305d195",
+    "fact_id": "ad1dd37b-aa00-485b-ba36-8a8f98070cd1",
+    "note_id": "f73ad425-b03c-462c-91c8-b4137be3fce4",
+    "quote": "The South division Atlas project (ACCT-S), managed by Alex Rivera retains STREAM-6-286 and adopts RETRY-6-907, replacing RETRY-6-108.",
+    "created_at": "2026-10-12T08:53:13.126373+00:00"
+  },
+  {
+    "evidence_id": "040642dc-a3ce-4e2e-8130-e83191bb5eea",
+    "fact_id": "00ae8e49-09b1-47c2-a871-c1ef48805b8b",
+    "note_id": "31be39b8-ea3d-4db6-aa69-978193c5a347",
+    "quote": "\u9648\u96e8\u8d1f\u8d23\u767d\u9e6d\u9879\u76ee\uff0c\u9879\u76ee\u7f16\u53f7 EGRET-CN\u3002",
+    "created_at": "2026-10-12T08:54:25.932899+00:00"
+  },
+  {
+    "evidence_id": "49ed2e1d-d5fd-4542-8a6a-43e1bdb40289",
+    "fact_id": "4ab4b2ce-780c-4b24-830b-366ed3de969e",
+    "note_id": "31be39b8-ea3d-4db6-aa69-978193c5a347",
+    "quote": "\u9648\u96e8\u8d1f\u8d23\u767d\u9e6d\u9879\u76ee\uff0c\u9879\u76ee\u7f16\u53f7 EGRET-CN\u3002",
+    "created_at": "2026-10-12T08:54:25.932899+00:00"
+  },
+  {
+    "evidence_id": "95a51fae-3f10-4174-8648-2a2ec112cc7c",
+    "fact_id": "a8d578eb-9de3-49c4-952c-c062b7d4593a",
+    "note_id": "52c81107-5ab6-46be-bc3f-ab8e2e0b3659",
+    "quote": "\u767d\u9e6d\u9879\u76ee\uff0c\u9879\u76ee\u7f16\u53f7 EGRET-CN\u3002\u5f53\u524d\u91c7\u7528 BATCH-7-741 \u6295\u9012\uff0c\u91cd\u8bd5\u7b56\u7565 RETRY-7-108\u3002",
+    "created_at": "2026-10-12T08:54:25.949014+00:00"
+  },
+  {
+    "evidence_id": "4a636394-d304-4465-8a4f-a229cf71217d",
+    "fact_id": "54eba187-46a2-4fbc-bda0-6f7b988f91e5",
+    "note_id": "68859459-c25c-4e15-8d39-b9e6765c10aa",
+    "quote": "\u767d\u9e6d\u9879\u76ee\uff0c\u9879\u76ee\u7f16\u53f7 EGRET-CN\u3002\u5f53\u524d\u91c7\u7528 BATCH-7-741 \u6295\u9012\uff0c\u91cd\u8bd5\u7b56\u7565 RETRY-7-108\u3002",
+    "created_at": "2026-10-12T08:54:25.959828+00:00"
+  },
+  {
+    "evidence_id": "4f6ad447-5dec-4ce4-a7d4-b05c7a6bcbba",
+    "fact_id": "578bf98b-e353-40ae-ac74-ae6f07d32f78",
+    "note_id": "3b39d2d8-0d8e-4291-83c5-e78420b38f78",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u5728 GATE-7-519 \u6545\u969c\u671f\u95f4\u4e22\u5931\u66f4\u65b0\u3002",
+    "created_at": "2026-10-12T08:54:54.886595+00:00"
+  },
+  {
+    "evidence_id": "7f508217-8116-49b1-a256-24bf384c563e",
+    "fact_id": "7f8ec317-f7b1-4097-825b-9a4a21f8e87e",
+    "note_id": "6bf1a66c-2067-4b0d-b194-00d7dd4b0f73",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u5728 GATE-7-519 \u6545\u969c\u671f\u95f4\u4e22\u5931\u66f4\u65b0\u3002REPLAY-7-632 \u6062\u590d\u4e86\u66f4\u65b0\u3002",
+    "created_at": "2026-10-12T08:54:54.89478+00:00"
+  },
+  {
+    "evidence_id": "7157efeb-435d-468e-9b37-13cb59a9bc39",
+    "fact_id": "18d4c82f-f794-428c-bb59-ec22fca9bcbf",
+    "note_id": "6bf1a66c-2067-4b0d-b194-00d7dd4b0f73",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u5728 GATE-7-519 \u6545\u969c\u671f\u95f4\u4e22\u5931\u66f4\u65b0\u3002REPLAY-7-632 \u6062\u590d\u4e86\u66f4\u65b0\u3002",
+    "created_at": "2026-10-12T08:54:54.89478+00:00"
+  },
+  {
+    "evidence_id": "ce848471-226a-4f2e-acf7-a905a7443877",
+    "fact_id": "4c4e454a-b1a7-4298-9e86-b19360b2a6f5",
+    "note_id": "9c616ef0-5bc4-42f0-8825-e57107fa62b5",
+    "quote": "\u8fd9\u6b21\u4f1a\u8bae\u6ca1\u6709\u6279\u51c6\u6539\u53d8\u6295\u9012\u6a21\u5f0f\u3002",
+    "created_at": "2026-10-12T08:54:54.903588+00:00"
+  },
+  {
+    "evidence_id": "f93b131a-f386-4d7e-be56-0612479317cf",
+    "fact_id": "3313707e-0652-49ce-bb25-7f174c8d6e21",
+    "note_id": "03c90a34-90fb-4ff2-b0be-0ce7f80e8d66",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u56e0 GATE-7-519 \u6545\u969c\uff0c\u6279\u51c6\u5f53\u5929\u4ece BATCH-7-741 \u5207\u6362\u81f3 STREAM-7-286\u3002",
+    "created_at": "2026-10-12T08:55:20.79338+00:00"
+  },
+  {
+    "evidence_id": "012d9f78-1468-4d49-8b52-9cbd444de8db",
+    "fact_id": "2f0813b2-1db9-451f-90e0-66577f1b49be",
+    "note_id": "03c90a34-90fb-4ff2-b0be-0ce7f80e8d66",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u56e0 GATE-7-519 \u6545\u969c\uff0c\u6279\u51c6\u5f53\u5929\u4ece BATCH-7-741 \u5207\u6362\u81f3 STREAM-7-286\u3002",
+    "created_at": "2026-10-12T08:55:20.79338+00:00"
+  },
+  {
+    "evidence_id": "e434fec3-308b-417d-8ac2-6733efe949ae",
+    "fact_id": "1fdd8be5-36d9-428a-b1b8-b14bd7865c22",
+    "note_id": "03c90a34-90fb-4ff2-b0be-0ce7f80e8d66",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u56e0 GATE-7-519 \u6545\u969c\uff0c\u6279\u51c6\u5f53\u5929\u4ece BATCH-7-741 \u5207\u6362\u81f3 STREAM-7-286\u3002",
+    "created_at": "2026-10-12T08:55:20.79338+00:00"
+  },
+  {
+    "evidence_id": "c5a297aa-5999-4135-8d45-18c6fbb27f0d",
+    "fact_id": "9ad59802-8a96-429f-b743-6c61a9071317",
+    "note_id": "288b7817-85ab-4f8d-b290-a56799390a49",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u4fdd\u6301 STREAM-7-286",
+    "created_at": "2026-10-12T08:56:18.012098+00:00"
+  },
+  {
+    "evidence_id": "2fd2f760-d8c6-463a-a9db-048eaff58c55",
+    "fact_id": "85ca2a78-292a-4cb4-8806-9778eddf35b6",
+    "note_id": "288b7817-85ab-4f8d-b290-a56799390a49",
+    "quote": "\u767d\u9e6d\u9879\u76ee EGRET-CN \u4fdd\u6301 STREAM-7-286\uff0c\u91cd\u8bd5\u7b56\u7565\u6539\u4e3a RETRY-7-907",
+    "created_at": "2026-10-12T08:56:18.012098+00:00"
+  },
+  {
+    "evidence_id": "8caa4964-0699-4e34-8fba-57b671adcad1",
+    "fact_id": "2ee11b74-8482-4b5a-84a6-e20d077c6a5f",
+    "note_id": "288b7817-85ab-4f8d-b290-a56799390a49",
+    "quote": "\u91cd\u8bd5\u7b56\u7565\u6539\u4e3a RETRY-7-907\uff0c\u66ff\u4ee3 RETRY-7-108",
+    "created_at": "2026-10-12T08:56:18.012098+00:00"
+  },
+  {
+    "evidence_id": "bfb122b7-9df6-49a0-b247-362dda21b4ae",
+    "fact_id": "cd4ed490-6991-4349-b267-4480fddfc110",
+    "note_id": "07c3d101-c947-4667-b5c1-376ad1e9c969",
+    "quote": "\u6797\u6f88\u5df2\u4e8e8\u670820\u65e5\u88ab\u4efb\u547d\u4e3a\u9884\u7b97\u8d1f\u8d23\u4eba",
+    "created_at": "2026-10-12T08:56:18.033969+00:00"
+  },
+  {
+    "evidence_id": "ca5cfbb9-eefc-4d01-9603-0b264e90b12e",
+    "fact_id": "45526627-cd20-4836-9871-d54e856fe5b2",
+    "note_id": "ceb2e414-c95b-40f6-b866-4764cdb6addf",
+    "quote": "Morgan owns the Delta project DELTA-8.",
+    "created_at": "2026-10-12T08:57:59.122946+00:00"
+  },
+  {
+    "evidence_id": "df1d6f7e-4c49-4376-bca5-576e01d4129a",
+    "fact_id": "527b0186-4ea8-45df-86f6-f7d87da28044",
+    "note_id": "67f9577e-88c8-4555-8024-5b30caae210c",
+    "quote": "2026-08-01. Morgan owns the Delta project DELTA-8. BATCH-8-741 is the approved delivery mode and RETRY-8-108 the retry policy.",
+    "created_at": "2026-10-12T08:57:59.164623+00:00"
+  },
+  {
+    "evidence_id": "8a4e0aec-768d-4e83-9727-f24cb54df398",
+    "fact_id": "5ff9021d-fb46-4ee8-a797-dac34ba1c380",
+    "note_id": "67f9577e-88c8-4555-8024-5b30caae210c",
+    "quote": "RETRY-8-108 the retry policy",
+    "created_at": "2026-10-12T08:57:59.164623+00:00"
+  },
+  {
+    "evidence_id": "2230f665-0c68-4ea3-8733-b9a32155b2a1",
+    "fact_id": "52d3afbf-eefd-4405-84bb-d76e90d5ab56",
+    "note_id": "d70c3371-d762-44f5-a05c-b7b20e7c0562",
+    "quote": "Delta DELTA-8 suffered incident GATE-8-519.",
+    "created_at": "2026-10-12T08:58:51.895313+00:00"
+  },
+  {
+    "evidence_id": "523140ec-5489-4958-856d-fc6032c45f84",
+    "fact_id": "389b7dd5-66a2-4f10-8501-f0718dd93e63",
+    "note_id": "d70c3371-d762-44f5-a05c-b7b20e7c0562",
+    "quote": "REPLAY-8-632 restored missing updates.",
+    "created_at": "2026-10-12T08:58:51.895313+00:00"
+  },
+  {
+    "evidence_id": "2ab3a4d5-73d0-4f7b-843f-d21f6040ff9c",
+    "fact_id": "caacfbaf-2a87-4d99-8895-14bc01c52e95",
+    "note_id": "793b7866-b448-426e-8c54-0425a25e90d1",
+    "quote": "Delta DELTA-8 retains both conflicting August 15 decision logs, with no adjudication.",
+    "created_at": "2026-10-12T09:00:26.093868+00:00"
+  },
+  {
+    "evidence_id": "f6deafa6-fac3-4391-beac-8794f80a2a8f",
+    "fact_id": "dd031172-3e6e-4c0b-af5c-d5cdbeaaa3ee",
+    "note_id": "8f776fac-26cd-4399-8362-68f31a30c11a",
+    "quote": "\u9648\u96e8\u4ecd\u662f\u9879\u76ee\u8d1f\u8d23\u4eba",
+    "created_at": "2026-10-12T08:56:18.040994+00:00"
+  },
+  {
+    "evidence_id": "c233117e-073f-4e73-9ab4-af42f50ed454",
+    "fact_id": "7b681262-5aa2-45b7-b790-b49bcd665892",
+    "note_id": "e9346cc4-399c-4f9b-a95a-5c2d09e79ce6",
+    "quote": "2026-08-01. Morgan owns the Delta project DELTA-8. BATCH-8-741 is the approved delivery mode and RETRY-8-108 the retry policy.",
+    "created_at": "2026-10-12T08:57:59.139237+00:00"
+  },
+  {
+    "evidence_id": "9e230cab-6b76-4171-94ee-a0a9beedb70f",
+    "fact_id": "fcc2f570-31dd-418a-ad71-a8491e950e77",
+    "note_id": "e9346cc4-399c-4f9b-a95a-5c2d09e79ce6",
+    "quote": "BATCH-8-741 is the approved delivery mode",
+    "created_at": "2026-10-12T08:57:59.139237+00:00"
+  },
+  {
+    "evidence_id": "6a73965e-9600-4d61-b968-43d7f8f03d32",
+    "fact_id": "6751e945-4b47-4345-a73a-3507041348e4",
+    "note_id": "3e9fa7c2-1ffe-4bd2-b10d-d0b52926ef4c",
+    "quote": "BATCH-8-741 remained approved after the meeting.",
+    "created_at": "2026-10-12T08:58:51.91279+00:00"
+  },
+  {
+    "evidence_id": "469e7e08-6507-4c39-89df-cb7a29add5d4",
+    "fact_id": "b078c573-4bf4-42e2-87ab-cbaa243708c8",
+    "note_id": "1b39b774-5b27-4483-a8f3-b9c8212f58e7",
+    "quote": "Delta DELTA-8 decision log A approves STREAM-8-286 effective August 15 because of GATE-8-519 and retains REPLAY-8-632.",
+    "created_at": "2026-10-12T08:59:17.048871+00:00"
+  },
+  {
+    "evidence_id": "9a20fd2d-c16f-4e7c-a732-cde89e73625f",
+    "fact_id": "c6d98e54-a601-4c2f-8d56-f564db8a2a1f",
+    "note_id": "1b39b774-5b27-4483-a8f3-b9c8212f58e7",
+    "quote": "Delta DELTA-8 decision log A approves STREAM-8-286 effective August 15 because of GATE-8-519 and retains REPLAY-8-632.",
+    "created_at": "2026-10-12T08:59:17.048871+00:00"
+  },
+  {
+    "evidence_id": "763cb884-c383-4fef-9f0e-2164c6984294",
+    "fact_id": "ec2276da-18a9-42af-95e8-5dcd0f6c0ba2",
+    "note_id": "1b39b774-5b27-4483-a8f3-b9c8212f58e7",
+    "quote": "Delta DELTA-8 decision log A approves STREAM-8-286 effective August 15 because of GATE-8-519 and retains REPLAY-8-632.",
+    "created_at": "2026-10-12T08:59:17.048871+00:00"
+  },
+  {
+    "evidence_id": "a8eb7a0c-ee9d-4ccd-9b5b-10c7e1162c21",
+    "fact_id": "1733fc20-15da-4029-b539-5ef93bf5028c",
+    "note_id": "1b39b774-5b27-4483-a8f3-b9c8212f58e7",
+    "quote": "Delta DELTA-8 decision log A approves STREAM-8-286 effective August 15 because of GATE-8-519 and retains REPLAY-8-632.",
+    "created_at": "2026-10-12T08:59:17.048871+00:00"
+  },
+  {
+    "evidence_id": "28f4e25f-7a22-43e1-93d4-381a336206a6",
+    "fact_id": "79770e5f-a5dd-48f3-ba34-3e84819d6fec",
+    "note_id": "31f48b93-2991-46fa-918c-80c6625a7d49",
+    "quote": "Independent decision log B approves QUEUE-8-440 for the same project effective August 15.",
+    "created_at": "2026-10-12T08:59:17.072922+00:00"
+  },
+  {
+    "evidence_id": "dd2bd461-f08c-4e87-9588-3ff2c1925e81",
+    "fact_id": "380831a1-b0c0-4158-b17a-799113819aa9",
+    "note_id": "70c7148a-1bc1-4d7f-894a-be95eefa1e69",
+    "quote": "The approved retry policy is still RETRY-8-108.",
+    "created_at": "2026-10-12T09:00:26.109181+00:00"
+  },
+  {
+    "evidence_id": "f84c5571-8ff5-4783-a7c9-46c0b6a9eb9d",
+    "fact_id": "4772aac9-9265-4c86-9bdb-931220742429",
+    "note_id": "70c7148a-1bc1-4d7f-894a-be95eefa1e69",
+    "quote": "RETRY-8-907 is only a proposal for September 1 and has not been approved.",
+    "created_at": "2026-10-12T09:00:26.109181+00:00"
+  }
+]

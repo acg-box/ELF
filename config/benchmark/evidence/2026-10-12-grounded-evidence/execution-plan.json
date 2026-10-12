@@ -1,0 +1,547 @@
+{
+  "decided_at": "2026-10-12T09:19:46.613467+00:00",
+  "reason": "The first four primary cases cost $0.135189186 and later recovery cases cost more. Preserve the complete original five-arm regression and all new questions under the cumulative $10 ceiling. New contrast questions compare the full combined ELF agent against the same initial-memory control. No new contrast reader answer existed when this amendment was made.",
+  "original_conditions": [
+    "notes",
+    "source",
+    "graph",
+    "both",
+    "initial"
+  ],
+  "contrast_conditions": [
+    "both",
+    "initial"
+  ],
+  "expected_cases": 132,
+  "selected": [
+    {
+      "condition": "notes",
+      "case_id": "memory-0-0"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-0-0"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-0-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-0-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-0-0"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-0-1"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-0-1"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-0-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-0-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-0-1"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-0-2"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-0-2"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-0-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-0-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-0-2"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-0-3"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-0-3"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-0-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-0-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-0-3"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-1-0"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-1-0"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-1-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-1-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-1-0"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-1-1"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-1-1"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-1-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-1-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-1-1"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-1-2"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-1-2"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-1-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-1-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-1-2"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-1-3"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-1-3"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-1-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-1-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-1-3"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-2-0"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-2-0"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-2-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-2-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-2-0"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-2-1"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-2-1"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-2-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-2-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-2-1"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-2-2"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-2-2"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-2-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-2-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-2-2"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-2-3"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-2-3"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-2-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-2-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-2-3"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-3-0"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-3-0"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-3-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-3-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-3-0"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-3-1"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-3-1"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-3-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-3-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-3-1"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-3-2"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-3-2"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-3-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-3-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-3-2"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-3-3"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-3-3"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-3-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-3-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-3-3"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-4-0"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-4-0"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-4-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-4-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-4-0"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-4-1"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-4-1"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-4-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-4-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-4-1"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-4-2"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-4-2"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-4-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-4-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-4-2"
+    },
+    {
+      "condition": "notes",
+      "case_id": "memory-4-3"
+    },
+    {
+      "condition": "source",
+      "case_id": "memory-4-3"
+    },
+    {
+      "condition": "graph",
+      "case_id": "memory-4-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "memory-4-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "memory-4-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-5-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-5-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-5-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-5-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-5-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-5-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-5-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-5-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-6-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-6-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-6-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-6-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-6-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-6-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-6-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-6-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-7-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-7-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-7-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-7-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-7-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-7-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-7-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-7-3"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-8-0"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-8-0"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-8-1"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-8-1"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-8-2"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-8-2"
+    },
+    {
+      "condition": "both",
+      "case_id": "contrast-8-3"
+    },
+    {
+      "condition": "initial",
+      "case_id": "contrast-8-3"
+    }
+  ],
+  "interruption": "Send SIGINT only to the reader main thread. Its bounded executor drains currently running cases and dispatches no more. Preserve every completed answer and request receipt."
+}

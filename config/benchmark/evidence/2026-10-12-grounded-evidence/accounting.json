@@ -1,0 +1,20 @@
+{
+  "ceiling_usd": 10,
+  "prior_paid_usd": 4.067705691999996,
+  "new_paid_usd": 3.839257734,
+  "cumulative_paid_usd": 7.906963426000025,
+  "conservative_exposure_usd": 8.990763826000014,
+  "unsettled_reservations": [
+    {
+      "ordinal": 1577,
+      "status": "provider_failed",
+      "reserved_usd": 0.5691777
+    },
+    {
+      "ordinal": 4501,
+      "status": "provider_failed",
+      "reserved_usd": 0.5146227
+    }
+  ],
+  "scope": "OpenRouter API receipts only. Includes preparation, pilot, continuation, and initial-context controls. Local compute and CI are not API charges. Cache and provider time-dependent prices confound causal cost comparisons."
+}

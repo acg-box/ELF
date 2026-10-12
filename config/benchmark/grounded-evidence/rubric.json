@@ -1,0 +1,22 @@
+{
+  "protocol": "Freeze before implementation and paid model calls. Keep original twenty questions and splits; report the sixteen new cases separately.",
+  "factual": "Review the entire answer. Distinguish historical from current values, conflicts from resolved facts, explicit absence from unknown. Concrete requested identifiers must have been observed.",
+  "grounding": "Every positive or negative claim must cite an actual retrieved source and verbatim quote supporting the requested subject and time. Available sources and well-formed citations alone do not prove entailment. Unknown may cite a record that explicitly states information is missing.",
+  "contrast_dimensions": [
+    "same project name across divisions",
+    "same manager across projects",
+    "appointed vs explicitly unassigned budget owner",
+    "Chinese original and query",
+    "conflicting simultaneous decisions",
+    "future unapproved proposal",
+    "missing information vs explicit negative"
+  ],
+  "conditions": [
+    "notes",
+    "source",
+    "graph",
+    "both",
+    "initial"
+  ],
+  "models": "Preserve official DeepSeek V4.1 Flash, maximum reasoning and 393216 output allowance; Qwen3-Embedding-8B full4096."
+}

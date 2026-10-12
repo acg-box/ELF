@@ -1,0 +1,55 @@
+{
+  "product_revision": "0b41ef27df3d2a0401d185165dde0f200c31e811",
+  "checks": [
+    {
+      "check": "rust-unit",
+      "result": "passed",
+      "log": "validation/rust-unit.log",
+      "sha256": "0c79de1070c7bdb8e4f0187fd8faaeb86854a9fe460c7694ef22b4a33c237ce4"
+    },
+    {
+      "check": "rust-integration",
+      "result": "passed",
+      "log": "validation/rust-integration.log",
+      "sha256": "8724280a66eb8e81890ceeb5980d2cfb426e4d928d35ad406ca4fcf492c67c5c"
+    },
+    {
+      "check": "python-contract",
+      "result": "passed",
+      "log": "validation/python-contract.log",
+      "sha256": "7c2993f74bd7a9679cb3745608358f2b207ce848a00d968c6a03a42a08875045"
+    },
+    {
+      "check": "rust-clippy",
+      "result": "passed",
+      "log": "validation/rust-clippy.log",
+      "sha256": "1b792b2955e2f2df514b9a2a1d881ad772859ff28415de925181d4f8d904a5cb"
+    },
+    {
+      "check": "rust-style",
+      "result": "passed",
+      "log": "validation/rust-style.log",
+      "sha256": "58796ff50573be2439648e70fa881b79acf216ecd6c6cf60f30f7563d7cab230"
+    },
+    {
+      "check": "docs",
+      "result": "passed",
+      "log": "validation/docs.log",
+      "sha256": "00a04372db7211dfcc7599b3162f7fff06d320a2105934341a14b4de59c8e8ca"
+    },
+    {
+      "check": "prior-406",
+      "result": "passed",
+      "log": "validation/prior-406.log",
+      "sha256": "55e63cafdb659c53ffaa792e59f40d7c49df2ccd909ea5d2eb0ece738098b853"
+    },
+    {
+      "check": "prior-407",
+      "result": "passed",
+      "log": "validation/prior-407.log",
+      "sha256": "c465417d2a1800b4da67c2d502eba431d0c914e51f836513078d6a7f62cdca80"
+    }
+  ],
+  "scope": "Local repository checks and Docker integration. Final exact-head CI is checked on PR #408 before merge.",
+  "control_audit_revision": "0ecf6ab7"
+}

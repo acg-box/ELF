@@ -7,7 +7,7 @@ use crate::{
 		persistence::{self},
 		types::{AddEventPersistOutput, AddEventResult, PersistExtractedNoteArgs},
 	},
-	graph_ingestion,
+	graph_ingestion::{self, EntityIdentityAuthority},
 };
 use elf_domain::memory_policy::MemoryPolicyDecision;
 use elf_storage::models::MemoryNote;
@@ -88,6 +88,7 @@ pub(super) async fn persist_extracted_note_update(
 			existing.note_id,
 			structured,
 			args.now,
+			EntityIdentityAuthority::Extracted,
 		)
 		.await?;
 	}

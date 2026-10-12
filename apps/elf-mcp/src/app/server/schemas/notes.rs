@@ -90,6 +90,21 @@ pub(in crate::app::server) fn notes_unpublish_schema() -> Arc<JsonObject> {
 	notes_publish_schema()
 }
 
+pub(in crate::app::server) fn evidence_check_schema() -> Arc<JsonObject> {
+	Arc::new(serde_json::from_value(serde_json::json!({
+        "type":"object", "additionalProperties":false, "required":["claims"],
+        "properties":{"claims":{"type":"array", "minItems":1,"maxItems":12,"items":{
+            "type":"object","additionalProperties":false,"required":["text","state","citations"],"properties":{
+                "text":{"type":"string"},"state":{"type":"string","enum":["supported","absent","unknown","conflict"]},
+                "citations":{"type":"array","maxItems":8,"items":{"oneOf":[
+                    {"type":"object","additionalProperties":false,"required":["kind","note_id","quote"],"properties":{"kind":{"const":"note"},"note_id":{"type":"string"},"quote":{"type":"string"}}},
+                    {"type":"object","additionalProperties":false,"required":["kind","doc_id","content_hash","quote"],"properties":{"kind":{"const":"source"},"doc_id":{"type":"string"},"content_hash":{"type":"string"},"quote":{"type":"string"}}}
+                ]}}
+            }
+        }}}
+    })).expect("Valid evidence check schema"))
+}
+
 fn notes_structured_entity_schema() -> Value {
 	serde_json::json!({
 		"type": "object",
@@ -97,6 +112,7 @@ fn notes_structured_entity_schema() -> Value {
 		"required": ["canonical"],
 		"properties": {
 			"canonical": { "type": "string" },
+			"entity_id": { "type": ["string", "null"], "description": "Existing caller-selected identity. Automatic extraction cannot assign this field." },
 			"kind": { "type": ["string", "null"] },
 			"aliases": {
 				"type": ["array", "null"],
@@ -158,6 +174,7 @@ fn notes_structured_schema() -> Value {
 					"properties": {
 						"subject": notes_structured_entity_schema(),
 						"predicate": { "type": "string" },
+						"evidence_quote": { "type": ["string", "null"] },
 						"object": notes_structured_relation_object_schema(),
 						"valid_from": { "type": ["string", "null"], "format": "date-time" },
 						"valid_to": { "type": ["string", "null"], "format": "date-time" }

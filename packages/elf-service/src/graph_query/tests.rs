@@ -39,6 +39,7 @@ fn test_validate_graph_query_request_rejects_invalid_fields() {
 fn test_truncate_graph_query_facts_and_explain_shaping() {
 	let facts = vec![
 		GraphQueryFact {
+			evidence_quotes: Vec::new(),
 			fact_id: Uuid::from_u128(1),
 			scope: "project_shared".to_string(),
 			actor: "agent1".to_string(),
@@ -59,6 +60,7 @@ fn test_truncate_graph_query_facts_and_explain_shaping() {
 			evidence_note_ids: vec![],
 		},
 		GraphQueryFact {
+			evidence_quotes: Vec::new(),
 			fact_id: Uuid::from_u128(2),
 			scope: "project_shared".to_string(),
 			actor: "agent1".to_string(),
@@ -79,6 +81,7 @@ fn test_truncate_graph_query_facts_and_explain_shaping() {
 			evidence_note_ids: vec![],
 		},
 		GraphQueryFact {
+			evidence_quotes: Vec::new(),
 			fact_id: Uuid::from_u128(3),
 			scope: "project_shared".to_string(),
 			actor: "agent2".to_string(),

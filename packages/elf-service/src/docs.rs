@@ -72,17 +72,20 @@ use source_capture::{
 };
 use types::{
 	ByteChunk, DEFAULT_DOC_MAX_BYTES, DEFAULT_L0_MAX_BYTES, DEFAULT_L1_MAX_BYTES,
-	DEFAULT_L2_MAX_BYTES, DEFAULT_MAX_CHUNKS_PER_DOC, DOC_SOURCE_CAPTURE_SCHEMA_V1,
-	DOC_SOURCE_REF_RESOLVER_V1, DOC_SOURCE_REF_SCHEMA_V1, DOC_SOURCE_SPAN_SCHEMA_V1, DOC_STATUSES,
-	DocChunkingProfile, DocExcerptMatch, DocExcerptRange, DocSearchRow, DocTrajectoryBuilder,
-	DocsSearchL0Filters, DocsSearchL0FiltersParsed, DocsSearchL0Prepared, DocsSearchL0RangesParsed,
-	DocsSparseMode, ExcerptsSelectorKind, MAX_CANDIDATE_K, MAX_TOP_K, SOURCE_LIBRARY_FIELD_KEYS,
+	DEFAULT_MAX_CHUNKS_PER_DOC, DOC_SOURCE_CAPTURE_SCHEMA_V1, DOC_SOURCE_REF_RESOLVER_V1,
+	DOC_SOURCE_REF_SCHEMA_V1, DOC_SOURCE_SPAN_SCHEMA_V1, DOC_STATUSES, DocChunkingProfile,
+	DocExcerptMatch, DocExcerptRange, DocSearchRow, DocTrajectoryBuilder, DocsSearchL0Filters,
+	DocsSearchL0FiltersParsed, DocsSearchL0Prepared, DocsSearchL0RangesParsed, DocsSparseMode,
+	ExcerptsSelectorKind, MAX_CANDIDATE_K, MAX_TOP_K, SOURCE_LIBRARY_FIELD_KEYS,
 	SOURCE_LIBRARY_KINDS, SOURCE_LIBRARY_TRUST_LABELS, SourceCaptureSummaryInput, ValidatedDocsPut,
 };
 use validation::{
 	excerpt_level_max, resolve_doc_chunking_profile, validate_docs_excerpts_get, validate_docs_put,
 	validate_docs_search_l0,
 };
+
+pub(crate) const DEFAULT_L2_MAX_BYTES: usize = 32 * 1_024;
+
 #[cfg(test)]
 #[path = "docs/tests.rs"]
 mod tests;

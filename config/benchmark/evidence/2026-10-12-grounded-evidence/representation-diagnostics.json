@@ -1,0 +1,375 @@
+{
+  "notes": 84,
+  "graph_entities": 99,
+  "facts": 119,
+  "evidence_links": 123,
+  "links_with_quotes": 123,
+  "facts_with_unknown_valid_from": 97,
+  "entities_used_by_multiple_source_groups": [
+    {
+      "entity_id": "3f90d092-4e22-4b9f-96ae-7222e49d5201",
+      "canonical": "August 1 delivery decision",
+      "source_groups": [
+        0,
+        1
+      ]
+    },
+    {
+      "entity_id": "721cdb8e-400a-4e4e-bc11-0f0bdfa617ff",
+      "canonical": "successful recovery procedure",
+      "source_groups": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "entity_id": "1c500c01-b3f9-4ceb-ad1d-23059eb106c0",
+      "canonical": "recovery procedure validated on August 8",
+      "source_groups": [
+        0,
+        2
+      ]
+    },
+    {
+      "entity_id": "a10531ee-3d20-4fad-a77c-c2f1bf959ee4",
+      "canonical": "recovery procedure",
+      "source_groups": [
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "entity_id": "6780b0c8-b5b0-460a-814f-12902c223684",
+      "canonical": "Alex Rivera",
+      "source_groups": [
+        5,
+        6
+      ]
+    },
+    {
+      "entity_id": "3c4e592b-d247-48ff-a13d-c1c8e786bea8",
+      "canonical": "Atlas project",
+      "source_groups": [
+        5,
+        6
+      ]
+    }
+  ],
+  "canonical_fragments": {
+    "ACCT-N": [
+      {
+        "entity_id": "24453529-36b7-4f2c-8fd3-9ebcc9c5978e",
+        "canonical": "North division Atlas project (ACCT-N)"
+      },
+      {
+        "entity_id": "f7da6259-3714-4439-a084-143531164860",
+        "canonical": "Atlas project (ACCT-N)"
+      },
+      {
+        "entity_id": "cc6b1c44-6edf-4f41-b6e7-afde1709c2b2",
+        "canonical": "ACCT-N"
+      }
+    ],
+    "ACCT-S": [
+      {
+        "entity_id": "a7f4aaa2-1e7c-4c9d-95ad-890c883ee58b",
+        "canonical": "ACCT-S"
+      }
+    ],
+    "EGRET-CN": [
+      {
+        "entity_id": "d9fb91f9-aa78-460d-8ab3-f9c70d514d71",
+        "canonical": "EGRET-CN"
+      }
+    ],
+    "DELTA-8": [
+      {
+        "entity_id": "7a469061-7838-4b4d-92d1-308157e3ae8b",
+        "canonical": "Delta project DELTA-8"
+      },
+      {
+        "entity_id": "84b45844-d20a-4da7-9ef4-9d64b5be6432",
+        "canonical": "DELTA-8"
+      },
+      {
+        "entity_id": "84245f06-67e6-42de-ad96-e75f8e9a9903",
+        "canonical": "Delta DELTA-8"
+      }
+    ]
+  },
+  "stored_three_edge_recovery_paths": [
+    {
+      "group": 0,
+      "canonical_start": "Larch",
+      "canonical_start_ids": [
+        "0dffdee0-fdc3-4cf1-ba97-d14cb62a4947"
+      ],
+      "start_ids": [
+        "0dffdee0-fdc3-4cf1-ba97-d14cb62a4947"
+      ],
+      "target": "REPLAY-0-632",
+      "paths": []
+    },
+    {
+      "group": 1,
+      "canonical_start": "Cobalt",
+      "canonical_start_ids": [
+        "aa6934fd-6394-4c28-8215-661013beab6e"
+      ],
+      "start_ids": [
+        "aa6934fd-6394-4c28-8215-661013beab6e"
+      ],
+      "target": "REPLAY-1-632",
+      "paths": []
+    },
+    {
+      "group": 2,
+      "canonical_start": "Reed",
+      "canonical_start_ids": [
+        "c930b155-7da3-4673-b5ee-f5db9f29e8e0"
+      ],
+      "start_ids": [
+        "c930b155-7da3-4673-b5ee-f5db9f29e8e0"
+      ],
+      "target": "REPLAY-2-632",
+      "paths": []
+    },
+    {
+      "group": 3,
+      "canonical_start": "Sable",
+      "canonical_start_ids": [
+        "5c7be7cb-6599-4632-900c-4c972c77b78d"
+      ],
+      "start_ids": [
+        "5c7be7cb-6599-4632-900c-4c972c77b78d"
+      ],
+      "target": "REPLAY-3-632",
+      "paths": []
+    },
+    {
+      "group": 4,
+      "canonical_start": "Cedar",
+      "canonical_start_ids": [
+        "39e4fc26-56c5-42de-952d-f9353f177f5c"
+      ],
+      "start_ids": [
+        "39e4fc26-56c5-42de-952d-f9353f177f5c"
+      ],
+      "target": "REPLAY-4-632",
+      "paths": []
+    },
+    {
+      "group": 5,
+      "canonical_start": "ACCT-N",
+      "canonical_start_ids": [
+        "cc6b1c44-6edf-4f41-b6e7-afde1709c2b2"
+      ],
+      "start_ids": [
+        "24453529-36b7-4f2c-8fd3-9ebcc9c5978e",
+        "3c4e592b-d247-48ff-a13d-c1c8e786bea8",
+        "cc6b1c44-6edf-4f41-b6e7-afde1709c2b2"
+      ],
+      "target": "REPLAY-5-632",
+      "paths": []
+    },
+    {
+      "group": 6,
+      "canonical_start": "ACCT-S",
+      "canonical_start_ids": [
+        "a7f4aaa2-1e7c-4c9d-95ad-890c883ee58b"
+      ],
+      "start_ids": [
+        "a7f4aaa2-1e7c-4c9d-95ad-890c883ee58b"
+      ],
+      "target": "REPLAY-6-632",
+      "paths": []
+    },
+    {
+      "group": 7,
+      "canonical_start": "EGRET-CN",
+      "canonical_start_ids": [
+        "d9fb91f9-aa78-460d-8ab3-f9c70d514d71"
+      ],
+      "start_ids": [
+        "d9fb91f9-aa78-460d-8ab3-f9c70d514d71"
+      ],
+      "target": "REPLAY-7-632",
+      "paths": []
+    },
+    {
+      "group": 8,
+      "canonical_start": "DELTA-8",
+      "canonical_start_ids": [
+        "84b45844-d20a-4da7-9ef4-9d64b5be6432"
+      ],
+      "start_ids": [
+        "7a469061-7838-4b4d-92d1-308157e3ae8b",
+        "84b45844-d20a-4da7-9ef4-9d64b5be6432"
+      ],
+      "target": "REPLAY-8-632",
+      "paths": []
+    }
+  ],
+  "source_name_variant_reachability": [
+    {
+      "group": 0,
+      "start_candidates": [
+        {
+          "id": "0dffdee0-fdc3-4cf1-ba97-d14cb62a4947",
+          "canonical": "Larch"
+        }
+      ],
+      "target": "REPLAY-0-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 1,
+      "start_candidates": [
+        {
+          "id": "aa6934fd-6394-4c28-8215-661013beab6e",
+          "canonical": "Cobalt"
+        },
+        {
+          "id": "b88e58dd-e9d9-4f8d-bce5-3a8da02a6b5d",
+          "canonical": "project Cobalt"
+        }
+      ],
+      "target": "REPLAY-1-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 2,
+      "start_candidates": [
+        {
+          "id": "c930b155-7da3-4673-b5ee-f5db9f29e8e0",
+          "canonical": "Reed"
+        }
+      ],
+      "target": "REPLAY-2-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 3,
+      "start_candidates": [
+        {
+          "id": "0ae885d1-36ef-4da3-b2ba-b6f5ce1e3f60",
+          "canonical": "project Sable"
+        },
+        {
+          "id": "5c7be7cb-6599-4632-900c-4c972c77b78d",
+          "canonical": "Sable"
+        }
+      ],
+      "target": "REPLAY-3-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 4,
+      "start_candidates": [
+        {
+          "id": "39e4fc26-56c5-42de-952d-f9353f177f5c",
+          "canonical": "Cedar"
+        },
+        {
+          "id": "6eb8dc94-a7bc-4af2-ae04-2dd35808b4c1",
+          "canonical": "project Cedar"
+        }
+      ],
+      "target": "REPLAY-4-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 5,
+      "start_candidates": [
+        {
+          "id": "24453529-36b7-4f2c-8fd3-9ebcc9c5978e",
+          "canonical": "North division Atlas project (ACCT-N)"
+        },
+        {
+          "id": "3c4e592b-d247-48ff-a13d-c1c8e786bea8",
+          "canonical": "Atlas project"
+        },
+        {
+          "id": "cc6b1c44-6edf-4f41-b6e7-afde1709c2b2",
+          "canonical": "ACCT-N"
+        },
+        {
+          "id": "f7da6259-3714-4439-a084-143531164860",
+          "canonical": "Atlas project (ACCT-N)"
+        }
+      ],
+      "target": "REPLAY-5-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 6,
+      "start_candidates": [
+        {
+          "id": "a7f4aaa2-1e7c-4c9d-95ad-890c883ee58b",
+          "canonical": "ACCT-S"
+        }
+      ],
+      "target": "REPLAY-6-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 7,
+      "start_candidates": [
+        {
+          "id": "c50bda5e-eb40-4826-9a80-681777e1e21c",
+          "canonical": "白鹭项目"
+        },
+        {
+          "id": "d9fb91f9-aa78-460d-8ab3-f9c70d514d71",
+          "canonical": "EGRET-CN"
+        }
+      ],
+      "target": "REPLAY-7-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    },
+    {
+      "group": 8,
+      "start_candidates": [
+        {
+          "id": "7a469061-7838-4b4d-92d1-308157e3ae8b",
+          "canonical": "Delta project DELTA-8"
+        },
+        {
+          "id": "84245f06-67e6-42de-ad96-e75f8e9a9903",
+          "canonical": "Delta DELTA-8"
+        },
+        {
+          "id": "84b45844-d20a-4da7-9ef4-9d64b5be6432",
+          "canonical": "DELTA-8"
+        }
+      ],
+      "target": "REPLAY-8-632",
+      "entity_terminal_paths": [],
+      "scalar_terminal_paths": [],
+      "paths_with_target_in_evidence_quote": []
+    }
+  ],
+  "limits": [
+    "Graph paths start separately from each exact canonical or exact-alias candidate and use only stored directed entity edges. No fragments are merged. This does not simulate native canonical-priority resolution, validity filters, query budgets, or semantic entailment.",
+    "Shared names can denote one real actor or different actors; multiple source groups alone do not prove a wrong merge.",
+    "Canonical name variants remain separate unless the caller provides identity authority. The wider diagnostic starts from each name or identifier variant separately, never joins nodes, and reports scalar terminals and quote-only evidence separately. No diagnostic joins or oracle answers are supplied to the agent."
+  ]
+}

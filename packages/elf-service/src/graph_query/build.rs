@@ -119,6 +119,7 @@ pub(super) fn graph_query_facts_from_rows(
 				),
 				object,
 				evidence_note_ids: row.evidence_note_ids,
+				evidence_quotes: Vec::new(),
 			}
 		})
 		.collect()
