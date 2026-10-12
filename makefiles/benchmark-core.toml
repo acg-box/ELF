@@ -282,3 +282,7 @@ command = "docker"
 [tasks.build-retrieval-lab]
 args    = ["build", "-f", "docker/retrieval-lab/Dockerfile", "-t", "elf-retrieval-lab:20261010", "."]
 command = "docker"
+
+[tasks.benchmark-elf-agent]
+args    = ["scripts/benchmark-elf-agent.py", "${@}"]
+command = "python3"
