@@ -126,7 +126,7 @@ pub struct GraphQueryFact {
 	#[serde(with = "crate::time_serde::option")]
 	/// End of the fact validity window, if superseded.
 	pub valid_to: Option<OffsetDateTime>,
-	/// Temporal state for the fact relative to the service read timestamp.
+	/// Temporal state for the fact relative to the requested as_of timestamp.
 	pub temporal_status: RelationTemporalStatus,
 	/// Object payload for the fact.
 	pub object: GraphQueryObject,

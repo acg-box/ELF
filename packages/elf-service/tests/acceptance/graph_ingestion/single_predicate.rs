@@ -215,7 +215,7 @@ async fn add_note_single_predicate_supersedes_conflicting_fact() {
 	assert_eq!(historical_replay.facts.len(), 1);
 	assert_eq!(historical_replay.facts[0].object.value.as_deref(), Some("Initech"));
 	assert_eq!(historical_replay.facts[0].valid_to, Some(fact_b.valid_from));
-	assert_eq!(historical_replay.facts[0].temporal_status, RelationTemporalStatus::Historical);
+	assert_eq!(historical_replay.facts[0].temporal_status, RelationTemporalStatus::Current);
 	assert_eq!(historical_replay.facts[0].evidence_note_ids, vec![old_note_id]);
 
 	let current_readback = service

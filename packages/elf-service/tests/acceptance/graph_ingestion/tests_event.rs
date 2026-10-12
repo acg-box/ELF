@@ -3,7 +3,7 @@ use serde_json::Value;
 use crate::acceptance::graph_ingestion::tests_helpers;
 use elf_service::{
 	AddEventRequest, DocsPutRequest, EventMessage, EventSourceDocument, NoteOp,
-	TextPositionSelector,
+	TextPositionSelector, evidence::EvidenceRecallRequest,
 };
 use elf_storage::graph;
 
@@ -293,6 +293,22 @@ async fn extracted_shared_alias_does_not_merge_distinct_canonical_identities() {
 	let mut conn = service.db.pool.acquire().await.expect("Connection");
 
 	assert!(graph::resolve_entity_by_surface(&mut conn, "t", "p", "Atlas").await.is_err());
+
+	let recalled = service
+		.evidence_recall(EvidenceRecallRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			read_profile: "private_only".into(),
+			subjects: vec!["Atlas".into()],
+			as_of: None,
+		})
+		.await
+		.expect("Ambiguous names return separate evidence candidates");
+
+	assert_eq!(recalled.candidates.len(), 2);
+	assert_eq!(recalled.pack.notes.len(), 2);
+	assert_ne!(recalled.candidates[0].note_id, recalled.candidates[1].note_id);
 
 	drop(conn);
 
