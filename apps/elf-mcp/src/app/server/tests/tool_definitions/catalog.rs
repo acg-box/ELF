@@ -25,7 +25,7 @@ const ALL_TOOL_DEFINITIONS: [ToolDefinition; 42] = [
 		"elf_evidence_check",
 		HttpMethod::Post,
 		"/v2/evidence/check",
-		"Check each claim citation against currently readable notes or hash-guarded original quotes. This verifies source bindings, not semantic entailment.",
+		"Expand backward depends_on claim links and check the complete citation chain against current permissions and original hashes. Render resolved_citations for each claim. This verifies source bindings, not semantic entailment.",
 	),
 	ToolDefinition::new(
 		"elf_notes_ingest",

@@ -26,8 +26,17 @@ impl ElfService {
 					.into(),
 			});
 		}
+		// Backward-only edges give a bounded topological order without a graph store.
+		if claims.iter().enumerate().any(|(i, claim)| {
+			claim.depends_on.len() > MAX_CLAIMS
+				|| claim.depends_on.iter().any(|&dependency| dependency >= i)
+		}) {
+			return Err(Error::InvalidRequest {
+				message: "Claim dependencies must refer to earlier claim indices.".into(),
+			});
+		}
 
-		let mut bindings = Vec::new();
+		let mut bindings: Vec<ClaimBinding> = Vec::new();
 
 		for (claim_index, claim) in claims.iter().enumerate() {
 			let mut citation_verified = Vec::new();
@@ -56,14 +65,60 @@ impl ElfService {
 				resolved_citations.push(verified);
 			}
 
+			let dependencies_bound = claim.depends_on.iter().all(|&d| bindings[d].binding_verified);
+			let mut citation_claim_indices = Vec::new();
+
+			if !claim.depends_on.is_empty() {
+				citation_claim_indices.resize(resolved_citations.len(), claim_index);
+
+				let mut required = [false; MAX_CLAIMS];
+
+				for &dependency in &claim.depends_on {
+					required[dependency] = true;
+				}
+				for dependency in (0..claim_index).rev() {
+					if required[dependency] {
+						for &parent in &claims[dependency].depends_on {
+							required[parent] = true;
+						}
+					}
+				}
+				for dependency in 0..claim_index {
+					if !required[dependency] {
+						continue;
+					}
+
+					let prior = &bindings[dependency];
+
+					// Read only each premise's direct slots. Diamond paths and invalid
+					// citations must not multiply the bounded 12-by-8 input.
+					for (index, citation) in prior
+						.resolved_citations
+						.iter()
+						.take(claims[dependency].citations.len())
+						.enumerate()
+					{
+						if citation.is_some() && resolved_citations.contains(citation) {
+							continue;
+						}
+
+						resolved_citations.push(citation.clone());
+						citation_verified.push(prior.citation_verified[index]);
+						citation_claim_indices.push(dependency);
+					}
+				}
+			}
+
 			let enough = match claim.state {
 				ClaimState::Unknown => true,
-				ClaimState::Conflict => claim.citations.len() >= 2,
-				_ => !claim.citations.is_empty(),
+				ClaimState::Conflict => resolved_citations.len() >= 2,
+				_ => !resolved_citations.is_empty(),
 			};
-			let binding_verified = enough && citation_verified.iter().all(|verified| *verified);
+			let binding_verified =
+				dependencies_bound && enough && citation_verified.iter().all(|verified| *verified);
 
 			bindings.push(ClaimBinding {
+				citation_claim_indices,
 				claim_index,
 				citation_verified,
 				binding_verified,

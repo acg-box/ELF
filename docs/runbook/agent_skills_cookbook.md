@@ -21,6 +21,9 @@ Outputs: Reusable workflow patterns that stay within the ELF contract without re
 
 Scope: This is a runbook/playbook. It is non-normative and does not change the ELF system contract.
 
+For source-backed answers, follow [the evidence-chain integration](agent-evidence.md).
+It is the shared contract for MCP, HTTP agents, and the evidence benchmark.
+
 ## 0) Contract: MCP vs Skills
 
 ### MCP tools (capability surface)
