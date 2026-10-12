@@ -1,9 +1,12 @@
 """Verify frozen questions, native source bindings, reviews, and spend offline."""
 import gzip
 import hashlib
+import io
 import json
 from pathlib import Path
 import sys
+import subprocess
+import tarfile
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[3]
@@ -156,8 +159,12 @@ def main():
     assert compatibility['omitted_as_of_accepted']
     assert {r['case_id'] for r in compatibility['inputs'] if r['same']} == cases.keys()
     implementation = read('implementation.json')
-    for name, digest in implementation['files'].items():
-        assert sha((REPO / name).read_bytes()) == digest, name
+    snapshot_bytes = subprocess.check_output(
+        ['git', 'archive', implementation['commit'], 'packages', 'apps', 'sql',
+         'scripts/benchmark-evidence-context.py'], cwd=REPO)
+    with tarfile.open(fileobj=io.BytesIO(snapshot_bytes)) as snapshot:
+        for name, digest in implementation['files'].items():
+            assert sha(snapshot.extractfile(name).read()) == digest, name
     logs = {r['path']: r['text'] for r in rows('validation-logs.jsonl.gz')}
     for log in read('validation.json')['logs']:
         assert sha(logs[log['path']].encode()) == log['sha256']
