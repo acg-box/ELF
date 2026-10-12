@@ -117,7 +117,9 @@ native binding audit may run; it returns no new facts to the reader and cannot
 replace or resample the answer. Score answer truth, subject/time attribution,
 quote bindings, abstention, graph evidence, and actual cost separately. A
 single known fixture is not a general product ranking. Primary cases can use two
-independent workers under one locked cost ledger; controls remain serial. Each
+independent workers under one locked cost ledger; controls remain serial. The
+gateway requires explicit `--maximum-profile-concurrency 2` and reserves the full
+input and output cost for each active request. Its default remains one request. Each
 case retains the same prompt, output allowance, and tool limits. Report this
 execution policy with latency; do not compare concurrent wall times directly
 with prior serial measurements.

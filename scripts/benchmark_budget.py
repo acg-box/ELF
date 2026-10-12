@@ -133,9 +133,9 @@ def embedding_retry_delay(kind, status, attempt, retries, retry_after):
     return 2 ** (attempt + 1)
 
 
-def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, receipt_dir=None, request_max_bytes=262144):
+def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, receipt_dir=None, request_max_bytes=262144, maximum_profile_concurrency=1):
     opener = urllib.request.build_opener(NoRedirect)
-    maximum_profile_lock = threading.Lock()
+    maximum_profile_lock = threading.BoundedSemaphore(maximum_profile_concurrency)
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
             pass
@@ -165,7 +165,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 "object": "model", "created": 0, "owned_by": "benchmark-route"}]})
 
         def do_POST(self):
-            # Full provider-output reservations are large; keep this opt-in profile serial.
+            # Full output reservations stay bounded; the default profile remains serial.
             with maximum_profile_lock if force_chat_max_tokens else nullcontext():
                 self.process_post()
 
@@ -263,6 +263,7 @@ def main():
     parser.add_argument("--request-timeout", type=int, default=90)
     parser.add_argument("--request-max-bytes", type=int, default=262144, help="Maximum incoming JSON bytes; actual input and full output still require a monetary reservation")
     parser.add_argument("--force-chat-max-tokens", action="store_true", help="Override native internal output limits for a provider-maximum capability profile")
+    parser.add_argument("--maximum-profile-concurrency", type=int, choices=(1, 2), default=1, help="Bound provider-maximum requests; every concurrent call reserves its full cost")
     parser.add_argument("--reasoning-effort", choices=("low", "high", "max"), default="low")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
@@ -288,7 +289,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price, args.receipt_dir, args.request_max_bytes))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price, args.receipt_dir, args.request_max_bytes, args.maximum_profile_concurrency))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -302,6 +303,7 @@ def main():
             "tranche_reservation_usd": args.tranche, "paid_total_usd": totals(ledger.value)[0],
             "embedding_429_retries": args.embedding_429_retries,
             "force_chat_max_tokens": args.force_chat_max_tokens,
+            "maximum_profile_concurrency": args.maximum_profile_concurrency,
             "chat_prompt_price": args.chat_prompt_price, "chat_completion_price": args.chat_completion_price,
             "chat_max_tokens": args.chat_max_tokens, "request_timeout": args.request_timeout, "reasoning_effort": args.reasoning_effort,
             "request_max_bytes": args.request_max_bytes,

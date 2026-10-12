@@ -12,6 +12,41 @@ from benchmark_budget import Ledger, buffered_events, prepare_request, reservati
 
 
 class BudgetTests(TestCase):
+    def test_maximum_profile_can_reserve_two_real_concurrent_requests(self):
+        import contextlib
+        import http.client
+        import io
+        import threading
+        from http.server import ThreadingHTTPServer
+        from unittest.mock import Mock, patch
+        from benchmark_budget import handler_for
+        barrier=threading.Barrier(2)
+        response={'choices':[{'message':{'role':'assistant','content':'ok'},'finish_reason':'stop'}],
+                  'usage':{'cost':0.001}}
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
+            ledger=Ledger(Path(directory)/'ledger.json',1,1)
+            def upstream(*args,**kwargs):
+                barrier.wait(timeout=5)
+                return io.BytesIO(json.dumps(response).encode())
+            with patch('benchmark_budget.urllib.request.build_opener',return_value=Mock(open=upstream)):
+                server=ThreadingHTTPServer(('127.0.0.1',0),handler_for(ledger,'upstream','local',
+                    force_chat_max_tokens=True,chat_max_tokens=100,maximum_profile_concurrency=2))
+                thread=threading.Thread(target=server.serve_forever,kwargs={'poll_interval':0.01});thread.start()
+                def request(_):
+                    client=http.client.HTTPConnection('127.0.0.1',server.server_port,timeout=10)
+                    try:
+                        client.request('POST','/v1/chat/completions',json.dumps({'messages':[]}),
+                                       {'Authorization':'Bearer local','Content-Type':'application/json'})
+                        result=client.getresponse();result.read();return result.status
+                    finally:client.close()
+                try:
+                    with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+                        statuses=list(pool.map(request,range(2)))
+                finally:server.shutdown();server.server_close();thread.join()
+        self.assertEqual(statuses,[200,200])
+        self.assertEqual(len(ledger.value['requests']),2)
+        self.assertAlmostEqual(totals(ledger.value)[0],0.002)
+
     def test_lower_price_caps_bind_routing_and_full_output_reservation(self):
         body, _, output = prepare_request({}, "chat", chat_max_tokens=943718,
             force_chat_max_tokens=True, reasoning_effort="max",
