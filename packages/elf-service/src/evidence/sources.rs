@@ -5,7 +5,10 @@ use serde_json::Value;
 use uuid::Uuid;
 
 use crate::{
-	docs::{DocsExcerptsGetRequest, DocsGetRequest, TextPositionSelector},
+	docs::{
+		DEFAULT_L2_MAX_BYTES, DocsExcerptsGetRequest, DocsGetRequest, TextPositionSelector,
+		TextQuoteSelector,
+	},
 	evidence::{
 		ElfService, Error, MAX_SOURCES, NoteEvidenceResponse, NoteFetchRequest, NoteSourceEvidence,
 		Result,
@@ -49,17 +52,20 @@ impl ElfService {
 		}
 
 		let entries = note.source_ref.get("evidence").and_then(Value::as_array);
-		let pointers: Vec<&Value> = if let Some(entries) = entries {
-			entries.iter().map(|entry| &entry["source"]["document"]).collect()
+		let pointers: Vec<(&Value, Option<&str>)> = if let Some(entries) = entries {
+			entries
+				.iter()
+				.map(|entry| (&entry["source"]["document"], entry["quote"].as_str()))
+				.collect()
 		} else {
-			vec![&note.source_ref]
+			vec![(&note.source_ref, None)]
 		};
 		let mut seen = HashSet::new();
-		let mut sources = Vec::new();
+		let mut sources: Vec<NoteSourceEvidence> = Vec::new();
 		let mut complete = !pointers.is_empty();
 		let mut reads = 0;
 
-		for value in pointers {
+		for (value, quote) in pointers {
 			let Ok(pointer) = serde_json::from_value::<Pointer>(value.clone()) else {
 				complete = false;
 
@@ -77,6 +83,7 @@ impl ElfService {
 				pointer.locator.position.start,
 				pointer.locator.position.end,
 				pointer.state.content_hash.clone(),
+				quote.map(str::to_string),
 			);
 
 			if !seen.insert(key) {
@@ -90,10 +97,19 @@ impl ElfService {
 
 			reads += 1;
 
-			let fetched = self.resolve_note_source(&req, &read_profile, pointer).await;
+			let fetched = self.resolve_note_source(&req, &read_profile, pointer, quote).await;
 
 			match fetched {
-				Ok(source) => sources.push(source),
+				Ok(source) => {
+					if !sources.iter().any(|prior| {
+						prior.metadata.doc_id == source.metadata.doc_id
+							&& prior.metadata.content_hash == source.metadata.content_hash
+							&& prior.excerpt.start_offset == source.excerpt.start_offset
+							&& prior.excerpt.end_offset == source.excerpt.end_offset
+					}) {
+						sources.push(source);
+					}
+				},
 				Err(
 					Error::NotFound { .. }
 					| Error::InvalidRequest { .. }
@@ -111,6 +127,7 @@ impl ElfService {
 		req: &NoteFetchRequest,
 		read_profile: &str,
 		pointer: Pointer,
+		evidence_quote: Option<&str>,
 	) -> Result<NoteSourceEvidence> {
 		let doc_id = pointer.reference.doc_id;
 		let metadata = self
@@ -127,6 +144,24 @@ impl ElfService {
 			return Err(Error::InvalidRequest { message: "Source pointer hash mismatch.".into() });
 		}
 
+		let span = &pointer.locator.position;
+		let use_quote = span.end.saturating_sub(span.start) > DEFAULT_L2_MAX_BYTES;
+
+		if use_quote && evidence_quote.is_none_or(|quote| quote.trim().is_empty()) {
+			return Err(Error::InvalidRequest {
+				message: "A large source span requires a nonempty evidence quote.".into(),
+			});
+		}
+
+		let quote_selector = if use_quote {
+			evidence_quote.map(|quote| TextQuoteSelector {
+				exact: quote.into(),
+				prefix: None,
+				suffix: None,
+			})
+		} else {
+			None
+		};
 		let excerpt = self
 			.docs_excerpts_get(DocsExcerptsGetRequest {
 				tenant_id: req.tenant_id.clone(),
@@ -136,14 +171,17 @@ impl ElfService {
 				doc_id,
 				level: "L2".into(),
 				chunk_id: None,
-				quote: None,
-				position: Some(pointer.locator.position),
+				quote: quote_selector,
+				position: if use_quote { None } else { Some(span.clone()) },
 				explain: Some(false),
 			})
 			.await?;
 
 		if !excerpt.verification.verified
 			|| excerpt.verification.content_hash != metadata.content_hash
+			|| evidence_quote.is_some_and(|quote| !excerpt.excerpt.contains(quote))
+			|| excerpt.locator.match_start_offset < span.start
+			|| excerpt.locator.match_end_offset > span.end
 		{
 			return Err(Error::InvalidRequest {
 				message: "Source excerpt verification failed.".into(),

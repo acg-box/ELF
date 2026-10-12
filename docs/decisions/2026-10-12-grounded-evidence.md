@@ -37,7 +37,10 @@ copy, or new persistence root. The existing ContextPack memory items carry
 The evidence resolver follows at most four distinct supported pointers and uses
 Source Library's existing L2 excerpt bound and read-profile checks. It returns
 `complete: false` when pointers cannot be resolved or exceed the count budget.
-It does not conceal storage failures as missing evidence. No model call is
+For an original span larger than the L2 bound, it resolves each exact evidence
+quote through the existing quote selector and checks that the match remains
+inside the declared source span. Missing or ambiguous anchors leave the result
+incomplete. It does not conceal storage failures as missing evidence. No model call is
 needed for expansion. An original quote proves what a source says; it does not
 prove that the source is correct.
 

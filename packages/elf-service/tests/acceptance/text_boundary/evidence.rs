@@ -165,3 +165,80 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 
 	fixture.test_db.cleanup().await.expect("Clean fixture");
 }
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant."]
+async fn evidence_expansion_anchors_each_quote_in_a_long_source_span() {
+	let first = "白鹭预算负责人是林澈。";
+	let last = "The project lead is Chen.";
+	let content = format!("{first}\n{}{last}", "padding ".repeat(10_000));
+	let payload = serde_json::json!({"notes":[{"type":"fact","text":"Egret budget owner 林澈; project lead Chen.","importance":0.8,"confidence":0.9,"evidence":[{"message_index":0,"quote":first},{"message_index":0,"quote":last}]}]});
+	let fixture = setup::setup_service_with_payload("long_evidence_window", payload)
+		.await
+		.expect("Test prerequisites");
+	let service = &fixture.service;
+	let doc = service.docs_put(DocsPutRequest { tenant_id:"t".into(), project_id:"p".into(), agent_id:"a".into(), scope:"agent_private".into(), doc_type:None, title:Some("Long source".into()), write_policy:None, source_ref:serde_json::json!({"schema":"doc_source_ref/v1","doc_type":"knowledge","ts":"2026-08-22T00:00:00Z"}), content:content.clone() }).await.expect("Archive long original");
+	let event = service
+		.add_event(AddEventRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			scope: Some("agent_private".into()),
+			dry_run: Some(false),
+			ingestion_profile: None,
+			messages: vec![EventMessage {
+				role: "user".into(),
+				content: content.clone(),
+				ts: None,
+				msg_id: Some("long-original".into()),
+				source_document: Some(EventSourceDocument {
+					doc_id: doc.doc_id,
+					content_hash: doc.content_hash.clone(),
+					position: TextPositionSelector { start: 0, end: content.len() },
+				}),
+				write_policy: None,
+			}],
+		})
+		.await
+		.expect("Extract two distant quotes");
+	let read = NoteFetchRequest {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		note_id: event.results[0].note_id.expect("Stored note"),
+	};
+	let expanded = service
+		.note_evidence(read.clone(), "private_plus_project".into())
+		.await
+		.expect("Resolve quote-centered windows");
+
+	assert!(expanded.complete);
+	assert_eq!(expanded.sources.len(), 2);
+	assert!(expanded.sources[0].excerpt.excerpt.contains(first));
+	assert!(expanded.sources[1].excerpt.excerpt.contains(last));
+	assert!(expanded.sources.iter().all(|source| source.excerpt.excerpt.len() <= 32 * 1_024));
+	assert!(expanded.sources.iter().all(|source| source.excerpt.locator.selector_kind == "quote"));
+
+	sqlx::query("UPDATE memory_notes SET source_ref=jsonb_set(source_ref,'{evidence,0,source,document,locator,position,start}','1024'::jsonb) WHERE note_id=$1")
+        .bind(read.note_id).execute(&service.db.pool).await.expect("Simulate an invalid pointer range");
+
+	let outside = service
+		.note_evidence(read, "private_plus_project".into())
+		.await
+		.expect("Reject a quote outside the declared original range");
+
+	assert!(!outside.complete);
+	assert_eq!(outside.sources.len(), 1);
+	assert!(outside.sources[0].excerpt.excerpt.contains(last));
+
+	let original: (String, String) =
+		sqlx::query_as("SELECT content,content_hash FROM doc_documents WHERE doc_id=$1")
+			.bind(doc.doc_id)
+			.fetch_one(&service.db.pool)
+			.await
+			.expect("Read immutable original");
+
+	assert_eq!(original, (content, doc.content_hash));
+
+	fixture.test_db.cleanup().await.expect("Clean fixture");
+}
