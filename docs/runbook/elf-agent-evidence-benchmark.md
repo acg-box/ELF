@@ -203,3 +203,27 @@ legacy redundant list agreed. This is deterministic projection, not claim
 repair. Use the checker’s `resolved_citations` to render references. The
 [retained trial](../evidence/benchmarking/2026-10-12-evidence-context.md) includes
 both raw output-contract failures and native-consumer replay results.
+
+## Supplemental recall and historical reads
+
+Use `elf_evidence_recall` when initial candidates lack context or graph traversal
+stops at a name variant or missing edge. Supply 1-4 literal subjects in `subjects`
+and an optional RFC3339 `as_of`. The result combines readable original text,
+derived text, and incoming/outgoing graph incidence. Entity IDs remain distinct;
+a match is not a merge or a certified relationship. Original documents need no
+derived note to be returned.
+
+The result limits candidate notes, documents, and source bytes. SQL scan work is
+not bounded by the output limits; this is an explicit recovery path. Check
+`truncated` and `pack.complete`, then assess whether the question has sufficient
+evidence. Neither field certifies answer completeness. Use original statements
+to determine effective dates; a record timestamp is not a fact-validity date.
+Graph-query `temporal_status` is relative to the requested `as_of`; current
+permissions continue to apply to historical reads.
+
+Graph alias lookup now requires caller authority. Existing aliases without
+recorded authority become `unknown`, and extracted aliases remain descriptive.
+Neither can resolve identity. Use a known entity ID or have its owner reassert
+a caller-authorized alias; do not promote every legacy alias as a migration.
+For answers, carry the returned `as_of` as an explicit target instant and keep
+the distinction between an in-use state and evidence of formal approval.

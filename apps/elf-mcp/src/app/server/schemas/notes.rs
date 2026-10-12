@@ -116,6 +116,16 @@ pub(in crate::app::server) fn evidence_pack_schema() -> Arc<JsonObject> {
     })).expect("Valid evidence pack schema"))
 }
 
+pub(in crate::app::server) fn evidence_recall_schema() -> Arc<JsonObject> {
+	Arc::new(serde_json::from_value(serde_json::json!({
+		"type": "object", "additionalProperties": false, "required": ["subjects"],
+		"properties": {
+			"subjects": {"type":"array", "minItems":1, "maxItems":4, "items":{"type":"string", "minLength":2, "maxLength":128}},
+			"as_of": {"type":["string", "null"], "format":"date-time"}
+		}
+	})).expect("Valid evidence recall schema"))
+}
+
 fn notes_structured_entity_schema() -> Value {
 	serde_json::json!({
 		"type": "object",

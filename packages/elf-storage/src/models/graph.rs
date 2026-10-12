@@ -34,6 +34,8 @@ pub struct GraphEntityAlias {
 	pub alias: String,
 	/// Normalized alias surface.
 	pub alias_norm: String,
+	/// Identity declaration authority: caller, extracted, or unknown.
+	pub authority: String,
 	/// Creation timestamp.
 	pub created_at: OffsetDateTime,
 }

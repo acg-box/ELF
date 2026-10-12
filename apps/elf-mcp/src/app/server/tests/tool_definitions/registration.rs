@@ -19,6 +19,7 @@ fn registers_all_tools() {
 		"elf_notes_evidence",
 		"elf_evidence_check",
 		"elf_evidence_pack",
+		"elf_evidence_recall",
 		"elf_notes_patch",
 		"elf_notes_delete",
 		"elf_notes_publish",

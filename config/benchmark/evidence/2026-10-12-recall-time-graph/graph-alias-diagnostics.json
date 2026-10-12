@@ -1,0 +1,15 @@
+{
+  "scope": "Frozen graph inspection, not graph repair or an isolated graph-quality ablation.",
+  "observed_canonical": "Atlas project",
+  "observed_aliases": [
+    "South division Atlas project (ACCT-S)",
+    "ACCT-N",
+    "Atlas project"
+  ],
+  "entity_id": "3c4e592b-d247-48ff-a13d-c1c8e786bea8",
+  "interpretation": "The same generic node has incompatible branch-qualified aliases and links to a South incident. Treat alias hits as navigation candidates, not identity proof.",
+  "questions_with_new_sources": 15,
+  "questions_with_graph_only_sources": 8,
+  "graph_only_assessment": "All eight graph-only additions are the opposite North/South branch incident record. They are off-topic candidates, not demonstrated recall gains.",
+  "questions_with_original_only_sources": 8
+}

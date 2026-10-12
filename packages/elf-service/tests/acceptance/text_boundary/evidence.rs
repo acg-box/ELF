@@ -7,6 +7,7 @@ use elf_service::{
 	docs::TextPositionSelector,
 	evidence::{
 		ClaimCitation, ClaimEvidence, ClaimState, EvidenceCheckRequest, EvidencePackRequest,
+		EvidenceRecallRequest,
 	},
 };
 
@@ -75,6 +76,9 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 	};
 	let service = &fixture.service;
 	let doc = service.docs_put(DocsPutRequest { tenant_id:"t".into(), project_id:"p".into(), agent_id:"a".into(), scope:"agent_private".into(), doc_type:None, title:Some("白鹭项目".into()), write_policy:None, source_ref:serde_json::json!({"schema":"doc_source_ref/v1","doc_type":"knowledge","ts":"2026-08-22T00:00:00Z"}), content:content.into() }).await.expect("Archive original");
+
+	verify_source_only_recall(service, content).await;
+
 	let event = service
 		.add_event(AddEventRequest {
 			tenant_id: "t".into(),
@@ -117,6 +121,9 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 
 	let reference =
 		verify_evidence_pack(service, note_id, doc.doc_id, &doc.content_hash, content).await;
+
+	verify_supplemental_recall(service, content).await;
+
 	let request = claim_request(doc.doc_id, &doc.content_hash, content);
 	let checked = service.evidence_check(request.clone()).await.expect("Check bindings");
 
@@ -174,14 +181,7 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 			.binding_verified
 	);
 
-	let original: (String, String) =
-		sqlx::query_as("SELECT content,content_hash FROM doc_documents WHERE doc_id=$1")
-			.bind(doc.doc_id)
-			.fetch_one(&service.db.pool)
-			.await
-			.expect("Original readback");
-
-	assert_eq!(original, (content.into(), doc.content_hash));
+	verify_original_unchanged(service, doc.doc_id, content, &doc.content_hash).await;
 
 	fixture.test_db.cleanup().await.expect("Clean fixture");
 }
@@ -355,4 +355,63 @@ async fn verify_evidence_pack(
 	}
 
 	pack.sources[0].reference.clone()
+}
+
+async fn verify_supplemental_recall(service: &ElfService, content: &str) {
+	let recall_req = EvidenceRecallRequest {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		read_profile: "private_plus_project".into(),
+		subjects: vec!["林澈".into()],
+		as_of: Some(time::macros::datetime!(2_026-08-01 00:00 UTC)),
+	};
+	let recall = service
+		.evidence_recall(recall_req.clone())
+		.await
+		.expect("Discover source without a graph edge");
+
+	assert_eq!(recall.pack.sources[0].text, content);
+	assert_eq!(recall.as_of, recall_req.as_of);
+	assert!(recall.candidates[0].lexical_match);
+
+	for hidden_request in [
+		EvidenceRecallRequest { agent_id: "other".into(), ..recall_req.clone() },
+		EvidenceRecallRequest { tenant_id: "other".into(), ..recall_req },
+	] {
+		let hidden =
+			service.evidence_recall(hidden_request).await.expect("No inaccessible matches");
+
+		assert!(hidden.candidates.is_empty());
+		assert!(hidden.pack.sources.is_empty());
+	}
+}
+
+async fn verify_source_only_recall(service: &ElfService, content: &str) {
+	let recalled = service
+		.evidence_recall(EvidenceRecallRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			read_profile: "private_only".into(),
+			subjects: vec!["白鹭".into()],
+			as_of: None,
+		})
+		.await
+		.expect("Read original without any derived note");
+
+	assert!(recalled.candidates.is_empty());
+	assert_eq!(recalled.pack.sources.len(), 1);
+	assert_eq!(recalled.pack.sources[0].text, content);
+}
+
+async fn verify_original_unchanged(service: &ElfService, doc_id: Uuid, content: &str, hash: &str) {
+	let original: (String, String) =
+		sqlx::query_as("SELECT content,content_hash FROM doc_documents WHERE doc_id=$1")
+			.bind(doc_id)
+			.fetch_one(&service.db.pool)
+			.await
+			.expect("Original readback");
+
+	assert_eq!(original, (content.into(), hash.into()));
 }

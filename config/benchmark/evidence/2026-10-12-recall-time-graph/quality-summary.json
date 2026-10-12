@@ -1,0 +1,32 @@
+[
+  {
+    "cohort": "original_test",
+    "cases": 16,
+    "factual": 16,
+    "semantic": 14,
+    "binding": 16,
+    "joint": 14,
+    "retained_reader_median_seconds": 43.36308893698151,
+    "prefetch_median_seconds": 0.05231866697431542
+  },
+  {
+    "cohort": "contrast_test",
+    "cases": 16,
+    "factual": 16,
+    "semantic": 16,
+    "binding": 16,
+    "joint": 16,
+    "retained_reader_median_seconds": 51.75280214601662,
+    "prefetch_median_seconds": 0.05261758351116441
+  },
+  {
+    "cohort": "original_dev",
+    "cases": 4,
+    "factual": 4,
+    "semantic": 4,
+    "binding": 4,
+    "joint": 4,
+    "retained_reader_median_seconds": 42.88977370847715,
+    "prefetch_median_seconds": 0.04748133348766714
+  }
+]

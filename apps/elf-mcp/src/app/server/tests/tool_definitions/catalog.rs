@@ -2,7 +2,13 @@ use std::collections::HashMap;
 
 use crate::app::server::HttpMethod;
 
-const ALL_TOOL_DEFINITIONS: [ToolDefinition; 41] = [
+const ALL_TOOL_DEFINITIONS: [ToolDefinition; 42] = [
+	ToolDefinition::new(
+		"elf_evidence_recall",
+		HttpMethod::Post,
+		"/v2/evidence/recall",
+		"Supplement incomplete recall with 1-4 literal subject names or identifiers. Retrieve original text independently of extraction, plus source-diverse note and incoming/outgoing graph evidence across distinct entity candidates without merging them. Supply as_of for historical questions; compare states effective then, retain late reports, and do not apply later decisions backward. Match and citation validity do not prove truth.",
+	),
 	ToolDefinition::new(
 		"elf_notes_evidence",
 		HttpMethod::Get,

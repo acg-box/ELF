@@ -6,7 +6,8 @@ mod predicate;
 
 pub use self::{
 	entity::{
-		resolve_entity_by_canonical, resolve_entity_by_surface, upsert_entity, upsert_entity_alias,
+		AliasAuthority, resolve_entity_by_canonical, resolve_entity_by_surface, upsert_entity,
+		upsert_entity_alias,
 	},
 	fact::{
 		fetch_active_facts_for_subject, fetch_evidence_quotes, insert_fact_with_evidence,

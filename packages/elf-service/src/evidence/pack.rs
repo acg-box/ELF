@@ -5,7 +5,7 @@ use time::OffsetDateTime;
 use uuid::Uuid;
 
 use crate::{
-	evidence::{ElfService, Error, NoteFetchRequest, Result, reference},
+	evidence::{ElfService, Error, NoteFetchRequest, NoteSourceEvidence, Result, reference},
 	search,
 };
 
@@ -76,6 +76,33 @@ pub struct EvidencePackSource {
 	#[serde(with = "crate::time_serde")]
 	/// Time ELF captured the source; never used as a fact's effective time.
 	pub captured_at: OffsetDateTime,
+}
+impl EvidencePackSource {
+	pub(super) fn from_evidence(source: NoteSourceEvidence) -> Self {
+		let metadata = source.metadata;
+		let excerpt = source.excerpt;
+
+		Self {
+			reference: reference::source_reference(
+				metadata.doc_id,
+				&metadata.content_hash,
+				excerpt.start_offset,
+				excerpt.end_offset,
+			),
+			doc_id: metadata.doc_id,
+			content_hash: metadata.content_hash,
+			start: excerpt.start_offset,
+			end: excerpt.end_offset,
+			text: excerpt.excerpt,
+			title: metadata.title,
+			source_timestamp: metadata
+				.source_ref
+				.get("ts")
+				.and_then(|v| v.as_str())
+				.map(str::to_string),
+			captured_at: metadata.created_at,
+		}
+	}
 }
 
 impl ElfService {
@@ -156,21 +183,10 @@ impl ElfService {
 
 					result.source_bytes += excerpt.excerpt.len();
 
-					result.sources.push(EvidencePackSource {
-						reference: reference.clone(),
-						doc_id: metadata.doc_id,
-						content_hash: metadata.content_hash,
-						start: excerpt.start_offset,
-						end: excerpt.end_offset,
-						text: excerpt.excerpt,
-						title: metadata.title,
-						source_timestamp: metadata
-							.source_ref
-							.get("ts")
-							.and_then(|value| value.as_str())
-							.map(str::to_string),
-						captured_at: metadata.created_at,
-					});
+					result.sources.push(EvidencePackSource::from_evidence(NoteSourceEvidence {
+						metadata,
+						excerpt,
+					}));
 				}
 
 				note.source_references.push(reference);

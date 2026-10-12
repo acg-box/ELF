@@ -7,14 +7,19 @@ use rmcp::{
 use crate::app::server::{
 	ElfMcp, HttpMethod,
 	schemas::{
-		evidence_check_schema, evidence_pack_schema, notes_get_schema, notes_list_schema,
-		notes_patch_schema, notes_publish_schema, notes_unpublish_schema,
+		evidence_check_schema, evidence_pack_schema, evidence_recall_schema, notes_get_schema,
+		notes_list_schema, notes_patch_schema, notes_publish_schema, notes_unpublish_schema,
 	},
 	support,
 };
 
 #[rmcp::tool_router(router = core_notes_tool_router, vis = "pub(in crate::app::server)")]
 impl ElfMcp {
+	#[rmcp::tool(name = "elf_evidence_recall", description = "Supplement incomplete recall with 1-4 literal subject names or identifiers. Retrieve original text independently of extraction, plus source-diverse note and incoming/outgoing graph evidence across distinct entity candidates without merging them. Supply as_of for historical questions; compare states effective then, retain late reports, and do not apply later decisions backward. Match and citation validity do not prove truth.", input_schema = evidence_recall_schema())]
+	async fn elf_evidence_recall(&self, params: JsonObject) -> Result<CallToolResult, ErrorData> {
+		self.forward(HttpMethod::Post, "/v2/evidence/recall", params, None).await
+	}
+
 	#[rmcp::tool(
 		name = "elf_notes_list",
 		description = "List notes in a tenant and project with optional filters.",

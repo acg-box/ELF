@@ -3,7 +3,7 @@ use time::{Duration, OffsetDateTime};
 use uuid::Uuid;
 
 use crate::{Error, Result, StructuredFields, structured_fields::StructuredEntity};
-use elf_storage::graph;
+use elf_storage::graph::{self, AliasAuthority};
 
 #[derive(Clone, Copy)]
 pub(crate) enum EntityIdentityAuthority {
@@ -157,6 +157,10 @@ async fn upsert_graph_entity_and_aliases(
 	context_path: &str,
 	identity_authority: EntityIdentityAuthority,
 ) -> Result<Uuid> {
+	let alias_authority = match identity_authority {
+		EntityIdentityAuthority::Caller => AliasAuthority::Caller,
+		EntityIdentityAuthority::Extracted => AliasAuthority::Extracted,
+	};
 	let canonical = entity.canonical.as_deref().ok_or_else(|| Error::InvalidRequest {
 		message: format!("{context_path}.canonical is required."),
 	})?;
@@ -217,7 +221,7 @@ async fn upsert_graph_entity_and_aliases(
 
 	let entity_id = match resolved {
 		Some(id) => {
-			graph::upsert_entity_alias(tx, id, canonical).await?;
+			graph::upsert_entity_alias(tx, id, canonical, alias_authority).await?;
 
 			id
 		},
@@ -236,7 +240,7 @@ async fn upsert_graph_entity_and_aliases(
 				});
 			}
 
-			graph::upsert_entity_alias(tx, entity_id, alias)
+			graph::upsert_entity_alias(tx, entity_id, alias, alias_authority)
 				.await
 				.map_err(|err| Error::Storage { message: err.to_string() })?;
 		}

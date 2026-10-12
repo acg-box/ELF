@@ -1,0 +1,150 @@
+{
+  "inputs": [
+    {
+      "case_id": "contrast-5-0",
+      "same": true
+    },
+    {
+      "case_id": "contrast-5-1",
+      "same": true
+    },
+    {
+      "case_id": "contrast-5-2",
+      "same": true
+    },
+    {
+      "case_id": "contrast-5-3",
+      "same": true
+    },
+    {
+      "case_id": "contrast-6-0",
+      "same": true
+    },
+    {
+      "case_id": "contrast-6-1",
+      "same": true
+    },
+    {
+      "case_id": "contrast-6-2",
+      "same": true
+    },
+    {
+      "case_id": "contrast-6-3",
+      "same": true
+    },
+    {
+      "case_id": "contrast-7-0",
+      "same": true
+    },
+    {
+      "case_id": "contrast-7-1",
+      "same": true
+    },
+    {
+      "case_id": "contrast-7-2",
+      "same": true
+    },
+    {
+      "case_id": "contrast-7-3",
+      "same": true
+    },
+    {
+      "case_id": "contrast-8-0",
+      "same": true
+    },
+    {
+      "case_id": "contrast-8-1",
+      "same": true
+    },
+    {
+      "case_id": "contrast-8-2",
+      "same": true
+    },
+    {
+      "case_id": "contrast-8-3",
+      "same": true
+    },
+    {
+      "case_id": "memory-0-0",
+      "same": true
+    },
+    {
+      "case_id": "memory-0-1",
+      "same": true
+    },
+    {
+      "case_id": "memory-0-2",
+      "same": true
+    },
+    {
+      "case_id": "memory-0-3",
+      "same": true
+    },
+    {
+      "case_id": "memory-1-0",
+      "same": true
+    },
+    {
+      "case_id": "memory-1-1",
+      "same": true
+    },
+    {
+      "case_id": "memory-1-2",
+      "same": true
+    },
+    {
+      "case_id": "memory-1-3",
+      "same": true
+    },
+    {
+      "case_id": "memory-2-0",
+      "same": true
+    },
+    {
+      "case_id": "memory-2-1",
+      "same": true
+    },
+    {
+      "case_id": "memory-2-2",
+      "same": true
+    },
+    {
+      "case_id": "memory-2-3",
+      "same": true
+    },
+    {
+      "case_id": "memory-3-0",
+      "same": true
+    },
+    {
+      "case_id": "memory-3-1",
+      "same": true
+    },
+    {
+      "case_id": "memory-3-2",
+      "same": true
+    },
+    {
+      "case_id": "memory-3-3",
+      "same": true
+    },
+    {
+      "case_id": "memory-4-0",
+      "same": true
+    },
+    {
+      "case_id": "memory-4-1",
+      "same": true
+    },
+    {
+      "case_id": "memory-4-2",
+      "same": true
+    },
+    {
+      "case_id": "memory-4-3",
+      "same": true
+    }
+  ],
+  "omitted_as_of_accepted": true,
+  "normalization": "Remove only the root transport request_id from each API response."
+}

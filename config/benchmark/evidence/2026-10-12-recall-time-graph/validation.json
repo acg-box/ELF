@@ -1,0 +1,49 @@
+{
+  "logs": [
+    {
+      "path": "elf-recall-unit-final.log",
+      "sha256": "c681685e2b71eb215010a2886278208ff1488b3a55ebfa81fde6cf469e0714b2"
+    },
+    {
+      "path": "elf-recall-authority-integration-final.log",
+      "sha256": "77c24b1fc6ab838b0a9844f6a4e28e5b193a6e9706742dfd596b1913e7d551a2"
+    },
+    {
+      "path": "elf-recall-pipe-recheck.log",
+      "sha256": "0b6dab0102d9a48281342e4778e961e2a8022ce573ffb58bb68dfc4f6846a4e4"
+    },
+    {
+      "path": "elf-recall-focused.log",
+      "sha256": "5e8559f160e7b7d74b64d36bff280723f4984bb4e9ba9d2c84e39e3bb272362d"
+    },
+    {
+      "path": "elf-recall-python.log",
+      "sha256": "b61fb5187ab88e6621e99598b4206bd272bded33cea835c6fb3dbdb230f70548"
+    },
+    {
+      "path": "elf-recall-lint-final.log",
+      "sha256": "faf1edfc8c2479c12cf0244523d562d167ed22ac2776e6e97cc5f454a4503a4f"
+    },
+    {
+      "path": "elf-recall-format.log",
+      "sha256": "57e9ad3ccdc81faac660f6338985b2fea69df4128c0a18a6b9ee7316c1fd5541"
+    },
+    {
+      "path": "elf-recall-docs.log",
+      "sha256": "5c7ea6b42882b697dcd057331292d1298e0e2d86320e6b52ed201e190df439f4"
+    },
+    {
+      "path": "elf-recall-build-final.log",
+      "sha256": "19f9398f9152f4771524e671d0a2890994f1c590860bdffd083f54e58da9c211"
+    }
+  ],
+  "rust_unit_passed": 462,
+  "rust_integration_passed": 105,
+  "python_contracts_passed": 183,
+  "focused_acceptance_passed": 4,
+  "format": "passed",
+  "docs": "passed",
+  "lint": "passed",
+  "integration_note": "One existing payload-level search test reported a leaky pipe; the focused rerun passed without the warning and no test API process remained. Complete logs retained.",
+  "native_final_replay_cases": 36
+}

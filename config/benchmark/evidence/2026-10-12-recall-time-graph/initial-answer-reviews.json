@@ -1,0 +1,290 @@
+[
+  {
+    "case_id": "memory-0-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The August 15 change and August 22 retention establish STREAM and the new retry policy for Larch. Each cited source states the same subject and date.",
+    "answer_sha256": "026ba220f837f222bedc5c1df62b611d586059e0bc21d07f5fd61bd52c153234",
+    "claims_sha256": "d5a3414212b5e67d01047a2445555688d41ee54731648de1fe735a94621eb433"
+  },
+  {
+    "case_id": "contrast-5-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "North ACCT-N is retained separately from South. August 15 and August 22 support STREAM-5-286 and RETRY-5-907.",
+    "answer_sha256": "c03884d8750558d140d4c080e720a5826ee6094373b7ccb20558476599089e15",
+    "claims_sha256": "9718047db4e916b1a566a24feac92622816cb0fbf02f3f9db4e3faa5d79fd27d"
+  },
+  {
+    "case_id": "contrast-7-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The August 1 mode and explicit no-change statement on August 8 support continuing BATCH-7-741 after that meeting.",
+    "answer_sha256": "94c762ba3e12881ce09504ba2bf0338bfce3eccc58a35a16ef2d98d0aa02a3a0",
+    "claims_sha256": "c938132d9c083a7a69b801d95f81cf8de6ca77ab918a72a9786d12f30b1657dc"
+  },
+  {
+    "case_id": "contrast-8-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Both unretracted delivery approvals remain unresolved; retry 108 remains approved and retry 907 remains an unapproved future proposal.",
+    "answer_sha256": "b2af16fd50857fb04ba10382d5df66191b6f3436f24b933545039d6660970241",
+    "claims_sha256": "455d9b4508931a1c3dc9a6c4a075474c020f1ebabe8f923c3c1f07b6e895cbc2"
+  },
+  {
+    "case_id": "memory-0-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "August 8 recovery and August 15 causal link are quoted separately; August 22 directs reuse of that recovery procedure.",
+    "answer_sha256": "54a1094c4dd25216e4c1b035ec633057b37fd3b084bba1d7182be852dc009d11",
+    "claims_sha256": "d27001c643f3cf65705b8538f84eec26fccb203951cc7b6bb2599f94cce94841"
+  },
+  {
+    "case_id": "memory-0-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "August 1 establishes BATCH and August 8 explicitly approves no change. The answer retains that historical state.",
+    "answer_sha256": "fa6c828c95263b1486e18bfe4b01bba152f38e6e832ac6418f0d5b1ff41dfc83",
+    "claims_sha256": "6dfd849aefec3610e351f62d978a5e0b7591828779c99351ee43734b88cd5ad4"
+  },
+  {
+    "case_id": "memory-0-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "August 22 explicitly states that no budget owner has been appointed; the answer preserves absence rather than guessing a person.",
+    "answer_sha256": "b2612b6cfe9a61216ce48eb52dfb79d8a1c2d1816db7de34437568fb9edea6d5",
+    "claims_sha256": "5f1e26cc118d23d994ecdbea39533d487eef3920dcf1dcb9fd84a9854b6d5dda"
+  },
+  {
+    "case_id": "memory-1-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "August 15 and August 22 establish Cobalt current mode and retry; the old retry is clearly qualified as superseded.",
+    "answer_sha256": "9d30f845b2dcc69fdd01cb1af077ea13013cc5ef6ff763df8f4f9d7a1764a7d6",
+    "claims_sha256": "1f54e3ef657d9e97c03d0b1e14af18e0cf610084907a58633f63891ba856331d"
+  },
+  {
+    "case_id": "memory-1-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "reason": "Facts are correct. One atomic claim names Cobalt but cites only the August 8 Ivo/BATCH incident record, which does not name Cobalt. The project-identifier bridge exists in other cited claims but is not bound to this claim. Count strict per-claim attribution incomplete.",
+    "answer_sha256": "474d2755458e7b8763a9de3d9688ccdf75333a36aa12dcc2cc6d1586bcec810b",
+    "claims_sha256": "8044897a919019a951322e3fab8f61a8392e689dd310dfe394e53e936bcaa60e"
+  },
+  {
+    "case_id": "memory-1-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The continuing BATCH state is bound to both August 1 and August 8; the STREAM change is explicitly later, not applied backward.",
+    "answer_sha256": "2499f2506814ecbe5ba7bb1b13ae626948b3ead1436e863492d8a79349420e36",
+    "claims_sha256": "835af12eb2aabd724542c6c05d01c20213d5a843218fff90ec78fd783795ad65"
+  },
+  {
+    "case_id": "memory-1-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The cited August 22 Cobalt record explicitly states no budget-owner appointment.",
+    "answer_sha256": "c5ea7f79c9c04c00bd33049ffa46e912efcb3b065136e13e18e45e2874c855a7",
+    "claims_sha256": "7d00558b0a88fe82c0d95604180b98b2654c4c22158b50fbe7cf8d365b3434bd"
+  },
+  {
+    "case_id": "memory-2-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reed mode and retry are supported by the August 15 change and August 22 retention; superseded values remain explicitly historical.",
+    "answer_sha256": "cf456cd0cf60da6eb4ecaa9a5c86ef5b572bfefefe872d1dcbdedfa24fbd58b5",
+    "claims_sha256": "f972f5acdebabb25491d0052b5d9229f1589d12c9f9e244b187c113f9ce6bc36"
+  },
+  {
+    "case_id": "memory-2-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The recovery claim binds August 8, August 15, and August 22 together; the incident and causal change remain associated with Reed.",
+    "answer_sha256": "623cc5cfb5bd8272627c3bcb28426f0bfe8648ddd48ec01d54de0f42761a233b",
+    "claims_sha256": "3a7201826efccef8e469ffd8dbd67b607cbedb8575fae41ecf5854362aafbbff"
+  },
+  {
+    "case_id": "memory-2-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "August 1 and August 8 jointly support the still-effective BATCH state; the decision time is not replaced by ingestion time.",
+    "answer_sha256": "3e03c211e1fd4147db986327e162eb22e9a6dfa3bdd4786bd6594012317911f1",
+    "claims_sha256": "46e2c3d8249b86b2bb6c060f7d0f9ef0df38579c6d93879e35e284cc3e5b5090"
+  },
+  {
+    "case_id": "memory-2-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Explicit August 22 absence of a budget-owner appointment is preserved.",
+    "answer_sha256": "26927664d5c73b1443453e9767c4c82d710f570ab21e666bc0950d637a89affe",
+    "claims_sha256": "303e242981d588b57cf6b88d8ebd3c0bae5fa92537d7ab084d658aded72f0257"
+  },
+  {
+    "case_id": "memory-3-0",
+    "correct": true,
+    "semantic_grounding": false,
+    "reason": "Facts are correct, but the atomic claim that the August 22 retained mode is STREAM cites only the August 22 keep-August-15-choice record. It omits the August 15 source needed to resolve that choice; that bridge appears only in another claim.",
+    "answer_sha256": "527c08090f22eaa16f5b25bc11f7de94cd58dd01db24ad7d717fca447034e56e",
+    "claims_sha256": "b4ae67511c4315f2e26a354439751270841b0e9801ccd498233f9b1491906eea"
+  },
+  {
+    "case_id": "memory-3-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The recovery claim cites August 22 and August 8 together. The causal transition and dates are directly supported by the August 15 record.",
+    "answer_sha256": "20ab2a561df2ca617951ddb6b403806ad5c9a852eff9dc715a2f88f74ad63454",
+    "claims_sha256": "9d85d36b20f27d92d8201ccaebe8802f1c9420093720cbb399277a3554714838"
+  },
+  {
+    "case_id": "memory-3-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "9d9bb3778760f0880511a22406faea8e5dbd0f9c1a981c07bba9eb0c3a39c03d",
+    "claims_sha256": "ecc8a184f3b1e13256fc2680d24af45a55a8ff14a8538ecdb2f482cabbe363e7"
+  },
+  {
+    "case_id": "memory-3-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "77db14e30377610bc1e289d8d19fa9f76ca3dc6a48920b229fffb674f2aa8ed9",
+    "claims_sha256": "a1dbf5aa45d01744635e17860ee823cde8791e06a615088ae612bac15774cb8c"
+  },
+  {
+    "case_id": "memory-4-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "d830a4ae8fec483cb2371e3d088e00de4cebf9a71c309b8cd8d25a20c38e9ae4",
+    "claims_sha256": "121a999f9ab9fdb1ba44ef4d6ea8f9c717b579603cc3d16fd24e83030038266e"
+  },
+  {
+    "case_id": "memory-4-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "b315f6d52ec0eb10284b86d390ddef7065b5b5b76c21242f3ad75f2998d2279d",
+    "claims_sha256": "6ee8646b7f1abdf1180fa2747e42ad5cf0a4e3ce7216e800996b8df3cd212e06"
+  },
+  {
+    "case_id": "memory-4-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "539926e833953bc43424fb4c14c3b9864a63aa8c2bd2616577fb733ac869ccaf",
+    "claims_sha256": "ddd55c0996ed9b9aa5dbddfd0185da43e6153f72debe773c2bc92777cc45332d"
+  },
+  {
+    "case_id": "memory-4-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "979116f5bf1919b22872f3e52157cd8c8bf1c6d5c929ea913fbe0308a9063d29",
+    "claims_sha256": "b21603f26c361d6d5a21d2d3f0a7b4d0d8ab13820e711c6dd47ff0dd63d85690"
+  },
+  {
+    "case_id": "contrast-5-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "96bd4b9b62fc498835a36454fd790fc7df73a838694eb151ec61491e6b967d8d",
+    "claims_sha256": "79b6b5bad3d72af3795bd852ba95304d625aa974c2646767d6dd4fafa8008839"
+  },
+  {
+    "case_id": "contrast-5-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "85f201f466fa1ed9b6656e80a1c7290d4311e84558cb3a6cb0f0f5d5ee27c7c1",
+    "claims_sha256": "1d8da147548d8468ffbd5f2263f97da324603b750151c55e85b92330f082c1ab"
+  },
+  {
+    "case_id": "contrast-6-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "5adc85c76f3ebcc52f4a559473f369caa7c0699a14258d76e48a335346671076",
+    "claims_sha256": "4e310fef28345914a61ec1fab626464561c11f1c8c8e13329dfaf0f7029aa3ff"
+  },
+  {
+    "case_id": "contrast-6-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "0db9aad3d25fd731ff59e216c9899fb7a17183108e5c6e367bff57d2fa26a8fa",
+    "claims_sha256": "303a55dcc1c66aa28233c5bc4d7576ea77265810c174e04086e3757d5c2ec7d3"
+  },
+  {
+    "case_id": "contrast-6-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "aa495e2d4f8e0c3590f911666d9d7282af9ad9c45ab3b774b1da96efa7e4b468",
+    "claims_sha256": "1e0911001d194501c2712bdafd73b73b372d90e321ca623e361b4ef0b23eadec"
+  },
+  {
+    "case_id": "contrast-5-2",
+    "correct": false,
+    "semantic_grounding": false,
+    "reason": "The requested immediate August 8 state is not answered as BATCH. A claim instead names the August 15 STREAM approval as the mode approved after that meeting, despite the supplied August 8 as_of. It substitutes a later approval event for the requested state.",
+    "answer_sha256": "d333f2f1f03a20790bd06907c05ddf8db67c88c2c4ed9c4bf5a089b673d610e9",
+    "claims_sha256": "50012e40e8c871999c3b9ae26c7b56f40cc3d507b058458c77c3066936358fc0"
+  },
+  {
+    "case_id": "contrast-6-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Cited originals support the subject, effective state, and requested facts. Explicit absence, separate roles, or unknown causal motivation are preserved rather than inferred from missing text.",
+    "answer_sha256": "b5f9d840464b00f63bd88b0e6536d9df7f0eb2af8c35f4f3de6ac818178257a1",
+    "claims_sha256": "76756e0dbe8ee1d258f3bd96bc03f1abf924af8e0dc01852bf0b14c19e058287"
+  },
+  {
+    "case_id": "contrast-7-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Cited originals support the subject, effective state, and requested facts. Explicit absence, separate roles, or unknown causal motivation are preserved rather than inferred from missing text.",
+    "answer_sha256": "3a0b88d8370ae9a883ba7b6ada07f7583817b60c6019de76d95ce46c4afb8968",
+    "claims_sha256": "0201c8934c41391d13d716a7ad3bd35aaae739d8a7097b8f8e98e5b1ed176df6"
+  },
+  {
+    "case_id": "contrast-7-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Cited originals support the subject, effective state, and requested facts. Explicit absence, separate roles, or unknown causal motivation are preserved rather than inferred from missing text.",
+    "answer_sha256": "5025771ba6fdc3924557233e54d1cc4feb7b836cc3c5574f2c4dc2bf3b912114",
+    "claims_sha256": "ae15622a16f4eb54754e580af68d89e12576eaf13b2342acd928242109a0cf42"
+  },
+  {
+    "case_id": "contrast-7-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Cited originals support the subject, effective state, and requested facts. Explicit absence, separate roles, or unknown causal motivation are preserved rather than inferred from missing text.",
+    "answer_sha256": "235c6cd0423f3dc2522251f1538a3713138448a968e61d196a41c0991383303d",
+    "claims_sha256": "745897a918a5ddeb75cadf603588606317eb5fcba6d6de6abbc31c54af382077"
+  },
+  {
+    "case_id": "contrast-8-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Cited originals support the subject, effective state, and requested facts. Explicit absence, separate roles, or unknown causal motivation are preserved rather than inferred from missing text.",
+    "answer_sha256": "4fdb3b9edd28f0b0b8f3e1ebf379e81c605d06ee38ac053652085f418b715f9e",
+    "claims_sha256": "8196eec93bbc2e64056e5b8a2e90b38aba0a5b45098451170a4c3b9512341710"
+  },
+  {
+    "case_id": "contrast-8-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Cited originals support the subject, effective state, and requested facts. Explicit absence, separate roles, or unknown causal motivation are preserved rather than inferred from missing text.",
+    "answer_sha256": "c10b29316b7cb2d3e1f71731a9c4e9f7a448ef4526bc33a780620203c5d46e7d",
+    "claims_sha256": "5556a0d0b199866a4e330e2fabdf48b9e17b0d71962058182ed9669409b58d1c"
+  },
+  {
+    "case_id": "contrast-8-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The original explicitly distinguishes missing appointment information from an unassigned role; the answer preserves that distinction.",
+    "answer_sha256": "10d310008bf7b13dd86c914245d664b0c5f79036022170d653971ac25a4bef6c",
+    "claims_sha256": "6fa012b9d470175d0eeb698ffd83af74b66bb159b6803a152ff38cb7a194ee39"
+  }
+]

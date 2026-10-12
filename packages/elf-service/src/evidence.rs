@@ -2,12 +2,15 @@
 
 mod claims;
 mod pack;
+mod recall;
 mod reference;
+mod source_recall;
 mod sources;
 mod types;
 
 pub use self::{
 	pack::{EvidencePackNote, EvidencePackRequest, EvidencePackResponse, EvidencePackSource},
+	recall::{EvidenceRecallCandidate, EvidenceRecallRequest, EvidenceRecallResponse},
 	types::{
 		ClaimBinding, ClaimCitation, ClaimEvidence, ClaimState, EvidenceCheckRequest,
 		EvidenceCheckResponse, NoteEvidenceResponse, NoteSourceEvidence,

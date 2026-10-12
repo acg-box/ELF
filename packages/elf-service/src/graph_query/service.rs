@@ -2,7 +2,7 @@ use crate::{
 	access,
 	graph_query::{
 		self, ElfService, GraphQueryEntity, GraphQueryEvidenceQuote, GraphQueryPredicate,
-		GraphQueryRequest, GraphQueryResponse, GraphQueryRowsFetchParams, OffsetDateTime, Result,
+		GraphQueryRequest, GraphQueryResponse, GraphQueryRowsFetchParams, Result,
 	},
 	search,
 };
@@ -47,7 +47,6 @@ impl ElfService {
 			.map(|item| format!("{}:{}", item.scope, item.space_owner_agent_id))
 			.collect();
 		let predicate_id = predicate.as_ref().map(|predicate| predicate.id);
-		let read_at = OffsetDateTime::now_utc();
 		let rows = graph_query::fetch_graph_query_rows(
 			&mut conn,
 			GraphQueryRowsFetchParams {
@@ -63,7 +62,7 @@ impl ElfService {
 			},
 		)
 		.await?;
-		let facts = graph_query::graph_query_facts_from_rows(rows, read_at);
+		let facts = graph_query::graph_query_facts_from_rows(rows, prepared.as_of);
 		let queried_rows = facts.len();
 		let (mut facts, truncated) = graph_query::truncate_graph_query_facts(facts, prepared.limit);
 		let pairs = facts
