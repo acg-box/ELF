@@ -58,6 +58,10 @@ def main():
         assert protocol['max_output_tokens']==args.output_maximum
         common.freeze(root/'control-protocol.json',{'condition':'initial','purpose':'Separate richer initial structured notes from iterative tool use. Same prompt, initial projection, model, and output allowance; no tools. Run after the four primary arms.','max_output_tokens':args.output_maximum})
         suite=json.loads((root/'workload.json').read_text())
+        audit_api=None
+        if args.grounded:
+            auth=json.loads((root/'private-auth.json').read_text())
+            def audit_api(path,body=None):return common.api(matched.BASE,path,body,token='Bearer '+auth['memory'],timeout=60)[0]
         for q in suite['queries']:
             path=root/'cases'/'initial'/(q['case_id']+'.json')
             if path.exists():continue
@@ -65,7 +69,7 @@ def main():
             progress=root/'progress'/'initial'/(q['case_id']+'.json')
             if progress.exists():
                 raise RuntimeError('A recorded control response requires offline recovery before continuing: '+str(progress))
-            value=run(None,'initial',q['question'],initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],max_rounds=1,max_calls=0,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(progress,trace),grounded=args.grounded)
+            value=run(audit_api,'initial',q['question'],initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],max_rounds=1,max_calls=0,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(progress,trace),grounded=args.grounded)
             value.update(condition='initial',query=q,expected=suite['oracle'][q['case_id']])
             value['strict_correct']=value['status']=='completed' and common.score(value['expected'],value['text'])
             common.save(path,value);print(json.dumps({'condition':'initial','case_id':q['case_id'],'status':value['status']}),flush=True)

@@ -109,6 +109,24 @@ class AgentBoundaries(unittest.TestCase):
         self.assertEqual(json.loads(outputs[0]['content']),{'text':'observed'})
         self.assertIn('error',json.loads(outputs[1]['content']))
 
+    def test_initial_control_audits_only_after_answer_without_reader_feedback(self):
+        answer={'text':'A claim','supported':True,'citations':['n'],'claims':[{'text':'A claim','state':'supported','citations':[{'kind':'note','note_id':'n','quote':'A claim'}]}]}
+        response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':json.dumps(answer)}}]}
+        requests=[];audits=[]
+        def reply(request,**kwargs):
+            requests.append(json.loads(request.data));return io.BytesIO(json.dumps(response).encode())
+        def audit(path,body):
+            self.assertEqual(len(requests),1);audits.append((path,body))
+            return {'semantic_support':'not_evaluated','claims':[{'binding_verified':False}]}
+        with patch('benchmark_agent.runner.urllib.request.urlopen',side_effect=reply):
+            result=run(audit,'initial','question',[],'http://unused','token',max_rounds=1,max_calls=0,grounded=True)
+        self.assertEqual(len(requests),1)
+        self.assertNotIn('tools',requests[0])
+        self.assertEqual(result['tool_calls'],0)
+        self.assertEqual(result['text'],answer['text'])
+        self.assertEqual(audits,[('/v2/evidence/check',{'claims':answer['claims']})])
+        self.assertFalse(result['claim_bindings']['claims'][0]['binding_verified'])
+
     def test_no_tool_control_retains_invalid_output_without_resampling(self):
         response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':'<invented tool call>'}}]}
         with patch('benchmark_agent.runner.urllib.request.urlopen',return_value=io.BytesIO(json.dumps(response).encode())) as call:
