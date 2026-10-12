@@ -3,6 +3,7 @@ mod schemas;
 mod tool_definitions;
 
 use axum::http::HeaderMap;
+use rmcp::ServerHandler;
 
 use crate::app::{
 	McpAuthState,
@@ -61,4 +62,25 @@ fn static_keys_mode_rejects_non_bearer_schemes() {
 		&headers,
 		&McpAuthState::StaticKeys { bearer_token: "token-a".to_string() }
 	));
+}
+
+#[test]
+fn server_publishes_the_shared_evidence_reader_contract() {
+	let context = McpContext {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		read_profile: "private_plus_project".into(),
+	};
+	let server = ElfMcp::new(
+		"http://localhost:1".into(),
+		"http://localhost:2".into(),
+		ElfContextHeaders::new(&context),
+		McpAuthState::Off,
+	);
+
+	assert_eq!(
+		server.get_info().instructions.as_deref(),
+		Some(include_str!("../../../../../config/agent/evidence-reader.md"))
+	);
 }

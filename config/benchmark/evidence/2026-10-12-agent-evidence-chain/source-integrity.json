@@ -1,0 +1,124 @@
+{
+  "baseline_original_columns": {
+    "doc_documents": {
+      "rows": 36,
+      "sha256": "c4ecc8157bab3b75e9b6014b34ab6fbe01f612129df54b337c6d3f3839f4a927"
+    },
+    "doc_chunks": {
+      "rows": 36,
+      "sha256": "f392c050ea7c5707e11729d5d169644dfe62f8b57d331b09e27c98c3c9e2f4b7"
+    },
+    "memory_notes": {
+      "rows": 84,
+      "sha256": "b4a7d4e12c57a0b4d488dd8294945de0fa0ca5d3e94b88fd595771b4ca50dd61"
+    },
+    "note_embeddings": {
+      "rows": 84,
+      "sha256": "2743480f5fa66a3989bc8e24de02ec5ba54a1b039ba0c64ab06df9fb3ddc4b9a"
+    },
+    "note_chunk_embeddings": {
+      "rows": 84,
+      "sha256": "d3ee12a2a053bca6b64aa134e0ea3687b359f99ec23bc8ddfff82acfeead2cab"
+    },
+    "note_field_embeddings": {
+      "rows": 420,
+      "sha256": "1e1c4de73e20f550f3bea5547d2d7fa1c177cb837d9dbd4f41ebc52af53476cc"
+    },
+    "doc_chunk_embeddings": {
+      "rows": 36,
+      "sha256": "f7191536450db0fa992d74665c2cc0eaab691f6d804ec652bd03c6394d456a07"
+    },
+    "graph_entities": {
+      "rows": 99,
+      "sha256": "03d516413f6529f479126a4fecd218a8545e56731b52e533dd35d132539553e5"
+    },
+    "graph_entity_aliases": {
+      "rows": 103,
+      "sha256": "599aaf3703a5099321d80b29928d78d92881d3ea4b60c77e72cbc6f76dcd0aa7"
+    },
+    "graph_facts": {
+      "rows": 119,
+      "sha256": "f3d6ff65a072f3273febf96a3d287510e5b3c86f50adc5cbdcd1f342fa1c4fa9"
+    },
+    "graph_fact_evidence": {
+      "rows": 123,
+      "sha256": "03e6938f11a8c5116e973e07bb092dd144a5c1cd6a994e24fcf770927f80f755"
+    }
+  },
+  "final_original_columns_excluding_new_fixture_documents": {
+    "doc_documents": {
+      "rows": 36,
+      "sha256": "c4ecc8157bab3b75e9b6014b34ab6fbe01f612129df54b337c6d3f3839f4a927"
+    },
+    "doc_chunks": {
+      "rows": 36,
+      "sha256": "f392c050ea7c5707e11729d5d169644dfe62f8b57d331b09e27c98c3c9e2f4b7"
+    },
+    "memory_notes": {
+      "rows": 84,
+      "sha256": "b4a7d4e12c57a0b4d488dd8294945de0fa0ca5d3e94b88fd595771b4ca50dd61"
+    },
+    "note_embeddings": {
+      "rows": 84,
+      "sha256": "2743480f5fa66a3989bc8e24de02ec5ba54a1b039ba0c64ab06df9fb3ddc4b9a"
+    },
+    "note_chunk_embeddings": {
+      "rows": 84,
+      "sha256": "d3ee12a2a053bca6b64aa134e0ea3687b359f99ec23bc8ddfff82acfeead2cab"
+    },
+    "note_field_embeddings": {
+      "rows": 420,
+      "sha256": "1e1c4de73e20f550f3bea5547d2d7fa1c177cb837d9dbd4f41ebc52af53476cc"
+    },
+    "doc_chunk_embeddings": {
+      "rows": 36,
+      "sha256": "f7191536450db0fa992d74665c2cc0eaab691f6d804ec652bd03c6394d456a07"
+    },
+    "graph_entities": {
+      "rows": 99,
+      "sha256": "03d516413f6529f479126a4fecd218a8545e56731b52e533dd35d132539553e5"
+    },
+    "graph_entity_aliases": {
+      "rows": 103,
+      "sha256": "599aaf3703a5099321d80b29928d78d92881d3ea4b60c77e72cbc6f76dcd0aa7"
+    },
+    "graph_facts": {
+      "rows": 119,
+      "sha256": "f3d6ff65a072f3273febf96a3d287510e5b3c86f50adc5cbdcd1f342fa1c4fa9"
+    },
+    "graph_fact_evidence": {
+      "rows": 123,
+      "sha256": "03e6938f11a8c5116e973e07bb092dd144a5c1cd6a994e24fcf770927f80f755"
+    }
+  },
+  "new_fixture_doc_ids": [
+    "1babe4c2-a6e8-5a7d-a5f4-6da5df139b23",
+    "206e162f-1251-5f53-aa09-0263e654e6c7",
+    "3c9ebeb1-e93a-5dd6-a928-9fc3c63ec441",
+    "4d75671d-7aee-58fc-96e0-2ed9c3593b6b",
+    "5080b957-8649-59fa-bcf4-56ca7a5740d8",
+    "58010c76-c6ac-5274-b14e-bab6c4df9d69",
+    "6f84fd7a-9773-521f-90a4-77e8cbe30216",
+    "7b981125-2b94-549f-b61c-96a919bcf381",
+    "7bc5e42d-097f-5ce4-9c01-7386c526edea",
+    "7ddaaa63-50c7-5c0f-ba53-c22efb5f6a95",
+    "7fad7bdd-f6bd-5ed2-b1c3-abbe60597803",
+    "8390d536-c813-5a06-82ac-8b05c620d81c",
+    "8c7e4b60-cb28-5b68-aafc-b7fb44b79614",
+    "93678c94-8116-52e3-99e3-4f57220a3fc4",
+    "973e46cd-7d60-5232-b1b2-63ea1ca4bc5f",
+    "9b41d3ee-faae-5fef-be0e-429482ec04e2",
+    "9ea11066-a707-5ef1-a24c-c71eae34ac65",
+    "b6bc369a-04b2-5a2e-b5e6-d83df13e5189",
+    "b73e0ef3-8a22-5319-abf4-fdca2ae90a15",
+    "be2139bf-06f6-5f3b-8dba-b607ad85c0e9",
+    "bf69d9e0-aae1-5ab7-9f6e-4b53a5623355",
+    "c20d5baa-e1a6-5c05-a5a6-9af03b16ef30",
+    "d1ad4b9d-762e-539b-a675-cebfe73c3973",
+    "d929cfa3-9c0a-50a2-acce-811eac13b41e",
+    "e27e2840-6275-5be1-9727-b416e92cae59",
+    "ee8cc0e7-46c5-5f31-967b-3f7f8b9c5977"
+  ],
+  "originals_unchanged": true,
+  "new_fixture_documents": 26
+}

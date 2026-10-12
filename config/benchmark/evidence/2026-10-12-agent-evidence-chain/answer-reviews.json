@@ -1,0 +1,115 @@
+[
+  {
+    "case_id": "memory-1-1",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "c77c07e7b70251a7e8e9415e1237f608dacd72bef82ec54948b7283564cd8c05",
+    "claims_sha256": "648322f8696a367789d8617d011ddd73a5e2d29c2b5a48b5ea5473426d6550b2",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": true
+  },
+  {
+    "case_id": "memory-1-2",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "eb63eace65b8c0dab36f6c457f018a67a01b6c9fdbc78bb8b1d83916d511cfac",
+    "claims_sha256": "515d988e1ab0c6a7595afd6c8e6b6582743e19365296abd04568e2e51f6193dd",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": true
+  },
+  {
+    "case_id": "bridge-1",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "43fa3831cf4213ffe52e1219d161d0bb6d8b19e9b29cf7d3bee08ebabdb726ee",
+    "claims_sha256": "dbffd504016bae7c7c48ab36945d5524d4d27b2d6c8ac25677086760736d7ed8",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": true
+  },
+  {
+    "case_id": "bridge-2",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "83bcb0c2ff06ff54932bcb1a36a665566fe5eef87df3576c4ca3c85b2cbb8da2",
+    "claims_sha256": "51d10263e320358fd24efd6f31c74bd5809a461ca4888a35b9bf7c9c44848726",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": true
+  },
+  {
+    "case_id": "boundary-3",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "7ddb77085963e15efc5cf1fcb8c5631404cf35d372996f5f4b576a3099a70b6f",
+    "claims_sha256": "d264eb487cfc2bb59b0aca1158876e8d3a6c43505da678f87f9aa2e1bdcb9087",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": true
+  },
+  {
+    "case_id": "retroactive-4",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "462ab9e9f9a6f84f92ac50b2670b5c134d1a50a9d2a8974aa9a9b7903a334063",
+    "claims_sha256": "51b8fe1b8df92b8bf2a919a0935b36b0635d7de41d651870de90f66970809fd3",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": true
+  },
+  {
+    "case_id": "revocation-5",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "92a239edcdd6fd15b6f2ed06b59b287ec365921523e9b48d461c4c58d7d240fe",
+    "claims_sha256": "e13a7c669f4570fbe037f65bd7a90182cfe72df07c4288ad38df40cdd65f201d",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": true
+  },
+  {
+    "case_id": "conflict-6",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "b2d433014b820e70bfa28adb11d2a0989984e02e30cad91f5c400b9babdfbf3a",
+    "claims_sha256": "4dcfae11c1929fd9e7e2c2c694b5ffed2afa4df1f09a1339106a9edbbb74f408",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": false,
+    "state_contract_note": "Text correctly preserves the unresolved conflict and cites both decisions plus identity. The conclusion is tagged supported rather than conflict. Keep this structured-state limitation separate from the frozen factual and citation rubric."
+  },
+  {
+    "case_id": "absence-8",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "6350afa9fd60b7a2c6b63efad4d70b1be9358a5f3d79e1b86756d2850adb491d",
+    "claims_sha256": "338325ffa44ed3ae0369af067167cd40f98b6d423f31c7e2083d2b7174c20a39",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": false,
+    "state_contract_note": "Text and source chain correctly distinguish explicit absence from missing information, but the conclusion uses supported rather than absent. This is an additional integration observation, not a changed frozen citation rubric."
+  },
+  {
+    "case_id": "unknown-7",
+    "factual": true,
+    "semantic": true,
+    "binding": true,
+    "answer_sha256": "2b55de58f5a837e020fdfa8137a7bba62d1f70e3acae2ef2a8bdddb61f47d042",
+    "claims_sha256": "80a4274321a25b2c37611de1809eb9820d4a27488ee2adb54cc60d142a8f75de",
+    "reviewer": "Assistant source-by-source review; not a blinded independent judge.",
+    "reason": "Originals support the requested state and every atomic claim, including the declared dependency sources; distractors are not imported.",
+    "state_contract_correct": false,
+    "state_contract_note": "Text and source chain correctly distinguish explicit absence from missing information, but the conclusion uses supported rather than unknown. This is an additional integration observation, not a changed frozen citation rubric."
+  }
+]

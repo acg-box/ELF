@@ -1,0 +1,27 @@
+{
+  "commit": "13e6ef38cf2e127f6dc9566724c873e46fb823d0",
+  "file_sha256": {
+    "apps/elf-mcp/src/app/server/runtime.rs": "43206f1a5cfa145a282f01b717bebdd42fff97e48b93d8095f5193797c10cb9d",
+    "apps/elf-mcp/src/app/server/schemas/notes.rs": "6ff7cf2a8e374548af6bb9abddf4c404b637fc19fb7040a352a85a19e54eaf4e",
+    "apps/elf-mcp/src/app/server/tests.rs": "f4ae756098027639c861287e0e3e8d6a39fca82bb5f264e79e7fc68520b8ce42",
+    "apps/elf-mcp/src/app/server/tests/tool_definitions/catalog.rs": "50163cad7b313a6ba483e6a92f29e367ca3cee43f19abfd942cfc4d926b16bb7",
+    "apps/elf-mcp/src/app/server/tools/core/notes.rs": "7678bed147a0995a9d22312bdccb787efb89afa1f3098999c48306c38e7ab26e",
+    "config/agent/evidence-reader.md": "eb08a4df70b2b8ac8dd0ccdfe8af6ee410b21cf920f66976c8017a079e78bc11",
+    "config/benchmark/agent-evidence-chain/freeze.json": "714130c3b37c4a0681997e8c986b2d7543ab79d7919a574a9cffb988ab64cf0f",
+    "config/benchmark/agent-evidence-chain/workload.json": "dc4f49d66172ddb9e6574f9d8e8fb7e9e89cdfae9561888f4d69c468d2072d22",
+    "docs/decisions/2026-10-12-agent-evidence-chain.md": "941f381c922fddc2ec5f74b9daad00532c9821017c88c70347b9299e682ce8b7",
+    "docs/runbook/agent-evidence.md": "1428ed101043699d83fe3e6f42c41c63e9a83883c6d03033f40cd5177713758a",
+    "docs/runbook/agent-setup.md": "ea3918035e39833129e1f698d38125bffae747c1b9bf23e66fa5a8cc5e9068bb",
+    "docs/runbook/agent_skills_cookbook.md": "485904fffbe0886631f993524623b76452aabec9d1ab4d7b94e4ba57089a56ac",
+    "packages/elf-service/src/evidence/claims.rs": "a293e602ef916dfc2fc43a1e80e246fbbbe071579709df4a221d6f2345a97b63",
+    "packages/elf-service/src/evidence/types.rs": "e5825db78041de106f2b6032adb3a8281f1d2c0b65cbd2c64b1f15844c1a76f0",
+    "packages/elf-service/tests/acceptance/text_boundary.rs": "0cf6a41913b3c56cf1cace780bcd4507c3172646055e41db846e8e8edf4965f4",
+    "packages/elf-service/tests/acceptance/text_boundary/claim_chain.rs": "37a02a57caad0d6cf064e72b1a25bcce2d0b9c07443fffd9f29a647c4c0bb245",
+    "packages/elf-service/tests/acceptance/text_boundary/evidence.rs": "f124fe782f09459732ef68780077cfb5b867cd22312420ff832483c1af0732a5",
+    "scripts/benchmark-evidence-context.py": "6f4fb98ceb1abf00c0e8bc4cb392648eb31b2981be9348c13bedbca9cab2ba6b",
+    "scripts/benchmark_agent/evidence_chain.py": "a3a2d88e37cc489a3c5077679b0490a69ee3951b002b5df39cde3e9c84e01d3f",
+    "scripts/tests/test_benchmark_recall_plan.py": "9ec167ceb03afb42f09565cd1da0dee86ea5c0e92587f43456f700a57a662c3e"
+  },
+  "api_binary_sha256": "535a57878e15038c4979e9fc6c8c61fb9abe6f8abcf319d94974d3535ef96ef8",
+  "native_replay_cases": 10
+}

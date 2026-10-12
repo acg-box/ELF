@@ -1,0 +1,251 @@
+{
+  "schema": "elf.agent_evidence_chain_workload/v1",
+  "frozen_at": "2026-10-12T15:57:15.007206+00:00",
+  "baseline_commit": "5e724589cda734276fb43867ace53612bcfb101a",
+  "scope": "Eight new source-reading/claim-chain cases, plus the two prior Cobalt failures as separate regressions. Native evidence packs supply every case source including distractors. This isolates reading and citation composition, not retrieval ranking or blind generalization. No oracle enters reader context. One final response per case; retain failures; no answer-driven retries. Assistant-authored fixed rubric, not independent judging.",
+  "regression_cases": [
+    "memory-1-1",
+    "memory-1-2"
+  ],
+  "cases": [
+    {
+      "case_id": "bridge-1",
+      "question": "For Kestrel KES-41, did the September 6 review change the delivery mode?",
+      "as_of": null,
+      "sources": [
+        {
+          "key": "identity",
+          "text": "2026-09-01. Kestrel KES-41 is operated by team Rowan. Team Rowan uses lane L-482 exclusively for KES-41."
+        },
+        {
+          "key": "event",
+          "text": "2026-09-06. The review for lane L-482 retained BUFFER-19. It did not authorize a delivery-mode change."
+        },
+        {
+          "key": "distractor",
+          "text": "2026-09-06. Team Willow operates Kestrel KES-42 on lane L-483. Its review approved DIRECT-28."
+        }
+      ],
+      "rubric": {
+        "expected": "No change was authorized for KES-41; BUFFER-19 was retained. The lane identity and review are both required.",
+        "required_joint_source_groups": [
+          [
+            "identity",
+            "event"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    },
+    {
+      "case_id": "bridge-2",
+      "question": "Who was authorized to approve purchases for Juniper JUN-63 on September 12?",
+      "as_of": "2026-09-12T23:59:59Z",
+      "sources": [
+        {
+          "key": "project",
+          "text": "2026-09-02. Juniper JUN-63 assigns purchasing authority to the custodian of register REG-615."
+        },
+        {
+          "key": "person",
+          "text": "2026-09-03. Nadi is the custodian of register REG-615."
+        },
+        {
+          "key": "authority",
+          "text": "2026-09-11. Register REG-615 custodians may approve purchases from September 11 through September 18 inclusive."
+        },
+        {
+          "key": "distractor",
+          "text": "2026-09-02. Juniper JUN-64 uses REG-616. Its custodian is Elio."
+        }
+      ],
+      "rubric": {
+        "expected": "Nadi was authorized on September 12. Project-to-register, register-to-person and validity evidence are all required.",
+        "required_joint_source_groups": [
+          [
+            "project",
+            "person",
+            "authority"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    },
+    {
+      "case_id": "boundary-3",
+      "question": "Did Mira authorize the rollback for Orion ORI-E on September 9?",
+      "as_of": null,
+      "sources": [
+        {
+          "key": "identity",
+          "text": "2026-09-01. Orion ORI-E is the east service. Its release manager is Mira Chen. Orion ORI-W is the west service; its manager is Mira Patel."
+        },
+        {
+          "key": "east",
+          "text": "2026-09-09. Mira Chen explicitly declined to authorize rollback RB-215 for the east service."
+        },
+        {
+          "key": "west",
+          "text": "2026-09-09. Mira Patel authorized rollback RB-216 for the west service."
+        }
+      ],
+      "rubric": {
+        "expected": "No. Mira Chen explicitly declined RB-215 for ORI-E. Do not attribute Mira Patel or RB-216 to the east service.",
+        "required_joint_source_groups": [
+          [
+            "identity",
+            "east"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    },
+    {
+      "case_id": "retroactive-4",
+      "question": "As of September 4, who held the budget role for Sable SAB-52?",
+      "as_of": "2026-09-04T23:59:59Z",
+      "sources": [
+        {
+          "key": "old",
+          "text": "2026-09-01. Sable SAB-52 budget role is held by Uma."
+        },
+        {
+          "key": "late",
+          "text": "Record dated 2026-09-10. Approved correction: for Sable SAB-52, Tarek replaced Uma as budget owner effective 2026-09-03. This corrects the September 1 record for dates from September 3 onward."
+        },
+        {
+          "key": "future",
+          "text": "2026-09-11. Sable SAB-52 proposes appointing Zuri from September 20. The proposal is not approved."
+        }
+      ],
+      "rubric": {
+        "expected": "Tarek held the role on September 4. Use the explicitly retroactive effective date, not the later record date or unapproved Zuri proposal.",
+        "required_joint_source_groups": [
+          [
+            "late"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    },
+    {
+      "case_id": "revocation-5",
+      "question": "Which recovery procedure was approved for Maple MAP-87 on September 14?",
+      "as_of": "2026-09-14T23:59:59Z",
+      "sources": [
+        {
+          "key": "initial",
+          "text": "2026-09-01. Maple MAP-87 approves RESTORE-31 until further notice."
+        },
+        {
+          "key": "approval",
+          "text": "2026-09-08. Maple MAP-87 approves a change from RESTORE-31 to REPLAY-62 effective September 16."
+        },
+        {
+          "key": "revocation",
+          "text": "2026-09-12. Maple MAP-87 revokes the September 8 change before it takes effect. RESTORE-31 remains approved."
+        },
+        {
+          "key": "proposal",
+          "text": "2026-09-13. Maple MAP-87 suggests PATCH-77 as a possible replacement; no approval is recorded."
+        }
+      ],
+      "rubric": {
+        "expected": "RESTORE-31 remains approved on September 14; the future REPLAY-62 change was revoked and PATCH-77 is only a proposal.",
+        "required_joint_source_groups": [
+          [
+            "revocation"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    },
+    {
+      "case_id": "conflict-6",
+      "question": "Which delivery mode is approved for Linden LIN-29 as of September 18?",
+      "as_of": "2026-09-18T23:59:59Z",
+      "sources": [
+        {
+          "key": "identity",
+          "text": "2026-09-01. Linden LIN-29 release decisions are recorded under account AC-902."
+        },
+        {
+          "key": "first",
+          "text": "2026-09-15. Decision A for account AC-902 approves PUSH-14 effective September 15."
+        },
+        {
+          "key": "second",
+          "text": "2026-09-16. Independent decision B for account AC-902 approves PULL-23 effective September 15. It does not revoke decision A; neither decision has precedence or adjudication."
+        },
+        {
+          "key": "distractor",
+          "text": "2026-09-18. Account AC-903 has approved PUSH-14 with no conflict."
+        }
+      ],
+      "rubric": {
+        "expected": "Unresolved conflict between PUSH-14 and PULL-23 for LIN-29; identity and both decisions are required. Do not choose by recording timestamp.",
+        "required_joint_source_groups": [
+          [
+            "identity",
+            "first",
+            "second"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    },
+    {
+      "case_id": "unknown-7",
+      "question": "截至9月21日，青岚 QL-58 的预算负责人是否明确无人担任？",
+      "as_of": "2026-09-21T23:59:59Z",
+      "sources": [
+        {
+          "key": "role",
+          "text": "2026-09-21。青岚 QL-58 的项目负责人是沈禾。本记录没有预算负责人的任命信息，也不表明该职位空缺。"
+        },
+        {
+          "key": "distractor",
+          "text": "2026-09-21。青岚 QL-59 的预算负责人职位明确空缺。"
+        }
+      ],
+      "rubric": {
+        "expected": "Unknown for QL-58, not confirmed vacant. Do not substitute project owner 沈禾 or import QL-59 vacancy.",
+        "required_joint_source_groups": [
+          [
+            "role"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    },
+    {
+      "case_id": "absence-8",
+      "question": "截至9月21日，银杉 YS-73 的预算负责人是谁？",
+      "as_of": "2026-09-21T23:59:59Z",
+      "sources": [
+        {
+          "key": "identity",
+          "text": "2026-09-01。银杉 YS-73 对应账本 BZ-307；银杉 YS-74 对应账本 BZ-308。"
+        },
+        {
+          "key": "absence",
+          "text": "2026-09-21。账本 BZ-307 的预算负责人职位明确空缺，尚未任命任何人。"
+        },
+        {
+          "key": "distractor",
+          "text": "2026-09-21。账本 BZ-308 的预算负责人是黎青。"
+        }
+      ],
+      "rubric": {
+        "expected": "Explicitly unassigned for YS-73, not merely unknown, and not 黎青. Identity and explicit vacancy evidence are required.",
+        "required_joint_source_groups": [
+          [
+            "identity",
+            "absence"
+          ]
+        ],
+        "all_auxiliary_claims_must_be_grounded": true
+      }
+    }
+  ]
+}

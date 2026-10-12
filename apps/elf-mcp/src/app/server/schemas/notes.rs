@@ -95,6 +95,7 @@ pub(in crate::app::server) fn evidence_check_schema() -> Arc<JsonObject> {
         "type":"object", "additionalProperties":false, "required":["claims"],
         "properties":{"claims":{"type":"array", "minItems":1,"maxItems":12,"items":{
             "type":"object","additionalProperties":false,"required":["text","state","citations"],"properties":{
+                "depends_on":{"type":"array","maxItems":12,"items":{"type":"integer","minimum":0,"maximum":11},"description":"Earlier claim indices that supply required subject, scope, or temporal evidence. No self or forward references."},
                 "text":{"type":"string"},"state":{"type":"string","enum":["supported","absent","unknown","conflict"]},
                 "citations":{"type":"array","maxItems":8,"items":{"oneOf":[
                     {"type":"object","additionalProperties":false,"required":["kind","reference"],"properties":{"kind":{"const":"reference"},"reference":{"type":"string","maxLength":192}}},

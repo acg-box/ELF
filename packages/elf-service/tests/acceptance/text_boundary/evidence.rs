@@ -25,26 +25,31 @@ fn claim_request(doc_id: Uuid, content_hash: &str, content: &str) -> EvidenceChe
 		read_profile: "private_plus_project".into(),
 		claims: vec![
 			ClaimEvidence {
+				depends_on: vec![],
 				text: "白鹭预算负责人是林澈。".into(),
 				state: ClaimState::Supported,
 				citations: vec![cite.clone()],
 			},
 			ClaimEvidence {
+				depends_on: vec![],
 				text: "No source establishes this claim.".into(),
 				state: ClaimState::Absent,
 				citations: vec![],
 			},
 			ClaimEvidence {
+				depends_on: vec![],
 				text: "Unknown appointment.".into(),
 				state: ClaimState::Unknown,
 				citations: vec![],
 			},
 			ClaimEvidence {
+				depends_on: vec![],
 				text: "A real quote does not prove this unrelated claim.".into(),
 				state: ClaimState::Supported,
 				citations: vec![cite],
 			},
 			ClaimEvidence {
+				depends_on: vec![],
 				text: "Forged quote.".into(),
 				state: ClaimState::Supported,
 				citations: vec![ClaimCitation::Source {
@@ -54,6 +59,7 @@ fn claim_request(doc_id: Uuid, content_hash: &str, content: &str) -> EvidenceChe
 				}],
 			},
 			ClaimEvidence {
+				depends_on: vec![],
 				text: "Stale hash.".into(),
 				state: ClaimState::Supported,
 				citations: vec![ClaimCitation::Source {

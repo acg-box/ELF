@@ -79,14 +79,15 @@ def validate_recall_plans(value, work):
 
 
 
-def reader_request(query, frozen, temporal_contract=False):
+def reader_request(query, frozen, temporal_contract=False, agent_contract=False):
     supplement = frozen.get('supplemental_recall')
     target = supplement.get('as_of') if supplement else None
     content = {'question': query['question'], 'evidence_pack': frozen['pack'], 'supplemental_recall': supplement}
-    prompt = PROMPT
-    if temporal_contract and target is not None:
+    prompt = (Path(__file__).resolve().parent.parent / "config/agent/evidence-reader.md").read_text() if agent_contract else PROMPT
+    if (temporal_contract or agent_contract) and target is not None:
         content['requested_as_of'] = target
-        prompt += TEMPORAL_PROMPT
+        if not agent_contract:
+            prompt += TEMPORAL_PROMPT
     return {'model': MODEL, 'max_tokens': OUTPUT_MAXIMUM, 'reasoning': {'effort': 'max'},
             'messages': [{'role': 'system', 'content': prompt},
                          {'role': 'user', 'content': json.dumps(content, ensure_ascii=False)}]}
@@ -95,13 +96,20 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, required=True)
     parser.add_argument('--baseline-raw', type=Path, required=True)
-    parser.add_argument('--phase', choices=['plan', 'prepare', 'run'], required=True)
+    parser.add_argument('--phase', choices=['plan', 'prepare', 'run', 'chain-prepare', 'chain-run'], required=True)
     parser.add_argument('--api-base', default='http://127.0.0.1:19894')
     parser.add_argument('--max-new-cases', type=int)
     parser.add_argument('--supplemental-recall', action='store_true')
     parser.add_argument('--temporal-contract', action='store_true')
     args = parser.parse_args()
     auth = read(args.baseline_raw / 'private-auth.json')['memory']
+    if args.phase in ('chain-prepare', 'chain-run'):
+        from benchmark_agent import evidence_chain
+        if args.phase == 'chain-prepare':
+            evidence_chain.prepare(args, read, save, freeze, api, auth)
+        else:
+            evidence_chain.run(args, read, save, api, auth, reader_request, parse_claim_answer)
+        return
     work = read(BASELINE / 'workload.json')
     freeze(args.root / 'workload.json', work)
     freeze(args.root / 'protocol.json', {

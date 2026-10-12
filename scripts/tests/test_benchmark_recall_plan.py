@@ -34,3 +34,12 @@ class RecallPlanningTests(unittest.TestCase):
         request = RUNNER.reader_request(query, data, True)
         self.assertEqual(json.loads(request['messages'][1]['content'])['requested_as_of'], data['supplemental_recall']['as_of'])
         self.assertIn('not the next approval', request['messages'][0]['content'])
+
+    def test_production_contract_is_used_without_benchmark_specific_instructions(self):
+        data = {'pack': {'sources': []}, 'supplemental_recall': {'as_of': '2026-09-04T23:59:59Z'}}
+        request = RUNNER.reader_request({'question': 'Who held the role?', 'rubric': 'must not leak'}, data, agent_contract=True)
+        contract = (Path(__file__).parents[2] / 'config/agent/evidence-reader.md').read_text()
+        self.assertEqual(request['messages'][0]['content'], contract)
+        payload = json.loads(request['messages'][1]['content'])
+        self.assertEqual(set(payload), {'question', 'evidence_pack', 'supplemental_recall', 'requested_as_of'})
+        self.assertEqual(payload['requested_as_of'], data['supplemental_recall']['as_of'])

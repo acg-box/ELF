@@ -36,6 +36,9 @@ Verification: ELF services start, required dependencies are reachable, and the l
 This runbook is written for AI agents helping a human operator install and run ELF locally with minimal back-and-forth.
 It assumes you have access to this repository checkout.
 
+For source-backed answers, follow [the evidence-chain integration](agent-evidence.md).
+It is the shared contract for MCP, HTTP agents, and the evidence benchmark.
+
 ## What You Are Setting Up
 
 ELF is a Rust workspace that typically runs:

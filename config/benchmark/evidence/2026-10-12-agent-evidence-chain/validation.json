@@ -1,0 +1,60 @@
+{
+  "rust_unit_passed": 463,
+  "rust_integration_passed": 106,
+  "python_contracts_passed": 184,
+  "focused_claim_chain_passed": 1,
+  "lint": "passed",
+  "format": "passed",
+  "docs": "passed",
+  "logs": [
+    {
+      "path": "elf-chain-unit-final.log",
+      "sha256": "962c9681e8b33aaae1ca681303523dd9f8a32a407d5e78f31661593e12f21136"
+    },
+    {
+      "path": "elf-chain-integration-pass.log",
+      "sha256": "bc7828fe0ceb95dc1d4fd8270a93005ccbdebf61f5d2ad06611082bf6f5fad5a"
+    },
+    {
+      "path": "elf-chain-focused.log",
+      "sha256": "73958b8f76c2ea338ddb57ccb93330a5f9f289dfb748421afe5ab86fccc65fa3"
+    },
+    {
+      "path": "elf-chain-python-final.log",
+      "sha256": "3aff47c258f87c18f9620ba3e0408e767b75c5f7af26c41b903536989ac97a5d"
+    },
+    {
+      "path": "elf-chain-lint-final.log",
+      "sha256": "8e0e106f374dff2bf6b18399c9a0603adea86d099cc1c48ab1c817cdda313340"
+    },
+    {
+      "path": "elf-chain-format.log",
+      "sha256": "cea0d6c4a09dc8212a9de18dc2c9ed910e41e3ef65d5efd7d5b7150a214a313c"
+    },
+    {
+      "path": "elf-chain-docs.log",
+      "sha256": "28365ff0843a5958102a473053a89bbc45859bb619fd54499e782a9868e53410"
+    },
+    {
+      "path": "elf-chain-build-final.log",
+      "sha256": "beb3b3f73c53cb75f93272dfc6d9a1c238cadb6e85c366ce6b65eaa1eebc7eff"
+    },
+    {
+      "path": "elf-chain-mcp-build.log",
+      "sha256": "2f668a3d40f7292e6082fb42600ca91047b04088f669ae518984c2e63467d0c9"
+    },
+    {
+      "path": "elf-chain-build-delivery.log",
+      "sha256": "b07543019ad3a9c655b870926e5b57e95908d526d25e9a1e2b07f6712d63ca58"
+    },
+    {
+      "path": "elf-chain-prior-verify.log",
+      "sha256": "9174088bf0722eb19bcb61af62ca90d5605483cb5eb1ec43b2c3c078f4e15c46"
+    },
+    {
+      "path": "elf-chain-docs-delivery.log",
+      "sha256": "305be4842159ee4a1482ab2e0f60e73f338776f4a372828054581821e577c1cf"
+    }
+  ],
+  "fixture_repairs": "Initial integration fixture omitted required doc_type then timestamp. Fixed fixture and reran all 106 integration tests successfully. Original failure logs retained outside checkout."
+}

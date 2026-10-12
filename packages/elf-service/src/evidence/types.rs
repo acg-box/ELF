@@ -44,6 +44,9 @@ pub enum ClaimState {
 #[derive(Clone, Debug, Deserialize, Serialize)]
 #[serde(deny_unknown_fields)]
 pub struct ClaimEvidence {
+	/// Earlier claim indices whose source evidence is required for this inference.
+	#[serde(default, skip_serializing_if = "Vec::is_empty")]
+	pub depends_on: Vec<usize>,
 	/// The atomic statement to assess, including its subject and time when relevant.
 	pub text: String,
 	/// Semantic state asserted by the agent.
@@ -53,7 +56,7 @@ pub struct ClaimEvidence {
 }
 
 /// A quote from a derived note or an immutable original document.
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Clone, Debug, PartialEq, Deserialize, Serialize)]
 #[serde(tag = "kind", rename_all = "snake_case", deny_unknown_fields)]
 pub enum ClaimCitation {
 	/// Native locator copied from an evidence pack; current read access is always rechecked.
@@ -82,13 +85,16 @@ pub enum ClaimCitation {
 /// Mechanical binding result for a claim. It does not certify entailment.
 #[derive(Clone, Debug, Serialize)]
 pub struct ClaimBinding {
+	/// Originating claim index for each expanded citation when dependencies are present.
+	#[serde(skip_serializing_if = "Vec::is_empty")]
+	pub citation_claim_indices: Vec<usize>,
 	/// Claim position in the request.
 	pub claim_index: usize,
-	/// One result per requested citation, in request order.
+	/// Direct citation results, or the deduplicated chain when dependencies are present.
 	pub citation_verified: Vec<bool>,
 	/// Whether required evidence is present and every supplied quote resolves.
 	pub binding_verified: bool,
-	/// Resolved exact citations in input order; null for an unreadable or invalid binding.
+	/// Direct citations followed by dependency citations; null for invalid bindings.
 	pub resolved_citations: Vec<Option<ClaimCitation>>,
 }
 
