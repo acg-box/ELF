@@ -22,7 +22,7 @@ impl ElfMcp {
 
 	#[rmcp::tool(
 		name = "elf_graph_query",
-		description = "Query graph entities and relations by structured criteria.",
+		description = "Query graph entities and relations by structured criteria. To inspect original context, pass selected evidence_note_ids to elf_evidence_pack; a graph edge does not certify semantic truth.",
 		input_schema = graph_query_schema()
 	)]
 	async fn elf_graph_query(&self, params: JsonObject) -> Result<CallToolResult, ErrorData> {

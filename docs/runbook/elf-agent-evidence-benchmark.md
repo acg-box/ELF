@@ -166,3 +166,40 @@ interpreting source-access gains.
 
 See the [retained grounded-evidence trial](../evidence/benchmarking/2026-10-12-grounded-evidence.md)
 for the selected matrix, scores, cost, and offline verification commands.
+
+## Evidence-pack read path
+
+Use `POST /v2/evidence/pack` or MCP `elf_evidence_pack` after memory retrieval.
+Pass `note_ids` in retrieval order (1–12 IDs). The optional `max_source_bytes`
+sets a total original-text budget from 1 to 32768 bytes. The service deduplicates
+original windows and keeps them separate from derived notes. Each note lists
+its `source_references`; `complete` describes source resolution, not answer
+coverage. A budget-limited or unreadable source does not establish absence.
+
+Read the original window to establish its subject and effective dates.
+`source_timestamp` is the timestamp declared by the source record;
+`captured_at` is ELF's capture time. Neither is a default fact-validity date.
+Use graph `evidence_note_ids` as inputs to this same read path when graph
+traversal finds a useful fact. Shared provenance does not create a new causal
+or identity relationship.
+
+Copy a returned `reference` into a claim citation as
+`{"kind":"reference","reference":"<returned reference>"}`. Submit claims to
+`POST /v2/evidence/check` or MCP `elf_evidence_check`. The response includes
+`resolved_citations` with exact original bytes for valid references, and null
+for invalid or unreadable references. The reference grants no access and the
+checker rechecks current permissions, source lifecycle, hash, and byte bounds.
+Its semantic-support result remains `not_evaluated`.
+
+The source-context trial uses `cargo make benchmark-evidence-context` through
+the existing budget gateway. It freezes the same thirty-six questions and
+initial retrieval, then materializes evidence before one reader response.
+Report prefetch work, output-contract failures, native claim checks, and API
+cost separately. Do not describe it as a repeat of all five prior ablation arms.
+
+The evidence-pack reader consumes `text`, `supported`, and native `claims`.
+It derives the answer-level citation list from claims and records whether the
+legacy redundant list agreed. This is deterministic projection, not claim
+repair. Use the checker’s `resolved_citations` to render references. The
+[retained trial](../evidence/benchmarking/2026-10-12-evidence-context.md) includes
+both raw output-contract failures and native-consumer replay results.

@@ -1,0 +1,46 @@
+{
+  "doc_documents": {
+    "rows": 36,
+    "sha256": "c4ecc8157bab3b75e9b6014b34ab6fbe01f612129df54b337c6d3f3839f4a927"
+  },
+  "doc_chunks": {
+    "rows": 36,
+    "sha256": "f392c050ea7c5707e11729d5d169644dfe62f8b57d331b09e27c98c3c9e2f4b7"
+  },
+  "memory_notes": {
+    "rows": 84,
+    "sha256": "b4a7d4e12c57a0b4d488dd8294945de0fa0ca5d3e94b88fd595771b4ca50dd61"
+  },
+  "note_embeddings": {
+    "rows": 84,
+    "sha256": "2743480f5fa66a3989bc8e24de02ec5ba54a1b039ba0c64ab06df9fb3ddc4b9a"
+  },
+  "note_chunk_embeddings": {
+    "rows": 84,
+    "sha256": "d3ee12a2a053bca6b64aa134e0ea3687b359f99ec23bc8ddfff82acfeead2cab"
+  },
+  "note_field_embeddings": {
+    "rows": 420,
+    "sha256": "1e1c4de73e20f550f3bea5547d2d7fa1c177cb837d9dbd4f41ebc52af53476cc"
+  },
+  "doc_chunk_embeddings": {
+    "rows": 36,
+    "sha256": "f7191536450db0fa992d74665c2cc0eaab691f6d804ec652bd03c6394d456a07"
+  },
+  "graph_entities": {
+    "rows": 99,
+    "sha256": "03d516413f6529f479126a4fecd218a8545e56731b52e533dd35d132539553e5"
+  },
+  "graph_entity_aliases": {
+    "rows": 103,
+    "sha256": "599aaf3703a5099321d80b29928d78d92881d3ea4b60c77e72cbc6f76dcd0aa7"
+  },
+  "graph_facts": {
+    "rows": 119,
+    "sha256": "f3d6ff65a072f3273febf96a3d287510e5b3c86f50adc5cbdcd1f342fa1c4fa9"
+  },
+  "graph_fact_evidence": {
+    "rows": 123,
+    "sha256": "03e6938f11a8c5116e973e07bb092dd144a5c1cd6a994e24fcf770927f80f755"
+  }
+}

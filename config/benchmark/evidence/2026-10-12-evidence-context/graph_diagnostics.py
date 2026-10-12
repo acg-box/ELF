@@ -65,6 +65,9 @@ def diagnose():
         'entity_objects': sum(f['object_entity_id'] is not None for f in facts),
         'scalar_objects': sum(f['object_entity_id'] is None for f in facts),
         'unknown_valid_from': sum(f['valid_from'] is None for f in facts),
+        'known_valid_to': sum(f['valid_to'] is not None for f in facts),
+        'distinct_predicates': len({f['predicate'] for f in facts}),
+        'canonical_fragments': {label: [e['canonical'] for e in entities.values() if label in e['canonical']] for label in ['ACCT-N', 'ACCT-S', 'EGRET-CN', 'DELTA-8']},
         'groups': rows,
         'boundary': 'Read-only structural diagnosis. Source incidence means shared provenance, not identity, causality, temporal validity, or a permissible new semantic edge. No diagnostic path is passed to the model. Name candidates are tried separately, never merged.',
     }

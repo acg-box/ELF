@@ -115,8 +115,8 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 	assert_eq!(expanded.sources[0].excerpt.excerpt, content);
 	assert_eq!(expanded.sources[0].metadata.content_hash, doc.content_hash);
 
-	verify_evidence_pack(service, note_id, doc.doc_id, &doc.content_hash, content).await;
-
+	let reference =
+		verify_evidence_pack(service, note_id, doc.doc_id, &doc.content_hash, content).await;
 	let request = claim_request(doc.doc_id, &doc.content_hash, content);
 	let checked = service.evidence_check(request.clone()).await.expect("Check bindings");
 
@@ -156,6 +156,21 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 	assert!(!revoked.complete && revoked.sources.is_empty());
 	assert!(
 		!service.evidence_check(request).await.expect("Recheck current access").claims[0]
+			.binding_verified
+	);
+
+	let mut native_request = claim_request(doc.doc_id, &doc.content_hash, content);
+
+	native_request.claims.truncate(1);
+
+	native_request.claims[0].citations = vec![ClaimCitation::Reference { reference }];
+
+	assert!(
+		!service
+			.evidence_check(native_request)
+			.await
+			.expect("Reject revoked native reference")
+			.claims[0]
 			.binding_verified
 	);
 
@@ -254,7 +269,7 @@ async fn verify_evidence_pack(
 	doc_id: Uuid,
 	content_hash: &str,
 	content: &str,
-) {
+) -> String {
 	let pack_request = EvidencePackRequest {
 		tenant_id: "t".into(),
 		project_id: "p".into(),
@@ -338,4 +353,6 @@ async fn verify_evidence_pack(
 				.binding_verified
 		);
 	}
+
+	pack.sources[0].reference.clone()
 }

@@ -31,7 +31,7 @@ const ALL_TOOL_DEFINITIONS: [ToolDefinition; 41] = [
 		"elf_graph_query",
 		HttpMethod::Post,
 		"/v2/graph/query",
-		"Query graph entities and relations by structured criteria.",
+		"Query graph entities and relations by structured criteria. To inspect original context, pass selected evidence_note_ids to elf_evidence_pack; a graph edge does not certify semantic truth.",
 	),
 	ToolDefinition::new(
 		"elf_graph_report",

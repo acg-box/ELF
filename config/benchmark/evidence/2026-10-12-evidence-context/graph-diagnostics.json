@@ -3,6 +3,26 @@
   "entity_objects": 86,
   "scalar_objects": 33,
   "unknown_valid_from": 97,
+  "known_valid_to": 0,
+  "distinct_predicates": 68,
+  "canonical_fragments": {
+    "ACCT-N": [
+      "North division Atlas project (ACCT-N)",
+      "Atlas project (ACCT-N)",
+      "ACCT-N"
+    ],
+    "ACCT-S": [
+      "ACCT-S"
+    ],
+    "EGRET-CN": [
+      "EGRET-CN"
+    ],
+    "DELTA-8": [
+      "Delta project DELTA-8",
+      "DELTA-8",
+      "Delta DELTA-8"
+    ]
+  },
   "groups": [
     {
       "group": 0,

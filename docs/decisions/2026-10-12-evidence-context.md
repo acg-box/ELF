@@ -2,7 +2,7 @@
 type: Decision
 title: Keep source context and citation identity together
 description: Compose bounded source expansion and native citation resolution without a new storage authority.
-status: proposed
+status: accepted
 authority: normative
 owner: elf-service
 last_verified: 2026-10-12
@@ -60,7 +60,14 @@ The frozen graph has 119 facts and 123 evidence links. Ninety-seven facts have
 unknown validity. For Larch, the project points to a delivery mode and that mode
 points to an incident. The recovery procedure points only to the scalar
 `missing updates`. No stored semantic edge joins the incident and procedure.
-More traversal depth cannot repair this missing relation. Name fragments and
+More traversal depth cannot repair this missing relation. The 119 facts use 68
+predicate surfaces; 33 have scalar objects, and none has a known `valid_to`.
+North Atlas and Delta each have three canonical name variants. Thus the graph
+has coverage, identity, predicate, and temporal-model gaps, not just a depth
+limit. Trying each name variant independently gives 0/9 directed recovery paths
+within three edges. Allowing reverse edges gives 2/9. A separate provenance
+incidence graph gives candidate source paths for 9/9 within four hops; these are
+navigation paths, not semantic or causal assertions. Name fragments and
 directed-only traversal are separate questions and must be measured separately.
 Inspect incidence, scalar endpoints, name variants, and source-note connectivity
 before selecting a graph change. Never repair the benchmark graph with oracle
@@ -89,3 +96,12 @@ granting needed authority. Test malformed locators, hashes, UTF-8 boundaries,
 revoked access, partial packs, and unchanged originals. The service owner must
 revisit the format if sources become mutable or reference requirements change;
 remove custom formatting if a canonical Source Library locator becomes available.
+
+## Answer-contract follow-through
+
+The paid trial exposed a redundant outer citation list. Preserve its 24/36 raw
+format failures. The delivered consumer derives that list from atomic claims,
+with no text, identifier, or quote changes. Replay all retained outputs and the
+prior corpus through the same consumer; do not regenerate answers to improve a
+score. The future generation prompt stops requesting the redundant list. Report
+native-consumer results separately from the original strict-envelope contract.
