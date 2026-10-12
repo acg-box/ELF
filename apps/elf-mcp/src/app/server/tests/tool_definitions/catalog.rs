@@ -2,12 +2,18 @@ use std::collections::HashMap;
 
 use crate::app::server::HttpMethod;
 
-const ALL_TOOL_DEFINITIONS: [ToolDefinition; 40] = [
+const ALL_TOOL_DEFINITIONS: [ToolDefinition; 41] = [
 	ToolDefinition::new(
 		"elf_notes_evidence",
 		HttpMethod::Get,
 		"/v2/notes/{note_id}/evidence",
 		"Read a derived note with bounded, hash-verified original context. Use the original subject and time to assess support; a valid source hash does not prove a claim. Does not modify sources.",
+	),
+	ToolDefinition::new(
+		"elf_evidence_pack",
+		HttpMethod::Post,
+		"/v2/evidence/pack",
+		"Resolve 1-12 retrieved note IDs into deduplicated original context with native citation references. Source timestamps are record times, not inferred fact validity. Incomplete context does not prove absence.",
 	),
 	ToolDefinition::new(
 		"elf_evidence_check",
@@ -25,7 +31,7 @@ const ALL_TOOL_DEFINITIONS: [ToolDefinition; 40] = [
 		"elf_graph_query",
 		HttpMethod::Post,
 		"/v2/graph/query",
-		"Query graph entities and relations by structured criteria.",
+		"Query graph entities and relations by structured criteria. To inspect original context, pass selected evidence_note_ids to elf_evidence_pack; a graph edge does not certify semantic truth.",
 	),
 	ToolDefinition::new(
 		"elf_graph_report",

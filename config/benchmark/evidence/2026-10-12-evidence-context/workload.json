@@ -1,0 +1,884 @@
+{
+  "items": [
+    {
+      "evidence_id": "m_c558d1541c4b9d0f",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_d7a9d1f22107f233",
+      "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_99ab4da076b7c734",
+      "text": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_eb85892166acc8ef",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_f7ff6441bdd98e53",
+      "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_70bd88efee712a9a",
+      "text": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_4a54af2b364be476",
+      "text": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_ea0fb41d60279977",
+      "text": "2026-08-01. Neri started project Reed. They chose BATCH-2-741 for batch delivery. The initial retry policy was RETRY-2-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_9757cd3f6fff2b1a",
+      "text": "2026-08-08. Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages. The team tested REPLAY-2-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_89c1a1e6265841f0",
+      "text": "2026-08-15. Neri approved switching Reed from BATCH-2-741 to STREAM-2-286. This supersedes the August 1 delivery decision. The cause was the GATE-2-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_6e4b0b61170e23a6",
+      "text": "2026-08-22. Neri reviewed Reed. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-2-907, superseding RETRY-2-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_5cccbe54a3057c9d",
+      "text": "2026-08-01. Tala started project Sable. They chose BATCH-3-741 for batch delivery. The initial retry policy was RETRY-3-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_60a61eab3b3b1426",
+      "text": "2026-08-08. Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages. The team tested REPLAY-3-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_6bf734c83508b527",
+      "text": "2026-08-15. Tala approved switching Sable from BATCH-3-741 to STREAM-3-286. This supersedes the August 1 delivery decision. The cause was the GATE-3-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_b482da0e797a3b49",
+      "text": "2026-08-22. Tala reviewed Sable. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-3-907, superseding RETRY-3-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_11ab570fcca41f15",
+      "text": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_0cf97e4da97e721d",
+      "text": "2026-08-08. Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages. The team tested REPLAY-4-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_7a073c47318430f8",
+      "text": "2026-08-15. Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286. This supersedes the August 1 delivery decision. The cause was the GATE-4-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "m_10a8847f903485c5",
+      "text": "2026-08-22. Devon reviewed Cedar. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-4-907, superseding RETRY-4-108. No budget owner has been appointed.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_5_0",
+      "text": "2026-08-01. The North division Atlas project (ACCT-N), managed by Alex Rivera uses BATCH-5-741 and RETRY-5-108. The North and South divisions have separate Atlas projects and separate budgets.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_5_1",
+      "text": "2026-08-08. The North division Atlas project (ACCT-N), managed by Alex Rivera suffered incident GATE-5-519. BATCH-5-741 lost updates. Recovery procedure REPLAY-5-632 restored those updates. The team did not approve a delivery change.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_5_2",
+      "text": "2026-08-15. For the North division Atlas project (ACCT-N), managed by Alex Rivera, Alex approved STREAM-5-286 effective August 15, replacing BATCH-5-741 because of GATE-5-519. Keep REPLAY-5-632 for that incident type.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_5_3",
+      "text": "2026-08-22. The North division Atlas project (ACCT-N), managed by Alex Rivera retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108. Jordan Lee was appointed budget owner for ACCT-N effective August 20.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_6_0",
+      "text": "2026-08-01. The South division Atlas project (ACCT-S), managed by Alex Rivera uses BATCH-6-741 and RETRY-6-108. The North and South divisions have separate Atlas projects and separate budgets.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_6_1",
+      "text": "2026-08-08. The South division Atlas project (ACCT-S), managed by Alex Rivera suffered incident GATE-6-519. BATCH-6-741 lost updates. Recovery procedure REPLAY-6-632 restored those updates. The team did not approve a delivery change.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_6_2",
+      "text": "2026-08-15. For the South division Atlas project (ACCT-S), managed by Alex Rivera, Alex approved STREAM-6-286 effective August 15, replacing BATCH-6-741 because of GATE-6-519. Keep REPLAY-6-632 for that incident type.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_6_3",
+      "text": "2026-08-22. The South division Atlas project (ACCT-S), managed by Alex Rivera retains STREAM-6-286 and adopts RETRY-6-907, replacing RETRY-6-108. No budget owner has been appointed for ACCT-S as of August 22. The appointment for ACCT-N does not cover ACCT-S.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_7_0",
+      "text": "2026-08-01。陈雨负责白鹭项目，项目编号 EGRET-CN。当前采用 BATCH-7-741 投递，重试策略 RETRY-7-108。",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_7_1",
+      "text": "2026-08-08。白鹭项目 EGRET-CN 在 GATE-7-519 故障期间丢失更新。REPLAY-7-632 恢复了更新。这次会议没有批准改变投递模式。",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_7_2",
+      "text": "2026-08-15。白鹭项目 EGRET-CN 因 GATE-7-519 故障，批准当天从 BATCH-7-741 切换至 STREAM-7-286。下次同类故障继续使用 REPLAY-7-632。",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_7_3",
+      "text": "2026-08-22。白鹭项目 EGRET-CN 保持 STREAM-7-286，重试策略改为 RETRY-7-907，替代 RETRY-7-108。林澈已于8月20日被任命为预算负责人；陈雨仍是项目负责人。",
+      "timestamp": "2026-08-22T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_8_0",
+      "text": "2026-08-01. Morgan owns the Delta project DELTA-8. BATCH-8-741 is the approved delivery mode and RETRY-8-108 the retry policy.",
+      "timestamp": "2026-08-01T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_8_1",
+      "text": "2026-08-08. Delta DELTA-8 suffered incident GATE-8-519. REPLAY-8-632 restored missing updates. BATCH-8-741 remained approved after the meeting.",
+      "timestamp": "2026-08-08T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_8_2",
+      "text": "2026-08-15. Delta DELTA-8 decision log A approves STREAM-8-286 effective August 15 because of GATE-8-519 and retains REPLAY-8-632. Independent decision log B approves QUEUE-8-440 for the same project effective August 15. Neither log retracts or supersedes the other.",
+      "timestamp": "2026-08-15T12:00:00Z"
+    },
+    {
+      "evidence_id": "contrast_source_8_3",
+      "text": "2026-08-22. Delta DELTA-8 retains both conflicting August 15 decision logs, with no adjudication. The approved retry policy is still RETRY-8-108. RETRY-8-907 is only a proposal for September 1 and has not been approved. This review contains no budget-owner appointment information. It does not establish that the role is unassigned.",
+      "timestamp": "2026-08-22T12:00:00Z"
+    }
+  ],
+  "queries": [
+    {
+      "case_id": "memory-0-0",
+      "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project?",
+      "lane": "updates",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-0-1",
+      "question": "For the next outage on Larch, which recovery procedure should Mara use, and which outage gate led to the delivery-mode change?",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-0-2",
+      "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-0-3",
+      "question": "Who is the appointed budget owner for Mara's Larch project as of August 22?",
+      "lane": "abstention",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-0",
+      "question": "As of August 22, what delivery mode and retry policy apply to Ivo's Cobalt project?",
+      "lane": "updates",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-1",
+      "question": "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-2",
+      "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-1-3",
+      "question": "Who is the appointed budget owner for Ivo's Cobalt project as of August 22?",
+      "lane": "abstention",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-0",
+      "question": "As of August 22, what delivery mode and retry policy apply to Neri's Reed project?",
+      "lane": "updates",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-1",
+      "question": "For the next outage on Reed, which recovery procedure should Neri use, and which outage gate led to the delivery-mode change?",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-2",
+      "question": "What delivery mode was still approved for Neri's Reed project immediately after the August 8 meeting?",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-2-3",
+      "question": "Who is the appointed budget owner for Neri's Reed project as of August 22?",
+      "lane": "abstention",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-0",
+      "question": "As of August 22, what delivery mode and retry policy apply to Tala's Sable project?",
+      "lane": "updates",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-1",
+      "question": "For the next outage on Sable, which recovery procedure should Tala use, and which outage gate led to the delivery-mode change?",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-2",
+      "question": "What delivery mode was still approved for Tala's Sable project immediately after the August 8 meeting?",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-3-3",
+      "question": "Who is the appointed budget owner for Tala's Sable project as of August 22?",
+      "lane": "abstention",
+      "split": "test"
+    },
+    {
+      "case_id": "memory-4-0",
+      "question": "As of August 22, what delivery mode and retry policy apply to Devon's Cedar project?",
+      "lane": "updates",
+      "split": "dev"
+    },
+    {
+      "case_id": "memory-4-1",
+      "question": "For the next outage on Cedar, which recovery procedure should Devon use, and which outage gate led to the delivery-mode change?",
+      "lane": "cross_session",
+      "split": "dev"
+    },
+    {
+      "case_id": "memory-4-2",
+      "question": "What delivery mode was still approved for Devon's Cedar project immediately after the August 8 meeting?",
+      "lane": "temporal",
+      "split": "dev"
+    },
+    {
+      "case_id": "memory-4-3",
+      "question": "Who is the appointed budget owner for Devon's Cedar project as of August 22?",
+      "lane": "abstention",
+      "split": "dev"
+    },
+    {
+      "case_id": "contrast-5-0",
+      "question": "As of August 22, which delivery mode and retry policy apply to the North division Atlas project (ACCT-N), managed by Alex Rivera?",
+      "lane": "update",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-5-1",
+      "question": "For the next outage on the North division Atlas project (ACCT-N), managed by Alex Rivera, what recovery procedure should be used and which incident caused the delivery change?",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-5-2",
+      "question": "Which delivery mode was approved immediately after the August 8 meeting for the North division Atlas project (ACCT-N), managed by Alex Rivera?",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-5-3",
+      "question": "Who is the appointed budget owner for the North division Atlas project (ACCT-N), managed by Alex Rivera as of August 22?",
+      "lane": "abstention",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-6-0",
+      "question": "As of August 22, which delivery mode and retry policy apply to the South division Atlas project (ACCT-S), managed by Alex Rivera?",
+      "lane": "update",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-6-1",
+      "question": "For the next outage on the South division Atlas project (ACCT-S), managed by Alex Rivera, what recovery procedure should be used and which incident caused the delivery change?",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-6-2",
+      "question": "Which delivery mode was approved immediately after the August 8 meeting for the South division Atlas project (ACCT-S), managed by Alex Rivera?",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-6-3",
+      "question": "Who is the appointed budget owner for the South division Atlas project (ACCT-S), managed by Alex Rivera as of August 22?",
+      "lane": "abstention",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-7-0",
+      "question": "截至8月22日，白鹭项目 EGRET-CN 的投递模式和重试策略是什么？",
+      "lane": "update",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-7-1",
+      "question": "白鹭项目下次同类故障应使用哪个恢复流程，哪次故障导致投递模式改变？",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-7-2",
+      "question": "8月8日会议刚结束时，白鹭项目仍批准使用哪个投递模式？",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-7-3",
+      "question": "截至8月22日，白鹭项目 EGRET-CN 的预算负责人是谁？请区分项目负责人。",
+      "lane": "abstention",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-8-0",
+      "question": "As of August 22, what delivery mode and retry policy are approved for Delta DELTA-8? Explain unresolved conflicts rather than picking a winner.",
+      "lane": "update",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-8-1",
+      "question": "For Delta DELTA-8, which procedure restored updates and which incident motivated the delivery proposals?",
+      "lane": "cross_session",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-8-2",
+      "question": "Immediately after the August 8 meeting, what delivery mode remained approved for Delta DELTA-8?",
+      "lane": "temporal",
+      "split": "test"
+    },
+    {
+      "case_id": "contrast-8-3",
+      "question": "Who is the budget owner for Delta DELTA-8 as of August 22? Distinguish missing information from a confirmed unassigned role.",
+      "lane": "abstention",
+      "split": "test"
+    }
+  ],
+  "oracle": {
+    "memory-0-0": {
+      "facts": [
+        "STREAM-0-286",
+        "RETRY-0-907"
+      ],
+      "forbidden": [
+        "BATCH-0-741",
+        "RETRY-0-108"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_c558d1541c4b9d0f",
+        "m_d7a9d1f22107f233",
+        "m_99ab4da076b7c734",
+        "m_d6297f549707f98d"
+      ]
+    },
+    "memory-0-1": {
+      "facts": [
+        "REPLAY-0-632",
+        "GATE-0-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "m_c558d1541c4b9d0f",
+        "m_d7a9d1f22107f233",
+        "m_99ab4da076b7c734",
+        "m_d6297f549707f98d"
+      ]
+    },
+    "memory-0-2": {
+      "facts": [
+        "BATCH-0-741"
+      ],
+      "forbidden": [
+        "STREAM-0-286"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_c558d1541c4b9d0f",
+        "m_d7a9d1f22107f233",
+        "m_99ab4da076b7c734",
+        "m_d6297f549707f98d"
+      ]
+    },
+    "memory-0-3": {
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "memory-1-0": {
+      "facts": [
+        "STREAM-1-286",
+        "RETRY-1-907"
+      ],
+      "forbidden": [
+        "BATCH-1-741",
+        "RETRY-1-108"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_eb85892166acc8ef",
+        "m_f7ff6441bdd98e53",
+        "m_70bd88efee712a9a",
+        "m_4a54af2b364be476"
+      ]
+    },
+    "memory-1-1": {
+      "facts": [
+        "REPLAY-1-632",
+        "GATE-1-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "m_eb85892166acc8ef",
+        "m_f7ff6441bdd98e53",
+        "m_70bd88efee712a9a",
+        "m_4a54af2b364be476"
+      ]
+    },
+    "memory-1-2": {
+      "facts": [
+        "BATCH-1-741"
+      ],
+      "forbidden": [
+        "STREAM-1-286"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_eb85892166acc8ef",
+        "m_f7ff6441bdd98e53",
+        "m_70bd88efee712a9a",
+        "m_4a54af2b364be476"
+      ]
+    },
+    "memory-1-3": {
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "memory-2-0": {
+      "facts": [
+        "STREAM-2-286",
+        "RETRY-2-907"
+      ],
+      "forbidden": [
+        "BATCH-2-741",
+        "RETRY-2-108"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_ea0fb41d60279977",
+        "m_9757cd3f6fff2b1a",
+        "m_89c1a1e6265841f0",
+        "m_6e4b0b61170e23a6"
+      ]
+    },
+    "memory-2-1": {
+      "facts": [
+        "REPLAY-2-632",
+        "GATE-2-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "m_ea0fb41d60279977",
+        "m_9757cd3f6fff2b1a",
+        "m_89c1a1e6265841f0",
+        "m_6e4b0b61170e23a6"
+      ]
+    },
+    "memory-2-2": {
+      "facts": [
+        "BATCH-2-741"
+      ],
+      "forbidden": [
+        "STREAM-2-286"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_ea0fb41d60279977",
+        "m_9757cd3f6fff2b1a",
+        "m_89c1a1e6265841f0",
+        "m_6e4b0b61170e23a6"
+      ]
+    },
+    "memory-2-3": {
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "memory-3-0": {
+      "facts": [
+        "STREAM-3-286",
+        "RETRY-3-907"
+      ],
+      "forbidden": [
+        "BATCH-3-741",
+        "RETRY-3-108"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_5cccbe54a3057c9d",
+        "m_60a61eab3b3b1426",
+        "m_6bf734c83508b527",
+        "m_b482da0e797a3b49"
+      ]
+    },
+    "memory-3-1": {
+      "facts": [
+        "REPLAY-3-632",
+        "GATE-3-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "m_5cccbe54a3057c9d",
+        "m_60a61eab3b3b1426",
+        "m_6bf734c83508b527",
+        "m_b482da0e797a3b49"
+      ]
+    },
+    "memory-3-2": {
+      "facts": [
+        "BATCH-3-741"
+      ],
+      "forbidden": [
+        "STREAM-3-286"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_5cccbe54a3057c9d",
+        "m_60a61eab3b3b1426",
+        "m_6bf734c83508b527",
+        "m_b482da0e797a3b49"
+      ]
+    },
+    "memory-3-3": {
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "memory-4-0": {
+      "facts": [
+        "STREAM-4-286",
+        "RETRY-4-907"
+      ],
+      "forbidden": [
+        "BATCH-4-741",
+        "RETRY-4-108"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_11ab570fcca41f15",
+        "m_0cf97e4da97e721d",
+        "m_7a073c47318430f8",
+        "m_10a8847f903485c5"
+      ]
+    },
+    "memory-4-1": {
+      "facts": [
+        "REPLAY-4-632",
+        "GATE-4-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "m_11ab570fcca41f15",
+        "m_0cf97e4da97e721d",
+        "m_7a073c47318430f8",
+        "m_10a8847f903485c5"
+      ]
+    },
+    "memory-4-2": {
+      "facts": [
+        "BATCH-4-741"
+      ],
+      "forbidden": [
+        "STREAM-4-286"
+      ],
+      "supported": true,
+      "evidence": [
+        "m_11ab570fcca41f15",
+        "m_0cf97e4da97e721d",
+        "m_7a073c47318430f8",
+        "m_10a8847f903485c5"
+      ]
+    },
+    "memory-4-3": {
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "evidence": []
+    },
+    "contrast-5-0": {
+      "facts": [
+        "STREAM-5-286",
+        "RETRY-5-907"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_5_0",
+        "contrast_source_5_1",
+        "contrast_source_5_2",
+        "contrast_source_5_3"
+      ]
+    },
+    "contrast-5-1": {
+      "facts": [
+        "REPLAY-5-632",
+        "GATE-5-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_5_0",
+        "contrast_source_5_1",
+        "contrast_source_5_2",
+        "contrast_source_5_3"
+      ]
+    },
+    "contrast-5-2": {
+      "facts": [
+        "BATCH-5-741"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_5_0",
+        "contrast_source_5_1",
+        "contrast_source_5_2",
+        "contrast_source_5_3"
+      ]
+    },
+    "contrast-5-3": {
+      "facts": [
+        "Jordan Lee"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "answer_state": "supported",
+      "evidence": [
+        "contrast_source_5_0",
+        "contrast_source_5_1",
+        "contrast_source_5_2",
+        "contrast_source_5_3"
+      ]
+    },
+    "contrast-6-0": {
+      "facts": [
+        "STREAM-6-286",
+        "RETRY-6-907"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_6_0",
+        "contrast_source_6_1",
+        "contrast_source_6_2",
+        "contrast_source_6_3"
+      ]
+    },
+    "contrast-6-1": {
+      "facts": [
+        "REPLAY-6-632",
+        "GATE-6-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_6_0",
+        "contrast_source_6_1",
+        "contrast_source_6_2",
+        "contrast_source_6_3"
+      ]
+    },
+    "contrast-6-2": {
+      "facts": [
+        "BATCH-6-741"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_6_0",
+        "contrast_source_6_1",
+        "contrast_source_6_2",
+        "contrast_source_6_3"
+      ]
+    },
+    "contrast-6-3": {
+      "facts": [],
+      "forbidden": [
+        "Jordan Lee"
+      ],
+      "supported": false,
+      "answer_state": "absent",
+      "evidence": [
+        "contrast_source_6_0",
+        "contrast_source_6_1",
+        "contrast_source_6_2",
+        "contrast_source_6_3"
+      ]
+    },
+    "contrast-7-0": {
+      "facts": [
+        "STREAM-7-286",
+        "RETRY-7-907"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_7_0",
+        "contrast_source_7_1",
+        "contrast_source_7_2",
+        "contrast_source_7_3"
+      ]
+    },
+    "contrast-7-1": {
+      "facts": [
+        "REPLAY-7-632",
+        "GATE-7-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_7_0",
+        "contrast_source_7_1",
+        "contrast_source_7_2",
+        "contrast_source_7_3"
+      ]
+    },
+    "contrast-7-2": {
+      "facts": [
+        "BATCH-7-741"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_7_0",
+        "contrast_source_7_1",
+        "contrast_source_7_2",
+        "contrast_source_7_3"
+      ]
+    },
+    "contrast-7-3": {
+      "facts": [
+        "林澈"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "answer_state": "supported",
+      "evidence": [
+        "contrast_source_7_0",
+        "contrast_source_7_1",
+        "contrast_source_7_2",
+        "contrast_source_7_3"
+      ]
+    },
+    "contrast-8-0": {
+      "facts": [
+        "STREAM-8-286",
+        "QUEUE-8-440",
+        "RETRY-8-108"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "answer_state": "conflict",
+      "evidence": [
+        "contrast_source_8_0",
+        "contrast_source_8_1",
+        "contrast_source_8_2",
+        "contrast_source_8_3"
+      ]
+    },
+    "contrast-8-1": {
+      "facts": [
+        "REPLAY-8-632",
+        "GATE-8-519"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_8_0",
+        "contrast_source_8_1",
+        "contrast_source_8_2",
+        "contrast_source_8_3"
+      ]
+    },
+    "contrast-8-2": {
+      "facts": [
+        "BATCH-8-741"
+      ],
+      "forbidden": [],
+      "supported": true,
+      "evidence": [
+        "contrast_source_8_0",
+        "contrast_source_8_1",
+        "contrast_source_8_2",
+        "contrast_source_8_3"
+      ]
+    },
+    "contrast-8-3": {
+      "facts": [],
+      "forbidden": [],
+      "supported": false,
+      "answer_state": "unknown",
+      "evidence": [
+        "contrast_source_8_0",
+        "contrast_source_8_1",
+        "contrast_source_8_2",
+        "contrast_source_8_3"
+      ]
+    }
+  }
+}

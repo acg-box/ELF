@@ -1,0 +1,350 @@
+[
+  {
+    "case_id": "memory-0-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct Larch mode and updated retry policy.",
+    "citation_review_reason": "The August 22 original retains the August 15 choice and sets the retry; the August 15 original identifies that choice explicitly.",
+    "answer_sha256": "a638561729b8a8725a32b30f9dad0d682f8c9908816d62739a42a24f41ea6bbc",
+    "claims_sha256": "5ca7f98635003888f35dd5cb037aae2e41f9f43d1918539dccfa3dae6c3217cc"
+  },
+  {
+    "case_id": "contrast-5-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct North Atlas mode, retry, manager, and approval history.",
+    "citation_review_reason": "The cited North originals explicitly identify ACCT-N and Alex Rivera, and establish current mode, effective date, and retry replacement.",
+    "answer_sha256": "c8f743607d51061736448d95d63e8d2fff4d49374be57fd662134aae4ce7f54b",
+    "claims_sha256": "50611c5f605bc8c7bce0215b59af2eb986968cb9a839944c893c7357ff24da3d"
+  },
+  {
+    "case_id": "contrast-7-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correctly retains Egret's BATCH mode immediately after the August 8 meeting.",
+    "citation_review_reason": "Chinese originals establish the initial mode and explicit no-change decision for the same project.",
+    "answer_sha256": "94c762ba3e12881ce09504ba2bf0338bfce3eccc58a35a16ef2d98d0aa02a3a0",
+    "claims_sha256": "bec17a3b8ede4800d71156ad275d3314c5995a1a79dbea207a52b2dcada885a7"
+  },
+  {
+    "case_id": "contrast-8-0",
+    "correct": true,
+    "semantic_grounding": false,
+    "reason": "The raw answer correctly preserves competing Delta approvals and the current retry policy, but violates the top-level citation-array format.",
+    "citation_review_reason": "Retained as invalid structured output. The formal claims were not accepted or checked; semantic structured-citation pass is not awarded.",
+    "answer_sha256": "41b92d72793ac508be879f30012eaa94b3c571491ba33a60063041b359214a0e",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "native_semantic_grounding": true
+  },
+  {
+    "case_id": "memory-0-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "The raw answer gives the correct Larch recovery and causal gate, but violates the top-level citation-array contract.",
+    "citation_review_reason": "Strict structured output remains invalid. Separately, native claims cite the correct August 8 recovery, August 15 cause, and August 22 instruction; no unrelated subject is used.",
+    "answer_sha256": "3df0eb2777f8a62dc9c389b46b62de2df433ce5eb60e8ac1f2f0bace0868e8dd",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-0-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Keeps Larch's initial mode at the August 8 boundary and correctly labels the later switch.",
+    "citation_review_reason": "Initial choice, explicit no-change meeting, and later approval each cite their own Larch source records.",
+    "answer_sha256": "6d3165c2094aa03b1018d6cb1a25efe1246e76e3053e4e6fbd801c07bd46f87b",
+    "claims_sha256": "66f1fdc89cc186948c4b468bb701d290a8d95d4062481af026ad41d7f29f2c03"
+  },
+  {
+    "case_id": "memory-0-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct explicit absence of a Larch budget-owner appointment.",
+    "citation_review_reason": "The citation includes Mara's Larch review and its explicit no-owner statement, rather than an unqualified generic note.",
+    "answer_sha256": "805a66a7b102dec631d66d854d3bf2cbc63c6184996a3d5c17fb8d7240fc86c9",
+    "claims_sha256": "5f1e26cc118d23d994ecdbea39533d487eef3920dcf1dcb9fd84a9854b6d5dda"
+  },
+  {
+    "case_id": "memory-1-0",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Cobalt current mode and retry; strict output has the same top-level citation-list shape error.",
+    "citation_review_reason": "Native atomic claims are supported by Cobalt's August 15 choice and August 22 retention/retry update; strict structured output remains invalid.",
+    "answer_sha256": "93dd50430c16585a63639af235e41b4e7e2debcc3162f741effd3cf62f4c0427",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-1-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Cobalt recovery, causal outage, and chronology; the top-level citation-list shape is invalid.",
+    "citation_review_reason": "Native claims join Cobalt's recovery record to its later next-outage instruction and cite the explicit causal approval record.",
+    "answer_sha256": "6a511a8fc24abac1bde7da592e9329f8c3216e5cdf90bdd4813e4daf34c864ab",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-1-2",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Cobalt historical mode; strict outer citation-list format fails.",
+    "citation_review_reason": "Native claims cite Cobalt's initial choice and its own no-change meeting, without unrelated generic evidence.",
+    "answer_sha256": "2a56bab3ef05089b30488b4a536cb3a853325a8a37165cca2cf2db4daa96a52c",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-1-3",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct explicit absence for Cobalt, with invalid top-level citation-list format.",
+    "citation_review_reason": "The original source explicitly names Cobalt and the no-owner appointment statement; native binding passes.",
+    "answer_sha256": "84e407f00a818e25c5ee8f9b0233dec6e2393b4abd2e9f689f1b291f12a18f00",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-2-0",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Reed mode and retry, with the strict outer citation-list shape failure.",
+    "citation_review_reason": "Native claims cite Reed's explicit August 15 choice and August 22 retention and retry replacement.",
+    "answer_sha256": "ad9a1f68748316ac350ec95f26394a064c47008ce7b99075046bece1adfa1431",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-2-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Reed recovery, incident, and decision chronology; strict top-level citations are malformed.",
+    "citation_review_reason": "Native claims cite Reed originals for the next-outage directive, successful recovery, no-change meeting, and explicit causal switch.",
+    "answer_sha256": "1d15bf7dd43d4e697c0beff9d88d3a57c207d634ca726282a78ab4dd433925b3",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-2-2",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Reed historical mode; the outer citation-list format fails.",
+    "citation_review_reason": "Native claims connect Reed's original mode with its explicit no-change meeting using only Reed sources.",
+    "answer_sha256": "c362a701f75ee033f41cc4df3b4da0f7da3739a055f62823c58ff3394d8d96eb",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-2-3",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct explicit absence of a Reed appointment, with invalid outer citation-list shape.",
+    "citation_review_reason": "The cited original binds the review and absence statement to Neri and Reed.",
+    "answer_sha256": "c052af8689c46e3a4c5c71f729b7a9861bb9ff99383c830dd5f75bb0889a7896",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-3-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct current Sable mode and retry.",
+    "citation_review_reason": "Sable's approval and retention records jointly support the mode, and the August 22 source explicitly sets the retry.",
+    "answer_sha256": "1280d6cf4006070b6eecd38c63ffab590911dcdd780eeb2bb0244e18863cbb56",
+    "claims_sha256": "177c5fb8669de162b2504d127825c9013505ab288497f9881b20723ccfc7a30d"
+  },
+  {
+    "case_id": "memory-3-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Sable recovery, causal incident, and chronological distinction; outer citation-list shape fails.",
+    "citation_review_reason": "Each native claim cites Sable records for the incident, successful procedure, no-change meeting, later causal switch, and next-outage directive.",
+    "answer_sha256": "16b4d7424c11f2cfdae95d61c482cbfa39de04f588c6ffd1c48737f96faf2a09",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-3-2",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Sable historical approval, with the strict outer citation-list shape failure.",
+    "citation_review_reason": "The native claims use the dated August 1 decision and its explicit August 15 supersession to establish the prior mode. They do not cite an unrelated meeting or apply the later mode early.",
+    "answer_sha256": "56cfaf54b479a803e563ef8e5cb900772d87aa7dd2cc3f1a69c5562d4ea4d8d8",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-3-3",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct explicit absence for Sable; outer citation-list shape is invalid.",
+    "citation_review_reason": "Sable's own original review contains the no-owner statement and date.",
+    "answer_sha256": "b98359a9b22c025a33b58d404e2ed351734d2ef615b740fa3ee0283527194b5b",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-4-0",
+    "correct": false,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Incomplete: the required current Cedar mode is unknown because the initial candidate set lacks the August 15 source. Retry and historical initial mode are correct. Outer citation-list shape also fails.",
+    "citation_review_reason": "Native claims accurately describe the available Cedar originals and do not invent the missing delivery choice. This is a retrieval-coverage limit, not false attribution.",
+    "answer_sha256": "3d4333d359b61c75bf5c4e82891e403b9f28b927e87521dae6d401ef8bd9a341",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-4-1",
+    "correct": false,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Incomplete causal answer: the packet supports the Cedar recovery and incident but lacks the August 15 causal decision. The model correctly leaves that causal link unknown. Strict outer citation-list format also fails.",
+    "citation_review_reason": "Native claims are supported by the named Cedar originals and distinguish the observed incident from an unestablished causal link.",
+    "answer_sha256": "2ded62401d9b5908e69261e68755e8739cbc3988ff74b9a2c832235ad6626eab",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-4-2",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Cedar historical mode, with strict outer citation-list shape failure.",
+    "citation_review_reason": "Native claims cite Cedar's initial choice and explicit no-change meeting.",
+    "answer_sha256": "355647cae163c5721612c3ee859a6cfbd2bb8a2308771fd267e6b82943e8a526",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "memory-4-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct explicit absence of a Cedar budget-owner appointment.",
+    "citation_review_reason": "Cedar's dated review directly supports the absence, without unsupported comparisons to other appointments.",
+    "answer_sha256": "310274df3659390a8655cdf916db40dbdceac6e3d66dda99e14fc5f7fda0f34a",
+    "claims_sha256": "26b0b14071505339a0f4099c3bbf0da197f448f764f6f90a3cb6dda57299a202"
+  },
+  {
+    "case_id": "contrast-5-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct North recovery, incident, and effective date.",
+    "citation_review_reason": "The North original explicitly preserves the recovery procedure for that incident type and states the cause of the delivery change; the August 8 record supports the historical recovery.",
+    "answer_sha256": "d5d31494082a7f937ac264970dd20aedcd47570863b5f257d140e206797efbde",
+    "claims_sha256": "4e94a86c963a9f6da369d3afaf1faac4661dcf1d43fe771b4271e32541994b53"
+  },
+  {
+    "case_id": "contrast-5-2",
+    "correct": false,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Does not return the required retained BATCH mode; instead treats the ambiguous wording as an unknown new approval event. It does not incorrectly move the later STREAM choice to August 8. Outer citation-list format also fails.",
+    "citation_review_reason": "Native claims correctly cite North's no-change meeting and later review, and mark the unestablished approval event unknown. The answer is incomplete under the frozen expected-state rubric.",
+    "answer_sha256": "45fd43eb4d1a84db2a4937ab4cbe2f306a8106c16c9c8dca94f3bcdaa315f36c",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-5-3",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct North budget owner and effective date; strict outer citation-list shape fails.",
+    "citation_review_reason": "The North original explicitly assigns Jordan Lee to ACCT-N; no South absence is treated as a conflict.",
+    "answer_sha256": "799b9758302562339c6d1a8063e1639b93e21ab604d05b30fa4afd1d601efe28",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-6-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct South mode, retry, manager, and date.",
+    "citation_review_reason": "The South original explicitly names ACCT-S and all reported facts.",
+    "answer_sha256": "7e737ca2ce9034c4e8a96592753e4aed4b90bfd91b5fcd10ff91cc5ed3566d4e",
+    "claims_sha256": "dc957e00d02e73098f3d57fc2cb20d445b9c377f755824682f0a8972c06ca55d"
+  },
+  {
+    "case_id": "contrast-6-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct South recovery and causal incident, with strict outer citation-list shape failure.",
+    "citation_review_reason": "South's dated originals establish the successful procedure, causal change, and instruction to keep that procedure for the incident type.",
+    "answer_sha256": "c8e84b7c9beb567407f5c9ccf50fced859b455b1c4242cbca4bb175748c2e77c",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-6-2",
+    "correct": false,
+    "semantic_grounding": false,
+    "native_semantic_grounding": false,
+    "reason": "Selects the August 15 STREAM approval for a question about immediately after August 8. The later-date explanation does not answer the requested retained-state question. Outer citation-list format also fails.",
+    "citation_review_reason": "Native citations support the later approval, but not that mode at the requested immediate post-meeting time. The answer drops the limiting word immediately.",
+    "answer_sha256": "09a0113e025bb32d95d0650709de879b89ed6cbd7db30c06adb2bf09c15961c8",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-6-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correctly distinguishes South's explicit absence from North's appointment.",
+    "citation_review_reason": "The South original states the manager, lack of appointment, and separate coverage directly.",
+    "answer_sha256": "3b1313fdce0b44a0108dcd737f56058eecbe1a3b98a2b667f7b647e1d3e3ad02",
+    "claims_sha256": "21881a8d4183bdef95c1a9f6f3235aa093525dbf67a73c252a4f15afe0efb181"
+  },
+  {
+    "case_id": "contrast-7-0",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct current Egret mode and retry in Chinese; strict outer citation-list shape fails.",
+    "citation_review_reason": "The Chinese original explicitly binds all requested values to EGRET-CN and August 22.",
+    "answer_sha256": "d234c05124f39d772832083cdcc7e7810d58c551c1b3d71707dbf6893684ae22",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-7-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Egret recovery, causal incident, and approval date; outer citation-list shape fails.",
+    "citation_review_reason": "The Chinese original explicitly gives both the cause and next-outage recovery instruction for the named project.",
+    "answer_sha256": "f7cd2e839dbb114246cb5306f157d68f8cc085950066e87030516df127b1d0ee",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-7-3",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correctly distinguishes Egret budget owner Lin Che from project lead Chen Yu and preserves the appointment date; strict outer citation-list shape fails.",
+    "citation_review_reason": "All native claims cite the same Chinese original that explicitly distinguishes both roles.",
+    "answer_sha256": "0b316571f66eb9bd20df9d77f9303fb4ef3396af2867ffa801c760469f5a2815",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-8-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correct Delta recovery and incident, with the cause specifically attributed to log A and the separate log B conflict retained.",
+    "citation_review_reason": "Original Delta records establish recovery, the explicit log A cause, the independent log B decision, and no adjudication.",
+    "answer_sha256": "1daedf00ce5a9fd1c9596036d63efc37171d4133eb99d9e4e17f5e202ac95fb4",
+    "claims_sha256": "5abe3b57255a7b0a7f06271877aa8a3a78c8cd1dc7c68eb4dab83a402d2682bb"
+  },
+  {
+    "case_id": "contrast-8-2",
+    "correct": true,
+    "semantic_grounding": false,
+    "native_semantic_grounding": true,
+    "reason": "Correct Delta historical mode; strict outer citation-list shape fails.",
+    "citation_review_reason": "The Delta originals explicitly establish the initial approved mode and its retention after the meeting.",
+    "answer_sha256": "4956dd5d201d7da4c8b32b74b8d80f48ab4a0db10f1bcbc863b0606849718475",
+    "claims_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  {
+    "case_id": "contrast-8-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Correctly distinguishes unknown budget ownership from confirmed absence.",
+    "citation_review_reason": "Delta's original review explicitly states missing appointment information and denies that this establishes an unassigned role.",
+    "answer_sha256": "7d684c0a0b460a10e7ff4ef14d358d11147bae45a5c8f5ed83eb771f49ad5996",
+    "claims_sha256": "83b825fab518a0c47ade147855fb60f96910237bac1eb7d54d41162bf01ddf9b"
+  }
+]

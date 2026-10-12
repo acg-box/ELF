@@ -7,8 +7,8 @@ use rmcp::{
 use crate::app::server::{
 	ElfMcp, HttpMethod,
 	schemas::{
-		evidence_check_schema, notes_get_schema, notes_list_schema, notes_patch_schema,
-		notes_publish_schema, notes_unpublish_schema,
+		evidence_check_schema, evidence_pack_schema, notes_get_schema, notes_list_schema,
+		notes_patch_schema, notes_publish_schema, notes_unpublish_schema,
 	},
 	support,
 };
@@ -54,6 +54,11 @@ impl ElfMcp {
 			None,
 		)
 		.await
+	}
+
+	#[rmcp::tool(name = "elf_evidence_pack", description = "Resolve 1-12 retrieved note IDs into deduplicated original context with native citation references. Source timestamps are record times, not inferred fact validity. Incomplete context does not prove absence.", input_schema = evidence_pack_schema())]
+	async fn elf_evidence_pack(&self, params: JsonObject) -> Result<CallToolResult, ErrorData> {
+		self.forward(HttpMethod::Post, "/v2/evidence/pack", params, None).await
 	}
 
 	#[rmcp::tool(name = "elf_evidence_check", description = "Check each claim citation against currently readable notes or hash-guarded original quotes. This verifies source bindings, not semantic entailment.", input_schema = evidence_check_schema())]

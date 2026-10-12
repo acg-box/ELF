@@ -2,9 +2,12 @@ use uuid::Uuid;
 
 use crate::acceptance::text_boundary::setup;
 use elf_service::{
-	AddEventRequest, DocsPutRequest, EventMessage, EventSourceDocument, NoteFetchRequest,
+	AddEventRequest, DocsPutRequest, ElfService, EventMessage, EventSourceDocument,
+	NoteFetchRequest,
 	docs::TextPositionSelector,
-	evidence::{ClaimCitation, ClaimEvidence, ClaimState, EvidenceCheckRequest},
+	evidence::{
+		ClaimCitation, ClaimEvidence, ClaimState, EvidenceCheckRequest, EvidencePackRequest,
+	},
 };
 
 fn claim_request(doc_id: Uuid, content_hash: &str, content: &str) -> EvidenceCheckRequest {
@@ -112,6 +115,8 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 	assert_eq!(expanded.sources[0].excerpt.excerpt, content);
 	assert_eq!(expanded.sources[0].metadata.content_hash, doc.content_hash);
 
+	let reference =
+		verify_evidence_pack(service, note_id, doc.doc_id, &doc.content_hash, content).await;
 	let request = claim_request(doc.doc_id, &doc.content_hash, content);
 	let checked = service.evidence_check(request.clone()).await.expect("Check bindings");
 
@@ -151,6 +156,21 @@ async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_acces
 	assert!(!revoked.complete && revoked.sources.is_empty());
 	assert!(
 		!service.evidence_check(request).await.expect("Recheck current access").claims[0]
+			.binding_verified
+	);
+
+	let mut native_request = claim_request(doc.doc_id, &doc.content_hash, content);
+
+	native_request.claims.truncate(1);
+
+	native_request.claims[0].citations = vec![ClaimCitation::Reference { reference }];
+
+	assert!(
+		!service
+			.evidence_check(native_request)
+			.await
+			.expect("Reject revoked native reference")
+			.claims[0]
 			.binding_verified
 	);
 
@@ -241,4 +261,98 @@ async fn evidence_expansion_anchors_each_quote_in_a_long_source_span() {
 	assert_eq!(original, (content, doc.content_hash));
 
 	fixture.test_db.cleanup().await.expect("Clean fixture");
+}
+
+async fn verify_evidence_pack(
+	service: &ElfService,
+	note_id: Uuid,
+	doc_id: Uuid,
+	content_hash: &str,
+	content: &str,
+) -> String {
+	let pack_request = EvidencePackRequest {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		read_profile: "private_plus_project".into(),
+		note_ids: vec![note_id, note_id],
+		max_source_bytes: None,
+	};
+	let pack = service.evidence_pack(pack_request.clone()).await.expect("Pack evidence");
+
+	assert!(pack.complete);
+	assert_eq!(pack.notes.len(), 1);
+	assert_eq!(pack.sources.len(), 1);
+	assert_eq!(pack.sources[0].text, content);
+	assert_eq!(pack.sources[0].source_timestamp.as_deref(), Some("2026-08-22T00:00:00Z"));
+	assert_eq!(pack.notes[0].source_references, vec![pack.sources[0].reference.clone()]);
+	assert_eq!(pack.source_bytes, content.len());
+
+	let partial = service
+		.evidence_pack(EvidencePackRequest {
+			max_source_bytes: Some(content.len() - 1),
+			..pack_request.clone()
+		})
+		.await
+		.expect("Budgeted evidence");
+
+	assert!(!partial.complete);
+	assert!(!partial.notes[0].complete);
+	assert!(partial.sources.is_empty());
+
+	let denied = service
+		.evidence_pack(EvidencePackRequest { agent_id: "other".into(), ..pack_request })
+		.await
+		.expect("Do not disclose unreadable notes or sources");
+
+	assert!(denied.notes.is_empty() && denied.sources.is_empty());
+	assert!(!denied.complete);
+
+	let mut references = claim_request(doc_id, content_hash, content);
+
+	references.claims.truncate(1);
+
+	references.claims[0].citations =
+		vec![ClaimCitation::Reference { reference: pack.sources[0].reference.clone() }];
+
+	let native = service.evidence_check(references.clone()).await.expect("Resolve reference");
+
+	assert!(native.claims[0].binding_verified);
+	assert_eq!(native.semantic_support, "not_evaluated");
+
+	let Some(ClaimCitation::Source { quote, content_hash: resolved_hash, .. }) =
+		&native.claims[0].resolved_citations[0]
+	else {
+		panic!("Expected original source citation");
+	};
+
+	assert_eq!(quote, content);
+	assert_eq!(resolved_hash, content_hash);
+
+	let denied = service
+		.evidence_check(EvidenceCheckRequest { agent_id: "other".into(), ..references.clone() })
+		.await
+		.expect("Reference does not grant access");
+
+	assert!(!denied.claims[0].binding_verified);
+	assert!(denied.claims[0].resolved_citations[0].is_none());
+
+	for reference in [
+		pack.sources[0].reference.replace(content_hash, &"0".repeat(64)),
+		format!("elf-source-v1/{}/{}/12/13", doc_id, content_hash),
+		format!("elf-source-v1/{}/{}/0/{}", doc_id, content_hash, content.len() + 1),
+	] {
+		references.claims[0].citations = vec![ClaimCitation::Reference { reference }];
+
+		assert!(
+			!service
+				.evidence_check(references.clone())
+				.await
+				.expect("Reject invalid reference")
+				.claims[0]
+				.binding_verified
+		);
+	}
+
+	pack.sources[0].reference.clone()
 }

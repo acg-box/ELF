@@ -1,0 +1,52 @@
+{
+  "verified_at": "2026-10-12T12:58:26.284543+00:00",
+  "removed_containers": [
+    {
+      "id": "186b16c7f816d2ff9e3e8e71a6d7c5f39dc64b8a8109808a7b9f07e213336529",
+      "name": "elf-context-db",
+      "image": "pgvector/pgvector:pg18"
+    },
+    {
+      "id": "603ac6e02f01af61d07d17a66657fa094b3b75757e5bf676b4478a2aba369e91",
+      "name": "elf-context-qdrant",
+      "image": "qdrant/qdrant:v1.18.0"
+    }
+  ],
+  "removed_volumes": [
+    "19606e54a27730c5ec7e4e15c26e017e240929e72a1cf017e7454bfbb1ae3a40"
+  ],
+  "stopped_native_api_pid": 81233,
+  "preserved_unrelated_containers": [
+    "0612de418a16363d1b33844e9fac9a350a53c62a888847ad7919f2c6a8364988",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "5537bcad41a43193a1919510969c84881ed507eff5b6c04683e81b62fbbaaec0",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d",
+    "60de474701008644fe32369605cfcd3f51b2b3c9c92e6116074a230ca1de55f0",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "8451df7830edfacf2bbb99e140f94bdc2d9a51604494d4987f8aea3ba88879ac",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b"
+  ],
+  "remaining_containers": [
+    "0612de418a16363d1b33844e9fac9a350a53c62a888847ad7919f2c6a8364988",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "5537bcad41a43193a1919510969c84881ed507eff5b6c04683e81b62fbbaaec0",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d",
+    "60de474701008644fe32369605cfcd3f51b2b3c9c92e6116074a230ca1de55f0",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "8451df7830edfacf2bbb99e140f94bdc2d9a51604494d4987f8aea3ba88879ac",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b"
+  ],
+  "shared_images_preserved": true,
+  "global_prune": false,
+  "backup_preserved": {
+    "backup_sha256": "229ce0d0fdced79ce21f16dabd1df354a53543fd82cebb021ad033270298cd7d",
+    "database": "elf_context_trial",
+    "container": "elf-context-db",
+    "source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/grounded-evidence-4096/native-fixture.dump"
+  },
+  "raw_results_preserved": "/Users/x/code/acg-box/ELF/tmp/elf-evidence-context"
+}

@@ -3,8 +3,18 @@ use serde::Deserialize;
 use crate::routes::{self, ApiError, AppState, HeaderMap, Json, Path, RequestContext, State, Uuid};
 use elf_service::{
 	NoteFetchRequest,
-	evidence::{ClaimEvidence, EvidenceCheckRequest, EvidenceCheckResponse, NoteEvidenceResponse},
+	evidence::{
+		ClaimEvidence, EvidenceCheckRequest, EvidenceCheckResponse, EvidencePackRequest,
+		EvidencePackResponse, NoteEvidenceResponse,
+	},
 };
+
+#[derive(Deserialize)]
+#[serde(deny_unknown_fields)]
+pub(super) struct PackBody {
+	note_ids: Vec<Uuid>,
+	max_source_bytes: Option<usize>,
+}
 
 #[derive(Deserialize)]
 #[serde(deny_unknown_fields)]
@@ -55,6 +65,30 @@ pub(super) async fn evidence_check(
 				agent_id: ctx.agent_id,
 				read_profile,
 				claims: body.claims,
+			})
+			.await?,
+	))
+}
+
+#[utoipa::path(post, path = "/v2/evidence/pack", tag = "notes", request_body = Value, responses((status = 200, description = "Derived notes and bounded original context with native citations.", body = Value)))]
+pub(super) async fn evidence_pack(
+	State(state): State<AppState>,
+	headers: HeaderMap,
+	Json(body): Json<PackBody>,
+) -> Result<Json<EvidencePackResponse>, ApiError> {
+	let ctx = RequestContext::from_headers(&headers)?;
+	let read_profile = routes::required_read_profile(&headers)?;
+
+	Ok(Json(
+		state
+			.service
+			.evidence_pack(EvidencePackRequest {
+				tenant_id: ctx.tenant_id,
+				project_id: ctx.project_id,
+				agent_id: ctx.agent_id,
+				read_profile,
+				note_ids: body.note_ids,
+				max_source_bytes: body.max_source_bytes,
 			})
 			.await?,
 	))

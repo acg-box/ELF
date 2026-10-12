@@ -1,0 +1,50 @@
+[
+  {
+    "cohort": "original_test",
+    "cases": 16,
+    "factual": 16,
+    "semantic": 4,
+    "mechanical": 4,
+    "joint": 4,
+    "native_semantic": 16,
+    "native_mechanical": 16,
+    "native_joint": 16,
+    "strict_valid_output": 4,
+    "reader_median_seconds": 38.98484079146874,
+    "reader_max_seconds": 73.88735320797423,
+    "prefetch_median_seconds": 0.022559625009307638,
+    "chat_cost_usd": 0.08138466
+  },
+  {
+    "cohort": "contrast_test",
+    "cases": 16,
+    "factual": 14,
+    "semantic": 7,
+    "mechanical": 7,
+    "joint": 7,
+    "native_semantic": 15,
+    "native_mechanical": 16,
+    "native_joint": 14,
+    "strict_valid_output": 7,
+    "reader_median_seconds": 32.33880793701974,
+    "reader_max_seconds": 103.25363583298167,
+    "prefetch_median_seconds": 0.022560979006811976,
+    "chat_cost_usd": 0.076933494
+  },
+  {
+    "cohort": "original_dev",
+    "cases": 4,
+    "factual": 2,
+    "semantic": 1,
+    "mechanical": 1,
+    "joint": 1,
+    "native_semantic": 4,
+    "native_mechanical": 4,
+    "native_joint": 2,
+    "strict_valid_output": 1,
+    "reader_median_seconds": 72.7728962499823,
+    "reader_max_seconds": 117.76703645900125,
+    "prefetch_median_seconds": 0.021745437989011407,
+    "chat_cost_usd": 0.033966936
+  }
+]

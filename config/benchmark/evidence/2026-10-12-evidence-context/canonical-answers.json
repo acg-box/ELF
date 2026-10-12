@@ -1,0 +1,1913 @@
+[
+  {
+    "case_id": "contrast-5-0",
+    "answer": {
+      "text": "As of August 22, 2026, the North division Atlas project (ACCT-N), managed by Alex Rivera, applies delivery mode STREAM-5-286 and retry policy RETRY-5-907 (replacing RETRY-5-108).",
+      "supported": true,
+      "claims": [
+        {
+          "text": "The North division Atlas project (ACCT-N) is managed by Alex Rivera.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Alex approved STREAM-5-286 for ACCT-N effective August 15, replacing BATCH-5-741 because of GATE-5-519.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/48d02284-625c-53e1-bcd5-082fb5f6aa6d/9c45aebbf2439d75fed30d59996cb571169b0866e24fb33b4c04c8a9007d3f1d/0/217"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, ACCT-N retains delivery mode STREAM-5-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, ACCT-N adopts retry policy RETRY-5-907, replacing RETRY-5-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215",
+        "elf-source-v1/48d02284-625c-53e1-bcd5-082fb5f6aa6d/9c45aebbf2439d75fed30d59996cb571169b0866e24fb33b4c04c8a9007d3f1d/0/217"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "contrast-5-1",
+    "answer": {
+      "text": "For the next outage on the North division Atlas project (ACCT-N), use REPLAY-5-632. The delivery change was caused by incident GATE-5-519, which led to STREAM-5-286 replacing BATCH-5-741 effective August 15, 2026.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "For the next outage on the North division Atlas project (ACCT-N), managed by Alex Rivera, the recovery procedure to use is REPLAY-5-632.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/48d02284-625c-53e1-bcd5-082fb5f6aa6d/9c45aebbf2439d75fed30d59996cb571169b0866e24fb33b4c04c8a9007d3f1d/0/217"
+            }
+          ]
+        },
+        {
+          "text": "The ACCT-N delivery change—Alex's approval of STREAM-5-286 effective August 15, replacing BATCH-5-741—was caused by incident GATE-5-519.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/48d02284-625c-53e1-bcd5-082fb5f6aa6d/9c45aebbf2439d75fed30d59996cb571169b0866e24fb33b4c04c8a9007d3f1d/0/217"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-08, ACCT-N suffered incident GATE-5-519; BATCH-5-741 lost updates and REPLAY-5-632 restored them.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/023d66c1-cbcb-599f-8296-f2551acda2cf/907fd2e261caaccdf643d595d4c090666282b7607c199db4af5ebf877ece67b7/0/233"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/48d02284-625c-53e1-bcd5-082fb5f6aa6d/9c45aebbf2439d75fed30d59996cb571169b0866e24fb33b4c04c8a9007d3f1d/0/217",
+        "elf-source-v1/023d66c1-cbcb-599f-8296-f2551acda2cf/907fd2e261caaccdf643d595d4c090666282b7607c199db4af5ebf877ece67b7/0/233"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "contrast-5-2",
+    "answer": {
+      "text": "The evidence does not establish that a delivery mode was approved immediately after the August 8 meeting for the North division Atlas project (ACCT-N). The August 8 record states the team did not approve a delivery change; the later August 22 record states ACCT-N retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108, but does not state when STREAM-5-286 was approved.",
+      "supported": false,
+      "claims": [
+        {
+          "text": "The 2026-08-08 record for the North division Atlas project (ACCT-N) states that the team did not approve a delivery change.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/023d66c1-cbcb-599f-8296-f2551acda2cf/907fd2e261caaccdf643d595d4c090666282b7607c199db4af5ebf877ece67b7/0/233"
+            }
+          ]
+        },
+        {
+          "text": "The 2026-08-22 record for the North division Atlas project (ACCT-N) states that ACCT-N retains STREAM-5-286 and adopts RETRY-5-907, replacing RETRY-5-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215"
+            }
+          ]
+        },
+        {
+          "text": "The evidence does not establish that a delivery mode was approved immediately after the August 8 meeting for ACCT-N, or that STREAM-5-286 was approved at that time.",
+          "state": "unknown",
+          "citations": []
+        }
+      ],
+      "citations": [
+        "elf-source-v1/023d66c1-cbcb-599f-8296-f2551acda2cf/907fd2e261caaccdf643d595d4c090666282b7607c199db4af5ebf877ece67b7/0/233",
+        "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-5-3",
+    "answer": {
+      "text": "Jordan Lee was appointed budget owner for the North division Atlas project (ACCT-N), effective August 20, 2026.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Jordan Lee was appointed budget owner for the North division Atlas project (ACCT-N), effective August 20, 2026.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/890ab6f0-85d3-5adf-b405-8c7a5500ef0c/69c51a34690f1008bda32311bc96fba014ea523d614f029636fc9f7a787f4bad/0/215"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-6-0",
+    "answer": {
+      "text": "As of August 22, 2026, the South division Atlas project (ACCT-S), managed by Alex Rivera, retains delivery mode STREAM-6-286 and adopts retry policy RETRY-6-907, replacing RETRY-6-108.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "The South division Atlas project (ACCT-S) is managed by Alex Rivera.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+            }
+          ]
+        },
+        {
+          "text": "As of August 22, 2026, ACCT-S retains delivery mode STREAM-6-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+            }
+          ]
+        },
+        {
+          "text": "As of August 22, 2026, ACCT-S adopts retry policy RETRY-6-907, replacing RETRY-6-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "contrast-6-1",
+    "answer": {
+      "text": "For the next outage on the South division Atlas project (ACCT-S), managed by Alex Rivera, the recovery procedure to use is REPLAY-6-632. The ACCT-S delivery change to STREAM-6-286 was caused by incident GATE-6-519.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "On 2026-08-08, the South division Atlas project (ACCT-S), managed by Alex Rivera, suffered incident GATE-6-519; BATCH-6-741 lost updates, and the recovery procedure REPLAY-6-632 restored those updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1c6fccdd-86e7-5af9-b831-4ab8ccffa023/4a2e4e36b060157419aa69024e0748e652fc41095e8010a19c6468dd640e94af/0/233"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, for the South division Atlas project (ACCT-S), Alex approved STREAM-6-286 effective August 15, replacing BATCH-6-741 because of GATE-6-519.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+            }
+          ]
+        },
+        {
+          "text": "For the South division Atlas project (ACCT-S), keep REPLAY-6-632 for the GATE-6-519 incident type.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+            }
+          ]
+        },
+        {
+          "text": "The incident that caused the ACCT-S delivery change was GATE-6-519.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+            }
+          ]
+        },
+        {
+          "text": "For the next ACCT-S outage of the GATE-6-519 incident type, the recovery procedure to use is REPLAY-6-632.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1c6fccdd-86e7-5af9-b831-4ab8ccffa023/4a2e4e36b060157419aa69024e0748e652fc41095e8010a19c6468dd640e94af/0/233"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/1c6fccdd-86e7-5af9-b831-4ab8ccffa023/4a2e4e36b060157419aa69024e0748e652fc41095e8010a19c6468dd640e94af/0/233",
+        "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-6-2",
+    "answer": {
+      "text": "The delivery mode approved after the August 8 meeting for the South division Atlas project (ACCT-S) was STREAM-6-286. At the August 8 meeting, no delivery-mode change was approved for ACCT-S; the approval recorded afterward was STREAM-6-286, effective August 15, 2026, replacing BATCH-6-741.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "The South division Atlas project (ACCT-S) is managed by Alex Rivera.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+            }
+          ]
+        },
+        {
+          "text": "At the 2026-08-08 meeting, no delivery change was approved for ACCT-S.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1c6fccdd-86e7-5af9-b831-4ab8ccffa023/4a2e4e36b060157419aa69024e0748e652fc41095e8010a19c6468dd640e94af/0/233"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Alex approved STREAM-6-286 for ACCT-S effective August 15, replacing BATCH-6-741 because of GATE-6-519.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+            }
+          ]
+        },
+        {
+          "text": "The delivery mode approved after the August 8 meeting for ACCT-S was STREAM-6-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1c6fccdd-86e7-5af9-b831-4ab8ccffa023/4a2e4e36b060157419aa69024e0748e652fc41095e8010a19c6468dd640e94af/0/233"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/db9c2704-b404-5a81-9a01-7e0c1a291d5f/e215dfc2d13a173aeaf4bae8190d1dd229123bb7e32481ef1e5065cb3a03bcac/0/217",
+        "elf-source-v1/1c6fccdd-86e7-5af9-b831-4ab8ccffa023/4a2e4e36b060157419aa69024e0748e652fc41095e8010a19c6468dd640e94af/0/233"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-6-3",
+    "answer": {
+      "text": "The South division Atlas project (ACCT-S) is managed by Alex Rivera. No budget owner has been appointed for ACCT-S as of August 22. The appointment for ACCT-N does not cover ACCT-S.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "The South division Atlas project (ACCT-S) is managed by Alex Rivera.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+            }
+          ]
+        },
+        {
+          "text": "No budget owner has been appointed for ACCT-S as of August 22.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+            }
+          ]
+        },
+        {
+          "text": "The appointment for ACCT-N does not cover ACCT-S.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/5737d6bc-b893-5609-9a85-94bf7835219a/e8c45ec2366c1d4d8e7dd65db91fb28d6d4eb8799dd301e16503837283ff12ee/0/258"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "contrast-7-0",
+    "answer": {
+      "text": "截至 2026-08-22，白鹭项目 EGRET-CN 的投递模式为 STREAM-7-286；重试策略为 RETRY-7-907，替代 RETRY-7-108。",
+      "supported": true,
+      "claims": [
+        {
+          "text": "截至 2026-08-22，白鹭项目 EGRET-CN 的投递模式为 STREAM-7-286。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3afcc964-23c3-5d0c-8720-60e8126325e0/93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d/0/192"
+            }
+          ]
+        },
+        {
+          "text": "截至 2026-08-22，白鹭项目 EGRET-CN 的重试策略为 RETRY-7-907，替代 RETRY-7-108。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3afcc964-23c3-5d0c-8720-60e8126325e0/93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d/0/192"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/3afcc964-23c3-5d0c-8720-60e8126325e0/93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d/0/192"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-7-1",
+    "answer": {
+      "text": "白鹭项目 EGRET-CN 下次同类故障应继续使用 REPLAY-7-632；导致投递模式改变的是 GATE-7-519 故障，该决定于 2026-08-15 批准，将投递从 BATCH-7-741 切换为 STREAM-7-286。",
+      "supported": true,
+      "claims": [
+        {
+          "text": "白鹭项目 EGRET-CN 下次同类故障应继续使用 REPLAY-7-632。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9ae7ee6e-440d-5563-88f6-e8089c595ad5/e3898cc8f849a262256542961531b5d35a696a05c4a5349be17ec777490c5627/0/158"
+            }
+          ]
+        },
+        {
+          "text": "GATE-7-519 故障导致白鹭项目 EGRET-CN 的投递模式改变。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9ae7ee6e-440d-5563-88f6-e8089c595ad5/e3898cc8f849a262256542961531b5d35a696a05c4a5349be17ec777490c5627/0/158"
+            }
+          ]
+        },
+        {
+          "text": "2026-08-15，白鹭项目 EGRET-CN 因 GATE-7-519 批准当天从 BATCH-7-741 切换至 STREAM-7-286。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9ae7ee6e-440d-5563-88f6-e8089c595ad5/e3898cc8f849a262256542961531b5d35a696a05c4a5349be17ec777490c5627/0/158"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/9ae7ee6e-440d-5563-88f6-e8089c595ad5/e3898cc8f849a262256542961531b5d35a696a05c4a5349be17ec777490c5627/0/158"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-7-2",
+    "answer": {
+      "text": "8月8日会议刚结束时，白鹭项目 EGRET-CN 仍批准使用的投递模式是 BATCH-7-741。",
+      "supported": true,
+      "claims": [
+        {
+          "text": "截至2026-08-01，白鹭项目 EGRET-CN 采用 BATCH-7-741 投递模式。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0dd8dbcc-5873-5eaf-8576-65a5d0605396/44bc86e31cbd032ecb9c51d93596486a7db147c1947dc3d10522fae110a95fe4/0/125"
+            }
+          ]
+        },
+        {
+          "text": "2026-08-08会议没有批准改变白鹭项目 EGRET-CN 的投递模式。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b4605f67-bc94-5f44-97d4-c1cf163a6151/c6f119dc157ed7c733a4990b079f866482f06bf55428939d1ae5e92a15830f97/0/153"
+            }
+          ]
+        },
+        {
+          "text": "因此，8月8日会议刚结束时，白鹭项目 EGRET-CN 仍批准使用的投递模式是 BATCH-7-741。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0dd8dbcc-5873-5eaf-8576-65a5d0605396/44bc86e31cbd032ecb9c51d93596486a7db147c1947dc3d10522fae110a95fe4/0/125"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b4605f67-bc94-5f44-97d4-c1cf163a6151/c6f119dc157ed7c733a4990b079f866482f06bf55428939d1ae5e92a15830f97/0/153"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/0dd8dbcc-5873-5eaf-8576-65a5d0605396/44bc86e31cbd032ecb9c51d93596486a7db147c1947dc3d10522fae110a95fe4/0/125",
+        "elf-source-v1/b4605f67-bc94-5f44-97d4-c1cf163a6151/c6f119dc157ed7c733a4990b079f866482f06bf55428939d1ae5e92a15830f97/0/153"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "contrast-7-3",
+    "answer": {
+      "text": "截至2026年8月22日，白鹭项目 EGRET-CN 的预算负责人是林澈（2026年8月20日被任命）；项目负责人是陈雨，且陈雨仍担任项目负责人。",
+      "supported": true,
+      "claims": [
+        {
+          "text": "截至2026年8月22日，白鹭项目 EGRET-CN 的预算负责人是林澈。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3afcc964-23c3-5d0c-8720-60e8126325e0/93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d/0/192"
+            }
+          ]
+        },
+        {
+          "text": "林澈于2026年8月20日被任命为白鹭项目 EGRET-CN 的预算负责人。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3afcc964-23c3-5d0c-8720-60e8126325e0/93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d/0/192"
+            }
+          ]
+        },
+        {
+          "text": "截至2026年8月22日，陈雨仍是白鹭项目 EGRET-CN 的项目负责人，与预算负责人林澈角色不同。",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3afcc964-23c3-5d0c-8720-60e8126325e0/93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d/0/192"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/3afcc964-23c3-5d0c-8720-60e8126325e0/93c1dd76acf18e88c3cb926dcf86dd95d48f8cd64507ea009e5a6508b5a1238d/0/192"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-8-0",
+    "answer": {
+      "text": "Delta DELTA-8 as of 2026-08-22 has an unresolved delivery-mode conflict: decision log A approved STREAM-8-286 effective 2026-08-15, while independent decision log B approved QUEUE-8-440 effective 2026-08-15; neither log retracted or superseded the other, and the 2026-08-22 review retained both conflicting logs with no adjudication. The approved retry policy remains RETRY-8-108; RETRY-8-907 is only an unapproved proposal for September 1. An earlier 2026-08-01 record listed BATCH-8-741 as the approved delivery mode and RETRY-8-108 as the retry policy.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "As of 2026-08-01, BATCH-8-741 was recorded as the approved delivery mode for the Delta project DELTA-8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9e6780ee-3c75-5795-be9b-47ade3c47056/4f3d51c7cb039751fc53355ae4848b5c2bed441fdb559de91f72367970b4fde7/0/126"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-01, RETRY-8-108 was recorded as the retry policy for the Delta project DELTA-8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9e6780ee-3c75-5795-be9b-47ade3c47056/4f3d51c7cb039751fc53355ae4848b5c2bed441fdb559de91f72367970b4fde7/0/126"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Delta DELTA-8 decision log A approved STREAM-8-286 effective 2026-08-15.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, independent Delta DELTA-8 decision log B approved QUEUE-8-440 effective 2026-08-15.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266"
+            }
+          ]
+        },
+        {
+          "text": "Neither decision log A nor decision log B retracted or superseded the other.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, Delta DELTA-8 retained both conflicting August 15 decision logs with no adjudication.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        },
+        {
+          "text": "For Delta DELTA-8 as of 2026-08-22, the delivery-mode approval is unresolved rather than having a single adjudicated winner.",
+          "state": "conflict",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, the approved retry policy for Delta DELTA-8 was still RETRY-8-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        },
+        {
+          "text": "RETRY-8-907 was only a proposal for September 1 and had not been approved as of 2026-08-22.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/9e6780ee-3c75-5795-be9b-47ade3c47056/4f3d51c7cb039751fc53355ae4848b5c2bed441fdb559de91f72367970b4fde7/0/126",
+        "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266",
+        "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-8-1",
+    "answer": {
+      "text": "For Delta DELTA-8, REPLAY-8-632 restored the missing updates after incident GATE-8-519. GATE-8-519 was the stated reason for decision log A's August 15 delivery approval of STREAM-8-286; decision log B separately approved QUEUE-8-440 for the same project. The two August 15 decision logs remained conflicting and unadjudicated as of the 2026-08-22 review.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Delta DELTA-8 suffered incident GATE-8-519.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b89ecd61-6625-58e0-9339-b5b3d8f734ee/a873ba7f51d4eb63ba10c1f69efd892db8ad88b4f5538ff6da94ec6869e67176/0/143"
+            }
+          ]
+        },
+        {
+          "text": "For Delta DELTA-8, REPLAY-8-632 restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b89ecd61-6625-58e0-9339-b5b3d8f734ee/a873ba7f51d4eb63ba10c1f69efd892db8ad88b4f5538ff6da94ec6869e67176/0/143"
+            }
+          ]
+        },
+        {
+          "text": "For Delta DELTA-8, decision log A approved STREAM-8-286 effective 2026-08-15 because of GATE-8-519.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266"
+            }
+          ]
+        },
+        {
+          "text": "For Delta DELTA-8, decision log B independently approved QUEUE-8-440 effective 2026-08-15.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266"
+            }
+          ]
+        },
+        {
+          "text": "As of the 2026-08-22 review, Delta DELTA-8 retained both conflicting August 15 decision logs with no adjudication.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/b89ecd61-6625-58e0-9339-b5b3d8f734ee/a873ba7f51d4eb63ba10c1f69efd892db8ad88b4f5538ff6da94ec6869e67176/0/143",
+        "elf-source-v1/5a1836ea-422c-58c3-9ec0-03fb31a0a1f3/fde338fcf20e4e2d9e46e5d6f40c5b097d1c6323b59221192ad1ec4e005fb0bd/0/266",
+        "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "contrast-8-2",
+    "answer": {
+      "text": "Immediately after the August 8, 2026 meeting, BATCH-8-741 remained the approved delivery mode for Delta DELTA-8.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "As of 2026-08-01, BATCH-8-741 was the approved delivery mode for Delta DELTA-8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9e6780ee-3c75-5795-be9b-47ade3c47056/4f3d51c7cb039751fc53355ae4848b5c2bed441fdb559de91f72367970b4fde7/0/126"
+            }
+          ]
+        },
+        {
+          "text": "After the 2026-08-08 meeting, BATCH-8-741 remained approved for Delta DELTA-8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b89ecd61-6625-58e0-9339-b5b3d8f734ee/a873ba7f51d4eb63ba10c1f69efd892db8ad88b4f5538ff6da94ec6869e67176/0/143"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/9e6780ee-3c75-5795-be9b-47ade3c47056/4f3d51c7cb039751fc53355ae4848b5c2bed441fdb559de91f72367970b4fde7/0/126",
+        "elf-source-v1/b89ecd61-6625-58e0-9339-b5b3d8f734ee/a873ba7f51d4eb63ba10c1f69efd892db8ad88b4f5538ff6da94ec6869e67176/0/143"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "contrast-8-3",
+    "answer": {
+      "text": "As of 2026-08-22, the budget owner for Delta DELTA-8 is not identified. The Delta DELTA-8 review contains no budget-owner appointment information and does not establish that the budget-owner role is unassigned, so the status is missing/unknown rather than a confirmed unassigned role.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "The identity of the budget owner for Delta DELTA-8 as of 2026-08-22 is not identified in the evidence.",
+          "state": "unknown",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        },
+        {
+          "text": "The 2026-08-22 Delta DELTA-8 review contains no budget-owner appointment information.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        },
+        {
+          "text": "The 2026-08-22 Delta DELTA-8 review does not establish that the budget-owner role is unassigned.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        },
+        {
+          "text": "For Delta DELTA-8 as of 2026-08-22, the budget-owner status is missing/unknown rather than a confirmed unassigned role.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/ded7e3d2-cf01-5b89-a1dd-8675cf44c20d/9bfa3cc7266bc8f3dcdc846cba86e0e811433a258e8cf48985195d45629076e2/0/332"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "memory-0-0",
+    "answer": {
+      "text": "As of 2026-08-22, Mara's Larch project uses delivery mode STREAM-0-286, retained from the August 15 delivery decision. Its retry policy is RETRY-0-907, superseding RETRY-0-108.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "As of 2026-08-22, Mara's Larch project uses delivery mode STREAM-0-286, retained from the August 15 delivery decision.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, Mara's Larch project has retry policy RETRY-0-907, superseding RETRY-0-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237",
+        "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "memory-0-1",
+    "answer": {
+      "text": "For the next outage on Larch, Mara should use REPLAY-0-632, the recovery procedure validated on August 8. The delivery-mode change—Larch switching from BATCH-0-741 to STREAM-0-286—was caused by the GATE-0-519 outages recorded on August 8. No delivery-mode change had been approved at the August 8 meeting.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "On 2026-08-08, Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages; the team tested REPLAY-0-632, which restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0be90114-0a70-5aff-b5a1-c416f0cf6d34/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205"
+            }
+          ]
+        },
+        {
+          "text": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0be90114-0a70-5aff-b5a1-c416f0cf6d34/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Mara approved switching Larch from BATCH-0-741 to STREAM-0-286, superseding the August 1 delivery decision.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+            }
+          ]
+        },
+        {
+          "text": "The cause of Larch's delivery-mode change was the GATE-0-519 outages recorded on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+            }
+          ]
+        },
+        {
+          "text": "After Mara's 2026-08-22 review of Larch, the August 15 delivery choice was kept, and for the next outage Mara should use the recovery procedure validated on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+            }
+          ]
+        },
+        {
+          "text": "The recovery procedure validated on August 8 for Larch was REPLAY-0-632, which restored updates lost by BATCH-0-741 during the GATE-0-519 outages.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0be90114-0a70-5aff-b5a1-c416f0cf6d34/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/0be90114-0a70-5aff-b5a1-c416f0cf6d34/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+        "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241",
+        "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-0-2",
+    "answer": {
+      "text": "Immediately after the August 8 meeting, BATCH-0-741 was still the approved delivery mode for Mara's Larch project; it was later switched to STREAM-0-286 on August 15.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "On 2026-08-01, Mara started the Larch project and chose BATCH-0-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/bc82954e-c401-5c8e-b65d-c8933e3ef02b/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124"
+            }
+          ]
+        },
+        {
+          "text": "At the 2026-08-08 meeting, no change of delivery mode was approved after Mara reported BATCH-0-741 lost updates during GATE-0-519 outages.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0be90114-0a70-5aff-b5a1-c416f0cf6d34/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205"
+            }
+          ]
+        },
+        {
+          "text": "Immediately after the 2026-08-08 meeting, BATCH-0-741 remained the approved delivery mode for Mara's Larch project.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/bc82954e-c401-5c8e-b65d-c8933e3ef02b/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0be90114-0a70-5aff-b5a1-c416f0cf6d34/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Mara approved switching Larch from BATCH-0-741 to STREAM-0-286, later than the August 8 meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/bc82954e-c401-5c8e-b65d-c8933e3ef02b/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124",
+        "elf-source-v1/0be90114-0a70-5aff-b5a1-c416f0cf6d34/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+        "elf-source-v1/b4974e9b-bf63-51ac-9419-b08632a32873/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "memory-0-3",
+    "answer": {
+      "text": "As of August 22, no budget owner has been appointed for Mara's Larch project.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "As of 2026-08-22, no budget owner has been appointed for Mara's Larch project.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/c833f302-431e-5ede-8f6f-9654ff6949f0/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "memory-1-0",
+    "answer": {
+      "text": "As of 2026-08-22, Ivo's Cobalt project uses delivery mode STREAM-1-286 and retry policy RETRY-1-907, which supersedes RETRY-1-108.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "As of 2026-08-22, Ivo's Cobalt project uses delivery mode STREAM-1-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0cff314f-7a10-5a96-a842-b03f60e283a2/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, Ivo's Cobalt project uses retry policy RETRY-1-907.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+            }
+          ]
+        },
+        {
+          "text": "For Ivo's Cobalt project, RETRY-1-907 supersedes RETRY-1-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+        "elf-source-v1/0cff314f-7a10-5a96-a842-b03f60e283a2/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-1-1",
+    "answer": {
+      "text": "For the next outage on Cobalt, Ivo should use the recovery procedure validated on August 8—REPLAY-1-632, which restored the missing updates. No delivery-mode change was approved at the 2026-08-08 meeting; Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286 on 2026-08-15, caused by the GATE-1-519 outages recorded on August 8.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "For the next outage on Cobalt, Ivo should use the recovery procedure validated on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+            }
+          ]
+        },
+        {
+          "text": "The recovery procedure validated on August 8 was REPLAY-1-632, which restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/695171ff-aca3-5c7b-b31c-8e6f2da84483/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+            }
+          ]
+        },
+        {
+          "text": "No delivery-mode change was approved at the 2026-08-08 meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/695171ff-aca3-5c7b-b31c-8e6f2da84483/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204"
+            }
+          ]
+        },
+        {
+          "text": "Cobalt's delivery-mode change was from BATCH-1-741 to STREAM-1-286, approved by Ivo on 2026-08-15.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0cff314f-7a10-5a96-a842-b03f60e283a2/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241"
+            }
+          ]
+        },
+        {
+          "text": "The GATE-1-519 outages recorded on August 8 caused Cobalt's delivery-mode change.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0cff314f-7a10-5a96-a842-b03f60e283a2/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+        "elf-source-v1/695171ff-aca3-5c7b-b31c-8e6f2da84483/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+        "elf-source-v1/0cff314f-7a10-5a96-a842-b03f60e283a2/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-1-2",
+    "answer": {
+      "text": "Immediately after the August 8 meeting, BATCH-1-741 was still the approved delivery mode for Ivo's Cobalt project.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "On 2026-08-01, Ivo started project Cobalt and selected BATCH-1-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/f6e66d7b-afbd-532d-baff-e10c3242587e/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124"
+            }
+          ]
+        },
+        {
+          "text": "At the 2026-08-08 meeting, Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/695171ff-aca3-5c7b-b31c-8e6f2da84483/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204"
+            }
+          ]
+        },
+        {
+          "text": "No change of delivery mode was approved at that 2026-08-08 meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/695171ff-aca3-5c7b-b31c-8e6f2da84483/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204"
+            }
+          ]
+        },
+        {
+          "text": "Therefore, immediately after the 2026-08-08 meeting, BATCH-1-741 remained the approved delivery mode for Ivo's Cobalt project.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/f6e66d7b-afbd-532d-baff-e10c3242587e/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/695171ff-aca3-5c7b-b31c-8e6f2da84483/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/f6e66d7b-afbd-532d-baff-e10c3242587e/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+        "elf-source-v1/695171ff-aca3-5c7b-b31c-8e6f2da84483/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-1-3",
+    "answer": {
+      "text": "No budget owner had been appointed for Ivo's Cobalt project as of August 22, 2026.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "No budget owner had been appointed for Ivo's Cobalt project as of August 22, 2026.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/0ceb9aef-6778-5cf6-a4a5-d4bc313df631/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-2-0",
+    "answer": {
+      "text": "As of August 22, Neri's Reed project uses delivery mode STREAM-2-286 and retry policy RETRY-2-907.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "On 2026-08-15, Neri approved switching Reed from BATCH-2-741 to STREAM-2-286, superseding the August 1 delivery decision.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9f098a2b-e6b3-59e9-90d7-bafe82db8eda/fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762/0/240"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-22, Neri reviewed Reed and kept the August 15 delivery choice.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, Reed's delivery mode is STREAM-2-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9f098a2b-e6b3-59e9-90d7-bafe82db8eda/fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762/0/240"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, Reed's retry policy is RETRY-2-907, superseding RETRY-2-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/9f098a2b-e6b3-59e9-90d7-bafe82db8eda/fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762/0/240",
+        "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-2-1",
+    "answer": {
+      "text": "For Reed's next outage, Neri should use REPLAY-2-632, the recovery procedure validated on August 8 from the GATE-2-519 incident. The delivery-mode change was Neri's 2026-08-15 switch of Reed from BATCH-2-741 to STREAM-2-286, caused by the GATE-2-519 outages; no delivery-mode change was approved at the 2026-08-08 meeting.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "For Reed's next outage, Neri should use the recovery procedure validated on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+            }
+          ]
+        },
+        {
+          "text": "The successful recovery procedure from the GATE-2-519 incident recorded on August 8 was REPLAY-2-632, which restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/8b17477e-d9d4-5283-b9a1-d5daa7dc6492/2bf4722d3be2a3268603282610bd6393b4ac38f9d438ab67eb45acf05ef359ba/0/205"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9f098a2b-e6b3-59e9-90d7-bafe82db8eda/fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762/0/240"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Neri approved switching Reed from BATCH-2-741 to STREAM-2-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9f098a2b-e6b3-59e9-90d7-bafe82db8eda/fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762/0/240"
+            }
+          ]
+        },
+        {
+          "text": "The cause of the Reed delivery-mode change was the GATE-2-519 outages recorded on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/9f098a2b-e6b3-59e9-90d7-bafe82db8eda/fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762/0/240"
+            }
+          ]
+        },
+        {
+          "text": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/8b17477e-d9d4-5283-b9a1-d5daa7dc6492/2bf4722d3be2a3268603282610bd6393b4ac38f9d438ab67eb45acf05ef359ba/0/205"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236",
+        "elf-source-v1/8b17477e-d9d4-5283-b9a1-d5daa7dc6492/2bf4722d3be2a3268603282610bd6393b4ac38f9d438ab67eb45acf05ef359ba/0/205",
+        "elf-source-v1/9f098a2b-e6b3-59e9-90d7-bafe82db8eda/fd202e96fd2793000232a7dfe3f244d821b2aac24cd89ff56ee11056c884b762/0/240"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-2-2",
+    "answer": {
+      "text": "BATCH-2-741 remained the approved delivery mode for Neri's Reed project immediately after the August 8 meeting.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Neri started project Reed on 2026-08-01 and chose BATCH-2-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/c40cbd8a-f9a0-5872-9e8d-32b1b8352bba/5d8f7df65ba1b4f27d727ae35e2aa244a26355ac5df36412bdd840c1d8f17f53/0/123"
+            }
+          ]
+        },
+        {
+          "text": "At the 2026-08-08 meeting, Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages, and no change of delivery mode was approved at that meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/8b17477e-d9d4-5283-b9a1-d5daa7dc6492/2bf4722d3be2a3268603282610bd6393b4ac38f9d438ab67eb45acf05ef359ba/0/205"
+            }
+          ]
+        },
+        {
+          "text": "Therefore BATCH-2-741 remained the approved delivery mode for Neri's Reed project immediately after the August 8 meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/c40cbd8a-f9a0-5872-9e8d-32b1b8352bba/5d8f7df65ba1b4f27d727ae35e2aa244a26355ac5df36412bdd840c1d8f17f53/0/123"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/8b17477e-d9d4-5283-b9a1-d5daa7dc6492/2bf4722d3be2a3268603282610bd6393b4ac38f9d438ab67eb45acf05ef359ba/0/205"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/c40cbd8a-f9a0-5872-9e8d-32b1b8352bba/5d8f7df65ba1b4f27d727ae35e2aa244a26355ac5df36412bdd840c1d8f17f53/0/123",
+        "elf-source-v1/8b17477e-d9d4-5283-b9a1-d5daa7dc6492/2bf4722d3be2a3268603282610bd6393b4ac38f9d438ab67eb45acf05ef359ba/0/205"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-2-3",
+    "answer": {
+      "text": "No budget owner has been appointed for Neri's Reed project as of August 22, 2026.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "On 2026-08-22, Neri reviewed Reed.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, no budget owner had been appointed for Reed.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/6fc05b3a-16f4-549d-8927-4e11ff64ed27/6701197f4603f2db3db982379ad2bfa22079314ec2e66eaa4abda9fcdc95d05f/0/236"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-3-0",
+    "answer": {
+      "text": "As of August 22, Tala's Sable project uses the STREAM-3-286 delivery mode and the RETRY-3-907 retry policy.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "As of August 22, Tala's Sable project uses the STREAM-3-286 delivery mode.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+            }
+          ]
+        },
+        {
+          "text": "As of August 22, Tala's Sable project retry policy is RETRY-3-907.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241",
+        "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  },
+  {
+    "case_id": "memory-3-1",
+    "answer": {
+      "text": "For Sable's next outage, Tala should use REPLAY-3-632, the recovery procedure validated on August 8 and kept as the successful procedure from the GATE-3-519 incident. The delivery-mode change from BATCH-3-741 to STREAM-3-286 was caused by the GATE-3-519 outages recorded on August 8; no delivery-mode change was approved at the August 8 meeting, and Tala approved the switch on August 15.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "On 2026-08-08, Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3841e274-5173-5c90-8b0b-73522382b129/cff038581c7dfdd6a502e36c9397be99f243a7d9cfc010cd220653b4d6f69811/0/205"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-08, the team tested REPLAY-3-632, which restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3841e274-5173-5c90-8b0b-73522382b129/cff038581c7dfdd6a502e36c9397be99f243a7d9cfc010cd220653b4d6f69811/0/205"
+            }
+          ]
+        },
+        {
+          "text": "At the August 8, 2026 meeting, no change of delivery mode was approved.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3841e274-5173-5c90-8b0b-73522382b129/cff038581c7dfdd6a502e36c9397be99f243a7d9cfc010cd220653b4d6f69811/0/205"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Tala approved switching Sable from BATCH-3-741 to STREAM-3-286, superseding the August 1 delivery decision.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241"
+            }
+          ]
+        },
+        {
+          "text": "The cause of the Sable delivery-mode change was the GATE-3-519 outages recorded on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-22, Tala reviewed Sable and decided to keep the August 15 delivery choice and, for the next outage, use the recovery procedure validated on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+            }
+          ]
+        },
+        {
+          "text": "For Sable's next outage, the recovery procedure Tala should use is REPLAY-3-632, the successful recovery procedure from the GATE-3-519 incident.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/3841e274-5173-5c90-8b0b-73522382b129/cff038581c7dfdd6a502e36c9397be99f243a7d9cfc010cd220653b4d6f69811/0/205"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/3841e274-5173-5c90-8b0b-73522382b129/cff038581c7dfdd6a502e36c9397be99f243a7d9cfc010cd220653b4d6f69811/0/205",
+        "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241",
+        "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-3-2",
+    "answer": {
+      "text": "Immediately after the August 8 meeting, Tala's Sable project was still approved for BATCH-3-741 (batch delivery).",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Tala started project Sable on 2026-08-01 and chose BATCH-3-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ac83044a-3ad5-56a0-b2fa-0dab57b3a784/ed28537e4eae6a4b432f8d0ca49112270f35e2e2d5b6ee09382000360d46fb9b/0/124"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-15, Tala approved switching Sable from BATCH-3-741 to STREAM-3-286, superseding the August 1 delivery decision.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241"
+            }
+          ]
+        },
+        {
+          "text": "Thus, immediately after the 2026-08-08 meeting and before the 2026-08-15 switch, Sable's still-approved delivery mode was BATCH-3-741.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/ac83044a-3ad5-56a0-b2fa-0dab57b3a784/ed28537e4eae6a4b432f8d0ca49112270f35e2e2d5b6ee09382000360d46fb9b/0/124"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/ac83044a-3ad5-56a0-b2fa-0dab57b3a784/ed28537e4eae6a4b432f8d0ca49112270f35e2e2d5b6ee09382000360d46fb9b/0/124",
+        "elf-source-v1/1fbe6485-ad5f-5233-83b8-bc5b8208c54c/56b0ca5cce40ec944584a2ed0aae79159607deec0bb1adf597f0d606feb27802/0/241"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-3-3",
+    "answer": {
+      "text": "No budget owner has been appointed for Tala's Sable project as of 2026-08-22.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "No budget owner has been appointed for Tala's Sable project as of 2026-08-22.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/60b82a61-2b56-5bc4-a042-8cc7ee23b8e9/e1c3c03df8af319114172f35d575967a61c7b0a16815dde440ad701d46504723/0/237"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-4-0",
+    "answer": {
+      "text": "As of 2026-08-22, Cedar's retry policy is RETRY-4-907, superseding RETRY-4-108. The 2026-08-22 Cedar review kept the August 15 delivery choice, but the evidence pack does not identify what that August 15 delivery choice was; therefore Cedar's delivery mode as of 2026-08-22 is unknown. The pack also shows that BATCH-4-741 was chosen for batch delivery when Devon started Cedar on 2026-08-01.",
+      "supported": false,
+      "claims": [
+        {
+          "text": "On 2026-08-22, Devon reviewed Cedar.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+            }
+          ]
+        },
+        {
+          "text": "The 2026-08-22 Cedar review kept the August 15 delivery choice.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+            }
+          ]
+        },
+        {
+          "text": "As of 2026-08-22, Cedar's retry policy is RETRY-4-907, superseding RETRY-4-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+            }
+          ]
+        },
+        {
+          "text": "Cedar's delivery mode as of 2026-08-22 is unknown because the evidence pack does not identify what the August 15 delivery choice was.",
+          "state": "unknown",
+          "citations": []
+        },
+        {
+          "text": "Devon started project Cedar on 2026-08-01.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+            }
+          ]
+        },
+        {
+          "text": "BATCH-4-741 was chosen for batch delivery in the 2026-08-01 project Cedar context.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238",
+        "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-4-1",
+    "answer": {
+      "text": "For the next outage on Cedar, Devon should use REPLAY-4-632, the recovery procedure validated on 2026-08-08. The 2026-08-22 review references an August 15 delivery choice, but the evidence does not identify an outage gate that caused a Cedar delivery-mode change; at the 2026-08-08 meeting after the GATE-4-519 outages, no delivery-mode change was approved.",
+      "supported": false,
+      "claims": [
+        {
+          "text": "Devon started project Cedar on 2026-08-01.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+            }
+          ]
+        },
+        {
+          "text": "Cedar initially chose BATCH-4-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-08, Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+            }
+          ]
+        },
+        {
+          "text": "REPLAY-4-632 was tested on 2026-08-08 and restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+            }
+          ]
+        },
+        {
+          "text": "At the 2026-08-08 Cedar meeting, no change of delivery mode was approved.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-22, Devon reviewed Cedar and decided to keep the August 15 delivery choice.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+            }
+          ]
+        },
+        {
+          "text": "On 2026-08-22, Devon decided that for the next Cedar outage, the recovery procedure validated on August 8 should be used.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+            }
+          ]
+        },
+        {
+          "text": "For the next outage on Cedar, the recovery procedure Devon should use is REPLAY-4-632.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+            }
+          ]
+        },
+        {
+          "text": "The evidence does not identify an outage gate that led to a Cedar delivery-mode change.",
+          "state": "unknown",
+          "citations": []
+        }
+      ],
+      "citations": [
+        "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125",
+        "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206",
+        "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-4-2",
+    "answer": {
+      "text": "Immediately after the August 8 meeting, BATCH-4-741 remained the approved delivery mode for Devon's Cedar project.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Devon started project Cedar on 2026-08-01.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+            }
+          ]
+        },
+        {
+          "text": "BATCH-4-741 was chosen for Cedar's batch delivery at that time.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+            }
+          ]
+        },
+        {
+          "text": "At the 2026-08-08 meeting, Devon reported that BATCH-4-741 lost updates during GATE-4-519 outages.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+            }
+          ]
+        },
+        {
+          "text": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+            }
+          ]
+        },
+        {
+          "text": "Therefore, immediately after the August 8 meeting, BATCH-4-741 remained the approved delivery mode for Devon's Cedar project.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125"
+            },
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/69394bc2-752c-5524-858a-dd4576efce81/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125",
+        "elf-source-v1/80d40823-22ca-5bbb-9a5d-24ea4309ec72/1d4e9a77791d8435ab619864a8b0dc6f3ed096109fbf8c4e3d8ba11c4f833e9a/0/206"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": false
+    }
+  },
+  {
+    "case_id": "memory-4-3",
+    "answer": {
+      "text": "No budget owner has been appointed for Devon's Cedar project as of 2026-08-22.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "No budget owner has been appointed for Devon's Cedar project as of 2026-08-22.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "reference",
+              "reference": "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+            }
+          ]
+        }
+      ],
+      "citations": [
+        "elf-source-v1/e8f8c1df-73bb-598a-9f8e-11918bb990ce/064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2/0/238"
+      ],
+      "format_compliant": true,
+      "legacy_envelope_valid": true
+    }
+  }
+]
