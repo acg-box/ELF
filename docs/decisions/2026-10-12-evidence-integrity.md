@@ -51,6 +51,12 @@ Fact strings and source quotes still require verbatim grounding. Named identifie
 source occurrence and lexical validation do not prove semantic equivalence.
 Pending predicates are not automatically promoted to authoritative vocabulary.
 
+The changed built-in extraction guidance is published as `default` version 4.
+Seeding adds this version without rewriting stored version 3 or moving an
+existing default pointer. Existing deployments must explicitly select version 4
+through the profile default API or a request selector. Original records and
+prior profile versions remain unchanged.
+
 The graph table is owned by the existing declarative-first `sql/init.sql` entry
 point and its table module. Its repeatable upgrade drops the effective-start
 NOT NULL constraint and rebuilds the existing active-fact indexes. This needs a

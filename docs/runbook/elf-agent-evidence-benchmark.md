@@ -69,10 +69,22 @@ Without the flag, the replay proxy requires an exact match with a prior
 extraction request; it refuses to substitute an old output for changed messages
 or prompts. Use a compatible runtime for historical frozen-extraction trials.
 
+A live trial resumes its own saved extraction response when the complete
+message sequence matches. It does not sample another response after a native
+validation failure. Preserve the failed attempt and runtime revision before a
+software repair. Rebuild the initial retrieval contexts after a repair changes
+accepted notes, and record that preparation step separately from reader cases.
+
 `--reuse-receipts` imports only exact Qwen3-Embedding-8B inputs at the full 4,096
 dimensions. It does not import old reader answers or tool outputs. Changed note
 text and new queries can request new embeddings through the gateway. Record
 fresh extraction and changed derived state as experiment factors.
+
+The new built-in extraction profile is `default` version 4. Existing profile
+versions and default pointers are retained. Use a fresh fixture, or explicitly
+select and record the intended profile before preparation. The provider receipts
+record the actual prompt and schema; a binary revision alone does not prove
+which stored profile was selected.
 
 The pinned sidecar supplies a local reranker. Its image packaging is not a
 competitor rerun. The raw artifact directory retains complete native initial
