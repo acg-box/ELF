@@ -1,0 +1,30 @@
+{
+  "note_embeddings": {
+    "sha256": "325091eb071b0b5dd0b0400a757ed09a559e8da9aecc84d33f5633566f1cb09d",
+    "rows": 59,
+    "dimensions": [
+      4096
+    ]
+  },
+  "note_chunk_embeddings": {
+    "sha256": "bbe9447c8d412479ad7f6649c510a4028365c866753ac6fc3ea85eb458e49fcd",
+    "rows": 59,
+    "dimensions": [
+      4096
+    ]
+  },
+  "note_field_embeddings": {
+    "sha256": "637a23a753ca460ccda9d209db884d230564309291a4eba8de2a8d8facd83e34",
+    "rows": 256,
+    "dimensions": [
+      4096
+    ]
+  },
+  "doc_chunk_embeddings": {
+    "sha256": "95d38671656e4e1274355fd594521d67e7812c6ec014bca1a4a664b5f0d85383",
+    "rows": 20,
+    "dimensions": [
+      4096
+    ]
+  }
+}

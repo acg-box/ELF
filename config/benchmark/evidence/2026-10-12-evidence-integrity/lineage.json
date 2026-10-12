@@ -1,0 +1,7 @@
+{
+  "runtime_revision": "5df4500ca70be177b631f49baa2d31fd6898a98b",
+  "base_revision": "aa09a2fc0c272ef366d22a4f8ea743109c316c88",
+  "prior_bundle": "2026-10-11-agent-evidence",
+  "prior_manifest_sha256": "be29a2afb7832d3a4ea05700a925a9c47b0e3a8b5131ff1d0d6e61ddf8902ad9",
+  "changes": "New native source identity, document pointers, graph temporal and alias handling, fresh extraction with retained exact-response validation repairs, bounded-v2 agent policy. Same original sources, questions, splits, models, dimensions, and budgets. No causal isolation of individual changes."
+}

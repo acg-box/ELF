@@ -1,0 +1,502 @@
+[
+  {
+    "entity_id": "c6698e13-759e-4017-868a-605b719b33c2",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Mara",
+    "canonical_norm": "mara",
+    "kind": "person",
+    "created_at": "2026-10-12T05:54:15.733212+00:00",
+    "updated_at": "2026-10-12T05:54:15.733212+00:00"
+  },
+  {
+    "entity_id": "c9e1bb6c-9bc8-446c-a6f9-59791214d3a3",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "project Larch",
+    "canonical_norm": "project larch",
+    "kind": "project",
+    "created_at": "2026-10-12T05:54:15.733212+00:00",
+    "updated_at": "2026-10-12T05:54:15.733212+00:00"
+  },
+  {
+    "entity_id": "623326ac-aea6-4e8d-af99-4668d2af3dd4",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-0-741",
+    "canonical_norm": "batch-0-741",
+    "kind": null,
+    "created_at": "2026-10-12T05:54:15.766208+00:00",
+    "updated_at": "2026-10-12T05:54:15.766208+00:00"
+  },
+  {
+    "entity_id": "693ee564-c0ad-4476-9cda-439785ce5c15",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-0-108",
+    "canonical_norm": "retry-0-108",
+    "kind": null,
+    "created_at": "2026-10-12T05:54:15.80112+00:00",
+    "updated_at": "2026-10-12T05:54:15.80112+00:00"
+  },
+  {
+    "entity_id": "23139123-6cdf-4c4e-ac34-6c8c6fede6da",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-0-519",
+    "canonical_norm": "gate-0-519",
+    "kind": "system",
+    "created_at": "2026-10-12T05:54:28.695204+00:00",
+    "updated_at": "2026-10-12T05:54:28.695204+00:00"
+  },
+  {
+    "entity_id": "d247b8c5-e31b-4e39-9903-3c00e57cbf1b",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-0-632",
+    "canonical_norm": "replay-0-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T05:54:28.721123+00:00",
+    "updated_at": "2026-10-12T05:54:28.721123+00:00"
+  },
+  {
+    "entity_id": "0de69660-19f2-421c-ab81-7dceda6c46b6",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Larch",
+    "canonical_norm": "larch",
+    "kind": "system",
+    "created_at": "2026-10-12T05:55:50.941194+00:00",
+    "updated_at": "2026-10-12T05:55:50.941194+00:00"
+  },
+  {
+    "entity_id": "1ab56dd5-e143-4f7a-89e1-f1d04210d911",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-0-286",
+    "canonical_norm": "stream-0-286",
+    "kind": "identifier",
+    "created_at": "2026-10-12T05:55:50.941194+00:00",
+    "updated_at": "2026-10-12T05:55:50.941194+00:00"
+  },
+  {
+    "entity_id": "3a96ccf7-e66e-4b06-b073-f6b6a844f945",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Larch's switch",
+    "canonical_norm": "larch's switch",
+    "kind": "event",
+    "created_at": "2026-10-12T05:59:31.506183+00:00",
+    "updated_at": "2026-10-12T05:59:31.506183+00:00"
+  },
+  {
+    "entity_id": "d57b9b33-b191-4da6-8a0c-a4491e45ffd3",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "successful recovery procedure",
+    "canonical_norm": "successful recovery procedure",
+    "kind": "procedure",
+    "created_at": "2026-10-12T05:59:31.51387+00:00",
+    "updated_at": "2026-10-12T05:59:31.51387+00:00"
+  },
+  {
+    "entity_id": "b7e591c5-b1fb-4d9a-b54a-632bd1259f82",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-0-907",
+    "canonical_norm": "retry-0-907",
+    "kind": "policy",
+    "created_at": "2026-10-12T06:00:12.844646+00:00",
+    "updated_at": "2026-10-12T06:00:12.844646+00:00"
+  },
+  {
+    "entity_id": "82665645-c19d-4c85-962b-d8ed742b31e7",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "recovery procedure",
+    "canonical_norm": "recovery procedure",
+    "kind": "procedure",
+    "created_at": "2026-10-12T06:00:12.851108+00:00",
+    "updated_at": "2026-10-12T06:00:12.851108+00:00"
+  },
+  {
+    "entity_id": "b2ca6b6e-6dd2-4bb2-9f9e-012d9dc70eab",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Ivo",
+    "canonical_norm": "ivo",
+    "kind": "person",
+    "created_at": "2026-10-12T06:00:27.905041+00:00",
+    "updated_at": "2026-10-12T06:00:27.905041+00:00"
+  },
+  {
+    "entity_id": "587d8d7e-4c86-4daa-932c-f0ea79b4ec61",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Cobalt",
+    "canonical_norm": "cobalt",
+    "kind": "project",
+    "created_at": "2026-10-12T06:00:27.905041+00:00",
+    "updated_at": "2026-10-12T06:00:27.905041+00:00"
+  },
+  {
+    "entity_id": "6f027790-8d26-4e68-8ac1-799653898f1d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-1-741",
+    "canonical_norm": "batch-1-741",
+    "kind": "batch",
+    "created_at": "2026-10-12T06:01:04.986035+00:00",
+    "updated_at": "2026-10-12T06:01:04.986035+00:00"
+  },
+  {
+    "entity_id": "8939dc20-7df7-473a-b651-dd17731732fb",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-1-519",
+    "canonical_norm": "gate-1-519",
+    "kind": "system",
+    "created_at": "2026-10-12T06:01:04.986035+00:00",
+    "updated_at": "2026-10-12T06:01:04.986035+00:00"
+  },
+  {
+    "entity_id": "6f5df962-2125-4c33-8e2c-cdcb105c66ed",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-1-632",
+    "canonical_norm": "replay-1-632",
+    "kind": "procedure",
+    "created_at": "2026-10-12T06:01:05.135344+00:00",
+    "updated_at": "2026-10-12T06:01:05.135344+00:00"
+  },
+  {
+    "entity_id": "e4344e77-472c-4851-826b-1ee383d43417",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-1-286",
+    "canonical_norm": "stream-1-286",
+    "kind": null,
+    "created_at": "2026-10-12T06:01:42.003967+00:00",
+    "updated_at": "2026-10-12T06:01:42.003967+00:00"
+  },
+  {
+    "entity_id": "d5f8d34f-0844-4ee1-8e99-a40ab0012ac0",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-1-907",
+    "canonical_norm": "retry-1-907",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T06:02:08.652016+00:00",
+    "updated_at": "2026-10-12T06:02:08.652016+00:00"
+  },
+  {
+    "entity_id": "5a00faf3-6adc-4827-9eb3-a48607d3c0b6",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-1-108",
+    "canonical_norm": "retry-1-108",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T06:02:08.652016+00:00",
+    "updated_at": "2026-10-12T06:02:08.652016+00:00"
+  },
+  {
+    "entity_id": "3ad6ae33-c021-4b4e-b3ad-1944e96d228c",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "August 15 delivery choice",
+    "canonical_norm": "august 15 delivery choice",
+    "kind": "decision",
+    "created_at": "2026-10-12T06:02:08.69365+00:00",
+    "updated_at": "2026-10-12T06:02:08.69365+00:00"
+  },
+  {
+    "entity_id": "18f3a554-47cf-446f-9fad-64d5423a0f34",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "budget owner",
+    "canonical_norm": "budget owner",
+    "kind": "role",
+    "created_at": "2026-10-12T06:02:08.698644+00:00",
+    "updated_at": "2026-10-12T06:02:08.698644+00:00"
+  },
+  {
+    "entity_id": "3aae9692-068a-4cb6-abc8-5d4baf4bc3fb",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Neri",
+    "canonical_norm": "neri",
+    "kind": null,
+    "created_at": "2026-10-12T06:03:00.601599+00:00",
+    "updated_at": "2026-10-12T06:03:00.601599+00:00"
+  },
+  {
+    "entity_id": "c49d9c27-1b50-465c-9f5f-420f3c2b8a68",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Reed",
+    "canonical_norm": "reed",
+    "kind": "project",
+    "created_at": "2026-10-12T06:03:00.601599+00:00",
+    "updated_at": "2026-10-12T06:03:00.601599+00:00"
+  },
+  {
+    "entity_id": "a0c01593-817c-4997-8b9d-e7fb30a29caf",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-2-741",
+    "canonical_norm": "batch-2-741",
+    "kind": "batch",
+    "created_at": "2026-10-12T06:03:00.624706+00:00",
+    "updated_at": "2026-10-12T06:03:00.624706+00:00"
+  },
+  {
+    "entity_id": "e4e17e19-c15e-4a90-93c8-f2b4615697f3",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-2-519",
+    "canonical_norm": "gate-2-519",
+    "kind": "system",
+    "created_at": "2026-10-12T06:03:47.227235+00:00",
+    "updated_at": "2026-10-12T06:03:47.227235+00:00"
+  },
+  {
+    "entity_id": "3954eed1-8465-42ca-8338-3058a691e2be",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-2-632",
+    "canonical_norm": "replay-2-632",
+    "kind": "system",
+    "created_at": "2026-10-12T06:03:47.245653+00:00",
+    "updated_at": "2026-10-12T06:03:47.245653+00:00"
+  },
+  {
+    "entity_id": "1570b55f-2f52-4187-923e-46bf67f19b97",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-2-286",
+    "canonical_norm": "stream-2-286",
+    "kind": null,
+    "created_at": "2026-10-12T06:05:23.040674+00:00",
+    "updated_at": "2026-10-12T06:05:23.040674+00:00"
+  },
+  {
+    "entity_id": "91320691-8ec3-4f77-8549-a09b9785721f",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "August 1 delivery decision",
+    "canonical_norm": "august 1 delivery decision",
+    "kind": "decision",
+    "created_at": "2026-10-12T06:05:23.040674+00:00",
+    "updated_at": "2026-10-12T06:05:23.040674+00:00"
+  },
+  {
+    "entity_id": "bc6c4aef-e141-4755-9c3a-1d6dbfb293dc",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-2-907",
+    "canonical_norm": "retry-2-907",
+    "kind": "policy",
+    "created_at": "2026-10-12T06:05:50.507806+00:00",
+    "updated_at": "2026-10-12T06:05:50.507806+00:00"
+  },
+  {
+    "entity_id": "5eacdf92-c61d-4211-8d23-14a2bdd29635",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-2-108",
+    "canonical_norm": "retry-2-108",
+    "kind": "policy",
+    "created_at": "2026-10-12T06:05:50.507806+00:00",
+    "updated_at": "2026-10-12T06:05:50.507806+00:00"
+  },
+  {
+    "entity_id": "c4b10303-595c-4a75-b3b4-060ce344030f",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Tala",
+    "canonical_norm": "tala",
+    "kind": "person",
+    "created_at": "2026-10-12T06:06:22.077212+00:00",
+    "updated_at": "2026-10-12T06:06:22.077212+00:00"
+  },
+  {
+    "entity_id": "52deec11-ed00-46b0-8c4f-6d9b325ccacc",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "project Sable",
+    "canonical_norm": "project sable",
+    "kind": "project",
+    "created_at": "2026-10-12T06:06:22.077212+00:00",
+    "updated_at": "2026-10-12T06:06:22.077212+00:00"
+  },
+  {
+    "entity_id": "e6f1b5eb-0e77-438a-bc8c-44a288e4433a",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-3-741",
+    "canonical_norm": "batch-3-741",
+    "kind": "batch",
+    "created_at": "2026-10-12T06:06:22.122281+00:00",
+    "updated_at": "2026-10-12T06:06:22.122281+00:00"
+  },
+  {
+    "entity_id": "4eba320e-9e2b-4f01-821b-7586a9ea2771",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-3-108",
+    "canonical_norm": "retry-3-108",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T06:06:22.14215+00:00",
+    "updated_at": "2026-10-12T06:06:22.14215+00:00"
+  },
+  {
+    "entity_id": "80562835-4f76-457a-9ca9-7ae3852ffe6d",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-3-519",
+    "canonical_norm": "gate-3-519",
+    "kind": null,
+    "created_at": "2026-10-12T06:07:15.186929+00:00",
+    "updated_at": "2026-10-12T06:07:15.186929+00:00"
+  },
+  {
+    "entity_id": "d32a4fc4-522f-4e36-9ca7-422e9aa8f4b3",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-3-632",
+    "canonical_norm": "replay-3-632",
+    "kind": null,
+    "created_at": "2026-10-12T06:07:15.186929+00:00",
+    "updated_at": "2026-10-12T06:07:15.186929+00:00"
+  },
+  {
+    "entity_id": "d673dc92-a304-4e83-ad30-b83070784df2",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Sable",
+    "canonical_norm": "sable",
+    "kind": "system",
+    "created_at": "2026-10-12T06:08:41.589134+00:00",
+    "updated_at": "2026-10-12T06:08:41.589134+00:00"
+  },
+  {
+    "entity_id": "a94a2b0d-cbfc-45cd-9590-65271747874e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-3-286",
+    "canonical_norm": "stream-3-286",
+    "kind": "system",
+    "created_at": "2026-10-12T06:08:41.589134+00:00",
+    "updated_at": "2026-10-12T06:08:41.589134+00:00"
+  },
+  {
+    "entity_id": "cb97dcd7-a252-43cf-b555-b1b7e4247f05",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "switching Sable from BATCH-3-741 to STREAM-3-286",
+    "canonical_norm": "switching sable from batch-3-741 to stream-3-286",
+    "kind": "decision",
+    "created_at": "2026-10-12T06:08:41.589134+00:00",
+    "updated_at": "2026-10-12T06:08:41.589134+00:00"
+  },
+  {
+    "entity_id": "b69a94e4-3a16-4df1-be7a-76349960e09e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-3-907",
+    "canonical_norm": "retry-3-907",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T06:09:37.12636+00:00",
+    "updated_at": "2026-10-12T06:09:37.12636+00:00"
+  },
+  {
+    "entity_id": "fa4169a5-6c2f-4bca-8eef-73d8e77386d6",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Devon",
+    "canonical_norm": "devon",
+    "kind": "person",
+    "created_at": "2026-10-12T06:10:17.497061+00:00",
+    "updated_at": "2026-10-12T06:10:17.497061+00:00"
+  },
+  {
+    "entity_id": "b3eca3c4-dc3a-481b-b0ff-8d7d5991e7b3",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Cedar",
+    "canonical_norm": "cedar",
+    "kind": "project",
+    "created_at": "2026-10-12T06:10:17.497061+00:00",
+    "updated_at": "2026-10-12T06:10:17.497061+00:00"
+  },
+  {
+    "entity_id": "f321265f-8b0c-482e-8bfe-171077fc48ce",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "BATCH-4-741",
+    "canonical_norm": "batch-4-741",
+    "kind": "batch",
+    "created_at": "2026-10-12T06:10:17.516226+00:00",
+    "updated_at": "2026-10-12T06:10:17.516226+00:00"
+  },
+  {
+    "entity_id": "cdfbd628-361a-4392-92bb-876b1567e918",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-4-108",
+    "canonical_norm": "retry-4-108",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T06:10:17.532115+00:00",
+    "updated_at": "2026-10-12T06:10:17.532115+00:00"
+  },
+  {
+    "entity_id": "0b1168c1-6e46-4435-8cac-806f8d2bb57e",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "GATE-4-519",
+    "canonical_norm": "gate-4-519",
+    "kind": null,
+    "created_at": "2026-10-12T06:11:27.092546+00:00",
+    "updated_at": "2026-10-12T06:11:27.092546+00:00"
+  },
+  {
+    "entity_id": "d47f7e55-3d2b-4865-9827-c5b9929ebe13",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "REPLAY-4-632",
+    "canonical_norm": "replay-4-632",
+    "kind": null,
+    "created_at": "2026-10-12T06:11:27.118313+00:00",
+    "updated_at": "2026-10-12T06:11:27.118313+00:00"
+  },
+  {
+    "entity_id": "97cefe60-6984-4bd8-870b-5abebd50dc87",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "STREAM-4-286",
+    "canonical_norm": "stream-4-286",
+    "kind": "identifier",
+    "created_at": "2026-10-12T06:12:16.667525+00:00",
+    "updated_at": "2026-10-12T06:12:16.667525+00:00"
+  },
+  {
+    "entity_id": "db73a5b4-d23a-48be-b281-30daae860285",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "Cedar switch",
+    "canonical_norm": "cedar switch",
+    "kind": "decision",
+    "created_at": "2026-10-12T06:12:16.667525+00:00",
+    "updated_at": "2026-10-12T06:12:16.667525+00:00"
+  },
+  {
+    "entity_id": "424513f1-55e6-4aaf-b72a-8d510311c7c5",
+    "tenant_id": "matched",
+    "project_id": "memory",
+    "canonical": "RETRY-4-907",
+    "canonical_norm": "retry-4-907",
+    "kind": "retry policy",
+    "created_at": "2026-10-12T06:13:34.279149+00:00",
+    "updated_at": "2026-10-12T06:13:34.279149+00:00"
+  }
+]

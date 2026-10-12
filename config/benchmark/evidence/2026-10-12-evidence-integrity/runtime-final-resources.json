@@ -1,0 +1,153 @@
+[
+  {
+    "id": "ad66c812d4fc120cdbfabdca0048cc14cb63a6e6fb323faf7d848525952d71ec",
+    "name": "/elf-matched-worker",
+    "image_id": "sha256:83c92008a9e2eb20775a246ab82777a1d411573a4893d48573c9b908e7161ea7",
+    "image_reference": "elf-evidence-integrity:current",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.revision": "5df4500ca70be177b631f49baa2d31fd6898a98b"
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/evidence-integrity-4096",
+        "Destination": "/experiment",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "id": "4273c4f0f5f25991d7c73db6a1a0e901e52048ca375853ead02bd9e4895430cc",
+    "name": "/elf-matched-api",
+    "image_id": "sha256:83c92008a9e2eb20775a246ab82777a1d411573a4893d48573c9b908e7161ea7",
+    "image_reference": "elf-evidence-integrity:current",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.revision": "5df4500ca70be177b631f49baa2d31fd6898a98b"
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/evidence-integrity-4096",
+        "Destination": "/experiment",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "id": "8e45bfc61e537072db54309217c229687db969599856e04812e6ef19f75dcfe9",
+    "name": "/elf-matched-sidecar",
+    "image_id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+    "image_reference": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.created": "2026-10-08T15:31:07.027Z",
+      "org.opencontainers.image.description": "Hindsight: Agent Memory That Learns",
+      "org.opencontainers.image.licenses": "MIT",
+      "org.opencontainers.image.revision": "eb6df499d35300e5b2f3f029b2e6adda04ed90f8",
+      "org.opencontainers.image.source": "https://github.com/vectorize-io/hindsight",
+      "org.opencontainers.image.title": "hindsight",
+      "org.opencontainers.image.url": "https://github.com/vectorize-io/hindsight",
+      "org.opencontainers.image.version": "0.10.3"
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/evidence-integrity-4096",
+        "Destination": "/experiment",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "/Users/x/.codex/worktrees/elf-evidence-integrity/ELF/scripts/benchmark_deep/native_sidecar.py",
+        "Destination": "/native-sidecar.py",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "id": "3413596c27a910ff97880b77b121558cce64c741c0bb370fa036e76cadefb160",
+    "name": "/elf-matched-qdrant",
+    "image_id": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c",
+    "image_reference": "qdrant/qdrant:v1.18.0",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.description": "Official Qdrant image",
+      "org.opencontainers.image.documentation": "https://qdrant.com/docs",
+      "org.opencontainers.image.source": "https://github.com/qdrant/qdrant",
+      "org.opencontainers.image.title": "Qdrant",
+      "org.opencontainers.image.url": "https://qdrant.com/",
+      "org.opencontainers.image.vendor": "Qdrant",
+      "org.opencontainers.image.version": "v1.18.0"
+    },
+    "mounts": []
+  },
+  {
+    "id": "26a792007bc891f0928d437231da5a69cfe6769793003588eb2ee67a14fe7756",
+    "name": "/elf-matched-db",
+    "image_id": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+    "image_reference": "pgvector/pgvector:pg18",
+    "labels": {
+      "elf.benchmark": "elf-matched"
+    },
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "afae2ffd191bd77b6f4c6ca092c50691869f8d3626bbe2bc2f28bc89e0d1eb5e",
+        "Source": "/var/lib/docker/volumes/afae2ffd191bd77b6f4c6ca092c50691869f8d3626bbe2bc2f28bc89e0d1eb5e/_data",
+        "Destination": "/var/lib/postgresql",
+        "Driver": "local",
+        "Mode": "",
+        "RW": true,
+        "Propagation": ""
+      }
+    ]
+  },
+  {
+    "id": "d3ecf7fa20fc45ce979dbd0315697209f38e42cf66f3f303c9360bbe8dfbcaf5",
+    "name": "/elf-integrity-test-qdrant",
+    "image_id": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c",
+    "image_reference": "qdrant/qdrant:v1.18.0",
+    "labels": {
+      "elf.task": "elf-evidence-integrity",
+      "org.opencontainers.image.description": "Official Qdrant image",
+      "org.opencontainers.image.documentation": "https://qdrant.com/docs",
+      "org.opencontainers.image.source": "https://github.com/qdrant/qdrant",
+      "org.opencontainers.image.title": "Qdrant",
+      "org.opencontainers.image.url": "https://qdrant.com/",
+      "org.opencontainers.image.vendor": "Qdrant",
+      "org.opencontainers.image.version": "v1.18.0"
+    },
+    "mounts": []
+  },
+  {
+    "id": "a51168eb78acb978aad826e18cb6cd82249c94b7127945d9ec4aa17f5e5a128e",
+    "name": "/elf-integrity-test-db",
+    "image_id": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+    "image_reference": "pgvector/pgvector:pg18",
+    "labels": {
+      "elf.task": "elf-evidence-integrity"
+    },
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "b14b59e2a1dd1cde19e871f20a961b74b2f6b028f1755abdbf2b173f9d213375",
+        "Source": "/var/lib/docker/volumes/b14b59e2a1dd1cde19e871f20a961b74b2f6b028f1755abdbf2b173f9d213375/_data",
+        "Destination": "/var/lib/postgresql",
+        "Driver": "local",
+        "Mode": "",
+        "RW": true,
+        "Propagation": ""
+      }
+    ]
+  }
+]

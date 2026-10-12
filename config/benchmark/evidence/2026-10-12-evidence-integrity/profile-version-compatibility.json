@@ -1,0 +1,31 @@
+{
+  "benchmark_runtime_revision": "5df4500ca70be177b631f49baa2d31fd6898a98b",
+  "delivery_revision": "d532f98f8ce484e3111522ba2a3eca61769cb392",
+  "benchmark_stored_profile_version": 3,
+  "published_builtin_profile_version": 4,
+  "unchanged_prompt_schema_and_message_builder_sources": [
+    {
+      "path": "packages/elf-service/src/ingestion_profiles/profile.rs",
+      "benchmark_sha256": "66e3c57036b8dd154f0ad8c68ab3f5943bd1af8ed8cf651b884e7ce3b55da5d0",
+      "delivered_sha256": "66e3c57036b8dd154f0ad8c68ab3f5943bd1af8ed8cf651b884e7ce3b55da5d0"
+    },
+    {
+      "path": "packages/elf-service/src/ingestion_profiles/types.rs",
+      "benchmark_sha256": "96c57cb28ffedf53cedca1caea4eb21fb098877669639db2b88ab8fde35e4357",
+      "delivered_sha256": "96c57cb28ffedf53cedca1caea4eb21fb098877669639db2b88ab8fde35e4357"
+    },
+    {
+      "path": "packages/elf-service/src/add_event/types.rs",
+      "benchmark_sha256": "f6968d9f20f76ee230ccf57422694c64965f06798794df5c761f323c25ee0afc",
+      "delivered_sha256": "f6968d9f20f76ee230ccf57422694c64965f06798794df5c761f323c25ee0afc"
+    },
+    {
+      "path": "packages/elf-service/src/structured_fields/types.rs",
+      "benchmark_sha256": "744e68a038d1deed81ebd872f939f7357df90ac3e857d1d8e661b6f68cc63eb1",
+      "delivered_sha256": "744e68a038d1deed81ebd872f939f7357df90ac3e857d1d8e661b6f68cc63eb1"
+    }
+  ],
+  "runtime_delta": "diff --git a/packages/elf-service/src/ingestion_profiles.rs b/packages/elf-service/src/ingestion_profiles.rs\nindex 60e81e46..59ae3da8 100644\n--- a/packages/elf-service/src/ingestion_profiles.rs\n+++ b/packages/elf-service/src/ingestion_profiles.rs\n@@ -20,7 +20,7 @@ use types::ResolvedIngestionProfile;\n \n const ADD_EVENT_PIPELINE: &str = \"add_event\";\n const DEFAULT_PROFILE_ID: &str = \"default\";\n-const DEFAULT_PROFILE_VERSION: i32 = 3;\n+const DEFAULT_PROFILE_VERSION: i32 = 4;\n \n pub(crate) async fn resolve_add_event_profile(\n \tpool: &PgPool,\n",
+  "validation": "101 native integration tests passed, including preservation of legacy version 3 and its pinned default while publishing version 4. The existing multilingual extraction test now uses the new built-in version. Clippy, Vstyle, and docs checks passed.",
+  "boundary": "All reader cases continue on the frozen benchmark binary. The only later runtime source change is the built-in profile version constant, from 3 to 4; extraction prompt/schema and reader behavior are unchanged. Archived profile references are retained, not rewritten."
+}

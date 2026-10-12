@@ -1,0 +1,7 @@
+{
+  "reviewer": "Codex assistant, full-answer review after reading outputs; not an independent blinded human judge.",
+  "comparable_truth_score": "Same complete-answer factual review as the previous trial: requested concrete identifiers must occur in evidence; historical/current values must be distinguished; material false or unsupported added historical events fail. Correct abstention on an absence question is accepted.",
+  "absence_boundary": "The symmetric fixture has no appointed budget owner for any topic. An absence answer can agree with the target source despite only seeing another topic absence. Preserve the prior factual comparison, and separately flag unsupported absence assertions. This is not fully grounded correctness.",
+  "citation_boundary": "A returned citation from another topic is marked defective unless the answer uses it for an explicit correctly attributed comparison. Topics share one authorized ELF project; this is not an authorization leak. The audit does not measure full claim-level entailment.",
+  "joint_diagnostic": "Current-only conservative diagnostic: factually correct, no recorded citation defect, and no unsupported absence assertion. It is not a general product score and was not used to tune or resample answers."
+}

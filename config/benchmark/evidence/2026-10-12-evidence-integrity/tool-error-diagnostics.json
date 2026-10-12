@@ -1,0 +1,85 @@
+[
+  {
+    "kind": "read_document Supply exactly one returned chunk or byte-position selector",
+    "count": 41,
+    "sample": {
+      "case": "cases/source/memory-4-3.json",
+      "arguments": {
+        "doc_id": "e8f8c1df-73bb-598a-9f8e-11918bb990ce",
+        "chunk_id": "a3b92287-4352-5766-968d-1a82d2d7c66c",
+        "position": {
+          "start": 0,
+          "end": 238
+        },
+        "content_hash": "064cc7c76e1cd40b0b96dff587d2aac43a3a232c95566c4d5993d676a780bba2"
+      },
+      "result": {
+        "error": "Supply exactly one returned chunk or byte-position selector"
+      }
+    }
+  },
+  {
+    "kind": "query_graph {'http_status': 404, 'detail': '{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Project Cedar\",\"request_id\":\"aa963a36-842b-401c-835f-7912d0a5d7c3\"}'}",
+    "count": 1,
+    "sample": {
+      "case": "cases/both/memory-4-0.json",
+      "arguments": {
+        "surface": "Project Cedar"
+      },
+      "result": {
+        "error": {
+          "http_status": 404,
+          "detail": "{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Project Cedar\",\"request_id\":\"aa963a36-842b-401c-835f-7912d0a5d7c3\"}"
+        }
+      }
+    }
+  },
+  {
+    "kind": "query_graph {'http_status': 404, 'detail': '{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Project Cedar\",\"request_id\":\"637dd766-a5f1-424c-987b-342e8a9b8111\"}'}",
+    "count": 1,
+    "sample": {
+      "case": "cases/both/memory-4-3.json",
+      "arguments": {
+        "surface": "Project Cedar"
+      },
+      "result": {
+        "error": {
+          "http_status": 404,
+          "detail": "{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Project Cedar\",\"request_id\":\"637dd766-a5f1-424c-987b-342e8a9b8111\"}"
+        }
+      }
+    }
+  },
+  {
+    "kind": "query_graph {'http_status': 404, 'detail': '{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Tala Sable budget owner\",\"request_id\":\"eb15cb46-e2c2-4484-85be-d667ca4d2381\"}'}",
+    "count": 1,
+    "sample": {
+      "case": "cases/graph/memory-3-3.json",
+      "arguments": {
+        "surface": "Tala Sable budget owner"
+      },
+      "result": {
+        "error": {
+          "http_status": 404,
+          "detail": "{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Tala Sable budget owner\",\"request_id\":\"eb15cb46-e2c2-4484-85be-d667ca4d2381\"}"
+        }
+      }
+    }
+  },
+  {
+    "kind": "query_graph {'http_status': 404, 'detail': '{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Devon\\'s Cedar project\",\"request_id\":\"805bd871-b43b-4523-963d-ff699cab22e5\"}'}",
+    "count": 1,
+    "sample": {
+      "case": "cases/graph/memory-4-3.json",
+      "arguments": {
+        "surface": "Devon's Cedar project"
+      },
+      "result": {
+        "error": {
+          "http_status": 404,
+          "detail": "{\"error_code\":\"NOT_FOUND\",\"fields\":null,\"message\":\"graph entity not found for subject surface=Devon's Cedar project\",\"request_id\":\"805bd871-b43b-4523-963d-ff699cab22e5\"}"
+        }
+      }
+    }
+  }
+]

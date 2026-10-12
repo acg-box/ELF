@@ -1,0 +1,34 @@
+{
+  "purpose": "Regression evaluation of ELF native evidence identity and bounded external-agent behavior. No competitor rerun.",
+  "unchanged": [
+    "20 original memory source documents",
+    "20 questions, including 16 labeled test and 4 labeled development",
+    "Four rotated primary conditions plus one initial-context control",
+    "PG and Qdrant",
+    "Qwen3-Embedding-8B, full 4096 dimensions; exact cached embedding reuse",
+    "DeepSeek V4.1 Flash, official DeepSeek provider, maximum reasoning",
+    "393216 maximum output allowance",
+    "12 model responses and 24 executed tool calls in each primary case"
+  ],
+  "changed": [
+    "Native source occurrence identity and verified original-document pointers",
+    "Unknown graph validity represented separately from observation time",
+    "Exact alias identity resolution and source-grounded extraction guidance",
+    "Fresh native extraction rather than historical frozen note bodies",
+    "Bounded-v2 external-agent prompt, cached-search access, and in-budget final response"
+  ],
+  "review": "The Codex assistant reads complete answers against frozen originals, records semantic decisions bound to answer hashes, and audits citations separately. This is not an independent blinded human study. Raw substring scores remain intact.",
+  "known_fixture_limits": [
+    "The original sources and questions are known regression fixtures, not a newly held-out evaluation.",
+    "The corpus is small: 20 documents and 59 freshly derived notes. A candidate ceiling of 60 can cover nearly the whole note corpus.",
+    "Project names identify synthetic topics inside the same authorized tenant/project. Cross-project citation diagnostics do not indicate tenant or permission leakage.",
+    "The five topics share a repeated scenario pattern. No appointed budget owner exists in any of them, so absence cases do not establish general calibration.",
+    "Source-enabled arms add quoted provenance and document pointers, not just a document-reading tool.",
+    "Graph traversal follows outgoing object entities only; missing paths do not prove absence of a source-backed fact.",
+    "A combined iteration changes native data and agent policy. It does not isolate the causal effect of an individual patch.",
+    "Provider cache hits and time-dependent prices prevent a clean causal price comparison between arms or runs.",
+    "Wall-clock latency was measured on a shared local host while development checks also ran; it is not an isolated backend performance benchmark.",
+    "The benchmark uses a declared set of note, source-document, cached-search, and outgoing-graph tools. It does not exercise every ContextPack option or every MCP tool exposed by ELF."
+  ],
+  "attempt_policy": "Retain factual mistakes and invalid final answers. Native contract defects found during preparation were repaired by replaying the exact paid extraction responses. Earlier native outcomes and revisions are archived. No reader case preceded the final prepared fixture."
+}

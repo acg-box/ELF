@@ -1,0 +1,1326 @@
+[
+  {
+    "condition": "notes",
+    "case_id": "memory-0-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source": "m_10a8847f903485c5",
+    "issue": "The answer is about Larch but this generic keep-the-August-15-choice note comes only from Cedar. Other correct Larch citations support the factual answer; this remains an attribution defect."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source": "m_10a8847f903485c5",
+    "issue": "The Larch answer also cites a Cedar-only generic note, despite reading correct Larch originals."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source": "m_10a8847f903485c5",
+    "issue": "A generic Cedar-only keep-the-delivery-choice note is cited for Larch."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source": "m_10a8847f903485c5",
+    "issue": "A Cedar-only generic note is included in the Larch answer citations, although correct Larch source documents were read."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "citation": "6d3bb68a-76ee-4885-9948-1a35e73f805f",
+    "source_evidence_ids": [
+      "m_9757cd3f6fff2b1a"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "citation": "90ff894b-069d-42ff-8d14-0f52ab462a70",
+    "source_evidence_ids": [
+      "m_f7ff6441bdd98e53"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-2",
+    "citation": "6d3bb68a-76ee-4885-9948-1a35e73f805f",
+    "source_evidence_ids": [
+      "m_9757cd3f6fff2b1a"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "citation": "b32b6364-a4e1-411c-9765-64d5a395a855",
+    "source_evidence_ids": [
+      "m_6e4b0b61170e23a6"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-1",
+    "citation": "b32b6364-a4e1-411c-9765-64d5a395a855",
+    "source_evidence_ids": [
+      "m_6e4b0b61170e23a6"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-2",
+    "citation": "7d39ef98-d6ac-4e91-af2c-13020c4a4099",
+    "source_evidence_ids": [
+      "m_d7a9d1f22107f233"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-3",
+    "citation": "c833f302-431e-5ede-8f6f-9654ff6949f0",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-1",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-2",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-2",
+    "citation": "90ff894b-069d-42ff-8d14-0f52ab462a70",
+    "source_evidence_ids": [
+      "m_f7ff6441bdd98e53"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-2",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "citation": "b32b6364-a4e1-411c-9765-64d5a395a855",
+    "source_evidence_ids": [
+      "m_6e4b0b61170e23a6"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-2",
+    "citation": "90ff894b-069d-42ff-8d14-0f52ab462a70",
+    "source_evidence_ids": [
+      "m_f7ff6441bdd98e53"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-2",
+    "citation": "90ff894b-069d-42ff-8d14-0f52ab462a70",
+    "source_evidence_ids": [
+      "m_f7ff6441bdd98e53"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "citation": "b32b6364-a4e1-411c-9765-64d5a395a855",
+    "source_evidence_ids": [
+      "m_6e4b0b61170e23a6"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-2",
+    "citation": "6d3bb68a-76ee-4885-9948-1a35e73f805f",
+    "source_evidence_ids": [
+      "m_9757cd3f6fff2b1a"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-2",
+    "citation": "90ff894b-069d-42ff-8d14-0f52ab462a70",
+    "source_evidence_ids": [
+      "m_f7ff6441bdd98e53"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "citation": "b32b6364-a4e1-411c-9765-64d5a395a855",
+    "source_evidence_ids": [
+      "m_6e4b0b61170e23a6"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-2",
+    "citation": "6d3bb68a-76ee-4885-9948-1a35e73f805f",
+    "source_evidence_ids": [
+      "m_9757cd3f6fff2b1a"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-2",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-3",
+    "citation": "0ceb9aef-6778-5cf6-a4a5-d4bc313df631",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-2",
+    "citation": "6d3bb68a-76ee-4885-9948-1a35e73f805f",
+    "source_evidence_ids": [
+      "m_9757cd3f6fff2b1a"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This generic negative statement belongs to Cobalt, not Cedar. Unlike the explicitly named Larch comparison in the answer, this citation is presented as direct support for Cedar absence."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-2",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-2",
+    "citation": "67acd4e7-1fa7-4e09-a119-92b1f3b28dba",
+    "source_evidence_ids": [
+      "m_0cf97e4da97e721d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "The generic delivery directive belongs to Cedar, not Cobalt. The answer explicit Cedar comparison concerns its retry chain, not its delivery directive."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-2",
+    "citation": "90ff894b-069d-42ff-8d14-0f52ab462a70",
+    "source_evidence_ids": [
+      "m_f7ff6441bdd98e53"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-2",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-1",
+    "citation": "024fa512-b22b-40e1-8984-0f2b824e07a7",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This other-topic directive is extraneous to the target answer. Correctly attributed incident or retry comparisons are excluded from this defect list."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This other-topic directive is extraneous to the target answer. Correctly attributed incident or retry comparisons are excluded from this defect list."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This other-topic directive is extraneous to the target answer. Correctly attributed incident or retry comparisons are excluded from this defect list."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This other-topic directive is extraneous to the target answer. Correctly attributed incident or retry comparisons are excluded from this defect list."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-0",
+    "citation": "1c2828f1-2d9f-4d98-bee6-60446014f9bf",
+    "source_evidence_ids": [
+      "m_10a8847f903485c5"
+    ],
+    "issue": "This other-topic directive is extraneous to the target answer. Correctly attributed incident or retry comparisons are excluded from this defect list."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-2",
+    "citation": "90ff894b-069d-42ff-8d14-0f52ab462a70",
+    "source_evidence_ids": [
+      "m_f7ff6441bdd98e53"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-1",
+    "citation": "b28af1ec-c3e5-4e5a-b978-7dec4ec672d7",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-1",
+    "citation": "114ac56e-1e60-498e-9a11-676847bb664e",
+    "source_evidence_ids": [
+      "m_b482da0e797a3b49"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-1",
+    "citation": "b62d6940-5662-4cf8-956b-8b702d05ef27",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-2",
+    "citation": "8bd32566-05d5-4974-803a-11bfd77c815f",
+    "source_evidence_ids": [
+      "m_60a61eab3b3b1426"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-3",
+    "citation": "7778f15b-0a76-4e1a-bb86-ad60cb43ca5e",
+    "source_evidence_ids": [
+      "m_4a54af2b364be476"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-3",
+    "citation": "8e5c942a-975e-430f-b8aa-43639751fbb5",
+    "source_evidence_ids": [
+      "m_d6297f549707f98d"
+    ],
+    "issue": "This citation belongs only to another project. The answer does not use that source for an explicit correctly attributed comparison; it is extraneous support for the requested project."
+  }
+]

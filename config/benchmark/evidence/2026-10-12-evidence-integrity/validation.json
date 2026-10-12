@@ -1,0 +1,65 @@
+{
+  "checks": [
+    {
+      "name": "rust_unit",
+      "result": "passed",
+      "tests_passed": 457,
+      "local_log": "/tmp/elf-integrity-unit-2.log",
+      "log_sha256": "b986ff2062a55b13cc125e74310fd664d52a97ee089636f15cec49b64a7fd760"
+    },
+    {
+      "name": "native_integration",
+      "result": "passed",
+      "tests_passed": 101,
+      "local_log": "/tmp/elf-integrity-integration-6.log",
+      "log_sha256": "297bab09c48ec5c0e9aaa8acca1f66cbf367c8768192e597284a1a0ab7d64eb6"
+    },
+    {
+      "name": "benchmark_python",
+      "result": "passed",
+      "tests_passed": 171,
+      "local_log": "/tmp/elf-integrity-python-final.log",
+      "log_sha256": "1ab1012345699cc3e2d321d4f88c93b6953e03fba4bb7722a91514950f706772"
+    },
+    {
+      "name": "clippy",
+      "result": "passed",
+      "tests_passed": null,
+      "local_log": "/tmp/elf-integrity-clippy-8.log",
+      "log_sha256": "b3392b596a9888d3d93a23c903145249e9935124ed449d744dfa2afc782d4417"
+    },
+    {
+      "name": "vstyle",
+      "result": "passed",
+      "tests_passed": null,
+      "local_log": "/tmp/elf-integrity-vstyle-11.log",
+      "log_sha256": "530eb9ef9db302d3e534c2ff12d62a93d64f9f32a5106f3691cbdbd9b7966749"
+    },
+    {
+      "name": "toml",
+      "result": "passed",
+      "tests_passed": null,
+      "local_log": "/tmp/elf-integrity-toml.log",
+      "log_sha256": "81867ac7575c726938880713177cde489f71a7a04d6b62c961f86f48ade73f8a"
+    },
+    {
+      "name": "documentation",
+      "result": "passed",
+      "local_log": "/tmp/elf-integrity-docs-final.log",
+      "log_sha256": "b37cecca9b4d591d3be469befdd7ae5b11d9646712a3d4fb8b486f22ce57ca1f"
+    },
+    {
+      "name": "offline_evidence_verifier",
+      "result": "passed",
+      "cases": 100,
+      "sources": 20,
+      "unique_extractions": 20,
+      "command": "python3 config/benchmark/evidence/2026-10-12-evidence-integrity/verify.py"
+    }
+  ],
+  "boundaries": [
+    "Rust unit suite predates the metadata-only built-in version bump. The 101 integration tests and Clippy check include that bump.",
+    "Final evidence verification and documentation validation are recorded after the public bundle is assembled.",
+    "Native benchmark image revision is frozen separately in protocol.json. No production rollout."
+  ]
+}
