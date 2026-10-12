@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS graph_facts (
 	predicate_id uuid NULL REFERENCES graph_predicates(predicate_id),
 	object_entity_id uuid NULL REFERENCES graph_entities(entity_id),
 	object_value text NULL,
-	valid_from timestamptz NOT NULL,
+	valid_from timestamptz NULL,
 	valid_to timestamptz NULL,
 	created_at timestamptz NOT NULL DEFAULT now(),
 	updated_at timestamptz NOT NULL DEFAULT now(),
@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS graph_facts (
 	CONSTRAINT graph_facts_valid_window
 		CHECK (valid_to IS NULL OR valid_to > valid_from)
 );
+
+ALTER TABLE graph_facts ALTER COLUMN valid_from DROP NOT NULL;
 
 ALTER TABLE graph_facts ADD COLUMN IF NOT EXISTS predicate_id uuid NULL;
 
@@ -40,8 +42,8 @@ CREATE INDEX IF NOT EXISTS idx_graph_facts_tenant_project_object_entity
 	WHERE object_entity_id IS NOT NULL;
 
 CREATE UNIQUE INDEX IF NOT EXISTS uq_graph_facts_active_entity_object
-	ON graph_facts (tenant_id, project_id, scope, subject_entity_id, predicate_id, object_entity_id)
+	ON graph_facts (tenant_id, project_id, agent_id, scope, subject_entity_id, predicate_id, object_entity_id, valid_from) NULLS NOT DISTINCT
 	WHERE valid_to IS NULL AND object_entity_id IS NOT NULL;
 CREATE UNIQUE INDEX IF NOT EXISTS uq_graph_facts_active_entity_value
-	ON graph_facts (tenant_id, project_id, scope, subject_entity_id, predicate_id, object_value)
+	ON graph_facts (tenant_id, project_id, agent_id, scope, subject_entity_id, predicate_id, object_value, valid_from) NULLS NOT DISTINCT
 	WHERE valid_to IS NULL AND object_value IS NOT NULL;

@@ -1,7 +1,7 @@
 ---
 type: Runbook
 title: ELF agent source and graph benchmark
-description: Measure iterative recall, source provenance, and graph traversal over frozen memory extraction.
+description: Measure bounded evidence retrieval, source provenance, graph traversal, and final answers over fixed source workloads.
 status: active
 authority: informative
 owner: benchmark
@@ -12,143 +12,123 @@ code_refs:
   - scripts/benchmark_agent/tools.py
   - scripts/benchmark_agent/replay.py
 related:
-  - docs/runbook/retrieval-laboratory.md
+  - docs/evidence/benchmarking/2026-10-11-agent-evidence.md
+  - docs/decisions/2026-10-12-evidence-integrity.md
 ---
 # ELF agent source and graph benchmark
 
-## Scope
+## Contract
 
-Use this experiment to separate answer quality from tool availability. The four
-primary conditions use the same initial twelve derived notes, including their
-structured fields. All conditions can search and read notes. `source` adds
-original-document search and verified excerpts. `graph` adds outgoing graph
-queries and evidence-note traversal. `both` adds both sets of tools. Initial
-notes do not include provenance quotes. A source-enabled agent must read a note
-to obtain its provenance.
+The four primary conditions share the same twelve initial derived notes and
+structured fields. All can search/read notes and expand cached search sessions.
+`source` adds original-document search and verified excerpts. `graph` adds
+outgoing graph queries and object/evidence-note traversal. `both` adds both.
+Initial contexts omit `source_ref`; a source-enabled agent must read a note to
+obtain provenance. Source-disabled conditions remove the complete provenance
+envelope. This is an ablation, not the normal full ELF response.
 
-The later `initial` control receives the same prompt and initial notes with no
-tools. It helps distinguish richer initial context from iterative retrieval.
-Keep this control separate from the rotated four-condition experiment. The
-shared prompt still asks for verification when tools exist. Record invented
-textual tool calls or invalid JSON as failed control outputs; do not resample
-them. This prompt interaction limits attribution to retrieval alone.
+Twenty fixed memory questions contain sixteen test and four development cases.
+The later `initial` control receives the same initial notes without tools. Never
+combine this fixture's score with a different competitor protocol as a product
+ranking. Record factual correctness, citation attribution, source integrity,
+actual tool usage, and cost separately.
 
-The workload has twenty memory questions. Sixteen belong to the test split;
-four belong to the development split. This is a small diagnostic fixture, not
-a product ranking or a document-parser benchmark. Do not combine its score with
-older competitor runs as if all systems were tested under identical conditions.
+## Prepare and run
 
-## Preparation
-
-Use the repository's ELF runtime Docker target and record its source revision
-and image digest. Run one matched ELF fixture at a time. The shared runtime
-helper owns the `elf-matched` container namespace and checks its ownership label.
-Do not start this runner against another active experiment's containers.
+Use the repository ELF runtime Docker target. Record the exact source revision
+and image digest. The shared runtime owns the `elf-matched` namespace; do not
+reuse another active experiment's containers.
 
 ```sh
-docker build --target elf-service-runtime --build-arg ELF_SOURCE_COMMIT="$(git rev-parse HEAD)" -t elf-agent-evidence:current -f docker/benchmark/Dockerfile .
+docker build --target elf-service-runtime --build-arg ELF_SOURCE_COMMIT="$(git rev-parse HEAD)" -t elf-evidence-integrity:current -f docker/benchmark/Dockerfile .
 ```
 
-Set `ROOT` to a new absolute artifact directory. Run the commands below as the
-consumer of `cargo make benchmark-budget`. Inject the provider credential only
-into that gateway, and use the existing cumulative ledger and authorized cap.
-The gateway supplies ephemeral `LITELLM_BASE_URL` and `LITELLM_API_KEY` values.
-Do not put a provider key in the runner, Docker configuration, or command line.
+Set `ROOT` to a new absolute artifact directory. Run the following commands as
+consumers of `cargo make benchmark-budget`, with the authorized cumulative
+ledger and dollar cap. Inject provider credentials only into that gateway. It
+supplies ephemeral `LITELLM_BASE_URL` and `LITELLM_API_KEY` values to consumers.
 
 ```sh
-cargo make benchmark-elf-agent --root "$ROOT" --image elf-agent-evidence:current --phase prepare --output-maximum 393216
-cargo make benchmark-elf-agent --root "$ROOT" --image elf-agent-evidence:current --phase run --output-maximum 393216
-cargo make benchmark-elf-agent --root "$ROOT" --image elf-agent-evidence:current --phase paged --output-maximum 393216
-cargo make benchmark-elf-agent --root "$ROOT" --phase finalize --output-maximum 393216
+cargo make benchmark-elf-agent --root "$ROOT" --image elf-evidence-integrity:current --phase prepare --live-extraction --reuse-receipts config/benchmark/evidence/2026-10-11-agent-evidence/provider-receipts.jsonl.gz --output-maximum 393216
+cargo make benchmark-elf-agent --root "$ROOT" --image elf-evidence-integrity:current --phase run --live-extraction --reuse-receipts config/benchmark/evidence/2026-10-11-agent-evidence/provider-receipts.jsonl.gz --output-maximum 393216
 cargo make benchmark-elf-agent --root "$ROOT" --phase control --output-maximum 393216
 ```
 
-The recorded DeepSeek route supports a maximum completion of 393,216 tokens.
-This differs from the model-directory maximum. Before a new trial, verify the
-selected endpoint's output allowance and prices. Keep all conditions on the
-same provider and settings. Preserve route failures and their outstanding cost
-reservations. A missing usage receipt is not proof of zero charge.
+The recorded official DeepSeek route supports 393,216 output tokens. Verify
+endpoint allowance and prices before a new run. Keep the provider, reasoning,
+output allowance, and input workload fixed across conditions. Use gateway
+`--request-max-bytes 1048576` for multi-turn histories. This permits a larger
+transport envelope while retaining full input/output monetary reservations.
+Never truncate evidence to fit a smaller envelope or clear unknown charges.
 
-Use `--request-max-bytes 1048576` on the budget gateway for this agent profile.
-The legacy 256 KiB limit can reject a multi-turn history before provider dispatch.
-This changes the transport envelope, not the provider output allowance or the
-cumulative dollar cap. Each request still reserves its full input and maximum
-output cost. Do not truncate evidence to fit the old envelope.
+`--live-extraction` uses the current native schema and extraction guidance. It
+archives original source documents, passes verified document/span pointers to
+event ingestion, and retains each extraction receipt. The model cannot assign
+the source pointer. This is necessary when evaluating changes to extraction.
+Without the flag, the replay proxy requires an exact match with a prior
+extraction request; it refuses to substitute an old output for changed messages
+or prompts. Use a compatible runtime for historical frozen-extraction trials.
 
-Preparation creates source documents and ingests the corresponding events
-through native ELF APIs. The extraction proxy returns exact prior successful
-responses only when the extraction messages match. It reuses exact cached
-Qwen3-Embedding-8B inputs at all 4,096 dimensions. New search-query embeddings
-can use the budget gateway. This tests retrieval over frozen extraction, not
-the quality of a new extraction model. New native identifiers and ingestion
-timestamps are expected; derived note bodies must match the recorded fixture.
+`--reuse-receipts` imports only exact Qwen3-Embedding-8B inputs at the full 4,096
+dimensions. It does not import old reader answers or tool outputs. Changed note
+text and new queries can request new embeddings through the gateway. Record
+fresh extraction and changed derived state as experiment factors.
 
-The runtime helper uses a pinned local reranker image. That image's packaging
-does not constitute a competitor benchmark.
+The pinned sidecar supplies a local reranker. Its image packaging is not a
+competitor rerun. The raw artifact directory retains complete native initial
+responses and tool traces; model-facing note-search results omit internal
+ranking diagnostics while preserving returned evidence and search IDs.
 
-## Collection and interpretation
+## Bounded agent policy
 
-Each agent has at most twelve model rounds and twenty-four tool calls. The
-provider output allowance remains unchanged. Retain tool or round exhaustion as
-an unsuccessful outcome; do not resample it until it produces an answer. These
-limits measure a bounded workflow, not unlimited-search capability.
+Each agent has at most twelve model responses and twenty-four tool calls. The
+`bounded-v2` policy reserves the final response inside that original allowance.
+When tool capacity ends, it closes unexecuted tool calls with explicit errors
+and requests a final answer using only prior evidence. It does not increase the
+budget, provide oracle facts, or retry a wrong answer. Invalid output remains a
+failed outcome.
 
-The separate `finalize` phase makes one final model call for each exhausted
-primary or paged trace. It supplies only the evidence already read, marks pending tool calls as
-unexecuted, and permits no further retrieval. Keep these answers separate from
-the primary outcomes. This distinguishes failure to stop searching from failure
-to obtain the requested facts. Persist the raw finalization response before
-parsing it; a restart must not purchase a replacement factual answer.
+The prompt tells the agent to expand an existing search before repeating a
+query, follow a supplied source pointer, distinguish unknown validity from
+current truth, and stop after the requested facts have sufficient evidence.
+It explicitly states that unavailable tools cannot be invented. Record this
+policy alongside native changes; a combined improvement is not causal evidence
+for one individual patch.
 
-The runner records every provider response and completed tool call before the
-next step. Tool failures remain visible to the agent. Wrong factual answers are
-retained. A single fenced final JSON object can be read without a new model
-call, but record its formatting noncompliance. Archive transport or ambiguous
-format failures before an explicit retry. A completed-case restart skips prior
-answers and exhausted cases.
+The older evidence bundle used post-run `finalize` and selected `paged` phases.
+Keep those historical results separate. The current primary conditions already
+include cached expansion and bounded finalization. The legacy phase commands
+remain diagnostic utilities, not required additions to the current score.
 
-For an archived transport rejection after a complete tool batch, explicitly
-pass `--resume-case CONDITION/CASE_ID` to the `run` phase. It restores the saved
-responses and tool outputs and retains both round and tool-call counts. It
-refuses to resume a recorded final answer or an incomplete tool batch. Keep
-the original failure and trace. Report total wall-clock latency as unavailable
-when the original timer was lost.
+Every provider response and completed tool call is saved before the next step.
+A restart skips completed cases. If a transport failure interrupts a complete
+tool batch, archive the failure and explicitly use
+`--resume-case CONDITION/CASE_ID`. Do not repurchase completed calls or overwrite
+a recorded final answer. Lost wall timers remain unavailable. A single fenced
+JSON answer can be recovered from its saved response, with formatting failure
+recorded. A pending control response requires offline recovery before restart.
 
-Graph tools use `/v2/graph/query`. The primary agent does not use the separate
-graph-report, Context Pack, knowledge-page, or entity-memory interfaces. Record
-additional read-only diagnostics separately. Do not describe this experiment as
-coverage of every ELF interface.
+## Inspect and publish
 
-The primary wrapper fixes note-search output at twelve items. ELF itself also
-supports `elf_searches_get` with a larger `top_k` over the existing cached
-session. The separate `paged` diagnostic exposes that capability, supplies the
-native initial `search_id`, and recommends expansion before another query. It
-selects the four questions with missing identifiers in the initial context,
-recorded in `initial-fact-coverage.json`. This is a targeted follow-up selected
-after inspection, not an unbiased extension of the primary score. It adds no
-source or graph tools. Report the wrapper omission rather than describing
-cached expansion as a missing ELF product feature.
-
-Run offline analysis without provider credentials or Docker:
+Run analysis without credentials or Docker:
 
 ```sh
 cargo make benchmark-elf-agent --root "$ROOT" --phase analyze
 ```
 
-Report strict scores and semantic review separately. Bind each review to the
-answer's SHA-256 hash. A current-state answer can correctly mention an explicitly
-superseded value; a raw forbidden-substring check cannot judge that distinction.
-Known absence of an appointed owner also differs from missing information.
-Keep unsupported claims and genuinely wrong current states as failures.
+Review full answers against original sources and bind reviews to answer hashes.
+Keep raw strict scores. Explicit historical comparisons and known absence must
+not be mistaken for wrong current states. Conversely, required keywords alone
+do not excuse a wrong subject or unsupported explanation. Audit citation
+identity and claim support independently of factual-answer scores.
 
-The analyzer records actual document reads, verified provenance follows,
-object-entity traversal attempts, graph evidence-note reads, tool errors, and
-unseen citation identifiers. A graph traversal can reach a dead end. Identifier
-presence in tool output does not prove that its subject binding is correct.
-Inspect the traces before attributing an improvement to a graph or source tool.
+A graph follow can reach an empty node. A returned fact must have readable
+supporting evidence; unknown temporal status is not established current truth.
+The benchmark uses selected REST operations, not every MCP, Context Pack,
+knowledge-page, or entity-memory interface.
 
-Keep canonical source bytes, extraction receipts, graph snapshots, initial
-contexts, raw answers, reviews, and cost receipts. Use explicit source lineage
-for reused evidence. Exclude private runtime configuration and authentication
-files from public bundles. After delivery, remove only this experiment's owned
-containers, volumes, network, and unused task-created images.
+Preserve original bytes, offsets/hashes, extraction receipts, graph snapshots,
+initial contexts, answers, reviews, and usage. Exclude private runtime config
+and credentials from public bundles. Verify the public evidence offline. After
+collection, remove only this task's owned Docker resources and preserve raw
+results needed for review or later matched trials.

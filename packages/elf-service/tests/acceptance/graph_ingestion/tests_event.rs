@@ -1,5 +1,10 @@
+use serde_json::Value;
+
 use crate::acceptance::graph_ingestion::tests_helpers;
-use elf_service::{AddEventRequest, EventMessage, NoteOp};
+use elf_service::{
+	AddEventRequest, DocsPutRequest, EventMessage, EventSourceDocument, NoteOp,
+	TextPositionSelector,
+};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
@@ -46,6 +51,7 @@ async fn add_event_persists_graph_relations() {
 				content: "Alice mentors Bob.".to_string(),
 				ts: None,
 				msg_id: None,
+				source_document: None,
 				write_policy: None,
 			}],
 		})
@@ -100,6 +106,7 @@ async fn extracted_keys_cannot_overwrite_distinct_subjects() {
 				content: text.into(),
 				ts: None,
 				msg_id: Some(text.into()),
+				source_document: None,
 				write_policy: None,
 			}],
 		};
@@ -132,4 +139,111 @@ async fn extracted_keys_cannot_overwrite_distinct_subjects() {
 	assert_ne!(identities[0], identities[1]);
 
 	test_db.cleanup().await.expect("Cleanup database.");
+}
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant."]
+async fn event_source_occurrences_link_exact_original_documents() {
+	let db = tests_helpers::build_test_db("source_occurrences").await.expect("Database required.");
+	let quote = "No change was approved.";
+	let payload = serde_json::json!({"notes":[{"type":"decision","text":quote,"importance":0.8,"confidence":0.9,"evidence":[{"message_index":0,"quote":quote}]}]});
+	let service = tests_helpers::build_service_with_extractor_payload(&db, payload).await;
+	let mut ids = Vec::new();
+
+	for project in ["Alpha", "Beta"] {
+		let content = format!("项目 {project}: {quote}");
+		let doc = service.docs_put(DocsPutRequest {
+            tenant_id:"t".into(),project_id:"p".into(),agent_id:"a".into(),scope:"agent_private".into(),doc_type:None,title:None,write_policy:None,
+            source_ref:serde_json::json!({"schema":"doc_source_ref/v1","doc_type":"knowledge","origin":project,"ts":"2026-08-08T00:00:00Z"}),content:content.clone(),
+        }).await.expect("Archive original.");
+		let request = AddEventRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			scope: Some("agent_private".into()),
+			dry_run: Some(false),
+			ingestion_profile: None,
+			messages: vec![EventMessage {
+				role: "user".into(),
+				content: content.clone(),
+				ts: Some("2026-08-08".into()),
+				msg_id: Some(project.into()),
+				write_policy: None,
+				source_document: Some(EventSourceDocument {
+					doc_id: doc.doc_id,
+					content_hash: doc.content_hash.clone(),
+					position: TextPositionSelector { start: 0, end: content.len() },
+				}),
+			}],
+		};
+		let result = service.add_event(request.clone()).await.expect("Bind source occurrence.");
+		let id = result.results[0].note_id.expect("Persisted note.");
+
+		assert_eq!(result.results[0].op, NoteOp::Add);
+
+		ids.push(id);
+
+		let retry = service.add_event(request.clone()).await.expect("Retry same occurrence.");
+
+		assert_eq!(retry.results[0].op, NoteOp::None);
+		assert_eq!(retry.results[0].note_id, Some(id));
+
+		let source: Value =
+			sqlx::query_scalar("SELECT source_ref FROM memory_notes WHERE note_id=$1")
+				.bind(id)
+				.fetch_one(&service.db.pool)
+				.await
+				.expect("Read provenance.");
+
+		assert_eq!(
+			source["evidence"][0]["source"]["document"]["ref"]["doc_id"],
+			doc.doc_id.to_string()
+		);
+
+		let (bytes, hash): (String, String) =
+			sqlx::query_as("SELECT content,content_hash FROM doc_documents WHERE doc_id=$1")
+				.bind(doc.doc_id)
+				.fetch_one(&service.db.pool)
+				.await
+				.expect("Read source.");
+
+		assert_eq!((bytes, hash), (content, doc.content_hash));
+
+		let mut wrong = request.clone();
+
+		wrong.messages[0]
+			.source_document
+			.as_mut()
+			.expect("Evidence integrity fixture must succeed.")
+			.content_hash = "wrong".into();
+
+		assert!(service.add_event(wrong).await.is_err());
+
+		let mut wrong = request.clone();
+
+		wrong.messages[0]
+			.source_document
+			.as_mut()
+			.expect("Evidence integrity fixture must succeed.")
+			.position
+			.end -= 1;
+
+		assert!(service.add_event(wrong).await.is_err());
+
+		let mut wrong = request.clone();
+
+		wrong.agent_id = "another-agent".into();
+
+		assert!(service.add_event(wrong).await.is_err());
+
+		let mut wrong = request;
+
+		wrong.scope = Some("project_shared".into());
+
+		assert!(service.add_event(wrong).await.is_err());
+	}
+
+	assert_ne!(ids[0], ids[1]);
+
+	db.cleanup().await.expect("Clean fixture.");
 }

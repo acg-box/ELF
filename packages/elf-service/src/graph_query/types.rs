@@ -118,8 +118,11 @@ pub struct GraphQueryFact {
 	/// Resolved predicate identifier, when available.
 	pub predicate_id: Option<Uuid>,
 	#[serde(with = "crate::time_serde")]
-	/// Start of the fact validity window.
-	pub valid_from: OffsetDateTime,
+	/// Time the database first recorded this assertion; not its effective time.
+	pub observed_at: OffsetDateTime,
+	#[serde(with = "crate::time_serde::option")]
+	/// Start of the fact validity window; null when the source does not establish it.
+	pub valid_from: Option<OffsetDateTime>,
 	#[serde(with = "crate::time_serde::option")]
 	/// End of the fact validity window, if superseded.
 	pub valid_to: Option<OffsetDateTime>,

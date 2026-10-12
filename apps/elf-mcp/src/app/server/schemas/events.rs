@@ -30,6 +30,19 @@ pub(in crate::app::server) fn events_ingest_schema() -> Arc<JsonObject> {
 						"content": { "type": "string" },
 						"ts": { "type": ["string", "null"] },
 						"msg_id": { "type": ["string", "null"] },
+						"source_document": {
+							"type": ["object", "null"],
+							"additionalProperties": false,
+							"required": ["doc_id", "content_hash", "position"],
+							"properties": {
+								"doc_id": {"type":"string", "format":"uuid"},
+								"content_hash": {"type":"string"},
+								"position": {"type":"object", "required":["start","end"], "properties":{
+									"start":{"type":"integer","minimum":0},
+									"end":{"type":"integer","minimum":1}
+								}}
+							}
+						},
 						"write_policy": { "type": ["object", "null"] }
 					}
 				}

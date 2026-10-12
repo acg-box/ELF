@@ -32,7 +32,7 @@ impl ElfMcp {
 
 	#[rmcp::tool(
 		name = "elf_searches_get",
-		description = "Fetch a search session index view by search_id, including optional trajectory_summary.",
+		description = "Expand cached results by search_id and top_k before issuing another query. Reuses existing candidates; use touch=false for a read without usage updates.",
 		input_schema = searches_get_schema()
 	)]
 	async fn elf_searches_get(&self, mut params: JsonObject) -> Result<CallToolResult, ErrorData> {

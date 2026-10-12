@@ -87,6 +87,8 @@ pub struct GraphReportSummary {
 	pub historical_count: usize,
 	/// Number of facts whose validity starts after `as_of`.
 	pub future_count: usize,
+	/// Number of facts without an established validity start at `as_of`.
+	pub unknown_count: usize,
 	/// Number of facts with at least one evidence note link.
 	pub sourced_count: usize,
 	/// Number of facts still backed by pending or unresolved predicate vocabulary.
@@ -122,8 +124,11 @@ pub struct GraphReportFact {
 	/// Predicate registry cardinality, when available.
 	pub predicate_cardinality: Option<String>,
 	#[serde(with = "crate::time_serde")]
-	/// Start of the fact validity window.
-	pub valid_from: OffsetDateTime,
+	/// Time the database first recorded this assertion; not its effective time.
+	pub observed_at: OffsetDateTime,
+	#[serde(with = "crate::time_serde::option")]
+	/// Start of the fact validity window; null when the source does not establish it.
+	pub valid_from: Option<OffsetDateTime>,
 	#[serde(with = "crate::time_serde::option")]
 	/// End of the fact validity window, if superseded or explicitly bounded.
 	pub valid_to: Option<OffsetDateTime>,

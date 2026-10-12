@@ -31,9 +31,9 @@ pub struct SearchExplainRelationContext {
 	pub predicate: String,
 	/// Object payload.
 	pub object: SearchExplainRelationContextObject,
-	#[serde(with = "crate::time_serde")]
-	/// Start of the fact validity window.
-	pub valid_from: OffsetDateTime,
+	#[serde(with = "crate::time_serde::option")]
+	/// Start of the fact validity window; null when the source does not establish it.
+	pub valid_from: Option<OffsetDateTime>,
 	#[serde(with = "crate::time_serde::option")]
 	/// End of the fact validity window, if superseded.
 	pub valid_to: Option<OffsetDateTime>,

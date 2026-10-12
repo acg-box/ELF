@@ -1,5 +1,10 @@
+use time::{OffsetDateTime, format_description::well_known::Rfc3339};
+
 use crate::acceptance::graph_ingestion::tests_helpers;
-use elf_service::{AddNoteInput, AddNoteRequest, NoteOp};
+use elf_service::{
+	AddNoteInput, AddNoteRequest, GraphQueryEntityRef, GraphQueryRequest, NoteOp,
+	RelationTemporalStatus,
+};
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
@@ -171,4 +176,56 @@ async fn add_note_persists_graph_relations() {
 	assert_eq!(evidence_count, 1);
 
 	test_db.cleanup().await.expect("Failed to cleanup test database.");
+}
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant."]
+async fn graph_preserves_unknown_time_and_reuses_declared_aliases() {
+	let db = tests_helpers::build_test_db("graph_identity_time").await.expect("Database required.");
+	let service = tests_helpers::build_stub_service(&db).await;
+
+	for (name, aliases, target) in [
+		("Cobalt", vec!["project Cobalt"], "incident Z"),
+		("project Cobalt", vec![], "procedure Y"),
+	] {
+		let text = format!("Cobalt (project Cobalt) uses {target}.");
+
+		service.add_note(AddNoteRequest {tenant_id:"t".into(),project_id:"p".into(),agent_id:"a".into(),scope:"agent_private".into(),notes:vec![AddNoteInput {
+            r#type:"fact".into(),key:None,text:text.clone(),importance:0.8,confidence:0.9,ttl_days:None,write_policy:None,source_ref:serde_json::json!({"quote":text}),
+            structured:Some(serde_json::from_value(serde_json::json!({"relations":[{"subject":{"canonical":name,"kind":"project","aliases":aliases},"predicate":"uses","object":{"entity":{"canonical":target}}}]})).expect("Evidence integrity fixture must succeed.")),
+        }]}).await.expect("Store graph evidence.");
+	}
+
+	let result = service
+		.graph_query(GraphQueryRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			read_profile: "private_only".into(),
+			subject: GraphQueryEntityRef::Surface { surface: "project Cobalt".into() },
+			predicate: None,
+			scopes: None,
+			as_of: Some(
+				OffsetDateTime::parse("2026-08-22T00:00:00Z", &Rfc3339)
+					.expect("Evidence integrity fixture must succeed."),
+			),
+			limit: None,
+			explain: None,
+		})
+		.await
+		.expect("Read unknown-time candidates.");
+
+	assert_eq!(result.facts.len(), 2);
+	assert!(result.facts.iter().all(|f| f.valid_from.is_none() && f.temporal_status == RelationTemporalStatus::Unknown));
+
+	let count: i64 = sqlx::query_scalar(
+		"SELECT count(*) FROM graph_entities WHERE canonical IN ('Cobalt','project Cobalt')",
+	)
+	.fetch_one(&service.db.pool)
+	.await
+	.expect("Evidence integrity fixture must succeed.");
+
+	assert_eq!(count, 1);
+
+	db.cleanup().await.expect("Clean fixture.");
 }

@@ -19,6 +19,7 @@ fn accepts_long_french_message_content() {
 						.to_string(),
 					ts: None,
 					msg_id: None,
+					source_document: None,
 					write_policy: None,
 				}],
 			};

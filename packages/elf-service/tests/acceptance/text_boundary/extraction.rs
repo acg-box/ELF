@@ -31,6 +31,7 @@ async fn chinese_evidence_and_date_only_relations_survive_native_extraction() {
 				content: text.to_string(),
 				ts: Some("2026-10-01T00:00:00Z".to_string()),
 				msg_id: Some("原文-1".to_string()),
+				source_document: None,
 				write_policy: None,
 			}],
 		})

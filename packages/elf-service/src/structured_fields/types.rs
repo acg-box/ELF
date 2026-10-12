@@ -52,7 +52,7 @@ pub struct StructuredEntity {
 	pub canonical: Option<String>,
 	/// Optional entity kind such as person or organization.
 	pub kind: Option<String>,
-	/// Optional alternate surfaces for the entity.
+	/// Alternate names explicitly used for this same entity in the source. Do not invent aliases.
 	pub aliases: Option<Vec<String>>,
 }
 
@@ -73,7 +73,7 @@ pub struct StructuredRelation {
 	pub object: Option<StructuredRelationObject>,
 	#[serde(with = "crate::structured_fields::relation_time")]
 	#[schemars(with = "Option<String>", description = crate::structured_fields::relation_time::FORMAT)]
-	/// Optional validity-window start.
+	/// Effective start established by the source, not the ingestion time. Use null when unknown.
 	pub valid_from: Option<OffsetDateTime>,
 	#[serde(with = "crate::structured_fields::relation_time")]
 	#[schemars(with = "Option<String>", description = crate::structured_fields::relation_time::FORMAT)]
@@ -85,8 +85,9 @@ pub struct StructuredRelation {
 #[derive(Clone, Debug, Default, Deserialize, JsonSchema, Serialize)]
 #[serde(deny_unknown_fields)]
 pub struct StructuredRelationObject {
-	/// Entity-shaped object value.
+	/// Use an entity for a named person, project, incident, procedure or other linkable
+	/// identifier.
 	pub entity: Option<StructuredEntity>,
-	/// Scalar object value.
+	/// Scalar literal such as a quantity, date, boolean or unstructured description.
 	pub value: Option<String>,
 }

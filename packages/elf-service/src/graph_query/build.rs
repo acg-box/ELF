@@ -109,6 +109,7 @@ pub(super) fn graph_query_facts_from_rows(
 				actor: row.actor,
 				predicate: row.predicate,
 				predicate_id: row.predicate_id,
+				observed_at: row.observed_at,
 				valid_from: row.valid_from,
 				valid_to: row.valid_to,
 				temporal_status: graph::relation_temporal_status(

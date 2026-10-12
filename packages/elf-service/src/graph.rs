@@ -11,6 +11,8 @@ use elf_storage::graph;
 #[derive(Clone, Copy, Debug, Default, Eq, PartialEq, Deserialize, Serialize)]
 #[serde(rename_all = "snake_case")]
 pub enum RelationTemporalStatus {
+	/// The source does not establish when this relation became valid.
+	Unknown,
 	/// The fact's validity window starts after the read timestamp.
 	Future,
 	/// The fact is valid at the read timestamp.
@@ -72,15 +74,18 @@ impl ElfService {
 }
 
 pub(crate) fn relation_temporal_status(
-	valid_from: OffsetDateTime,
+	valid_from: Option<OffsetDateTime>,
 	valid_to: Option<OffsetDateTime>,
 	read_at: OffsetDateTime,
 ) -> RelationTemporalStatus {
-	if valid_from > read_at {
+	if valid_from.is_some_and(|start| start > read_at) {
 		return RelationTemporalStatus::Future;
 	}
 	if valid_to.is_some_and(|valid_to| valid_to <= read_at) {
 		return RelationTemporalStatus::Historical;
+	}
+	if valid_from.is_none() {
+		return RelationTemporalStatus::Unknown;
 	}
 
 	RelationTemporalStatus::Current

@@ -10,7 +10,9 @@ mod source_ref;
 mod types;
 mod validation;
 
-pub use types::{AddEventRequest, AddEventResponse, AddEventResult, EventMessage};
+pub use types::{
+	AddEventRequest, AddEventResponse, AddEventResult, EventMessage, EventSourceDocument,
+};
 
 use serde_json::Value;
 

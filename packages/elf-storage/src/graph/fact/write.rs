@@ -13,10 +13,12 @@ pub async fn insert_fact_with_evidence(
 	predicate_id: Uuid,
 	object_entity_id: Option<Uuid>,
 	object_value: Option<&str>,
-	valid_from: OffsetDateTime,
+	valid_from: impl Into<Option<OffsetDateTime>>,
 	valid_to: Option<OffsetDateTime>,
 	evidence_note_ids: &[Uuid],
 ) -> Result<Uuid> {
+	let valid_from = valid_from.into();
+
 	if evidence_note_ids.is_empty() {
 		return Err(Error::InvalidArgument(
 			"graph fact evidence is required; evidence_note_ids must not be empty".to_string(),
@@ -100,10 +102,12 @@ pub async fn upsert_fact_with_evidence(
 	predicate_id: Uuid,
 	object_entity_id: Option<Uuid>,
 	object_value: Option<&str>,
-	valid_from: OffsetDateTime,
+	valid_from: impl Into<Option<OffsetDateTime>>,
 	valid_to: Option<OffsetDateTime>,
 	evidence_note_ids: &[Uuid],
 ) -> Result<Uuid> {
+	let valid_from = valid_from.into();
+
 	if evidence_note_ids.is_empty() {
 		return Err(Error::InvalidArgument(
 			"graph fact evidence is required; evidence_note_ids must not be empty".to_string(),
@@ -131,7 +135,7 @@ INSERT INTO graph_facts (
 	updated_at
 )
 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, now(), now())
-ON CONFLICT (tenant_id, project_id, scope, subject_entity_id, predicate_id, object_entity_id)
+ON CONFLICT (tenant_id, project_id, agent_id, scope, subject_entity_id, predicate_id, object_entity_id, valid_from)
 WHERE valid_to IS NULL AND object_entity_id IS NOT NULL
 DO UPDATE
 SET updated_at = graph_facts.updated_at
@@ -174,7 +178,7 @@ INSERT INTO graph_facts (
 	updated_at
 )
 VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, now(), now())
-ON CONFLICT (tenant_id, project_id, scope, subject_entity_id, predicate_id, object_value)
+ON CONFLICT (tenant_id, project_id, agent_id, scope, subject_entity_id, predicate_id, object_value, valid_from)
 WHERE valid_to IS NULL AND object_value IS NOT NULL
 DO UPDATE
 SET updated_at = graph_facts.updated_at

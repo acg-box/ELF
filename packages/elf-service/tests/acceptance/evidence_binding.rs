@@ -70,6 +70,7 @@ async fn rejects_invalid_evidence_quote() {
 			content: "This is a message without the expected quote.".to_string(),
 			ts: None,
 			msg_id: None,
+			source_document: None,
 			write_policy: None,
 		}],
 	};
@@ -151,6 +152,7 @@ async fn rejects_transformed_quote_mismatch_with_write_policy() {
 			content: "Alice mentors Bob.".to_string(),
 			ts: None,
 			msg_id: None,
+			source_document: None,
 			write_policy: Some(
 				serde_json::from_value(
 					serde_json::json!({ "redactions": [{ "kind": "remove", "span": { "start": 0, "end": 5 } }] }),

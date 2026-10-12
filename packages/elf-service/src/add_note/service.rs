@@ -131,7 +131,7 @@ impl ElfService {
 		note: &AddNoteInput,
 	) -> Result<(UpdateDecision, UpdateDecisionMetadata)> {
 		let decision = crate::resolve_update(
-			&mut **tx,
+			tx,
 			ResolveUpdateArgs {
 				tenant_id: ctx.tenant_id,
 				project_id: ctx.project_id,
@@ -140,6 +140,7 @@ impl ElfService {
 				note_type: note.r#type.as_str(),
 				key: note.key.as_deref(),
 				text: note.text.as_str(),
+				source_ref: &note.source_ref,
 				now: ctx.now,
 			},
 		)

@@ -143,9 +143,9 @@ pub struct EntityMemoryRelation {
 	pub scope: String,
 	/// Agent that emitted the graph fact.
 	pub actor: String,
-	#[serde(with = "crate::time_serde")]
-	/// Start of fact validity window.
-	pub valid_from: OffsetDateTime,
+	#[serde(with = "crate::time_serde::option")]
+	/// Start of fact validity window, when established.
+	pub valid_from: Option<OffsetDateTime>,
 	#[serde(with = "crate::time_serde::option")]
 	/// End of fact validity window, when superseded.
 	pub valid_to: Option<OffsetDateTime>,

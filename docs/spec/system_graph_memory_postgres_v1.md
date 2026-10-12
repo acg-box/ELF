@@ -6,7 +6,7 @@ resource: docs/spec/system_graph_memory_postgres_v1.md
 status: active
 authority: normative
 owner: spec
-last_verified: 2026-10-10
+last_verified: 2026-10-12
 tags:
   - docs
   - spec
@@ -145,7 +145,7 @@ Registration behavior:
 - `predicate_id uuid NULL REFERENCES graph_predicates(predicate_id)`
 - `object_entity_id uuid NULL REFERENCES graph_entities(entity_id)`
 - `object_value text NULL`
-- `valid_from timestamptz NOT NULL`
+- `valid_from timestamptz NULL` (unknown effective start is null)
 - `valid_to timestamptz NULL`
 - `created_at timestamptz NOT NULL DEFAULT now()`
 - `updated_at timestamptz NOT NULL DEFAULT now()`
@@ -154,15 +154,15 @@ Checks:
 - Exactly one object reference per fact:
   - `(object_entity_id IS NULL AND object_value IS NOT NULL)` OR
     `(object_entity_id IS NOT NULL AND object_value IS NULL)`
-- `valid_to IS NULL OR valid_to > valid_from`
+- `valid_from IS NULL OR valid_to IS NULL OR valid_to > valid_from`
 
 Indexes:
 - `(tenant_id, project_id, subject_entity_id, predicate_id)`
 - `(tenant_id, project_id, valid_to)`
 - `(tenant_id, project_id, object_entity_id) WHERE object_entity_id IS NOT NULL`
-- `UNIQUE (tenant_id, project_id, scope, subject_entity_id, predicate_id, object_entity_id)
+- `UNIQUE (tenant_id, project_id, agent_id, scope, subject_entity_id, predicate_id, object_entity_id, valid_from) NULLS NOT DISTINCT
   WHERE valid_to IS NULL AND object_entity_id IS NOT NULL`
-- `UNIQUE (tenant_id, project_id, scope, subject_entity_id, predicate_id, object_value)
+- `UNIQUE (tenant_id, project_id, agent_id, scope, subject_entity_id, predicate_id, object_value, valid_from) NULLS NOT DISTINCT
   WHERE valid_to IS NULL AND object_value IS NOT NULL`
 
 ============================================================
@@ -217,12 +217,21 @@ Supersession rule (write-time):
   - whitespace collapse to one space
   - lowercase
 - An active fact is defined by: `valid_from <= now AND (valid_to IS NULL OR valid_to > now)`.
-- Active duplicate prevention is enforced by partial unique indexes.
+- Active duplicate prevention is enforced by partial unique indexes. The owner
+  agent and effective start are part of fact identity. Unknown and known starts
+  cannot overwrite each other; repeated unknown starts deduplicate.
+- Missing effective starts remain null. Never substitute ingestion time. The
+  stored `created_at`, returned as `observed_at` by graph query/report, records
+  when ELF first observed the assertion. Unknown-time candidates do not trigger
+  single-cardinality supersession.
 - When ingestion reintroduces a note equivalent to an existing active fact, the system reuses the existing fact row and appends additional evidence rows for the new note instead of creating another active duplicate fact row.
 - Graph read APIs should expose relation temporal state derived from the validity window:
   - `current` when `valid_from <= read_at AND (valid_to IS NULL OR valid_to > read_at)`.
   - `historical` when `valid_to <= read_at`.
   - `future` when `valid_from > read_at`.
+  - `unknown` when `valid_from IS NULL` and the fact has not reached a known end.
+- Graph queries may return unknown-time candidates alongside time-matched facts.
+  Clients must not treat these candidates as established current truth.
 - Graph query, graph report, and search relation context readbacks must return a
   fact only when at least one linked evidence note is active, unexpired, and readable
   under the caller's scope context at read time.
@@ -274,3 +283,8 @@ fetch_active_facts_for_subject(
 	now,
 )
 ```
+
+Same-time conflicting assertions remain separate candidates instead of creating
+zero-length validity windows. Automatic supersession closes only strictly earlier
+known starts owned by the same agent. A shared predicate does not authorize one
+agent to retire another agent's fact.

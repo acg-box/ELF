@@ -53,7 +53,8 @@ pub(super) struct GraphQueryFactRow {
 	pub(super) object_canonical: Option<String>,
 	pub(super) object_kind: Option<String>,
 	pub(super) object_value: Option<String>,
-	pub(super) valid_from: OffsetDateTime,
+	pub(super) observed_at: OffsetDateTime,
+	pub(super) valid_from: Option<OffsetDateTime>,
 	pub(super) valid_to: Option<OffsetDateTime>,
 	pub(super) evidence_note_ids: Vec<Uuid>,
 }

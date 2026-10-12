@@ -21,7 +21,7 @@ use elf_config::McpContext;
 impl ServerHandler for ElfMcp {
 	fn get_info(&self) -> ServerInfo {
 		ServerInfo::new(ServerCapabilities::builder().enable_tools().build())
-			.with_instructions("ELF MCP adapter that forwards tool calls to the ELF HTTP API.")
+			.with_instructions("ELF provides source-backed memory tools. Expand an existing search_id with elf_searches_get before repeating a query when the first result page is incomplete. Read l2 note provenance and follow elf_doc_ext/v1 document pointers with their selectors and hash checks. Graph facts with unknown validity are evidence candidates, not current truth. Follow useful object or evidence-note links; an empty graph path does not disprove a source-backed fact. Stop when the requested facts have sufficient evidence, preserve uncertainty, and copy citation identifiers exactly.")
 	}
 }
 

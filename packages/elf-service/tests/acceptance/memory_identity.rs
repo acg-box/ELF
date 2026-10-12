@@ -161,3 +161,66 @@ async fn memory_identity_preserves_distinct_facts_and_clears_stale_fields() {
 
 	db.cleanup().await.expect("Identity regression fixture must succeed.");
 }
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant."]
+async fn identical_text_preserves_source_occurrences_under_concurrent_retries() {
+	let db = acceptance::test_db().await.expect("Postgres is required.");
+	let cfg = acceptance::test_config(
+		db.dsn().to_string(),
+		acceptance::test_qdrant_url().expect("Qdrant is required."),
+		4_096,
+		db.collection_name("occurrences"),
+		db.collection_name("occurrence_docs"),
+	);
+	let service = acceptance::build_service(
+		cfg,
+		Providers::new(
+			Arc::new(IdenticalEmbedding),
+			Arc::new(StubRerank),
+			Arc::new(SpyExtractor {
+				calls: Arc::new(AtomicUsize::new(0)),
+				payload: serde_json::json!({"notes":[]}),
+			}),
+		),
+	)
+	.await
+	.expect("Build service.");
+	let mut first = note(None, "No change was approved.");
+
+	first.source_ref = serde_json::json!({"source_id":"project-A/meeting"});
+
+	let mut second = first.clone();
+
+	second.source_ref = serde_json::json!({"source_id":"project-B/meeting"});
+
+	let (left, right) =
+		tokio::join!(service.add_note(request(first.clone())), service.add_note(request(first)));
+	let left = left.expect("First concurrent write.").results.remove(0);
+	let right = right.expect("Concurrent retry.").results.remove(0);
+
+	assert_eq!(left.note_id, right.note_id);
+	assert!(matches!(
+		(left.op, right.op),
+		(NoteOp::Add, NoteOp::None) | (NoteOp::None, NoteOp::Add)
+	));
+
+	let other = service
+		.add_note(request(second))
+		.await
+		.expect("Distinct source occurrence.")
+		.results
+		.remove(0);
+
+	assert_eq!(other.op, NoteOp::Add);
+	assert_ne!(other.note_id, left.note_id);
+
+	let count: i64 = sqlx::query_scalar("SELECT count(*) FROM memory_notes")
+		.fetch_one(&service.db.pool)
+		.await
+		.expect("Read occurrences.");
+
+	assert_eq!(count, 2);
+
+	db.cleanup().await.expect("Clean fixture.");
+}

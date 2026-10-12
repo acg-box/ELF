@@ -2,6 +2,7 @@
 
 mod api;
 mod chunking;
+mod event_sources;
 mod excerpts;
 mod queries;
 mod search_support;
