@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-12T10:51:46.413402+00:00",
+  "action": "Gracefully drain two active cases before restoring two provider requests in parallel. The full per-request reservation and cumulative $10 hard ceiling remain unchanged.",
+  "reason": "Observed remaining primary count and marginal costs leave room for two reserved requests. A long serial model response blocks unrelated work.",
+  "consumer_pid": 64609,
+  "drained_at": "2026-10-12T10:54:18.728197+00:00",
+  "cases": 84,
+  "paid_usd": 7.35380611000002,
+  "exposure_usd": 8.437606510000009,
+  "in_flight": 0,
+  "restored_provider_concurrency": 2
+}

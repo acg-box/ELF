@@ -1,0 +1,5 @@
+{
+  "condition": "initial",
+  "purpose": "Separate richer initial structured notes from iterative tool use. Same prompt, initial projection, model, and output allowance; no tools. Run after the four primary arms.",
+  "max_output_tokens": 393216
+}

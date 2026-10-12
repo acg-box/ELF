@@ -1,0 +1,57 @@
+{
+  "verified_at": "2026-10-12T11:53:25.048817+00:00",
+  "removed_containers": [
+    "e8d8f8e5c923a6cf67b6f3206ddc6895105664be365ec0280b0514532282e288",
+    "86aa340b3a6fb5ba8ba984f2e92b8af395e986a1bb24c6b3686e197ce4e4b018",
+    "444bab699ca87413a9078c3cb9b028b1226720f3e4e22714410138e3cd79b370",
+    "09f4334d36f8b0b8fee72f0397caeb1e6961fcc5d9bb1e7a97f69b29a76b0877",
+    "7f8163c9d36d069827cd8890c73cf63f2ed5abbeced9c52a0c312a7214fe9bcc",
+    "31f81e1cc580ada49a01c8d4d0cec543a51d5f0a439dcdf8935ef26bedfeae79",
+    "bc8c536a15e02f0e09bd3b56031bfaf0afe1ea4c8eb312f2597b931f0198eb98",
+    "4ee5a127c2110b30372fad8e62636b5fa38f9b9a654c8f4e38b739fc88e68939"
+  ],
+  "removed_volumes": [
+    "99bbd13b0fc1cd422e6e1d10f623e8cdb1d58a717ef5064abee9fe4e4eb97169",
+    "a5ba8db4ee7867f707d565c84c499f44e87c5f5e0726a50591e54a61a553cdb4"
+  ],
+  "removed_network": "dc6c38ac49b52bdf07261f336b8f4297d070928448b549eb90b0345bba7b49ee",
+  "removed_image_references": [
+    {
+      "reference": "elf-grounded-evidence:current",
+      "receipt": "Untagged: elf-grounded-evidence:current\nDeleted: sha256:b8da3afc52c54818bbb38bb95792173c6f65c9a085170ae1a8469eda170486a6"
+    },
+    {
+      "reference": "elf-grounded-evidence:window-fix",
+      "receipt": "Untagged: elf-grounded-evidence:window-fix\nDeleted: sha256:7ac4e4f79ea70e6a9ee05b1f94d808eedcf0275bf339f80f6eea3ccc92a48c99"
+    }
+  ],
+  "retained_images": [],
+  "unrelated_containers_preserved": [
+    "b45eb9bd123bae3d698f6bf4ac9e4c13e76740f2347508fadf5fd0e1208a2359",
+    "5537bcad41a43193a1919510969c84881ed507eff5b6c04683e81b62fbbaaec0",
+    "60de474701008644fe32369605cfcd3f51b2b3c9c92e6116074a230ca1de55f0",
+    "0612de418a16363d1b33844e9fac9a350a53c62a888847ad7919f2c6a8364988",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d"
+  ],
+  "remaining_container_ids": [
+    "b45eb9bd123bae3d698f6bf4ac9e4c13e76740f2347508fadf5fd0e1208a2359",
+    "5537bcad41a43193a1919510969c84881ed507eff5b6c04683e81b62fbbaaec0",
+    "60de474701008644fe32369605cfcd3f51b2b3c9c92e6116074a230ca1de55f0",
+    "0612de418a16363d1b33844e9fac9a350a53c62a888847ad7919f2c6a8364988",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d"
+  ],
+  "global_prune": false,
+  "raw_results_preserved": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/grounded-evidence-4096",
+  "backup_restore_receipt": "backup-receipt.json",
+  "docker_disk_after": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          65        9         12.75GB   8.278GB (64%)\nContainers      10        10        1.84MB    0B (0%)\nLocal Volumes   74        3         22.75GB   19.57GB (86%)\nBuild Cache     512       0         52.47GB   52.05GB"
+}

@@ -1,0 +1,12 @@
+{
+  "cases": 9,
+  "remaining": 0,
+  "case_prefix": "memory-",
+  "conditions": [
+    "notes",
+    "source",
+    "graph",
+    "both"
+  ],
+  "note": "Exhausted agents are retained outcomes, not rerun answers. Counts cover only cases executed in this invocation."
+}

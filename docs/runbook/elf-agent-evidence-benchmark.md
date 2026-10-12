@@ -157,3 +157,12 @@ atomic `claims`, exact quotes, and separate absence/unknown/conflict states.
 The post-answer native binding audit uses current permissions and source hashes;
 it does not provide new evidence to the model or certify semantic entailment.
 Keep the existing output allowance and cumulative budget gateway.
+
+Grounded initial-memory controls use the same native post-answer quote audit.
+Keep the fixture API running until these audits finish. The reader still has
+no tools and receives no audit feedback. Source-disabled projections omit
+`source_ref`, including source quotes and timestamps; report that boundary when
+interpreting source-access gains.
+
+See the [retained grounded-evidence trial](../evidence/benchmarking/2026-10-12-grounded-evidence.md)
+for the selected matrix, scores, cost, and offline verification commands.

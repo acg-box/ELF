@@ -1,0 +1,173 @@
+[
+  {
+    "id": "09f4334d36f8b0b8fee72f0397caeb1e6961fcc5d9bb1e7a97f69b29a76b0877",
+    "name": "/elf-matched-worker",
+    "image_id": "sha256:b8da3afc52c54818bbb38bb95792173c6f65c9a085170ae1a8469eda170486a6",
+    "image_reference": "elf-grounded-evidence:current",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.revision": "a0bb04d3629aaba4b1bdb4e42d929b4bc182be1a"
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/grounded-evidence-4096",
+        "Destination": "/experiment",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "id": "86aa340b3a6fb5ba8ba984f2e92b8af395e986a1bb24c6b3686e197ce4e4b018",
+    "name": "/elf-matched-api",
+    "image_id": "sha256:b8da3afc52c54818bbb38bb95792173c6f65c9a085170ae1a8469eda170486a6",
+    "image_reference": "elf-grounded-evidence:current",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.revision": "a0bb04d3629aaba4b1bdb4e42d929b4bc182be1a"
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/grounded-evidence-4096",
+        "Destination": "/experiment",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "id": "e8d8f8e5c923a6cf67b6f3206ddc6895105664be365ec0280b0514532282e288",
+    "name": "/elf-grounded-window-api",
+    "image_id": "sha256:7ac4e4f79ea70e6a9ee05b1f94d808eedcf0275bf339f80f6eea3ccc92a48c99",
+    "image_reference": "elf-grounded-evidence:window-fix",
+    "labels": {
+      "elf.task": "elf-grounded-evidence",
+      "org.opencontainers.image.revision": "0b41ef27df3d2a0401d185165dde0f200c31e811"
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/grounded-evidence-4096",
+        "Destination": "/experiment",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "id": "444bab699ca87413a9078c3cb9b028b1226720f3e4e22714410138e3cd79b370",
+    "name": "/elf-matched-sidecar",
+    "image_id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+    "image_reference": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.created": "2026-10-08T15:31:07.027Z",
+      "org.opencontainers.image.description": "Hindsight: Agent Memory That Learns",
+      "org.opencontainers.image.licenses": "MIT",
+      "org.opencontainers.image.revision": "eb6df499d35300e5b2f3f029b2e6adda04ed90f8",
+      "org.opencontainers.image.source": "https://github.com/vectorize-io/hindsight",
+      "org.opencontainers.image.title": "hindsight",
+      "org.opencontainers.image.url": "https://github.com/vectorize-io/hindsight",
+      "org.opencontainers.image.version": "0.10.3"
+    },
+    "mounts": [
+      {
+        "Type": "bind",
+        "Source": "/Users/x/.codex/worktrees/elf-grounded-evidence/ELF/scripts/benchmark_deep/native_sidecar.py",
+        "Destination": "/native-sidecar.py",
+        "Mode": "ro",
+        "RW": false,
+        "Propagation": "rprivate"
+      },
+      {
+        "Type": "bind",
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/grounded-evidence-4096",
+        "Destination": "/experiment",
+        "Mode": "",
+        "RW": true,
+        "Propagation": "rprivate"
+      }
+    ]
+  },
+  {
+    "id": "4ee5a127c2110b30372fad8e62636b5fa38f9b9a654c8f4e38b739fc88e68939",
+    "name": "/elf-matched-qdrant",
+    "image_id": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c",
+    "image_reference": "qdrant/qdrant:v1.18.0",
+    "labels": {
+      "elf.benchmark": "elf-matched",
+      "org.opencontainers.image.description": "Official Qdrant image",
+      "org.opencontainers.image.documentation": "https://qdrant.com/docs",
+      "org.opencontainers.image.source": "https://github.com/qdrant/qdrant",
+      "org.opencontainers.image.title": "Qdrant",
+      "org.opencontainers.image.url": "https://qdrant.com/",
+      "org.opencontainers.image.vendor": "Qdrant",
+      "org.opencontainers.image.version": "v1.18.0"
+    },
+    "mounts": []
+  },
+  {
+    "id": "bc8c536a15e02f0e09bd3b56031bfaf0afe1ea4c8eb312f2597b931f0198eb98",
+    "name": "/elf-matched-db",
+    "image_id": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+    "image_reference": "pgvector/pgvector:pg18",
+    "labels": {
+      "elf.benchmark": "elf-matched"
+    },
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "99bbd13b0fc1cd422e6e1d10f623e8cdb1d58a717ef5064abee9fe4e4eb97169",
+        "Source": "/var/lib/docker/volumes/99bbd13b0fc1cd422e6e1d10f623e8cdb1d58a717ef5064abee9fe4e4eb97169/_data",
+        "Destination": "/var/lib/postgresql",
+        "Driver": "local",
+        "Mode": "",
+        "RW": true,
+        "Propagation": ""
+      }
+    ]
+  },
+  {
+    "id": "31f81e1cc580ada49a01c8d4d0cec543a51d5f0a439dcdf8935ef26bedfeae79",
+    "name": "/elf-grounded-test-qdrant",
+    "image_id": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c",
+    "image_reference": "qdrant/qdrant:v1.18.0",
+    "labels": {
+      "elf.task": "elf-grounded-evidence",
+      "org.opencontainers.image.description": "Official Qdrant image",
+      "org.opencontainers.image.documentation": "https://qdrant.com/docs",
+      "org.opencontainers.image.source": "https://github.com/qdrant/qdrant",
+      "org.opencontainers.image.title": "Qdrant",
+      "org.opencontainers.image.url": "https://qdrant.com/",
+      "org.opencontainers.image.vendor": "Qdrant",
+      "org.opencontainers.image.version": "v1.18.0"
+    },
+    "mounts": []
+  },
+  {
+    "id": "7f8163c9d36d069827cd8890c73cf63f2ed5abbeced9c52a0c312a7214fe9bcc",
+    "name": "/elf-grounded-test-db",
+    "image_id": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+    "image_reference": "pgvector/pgvector:pg18",
+    "labels": {
+      "elf.task": "elf-grounded-evidence"
+    },
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "a5ba8db4ee7867f707d565c84c499f44e87c5f5e0726a50591e54a61a553cdb4",
+        "Source": "/var/lib/docker/volumes/a5ba8db4ee7867f707d565c84c499f44e87c5f5e0726a50591e54a61a553cdb4/_data",
+        "Destination": "/var/lib/postgresql",
+        "Driver": "local",
+        "Mode": "",
+        "RW": true,
+        "Propagation": ""
+      }
+    ]
+  }
+]

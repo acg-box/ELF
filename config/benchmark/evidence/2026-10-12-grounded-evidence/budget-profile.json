@@ -1,0 +1,17 @@
+{
+  "ceiling_usd": 10,
+  "prior_paid_usd": 4.067705692,
+  "existing_unsettled_ordinal": 1577,
+  "existing_unsettled_reservation_usd": 0.5691777,
+  "chat_max_tokens": 393216,
+  "reasoning_effort": "max",
+  "chat_prompt_price_per_million_cap": 0.3,
+  "chat_completion_price_per_million_cap": 1.2,
+  "embedding_dimensions": 4096,
+  "prepare_gateway_concurrency": 1,
+  "primary_gateway_concurrency": 2,
+  "primary_case_workers": 2,
+  "control_gateway_concurrency": 1,
+  "control_case_workers": 1,
+  "policy": "Each request reserves full possible cost under one atomic ledger. No repeat of a completed factual answer."
+}

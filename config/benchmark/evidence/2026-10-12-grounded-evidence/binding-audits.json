@@ -1,0 +1,5543 @@
+[
+  {
+    "condition": "both",
+    "case_id": "contrast-5-0",
+    "answer_sha256": "e42ae312e65af3ef9a3a298db69ff9db775deb4cfc094c7c23730c0575923683",
+    "claims_sha256": "76ac6d0d24208bfe860b86dffa9c5bb5cf0dd98e547ef6db61570c2ecb926faa",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-5-1",
+    "answer_sha256": "4cedf7d374638602374799025d2847861b26f6e4518c953369163801c66b69a5",
+    "claims_sha256": "884d83afb089cbfea59628c6258643a55e43302d7a618894e354bfd86a6f05e4",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          false
+        ],
+        "exposed": false
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": false,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-5-2",
+    "answer_sha256": "025f6e378f5bab9ca95c0a05e9e6a885346a5b258a048fd462d74ac0c2034fab",
+    "claims_sha256": "e5899b221e4d1ee92f0fd3ca34045e562beb8a7d90171f1972131ef65eaa0af9",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-5-3",
+    "answer_sha256": "d530eded9a530af313b3255d0200759818b390460263462a9e5287eaab1c862e",
+    "claims_sha256": "fe3eb1828ec512f1a552116655290af027783dd70e205f5d53dbb33a4349b10c",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-6-0",
+    "answer_sha256": "ad40b02dcc1a7115a89108456bd8a835851c90187c3ad904f67462037394cd01",
+    "claims_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "claim_count": 0,
+    "claims": [],
+    "top_level_matches_claims": true,
+    "exposure_pass": false,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-6-1",
+    "answer_sha256": "23151faf9a3a2744d50130074a6ab379f1336353ed04f0faa35723f99b0e6908",
+    "claims_sha256": "2997e11548c1af83888559123db87db383e96fbebc16d5f653b8f10cd3c9e984",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-6-2",
+    "answer_sha256": "fcaa6837db9262a7778578d7d957e6fbe1568b2fe274b743a30ef200f3544a8b",
+    "claims_sha256": "f77a03f2251d9aa6a601d7d92974182888a32d7556c3aad0ab5da61db968700f",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-6-3",
+    "answer_sha256": "88b500c3c80b2fc7e314bd88bf98f143df73f2fececbb26f6df1b1dbade29cf7",
+    "claims_sha256": "933d5ff92c96eb978f390d6f683a4eb4724e2e98cd7f8b133bc6601064ed1e51",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-7-0",
+    "answer_sha256": "0bb6fa5f022b93c844f2aa23d9f762518feb5c0f49b84437993e7c41a59c4742",
+    "claims_sha256": "9bafffefaceb6f9f4b6bbc2eb24571002f1f50eccedc55418722618cd533ce3d",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-7-1",
+    "answer_sha256": "2a703dc4f1deb2a352582b877c1a2783da253a9891767a2cb65600c2eed0067e",
+    "claims_sha256": "ad6d03dc3e2006786712ea8c07f377a62a964685ddb14653fdd32b575934d0ed",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-7-2",
+    "answer_sha256": "509db1dcca94c3207449ed372f88f1256577feee7996fabb3822c8415ca3ea9b",
+    "claims_sha256": "13a742d149d80467d04dc886858493f81e95e8583a5f2686d4fda0ef3846795f",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-7-3",
+    "answer_sha256": "b3ef1f2484d6c13a8491068b226650aa0179b49e39126ef376b4b4fded47889c",
+    "claims_sha256": "6730c1116607a504bf0cba616d3f4cec1036defe6ce35af9222e3f3ba3dae349",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          false
+        ],
+        "exposed": false
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          false
+        ],
+        "exposed": false
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": false,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-8-0",
+    "answer_sha256": "038ec4e3fa18b3a887288dfd3f20489d47bdedefbc9bbc1194542025ce58a958",
+    "claims_sha256": "ce10b236a69143e5d076d60951050602a66163c54041e7d2367fa73d65c55c05",
+    "claim_count": 9,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 5,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 6,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 7,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 8,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-8-1",
+    "answer_sha256": "b1fa05a80280eb3daf41a0ce3873dd5df9e307c682e7630f6163416fad3900ea",
+    "claims_sha256": "2dae9be56f776f310a04bfcb59820d72cf0d038e61f837ddaaba130d8d79ae3c",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-8-2",
+    "answer_sha256": "fc1dd123e0532fd55d754d83a8bf927ac402d67b86918cb8029f25fd0203e67e",
+    "claims_sha256": "05c6f3f7d45659ef52dd313af183ca6fd0cf7f840c0b22c910500951d04ef9c7",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "contrast-8-3",
+    "answer_sha256": "2fdd341f45646d99c353bcebdb9860e7641989b151372f794607a8c29540ae51",
+    "claims_sha256": "b8d8f467eeb299a675430d31212f01e06d59a716c5ea1da9b5f6290e7eea9416",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-0",
+    "answer_sha256": "6fc131aa90951fe49eb5b24f33a734c99e899b7ecb466c7d1377a85894ef5672",
+    "claims_sha256": "e212b94d6aaa8f9a8c4d667472a361d47f73c6185ebb9c9837a05b96dcf55807",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-1",
+    "answer_sha256": "6e04e92882f123a030a74285e5634f3ee8c37b9b513f21a440a40d6adab4b3b0",
+    "claims_sha256": "a1370ecedf151c3fa3e6af44e45724eddef24168bc11254eb1c4e02be9584937",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-2",
+    "answer_sha256": "5c14812085d43b4508bd50666f9b53237ac29ceb7055f8fe8c71ef90573deea0",
+    "claims_sha256": "68ada8fd6717a55ef30c9ab706843ec14c954cd9a010cbb833f9431843240d5a",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-3",
+    "answer_sha256": "a89a4f8fc300ec33608062fca6a4da2d432f7a1ba764cf4b4fc07fe7d5a3f261",
+    "claims_sha256": "b5d9859dd8a8d1c187f7890fdc53dd0f5e8d5cea1a9d00ee6aa53f8403a2150b",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          false
+        ],
+        "exposed": false
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": false,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-0",
+    "answer_sha256": "ef180c0e8c68bc86f5a2b4be41df078187f36edae0b882db042e34ec46bf9032",
+    "claims_sha256": "dd520cb70b161850fd33750b5162ba6c05fe62c294776e1928c61dcacaabf1b7",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-1",
+    "answer_sha256": "b77e8b766dad93e217248f45ddf39cdf97e4e2e9d386f1e744dee2d2f3a05a5f",
+    "claims_sha256": "cdfd4c2deb20e74dca56a71d352043e06a71788aa9b11ee431d8073263d3d22e",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-2",
+    "answer_sha256": "dda69349deccb938d597e259f25605ac1497fe5a2da6ce25bddecc58638d148b",
+    "claims_sha256": "414d2963f8dcc6e4afc70e2e67a986481147f46fa408eed8b91b76d9dac1b3d5",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-3",
+    "answer_sha256": "ae1a668a5a20cb8587d5ee1392f201782c83c64fa44e3bd6c2f3327073749abf",
+    "claims_sha256": "8fbcf03a4e98acf9400ddf938fed3a21c6f39848e53de3f38f246f8d360fe7e4",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-0",
+    "answer_sha256": "c6fb0d263a3887911d393ea384d55e6b216c3cc4e7b0158e8fa7771709a8ab07",
+    "claims_sha256": "a44bfbdcd1f6383a52662c8228feb418d0749fbcfd79aa62bcd30a52a7130953",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-1",
+    "answer_sha256": "937ebf6aac3c9881bda8234388d538c8e4e6586e79beffd45416098067a686d9",
+    "claims_sha256": "acf0cee3679119807d93598861779f87196707e65172a502358b2f971b96e542",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-2",
+    "answer_sha256": "08980529d183f0d61540fcbe4bd29f6113e3be160a2b666a07e235293f9c648b",
+    "claims_sha256": "e7bd93a52d7f74dfeed36dbcfaf89af1355974204e96f8c81a0fd04cb3081c2b",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-3",
+    "answer_sha256": "0ee0e48a5dfcc4196539fad011a40835d44748fa5a3f1e9f61aeff7758d992da",
+    "claims_sha256": "40fe4441cc640da63435d53a7de33bdf61c8aef073a1a2263f50fba4be08bf31",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-0",
+    "answer_sha256": "11c4ef6f8e94bdc24afb6a7eeb693e4fee50dd4c4037887cb1d52075a9c36487",
+    "claims_sha256": "30daf20215c75365d603e262962ddc1fa4ceedc9c143fbf76e8fd487e3cc4896",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-1",
+    "answer_sha256": "66f18f139acaa287665ecea7adefe12074b2917029fd6c91cef59ad81a88868a",
+    "claims_sha256": "cb082c0801185db031d1cdba5ddf97652f03a044339cf9f1d15ca64e7cc3bd45",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-2",
+    "answer_sha256": "ca47c752e20b58fd4ede0dda8ccfd2cb0ffe0809d84d340ef74020d9ebbc7f71",
+    "claims_sha256": "37a1d2e2ed80a8feb8398047473f09cc8cd1ee8bbecad4df3c547b91e3d5eb46",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-3",
+    "answer_sha256": "1d1dcedc38d040978f4d351dbe734d9d580cfb1353aa33d1c2ea390f71cebf40",
+    "claims_sha256": "203bdede5ff365934a9fe65b6e94e3158bc9d0ec1e27f8205495be4128daad0c",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-0",
+    "answer_sha256": "84bd08e9833b4513f798d8af00a4d0b60f686ff9c0567ce40ada210769d7a1b5",
+    "claims_sha256": "e0ee6604f7dbfccfa38d40c00520b7004d9b7a46cdcd8e76f2a9c665cd8b9410",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          false
+        ],
+        "exposed": false
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": false,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "answer_sha256": "f9c08058f09e0f4d876c1e53bc0340f6dc22a5a9beeefc77cd0547f720c57d5a",
+    "claims_sha256": "a31f39c27199bf1c47ed0585445e941b9d093eb0d9a6a3b47513b80adbfdbdcb",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-2",
+    "answer_sha256": "cdbb4197b4dd3185b0011061788ac689c10bbcdc3c0b24a4531c25541a55af76",
+    "claims_sha256": "61219d1a7d11214a0ae65ed23fc7b51737651be02cdd0e630f88ed58fc060233",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-3",
+    "answer_sha256": "f4d0308f789774df7886855a778f36fccd32712a42f3cced70b3b9d80af3e109",
+    "claims_sha256": "e82930f10d298b2fc4ec7dbd7757206ae65d26686f1bf8a36b50261d8bf60ee1",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-0",
+    "answer_sha256": "c03bb95cfe5df33e4f15fe995cd6916f9e96a769abae3df878b7b5c14a801d4e",
+    "claims_sha256": "0a9a075f40e41e426b31240a7f18a66222fbdbc242fd070581228a4d8488e4a6",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-1",
+    "answer_sha256": "f0e5b5dad9e6ea2b47f839a66e2b9c49b6e10278a2408550c41d22e1334cf03c",
+    "claims_sha256": "9d6be40251fc5ef2f6f01daab02802b331cae4c6dec396a227a25e7c2cab503c",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "answer_sha256": "579388bb464dbd69b5ce3216f010521521c33b8340ed0a78d6a604b8d7322b14",
+    "claims_sha256": "182570aadab2159da079437307306fd16584a4bfc4ee0e9397e0e61dcf18ae88",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-3",
+    "answer_sha256": "e0eb7261ac85b45dd75cb6b860792b3aa75ef69fb0581e58f452b7ada759fe91",
+    "claims_sha256": "65e8c940d785781e8ff224025b2bb714a7bbab82705db90724ccfcc4ac73a9d4",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-0",
+    "answer_sha256": "5ea4abb885346c3725e47492230d21a1c816bd63d86aa7a6abc18a563c7b6bd6",
+    "claims_sha256": "71c241d2e17daf700cd7101480d8f9cdb83f30a74528a442cd12b71b62f4802e",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "answer_sha256": "0d50001625b6a18e7e4553cf8ad72f5cac9609c45c557a27a6f8ee3184097965",
+    "claims_sha256": "ac11618f282ebdb587607f8eba4ce103d5ce20f38f2ba5ec846fdfecd4d76f2a",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-2",
+    "answer_sha256": "fcf9b43be75b4a423064d8efb26c37a73087278cc21b48473de2f7e3f6ae9f50",
+    "claims_sha256": "4ba5543ad6da19d656defeec6a4e171740fc070c73515c940f40f8367fac2093",
+    "claim_count": 6,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 5,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-3",
+    "answer_sha256": "1f6f43e6fda40a5291c213fa264f4bd13c05178eea29078c3515b3042581f4de",
+    "claims_sha256": "480af5b2d0d067aa466ac8f510e5f536411a348fafb99da7157f72e51bcf5637",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-0",
+    "answer_sha256": "e913f719d360c5ff90dd62ba678a6c3f8a6c36b7fa866b73e93dca3fdb6c7548",
+    "claims_sha256": "2fd7cd084b58f0a8ebd809f4df2a79e7a7a7f98e1af2e5aa3151e354a311a648",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-1",
+    "answer_sha256": "595937df59b02b24b5b59b1b122f0143bbd54d64802d785ed3bebae5a56543c8",
+    "claims_sha256": "1924182ec4a11e7e425b9a3078a5b7b0f1642e780276b44bfee5be36cde58b2f",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-2",
+    "answer_sha256": "ddb67891ccba59256ac3fdfb643c5378bb3fe7af4ad1887878450ccad9a2772b",
+    "claims_sha256": "2d427b77bd639305a85161113bc02d59ec7dc4e09b98eea46f30d45b6ea8c338",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-3",
+    "answer_sha256": "ef8cee8e4d5209272e105804c0cc73dd1bb585a487bfb123b616f0d9f1067456",
+    "claims_sha256": "4dee6211c6dd943b150c13fa1c4b37354c119052b6f67560e41b817fb8a828d0",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-0",
+    "answer_sha256": "c34a2d5c024b81490e0649e154c2b19ff5b8ab1719e917bee3b4c63e15f854f1",
+    "claims_sha256": "b94b46c415d74264aac94bb32e75367f1d5449cc438eaccd611a07c14ff787c6",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "answer_sha256": "762ed16c08c9bf919122fa193ae568db9e47fddda64f2bcd4c695195ba8511d7",
+    "claims_sha256": "557b072d40cdfcea84653af7dffc560852b4e6aab6546e9b5b2e1a3d7b5c5eb9",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-2",
+    "answer_sha256": "a168858b1c6bf28da84e6da366458cacfc8278afe6d072193089f45aff8dab36",
+    "claims_sha256": "17dece71c90d1f6a82fa39dfc7eb9379722944349b4f51d7d4568b8fd2040647",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-3",
+    "answer_sha256": "71b87057b358ce203b2bacb169378222b6e5759d48f26185c7f0e2b05e9c361e",
+    "claims_sha256": "daef1f598e5f1f946ca85d8044dc8618d1cbdba50a35bc738a4a363df07caa43",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-0",
+    "answer_sha256": "49a54119b93b85f5cada35108f735d0d375476056f58ea733bb3a4c959e01de0",
+    "claims_sha256": "dfd63c988128d4030603fb5fdf67d4fdbc693dbd41967195e28baa4a7700a757",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-1",
+    "answer_sha256": "c79330514a37f137ae5e4e2dbe71587603b8aaeadccf4c9b09417695664195fb",
+    "claims_sha256": "8ae85b0446c5fc091c41095c5012e65f13d49a61feec2f5fb4a4980b5697ae04",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-2",
+    "answer_sha256": "199ca50fda4fd7164ed57a3d96da464433ee775cfd750ef9538ed0d177699ba7",
+    "claims_sha256": "5ce0b7e24d181e5f2ea8408483b7bca24b9c3a5339fdda532c4c979f87fc1435",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-3",
+    "answer_sha256": "2c63b31e52274a30ee4520de6fbf266c152a66c92ca19bb202f369e5ea6bfc4d",
+    "claims_sha256": "7c8119a8e515219546d469416e41a9473ebab0f4bd626dcfb320ca1c7ca65568",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-5-0",
+    "answer_sha256": "bd8a5c9c14603abe64d4805ee861d3acfe46e8908aa9f82d935b02cbd2af0669",
+    "claims_sha256": "57834a8f46298804849b374000fb6bad9873553fedfaf5e1c44a7a1a365101b4",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-5-1",
+    "answer_sha256": "467a09f828b2a363b66ce95a20a4a90bb0e6232fe891996a7c1db4b22baa2a37",
+    "claims_sha256": "277bceee2f0b96e50fdaa711c4fd194e74aa931aa59177be8aad662a99a83567",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-5-2",
+    "answer_sha256": "00a21e27ae99867d8bd5b4759cb34a8c3bbf899742a8d0f212b424f8d4a333f9",
+    "claims_sha256": "442ea9184bf35f9316e95ecb573d05f9ac8c7cca870bdb154cffcee3bd0194b0",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-5-3",
+    "answer_sha256": "db0b4dcf9115b4f515bb8a2f4ff9a4d00f55465e7e14bdc78203952f4feebc40",
+    "claims_sha256": "ea117909c58116b75aa9e7128ac669f243d88ed00011b817d1c1e470ee706a5f",
+    "claim_count": 1,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-6-0",
+    "answer_sha256": "d671375a0eb240da93f588b173166a1ab2c0e0637b15f8cb033f993f3edc9002",
+    "claims_sha256": "501822f2cc7a5f31f76d59d27b054d08c397b97c280f35e35ac96186f3eb3726",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-6-1",
+    "answer_sha256": "4d622809daa6bba3a778d9075690e6e0f7dbe655cc685b5a6f50fa1ab306d025",
+    "claims_sha256": "2a4d7b88b4ad5bca8166d07130dd5226a733e0da71a7fe9f14462e2a1ac9dc92",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-6-2",
+    "answer_sha256": "3460b0e491f075858a3b9c088b49caee473a85d13cdebdf4b5a196b0ffcbc690",
+    "claims_sha256": "81f9260775009362380136bf53e695d70e5fdaba2a0a58bc6be6defe4dfc0f02",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-6-3",
+    "answer_sha256": "8f2012d9b065962eb43a08d511c15ff4efaa1a9a510250452195e47bb6c5286b",
+    "claims_sha256": "98483064ef7a4910c66617404bd155f44d2b0ea81fa1ffb86f226d5cb74c5d4c",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-7-0",
+    "answer_sha256": "76427cdb1b8e5b2b5f3550b8925e65640a7159eed9e134e1315f0e4c14486d5d",
+    "claims_sha256": "a12b34851e41f095fabc307f0f0213fcecb7f057ebdabb8f619eae1c41ad1b9f",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-7-1",
+    "answer_sha256": "8e5ca892bd6e36b7feb5d473490cbb758b7227c84aac22d56602e8175b8b14d6",
+    "claims_sha256": "26ce1ee012be43b62ff4075d1a3c01abd397d9ed31308796515be9d4d6eb1117",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-7-2",
+    "answer_sha256": "fbc72ee341d74330cd970c7090b4796039f253c83f72752cc456778ffa1ca7de",
+    "claims_sha256": "8fc829fe98a6d063aadb35a65cea9d68adc29ee7edaaa7b440701b4abf4a81d9",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-7-3",
+    "answer_sha256": "43149f3d04ad72a169759d1263f496d52f58922cfc611cbd4b560b3a9007db5c",
+    "claims_sha256": "8a249798fe8cb3b675a5a5627a0c4d6465903bf31880e58b9334ded9eda463b4",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-8-0",
+    "answer_sha256": "18d3d04d52b086098dbb200e5dde044d98d229c6cf8239d8886a2ed1c977eeff",
+    "claims_sha256": "6cfb756bc0642d68099d617874c801a750bfb7ef2e2139ccd1beb279ad430acc",
+    "claim_count": 8,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 5,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 6,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 7,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-8-1",
+    "answer_sha256": "cb1c43b4e553924e89511441b900367c12878055e44ae96e9e0730bd7aef5799",
+    "claims_sha256": "53ec756d3782237ab70423e418f20a7bdec15ec68a3353d3ea9fa5958d2b1a39",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-8-2",
+    "answer_sha256": "98ba774ffd890530ed6e5176af14736fc1f11ab304dabab80fddaa19f5e7f6a4",
+    "claims_sha256": "0580b2818ddaa8d2c68549b50c9864bfd4cb5ded336441ea18ac757390302b37",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "contrast-8-3",
+    "answer_sha256": "0c348770d732a58de171ed452baa06383fed8e987de601c9017701e850c6fbdc",
+    "claims_sha256": "fcaf33cfdc89d82947685b86aca648e838847879e114f1c7d3fa758eddef17be",
+    "claim_count": 7,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 5,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 6,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-0",
+    "answer_sha256": "cded35bed5680b4e8720ea5be1ae2a482be1d4678a2cfe602f9b52269a134c58",
+    "claims_sha256": "4db1dd7830d0fdf3865ea5896ab8e80b026a53d9e57fbb2cb8206d31ea3965ba",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-1",
+    "answer_sha256": "fdb7590f0d2cc1d01fa0af4b1c70076a38b709fd3d3a968b2aedc13bf9ad85e6",
+    "claims_sha256": "3b766ce11c7b9b08fd47995bd4f9d17fd64f4bf80c9f1caf0bf8a6a707465ce6",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-2",
+    "answer_sha256": "c82aad721e151d4b0c0af218dbf93da1748308c1483841473e1188c08d029f51",
+    "claims_sha256": "52706adb906314ee0604953312e54856b6fb5be5c57e069dbfba3d8bd2dea518",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-3",
+    "answer_sha256": "315f4388f039ee249e11657032a198cb74e8c95a5514efe27e262a39d488a69b",
+    "claims_sha256": "87759f975acf7c388f0fb0fee513cc024ff3b47173c772a8d41d4f1d439f9ca8",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-0",
+    "answer_sha256": "955593840eada1b9de8e168689c845aa4d642d76ecaf672da2d9965a2fef1da4",
+    "claims_sha256": "f2ea6282986cfbea7d7bab41648ef041c955b642818661a52af9df3244e92f39",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-1",
+    "answer_sha256": "4f3648710eaf7d8f9553bd469e1438623d3390964feb277177a09faae8a09bc1",
+    "claims_sha256": "695948c0f3e960ef9f1a2cf33cd3b0e38cb350dbb02cd69ddb4115ba35e57533",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-2",
+    "answer_sha256": "a2e1a1417b3316866ac41d7d6c463f9ba50fef51336fd8ac402f8a622ee086bd",
+    "claims_sha256": "46e1c3986bed64065646808de6550abf230e0f1f790a6fbd799015d9091a2cb0",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-3",
+    "answer_sha256": "ae6546bc8a45981e3310da57e2cda007c3e6bd44d1b15e8ff583e3e788575282",
+    "claims_sha256": "c9f679339970d0169d3647eeeba4937c27aabe1566a888436c6d03b39f8de4ab",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-0",
+    "answer_sha256": "5761f33105a3c33c1ad6466a18d7d3999cd750f428b3769c3d8202c8c036630c",
+    "claims_sha256": "785dd0962aa81411c6cfe72d5d3431140e06ae8b198753289b3d5a22f4ca71ee",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-1",
+    "answer_sha256": "a25772e66eb62264c48d0608bd5aa11249511906a42a4b87f7685972bd55b4d4",
+    "claims_sha256": "3d8f324721800deb3c0079f217377384d860c7ef84e722f86d9c291d5fdff036",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-2",
+    "answer_sha256": "e474a5fe8e8369371e2cd1b3627fe11c8fbe81df1868ffe57ffbb6ffbd82a4e4",
+    "claims_sha256": "0479dbd2d7d3b65b558e3ff13ea5b4e5337d3c2c617acbf4db3744506dcac02d",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-3",
+    "answer_sha256": "20a58d2370353cb53d0a9b3da253f8671a4eceb891af690f5a6ca112ee91dd03",
+    "claims_sha256": "99a10fbf666d103afc86d128cd16e1bd355f9465a9dc715c801ebf0f6dec35d5",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-0",
+    "answer_sha256": "b191d5cd49bf50093f4c19c821e7ef430eb5a35706b2576254e4623d1becebd3",
+    "claims_sha256": "0d87ae91e929e85d6fc2d3cb78000cba726f90e9c3c264f4905aa8889409c4f2",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-1",
+    "answer_sha256": "f015cd697a21028e0022e084224dd533c7f1e3286207898741a3627febc2f4a3",
+    "claims_sha256": "c6e1c4a7cc0dac8d7a24be8545b5d144aa1b7da6b24bdffeb257d5588c4228e1",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-2",
+    "answer_sha256": "701eb74604b81913c5ea0ff8f51bd96cc26d84080d8775157fab43864495f688",
+    "claims_sha256": "c11d3f206ba8e4eca2381020e80f1da826e9393bf7c9d8201c8ca09943ddd33d",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-3",
+    "answer_sha256": "97d697d0699b1351d62d383cfeb4ba9c4a14ed87801df5b3d9c414d58b7823c3",
+    "claims_sha256": "1df57bfd8a09a488fa67cf4b30c50a9e3a9a07f304c7d614de0f2bdd3a1d4c2e",
+    "claim_count": 1,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-0",
+    "answer_sha256": "1ab1d93d495fbef0f971dc9e7f7bdd017ffc77d64aa54d63627305f9cf6d5884",
+    "claims_sha256": "bc6878ee233bd62748aebd7dddd60804c7644affc19d21d851711efdb5d2a325",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-1",
+    "answer_sha256": "47812d0df07a740e4a2a30c43d0b70a2d6b8b0a840467736adce8839dbec8f57",
+    "claims_sha256": "6677e53737284e4b23fcbcb92633c40f66b117f48eaa7cb5e1df7661fa60a797",
+    "claim_count": 7,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 5,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 6,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-2",
+    "answer_sha256": "9657a19102354ff485e4150582a988dce3225f26516debcce7214d40028972cd",
+    "claims_sha256": "efb056657e945ad2ad74fb777a0a57506485c3961d95af8a4997606069e5c577",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-3",
+    "answer_sha256": "dd78bc234af4998e5c2afcbbeea18d222c0997d796df895454eb48d214016abd",
+    "claims_sha256": "0e5de06a7b62133f3ffe5e00b6fa54af660af3411707c601c7c6e08fb62ace20",
+    "claim_count": 1,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-0",
+    "answer_sha256": "dbb8b7399d3b7028a3f8b5a70adf23eec8e14e91f815b75ef746658c7a1a8d32",
+    "claims_sha256": "b7014018272530fb858327e71524cd22b6217ba1d20dbcb46752f68cfb3f80a9",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "answer_sha256": "d0898fe08f929db4dc2daadb2b7772bbfb8e8d0e2f26b6a538dac679d61fe454",
+    "claims_sha256": "dabfbe1dd25fbf957196357e34df3bc31fcf2605ee1ed7052247e068650dca60",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-2",
+    "answer_sha256": "05cf215cc2dcf0814f99d622f89fa4572a1141b2889c0c2a4a584342962bac70",
+    "claims_sha256": "a1453b7a6bd59188457a0a33b58bcf0d0da483769862e4fed677b83b59709d00",
+    "claim_count": 7,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 5,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 6,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-3",
+    "answer_sha256": "698fa29addc498e8ced7c11540e912e8930d59700a3d192bd4c87894b36a91a8",
+    "claims_sha256": "7bfe8d19f47efa25118396c1261d9fcaecd625eb539c206f6e0659aaa234f31f",
+    "claim_count": 1,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-0",
+    "answer_sha256": "7a3729ed072ee881d8bd1f8f8b5ff77cb771b651c5f367d5c6085690de2dd00c",
+    "claims_sha256": "71d4e6247f854695a450d137791c8c57d34e1bed7885b7cecb26d9dd008bbab0",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-1",
+    "answer_sha256": "44bd60f5359cbb69ddd05fd2da3f5ee093459dfdb28ffbd68cb9cb8cd7984528",
+    "claims_sha256": "2288d07171dd8fe59bda605deba2d680680cb7c56bcc36db3dc130c7841a8826",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-2",
+    "answer_sha256": "a6f55f7b06815f26f02142af7f89a9d0d32f9f7e6ce7662a686503723dfbdb64",
+    "claims_sha256": "df02bc82a6ca8392d6157f772557940c462ca2a0b79288987f7ca54c44927820",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-3",
+    "answer_sha256": "adca16a7415ecbc816ce10cd24472f042bf8fcc7b64e23be285d888698f1fd14",
+    "claims_sha256": "3c52f8805eb16882246c90e82a40d2e454334d4e2eabc8876cd2e559ccdaad60",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-0",
+    "answer_sha256": "5895f4dd88ea758e33ada88536debb6bd4b953a8ae609b0c7a4c5d4d3a806eca",
+    "claims_sha256": "3180eb922411da2d2a5d4dc8e1c6bbff40f1010aa29c70fc7b6a322fceb9cb81",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-1",
+    "answer_sha256": "1fcf6cb16f40a112e902504faa31166a3bbd33e976b85ac4f7c3f47058c9416e",
+    "claims_sha256": "1d23f10ea84d3e9b6a585c4efb26a21f19e5f067ba6d22f38931f6ea7d3ae6ae",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-2",
+    "answer_sha256": "39d72e2f9e1bae30e567c46b53b395cd7b085b8d59fa73f6e3a37b0e471513a8",
+    "claims_sha256": "47b2ce6ed57b19fd4b58ce6621118855fe1cf28df0058c469f5bb11b6ccbc988",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-3",
+    "answer_sha256": "1790eb66c998cb091070a85321d4e099a215f3b628bcc1a1e33f0c03996ebc60",
+    "claims_sha256": "cc84d8c1edb810023365e4503c5a2f26738668ef82c72b884ff3f53741935770",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-0",
+    "answer_sha256": "f8914315b866b61c2fd3da7198d6dd376ac2217e208b29b30b77e33e5b0221da",
+    "claims_sha256": "514f8491ce9461beaf90ee58ca316f2d53d0e04f5b32048a7b9f1fe9ba7661a8",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "answer_sha256": "677c860b6d8e5666751a645912b6b6d0eb4fde5df38040d69802eabda39cc0ed",
+    "claims_sha256": "95c5b7fef13931299d5aaad10db3f82ca1f5045c0f9f69916e47d7dffc54bcb3",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-2",
+    "answer_sha256": "12a9e66cb7af20ad431be536673151e5ee0ffb147ac260162d89921fe587f47d",
+    "claims_sha256": "7e814174cda9d8531b07d01ed406be6304a31eb8d6a9f9388019a2740f68881e",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-3",
+    "answer_sha256": "837da3d54045a25632df18e28ec9ed0a9c52aebb1364a30610dd7ffaf74d4b88",
+    "claims_sha256": "2e688c9e0960e6b3a2aba1135fafb5f124760f7ef8182617ca5f21389439ceaf",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-0",
+    "answer_sha256": "233153b566c6bd25a6f9630f9391e9fc727689cbd5f8e925ea9b7c59fe9bb5ad",
+    "claims_sha256": "326dbe4ada2196e8cdfd6972b4e506b8cc590a9c8e1d0f15af3635f204d5a736",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-1",
+    "answer_sha256": "8463c7c9f0688d71f6a7037eb777a8d6e42ffb82c214167e661fb50aa81b0ab9",
+    "claims_sha256": "b2c9596046e5c83d57da93655c36284f3d48e0d8f28e7b6e9f8fbe6cfefea7cb",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-2",
+    "answer_sha256": "c5f2d3c9b60895ed366a2b8014759913f1c5d9473dc7da1043b4e22b577d949e",
+    "claims_sha256": "3a123888deaafa20de17d115aeccd36e74f674d017139ded6697c8e613119db1",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-3",
+    "answer_sha256": "b5dd8873046a9ac7db85e69f16eabfa9ad0199ed6bba65eddac698e40ba94c82",
+    "claims_sha256": "9bbc03080f76e85d1f01653b81e30177810a2a248583d2d5d48948dfb8173f19",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-0",
+    "answer_sha256": "556c1ff8152f321c269eae18fde08f707be1cda51f063cdc79142c3789241422",
+    "claims_sha256": "c682c501abeb31ad4e66becd7266cff31f536101b2efd9ca11d5d117e00d9d32",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-1",
+    "answer_sha256": "b7727ca4f339284300129881693f7a9458edb0b67f3579d6da8d1f4f3917b8ef",
+    "claims_sha256": "e63309ed931edad50f64a9a46667ea1ac4afa6b1967073da654bbb16d7413c9c",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-2",
+    "answer_sha256": "bacf83665c04ae9c7246e8c180c6910aad23193de6b49c2f320b7ebd8c5e0b59",
+    "claims_sha256": "e6a32251cabc32a0147e6b6f2550df61f33a614e2ca582f25a1684a6a06584f1",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-3",
+    "answer_sha256": "5325e919f3530e894da7d309ce4264fddf3a8613a4609db76eb756b5093c53a8",
+    "claims_sha256": "5d487243b880ab8b14b70f23bffa733b0c9dd7d04752155b0cdb92771eef0259",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-0",
+    "answer_sha256": "f9f91b23ac4d25130205a051d015f4d18fc1dc249c77db322b1197f813847b8b",
+    "claims_sha256": "723ca73e547469230add10c46e024c0f1be91a084cecaf4cfdcfd84d14a8bc31",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-1",
+    "answer_sha256": "78740441e5269dd6402c9860b333198ca70907a9d48364136608c32dae98209e",
+    "claims_sha256": "057d25cda174e2a8eaecf6117c655be875056ddb67732387f0e3b3bf75dc265d",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-2",
+    "answer_sha256": "815b1535f538dc7cc5a7f8d560220aa546bf921e3326de3474b4a2277707e89a",
+    "claims_sha256": "8cabc44c98bce0d43259cb79f062ccbfadf7eaa4738fff97752a34ae1ca9eb71",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-3",
+    "answer_sha256": "42844d7e0cae3f2de52e8513cf668cec29232743a562218c148f82823b817961",
+    "claims_sha256": "fe773bf0e57487ef84cce7b217aaf67bd1d69985a35207a416edad905ce6fcba",
+    "claim_count": 1,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-0",
+    "answer_sha256": "88790d52ca8a48b6c5a61a185a498f1fcbdb2e5dd2cd05638483dd40f9fe149f",
+    "claims_sha256": "4c8dc5e724c80df18b3f4e292db79928b628c54cbf58e7abaa01a97c12ebc186",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-1",
+    "answer_sha256": "5aa10cccd4109d813ac3f068431412ac7d4a312d94656045463135fc0f192473",
+    "claims_sha256": "58745d7798324e4ad453d613e4775af1f935f438fc6d47d40bd25d8fcb45f2a4",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-2",
+    "answer_sha256": "c76ba0b70fd783b0c54e7e0a081039a0ea6f51e9b085e4f354fc1bf44796ca17",
+    "claims_sha256": "007bc0fc5510ec93ce218850d875eadd98ba3b716c3b083075487b0358be3050",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-3",
+    "answer_sha256": "2a83b311c78261713360e54d367c2e827cbe821f2e5fdb6651606b4d8dc8ea79",
+    "claims_sha256": "ad0a1e05a0c46f5361c899ef0d076413c64f64a2f06464feaae45a8c88bab1fd",
+    "claim_count": 1,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          false
+        ],
+        "exposed": false
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": false,
+    "native_binding_pass": false,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-0",
+    "answer_sha256": "7e5f7b5bc97f41cc72be1b6b463592c0f429bd435e2d23eab7d81c63246de34e",
+    "claims_sha256": "9f70b5f9971ea6eb3420004fdc3a2981ba369e4293b1d2683918df029835983d",
+    "claim_count": 4,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "answer_sha256": "f69adf9758fa50d9d6f09a2f11d378dbd44936b4a571e0ad2065c7d87c27e0f6",
+    "claims_sha256": "fdff50ddb7b26663ced5988162fa022f1a69d9b1f01349b25a1d20a6e90b6ee1",
+    "claim_count": 5,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 3,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 4,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-2",
+    "answer_sha256": "f4558bbc01ca0df6f83ba4fd39c844dbf497f9cce6f88a6d8816e5e39da8880e",
+    "claims_sha256": "798640e5afaccbf9e43bd195579d049f63e2d1727a7ee29af230693e0d5ce885",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-3",
+    "answer_sha256": "c0b360969a3df0ffe8a64d49c3a298e04d9a180335f5c694d3dc03ca990a8074",
+    "claims_sha256": "bd904dd9f1813ea568db7ae9ae0e717047148e89b5d5bb127ad637df83f4dc37",
+    "claim_count": 1,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-0",
+    "answer_sha256": "8711892c6e3b641eb327a18815df3f71f1f9a4e5c425d85bb7acaff36aefc66e",
+    "claims_sha256": "5736e7fe13341c2a8c95bcbf81b2495abbea5ad705726c6c426d17194a556539",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-1",
+    "answer_sha256": "a768d9835c32ed7b525ef8816841b3213d64d9be57f145436cb7d98853076d53",
+    "claims_sha256": "96314d9703f2303a4785aec1e9b8c33af207074fc03aab76d9faa6da86f4a41d",
+    "claim_count": 3,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 2,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-2",
+    "answer_sha256": "438e3ac3f3137f768dd5040197506a60954b595d044dd48bb939bbb49c920526",
+    "claims_sha256": "b0a3b93591458a6cdd56fa5a1d789809185a88907913a338ff779bce6ee4e74e",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "answer_sha256": "2a89c84ee0b01efd10ad427e5e2605252456fb80f42565fc3b286652bd8b64a4",
+    "claims_sha256": "4fda381f920b3cc3d9d9984488b71b236a9ec6c1d591ed449e8ab1882a1d46f0",
+    "claim_count": 2,
+    "claims": [
+      {
+        "claim_index": 0,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      },
+      {
+        "claim_index": 1,
+        "valid_shape": true,
+        "citation_exposure": [
+          true,
+          true
+        ],
+        "exposed": true
+      }
+    ],
+    "top_level_matches_claims": true,
+    "exposure_pass": true,
+    "native_binding_pass": true,
+    "semantic_support": "requires_separate_review"
+  }
+]

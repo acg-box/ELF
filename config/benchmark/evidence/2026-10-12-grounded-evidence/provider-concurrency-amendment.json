@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-12T10:25:51.157907+00:00",
+  "condition": "both",
+  "case_id": "memory-3-1",
+  "failed_ordinal": 4501,
+  "http_status": 520,
+  "retained_rounds": 4,
+  "retained_tools": 18,
+  "progress_sha256": "6c85965a085f10fabe2de5bc1b1a68d40213b22caec1245d35a16642aa908675",
+  "action": "Resume the next unanswered model response from the complete retained tool batch. No model answer was returned by the failed request. Preserve all prior responses and tool budgets.",
+  "maximum_profile_concurrency": 1,
+  "case_workers": 2,
+  "reason": "Keep old and new unsettled request reservations. Serialize provider calls for remaining budget headroom; do not reduce maximum output."
+}

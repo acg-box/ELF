@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-12T09:21:24.440025+00:00",
+  "completed_cases_after_drain": 13,
+  "failed_cases": 0,
+  "in_flight_requests": 0,
+  "gateway_consumer_exit": 104,
+  "reason": "Controlled SIGINT drains bounded executor; the interrupted batch is not a model or product failure. All thirteen completed cases are retained.",
+  "cumulative_paid_usd": 5.081559305999996,
+  "selection_commit": "27092af3"
+}

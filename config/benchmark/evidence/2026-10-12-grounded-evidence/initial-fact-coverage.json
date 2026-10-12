@@ -1,0 +1,341 @@
+[
+  {
+    "case_id": "memory-0-0",
+    "split": "test",
+    "expected": [
+      "STREAM-0-286",
+      "RETRY-0-907"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-0-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-0-632",
+      "GATE-0-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-0-2",
+    "split": "test",
+    "expected": [
+      "BATCH-0-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-0-3",
+    "split": "test",
+    "expected": [],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-1-0",
+    "split": "test",
+    "expected": [
+      "STREAM-1-286",
+      "RETRY-1-907"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-1-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-1-632",
+      "GATE-1-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-1-2",
+    "split": "test",
+    "expected": [
+      "BATCH-1-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-1-3",
+    "split": "test",
+    "expected": [],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-2-0",
+    "split": "test",
+    "expected": [
+      "STREAM-2-286",
+      "RETRY-2-907"
+    ],
+    "body_missing": [
+      "RETRY-2-907"
+    ],
+    "structured_missing": [
+      "RETRY-2-907"
+    ]
+  },
+  {
+    "case_id": "memory-2-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-2-632",
+      "GATE-2-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-2-2",
+    "split": "test",
+    "expected": [
+      "BATCH-2-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-2-3",
+    "split": "test",
+    "expected": [],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-3-0",
+    "split": "test",
+    "expected": [
+      "STREAM-3-286",
+      "RETRY-3-907"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-3-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-3-632",
+      "GATE-3-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-3-2",
+    "split": "test",
+    "expected": [
+      "BATCH-3-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-3-3",
+    "split": "test",
+    "expected": [],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-4-0",
+    "split": "dev",
+    "expected": [
+      "STREAM-4-286",
+      "RETRY-4-907"
+    ],
+    "body_missing": [
+      "STREAM-4-286"
+    ],
+    "structured_missing": [
+      "STREAM-4-286"
+    ]
+  },
+  {
+    "case_id": "memory-4-1",
+    "split": "dev",
+    "expected": [
+      "REPLAY-4-632",
+      "GATE-4-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-4-2",
+    "split": "dev",
+    "expected": [
+      "BATCH-4-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "memory-4-3",
+    "split": "dev",
+    "expected": [],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-5-0",
+    "split": "test",
+    "expected": [
+      "STREAM-5-286",
+      "RETRY-5-907"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-5-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-5-632",
+      "GATE-5-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-5-2",
+    "split": "test",
+    "expected": [
+      "BATCH-5-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-5-3",
+    "split": "test",
+    "expected": [
+      "Jordan Lee"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-6-0",
+    "split": "test",
+    "expected": [
+      "STREAM-6-286",
+      "RETRY-6-907"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-6-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-6-632",
+      "GATE-6-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-6-2",
+    "split": "test",
+    "expected": [
+      "BATCH-6-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-6-3",
+    "split": "test",
+    "expected": [],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-7-0",
+    "split": "test",
+    "expected": [
+      "STREAM-7-286",
+      "RETRY-7-907"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-7-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-7-632",
+      "GATE-7-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-7-2",
+    "split": "test",
+    "expected": [
+      "BATCH-7-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-7-3",
+    "split": "test",
+    "expected": [
+      "\u6797\u6f88"
+    ],
+    "body_missing": [],
+    "structured_missing": [
+      "\u6797\u6f88"
+    ]
+  },
+  {
+    "case_id": "contrast-8-0",
+    "split": "test",
+    "expected": [
+      "STREAM-8-286",
+      "QUEUE-8-440",
+      "RETRY-8-108"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-8-1",
+    "split": "test",
+    "expected": [
+      "REPLAY-8-632",
+      "GATE-8-519"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-8-2",
+    "split": "test",
+    "expected": [
+      "BATCH-8-741"
+    ],
+    "body_missing": [],
+    "structured_missing": []
+  },
+  {
+    "case_id": "contrast-8-3",
+    "split": "test",
+    "expected": [],
+    "body_missing": [],
+    "structured_missing": []
+  }
+]
