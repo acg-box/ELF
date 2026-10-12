@@ -220,3 +220,31 @@ fn relation_accepts_valid_structured_relation() {
 
 	assert!(res.is_ok());
 }
+
+#[test]
+fn extracted_alias_grounding_uses_entity_normalization() {
+	let structured: StructuredFields = serde_json::from_value(serde_json::json!({
+		"entities": [{"canonical":"Cobalt", "aliases":["project Cobalt"]}]
+	}))
+	.expect("Valid structured fixture.");
+	let evidence = vec![(0, "They chose BATCH-1-741 for batch delivery.".to_string())];
+
+	assert!(
+		structured_fields::validate_structured_fields(
+			&structured,
+			"Project Cobalt chose BATCH-1-741.",
+			&serde_json::json!({}),
+			Some(&evidence)
+		)
+		.is_ok()
+	);
+	assert!(
+		structured_fields::validate_structured_fields(
+			&structured,
+			"Project Larch chose BATCH-1-741.",
+			&serde_json::json!({}),
+			Some(&evidence)
+		)
+		.is_err()
+	);
+}

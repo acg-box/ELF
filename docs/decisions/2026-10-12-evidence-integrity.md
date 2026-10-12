@@ -46,7 +46,8 @@ existing entities is introduced. Free-text entity kinds are annotations, not
 identity keys. Reusing an existing entity preserves its stored kind even when
 an extractor supplies another label. Conflicting resolved entity IDs still fail.
 Extracted aliases must occur in supplied
-evidence. Named identifiers and relation chains remain extractor assertions;
+evidence under the same case and whitespace normalization as entity lookup.
+Fact strings and source quotes still require verbatim grounding. Named identifiers and relation chains remain extractor assertions;
 source occurrence and lexical validation do not prove semantic equivalence.
 Pending predicates are not automatically promoted to authoritative vocabulary.
 

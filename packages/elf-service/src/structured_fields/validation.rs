@@ -28,26 +28,7 @@ pub fn validate_structured_fields(
 	};
 
 	if add_event_evidence.is_some() {
-		let entities = structured.entities.iter().flatten().chain(
-			structured.relations.iter().flatten().flat_map(|relation| {
-				relation
-					.subject
-					.iter()
-					.chain(relation.object.iter().filter_map(|object| object.entity.as_ref()))
-			}),
-		);
-
-		for entity in entities {
-			for alias in entity.aliases.iter().flatten() {
-				if !quotes::fact_is_evidence_bound(alias, note_text, &evidence_quotes) {
-					return Err(Error::InvalidRequest {
-						message:
-							"Extracted entity aliases must occur in note text or source evidence."
-								.into(),
-					});
-				}
-			}
-		}
+		entity::validate_extracted_aliases(structured, note_text, &evidence_quotes)?;
 	}
 
 	if let Some(summary) = structured.summary.as_ref() {
