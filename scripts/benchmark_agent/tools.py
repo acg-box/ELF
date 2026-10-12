@@ -1,12 +1,15 @@
 """Read-only adapters over public ELF APIs, with explicit ablation boundaries."""
 import copy
 import urllib.error
+import urllib.parse
 
 
 def schemas(condition):
     if condition=='initial':return []
     definitions=[('search_notes','Search stored memories. Returns note ids and summaries.',{'query':{'type':'string'}},['query']),
                  ('get_note','Read a memory including its derived structured fields. In source-enabled runs it includes original provenance.',{'note_id':{'type':'string'}},['note_id'])]
+    if condition=='paged':
+        definitions += [('get_search','Widen an existing search session before issuing another query when its first results are incomplete. Reuses cached candidates without a new embedding. Start with top_k 24; maximum 60.',{'search_id':{'type':'string'},'top_k':{'type':'integer','minimum':1,'maximum':60}},['search_id'])]
     if condition in ('source','both'):
         definitions += [('search_documents','Search original source records by subject, keywords or an evidence quote. Returns document and chunk pointers.',{'query':{'type':'string'}},['query']),
                         ('read_document','Read a verified original excerpt and its source metadata using a returned pointer.',{'doc_id':{'type':'string'},'chunk_id':{'type':'string'}},['doc_id','chunk_id'])]
@@ -25,6 +28,10 @@ def execute(api,condition,name,args):
     allowed={s['function']['name'] for s in schemas(condition)}
     if name not in allowed:raise ValueError('Tool unavailable in this condition')
     if name=='search_notes':return api('/v2/searches',{'mode':'planned_search','query':args['query'],'top_k':12,'candidate_k':60})
+    if name=='get_search':
+        count=int(args.get('top_k',24))
+        if not 1<=count<=60:raise ValueError('top_k must be between 1 and 60')
+        return api('/v2/searches/'+urllib.parse.quote(args['search_id'],safe='')+'?top_k='+str(count)+'&touch=false')
     if name=='get_note':return project_note(api('/v2/notes/'+args['note_id']),condition)
     if name=='search_documents':return api('/v2/docs/search/l0',{'query':args['query'],'top_k':12,'candidate_k':60,'explain':True})
     if name=='read_document':

@@ -21,9 +21,11 @@ def parse_answer(content):
     return {k:answer[k] for k in ('text','supported','citations')} | {'format_compliant':format_compliant}
 
 
-def finalize_recorded(case,initial,base,token,max_output_tokens):
+def finalize_recorded(case,initial,base,token,max_output_tokens,initial_search_id=None):
     """Synthesize from an exhausted trace; do not retrieve again or resample tools."""
-    messages=[{'role':'system','content':PROMPT},{'role':'user','content':json.dumps({'question':case['query']['question'],'initial_memories':[project_note(n,'notes') for n in initial]},ensure_ascii=False)}]
+    context={'question':case['query']['question'],'initial_memories':[project_note(n,'notes') for n in initial]}
+    if initial_search_id is not None:context['initial_search_id']=initial_search_id
+    messages=[{'role':'system','content':PROMPT},{'role':'user','content':json.dumps(context,ensure_ascii=False)}]
     for step in case['trace']:
         message=step['response']['choices'][0]['message']
         messages.append({k:v for k,v in message.items() if k in ('role','content','tool_calls','reasoning_content','reasoning_details')})
@@ -38,10 +40,19 @@ def finalize_recorded(case,initial,base,token,max_output_tokens):
     return {'response':raw,'seconds':time.monotonic()-started}
 
 
-def run(api,condition,question,initial,base,token,max_rounds=12,max_calls=24,max_output_tokens=943718,checkpoint=lambda value: None):
-    messages=[{'role':'system','content':PROMPT}, {'role':'user','content':json.dumps({'question':question,'initial_memories':[project_note(n,"notes") for n in initial]},ensure_ascii=False)}]
-    trace=[];calls=0;started=time.monotonic()
-    for turn in range(max_rounds):
+def run(api,condition,question,initial,base,token,max_rounds=12,max_calls=24,max_output_tokens=393216,checkpoint=lambda value: None,initial_search_id=None,prior_trace=None):
+    context={'question':question,'initial_memories':[project_note(n,'notes') for n in initial]}
+    if initial_search_id is not None:context['initial_search_id']=initial_search_id
+    messages=[{'role':'system','content':PROMPT}, {'role':'user','content':json.dumps(context,ensure_ascii=False)}]
+    trace=list(prior_trace or []);calls=0;started=time.monotonic()
+    for step in trace:
+        message=step['response']['choices'][0]['message'];tool_calls=message.get('tool_calls') or []
+        if not tool_calls:raise ValueError('Refuse to resume a recorded final answer')
+        if len(tool_calls)!=len(step['tools']):raise ValueError('Resume requires a completed tool batch')
+        messages.append({k:v for k,v in message.items() if k in ('role','content','tool_calls','reasoning_content','reasoning_details')})
+        for call,tool in zip(tool_calls,step['tools']):
+            messages.append({'role':'tool','tool_call_id':call['id'],'content':json.dumps(tool['result'],ensure_ascii=False)});calls+=1
+    for turn in range(len(trace),max_rounds):
         payload={'model':'deepseek/deepseek-v4.1-flash','messages':messages,'max_tokens':max_output_tokens,'reasoning':{'effort':'max'}}
         if schemas(condition):payload.update(tools=schemas(condition),tool_choice='auto')
         req=urllib.request.Request(base.rstrip('/')+'/chat/completions',data=json.dumps(payload).encode(),headers={'Content-Type':'application/json','Authorization':'Bearer '+token})
@@ -53,7 +64,10 @@ def run(api,condition,question,initial,base,token,max_rounds=12,max_calls=24,max
         messages.append({k:v for k,v in message.items() if k in ('role','content','tool_calls','reasoning_content','reasoning_details')})
         if not tool_calls:
             content=message.get('content') or ''
-            answer=parse_answer(content)
+            try:answer=parse_answer(content)
+            except ValueError as error:
+                if condition!='initial':raise
+                return {'text':content,'supported':False,'citations':[],'format_compliant':False,'status':'invalid_answer','error':str(error),'trace':trace,'tool_calls':calls,'seconds':time.monotonic()-started}
             return {**answer,'status':'completed','trace':trace,'tool_calls':calls,'seconds':time.monotonic()-started}
         for call in tool_calls:
             if calls>=max_calls:return {'status':'tool_budget_exhausted','trace':trace,'tool_calls':calls,'seconds':time.monotonic()-started}

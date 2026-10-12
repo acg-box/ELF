@@ -1,0 +1,54 @@
+[
+  {
+    "condition": "notes",
+    "case_id": "memory-3-2",
+    "answer_sha256": "333dcb4537b15e5676c14a0f987231e36d15133906966997ed63c582c272eaa0",
+    "citation": "478d956d-7618-4b38-9dd0-249936658d87",
+    "claim": "No delivery-mode change was approved at the Sable August 8 meeting.",
+    "actual_linked_source": "m_d7a9d1f22107f233",
+    "actual_subject": "Larch / Mara",
+    "expected_source": "m_60a61eab3b3b1426",
+    "expected_subject": "Sable / Tala",
+    "finding": "The final answer cites a generic note whose retained provenance belongs only to another project. Both original events happen to state no change; answer correctness masks the source attribution defect.",
+    "scope": "Confirmed example, not an exhaustive claim-by-claim citation precision estimate."
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-2",
+    "answer_sha256": "4fbcb90e0c04810fb62116556797201598e05e76425b50d8fa6ac32b93f42c3e",
+    "citation": "478d956d-7618-4b38-9dd0-249936658d87",
+    "claim": "No delivery-mode change was approved at the Sable August 8 meeting.",
+    "actual_linked_source": "m_d7a9d1f22107f233",
+    "actual_subject": "Larch / Mara",
+    "expected_source": "m_60a61eab3b3b1426",
+    "expected_subject": "Sable / Tala",
+    "finding": "The final answer cites a generic note whose retained provenance belongs only to another project. Both original events happen to state no change; answer correctness masks the source attribution defect.",
+    "scope": "Confirmed example, not an exhaustive claim-by-claim citation precision estimate."
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-2",
+    "answer_sha256": "1b1fd037ae0ccc9b00c9ab62239d8c0a7e4f580ff29718043a790430167cd4a8",
+    "citation": "478d956d-7618-4b38-9dd0-249936658d87",
+    "claim": "No delivery-mode change was approved at the Sable August 8 meeting.",
+    "actual_linked_source": "m_d7a9d1f22107f233",
+    "actual_subject": "Larch / Mara",
+    "expected_source": "m_60a61eab3b3b1426",
+    "expected_subject": "Sable / Tala",
+    "finding": "The final answer cites a generic note whose retained provenance belongs only to another project. Both original events happen to state no change; answer correctness masks the source attribution defect.",
+    "scope": "Confirmed example, not an exhaustive claim-by-claim citation precision estimate."
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-2",
+    "answer_sha256": "aae76bd2eac9ca6a421b282e3838802b3a7b39c0d007eb60318e0d3a17e3cc10",
+    "citation": "478d956d-7618-4b38-9dd0-249936658d87",
+    "claim": "No delivery-mode change was approved at the Sable August 8 meeting.",
+    "actual_linked_source": "m_d7a9d1f22107f233",
+    "actual_subject": "Larch / Mara",
+    "expected_source": "m_60a61eab3b3b1426",
+    "expected_subject": "Sable / Tala",
+    "finding": "The final answer cites a generic note whose retained provenance belongs only to another project. Both original events happen to state no change; answer correctness masks the source attribution defect.",
+    "scope": "Confirmed example, not an exhaustive claim-by-claim citation precision estimate."
+  }
+]

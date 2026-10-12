@@ -1,0 +1,86 @@
+[
+  {
+    "name": "elf-matched-api",
+    "id": "fe7fd4c4249040afe7341fc57a7b3150c30375a2744fa9f3ecce87f83e95ced1",
+    "image": "elf-agent-evidence:current",
+    "image_id": "sha256:ea7e43d04b25ef536205cfffedfcf888c30bbcb41e37192f27863579b54127ec",
+    "mounts": [
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/elf-agent-evidence",
+        "Destination": "/experiment"
+      }
+    ],
+    "network_names": [
+      "elf-matched"
+    ]
+  },
+  {
+    "name": "elf-matched-worker",
+    "id": "b9e616460bdcaa3316e0bc89b75e6d707679708bfaa0df43b4cc66b1882dc6f6",
+    "image": "elf-agent-evidence:current",
+    "image_id": "sha256:ea7e43d04b25ef536205cfffedfcf888c30bbcb41e37192f27863579b54127ec",
+    "mounts": [
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/elf-agent-evidence",
+        "Destination": "/experiment"
+      }
+    ],
+    "network_names": [
+      "elf-matched"
+    ]
+  },
+  {
+    "name": "elf-matched-db",
+    "id": "7911097212a0c73f2a06e9fc3ce14f1ed9328c43b21b753f43752282573b0772",
+    "image": "pgvector/pgvector:pg18",
+    "image_id": "sha256:47231bed2c870708cfdc3a6961fbe16ec9d830eb1850772f6c0de72143ee9e9b",
+    "mounts": [
+      {
+        "Type": "volume",
+        "Name": "6fe692cc1f9ee620150debd0236a06e090de641ea7fb870591115c8afd67e440",
+        "Source": "/var/lib/docker/volumes/6fe692cc1f9ee620150debd0236a06e090de641ea7fb870591115c8afd67e440/_data",
+        "Destination": "/var/lib/postgresql"
+      }
+    ],
+    "network_names": [
+      "elf-matched"
+    ]
+  },
+  {
+    "name": "elf-matched-qdrant",
+    "id": "29ad1635d19a5dd2dd2d3adc62b42e9570f3bd0e0c90cc12a8aaed75b45dde46",
+    "image": "qdrant/qdrant:v1.18.0",
+    "image_id": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c",
+    "mounts": [],
+    "network_names": [
+      "elf-matched"
+    ]
+  },
+  {
+    "name": "elf-matched-sidecar",
+    "id": "8ae098b89c71c783b7eaa55f196169e8f352ce426e4540534ad15832b3b22269",
+    "image": "ghcr.io/vectorize-io/hindsight@sha256:acf5e76bd9a5b65f9f7c540a3414007c7f874b34346587dac7e4feab7ae80cba",
+    "image_id": "sha256:5a0d6fe60340607037bc4ee3dfe1b299990d0ca61f21c06ef4f89f5411fc9926",
+    "mounts": [
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "/Users/x/code/acg-box/ELF/tmp/elf-matched-benchmark/elf-agent-evidence",
+        "Destination": "/experiment"
+      },
+      {
+        "Type": "bind",
+        "Name": null,
+        "Source": "/Users/x/.codex/worktrees/elf-agent-evidence/ELF/scripts/benchmark_deep/native_sidecar.py",
+        "Destination": "/native-sidecar.py"
+      }
+    ],
+    "network_names": [
+      "elf-matched"
+    ]
+  }
+]

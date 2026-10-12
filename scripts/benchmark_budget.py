@@ -133,7 +133,7 @@ def embedding_retry_delay(kind, status, attempt, retries, retry_after):
     return 2 ** (attempt + 1)
 
 
-def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, receipt_dir=None):
+def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, receipt_dir=None, request_max_bytes=262144):
     opener = urllib.request.build_opener(NoRedirect)
     maximum_profile_lock = threading.Lock()
     class Handler(BaseHTTPRequestHandler):
@@ -141,12 +141,14 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
             pass
 
         def reply(self, code, value, retry_after=None):
+            raw = json.dumps(value).encode()
             self.send_response(code)
             self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Length", str(len(raw)))
             if retry_after and retry_after.isdigit():
                 self.send_header("Retry-After", retry_after)
             self.end_headers()
-            self.wfile.write(json.dumps(value).encode())
+            self.wfile.write(raw)
 
         def error(self, code, message, retry_after=None):
             self.reply(code, {"error": {"message": message}}, retry_after)
@@ -175,7 +177,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 return self.error(400, "route_not_allowed")
             try:
                 size = int(self.headers.get("Content-Length", "0"))
-                if size <= 0 or size > 262144:
+                if size <= 0 or size > request_max_bytes:
                     return self.error(413, "input_limit")
                 body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider, embedding_dimensions, chat_max_tokens, reasoning_effort, force_chat_max_tokens, chat_prompt_price, chat_completion_price)
                 data = json.dumps(body).encode()
@@ -259,14 +261,15 @@ def main():
     parser.add_argument("--chat-prompt-price", type=float, default=0.3, help="Enforced provider USD per million input tokens")
     parser.add_argument("--chat-completion-price", type=float, default=1.2, help="Enforced provider USD per million output tokens")
     parser.add_argument("--request-timeout", type=int, default=90)
+    parser.add_argument("--request-max-bytes", type=int, default=262144, help="Maximum incoming JSON bytes; actual input and full output still require a monetary reservation")
     parser.add_argument("--force-chat-max-tokens", action="store_true", help="Override native internal output limits for a provider-maximum capability profile")
     parser.add_argument("--reasoning-effort", choices=("low", "high", "max"), default="low")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if args.embedding_dimensions is not None and not 1 <= args.embedding_dimensions <= 4096:
         parser.error("embedding dimensions must be between 1 and 4096")
-    if args.chat_max_tokens <= 0 or args.request_timeout <= 0:
-        parser.error("chat output and request timeout must be positive")
+    if args.chat_max_tokens <= 0 or args.request_timeout <= 0 or args.request_max_bytes <= 0:
+        parser.error("chat output, request timeout, and request byte limit must be positive")
     if any(not math.isfinite(p) or p <= 0 for p in (args.chat_prompt_price, args.chat_completion_price)):
         parser.error("chat prices must be finite and positive")
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
@@ -285,7 +288,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price, args.receipt_dir))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price, args.receipt_dir, args.request_max_bytes))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -301,6 +304,7 @@ def main():
             "force_chat_max_tokens": args.force_chat_max_tokens,
             "chat_prompt_price": args.chat_prompt_price, "chat_completion_price": args.chat_completion_price,
             "chat_max_tokens": args.chat_max_tokens, "request_timeout": args.request_timeout, "reasoning_effort": args.reasoning_effort,
+            "request_max_bytes": args.request_max_bytes,
             "embedding_provider": args.embedding_provider, "embedding_dimensions": args.embedding_dimensions,
             "transport": "nonstream_upstream_with_optional_buffered_sse"}), flush=True)
         def interrupted(signum, frame):

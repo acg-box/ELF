@@ -1,0 +1,74 @@
+[
+  {
+    "phase": "primary",
+    "condition": "both",
+    "case_id": "memory-1-1",
+    "answer_sha256": "fea307ef8fdb871ff093815a4ba277d5feaca176370fb240f126ebe0688a1112",
+    "checks": [
+      {
+        "citation": "695171ff-aca3-5c7b-b31c-8e6f2da84483#2a3b4557-9fec-5cd5-83df-d2bf881fbfba",
+        "entire_string_in_evidence": false,
+        "all_components_in_evidence": true
+      },
+      {
+        "citation": "0cff314f-7a10-5a96-a842-b03f60e283a2#4dccb10e-59fb-5e5e-927d-b1b504e3d94a",
+        "entire_string_in_evidence": false,
+        "all_components_in_evidence": true
+      },
+      {
+        "citation": "0ceb9aef-6778-5cf6-a4a5-d4bc313df631#fee24541-f01d-58f1-9f70-8c4b616e41a3",
+        "entire_string_in_evidence": false,
+        "all_components_in_evidence": true
+      }
+    ]
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-2-2",
+    "answer_sha256": "4b2aca73d6f6b06243d5ddb6967d5d96caa02dd2075e04eec894c8f6b715aa2d",
+    "checks": [
+      {
+        "citation": "c40cbd8a-f9a0-5872-9e8d-32b1b8352bba:4e1cc23e-8e74-5bee-b2ef-e62bdafe5194",
+        "entire_string_in_evidence": false,
+        "all_components_in_evidence": true
+      },
+      {
+        "citation": "8b17477e-d9d4-5283-b9a1-d5daa7dc6492:d2fd5398-292a-5aca-8d0c-5aa697fb7f70",
+        "entire_string_in_evidence": false,
+        "all_components_in_evidence": true
+      },
+      {
+        "citation": "9f098a2b-e6b3-59e9-90d7-bafe82db8eda:c45ae405-252e-5cd2-8069-6c66ee550e86",
+        "entire_string_in_evidence": false,
+        "all_components_in_evidence": true
+      }
+    ]
+  },
+  {
+    "phase": "primary",
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "answer_sha256": "aeb2bb95b98de57967347b1d6482fac8419735dc3f76a5292351d8a04eaa8ae5",
+    "checks": [
+      {
+        "citation": "m_10a8847f903485c5",
+        "entire_string_in_evidence": true,
+        "all_components_in_evidence": false
+      }
+    ]
+  },
+  {
+    "phase": "finalization",
+    "condition": "both",
+    "case_id": "memory-0-1",
+    "answer_sha256": "fbbf31bacc5e115918fb532bcc9816fd3121cb9f4e26abdf4936b2ee0dd63c0d",
+    "checks": [
+      {
+        "citation": "9af8605c-786c-41d0-943a-0cf671692c",
+        "entire_string_in_evidence": false,
+        "all_components_in_evidence": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "cases": [
+    "memory-0-1",
+    "memory-2-1",
+    "memory-3-1",
+    "memory-4-0"
+  ],
+  "selection": "Diagnostic subset selected after observing missing identifiers in the initial context; not a new unbiased suite.",
+  "tools": "Note search/read plus native cached search-session expansion. No source or graph tools.",
+  "initial": "Same twelve notes plus the native initial search_id, which the primary wrapper omitted.",
+  "max_output_tokens": 393216
+}

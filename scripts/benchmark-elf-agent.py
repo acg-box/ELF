@@ -8,7 +8,7 @@ from pathlib import Path
 
 from benchmark_agent.replay import Replay
 from benchmark_agent.runner import run,finalize_recorded,parse_answer
-from benchmark_agent.analysis import analyze
+from benchmark_agent.analysis import analyze,initial_coverage
 from benchmark_deep import elf_runtime
 
 spec=importlib.util.spec_from_file_location('matched',Path(__file__).with_name('benchmark-elf-matched.py'))
@@ -19,24 +19,25 @@ CONDITIONS=['notes','source','graph','both']
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,required=True);parser.add_argument('--image')
-    parser.add_argument('--phase',choices=['prepare','run','control','finalize','analyze'],required=True);parser.add_argument('--limit',type=int,default=0)
-    parser.add_argument('--output-maximum',type=int,default=943718)
+    parser.add_argument('--phase',choices=['prepare','run','paged','control','finalize','analyze'],required=True);parser.add_argument('--limit',type=int,default=0)
+    parser.add_argument('--output-maximum',type=int,default=393216)
+    parser.add_argument('--resume-case',help='Explicit condition/case_id continuation from a retained complete tool batch after an archived transport failure')
     args=parser.parse_args();root=args.root.resolve();root.mkdir(parents=True,exist_ok=True)
     if args.phase=='analyze':
         print(json.dumps(analyze(root)['summary'],indent=2));return
     if args.phase=='finalize':
         protocol=json.loads((root/'protocol.json').read_text());assert protocol['max_output_tokens']==args.output_maximum
         common.freeze(root/'finalization-protocol.json',{'purpose':'Separate loop termination failure from missing evidence. One final model response from the original exhausted trace, with no additional retrieval. Primary exhausted cases remain unchanged.','max_output_tokens':args.output_maximum})
-        for source in sorted((root/'cases').glob('*/*.json')):
+        for source in sorted((root/'cases').glob('*/*.json'))+sorted((root/'paged-cases').glob('*/*.json')):
             case=json.loads(source.read_text())
             if case['status'] not in ('tool_budget_exhausted','round_budget_exhausted'):continue
             path=root/'finalizations'/case['condition']/source.name
             if path.exists():continue
-            initial=json.loads((root/'initial'/source.name).read_text())['notes']
+            saved=json.loads((root/'initial'/source.name).read_text());initial=saved['notes']
             raw_path=root/'finalization-responses'/case['condition']/source.name
             if raw_path.exists():raw=json.loads(raw_path.read_text())
             else:
-                raw=finalize_recorded(case,initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],args.output_maximum);common.save(raw_path,raw)
+                raw=finalize_recorded(case,initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],args.output_maximum,initial_search_id=saved['search']['search_id'] if case['condition']=='paged' else None);common.save(raw_path,raw)
             choice=raw['response']['choices'][0]
             if choice.get('finish_reason') in ('error','length'):raise RuntimeError('Failed finalization; preserve response')
             value=parse_answer(choice['message'].get('content') or '')
@@ -53,7 +54,10 @@ def main():
             path=root/'cases'/'initial'/(q['case_id']+'.json')
             if path.exists():continue
             initial=json.loads((root/'initial'/(q['case_id']+'.json')).read_text())['notes']
-            value=run(None,'initial',q['question'],initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],max_rounds=1,max_calls=0,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(root/'progress'/'initial'/(q['case_id']+'.json'),trace))
+            progress=root/'progress'/'initial'/(q['case_id']+'.json')
+            if progress.exists():
+                raise RuntimeError('A recorded control response requires offline recovery before continuing: '+str(progress))
+            value=run(None,'initial',q['question'],initial,os.environ['LITELLM_BASE_URL'],os.environ['LITELLM_API_KEY'],max_rounds=1,max_calls=0,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(progress,trace))
             value.update(condition='initial',query=q,expected=suite['oracle'][q['case_id']])
             value['strict_correct']=value['status']=='completed' and common.score(value['expected'],value['text'])
             common.save(path,value);print(json.dumps({'condition':'initial','case_id':q['case_id'],'status':value['status']}),flush=True)
@@ -95,25 +99,35 @@ def main():
         elf_runtime.drain();common.save(root/'prepared.json',{'notes':persisted_note_count,'same_note_bodies':True})
     else:
         assert (root/'prepared.json').exists()
+        queries=suite['queries'];folder='cases'
+        if args.phase=='paged':
+            missing={r['case_id'] for r in initial_coverage(root,suite) if r['structured_missing']}
+            queries=[q for q in queries if q['case_id'] in missing];folder='paged-cases'
+            common.freeze(root/'paged-protocol.json',{'cases':sorted(missing),'selection':'Diagnostic subset selected after observing missing identifiers in the initial context; not a new unbiased suite.','tools':'Note search/read plus native cached search-session expansion. No source or graph tools.','initial':'Same twelve notes plus the native initial search_id, which the primary wrapper omitted.','max_output_tokens':args.output_maximum})
         completed=0
-        for index,q in enumerate(suite['queries']):
-            order=CONDITIONS[index%4:]+CONDITIONS[:index%4]
-            initial=json.loads((root/'initial'/(q['case_id']+'.json')).read_text())['notes']
+        for index,q in enumerate(queries):
+            order=['paged'] if args.phase=='paged' else CONDITIONS[index%4:]+CONDITIONS[:index%4]
+            saved=json.loads((root/'initial'/(q['case_id']+'.json')).read_text());initial=saved['notes']
             for condition in order:
-                path=root/'cases'/condition/(q['case_id']+'.json')
+                path=root/folder/condition/(q['case_id']+'.json')
                 if path.exists():
                     assert json.loads(path.read_text())['status'] in ('completed','tool_budget_exhausted','round_budget_exhausted'),'Archive failed attempt before retry';continue
                 if args.limit and completed>=args.limit:return
+                prior=None
+                if args.resume_case==condition+'/'+q['case_id']:
+                    prior=json.loads((root/'progress'/condition/(q['case_id']+'.json')).read_text())
                 try:
-                    value=run(api,condition,q['question'],initial,base,token,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(root/'progress'/condition/(q['case_id']+'.json'),trace))
+                    value=run(api,condition,q['question'],initial,base,token,max_output_tokens=args.output_maximum,checkpoint=lambda trace:common.save(root/'progress'/condition/(q['case_id']+'.json'),trace),initial_search_id=saved['search']['search_id'] if condition=='paged' else None,prior_trace=prior)
                 except Exception as error:
                     value={'status':'failed','error':str(error).replace(token,'[redacted]')}
                 value.update(condition=condition,query=q,expected=suite['oracle'][q['case_id']])
+                if prior is not None:
+                    value['resume_seconds']=value.get('seconds');value['seconds']=None;value['resumed_recorded_turns']=len(prior)
                 if value['status']=='completed':value['strict_correct']=common.score(value['expected'],value['text'])
                 common.save(path,value);completed+=1
                 print(json.dumps({'condition':condition,'case_id':q['case_id'],'status':value['status'],'strict_correct':value.get('strict_correct'),'tools':value.get('tool_calls')}),flush=True)
                 if value['status']=='failed':raise RuntimeError('Agent run stopped; retain failure and progress before retry')
-        elf_runtime.drain();common.save(root/'completed.json',{'cases':80,'note':'Exhausted agents are retained outcomes, not rerun answers.'})
+        elf_runtime.drain();common.save(root/('paged-completed.json' if args.phase=='paged' else 'completed.json'),{'cases':completed,'note':'Exhausted agents are retained outcomes, not rerun answers. Counts exclude resumed cases.'})
     replay.server.shutdown()
 
 

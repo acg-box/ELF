@@ -1,0 +1,7 @@
+{
+  "source_ablation": "Notes and graph arms remove the full source_ref object, including metadata and quotes. Source/both expose it on get_note. This is not the normal full native response and does not isolate document reads alone.",
+  "temperature": "Omitted; provider default. One trajectory per condition.",
+  "primary_wrapper": "Selected REST tools, fixed12-note search output, no cached expansion or initial search_id. Full native MCP exposes more capability.",
+  "paged_diagnostic": "Four cases selected after observing missing initial identifiers. Adds native cached search expansion and initial search_id; not a new unbiased full-suite score.",
+  "scoring": "Reviewed factual completeness with required identifier witnesses; citation attribution remains a separate audit."
+}

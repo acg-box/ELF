@@ -10,11 +10,36 @@ from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from benchmark_agent.replay import Replay
 from benchmark_agent.tools import project_note,execute,schemas
-from benchmark_agent.runner import parse_answer,finalize_recorded
-from benchmark_agent.analysis import case_metrics
+from benchmark_agent.runner import parse_answer,finalize_recorded,run
+from benchmark_agent.analysis import case_metrics,evidence_payload
 
 
 class AgentBoundaries(unittest.TestCase):
+    def test_query_echo_is_not_retrieved_evidence(self):
+        value={'items':[],'query_plan':{'query':'REPLAY-0-632'}}
+        self.assertNotIn('REPLAY-0-632',json.dumps(evidence_payload('search_notes',value)))
+        value={'subject':{'canonical':'REPLAY-0-632'},'facts':[]}
+        self.assertNotIn('REPLAY-0-632',json.dumps(evidence_payload('query_graph',value)))
+
+    def test_transport_resume_reuses_completed_tools_and_refuses_final_answers(self):
+        message={'role':'assistant','content':None,'tool_calls':[{'id':'a','function':{'name':'get_note','arguments':'{}'}}]}
+        prior=[{'turn':0,'response':{'choices':[{'message':message}]},'tools':[{'name':'get_note','arguments':{},'result':{'text':'already read'}}]}]
+        answer={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':json.dumps({'text':'answer','supported':True,'citations':[]})}}]}
+        requests=[]
+        def reply(req,**kwargs):requests.append(json.loads(req.data));return io.BytesIO(json.dumps(answer).encode())
+        with patch('benchmark_agent.runner.urllib.request.urlopen',side_effect=reply):
+            result=run(lambda *args:self.fail('Do not repeat completed tools'),'notes','question',[],'http://local','token',prior_trace=prior)
+        self.assertEqual(result['tool_calls'],1)
+        self.assertEqual(result['trace'][0],prior[0])
+        self.assertEqual(json.loads(requests[0]['messages'][-1]['content']),{'text':'already read'})
+        with self.assertRaises(ValueError):run(None,'notes','question',[],'unused','token',prior_trace=[{'response':answer,'tools':[]}])
+
+    def test_cached_expansion_is_a_read_without_touch_or_new_search(self):
+        calls=[]
+        execute(lambda *args:calls.append(args),'paged','get_search',{'search_id':'session','top_k':24})
+        self.assertEqual(calls,[('/v2/searches/session?top_k=24&touch=false',)])
+        with self.assertRaises(ValueError):execute(lambda *args:None,'notes','get_search',{'search_id':'session'})
+
     def test_finalization_preserves_tools_without_supplying_oracle(self):
         message={'role':'assistant','content':None,'tool_calls':[{'id':'a','function':{'name':'get_note','arguments':'{}'}},{'id':'b','function':{'name':'get_note','arguments':'{}'}}]}
         case={'query':{'question':'Which fact?'},'expected':{'facts':['SECRET_ORACLE']},'trace':[{'response':{'choices':[{'message':message}]},'tools':[{'result':{'text':'observed'}}]}]}
@@ -29,6 +54,16 @@ class AgentBoundaries(unittest.TestCase):
         self.assertEqual([m['tool_call_id'] for m in outputs],['a','b'])
         self.assertEqual(json.loads(outputs[0]['content']),{'text':'observed'})
         self.assertIn('error',json.loads(outputs[1]['content']))
+
+    def test_no_tool_control_retains_invalid_output_without_resampling(self):
+        response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':'<invented tool call>'}}]}
+        with patch('benchmark_agent.runner.urllib.request.urlopen',return_value=io.BytesIO(json.dumps(response).encode())) as call:
+            result=run(None,'initial','question',[],'http://unused','token',max_rounds=1,max_calls=0)
+        self.assertEqual(result['status'],'invalid_answer')
+        self.assertEqual(result['text'],'<invented tool call>')
+        self.assertEqual(result['tool_calls'],0)
+        self.assertFalse(result['format_compliant'])
+        self.assertEqual(call.call_count,1)
 
     def test_fenced_answer_is_retained_as_format_failure_without_resampling(self):
         raw=json.dumps({'text':'answer','supported':True,'citations':['note']})

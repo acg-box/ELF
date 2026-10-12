@@ -5,7 +5,7 @@ description: Measure iterative recall, source provenance, and graph traversal ov
 status: active
 authority: informative
 owner: benchmark
-last_verified: 2026-10-11
+last_verified: 2026-10-12
 code_refs:
   - scripts/benchmark-elf-agent.py
   - scripts/benchmark_agent/runner.py
@@ -28,7 +28,10 @@ to obtain its provenance.
 
 The later `initial` control receives the same prompt and initial notes with no
 tools. It helps distinguish richer initial context from iterative retrieval.
-Keep this control separate from the rotated four-condition experiment.
+Keep this control separate from the rotated four-condition experiment. The
+shared prompt still asks for verification when tools exist. Record invented
+textual tool calls or invalid JSON as failed control outputs; do not resample
+them. This prompt interaction limits attribution to retrieval alone.
 
 The workload has twenty memory questions. Sixteen belong to the test split;
 four belong to the development split. This is a small diagnostic fixture, not
@@ -55,6 +58,7 @@ Do not put a provider key in the runner, Docker configuration, or command line.
 ```sh
 cargo make benchmark-elf-agent --root "$ROOT" --image elf-agent-evidence:current --phase prepare --output-maximum 393216
 cargo make benchmark-elf-agent --root "$ROOT" --image elf-agent-evidence:current --phase run --output-maximum 393216
+cargo make benchmark-elf-agent --root "$ROOT" --image elf-agent-evidence:current --phase paged --output-maximum 393216
 cargo make benchmark-elf-agent --root "$ROOT" --phase finalize --output-maximum 393216
 cargo make benchmark-elf-agent --root "$ROOT" --phase control --output-maximum 393216
 ```
@@ -64,6 +68,12 @@ This differs from the model-directory maximum. Before a new trial, verify the
 selected endpoint's output allowance and prices. Keep all conditions on the
 same provider and settings. Preserve route failures and their outstanding cost
 reservations. A missing usage receipt is not proof of zero charge.
+
+Use `--request-max-bytes 1048576` on the budget gateway for this agent profile.
+The legacy 256 KiB limit can reject a multi-turn history before provider dispatch.
+This changes the transport envelope, not the provider output allowance or the
+cumulative dollar cap. Each request still reserves its full input and maximum
+output cost. Do not truncate evidence to fit the old envelope.
 
 Preparation creates source documents and ingests the corresponding events
 through native ELF APIs. The extraction proxy returns exact prior successful
@@ -84,7 +94,7 @@ an unsuccessful outcome; do not resample it until it produces an answer. These
 limits measure a bounded workflow, not unlimited-search capability.
 
 The separate `finalize` phase makes one final model call for each exhausted
-trace. It supplies only the evidence already read, marks pending tool calls as
+primary or paged trace. It supplies only the evidence already read, marks pending tool calls as
 unexecuted, and permits no further retrieval. Keep these answers separate from
 the primary outcomes. This distinguishes failure to stop searching from failure
 to obtain the requested facts. Persist the raw finalization response before
@@ -97,10 +107,27 @@ call, but record its formatting noncompliance. Archive transport or ambiguous
 format failures before an explicit retry. A completed-case restart skips prior
 answers and exhausted cases.
 
-Graph tools use `/v2/graph/query`. The measured agent does not use the separate
+For an archived transport rejection after a complete tool batch, explicitly
+pass `--resume-case CONDITION/CASE_ID` to the `run` phase. It restores the saved
+responses and tool outputs and retains both round and tool-call counts. It
+refuses to resume a recorded final answer or an incomplete tool batch. Keep
+the original failure and trace. Report total wall-clock latency as unavailable
+when the original timer was lost.
+
+Graph tools use `/v2/graph/query`. The primary agent does not use the separate
 graph-report, Context Pack, knowledge-page, or entity-memory interfaces. Record
 additional read-only diagnostics separately. Do not describe this experiment as
 coverage of every ELF interface.
+
+The primary wrapper fixes note-search output at twelve items. ELF itself also
+supports `elf_searches_get` with a larger `top_k` over the existing cached
+session. The separate `paged` diagnostic exposes that capability, supplies the
+native initial `search_id`, and recommends expansion before another query. It
+selects the four questions with missing identifiers in the initial context,
+recorded in `initial-fact-coverage.json`. This is a targeted follow-up selected
+after inspection, not an unbiased extension of the primary score. It adds no
+source or graph tools. Report the wrapper omission rather than describing
+cached expansion as a missing ELF product feature.
 
 Run offline analysis without provider credentials or Docker:
 

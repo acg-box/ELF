@@ -1,0 +1,3454 @@
+[
+  {
+    "case_id": "memory-0-1",
+    "request": "/v2/searches/49223647-ca5b-4b9f-adf7-d06423556533?top_k=60&touch=false",
+    "seconds": 0.04330733302049339,
+    "missing_identifier_ranks": {
+      "REPLAY-0-632": [
+        20
+      ]
+    },
+    "response": {
+      "expires_at": "2026-10-12T08:34:11.923798Z",
+      "items": [
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.610584Z",
+          "final_score": 1.1081922,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+          "scope": "agent_private",
+          "summary": "Larch's switch from BATCH-0-741 to STREAM-0-286 was caused by GATE-0-519 outages recorded on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.610584Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 1.1051922,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+          "scope": "agent_private",
+          "summary": "Directive: for the next outage, use the recovery procedure validated on August 8.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:28.833299Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": "2026-10-26T02:33:27.811913Z",
+          "final_score": 1.1062492,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+          "scope": "agent_private",
+          "summary": "For Larch's next outage, use the recovery procedure validated on August 8.",
+          "type": "plan",
+          "updated_at": "2026-10-12T02:33:27.811913Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.0734563,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+          "scope": "agent_private",
+          "summary": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.610583Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 1.0817771,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-0-519 incident recorded on 2026-08-08, which caused the Larch switch to STREAM-0-286.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:27.610585Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.1006451,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+          "scope": "agent_private",
+          "summary": "Sable decisions: keep the August 15 delivery choice; next outage should use the August 8-validated recovery procedure.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534658Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.9693431,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+          "scope": "agent_private",
+          "summary": "For project Larch, BATCH-0-741 was chosen for batch delivery.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.064499Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343802Z",
+          "final_score": 0.9822111,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+          "scope": "agent_private",
+          "summary": "BATCH-0-741 lost updates during GATE-0-519 outages, as reported by Mara on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343802Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.98443747,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-2-519 incident (outages recorded on August 8).",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:30.423715Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.0723432,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0682bed1-e9ad-4e30-b3a4-a155920d1371",
+          "scope": "agent_private",
+          "summary": "For the next outage, use the recovery procedure validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346054Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.92483383,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+          "scope": "agent_private",
+          "summary": "No delivery mode change was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.940828Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.0693432,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+          "scope": "agent_private",
+          "summary": "For the next outage, the instructed recovery procedure is the one validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045114Z"
+        },
+        {
+          "confidence": 0.92,
+          "expires_at": "2027-04-10T02:33:32.357449Z",
+          "final_score": 0.9372677,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+          "scope": "agent_private",
+          "summary": "GATE-3-519 outages recorded on August 8 caused the Sable switch from BATCH-3-741 to STREAM-3-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.357449Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.8496454,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Mara reviewed Larch and kept the August 15 delivery choice; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811914Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.9213999,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+          "scope": "agent_private",
+          "summary": "GATE-4-519 outages recorded on August 8 caused the Cedar switch; the successful recovery procedure from that incident should be kept.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:33.110748Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:27.064498Z",
+          "final_score": 0.8281732,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+          "scope": "agent_private",
+          "summary": "Mara started project Larch on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.064498Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.9331545,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting about the BATCH-1-741 lost updates.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.4152Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.621742Z",
+          "final_score": 0.89309794,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+          "scope": "agent_private",
+          "summary": "GATE-1-519 outages recorded on August 8 caused the Cobalt switch from BATCH-1-741 to STREAM-1-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.621742Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.0645Z",
+          "final_score": 0.69387144,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+          "scope": "agent_private",
+          "summary": "Project Larch's initial retry policy was RETRY-0-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.0645Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343803Z",
+          "final_score": 0.79730546,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+          "scope": "agent_private",
+          "summary": "REPLAY-0-632 was tested on 2026-08-08 and restored the missing updates lost by BATCH-0-741 during GATE-0-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343803Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.581675Z",
+          "final_score": 0.8108527,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, the team tested REPLAY-3-632, which restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581675Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.6949284,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+          "scope": "agent_private",
+          "summary": "Larch retry policy updated to RETRY-0-907, superseding RETRY-0-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811912Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.581674Z",
+          "final_score": 0.75047535,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581674Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.118821Z",
+          "final_score": 0.73083377,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6726d269-caa0-4c6b-a1da-e613b804c284",
+          "scope": "agent_private",
+          "summary": "The team tested REPLAY-2-632, which restored the missing updates that BATCH-2-741 lost during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.118821Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.68187153,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.343804Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.11882Z",
+          "final_score": 0.68255067,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6aaecb07-b8fe-4459-be8c-16dab8ffb74c",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.11882Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.415199Z",
+          "final_score": 0.6787771,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Ivo reported BATCH-1-741 lost updates during GATE-1-519 outages; testing REPLAY-1-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.415199Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.423714Z",
+          "final_score": 0.64181495,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+          "scope": "agent_private",
+          "summary": "GATE-2-519 outages recorded on August 8 caused the Reed switch from BATCH-2-741 to STREAM-2-286.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.423714Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.6025319,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+          "scope": "agent_private",
+          "summary": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.357448Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:32.940827Z",
+          "final_score": 0.6666829,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+          "scope": "agent_private",
+          "summary": "BATCH-4-741 lost updates during GATE-4-519 outages; REPLAY-4-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.940827Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.5685696,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+          "scope": "agent_private",
+          "summary": "On 2026-08-15 Neri approved switching Reed from BATCH-2-741 to STREAM-2-286; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.423713Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.5293809,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "016a97a4-4a24-4e9b-9a17-1ec45f03624e",
+          "scope": "agent_private",
+          "summary": "BATCH-2-741 was chosen for batch delivery for project Reed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:29.400787Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.6455885,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "db962964-854a-4d9a-b869-31647d2d005f",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.118822Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.5527017,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+          "scope": "agent_private",
+          "summary": "Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.110747Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.47277716,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "a35a02ca-8583-4b6f-ac2d-c94494cd5882",
+          "scope": "agent_private",
+          "summary": "BATCH-1-741 was chosen for batch delivery for project Cobalt.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.12131Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.50364494,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+          "scope": "agent_private",
+          "summary": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286 on 2026-08-15; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.621741Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.4666827,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0d3d9682-a529-48fc-9180-b82fe74b62aa",
+          "scope": "agent_private",
+          "summary": "Retry policy updated to RETRY-1-907, superseding RETRY-1-108 as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.833298Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.43804136,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "73d1e03c-4e93-4d16-a15a-19f22fa14dcd",
+          "scope": "agent_private",
+          "summary": "Tala chose BATCH-3-741 for batch delivery on project Sable.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.390008Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.37843767,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+          "scope": "agent_private",
+          "summary": "Devon reviewed Cedar on 2026-08-22; the August 15 delivery choice should be kept.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346053Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.3822112,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "3ec0746b-8f46-46ce-b3e9-acd36779144d",
+          "scope": "agent_private",
+          "summary": "Devon chose BATCH-4-741 for batch delivery for project Cedar.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.747544Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:33.346055Z",
+          "final_score": 0.4470413,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "ef582051-9389-4946-85e6-984478e1231d",
+          "scope": "agent_private",
+          "summary": "The retry policy is now RETRY-4-907, superseding RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:33.346055Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.44781485,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+          "scope": "agent_private",
+          "summary": "The retry policy was updated to RETRY-2-907, replacing RETRY-2-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045113Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.3754376,
+          "importance": 0.65,
+          "key": null,
+          "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+          "scope": "agent_private",
+          "summary": "As of 2026-08-22, the August 15 delivery choice stands, Neri reviewed Reed, and no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045115Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.390009Z",
+          "final_score": 0.32183382,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "24b387ad-76c8-4e78-b032-4101f39fc568",
+          "scope": "agent_private",
+          "summary": "Project Sable's initial retry policy was RETRY-3-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390009Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.2803243,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Ivo reviewed Cobalt; the August 15 delivery choice is kept; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.8333Z"
+        },
+        {
+          "confidence": 0.98,
+          "expires_at": null,
+          "final_score": 0.34892806,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+          "scope": "agent_private",
+          "summary": "Sable's retry policy is now RETRY-3-907, superseding RETRY-3-108 (2026-08-22).",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534657Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:29.400788Z",
+          "final_score": 0.31960738,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "7f4c9f60-a744-4cc3-b337-327e3cfe9718",
+          "scope": "agent_private",
+          "summary": "Project Reed's initial retry policy was RETRY-2-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400788Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:29.400786Z",
+          "final_score": 0.21617338,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08",
+          "scope": "agent_private",
+          "summary": "Neri started project Reed on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400786Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.390007Z",
+          "final_score": 0.20330545,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c",
+          "scope": "agent_private",
+          "summary": "Tala started project Sable on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390007Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747545Z",
+          "final_score": 0.2667773,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "49f00edc-4daa-4da3-8596-f45b6e829e2c",
+          "scope": "agent_private",
+          "summary": "The initial retry policy for project Cedar was RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747545Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.121311Z",
+          "final_score": 0.25923,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "bcd54ab9-ed7a-4320-8803-ad4bb8c21271",
+          "scope": "agent_private",
+          "summary": "Project Cobalt's initial retry policy was RETRY-1-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121311Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747543Z",
+          "final_score": 0.19353193,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "ecbe520f-ac9a-467e-9aa6-33e48cb39b36",
+          "scope": "agent_private",
+          "summary": "Devon started project Cedar on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747543Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.534659Z",
+          "final_score": 0.1595697,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+          "scope": "agent_private",
+          "summary": "Tala reviewed Sable on 2026-08-22; no budget owner has been appointed for Sable.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.534659Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.121309Z",
+          "final_score": 0.16634311,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "6d44123c-308a-471d-a522-5ffa7201d8ea",
+          "scope": "agent_private",
+          "summary": "Ivo started project Cobalt on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121309Z"
+        }
+      ],
+      "mode": "planned_search",
+      "query_plan": {
+        "budget": {
+          "cache_enabled": true,
+          "candidate_k": 60,
+          "expansion_max_queries": 4,
+          "prefilter_max_candidates": 0,
+          "top_k": 60
+        },
+        "fusion_policy": {
+          "fusion_priority": 1,
+          "fusion_weight": 1.0,
+          "recursive_priority": 1,
+          "recursive_weight": 1.0,
+          "strategy": "weighted_merge",
+          "structured_field_priority": 0,
+          "structured_field_weight": 1.0
+        },
+        "intent": {
+          "agent_id": "benchmark",
+          "allowed_scopes": [
+            "agent_private"
+          ],
+          "project_id": "memory",
+          "query": "For the next outage on Larch, which recovery procedure should Mara use, and which outage gate led to the delivery-mode change?",
+          "read_profile": "private_only",
+          "tenant_id": "matched"
+        },
+        "rerank_policy": {
+          "blend_enabled": true,
+          "blend_segments": [
+            {
+              "max_retrieval_rank": 3,
+              "retrieval_weight": 0.8
+            },
+            {
+              "max_retrieval_rank": 10,
+              "retrieval_weight": 0.5
+            },
+            {
+              "max_retrieval_rank": 1000000,
+              "retrieval_weight": 0.2
+            }
+          ],
+          "diversity_enabled": true,
+          "diversity_mmr_lambda": 0.7,
+          "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+          "provider_id": "openai",
+          "rerank_normalization": "rank",
+          "retrieval_normalization": "rank"
+        },
+        "retrieval_stages": [
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "fusion_dense_bm25",
+            "source": "qdrant_fusion"
+          },
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "structured_field_vector",
+            "source": "postgres_vector"
+          }
+        ],
+        "rewrite": {
+          "dynamic_gate": {
+            "considered": true,
+            "min_candidates": 10,
+            "min_top_score": 0.12,
+            "observed_candidates": 54,
+            "observed_top_score": 1.0,
+            "should_expand": false
+          },
+          "expanded_queries": [
+            "For the next outage on Larch, which recovery procedure should Mara use, and which outage gate led to the delivery-mode change?"
+          ],
+          "expansion_mode": "dynamic"
+        },
+        "schema": "elf.search.query_plan",
+        "stages": [
+          {
+            "details": {
+              "allowed_scope_count": 1,
+              "path": "planned",
+              "query": "For the next outage on Larch, which recovery procedure should Mara use, and which outage gate led to the delivery-mode change?",
+              "read_profile": "private_only"
+            },
+            "name": "intent"
+          },
+          {
+            "details": {
+              "dynamic_gate_considered": true,
+              "dynamic_gate_should_expand": false,
+              "expanded_query_count": 1,
+              "expansion_mode": "dynamic"
+            },
+            "name": "rewrite"
+          },
+          {
+            "details": {
+              "stages": [
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "fusion_dense_bm25",
+                  "source": "qdrant_fusion"
+                },
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "structured_field_vector",
+                  "source": "postgres_vector"
+                }
+              ]
+            },
+            "name": "retrieval"
+          },
+          {
+            "details": {
+              "fusion_weight": 1.0,
+              "strategy": "weighted_merge",
+              "structured_field_weight": 1.0
+            },
+            "name": "fusion"
+          },
+          {
+            "details": {
+              "blend_enabled": true,
+              "diversity_enabled": true,
+              "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+              "provider_id": "openai"
+            },
+            "name": "rerank"
+          },
+          {
+            "details": {
+              "cache_enabled": true,
+              "candidate_k": 60,
+              "expansion_max_queries": 4,
+              "prefilter_max_candidates": 0,
+              "top_k": 60
+            },
+            "name": "budget"
+          }
+        ],
+        "version": "v1"
+      },
+      "request_id": "4ce889b0-2a8b-40c3-b1f4-f944e29de58c",
+      "search_id": "49223647-ca5b-4b9f-adf7-d06423556533",
+      "trace_id": "d0bb3386-eb47-4e35-b64a-69c6c084d7df",
+      "trajectory_summary": {
+        "schema": "search_retrieval_trajectory/v1",
+        "stages": [
+          {
+            "item_count": 0,
+            "stage_name": "rewrite.expansion",
+            "stage_order": 1,
+            "stats": {
+              "expanded_query_count": 1
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "recall.candidates",
+            "stage_order": 2,
+            "stats": {
+              "candidate_count_after_filter": 54,
+              "candidate_count_before_filter": 54,
+              "snippet_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "fusion.merge",
+            "stage_order": 3,
+            "stats": {
+              "fused_count": 54,
+              "scored_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "rerank.score",
+            "stage_order": 4,
+            "stats": {
+              "reranked_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "selection.final",
+            "stage_order": 5,
+            "stats": {
+              "selected_count": 54,
+              "top_k": 60
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "memory-2-1",
+    "request": "/v2/searches/8062b632-b720-41cc-bdc9-2cc7387bf769?top_k=60&touch=false",
+    "seconds": 0.0074288329924456775,
+    "missing_identifier_ranks": {
+      "REPLAY-2-632": [
+        23
+      ]
+    },
+    "response": {
+      "expires_at": "2026-10-12T08:34:15.959189Z",
+      "items": [
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 1.1504751,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+          "scope": "agent_private",
+          "summary": "Directive: for the next outage, use the recovery procedure validated on August 8.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:28.833299Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.055362,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+          "scope": "agent_private",
+          "summary": "On 2026-08-15 Neri approved switching Reed from BATCH-2-741 to STREAM-2-286; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.423713Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.423714Z",
+          "final_score": 0.9908714,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+          "scope": "agent_private",
+          "summary": "GATE-2-519 outages recorded on August 8 caused the Reed switch from BATCH-2-741 to STREAM-2-286.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.423714Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.12706,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+          "scope": "agent_private",
+          "summary": "Sable decisions: keep the August 15 delivery choice; next outage should use the August 8-validated recovery procedure.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534658Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 1.0221733,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-2-519 incident (outages recorded on August 8).",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:30.423715Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.1308337,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0682bed1-e9ad-4e30-b3a4-a155920d1371",
+          "scope": "agent_private",
+          "summary": "For the next outage, use the recovery procedure validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346054Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.98143756,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+          "scope": "agent_private",
+          "summary": "No delivery mode change was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.940828Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.0976449,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+          "scope": "agent_private",
+          "summary": "For the next outage, the instructed recovery procedure is the one validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045114Z"
+        },
+        {
+          "confidence": 0.92,
+          "expires_at": "2027-04-10T02:33:32.357449Z",
+          "final_score": 0.98443747,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+          "scope": "agent_private",
+          "summary": "GATE-3-519 outages recorded on August 8 caused the Sable switch from BATCH-3-741 to STREAM-3-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.357449Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": "2026-10-26T02:33:27.811913Z",
+          "final_score": 1.0213435,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+          "scope": "agent_private",
+          "summary": "For Larch's next outage, use the recovery procedure validated on August 8.",
+          "type": "plan",
+          "updated_at": "2026-10-12T02:33:27.811913Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.11882Z",
+          "final_score": 0.9542488,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6aaecb07-b8fe-4459-be8c-16dab8ffb74c",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.11882Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.88864505,
+          "importance": 0.65,
+          "key": null,
+          "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+          "scope": "agent_private",
+          "summary": "As of 2026-08-22, the August 15 delivery choice stands, Neri reviewed Reed, and no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045115Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.9591356,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+          "scope": "agent_private",
+          "summary": "GATE-4-519 outages recorded on August 8 caused the Cedar switch; the successful recovery procedure from that incident should be kept.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:33.110748Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.621742Z",
+          "final_score": 0.96856946,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+          "scope": "agent_private",
+          "summary": "GATE-1-519 outages recorded on August 8 caused the Cobalt switch from BATCH-1-741 to STREAM-1-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.621742Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:29.400786Z",
+          "final_score": 0.8539092,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08",
+          "scope": "agent_private",
+          "summary": "Neri started project Reed on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400786Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.87800336,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-0-519 incident recorded on 2026-08-08, which caused the Larch switch to STREAM-0-286.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:27.610585Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.9520223,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting about the BATCH-1-741 lost updates.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.4152Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343803Z",
+          "final_score": 0.8086261,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+          "scope": "agent_private",
+          "summary": "REPLAY-0-632 was tested on 2026-08-08 and restored the missing updates lost by BATCH-0-741 during GATE-0-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343803Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.7784375,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "016a97a4-4a24-4e9b-9a17-1ec45f03624e",
+          "scope": "agent_private",
+          "summary": "BATCH-2-741 was chosen for batch delivery for project Reed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:29.400787Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:29.400788Z",
+          "final_score": 0.7196073,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "7f4c9f60-a744-4cc3-b337-327e3cfe9718",
+          "scope": "agent_private",
+          "summary": "Project Reed's initial retry policy was RETRY-2-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400788Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.581675Z",
+          "final_score": 0.84104127,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, the team tested REPLAY-3-632, which restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581675Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.581674Z",
+          "final_score": 0.7504752,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581674Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.118821Z",
+          "final_score": 0.7346072,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6726d269-caa0-4c6b-a1da-e613b804c284",
+          "scope": "agent_private",
+          "summary": "The team tested REPLAY-2-632, which restored the missing updates that BATCH-2-741 lost during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.118821Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343802Z",
+          "final_score": 0.7256073,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+          "scope": "agent_private",
+          "summary": "BATCH-0-741 lost updates during GATE-0-519 outages, as reported by Mara on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343802Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.7082865,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.343804Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.610584Z",
+          "final_score": 0.70064485,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+          "scope": "agent_private",
+          "summary": "Larch's switch from BATCH-0-741 to STREAM-0-286 was caused by GATE-0-519 outages recorded on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.610584Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.415199Z",
+          "final_score": 0.68255067,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Ivo reported BATCH-1-741 lost updates during GATE-1-519 outages; testing REPLAY-1-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.415199Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.620626,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+          "scope": "agent_private",
+          "summary": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.610583Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.6682299,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "db962964-854a-4d9a-b869-31647d2d005f",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.118822Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.613079,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+          "scope": "agent_private",
+          "summary": "Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.110747Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:32.940827Z",
+          "final_score": 0.6666828,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+          "scope": "agent_private",
+          "summary": "BATCH-4-741 lost updates during GATE-4-519 outages; REPLAY-4-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.940827Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.5761167,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+          "scope": "agent_private",
+          "summary": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.357448Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.5180601,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "a35a02ca-8583-4b6f-ac2d-c94494cd5882",
+          "scope": "agent_private",
+          "summary": "BATCH-1-741 was chosen for batch delivery for project Cobalt.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.12131Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.5187392,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+          "scope": "agent_private",
+          "summary": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286 on 2026-08-15; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.621741Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.5014185,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+          "scope": "agent_private",
+          "summary": "For project Larch, BATCH-0-741 was chosen for batch delivery.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.064499Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:33.346055Z",
+          "final_score": 0.4923242,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "ef582051-9389-4946-85e6-984478e1231d",
+          "scope": "agent_private",
+          "summary": "The retry policy is now RETRY-4-907, superseding RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:33.346055Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.3935319,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+          "scope": "agent_private",
+          "summary": "Devon reviewed Cedar on 2026-08-22; the August 15 delivery choice should be kept.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346053Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.45690915,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "73d1e03c-4e93-4d16-a15a-19f22fa14dcd",
+          "scope": "agent_private",
+          "summary": "Tala chose BATCH-3-741 for batch delivery on project Sable.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.390008Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.48932412,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0d3d9682-a529-48fc-9180-b82fe74b62aa",
+          "scope": "agent_private",
+          "summary": "Retry policy updated to RETRY-1-907, superseding RETRY-1-108 as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.833298Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.38975826,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "3ec0746b-8f46-46ce-b3e9-acd36779144d",
+          "scope": "agent_private",
+          "summary": "Devon chose BATCH-4-741 for batch delivery for project Cedar.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.747544Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.46668267,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+          "scope": "agent_private",
+          "summary": "The retry policy was updated to RETRY-2-907, replacing RETRY-2-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045113Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747545Z",
+          "final_score": 0.3799847,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "49f00edc-4daa-4da3-8596-f45b6e829e2c",
+          "scope": "agent_private",
+          "summary": "The initial retry policy for project Cedar was RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747545Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.390009Z",
+          "final_score": 0.33692807,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "24b387ad-76c8-4e78-b032-4101f39fc568",
+          "scope": "agent_private",
+          "summary": "Project Sable's initial retry policy was RETRY-3-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390009Z"
+        },
+        {
+          "confidence": 0.98,
+          "expires_at": null,
+          "final_score": 0.34892797,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+          "scope": "agent_private",
+          "summary": "Sable's retry policy is now RETRY-3-907, superseding RETRY-3-108 (2026-08-22).",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534657Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.0645Z",
+          "final_score": 0.32405993,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+          "scope": "agent_private",
+          "summary": "Project Larch's initial retry policy was RETRY-0-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.0645Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.26145628,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Ivo reviewed Cobalt; the August 15 delivery choice is kept; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.8333Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.121311Z",
+          "final_score": 0.27432427,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "bcd54ab9-ed7a-4320-8803-ad4bb8c21271",
+          "scope": "agent_private",
+          "summary": "Project Cobalt's initial retry policy was RETRY-1-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121311Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:27.064498Z",
+          "final_score": 0.22817308,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+          "scope": "agent_private",
+          "summary": "Mara started project Larch on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.064498Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.2987019,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+          "scope": "agent_private",
+          "summary": "Larch retry policy updated to RETRY-0-907, superseding RETRY-0-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811912Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.23077735,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Mara reviewed Larch and kept the August 15 delivery choice; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811914Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.390007Z",
+          "final_score": 0.1844374,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c",
+          "scope": "agent_private",
+          "summary": "Tala started project Sable on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390007Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747543Z",
+          "final_score": 0.20862623,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "ecbe520f-ac9a-467e-9aa6-33e48cb39b36",
+          "scope": "agent_private",
+          "summary": "Devon started project Cedar on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747543Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.534659Z",
+          "final_score": 0.15956959,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+          "scope": "agent_private",
+          "summary": "Tala reviewed Sable on 2026-08-22; no budget owner has been appointed for Sable.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.534659Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.121309Z",
+          "final_score": 0.1701166,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "6d44123c-308a-471d-a522-5ffa7201d8ea",
+          "scope": "agent_private",
+          "summary": "Ivo started project Cobalt on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121309Z"
+        }
+      ],
+      "mode": "planned_search",
+      "query_plan": {
+        "budget": {
+          "cache_enabled": true,
+          "candidate_k": 60,
+          "expansion_max_queries": 4,
+          "prefilter_max_candidates": 0,
+          "top_k": 60
+        },
+        "fusion_policy": {
+          "fusion_priority": 1,
+          "fusion_weight": 1.0,
+          "recursive_priority": 1,
+          "recursive_weight": 1.0,
+          "strategy": "weighted_merge",
+          "structured_field_priority": 0,
+          "structured_field_weight": 1.0
+        },
+        "intent": {
+          "agent_id": "benchmark",
+          "allowed_scopes": [
+            "agent_private"
+          ],
+          "project_id": "memory",
+          "query": "For the next outage on Reed, which recovery procedure should Neri use, and which outage gate led to the delivery-mode change?",
+          "read_profile": "private_only",
+          "tenant_id": "matched"
+        },
+        "rerank_policy": {
+          "blend_enabled": true,
+          "blend_segments": [
+            {
+              "max_retrieval_rank": 3,
+              "retrieval_weight": 0.8
+            },
+            {
+              "max_retrieval_rank": 10,
+              "retrieval_weight": 0.5
+            },
+            {
+              "max_retrieval_rank": 1000000,
+              "retrieval_weight": 0.2
+            }
+          ],
+          "diversity_enabled": true,
+          "diversity_mmr_lambda": 0.7,
+          "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+          "provider_id": "openai",
+          "rerank_normalization": "rank",
+          "retrieval_normalization": "rank"
+        },
+        "retrieval_stages": [
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "fusion_dense_bm25",
+            "source": "qdrant_fusion"
+          },
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "structured_field_vector",
+            "source": "postgres_vector"
+          }
+        ],
+        "rewrite": {
+          "dynamic_gate": {
+            "considered": true,
+            "min_candidates": 10,
+            "min_top_score": 0.12,
+            "observed_candidates": 54,
+            "observed_top_score": 0.7,
+            "should_expand": false
+          },
+          "expanded_queries": [
+            "For the next outage on Reed, which recovery procedure should Neri use, and which outage gate led to the delivery-mode change?"
+          ],
+          "expansion_mode": "dynamic"
+        },
+        "schema": "elf.search.query_plan",
+        "stages": [
+          {
+            "details": {
+              "allowed_scope_count": 1,
+              "path": "planned",
+              "query": "For the next outage on Reed, which recovery procedure should Neri use, and which outage gate led to the delivery-mode change?",
+              "read_profile": "private_only"
+            },
+            "name": "intent"
+          },
+          {
+            "details": {
+              "dynamic_gate_considered": true,
+              "dynamic_gate_should_expand": false,
+              "expanded_query_count": 1,
+              "expansion_mode": "dynamic"
+            },
+            "name": "rewrite"
+          },
+          {
+            "details": {
+              "stages": [
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "fusion_dense_bm25",
+                  "source": "qdrant_fusion"
+                },
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "structured_field_vector",
+                  "source": "postgres_vector"
+                }
+              ]
+            },
+            "name": "retrieval"
+          },
+          {
+            "details": {
+              "fusion_weight": 1.0,
+              "strategy": "weighted_merge",
+              "structured_field_weight": 1.0
+            },
+            "name": "fusion"
+          },
+          {
+            "details": {
+              "blend_enabled": true,
+              "diversity_enabled": true,
+              "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+              "provider_id": "openai"
+            },
+            "name": "rerank"
+          },
+          {
+            "details": {
+              "cache_enabled": true,
+              "candidate_k": 60,
+              "expansion_max_queries": 4,
+              "prefilter_max_candidates": 0,
+              "top_k": 60
+            },
+            "name": "budget"
+          }
+        ],
+        "version": "v1"
+      },
+      "request_id": "ebddba7a-daad-4c5b-a392-7c9982ba60b1",
+      "search_id": "8062b632-b720-41cc-bdc9-2cc7387bf769",
+      "trace_id": "a59a5711-d228-4099-b86e-6425d873399d",
+      "trajectory_summary": {
+        "schema": "search_retrieval_trajectory/v1",
+        "stages": [
+          {
+            "item_count": 0,
+            "stage_name": "rewrite.expansion",
+            "stage_order": 1,
+            "stats": {
+              "expanded_query_count": 1
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "recall.candidates",
+            "stage_order": 2,
+            "stats": {
+              "candidate_count_after_filter": 54,
+              "candidate_count_before_filter": 54,
+              "snippet_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "fusion.merge",
+            "stage_order": 3,
+            "stats": {
+              "fused_count": 54,
+              "scored_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "rerank.score",
+            "stage_order": 4,
+            "stats": {
+              "reranked_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "selection.final",
+            "stage_order": 5,
+            "stats": {
+              "selected_count": 54,
+              "top_k": 60
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "memory-3-1",
+    "request": "/v2/searches/3a2d8bb2-f100-41d4-8462-48c88f523b6f?top_k=60&touch=false",
+    "seconds": 0.002716457995120436,
+    "missing_identifier_ranks": {
+      "REPLAY-3-632": [
+        19
+      ]
+    },
+    "response": {
+      "expires_at": "2026-10-12T08:34:19.807072Z",
+      "items": [
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.1572486,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+          "scope": "agent_private",
+          "summary": "Sable decisions: keep the August 15 delivery choice; next outage should use the August 8-validated recovery procedure.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534658Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.0742298,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+          "scope": "agent_private",
+          "summary": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.357448Z"
+        },
+        {
+          "confidence": 0.92,
+          "expires_at": "2027-04-10T02:33:32.357449Z",
+          "final_score": 1.1353807,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+          "scope": "agent_private",
+          "summary": "GATE-3-519 outages recorded on August 8 caused the Sable switch from BATCH-3-741 to STREAM-3-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.357449Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.1081921,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0682bed1-e9ad-4e30-b3a4-a155920d1371",
+          "scope": "agent_private",
+          "summary": "For the next outage, use the recovery procedure validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346054Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.581674Z",
+          "final_score": 1.0033052,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581674Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 1.0033052,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-2-519 incident (outages recorded on August 8).",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:30.423715Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 1.1070788,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+          "scope": "agent_private",
+          "summary": "Directive: for the next outage, use the recovery procedure validated on August 8.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:28.833299Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.99275815,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "73d1e03c-4e93-4d16-a15a-19f22fa14dcd",
+          "scope": "agent_private",
+          "summary": "Tala chose BATCH-3-741 for batch delivery on project Sable.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.390008Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.069343,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+          "scope": "agent_private",
+          "summary": "For the next outage, the instructed recovery procedure is the one validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045114Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.939928,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+          "scope": "agent_private",
+          "summary": "No delivery mode change was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.940828Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": "2026-10-26T02:33:27.811913Z",
+          "final_score": 0.99304146,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+          "scope": "agent_private",
+          "summary": "For Larch's next outage, use the recovery procedure validated on August 8.",
+          "type": "plan",
+          "updated_at": "2026-10-12T02:33:27.811913Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.9497015,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+          "scope": "agent_private",
+          "summary": "GATE-4-519 outages recorded on August 8 caused the Cedar switch; the successful recovery procedure from that incident should be kept.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:33.110748Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.534659Z",
+          "final_score": 0.82372046,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+          "scope": "agent_private",
+          "summary": "Tala reviewed Sable on 2026-08-22; no budget owner has been appointed for Sable.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.534659Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.621742Z",
+          "final_score": 0.97800326,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+          "scope": "agent_private",
+          "summary": "GATE-1-519 outages recorded on August 8 caused the Cobalt switch from BATCH-1-741 to STREAM-1-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.621742Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.390007Z",
+          "final_score": 0.8636826,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c",
+          "scope": "agent_private",
+          "summary": "Tala started project Sable on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390007Z"
+        },
+        {
+          "confidence": 0.98,
+          "expires_at": null,
+          "final_score": 0.8017581,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+          "scope": "agent_private",
+          "summary": "Sable's retry policy is now RETRY-3-907, superseding RETRY-3-108 (2026-08-22).",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534657Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.93083346,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-0-519 incident recorded on 2026-08-08, which caused the Larch switch to STREAM-0-286.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:27.610585Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.93315434,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting about the BATCH-1-741 lost updates.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.4152Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.581675Z",
+          "final_score": 0.83349395,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, the team tested REPLAY-3-632, which restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581675Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.390009Z",
+          "final_score": 0.7633431,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "24b387ad-76c8-4e78-b032-4101f39fc568",
+          "scope": "agent_private",
+          "summary": "Project Sable's initial retry policy was RETRY-3-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390009Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343803Z",
+          "final_score": 0.78598446,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+          "scope": "agent_private",
+          "summary": "REPLAY-0-632 was tested on 2026-08-08 and restored the missing updates lost by BATCH-0-741 during GATE-0-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343803Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343802Z",
+          "final_score": 0.74824864,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+          "scope": "agent_private",
+          "summary": "BATCH-0-741 lost updates during GATE-0-519 outages, as reported by Mara on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343802Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.70828646,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.343804Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.610584Z",
+          "final_score": 0.7081919,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+          "scope": "agent_private",
+          "summary": "Larch's switch from BATCH-0-741 to STREAM-0-286 was caused by GATE-0-519 outages recorded on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.610584Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.118821Z",
+          "final_score": 0.71951276,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6726d269-caa0-4c6b-a1da-e613b804c284",
+          "scope": "agent_private",
+          "summary": "The team tested REPLAY-2-632, which restored the missing updates that BATCH-2-741 lost during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.118821Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.11882Z",
+          "final_score": 0.6900977,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6aaecb07-b8fe-4459-be8c-16dab8ffb74c",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.11882Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.415199Z",
+          "final_score": 0.68255055,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Ivo reported BATCH-1-741 lost updates during GATE-1-519 outages; testing REPLAY-1-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.415199Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.423714Z",
+          "final_score": 0.63804114,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+          "scope": "agent_private",
+          "summary": "GATE-2-519 outages recorded on August 8 caused the Reed switch from BATCH-2-741 to STREAM-2-286.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.423714Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.6055316,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+          "scope": "agent_private",
+          "summary": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.610583Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:32.940827Z",
+          "final_score": 0.6629091,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+          "scope": "agent_private",
+          "summary": "BATCH-4-741 lost updates during GATE-4-519 outages; REPLAY-4-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.940827Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.5866636,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+          "scope": "agent_private",
+          "summary": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286 on 2026-08-15; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.621741Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.656909,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "db962964-854a-4d9a-b869-31647d2d005f",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.118822Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.56402224,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+          "scope": "agent_private",
+          "summary": "Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.110747Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.49541846,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "a35a02ca-8583-4b6f-ac2d-c94494cd5882",
+          "scope": "agent_private",
+          "summary": "BATCH-1-741 was chosen for batch delivery for project Cobalt.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.12131Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.54970145,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+          "scope": "agent_private",
+          "summary": "On 2026-08-15 Neri approved switching Reed from BATCH-2-741 to STREAM-2-286; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.423713Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.45768258,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "016a97a4-4a24-4e9b-9a17-1ec45f03624e",
+          "scope": "agent_private",
+          "summary": "BATCH-2-741 was chosen for batch delivery for project Reed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:29.400787Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:33.346055Z",
+          "final_score": 0.46590897,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "ef582051-9389-4946-85e6-984478e1231d",
+          "scope": "agent_private",
+          "summary": "The retry policy is now RETRY-4-907, superseding RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:33.346055Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.4561353,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+          "scope": "agent_private",
+          "summary": "For project Larch, BATCH-0-741 was chosen for batch delivery.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.064499Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.45913532,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0d3d9682-a529-48fc-9180-b82fe74b62aa",
+          "scope": "agent_private",
+          "summary": "Retry policy updated to RETRY-1-907, superseding RETRY-1-108 as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.833298Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.382211,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+          "scope": "agent_private",
+          "summary": "Devon reviewed Cedar on 2026-08-22; the August 15 delivery choice should be kept.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346053Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.38598457,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "3ec0746b-8f46-46ce-b3e9-acd36779144d",
+          "scope": "agent_private",
+          "summary": "Devon chose BATCH-4-741 for batch delivery for project Cedar.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.747544Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.121311Z",
+          "final_score": 0.33847508,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "bcd54ab9-ed7a-4320-8803-ad4bb8c21271",
+          "scope": "agent_private",
+          "summary": "Project Cobalt's initial retry policy was RETRY-1-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121311Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.3105128,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Ivo reviewed Cobalt; the August 15 delivery choice is kept; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.8333Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.44026744,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+          "scope": "agent_private",
+          "summary": "The retry policy was updated to RETRY-2-907, replacing RETRY-2-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045113Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.0645Z",
+          "final_score": 0.31651264,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+          "scope": "agent_private",
+          "summary": "Project Larch's initial retry policy was RETRY-0-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.0645Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747545Z",
+          "final_score": 0.3082865,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "49f00edc-4daa-4da3-8596-f45b6e829e2c",
+          "scope": "agent_private",
+          "summary": "The initial retry policy for project Cedar was RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747545Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.25845623,
+          "importance": 0.65,
+          "key": null,
+          "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+          "scope": "agent_private",
+          "summary": "As of 2026-08-22, the August 15 delivery choice stands, Neri reviewed Reed, and no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045115Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:27.064498Z",
+          "final_score": 0.20930505,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+          "scope": "agent_private",
+          "summary": "Mara started project Larch on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.064498Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.2760603,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+          "scope": "agent_private",
+          "summary": "Larch retry policy updated to RETRY-0-907, superseding RETRY-0-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811912Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.121309Z",
+          "final_score": 0.192758,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "6d44123c-308a-471d-a522-5ffa7201d8ea",
+          "scope": "agent_private",
+          "summary": "Ivo started project Cobalt on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121309Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:29.400788Z",
+          "final_score": 0.23658833,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "7f4c9f60-a744-4cc3-b337-327e3cfe9718",
+          "scope": "agent_private",
+          "summary": "Project Reed's initial retry policy was RETRY-2-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400788Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:29.400786Z",
+          "final_score": 0.16334297,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08",
+          "scope": "agent_private",
+          "summary": "Neri started project Reed on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400786Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.20058861,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Mara reviewed Larch and kept the August 15 delivery choice; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811914Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747543Z",
+          "final_score": 0.1557959,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "ecbe520f-ac9a-467e-9aa6-33e48cb39b36",
+          "scope": "agent_private",
+          "summary": "Devon started project Cedar on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747543Z"
+        }
+      ],
+      "mode": "planned_search",
+      "query_plan": {
+        "budget": {
+          "cache_enabled": true,
+          "candidate_k": 60,
+          "expansion_max_queries": 4,
+          "prefilter_max_candidates": 0,
+          "top_k": 60
+        },
+        "fusion_policy": {
+          "fusion_priority": 1,
+          "fusion_weight": 1.0,
+          "recursive_priority": 1,
+          "recursive_weight": 1.0,
+          "strategy": "weighted_merge",
+          "structured_field_priority": 0,
+          "structured_field_weight": 1.0
+        },
+        "intent": {
+          "agent_id": "benchmark",
+          "allowed_scopes": [
+            "agent_private"
+          ],
+          "project_id": "memory",
+          "query": "For the next outage on Sable, which recovery procedure should Tala use, and which outage gate led to the delivery-mode change?",
+          "read_profile": "private_only",
+          "tenant_id": "matched"
+        },
+        "rerank_policy": {
+          "blend_enabled": true,
+          "blend_segments": [
+            {
+              "max_retrieval_rank": 3,
+              "retrieval_weight": 0.8
+            },
+            {
+              "max_retrieval_rank": 10,
+              "retrieval_weight": 0.5
+            },
+            {
+              "max_retrieval_rank": 1000000,
+              "retrieval_weight": 0.2
+            }
+          ],
+          "diversity_enabled": true,
+          "diversity_mmr_lambda": 0.7,
+          "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+          "provider_id": "openai",
+          "rerank_normalization": "rank",
+          "retrieval_normalization": "rank"
+        },
+        "retrieval_stages": [
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "fusion_dense_bm25",
+            "source": "qdrant_fusion"
+          },
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "structured_field_vector",
+            "source": "postgres_vector"
+          }
+        ],
+        "rewrite": {
+          "dynamic_gate": {
+            "considered": true,
+            "min_candidates": 10,
+            "min_top_score": 0.12,
+            "observed_candidates": 54,
+            "observed_top_score": 1.0,
+            "should_expand": false
+          },
+          "expanded_queries": [
+            "For the next outage on Sable, which recovery procedure should Tala use, and which outage gate led to the delivery-mode change?"
+          ],
+          "expansion_mode": "dynamic"
+        },
+        "schema": "elf.search.query_plan",
+        "stages": [
+          {
+            "details": {
+              "allowed_scope_count": 1,
+              "path": "planned",
+              "query": "For the next outage on Sable, which recovery procedure should Tala use, and which outage gate led to the delivery-mode change?",
+              "read_profile": "private_only"
+            },
+            "name": "intent"
+          },
+          {
+            "details": {
+              "dynamic_gate_considered": true,
+              "dynamic_gate_should_expand": false,
+              "expanded_query_count": 1,
+              "expansion_mode": "dynamic"
+            },
+            "name": "rewrite"
+          },
+          {
+            "details": {
+              "stages": [
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "fusion_dense_bm25",
+                  "source": "qdrant_fusion"
+                },
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "structured_field_vector",
+                  "source": "postgres_vector"
+                }
+              ]
+            },
+            "name": "retrieval"
+          },
+          {
+            "details": {
+              "fusion_weight": 1.0,
+              "strategy": "weighted_merge",
+              "structured_field_weight": 1.0
+            },
+            "name": "fusion"
+          },
+          {
+            "details": {
+              "blend_enabled": true,
+              "diversity_enabled": true,
+              "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+              "provider_id": "openai"
+            },
+            "name": "rerank"
+          },
+          {
+            "details": {
+              "cache_enabled": true,
+              "candidate_k": 60,
+              "expansion_max_queries": 4,
+              "prefilter_max_candidates": 0,
+              "top_k": 60
+            },
+            "name": "budget"
+          }
+        ],
+        "version": "v1"
+      },
+      "request_id": "ce0ad235-1b9e-489a-984b-d585cd255a7a",
+      "search_id": "3a2d8bb2-f100-41d4-8462-48c88f523b6f",
+      "trace_id": "42f34c39-e229-468f-b2fa-0a8458f350ef",
+      "trajectory_summary": {
+        "schema": "search_retrieval_trajectory/v1",
+        "stages": [
+          {
+            "item_count": 0,
+            "stage_name": "rewrite.expansion",
+            "stage_order": 1,
+            "stats": {
+              "expanded_query_count": 1
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "recall.candidates",
+            "stage_order": 2,
+            "stats": {
+              "candidate_count_after_filter": 54,
+              "candidate_count_before_filter": 54,
+              "snippet_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "fusion.merge",
+            "stage_order": 3,
+            "stats": {
+              "fused_count": 54,
+              "scored_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "rerank.score",
+            "stage_order": 4,
+            "stats": {
+              "reranked_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "selection.final",
+            "stage_order": 5,
+            "stats": {
+              "selected_count": 54,
+              "top_k": 60
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "case_id": "memory-4-0",
+    "request": "/v2/searches/acd17679-e361-4231-b281-484df38ae790?top_k=60&touch=false",
+    "seconds": 0.0017114999936893582,
+    "missing_identifier_ranks": {
+      "RETRY-4-907": [
+        19
+      ]
+    },
+    "response": {
+      "expires_at": "2026-10-12T08:34:21.643099Z",
+      "items": [
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.1382251,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "669022de-9d4b-42f7-8414-96d7bc4b0dca",
+          "scope": "agent_private",
+          "summary": "Devon reviewed Cedar on 2026-08-22; the August 15 delivery choice should be kept.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346053Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747545Z",
+          "final_score": 1.0982629,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "49f00edc-4daa-4da3-8596-f45b6e829e2c",
+          "scope": "agent_private",
+          "summary": "The initial retry policy for project Cedar was RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747545Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.1256967,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "217676ac-dcc0-4a8d-8143-691cc5189123",
+          "scope": "agent_private",
+          "summary": "Devon approved switching Cedar from BATCH-4-741 to STREAM-4-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.110747Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.747543Z",
+          "final_score": 1.1042628,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "ecbe520f-ac9a-467e-9aa6-33e48cb39b36",
+          "scope": "agent_private",
+          "summary": "Devon started project Cedar on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.747543Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 1.066527,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "3ec0746b-8f46-46ce-b3e9-acd36779144d",
+          "scope": "agent_private",
+          "summary": "Devon chose BATCH-4-741 for batch delivery for project Cedar.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.747544Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.056659,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "7fa1eddf-8899-4d81-93cf-5de0c41944c8",
+          "scope": "agent_private",
+          "summary": "The retry policy was updated to RETRY-2-907, replacing RETRY-2-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045113Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.9473194,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "478d956d-7618-4b38-9dd0-249936658d87",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.343804Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.9245835,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "e2ed68fb-9957-43f9-a067-5fb5268f63db",
+          "scope": "agent_private",
+          "summary": "Sable decisions: keep the August 15 delivery choice; next outage should use the August 8-validated recovery procedure.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534658Z"
+        },
+        {
+          "confidence": 0.98,
+          "expires_at": null,
+          "final_score": 0.99173445,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "2b018f1c-1294-4765-bf4f-1c0b0ed0e592",
+          "scope": "agent_private",
+          "summary": "Sable's retry policy is now RETRY-3-907, superseding RETRY-3-108 (2026-08-22).",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.534657Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:29.400788Z",
+          "final_score": 0.96618736,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "7f4c9f60-a744-4cc3-b337-327e3cfe9718",
+          "scope": "agent_private",
+          "summary": "Project Reed's initial retry policy was RETRY-2-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400788Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 1.028357,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0d3d9682-a529-48fc-9180-b82fe74b62aa",
+          "scope": "agent_private",
+          "summary": "Retry policy updated to RETRY-1-907, superseding RETRY-1-108 as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.833298Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.87484777,
+          "importance": 0.65,
+          "key": null,
+          "note_id": "cfaa0028-4ac9-4593-8ff3-5f54c3e4c8af",
+          "scope": "agent_private",
+          "summary": "As of 2026-08-22, the August 15 delivery choice stands, Neri reviewed Reed, and no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045115Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.93773484,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "8ef10deb-34cf-4da3-a363-77fef5cb5dd4",
+          "scope": "agent_private",
+          "summary": "Larch retry policy updated to RETRY-0-907, superseding RETRY-0-108, as of 2026-08-22.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811912Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.390009Z",
+          "final_score": 0.9080364,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "24b387ad-76c8-4e78-b032-4101f39fc568",
+          "scope": "agent_private",
+          "summary": "Project Sable's initial retry policy was RETRY-3-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390009Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.0645Z",
+          "final_score": 0.90271544,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "3a3ff958-0bd6-4fd3-bde1-1e866267cb9b",
+          "scope": "agent_private",
+          "summary": "Project Larch's initial retry policy was RETRY-0-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.0645Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.121311Z",
+          "final_score": 0.89448917,
+          "importance": 0.6,
+          "key": null,
+          "note_id": "bcd54ab9-ed7a-4320-8803-ad4bb8c21271",
+          "scope": "agent_private",
+          "summary": "Project Cobalt's initial retry policy was RETRY-1-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121311Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.8038288,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6a3e5817-506e-4525-9922-d33bab4cfc40",
+          "scope": "agent_private",
+          "summary": "GATE-4-519 outages recorded on August 8 caused the Cedar switch; the successful recovery procedure from that incident should be kept.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:33.110748Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.7910552,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "df5f4ac6-21a5-4e53-a980-f88fdf72acb2",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Ivo reviewed Cobalt; the August 15 delivery choice is kept; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.8333Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:33.346055Z",
+          "final_score": 0.8672061,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "ef582051-9389-4946-85e6-984478e1231d",
+          "scope": "agent_private",
+          "summary": "The retry policy is now RETRY-4-907, superseding RETRY-4-108.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:33.346055Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.7902817,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "ae2f3066-b88f-454b-8b25-568260e60162",
+          "scope": "agent_private",
+          "summary": "No delivery mode change was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.940828Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": null,
+          "final_score": 0.7188669,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a44b5280-c7c1-4905-bc0c-ffa02ed13205",
+          "scope": "agent_private",
+          "summary": "On 2026-08-22, Mara reviewed Larch and kept the August 15 delivery choice; no budget owner has been appointed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.811914Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.7208099,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "915d2a9a-2270-4078-8072-16cd097b2095",
+          "scope": "agent_private",
+          "summary": "On 2026-08-15 Neri approved switching Reed from BATCH-2-741 to STREAM-2-286; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.423713Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.7714137,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "db962964-854a-4d9a-b869-31647d2d005f",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:30.118822Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.70194197,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "95af588e-cd32-43c5-b302-d827794dee02",
+          "scope": "agent_private",
+          "summary": "Tala approved switching Sable from BATCH-3-741 to STREAM-3-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:32.357448Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.7646401,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "f739146a-c6af-421e-b355-0454b2d47421",
+          "scope": "agent_private",
+          "summary": "No change of delivery mode was approved at the 2026-08-08 meeting about the BATCH-1-741 lost updates.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.4152Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.6913948,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd8c242c-3380-4edb-8bbc-356512663c17",
+          "scope": "agent_private",
+          "summary": "For the next outage, the instructed recovery procedure is the one validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.045114Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.667206,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "54eff30c-03bf-4b25-8955-093b7e2c5b29",
+          "scope": "agent_private",
+          "summary": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286 on 2026-08-15, superseding the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.610583Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.6558852,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "5d69f3cf-dbb1-4eb7-8132-e261fea77c62",
+          "scope": "agent_private",
+          "summary": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286 on 2026-08-15; this supersedes the August 1 delivery decision.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.621741Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:32.940827Z",
+          "final_score": 0.6000552,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "41df3621-38d2-4a50-bbf1-a5f0535e4af8",
+          "scope": "agent_private",
+          "summary": "BATCH-4-741 lost updates during GATE-4-519 outages; REPLAY-4-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.940827Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.5570929,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "016a97a4-4a24-4e9b-9a17-1ec45f03624e",
+          "scope": "agent_private",
+          "summary": "BATCH-2-741 was chosen for batch delivery for project Reed.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:29.400787Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.634791,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "8a6f2acc-726e-48e4-b3f1-d6357c4b64ab",
+          "scope": "agent_private",
+          "summary": "Directive: for the next outage, use the recovery procedure validated on August 8.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:28.833299Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.53067786,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "a35a02ca-8583-4b6f-ac2d-c94494cd5882",
+          "scope": "agent_private",
+          "summary": "BATCH-1-741 was chosen for batch delivery for project Cobalt.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:28.12131Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.5140363,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "bd00c3c2-5985-414f-b76c-3afd616ccdd4",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-2-519 incident (outages recorded on August 8).",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:30.423715Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": null,
+          "final_score": 0.56609297,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0682bed1-e9ad-4e30-b3a4-a155920d1371",
+          "scope": "agent_private",
+          "summary": "For the next outage, use the recovery procedure validated on August 8.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:33.346054Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.45820618,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "73d1e03c-4e93-4d16-a15a-19f22fa14dcd",
+          "scope": "agent_private",
+          "summary": "Tala chose BATCH-3-741 for batch delivery on project Sable.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:31.390008Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.4574324,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "9af8605c-786c-41d0-943a-0a7cf671692c",
+          "scope": "agent_private",
+          "summary": "For project Larch, BATCH-0-741 was chosen for batch delivery.",
+          "type": "decision",
+          "updated_at": "2026-10-12T02:33:27.064499Z"
+        },
+        {
+          "confidence": 0.0,
+          "expires_at": "2026-10-26T02:33:27.811913Z",
+          "final_score": 0.4962254,
+          "importance": 0.0,
+          "key": null,
+          "note_id": "a1699e9e-453f-4d32-b4b1-cad7067d537d",
+          "scope": "agent_private",
+          "summary": "For Larch's next outage, use the recovery procedure validated on August 8.",
+          "type": "plan",
+          "updated_at": "2026-10-12T02:33:27.811913Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:28.621742Z",
+          "final_score": 0.45288524,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "5d74fbae-4345-4b06-aa70-126d4d830861",
+          "scope": "agent_private",
+          "summary": "GATE-1-519 outages recorded on August 8 caused the Cobalt switch from BATCH-1-741 to STREAM-1-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.621742Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.121309Z",
+          "final_score": 0.40160233,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "6d44123c-308a-471d-a522-5ffa7201d8ea",
+          "scope": "agent_private",
+          "summary": "Ivo started project Cobalt on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.121309Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.423714Z",
+          "final_score": 0.40914953,
+          "importance": 0.75,
+          "key": null,
+          "note_id": "f5c3aee9-8dff-4f7f-a249-a4e45a414f5c",
+          "scope": "agent_private",
+          "summary": "GATE-2-519 outages recorded on August 8 caused the Reed switch from BATCH-2-741 to STREAM-2-286.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.423714Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:29.400786Z",
+          "final_score": 0.39860237,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b38c3ef9-562c-4b69-ac9c-e6fdd41c5e08",
+          "scope": "agent_private",
+          "summary": "Neri started project Reed on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:29.400786Z"
+        },
+        {
+          "confidence": 0.92,
+          "expires_at": "2027-04-10T02:33:32.357449Z",
+          "final_score": 0.44988543,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "931e4c7d-fbb7-46c5-915e-24d8e9949c33",
+          "scope": "agent_private",
+          "summary": "GATE-3-519 outages recorded on August 8 caused the Sable switch from BATCH-3-741 to STREAM-3-286; the successful recovery procedure from that incident should be kept.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.357449Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:27.064498Z",
+          "final_score": 0.357772,
+          "importance": 0.9,
+          "key": null,
+          "note_id": "241c1b61-1d3a-4ca6-aa16-c1a014d98dd9",
+          "scope": "agent_private",
+          "summary": "Mara started project Larch on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.064498Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:32.534659Z",
+          "final_score": 0.33445156,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "b7e807a5-7c24-46f2-a266-cff768cf05fb",
+          "scope": "agent_private",
+          "summary": "Tala reviewed Sable on 2026-08-22; no budget owner has been appointed for Sable.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:32.534659Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.390007Z",
+          "final_score": 0.34045142,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ad4ae67d-bcdd-42e3-ba5e-1c6e89d1716c",
+          "scope": "agent_private",
+          "summary": "Tala started project Sable on 2026-08-01.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.390007Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:31.581674Z",
+          "final_score": 0.3027156,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6bc5f924-3ba3-4397-9732-8afcdc32d4c9",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Tala reported that BATCH-3-741 lost updates during GATE-3-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581674Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343803Z",
+          "final_score": 0.27407402,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "1b069182-b394-4beb-af9b-fff700a427d2",
+          "scope": "agent_private",
+          "summary": "REPLAY-0-632 was tested on 2026-08-08 and restored the missing updates lost by BATCH-0-741 during GATE-0-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343803Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.11882Z",
+          "final_score": 0.25743252,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "6aaecb07-b8fe-4459-be8c-16dab8ffb74c",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Neri reported that BATCH-2-741 lost updates during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.11882Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": null,
+          "final_score": 0.21137582,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "0ecd78bd-e636-444f-a354-fb0d376458ac",
+          "scope": "agent_private",
+          "summary": "Retain the successful recovery procedure from the GATE-0-519 incident recorded on 2026-08-08, which caused the Larch switch to STREAM-0-286.",
+          "type": "constraint",
+          "updated_at": "2026-10-12T02:33:27.610585Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.343802Z",
+          "final_score": 0.25520608,
+          "importance": 0.7,
+          "key": null,
+          "note_id": "4f2dafc0-3847-44db-a05e-7d979b86002c",
+          "scope": "agent_private",
+          "summary": "BATCH-0-741 lost updates during GATE-0-519 outages, as reported by Mara on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.343802Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:31.581675Z",
+          "final_score": 0.21969672,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "ca1d180a-1d20-44bb-b7bb-cf7193181dbe",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, the team tested REPLAY-3-632, which restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:31.581675Z"
+        },
+        {
+          "confidence": 0.9,
+          "expires_at": "2027-04-10T02:33:27.610584Z",
+          "final_score": 0.15099844,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "911391b1-85a8-4ec5-a3ff-9bd86a16fb0f",
+          "scope": "agent_private",
+          "summary": "Larch's switch from BATCH-0-741 to STREAM-0-286 was caused by GATE-0-519 outages recorded on 2026-08-08.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:27.610584Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:28.415199Z",
+          "final_score": 0.19705507,
+          "importance": 0.8,
+          "key": null,
+          "note_id": "42a27cce-84e4-49bb-a448-5b3aa34870cb",
+          "scope": "agent_private",
+          "summary": "On 2026-08-08, Ivo reported BATCH-1-741 lost updates during GATE-1-519 outages; testing REPLAY-1-632 restored the missing updates.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:28.415199Z"
+        },
+        {
+          "confidence": 0.95,
+          "expires_at": "2027-04-10T02:33:30.118821Z",
+          "final_score": 0.17364001,
+          "importance": 0.85,
+          "key": null,
+          "note_id": "6726d269-caa0-4c6b-a1da-e613b804c284",
+          "scope": "agent_private",
+          "summary": "The team tested REPLAY-2-632, which restored the missing updates that BATCH-2-741 lost during GATE-2-519 outages.",
+          "type": "fact",
+          "updated_at": "2026-10-12T02:33:30.118821Z"
+        }
+      ],
+      "mode": "planned_search",
+      "query_plan": {
+        "budget": {
+          "cache_enabled": true,
+          "candidate_k": 60,
+          "expansion_max_queries": 4,
+          "prefilter_max_candidates": 0,
+          "top_k": 60
+        },
+        "fusion_policy": {
+          "fusion_priority": 1,
+          "fusion_weight": 1.0,
+          "recursive_priority": 1,
+          "recursive_weight": 1.0,
+          "strategy": "weighted_merge",
+          "structured_field_priority": 0,
+          "structured_field_weight": 1.0
+        },
+        "intent": {
+          "agent_id": "benchmark",
+          "allowed_scopes": [
+            "agent_private"
+          ],
+          "project_id": "memory",
+          "query": "As of August 22, what delivery mode and retry policy apply to Devon's Cedar project?",
+          "read_profile": "private_only",
+          "tenant_id": "matched"
+        },
+        "rerank_policy": {
+          "blend_enabled": true,
+          "blend_segments": [
+            {
+              "max_retrieval_rank": 3,
+              "retrieval_weight": 0.8
+            },
+            {
+              "max_retrieval_rank": 10,
+              "retrieval_weight": 0.5
+            },
+            {
+              "max_retrieval_rank": 1000000,
+              "retrieval_weight": 0.2
+            }
+          ],
+          "diversity_enabled": true,
+          "diversity_mmr_lambda": 0.7,
+          "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+          "provider_id": "openai",
+          "rerank_normalization": "rank",
+          "retrieval_normalization": "rank"
+        },
+        "retrieval_stages": [
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "fusion_dense_bm25",
+            "source": "qdrant_fusion"
+          },
+          {
+            "candidate_limit": 60,
+            "enabled": true,
+            "name": "structured_field_vector",
+            "source": "postgres_vector"
+          }
+        ],
+        "rewrite": {
+          "dynamic_gate": {
+            "considered": true,
+            "min_candidates": 10,
+            "min_top_score": 0.12,
+            "observed_candidates": 54,
+            "observed_top_score": 1.0,
+            "should_expand": false
+          },
+          "expanded_queries": [
+            "As of August 22, what delivery mode and retry policy apply to Devon's Cedar project?"
+          ],
+          "expansion_mode": "dynamic"
+        },
+        "schema": "elf.search.query_plan",
+        "stages": [
+          {
+            "details": {
+              "allowed_scope_count": 1,
+              "path": "planned",
+              "query": "As of August 22, what delivery mode and retry policy apply to Devon's Cedar project?",
+              "read_profile": "private_only"
+            },
+            "name": "intent"
+          },
+          {
+            "details": {
+              "dynamic_gate_considered": true,
+              "dynamic_gate_should_expand": false,
+              "expanded_query_count": 1,
+              "expansion_mode": "dynamic"
+            },
+            "name": "rewrite"
+          },
+          {
+            "details": {
+              "stages": [
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "fusion_dense_bm25",
+                  "source": "qdrant_fusion"
+                },
+                {
+                  "candidate_limit": 60,
+                  "enabled": true,
+                  "name": "structured_field_vector",
+                  "source": "postgres_vector"
+                }
+              ]
+            },
+            "name": "retrieval"
+          },
+          {
+            "details": {
+              "fusion_weight": 1.0,
+              "strategy": "weighted_merge",
+              "structured_field_weight": 1.0
+            },
+            "name": "fusion"
+          },
+          {
+            "details": {
+              "blend_enabled": true,
+              "diversity_enabled": true,
+              "model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+              "provider_id": "openai"
+            },
+            "name": "rerank"
+          },
+          {
+            "details": {
+              "cache_enabled": true,
+              "candidate_k": 60,
+              "expansion_max_queries": 4,
+              "prefilter_max_candidates": 0,
+              "top_k": 60
+            },
+            "name": "budget"
+          }
+        ],
+        "version": "v1"
+      },
+      "request_id": "08e518ac-c7b8-4dca-8d7c-08103bc5319a",
+      "search_id": "acd17679-e361-4231-b281-484df38ae790",
+      "trace_id": "966106cf-bf67-4d80-9b16-5b2c4d6edc7a",
+      "trajectory_summary": {
+        "schema": "search_retrieval_trajectory/v1",
+        "stages": [
+          {
+            "item_count": 0,
+            "stage_name": "rewrite.expansion",
+            "stage_order": 1,
+            "stats": {
+              "expanded_query_count": 1
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "recall.candidates",
+            "stage_order": 2,
+            "stats": {
+              "candidate_count_after_filter": 54,
+              "candidate_count_before_filter": 54,
+              "snippet_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "fusion.merge",
+            "stage_order": 3,
+            "stats": {
+              "fused_count": 54,
+              "scored_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "rerank.score",
+            "stage_order": 4,
+            "stats": {
+              "reranked_count": 54
+            }
+          },
+          {
+            "item_count": 54,
+            "stage_name": "selection.final",
+            "stage_order": 5,
+            "stats": {
+              "selected_count": 54,
+              "top_k": 60
+            }
+          }
+        ]
+      }
+    }
+  }
+]

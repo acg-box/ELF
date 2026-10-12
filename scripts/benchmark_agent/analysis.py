@@ -8,6 +8,20 @@ import statistics
 from .tools import project_note
 
 
+def initial_coverage(root,workload):
+    rows=[]
+    for query in workload['queries']:
+        notes=json.loads((root/'initial'/(query['case_id']+'.json')).read_text())['notes']
+        body='\n'.join(n['text'] for n in notes)
+        structured=json.dumps([note_evidence(project_note(n,'notes')) for n in notes])
+        facts=workload['oracle'][query['case_id']]['facts']
+        rows.append({'case_id':query['case_id'],'split':query['split'],'expected':facts,
+                     'body_missing':[f for f in facts if f not in body],
+                     'structured_missing':[f for f in facts if f not in structured]})
+    (root/'initial-fact-coverage.json').write_text(json.dumps(rows,indent=2)+'\n')
+    return rows
+
+
 def citation_sources(root):
     """Build an offline provenance index. Never supply this index to the agent."""
     sources={}
@@ -45,11 +59,27 @@ def identifiers(value):
     return found
 
 
+def note_evidence(note):
+    return {'text':note.get('text'),'structured':note.get('structured'),
+            'quotes':[e['quote'] for e in note.get('source_ref',{}).get('evidence',[]) if 'quote' in e]}
+
+
+def evidence_payload(name,result):
+    """Exclude query echoes and diagnostic strings from fact-availability checks."""
+    if name in ('search_notes','get_search'):
+        return [{'summary':i.get('summary'),'text':i.get('text')} for i in result['items']]
+    if name=='get_note':return note_evidence(result)
+    if name=='search_documents':return [i.get('snippet') for i in result['items']]
+    if name=='read_document':return result['excerpt']['excerpt']
+    if name=='query_graph':return [{'subject':result.get('subject'),'predicate':f.get('predicate'),'object':f.get('object')} for f in result.get('facts',[])]
+    raise ValueError('Unknown evidence tool: '+name)
+
+
 def case_metrics(case,initial):
     initial=[project_note(n,'notes') for n in initial]
     visible=identifiers(initial);graph_objects=set();graph_evidence=set();provenance={}
     counts=Counter();requests=Counter();errors=[];hops=[];source_links=[];evidence_follows=[]
-    payloads=[json.dumps(initial,ensure_ascii=False)]
+    payloads=[json.dumps([note_evidence(n) for n in initial],ensure_ascii=False)]
     for step in case.get('trace',[]):
         for tool in step['tools']:
             name=tool['name'];args=tool['arguments'];result=tool['result'];counts[name]+=1
@@ -76,7 +106,7 @@ def case_metrics(case,initial):
                                          'hash_matches':source['source_hash']==metadata['content_hash'],
                                          'quote_in_excerpt':source['quote'] in excerpt['excerpt'],
                                          'verified':excerpt['verification']['verified']})
-            visible.update(identifiers(result));payloads.append(json.dumps(result,ensure_ascii=False))
+            visible.update(identifiers(result));payloads.append(json.dumps(evidence_payload(name,result),ensure_ascii=False))
     expected=case['expected']['facts'];available='\n'.join(payloads)
     return {'condition':case['condition'],'case_id':case['query']['case_id'],'split':case['query']['split'],'lane':case['query']['lane'],
             'status':case['status'],'strict_correct':case.get('strict_correct',False),
@@ -95,13 +125,14 @@ def case_metrics(case,initial):
 def analyze(root):
     root=Path(root);rows=[]
     sources=citation_sources(root);workload=json.loads((root/'workload.json').read_text())
+    initial_coverage(root,workload)
     reviews=json.loads((root/'answer-reviews.json').read_text()) if (root/'answer-reviews.json').exists() else []
     review_by={(r.get('phase','primary'),r['condition'],r['case_id']):r for r in reviews}
-    for folder,phase in [('cases','primary'),('finalizations','finalization')]:
+    for folder,phase in [('cases','primary'),('finalizations','finalization'),('paged-cases','paged')]:
         for path in sorted((root/folder).glob('*/*.json')):
             case=json.loads(path.read_text())
             if phase=='finalization':
-                original=json.loads((root/'cases'/case['condition']/path.name).read_text())
+                original=json.loads((root/('paged-cases' if case['condition']=='paged' else 'cases')/case['condition']/path.name).read_text())
                 response=json.loads((root/'finalization-responses'/case['condition']/path.name).read_text())
                 case['trace']=original['trace']+[{'response':response['response'],'tools':[]}]
                 case['seconds']=case['seconds']+original['seconds'] if original.get('seconds') is not None else None

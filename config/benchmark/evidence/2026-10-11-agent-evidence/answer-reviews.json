@@ -1,0 +1,1018 @@
+[
+  {
+    "condition": "both",
+    "case_id": "memory-0-0",
+    "answer_sha256": "64faed319e36e26d0080d9651a1f21456966aad91a016bf57398367562a31a5d",
+    "correct": true,
+    "reason": "The answer identifies STREAM-0-286 and RETRY-0-907 as current. BATCH-0-741 and RETRY-0-108 appear only as explicitly superseded historical values; the frozen substring exclusion is a false negative.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-0",
+    "answer_sha256": "168be08e0e26e7384a3fc66751b9eccbc6b2acf8655b46dffff1a88ac65b4fa7",
+    "correct": true,
+    "reason": "The answer identifies STREAM-0-286 and RETRY-0-907 as current. BATCH-0-741 and RETRY-0-108 appear only as explicitly superseded historical values; the frozen substring exclusion is a false negative.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-0",
+    "answer_sha256": "ecfdfbefde679850658b151595c05a772c2675bf546caa3e6f58b6ed6e5dc0ca",
+    "correct": true,
+    "reason": "The answer identifies STREAM-0-286 and RETRY-0-907 as current. BATCH-0-741 and RETRY-0-108 appear only as explicitly superseded historical values; the frozen substring exclusion is a false negative.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-0",
+    "answer_sha256": "1cec9c44665cd4351bde1ab6598a0f2635b2605d6f555d3df0c0fc473ac13fd8",
+    "correct": true,
+    "reason": "The answer identifies STREAM-0-286 and RETRY-0-907 as current. BATCH-0-741 and RETRY-0-108 appear only as explicitly superseded historical values; the frozen substring exclusion is a false negative.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-1",
+    "answer_sha256": "93665081b813b119966d533612e6927546b2b655910fea5cf74f2e4f068d4675",
+    "correct": true,
+    "reason": "The answer names REPLAY-0-632 and GATE-0-519, connects the August 8 recovery to the later directive, and correctly distinguishes the August 15 approval date.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "No final answer was submitted within the primary 24-tool-call workflow. Retain the exhausted trace; any later evidence-only finalization is a separate outcome.",
+    "reviewer": "assistant review against frozen source records and recorded workflow status"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-2",
+    "answer_sha256": "3639ed4048bffd39655dc07db7dbeefcb7a6fd0cf14153b563a8aa1346f9cff6",
+    "correct": true,
+    "reason": "The answer correctly keeps BATCH-0-741 in force after August 8 and explicitly places STREAM-0-286 in the later August 15 decision. The forbidden substring is historical context, not a stale-state error.",
+    "reviewer": "assistant review against frozen source records and recorded workflow status"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "No final answer was submitted within the primary 24-tool-call workflow. Retain the exhausted trace; any later evidence-only finalization is a separate outcome.",
+    "reviewer": "assistant review against frozen source records and recorded workflow status"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-2",
+    "answer_sha256": "a39adf72a90433f48765f245daa02322afe60cc3953512958d1f92b8b5f1b34a",
+    "correct": true,
+    "reason": "The answer correctly keeps BATCH-0-741 in force after August 8 and explicitly places STREAM-0-286 in the later August 15 decision. The forbidden substring is historical context, not a stale-state error.",
+    "reviewer": "assistant review against frozen source records and recorded workflow status"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "No final answer was submitted within the primary 24-tool-call workflow. Retain the exhausted trace; any later evidence-only finalization is a separate outcome.",
+    "reviewer": "assistant review against frozen source records and recorded workflow status"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-2",
+    "answer_sha256": "8c96fe12c14be424fa9acacb4fb821f7a8c0b7e1e3e83e5fa3270009ed243e2c",
+    "correct": true,
+    "reason": "The answer correctly keeps BATCH-0-741 in force after August 8 and explicitly places STREAM-0-286 in the later August 15 decision. The forbidden substring is historical context, not a stale-state error.",
+    "reviewer": "assistant review against frozen source records and recorded workflow status"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-2",
+    "answer_sha256": "85ff06629add36db0c8b91b8ab0e88019adee9f31259e211670991ec4c8c1817",
+    "correct": true,
+    "reason": "The answer correctly keeps BATCH-0-741 in force after August 8 and explicitly places STREAM-0-286 in the later August 15 decision. The forbidden substring is historical context, not a stale-state error.",
+    "reviewer": "assistant review against frozen source records and recorded workflow status"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-0-3",
+    "answer_sha256": "ec6d4df7f8d904da87a1cb9986b9a474097bb92c38b70bca6b0cc82eafe8cca9",
+    "correct": true,
+    "reason": "The source and derived Larch review explicitly state that no budget owner has been appointed as of August 22. The answer gives this known absence and does not invent a person; the frozen unknown-only scoring rule is too narrow.",
+    "reviewer": "assistant semantic review against frozen sources and note text"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-0-3",
+    "answer_sha256": "34c3ca3c5c03c5e92621e4fffda650cd3bae82bcfcc33aaf2bd5df704e3f7f53",
+    "correct": true,
+    "reason": "The source and derived Larch review explicitly state that no budget owner has been appointed as of August 22. The answer gives this known absence and does not invent a person; the frozen unknown-only scoring rule is too narrow.",
+    "reviewer": "assistant semantic review against frozen sources and note text"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-0-3",
+    "answer_sha256": "f1af2e80c4b40c19b6e2325cb4d53601dea73fa1a4dde2f5f4aba623f7215a2f",
+    "correct": true,
+    "reason": "The source and derived Larch review explicitly state that no budget owner has been appointed as of August 22. The answer gives this known absence and does not invent a person; the frozen unknown-only scoring rule is too narrow.",
+    "reviewer": "assistant semantic review against frozen sources and note text"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-0-3",
+    "answer_sha256": "30ba957f5796ce6ee66d9e6480e597dac736b08cbef4e773dbe01f8bf5e9fd2d",
+    "correct": true,
+    "reason": "The source and derived Larch review explicitly state that no budget owner has been appointed as of August 22. The answer gives this known absence and does not invent a person; the frozen unknown-only scoring rule is too narrow.",
+    "reviewer": "assistant semantic review against frozen sources and note text"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-0",
+    "answer_sha256": "9eee6de23fcfb12f3c505b589c09ff18e7f538fc242a3e064a46621ab54cb888",
+    "correct": true,
+    "reason": "The answer identifies STREAM-1-286 and RETRY-1-907 as the current Cobalt configuration and explicitly labels BATCH-1-741 and RETRY-1-108 as superseded history. References to other projects are distinguished, not assigned to Cobalt.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-0",
+    "answer_sha256": "b4e2bd934ab84b92ea9e463966e522ff28929624da0c54473c9397f92aeaf9ff",
+    "correct": true,
+    "reason": "The answer identifies STREAM-1-286 and RETRY-1-907 as the current Cobalt configuration and explicitly labels BATCH-1-741 and RETRY-1-108 as superseded history. References to other projects are distinguished, not assigned to Cobalt.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-0",
+    "answer_sha256": "e3911ef00f5c20f6abc588f5a0da202c556d1d184c9bbefa9032973aedc6a4a6",
+    "correct": true,
+    "reason": "The answer identifies STREAM-1-286 and RETRY-1-907 as the current Cobalt configuration and explicitly labels BATCH-1-741 and RETRY-1-108 as superseded history. References to other projects are distinguished, not assigned to Cobalt.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-0",
+    "answer_sha256": "3c1b25321c599b450f104b6475899fc07dae774aa8fd081663cc343c0d744750",
+    "correct": true,
+    "reason": "The answer identifies STREAM-1-286 and RETRY-1-907 as the current Cobalt configuration and explicitly labels BATCH-1-741 and RETRY-1-108 as superseded history. References to other projects are distinguished, not assigned to Cobalt.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-1",
+    "answer_sha256": "fea307ef8fdb871ff093815a4ba277d5feaca176370fb240f126ebe0688a1112",
+    "correct": true,
+    "reason": "The answer correctly connects REPLAY-1-632 to the August 8 recovery, GATE-1-519 to the outages, and the later August 15 delivery-mode approval.",
+    "reviewer": "assistant semantic review against frozen source records and observed workflow status"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The primary workflow exhausted 24 tool calls without a final answer, despite both requested identifiers appearing in the tool evidence. Evidence-only finalization must remain a separate result.",
+    "reviewer": "assistant semantic review against frozen source records and observed workflow status"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-1",
+    "answer_sha256": "a503dc7d592dec5e1694620449da43cde3da91aaa33237c72526f24aef58b7c3",
+    "correct": true,
+    "reason": "The answer correctly connects REPLAY-1-632 to the August 8 recovery, GATE-1-519 to the outages, and the later August 15 delivery-mode approval.",
+    "reviewer": "assistant semantic review against frozen source records and observed workflow status"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-1",
+    "answer_sha256": "abad7fe6d274fa011bb0620f04dd464a9a6b4fa842cfce1f949fc77509e46cfc",
+    "correct": true,
+    "reason": "The answer correctly connects REPLAY-1-632 to the August 8 recovery, GATE-1-519 to the outages, and the later August 15 delivery-mode approval.",
+    "reviewer": "assistant semantic review against frozen source records and observed workflow status"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-2",
+    "answer_sha256": "4faa3df586ddd7c325f1ce549c8c012ed6fc41c1703ffd875a3ed5053e213423",
+    "correct": true,
+    "reason": "BATCH-1-741 is correctly identified as still approved immediately after August 8. STREAM-1-286 appears only as the later August 15 switch, not as the state at the requested time.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-2",
+    "answer_sha256": "db143dd048e94a45b4220b7279ec47425f051741fd0afd2e5b5f9fbc563da966",
+    "correct": true,
+    "reason": "BATCH-1-741 is correctly identified as still approved immediately after August 8. STREAM-1-286 appears only as the later August 15 switch, not as the state at the requested time.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-2",
+    "answer_sha256": "4ba2c393f5f589c9c78338add5df0f294abb331d66d96e0948495ae2d76f6c78",
+    "correct": true,
+    "reason": "BATCH-1-741 is correctly identified as still approved immediately after August 8. STREAM-1-286 appears only as the later August 15 switch, not as the state at the requested time.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-2",
+    "answer_sha256": "a299f250ada38d8728317f2a4f52445270a5328f84e92b5f43c13da6437d359d",
+    "correct": true,
+    "reason": "BATCH-1-741 is correctly identified as still approved immediately after August 8. STREAM-1-286 appears only as the later August 15 switch, not as the state at the requested time.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-1-3",
+    "answer_sha256": "9f380d2e831b964d59c80de204f5aa92146a1df80f4e43fbaad7a13247fae82d",
+    "correct": true,
+    "reason": "The Cobalt review explicitly states that no budget owner has been appointed as of August 22. The answer correctly reports this absence and supplies no invented appointee.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-1-3",
+    "answer_sha256": "b04033fadd615e4dd2f9c549c36e5c3505e904e534482dcb1445d9a4ec9719eb",
+    "correct": true,
+    "reason": "The Cobalt review explicitly states that no budget owner has been appointed as of August 22. The answer correctly reports this absence and supplies no invented appointee.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-1-3",
+    "answer_sha256": "5c2329da5d3bf3a3f2f1e035617f7d5b1562f1eb7394e56a47b93bbabf19599c",
+    "correct": true,
+    "reason": "The Cobalt review explicitly states that no budget owner has been appointed as of August 22. The answer correctly reports this absence and supplies no invented appointee.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-1-3",
+    "answer_sha256": "b318c9a213877dad7bd6fcfdffc2a02869f81d31ef47bef84ecb3adf29efa289",
+    "correct": true,
+    "reason": "The Cobalt review explicitly states that no budget owner has been appointed as of August 22. The answer correctly reports this absence and supplies no invented appointee.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-0",
+    "answer_sha256": "8d1ad35df96cb3e9262fbfff189071beb2fdec6c3e675af8feeae670a70a20f1",
+    "correct": true,
+    "reason": "The answer correctly identifies STREAM-2-286 and RETRY-2-907 for Reed as of August 22. BATCH-2-741 and RETRY-2-108 are explicitly described as superseded historical states.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-0",
+    "answer_sha256": "b93f19ecfe3f5734eb3b07b5ff13766a4e05895544495c4fd75e209d03884be2",
+    "correct": true,
+    "reason": "The answer correctly identifies STREAM-2-286 and RETRY-2-907 for Reed as of August 22. BATCH-2-741 and RETRY-2-108 are explicitly described as superseded historical states.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-0",
+    "answer_sha256": "f45eb46580a154e832929305fe24c052837a85c19fedd0f791393d9bb6772d80",
+    "correct": true,
+    "reason": "The answer correctly identifies STREAM-2-286 and RETRY-2-907 for Reed as of August 22. BATCH-2-741 and RETRY-2-108 are explicitly described as superseded historical states.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-0",
+    "answer_sha256": "3243f5e8eff627ddfc31b3dc79bd4aa07bfdff901ab2258c6eb07f7bc7e6b7ee",
+    "correct": true,
+    "reason": "The answer correctly identifies STREAM-2-286 and RETRY-2-907 for Reed as of August 22. BATCH-2-741 and RETRY-2-108 are explicitly described as superseded historical states.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-1",
+    "answer_sha256": "1e982d32724ed626e91ba5d6bd26546ccb2e0a61c36e813caaa420484ae33eb3",
+    "correct": true,
+    "reason": "The answer correctly binds REPLAY-2-632 and GATE-2-519 to Reed and distinguishes the August 8 incident from the August 15 mode-switch approval.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The primary workflow reached 24 tool calls without a final answer. The archived local transport rejection, where applicable, was continued from the same trace; no prior model response or tool call was repeated.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The primary workflow reached 24 tool calls without a final answer. The archived local transport rejection, where applicable, was continued from the same trace; no prior model response or tool call was repeated.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-2",
+    "answer_sha256": "ce9673b2c2018e8cd8087d21abf131c066f69ad264e5114796786772ec812ba1",
+    "correct": true,
+    "reason": "The answer correctly identifies BATCH-2-741 as the Reed delivery mode immediately after August 8, and places STREAM-2-286 only in the later August 15 approval.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-2",
+    "answer_sha256": "555c1c16622cf44672f61462a98e284e25e67cbf489b52a4bfa71acfa751ac27",
+    "correct": true,
+    "reason": "The answer correctly identifies BATCH-2-741 as the Reed delivery mode immediately after August 8, and places STREAM-2-286 only in the later August 15 approval.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The note-search workflow exhausted 24 tool calls without submitting an answer. Retain that autonomous outcome separately from evidence-only finalization.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-2",
+    "answer_sha256": "beb2a6d582aa53cece0379587acbf30d9cf9c2a14471b3e80ac97b6a5d6c2ab2",
+    "correct": true,
+    "reason": "The answer correctly identifies BATCH-2-741 as the Reed delivery mode immediately after August 8, and places STREAM-2-286 only in the later August 15 approval.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-2-3",
+    "answer_sha256": "c08d64affa26cc3d8da7cb21a8d9df3f2b425b0da19c3462872661e57a3dc79c",
+    "correct": true,
+    "reason": "The Reed review explicitly records no appointed budget owner on August 22. The answer reports that absence without inventing a person.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-0",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The primary graph-enabled workflow exhausted its 24 tool calls without submitting a final answer. Preserve this execution outcome independently of later evidence-only finalization.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-2-3",
+    "answer_sha256": "2a8e7f3e2e53b474ec63ce2da807d3e15b1287dcd81dfbdc2b2682fdd0620b9c",
+    "correct": true,
+    "reason": "The Reed review explicitly records no appointed budget owner on August 22. The answer reports that absence without inventing a person.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-0",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The primary graph-enabled workflow exhausted its 24 tool calls without submitting a final answer. Preserve this execution outcome independently of later evidence-only finalization.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-2-3",
+    "answer_sha256": "19bf143eaa3d61c384a90d386b9d4f115a01cdebbc0e4c8edacfa27f312c5aea",
+    "correct": true,
+    "reason": "The Reed review explicitly records no appointed budget owner on August 22. The answer reports that absence without inventing a person.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-0",
+    "answer_sha256": "b7269ef01c9bc80b34535f4ecff042d4b2080a35b5c41962efc7b194cfe99abb",
+    "correct": true,
+    "reason": "The answer correctly identifies STREAM-3-286 and RETRY-3-907 for Sable as of August 22, with prior values clearly historical.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-2",
+    "answer_sha256": "4b2aca73d6f6b06243d5ddb6967d5d96caa02dd2075e04eec894c8f6b715aa2d",
+    "correct": true,
+    "reason": "BATCH-2-741 is correctly retained for Reed immediately after August 8. The later STREAM-2-286 decision is explicitly placed on August 15.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-2-3",
+    "answer_sha256": "2801d198188edb8f2921e6ba15b437edf6da60f2a77fdd26dc1c17dc20b42ba4",
+    "correct": true,
+    "reason": "The Reed review explicitly records no appointed budget owner on August 22. The answer reports that absence without inventing a person.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-0",
+    "answer_sha256": "c0df2f6a47261d6230d6eced0f0bc37f35707117e63335e0fd81007cec3bba1e",
+    "correct": true,
+    "reason": "The answer correctly identifies STREAM-3-286 and RETRY-3-907 for Sable as of August 22, with prior values clearly historical.",
+    "reviewer": "assistant semantic review against frozen sources and recorded workflow status"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "No final answer was submitted within 24 tool calls. Keep the original exhausted workflow separate from evidence-only finalization.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-2",
+    "answer_sha256": "aae76bd2eac9ca6a421b282e3838802b3a7b39c0d007eb60318e0d3a17e3cc10",
+    "correct": true,
+    "reason": "The requested state is correctly BATCH-3-741 immediately after August 8, with STREAM-3-286 explicitly later. Citation auditing separately finds a Larch-only generic note cited for Sable; factual correctness is not full attribution correctness.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-3-3",
+    "answer_sha256": "e994712806ea19bfa927f7941bb9061c5ae721bcab240c8824cd492b3d63ccb9",
+    "correct": true,
+    "reason": "The answer correctly reports the explicit absence of an appointed Sable budget owner as of August 22 and quotes the matching original Sable record.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "No final answer was submitted within 24 tool calls. Keep the original exhausted workflow separate from evidence-only finalization.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-2",
+    "answer_sha256": "1b1fd037ae0ccc9b00c9ab62239d8c0a7e4f580ff29718043a790430167cd4a8",
+    "correct": true,
+    "reason": "The requested state is correctly BATCH-3-741 immediately after August 8, with STREAM-3-286 explicitly later. Citation auditing separately finds a Larch-only generic note cited for Sable; factual correctness is not full attribution correctness.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "No final answer was submitted within 24 tool calls. Keep the original exhausted workflow separate from evidence-only finalization.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-2",
+    "answer_sha256": "333dcb4537b15e5676c14a0f987231e36d15133906966997ed63c582c272eaa0",
+    "correct": true,
+    "reason": "The requested state is correctly BATCH-3-741 immediately after August 8, with STREAM-3-286 explicitly later. Citation auditing separately finds a Larch-only generic note cited for Sable; factual correctness is not full attribution correctness.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-1",
+    "answer_sha256": "6422a4d06b806a2e28dddbaa350421abcd1450f5b2fb7b557e10ceda3b543255",
+    "correct": true,
+    "reason": "The answer correctly binds REPLAY-3-632 and GATE-3-519 to Sable, with the August 8 incident and August 15 approval kept distinct.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-2",
+    "answer_sha256": "4fbcb90e0c04810fb62116556797201598e05e76425b50d8fa6ac32b93f42c3e",
+    "correct": true,
+    "reason": "The requested state is correctly BATCH-3-741 immediately after August 8, with STREAM-3-286 explicitly later. Citation auditing separately finds a Larch-only generic note cited for Sable; factual correctness is not full attribution correctness.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-0",
+    "answer_sha256": "91e0213756469d689da5c03c38d24fd9a238c401a0d86010d7445f27b4ea5323",
+    "correct": true,
+    "reason": "The development answer correctly names STREAM-4-286 and RETRY-4-907 for Cedar, with BATCH-4-741 and RETRY-4-108 explicitly historical.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The development workflow exhausted 24 tool calls without submitting an answer.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-3-3",
+    "answer_sha256": "7a6bb16385771875f1614a8f332b23204a28c643e1f359c506111896c069e8e5",
+    "correct": true,
+    "reason": "The answer correctly reports that no Sable budget owner was appointed as of August 22, as explicitly stated in the Sable review.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-0",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The development graph-enabled workflow exhausted 24 tool calls without submitting an answer.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The development workflow exhausted 24 tool calls without submitting an answer.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-3-3",
+    "answer_sha256": "0503320d79f28ea253c1535895863d76971c6f0f454b67db557538dfaa47febd",
+    "correct": true,
+    "reason": "The answer correctly reports that no Sable budget owner was appointed as of August 22, as explicitly stated in the Sable review.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-0",
+    "answer_sha256": "7298d1c817460eb3cf78f57a80a91dfa347176c9679d154a6c7bd1940b85739a",
+    "correct": true,
+    "reason": "The development answer correctly names STREAM-4-286 and RETRY-4-907 for Cedar, with BATCH-4-741 and RETRY-4-108 explicitly historical.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-3-3",
+    "answer_sha256": "6edfd85e73de0a7ca73b479788c2d606ed35b13ab4e3fe56689961af9012b680",
+    "correct": true,
+    "reason": "The answer correctly reports that no Sable budget owner was appointed as of August 22, as explicitly stated in the Sable review.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-0",
+    "answer_sha256": "cc4f3fb03a21337ba0c87aaed6916daa9976b6da81600795f5537c605e505e30",
+    "correct": true,
+    "reason": "The development answer correctly names STREAM-4-286 and RETRY-4-907 for Cedar, with BATCH-4-741 and RETRY-4-108 explicitly historical.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-1",
+    "answer_sha256": "187df88e5a357f437d00332ff0cd3097d9909d14be722b7665cf87156ec34d45",
+    "correct": true,
+    "reason": "The development answer correctly names REPLAY-4-632 and GATE-4-519 and separates the August 8 incident from the August 15 approval.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-2",
+    "answer_sha256": "77129845d0aa8e184e4ac3d6a1321bcd4a9eda02434ddbc93bc659e74c643864",
+    "correct": true,
+    "reason": "The development answer correctly identifies BATCH-4-741 as the Cedar state immediately after August 8; STREAM-4-286 is explicitly later, on August 15.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "both",
+    "case_id": "memory-4-3",
+    "answer_sha256": "f297c099e3efa39d07c06564671ac892b95efb74a581c8061edf925b5887f926",
+    "correct": true,
+    "reason": "The development source-enabled answer correctly reports the explicit no-owner statement in the original Cedar August 22 review.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-2",
+    "answer_sha256": "c2ec39a2fc4255137ae580452bb9a279f31244d6dcbcdb14f2cbdf796acd5579",
+    "correct": true,
+    "reason": "The development answer correctly identifies BATCH-4-741 as the Cedar state immediately after August 8; STREAM-4-286 is explicitly later, on August 15.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "graph",
+    "case_id": "memory-4-3",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The development memory-only workflow exhausts 24 calls without a final answer. Do not infer that an owner was appointed or that an explicit no-owner statement was retrieved.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The development note-only workflow exhausts 24 calls without a final answer.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-2",
+    "answer_sha256": "cb1a0016eb2c2aaf7f8fa675ac388d6cae53c301cfd36e135eddda86fecb07f5",
+    "correct": true,
+    "reason": "The development answer correctly identifies BATCH-4-741 as the Cedar state immediately after August 8; STREAM-4-286 is explicitly later, on August 15.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "notes",
+    "case_id": "memory-4-3",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The development memory-only workflow exhausts 24 calls without a final answer. Do not infer that an owner was appointed or that an explicit no-owner statement was retrieved.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-2",
+    "answer_sha256": "36f71287b8fc3da4e51b0b7ac7e85a2a2c1fcdb3530a53eda9cd0294b8659f8f",
+    "correct": true,
+    "reason": "The development answer correctly identifies BATCH-4-741 as the Cedar state immediately after August 8; STREAM-4-286 is explicitly later, on August 15.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "condition": "source",
+    "case_id": "memory-4-3",
+    "answer_sha256": "aeb2bb95b98de57967347b1d6482fac8419735dc3f76a5292351d8a04eaa8ae5",
+    "correct": true,
+    "reason": "The development source-enabled answer correctly reports the explicit no-owner statement in the original Cedar August 22 review.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "both",
+    "case_id": "memory-4-1",
+    "answer_sha256": "0dd76dca069f44f8c7be523ebe54b2035a8294a8385a721cefdbcb7cf75c3640",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "both",
+    "case_id": "memory-3-0",
+    "answer_sha256": "09f7bc7d7f31f9d952badef823c7c9f6ad2d6ba4828fbf86751a5a205f5b615f",
+    "correct": true,
+    "reason": "The evidence-only final answer correctly gives the current streaming mode and updated retry policy, with prior values clearly historical.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "both",
+    "case_id": "memory-0-1",
+    "answer_sha256": "fbbf31bacc5e115918fb532bcc9816fd3121cb9f4e26abdf4936b2ee0dd63c0d",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "both",
+    "case_id": "memory-3-1",
+    "answer_sha256": "b7ae2e6e2a0d538fd71681fbf28c3b4d3bbc228dbc7387f04d5fac80cd0eff9d",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-2-1",
+    "answer_sha256": "68f93272979060ca8c530e50e2b627373656cabd800a70e7f8118abbd6e7d140",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-3-1",
+    "answer_sha256": "c069d0d62ab274f6d8a8f3b76c6120a6530d45c6d3d13c113bb71fbc604b97db",
+    "correct": false,
+    "reason": "Although REPLAY-3-632 and GATE-3-519 are correct, the final timing note incorrectly says the August 8 meeting covered BATCH-4-741/GATE-4-519. Those belong to Cedar, not the Sable incident described by this answer. The raw identifier scorer misses this extra cross-subject factual error.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-4-0",
+    "answer_sha256": "bc2c7416c4cd9bfdee9cc58df9be49665243aad46e6df2e4b669d2bca883178d",
+    "correct": true,
+    "reason": "The evidence-only final answer correctly gives the current streaming mode and updated retry policy, with prior values clearly historical.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-4-1",
+    "answer_sha256": "06fb925de2f6406121f29a244718733ce3abbb9cf99eb060c76e5203700de21a",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-3-0",
+    "answer_sha256": "0e588f060e9f5308ed309647431713a3dc1ee078e8b9dac66a38113a03fbfae8",
+    "correct": true,
+    "reason": "The evidence-only final answer correctly gives the current streaming mode and updated retry policy, with prior values clearly historical.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-0-1",
+    "answer_sha256": "9309877cc58a1e17b2ab99a16aeabc097ece2a08267adf11dbee2c2931c4f1a4",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-1-1",
+    "answer_sha256": "9117facc4d241202a236d28decad1ef682518c09df8b7e61e64f65f50709e870",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "graph",
+    "case_id": "memory-4-3",
+    "answer_sha256": "6cf9aa630280f0c9e7fbcfc351e7773359b7c116276d85d64411a8ed9b9c62fc",
+    "correct": true,
+    "reason": "The answer does not invent a Cedar appointee. It distinguishes the missing appointment information in Cedar-derived notes from the explicit no-owner statements for other projects. This is calibrated no-recorded-owner reporting, not proof that the original Cedar absence statement was retained.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "notes",
+    "case_id": "memory-2-1",
+    "answer_sha256": "8d8c5e24d3ea0b7beadc1945e940ba062a947053f0ce0cef56a11a823d40fd38",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "finalization",
+    "condition": "notes",
+    "case_id": "memory-0-1",
+    "answer_sha256": "b4df7b5e2b6c68efffffd64ed3c3a7b0b4bf11bdfb04fe1a12a04ac737d09e42",
+    "correct": true,
+    "reason": "The evidence-only final answer gives the correct project-specific recovery and outage identifiers and separates the August 8 incident from the later August 15 approval. It uses facts already present in the retained tool evidence.",
+    "reviewer": "assistant factual review against frozen sources; citation integrity is a separate audit"
+  },
+  {
+    "phase": "paged",
+    "condition": "paged",
+    "case_id": "memory-0-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The targeted cached-expansion workflow still exhausts 24 tools without an autonomous final answer.",
+    "reviewer": "assistant factual review of targeted diagnostic; not a new unbiased suite"
+  },
+  {
+    "phase": "paged",
+    "condition": "paged",
+    "case_id": "memory-2-1",
+    "answer_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "correct": false,
+    "reason": "The targeted cached-expansion workflow still exhausts 24 tools without an autonomous final answer.",
+    "reviewer": "assistant factual review of targeted diagnostic; not a new unbiased suite"
+  },
+  {
+    "phase": "paged",
+    "condition": "paged",
+    "case_id": "memory-3-1",
+    "answer_sha256": "7c070305ef36b5a0ef9fcb9f9f4fc73b2a0bbda24f7786129916bdb5957579fc",
+    "correct": true,
+    "reason": "The required Sable recovery and gate identifiers are correct. The caveat concerns the retained notes from other projects and must not be read as proof that the original Sable event lacked a no-change statement.",
+    "reviewer": "assistant factual review of targeted diagnostic; not a new unbiased suite"
+  },
+  {
+    "phase": "paged",
+    "condition": "paged",
+    "case_id": "memory-4-0",
+    "answer_sha256": "fef4b691bd88ba87fec9b63b3811d92fbadb63702b2bb0ee54a5363963994e08",
+    "correct": true,
+    "reason": "The targeted cached-expansion workflow correctly gives STREAM-4-286 and RETRY-4-907 for Cedar as of August 22.",
+    "reviewer": "assistant factual review of targeted diagnostic; not a new unbiased suite"
+  },
+  {
+    "phase": "finalization",
+    "condition": "notes",
+    "case_id": "memory-3-1",
+    "answer_sha256": "8452f19126d277ee80c70a44830a2ffc66bd26e20e4077a96a97d803e896c6dc",
+    "correct": true,
+    "reason": "Correct REPLAY-3-632 and GATE-3-519 with correct approval timing. The aside describes other-project retained no-change notes, not evidence that the original Sable meeting approved a change. The source-occurrence gap remains separately documented.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "phase": "finalization",
+    "condition": "notes",
+    "case_id": "memory-4-1",
+    "answer_sha256": "fa593cf1fcf1cf1fd3b8c7e584a1eea468f9d354f23a0255caa1bd5d0318b101",
+    "correct": true,
+    "reason": "Correct REPLAY-4-632 and GATE-4-519, with August 8 validation distinguished from August 15 approval.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "phase": "finalization",
+    "condition": "notes",
+    "case_id": "memory-4-3",
+    "answer_sha256": "9d7c66d9aaac11005604bbcea5c0ff69bc0af60c96a4e50072fe1a164b50bc17",
+    "correct": true,
+    "reason": "No named owner is invented. The answer qualifies absence as no appointment in available Cedar records and explicitly distinguishes other-project absence notes; it does not prove retention of the original Cedar absence statement.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "phase": "finalization",
+    "condition": "paged",
+    "case_id": "memory-0-1",
+    "answer_sha256": "08543bb30fe628ef8ab85348a0f7d75207107d5665bfdbe95f367cecfdc55e3d",
+    "correct": true,
+    "reason": "Correct REPLAY-0-632 and GATE-0-519, with the August 8 recovery linked to the later standing directive.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "phase": "finalization",
+    "condition": "paged",
+    "case_id": "memory-2-1",
+    "answer_sha256": "b8470e2836e6f9f6c66840e8dd5178e94d3480d62612cea70cf0cf3c1f1c1330",
+    "correct": true,
+    "reason": "Correct REPLAY-2-632 and GATE-2-519 with approval timing. The aside describes retrieved other-project no-change notes; source attribution completeness remains a separate limitation.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "phase": "finalization",
+    "condition": "source",
+    "case_id": "memory-2-1",
+    "answer_sha256": "557dabddf3ae14b5b2af7f3ee01a47c01af3cac0fdbdcc5ec7f8ae90dacec172",
+    "correct": true,
+    "reason": "Correct REPLAY-2-632 and GATE-2-519, verified original review and clear August 8 versus August 15 distinction.",
+    "reviewer": "assistant semantic review against frozen source records"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-0",
+    "answer_sha256": "c1073e967b8db88422980aeb4a0dcb12e81c58eb551c7f157e66c161e1893642",
+    "correct": true,
+    "reason": "Correct current STREAM-0-286 and RETRY-0-907, with prior settings explicitly superseded.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-1",
+    "answer_sha256": "e41e98963f61b775885bf655d480c7630e5beff52c2f95f315f673c00632857e",
+    "correct": false,
+    "reason": "No answer: the no-tool control emitted an invented textual tool call instead of the required JSON. Retain the failure; the shared tool-oriented prompt is a confound.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-2",
+    "answer_sha256": "781002a6c359d39fc18ecb2282b3da301eeb1cbf4fb90ec02b7eb7c7062f47f7",
+    "correct": true,
+    "reason": "Correct historical BATCH-0-741; August 15 switch is explicitly later.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-0-3",
+    "answer_sha256": "37da1af8dfa174af25571c80e032f7f34c56be7d2ef1742712d2e583a6fdf82b",
+    "correct": true,
+    "reason": "Correct explicit no-appointed-budget-owner result for Larch.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-0",
+    "answer_sha256": "36ff3b8507d57cfcdc73b1ec58a87143d1b0e5222a1bc53b56d76163e22beb74",
+    "correct": false,
+    "reason": "No answer: invented textual tool call despite no available tools. This is a control prompt/response failure, not proof of missing source facts.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-1",
+    "answer_sha256": "1b876db0d462c06c4706d21038a72631bba945e967514beefcea178ffe6b5e4a",
+    "correct": true,
+    "reason": "Correct REPLAY-1-632 and GATE-1-519, both supplied in initial structured evidence; dates and subject match Cobalt.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-2",
+    "answer_sha256": "4108ce5d17e579ea6d0e8c03ed4a2e0f8587a6f1028d0ce8ee8d1f8c29de412b",
+    "correct": true,
+    "reason": "Correct historical BATCH-1-741, with the later August 15 switch clearly distinguished.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-1-3",
+    "answer_sha256": "6f6b2501e2260ae993fa149193c446a0b995a1a835ec1cd953c075dfd01f429f",
+    "correct": false,
+    "reason": "No answer: invented textual search calls rather than JSON; no tool executed.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-0",
+    "answer_sha256": "29d8854836d6962fd062cf5e3225f3abd8c05b26561c1c15b776db01c1d3357e",
+    "correct": true,
+    "reason": "Correct current STREAM-2-286 and RETRY-2-907; prior values explicitly superseded.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-1",
+    "answer_sha256": "566f6d87359753a71ff359e256116944f11e28afb36736cf7446d85b37b7c1c0",
+    "correct": false,
+    "reason": "Omits the requested concrete recovery identifier REPLAY-2-632; a directive to use the August 8 procedure is insufficient. That identifier is absent from the initial context.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-2",
+    "answer_sha256": "eb5f07289753a30103b15c5de381ff05fd6c455c0e117f20dbed52b633d0fdcb",
+    "correct": true,
+    "reason": "Correct historical BATCH-2-741 and later August 15 switch. Source attribution limitations are scored separately.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-2-3",
+    "answer_sha256": "2166d932936dacbed5d013b953813cd8bdd1077fffac171bd8a6a7bcf93dadb3",
+    "correct": true,
+    "reason": "Correct explicit absence of an appointed Reed budget owner.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-0",
+    "answer_sha256": "ce2d37dd0a8f75f803b8c63945e593adddc2dd4bb5d4713abc1ab69fd269dd31",
+    "correct": true,
+    "reason": "Correct current STREAM-3-286 and RETRY-3-907 with prior values marked superseded.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-1",
+    "answer_sha256": "1a0aa01e7d06089e0056bf4e2c79bca95e857ce79d5e641d2e4613c01866529a",
+    "correct": false,
+    "reason": "No final answer: textual invented tool calls without any available tool. Retain the shared-prompt control failure; no tools executed.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-2",
+    "answer_sha256": "3cc1c2deaecf4afd1160e6fc2fda747d6c883aa1d05d9ee0d02bf5f7121992b9",
+    "correct": true,
+    "reason": "Correct historical BATCH-3-741 and explicit later August 15 switch. Factual correctness does not certify every citation source association.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-3-3",
+    "answer_sha256": "6003d7afda3f3bf830694f66a38c65c6806a44d61834576bc4a350c5d306b019",
+    "correct": true,
+    "reason": "Correct explicit absence of an appointed Sable budget owner.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-0",
+    "answer_sha256": "c32f6f951e4a0cd9479a80551b3832ec2614c9cba0e3dacdc8b1313d6f96c34e",
+    "correct": false,
+    "reason": "No final answer: the no-tool control emits an invented textual tool call. No tool ran. Retain this prompt/response failure without claiming that every needed fact was absent.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-1",
+    "answer_sha256": "da4b01e53f4e82db56186d7035108b74c5b286e5cbb6c8538d1c9e5ed847314c",
+    "correct": false,
+    "reason": "No final answer: the no-tool control emits an invented textual tool call. No tool ran. Retain this prompt/response failure without claiming that every needed fact was absent.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-2",
+    "answer_sha256": "5131bcb1b2a6b11e7d7f035eea585872c243aa6c66371add6db01aeb8e6a6f30",
+    "correct": false,
+    "reason": "No final answer: the no-tool control emits an invented textual tool call. No tool ran. Retain this prompt/response failure without claiming that every needed fact was absent.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  },
+  {
+    "condition": "initial",
+    "case_id": "memory-4-3",
+    "answer_sha256": "6e4572c52efefcc2898fe51360af1152075f634de07da98f71d51aa54e35bf16",
+    "correct": false,
+    "reason": "No final answer: the no-tool control emits an invented textual tool call. No tool ran. Retain this prompt/response failure without claiming that every needed fact was absent.",
+    "reviewer": "assistant semantic review against frozen source records and supplied context"
+  }
+]

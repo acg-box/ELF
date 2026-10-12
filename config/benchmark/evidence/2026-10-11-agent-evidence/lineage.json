@@ -1,0 +1,12 @@
+{
+  "prior_bundle": "../2026-10-11-memory-consistency-4096",
+  "native_runtime_revision": "b8e6eb14f8b6122f5e2a5f963e34137d67b057b1",
+  "native_runtime_image": "sha256:ea7e43d04b25ef536205cfffedfcf888c30bbcb41e37192f27863579b54127ec",
+  "new_request_first_ordinal": 1577,
+  "retained_transport_recoveries": [
+    "routing-1577",
+    "request-size-source-memory-2-1"
+  ],
+  "retained_format_recovery": "format-memory-0-0-both",
+  "initial_invalid_response": "memory-0-1 retains the original textual invented tool call and no replacement call; its original wall timer is unavailable."
+}
