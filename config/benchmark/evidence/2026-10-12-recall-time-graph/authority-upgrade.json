@@ -1,0 +1,11 @@
+{
+  "existing_columns_match_prior_fingerprints": true,
+  "authority_counts": [
+    {
+      "authority": "unknown",
+      "rows": 103
+    }
+  ],
+  "projection": "Alias fingerprints select original columns alias_id, entity_id, alias, alias_norm, created_at in their original order. The added authority column is audited separately.",
+  "scope": "Owned Docker fixture only. No production deployment."
+}

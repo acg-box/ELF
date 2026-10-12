@@ -25,6 +25,16 @@ def sha(value):
     return hashlib.sha256(value).hexdigest()
 
 
+
+def normalized_request(request):
+    request = json.loads(json.dumps(request))
+    body = json.loads(request['messages'][1]['content'])
+    for key in ('evidence_pack', 'supplemental_recall'):
+        if isinstance(body.get(key), dict):
+            body[key].pop('request_id', None)
+    request['messages'][1]['content'] = body
+    return request
+
 def main():
     manifest = read('manifest.json')
     assert set(manifest) == {p.name for p in ROOT.iterdir() if p.is_file() and p.name != 'manifest.json'}
@@ -74,9 +84,21 @@ def main():
                 assert source['text'].encode() == doc['content'].encode()[source['start']:source['end']]
                 available[ref] = source
         response = responses[key]
-        assert response['request']['messages'] == [
-            {'role': 'system', 'content': protocol['prompt']},
-            {'role': 'user', 'content': json.dumps({'question': questions[key]['question'], 'evidence_pack': data['pack'], 'supplemental_recall': data['supplemental_recall']}, ensure_ascii=False)}]
+        prompt = protocol['prompt']
+        body = {'question': questions[key]['question'], 'evidence_pack': data['pack'], 'supplemental_recall': data['supplemental_recall']}
+        if protocol.get('temporal_contract') and data['supplemental_recall']['as_of'] is not None:
+            body['requested_as_of'] = data['supplemental_recall']['as_of']
+            prompt += protocol['temporal_prompt']
+        expected_request = {'model': protocol['model'], 'max_tokens': 393216, 'reasoning': {'effort': 'max'},
+                            'messages': [{'role': 'system', 'content': prompt}, {'role': 'user', 'content': json.dumps(body, ensure_ascii=False)}]}
+        assert normalized_request(response['request']) == normalized_request(expected_request)
+        lineage = next(row for row in read('response-lineage.json') if row['case_id'] == key)
+        if lineage['reused_response']:
+            original = next(row['value'] for row in rows('initial-responses.jsonl.gz') if row['case_id'] == key)
+            assert response == original
+            assert lineage['original_semantic_request_sha256'] == lineage['final_semantic_request_sha256']
+        else:
+            assert response['request'] == expected_request
         assert response['request']['max_tokens'] == 393216
         assert response['request']['reasoning'] == {'effort': 'max'}
         assert response['response'] == receipts[response['response']['id']]['response']
@@ -112,12 +134,50 @@ def main():
         assert cohort['binding'] == sum(bindings[k] for k in keys)
         assert cohort['joint'] == sum(reviews[k]['correct'] and reviews[k]['semantic_grounding'] and bindings[k] for k in keys)
     assert read('restored-fingerprints.json') == read('final-fingerprints.json') == json.loads((PREVIOUS / 'final-fingerprints.json').read_text())
+    upgrade = read('authority-upgrade.json')
+    assert upgrade['existing_columns_match_prior_fingerprints']
+    assert upgrade['authority_counts'] == [{'authority': 'unknown', 'rows': read('final-fingerprints.json')['graph_entity_aliases']['rows']}]
+    initial_cases = rows('initial-cases.jsonl.gz')
+    initial_reviews = {r['case_id']: r for r in read('initial-answer-reviews.json')}
+    assert len(initial_cases) == len(initial_reviews) == 36
+    for case in initial_cases:
+        review = initial_reviews[case['query']['case_id']]
+        assert review['answer_sha256'] == sha(case['text'].encode())
+        assert review['claims_sha256'] == sha(json.dumps(case['claims'], sort_keys=True, ensure_ascii=False).encode())
+    replay = {r['case_id']: r for r in rows('final-native-replay.jsonl.gz')}
+    assert replay.keys() == cases.keys()
+    def without_transport(value):
+        return {k: v for k, v in value.items() if k != 'request_id'}
+    for key, live in replay.items():
+        assert without_transport(live['initial_pack']) == without_transport(inputs[key]['pack'])
+        assert without_transport(live['supplemental_recall']) == without_transport(inputs[key]['supplemental_recall'])
+        assert without_transport(live['claim_bindings']) == without_transport(cases[key]['claim_bindings'])
+    compatibility = read('final-native-compatibility.json')
+    assert compatibility['omitted_as_of_accepted']
+    assert {r['case_id'] for r in compatibility['inputs'] if r['same']} == cases.keys()
+    implementation = read('implementation.json')
+    for name, digest in implementation['files'].items():
+        assert sha((REPO / name).read_bytes()) == digest, name
+    logs = {r['path']: r['text'] for r in rows('validation-logs.jsonl.gz')}
+    for log in read('validation.json')['logs']:
+        assert sha(logs[log['path']].encode()) == log['sha256']
+    cleanup = read('cleanup.json')
+    assert len(cleanup['removed_containers']) == 2 and cleanup['shared_images_preserved']
+    assert not cleanup['global_prune']
+    assert set(cleanup['preserved_unrelated_containers']) <= set(cleanup['remaining_containers'])
+    assert not {r['id'] for r in cleanup['removed_containers']} & set(cleanup['remaining_containers'])
+    assert cleanup['backup_preserved'] == read('restore.json')
     account = read('accounting.json')
     usage = rows('usage.jsonl.gz')
-    assert len(usage) == 37 and all(r['status'] == 'completed' and r['kind'] == 'chat' for r in usage)
+    assert len(usage) == 1 + 36 + sum(not r['reused_response'] for r in read('response-lineage.json')) and all(r['status'] == 'completed' and r['kind'] == 'chat' for r in usage)
+    assert len(receipts) == len(usage) == 67
+    assert abs(sum(r['response']['usage']['cost'] for r in receipts.values()) - sum(r['usage']['cost'] for r in usage)) < 1e-9
+    for field in ('prompt_tokens', 'completion_tokens', 'total_tokens'):
+        assert sum(r['response']['usage'][field] for r in receipts.values()) == sum(r['usage'][field] for r in usage)
     paid = sum(r['usage']['cost'] for r in usage)
     assert abs(paid - account['new_paid_usd']) < 1e-9
     assert abs(account['prior_paid_usd'] + paid - account['cumulative_paid_usd']) < 1e-9
+    assert abs(account['cumulative_paid_usd'] + sum(r['reserved_usd'] for r in account['unsettled_reservations']) - account['conservative_exposure_usd']) < 1e-9
     assert account['conservative_exposure_usd'] <= 10
     assert planner['response'] == receipts[planner['response']['id']]['response']
     print(json.dumps({'questions': len(cases), 'paid_requests': len(usage), 'new_paid_usd': paid,

@@ -1,0 +1,290 @@
+[
+  {
+    "case_id": "contrast-8-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Cited originals support the subject, effective state, and requested facts. Explicit absence, separate roles, or unknown causal motivation are preserved rather than inferred from missing text.",
+    "answer_sha256": "4fdb3b9edd28f0b0b8f3e1ebf379e81c605d06ee38ac053652085f418b715f9e",
+    "claims_sha256": "8196eec93bbc2e64056e5b8a2e90b38aba0a5b45098451170a4c3b9512341710"
+  },
+  {
+    "case_id": "memory-0-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "August 8 recovery and August 15 causal link are quoted separately; August 22 directs reuse of that recovery procedure.",
+    "answer_sha256": "54a1094c4dd25216e4c1b035ec633057b37fd3b084bba1d7182be852dc009d11",
+    "claims_sha256": "d27001c643f3cf65705b8538f84eec26fccb203951cc7b6bb2599f94cce94841"
+  },
+  {
+    "case_id": "memory-1-1",
+    "correct": true,
+    "semantic_grounding": false,
+    "reason": "Facts are correct. One atomic claim names Cobalt but cites only the August 8 Ivo/BATCH incident record, which does not name Cobalt. The project-identifier bridge exists in other cited claims but is not bound to this claim. Count strict per-claim attribution incomplete.",
+    "answer_sha256": "474d2755458e7b8763a9de3d9688ccdf75333a36aa12dcc2cc6d1586bcec810b",
+    "claims_sha256": "8044897a919019a951322e3fab8f61a8392e689dd310dfe394e53e936bcaa60e"
+  },
+  {
+    "case_id": "memory-2-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The recovery claim binds August 8, August 15, and August 22 together; the incident and causal change remain associated with Reed.",
+    "answer_sha256": "623cc5cfb5bd8272627c3bcb28426f0bfe8648ddd48ec01d54de0f42761a233b",
+    "claims_sha256": "3a7201826efccef8e469ffd8dbd67b607cbedb8575fae41ecf5854362aafbbff"
+  },
+  {
+    "case_id": "memory-3-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The recovery claim cites August 22 and August 8 together. The causal transition and dates are directly supported by the August 15 record.",
+    "answer_sha256": "20ab2a561df2ca617951ddb6b403806ad5c9a852eff9dc715a2f88f74ad63454",
+    "claims_sha256": "9d85d36b20f27d92d8201ccaebe8802f1c9420093720cbb399277a3554714838"
+  },
+  {
+    "case_id": "memory-4-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Requested facts and cited source windows preserve the subject and relevant time; historical and superseded states are explicitly qualified.",
+    "answer_sha256": "b315f6d52ec0eb10284b86d390ddef7065b5b5b76c21242f3ad75f2998d2279d",
+    "claims_sha256": "6ee8646b7f1abdf1180fa2747e42ad5cf0a4e3ce7216e800996b8df3cd212e06"
+  },
+  {
+    "case_id": "memory-0-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The final temporal contract preserves the target-time state, subject-specific source binding, and unresolved conflict where applicable. Required cross-record bridges are included in the atomic claim citations.",
+    "answer_sha256": "1e9bf5618963854c2a82be31b9b3adcf564535c6313abb406f001b9c5834f105",
+    "claims_sha256": "a737fbcd63b9ceedc2dc5fc7d8b0faa7220daee7d3c681d4510b96a4f565ebc7"
+  },
+  {
+    "case_id": "contrast-5-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The final temporal contract preserves the target-time state, subject-specific source binding, and unresolved conflict where applicable. Required cross-record bridges are included in the atomic claim citations.",
+    "answer_sha256": "dbe5cef2e541acde53219b6cccee7655e2038313549d6babf389dda7131ab19f",
+    "claims_sha256": "f0304110479de8c41636e67ea1485891895626a2703aafddf3ddef43a3786c89"
+  },
+  {
+    "case_id": "contrast-7-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The final temporal contract preserves the target-time state, subject-specific source binding, and unresolved conflict where applicable. Required cross-record bridges are included in the atomic claim citations.",
+    "answer_sha256": "aa80c01f9fa5452477e87fdbb473fdbda5a6e09b46828b197749f67b602e51c0",
+    "claims_sha256": "3405d529df1c7933909d037fd356063dd63ae7a822b6c310104f5551b14e416e"
+  },
+  {
+    "case_id": "contrast-8-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The final temporal contract preserves the target-time state, subject-specific source binding, and unresolved conflict where applicable. Required cross-record bridges are included in the atomic claim citations.",
+    "answer_sha256": "0a5acf08b30afd8be06230bee1f45190fd80a13eb6b5138db4a4cd81148f50ca",
+    "claims_sha256": "86dfb96e5f91cc6937d1cb026c7c56400a8d57eeb1c289602a456953721ad5a3"
+  },
+  {
+    "case_id": "memory-0-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "e2c48d36d856510ad9ff113a8f95c528618c52f1308f657f96df647e4e3aae51",
+    "claims_sha256": "22f21d8696e4e189634a5dbfa8dbbe32fcadbe3e45b0741d3ea0c8abba0f97e0"
+  },
+  {
+    "case_id": "memory-0-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "7855522011309e4939eee6351275cdcf5e886ad4d4df4f13e83cbc6e46781f00",
+    "claims_sha256": "87ad7d2a8c933781c53c6dd4228108d34e464ec98552a8139936c6643394f129"
+  },
+  {
+    "case_id": "memory-1-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "e1dba003ab5e855e71d86f1191541a734c1b73d87640b040fd312fad8a54fcdc",
+    "claims_sha256": "1b8f8d3bc79d09a271a3a43391794bb782aeb296e7216c5432b12bce5422534b"
+  },
+  {
+    "case_id": "memory-1-2",
+    "correct": true,
+    "semantic_grounding": false,
+    "reason": "Facts and the main historical-state claim are correct. An auxiliary atomic no-change claim names Cobalt but cites only the August 8 Ivo/BATCH record, omitting the project-identifier bridge. Keep this strict per-claim attribution failure.",
+    "answer_sha256": "0fae83b021225848962dd480a6b63c0db09556661f6d6ff39d5da389fb9c9266",
+    "claims_sha256": "34e62e549fdbcaec0e768442ef5f9fa89bb48b32cf0b17dead27ede5ab82f366"
+  },
+  {
+    "case_id": "memory-1-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "9338027352dd7c7cb8d64c5a9a71125976376502c3222073082f79556148c8c6",
+    "claims_sha256": "edddba52642034cf42fb762f16d74a50d5e94ad113ad3f659fb1f0cdaeb7a623"
+  },
+  {
+    "case_id": "memory-2-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "1f88e649d7397a2be21b99ed33ce8293c8772c33bb8d89aebc0052c075b3ea0d",
+    "claims_sha256": "85a9430c9077ba9ad5526618be08c9d6ea1b94fa32f72d962dc8742a95f392e7"
+  },
+  {
+    "case_id": "memory-2-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "181c4ff91ab09a7031745f764dfd130bcfc9ef2516d0432207ee3faf3aa29d28",
+    "claims_sha256": "d9dd6a2538534b1d3b3edb24a63372bca8e967129ce7e6b1aaa1872115c4105a"
+  },
+  {
+    "case_id": "memory-2-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "26927664d5c73b1443453e9767c4c82d710f570ab21e666bc0950d637a89affe",
+    "claims_sha256": "2b533f103b61400862a728c5b6dc33f465d40175f5c32bddfd197e783b4a1ec8"
+  },
+  {
+    "case_id": "memory-3-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "6f5733ccd3dca7b0222427a8cf5875e91b060671c7f1905eccbb107ec693afd6",
+    "claims_sha256": "a6734b0c83cd3dd3b04740a9fd6ab3e6e8dbb798c73eecf10b10cddf84bbf210"
+  },
+  {
+    "case_id": "memory-3-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "d3aa074352660abb452d95185bdedb940430c12c7d8058057ee453150a10971a",
+    "claims_sha256": "186726b69a76c61633746f3a2ea18940bbba94c3ab94cd7dd10a7042f4966679"
+  },
+  {
+    "case_id": "memory-3-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "d57ca0eacc8b2d1ac108356132161f03a21eff0d52a1b95cf3280d724fb67206",
+    "claims_sha256": "4ee24581741fc457889d09ce903234c91c14b4c15a55569f33337ee77a0b1ba1"
+  },
+  {
+    "case_id": "memory-4-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "e494c851c4f84d6881715d85d69b46155420946d707cb6e76d369b9f9314da0e",
+    "claims_sha256": "3a8202e58f74e099ab9e1b66916c2564bf27bb85ff8b03c4feec1ddb387db15d"
+  },
+  {
+    "case_id": "memory-4-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "1627240a29d883cf59343f71ca82976b15f569c306bd230e1547e74ac0f4a727",
+    "claims_sha256": "d0a030ec20d86ab1952debfee72f91e6d9cfd8bb005d9e671608e92b90b5e150"
+  },
+  {
+    "case_id": "memory-4-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "The answer preserves the target-time state and source-specific roles or explicit absence. Cross-record state claims include their necessary dated source windows.",
+    "answer_sha256": "979116f5bf1919b22872f3e52157cd8c8bf1c6d5c929ea913fbe0308a9063d29",
+    "claims_sha256": "956a9cf3623e0e6ce64423c1e73f3cb7a04a07e50850c276c303ee79c317b0f3"
+  },
+  {
+    "case_id": "contrast-5-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "fc5572e24abbb198fd0125d45f64f187a71b1b6126c116476a65cd29ee516e0b",
+    "claims_sha256": "5973e1593b9ea79840b2654732cccd4705423b191bf706d7e647caaa8494cc00"
+  },
+  {
+    "case_id": "contrast-5-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "f97474ff28e73cd6d01c2f46114cd53528a2e545335ff3dbebe7851c734fd6ab",
+    "claims_sha256": "3bc1b4ac3ca844321689ad519dbb686a9df8e823a6c47498c4b5ccc38bfb55a0"
+  },
+  {
+    "case_id": "contrast-5-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "af58ff18d368155af81b3a9698dfd6b63c097f1f38ee9e3b4b5cd8c0a4948fa0",
+    "claims_sha256": "5c911efebebd144f95adba26746f428287bf58ce79a7cd977cc6589674cc5d25"
+  },
+  {
+    "case_id": "contrast-6-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "93c0233ea167bb69c967068533bacbb6fff1328053dfd52513f5977a6aee837d",
+    "claims_sha256": "d2928109203e54616cf212ddfcb0cab07aa2a238a5fc6efb7452aab84e4887a2"
+  },
+  {
+    "case_id": "contrast-6-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "6df88eff3764618963b1131f7aafe2f5f53c1a5cf98abfd91f66067a16ca5931",
+    "claims_sha256": "1d5b015b4eb36633c30a85403a0f51a302cfcaf915f89fdb6a3fe42b14485054"
+  },
+  {
+    "case_id": "contrast-6-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "16349afbaa8fa87de73e23b0a84ca61ce431b74598912d5c8f77686338366d62",
+    "claims_sha256": "72caf8e7b699b149075e8197ddeb20087f9dda10d41e3742c54c80c2b76bf156"
+  },
+  {
+    "case_id": "contrast-6-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "f76801ebb49907eb9df3df3e059120a650566510e1573b3169ba59d7db895002",
+    "claims_sha256": "d42e3c4d12f401b10f821ecd75b266583e84bb5d19b532e22d9f2dfa6788e785"
+  },
+  {
+    "case_id": "contrast-7-0",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "7dd332328bbef59dba26b96547cea59f5eae44e9c5609d50bfa7d00c011cb150",
+    "claims_sha256": "89b0182f4c960702d0a5b1e45137682c3548311274953ce0758c215a8075068f"
+  },
+  {
+    "case_id": "contrast-7-1",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "1a0a19bb7969958040bd3d38b2b6f3f13914e9fbf9d88d833b12df6f4fd024a1",
+    "claims_sha256": "f940ad77b269d6b6132ad85e32d07fafb06b941d6184b7d3c1f2622497156c44"
+  },
+  {
+    "case_id": "contrast-7-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "58f7c25ebef1e71ffdf1f87621b3bcb09a75a1157aa5a064070b59f7cdcfbd0e",
+    "claims_sha256": "d1099afd34fa94f75f4d006239a779b07e7f31a936996e565655649a473222e5"
+  },
+  {
+    "case_id": "contrast-8-2",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "b9153bd59689b8874e76cfbe931f37953fcef28fedd252740f46a63844fbaed0",
+    "claims_sha256": "b1adab87aab37f29cd6abfb2792e46239ccc556e23326cae2efbe08d46e078d5"
+  },
+  {
+    "case_id": "contrast-8-3",
+    "correct": true,
+    "semantic_grounding": true,
+    "reason": "Reviewed the answer, each atomic claim, and its original source windows. Subject, target-time state, and any explicit uncertainty or conflict are supported without substituting another project or a later decision.",
+    "answer_sha256": "89fde4782182d09078f555537484a6982d96c5593bd760c614df6a60b29b7c7f",
+    "claims_sha256": "04f0b3517b58eea641cae2e68113a50574ab1a83aace0ad55fe3e4cad60881c6"
+  }
+]
