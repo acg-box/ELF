@@ -1,0 +1,56 @@
+{
+  "prior_settled_usd": 8.50322717200002,
+  "prior_conservative_exposure_usd": 9.587027572000006,
+  "ceiling_usd": 10,
+  "headroom_usd": 0.41297242799999445,
+  "requests": [
+    {
+      "case_id": "absence-8",
+      "maximum_reservation_usd": 0.23817794999999997
+    },
+    {
+      "case_id": "boundary-3",
+      "maximum_reservation_usd": 0.23814809999999997
+    },
+    {
+      "case_id": "bridge-1",
+      "maximum_reservation_usd": 0.23814929999999998
+    },
+    {
+      "case_id": "bridge-2",
+      "maximum_reservation_usd": 0.23823224999999998
+    },
+    {
+      "case_id": "conflict-6",
+      "maximum_reservation_usd": 0.23824364999999997
+    },
+    {
+      "case_id": "memory-1-1",
+      "maximum_reservation_usd": 0.24056714999999995
+    },
+    {
+      "case_id": "memory-1-2",
+      "maximum_reservation_usd": 0.24061589999999997
+    },
+    {
+      "case_id": "retroactive-4",
+      "maximum_reservation_usd": 0.23816489999999996
+    },
+    {
+      "case_id": "revocation-5",
+      "maximum_reservation_usd": 0.23824049999999997
+    },
+    {
+      "case_id": "unknown-7",
+      "maximum_reservation_usd": 0.23811074999999998
+    }
+  ],
+  "sequential": true,
+  "full_output_tokens": 393216,
+  "reasoning": "max",
+  "maximum_price_usd_per_million": {
+    "prompt": 0.15,
+    "completion": 0.6
+  },
+  "policy": "Reserve full cost before every request. Stop on rejection. No lowering output ceiling or paid retry."
+}

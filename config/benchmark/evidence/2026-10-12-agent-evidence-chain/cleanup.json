@@ -1,0 +1,61 @@
+{
+  "verified_at": "2026-10-12T16:25:21.241738+00:00",
+  "removed_containers": [
+    {
+      "id": "13f306558bae15f30463e3fd72a591e1c711c150d8675155ccc770b99fb2185c",
+      "name": "elf-chain-db",
+      "image": "pgvector/pgvector:pg18"
+    },
+    {
+      "id": "ff82d76cd7f33905655ecc995ee4980899700fb4d7395e2b99ae4bbdf9155b1e",
+      "name": "elf-chain-qdrant",
+      "image": "qdrant/qdrant:v1.18.0"
+    }
+  ],
+  "removed_volumes": [
+    "96a463e8d1bd863f6c905d2174d8d2e9bd317f1b1b8489f2d2a312ddc66036ef"
+  ],
+  "stopped_processes": [
+    {
+      "pid": 99174,
+      "binary": "elf-api"
+    },
+    {
+      "pid": 96887,
+      "binary": "elf-mcp"
+    }
+  ],
+  "preserved_unrelated_containers": [
+    "0612de418a16363d1b33844e9fac9a350a53c62a888847ad7919f2c6a8364988",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "5537bcad41a43193a1919510969c84881ed507eff5b6c04683e81b62fbbaaec0",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d",
+    "60de474701008644fe32369605cfcd3f51b2b3c9c92e6116074a230ca1de55f0",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "8451df7830edfacf2bbb99e140f94bdc2d9a51604494d4987f8aea3ba88879ac",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b"
+  ],
+  "remaining_containers": [
+    "0612de418a16363d1b33844e9fac9a350a53c62a888847ad7919f2c6a8364988",
+    "3a587726dc684f7d8d75e31132d583a511a7e12eeeefdf82812d23ce93fd5212",
+    "3b942876fd902599b6f5a1da35d71ac879380b90d232b0c173a4eed9f4374939",
+    "5537bcad41a43193a1919510969c84881ed507eff5b6c04683e81b62fbbaaec0",
+    "5f2ed96f30e433cb61d46229d486c3d25e13c9afd4a44bb8e85308e2e60d034d",
+    "60de474701008644fe32369605cfcd3f51b2b3c9c92e6116074a230ca1de55f0",
+    "734d45aa41b6f4c44ef47e6219aa617c2a73199899b42e836d9a5a0a90af1cae",
+    "8451df7830edfacf2bbb99e140f94bdc2d9a51604494d4987f8aea3ba88879ac",
+    "9f0ccfa556133551773430181217e01a8959bac3c1c330eadc6af33d1b315a74",
+    "bb9e8ce478de1952ea05b0ae4559071cce0126b9d118f03261c1317d23ccd15b"
+  ],
+  "shared_images_preserved": true,
+  "global_prune": false,
+  "backup_preserved": {
+    "source": "/Users/x/code/acg-box/ELF/tmp/elf-agent-evidence-chain/native-fixture.dump",
+    "sha256": "68bf41e4bf6fa266842f7bd1a7cca166bb0c6d9934771773a3b6413b78492320",
+    "restore_verified": true,
+    "restored_document_fingerprint": "62|2485542febb585d70fc771ca10caa19c"
+  },
+  "raw_results_preserved": "/Users/x/code/acg-box/ELF/tmp/elf-agent-evidence-chain"
+}
