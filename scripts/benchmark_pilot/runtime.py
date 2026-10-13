@@ -94,7 +94,7 @@ class Runtime:
             target = '/var/lib/postgresql' if suffix == 'db' else '/qdrant/storage'
             docker(*args, '-v', volume + ':' + target, image)
         for _ in range(60):
-            check = subprocess.run(['docker', 'exec', self.owner + '-db', 'pg_isready', '-U', 'postgres'], capture_output=True)
+            check = subprocess.run(['docker', 'exec', self.owner + '-db', 'pg_isready', '-h', '127.0.0.1', '-U', 'postgres'], capture_output=True)
             if check.returncode == 0:
                 return
             time.sleep(1)

@@ -32,6 +32,30 @@ class ProjectPilotTests(unittest.TestCase):
         self.assertEqual(results[0]['text'], '中文原文\n')
         self.assertEqual(results[0]['end'] - results[0]['start'], len('中文原文\n'.encode()))
 
+    def test_byte_positions_round_trip_without_line_conversion(self):
+        host = self.host('source_only')
+        start = len('Old plan\n'.encode())
+        end = start + len('中文原文'.encode())
+        result = host.call('read_source', {'source_id': 's01', 'position': {'start': start, 'end': end}})
+        self.assertEqual(result['text'], '中文原文')
+        self.assertTrue(result['reference'].endswith(f'/{start}/{end}'))
+        self.assertIn('error', host.call('read_source', {'source_id': 's01', 'position': {'start': start + 1, 'end': end}}))
+
+    def test_native_excerpt_and_check_use_declared_routes(self):
+        calls = []
+        def api(path, args):
+            calls.append((path, args))
+            if path.endswith('/excerpts'):
+                return {'reference': 'elf-source-v1/native-a/abc/0/3', 'excerpt': 'Old'}
+            return {'claims': [{'binding_verified': False}], 'semantic_support': 'not_evaluated'}
+        host = self.host('source_only', api)
+        result = host.call('elf_docs_excerpts_get', {'doc_id': 'native-a', 'level': 'L1', 'position': {'start': 0, 'end': 3}})
+        self.assertIn(result['reference'], host.references)
+        check = host.call('elf_evidence_check', {'claims': []})
+        self.assertFalse(check['claims'][0]['binding_verified'])
+        self.assertEqual(calls[0][0], '/v2/docs/excerpts')
+        self.assertEqual(calls[1][0], '/v2/evidence/check')
+
     def test_future_source_is_not_readable_or_resolvable(self):
         host = self.host('full_elf')
         self.assertIn('error', host.call('read_source', {'source_id': 'future'}))
@@ -42,8 +66,8 @@ class ProjectPilotTests(unittest.TestCase):
         def forbidden(*args):
             self.fail('Ablated native API must not be called')
         for condition in ('no_elf', 'source_only'):
-            self.assertIn('error', self.host(condition, forbidden).call('search_memories', {'query': 'decision'}))
-        self.assertIn('error', self.host('no_elf', forbidden).call('search_sources', {'query': 'decision'}))
+            self.assertIn('error', self.host(condition, forbidden).call('elf_searches_create', {'query': 'decision'}))
+        self.assertIn('error', self.host('no_elf', forbidden).call('elf_docs_search_l0', {'query': 'decision'}))
 
     def test_truncation_preserves_parseable_complete_records_and_read_citations(self):
         host = self.host('no_elf')
@@ -101,7 +125,7 @@ max_notes_per_add_event = 3
 [security]
 evidence_min_quotes = 1
 evidence_max_quotes = 2
-evidence_max_quote_chars = 320
+evidence_max_quote_bytes = 320
 ''')
             cell_id = canary + '--no_elf--1'
             save(root / 'cases' / cell_id / 'result.json', {'cell': cell_id, 'task_id': canary, 'phase': 'formal',

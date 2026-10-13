@@ -1,6 +1,9 @@
-use crate::docs::service::{
-	self, DocExcerptRange, DocTrajectoryBuilder, DocsExcerptResponse, DocsExcerptVerification,
-	DocsExcerptsGetRequest, ElfService, Result, Uuid,
+use crate::{
+	docs::service::{
+		self, DocExcerptRange, DocTrajectoryBuilder, DocsExcerptResponse, DocsExcerptVerification,
+		DocsExcerptsGetRequest, ElfService, Result, Uuid,
+	},
+	evidence::reference,
 };
 
 impl ElfService {
@@ -90,6 +93,9 @@ impl ElfService {
 		);
 
 		Ok(DocsExcerptResponse {
+			reference: verified.then(|| {
+				reference::source_reference(doc.doc_id, &doc.content_hash, start_offset, end_offset)
+			}),
 			trace_id,
 			doc_id: doc.doc_id,
 			excerpt,

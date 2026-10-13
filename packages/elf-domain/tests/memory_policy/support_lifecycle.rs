@@ -22,7 +22,7 @@ pub(crate) fn memory_policy_security_config() -> Security {
 		redact_secrets_on_write: true,
 		evidence_min_quotes: 1,
 		evidence_max_quotes: 2,
-		evidence_max_quote_chars: 320,
+		evidence_max_quote_bytes: 320,
 		auth_mode: "off".to_string(),
 		auth_keys: vec![],
 	}

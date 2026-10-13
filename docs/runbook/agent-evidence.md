@@ -5,7 +5,7 @@ description: Integrate native recall, historical interpretation, and claim depen
 status: active
 authority: procedural
 owner: elf-service
-last_verified: 2026-10-12
+last_verified: 2026-10-13
 ---
 # Answer with complete source evidence chains
 
@@ -17,18 +17,27 @@ loads this contract too; it has no separate optimized answer instructions.
 
 ## Read and answer
 
-1. Search with `elf_searches_create`; expand an incomplete `search_id` with
-   `elf_searches_get`. Select at most twelve note IDs for `elf_evidence_pack`.
+1. Start a project handoff with `elf_searches_create`, `mode: planned_search`,
+   and `top_k: 4`. Use `elf_evidence_pack` for relevant IDs with a small source
+   budget such as 6000 bytes. Expand an incomplete `search_id` with
+   `elf_searches_get`. Keep budget for missing evidence and citation checks.
 2. If originals lack a required subject, scope, or time connection, call
    `elf_evidence_recall` with literal names or IDs from the question or verified
-   originals. Supply `as_of` for a historical question. Follow a source or graph
+   originals. Search originals with `elf_docs_search_l0` when memory is missing.
+   Pass `doc_id` and `pointer.locator.position` unchanged to
+   `elf_docs_excerpts_get` with `level: L1`. Offsets count UTF-8 bytes, not lines.
+   Copy the returned `reference`; the server omits it if verification fails.
+   Use L2 only when a specific premise needs more context.
+   Supply `as_of` for a historical question. Follow a source or graph
    link only to resolve a specific gap. Preserve late records that describe
    earlier effective events.
 3. Construct atomic claims in dependency order. Cite a source for each premise.
    Use `depends_on` for each earlier claim whose evidence is needed by the
    current conclusion. Do not infer shared identity from a similar name.
 4. Send the complete array to `elf_evidence_check`. A failed dependency makes
-   the dependent binding fail. Do not present that chain as verified.
+   the dependent binding fail. Repair the citation using an inspected source,
+   then check the full chain again within the host's declared workflow budget.
+   If evidence remains insufficient, report the gap. Do not fabricate a locator.
 5. Render each conclusion with its returned `resolved_citations`. A conclusion
    can have sources inherited from several premises. Recheck semantic support
    yourself: `binding_verified` checks access and source integrity only.

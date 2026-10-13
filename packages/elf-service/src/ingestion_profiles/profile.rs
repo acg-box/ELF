@@ -79,8 +79,8 @@ Prefer an explicit source identifier as canonical when names are shared across p
 Set relation valid_from/valid_to only when the source establishes effective dates. Distinguish approval dates, event dates, and observation dates; leave unknown validity null rather than using the message or ingestion timestamp. \
 Preserve numbers, dates, percentages, currency amounts, tickers, URLs, and code snippets exactly. \
 Never store secrets or PII: API keys, tokens, private keys, seed phrases, passwords, bank IDs, personal addresses. \
-For every note, provide 1 to 2 evidence quotes copied verbatim from the input messages and include the message_index. \
-If you cannot provide verbatim evidence, omit the note. \
+For every note, select supporting evidence_spans supplied with each message: output message_index and span_id. The server fills the exact original quote; do not copy or rewrite its text. Select the fewest spans that support the claim, including its subject and effective time where stated. Legacy quote objects are accepted only when copied exactly, including whitespace. If a note cannot fit, narrow the claim rather than dropping its subject or qualifications. \
+If no supplied evidence span supports a claim, omit the note. \
 If content is ephemeral or not useful long-term, return an empty notes array."
 				.to_string(),
 		),

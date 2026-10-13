@@ -1,6 +1,7 @@
 //! Event ingestion APIs.
 
 mod audit;
+mod extraction;
 mod materialize;
 mod persistence;
 mod policy;

@@ -3,6 +3,7 @@ use time::{Duration, OffsetDateTime};
 use crate::{
 	ElfService, Error, Result,
 	add_event::{
+		extraction,
 		types::{AddEventRequest, AddEventResponse, ExtractorOutput},
 		validation,
 	},
@@ -38,12 +39,16 @@ impl ElfService {
 				.remove("source_document");
 		}
 
-		let messages_json = extraction_messages.to_string();
-		let extractor_messages = resolved_profile.build_extractor_messages(
-			&messages_json,
-			self.cfg.memory.max_notes_per_add_event,
-			self.cfg.memory.max_note_chars,
+		let spans = extraction::evidence_spans(
+			&message_texts,
+			self.cfg.security.evidence_max_quote_bytes as usize,
 		)?;
+
+		extraction::attach_spans(&mut extraction_messages, &spans);
+
+		let messages_json = extraction_messages.to_string();
+		let extractor_messages =
+			resolved_profile.build_extractor_messages(&messages_json, &self.cfg)?;
 		let llm_cfg = resolved_profile.resolved_llm_config(&self.cfg.providers.llm_extractor);
 		let extracted_raw = self.providers.extractor.extract(&llm_cfg, &extractor_messages).await?;
 		let max_notes = self.cfg.memory.max_notes_per_add_event as usize;
@@ -55,6 +60,8 @@ impl ElfService {
 		if extracted.notes.len() > max_notes {
 			extracted.notes.truncate(max_notes);
 		}
+
+		extraction::resolve_selections(&mut extracted, &spans)?;
 
 		let extracted_json = serde_json::to_value(&extracted).map_err(|_| {
 			Error::InvalidRequest { message: "Failed to serialize extracted notes.".to_string() }

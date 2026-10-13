@@ -1,9 +1,10 @@
 //! Read-time evidence expansion and quote binding. No source mutation or semantic oracle.
 
+pub(crate) mod reference;
+
 mod claims;
 mod pack;
 mod recall;
-mod reference;
 mod source_recall;
 mod sources;
 mod types;

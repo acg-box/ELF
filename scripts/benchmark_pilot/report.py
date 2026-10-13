@@ -38,8 +38,9 @@ def measurements(root, fixture):
         tool_counts = Counter(tool['name'] for tool in tools)
         budget_errors = sum('evidence-byte budget' in str(tool['result'].get('error', '')) for tool in tools)
         empty_truncations = sum(tool['result'].get('truncated') is True and tool['result'].get('items') == [] for tool in tools)
-        memory_completions = sum(tool['name'] in ('search_memories', 'evidence_pack', 'recall_evidence', 'query_graph') and 'error' not in tool['result'] for tool in tools)
+        memory_completions = sum(tool['name'] in ('search_memories', 'evidence_pack', 'recall_evidence', 'query_graph', 'elf_searches_create', 'elf_searches_get', 'elf_evidence_pack', 'elf_evidence_recall', 'elf_graph_query') and 'error' not in tool['result'] for tool in tools)
         results.append({k: row[k] for k in ('cell', 'task_id', 'phase', 'condition', 'repetition', 'status', 'seconds', 'tool_calls', 'evidence_bytes')} | {
+            'cohort': next(t.get('cohort', 'original') for t in tasks if t['id'] == row['task_id']),
             'criteria': criteria, 'text_pattern_coverage': sum(c['text_patterns_present'] for c in criteria) / len(criteria),
             'native_binding': bool(binding) and all(c['binding_verified'] for c in binding),
             'all_references_seen': row.get('all_references_seen', False), 'usage': usage,
@@ -85,9 +86,9 @@ def measurements(root, fixture):
             'tool_calls': sum(r['tool_calls'] for r in rows),
             'tool_counts': dict(sum((Counter(r['tool_counts']) for r in rows), Counter())),
             'cells_with_budget_loss': sum(bool(r['evidence_budget_errors'] or r['empty_truncated_results']) for r in rows),
-            'memory_tool_cells': sum(any(r['tool_counts'].get(name) for name in ('search_memories', 'evidence_pack', 'recall_evidence', 'query_graph')) for r in rows),
+            'memory_tool_cells': sum(any(r['tool_counts'].get(name) for name in ('search_memories', 'evidence_pack', 'recall_evidence', 'query_graph', 'elf_searches_create', 'elf_searches_get', 'elf_evidence_pack', 'elf_evidence_recall', 'elf_graph_query')) for r in rows),
             'memory_tool_completed_cells': sum(bool(r['memory_tool_completions']) for r in rows),
-            'source_search_cells': sum(bool(r['tool_counts'].get('search_sources')) for r in rows),
+            'source_search_cells': sum(bool(r['tool_counts'].get('search_sources') or r['tool_counts'].get('elf_docs_search_l0')) for r in rows),
             'paid_usd': sum(r['paid_usd'] for r in rows),
             'cost_exposure_usd': sum(r['cost_exposure_usd'] for r in rows),
             'prompt_tokens': sum(r['usage']['prompt_tokens'] for r in rows),

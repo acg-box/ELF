@@ -3,7 +3,7 @@ use serde_json::Value;
 use time::OffsetDateTime;
 
 use crate::{Error, Result};
-use elf_config::LlmProviderConfig;
+use elf_config::{Config, LlmProviderConfig};
 
 /// Selector for an ingestion profile and optional version.
 #[derive(Clone, Debug, Deserialize, Serialize)]
@@ -165,22 +165,49 @@ impl ResolvedIngestionProfile {
 	pub(crate) fn build_extractor_messages(
 		&self,
 		messages_json: &str,
-		max_notes: u32,
-		max_note_chars: u32,
+		cfg: &Config,
 	) -> Result<Vec<Value>> {
-		let schema =
-			serde_json::to_string(&self.prompt_schema).map_err(|_| Error::InvalidRequest {
-				message: "Failed to serialize ingestion profile schema.".to_string(),
-			})?;
+		let mut schema = self.prompt_schema.clone();
+
+		// JSON Schema counts Unicode scalar values, as the note validator does.
+		if let Some(notes) = schema.pointer_mut("/properties/notes").and_then(Value::as_object_mut)
+		{
+			notes.insert("maxItems".into(), cfg.memory.max_notes_per_add_event.into());
+		}
+		if let Some(text) = schema
+			.pointer_mut("/$defs/ExtractedNote/properties/text")
+			.and_then(Value::as_object_mut)
+		{
+			text.insert("maxLength".into(), cfg.memory.max_note_chars.into());
+		}
+		if let Some(evidence) = schema
+			.pointer_mut("/$defs/ExtractedNote/properties/evidence")
+			.and_then(Value::as_object_mut)
+		{
+			evidence.insert("minItems".into(), cfg.security.evidence_min_quotes.max(1).into());
+			evidence.insert("maxItems".into(), cfg.security.evidence_max_quotes.into());
+		}
+
+		let limits = format!(
+			"Runtime admission limits (apply to every profile): at most {} notes; each note text at most {} Unicode characters; {} to {} evidence quotes per note; each quote at most {} UTF-8 bytes (not characters). Use short complete verbatim passages. Do not change the original text or guess byte offsets.",
+			cfg.memory.max_notes_per_add_event,
+			cfg.memory.max_note_chars,
+			cfg.security.evidence_min_quotes.max(1),
+			cfg.security.evidence_max_quotes,
+			cfg.security.evidence_max_quote_bytes,
+		);
+		let schema = serde_json::to_string(&schema).map_err(|_| Error::InvalidRequest {
+			message: "Failed to serialize ingestion profile schema.".to_string(),
+		})?;
 		let user_prompt = self
 			.prompt_user_template
 			.replace("{SCHEMA}", &schema)
-			.replace("{MAX_NOTES}", max_notes.to_string().as_str())
-			.replace("{MAX_NOTE_CHARS}", max_note_chars.to_string().as_str())
+			.replace("{MAX_NOTES}", cfg.memory.max_notes_per_add_event.to_string().as_str())
+			.replace("{MAX_NOTE_CHARS}", cfg.memory.max_note_chars.to_string().as_str())
 			.replace("{MESSAGES_JSON}", messages_json);
 
 		Ok(vec![
-			serde_json::json!({ "role": "system", "content": self.prompt_system.clone() }),
+			serde_json::json!({ "role": "system", "content": format!("{}\n\n{}", self.prompt_system, limits) }),
 			serde_json::json!({ "role": "user", "content": user_prompt }),
 		])
 	}
@@ -196,5 +223,50 @@ impl ResolvedIngestionProfile {
 			timeout_ms: self.timeout_ms.unwrap_or(base.timeout_ms),
 			default_headers: base.default_headers.clone(),
 		}
+	}
+}
+
+#[cfg(test)]
+mod tests {
+	use serde_json::Value;
+
+	use crate::{
+		add_event,
+		ingestion_profiles::types::{IngestionProfileRef, ResolvedIngestionProfile},
+	};
+
+	#[test]
+	fn runtime_limits_reach_custom_prompts_without_mutating_profile() {
+		let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../elf.example.toml");
+		let mut cfg = elf_config::load(&path).expect("Example config");
+
+		cfg.memory.max_note_chars = 123;
+		cfg.security.evidence_max_quotes = 3;
+		cfg.security.evidence_max_quote_bytes = 99;
+
+		let profile = ResolvedIngestionProfile {
+			profile_ref: IngestionProfileRef { id: "custom".into(), version: 1 },
+			prompt_schema: add_event::extraction_schema(),
+			prompt_system: "Custom instructions".into(),
+			prompt_user_template: "{SCHEMA}\n{MESSAGES_JSON}".into(),
+			model: None,
+			temperature: None,
+			timeout_ms: None,
+		};
+		let before = profile.prompt_schema.clone();
+		let messages = profile.build_extractor_messages("[]", &cfg).expect("Runtime prompt");
+		let system = messages[0]["content"].as_str().expect("System prompt");
+
+		assert!(system.contains("123 Unicode characters"));
+		assert!(system.contains("1 to 3 evidence quotes"));
+		assert!(system.contains("99 UTF-8 bytes"));
+
+		let user = messages[1]["content"].as_str().expect("User prompt");
+		let schema: Value =
+			serde_json::from_str(user.split('\n').next().expect("Schema")).expect("Valid schema");
+
+		assert_eq!(schema["$defs"]["ExtractedNote"]["properties"]["text"]["maxLength"], 123);
+		assert_eq!(schema["$defs"]["ExtractedNote"]["properties"]["evidence"]["maxItems"], 3);
+		assert_eq!(profile.prompt_schema, before);
 	}
 }

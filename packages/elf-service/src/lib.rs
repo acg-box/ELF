@@ -65,7 +65,10 @@ pub use self::{
 		ConsolidationRunCreateRequest, ConsolidationRunCreateResponse, ConsolidationRunGetRequest,
 		ConsolidationRunResponse, ConsolidationRunsListRequest, ConsolidationRunsListResponse,
 	},
-	constants::{REJECT_EVIDENCE_MISMATCH, REJECT_WRITE_POLICY_MISMATCH},
+	constants::{
+		REJECT_EVIDENCE_MISMATCH, REJECT_EVIDENCE_QUOTE_COUNT, REJECT_EVIDENCE_QUOTE_TOO_LONG,
+		REJECT_WRITE_POLICY_MISMATCH,
+	},
 	context_pack::{
 		ContextPackActivationPolicy, ContextPackAuthorityLayer, ContextPackBudgetLimits,
 		ContextPackDebugOverrides, ContextPackDebugPolicy, ContextPackFreshnessPolicy,

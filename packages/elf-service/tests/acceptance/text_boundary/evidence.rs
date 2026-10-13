@@ -2,8 +2,8 @@ use uuid::Uuid;
 
 use crate::acceptance::text_boundary::setup;
 use elf_service::{
-	AddEventRequest, DocsPutRequest, ElfService, EventMessage, EventSourceDocument,
-	NoteFetchRequest,
+	AddEventRequest, DocsExcerptsGetRequest, DocsPutRequest, ElfService, EventMessage,
+	EventSourceDocument, NoteFetchRequest,
 	docs::TextPositionSelector,
 	evidence::{
 		ClaimCitation, ClaimEvidence, ClaimState, EvidenceCheckRequest, EvidencePackRequest,
@@ -293,6 +293,24 @@ async fn verify_evidence_pack(
 	assert_eq!(pack.sources[0].source_timestamp.as_deref(), Some("2026-08-22T00:00:00Z"));
 	assert_eq!(pack.notes[0].source_references, vec![pack.sources[0].reference.clone()]);
 	assert_eq!(pack.source_bytes, content.len());
+
+	let excerpt = service
+		.docs_excerpts_get(DocsExcerptsGetRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			read_profile: "private_plus_project".into(),
+			doc_id,
+			level: "L1".into(),
+			position: Some(TextPositionSelector { start: 0, end: content.len() }),
+			quote: None,
+			chunk_id: None,
+			explain: None,
+		})
+		.await
+		.expect("Read exact source position");
+
+	assert_eq!(excerpt.reference.as_deref(), Some(pack.sources[0].reference.as_str()));
 
 	let partial = service
 		.evidence_pack(EvidencePackRequest {

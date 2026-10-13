@@ -17,6 +17,8 @@ sessions or a substitute for a multi-week customer pilot.
 
 The run directory’s private `fixture/` contains fourteen complete original records,
 four chronological checkpoints, two calibration tasks, and eight formal tasks.
+The current protocol has four regressions and four new follow-up tasks. Keep
+previous freeze directories and results unchanged. Report each cohort separately.
 The formal tasks have two repetitions in each of three conditions: 48 cells.
 The selected source corpus is bounded; it is not the entire repository. The
 tasks require read-only handoff decisions, not code patches or live deployment.
@@ -60,9 +62,13 @@ returned to that reader.
 
 The evidence-byte limit is a shared workflow budget, not the model's native
 context limit. The agent chooses its tools; enabled memory tools can remain
-unused. Report that usage explicitly. The common checker runs after the final
-answer and does not provide a repair turn. This trial therefore measures this
-reader workflow, not every ELF feature or the best possible client integration.
+unused. Report that usage explicitly. Protocol v3 declares the formal MCP tool
+names and a callable claim checker in every condition. The agent can repair
+citations within the same round and call limits; the host also checks the final
+answer. Native document search positions feed the excerpt API directly as UTF-8
+byte ranges. The shared reader contract starts with focused memory discovery, or
+source discovery when memory is unavailable. It does not preload task answers.
+The old protocol v2 result remains in its immutable evidence bundle.
 
 ## Execution
 

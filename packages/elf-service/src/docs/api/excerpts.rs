@@ -47,6 +47,9 @@ pub struct DocsExcerptVerification {
 /// Response payload for excerpt retrieval.
 #[derive(Clone, Debug, Serialize)]
 pub struct DocsExcerptResponse {
+	/// Copyable citation for verified original bytes. Absent if selector verification failed.
+	#[serde(skip_serializing_if = "Option::is_none")]
+	pub reference: Option<String>,
 	/// Excerpt trace identifier.
 	pub trace_id: Uuid,
 	/// Identifier of the source document.

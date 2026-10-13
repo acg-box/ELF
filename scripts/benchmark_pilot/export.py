@@ -61,7 +61,7 @@ def export(root, destination):
                 'reasoning', 'max_output_tokens', 'embedding_model', 'embedding_dimensions',
                 'embedding_provider', 'reranker', 'extraction_window_bytes', 'memory_notes_per_event',
                 'budget_usd', 'calibration_tranche_usd', 'paid_retries', 'ranking_or_prompt_tuning_after_formal_start',
-                'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
+                'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
     save(destination / 'protocol.json', {k: v for k, v in json.loads((fixture / 'protocol.json').read_text()).items() if k in controls})
     native = []
     for path in sorted(root.glob('native-stage-*.json')):
@@ -94,8 +94,8 @@ def export(root, destination):
         config = tomllib.loads(native_config.read_text())
         builds['native_limits'] = {key: config[section][key] for section, keys in (
             ('memory', ('max_note_chars', 'max_notes_per_add_event')),
-            ('security', ('evidence_min_quotes', 'evidence_max_quotes', 'evidence_max_quote_chars')))
-            for key in keys}
+            ('security', ('evidence_min_quotes', 'evidence_max_quotes', 'evidence_max_quote_bytes')))
+            for key in keys if key in config[section]}
     save(destination / 'runtime-provenance.json', builds)
     rejection_audit = root / 'write-rejection-audit.json'
     if rejection_audit.exists():

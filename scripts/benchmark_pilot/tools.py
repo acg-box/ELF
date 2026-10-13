@@ -7,26 +7,47 @@ import urllib.error
 
 
 def schemas(condition):
+    position = {'type': 'object', 'properties': {'start': {'type': 'integer', 'minimum': 0},
+                'end': {'type': 'integer', 'minimum': 1}}, 'required': ['start', 'end'], 'additionalProperties': False}
+    citation = {'type': 'object', 'additionalProperties': False, 'required': ['kind', 'reference'],
+                'properties': {'kind': {'const': 'reference'}, 'reference': {'type': 'string'}}}
+    claim = {'type': 'object', 'additionalProperties': False, 'required': ['text', 'state', 'citations'],
+             'properties': {'text': {'type': 'string'},
+                 'state': {'type': 'string', 'enum': ['supported', 'absent', 'unknown', 'conflict']},
+                 'depends_on': {'type': 'array', 'items': {'type': 'integer', 'minimum': 0, 'maximum': 11}},
+                 'citations': {'type': 'array', 'maxItems': 8, 'items': citation}}}
     definitions = [
         ('list_sources', 'List immutable Git records available at this checkpoint.', {}, []),
-        ('read_source', 'Read exact original lines. Line numbers are one-based. Returns a native citation reference.',
+        ('read_source', 'Read exact original lines or a UTF-8 byte position. Use small ranges. Returns a native citation reference.',
          {'source_id': {'type': 'string'}, 'start_line': {'type': 'integer', 'minimum': 1},
-          'line_count': {'type': 'integer', 'minimum': 1, 'maximum': 100}}, ['source_id']),
-        ('search_files', 'Search original lines with a case-insensitive regular expression, like grep. Returns up to 20 matches with nearby lines and citation references.',
+          'line_count': {'type': 'integer', 'minimum': 1, 'maximum': 100}, 'position': position}, ['source_id']),
+        ('search_files', 'Search original lines with a case-insensitive regular expression. Returns at most 20 narrow matches and citation references.',
          {'pattern': {'type': 'string'}}, ['pattern']),
+        ('elf_evidence_check', 'Check complete claim dependencies and original citation bindings before the final answer. Repair failed references from inspected evidence; this does not verify entailment.',
+         {'claims': {'type': 'array', 'minItems': 1, 'maxItems': 12, 'items': claim}}, ['claims']),
     ]
     if condition != 'no_elf':
-        definitions.append(('search_sources', 'Search original documents through native ELF vector and lexical retrieval. Read returned source IDs for context.',
-                            {'query': {'type': 'string'}}, ['query']))
+        definitions += [
+            ('elf_docs_search_l0', 'Search original documents. Pass a selected doc_id and pointer.locator.position to elf_docs_excerpts_get.',
+             {'query': {'type': 'string'}, 'top_k': {'type': 'integer', 'minimum': 1, 'maximum': 8}}, ['query']),
+            ('elf_docs_excerpts_get', 'Read an original at a search result byte position, with a copyable native reference. L1 is a focused window; L2 is for a missing premise.',
+             {'doc_id': {'type': 'string'}, 'position': position, 'level': {'enum': ['L0', 'L1', 'L2']}}, ['doc_id', 'position', 'level']),
+        ]
     if condition == 'full_elf':
         definitions += [
-            ('search_memories', 'Search native extracted memories. These are discovery candidates; inspect their originals before a final claim.', {'query': {'type': 'string'}}, ['query']),
-            ('evidence_pack', 'Read selected native memories and their verified original windows. Maximum six note IDs.',
-             {'note_ids': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 6}}, ['note_ids']),
-            ('recall_evidence', 'Recall missing evidence using up to four literal subjects. Optionally specify historical as_of in RFC3339.',
+            ('elf_searches_create', 'Start handoffs with planned_search and top_k=4. Resolve relevant note IDs with elf_evidence_pack before broad original reads.',
+             {'query': {'type': 'string'}, 'mode': {'enum': ['quick_find', 'planned_search']},
+              'top_k': {'type': 'integer', 'minimum': 1, 'maximum': 12}}, ['query', 'mode']),
+            ('elf_searches_get', 'Expand cached candidates before issuing another query.',
+             {'search_id': {'type': 'string'}, 'top_k': {'type': 'integer', 'minimum': 1, 'maximum': 12}}, ['search_id']),
+            ('elf_evidence_pack', 'Resolve selected memory notes to verified original windows. Start with a small source budget.',
+             {'note_ids': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 12},
+              'max_source_bytes': {'type': 'integer', 'minimum': 1, 'maximum': 32768}}, ['note_ids']),
+            ('elf_evidence_recall', 'Recall missing evidence using up to four literal subjects. Optionally specify historical as_of in RFC3339.',
              {'subjects': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 4}, 'as_of': {'type': 'string'}}, ['subjects']),
-            ('query_graph', 'Traverse native entity relationships by surface. Returned evidence note IDs can be read with evidence_pack.',
-             {'surface': {'type': 'string'}, 'as_of': {'type': 'string'}}, ['surface']),
+            ('elf_graph_query', 'Traverse native entity relationships. Read evidence_note_ids with elf_evidence_pack.',
+             {'subject': {'type': 'object', 'properties': {'surface': {'type': 'string'}}, 'required': ['surface']},
+              'as_of': {'type': 'string'}}, ['subject']),
         ]
     return [{'type': 'function', 'function': {'name': n, 'description': d, 'parameters': {
         'type': 'object', 'properties': p, 'required': r, 'additionalProperties': False}}} for n, d, p, r in definitions]
@@ -52,9 +73,17 @@ class SourceTools:
 
     def read(self, args):
         source_id = args['source_id']
-        lines = self.sources[source_id]['text'].encode().splitlines(keepends=True)
+        raw = self.sources[source_id]['text'].encode()
+        if 'position' in args:
+            if 'start_line' in args or 'line_count' in args:
+                raise ValueError('Use byte position or line range, not both')
+            start, end = args['position']['start'], args['position']['end']
+            if not 0 <= start < end <= len(raw):
+                raise ValueError('Invalid byte range')
+            return self.original(source_id, start, end)
+        lines = raw.splitlines(keepends=True)
         first = int(args.get('start_line', 1)) - 1
-        count = int(args.get('line_count', 60))
+        count = int(args.get('line_count', 24))
         if first < 0 or not 1 <= count <= 100 or first >= len(lines):
             raise ValueError('Invalid line range')
         start = sum(map(len, lines[:first]))
@@ -99,22 +128,29 @@ class SourceTools:
             return self.read(args)
         if name == 'search_files':
             return self.grep(args['pattern'])
-        if name == 'search_sources':
-            data = self.api('/v2/docs/search/l0', {'query': args['query'], 'top_k': 8, 'candidate_k': 60})
-            return {'items': [{'source_id': self.inverse[row['doc_id']], 'snippet': row['snippet'],
-                              'title': self.sources[self.inverse[row['doc_id']]]['title'],
-                              'source_timestamp': self.sources[self.inverse[row['doc_id']]]['timestamp'],
-                              'position': row['pointer']['locator']['position']}
+        if name == 'elf_evidence_check':
+            return self.api('/v2/evidence/check', args)
+        if name == 'elf_docs_search_l0':
+            data = self.api('/v2/docs/search/l0', {'candidate_k': 60, 'top_k': 4, **args})
+            return {'items': [{**row, 'source_id': self.inverse[row['doc_id']]}
                              for row in data['items'] if row['doc_id'] in self.inverse]}
-        if name == 'search_memories':
-            data = self.api('/v2/searches', {'mode': 'planned_search', 'query': args['query'], 'top_k': 12, 'candidate_k': 60})
+        if name == 'elf_docs_excerpts_get':
+            if args['doc_id'] not in self.inverse:
+                raise ValueError('Future or foreign source crossed the checkpoint')
+            return {**self.api('/v2/docs/excerpts', args), 'source_id': self.inverse[args['doc_id']]}
+        if name in ('elf_searches_create', 'elf_searches_get'):
+            if name == 'elf_searches_create':
+                data = self.api('/v2/searches', {'top_k': 4, 'candidate_k': 60, **args})
+            else:
+                from urllib.parse import urlencode
+                data = self.api('/v2/searches/' + args['search_id'] + '?' + urlencode({'top_k': args.get('top_k', 8), 'touch': 'false'}))
             return {k: data[k] for k in ('search_id', 'items', 'total', 'has_more') if k in data}
-        if name == 'evidence_pack':
-            return self.project_pack(self.api('/v2/evidence/pack', {'note_ids': args['note_ids'], 'max_source_bytes': 8000}))
-        if name == 'recall_evidence':
+        if name == 'elf_evidence_pack':
+            return self.project_pack(self.api('/v2/evidence/pack', {'max_source_bytes': 6000, **args}))
+        if name == 'elf_evidence_recall':
             data = self.api('/v2/evidence/recall', args)
             return {**data, 'pack': self.project_pack(data['pack'])}
-        return self.api('/v2/graph/query', {'subject': {'surface': args['surface']}, 'as_of': args.get('as_of'), 'limit': 12})
+        return self.api('/v2/graph/query', {'limit': 12, **args})
 
     def project_pack(self, pack):
         # Native order is retained. The common output budget may trim the tail.
@@ -152,6 +188,17 @@ class SourceTools:
                 break
             max(candidates, key=lambda v: len(json.dumps(v))).pop()
             value['truncated'] = True
+        # A truncated pack cannot keep a successful completeness claim or dangling links.
+        if value.get('truncated'):
+            pack = value.get('pack', value)
+            if 'sources' in pack and 'notes' in pack:
+                available = {source.get('reference') for source in pack['sources']}
+                pack['complete'] = False
+                for note in pack['notes']:
+                    refs = note.get('source_references', [])
+                    if any(ref not in available for ref in refs):
+                        note['complete'] = False
+                        note['source_references'] = [ref for ref in refs if ref in available]
         def references(node):
             if isinstance(node, dict):
                 ref = node.get('reference')
