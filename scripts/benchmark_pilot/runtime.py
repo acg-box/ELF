@@ -12,6 +12,7 @@ import subprocess
 import time
 import tomllib
 import urllib.request
+import urllib.error
 
 from .corpus import save
 
@@ -54,8 +55,12 @@ class Runtime:
         data = None if payload is None else json.dumps(payload).encode()
         request = urllib.request.Request(self.base + path, data=data,
             headers={'Authorization': 'Bearer ' + self.token, 'Content-Type': 'application/json'})
-        with urllib.request.urlopen(request, timeout=3600) as response:
-            return json.load(response)
+        try:
+            with urllib.request.urlopen(request, timeout=3600) as response:
+                return json.load(response)
+        except urllib.error.HTTPError as error:
+            error.add_note(error.read().decode())
+            raise
 
     def sql(self, query):
         return docker('exec', self.owner + '-db', 'psql', '-U', 'postgres', '-d', 'elf', '-At', '-c', query)
@@ -139,7 +144,10 @@ class Runtime:
             if any(p.poll() is not None for p in self.processes):
                 raise RuntimeError('Pilot API or worker exited; inspect private run logs')
             try:
-                self.api('/health')
+                request = urllib.request.Request(self.base + '/health',
+                    headers={'Authorization': 'Bearer ' + self.token})
+                with urllib.request.urlopen(request, timeout=2):
+                    pass
                 save(self.root / 'runtime-build.json', {'source_commit': subprocess.check_output(
                     ['git', 'rev-parse', 'HEAD'], cwd=self.repo, text=True).strip(),
                     'binaries': {r: hashlib.sha256((self.repo / 'target/debug' / ('elf-' + r)).read_bytes()).hexdigest() for r in ['api', 'worker']},

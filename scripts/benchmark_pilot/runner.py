@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import datetime
 import json
 import os
 from pathlib import Path
@@ -129,9 +130,13 @@ def ingest(rt, root, sources, stage, protocol):
         before = usage(root)
         started = time.monotonic()
         body = {'scope': 'agent_private', 'title': source['title'], 'source_ref': {
-            'schema': 'doc_source_ref/v1', 'doc_type': 'knowledge', 'ts': source['timestamp'],
+            'schema': 'doc_source_ref/v1', 'doc_type': 'dev', 'ts': source['timestamp'],
+            'repo': source['origin'], 'commit_sha': source['commit'],
             'source_kind': 'repo_file',
-            'canonical_uri': source['origin'] + '/blob/' + source['commit'] + '/' + source['path'],
+            'canonical_uri': source['origin'] + ('/blob/' + source['commit'] + '/' + source['path']
+                if source['kind'] == 'blob' else '/commit/' + source['commit']),
+            'captured_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'source_created_at': source['timestamp'], 'trust_label': 'user_captured',
             'pilot_source_id': source['id']}, 'content': source['text']}
         doc = rt.api('/v2/docs', body)
         documents[source['id']] = doc
@@ -225,9 +230,11 @@ def run(args, repo, sources, checkpoints, protocol, tasks):
 
 
 def main():
+    os.umask(0o077)
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, required=True)
-    parser.add_argument('--phase', choices=['calibration', 'formal', 'report'], required=True)
+    parser.add_argument('--phase', choices=['calibration', 'formal', 'report', 'export'], required=True)
+    parser.add_argument('--export-dir', type=Path)
     parser.add_argument('--cell')
     parser.add_argument('--task')
     parser.add_argument('--condition', choices=['no_elf', 'source_only', 'full_elf'])
@@ -245,6 +252,12 @@ def main():
     if args.phase == 'report':
         from .report import write_report
         write_report(args.root, frozen)
+        return 0
+    if args.phase == 'export':
+        from .export import export
+        if args.export_dir is None:
+            raise ValueError('Specify a new --export-dir for de-identified evidence')
+        export(args.root, args.export_dir)
         return 0
     if args.cell:
         task = next(t for t in tasks if t['id'] == args.task)
