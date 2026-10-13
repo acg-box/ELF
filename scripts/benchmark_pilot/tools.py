@@ -18,9 +18,9 @@ def schemas(condition):
                  'citations': {'type': 'array', 'maxItems': 8, 'items': citation}}}
     definitions = [
         ('list_sources', 'List immutable Git records available at this checkpoint.', {}, []),
-        ('read_source', 'Read exact original lines or a UTF-8 byte position. Use small ranges. Returns a native citation reference.',
+        ('read_source', 'Read exact original lines. Line numbers are one-based. Use small ranges. Returns a native citation reference.',
          {'source_id': {'type': 'string'}, 'start_line': {'type': 'integer', 'minimum': 1},
-          'line_count': {'type': 'integer', 'minimum': 1, 'maximum': 100}, 'position': position}, ['source_id']),
+          'line_count': {'type': 'integer', 'minimum': 1, 'maximum': 100}}, ['source_id']),
         ('search_files', 'Search original lines with a case-insensitive regular expression. Returns at most 20 narrow matches and citation references.',
          {'pattern': {'type': 'string'}}, ['pattern']),
         ('elf_evidence_check', 'Check complete claim dependencies and original citation bindings before the final answer. Repair failed references from inspected evidence; this does not verify entailment.',
@@ -44,13 +44,25 @@ def schemas(condition):
              {'note_ids': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 12},
               'max_source_bytes': {'type': 'integer', 'minimum': 1, 'maximum': 32768}}, ['note_ids']),
             ('elf_evidence_recall', 'Recall missing evidence using up to four literal subjects. Optionally specify historical as_of in RFC3339.',
-             {'subjects': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 4}, 'as_of': {'type': 'string'}}, ['subjects']),
+             {'subjects': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 4}, 'as_of': {'type': ['string', 'null']}}, ['subjects']),
             ('elf_graph_query', 'Traverse native entity relationships. Read evidence_note_ids with elf_evidence_pack.',
              {'subject': {'type': 'object', 'properties': {'surface': {'type': 'string'}}, 'required': ['surface']},
-              'as_of': {'type': 'string'}}, ['subject']),
+              'as_of': {'type': ['string', 'null']}}, ['subject']),
         ]
     return [{'type': 'function', 'function': {'name': n, 'description': d, 'parameters': {
         'type': 'object', 'properties': p, 'required': r, 'additionalProperties': False}}} for n, d, p, r in definitions]
+
+
+def opening_tool(condition, trace):
+    """A bounded host opening; subsequent retrieval remains the agent's choice."""
+    if not trace:
+        return {'no_elf': 'search_files', 'source_only': 'elf_docs_search_l0',
+                'full_elf': 'elf_searches_create'}[condition]
+    if condition == 'full_elf' and len(trace) == 1 and any(
+            tool['name'] == 'elf_searches_create' and tool['result'].get('items')
+            for tool in trace[0]['tools']):
+        return 'elf_evidence_pack'
+    return None
 
 
 class SourceTools:
@@ -74,13 +86,6 @@ class SourceTools:
     def read(self, args):
         source_id = args['source_id']
         raw = self.sources[source_id]['text'].encode()
-        if 'position' in args:
-            if 'start_line' in args or 'line_count' in args:
-                raise ValueError('Use byte position or line range, not both')
-            start, end = args['position']['start'], args['position']['end']
-            if not 0 <= start < end <= len(raw):
-                raise ValueError('Invalid byte range')
-            return self.original(source_id, start, end)
         lines = raw.splitlines(keepends=True)
         first = int(args.get('start_line', 1)) - 1
         count = int(args.get('line_count', 24))

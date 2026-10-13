@@ -46,9 +46,16 @@ This phase tests a correct contract before changing those product defaults.
 
 The shared Agent contract starts a handoff with a small memory search and the
 originals behind selected notes. Missing memory triggers source discovery.
-Source-only clients start with document discovery. Neither path scans every
+Source-only clients start with document discovery. The host explicitly selects
+the opening tools; after discovery and memory hydration, the agent chooses
+follow-up calls. This policy is measured as client integration, not spontaneous
+model tool use. Neither path scans every
 file by default. The same contract is published by MCP and loaded by HTTP clients
 and the benchmark. Tool availability remains controlled by each host.
+
+Evidence packs divide their source budget across selected notes before reading
+context. They do not fetch fixed 32KB windows and discard them for exceeding a
+small pack budget. Incomplete packs still report missing evidence.
 
 Document excerpts return native references only for verified original bytes.
 Search byte positions pass directly into the existing excerpt API. Agents copy

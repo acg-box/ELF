@@ -11,7 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from benchmark_pilot.corpus import load, spans
 from benchmark_pilot.corpus import save
 from benchmark_pilot.export import export
-from benchmark_pilot.tools import SourceTools
+from benchmark_pilot.tools import SourceTools, opening_tool, schemas
 
 
 class ProjectPilotTests(unittest.TestCase):
@@ -32,14 +32,14 @@ class ProjectPilotTests(unittest.TestCase):
         self.assertEqual(results[0]['text'], '中文原文\n')
         self.assertEqual(results[0]['end'] - results[0]['start'], len('中文原文\n'.encode()))
 
-    def test_byte_positions_round_trip_without_line_conversion(self):
-        host = self.host('source_only')
-        start = len('Old plan\n'.encode())
-        end = start + len('中文原文'.encode())
-        result = host.call('read_source', {'source_id': 's01', 'position': {'start': start, 'end': end}})
-        self.assertEqual(result['text'], '中文原文')
-        self.assertTrue(result['reference'].endswith(f'/{start}/{end}'))
-        self.assertIn('error', host.call('read_source', {'source_id': 's01', 'position': {'start': start + 1, 'end': end}}))
+    def test_host_opening_uses_available_tools_and_does_not_repeat_empty_memory(self):
+        for arm in ('no_elf', 'source_only', 'full_elf'):
+            self.assertIn(opening_tool(arm, []), {t['function']['name'] for t in schemas(arm)})
+        trace = [{'tools': [{'name': 'elf_searches_create', 'result': {'items': []}}]}]
+        self.assertIsNone(opening_tool('full_elf', trace))
+        trace[0]['tools'][0]['result']['items'] = [{'note_id': 'a'}]
+        self.assertEqual(opening_tool('full_elf', trace), 'elf_evidence_pack')
+        self.assertIsNone(opening_tool('full_elf', trace * 2))
 
     def test_native_excerpt_and_check_use_declared_routes(self):
         calls = []

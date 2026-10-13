@@ -245,6 +245,24 @@ async fn evidence_expansion_anchors_each_quote_in_a_long_source_span() {
 	assert!(expanded.sources.iter().all(|source| source.excerpt.excerpt.len() <= 32 * 1_024));
 	assert!(expanded.sources.iter().all(|source| source.excerpt.locator.selector_kind == "quote"));
 
+	let bounded = service
+		.evidence_pack(EvidencePackRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			read_profile: "private_plus_project".into(),
+			note_ids: vec![read.note_id, read.note_id],
+			max_source_bytes: Some(1_024),
+		})
+		.await
+		.expect("Hydrate a small pack from a long original");
+
+	assert!(bounded.complete);
+	assert_eq!(bounded.sources.len(), 2);
+	assert!(bounded.sources[0].text.contains(first));
+	assert!(bounded.sources[1].text.contains(last));
+	assert!(bounded.source_bytes <= 1_024);
+
 	sqlx::query("UPDATE memory_notes SET source_ref=jsonb_set(source_ref,'{evidence,0,source,document,locator,position,start}','1024'::jsonb) WHERE note_id=$1")
         .bind(read.note_id).execute(&service.db.pool).await.expect("Simulate an invalid pointer range");
 

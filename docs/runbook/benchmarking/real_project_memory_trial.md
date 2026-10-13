@@ -61,8 +61,10 @@ with the native checker and separately verifies that references were actually
 returned to that reader.
 
 The evidence-byte limit is a shared workflow budget, not the model's native
-context limit. The agent chooses its tools; enabled memory tools can remain
-unused. Report that usage explicitly. Protocol v3 declares the formal MCP tool
+context limit. The host selects initial discovery and memory hydration as described in the
+shared Agent contract. The agent chooses subsequent tools. Record whether the
+opening returned useful memory and original evidence; a requested tool is not
+proof of an effective read. Protocol v3 declares the formal MCP tool
 names and a callable claim checker in every condition. The agent can repair
 citations within the same round and call limits; the host also checks the final
 answer. Native document search positions feed the excerpt API directly as UTF-8

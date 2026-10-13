@@ -119,6 +119,8 @@ impl ElfService {
 
 		search::resolve_read_profile_scopes(&self.cfg, &req.read_profile)?;
 
+		let distinct_notes = req.note_ids.iter().collect::<HashSet<_>>().len();
+		let window_bytes = (budget / distinct_notes).max(1);
 		let mut result = EvidencePackResponse {
 			schema: "elf.evidence_pack/v1",
 			notes: Vec::new(),
@@ -134,7 +136,7 @@ impl ElfService {
 			}
 
 			let expanded = self
-				.note_evidence(
+				.note_evidence_bounded(
 					NoteFetchRequest {
 						tenant_id: req.tenant_id.clone(),
 						project_id: req.project_id.clone(),
@@ -142,6 +144,7 @@ impl ElfService {
 						note_id,
 					},
 					req.read_profile.clone(),
+					Some(window_bytes),
 				)
 				.await;
 			let expanded = match expanded {

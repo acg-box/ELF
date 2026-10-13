@@ -12,6 +12,14 @@ impl ElfService {
 		&self,
 		req: DocsExcerptsGetRequest,
 	) -> Result<DocsExcerptResponse> {
+		self.docs_excerpts_get_bounded(req, usize::MAX).await
+	}
+
+	pub(crate) async fn docs_excerpts_get_bounded(
+		&self,
+		req: DocsExcerptsGetRequest,
+		max_bytes: usize,
+	) -> Result<DocsExcerptResponse> {
 		let explain = req.explain.unwrap_or(false);
 		let trace_id = Uuid::new_v4();
 		let tenant_id = req.tenant_id.trim();
@@ -46,7 +54,7 @@ impl ElfService {
 			req.doc_id,
 		)
 		.await?;
-		let level_max = service::excerpt_level_max(req.level.as_str())?;
+		let level_max = service::excerpt_level_max(req.level.as_str())?.min(max_bytes);
 
 		trajectory.push(
 			"level_selection",

@@ -47,6 +47,12 @@ def measurements(root, fixture):
             'tool_counts': dict(tool_counts),
             'evidence_budget_errors': budget_errors, 'empty_truncated_results': empty_truncations,
             'memory_tool_completions': memory_completions,
+            'memory_evidence_reads': sum(tool['name'] in ('evidence_pack', 'elf_evidence_pack', 'recall_evidence', 'elf_evidence_recall')
+                and bool(tool['result'].get('pack', tool['result']).get('notes'))
+                and bool(tool['result'].get('pack', tool['result']).get('sources')) for tool in tools),
+            'citation_checks': tool_counts.get('elf_evidence_check', 0),
+            'failed_citation_checks': sum(tool['name'] == 'elf_evidence_check' and
+                any(not c['binding_verified'] for c in tool['result'].get('claims', [])) for tool in tools),
             'provider_requests': len(requests), 'cost_exposure_usd': totals({'requests': requests})[1],
             'paid_usd': row['usage_after']['paid_usd'] - row['usage_before']['paid_usd']})
     review_path = root / 'review.json'
@@ -88,6 +94,9 @@ def measurements(root, fixture):
             'cells_with_budget_loss': sum(bool(r['evidence_budget_errors'] or r['empty_truncated_results']) for r in rows),
             'memory_tool_cells': sum(any(r['tool_counts'].get(name) for name in ('search_memories', 'evidence_pack', 'recall_evidence', 'query_graph', 'elf_searches_create', 'elf_searches_get', 'elf_evidence_pack', 'elf_evidence_recall', 'elf_graph_query')) for r in rows),
             'memory_tool_completed_cells': sum(bool(r['memory_tool_completions']) for r in rows),
+            'memory_evidence_cells': sum(bool(r['memory_evidence_reads']) for r in rows),
+            'citation_check_cells': sum(bool(r['citation_checks']) for r in rows),
+            'citation_repair_cells': sum(bool(r['failed_citation_checks']) and r['native_binding'] and r['all_references_seen'] for r in rows),
             'source_search_cells': sum(bool(r['tool_counts'].get('search_sources') or r['tool_counts'].get('elf_docs_search_l0')) for r in rows),
             'paid_usd': sum(r['paid_usd'] for r in rows),
             'cost_exposure_usd': sum(r['cost_exposure_usd'] for r in rows),
@@ -96,6 +105,17 @@ def measurements(root, fixture):
             'cache_write_prompt_tokens': sum(r['usage']['cache_write_prompt_tokens'] for r in rows),
             'reasoning_tokens': sum(r['usage']['reasoning_tokens'] for r in rows),
             'completion_tokens': sum(r['usage']['completion_tokens'] for r in rows)}
+    for condition, value in summary.items():
+        value['cohorts'] = {}
+        for cohort in sorted({r['cohort'] for r in results if r['phase'] == 'formal'}):
+            matched = [r for r in results if r['phase'] == 'formal' and r['condition'] == condition
+                       and r['cohort'] == cohort and (r['task_id'], r['repetition']) in comparable and r['cell'] in reviews]
+            value['cohorts'][cohort] = {
+                'matched_cells': len(matched), 'criteria': sum(len(r['criteria']) for r in matched),
+                'passed_criteria': sum(reviews[r['cell']]['passed_criteria'] for r in matched),
+                'accepted': sum(reviews[r['cell']]['accepted'] for r in matched),
+                'mean_paid_usd': statistics.mean(r['paid_usd'] for r in matched) if matched else None,
+                'median_seconds': statistics.median(r['seconds'] for r in matched) if matched else None}
     setup = {'source_index': {'seconds': 0, 'paid_usd': 0}, 'memory': {'seconds': 0, 'paid_usd': 0}}
     writes = {'windows': 0, 'candidates': 0, 'operations': Counter(), 'rejections': Counter()}
     for path in (root / 'ingest').glob('*.json'):
