@@ -1,0 +1,166 @@
+{
+  "schema": "elf.real_project_pilot/v1",
+  "project": "acg-box/ELF",
+  "baseline_commit": "ff1147c8fc28bf13a5ba4dfde91500e19bd1e6c8",
+  "frozen_at": "2026-10-13T06:43:20.497777+00:00",
+  "scope": "Retrospective replay of actual merged ELF project decisions, not a live multi-week customer trial. No synthetic project facts or private chat transcripts.",
+  "checkpoints": [
+    {
+      "checkpoint": "context",
+      "commit": "087721422704ccc339c0c551558e70c47ab2ec7a",
+      "title": "After PR 409: source context and native citations",
+      "new_source_ids": [
+        "1d27b3af12a9842ad759",
+        "b5970c343d6b882a1e83"
+      ],
+      "visible_source_ids": [
+        "1d27b3af12a9842ad759",
+        "b5970c343d6b882a1e83"
+      ]
+    },
+    {
+      "checkpoint": "recall",
+      "commit": "5e724589cda734276fb43867ace53612bcfb101a",
+      "title": "After PR 410: source-only recall and historical time",
+      "new_source_ids": [
+        "3abd87a928a3484be67c",
+        "44db0952338584a3b7f1"
+      ],
+      "visible_source_ids": [
+        "1d27b3af12a9842ad759",
+        "b5970c343d6b882a1e83",
+        "3abd87a928a3484be67c",
+        "44db0952338584a3b7f1"
+      ]
+    },
+    {
+      "checkpoint": "chain",
+      "commit": "ff1147c8fc28bf13a5ba4dfde91500e19bd1e6c8",
+      "title": "After PR 411: claim dependencies and agent integration",
+      "new_source_ids": [
+        "b25e396789b0bafffad6",
+        "d57853be7738604fb408",
+        "2c5ac234c51a789a998f"
+      ],
+      "visible_source_ids": [
+        "1d27b3af12a9842ad759",
+        "b5970c343d6b882a1e83",
+        "3abd87a928a3484be67c",
+        "44db0952338584a3b7f1",
+        "b25e396789b0bafffad6",
+        "d57853be7738604fb408",
+        "2c5ac234c51a789a998f"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "resume-context",
+      "checkpoint": "context",
+      "request": "你接手 ELF 的召回修复工作。根据当前项目记录，说明已交付的来源读取能力、仍缺失的关键材料，以及下一步最小改动范围。不要把已有分数当作全部问题已解决；请给出可追溯的依据。",
+      "acceptance": [
+        "Identify native evidence-pack/source reference support and its binding-only guarantee.",
+        "Identify the missing Cedar August 15 source in the current selected context and recommend independent original-source discovery.",
+        "Do not claim that supplemental recall or caller alias authority is already delivered at this checkpoint."
+      ]
+    },
+    {
+      "task_id": "update-recall",
+      "checkpoint": "recall",
+      "request": "上一阶段之后 ELF 已合并 PR 410。请给下一位工程师一份简短交接：哪些原先的召回和历史时间问题已经解决，哪些问题仍应继续处理？不要重复建议已经完成的工作，也不要宣称整体引用分数已经提升。",
+      "acceptance": [
+        "Recognize shipped original-text supplemental recall and historical graph status at requested as_of.",
+        "Explain caller-authorized aliases versus unknown/extracted aliases without automatic identity merging.",
+        "Report factual 32/32 and strict 30/32 with the two remaining Cobalt citation-bridge failures; do not claim native claim dependencies are delivered yet."
+      ]
+    },
+    {
+      "task_id": "update-agent-chain",
+      "checkpoint": "chain",
+      "request": "ELF 又合并了 PR 411。我们现在要接入一个新的 Agent 客户端，请说明跨文档结论应怎样提交和显示引用、旧调用是否必须修改、以及当前仍不能放心交给自动化决策的字段。",
+      "acceptance": [
+        "Explain optional backward depends_on and rendering the returned resolved_citations including premise sources.",
+        "Explain that requests without dependencies preserve the old shape and source-binding checks do not prove entailment.",
+        "Identify supported versus conflict/unknown/absent label errors as remaining limitations, with 7/10 all-four result rather than universal success."
+      ]
+    },
+    {
+      "task_id": "resume-latest",
+      "checkpoint": "chain",
+      "request": "换一个新会话接手 ELF：根据截至 PR 411 的项目资料，决定下一步该修什么、该保留什么架构、应怎样验证真实项目价值。请区分已经验证的结论和仍未验证的产品优势，不要继续扩大数据库或图谱范围。",
+      "acceptance": [
+        "Prioritize reliable structured-state interpretation and real project validation rather than claiming the small fixture proves general reliability.",
+        "Retain PostgreSQL plus Qdrant and 4096-dimensional embeddings; do not infer a need for a database migration.",
+        "Explain that the prior evaluation supplied all case sources, measured source reading and citation composition, and did not establish independent graph benefit or customer readiness."
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "no_elf",
+      "tools": [
+        "repo_search",
+        "repo_read"
+      ],
+      "description": "Fresh agent with a bounded frozen repository/history reader. No ELF retrieval or persistent derived memory."
+    },
+    {
+      "id": "source_only",
+      "tools": [
+        "repo_search",
+        "repo_read",
+        "source_search",
+        "source_read"
+      ],
+      "description": "Same repository/history plus a persistent index of exactly the same immutable sources. No derived memories."
+    },
+    {
+      "id": "full_elf",
+      "tools": [
+        "repo_search",
+        "repo_read",
+        "source_search",
+        "source_read",
+        "memory_recall"
+      ],
+      "description": "Same source access plus native persistent ELF extraction and recall across checkpoints."
+    }
+  ],
+  "controls": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "provider": "deepseek",
+    "reasoning": "max",
+    "max_output_tokens": 393216,
+    "embedding_model": "qwen/qwen3-embedding-8b",
+    "embedding_dimensions": 4096,
+    "source_byte_budget": 32768,
+    "maximum_model_rounds": 3,
+    "maximum_tool_calls": 6,
+    "independent_process_per_task": true,
+    "same_questions_and_source_access": true,
+    "future_checkpoint_sources_forbidden": true,
+    "condition_order": "Rotate conditions per task; no carryover conversation; full-ELF state persists only through chronological checkpoints.",
+    "paid_retries": false,
+    "stop_when_full_reservation_not_admitted": true
+  },
+  "metrics": [
+    "task_success_with_grounded_claims",
+    "stale_decision_errors",
+    "future_information_leaks",
+    "invalid_or_incomplete_answers",
+    "model_and_tool_calls",
+    "resume_wall_seconds",
+    "prompt_completion_cached_tokens",
+    "preparation_and_query_usd",
+    "preparation_wall_seconds",
+    "total_cost_amortized_over_1_5_20_tasks"
+  ],
+  "interpretation": [
+    "Primary memory-value contrast is full_elf versus source_only with the same original corpus.",
+    "No-ELF retains repository/history access; the experiment must not manufacture a win by withholding source facts.",
+    "Count ingestion, extraction, embeddings, indexing readiness and failed calls; do not report only cheap successful queries.",
+    "One run per cell is diagnostic, not statistical evidence. Do not pool old synthetic scores.",
+    "A complete comparison requires all three conditions for every evaluated task. A partial or blocked run has no product ranking.",
+    "No native execution, latency, cost saving, cross-session success or customer readiness is inferred from preparation-only checks."
+  ]
+}
