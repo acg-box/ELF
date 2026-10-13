@@ -9,6 +9,8 @@ import tempfile
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from benchmark_pilot.corpus import load, spans
+from benchmark_pilot.corpus import save
+from benchmark_pilot.export import export
 from benchmark_pilot.tools import SourceTools
 
 
@@ -72,6 +74,36 @@ class ProjectPilotTests(unittest.TestCase):
             (root / 'sources.jsonl.gz').write_bytes(original + b'changed')
             with self.assertRaises(ValueError):
                 load(root)
+
+    def test_public_export_excludes_private_source_questions_answers_and_paths(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / 'private'
+            fixture = root / 'fixture'
+            canary = 'PRIVATE_PROJECT_CANARY'
+            source = {**self.source, 'id': canary, 'title': canary, 'path': canary, 'text': canary,
+                      'sha256': hashlib.sha256(canary.encode()).hexdigest()}
+            fixture.mkdir(parents=True)
+            (fixture / 'sources.jsonl.gz').write_bytes(gzip.compress((json.dumps(source) + '\n').encode(), mtime=0))
+            save(fixture / 'checkpoints.json', [])
+            save(fixture / 'tasks.json', [{'id': canary, 'phase': 'formal', 'question': canary}])
+            save(fixture / 'oracle.json', [{'id': canary, 'criteria': [{'obligation': canary, 'patterns': [canary]}]}])
+            save(fixture / 'protocol.json', {'conditions': ['no_elf'], 'formal_repetitions': 1, 'private_annotation': canary})
+            save(fixture / 'freeze.json', {'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in fixture.iterdir()}})
+            save(root / 'budget-ledger.json', {'prior_paid_usd': 0, 'requests': []})
+            cell_id = canary + '--no_elf--1'
+            save(root / 'cases' / cell_id / 'result.json', {'cell': cell_id, 'task_id': canary, 'phase': 'formal',
+                'condition': 'no_elf', 'repetition': 1, 'status': 'completed', 'seconds': 1, 'tool_calls': 1,
+                'evidence_bytes': 10, 'answer': {'text': canary, 'claims': []},
+                'usage_before': {'requests': 0, 'paid_usd': 0}, 'usage_after': {'requests': 0, 'paid_usd': 0},
+                'stage': 0, 'pid': 100})
+            save(root / 'cases' / cell_id / 'trace.json', [{'tools': [{'result': {'source_id': canary, 'text': canary}}]}])
+            save(root / 'review.json', {cell_id: {'accepted': True, 'passed_criteria': 1, 'flags': [], 'private_notes': canary}})
+            save(root / 'native-stage-0.json', {'stage': 0, 'sources_verified': 1, 'vectors': {}, 'notes': [canary]})
+            destination = Path(directory) / 'public'
+            export(root, destination)
+            self.assertTrue((destination / 'manifest.json').exists())
+            for path in destination.iterdir():
+                self.assertNotIn(canary, path.read_text(), path.name)
 
 
 if __name__ == '__main__':

@@ -57,10 +57,16 @@ source binding only proves identity and accessible bytes. Review subject, time,
 scope, and entailment separately. Report pattern checks, native bindings, and
 semantic review as distinct measurements.
 
-Use the provider's full output allowance and maximum reasoning. Reserve the
+Use the provider's full output allowance and a daily economical reasoning profile.
+The frozen trial uses GPT-6 Luna with medium reasoning and a 128000-token output
+allowance. An interrupted maximum-reasoning preparation probe remains separate
+from comparative measurements; its charges still count toward the same ceiling.
+Reserve the
 worst-case call cost before dispatch. Charge indexing, extraction, query planning,
 answers, and failures to the same new $10 ledger. The initial calibration tranche
-is $1. A prior experiment's ledger is preserved and is not reset or refunded.
+is $1. The extractor retains its native maximum of three JSON parse attempts;
+each attempt is charged. The host does not repeat recorded cells. A prior
+experiment's ledger is preserved and is not reset or refunded.
 
 Two repetitions of eight retrospective tasks can reveal specific workflow
 failures and cost differences. They cannot establish general superiority,

@@ -44,7 +44,7 @@ def reservation(size, kind, output, chat_prompt_price=0.3, chat_completion_price
     return ((size + 8192) * (chat_prompt_price if kind == "chat" else 0.1) + output * chat_completion_price) / 1_000_000
 
 
-def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2):
+def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, chat_model=CHAT_MODEL, chat_provider="deepseek", omit_chat_temperature=False):
     body = dict(body)
     streaming = body.get("stream") is True
     body["stream"] = False
@@ -62,8 +62,10 @@ def prepare_request(body, kind, embedding_provider="deepinfra", embedding_dimens
             output = chat_max_tokens
         if output <= 0:
             raise ValueError("invalid_output_limit")
-        body.update(model=CHAT_MODEL, max_tokens=output, reasoning={"effort": reasoning_effort},
-            provider={"only": ["deepseek"], "allow_fallbacks": False, "max_price": {"prompt": chat_prompt_price, "completion": chat_completion_price}})
+        body.update(model=chat_model, max_tokens=output, reasoning={"effort": reasoning_effort},
+            provider={"only": [chat_provider], "allow_fallbacks": False, "max_price": {"prompt": chat_prompt_price, "completion": chat_completion_price}})
+        if omit_chat_temperature:
+            body.pop("temperature", None)
         body.pop("max_completion_tokens", None)
         body.pop("reasoning_effort", None)
     else:
@@ -133,7 +135,7 @@ def embedding_retry_delay(kind, status, attempt, retries, retry_after):
     return 2 ** (attempt + 1)
 
 
-def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, receipt_dir=None, request_max_bytes=262144, maximum_profile_concurrency=1):
+def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider="deepinfra", embedding_dimensions=None, chat_max_tokens=8192, request_timeout=90, reasoning_effort="low", force_chat_max_tokens=False, chat_prompt_price=0.3, chat_completion_price=1.2, receipt_dir=None, request_max_bytes=262144, maximum_profile_concurrency=1, chat_model=CHAT_MODEL, chat_provider="deepseek", omit_chat_temperature=False):
     opener = urllib.request.build_opener(NoRedirect)
     maximum_profile_lock = threading.BoundedSemaphore(maximum_profile_concurrency)
     class Handler(BaseHTTPRequestHandler):
@@ -161,7 +163,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 return self.error(401, "unauthorized")
             if self.path != "/v1/models":
                 return self.error(404, "route_not_allowed")
-            self.reply(200, {"object": "list", "data": [{"id": CHAT_MODEL,
+            self.reply(200, {"object": "list", "data": [{"id": chat_model,
                 "object": "model", "created": 0, "owned_by": "benchmark-route"}]})
 
         def do_POST(self):
@@ -179,7 +181,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 size = int(self.headers.get("Content-Length", "0"))
                 if size <= 0 or size > request_max_bytes:
                     return self.error(413, "input_limit")
-                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider, embedding_dimensions, chat_max_tokens, reasoning_effort, force_chat_max_tokens, chat_prompt_price, chat_completion_price)
+                body, streaming, output = prepare_request(json.loads(self.rfile.read(size)), kind, embedding_provider, embedding_dimensions, chat_max_tokens, reasoning_effort, force_chat_max_tokens, chat_prompt_price, chat_completion_price, chat_model, chat_provider, omit_chat_temperature)
                 data = json.dumps(body).encode()
             except (ValueError, TypeError) as error:
                 return self.error(400, str(error))
@@ -195,7 +197,7 @@ def handler_for(ledger, key, token, embedding_429_retries=0, embedding_provider=
                 if first_ordinal is None:
                     first_ordinal = row["ordinal"]
                 attempt_metadata = {"attempt": attempt + 1, "request_ordinal": first_ordinal,
-                    "requested_provider": embedding_provider if kind == "embedding" else "deepseek"}
+                    "requested_provider": embedding_provider if kind == "embedding" else chat_provider}
                 if kind == "chat":
                     attempt_metadata.update(requested_max_tokens=output, reasoning_effort=body["reasoning"]["effort"],
                         max_price=body["provider"]["max_price"])
@@ -258,13 +260,16 @@ def main():
                         help="Fix the shared Qwen embedding dimension for clients without a dimension setting")
     parser.add_argument("--embedding-429-retries", type=int, choices=range(4), default=0)
     parser.add_argument("--chat-max-tokens", type=int, default=8192)
+    parser.add_argument("--chat-model", default=CHAT_MODEL)
+    parser.add_argument("--chat-provider", default="deepseek")
+    parser.add_argument("--omit-chat-temperature", action="store_true", help="Omit sampling temperature for models that do not support it")
     parser.add_argument("--chat-prompt-price", type=float, default=0.3, help="Enforced provider USD per million input tokens")
     parser.add_argument("--chat-completion-price", type=float, default=1.2, help="Enforced provider USD per million output tokens")
     parser.add_argument("--request-timeout", type=int, default=90)
     parser.add_argument("--request-max-bytes", type=int, default=262144, help="Maximum incoming JSON bytes; actual input and full output still require a monetary reservation")
     parser.add_argument("--force-chat-max-tokens", action="store_true", help="Override native internal output limits for a provider-maximum capability profile")
     parser.add_argument("--maximum-profile-concurrency", type=int, choices=(1, 2), default=1, help="Bound provider-maximum requests; every concurrent call reserves its full cost")
-    parser.add_argument("--reasoning-effort", choices=("low", "high", "max"), default="low")
+    parser.add_argument("--reasoning-effort", choices=("none", "low", "medium", "high", "xhigh", "max"), default="low")
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     if args.embedding_dimensions is not None and not 1 <= args.embedding_dimensions <= 4096:
@@ -289,7 +294,7 @@ def main():
         ledger = Ledger(path, args.ceiling, args.tranche)
         ledger.save()
         token = secrets.token_hex(24)
-        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price, args.receipt_dir, args.request_max_bytes, args.maximum_profile_concurrency))
+        server = ThreadingHTTPServer(("0.0.0.0", 0), handler_for(ledger, key, token, args.embedding_429_retries, args.embedding_provider, args.embedding_dimensions, args.chat_max_tokens, args.request_timeout, args.reasoning_effort, args.force_chat_max_tokens, args.chat_prompt_price, args.chat_completion_price, args.receipt_dir, args.request_max_bytes, args.maximum_profile_concurrency, args.chat_model, args.chat_provider, args.omit_chat_temperature))
         server.daemon_threads = False
         thread = threading.Thread(target=server.serve_forever, daemon=True)
         thread.start()
@@ -305,6 +310,8 @@ def main():
             "force_chat_max_tokens": args.force_chat_max_tokens,
             "maximum_profile_concurrency": args.maximum_profile_concurrency,
             "chat_prompt_price": args.chat_prompt_price, "chat_completion_price": args.chat_completion_price,
+            "chat_model": args.chat_model, "chat_provider": args.chat_provider,
+            "omit_chat_temperature": args.omit_chat_temperature,
             "chat_max_tokens": args.chat_max_tokens, "request_timeout": args.request_timeout, "reasoning_effort": args.reasoning_effort,
             "request_max_bytes": args.request_max_bytes,
             "embedding_provider": args.embedding_provider, "embedding_dimensions": args.embedding_dimensions,

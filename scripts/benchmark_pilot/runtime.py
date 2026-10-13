@@ -102,6 +102,7 @@ class Runtime:
 
     def start(self):
         self.stores()
+        protocol = json.loads((self.root / 'fixture' / 'protocol.json').read_text())
         tokenizer = self.root / 'tokenizer.json'
         if not tokenizer.exists():
             raise ValueError('Supply the verified GPT-2 tokenizer.json in the run directory')
@@ -115,7 +116,7 @@ class Runtime:
         config = config.replace('http://127.0.0.1:6334', f"http://127.0.0.1:{self.state['qdrant_port']}")
         config = config.replace('tokenizer_repo = "REPLACE_ME"', 'tokenizer_repo = ' + json.dumps(str(tokenizer)))
         for name, model, endpoint in [('embedding', 'qwen/qwen3-embedding-8b', '/embeddings'),
-                                      ('llm_extractor', 'deepseek/deepseek-v4.1-flash', '/chat/completions'),
+                                      ('llm_extractor', protocol['model'], '/chat/completions'),
                                       ('rerank', 'local-token-overlap', '/rerank')]:
             values = {'api_base': os.environ['LITELLM_BASE_URL'], 'api_key': os.environ['LITELLM_API_KEY'],
                       'model': model, 'provider_id': 'local' if name == 'rerank' else 'openai',

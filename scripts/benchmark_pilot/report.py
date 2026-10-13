@@ -28,6 +28,9 @@ def measurements(root, fixture):
         requests = ledger['requests'][lower:upper]
         usage = {k: sum(r.get('usage', {}).get(k, 0) or 0 for r in requests)
                  for k in ('prompt_tokens', 'completion_tokens', 'total_tokens')}
+        usage['cached_prompt_tokens'] = sum((r.get('usage', {}).get('prompt_tokens_details') or {}).get('cached_tokens', 0) or 0 for r in requests)
+        usage['cache_write_prompt_tokens'] = sum((r.get('usage', {}).get('prompt_tokens_details') or {}).get('cache_write_tokens', 0) or 0 for r in requests)
+        usage['reasoning_tokens'] = sum((r.get('usage', {}).get('completion_tokens_details') or {}).get('reasoning_tokens', 0) or 0 for r in requests)
         binding = row.get('claim_bindings', {}).get('claims', [])
         results.append({k: row[k] for k in ('cell', 'task_id', 'phase', 'condition', 'repetition', 'status', 'seconds', 'tool_calls', 'evidence_bytes')} | {
             'criteria': criteria, 'text_pattern_coverage': sum(c['text_patterns_present'] for c in criteria) / len(criteria),
@@ -47,11 +50,16 @@ def measurements(root, fixture):
             'text_pattern_coverage': statistics.mean(r['text_pattern_coverage'] for r in rows) if rows else None,
             'native_binding_pass': sum(r['native_binding'] and r['all_references_seen'] for r in rows),
             'reviewed': len(reviewed), 'semantic_acceptance': sum(r['accepted'] for r in reviewed),
+            'reviewed_criteria': sum(len(r['criteria']) for r in rows if r['cell'] in reviews),
+            'passed_criteria': sum(r['passed_criteria'] for r in reviewed),
             'median_seconds': statistics.median(times) if rows else None,
             'p95_seconds': times[math.ceil(len(times) * .95) - 1] if rows else None,
             'tool_calls': sum(r['tool_calls'] for r in rows),
             'paid_usd': sum(r['paid_usd'] for r in rows),
             'prompt_tokens': sum(r['usage']['prompt_tokens'] for r in rows),
+            'cached_prompt_tokens': sum(r['usage']['cached_prompt_tokens'] for r in rows),
+            'cache_write_prompt_tokens': sum(r['usage']['cache_write_prompt_tokens'] for r in rows),
+            'reasoning_tokens': sum(r['usage']['reasoning_tokens'] for r in rows),
             'completion_tokens': sum(r['usage']['completion_tokens'] for r in rows)}
     setup = {'source_index': {'seconds': 0, 'paid_usd': 0}, 'memory': {'seconds': 0, 'paid_usd': 0}}
     for path in (root / 'ingest').glob('*.json'):
@@ -67,8 +75,12 @@ def measurements(root, fixture):
         mean = value['paid_usd'] / value['measured'] if value['measured'] else None
         value['amortized_usd_per_task'] = {str(n): prep / n + mean if mean is not None else None for n in (1, 5, 20)}
     paid, exposure = totals(ledger)
+    exploration_path = root / 'exploration.json'
+    exploration_count = json.loads(exploration_path.read_text())['prior_request_count'] if exploration_path.exists() else 0
+    exploration_paid, exploration_exposure = totals({'requests': ledger['requests'][:exploration_count]})
     return {'schema': 'elf.real_project_measurements/v1', 'summary': summary, 'cells': results,
             'preparation': setup, 'new_budget': {'paid_usd': paid, 'exposure_usd': exposure, 'ceiling_usd': 10},
+            'exploration': {'requests': exploration_count, 'paid_usd': exploration_paid, 'exposure_usd': exploration_exposure},
             'review_boundary': 'Text-pattern coverage is diagnostic only. Semantic reviews are explicit, source-based assistant assessments, not independent judges. Native binding does not prove entailment.'}
 
 

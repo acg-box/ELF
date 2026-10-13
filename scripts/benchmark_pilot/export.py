@@ -57,7 +57,8 @@ def export(root, destination):
                 'max_tool_calls', 'max_evidence_bytes', 'max_tool_result_bytes', 'model', 'provider',
                 'reasoning', 'max_output_tokens', 'embedding_model', 'embedding_dimensions',
                 'embedding_provider', 'reranker', 'extraction_window_bytes', 'memory_notes_per_event',
-                'budget_usd', 'calibration_tranche_usd', 'paid_retries', 'ranking_or_prompt_tuning_after_formal_start'}
+                'budget_usd', 'calibration_tranche_usd', 'paid_retries', 'ranking_or_prompt_tuning_after_formal_start',
+                'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
     save(destination / 'protocol.json', {k: v for k, v in json.loads((fixture / 'protocol.json').read_text()).items() if k in controls})
     native = []
     for path in sorted(root.glob('native-stage-*.json')):
@@ -70,5 +71,6 @@ def export(root, destination):
         'files': [{'path_sha256': digest(str(p.relative_to(root)).encode()), 'content_sha256': digest(p.read_bytes())} for p in sorted(root.rglob('*.json'))
                   if 'private-' not in p.name and p.name not in ('runtime.json',)
                   and not p.name.endswith('.attempt.json') and p.is_file()]})
+    (destination / 'verify.py').write_bytes(Path(__file__).with_name('verify_export.py').read_bytes())
     save(destination / 'manifest.json', {'files': {p.name: digest(p.read_bytes()) for p in sorted(destination.iterdir()) if p.is_file()}})
     print(json.dumps({'exported_cells': len(public['cells']), 'destination': str(destination)}))
