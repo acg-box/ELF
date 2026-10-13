@@ -119,17 +119,35 @@ pub(super) struct ExtractedNote {
 	pub confidence: Option<f32>,
 	pub ttl_days: Option<i64>,
 	pub scope_suggestion: Option<String>,
-	/// One or two verbatim source quotes that support this note.
+	/// Verbatim source quotes that support this note, within the runtime count and byte limits.
 	#[schemars(required)]
-	pub evidence: Option<Vec<EvidenceQuote>>,
+	pub evidence: Option<Vec<ExtractedEvidence>>,
 	pub reason: Option<String>,
 }
 
 #[derive(Clone, Debug, Deserialize, JsonSchema, Serialize)]
 #[serde(deny_unknown_fields)]
 pub(super) struct EvidenceQuote {
+	/// Server-resolved span within the extraction message. Never model controlled.
+	#[serde(skip)]
+	pub position: Option<TextPositionSelector>,
 	pub message_index: usize,
 	pub quote: String,
+}
+
+#[derive(Clone, Debug, Deserialize, JsonSchema, Serialize)]
+#[serde(untagged)]
+pub(super) enum ExtractedEvidence {
+	Selection(EvidenceSelection),
+	Quote(EvidenceQuote),
+}
+
+#[derive(Clone, Debug, Deserialize, JsonSchema, Serialize)]
+#[serde(deny_unknown_fields)]
+pub(super) struct EvidenceSelection {
+	pub message_index: usize,
+	/// Select an evidence_spans entry supplied with this message. Never invent a span ID.
+	pub span_id: usize,
 }
 
 pub(super) struct NoteProcessingData {
@@ -163,7 +181,17 @@ impl NoteProcessingData {
 			reason: note.reason.clone(),
 			ttl_days: note.ttl_days,
 			scope: req.scope.clone().or(note.scope_suggestion.clone()).unwrap_or_default(),
-			evidence: note.evidence.clone().unwrap_or_default(),
+			evidence: note
+				.evidence
+				.as_deref()
+				.unwrap_or_default()
+				.iter()
+				.map(|value| match value {
+					ExtractedEvidence::Quote(quote) => quote.clone(),
+					ExtractedEvidence::Selection(_) =>
+						unreachable!("Selections resolve before note processing"),
+				})
+				.collect(),
 			structured_present,
 			graph_present,
 		}

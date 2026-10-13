@@ -1,8 +1,14 @@
 use std::slice;
 
-use crate::add_event::{
-	source_ref,
-	types::{EventMessage, EvidenceQuote},
+use uuid::Uuid;
+
+use crate::{
+	EventSourceDocument,
+	add_event::{
+		source_ref,
+		types::{EventMessage, EvidenceQuote},
+	},
+	docs::TextPositionSelector,
 };
 use elf_domain::writegate::{self, WritePolicy, WriteSpan};
 
@@ -36,7 +42,11 @@ fn evidence_retains_original_identity_and_the_correct_transform_audit() {
 	let refs = source_ref::evidence_sources(
 		&messages,
 		&["untouched".to_string(), transformed.transformed.clone()],
-		&[EvidenceQuote { message_index: 1, quote: transformed.transformed.clone() }],
+		&[EvidenceQuote {
+			position: None,
+			message_index: 1,
+			quote: transformed.transformed.clone(),
+		}],
 		Some(slice::from_ref(&transformed.audit)),
 	)
 	.expect("Bind source metadata");
@@ -56,4 +66,34 @@ fn evidence_retains_original_identity_and_the_correct_transform_audit() {
 		serde_json::to_value(transformed.audit).expect("Serialize audit")
 	);
 	assert_eq!(messages[1].content, raw);
+}
+
+#[test]
+fn selected_occurrence_keeps_its_original_byte_position() {
+	let message = EventMessage {
+		role: "user".into(),
+		content: "same\nsame\n".into(),
+		ts: None,
+		msg_id: None,
+		write_policy: None,
+		source_document: Some(EventSourceDocument {
+			doc_id: Uuid::nil(),
+			content_hash: "hash".into(),
+			position: TextPositionSelector { start: 100, end: 110 },
+		}),
+	};
+	let evidence = EvidenceQuote {
+		message_index: 0,
+		quote: "same\n".into(),
+		position: Some(TextPositionSelector { start: 5, end: 10 }),
+	};
+	let refs =
+		source_ref::evidence_sources(&[message], &["same\nsame\n".into()], &[evidence], None)
+			.expect("Exact repeated occurrence");
+
+	assert_eq!(
+		refs[0]["source"]["document"]["locator"]["position"],
+		serde_json::json!({"start":105,"end":110})
+	);
+	assert_eq!(refs[0]["source"]["extraction_position"], serde_json::json!({"start":5,"end":10}));
 }

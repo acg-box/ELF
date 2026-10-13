@@ -1,0 +1,3454 @@
+{
+  "schema": "elf.real_project_measurements/v1",
+  "summary": {
+    "no_elf": {
+      "planned": 16,
+      "measured": 16,
+      "completed": 16,
+      "text_pattern_coverage": 0.671875,
+      "native_binding_pass": 12,
+      "reviewed": 16,
+      "semantic_acceptance": 4,
+      "reviewed_criteria": 64,
+      "passed_criteria": 40,
+      "answered_criteria": 64,
+      "answered_passed_criteria": 40,
+      "matched_content_cells": 16,
+      "matched_criteria": 64,
+      "matched_passed_criteria": 40,
+      "matched_accepted": 4,
+      "matched_native_binding_pass": 12,
+      "matched_paid_usd": 0.0662489949999997,
+      "matched_median_seconds": 45.43286520789843,
+      "median_seconds": 45.43286520789843,
+      "p95_seconds": 59.275763750076294,
+      "tool_calls": 175,
+      "tool_counts": {
+        "search_files": 54,
+        "read_source": 99,
+        "elf_evidence_check": 15,
+        "list_sources": 7
+      },
+      "cells_with_budget_loss": 11,
+      "memory_tool_cells": 0,
+      "memory_tool_completed_cells": 0,
+      "memory_evidence_cells": 0,
+      "citation_check_cells": 12,
+      "citation_repair_cells": 0,
+      "source_search_cells": 0,
+      "paid_usd": 0.0662489949999997,
+      "cost_exposure_usd": 0.066248995,
+      "prompt_tokens": 1143326,
+      "cached_prompt_tokens": 864922,
+      "cache_write_prompt_tokens": 275995,
+      "reasoning_tokens": 17489,
+      "completion_tokens": 45719,
+      "cohorts": {
+        "new": {
+          "matched_cells": 8,
+          "criteria": 32,
+          "passed_criteria": 23,
+          "accepted": 3,
+          "mean_paid_usd": 0.004285718750000014,
+          "median_seconds": 45.79668600001605
+        },
+        "regression": {
+          "matched_cells": 8,
+          "criteria": 32,
+          "passed_criteria": 17,
+          "accepted": 1,
+          "mean_paid_usd": 0.003995405624999948,
+          "median_seconds": 45.43286520789843
+        }
+      },
+      "amortized_usd_per_task": {
+        "1": 0.004140562187499981,
+        "5": 0.004140562187499981,
+        "20": 0.004140562187499981
+      }
+    },
+    "source_only": {
+      "planned": 16,
+      "measured": 16,
+      "completed": 14,
+      "text_pattern_coverage": 0.515625,
+      "native_binding_pass": 10,
+      "reviewed": 16,
+      "semantic_acceptance": 3,
+      "reviewed_criteria": 64,
+      "passed_criteria": 32,
+      "answered_criteria": 56,
+      "answered_passed_criteria": 28,
+      "matched_content_cells": 16,
+      "matched_criteria": 64,
+      "matched_passed_criteria": 32,
+      "matched_accepted": 3,
+      "matched_native_binding_pass": 10,
+      "matched_paid_usd": 0.07917062000000002,
+      "matched_median_seconds": 58.49886529147625,
+      "median_seconds": 58.49886529147625,
+      "p95_seconds": 82.27422487502918,
+      "tool_calls": 160,
+      "tool_counts": {
+        "elf_docs_search_l0": 76,
+        "elf_docs_excerpts_get": 50,
+        "elf_evidence_check": 19,
+        "list_sources": 9,
+        "search_files": 5,
+        "read_source": 1
+      },
+      "cells_with_budget_loss": 11,
+      "memory_tool_cells": 0,
+      "memory_tool_completed_cells": 0,
+      "memory_evidence_cells": 0,
+      "citation_check_cells": 8,
+      "citation_repair_cells": 1,
+      "source_search_cells": 16,
+      "paid_usd": 0.07917062000000002,
+      "cost_exposure_usd": 0.07917062,
+      "prompt_tokens": 1350762,
+      "cached_prompt_tokens": 970289,
+      "cache_write_prompt_tokens": 376676,
+      "reasoning_tokens": 17953,
+      "completion_tokens": 44247,
+      "cohorts": {
+        "new": {
+          "matched_cells": 8,
+          "criteria": 32,
+          "passed_criteria": 17,
+          "accepted": 3,
+          "mean_paid_usd": 0.004469656875000005,
+          "median_seconds": 55.266447749512736
+        },
+        "regression": {
+          "matched_cells": 8,
+          "criteria": 32,
+          "passed_criteria": 15,
+          "accepted": 0,
+          "mean_paid_usd": 0.005426670624999998,
+          "median_seconds": 59.62682472902816
+        }
+      },
+      "amortized_usd_per_task": {
+        "1": 0.005280923750000211,
+        "5": 0.005014715750000043,
+        "20": 0.004964801750000012
+      }
+    },
+    "full_elf": {
+      "planned": 16,
+      "measured": 16,
+      "completed": 15,
+      "text_pattern_coverage": 0.671875,
+      "native_binding_pass": 14,
+      "reviewed": 16,
+      "semantic_acceptance": 3,
+      "reviewed_criteria": 64,
+      "passed_criteria": 41,
+      "answered_criteria": 60,
+      "answered_passed_criteria": 39,
+      "matched_content_cells": 16,
+      "matched_criteria": 64,
+      "matched_passed_criteria": 41,
+      "matched_accepted": 3,
+      "matched_native_binding_pass": 14,
+      "matched_paid_usd": 0.0787502100000006,
+      "matched_median_seconds": 52.57021310401615,
+      "median_seconds": 52.57021310401615,
+      "p95_seconds": 90.50547600002028,
+      "tool_calls": 141,
+      "tool_counts": {
+        "elf_searches_create": 17,
+        "elf_evidence_pack": 16,
+        "list_sources": 10,
+        "search_files": 10,
+        "read_source": 43,
+        "elf_evidence_check": 13,
+        "elf_docs_excerpts_get": 7,
+        "elf_docs_search_l0": 25
+      },
+      "cells_with_budget_loss": 10,
+      "memory_tool_cells": 16,
+      "memory_tool_completed_cells": 16,
+      "memory_evidence_cells": 16,
+      "citation_check_cells": 9,
+      "citation_repair_cells": 0,
+      "source_search_cells": 9,
+      "paid_usd": 0.0787502100000006,
+      "cost_exposure_usd": 0.07875021,
+      "prompt_tokens": 1128290,
+      "cached_prompt_tokens": 759360,
+      "cache_write_prompt_tokens": 363444,
+      "reasoning_tokens": 21822,
+      "completion_tokens": 50519,
+      "cohorts": {
+        "new": {
+          "matched_cells": 8,
+          "criteria": 32,
+          "passed_criteria": 23,
+          "accepted": 2,
+          "mean_paid_usd": 0.00444006250000005,
+          "median_seconds": 50.491303833492566
+        },
+        "regression": {
+          "matched_cells": 8,
+          "criteria": 32,
+          "passed_criteria": 18,
+          "accepted": 1,
+          "mean_paid_usd": 0.005403713750000025,
+          "median_seconds": 56.544219208008144
+        }
+      },
+      "amortized_usd_per_task": {
+        "1": 0.028345953124999976,
+        "5": 0.009606701125000025,
+        "20": 0.006093091375000035
+      }
+    }
+  },
+  "preparation": {
+    "source_index": {
+      "seconds": 125.19503458379768,
+      "paid_usd": 0.00033276000000020955
+    },
+    "memory": {
+      "seconds": 439.56225350196473,
+      "paid_usd": 0.02309130499999973
+    }
+  },
+  "new_budget": {
+    "paid_usd": 0.7282775060000007,
+    "exposure_usd": 0.7987623059999996,
+    "ceiling_usd": 10
+  },
+  "exploration": {
+    "requests": 500,
+    "paid_usd": 0.4677703560000004,
+    "exposure_usd": 0.5382551560000002
+  },
+  "native_writes": {
+    "windows": 32,
+    "candidates": 79,
+    "operations": {
+      "REJECTED": 34,
+      "ADD": 45
+    },
+    "rejections": {
+      "REJECT_TOO_LONG": 33,
+      "REJECT_EVIDENCE_QUOTE_COUNT": 1
+    }
+  },
+  "native_recall_diagnostic": null,
+  "review_boundary": "Text-pattern coverage is diagnostic only. Semantic reviews are explicit, source-based assistant assessments, not independent judges. Native binding does not prove entailment.",
+  "cells": [
+    {
+      "phase": "calibration",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 22.084948334028013,
+      "tool_calls": 3,
+      "evidence_bytes": 16192,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.6666666666666666,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 16333,
+        "completion_tokens": 1101,
+        "total_tokens": 17434,
+        "cached_prompt_tokens": 9226,
+        "cache_write_prompt_tokens": 6813,
+        "reasoning_tokens": 248
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 5,
+      "cost_exposure_usd": 0.001522165,
+      "paid_usd": 0.0015221650000000198,
+      "task_id": "task-01",
+      "cell": "task-01--full_elf--1",
+      "required_criteria": 3,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79140,
+      "request_interval": [
+        541,
+        546
+      ],
+      "inspected_source_ids": [
+        "source-004"
+      ]
+    },
+    {
+      "phase": "calibration",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 19.20220620802138,
+      "tool_calls": 5,
+      "evidence_bytes": 19279,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.6666666666666666,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 30880,
+        "completion_tokens": 1241,
+        "total_tokens": 32121,
+        "cached_prompt_tokens": 22095,
+        "cache_write_prompt_tokens": 8641,
+        "reasoning_tokens": 258
+      },
+      "tool_counts": {
+        "search_files": 1,
+        "read_source": 2,
+        "elf_evidence_check": 2
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 2,
+      "failed_citation_checks": 1,
+      "provider_requests": 5,
+      "cost_exposure_usd": 0.001935975,
+      "paid_usd": 0.0019359749999999787,
+      "task_id": "task-01",
+      "cell": "task-01--no_elf--1",
+      "required_criteria": 3,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79125,
+      "request_interval": [
+        529,
+        534
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "calibration",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 23.461260915966704,
+      "tool_calls": 6,
+      "evidence_bytes": 27541,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.6666666666666666,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 51499,
+        "completion_tokens": 1253,
+        "total_tokens": 52752,
+        "cached_prompt_tokens": 38427,
+        "cache_write_prompt_tokens": 12905,
+        "reasoning_tokens": 276
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 1,
+        "list_sources": 1,
+        "search_files": 1,
+        "read_source": 2,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.002639155,
+      "paid_usd": 0.0026391550000000596,
+      "task_id": "task-01",
+      "cell": "task-01--source_only--1",
+      "required_criteria": 3,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79133,
+      "request_interval": [
+        534,
+        541
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "calibration",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 33.90196266700514,
+      "tool_calls": 6,
+      "evidence_bytes": 22469,
+      "cohort": "regression",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 32825,
+        "completion_tokens": 2245,
+        "total_tokens": 35070,
+        "cached_prompt_tokens": 23812,
+        "cache_write_prompt_tokens": 8714,
+        "reasoning_tokens": 899
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "list_sources": 1,
+        "read_source": 2,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.00247824,
+      "paid_usd": 0.0024782400000000204,
+      "task_id": "task-02",
+      "cell": "task-02--full_elf--1",
+      "required_criteria": 3,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 3,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79154,
+      "request_interval": [
+        552,
+        559
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002"
+      ]
+    },
+    {
+      "phase": "calibration",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 20.78141324990429,
+      "tool_calls": 5,
+      "evidence_bytes": 28867,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.6666666666666666,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 28496,
+        "completion_tokens": 1477,
+        "total_tokens": 29973,
+        "cached_prompt_tokens": 17554,
+        "cache_write_prompt_tokens": 10801,
+        "reasoning_tokens": 351
+      },
+      "tool_counts": {
+        "search_files": 1,
+        "read_source": 3,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 4,
+      "cost_exposure_usd": 0.002278265,
+      "paid_usd": 0.0022782650000000015,
+      "task_id": "task-02",
+      "cell": "task-02--no_elf--1",
+      "required_criteria": 3,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 3,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79169,
+      "request_interval": [
+        559,
+        563
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002"
+      ]
+    },
+    {
+      "phase": "calibration",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 23.480240709031932,
+      "tool_calls": 4,
+      "evidence_bytes": 22021,
+      "cohort": "regression",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 27373,
+        "completion_tokens": 1284,
+        "total_tokens": 28657,
+        "cached_prompt_tokens": 17366,
+        "cache_write_prompt_tokens": 9832,
+        "reasoning_tokens": 264
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 2,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 6,
+      "cost_exposure_usd": 0.00205946,
+      "paid_usd": 0.002059460000000013,
+      "task_id": "task-02",
+      "cell": "task-02--source_only--1",
+      "required_criteria": 3,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 3,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79149,
+      "request_interval": [
+        546,
+        552
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 53.01327054097783,
+      "tool_calls": 7,
+      "evidence_bytes": 32608,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 68004,
+        "completion_tokens": 4122,
+        "total_tokens": 72126,
+        "cached_prompt_tokens": 43953,
+        "cache_write_prompt_tokens": 23734,
+        "reasoning_tokens": 1622
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "list_sources": 1,
+        "search_files": 1,
+        "read_source": 1,
+        "elf_evidence_check": 2
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 2,
+      "failed_citation_checks": 0,
+      "provider_requests": 9,
+      "cost_exposure_usd": 0.00549637,
+      "paid_usd": 0.005496370000000028,
+      "task_id": "task-08",
+      "cell": "task-08--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 1,
+      "reader_pid": 79762,
+      "request_interval": [
+        729,
+        738
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 28.940368333947845,
+      "tool_calls": 4,
+      "evidence_bytes": 28954,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 29968,
+        "completion_tokens": 1712,
+        "total_tokens": 31680,
+        "cached_prompt_tokens": 20979,
+        "cache_write_prompt_tokens": 8694,
+        "reasoning_tokens": 607
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 6,
+      "cost_exposure_usd": 0.0021806,
+      "paid_usd": 0.002180600000000088,
+      "task_id": "task-08",
+      "cell": "task-08--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 4,
+        "flags": [
+          "unbound_citation"
+        ]
+      },
+      "stage": 1,
+      "reader_pid": 79823,
+      "request_interval": [
+        764,
+        770
+      ],
+      "inspected_source_ids": [
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 33.10044425004162,
+      "tool_calls": 7,
+      "evidence_bytes": 28213,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 45616,
+        "completion_tokens": 2281,
+        "total_tokens": 47897,
+        "cached_prompt_tokens": 34521,
+        "cache_write_prompt_tokens": 10948,
+        "reasoning_tokens": 494
+      },
+      "tool_counts": {
+        "search_files": 2,
+        "read_source": 4,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 6,
+      "cost_exposure_usd": 0.00286891,
+      "paid_usd": 0.0028689100000000023,
+      "task_id": "task-08",
+      "cell": "task-08--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 1,
+      "reader_pid": 79778,
+      "request_interval": [
+        738,
+        744
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 39.7489370420808,
+      "tool_calls": 7,
+      "evidence_bytes": 21516,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 56893,
+        "completion_tokens": 2405,
+        "total_tokens": 59298,
+        "cached_prompt_tokens": 40763,
+        "cache_write_prompt_tokens": 15977,
+        "reasoning_tokens": 666
+      },
+      "tool_counts": {
+        "search_files": 3,
+        "read_source": 3,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.003622555,
+      "paid_usd": 0.0036225549999999718,
+      "task_id": "task-08",
+      "cell": "task-08--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 1,
+      "reader_pid": 79803,
+      "request_interval": [
+        751,
+        759
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 33.64745016593952,
+      "tool_calls": 4,
+      "evidence_bytes": 30537,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 43408,
+        "completion_tokens": 2103,
+        "total_tokens": 45511,
+        "cached_prompt_tokens": 30767,
+        "cache_write_prompt_tokens": 12459,
+        "reasoning_tokens": 651
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 2,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.0029316850000000003,
+      "paid_usd": 0.0029316850000001837,
+      "task_id": "task-08",
+      "cell": "task-08--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 1,
+      "reader_pid": 79791,
+      "request_interval": [
+        744,
+        751
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 21.341447000042535,
+      "tool_calls": 3,
+      "evidence_bytes": 27064,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 26941,
+        "completion_tokens": 1362,
+        "total_tokens": 28303,
+        "cached_prompt_tokens": 17839,
+        "cache_write_prompt_tokens": 8940,
+        "reasoning_tokens": 263
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 1,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 5,
+      "cost_exposure_usd": 0.00199156,
+      "paid_usd": 0.0019915600000000033,
+      "task_id": "task-08",
+      "cell": "task-08--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 1,
+      "reader_pid": 79816,
+      "request_interval": [
+        759,
+        764
+      ],
+      "inspected_source_ids": [
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 60.40019812504761,
+      "tool_calls": 9,
+      "evidence_bytes": 32045,
+      "cohort": "new",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 78355,
+        "completion_tokens": 2725,
+        "total_tokens": 81080,
+        "cached_prompt_tokens": 51371,
+        "cache_write_prompt_tokens": 26598,
+        "reasoning_tokens": 807
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 3,
+        "elf_docs_excerpts_get": 2,
+        "elf_evidence_check": 2
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 1,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 2,
+      "failed_citation_checks": 0,
+      "provider_requests": 12,
+      "cost_exposure_usd": 0.00523074,
+      "paid_usd": 0.0052307400000001225,
+      "task_id": "task-09",
+      "cell": "task-09--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80144,
+      "request_interval": [
+        875,
+        887
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-004",
+        "source-005",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 52.647286124993116,
+      "tool_calls": 11,
+      "evidence_bytes": 32673,
+      "cohort": "new",
+      "text_pattern_coverage": 0.25,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 91964,
+        "completion_tokens": 1917,
+        "total_tokens": 93881,
+        "cached_prompt_tokens": 63066,
+        "cache_write_prompt_tokens": 28488,
+        "reasoning_tokens": 877
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 5,
+        "elf_docs_excerpts_get": 2,
+        "list_sources": 1,
+        "search_files": 1
+      },
+      "evidence_budget_errors": 3,
+      "empty_truncated_results": 2,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 14,
+      "cost_exposure_usd": 0.0051801799999999995,
+      "paid_usd": 0.005180179999999979,
+      "task_id": "task-09",
+      "cell": "task-09--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 1,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80189,
+      "request_interval": [
+        902,
+        916
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-004",
+        "source-005",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 43.3699626250891,
+      "tool_calls": 14,
+      "evidence_bytes": 32738,
+      "cohort": "new",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 85252,
+        "completion_tokens": 2428,
+        "total_tokens": 87680,
+        "cached_prompt_tokens": 61083,
+        "cache_write_prompt_tokens": 24016,
+        "reasoning_tokens": 1218
+      },
+      "tool_counts": {
+        "search_files": 6,
+        "read_source": 8
+      },
+      "evidence_budget_errors": 5,
+      "empty_truncated_results": 2,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.00484213,
+      "paid_usd": 0.004842129999999889,
+      "task_id": "task-09",
+      "cell": "task-09--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80109,
+      "request_interval": [
+        856,
+        864
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 40.46750999998767,
+      "tool_calls": 8,
+      "evidence_bytes": 32688,
+      "cohort": "new",
+      "text_pattern_coverage": 0.25,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 92295,
+        "completion_tokens": 2084,
+        "total_tokens": 94379,
+        "cached_prompt_tokens": 67146,
+        "cache_write_prompt_tokens": 24996,
+        "reasoning_tokens": 1182
+      },
+      "tool_counts": {
+        "search_files": 6,
+        "read_source": 2
+      },
+      "evidence_budget_errors": 3,
+      "empty_truncated_results": 2,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.00485326,
+      "paid_usd": 0.004853260000000081,
+      "task_id": "task-09",
+      "cell": "task-09--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 1,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80202,
+      "request_interval": [
+        916,
+        924
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 79.3071090420708,
+      "tool_calls": 12,
+      "evidence_bytes": 32712,
+      "cohort": "new",
+      "text_pattern_coverage": 0.0,
+      "native_binding": true,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 94438,
+        "completion_tokens": 1433,
+        "total_tokens": 95871,
+        "cached_prompt_tokens": 78462,
+        "cache_write_prompt_tokens": 15734,
+        "reasoning_tokens": 685
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 4,
+        "elf_docs_excerpts_get": 6,
+        "list_sources": 1,
+        "search_files": 1
+      },
+      "evidence_budget_errors": 8,
+      "empty_truncated_results": 1,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 11,
+      "cost_exposure_usd": 0.00348415,
+      "paid_usd": 0.003484149999999797,
+      "task_id": "task-09",
+      "cell": "task-09--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 0,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 0,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80118,
+      "request_interval": [
+        864,
+        875
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 52.41569116606843,
+      "tool_calls": 11,
+      "evidence_bytes": 32677,
+      "cohort": "new",
+      "text_pattern_coverage": 0.0,
+      "native_binding": true,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 110115,
+        "completion_tokens": 1276,
+        "total_tokens": 111391,
+        "cached_prompt_tokens": 79508,
+        "cache_write_prompt_tokens": 30330,
+        "reasoning_tokens": 622
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 7,
+        "elf_docs_excerpts_get": 3,
+        "list_sources": 1
+      },
+      "evidence_budget_errors": 3,
+      "empty_truncated_results": 3,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 15,
+      "cost_exposure_usd": 0.00524123,
+      "paid_usd": 0.005241230000000097,
+      "task_id": "task-09",
+      "cell": "task-09--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 0,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 0,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80171,
+      "request_interval": [
+        887,
+        902
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 39.501777624944225,
+      "tool_calls": 9,
+      "evidence_bytes": 32152,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 70697,
+        "completion_tokens": 1999,
+        "total_tokens": 72696,
+        "cached_prompt_tokens": 47062,
+        "cache_write_prompt_tokens": 23335,
+        "reasoning_tokens": 800
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "list_sources": 1,
+        "search_files": 1,
+        "read_source": 5
+      },
+      "evidence_budget_errors": 2,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 9,
+      "cost_exposure_usd": 0.004415914999999999,
+      "paid_usd": 0.004415915000000159,
+      "task_id": "task-05",
+      "cell": "task-05--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail",
+          "unsupported_claim"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 79975,
+      "request_interval": [
+        797,
+        806
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 64.42799125006422,
+      "tool_calls": 8,
+      "evidence_bytes": 32693,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 76370,
+        "completion_tokens": 3694,
+        "total_tokens": 80064,
+        "cached_prompt_tokens": 61435,
+        "cache_write_prompt_tokens": 14615,
+        "reasoning_tokens": 1629
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 1,
+        "search_files": 2,
+        "list_sources": 1,
+        "read_source": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 4,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 9,
+      "cost_exposure_usd": 0.004317075,
+      "paid_usd": 0.0043170750000000035,
+      "task_id": "task-05",
+      "cell": "task-05--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80090,
+      "request_interval": [
+        847,
+        856
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 50.0483393749455,
+      "tool_calls": 11,
+      "evidence_bytes": 32657,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 88780,
+        "completion_tokens": 3082,
+        "total_tokens": 91862,
+        "cached_prompt_tokens": 63858,
+        "cache_write_prompt_tokens": 24769,
+        "reasoning_tokens": 1493
+      },
+      "tool_counts": {
+        "search_files": 4,
+        "read_source": 7
+      },
+      "evidence_budget_errors": 4,
+      "empty_truncated_results": 1,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.005291005,
+      "paid_usd": 0.005291004999999904,
+      "task_id": "task-05",
+      "cell": "task-05--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 79987,
+      "request_interval": [
+        806,
+        814
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 46.807935666060075,
+      "tool_calls": 11,
+      "evidence_bytes": 32741,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 82585,
+        "completion_tokens": 3140,
+        "total_tokens": 85725,
+        "cached_prompt_tokens": 68222,
+        "cache_write_prompt_tokens": 14213,
+        "reasoning_tokens": 934
+      },
+      "tool_counts": {
+        "search_files": 3,
+        "read_source": 6,
+        "list_sources": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 8,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.004043845,
+      "paid_usd": 0.004043845000000101,
+      "task_id": "task-05",
+      "cell": "task-05--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80037,
+      "request_interval": [
+        825,
+        832
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 82.27422487502918,
+      "tool_calls": 9,
+      "evidence_bytes": 32671,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.25,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 100340,
+        "completion_tokens": 4848,
+        "total_tokens": 105188,
+        "cached_prompt_tokens": 69306,
+        "cache_write_prompt_tokens": 30821,
+        "reasoning_tokens": 1636
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 3,
+        "elf_docs_excerpts_get": 2,
+        "elf_evidence_check": 4
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 1,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 4,
+      "failed_citation_checks": 0,
+      "provider_requests": 11,
+      "cost_exposure_usd": 0.006985945,
+      "paid_usd": 0.006985944999999938,
+      "task_id": "task-05",
+      "cell": "task-05--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 1,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80005,
+      "request_interval": [
+        814,
+        825
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-004",
+        "source-005",
+        "source-007",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 77.48766295902897,
+      "tool_calls": 11,
+      "evidence_bytes": 32727,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 98161,
+        "completion_tokens": 3469,
+        "total_tokens": 101630,
+        "cached_prompt_tokens": 68568,
+        "cache_write_prompt_tokens": 29326,
+        "reasoning_tokens": 1713
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 7,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 2,
+        "list_sources": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 3,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 2,
+      "failed_citation_checks": 0,
+      "provider_requests": 15,
+      "cost_exposure_usd": 0.00610273,
+      "paid_usd": 0.006102730000000056,
+      "task_id": "task-05",
+      "cell": "task-05--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 2,
+      "reader_pid": 80048,
+      "request_interval": [
+        832,
+        847
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-005",
+        "source-008",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 66.26928416697774,
+      "tool_calls": 7,
+      "evidence_bytes": 32115,
+      "cohort": "regression",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 84289,
+        "completion_tokens": 5046,
+        "total_tokens": 89335,
+        "cached_prompt_tokens": 55723,
+        "cache_write_prompt_tokens": 28215,
+        "reasoning_tokens": 2101
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 1,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 3
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 3,
+      "failed_citation_checks": 0,
+      "provider_requests": 10,
+      "cost_exposure_usd": 0.006636535,
+      "paid_usd": 0.0066365350000000545,
+      "task_id": "task-04",
+      "cell": "task-04--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 1,
+      "reader_pid": 79675,
+      "request_interval": [
+        688,
+        698
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 47.121149624930695,
+      "tool_calls": 7,
+      "evidence_bytes": 31648,
+      "cohort": "regression",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 68269,
+        "completion_tokens": 2639,
+        "total_tokens": 70908,
+        "cached_prompt_tokens": 45864,
+        "cache_write_prompt_tokens": 22098,
+        "reasoning_tokens": 1288
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "list_sources": 1,
+        "search_files": 2,
+        "read_source": 2
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 9,
+      "cost_exposure_usd": 0.00456938,
+      "paid_usd": 0.004569379999999845,
+      "task_id": "task-04",
+      "cell": "task-04--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 1,
+      "reader_pid": 79718,
+      "request_interval": [
+        706,
+        715
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-004",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 46.14230300008785,
+      "tool_calls": 13,
+      "evidence_bytes": 32727,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 80252,
+        "completion_tokens": 3058,
+        "total_tokens": 83310,
+        "cached_prompt_tokens": 55637,
+        "cache_write_prompt_tokens": 24462,
+        "reasoning_tokens": 1383
+      },
+      "tool_counts": {
+        "search_files": 3,
+        "list_sources": 1,
+        "read_source": 9
+      },
+      "evidence_budget_errors": 7,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.00515842,
+      "paid_usd": 0.005158419999999886,
+      "task_id": "task-04",
+      "cell": "task-04--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 1,
+      "reader_pid": 79701,
+      "request_interval": [
+        698,
+        706
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-004",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 33.63955166598316,
+      "tool_calls": 10,
+      "evidence_bytes": 32676,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.25,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 62767,
+        "completion_tokens": 2347,
+        "total_tokens": 65114,
+        "cached_prompt_tokens": 49927,
+        "cache_write_prompt_tokens": 12693,
+        "reasoning_tokens": 734
+      },
+      "tool_counts": {
+        "search_files": 6,
+        "read_source": 3,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 7,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 6,
+      "cost_exposure_usd": 0.003274095,
+      "paid_usd": 0.003274094999999866,
+      "task_id": "task-04",
+      "cell": "task-04--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 1,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail",
+          "unbound_citation"
+        ]
+      },
+      "stage": 1,
+      "reader_pid": 79735,
+      "request_interval": [
+        715,
+        721
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-004",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 50.094306832994334,
+      "tool_calls": 6,
+      "evidence_bytes": 30780,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 59146,
+        "completion_tokens": 3415,
+        "total_tokens": 62561,
+        "cached_prompt_tokens": 45171,
+        "cache_write_prompt_tokens": 13778,
+        "reasoning_tokens": 771
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 2,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 3
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 3,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.0038970199999999997,
+      "paid_usd": 0.003897020000000029,
+      "task_id": "task-04",
+      "cell": "task-04--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 1,
+      "reader_pid": 79657,
+      "request_interval": [
+        680,
+        688
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 52.26033008296508,
+      "tool_calls": 5,
+      "evidence_bytes": 30659,
+      "cohort": "regression",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 58800,
+        "completion_tokens": 3566,
+        "total_tokens": 62366,
+        "cached_prompt_tokens": 45517,
+        "cache_write_prompt_tokens": 13091,
+        "reasoning_tokens": 1332
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 2,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 2
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 2,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.003890055,
+      "paid_usd": 0.003890055000000059,
+      "task_id": "task-04",
+      "cell": "task-04--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 1,
+      "reader_pid": 79746,
+      "request_interval": [
+        721,
+        729
+      ],
+      "inspected_source_ids": [
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-005",
+        "source-006"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 31.063928166986443,
+      "tool_calls": 3,
+      "evidence_bytes": 19513,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 22711,
+        "completion_tokens": 2538,
+        "total_tokens": 25249,
+        "cached_prompt_tokens": 13874,
+        "cache_write_prompt_tokens": 8539,
+        "reasoning_tokens": 522
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 5,
+      "cost_exposure_usd": 0.002502935,
+      "paid_usd": 0.002502935000000095,
+      "task_id": "task-07",
+      "cell": "task-07--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79514,
+      "request_interval": [
+        635,
+        640
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 28.8920001660008,
+      "tool_calls": 4,
+      "evidence_bytes": 27115,
+      "cohort": "new",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 33078,
+        "completion_tokens": 2116,
+        "total_tokens": 35194,
+        "cached_prompt_tokens": 22765,
+        "cache_write_prompt_tokens": 10016,
+        "reasoning_tokens": 725
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "read_source": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 6,
+      "cost_exposure_usd": 0.00256573,
+      "paid_usd": 0.002565730000000044,
+      "task_id": "task-07",
+      "cell": "task-07--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79541,
+      "request_interval": [
+        648,
+        654
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 52.24538312503137,
+      "tool_calls": 14,
+      "evidence_bytes": 31252,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 65380,
+        "completion_tokens": 3822,
+        "total_tokens": 69202,
+        "cached_prompt_tokens": 39622,
+        "cache_write_prompt_tokens": 25605,
+        "reasoning_tokens": 1401
+      },
+      "tool_counts": {
+        "search_files": 1,
+        "read_source": 10,
+        "list_sources": 1,
+        "elf_evidence_check": 2
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 2,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.005523145,
+      "paid_usd": 0.005523145000000174,
+      "task_id": "task-07",
+      "cell": "task-07--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79522,
+      "request_interval": [
+        640,
+        648
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 59.275763750076294,
+      "tool_calls": 10,
+      "evidence_bytes": 27100,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 58970,
+        "completion_tokens": 4290,
+        "total_tokens": 63260,
+        "cached_prompt_tokens": 39452,
+        "cache_write_prompt_tokens": 19365,
+        "reasoning_tokens": 1896
+      },
+      "tool_counts": {
+        "search_files": 1,
+        "read_source": 7,
+        "list_sources": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 8,
+      "cost_exposure_usd": 0.004975445,
+      "paid_usd": 0.004975444999999912,
+      "task_id": "task-07",
+      "cell": "task-07--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79549,
+      "request_interval": [
+        654,
+        662
+      ],
+      "inspected_source_ids": [
+        "source-001"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 60.99830979201943,
+      "tool_calls": 9,
+      "evidence_bytes": 28764,
+      "cohort": "new",
+      "text_pattern_coverage": 1.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 98854,
+        "completion_tokens": 3699,
+        "total_tokens": 102553,
+        "cached_prompt_tokens": 69392,
+        "cache_write_prompt_tokens": 29271,
+        "reasoning_tokens": 1127
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 2,
+        "elf_docs_excerpts_get": 2,
+        "elf_evidence_check": 5
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 5,
+      "failed_citation_checks": 1,
+      "provider_requests": 10,
+      "cost_exposure_usd": 0.006218335,
+      "paid_usd": 0.00621833500000013,
+      "task_id": "task-07",
+      "cell": "task-07--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79495,
+      "request_interval": [
+        625,
+        635
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 56.05812383303419,
+      "tool_calls": 9,
+      "evidence_bytes": 32354,
+      "cohort": "new",
+      "text_pattern_coverage": 0.75,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 92456,
+        "completion_tokens": 3523,
+        "total_tokens": 95979,
+        "cached_prompt_tokens": 64346,
+        "cache_write_prompt_tokens": 27907,
+        "reasoning_tokens": 1677
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 2,
+        "elf_docs_excerpts_get": 4,
+        "elf_evidence_check": 1,
+        "list_sources": 1,
+        "search_files": 1
+      },
+      "evidence_budget_errors": 1,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 10,
+      "cost_exposure_usd": 0.005909495000000001,
+      "paid_usd": 0.005909495000000042,
+      "task_id": "task-07",
+      "cell": "task-07--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail",
+          "unsupported_claim"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79568,
+      "request_interval": [
+        662,
+        672
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 60.59529833297711,
+      "tool_calls": 7,
+      "evidence_bytes": 31680,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.25,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 83358,
+        "completion_tokens": 2802,
+        "total_tokens": 86160,
+        "cached_prompt_tokens": 55164,
+        "cache_write_prompt_tokens": 27810,
+        "reasoning_tokens": 1495
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 4,
+        "read_source": 1
+      },
+      "evidence_budget_errors": 1,
+      "empty_truncated_results": 1,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 13,
+      "cost_exposure_usd": 0.00545865,
+      "paid_usd": 0.00545865000000012,
+      "task_id": "task-03",
+      "cell": "task-03--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 1,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79399,
+      "request_interval": [
+        585,
+        598
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 42.857492958894,
+      "tool_calls": 9,
+      "evidence_bytes": 32193,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 71306,
+        "completion_tokens": 2333,
+        "total_tokens": 73639,
+        "cached_prompt_tokens": 47741,
+        "cache_write_prompt_tokens": 23258,
+        "reasoning_tokens": 1262
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "list_sources": 1,
+        "search_files": 1,
+        "read_source": 5
+      },
+      "evidence_budget_errors": 1,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 9,
+      "cost_exposure_usd": 0.00458015,
+      "paid_usd": 0.004580150000000005,
+      "task_id": "task-03",
+      "cell": "task-03--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79452,
+      "request_interval": [
+        609,
+        618
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 27.020291332970373,
+      "tool_calls": 7,
+      "evidence_bytes": 30522,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 57103,
+        "completion_tokens": 1656,
+        "total_tokens": 58759,
+        "cached_prompt_tokens": 45235,
+        "cache_write_prompt_tokens": 11721,
+        "reasoning_tokens": 394
+      },
+      "tool_counts": {
+        "search_files": 2,
+        "read_source": 3,
+        "elf_evidence_check": 2
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 2,
+      "failed_citation_checks": 0,
+      "provider_requests": 6,
+      "cost_exposure_usd": 0.002760175,
+      "paid_usd": 0.0027601750000000314,
+      "task_id": "task-03",
+      "cell": "task-03--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": true,
+        "passed_criteria": 4,
+        "flags": []
+      },
+      "stage": 0,
+      "reader_pid": 79365,
+      "request_interval": [
+        563,
+        569
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 44.76690087490715,
+      "tool_calls": 8,
+      "evidence_bytes": 32695,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 69875,
+        "completion_tokens": 2905,
+        "total_tokens": 72780,
+        "cached_prompt_tokens": 56976,
+        "cache_write_prompt_tokens": 12749,
+        "reasoning_tokens": 1262
+      },
+      "tool_counts": {
+        "search_files": 2,
+        "read_source": 4,
+        "elf_evidence_check": 2
+      },
+      "evidence_budget_errors": 2,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 2,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.003630885,
+      "paid_usd": 0.0036308849999998616,
+      "task_id": "task-03",
+      "cell": "task-03--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79478,
+      "request_interval": [
+        618,
+        625
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 65.3116770000197,
+      "tool_calls": 12,
+      "evidence_bytes": 32376,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.0,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 96595,
+        "completion_tokens": 2352,
+        "total_tokens": 98947,
+        "cached_prompt_tokens": 66109,
+        "cache_write_prompt_tokens": 30198,
+        "reasoning_tokens": 1269
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 8,
+        "elf_docs_excerpts_get": 3,
+        "search_files": 1
+      },
+      "evidence_budget_errors": 0,
+      "empty_truncated_results": 5,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 16,
+      "cost_exposure_usd": 0.0056288499999999995,
+      "paid_usd": 0.005628849999999963,
+      "task_id": "task-03",
+      "cell": "task-03--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 0,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 0,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79375,
+      "request_interval": [
+        569,
+        585
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 60.056476375088096,
+      "tool_calls": 10,
+      "evidence_bytes": 32758,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.25,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 84669,
+        "completion_tokens": 2884,
+        "total_tokens": 87553,
+        "cached_prompt_tokens": 62161,
+        "cache_write_prompt_tokens": 22291,
+        "reasoning_tokens": 1422
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 3,
+        "elf_docs_excerpts_get": 4,
+        "search_files": 1,
+        "list_sources": 1,
+        "read_source": 1
+      },
+      "evidence_budget_errors": 1,
+      "empty_truncated_results": 3,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 11,
+      "cost_exposure_usd": 0.004866285,
+      "paid_usd": 0.00486628499999997,
+      "task_id": "task-03",
+      "cell": "task-03--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 1,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 0,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 0,
+      "reader_pid": 79424,
+      "request_interval": [
+        598,
+        609
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 48.335321541992016,
+      "tool_calls": 16,
+      "evidence_bytes": 32693,
+      "cohort": "new",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 86931,
+        "completion_tokens": 2701,
+        "total_tokens": 89632,
+        "cached_prompt_tokens": 58334,
+        "cache_write_prompt_tokens": 28223,
+        "reasoning_tokens": 1052
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 2,
+        "list_sources": 1,
+        "read_source": 10,
+        "search_files": 1
+      },
+      "evidence_budget_errors": 9,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 11,
+      "cost_exposure_usd": 0.005491375,
+      "paid_usd": 0.005491374999999965,
+      "task_id": "task-10",
+      "cell": "task-10--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 83617,
+      "request_interval": [
+        1050,
+        1061
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-009",
+        "source-010",
+        "source-014"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "invalid_answer",
+      "seconds": 71.99415845796466,
+      "tool_calls": 13,
+      "evidence_bytes": 32741,
+      "cohort": "new",
+      "text_pattern_coverage": 0.0,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 89500,
+        "completion_tokens": 4748,
+        "total_tokens": 94248,
+        "cached_prompt_tokens": 58023,
+        "cache_write_prompt_tokens": 31110,
+        "reasoning_tokens": 2097
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "list_sources": 1,
+        "elf_docs_search_l0": 4,
+        "search_files": 1,
+        "read_source": 4,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 6,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 12,
+      "cost_exposure_usd": 0.00687257,
+      "paid_usd": 0.006872570000000078,
+      "task_id": "task-10",
+      "cell": "task-10--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 0,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail",
+          "invalid_format"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 83652,
+      "request_interval": [
+        1068,
+        1080
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-008",
+        "source-009",
+        "source-010",
+        "source-012",
+        "source-013",
+        "source-014"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 49.69177108304575,
+      "tool_calls": 13,
+      "evidence_bytes": 32723,
+      "cohort": "new",
+      "text_pattern_coverage": 0.5,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 80068,
+        "completion_tokens": 2935,
+        "total_tokens": 83003,
+        "cached_prompt_tokens": 65712,
+        "cache_write_prompt_tokens": 14206,
+        "reasoning_tokens": 1225
+      },
+      "tool_counts": {
+        "search_files": 5,
+        "list_sources": 1,
+        "read_source": 6,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 8,
+      "empty_truncated_results": 1,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.00391537,
+      "paid_usd": 0.003915369999999974,
+      "task_id": "task-10",
+      "cell": "task-10--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 2,
+        "flags": [
+          "missing_detail",
+          "unbound_citation"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 83635,
+      "request_interval": [
+        1061,
+        1068
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-004"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 48.223409374943,
+      "tool_calls": 15,
+      "evidence_bytes": 32757,
+      "cohort": "new",
+      "text_pattern_coverage": 0.75,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 69084,
+        "completion_tokens": 3143,
+        "total_tokens": 72227,
+        "cached_prompt_tokens": 56681,
+        "cache_write_prompt_tokens": 12253,
+        "reasoning_tokens": 1065
+      },
+      "tool_counts": {
+        "search_files": 3,
+        "list_sources": 1,
+        "read_source": 10,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 7,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.003684935,
+      "paid_usd": 0.0036849350000001113,
+      "task_id": "task-10",
+      "cell": "task-10--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail",
+          "unbound_citation"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 83670,
+      "request_interval": [
+        1080,
+        1087
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-004",
+        "source-006",
+        "source-010",
+        "source-012",
+        "source-013",
+        "source-014"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "invalid_answer",
+      "seconds": 64.32812570896931,
+      "tool_calls": 12,
+      "evidence_bytes": 32692,
+      "cohort": "new",
+      "text_pattern_coverage": 0.0,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 113978,
+        "completion_tokens": 2705,
+        "total_tokens": 116683,
+        "cached_prompt_tokens": 81507,
+        "cache_write_prompt_tokens": 32221,
+        "reasoning_tokens": 1195
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 6,
+        "elf_docs_excerpts_get": 5,
+        "list_sources": 1
+      },
+      "evidence_budget_errors": 5,
+      "empty_truncated_results": 2,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 14,
+      "cost_exposure_usd": 0.006211825,
+      "paid_usd": 0.006211824999999838,
+      "task_id": "task-10",
+      "cell": "task-10--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 0,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail",
+          "invalid_format"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 83599,
+      "request_interval": [
+        1036,
+        1050
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-008",
+        "source-009",
+        "source-010",
+        "source-012",
+        "source-014"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 54.474771665991284,
+      "tool_calls": 15,
+      "evidence_bytes": 32717,
+      "cohort": "new",
+      "text_pattern_coverage": 0.25,
+      "native_binding": true,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 96621,
+        "completion_tokens": 2025,
+        "total_tokens": 98646,
+        "cached_prompt_tokens": 80900,
+        "cache_write_prompt_tokens": 15447,
+        "reasoning_tokens": 1056
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 8,
+        "elf_docs_excerpts_get": 5,
+        "list_sources": 1,
+        "search_files": 1
+      },
+      "evidence_budget_errors": 8,
+      "empty_truncated_results": 2,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 14,
+      "cost_exposure_usd": 0.003768975,
+      "paid_usd": 0.0037689749999999522,
+      "task_id": "task-10",
+      "cell": "task-10--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 1,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 83686,
+      "request_interval": [
+        1087,
+        1101
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-008",
+        "source-009",
+        "source-010",
+        "source-013",
+        "source-014"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 90.50547600002028,
+      "tool_calls": 14,
+      "evidence_bytes": 32718,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 100018,
+        "completion_tokens": 6450,
+        "total_tokens": 106468,
+        "cached_prompt_tokens": 66130,
+        "cache_write_prompt_tokens": 33493,
+        "reasoning_tokens": 3288
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 4,
+        "list_sources": 1,
+        "read_source": 5,
+        "elf_docs_excerpts_get": 1,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 7,
+      "empty_truncated_results": 1,
+      "memory_tool_completions": 2,
+      "memory_evidence_reads": 1,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 13,
+      "cost_exposure_usd": 0.008102795,
+      "paid_usd": 0.008102794999999996,
+      "task_id": "task-06",
+      "cell": "task-06--full_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 81696,
+      "request_interval": [
+        989,
+        1002
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-006",
+        "source-009",
+        "source-010",
+        "source-012",
+        "source-013"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 52.49314008303918,
+      "tool_calls": 13,
+      "evidence_bytes": 31943,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 73472,
+        "completion_tokens": 2977,
+        "total_tokens": 76449,
+        "cached_prompt_tokens": 47876,
+        "cache_write_prompt_tokens": 25218,
+        "reasoning_tokens": 1650
+      },
+      "tool_counts": {
+        "elf_searches_create": 2,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 1,
+        "list_sources": 1,
+        "read_source": 8
+      },
+      "evidence_budget_errors": 5,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 3,
+      "memory_evidence_reads": 1,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 11,
+      "cost_exposure_usd": 0.0051492099999999996,
+      "paid_usd": 0.005149210000000015,
+      "task_id": "task-06",
+      "cell": "task-06--full_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 82560,
+      "request_interval": [
+        1019,
+        1030
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-006",
+        "source-008",
+        "source-009",
+        "source-010",
+        "source-011",
+        "source-012",
+        "source-013",
+        "source-014"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 41.59346054203343,
+      "tool_calls": 12,
+      "evidence_bytes": 32764,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.5,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 83511,
+        "completion_tokens": 2476,
+        "total_tokens": 85987,
+        "cached_prompt_tokens": 68644,
+        "cache_write_prompt_tokens": 14717,
+        "reasoning_tokens": 1109
+      },
+      "tool_counts": {
+        "search_files": 4,
+        "list_sources": 1,
+        "read_source": 6,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 8,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 7,
+      "cost_exposure_usd": 0.0037790650000000003,
+      "paid_usd": 0.003779064999999915,
+      "task_id": "task-06",
+      "cell": "task-06--no_elf--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 2,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 1,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 81608,
+      "request_interval": [
+        967,
+        974
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-009"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 46.09882954088971,
+      "tool_calls": 15,
+      "evidence_bytes": 32745,
+      "cohort": "regression",
+      "text_pattern_coverage": 1.0,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 64895,
+        "completion_tokens": 3667,
+        "total_tokens": 68562,
+        "cached_prompt_tokens": 51443,
+        "cache_write_prompt_tokens": 13305,
+        "reasoning_tokens": 1033
+      },
+      "tool_counts": {
+        "search_files": 3,
+        "read_source": 11,
+        "elf_evidence_check": 1
+      },
+      "evidence_budget_errors": 9,
+      "empty_truncated_results": 0,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 1,
+      "failed_citation_checks": 0,
+      "provider_requests": 6,
+      "cost_exposure_usd": 0.004025755000000001,
+      "paid_usd": 0.00402575500000002,
+      "task_id": "task-06",
+      "cell": "task-06--no_elf--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 4,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail",
+          "unbound_citation"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 83589,
+      "request_interval": [
+        1030,
+        1036
+      ],
+      "inspected_source_ids": [
+        "source-001",
+        "source-002",
+        "source-003",
+        "source-004",
+        "source-006",
+        "source-008",
+        "source-010",
+        "source-012"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 57.80055749998428,
+      "tool_calls": 16,
+      "evidence_bytes": 32671,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 78957,
+        "completion_tokens": 2674,
+        "total_tokens": 81631,
+        "cached_prompt_tokens": 45958,
+        "cache_write_prompt_tokens": 32692,
+        "reasoning_tokens": 1374
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 9,
+        "elf_docs_excerpts_get": 6,
+        "list_sources": 1
+      },
+      "evidence_budget_errors": 5,
+      "empty_truncated_results": 5,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 15,
+      "cost_exposure_usd": 0.0058997400000000005,
+      "paid_usd": 0.00589973999999982,
+      "task_id": "task-06",
+      "cell": "task-06--source_only--1",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 81647,
+      "request_interval": [
+        974,
+        989
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-009",
+        "source-010",
+        "source-012",
+        "source-013",
+        "source-014"
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "invalid_answer",
+      "seconds": 59.19717308296822,
+      "tool_calls": 16,
+      "evidence_bytes": 32688,
+      "cohort": "regression",
+      "text_pattern_coverage": 0.75,
+      "native_binding": false,
+      "all_references_seen": false,
+      "usage": {
+        "prompt_tokens": 97283,
+        "completion_tokens": 2913,
+        "total_tokens": 100196,
+        "cached_prompt_tokens": 64778,
+        "cache_write_prompt_tokens": 32170,
+        "reasoning_tokens": 1160
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 10,
+        "elf_docs_excerpts_get": 5,
+        "list_sources": 1
+      },
+      "evidence_budget_errors": 5,
+      "empty_truncated_results": 6,
+      "memory_tool_completions": 0,
+      "memory_evidence_reads": 0,
+      "citation_checks": 0,
+      "failed_citation_checks": 0,
+      "provider_requests": 17,
+      "cost_exposure_usd": 0.00614274,
+      "paid_usd": 0.006142740000000146,
+      "task_id": "task-06",
+      "cell": "task-06--source_only--2",
+      "required_criteria": 4,
+      "matching_text_patterns": 3,
+      "review": {
+        "accepted": false,
+        "passed_criteria": 3,
+        "flags": [
+          "missing_detail",
+          "invalid_format"
+        ]
+      },
+      "stage": 3,
+      "reader_pid": 82437,
+      "request_interval": [
+        1002,
+        1019
+      ],
+      "inspected_source_ids": [
+        "source-004",
+        "source-005",
+        "source-006",
+        "source-008",
+        "source-009",
+        "source-010",
+        "source-012",
+        "source-013",
+        "source-014"
+      ]
+    }
+  ]
+}

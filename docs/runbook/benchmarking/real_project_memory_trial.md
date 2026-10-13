@@ -17,6 +17,8 @@ sessions or a substitute for a multi-week customer pilot.
 
 The run directory’s private `fixture/` contains fourteen complete original records,
 four chronological checkpoints, two calibration tasks, and eight formal tasks.
+The current protocol has four regressions and four new follow-up tasks. Keep
+previous freeze directories and results unchanged. Report each cohort separately.
 The formal tasks have two repetitions in each of three conditions: 48 cells.
 The selected source corpus is bounded; it is not the entire repository. The
 tasks require read-only handoff decisions, not code patches or live deployment.
@@ -59,10 +61,25 @@ with the native checker and separately verifies that references were actually
 returned to that reader.
 
 The evidence-byte limit is a shared workflow budget, not the model's native
-context limit. The agent chooses its tools; enabled memory tools can remain
-unused. Report that usage explicitly. The common checker runs after the final
-answer and does not provide a repair turn. This trial therefore measures this
-reader workflow, not every ELF feature or the best possible client integration.
+context limit. The host selects initial discovery and memory hydration as described in the
+shared Agent contract. The agent chooses subsequent tools. Record whether the
+opening returned useful memory and original evidence; a requested tool is not
+proof of an effective read. Protocol v3 declares the formal MCP tool
+names and a callable claim checker in every condition. The agent can repair
+citations within the same round and call limits; the host also checks the final
+answer. Native document search positions feed the excerpt API directly as UTF-8
+byte ranges. The shared reader contract starts with focused memory discovery, or
+source discovery when memory is unavailable. It does not preload task answers.
+The old protocol v2 result remains in its immutable evidence bundle.
+
+Protocol v4 adds a separate source-only control with `hydrate_sources: true`.
+After nonempty document discovery, the host selects `elf_docs_excerpts_get` once
+before automatic tool choice resumes. The model selects the source and range.
+Use the same frozen tasks, original bytes, and limits. This control runs two
+calibration cells and sixteen formal cells; it does not extract unused memories.
+Keep its results separate from the earlier three-arm run. Sequential execution
+does not control provider latency or cache state. It tests an observed client
+ordering difference, not a randomized estimate of memory's causal benefit.
 
 ## Execution
 

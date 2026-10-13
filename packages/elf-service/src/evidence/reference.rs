@@ -45,7 +45,7 @@ impl ElfService {
 	}
 }
 
-pub(super) fn source_reference(doc_id: Uuid, hash: &str, start: usize, end: usize) -> String {
+pub(crate) fn source_reference(doc_id: Uuid, hash: &str, start: usize, end: usize) -> String {
 	format!("elf-source-v1/{doc_id}/{hash}/{start}/{end}")
 }
 

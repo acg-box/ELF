@@ -15,7 +15,7 @@ import urllib.request
 from benchmark_budget import totals
 from .corpus import digest, load, save, spans
 from .runtime import Runtime
-from .tools import SourceTools, schemas
+from .tools import SourceTools, opening_tool, schemas
 
 
 def read(path):
@@ -28,11 +28,11 @@ def usage(root):
     return {'paid_usd': paid, 'exposure_usd': exposure, 'requests': len(ledger['requests'])}
 
 
-def request(messages, condition, closing, protocol):
+def request(messages, condition, closing, protocol, required_tool=None):
     payload = {'model': protocol['model'], 'messages': messages,
                'max_tokens': protocol['max_output_tokens'], 'reasoning': {'effort': protocol['reasoning']}}
     if not closing:
-        payload.update(tools=schemas(condition), tool_choice='auto')
+        payload.update(tools=schemas(condition), tool_choice={'type': 'function', 'function': {'name': required_tool}} if required_tool else 'auto')
     req = urllib.request.Request(os.environ['LITELLM_BASE_URL'] + '/chat/completions',
         data=json.dumps(payload).encode(), headers={'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + os.environ['LITELLM_API_KEY']})
@@ -53,7 +53,7 @@ def cell(args, repo, sources, checkpoints, protocol, task):
     messages = [{'role': 'system', 'content': (repo / 'config/agent/evidence-reader.md').read_text()},
                 {'role': 'user', 'content': json.dumps({'task': task['question'],
                  'checkpoint': checkpoints[task['stage']],
-                 'instructions': 'Use the declared tools to inspect the Git evidence before answering. File and native reads return the same original evidence references. The host will check your final claims through ELF. Do not infer current external service state from repository history. Return only the shared-contract JSON.',
+                 'instructions': 'Use the declared retrieval and read tools to inspect immutable original evidence before answering. File and native reads return the same original evidence references. The host will check your final claims through ELF. Do not infer current external service state from repository history. Return only the shared-contract JSON.',
                  'sources': [{k: s[k] for k in ('id', 'title', 'timestamp')} for s in visible]}, ensure_ascii=False)}]
     started = time.monotonic()
     trace, calls = [], 0
@@ -66,7 +66,8 @@ def cell(args, repo, sources, checkpoints, protocol, task):
             closing = turn == protocol['max_rounds'] - 1 or calls >= protocol['max_tool_calls']
             if closing:
                 messages.append({'role': 'user', 'content': 'This is the final turn in the fixed workflow budget. Return your JSON answer from the evidence already inspected. Mark unestablished facts unknown.'})
-            payload, response = request(messages, args.condition, closing, protocol)
+            required_tool = opening_tool(args.condition, trace, protocol.get('hydrate_sources', False)) if protocol.get('host_opening') else None
+            payload, response = request(messages, args.condition, closing, protocol, required_tool)
             step = {'turn': turn, 'request': payload, 'response': response, 'tools': []}
             trace.append(step)
             save(trace_path, trace)
@@ -144,6 +145,9 @@ def ingest(rt, root, sources, stage, protocol):
         rt.drain()
         save(root / 'ingest' / (source['id'] + '-document.json'), {'document': doc,
             'seconds': time.monotonic() - started, 'before': before, 'after': usage(root)})
+    if 'full_elf' not in protocol['conditions']:
+        verify_state(rt, root, sources, documents, stage)
+        return
     for source in selected:
         doc = documents[source['id']]
         for i, (start, end, text) in enumerate(spans(source['text'], protocol['extraction_window_bytes'])):

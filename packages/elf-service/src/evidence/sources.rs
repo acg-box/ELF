@@ -44,6 +44,15 @@ impl ElfService {
 		req: NoteFetchRequest,
 		read_profile: String,
 	) -> Result<NoteEvidenceResponse> {
+		self.note_evidence_bounded(req, read_profile, None).await
+	}
+
+	pub(super) async fn note_evidence_bounded(
+		&self,
+		req: NoteFetchRequest,
+		read_profile: String,
+		source_budget: Option<usize>,
+	) -> Result<NoteEvidenceResponse> {
 		let scopes = search::resolve_read_profile_scopes(&self.cfg, &read_profile)?;
 		let note = self.get_note(req.clone()).await?;
 
@@ -60,6 +69,9 @@ impl ElfService {
 		} else {
 			vec![(&note.source_ref, None)]
 		};
+		let window_bytes = source_budget
+			.map(|budget| (budget / pointers.len().clamp(1, MAX_SOURCES)).max(1))
+			.unwrap_or(DEFAULT_L2_MAX_BYTES);
 		let mut seen = HashSet::new();
 		let mut sources: Vec<NoteSourceEvidence> = Vec::new();
 		let mut complete = !pointers.is_empty();
@@ -97,7 +109,8 @@ impl ElfService {
 
 			reads += 1;
 
-			let fetched = self.resolve_note_source(&req, &read_profile, pointer, quote).await;
+			let fetched =
+				self.resolve_note_source(&req, &read_profile, pointer, quote, window_bytes).await;
 
 			match fetched {
 				Ok(source) => {
@@ -128,6 +141,7 @@ impl ElfService {
 		read_profile: &str,
 		pointer: Pointer,
 		evidence_quote: Option<&str>,
+		window_bytes: usize,
 	) -> Result<NoteSourceEvidence> {
 		let doc_id = pointer.reference.doc_id;
 		let metadata = self
@@ -145,7 +159,7 @@ impl ElfService {
 		}
 
 		let span = &pointer.locator.position;
-		let use_quote = span.end.saturating_sub(span.start) > DEFAULT_L2_MAX_BYTES;
+		let use_quote = span.end.saturating_sub(span.start) > window_bytes;
 
 		if use_quote && evidence_quote.is_none_or(|quote| quote.trim().is_empty()) {
 			return Err(Error::InvalidRequest {
@@ -163,18 +177,21 @@ impl ElfService {
 			None
 		};
 		let excerpt = self
-			.docs_excerpts_get(DocsExcerptsGetRequest {
-				tenant_id: req.tenant_id.clone(),
-				project_id: req.project_id.clone(),
-				agent_id: req.agent_id.clone(),
-				read_profile: read_profile.into(),
-				doc_id,
-				level: "L2".into(),
-				chunk_id: None,
-				quote: quote_selector,
-				position: if use_quote { None } else { Some(span.clone()) },
-				explain: Some(false),
-			})
+			.docs_excerpts_get_bounded(
+				DocsExcerptsGetRequest {
+					tenant_id: req.tenant_id.clone(),
+					project_id: req.project_id.clone(),
+					agent_id: req.agent_id.clone(),
+					read_profile: read_profile.into(),
+					doc_id,
+					level: "L2".into(),
+					chunk_id: None,
+					quote: quote_selector,
+					position: if use_quote { None } else { Some(span.clone()) },
+					explain: Some(false),
+				},
+				window_bytes,
+			)
 			.await?;
 
 		if !excerpt.verification.verified

@@ -2,8 +2,8 @@ use uuid::Uuid;
 
 use crate::acceptance::text_boundary::setup;
 use elf_service::{
-	AddEventRequest, DocsPutRequest, ElfService, EventMessage, EventSourceDocument,
-	NoteFetchRequest,
+	AddEventRequest, DocsExcerptsGetRequest, DocsPutRequest, ElfService, EventMessage,
+	EventSourceDocument, NoteFetchRequest,
 	docs::TextPositionSelector,
 	evidence::{
 		ClaimCitation, ClaimEvidence, ClaimState, EvidenceCheckRequest, EvidencePackRequest,
@@ -245,6 +245,24 @@ async fn evidence_expansion_anchors_each_quote_in_a_long_source_span() {
 	assert!(expanded.sources.iter().all(|source| source.excerpt.excerpt.len() <= 32 * 1_024));
 	assert!(expanded.sources.iter().all(|source| source.excerpt.locator.selector_kind == "quote"));
 
+	let bounded = service
+		.evidence_pack(EvidencePackRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			read_profile: "private_plus_project".into(),
+			note_ids: vec![read.note_id, read.note_id],
+			max_source_bytes: Some(1_024),
+		})
+		.await
+		.expect("Hydrate a small pack from a long original");
+
+	assert!(bounded.complete);
+	assert_eq!(bounded.sources.len(), 2);
+	assert!(bounded.sources[0].text.contains(first));
+	assert!(bounded.sources[1].text.contains(last));
+	assert!(bounded.source_bytes <= 1_024);
+
 	sqlx::query("UPDATE memory_notes SET source_ref=jsonb_set(source_ref,'{evidence,0,source,document,locator,position,start}','1024'::jsonb) WHERE note_id=$1")
         .bind(read.note_id).execute(&service.db.pool).await.expect("Simulate an invalid pointer range");
 
@@ -293,6 +311,24 @@ async fn verify_evidence_pack(
 	assert_eq!(pack.sources[0].source_timestamp.as_deref(), Some("2026-08-22T00:00:00Z"));
 	assert_eq!(pack.notes[0].source_references, vec![pack.sources[0].reference.clone()]);
 	assert_eq!(pack.source_bytes, content.len());
+
+	let excerpt = service
+		.docs_excerpts_get(DocsExcerptsGetRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			read_profile: "private_plus_project".into(),
+			doc_id,
+			level: "L1".into(),
+			position: Some(TextPositionSelector { start: 0, end: content.len() }),
+			quote: None,
+			chunk_id: None,
+			explain: None,
+		})
+		.await
+		.expect("Read exact source position");
+
+	assert_eq!(excerpt.reference.as_deref(), Some(pack.sources[0].reference.as_str()));
 
 	let partial = service
 		.evidence_pack(EvidencePackRequest {

@@ -1,6 +1,7 @@
 use std::{env, fs, path::PathBuf};
 
 use crate::helpers::{self, TRACE_GATE_CONFIG_TOML};
+use elf_config::Config;
 
 #[test]
 fn required_config_fields_must_be_explicit() {
@@ -62,4 +63,20 @@ fn trace_gate_fixture_toml_is_valid() {
 
 	elf_config::load(&path).expect("Expected trace gate fixture config to be valid.");
 	fs::remove_file(&path).expect("Failed to remove test config.");
+}
+
+#[test]
+fn legacy_quote_limit_keeps_byte_semantics() {
+	let payload = helpers::sample_toml();
+	let legacy = payload.replace("evidence_max_quote_bytes", "evidence_max_quote_chars");
+	let cfg: Config = toml::from_str(&legacy).expect("Read legacy configuration");
+
+	assert_eq!(cfg.security.evidence_max_quote_bytes, 320);
+
+	let ambiguous = payload.replace(
+		"evidence_max_quote_bytes = 320",
+		"evidence_max_quote_bytes = 320\nevidence_max_quote_chars = 320",
+	);
+
+	assert!(toml::from_str::<elf_config::Config>(&ambiguous).is_err());
 }

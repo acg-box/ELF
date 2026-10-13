@@ -61,7 +61,7 @@ def verify(root):
             assert all(r['embedding_dim'] == 4096 for r in rows)
     expected_formal = sum(v['planned'] for v in data['summary'].values())
     assert sum(c['phase'] == 'formal' for c in cells) == expected_formal
-    assert sum(c['phase'] == 'calibration' for c in cells) == 6
+    assert sum(c['phase'] == 'calibration' for c in cells) == 2 * protocol['calibration_repetitions'] * len(protocol['conditions'])
     accounted = data['exploration']['paid_usd'] + sum(v['paid_usd'] for v in data['preparation'].values()) + sum(c['paid_usd'] for c in cells)
     if data.get('native_recall_diagnostic'):
         accounted += data['native_recall_diagnostic']['paid_usd']
@@ -75,7 +75,7 @@ def verify(root):
     assert audit['candidates'] == data['native_writes']['candidates'] == sum(audit['first_gate_outcomes'].values())
     restore = json.loads((root / 'restoration.json').read_text())
     assert restore['source_count'] == len(sources) and restore['postgres_state_equal']
-    assert all(row['dimension'] == 4096 and row['stored_vector_query_passed'] for row in restore['qdrant'])
+    assert all(row['dimension'] == 4096 and (row['stored_vector_query_passed'] if row['points'] else row['stored_vector_query_passed'] is None) for row in restore['qdrant'])
     return {'verified_cells': len(cells), 'original_records': len(sources),
             'paid_usd': data['new_budget']['paid_usd'],
             'boundary': 'Artifact integrity and metric consistency only; private semantic review is not independently reproduced.'}

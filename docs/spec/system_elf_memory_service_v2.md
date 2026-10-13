@@ -285,7 +285,7 @@ redact_secrets_on_write = true
 # Evidence rules for add_event
 evidence_min_quotes = 1
 evidence_max_quotes = 2
-evidence_max_quote_chars = 320
+evidence_max_quote_bytes = 320 # UTF-8 bytes; legacy evidence_max_quote_chars also counted bytes
 auth_mode = "off|static_keys"
 # Must exist. Empty array is allowed only when auth_mode = "off".
 auth_keys = []
@@ -1852,7 +1852,7 @@ Response:
 }
 
 Notes:
-- reason_code values include writegate rejection codes, REJECT_EVIDENCE_MISMATCH, and REJECT_WRITE_POLICY_MISMATCH.
+- reason_code values include writegate rejection codes, REJECT_EVIDENCE_QUOTE_COUNT, REJECT_EVIDENCE_QUOTE_TOO_LONG, REJECT_EVIDENCE_MISMATCH, and REJECT_WRITE_POLICY_MISMATCH. Count and length failures include their field path and runtime limit; mismatch remains a verbatim-source failure.
 - `ingestion_profile.id` is required when profile override is provided, and when `version` is omitted, latest version for that id is used.
 - If `ingestion_profile` is omitted, the tenant/project default profile is used.
 

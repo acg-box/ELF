@@ -1,7 +1,12 @@
-use crate::add_event::{
-	self,
-	types::{AddEventRequest, EventMessage, ExtractorOutput},
-	validation,
+use std::path::Path;
+
+use crate::{
+	REJECT_EVIDENCE_MISMATCH, REJECT_EVIDENCE_QUOTE_COUNT, REJECT_EVIDENCE_QUOTE_TOO_LONG,
+	add_event::{
+		self,
+		types::{AddEventRequest, EventMessage, EvidenceQuote, ExtractorOutput},
+		validation,
+	},
 };
 
 #[test]
@@ -47,4 +52,47 @@ fn extractor_schema_exposes_the_relation_time_contract() {
 			.expect("Date contract description");
 
 	assert!(description.contains("YYYY-MM-DD"), "{description}");
+}
+
+#[test]
+fn quote_rejections_distinguish_count_bytes_and_identity() {
+	let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../elf.example.toml");
+	let mut cfg = elf_config::load(&path).expect("Example config");
+
+	cfg.security.evidence_max_quote_bytes = 6;
+
+	let messages = vec!["中文测试".to_string()];
+	let check = |quotes: &[EvidenceQuote]| {
+		validation::reject_extracted_note_if_evidence_invalid(
+			&cfg,
+			None,
+			quotes,
+			&messages,
+			&[false],
+		)
+	};
+
+	assert_eq!(
+		check(&[]).expect("Missing quotes").reason_code.as_deref(),
+		Some(REJECT_EVIDENCE_QUOTE_COUNT)
+	);
+	assert!(
+		check(&[EvidenceQuote { position: None, message_index: 0, quote: "中文".into() }])
+			.is_none()
+	);
+
+	let long =
+		check(&[EvidenceQuote { position: None, message_index: 0, quote: "中文测".into() }])
+			.expect("Nine bytes");
+
+	assert_eq!(long.reason_code.as_deref(), Some(REJECT_EVIDENCE_QUOTE_TOO_LONG));
+	assert_eq!(long.field_path.as_deref(), Some("evidence[0].quote"));
+	assert_eq!(
+		check(&[EvidenceQuote { position: None, message_index: 0, quote: "not".into() }])
+			.expect("Wrong quote")
+			.reason_code
+			.as_deref(),
+		Some(REJECT_EVIDENCE_MISMATCH)
+	);
+	assert_eq!(messages[0], "中文测试");
 }

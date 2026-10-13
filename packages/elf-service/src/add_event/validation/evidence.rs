@@ -1,5 +1,6 @@
 use crate::{
-	NoteOp, REJECT_EVIDENCE_MISMATCH, REJECT_WRITE_POLICY_MISMATCH,
+	NoteOp, REJECT_EVIDENCE_MISMATCH, REJECT_EVIDENCE_QUOTE_COUNT, REJECT_EVIDENCE_QUOTE_TOO_LONG,
+	REJECT_WRITE_POLICY_MISMATCH,
 	add_event::types::{AddEventResult, EvidenceQuote},
 };
 use elf_config::Config;
@@ -20,22 +21,31 @@ pub(in crate::add_event) fn reject_extracted_note_if_evidence_invalid(
 			note_id: None,
 			op: NoteOp::Rejected,
 			policy_decision: MemoryPolicyDecision::Reject,
-			reason_code: Some(REJECT_EVIDENCE_MISMATCH.to_string()),
-			reason: reason.cloned(),
-			field_path: None,
+			reason_code: Some(REJECT_EVIDENCE_QUOTE_COUNT.to_string()),
+			reason: Some(format!(
+				"Expected {} to {} evidence quotes; received {}.",
+				cfg.security.evidence_min_quotes.max(1),
+				cfg.security.evidence_max_quotes,
+				evidence.len()
+			)),
+			field_path: Some("evidence".into()),
 			write_policy_audits: None,
 		});
 	}
 
-	for quote in evidence {
-		if quote.quote.len() > cfg.security.evidence_max_quote_chars as usize {
+	for (index, quote) in evidence.iter().enumerate() {
+		if quote.quote.len() > cfg.security.evidence_max_quote_bytes as usize {
 			return Some(AddEventResult {
 				note_id: None,
 				op: NoteOp::Rejected,
 				policy_decision: MemoryPolicyDecision::Reject,
-				reason_code: Some(REJECT_EVIDENCE_MISMATCH.to_string()),
-				reason: reason.cloned(),
-				field_path: None,
+				reason_code: Some(REJECT_EVIDENCE_QUOTE_TOO_LONG.to_string()),
+				reason: Some(format!(
+					"Evidence quote has {} UTF-8 bytes; maximum is {}.",
+					quote.quote.len(),
+					cfg.security.evidence_max_quote_bytes
+				)),
+				field_path: Some(format!("evidence[{index}].quote")),
 				write_policy_audits: None,
 			});
 		}
@@ -53,7 +63,7 @@ pub(in crate::add_event) fn reject_extracted_note_if_evidence_invalid(
 					REJECT_EVIDENCE_MISMATCH.to_string()
 				}),
 				reason: reason.cloned(),
-				field_path: None,
+				field_path: Some(format!("evidence[{index}].quote")),
 				write_policy_audits: None,
 			});
 		}

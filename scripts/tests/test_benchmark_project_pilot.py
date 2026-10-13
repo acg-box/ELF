@@ -6,12 +6,16 @@ from pathlib import Path
 import sys
 import unittest
 import tempfile
+import io
+import urllib.error
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from benchmark_pilot.corpus import load, spans
 from benchmark_pilot.corpus import save
 from benchmark_pilot.export import export
-from benchmark_pilot.tools import SourceTools
+from benchmark_pilot.runtime import Runtime
+from benchmark_pilot.tools import SourceTools, opening_tool, schemas
 
 
 class ProjectPilotTests(unittest.TestCase):
@@ -32,6 +36,45 @@ class ProjectPilotTests(unittest.TestCase):
         self.assertEqual(results[0]['text'], '中文原文\n')
         self.assertEqual(results[0]['end'] - results[0]['start'], len('中文原文\n'.encode()))
 
+    def test_host_opening_uses_available_tools_and_does_not_repeat_empty_memory(self):
+        for arm in ('no_elf', 'source_only', 'full_elf'):
+            self.assertIn(opening_tool(arm, []), {t['function']['name'] for t in schemas(arm)})
+        trace = [{'tools': [{'name': 'elf_searches_create', 'result': {'items': []}}]}]
+        self.assertIsNone(opening_tool('full_elf', trace))
+        trace[0]['tools'][0]['result']['items'] = [{'note_id': 'a'}]
+        self.assertEqual(opening_tool('full_elf', trace), 'elf_evidence_pack')
+        self.assertIsNone(opening_tool('full_elf', trace * 2))
+
+    def test_source_control_hydrates_before_more_discovery(self):
+        trace = [{'tools': [{'name': 'elf_docs_search_l0', 'result': {'items': [{'doc_id': 'a'}]}}]}]
+        self.assertEqual(opening_tool('source_only', trace, True), 'elf_docs_excerpts_get')
+        self.assertIsNone(opening_tool('source_only', trace, False))
+        self.assertIsNone(opening_tool('source_only', trace * 2, True))
+
+    def test_native_api_error_body_remains_available_to_the_reader(self):
+        with tempfile.TemporaryDirectory() as directory:
+            rt = Runtime(Path(directory), Path.cwd())
+            failure = urllib.error.HTTPError(rt.base, 400, 'Bad Request', {}, io.BytesIO(b'expected a reference string'))
+            with patch('urllib.request.urlopen', side_effect=failure):
+                with self.assertRaises(urllib.error.HTTPError) as caught:
+                    rt.api('/v2/evidence/check', {'claims': []})
+                self.assertEqual(caught.exception.read(), b'expected a reference string')
+
+    def test_native_excerpt_and_check_use_declared_routes(self):
+        calls = []
+        def api(path, args):
+            calls.append((path, args))
+            if path.endswith('/excerpts'):
+                return {'reference': 'elf-source-v1/native-a/abc/0/3', 'excerpt': 'Old'}
+            return {'claims': [{'binding_verified': False}], 'semantic_support': 'not_evaluated'}
+        host = self.host('source_only', api)
+        result = host.call('elf_docs_excerpts_get', {'doc_id': 'native-a', 'level': 'L1', 'position': {'start': 0, 'end': 3}})
+        self.assertIn(result['reference'], host.references)
+        check = host.call('elf_evidence_check', {'claims': []})
+        self.assertFalse(check['claims'][0]['binding_verified'])
+        self.assertEqual(calls[0][0], '/v2/docs/excerpts')
+        self.assertEqual(calls[1][0], '/v2/evidence/check')
+
     def test_future_source_is_not_readable_or_resolvable(self):
         host = self.host('full_elf')
         self.assertIn('error', host.call('read_source', {'source_id': 'future'}))
@@ -42,8 +85,8 @@ class ProjectPilotTests(unittest.TestCase):
         def forbidden(*args):
             self.fail('Ablated native API must not be called')
         for condition in ('no_elf', 'source_only'):
-            self.assertIn('error', self.host(condition, forbidden).call('search_memories', {'query': 'decision'}))
-        self.assertIn('error', self.host('no_elf', forbidden).call('search_sources', {'query': 'decision'}))
+            self.assertIn('error', self.host(condition, forbidden).call('elf_searches_create', {'query': 'decision'}))
+        self.assertIn('error', self.host('no_elf', forbidden).call('elf_docs_search_l0', {'query': 'decision'}))
 
     def test_truncation_preserves_parseable_complete_records_and_read_citations(self):
         host = self.host('no_elf')
@@ -101,7 +144,7 @@ max_notes_per_add_event = 3
 [security]
 evidence_min_quotes = 1
 evidence_max_quotes = 2
-evidence_max_quote_chars = 320
+evidence_max_quote_bytes = 320
 ''')
             cell_id = canary + '--no_elf--1'
             save(root / 'cases' / cell_id / 'result.json', {'cell': cell_id, 'task_id': canary, 'phase': 'formal',

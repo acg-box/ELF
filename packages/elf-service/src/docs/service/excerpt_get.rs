@@ -1,6 +1,9 @@
-use crate::docs::service::{
-	self, DocExcerptRange, DocTrajectoryBuilder, DocsExcerptResponse, DocsExcerptVerification,
-	DocsExcerptsGetRequest, ElfService, Result, Uuid,
+use crate::{
+	docs::service::{
+		self, DocExcerptRange, DocTrajectoryBuilder, DocsExcerptResponse, DocsExcerptVerification,
+		DocsExcerptsGetRequest, ElfService, Result, Uuid,
+	},
+	evidence::reference,
 };
 
 impl ElfService {
@@ -8,6 +11,14 @@ impl ElfService {
 	pub async fn docs_excerpts_get(
 		&self,
 		req: DocsExcerptsGetRequest,
+	) -> Result<DocsExcerptResponse> {
+		self.docs_excerpts_get_bounded(req, usize::MAX).await
+	}
+
+	pub(crate) async fn docs_excerpts_get_bounded(
+		&self,
+		req: DocsExcerptsGetRequest,
+		max_bytes: usize,
 	) -> Result<DocsExcerptResponse> {
 		let explain = req.explain.unwrap_or(false);
 		let trace_id = Uuid::new_v4();
@@ -43,7 +54,7 @@ impl ElfService {
 			req.doc_id,
 		)
 		.await?;
-		let level_max = service::excerpt_level_max(req.level.as_str())?;
+		let level_max = service::excerpt_level_max(req.level.as_str())?.min(max_bytes);
 
 		trajectory.push(
 			"level_selection",
@@ -90,6 +101,9 @@ impl ElfService {
 		);
 
 		Ok(DocsExcerptResponse {
+			reference: verified.then(|| {
+				reference::source_reference(doc.doc_id, &doc.content_hash, start_offset, end_offset)
+			}),
 			trace_id,
 			doc_id: doc.doc_id,
 			excerpt,

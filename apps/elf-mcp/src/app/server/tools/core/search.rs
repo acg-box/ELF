@@ -17,7 +17,7 @@ use crate::app::server::{
 impl ElfMcp {
 	#[rmcp::tool(
 		name = "elf_searches_create",
-		description = "Create a search session using quick-find or planned-search mode. Response includes optional trajectory_summary for staged retrieval progress.",
+		description = "Start project handoffs with planned_search and a small top_k, then resolve relevant note IDs with elf_evidence_pack before broad file reads. Response includes optional trajectory_summary for staged retrieval progress.",
 		input_schema = searches_create_schema()
 	)]
 	async fn elf_searches_create(

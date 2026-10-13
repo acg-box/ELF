@@ -12,7 +12,6 @@ import subprocess
 import time
 import tomllib
 import urllib.request
-import urllib.error
 
 from .corpus import save
 
@@ -55,12 +54,9 @@ class Runtime:
         data = None if payload is None else json.dumps(payload).encode()
         request = urllib.request.Request(self.base + path, data=data,
             headers={'Authorization': 'Bearer ' + self.token, 'Content-Type': 'application/json'})
-        try:
-            with urllib.request.urlopen(request, timeout=3600) as response:
-                return json.load(response)
-        except urllib.error.HTTPError as error:
-            error.add_note(error.read().decode())
-            raise
+        # Let the consumer read the native error body for a repair turn or failure receipt.
+        with urllib.request.urlopen(request, timeout=3600) as response:
+            return json.load(response)
 
     def sql(self, query):
         return docker('exec', self.owner + '-db', 'psql', '-U', 'postgres', '-d', 'elf', '-At', '-c', query)
@@ -94,7 +90,7 @@ class Runtime:
             target = '/var/lib/postgresql' if suffix == 'db' else '/qdrant/storage'
             docker(*args, '-v', volume + ':' + target, image)
         for _ in range(60):
-            check = subprocess.run(['docker', 'exec', self.owner + '-db', 'pg_isready', '-U', 'postgres'], capture_output=True)
+            check = subprocess.run(['docker', 'exec', self.owner + '-db', 'pg_isready', '-h', '127.0.0.1', '-U', 'postgres'], capture_output=True)
             if check.returncode == 0:
                 return
             time.sleep(1)
