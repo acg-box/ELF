@@ -72,6 +72,15 @@ byte ranges. The shared reader contract starts with focused memory discovery, or
 source discovery when memory is unavailable. It does not preload task answers.
 The old protocol v2 result remains in its immutable evidence bundle.
 
+Protocol v4 adds a separate source-only control with `hydrate_sources: true`.
+After nonempty document discovery, the host selects `elf_docs_excerpts_get` once
+before automatic tool choice resumes. The model selects the source and range.
+Use the same frozen tasks, original bytes, and limits. This control runs two
+calibration cells and sixteen formal cells; it does not extract unused memories.
+Keep its results separate from the earlier three-arm run. Sequential execution
+does not control provider latency or cache state. It tests an observed client
+ordering difference, not a randomized estimate of memory's causal benefit.
+
 ## Execution
 
 Build with `cargo make build-harness` and run

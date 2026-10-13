@@ -78,7 +78,13 @@ Embeddings remain Qwen3-Embedding-8B at 4096 dimensions. All requests count agai
 the existing cumulative $10 ledger, including unresolved prior reservations.
 
 Report actual memory reads, admission, citation binding, semantic review, latency,
-and amortized cost separately. The new source-only comparison isolates memory
-availability within the improved workflow. Comparison to the old trial also
-includes workflow changes and cannot isolate one patch's causal effect. These
-retrospective tasks do not establish natural multi-day session or customer readiness.
+and amortized cost separately. The first source-only arm could repeat discovery
+before reading an original, while the memory arm read an evidence pack after
+discovery. Do not attribute that client-order difference to memory quality.
+A separate source-only control uses the same frozen questions and explicitly
+selects one original excerpt after discovery. It skips memory extraction and
+keeps its results separate. Later calls remain automatic.
+
+Comparison to the old trial also includes workflow changes and cannot isolate
+one patch's causal effect. These retrospective tasks do not establish natural
+multi-day session or customer readiness.

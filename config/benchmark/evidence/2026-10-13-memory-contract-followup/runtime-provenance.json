@@ -1,0 +1,83 @@
+{
+  "calibration": {
+    "source_commit": "c1dc5f3e3d5e32e4a5cd53f832049e65033e74c8",
+    "binaries": {
+      "api": "023c46727b17e119d37bbb2da31ee95f6e0b66d4a3a465286db32afdd976f2b4",
+      "worker": "dc0653477a2e1610f96df83308176dcdb910e33b6dc1399b261c78da42f2e289"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "formal": {
+    "source_commit": "c1dc5f3e3d5e32e4a5cd53f832049e65033e74c8",
+    "binaries": {
+      "api": "023c46727b17e119d37bbb2da31ee95f6e0b66d4a3a465286db32afdd976f2b4",
+      "worker": "dc0653477a2e1610f96df83308176dcdb910e33b6dc1399b261c78da42f2e289"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "reader_files": {
+    "apps/elf-api/tests/http/helpers/config.rs": "4fae2cdaabe272fc6cb83c0bcca41b22a1f5ee8049a93f192fb2bf88bf024ecd",
+    "apps/elf-mcp/src/app.rs": "eaf73b01f4f113c822f58563f2c4791ddb68710c55fa6022436e02a78c43ecfc",
+    "apps/elf-mcp/src/app/server/tools/core/search.rs": "bd87320121fab29e5e234c6af5e5786f1cbabfef632ef46361e2552cb3972c8b",
+    "apps/elf-mcp/src/app/server/tools/docs.rs": "a27b02f69350fbff881df3d87f2d69a54dbeeb3c7cda64ebba7d66055812bcbf",
+    "config/agent/evidence-reader.md": "e19bcd63793934a0970d75f64e484dfefe5e002f5fb3a661be2fdf61b1aeddd0",
+    "config/local/elf.docker.toml": "5c7bc63263ee4869ed1b979abd8617eaf15c938faba68f6bcaa02b398b67333a",
+    "docs/decisions/2026-10-13-daily-memory-contract.md": "b4cd40f9051f350abf2fb20898b1b58399fa5d1d131ef3a1129788626b43e960",
+    "docs/runbook/agent-evidence.md": "67666f04357abe8dd2445efee628ebd8f697c250951ea3a31d2ae97a283c75a8",
+    "docs/runbook/benchmarking/real_project_memory_trial.md": "bf502d1f3a2a9ac2d948bec52b9f3746b6cb3d78d81d4af025b6489a807d2c5e",
+    "docs/spec/system_elf_memory_service_v2.md": "76a0ee51ab764ee023025cfbeabd335f483f198499f5f53516a784398424f09f",
+    "elf.example.toml": "1354665d9a1f54d8507115545b7c99699bb1db807f501f99a79d57c72a7015bd",
+    "packages/elf-config/src/types/security.rs": "302c96350570b5d4b0e53a4ad8c64c2598869e236c21d9445964ef6eb03a7438",
+    "packages/elf-config/tests/config_validation/core.rs": "a846ba43ebe2ebf122471e3180bfb6130deaca2c75f4f16705dbc332c8428491",
+    "packages/elf-config/tests/fixtures/sample_config.template.toml": "4161f83d4526b89bc21b7ecc8dacf7959d619eb1234dea77f12c9f9bb9825765",
+    "packages/elf-domain/src/memory_policy/support/lifecycle.rs": "fa10e7721d2e9c9521aecc2e74dc14e03fd9e9a10716ba4c971e954dd61e6063",
+    "packages/elf-domain/src/writegate/tests/config.rs": "a84e16ad809a3dd96b191491361d56e6746334e30308cac789f6ad04b6186932",
+    "packages/elf-domain/tests/domain.rs": "4e1f1cbfbeac7a09fa2b67b3e2f276f7717890b308a004713d306f4dab5f9bb0",
+    "packages/elf-domain/tests/memory_policy/support_lifecycle.rs": "80ac431564a1b55481d41964122eb44651b607975af667ff6a7fb21843ff73c9",
+    "packages/elf-service/src/add_event.rs": "ec3a5941b3eb84a9a5e8116442a4aecfd004721150db915c6505d14407825be4",
+    "packages/elf-service/src/add_event/extraction.rs": "8043501788278396dd578e9d6c4ea46cbd52fa60865723c69f14efcd84b8a2ad",
+    "packages/elf-service/src/add_event/service/entrypoint.rs": "e18eb11f2e3e6ba2650438dd087670e6457984d57bf94c3524d8c4510d9c313e",
+    "packages/elf-service/src/add_event/source_ref.rs": "47072f438649e0f810569a12cc69d0c2d6bbfd1c3e8fc3c98a8cc5e7bbd1c15f",
+    "packages/elf-service/src/add_event/source_ref/tests.rs": "74bcaace823f593b5f00d13cd8b0fdcf14b1c268522360e160c602e0b0db9ae5",
+    "packages/elf-service/src/add_event/tests.rs": "6b9ed48a9f6b81a17f06f682e7df2dc156e9980152a89ee249d6f4d506992595",
+    "packages/elf-service/src/add_event/types.rs": "06b16105a9b38a4a85980668b7892089ceb19ac1b263ca76c43aff29a5dd55b1",
+    "packages/elf-service/src/add_event/validation/evidence.rs": "8d70dd40926e2d4a70668ee88b158c62d60382cae83d69dca4cb375c437623f0",
+    "packages/elf-service/src/constants.rs": "e350984e75a1234aa8eed95e8f4021731707d8d2a416afaf8eaa26e1f09349d8",
+    "packages/elf-service/src/docs/api/excerpts.rs": "4e291232251684a4b191a5919b90b70ea9d30662a7c59a04a99d8fe8f9622d36",
+    "packages/elf-service/src/docs/service/excerpt_get.rs": "1c6be8730a876efa9721ba63f56262b382570e3da21a79f14803742524f13d90",
+    "packages/elf-service/src/evidence.rs": "dcf90a4a743fcc5102afc57b7bffd82364bc879bf8674e3fdeef6f7ef882ca6e",
+    "packages/elf-service/src/evidence/pack.rs": "e1ccc56b7a167a381a3d506a26782fb7764d302b2b1e7264e6ad21a0a4357aea",
+    "packages/elf-service/src/evidence/reference.rs": "6b1b14247384f4dae41dda51db486d70b556471ffca68b1814b9c6b736cf3876",
+    "packages/elf-service/src/evidence/sources.rs": "792b0e6cfb939a349782b3e30ae26b7ae21360b43a01858cb9d38ec968265230",
+    "packages/elf-service/src/ingestion_profiles.rs": "4fa719d497afa4ae60db417677534137622a95da69fd5de68a4268c4cab6b909",
+    "packages/elf-service/src/ingestion_profiles/profile.rs": "96205bb06585764664949f0f46abf3ee3d9c2a6f59a199dabb7322c83ad9f361",
+    "packages/elf-service/src/ingestion_profiles/types.rs": "941727c43845b33a0372062fccc6b17a5063ab64e85a6b43c6986ea09876f5de",
+    "packages/elf-service/src/lib.rs": "81a4f5da6cc03195ffc3db9b0143f242adbeb99eb2f768aad2d58da89c8ed515",
+    "packages/elf-service/tests/acceptance/suite/config.rs": "167c12b7e8d8249dccec96bb825623899e72b90b0324fddae417f2a5f4791234",
+    "packages/elf-service/tests/acceptance/text_boundary/evidence.rs": "ae073491e6ef59d9819f2ecf2cd895117631f6abd68733bfee7b50a48eb4cb4b",
+    "packages/elf-service/tests/acceptance/text_boundary/extraction.rs": "cd29b041f7bca5aee3fb0b8408b46ba0dc52789519860bebbebbe5e35ef0cb9d",
+    "packages/elf-service/tests/service/config.rs": "5d5f04faa0ce90d30a225715e4cd3e07880dc78b448c78656ff1996b57ebbfb3",
+    "scripts/benchmark-project-pilot.py": "1d0fbfa1c529714ac8bf4149f404b4be59debcaa9c558199c254b5e10a9d07b2",
+    "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9",
+    "scripts/benchmark_pilot/__init__.py": "f5c4c7eca67d3b1c00c8f09ceb478a61c5cfd24afaedc9202f90d599433f7fb8",
+    "scripts/benchmark_pilot/corpus.py": "755d3fbe60ceb36acb706e24beed9c7e8fe4b0cdd74d086962a9a5a903818f41",
+    "scripts/benchmark_pilot/runner.py": "5d8b7ce2c9bd258a1689317940c7c9972def302a7daeb1e12d4304a6bb5772e6",
+    "scripts/benchmark_pilot/runtime.py": "44f8bcf333a85619a9b78c4f7a402b409a82441ccb32175c4f7b92086e253746",
+    "scripts/benchmark_pilot/tools.py": "562a34813b3a68ac07e39ca3d5e24dbcf9266dcd89b067e53d1b35e6ae028bfc",
+    "scripts/consolidation-harness.sh": "a946399ed24795c0ce9ea000ad1d633bf1cedf0dfc25d0d2ff58bcefa505157b",
+    "scripts/context-misranking-harness.sh": "4e2588cd0b094501dbcabb921c39bbf34d29b773c7eca1672c140b60ca81fef6",
+    "scripts/ranking-stability-harness.sh": "580f7e8a3503d17577924855ec5d9cd4ec6dd2c54832e08ad769cb39316578fb",
+    "scripts/tests/test_benchmark_project_pilot.py": "d4da0c88a8e5137e82802bbb22952e615fbf9cae5f848c464a00a8bd00935753"
+  },
+  "native_limits": {
+    "max_note_chars": 240,
+    "max_notes_per_add_event": 3,
+    "evidence_min_quotes": 1,
+    "evidence_max_quotes": 2,
+    "evidence_max_quote_bytes": 320
+  }
+}

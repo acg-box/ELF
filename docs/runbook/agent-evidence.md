@@ -20,7 +20,10 @@ HTTP tool-calling model, select `elf_searches_create` for the first turn, then
 `elf_evidence_pack` if candidates were returned. Use the provider's supported
 `tool_choice` mechanism; let the model choose the query and relevant note IDs.
 Source-only clients select `elf_docs_search_l0`; file-only clients select narrow
-file search. Subsequent tool choice is automatic. Count the opening in the same
+file search. The source-hydration control also selects `elf_docs_excerpts_get`
+after a nonempty source search. This prevents repeated discovery from spending
+the read budget before the first original is inspected. The model selects the
+source and position. Subsequent tool choice is automatic. Count the opening in the same
 call, evidence, latency, and cost budgets. The reference trial host implements
 this sequence in `opening_tool`; it does not preload expected answers.
 
@@ -104,6 +107,23 @@ A chain does not authorize arbitrary inference. The agent must establish that
 Ivo is the relevant operator at the requested time and within the same scope.
 If a premise is unknown or conflicted, do not turn it into an unqualified fact.
 Use `unknown` for missing information and `absent` for explicit absence.
+
+## Activate the extraction profile
+
+Built-in ingestion profile `default`, version 6, asks the model to select exact
+input spans. Existing stored profiles and default-version pins are not changed
+by a service upgrade. With the target project's existing admin identity, read
+`GET /v2/admin/events/ingestion-profiles/default`, then select version 6 with
+`PUT /v2/admin/events/ingestion-profiles/default` and
+`{"profile_id":"default","version":6}`. Read the pointer back and verify the
+next event's returned profile version. Explicit event-level profile selectors
+still take precedence. Keep the previous pointer for rollback; do not edit its
+stored profile or rewrite existing notes.
+
+Runtime admission limits apply to all profiles. The canonical quote setting is
+`security.evidence_max_quote_bytes`; the legacy `evidence_max_quote_chars` alias
+still means UTF-8 bytes. Configure one name, not both. Note length continues to
+count Unicode characters.
 
 ## Compatibility and bounds
 
