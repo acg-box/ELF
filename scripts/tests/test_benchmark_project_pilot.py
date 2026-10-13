@@ -6,11 +6,15 @@ from pathlib import Path
 import sys
 import unittest
 import tempfile
+import io
+import urllib.error
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from benchmark_pilot.corpus import load, spans
 from benchmark_pilot.corpus import save
 from benchmark_pilot.export import export
+from benchmark_pilot.runtime import Runtime
 from benchmark_pilot.tools import SourceTools, opening_tool, schemas
 
 
@@ -40,6 +44,21 @@ class ProjectPilotTests(unittest.TestCase):
         trace[0]['tools'][0]['result']['items'] = [{'note_id': 'a'}]
         self.assertEqual(opening_tool('full_elf', trace), 'elf_evidence_pack')
         self.assertIsNone(opening_tool('full_elf', trace * 2))
+
+    def test_source_control_hydrates_before_more_discovery(self):
+        trace = [{'tools': [{'name': 'elf_docs_search_l0', 'result': {'items': [{'doc_id': 'a'}]}}]}]
+        self.assertEqual(opening_tool('source_only', trace, True), 'elf_docs_excerpts_get')
+        self.assertIsNone(opening_tool('source_only', trace, False))
+        self.assertIsNone(opening_tool('source_only', trace * 2, True))
+
+    def test_native_api_error_body_remains_available_to_the_reader(self):
+        with tempfile.TemporaryDirectory() as directory:
+            rt = Runtime(Path(directory), Path.cwd())
+            failure = urllib.error.HTTPError(rt.base, 400, 'Bad Request', {}, io.BytesIO(b'expected a reference string'))
+            with patch('urllib.request.urlopen', side_effect=failure):
+                with self.assertRaises(urllib.error.HTTPError) as caught:
+                    rt.api('/v2/evidence/check', {'claims': []})
+                self.assertEqual(caught.exception.read(), b'expected a reference string')
 
     def test_native_excerpt_and_check_use_declared_routes(self):
         calls = []

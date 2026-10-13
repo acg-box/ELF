@@ -66,7 +66,7 @@ def cell(args, repo, sources, checkpoints, protocol, task):
             closing = turn == protocol['max_rounds'] - 1 or calls >= protocol['max_tool_calls']
             if closing:
                 messages.append({'role': 'user', 'content': 'This is the final turn in the fixed workflow budget. Return your JSON answer from the evidence already inspected. Mark unestablished facts unknown.'})
-            required_tool = opening_tool(args.condition, trace) if protocol.get('host_opening') else None
+            required_tool = opening_tool(args.condition, trace, protocol.get('hydrate_sources', False)) if protocol.get('host_opening') else None
             payload, response = request(messages, args.condition, closing, protocol, required_tool)
             step = {'turn': turn, 'request': payload, 'response': response, 'tools': []}
             trace.append(step)
@@ -145,6 +145,9 @@ def ingest(rt, root, sources, stage, protocol):
         rt.drain()
         save(root / 'ingest' / (source['id'] + '-document.json'), {'document': doc,
             'seconds': time.monotonic() - started, 'before': before, 'after': usage(root)})
+    if 'full_elf' not in protocol['conditions']:
+        verify_state(rt, root, sources, documents, stage)
+        return
     for source in selected:
         doc = documents[source['id']]
         for i, (start, end, text) in enumerate(spans(source['text'], protocol['extraction_window_bytes'])):

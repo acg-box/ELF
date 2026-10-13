@@ -53,11 +53,15 @@ def schemas(condition):
         'type': 'object', 'properties': p, 'required': r, 'additionalProperties': False}}} for n, d, p, r in definitions]
 
 
-def opening_tool(condition, trace):
+def opening_tool(condition, trace, hydrate_sources=False):
     """A bounded host opening; subsequent retrieval remains the agent's choice."""
     if not trace:
         return {'no_elf': 'search_files', 'source_only': 'elf_docs_search_l0',
                 'full_elf': 'elf_searches_create'}[condition]
+    if hydrate_sources and condition == 'source_only' and len(trace) == 1 and any(
+            tool['name'] == 'elf_docs_search_l0' and tool['result'].get('items')
+            for tool in trace[0]['tools']):
+        return 'elf_docs_excerpts_get'
     if condition == 'full_elf' and len(trace) == 1 and any(
             tool['name'] == 'elf_searches_create' and tool['result'].get('items')
             for tool in trace[0]['tools']):
