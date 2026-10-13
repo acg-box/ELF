@@ -96,7 +96,7 @@ class ProjectPilotTests(unittest.TestCase):
                 'evidence_bytes': 10, 'answer': {'text': canary, 'claims': []},
                 'usage_before': {'requests': 0, 'paid_usd': 0}, 'usage_after': {'requests': 0, 'paid_usd': 0},
                 'stage': 0, 'pid': 100})
-            save(root / 'cases' / cell_id / 'trace.json', [{'tools': [{'result': {'source_id': canary, 'text': canary}}]}])
+            save(root / 'cases' / cell_id / 'trace.json', [{'tools': [{'name': 'read_source', 'result': {'source_id': canary, 'text': canary}}]}])
             save(root / 'review.json', {cell_id: {'accepted': True, 'passed_criteria': 1, 'flags': [], 'private_notes': canary}})
             save(root / 'native-stage-0.json', {'stage': 0, 'sources_verified': 1, 'vectors': {}, 'notes': [canary]})
             destination = Path(directory) / 'public'

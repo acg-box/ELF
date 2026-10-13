@@ -9,6 +9,11 @@ last_verified: 2026-10-13
 ---
 # Compare memory value on real project handoffs
 
+This page records the original seven-file ELF preflight. For the executable
+private-project trial and daily model profile, use
+[the real-project trial runbook](real_project_memory_trial.md). The two workloads
+and their budget histories are separate.
+
 Use `config/benchmark/real-project-pilot/workload.json` and its exact Git-backed
 source archive for the first ELF project pilot. This is a retrospective replay of
 real merged engineering decisions with newly written handoff requests. It is not
@@ -66,10 +71,10 @@ against ordinary repository access.
    Count stale decisions, future leakage, unfinished answers, and incorrect state
    classifications separately. Keep failures; do not regenerate for a better score.
 
-The current change freezes this protocol and verifies budget admission. A native
-experiment runner and the execution steps above remain unexecuted while the
-budget gate is blocked. Preparation verification must not be represented as
-cross-session acceptance.
+The original preflight froze this protocol and verified budget admission. Its
+twelve-cell workload was not executed because that budget could not admit a
+request. Preparation verification must not be represented as cross-session
+acceptance, or combined with results from a different workload.
 
 ## Value, timing, and cost
 

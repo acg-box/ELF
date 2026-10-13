@@ -13,6 +13,17 @@ def verify(root):
     protocol = json.loads((root / 'protocol.json').read_text())
     sources = {s['id']: s for s in json.loads((root / 'sources.json').read_text())['records']}
     cells = data['cells']
+    ledger = json.loads((root / 'request-ledger.json').read_text())
+    assert [r['ordinal'] for r in ledger] == list(range(1, len(ledger) + 1))
+    assert all(r['status'] == 'completed' for r in ledger)
+    assert abs(sum(r['usage']['cost'] for r in ledger) - data['new_budget']['paid_usd']) < 1e-8
+    prior = data['exploration']['requests']
+    assert abs(sum(r['usage']['cost'] for r in ledger[:prior]) - data['exploration']['paid_usd']) < 1e-8
+    for row in ledger[prior:]:
+        if row['kind'] == 'chat':
+            assert row['model'] == protocol['model']
+            assert row['requested_max_tokens'] == protocol['max_output_tokens']
+            assert row['reasoning_effort'] == protocol['reasoning']
     assert len({c['cell'] for c in cells}) == len(cells)
     assert len({c['reader_pid'] for c in cells}) == len(cells)
     for cell in cells:
@@ -21,6 +32,9 @@ def verify(root):
         assert all(sources[s]['stage'] <= cell['stage'] for s in cell['inspected_source_ids'])
         assert 0 <= cell['review']['passed_criteria'] <= cell['required_criteria']
         assert cell['review']['accepted'] == (cell['review']['passed_criteria'] == cell['required_criteria'] and not cell['review']['flags'])
+        first, last = cell['request_interval']
+        assert prior <= first < last <= len(ledger)
+        assert abs(sum(r['usage']['cost'] for r in ledger[first:last]) - cell['paid_usd']) < 1e-8
     for condition, summary in data['summary'].items():
         group = [c for c in cells if c['condition'] == condition and c['phase'] == 'formal']
         assert summary['planned'] == summary['measured'] == len(group)

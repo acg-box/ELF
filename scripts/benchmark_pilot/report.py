@@ -67,6 +67,7 @@ def measurements(root, fixture):
             'reasoning_tokens': sum(r['usage']['reasoning_tokens'] for r in rows),
             'completion_tokens': sum(r['usage']['completion_tokens'] for r in rows)}
     setup = {'source_index': {'seconds': 0, 'paid_usd': 0}, 'memory': {'seconds': 0, 'paid_usd': 0}}
+    writes = {'windows': 0, 'candidates': 0, 'operations': Counter(), 'rejections': Counter()}
     for path in (root / 'ingest').glob('*.json'):
         if path.name.endswith('.attempt.json'):
             continue
@@ -74,6 +75,14 @@ def measurements(root, fixture):
         kind = 'source_index' if path.name.endswith('-document.json') else 'memory'
         setup[kind]['seconds'] += row['seconds']
         setup[kind]['paid_usd'] += row['after']['paid_usd'] - row['before']['paid_usd']
+        if kind == 'memory':
+            response = row['response']
+            writes['windows'] += 1
+            writes['candidates'] += len(response.get('extracted', {}).get('notes', []))
+            for result in response.get('results', []):
+                writes['operations'][result['op']] += 1
+                if result.get('reason_code'):
+                    writes['rejections'][result['reason_code']] += 1
     for condition, value in summary.items():
         prep = 0 if condition == 'no_elf' else setup['source_index']['paid_usd']
         prep += setup['memory']['paid_usd'] if condition == 'full_elf' else 0
@@ -86,6 +95,7 @@ def measurements(root, fixture):
     return {'schema': 'elf.real_project_measurements/v1', 'summary': summary, 'cells': results,
             'preparation': setup, 'new_budget': {'paid_usd': paid, 'exposure_usd': exposure, 'ceiling_usd': 10},
             'exploration': {'requests': exploration_count, 'paid_usd': exploration_paid, 'exposure_usd': exploration_exposure},
+            'native_writes': writes,
             'review_boundary': 'Text-pattern coverage is diagnostic only. Semantic reviews are explicit, source-based assistant assessments, not independent judges. Native binding does not prove entailment.'}
 
 

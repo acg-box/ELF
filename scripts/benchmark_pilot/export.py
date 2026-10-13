@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import tomllib
 
 from .corpus import digest, load, save
 from .report import measurements
@@ -27,13 +28,15 @@ def export(root, destination):
                       matching_text_patterns=sum(c['text_patterns_present'] for c in row['criteria']))
         review = reviews[row['cell']]
         allowed_flags = {'missing_detail', 'stale_decision', 'incorrect_scope',
-                         'unsupported_current_state', 'unbound_citation', 'invalid_format', 'incomplete'}
+                         'incorrect_time', 'unsupported_claim', 'unsupported_current_state',
+                         'unbound_citation', 'invalid_format', 'incomplete'}
         if set(review['flags']) - allowed_flags:
             raise ValueError('Public reviews require generic flags, not private prose')
         result['review'] = {'accepted': review['accepted'], 'passed_criteria': review['passed_criteria'], 'flags': review['flags']}
         private_result = json.loads((root / 'cases' / row['cell'] / 'result.json').read_text())
         result['stage'] = private_result['stage']
         result['reader_pid'] = private_result['pid']
+        result['request_interval'] = [private_result['usage_before']['requests'], private_result['usage_after']['requests']]
         trace = json.loads((root / 'cases' / row['cell'] / 'trace.json').read_text())
         inspected = set()
         def collect(value):
@@ -66,6 +69,32 @@ def export(root, destination):
         native.append({'stage': state['stage'], 'sources_verified': state['sources_verified'],
                        'vectors': state['vectors'], 'notes': len(state['notes'])})
     save(destination / 'native.json', native)
+    ledger = json.loads((root / 'budget-ledger.json').read_text())
+    save(destination / 'request-ledger.json', [{
+        **{key: row[key] for key in ('ordinal', 'kind', 'status', 'reserved_usd', 'model', 'provider',
+              'seconds', 'requested_provider', 'requested_max_tokens', 'reasoning_effort') if key in row},
+        'usage': {key: value for key, value in row.get('usage', {}).items()
+                  if key in ('prompt_tokens', 'completion_tokens', 'total_tokens', 'cost')},
+    } for row in ledger['requests']])
+    builds = {}
+    for phase in ('calibration', 'formal'):
+        path = root / ('runtime-build-calibration.json' if phase == 'calibration' else 'runtime-build.json')
+        if path.exists():
+            builds[phase] = {key: value for key, value in json.loads(path.read_text()).items()
+                             if key in ('source_commit', 'binaries', 'tokenizer_sha256', 'database_image', 'qdrant_image')}
+    snapshot = root / 'harness-snapshot.json'
+    if snapshot.exists():
+        builds['reader_files'] = {key: value for key, value in json.loads(snapshot.read_text())['files'].items()
+                                 if key not in ('scripts/benchmark_pilot/report.py', 'scripts/benchmark_pilot/export.py',
+                                                'scripts/benchmark_pilot/verify_export.py')}
+    native_config = root / 'private-elf.toml'
+    if native_config.exists():
+        config = tomllib.loads(native_config.read_text())
+        builds['native_limits'] = {key: config[section][key] for section, keys in (
+            ('memory', ('max_note_chars', 'max_notes_per_add_event')),
+            ('security', ('evidence_min_quotes', 'evidence_max_quotes', 'evidence_max_quote_chars')))
+            for key in keys}
+    save(destination / 'runtime-provenance.json', builds)
     save(destination / 'private-evidence-hashes.json', {
         'boundary': 'These hashes identify private evidence. Original business records, task text, answer text and provider receipts are not published.',
         'files': [{'path_sha256': digest(str(p.relative_to(root)).encode()), 'content_sha256': digest(p.read_bytes())} for p in sorted(root.rglob('*.json'))

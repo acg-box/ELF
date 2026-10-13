@@ -8,6 +8,10 @@ Routes to: Benchmarking runbooks under `docs/runbook/benchmarking/`.
 
 ## Concepts
 
+- [Real-project memory trial](real_project_memory_trial.md): native three-arm
+  handoff replay with private originals, daily model costs, and public aggregate
+  evidence.
+
 - [Repository memory replay](repository_memory_replay.md): paired historical repair trials, isolated tests, and cost boundaries.
 
 - `live_baseline_benchmark.md`: Docker-isolated current-HEAD baseline checks against
