@@ -6,6 +6,7 @@ import math
 from pathlib import Path
 import re
 import statistics
+from collections import Counter
 
 from benchmark_budget import totals
 from .corpus import save
@@ -32,10 +33,13 @@ def measurements(root, fixture):
         usage['cache_write_prompt_tokens'] = sum((r.get('usage', {}).get('prompt_tokens_details') or {}).get('cache_write_tokens', 0) or 0 for r in requests)
         usage['reasoning_tokens'] = sum((r.get('usage', {}).get('completion_tokens_details') or {}).get('reasoning_tokens', 0) or 0 for r in requests)
         binding = row.get('claim_bindings', {}).get('claims', [])
+        trace = json.loads((path.parent / 'trace.json').read_text())
+        tool_counts = Counter(tool['name'] for step in trace for tool in step['tools'])
         results.append({k: row[k] for k in ('cell', 'task_id', 'phase', 'condition', 'repetition', 'status', 'seconds', 'tool_calls', 'evidence_bytes')} | {
             'criteria': criteria, 'text_pattern_coverage': sum(c['text_patterns_present'] for c in criteria) / len(criteria),
             'native_binding': bool(binding) and all(c['binding_verified'] for c in binding),
             'all_references_seen': row.get('all_references_seen', False), 'usage': usage,
+            'tool_counts': dict(tool_counts),
             'provider_requests': len(requests), 'paid_usd': row['usage_after']['paid_usd'] - row['usage_before']['paid_usd']})
     review_path = root / 'review.json'
     reviews = json.loads(review_path.read_text()) if review_path.exists() else {}
@@ -55,6 +59,7 @@ def measurements(root, fixture):
             'median_seconds': statistics.median(times) if rows else None,
             'p95_seconds': times[math.ceil(len(times) * .95) - 1] if rows else None,
             'tool_calls': sum(r['tool_calls'] for r in rows),
+            'tool_counts': dict(sum((Counter(r['tool_counts']) for r in rows), Counter())),
             'paid_usd': sum(r['paid_usd'] for r in rows),
             'prompt_tokens': sum(r['usage']['prompt_tokens'] for r in rows),
             'cached_prompt_tokens': sum(r['usage']['cached_prompt_tokens'] for r in rows),
