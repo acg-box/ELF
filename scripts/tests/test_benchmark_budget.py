@@ -12,6 +12,20 @@ from benchmark_budget import Ledger, buffered_events, prepare_request, reservati
 
 
 class BudgetTests(TestCase):
+    def test_explicit_daily_profile_keeps_tool_calls_and_native_output_allowance(self):
+        body, _, output = prepare_request({'model': 'other', 'temperature': 0.1,
+            'tools': [{'type': 'function', 'function': {'name': 'read'}}]}, 'chat',
+            chat_model='openai/gpt-6-luna', chat_provider='openai',
+            chat_max_tokens=128000, force_chat_max_tokens=True, reasoning_effort='medium',
+            chat_prompt_price=0.1, chat_completion_price=0.5, omit_chat_temperature=True)
+        self.assertEqual(body['model'], 'openai/gpt-6-luna')
+        self.assertEqual(body['provider']['only'], ['openai'])
+        self.assertEqual(body['reasoning'], {'effort': 'medium'})
+        self.assertEqual(output, 128000)
+        self.assertIn('tools', body)
+        self.assertNotIn('temperature', body)
+        self.assertLess(reservation(196608, 'chat', output, 0.1, 0.5), 0.085)
+
     def test_maximum_profile_can_reserve_two_real_concurrent_requests(self):
         import contextlib
         import http.client

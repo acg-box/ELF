@@ -73,6 +73,7 @@ a language migration or another runtime.
 | Owner | Responsibility |
 | --- | --- |
 | `scripts/benchmark_replay/` | Own the bounded historical repair pilot, source snapshots, memory conditions, agent tools, and isolated checks within the existing Python benchmark. |
+| `scripts/benchmark_pilot/` | Own chronological real-project source replay, three memory conditions, independent readers, and preparation-inclusive measurements. |
 | `scripts/benchmark_deep/` | Define blinded shared-store workloads and native actions across client-process boundaries. The host retains the answer oracle. |
 | `scripts/benchmark-deep.py` | Execute and score scale, continuity, conflict, namespace, and mutation workloads. |
 | `scripts/benchmark_budget.py` | Reserve cumulative API cost, constrain provider routes, isolate credentials, and retain usage receipts. |

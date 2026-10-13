@@ -28,3 +28,33 @@ fn rejects_invalid_type() {
 fn detects_secret_patterns() {
 	assert!(writegate::contains_secrets("password: hunter2"));
 }
+
+#[test]
+fn accepts_source_code_environment_references_without_changing_originals() {
+	for source in [
+		"const token = requiredString(process.env['GH_TOKEN'], 'GH_TOKEN');",
+		"const api_key = process.env.API_KEY;",
+		"GH_TOKEN: ${{ github.token }}",
+		"secret = ${SERVICE_SECRET}",
+		"let password = std::env::var(\"PASSWORD\")?;",
+		"token = os.environ['TOKEN']",
+		"jsonwebtoken = { version = \"~11.0\" }",
+	] {
+		assert!(!writegate::contains_secrets(source), "Non-secret source was rejected: {source}");
+	}
+}
+
+#[test]
+fn environment_reference_exemption_does_not_accept_literal_or_fallback_secrets() {
+	for source in [
+		"API_KEY = private-value",
+		"GH_TOKEN: actual-credential",
+		"token = 'process.env.TOKEN'",
+		"token = process.env.TOKEN || 'actual-credential'",
+		"token = process.env.TOKEN; password = hunter2",
+		"token = requiredString(process.env.TOKEN, 'actual-credential');",
+		"sk-abcdefghijklmnopqrstuvwxyz",
+	] {
+		assert!(writegate::contains_secrets(source), "Secret-like source was accepted: {source}");
+	}
+}

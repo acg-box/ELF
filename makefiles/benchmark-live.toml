@@ -44,3 +44,6 @@ command = "bash"
 [tasks.benchmark-evidence-context]
 args    = ["scripts/benchmark-evidence-context.py", "${@}"]
 command = "python3"
+[tasks.benchmark-project-pilot]
+args    = ["scripts/benchmark-project-pilot.py", "${@}"]
+command = "python3"

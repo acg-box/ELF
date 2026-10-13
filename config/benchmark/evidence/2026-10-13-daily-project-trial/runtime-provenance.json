@@ -1,0 +1,60 @@
+{
+  "calibration": {
+    "source_commit": "1046c95d1a3855847b75d31c1637ce1237901824",
+    "binaries": {
+      "api": "09ce8f95bbc34151c7264b5c8da1a95c2d0ecbc7d1bd400104769389d6e944f6",
+      "worker": "19b25d7bc7330a80b3e091ffc5a5adb1f9619df1aa84a2e6a015fe84204b7ee3"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "formal-first": {
+    "source_commit": "15e133d302b8ee3eb746de9f3fcd2d3a93f8287d",
+    "binaries": {
+      "api": "09ce8f95bbc34151c7264b5c8da1a95c2d0ecbc7d1bd400104769389d6e944f6",
+      "worker": "19b25d7bc7330a80b3e091ffc5a5adb1f9619df1aa84a2e6a015fe84204b7ee3"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "formal": {
+    "source_commit": "4a7217615f1a47b80eeaa97a390c3b75bc5681d1",
+    "binaries": {
+      "api": "09ce8f95bbc34151c7264b5c8da1a95c2d0ecbc7d1bd400104769389d6e944f6",
+      "worker": "19b25d7bc7330a80b3e091ffc5a5adb1f9619df1aa84a2e6a015fe84204b7ee3"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "diagnostic": {
+    "source_commit": "4a7217615f1a47b80eeaa97a390c3b75bc5681d1",
+    "binaries": {
+      "api": "09ce8f95bbc34151c7264b5c8da1a95c2d0ecbc7d1bd400104769389d6e944f6",
+      "worker": "19b25d7bc7330a80b3e091ffc5a5adb1f9619df1aa84a2e6a015fe84204b7ee3"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "reader_files": {
+    "scripts/benchmark_pilot/runner.py": "f00589b6e256a7b71f0cd1a6282390ace1aa684171fa05a52ff61bf2454edabe",
+    "scripts/benchmark_pilot/tools.py": "7277199650e5ba26e7270e662a7760045674d423fc0e204aa5a32bc333f35ef4",
+    "scripts/benchmark_pilot/__init__.py": "f5c4c7eca67d3b1c00c8f09ceb478a61c5cfd24afaedc9202f90d599433f7fb8",
+    "scripts/benchmark_pilot/runtime.py": "4159c0d920fc67ce798b1c97ae046e4140cce7ed5ccc8593980cfc6c0e9dca0a",
+    "scripts/benchmark_pilot/corpus.py": "755d3fbe60ceb36acb706e24beed9c7e8fe4b0cdd74d086962a9a5a903818f41",
+    "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9",
+    "scripts/benchmark-project-pilot.py": "1d0fbfa1c529714ac8bf4149f404b4be59debcaa9c558199c254b5e10a9d07b2",
+    "config/agent/evidence-reader.md": "eb08a4df70b2b8ac8dd0ccdfe8af6ee410b21cf920f66976c8017a079e78bc11",
+    "elf.example.toml": "c99e63ed2fd147516cdc1c2a70ceced2dcf7b6122fa71a25d7843a15c7d6bad1"
+  },
+  "native_limits": {
+    "max_note_chars": 240,
+    "max_notes_per_add_event": 3,
+    "evidence_min_quotes": 1,
+    "evidence_max_quotes": 2,
+    "evidence_max_quote_chars": 320
+  }
+}

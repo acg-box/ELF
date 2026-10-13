@@ -9,6 +9,12 @@ last_verified: 2026-10-13
 ---
 # Real-project memory pilot stopped at budget admission
 
+This is the preserved preflight result for the original cumulative budget and
+seven-file workload. The later
+[private-project trial](../../runbook/benchmarking/real_project_memory_trial.md)
+uses a separately authorized budget and a different frozen corpus. It does not
+replace this no-execution receipt or clear the older unresolved reservations.
+
 The actual three-condition experiment did not run. The cumulative budget cannot
 reserve even one full-output request at the verified current official-provider
 price. No model or embedding call was sent, no native memory was ingested, and
