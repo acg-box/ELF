@@ -77,8 +77,10 @@ def export(root, destination):
                   if key in ('prompt_tokens', 'completion_tokens', 'total_tokens', 'cost')},
     } for row in ledger['requests']])
     builds = {}
-    for phase in ('calibration', 'formal'):
-        path = root / ('runtime-build-calibration.json' if phase == 'calibration' else 'runtime-build.json')
+    for phase in ('calibration', 'formal-first', 'formal', 'diagnostic'):
+        path = root / ('runtime-build-' + phase + '.json')
+        if phase == 'formal' and not path.exists():
+            path = root / 'runtime-build.json'
         if path.exists():
             builds[phase] = {key: value for key, value in json.loads(path.read_text()).items()
                              if key in ('source_commit', 'binaries', 'tokenizer_sha256', 'database_image', 'qdrant_image')}
@@ -95,6 +97,17 @@ def export(root, destination):
             ('security', ('evidence_min_quotes', 'evidence_max_quotes', 'evidence_max_quote_chars')))
             for key in keys}
     save(destination / 'runtime-provenance.json', builds)
+    rejection_audit = root / 'write-rejection-audit.json'
+    if rejection_audit.exists():
+        audit = json.loads(rejection_audit.read_text())
+        save(destination / 'write-rejection-audit.json', {key: audit[key] for key in (
+            'candidates', 'first_gate_outcomes', 'quote_identity', 'note_character_limit', 'quote_byte_limit')})
+    restoration = root / 'backup' / 'restore-receipt.json'
+    if restoration.exists():
+        receipt = json.loads(restoration.read_text())
+        save(destination / 'restoration.json', {key: receipt[key] for key in (
+            'source_count', 'postgres_state_equal', 'qdrant', 'image_manifests')} | {
+            'private_receipt_sha256': digest(restoration.read_bytes())})
     save(destination / 'private-evidence-hashes.json', {
         'boundary': 'These hashes identify private evidence. Original business records, task text, answer text and provider receipts are not published.',
         'files': [{'path_sha256': digest(str(p.relative_to(root)).encode()), 'content_sha256': digest(p.read_bytes())} for p in sorted(root.rglob('*.json'))

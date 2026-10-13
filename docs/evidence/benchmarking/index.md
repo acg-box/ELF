@@ -9,6 +9,8 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [Daily-cost project memory trial](2026-10-13-daily-project-trial.md): real private project handoffs, matched requirement coverage, complete cost exposure, and native recall diagnosis.
+
 - [Frozen memory ablation and retrieval backends](2026-10-10-retrieval-laboratory.md): source versus note contribution, cached-vector database comparison, sustained load, and ontology boundaries.
 
 - [Language-neutral source memory regression](2026-10-10-elf-language-provenance.md): immutable sources, multilingual extraction, matched answer scores, provenance, and cumulative cost.

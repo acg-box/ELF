@@ -89,7 +89,20 @@ class ProjectPilotTests(unittest.TestCase):
             save(fixture / 'oracle.json', [{'id': canary, 'criteria': [{'obligation': canary, 'patterns': [canary]}]}])
             save(fixture / 'protocol.json', {'conditions': ['no_elf'], 'formal_repetitions': 1, 'private_annotation': canary})
             save(fixture / 'freeze.json', {'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in fixture.iterdir()}})
-            save(root / 'budget-ledger.json', {'prior_paid_usd': 0, 'requests': []})
+            save(root / 'budget-ledger.json', {'prior_paid_usd': 0, 'requests': [{
+                'ordinal': 1, 'kind': 'chat', 'status': 'completed', 'reserved_usd': 0,
+                'model': 'test-model', 'usage': {'cost': 0, 'private_annotation': canary},
+                'provider_error': canary}]})
+            (root / 'private-elf.toml').write_text(f'''[providers]
+api_key = "{canary}"
+[memory]
+max_note_chars = 240
+max_notes_per_add_event = 3
+[security]
+evidence_min_quotes = 1
+evidence_max_quotes = 2
+evidence_max_quote_chars = 320
+''')
             cell_id = canary + '--no_elf--1'
             save(root / 'cases' / cell_id / 'result.json', {'cell': cell_id, 'task_id': canary, 'phase': 'formal',
                 'condition': 'no_elf', 'repetition': 1, 'status': 'completed', 'seconds': 1, 'tool_calls': 1,

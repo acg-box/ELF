@@ -1,0 +1,27 @@
+{
+  "source_count": 14,
+  "postgres_state_equal": true,
+  "qdrant": [
+    {
+      "collection": "doc_chunks_v1",
+      "dimension": 4096,
+      "points": 29,
+      "stored_vector_query_passed": true
+    },
+    {
+      "collection": "mem_notes_v2",
+      "dimension": 4096,
+      "points": 23,
+      "stored_vector_query_passed": true
+    }
+  ],
+  "image_manifests": {
+    "db": [
+      "pgvector/pgvector@sha256:2358fcba361ed2233a5ed81b5fe4ca779ccb304120ce531a3bf51c0ed7e2bc11"
+    ],
+    "qdrant": [
+      "qdrant/qdrant@sha256:b3063c673f3973877c038eeecc392bad5011f072ee7892b56c9a8e204a3bdea9"
+    ]
+  },
+  "private_receipt_sha256": "fc7f24966912e7c6787a79a2ccd97583c537f8137050a5c4653a44e2df4aea06"
+}

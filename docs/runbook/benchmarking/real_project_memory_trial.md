@@ -58,6 +58,12 @@ Agent evidence contract applies to all conditions. The host checks final claims
 with the native checker and separately verifies that references were actually
 returned to that reader.
 
+The evidence-byte limit is a shared workflow budget, not the model's native
+context limit. The agent chooses its tools; enabled memory tools can remain
+unused. Report that usage explicitly. The common checker runs after the final
+answer and does not provide a repair turn. This trial therefore measures this
+reader workflow, not every ELF feature or the best possible client integration.
+
 ## Execution
 
 Build with `cargo make build-harness` and run
@@ -108,6 +114,12 @@ explicit source-based semantic review. Pattern matches are not correctness. The
 review must inspect every required obligation and additional claim, including
 stale advice, wrong scope, and unsupported deployment or deletion assertions.
 Assistant review is not an independent or blinded judge.
+
+Keep transport and harness failures in the completion and cost tables. For the
+content comparison, exclude that same task/repetition from every condition, so
+a provider connection failure does not become a memory-quality score. Report
+the matched denominator. Invalid answers and content errors remain in the
+content comparison; they are outcomes, not missing transport data.
 
 Report cell latency, calls, prompt/completion tokens, and provider-settled cost.
 Include source indexing and memory preparation, with amortized costs at 1, 5,

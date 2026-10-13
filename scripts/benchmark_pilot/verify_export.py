@@ -15,13 +15,17 @@ def verify(root):
     cells = data['cells']
     ledger = json.loads((root / 'request-ledger.json').read_text())
     assert [r['ordinal'] for r in ledger] == list(range(1, len(ledger) + 1))
-    assert all(r['status'] == 'completed' for r in ledger)
-    assert abs(sum(r['usage']['cost'] for r in ledger) - data['new_budget']['paid_usd']) < 1e-8
+    assert all(r['status'] in ('completed', 'uncertain', 'provider_failed', 'completed_cost_unknown') for r in ledger)
+    paid = sum(r['usage'].get('cost', 0) for r in ledger)
+    exposure = sum(r['usage']['cost'] if r['status'] == 'completed' else max(r['reserved_usd'], r['usage'].get('cost', 0)) for r in ledger)
+    assert abs(paid - data['new_budget']['paid_usd']) < 1e-8
+    assert abs(exposure - data['new_budget']['exposure_usd']) < 1e-8
     prior = data['exploration']['requests']
-    assert abs(sum(r['usage']['cost'] for r in ledger[:prior]) - data['exploration']['paid_usd']) < 1e-8
+    assert abs(sum(r['usage'].get('cost', 0) for r in ledger[:prior]) - data['exploration']['paid_usd']) < 1e-8
     for row in ledger[prior:]:
         if row['kind'] == 'chat':
-            assert row['model'] == protocol['model']
+            if row['status'] == 'completed':
+                assert row['model'] == protocol['model']
             assert row['requested_max_tokens'] == protocol['max_output_tokens']
             assert row['reasoning_effort'] == protocol['reasoning']
     assert len({c['cell'] for c in cells}) == len(cells)
@@ -34,7 +38,7 @@ def verify(root):
         assert cell['review']['accepted'] == (cell['review']['passed_criteria'] == cell['required_criteria'] and not cell['review']['flags'])
         first, last = cell['request_interval']
         assert prior <= first < last <= len(ledger)
-        assert abs(sum(r['usage']['cost'] for r in ledger[first:last]) - cell['paid_usd']) < 1e-8
+        assert abs(sum(r['usage'].get('cost', 0) for r in ledger[first:last]) - cell['paid_usd']) < 1e-8
     for condition, summary in data['summary'].items():
         group = [c for c in cells if c['condition'] == condition and c['phase'] == 'formal']
         assert summary['planned'] == summary['measured'] == len(group)
@@ -44,6 +48,12 @@ def verify(root):
         assert summary['reviewed_criteria'] == sum(c['required_criteria'] for c in group)
         assert summary['passed_criteria'] == sum(c['review']['passed_criteria'] for c in group)
         assert abs(summary['paid_usd'] - sum(c['paid_usd'] for c in group)) < 1e-9
+        matched = [c for c in group if not any(other['status'] in ('transport_failed', 'harness_failed')
+                   for other in cells if other['phase'] == 'formal' and other['task_id'] == c['task_id'] and other['repetition'] == c['repetition'])]
+        assert summary['matched_content_cells'] == len(matched)
+        assert summary['matched_criteria'] == sum(c['required_criteria'] for c in matched)
+        assert summary['matched_passed_criteria'] == sum(c['review']['passed_criteria'] for c in matched)
+        assert summary['matched_accepted'] == sum(c['review']['accepted'] for c in matched)
     native = json.loads((root / 'native.json').read_text())
     for stage in native:
         assert stage['sources_verified'] == sum(s['stage'] <= stage['stage'] for s in sources.values())
@@ -53,12 +63,19 @@ def verify(root):
     assert sum(c['phase'] == 'formal' for c in cells) == expected_formal
     assert sum(c['phase'] == 'calibration' for c in cells) == 6
     accounted = data['exploration']['paid_usd'] + sum(v['paid_usd'] for v in data['preparation'].values()) + sum(c['paid_usd'] for c in cells)
+    if data.get('native_recall_diagnostic'):
+        accounted += data['native_recall_diagnostic']['paid_usd']
     assert abs(accounted - data['new_budget']['paid_usd']) < 1e-8
     assert 0 <= data['new_budget']['paid_usd'] <= data['new_budget']['exposure_usd'] <= 10
     assert protocol['embedding_dimensions'] == 4096
     assert protocol['model'] == 'openai/gpt-6-luna'
     assert protocol['reasoning'] == 'medium'
     assert protocol['max_output_tokens'] == 128000
+    audit = json.loads((root / 'write-rejection-audit.json').read_text())
+    assert audit['candidates'] == data['native_writes']['candidates'] == sum(audit['first_gate_outcomes'].values())
+    restore = json.loads((root / 'restoration.json').read_text())
+    assert restore['source_count'] == len(sources) and restore['postgres_state_equal']
+    assert all(row['dimension'] == 4096 and row['stored_vector_query_passed'] for row in restore['qdrant'])
     return {'verified_cells': len(cells), 'original_records': len(sources),
             'paid_usd': data['new_budget']['paid_usd'],
             'boundary': 'Artifact integrity and metric consistency only; private semantic review is not independently reproduced.'}
