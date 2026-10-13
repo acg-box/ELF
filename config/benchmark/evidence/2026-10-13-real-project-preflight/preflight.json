@@ -1,0 +1,38 @@
+{
+  "schema": "elf.real_project_preflight/v1",
+  "captured_at": "2026-10-13T06:43:36.616562+00:00",
+  "status": "blocked_budget_before_execution",
+  "reason": "The full-output reservation for one request exceeds remaining cumulative headroom. No model request is permitted.",
+  "ceiling_usd": 10,
+  "opening_paid_usd": 8.555102170000023,
+  "opening_exposure_usd": 9.638902570000008,
+  "remaining_usd": 0.36109742999999206,
+  "minimum_request_reservation_usd": 0.4743167999999999,
+  "output_tokens": 393216,
+  "active_prices_usd_per_million": {
+    "prompt": 0.3,
+    "completion": 1.2
+  },
+  "ledger_sha256_before": "a7d5325dec7433941dc426fc83fbcc9b2c547e0db89bf738a9551f3d26bfa463",
+  "ledger_sha256_after": "a7d5325dec7433941dc426fc83fbcc9b2c547e0db89bf738a9551f3d26bfa463",
+  "opening_request_count": 5020,
+  "unsettled": [
+    {
+      "ordinal": 1577,
+      "status": "provider_failed",
+      "reserved_usd": 0.5691777
+    },
+    {
+      "ordinal": 4501,
+      "status": "provider_failed",
+      "reserved_usd": 0.5146227
+    }
+  ],
+  "planned_cells": 12,
+  "executed_cells": 0,
+  "new_provider_requests": 0,
+  "new_paid_usd": 0,
+  "scores": null,
+  "latency_measurements": null,
+  "pilot_preparation_boundary": "Immutable repository material and protocol only. Native ingestion, index readiness, model agents and cross-session execution were not started."
+}
