@@ -1,0 +1,76 @@
+{
+  "calibration": {
+    "source_commit": "3fb405b830547786a403e13928d7049344b64d46",
+    "binaries": {
+      "api": "44da9f54609c1c3eb268d5ce124a1c55a4214b39a9e6f138bac3a4108d8d4ed7",
+      "worker": "5df9cd3020ec3e9eb2d2918b43c1033801fb44158d919da65b9b9d60f68fa937"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "formal": {
+    "source_commit": "3fb405b830547786a403e13928d7049344b64d46",
+    "binaries": {
+      "api": "44da9f54609c1c3eb268d5ce124a1c55a4214b39a9e6f138bac3a4108d8d4ed7",
+      "worker": "5df9cd3020ec3e9eb2d2918b43c1033801fb44158d919da65b9b9d60f68fa937"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "reader_files": {
+    "apps/elf-api/src/routes/docs/excerpts.rs": "5423ffc276f1879e5f8ca8a03157b711a991b4dd74b3149c5e908c7eb1c5c46d",
+    "apps/elf-api/src/routes/search/create.rs": "cc580464abe9a2d72441a67fbebe68edf69dde63fce919f5f1b37740e22a5ccc",
+    "apps/elf-api/src/routes/search/read.rs": "87f56047561c8f53dfea433e4f5bf187f11f1362b305ce250a42f0c9c2cbc310",
+    "apps/elf-api/src/routes/types/docs.rs": "231db1bafe22020f3b93c20654468e55d9ddb161ad143068d76547e604d3f3ed",
+    "apps/elf-api/src/routes/types/search.rs": "a86a655657abb6b9cc72502259ca1fe8397d1babbff3b77c2276934d70f04b98",
+    "apps/elf-eval/src/app/eval.rs": "630808a63896f70ddaf8be4c2d28e2d80eddaafd468800500d9c98f25f0aff21",
+    "apps/elf-mcp/src/app/server/schemas/docs.rs": "67a5cfed766ec0b4cfaef039fea53d0f8309e18b19ac0375ba0f1ed4a639d7c2",
+    "apps/elf-mcp/src/app/server/tests/schemas/docs.rs": "32dd78794c1ec8f32dba6de72ff885e762003390f2af4da84fd40a5f9b0c41d5",
+    "apps/elf-mcp/src/app/server/tools/docs.rs": "1954c602291d0598d373ff05b7602128f3a99b4d6e2fad2c9a3494533b889f32",
+    "config/agent/evidence-reader.md": "25ab887f8527933b53083c2f438a82c2fa56e5ef407af44146a302ef64dc67e6",
+    "docs/decisions/2026-10-14-agent-evidence-use.md": "50ce40edb6106bc7ed317bf79452b3a41174cbe1fc094d9cd3a32c80fc08c7bd",
+    "docs/decisions/2026-10-14-bounded-source-evidence.md": "d570a7456d30c20fabfe7914870cd2f6c612b97cc9efc28797618e60a6f573c3",
+    "docs/runbook/agent-evidence.md": "1862efa6c67bb8a4b4f5f145bcb09128b3da95bc5709cb1bdd9a8c2e4c75077e",
+    "docs/spec/system_elf_memory_service_v2.md": "b320515aec1fcc796df2d2942704345a020f2be17d0a57091751c2625389d9ed",
+    "elf.example.toml": "1354665d9a1f54d8507115545b7c99699bb1db807f501f99a79d57c72a7015bd",
+    "packages/elf-service/src/docs/api/excerpts.rs": "be3ab45be650b205483da8635d220f439c4ba53ebef96005230a61306473e563",
+    "packages/elf-service/src/docs/excerpts/text.rs": "213a14ea34aca5c2245c0dac000356ee5ed8fb5a06ea6a68eff559d12729b19b",
+    "packages/elf-service/src/docs/service/excerpt_get.rs": "33aa77be1d58d31fc8e9fe68f2b7379c812e5826648b92a8c0e5542e4d7d4c6d",
+    "packages/elf-service/src/evidence/claims.rs": "4fb2ddaaaf57f457ea2c19216dd2760d0e99388eb88797d0962ebd65dee8e0dc",
+    "packages/elf-service/src/evidence/pack.rs": "3854874872abe047b5c6d6d9617bca8f2275c327c054f11e91107f448272104e",
+    "packages/elf-service/src/evidence/pack/windows.rs": "62f98c56bd191530578348c906faf8ef51b0f1d69c0c451b40c97133f775bf60",
+    "packages/elf-service/src/evidence/reference.rs": "a202d6ee45f3a7cf364154d3823076117f9077b20910e7ea34d75ce7c1687e47",
+    "packages/elf-service/src/evidence/source_recall.rs": "5ddcbc14b235dc64ad6cff9d4f2156bcdc8ae7a8f13395832151b1908c54f3de",
+    "packages/elf-service/src/evidence/sources.rs": "864d98757aada0141f41a9096e5e9f21cf5d053c50c80d8fafdd23e192dce454",
+    "packages/elf-service/src/progressive_search/followup/session_get.rs": "3565f8b9036f499d2dd28f23bd6551b65ebb83a88971cf5973b1c103bc8c4905",
+    "packages/elf-service/src/progressive_search/service/entrypoints.rs": "42c071d46cbac2842675e2dec8aadedcf2e9b49572160c77d2fad35cd06fde83",
+    "packages/elf-service/src/progressive_search/service/sessionized.rs": "d319231dda5b205aa48a9a0efd793b132eed346d1758c9edc40a0cc0bce55c3b",
+    "packages/elf-service/src/progressive_search/types/index.rs": "c5c6b5696266ae0c958a5bc1a9beafb3bc86bcd2a16554402abbcd64fbbcfd30",
+    "packages/elf-service/tests/acceptance/chunk_search/tests_core/progressive.rs": "60ec66c43e95d5c315f7b4f98e6957b5a3b89d212e815dace7f6c138828f2c53",
+    "packages/elf-service/tests/acceptance/docs_extension_v1/excerpts.rs": "be28b59f2612deafcdc6345cc051c2092f529b68de39acdf15405c00d7744854",
+    "packages/elf-service/tests/acceptance/docs_extension_v1/helpers/assertions.rs": "65c71ef93e818f662b4bf510f32c20a81a2b169d1877bbb3b73b3916f3af8f4f",
+    "packages/elf-service/tests/acceptance/docs_extension_v1/l0_search.rs": "8fe785d0f0c2eec649094c82dccdf2a54043ceacd7123708907abf1cddc91875",
+    "packages/elf-service/tests/acceptance/docs_extension_v1/lifecycle/write_policy.rs": "2526c0b0726749d2f241fc56abf55e688c267997fab77523d197364f4ea86550",
+    "packages/elf-service/tests/acceptance/text_boundary/evidence.rs": "9f3931f12cf8d3c882ed976621ec1ea85c239d1e9bf2fd272194fa9fa496bc0c",
+    "scripts/benchmark-project-pilot.py": "1d0fbfa1c529714ac8bf4149f404b4be59debcaa9c558199c254b5e10a9d07b2",
+    "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9",
+    "scripts/benchmark_pilot/__init__.py": "f5c4c7eca67d3b1c00c8f09ceb478a61c5cfd24afaedc9202f90d599433f7fb8",
+    "scripts/benchmark_pilot/corpus.py": "755d3fbe60ceb36acb706e24beed9c7e8fe4b0cdd74d086962a9a5a903818f41",
+    "scripts/benchmark_pilot/evidence.py": "3525b016b80c77069917e192b3aa0943f9074598d3c752b87762deca5924a9be",
+    "scripts/benchmark_pilot/reuse.py": "62b355505b87e4942b97f907879becff4ddb9c82d0750b4cba6617685ca4b470",
+    "scripts/benchmark_pilot/runner.py": "71234e44e961151309c085e189c060bf5ace1ec0eb080531d70ecee86a709fe3",
+    "scripts/benchmark_pilot/runtime.py": "a41626b81e02a4c0c53d7b6c0f3f614612865093d17f79ee7d8533a419758f9c",
+    "scripts/benchmark_pilot/tools.py": "88d49f8558ce5ff1acf45fb045faad6acb4973df75679363a90b2da28183c15a",
+    "scripts/tests/test_benchmark_pilot_evidence.py": "c38aba7303eb14f96d2e6a7ea16798576e914f42b397eab85645187b7c8a17e8"
+  },
+  "native_limits": {
+    "max_note_chars": 240,
+    "max_notes_per_add_event": 3,
+    "evidence_min_quotes": 1,
+    "evidence_max_quotes": 2,
+    "evidence_max_quote_bytes": 320,
+    "mmr_enabled": true
+  }
+}

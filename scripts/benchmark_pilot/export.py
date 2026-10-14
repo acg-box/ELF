@@ -129,6 +129,19 @@ def export(root, destination):
         save(destination / 'restoration.json', {key: receipt[key] for key in (
             'source_count', 'postgres_state_equal', 'qdrant', 'image_manifests')} | {
             'private_receipt_sha256': digest(restoration.read_bytes())})
+    read_audit = root / 'read-audit.json'
+    if read_audit.exists():
+        audit = json.loads(read_audit.read_text())
+        metrics = ('verified_bodies', 'original_bytes', 'repeated_bodies_suppressed',
+                   'native_bounded_reads', 'native_rereads')
+        save(destination / 'read-audit.json', {
+            'summary': audit['summary'],
+            'all_delivered_original_bytes_match': audit['all_delivered_original_bytes_match'],
+            'all_native_caps_respected': audit['all_native_caps_respected'],
+            'formal': {condition: {key: sum(row.get(key, 0) for row in audit['cells']
+                if row['phase'] == 'formal' and row['condition'] == condition) for key in metrics}
+                for condition in raw['summary']},
+            'private_receipt_sha256': digest(read_audit.read_bytes())})
     save(destination / 'private-evidence-hashes.json', {
         'boundary': 'These hashes identify private evidence. Original business records, task text, answer text and provider receipts are not published.',
         'files': [{'path_sha256': digest(str(p.relative_to(root)).encode()), 'content_sha256': digest(p.read_bytes())} for p in sorted(root.rglob('*.json'))
