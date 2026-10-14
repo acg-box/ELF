@@ -137,7 +137,7 @@ class SourceTools:
 
     def execute(self, name, args):
         allowed = {row['function']['name'] for row in schemas(self.condition, bool(self.handles))}
-        if name not in allowed:
+        if name not in allowed or name == 'submit_answer':
             raise ValueError('Tool is unavailable in this condition')
         if name == 'list_sources':
             return {'items': [{k: v for k, v in source.items() if k in ('id', 'title', 'timestamp', 'stage')}

@@ -3,11 +3,13 @@ import json
 from pathlib import Path
 import sys
 import unittest
+from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from benchmark_pilot.evidence import EvidenceHandles, compact_check
 from benchmark_pilot.reuse import key_for
 from benchmark_pilot.tools import SourceTools, schemas
+from benchmark_pilot.runner import request
 
 
 class EvidenceClientTests(unittest.TestCase):
@@ -64,6 +66,24 @@ class EvidenceClientTests(unittest.TestCase):
     def test_exact_source_arm_has_no_discovery_or_memory_tools(self):
         names = {t['function']['name'] for t in schemas('exact_source', True)}
         self.assertEqual(names, {'submit_answer', 'elf_evidence_check'})
+
+    def test_submission_is_host_owned_and_never_routes_to_graph(self):
+        seen = []
+        host = SourceTools('full_elf', [], {}, lambda *args: seen.append(args),
+            {'client_v3': True, 'max_evidence_bytes': 32768, 'max_tool_result_bytes': 12000})
+        with self.assertRaises(ValueError):
+            host.execute('submit_answer', {})
+        self.assertEqual(seen, [])
+
+    def test_client_requires_tools_and_closes_with_submission(self):
+        protocol = {'model': 'reader', 'max_output_tokens': 128000, 'reasoning': 'medium', 'client_v3': True}
+        with patch.dict('os.environ', {'LITELLM_BASE_URL': 'http://localhost', 'LITELLM_API_KEY': 'local'}), patch('urllib.request.urlopen') as send:
+            send.return_value.__enter__.return_value.read.return_value = '{}'
+            normal, _ = request([], 'full_elf', False, protocol)
+            closing, _ = request([], 'full_elf', True, protocol)
+        self.assertEqual(normal['tool_choice'], 'required')
+        self.assertEqual(closing['tool_choice']['function']['name'], 'submit_answer')
+        self.assertEqual(len(closing['tools']), 1)
 
     def test_provider_reuse_keys_preserve_input_and_full_dimensions(self):
         body = {'model': 'qwen/qwen3-embedding-8b', 'input': ['原文'], 'dimensions': 4096}

@@ -68,3 +68,10 @@ Freeze exact-source selections before any new model call. Apply each checkpoint'
 visibility boundary. Retain failed answers and all costs. Review answer coverage,
 binding, entailment, latency, preparation, and cached-provider reuse separately.
 The private corpus, answers, and provider fixtures stay outside public exports.
+
+Calibration found one missing paragraph in a calibration-only diagnostic input.
+Keep that answer and its original fixture. Add the paragraph before formal work,
+record the input amendment, and do not repeat the measured answer. Formal source
+selections, questions, criteria, and original bytes remain unchanged. The final
+client requires a tool call on each turn and accepts final answers only through
+the host-owned submission. These corrections precede every formal cell.

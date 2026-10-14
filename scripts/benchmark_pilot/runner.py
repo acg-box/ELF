@@ -37,7 +37,7 @@ def request(messages, condition, closing, protocol, required_tool=None):
         if closing:
             available = [tool for tool in available if tool['function']['name'] == 'submit_answer']
             required_tool = 'submit_answer'
-        payload.update(tools=available, tool_choice={'type': 'function', 'function': {'name': required_tool}} if required_tool else 'auto')
+        payload.update(tools=available, tool_choice={'type': 'function', 'function': {'name': required_tool}} if required_tool else 'required')
     elif not closing:
         payload.update(tools=schemas(condition), tool_choice={'type': 'function', 'function': {'name': required_tool}} if required_tool else 'auto')
     req = urllib.request.Request(os.environ['LITELLM_BASE_URL'] + '/chat/completions',
@@ -98,6 +98,9 @@ def cell(args, repo, sources, checkpoints, protocol, task):
             if not tool_calls:
                 content = message.get('content') or ''
                 result['raw_answer'] = content
+                if protocol.get('client_v3'):
+                    result.update(status='invalid_answer', error='The client contract requires submit_answer')
+                    break
                 try:
                     answer = json.loads(content)
                     if not isinstance(answer.get('text'), str) or not isinstance(answer.get('supported'), bool) or not isinstance(answer.get('claims'), list):
