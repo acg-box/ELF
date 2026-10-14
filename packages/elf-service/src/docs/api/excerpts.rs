@@ -21,6 +21,8 @@ pub struct DocsExcerptsGetRequest {
 	pub doc_id: Uuid,
 	/// Excerpt budget level: `L0`, `L1`, or `L2`.
 	pub level: String, // "L0" | "L1" | "L2"
+	/// Optional positive UTF-8 byte cap, bounded by the selected level.
+	pub max_bytes: Option<usize>,
 	/// Optional chunk identifier when the caller already knows the chunk.
 	pub chunk_id: Option<Uuid>,
 	/// Optional quote-based selector.

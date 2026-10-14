@@ -168,6 +168,7 @@ impl ElfService {
 						read_profile: context.read_profile.clone(),
 						doc_id: *doc_id,
 						level: "L2".into(),
+						max_bytes: None,
 						chunk_id: None,
 						position: None,
 						quote: Some(TextQuoteSelector {

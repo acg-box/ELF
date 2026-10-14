@@ -60,6 +60,7 @@ pub(crate) async fn assert_doc_excerpt(service: &ElfService, doc_id: Uuid, conte
 			read_profile: "private_plus_project".to_string(),
 			doc_id,
 			level: "L1".to_string(),
+			max_bytes: None,
 			chunk_id: None,
 			quote: Some(TextQuoteSelector {
 				exact: "Keyword: peregrine.".to_string(),

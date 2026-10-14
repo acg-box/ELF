@@ -38,6 +38,7 @@ pub(in crate::routes) struct DocsSearchL0Body {
 pub(in crate::routes) struct DocsExcerptsGetBody {
 	pub(in crate::routes) doc_id: Uuid,
 	pub(in crate::routes) level: String,
+	pub(in crate::routes) max_bytes: Option<usize>,
 	pub(in crate::routes) chunk_id: Option<Uuid>,
 	pub(in crate::routes) quote: Option<TextQuoteSelector>,
 	pub(in crate::routes) position: Option<TextPositionSelector>,

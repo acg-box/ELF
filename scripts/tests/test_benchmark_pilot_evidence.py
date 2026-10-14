@@ -13,6 +13,69 @@ from benchmark_pilot.runner import request
 
 
 class EvidenceClientTests(unittest.TestCase):
+    def test_repeated_original_is_compact_only_after_it_reaches_the_reader(self):
+        registry = EvidenceHandles()
+        original = {'reference': 'elf-source-v1/doc/hash/0/12', 'text': 'Original'}
+        first = registry.project(original)
+        self.assertEqual(registry.project(original)['text'], 'Original')
+        registry.expose(first)
+        repeated = registry.project(original)
+        self.assertTrue(repeated['already_read'])
+        self.assertNotIn('text', repeated)
+        self.assertEqual(repeated['reference'], first['reference'])
+        self.assertEqual(original['text'], 'Original')
+
+    def test_native_read_fits_remaining_budget_and_keeps_returned_reference(self):
+        calls = []
+        def api(path, body):
+            calls.append(body)
+            # Escaping is deliberately more expensive than the raw UTF-8 cap.
+            text = '\t' * body['max_bytes']
+            return {'doc_id': 'doc', 'excerpt': text, 'start_offset': 100,
+                    'end_offset': 100 + len(text), 'reference': f'elf-source-v1/doc/hash/100/{100 + len(text)}',
+                    'verification': {'verified': True}}
+        host = SourceTools('source_only', [{'id': 's1', 'timestamp': 't'}],
+            {'s1': {'doc_id': 'doc'}}, api,
+            {'client_v3': True, 'max_evidence_bytes': 4500, 'max_tool_result_bytes': 12000})
+        result = host.call('elf_docs_excerpts_get', {'doc_id': 'doc', 'position': {'start': 100, 'end': 8000}, 'level': 'L1'})
+        self.assertEqual(len(calls), 2)
+        self.assertLess(calls[-1]['max_bytes'], calls[0]['max_bytes'])
+        self.assertNotIn('error', result)
+        self.assertGreaterEqual(host.remaining, 2048)
+        self.assertEqual(len(result['excerpt']), result['end_offset'] - result['start_offset'])
+        self.assertEqual(host.handles.native[result['reference']], f'elf-source-v1/doc/hash/100/{result["end_offset"]}')
+
+    def test_discovery_keeps_only_read_locator_and_source_time(self):
+        pointer = {'hashes': {'content_hash': 'h'}, 'locator': {'position': {'start': 3, 'end': 9}, 'span_id': 'span'}, 'ref': {'doc_id': 'doc'}}
+        host = SourceTools('source_only', [{'id': 's1', 'timestamp': '2026-01-01'}],
+            {'s1': {'doc_id': 'doc'}}, lambda *args: {'items': [{'doc_id': 'doc', 'pointer': pointer, 'snippet': 'Discovery'}]},
+            {'client_v3': True, 'max_evidence_bytes': 32768, 'max_tool_result_bytes': 12000})
+        item = host.call('elf_docs_search_l0', {'query': 'q'})['items'][0]
+        self.assertEqual(item['pointer'], {'locator': {'position': {'start': 3, 'end': 9}}})
+        self.assertEqual(item['source_timestamp'], '2026-01-01')
+        self.assertEqual(host.handles.visible, set())
+
+    def test_cached_expansion_omits_only_candidates_already_delivered(self):
+        rows = [{'note_id': str(i), 'summary': 'x' * 450} for i in range(4)]
+        host = SourceTools('full_elf', [], {}, lambda *args: {'search_id': 's', 'items': list(rows), 'total': 8, 'has_more': True},
+            {'client_v3': True, 'max_evidence_bytes': 32768, 'max_tool_result_bytes': 900})
+        first = host.call('elf_searches_create', {'query': 'q'})
+        self.assertLess(len(first['items']), 4)
+        second = host.call('elf_searches_get', {'search_id': 's', 'top_k': 8})
+        self.assertEqual(second['already_returned_note_ids'], [r['note_id'] for r in first['items']])
+        self.assertTrue(second['items'])
+        self.assertNotEqual(second['items'][0]['note_id'], first['items'][0]['note_id'])
+
+    def test_file_read_returns_complete_lines_that_fit_and_a_continuation(self):
+        source = {'id': 's1', 'title': 'Original', 'timestamp': 't', 'text': 'Subject and condition.\n' * 100}
+        host = SourceTools('no_elf', [source], {'s1': {'doc_id': 'doc', 'content_hash': 'hash'}}, None,
+            {'client_v3': True, 'max_evidence_bytes': 2800, 'max_tool_result_bytes': 12000})
+        result = host.call('read_source', {'source_id': 's1', 'line_count': 100})
+        self.assertNotIn('error', result)
+        self.assertLess(result['next_line'], 101)
+        self.assertEqual(result['text'], source['text'].encode()[result['start']:result['end']].decode())
+        self.assertGreaterEqual(host.remaining, 2048)
+
     def test_only_exposed_handles_resolve_and_inputs_remain_immutable(self):
         registry = EvidenceHandles()
         original = {'sources': [{'reference': 'elf-source-v1/doc/hash/0/12', 'text': 'Original'}]}

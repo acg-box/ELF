@@ -320,6 +320,7 @@ async fn verify_evidence_pack(
 			read_profile: "private_plus_project".into(),
 			doc_id,
 			level: "L1".into(),
+			max_bytes: None,
 			position: Some(TextPositionSelector { start: 0, end: content.len() }),
 			quote: None,
 			chunk_id: None,

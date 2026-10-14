@@ -185,6 +185,7 @@ impl ElfService {
 					read_profile: read_profile.into(),
 					doc_id,
 					level: "L2".into(),
+					max_bytes: None,
 					chunk_id: None,
 					quote: quote_selector,
 					position: if use_quote { None } else { Some(span.clone()) },

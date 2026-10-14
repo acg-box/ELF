@@ -71,6 +71,7 @@ impl ElfService {
 				read_profile: req.read_profile.clone(),
 				doc_id,
 				level: "L2".into(),
+				max_bytes: None,
 				chunk_id: None,
 				quote: None,
 				position: Some(TextPositionSelector { start, end }),

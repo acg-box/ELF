@@ -156,6 +156,7 @@ pub(in crate::app::server) fn docs_excerpts_get_schema() -> Arc<JsonObject> {
 		"properties": {
 			"doc_id": { "type": "string" },
 			"level": { "type": "string", "enum": ["L0", "L1", "L2"] },
+			"max_bytes": { "type": ["integer", "null"], "minimum": 1, "description": "Optional original-text UTF-8 byte cap, bounded by level. Reserve separate room for JSON metadata." },
 			"explain": { "type": ["boolean", "null"] },
 			"chunk_id": { "type": ["string", "null"] },
 			"quote": {

@@ -120,4 +120,5 @@ fn docs_excerpts_get_schema_includes_l0_level_and_optional_explain() {
 
 	assert!(level_values.contains(&Value::String("L0".to_string())));
 	assert!(properties.contains_key("explain"));
+	assert_eq!(properties["max_bytes"]["minimum"], 1);
 }
