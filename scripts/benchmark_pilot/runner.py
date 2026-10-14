@@ -16,6 +16,7 @@ from benchmark_budget import totals
 from .corpus import digest, load, save, spans
 from .runtime import Runtime
 from .tools import SourceTools, opening_tool, schemas
+from .evidence import compact_check
 
 
 def read(path):
@@ -31,7 +32,13 @@ def usage(root):
 def request(messages, condition, closing, protocol, required_tool=None):
     payload = {'model': protocol['model'], 'messages': messages,
                'max_tokens': protocol['max_output_tokens'], 'reasoning': {'effort': protocol['reasoning']}}
-    if not closing:
+    if protocol.get('client_v3'):
+        available = schemas(condition, True)
+        if closing:
+            available = [tool for tool in available if tool['function']['name'] == 'submit_answer']
+            required_tool = 'submit_answer'
+        payload.update(tools=available, tool_choice={'type': 'function', 'function': {'name': required_tool}} if required_tool else 'auto')
+    elif not closing:
         payload.update(tools=schemas(condition), tool_choice={'type': 'function', 'function': {'name': required_tool}} if required_tool else 'auto')
     req = urllib.request.Request(os.environ['LITELLM_BASE_URL'] + '/chat/completions',
         data=json.dumps(payload).encode(), headers={'Content-Type': 'application/json',
@@ -55,18 +62,28 @@ def cell(args, repo, sources, checkpoints, protocol, task):
                  'checkpoint': checkpoints[task['stage']],
                  'instructions': 'Use the declared retrieval and read tools to inspect immutable original evidence before answering. File and native reads return the same original evidence references. The host will check your final claims through ELF. Do not infer current external service state from repository history. Return only the shared-contract JSON.',
                  'sources': [{k: s[k] for k in ('id', 'title', 'timestamp')} for s in visible]}, ensure_ascii=False)}]
+    if protocol.get('client_v3'):
+        messages.append({'role': 'user', 'content': 'This host assigns conversation-local E-number handles to original references. Use those handles unchanged in citations. Submit through submit_answer; the host resolves handles and checks the complete final chain before rendering. Native references remain private host metadata.'})
+    provided = None
+    if args.condition == 'exact_source':
+        provided = host.provide(read(args.root / 'fixture/exact-source.json')[task['id']])
+        messages.append({'role': 'user', 'content': json.dumps(provided, ensure_ascii=False)})
     started = time.monotonic()
     trace, calls = [], 0
     before = usage(args.root)
     result = {'cell': args.cell, 'task_id': task['id'], 'condition': args.condition,
               'repetition': args.repetition, 'phase': task['phase'], 'pid': os.getpid(),
               'stage': task['stage'], 'status': 'round_budget_exhausted'}
+    if provided is not None:
+        result['provided_originals'] = provided
     try:
         for turn in range(protocol['max_rounds']):
-            closing = turn == protocol['max_rounds'] - 1 or calls >= protocol['max_tool_calls']
+            closing = turn == protocol['max_rounds'] - 1 or calls >= protocol['max_tool_calls'] - int(bool(protocol.get('client_v3')))
             if closing:
                 messages.append({'role': 'user', 'content': 'This is the final turn in the fixed workflow budget. Return your JSON answer from the evidence already inspected. Mark unestablished facts unknown.'})
-            required_tool = opening_tool(args.condition, trace, protocol.get('hydrate_sources', False)) if protocol.get('host_opening') else None
+            required_tool = opening_tool(args.condition, trace, protocol.get('hydrate_sources', False)) if protocol.get('host_opening') and args.condition != 'exact_source' else None
+            if protocol.get('client_v3'):
+                messages.append({'role': 'user', 'content': f'Host budget: {host.remaining} evidence bytes and {protocol["max_tool_calls"] - calls} tool calls remain. Read promising originals before more searches; expand cached candidates for missing premises. Check each part of the question before submit_answer.'})
             payload, response = request(messages, args.condition, closing, protocol, required_tool)
             step = {'turn': turn, 'request': payload, 'response': response, 'tools': []}
             trace.append(step)
@@ -95,6 +112,26 @@ def cell(args, repo, sources, checkpoints, protocol, task):
                 break
             for call in tool_calls:
                 fn = call['function']
+                if fn['name'] == 'submit_answer' and protocol.get('client_v3') and calls < protocol['max_tool_calls']:
+                    calls += 1
+                    arguments = json.loads(fn['arguments'])
+                    try:
+                        final = host.finalize(arguments)
+                        value = compact_check(final['claim_bindings'])
+                        if not all(c['binding_verified'] for c in value['claims']) and not closing:
+                            value['error'] = 'The complete answer has invalid bindings. Repair before resubmitting.'
+                        else:
+                            result.update(final, raw_answer=json.dumps(arguments, ensure_ascii=False), status='completed')
+                    except (ValueError, KeyError, TypeError) as error:
+                        value = {'error': str(error)}
+                        if closing:
+                            result.update(status='invalid_answer', error=str(error), raw_answer=json.dumps(arguments, ensure_ascii=False))
+                    step['tools'].append({'name': fn['name'], 'arguments': arguments, 'result': value})
+                    save(trace_path, trace)
+                    messages.append({'role': 'tool', 'tool_call_id': call['id'], 'content': json.dumps(value)})
+                    if result['status'] in ('completed', 'invalid_answer'):
+                        break
+                    continue
                 if closing or calls >= protocol['max_tool_calls']:
                     value = {'error': 'Tool-call budget exhausted.'}
                 else:
@@ -107,6 +144,8 @@ def cell(args, repo, sources, checkpoints, protocol, task):
                     step['tools'].append({'name': fn['name'], 'arguments': arguments, 'result': value})
                     save(trace_path, trace)
                 messages.append({'role': 'tool', 'tool_call_id': call['id'], 'content': json.dumps(value, ensure_ascii=False)})
+            if result['status'] in ('completed', 'invalid_answer'):
+                break
     except urllib.error.HTTPError as error:
         detail = error.read().decode()
         result.update(status='transport_failed', error={'http_status': error.code, 'detail': detail})
@@ -117,6 +156,8 @@ def cell(args, repo, sources, checkpoints, protocol, task):
                       evidence_bytes=protocol['max_evidence_bytes'] - host.remaining,
                       usage_before=before, usage_after=usage(args.root))
         save(target, result)
+        if host.handles:
+            save(target.parent / 'evidence-handles.json', {'native': host.handles.native, 'visible': sorted(host.handles.visible)})
         print(json.dumps({k: result[k] for k in ('cell', 'status', 'seconds', 'tool_calls', 'usage_after')}), flush=True)
     return 2 if result['status'] in ('transport_failed', 'harness_failed') else 0
 
@@ -241,7 +282,7 @@ def main():
     parser.add_argument('--export-dir', type=Path)
     parser.add_argument('--cell')
     parser.add_argument('--task')
-    parser.add_argument('--condition', choices=['no_elf', 'source_only', 'full_elf'])
+    parser.add_argument('--condition', choices=['no_elf', 'source_only', 'full_elf', 'exact_source'])
     parser.add_argument('--repetition', type=int, default=1)
     args = parser.parse_args()
     args.root = args.root.resolve()

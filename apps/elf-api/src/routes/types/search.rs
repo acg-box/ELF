@@ -24,6 +24,8 @@ pub(in crate::routes) struct SearchIndexResponseV2 {
 	#[serde(with = "elf_service::time_serde")]
 	pub(in crate::routes) expires_at: OffsetDateTime,
 	pub(in crate::routes) items: Vec<SearchIndexItem>,
+	pub(in crate::routes) total: usize,
+	pub(in crate::routes) has_more: bool,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub(in crate::routes) trajectory_summary: Option<SearchTrajectorySummary>,
 	#[serde(skip_serializing_if = "Option::is_none")]
@@ -38,6 +40,8 @@ pub(in crate::routes) struct SearchCreateResponseV2 {
 	#[serde(with = "elf_service::time_serde")]
 	pub(in crate::routes) expires_at: OffsetDateTime,
 	pub(in crate::routes) items: Vec<SearchIndexItem>,
+	pub(in crate::routes) total: usize,
+	pub(in crate::routes) has_more: bool,
 	#[serde(skip_serializing_if = "Option::is_none")]
 	pub(in crate::routes) trajectory_summary: Option<SearchTrajectorySummary>,
 	#[serde(skip_serializing_if = "Option::is_none")]

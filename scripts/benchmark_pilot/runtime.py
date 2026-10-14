@@ -33,6 +33,7 @@ class Runtime:
         self.root, self.repo = root, repo
         self.processes = []
         self.logs = []
+        self.reuse = None
         path = root / 'runtime.json'
         if path.exists():
             self.state = json.loads(path.read_text())
@@ -99,12 +100,21 @@ class Runtime:
     def start(self):
         self.stores()
         protocol = json.loads((self.root / 'fixture' / 'protocol.json').read_text())
+        if protocol.get('reuse_receipts'):
+            from .reuse import RecordedProvider
+            self.reuse = RecordedProvider(self.root, protocol['reuse_receipts'],
+                os.environ['LITELLM_BASE_URL'], os.environ['LITELLM_API_KEY'])
         tokenizer = self.root / 'tokenizer.json'
         if not tokenizer.exists():
             raise ValueError('Supply the verified GPT-2 tokenizer.json in the run directory')
         if hashlib.sha256(tokenizer.read_bytes()).hexdigest() != '8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6':
             raise ValueError('Tokenizer hash mismatch')
         config = (self.repo / 'elf.example.toml').read_text()
+        if 'note_character_limit' in protocol:
+            config = re.sub(r'max_note_chars\s*=\s*\d+', 'max_note_chars = ' + str(protocol['note_character_limit']), config)
+        if 'mmr_enabled' in protocol:
+            config = re.sub(r'(\[ranking.diversity\]\s*enabled\s*=\s*)(true|false)',
+                lambda m: m[1] + str(protocol['mmr_enabled']).lower(), config)
         for key, number in [('http', self.state['http_port']), ('admin', self.state['admin_port']), ('mcp', self.state['mcp_port'])]:
             config = re.sub(key + r'_bind\s*=\s*"[^"]+"', key + '_bind = "127.0.0.1:' + str(number) + '"', config)
         config = config.replace('postgres://postgres:postgres@127.0.0.1:5432/elf',
@@ -114,7 +124,7 @@ class Runtime:
         for name, model, endpoint in [('embedding', 'qwen/qwen3-embedding-8b', '/embeddings'),
                                       ('llm_extractor', protocol['model'], '/chat/completions'),
                                       ('rerank', 'local-token-overlap', '/rerank')]:
-            values = {'api_base': os.environ['LITELLM_BASE_URL'], 'api_key': os.environ['LITELLM_API_KEY'],
+            values = {'api_base': self.reuse.base if self.reuse and name != 'rerank' else os.environ['LITELLM_BASE_URL'], 'api_key': os.environ['LITELLM_API_KEY'],
                       'model': model, 'provider_id': 'local' if name == 'rerank' else 'openai',
                       'path': endpoint, 'timeout_ms': 3600000}
             if name == 'embedding':
@@ -175,3 +185,5 @@ class Runtime:
                 process.wait()
         for log in self.logs:
             log.close()
+        if self.reuse:
+            self.reuse.close()

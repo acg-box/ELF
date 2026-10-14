@@ -37,6 +37,7 @@ impl ElfService {
 			session.expires_at
 		};
 		let top_k = req.top_k.unwrap_or(self.cfg.memory.top_k).max(1);
+		let total = session.items.len();
 		let items: Vec<SearchIndexItem> = session
 			.items
 			.into_iter()
@@ -48,6 +49,8 @@ impl ElfService {
 			trace_id: session.trace_id,
 			search_session_id: session.search_session_id,
 			expires_at,
+			total,
+			has_more: total > items.len(),
 			items,
 			mode: session.mode,
 			query_plan: session.query_plan,

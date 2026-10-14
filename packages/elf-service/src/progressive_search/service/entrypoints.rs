@@ -14,6 +14,8 @@ impl ElfService {
 			trace_id: response.trace_id,
 			search_session_id: response.search_session_id,
 			expires_at: response.expires_at,
+			total: response.total,
+			has_more: response.has_more,
 			items: response.items,
 			trajectory_summary: response.trajectory_summary,
 		})
@@ -35,6 +37,8 @@ impl ElfService {
 			trace_id: output.index.trace_id,
 			search_session_id: output.index.search_session_id,
 			expires_at: output.index.expires_at,
+			total: output.index.total,
+			has_more: output.index.has_more,
 			items: output.index.items,
 			trajectory_summary: output.index.trajectory_summary,
 			query_plan,

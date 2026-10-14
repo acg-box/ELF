@@ -51,6 +51,7 @@ def export(root, destination):
         for step in trace:
             for tool in step['tools']:
                 collect(tool['result'])
+        collect(private_result.get('provided_originals', {}))
         result['inspected_source_ids'] = sorted(source_aliases[s] for s in inspected)
         public['cells'].append(result)
     save(destination / 'measurements.json', public)
@@ -61,7 +62,7 @@ def export(root, destination):
                 'reasoning', 'max_output_tokens', 'embedding_model', 'embedding_dimensions',
                 'embedding_provider', 'reranker', 'extraction_window_bytes', 'memory_notes_per_event',
                 'budget_usd', 'calibration_tranche_usd', 'paid_retries', 'ranking_or_prompt_tuning_after_formal_start',
-                'host_opening', 'hydrate_sources', 'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
+                'host_opening', 'hydrate_sources', 'client_v3', 'note_character_limit', 'mmr_enabled', 'frozen_extraction', 'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
     save(destination / 'protocol.json', {k: v for k, v in json.loads((fixture / 'protocol.json').read_text()).items() if k in controls})
     native = []
     for path in sorted(root.glob('native-stage-*.json')):
@@ -69,6 +70,13 @@ def export(root, destination):
         native.append({'stage': state['stage'], 'sources_verified': state['sources_verified'],
                        'vectors': state['vectors'], 'notes': len(state['notes'])})
     save(destination / 'native.json', native)
+    reuse = root / 'provider-reuse.jsonl'
+    if reuse.exists():
+        rows = [json.loads(line) for line in reuse.read_text().splitlines()]
+        save(destination / 'provider-reuse.json', {'reused': {kind: sum(row['kind'] == kind and row['reused'] for row in rows)
+             for kind in ('embedding', 'extraction')}, 'forwarded_embeddings': sum(not row['reused'] for row in rows),
+             'log_sha256': digest(reuse.read_bytes()),
+             'boundary': 'Reused responses were settled in the earlier ledger. These are not new provider invocations.'})
     ledger = json.loads((root / 'budget-ledger.json').read_text())
     save(destination / 'request-ledger.json', [{
         **{key: row[key] for key in ('ordinal', 'kind', 'status', 'reserved_usd', 'model', 'provider',

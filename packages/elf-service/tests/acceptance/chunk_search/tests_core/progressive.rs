@@ -1,7 +1,94 @@
 use uuid::Uuid;
 
 use crate::acceptance::{StubRerank, chunk_search::tests_helpers};
-use elf_service::{SearchDetailsRequest, SearchRequest, SearchTimelineRequest};
+use elf_service::{
+	SearchDetailsRequest, SearchRequest, SearchSessionGetRequest, SearchTimelineRequest,
+};
+
+#[tokio::test]
+#[ignore = "Requires external Postgres and Qdrant."]
+async fn cached_candidate_counts_survive_expansion_and_keep_session_ownership() {
+	let context = tests_helpers::setup_context(
+		"cached_candidates",
+		tests_helpers::build_providers(StubRerank),
+	)
+	.await
+	.expect("Test prerequisites");
+
+	for text in ["Cedar uses the old queue.", "Cedar retired the old queue."] {
+		let note = Uuid::new_v4();
+		let chunk = Uuid::new_v4();
+
+		tests_helpers::insert_note(
+			&context.service.db.pool,
+			note,
+			text,
+			&context.embedding_version,
+		)
+		.await;
+		tests_helpers::insert_chunk(
+			&context.service.db.pool,
+			chunk,
+			note,
+			0,
+			0,
+			text.len() as i32,
+			text,
+			&context.embedding_version,
+		)
+		.await;
+		tests_helpers::upsert_point(&context.service, chunk, note, 0, 0, text.len() as i32, text)
+			.await;
+	}
+
+	let index = context
+		.service
+		.search(SearchRequest {
+			tenant_id: "t".into(),
+			project_id: "p".into(),
+			agent_id: "a".into(),
+			token_id: None,
+			read_profile: "private_only".into(),
+			payload_level: Default::default(),
+			query: "Cedar queue".into(),
+			top_k: Some(1),
+			candidate_k: Some(10),
+			filter: None,
+			record_hits: Some(false),
+			ranking: None,
+		})
+		.await
+		.expect("First candidate");
+
+	assert_eq!(index.items.len(), 1);
+	assert_eq!(index.total, 2);
+	assert!(index.has_more);
+
+	let request = SearchSessionGetRequest {
+		tenant_id: "t".into(),
+		project_id: "p".into(),
+		agent_id: "a".into(),
+		search_session_id: index.search_session_id,
+		payload_level: Default::default(),
+		top_k: Some(8),
+		touch: Some(false),
+	};
+	let expanded =
+		context.service.search_session_get(request.clone()).await.expect("Cached expansion");
+
+	assert_eq!(expanded.total, 2);
+	assert_eq!(expanded.items.len(), 2);
+	assert!(!expanded.has_more);
+	assert!(
+		context
+			.service
+			.search_session_get(SearchSessionGetRequest { agent_id: "other".into(), ..request })
+			.await
+			.is_err()
+	);
+
+	context.test_db.cleanup().await.expect("Clean database");
+}
 
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
