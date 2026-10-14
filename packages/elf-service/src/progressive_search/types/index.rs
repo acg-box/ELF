@@ -45,6 +45,10 @@ pub struct SearchIndexResponse {
 	pub expires_at: OffsetDateTime,
 	/// Stored search hits.
 	pub items: Vec<SearchIndexItem>,
+	/// Total candidates cached in this authorized search session.
+	pub total: usize,
+	/// Whether a larger top_k can return more cached candidates.
+	pub has_more: bool,
 	/// Optional condensed explain output.
 	pub trajectory_summary: Option<SearchTrajectorySummary>,
 }
@@ -61,6 +65,10 @@ pub struct SearchSessionGetResponse {
 	pub expires_at: OffsetDateTime,
 	/// Stored hits after trimming to the requested limit.
 	pub items: Vec<SearchIndexItem>,
+	/// Total candidates cached in this authorized search session.
+	pub total: usize,
+	/// Whether a larger top_k can return more cached candidates.
+	pub has_more: bool,
 	/// Session mode.
 	pub mode: SearchSessionMode,
 	/// Stored query plan for planned-search sessions.
@@ -81,6 +89,10 @@ pub struct SearchIndexPlannedResponse {
 	pub expires_at: OffsetDateTime,
 	/// Stored hits.
 	pub items: Vec<SearchIndexItem>,
+	/// Total candidates cached in this authorized search session.
+	pub total: usize,
+	/// Whether a larger top_k can return more cached candidates.
+	pub has_more: bool,
 	/// Optional condensed explain output.
 	pub trajectory_summary: Option<SearchTrajectorySummary>,
 	/// Stored query plan for the session.

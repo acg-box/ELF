@@ -93,6 +93,7 @@ impl ElfService {
 		)
 		.await?;
 
+		let total = items.len();
 		let response_items: Vec<SearchIndexItem> =
 			items.into_iter().take(top_k as usize).map(|item| item.to_index_item()).collect();
 
@@ -101,6 +102,8 @@ impl ElfService {
 				trace_id,
 				search_session_id,
 				expires_at,
+				total,
+				has_more: total > response_items.len(),
 				items: response_items,
 				trajectory_summary,
 			},

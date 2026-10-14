@@ -5,7 +5,7 @@ description: Integrate native recall, historical interpretation, and claim depen
 status: active
 authority: procedural
 owner: elf-service
-last_verified: 2026-10-13
+last_verified: 2026-10-14
 ---
 # Answer with complete source evidence chains
 
@@ -31,8 +31,10 @@ this sequence in `opening_tool`; it does not preload expected answers.
 
 1. Start a project handoff with `elf_searches_create`, `mode: planned_search`,
    and `top_k: 4`. Use `elf_evidence_pack` for relevant IDs with a small source
-   budget such as 6000 bytes. Expand an incomplete `search_id` with
-   `elf_searches_get`. Keep budget for missing evidence and citation checks.
+   budget such as 6000 bytes. The response's `total` counts cached candidates;
+   `has_more` means a larger `top_k` can return more. When a requested premise is
+   missing, use `elf_searches_get` with 8, then at most 12, before another broad
+   query. Keep budget for missing evidence and citation checks.
 2. If originals lack a required subject, scope, or time connection, call
    `elf_evidence_recall` with literal names or IDs from the question or verified
    originals. Search originals with `elf_docs_search_l0` when memory is missing.
@@ -65,6 +67,23 @@ checker before rendering. Text that resembles a tool call is invalid output,
 not an executed call. MCP hosts can provide the actual tool schemas.
 
 ## Cross-document example
+
+For a tool-calling client, keep a conversation-local lookup such as
+`E1 -> exact native reference`. Assign a handle only to an original returned to
+that reader. Resolve handles before the native check; reject unknown handles.
+The reference HTTP host implements this in
+[`EvidenceHandles`](../../scripts/benchmark_pilot/evidence.py).
+Its host-local `submit_answer` tool checks the final text and claims object, then
+returns that same object for rendering. It does not ask the model to repeat long
+hashes after verification. This tool is a client hook, not an ELF server endpoint.
+MCP hosts can apply the same policy around native tools.
+
+For intermediate checks, send all claim verdicts and dependency indices back to
+the model. Omit repeated `resolved_citations` source bodies from the model view
+if necessary, while keeping the full response in the host. Never truncate the
+verdict array or hide a failed claim. Final rendering uses the full native
+response and current permission check. A valid binding does not establish that
+the claim is entailed by the original.
 
 Suppose one original says that Cobalt is operated by Ivo, and a second says that
 Ivo retained BATCH at a review. The second original alone does not bind the

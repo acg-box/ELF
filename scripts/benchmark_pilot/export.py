@@ -51,17 +51,27 @@ def export(root, destination):
         for step in trace:
             for tool in step['tools']:
                 collect(tool['result'])
+        collect(private_result.get('provided_originals', {}))
         result['inspected_source_ids'] = sorted(source_aliases[s] for s in inspected)
         public['cells'].append(result)
     save(destination / 'measurements.json', public)
     save(destination / 'sources.json', {'fixture_sha256': digest((fixture / 'freeze.json').read_bytes()),
         'records': [{'id': source_aliases[s['id']], 'stage': s['stage'], 'bytes': len(s['text'].encode()), 'sha256': s['sha256']} for s in sources]})
+    amendment = root / 'preformal-input-amendment.json'
+    if amendment.exists():
+        previous = json.loads(amendment.read_text())
+        calibration = root / 'calibration-fixture/freeze.json'
+        save(destination / 'input-amendment.json', {
+            'previous_freeze_sha256': previous['previous_freeze_sha256'],
+            'formal_freeze_sha256': digest((fixture / 'freeze.json').read_bytes()),
+            'calibration_freeze_sha256': digest((calibration if calibration.exists() else fixture / 'freeze.json').read_bytes()),
+            'boundary': 'A calibration-only diagnostic input gained an omitted paragraph before formal execution. Formal selections and original bytes did not change; the recorded calibration answer was not repeated.'})
     controls = {'schema', 'conditions', 'formal_repetitions', 'calibration_repetitions', 'max_rounds',
                 'max_tool_calls', 'max_evidence_bytes', 'max_tool_result_bytes', 'model', 'provider',
                 'reasoning', 'max_output_tokens', 'embedding_model', 'embedding_dimensions',
                 'embedding_provider', 'reranker', 'extraction_window_bytes', 'memory_notes_per_event',
                 'budget_usd', 'calibration_tranche_usd', 'paid_retries', 'ranking_or_prompt_tuning_after_formal_start',
-                'host_opening', 'hydrate_sources', 'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
+                'host_opening', 'hydrate_sources', 'client_v3', 'note_character_limit', 'mmr_enabled', 'frozen_extraction', 'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
     save(destination / 'protocol.json', {k: v for k, v in json.loads((fixture / 'protocol.json').read_text()).items() if k in controls})
     native = []
     for path in sorted(root.glob('native-stage-*.json')):
@@ -69,6 +79,13 @@ def export(root, destination):
         native.append({'stage': state['stage'], 'sources_verified': state['sources_verified'],
                        'vectors': state['vectors'], 'notes': len(state['notes'])})
     save(destination / 'native.json', native)
+    reuse = root / 'provider-reuse.jsonl'
+    if reuse.exists():
+        rows = [json.loads(line) for line in reuse.read_text().splitlines()]
+        save(destination / 'provider-reuse.json', {'reused': {kind: sum(row['kind'] == kind and row['reused'] for row in rows)
+             for kind in ('embedding', 'extraction')}, 'forwarded_embeddings': sum(not row['reused'] for row in rows),
+             'log_sha256': digest(reuse.read_bytes()),
+             'boundary': 'Reused responses were settled in the earlier ledger. These are not new provider invocations.'})
     ledger = json.loads((root / 'budget-ledger.json').read_text())
     save(destination / 'request-ledger.json', [{
         **{key: row[key] for key in ('ordinal', 'kind', 'status', 'reserved_usd', 'model', 'provider',
@@ -96,12 +113,16 @@ def export(root, destination):
             ('memory', ('max_note_chars', 'max_notes_per_add_event')),
             ('security', ('evidence_min_quotes', 'evidence_max_quotes', 'evidence_max_quote_bytes')))
             for key in keys if key in config[section]}
+        diversity = config.get('ranking', {}).get('diversity', {})
+        if 'enabled' in diversity:
+            builds['native_limits']['mmr_enabled'] = diversity['enabled']
     save(destination / 'runtime-provenance.json', builds)
     rejection_audit = root / 'write-rejection-audit.json'
     if rejection_audit.exists():
         audit = json.loads(rejection_audit.read_text())
         save(destination / 'write-rejection-audit.json', {key: audit[key] for key in (
-            'candidates', 'first_gate_outcomes', 'quote_identity', 'note_character_limit', 'quote_byte_limit')})
+            'candidates', 'first_gate_outcomes', 'quote_identity', 'note_character_limit', 'quote_byte_limit',
+            'same_frozen_proposals', 'proposal_sha256') if key in audit})
     restoration = root / 'backup' / 'restore-receipt.json'
     if restoration.exists():
         receipt = json.loads(restoration.read_text())

@@ -197,6 +197,8 @@ async fn search_with_mode(
 				trace_id: response.trace_id,
 				search_session_id: response.search_session_id,
 				expires_at: response.expires_at,
+				total: response.total,
+				has_more: response.has_more,
 				items: response.items,
 				trajectory_summary: response.trajectory_summary,
 			})

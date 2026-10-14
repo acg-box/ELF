@@ -1,3 +1,5 @@
+mod windows;
+
 use std::collections::HashSet;
 
 use serde::Serialize;
@@ -199,6 +201,8 @@ impl ElfService {
 
 			result.notes.push(note);
 		}
+
+		windows::merge_overlaps(&mut result);
 
 		Ok(result)
 	}

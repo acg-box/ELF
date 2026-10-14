@@ -5,8 +5,10 @@ import json
 import re
 import urllib.error
 
+from .evidence import EvidenceHandles, compact_check
 
-def schemas(condition):
+
+def schemas(condition, client_v3=False):
     position = {'type': 'object', 'properties': {'start': {'type': 'integer', 'minimum': 0},
                 'end': {'type': 'integer', 'minimum': 1}}, 'required': ['start', 'end'], 'additionalProperties': False}
     citation = {'type': 'object', 'additionalProperties': False, 'required': ['kind', 'reference'],
@@ -26,7 +28,13 @@ def schemas(condition):
         ('elf_evidence_check', 'Check complete claim dependencies and original citation bindings before the final answer. Repair failed references from inspected evidence; this does not verify entailment.',
          {'claims': {'type': 'array', 'minItems': 1, 'maxItems': 12, 'items': claim}}, ['claims']),
     ]
-    if condition != 'no_elf':
+    if client_v3:
+        definitions.append(('submit_answer', 'Submit the final answer and its complete claim chain. The host resolves citation handles and checks current access before rendering; do not write the answer again after this call.',
+            {'text': {'type': 'string'}, 'supported': {'type': 'boolean'},
+             'claims': {'type': 'array', 'minItems': 1, 'maxItems': 12, 'items': claim}}, ['text', 'supported', 'claims']))
+    if condition == 'exact_source':
+        definitions = [d for d in definitions if d[0] in ('elf_evidence_check', 'submit_answer')]
+    if condition in ('source_only', 'full_elf'):
         definitions += [
             ('elf_docs_search_l0', 'Search original documents. Pass a selected doc_id and pointer.locator.position to elf_docs_excerpts_get.',
              {'query': {'type': 'string'}, 'top_k': {'type': 'integer', 'minimum': 1, 'maximum': 8}}, ['query']),
@@ -77,6 +85,7 @@ class SourceTools:
         self.inverse = {v['doc_id']: k for k, v in documents.items() if k in self.sources}
         self.remaining = protocol['max_evidence_bytes']
         self.references = set()
+        self.handles = EvidenceHandles() if protocol.get('client_v3') else None
 
     def original(self, source_id, start, end):
         source = self.sources[source_id]
@@ -127,8 +136,8 @@ class SourceTools:
         return {'items': result, 'has_more': False}
 
     def execute(self, name, args):
-        allowed = {row['function']['name'] for row in schemas(self.condition)}
-        if name not in allowed:
+        allowed = {row['function']['name'] for row in schemas(self.condition, bool(self.handles))}
+        if name not in allowed or name == 'submit_answer':
             raise ValueError('Tool is unavailable in this condition')
         if name == 'list_sources':
             return {'items': [{k: v for k, v in source.items() if k in ('id', 'title', 'timestamp', 'stage')}
@@ -138,11 +147,18 @@ class SourceTools:
         if name == 'search_files':
             return self.grep(args['pattern'])
         if name == 'elf_evidence_check':
+            if self.handles:
+                checked = self.api('/v2/evidence/check', {'claims': self.handles.resolve(args['claims'])})
+                return compact_check(checked)
             return self.api('/v2/evidence/check', args)
         if name == 'elf_docs_search_l0':
             data = self.api('/v2/docs/search/l0', {'candidate_k': 60, 'top_k': 4, **args})
-            return {'items': [{**row, 'source_id': self.inverse[row['doc_id']]}
-                             for row in data['items'] if row['doc_id'] in self.inverse]}
+            rows = [{**row, 'source_id': self.inverse[row['doc_id']]}
+                    for row in data['items'] if row['doc_id'] in self.inverse]
+            if self.handles:
+                rows = [{k: v for k, v in row.items() if k in ('doc_id', 'source_id', 'title', 'snippet', 'pointer', 'score')}
+                        for row in rows]
+            return {'items': rows}
         if name == 'elf_docs_excerpts_get':
             if args['doc_id'] not in self.inverse:
                 raise ValueError('Future or foreign source crossed the checkpoint')
@@ -170,7 +186,8 @@ class SourceTools:
         return value
 
     def call(self, name, args):
-        if self.remaining <= 100:
+        reserve = 2048 if self.handles and name != 'elf_evidence_check' else 0
+        if self.remaining <= reserve + 100:
             return {'error': 'Common evidence-byte budget exhausted.'}
         try:
             value = self.execute(name, args)
@@ -180,7 +197,14 @@ class SourceTools:
             value = {'error': {'status': error.code, 'detail': error.read().decode()}}
         except (KeyError, ValueError, re.error) as error:
             value = {'error': str(error)}
-        cap = min(self.remaining, self.protocol['max_tool_result_bytes'])
+        if self.handles:
+            value = self.handles.project(value)
+        cap = min(self.remaining - reserve, self.protocol['max_tool_result_bytes'])
+        if name == 'elf_evidence_check' and self.handles:
+            if len(json.dumps(value, ensure_ascii=False).encode()) > cap:
+                value = {'error': 'Complete citation verdict does not fit. No partial success is returned.'}
+            self.remaining -= len(json.dumps(value, ensure_ascii=False).encode())
+            return value
         # Drop complete tail records, never slice serialized JSON or native references.
         lists = []
         def find_lists(node):
@@ -219,5 +243,36 @@ class SourceTools:
                 for v in node:
                     references(v)
         references(value)
+        if self.handles:
+            self.handles.expose(value)
+            self.references.update(self.handles.native[ref] for ref in self.handles.visible)
         self.remaining -= len(json.dumps(value, ensure_ascii=False).encode())
         return value
+
+    def provide(self, selections):
+        originals = []
+        for selection in selections:
+            value = self.original(selection['source_id'], selection['start'], selection['end'])
+            originals.append(value)
+        value = self.handles.project({'originals': originals})
+        size = len(json.dumps(value, ensure_ascii=False).encode())
+        if size > self.remaining - 2048:
+            raise ValueError('Frozen exact-source evidence exceeds the common budget')
+        self.remaining -= size
+        self.handles.expose(value)
+        self.references.update(self.handles.native[ref] for ref in self.handles.visible)
+        return value
+
+    def finalize(self, answer):
+        if not isinstance(answer.get('text'), str) or not isinstance(answer.get('supported'), bool):
+            raise ValueError('Expected text, supported, and claims')
+        claims = self.handles.resolve(answer['claims']) if self.handles else answer['claims']
+        try:
+            binding = self.api('/v2/evidence/check', {'claims': claims})
+        except urllib.error.HTTPError as error:
+            if error.code >= 500 or error.code == 402:
+                raise
+            raise ValueError(error.read().decode()) from error
+        refs = [c['reference'] for claim in claims for c in claim.get('citations', []) if c.get('kind') == 'reference']
+        return {'answer': {**answer, 'claims': claims}, 'claim_bindings': binding,
+                'all_references_seen': bool(refs) and all(ref in self.references for ref in refs)}

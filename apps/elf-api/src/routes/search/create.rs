@@ -60,6 +60,8 @@ pub(in crate::routes) async fn searches_create(
 				search_id: response.search_session_id,
 				expires_at: response.expires_at,
 				items: response.items,
+				total: response.total,
+				has_more: response.has_more,
 				trajectory_summary: response.trajectory_summary,
 				query_plan: None,
 			}
@@ -73,6 +75,8 @@ pub(in crate::routes) async fn searches_create(
 				search_id: response.search_session_id,
 				expires_at: response.expires_at,
 				items: response.items,
+				total: response.total,
+				has_more: response.has_more,
 				trajectory_summary: response.trajectory_summary,
 				query_plan: Some(response.query_plan),
 			}
