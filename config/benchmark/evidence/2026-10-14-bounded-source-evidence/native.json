@@ -1,0 +1,106 @@
+[
+  {
+    "stage": 0,
+    "sources_verified": 4,
+    "vectors": {
+      "doc_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 8
+        }
+      ],
+      "note_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 12
+        }
+      ],
+      "note_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 12
+        }
+      ],
+      "note_field_embeddings": []
+    },
+    "notes": 12
+  },
+  {
+    "stage": 1,
+    "sources_verified": 6,
+    "vectors": {
+      "doc_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 10
+        }
+      ],
+      "note_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 16
+        }
+      ],
+      "note_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 16
+        }
+      ],
+      "note_field_embeddings": []
+    },
+    "notes": 16
+  },
+  {
+    "stage": 2,
+    "sources_verified": 9,
+    "vectors": {
+      "doc_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 17
+        }
+      ],
+      "note_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 27
+        }
+      ],
+      "note_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 27
+        }
+      ],
+      "note_field_embeddings": []
+    },
+    "notes": 27
+  },
+  {
+    "stage": 3,
+    "sources_verified": 14,
+    "vectors": {
+      "doc_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 29
+        }
+      ],
+      "note_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 45
+        }
+      ],
+      "note_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 45
+        }
+      ],
+      "note_field_embeddings": []
+    },
+    "notes": 45
+  }
+]

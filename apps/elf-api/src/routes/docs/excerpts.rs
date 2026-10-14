@@ -73,6 +73,7 @@ async fn docs_excerpts_get_inner(
 			read_profile,
 			doc_id: payload.doc_id,
 			level: payload.level,
+			max_bytes: payload.max_bytes,
 			chunk_id: payload.chunk_id,
 			quote: payload.quote,
 			position: payload.position,

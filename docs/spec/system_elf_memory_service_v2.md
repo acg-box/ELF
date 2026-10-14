@@ -1931,6 +1931,10 @@ Behavior:
 - Hydrates bounded excerpts only from active, readable Source Library documents and
   verifies the requested chunk, quote, or position selector against current source
   content.
+- Optional `max_bytes` must be positive. It caps original UTF-8 bytes at the selected
+  level limit. Omit it to retain the existing level window. JSON metadata and escaping
+  are separate transport costs. The returned offsets and reference cover the actual
+  window, which can be smaller than the selector span. No source bytes are changed.
 
 Work Journal capture and readback:
 - POST /v2/work-journal/entries

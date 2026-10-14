@@ -62,7 +62,7 @@ impl ElfMcp {
 
 	#[rmcp::tool(
 		name = "elf_docs_excerpts_get",
-		description = "Pass a search result doc_id and pointer.locator.position unchanged. Positions are UTF-8 bytes. Start with L1; copy the verified reference for citations. Use L2 only for missing context.",
+		description = "Pass a search result doc_id and pointer.locator.position unchanged. Positions are UTF-8 bytes. Start with L1 and max_bytes that fits the read budget; copy the verified reference for citations. A smaller position does not limit the returned window. Use L2 only for missing context.",
 		input_schema = docs_excerpts_get_schema()
 	)]
 	async fn elf_docs_excerpts_get(&self, params: JsonObject) -> Result<CallToolResult, ErrorData> {

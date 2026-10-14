@@ -66,6 +66,7 @@ async fn docs_put_rejects_rewriting_and_verifies_separate_derivative() {
 			read_profile: "private_plus_project".to_string(),
 			doc_id: put.doc_id,
 			level: "L1".to_string(),
+			max_bytes: None,
 			chunk_id: Some(chunk_id),
 			quote: None,
 			position: None,

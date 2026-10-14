@@ -39,16 +39,24 @@ this sequence in `opening_tool`; it does not preload expected answers.
    `elf_evidence_recall` with literal names or IDs from the question or verified
    originals. Search originals with `elf_docs_search_l0` when memory is missing.
    Pass `doc_id` and `pointer.locator.position` unchanged to
-   `elf_docs_excerpts_get` with `level: L1`. Offsets count UTF-8 bytes, not lines.
+   `elf_docs_excerpts_get` with `level: L1` and a positive `max_bytes`, for example 3000. Reserve
+   separate room for JSON metadata and the final check. A smaller position alone
+   does not shrink the level window. Offsets count UTF-8 bytes, not lines.
    Copy the returned `reference`; the server omits it if verification fails.
    Use L2 only when a specific premise needs more context.
    Supply `as_of` for a historical question. Follow a source or graph
    link only to resolve a specific gap. Preserve late records that describe
    earlier effective events.
 3. Construct atomic claims in dependency order. Cite a source for each premise.
+   Keep each requested subject, effective time, prerequisite, and exclusion.
+   Check conjunctions and distinguish a necessary condition from sufficient
+   authorization. Compare older memory with the relevant current original for
+   an update question; a change announcement does not restate every retained rule.
    Use `depends_on` for each earlier claim whose evidence is needed by the
    current conclusion. Do not infer shared identity from a similar name.
-4. Send the complete array to `elf_evidence_check`. A failed dependency makes
+4. Use host-owned `submit_answer` for the final check when it is declared.
+   Otherwise send the complete array to `elf_evidence_check`. A separate
+   intermediate check is needed only for an uncertain binding or dependency. A failed dependency makes
    the dependent binding fail. Repair the citation using an inspected source,
    then check the full chain again within the host's declared workflow budget.
    If evidence remains insufficient, report the gap. Do not fabricate a locator.

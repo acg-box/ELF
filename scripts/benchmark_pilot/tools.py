@@ -38,8 +38,9 @@ def schemas(condition, client_v3=False):
         definitions += [
             ('elf_docs_search_l0', 'Search original documents. Pass a selected doc_id and pointer.locator.position to elf_docs_excerpts_get.',
              {'query': {'type': 'string'}, 'top_k': {'type': 'integer', 'minimum': 1, 'maximum': 8}}, ['query']),
-            ('elf_docs_excerpts_get', 'Read an original at a search result byte position, with a copyable native reference. L1 is a focused window; L2 is for a missing premise.',
-             {'doc_id': {'type': 'string'}, 'position': position, 'level': {'enum': ['L0', 'L1', 'L2']}}, ['doc_id', 'position', 'level']),
+            ('elf_docs_excerpts_get', 'Read an original at a search result byte position. max_bytes bounds the original window (default 3000); the host also limits it to remaining budget. A smaller position alone does not shrink L1. Returned offsets identify the inspected bytes.',
+             {'doc_id': {'type': 'string'}, 'position': position, 'level': {'enum': ['L0', 'L1', 'L2']},
+              'max_bytes': {'type': 'integer', 'minimum': 1, 'maximum': 32768}}, ['doc_id', 'position', 'level']),
         ]
     if condition == 'full_elf':
         definitions += [
@@ -86,6 +87,12 @@ class SourceTools:
         self.remaining = protocol['max_evidence_bytes']
         self.references = set()
         self.handles = EvidenceHandles() if protocol.get('client_v3') else None
+        self.seen_candidates = {}
+        self.original_reads = []
+
+    def result_cap(self, name):
+        reserve = 2048 if self.handles and name != 'elf_evidence_check' else 0
+        return min(self.remaining - reserve, self.protocol['max_tool_result_bytes'])
 
     def original(self, source_id, start, end):
         source = self.sources[source_id]
@@ -109,9 +116,47 @@ class SourceTools:
         for line in lines[first:first + count]:
             if selected and len(selected) + len(line) > 6000:
                 break
+            if self.handles:
+                candidate = {**self.original(source_id, start, start + len(selected) + len(line)),
+                    'start_line': first + 1, 'next_line': first + 1 + len((selected + line).splitlines()),
+                    'total_lines': len(lines)}
+                if len(json.dumps(candidate, ensure_ascii=False).encode()) > self.result_cap('read_source'):
+                    break
             selected += line
+        if not selected:
+            raise ValueError('One original line does not fit the common evidence-byte budget.')
         return {**self.original(source_id, start, start + len(selected)),
                 'start_line': first + 1, 'next_line': first + 1 + len(selected.splitlines()), 'total_lines': len(lines)}
+
+    def excerpt(self, args):
+        source_id = self.inverse[args['doc_id']]
+        if not self.handles:
+            return {**self.api('/v2/docs/excerpts', args), 'source_id': source_id}
+        cap = self.result_cap('elf_docs_excerpts_get')
+        limit = int(args.get('max_bytes', 3000))
+        if limit < 1:
+            raise ValueError('max_bytes must be positive')
+        # Bound at the native owner. Do not slice text while retaining a wider reference.
+        def read(limit):
+            body = {**args, 'max_bytes': limit}
+            native = self.api('/v2/docs/excerpts', body)
+            self.original_reads.append({'request': body, 'response': native})
+            value = {k: native[k] for k in ('doc_id', 'excerpt', 'start_offset', 'end_offset', 'reference') if k in native}
+            value.update(source_id=source_id, source_timestamp=self.sources[source_id]['timestamp'],
+                         verified=native['verification']['verified'])
+            if not value['verified']:
+                value['verification_errors'] = native['verification']['verification_errors']
+            return value
+        value = read(min(limit, max(1, cap - 512)))
+        if len(json.dumps(value, ensure_ascii=False).encode()) > cap:
+            # JSON control-character escaping can use six bytes per original byte.
+            # One conservative local read fits that case without another model turn.
+            overhead = len(json.dumps({**value, 'excerpt': '', 'native_reads': 2}, ensure_ascii=False).encode()) + 32
+            if cap < overhead + 6:
+                raise ValueError('Original metadata does not fit the common evidence-byte budget.')
+            value = read(min(limit, (cap - overhead) // 6))
+            value['native_reads'] = 2
+        return value
 
     def grep(self, pattern):
         if not isinstance(pattern, str) or len(pattern) > 200:
@@ -158,18 +203,26 @@ class SourceTools:
             if self.handles:
                 rows = [{k: v for k, v in row.items() if k in ('doc_id', 'source_id', 'title', 'snippet', 'pointer', 'score')}
                         for row in rows]
+                for row in rows:
+                    row['pointer'] = {'locator': {'position': row['pointer']['locator']['position']}}
+                    row['source_timestamp'] = self.sources[row['source_id']]['timestamp']
             return {'items': rows}
         if name == 'elf_docs_excerpts_get':
             if args['doc_id'] not in self.inverse:
                 raise ValueError('Future or foreign source crossed the checkpoint')
-            return {**self.api('/v2/docs/excerpts', args), 'source_id': self.inverse[args['doc_id']]}
+            return self.excerpt(args)
         if name in ('elf_searches_create', 'elf_searches_get'):
             if name == 'elf_searches_create':
                 data = self.api('/v2/searches', {'top_k': 4, 'candidate_k': 60, **args})
             else:
                 from urllib.parse import urlencode
                 data = self.api('/v2/searches/' + args['search_id'] + '?' + urlencode({'top_k': args.get('top_k', 8), 'touch': 'false'}))
-            return {k: data[k] for k in ('search_id', 'items', 'total', 'has_more') if k in data}
+            value = {k: data[k] for k in ('search_id', 'items', 'total', 'has_more') if k in data}
+            if self.handles:
+                seen = self.seen_candidates.get(data['search_id'], set())
+                value['already_returned_note_ids'] = [r['note_id'] for r in value['items'] if r['note_id'] in seen]
+                value['items'] = [r for r in value['items'] if r['note_id'] not in seen]
+            return value
         if name == 'elf_evidence_pack':
             return self.project_pack(self.api('/v2/evidence/pack', {'max_source_bytes': 6000, **args}))
         if name == 'elf_evidence_recall':
@@ -217,7 +270,7 @@ class SourceTools:
         while len(json.dumps(value, ensure_ascii=False).encode()) > cap:
             candidates = [v for v in lists if v]
             if not candidates:
-                value = {'error': 'Result does not fit common evidence-byte budget. Read fewer lines.'}
+                value = {'error': 'Result does not fit common evidence-byte budget. Request a smaller max_bytes or fewer file lines.'}
                 break
             max(candidates, key=lambda v: len(json.dumps(v))).pop()
             value['truncated'] = True
@@ -246,6 +299,8 @@ class SourceTools:
         if self.handles:
             self.handles.expose(value)
             self.references.update(self.handles.native[ref] for ref in self.handles.visible)
+            if 'search_id' in value:
+                self.seen_candidates.setdefault(value['search_id'], set()).update(r['note_id'] for r in value.get('items', []))
         self.remaining -= len(json.dumps(value, ensure_ascii=False).encode())
         return value
 

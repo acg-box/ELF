@@ -60,6 +60,10 @@ pub(in crate::docs) fn bounded_window(
 		end -= 1;
 	}
 
+	// A cap smaller than one UTF-8 scalar can leave no complete character.
+	// Return an empty, ordered range instead of an inverted window.
+	end = end.max(start);
+
 	(start, end)
 }
 
@@ -100,4 +104,22 @@ pub(in crate::docs) fn should_enable_sparse_auto(query: &str) -> bool {
 	};
 
 	special_count >= 2 || compact_hex_like || (has_mixed_alpha_num && trimmed.len() > 12)
+}
+
+#[cfg(test)]
+mod tests {
+	#[test]
+	fn bounded_windows_remain_ordered_utf8_ranges_even_below_one_character() {
+		let text = "白鹭🙂原文 and conditions";
+
+		for position in 0..=text.len() {
+			for cap in 0..=text.len() + 1 {
+				let (start, end) = super::bounded_window(position, position, text, cap);
+
+				assert!(start <= end && end <= text.len());
+				assert!(end - start <= cap);
+				assert!(text.get(start..end).is_some());
+			}
+		}
+	}
 }

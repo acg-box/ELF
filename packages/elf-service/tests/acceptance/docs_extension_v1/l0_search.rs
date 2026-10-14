@@ -148,6 +148,7 @@ async fn docs_search_l0_note_pointer_roundtrip_hydrates_doc() {
 			read_profile: "private_plus_project".to_string(),
 			doc_id: source_ref_doc_id,
 			level: "L1".to_string(),
+			max_bytes: None,
 			chunk_id: Some(source_ref_chunk_id),
 			quote: None,
 			position: None,

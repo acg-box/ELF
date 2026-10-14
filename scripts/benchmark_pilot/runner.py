@@ -83,7 +83,7 @@ def cell(args, repo, sources, checkpoints, protocol, task):
                 messages.append({'role': 'user', 'content': 'This is the final turn in the fixed workflow budget. Return your JSON answer from the evidence already inspected. Mark unestablished facts unknown.'})
             required_tool = opening_tool(args.condition, trace, protocol.get('hydrate_sources', False)) if protocol.get('host_opening') and args.condition != 'exact_source' else None
             if protocol.get('client_v3'):
-                messages.append({'role': 'user', 'content': f'Host budget: {host.remaining} evidence bytes and {protocol["max_tool_calls"] - calls} tool calls remain. Read promising originals before more searches; expand cached candidates for missing premises. Check each part of the question before submit_answer.'})
+                messages.append({'role': 'user', 'content': f'Host budget: {host.remaining} evidence bytes and {protocol["max_tool_calls"] - calls} tool calls remain. Read only to close a named gap. Before submit_answer, cover each requested part and keep the subject, applicable time, conditions, and exclusions from its cited original. submit_answer performs the final binding check.'})
             payload, response = request(messages, args.condition, closing, protocol, required_tool)
             step = {'turn': turn, 'request': payload, 'response': response, 'tools': []}
             trace.append(step)
@@ -161,6 +161,7 @@ def cell(args, repo, sources, checkpoints, protocol, task):
         save(target, result)
         if host.handles:
             save(target.parent / 'evidence-handles.json', {'native': host.handles.native, 'visible': sorted(host.handles.visible)})
+            save(target.parent / 'original-read-receipts.json', host.original_reads)
         print(json.dumps({k: result[k] for k in ('cell', 'status', 'seconds', 'tool_calls', 'usage_after')}), flush=True)
     return 2 if result['status'] in ('transport_failed', 'harness_failed') else 0
 

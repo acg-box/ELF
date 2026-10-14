@@ -1,4 +1,5 @@
 use crate::{
+	Error,
 	docs::service::{
 		self, DocExcerptRange, DocTrajectoryBuilder, DocsExcerptResponse, DocsExcerptVerification,
 		DocsExcerptsGetRequest, ElfService, Result, Uuid,
@@ -20,6 +21,12 @@ impl ElfService {
 		req: DocsExcerptsGetRequest,
 		max_bytes: usize,
 	) -> Result<DocsExcerptResponse> {
+		if req.max_bytes == Some(0) {
+			return Err(Error::InvalidRequest {
+				message: "max_bytes must be positive.".to_string(),
+			});
+		}
+
 		let explain = req.explain.unwrap_or(false);
 		let trace_id = Uuid::new_v4();
 		let tenant_id = req.tenant_id.trim();
@@ -54,7 +61,9 @@ impl ElfService {
 			req.doc_id,
 		)
 		.await?;
-		let level_max = service::excerpt_level_max(req.level.as_str())?.min(max_bytes);
+		let level_max = service::excerpt_level_max(req.level.as_str())?
+			.min(max_bytes)
+			.min(req.max_bytes.unwrap_or(usize::MAX));
 
 		trajectory.push(
 			"level_selection",

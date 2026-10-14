@@ -29,6 +29,12 @@ class EvidenceHandles:
                 ref = node.get('reference')
                 if isinstance(ref, str) and ref.startswith('elf-source-v1/'):
                     node['reference'] = self.handle(ref)
+                    if node['reference'] in self.visible:
+                        # The exact original is still in this conversation. Keep its
+                        # handle and provenance; do not charge for its body again.
+                        for field in ('text', 'excerpt'):
+                            node.pop(field, None)
+                        node['already_read'] = True
                 if 'source_references' in node:
                     node['source_references'] = [self.handle(ref) for ref in node['source_references']]
                 for child in node.values():
