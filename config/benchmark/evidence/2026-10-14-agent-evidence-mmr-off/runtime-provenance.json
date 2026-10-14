@@ -1,0 +1,57 @@
+{
+  "calibration": {
+    "source_commit": "c3cfc5bd7551e3b8541a4e9da80a86be5e17e66b",
+    "binaries": {
+      "api": "cf60a65043ee4308c2cc69c3f02f1565f9f06c911498d0404a720cf163bd277f",
+      "worker": "641e15ab5b56104b3bae2da0652dbda56b5513a4c2b8577cd5c8f163973bb294"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "formal": {
+    "source_commit": "c3cfc5bd7551e3b8541a4e9da80a86be5e17e66b",
+    "binaries": {
+      "api": "cf60a65043ee4308c2cc69c3f02f1565f9f06c911498d0404a720cf163bd277f",
+      "worker": "641e15ab5b56104b3bae2da0652dbda56b5513a4c2b8577cd5c8f163973bb294"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "reader_files": {
+    "apps/elf-api/src/routes/search/create.rs": "cc580464abe9a2d72441a67fbebe68edf69dde63fce919f5f1b37740e22a5ccc",
+    "apps/elf-api/src/routes/search/read.rs": "87f56047561c8f53dfea433e4f5bf187f11f1362b305ce250a42f0c9c2cbc310",
+    "apps/elf-api/src/routes/types/search.rs": "a86a655657abb6b9cc72502259ca1fe8397d1babbff3b77c2276934d70f04b98",
+    "apps/elf-eval/src/app/eval.rs": "630808a63896f70ddaf8be4c2d28e2d80eddaafd468800500d9c98f25f0aff21",
+    "config/agent/evidence-reader.md": "08c97950de0486832f259e6362f64c1477082b8d278b7e45245e7382869950fe",
+    "docs/decisions/2026-10-14-agent-evidence-use.md": "50ce40edb6106bc7ed317bf79452b3a41174cbe1fc094d9cd3a32c80fc08c7bd",
+    "docs/runbook/agent-evidence.md": "5752d2fbbec5dff4f2594db44e165a1f9ddb04815984c731ad78d837156f619c",
+    "elf.example.toml": "1354665d9a1f54d8507115545b7c99699bb1db807f501f99a79d57c72a7015bd",
+    "packages/elf-service/src/evidence/pack.rs": "3854874872abe047b5c6d6d9617bca8f2275c327c054f11e91107f448272104e",
+    "packages/elf-service/src/evidence/pack/windows.rs": "62f98c56bd191530578348c906faf8ef51b0f1d69c0c451b40c97133f775bf60",
+    "packages/elf-service/src/progressive_search/followup/session_get.rs": "3565f8b9036f499d2dd28f23bd6551b65ebb83a88971cf5973b1c103bc8c4905",
+    "packages/elf-service/src/progressive_search/service/entrypoints.rs": "42c071d46cbac2842675e2dec8aadedcf2e9b49572160c77d2fad35cd06fde83",
+    "packages/elf-service/src/progressive_search/service/sessionized.rs": "d319231dda5b205aa48a9a0efd793b132eed346d1758c9edc40a0cc0bce55c3b",
+    "packages/elf-service/src/progressive_search/types/index.rs": "c5c6b5696266ae0c958a5bc1a9beafb3bc86bcd2a16554402abbcd64fbbcfd30",
+    "packages/elf-service/tests/acceptance/chunk_search/tests_core/progressive.rs": "60ec66c43e95d5c315f7b4f98e6957b5a3b89d212e815dace7f6c138828f2c53",
+    "scripts/benchmark-project-pilot.py": "1d0fbfa1c529714ac8bf4149f404b4be59debcaa9c558199c254b5e10a9d07b2",
+    "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9",
+    "scripts/benchmark_pilot/__init__.py": "f5c4c7eca67d3b1c00c8f09ceb478a61c5cfd24afaedc9202f90d599433f7fb8",
+    "scripts/benchmark_pilot/corpus.py": "755d3fbe60ceb36acb706e24beed9c7e8fe4b0cdd74d086962a9a5a903818f41",
+    "scripts/benchmark_pilot/evidence.py": "635506c8cb1744a89420a65468cd16b9a336ffb1b708d056c7b00dc5a6a2461e",
+    "scripts/benchmark_pilot/reuse.py": "62b355505b87e4942b97f907879becff4ddb9c82d0750b4cba6617685ca4b470",
+    "scripts/benchmark_pilot/runner.py": "01d640a5ba9d8fd574995fa4e1a47d700b419afed79ebb9098047d6061001a52",
+    "scripts/benchmark_pilot/runtime.py": "a41626b81e02a4c0c53d7b6c0f3f614612865093d17f79ee7d8533a419758f9c",
+    "scripts/benchmark_pilot/tools.py": "dcf18fc008c5bb8664dca2d34a09bcadc0c8cb895e4a4060674f1931aadb2866",
+    "scripts/tests/test_benchmark_pilot_evidence.py": "2f5784a467960409af69cd03a6df4bed49853a3650e0934632edea76c43a9b6a"
+  },
+  "native_limits": {
+    "max_note_chars": 240,
+    "max_notes_per_add_event": 3,
+    "evidence_min_quotes": 1,
+    "evidence_max_quotes": 2,
+    "evidence_max_quote_bytes": 320,
+    "mmr_enabled": false
+  }
+}

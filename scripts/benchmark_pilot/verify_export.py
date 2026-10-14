@@ -73,6 +73,14 @@ def verify(root):
     assert protocol['max_output_tokens'] == 128000
     audit = json.loads((root / 'write-rejection-audit.json').read_text())
     assert audit['candidates'] == data['native_writes']['candidates'] == sum(audit['first_gate_outcomes'].values())
+    if protocol.get('frozen_extraction'):
+        limits = json.loads((root / 'runtime-provenance.json').read_text())['native_limits']
+        reuse = json.loads((root / 'provider-reuse.json').read_text())
+        assert limits['max_note_chars'] == protocol['note_character_limit'] == audit['note_character_limit']
+        assert limits['mmr_enabled'] == protocol['mmr_enabled']
+        assert audit['same_frozen_proposals'] and len(audit['proposal_sha256']) == 64
+        assert reuse['reused']['extraction'] == data['native_writes']['windows']
+        assert all(s['amortized_usd_per_task'] is None for s in data['summary'].values())
     restore = json.loads((root / 'restoration.json').read_text())
     assert restore['source_count'] == len(sources) and restore['postgres_state_equal']
     assert all(row['dimension'] == 4096 and (row['stored_vector_query_passed'] if row['points'] else row['stored_vector_query_passed'] is None) for row in restore['qdrant'])

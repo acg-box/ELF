@@ -57,6 +57,15 @@ def export(root, destination):
     save(destination / 'measurements.json', public)
     save(destination / 'sources.json', {'fixture_sha256': digest((fixture / 'freeze.json').read_bytes()),
         'records': [{'id': source_aliases[s['id']], 'stage': s['stage'], 'bytes': len(s['text'].encode()), 'sha256': s['sha256']} for s in sources]})
+    amendment = root / 'preformal-input-amendment.json'
+    if amendment.exists():
+        previous = json.loads(amendment.read_text())
+        calibration = root / 'calibration-fixture/freeze.json'
+        save(destination / 'input-amendment.json', {
+            'previous_freeze_sha256': previous['previous_freeze_sha256'],
+            'formal_freeze_sha256': digest((fixture / 'freeze.json').read_bytes()),
+            'calibration_freeze_sha256': digest((calibration if calibration.exists() else fixture / 'freeze.json').read_bytes()),
+            'boundary': 'A calibration-only diagnostic input gained an omitted paragraph before formal execution. Formal selections and original bytes did not change; the recorded calibration answer was not repeated.'})
     controls = {'schema', 'conditions', 'formal_repetitions', 'calibration_repetitions', 'max_rounds',
                 'max_tool_calls', 'max_evidence_bytes', 'max_tool_result_bytes', 'model', 'provider',
                 'reasoning', 'max_output_tokens', 'embedding_model', 'embedding_dimensions',
@@ -104,12 +113,16 @@ def export(root, destination):
             ('memory', ('max_note_chars', 'max_notes_per_add_event')),
             ('security', ('evidence_min_quotes', 'evidence_max_quotes', 'evidence_max_quote_bytes')))
             for key in keys if key in config[section]}
+        diversity = config.get('ranking', {}).get('diversity', {})
+        if 'enabled' in diversity:
+            builds['native_limits']['mmr_enabled'] = diversity['enabled']
     save(destination / 'runtime-provenance.json', builds)
     rejection_audit = root / 'write-rejection-audit.json'
     if rejection_audit.exists():
         audit = json.loads(rejection_audit.read_text())
         save(destination / 'write-rejection-audit.json', {key: audit[key] for key in (
-            'candidates', 'first_gate_outcomes', 'quote_identity', 'note_character_limit', 'quote_byte_limit')})
+            'candidates', 'first_gate_outcomes', 'quote_identity', 'note_character_limit', 'quote_byte_limit',
+            'same_frozen_proposals', 'proposal_sha256') if key in audit})
     restoration = root / 'backup' / 'restore-receipt.json'
     if restoration.exists():
         receipt = json.loads(restoration.read_text())
