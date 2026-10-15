@@ -1,0 +1,13 @@
+{
+  "rust_tests": 479,
+  "benchmark_contract_tests": 216,
+  "tooling_tests": 4,
+  "native_external_tests": 111,
+  "code_revision": "671ab06b",
+  "configuration_recovery_revision": "cf9ef14a",
+  "logs_sha256": {
+    "check-final.log": "d1e90de0805e6568048a54ae5f0b39b185dc69433fd56dfa460995d51e3516d1",
+    "integration-final.log": "dea02fe6b248367d31d8d0fcdb4cdddc907b6d891d634924ebe86e3a76bdb192",
+    "build.log": "b15a17214303017e049313958ef5bc49ab45280c5a2887599b256cf4f675bdcc"
+  }
+}

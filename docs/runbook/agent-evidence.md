@@ -232,7 +232,9 @@ Use evidence pack/recall `max_bytes` for the full response, including notes,
 originals, and metadata. `max_source_bytes` still bounds original text inside a
 pack. Both operations preserve complete returned notes and references; inspect
 `complete`, `truncated`, and `omitted_note_ids`. Request fewer selected IDs when
-a needed note does not fit. Search `is_preview` marks display text, not a complete
+a needed note does not fit. If one complete note still exceeds the reader budget,
+use bounded original-source reads or explicitly allocate a larger response budget;
+do not remove its conditions. Search `is_preview` marks display text, not a complete
 claim. The shared Agent contract is version 6.
 
 ## Compatibility and bounds

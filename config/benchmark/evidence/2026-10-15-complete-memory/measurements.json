@@ -1,0 +1,584 @@
+{
+  "summary": {
+    "replay": {
+      "cells": 4,
+      "criteria": 24,
+      "passed_criteria": 22,
+      "accepted": 2,
+      "mean_seconds": 51.31546934374637,
+      "reader_paid_usd": 0.009964179999999656,
+      "memory_read_cells": 4,
+      "exact_memory_original_cited_cells": 1
+    },
+    "boundary": {
+      "cells": 1,
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": 0,
+      "mean_seconds": 21.210106125014136,
+      "reader_paid_usd": 0.0011048049999999865,
+      "memory_read_cells": 1,
+      "exact_memory_original_cited_cells": 1
+    },
+    "fresh": {
+      "cells": 1,
+      "criteria": 4,
+      "passed_criteria": 4,
+      "accepted": 1,
+      "mean_seconds": 45.42272395800683,
+      "reader_paid_usd": 0.001475104999999699,
+      "memory_read_cells": 1,
+      "exact_memory_original_cited_cells": 1
+    }
+  },
+  "cells": [
+    {
+      "mode": "replay",
+      "task_id": "calibration",
+      "phase": "calibration",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 76.36861199999112,
+      "tool_calls": 8,
+      "evidence_bytes": 20882,
+      "memory_use": {
+        "notes_read": 1,
+        "originals_read": 1,
+        "originals_cited": 1
+      },
+      "requests": [
+        11,
+        22
+      ],
+      "paid_usd": 0.0045095999999997805,
+      "criteria": 4,
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "passed_criteria": 3,
+      "accepted": false,
+      "flags": [
+        "simple_architecture_and_pr_merge_omitted"
+      ],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "replay",
+      "task_id": "decision-update",
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 63.23147908298415,
+      "tool_calls": 7,
+      "evidence_bytes": 22003,
+      "memory_use": {
+        "notes_read": 3,
+        "originals_read": 3,
+        "originals_cited": 0
+      },
+      "requests": [
+        38,
+        45
+      ],
+      "paid_usd": 0.0022542600000001745,
+      "criteria": 6,
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "historical_settled_and_exposure_amounts_omitted"
+      ],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "replay",
+      "task_id": "decision-update",
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 31.497615000000224,
+      "tool_calls": 8,
+      "evidence_bytes": 27412,
+      "memory_use": {
+        "notes_read": 4,
+        "originals_read": 4,
+        "originals_cited": 0
+      },
+      "requests": [
+        45,
+        51
+      ],
+      "paid_usd": 0.0024611699999996794,
+      "criteria": 6,
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "passed_criteria": 6,
+      "accepted": true,
+      "flags": [],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "replay",
+      "task_id": "handoff",
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 62.98799162500654,
+      "tool_calls": 8,
+      "evidence_bytes": 24752,
+      "memory_use": {
+        "notes_read": 3,
+        "originals_read": 3,
+        "originals_cited": 1
+      },
+      "requests": [
+        22,
+        31
+      ],
+      "paid_usd": 0.0026175649999999884,
+      "criteria": 6,
+      "criterion_pass": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "capture_hash_span_identity_omitted"
+      ],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "replay",
+      "task_id": "handoff",
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 47.54479166699457,
+      "tool_calls": 7,
+      "evidence_bytes": 26198,
+      "memory_use": {
+        "notes_read": 4,
+        "originals_read": 5,
+        "originals_cited": 0
+      },
+      "requests": [
+        31,
+        38
+      ],
+      "paid_usd": 0.002631184999999814,
+      "criteria": 6,
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "passed_criteria": 6,
+      "accepted": true,
+      "flags": [],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "boundary",
+      "task_id": "complete-520",
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 21.210106125014136,
+      "tool_calls": 3,
+      "evidence_bytes": 7185,
+      "memory_use": {
+        "notes_read": 1,
+        "originals_read": 1,
+        "originals_cited": 1
+      },
+      "requests": [
+        7,
+        11
+      ],
+      "paid_usd": 0.0011048049999999865,
+      "criteria": 6,
+      "criterion_pass": [
+        true,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "capture_metadata_omitted",
+        "frozen_oracle_requires_metadata_not_explicit_in_this_original"
+      ],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "boundary",
+      "task_id": "qualified-state",
+      "phase": "calibration",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 36.06533045799006,
+      "tool_calls": 3,
+      "evidence_bytes": 7021,
+      "memory_use": {
+        "notes_read": 1,
+        "originals_read": 1,
+        "originals_cited": 1
+      },
+      "requests": [
+        3,
+        7
+      ],
+      "paid_usd": 0.0014863800000000094,
+      "criteria": 6,
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "passed_criteria": 6,
+      "accepted": true,
+      "flags": [],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "fresh",
+      "task_id": "all-qualifications",
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 45.42272395800683,
+      "tool_calls": 3,
+      "evidence_bytes": 9236,
+      "memory_use": {
+        "notes_read": 4,
+        "originals_read": 1,
+        "originals_cited": 1
+      },
+      "requests": [
+        64,
+        70
+      ],
+      "paid_usd": 0.001475104999999699,
+      "criteria": 4,
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "passed_criteria": 4,
+      "accepted": true,
+      "flags": [],
+      "all_references_seen": true,
+      "native_binding": true
+    },
+    {
+      "mode": "fresh",
+      "task_id": "boundary-calibration",
+      "phase": "calibration",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 47.73987845800002,
+      "tool_calls": 3,
+      "evidence_bytes": 6126,
+      "memory_use": {
+        "notes_read": 1,
+        "originals_read": 1,
+        "originals_cited": 1
+      },
+      "requests": [
+        58,
+        64
+      ],
+      "paid_usd": 0.0007355300000000398,
+      "criteria": 2,
+      "criterion_pass": [
+        true,
+        true
+      ],
+      "passed_criteria": 2,
+      "accepted": true,
+      "flags": [],
+      "all_references_seen": true,
+      "native_binding": true
+    }
+  ],
+  "preparation": [
+    {
+      "mode": "replay",
+      "kind": "source_index",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 1.358210542006418,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 2.30221245798748,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "source_index",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 1.3514629999990575,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 1.1260854169959202,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "source_index",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 3.5343123329803348,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 2.2316062079917174,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 2.300159208010882,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 2.2800808339961804,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        11,
+        11
+      ],
+      "seconds": 1.1840945830044802,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "source_index",
+      "requests": [
+        22,
+        22
+      ],
+      "seconds": 1.3589713749825023,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        22,
+        22
+      ],
+      "seconds": 2.3526311659952626,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "source_index",
+      "requests": [
+        22,
+        22
+      ],
+      "seconds": 1.3431525000196416,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        22,
+        22
+      ],
+      "seconds": 2.3094543339975644,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        22,
+        22
+      ],
+      "seconds": 1.1682459579897113,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "source_index",
+      "requests": [
+        22,
+        22
+      ],
+      "seconds": 1.3554541659832466,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "replay",
+      "kind": "memory",
+      "requests": [
+        22,
+        22
+      ],
+      "seconds": 2.2575063749973197,
+      "paid_usd": 0.0
+    },
+    {
+      "mode": "boundary",
+      "kind": "source_index",
+      "requests": [
+        0,
+        1
+      ],
+      "seconds": 4.585275833000196,
+      "paid_usd": 5.849999999973932e-06
+    },
+    {
+      "mode": "boundary",
+      "kind": "memory",
+      "requests": [
+        1,
+        2
+      ],
+      "seconds": 20.673932624980807,
+      "paid_usd": 9.499999999995623e-07
+    },
+    {
+      "mode": "fresh",
+      "kind": "source_index",
+      "requests": [
+        51,
+        52
+      ],
+      "seconds": 20.171970291994512,
+      "paid_usd": 5.019999999911207e-06
+    },
+    {
+      "mode": "fresh",
+      "kind": "memory",
+      "requests": [
+        52,
+        58
+      ],
+      "seconds": 73.11879866701202,
+      "paid_usd": 0.0013409499999998964
+    }
+  ],
+  "native_probes": [
+    {
+      "mode": "replay",
+      "request_indices": [],
+      "paid_usd": 0
+    },
+    {
+      "mode": "boundary",
+      "request_indices": [
+        2
+      ],
+      "paid_usd": 2.2e-07
+    }
+  ],
+  "budget": {
+    "opening_requests": 4103,
+    "requests": 4173,
+    "new_requests": 70,
+    "opening_settled_usd": 1.9447955460000017,
+    "opening_exposure_usd": 2.016133946,
+    "settled_usd": 1.9654241360000007,
+    "exposure_usd": 2.036762536000002,
+    "added_settled_usd": 0.020628589999998947,
+    "new_unresolved_reserve_usd": 3.1086244689504383e-15,
+    "retained_prior_reserve_usd": 0.07133839999999836,
+    "ceiling_usd": 10,
+    "tranche_usd": 0.5,
+    "closing_ledger_sha256": "48693e486a88906bd24561e0eda47be80280e476e59fe2bff4b088486610f8c1"
+  },
+  "review_boundary": "Source-based assistant review, not independent or blinded. Citation binding proves original byte identity and access, not semantic truth or memory benefit."
+}

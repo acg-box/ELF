@@ -66,23 +66,33 @@ file tools and an explicit handoff as the working approach. This is a scoped
 choice while incremental memory benefit is unproved. It does not remove memory
 from other workflows or change the shipped memory-first reader contract.
 
-The supplied note limit is now 512 characters. A frozen native replay admitted
-all seven old length rejections without changing their proposals or originals.
-The repair update and comparison condition each ranked first in targeted recall.
-All four readers retained the repair state and literal-credential restriction,
-but aggregate coverage stayed at 21/24 with 1/4 complete answers. Two historical
-budget amounts and one hash/span detail remained omitted. This is an admission
-correction, not new proof of incremental memory value.
+The historical 512-character replay recovered seven earlier rejections, but a
+fresh 520-character capture/calibration candidate still failed. The accepted
+correction now removes note and structured-text character admission gates and
+the silent three-candidate discard. Complete candidates share an ingestion
+budget; deferred outcomes and incomplete read packs are explicit. Search preview
+length no longer determines whether a qualified claim can be stored. Existing
+PostgreSQL authority, Qdrant retrieval, and original-source identity remain.
 
-Fresh extraction under profile 7 admitted two of three candidates; a 520-character
-candidate still failed the 512 bound. The fresh reader recovered through original
-evidence. Preserve this failure rather than treating a larger limit or a correct
-final answer as complete extraction coverage. The accepted correction and its
-bounded verification are complete; no further repair batch is justified by unused
-budget alone. See the [qualified-note decision](../decisions/2026-10-15-qualified-note-limit.md)
-and [replay evidence](../evidence/benchmarking/2026-10-15-note-limit-512.md).
-The earlier recommendation to force every candidate below 240 is superseded;
-keep the historical failure and comparison scores unchanged.
+The complete-memory replay admitted 24 of 26 unchanged old candidates; two still
+failed the original importance/confidence policy. All three later candidates,
+including the 520-character one, were admitted without rewriting them. Their
+native text, child chunks, original hashes, and citation bindings were verified.
+The original four reader cells covered 22/24 obligations and completed 2/4 strict
+checklists, compared with 21/24 and 1/4 in the prior 512-character run. This small
+sequential change does not establish repeatable incremental memory value. All
+four readers used memory, but only one final answer cited the exact source span
+delivered with memory; the others used wider original-source windows.
+
+The two remaining omissions were a capture hash/span detail and historical budget
+amounts. Both were already present in the returned original context. Do not treat
+these as evidence for another admission limit, store, or retrieval algorithm.
+Keep the frozen misses and the separately scored boundary cases in the
+[complete-memory report](../evidence/benchmarking/2026-10-15-complete-memory.md).
+The [request-budget decision](../decisions/2026-10-15-complete-memory-budgets.md)
+supersedes the 512-character admission choice, while the
+[previous results](../evidence/benchmarking/2026-10-15-note-limit-512.md)
+remain dated evidence.
 
 Any later value test still needs a real continuity need, the intended host,
 verified capture, and actual memory use before comparison. The reference gate
@@ -103,10 +113,10 @@ continue experiments.
 | Choice or hypothesis | Current disposition | Reconsider when |
 | --- | --- | --- |
 | PostgreSQL authority plus Qdrant retrieval | Retain the supported deployment. Qwen3-Embedding-8B uses the full 4096-dimensional profile in the current experiment. | Representative quality, load, recovery, or operating-cost evidence supports a simpler or better design. A vendor speed claim is insufficient. |
-| MMR | Keep enabled during the note-limit replay. | A separate controlled test demonstrates better task outcomes. |
-| Note admission limit | Use 512 characters in the supplied configurations. The old update passed replay; one fresh 520-character candidate still failed. Preserve complete subjects, times, conditions, and exceptions. | Complete relevant claims still fail admission, or longer notes measurably harm retrieval and use. |
+| MMR | Keep enabled during the complete-memory regression. | A separate controlled test demonstrates better task outcomes. |
+| Memory processing budget | Preserve complete claims. Use aggregate ingestion and read-response byte budgets with explicit gaps; 512 characters is a display preview only. | Representative workloads show excessive deferral, cost, or loss of qualified meaning. Measure the affected stage before changing a budget. |
 | Mandatory memory opening in the reference host | Retain the shipped contract. The optional-tool maintenance trial did not exercise it. | A frozen comparison can show when memory-first, source-first, or direct current-file access is useful. This review does not change the shipped reader contract. |
-| Compact facts as the main derived representation | Keep short notes with read-time bound source quotes. The extra model transcription into structured facts was rejected. | Observed workflows require a different representation and existing source/procedure references cannot meet the obligation. |
+| Compact facts as the main derived representation | Keep concise, complete claims with existing child-chunk retrieval and read-time bound originals. The extra model transcription into structured facts was rejected. | Observed workflows require a different representation and existing source/procedure references cannot meet the obligation. |
 | Stronger reader or extraction model | Evaluate roles separately when justified. Model size and coding scores do not grant authority. | A bounded diagnostic separates generation, retrieval, and use failures and reports total cost. |
 | Live verification of reusable lessons | Candidate for a narrow read-only probe through the application. | Current-state failures persist and an authorized source can resolve the uncertainty. Do not add broad background crawling. |
 | More databases, a universal ontology, or a new agent harness | Defer. | A measured obligation cannot be met within the current owners at acceptable cost. |
