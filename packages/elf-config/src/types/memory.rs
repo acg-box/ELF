@@ -2,11 +2,13 @@ use serde::Deserialize;
 
 /// Write-path limits and policy controls for note ingestion.
 #[derive(Debug, Deserialize)]
+#[serde(deny_unknown_fields)]
 pub struct Memory {
-	/// Maximum number of notes accepted per `add_event` request.
-	pub max_notes_per_add_event: u32,
-	/// Maximum character length for an individual note.
-	pub max_note_chars: u32,
+	/// Total serialized extraction-input and candidate bytes processed per ingestion request.
+	pub ingest_max_bytes: u32,
+	/// Display-only character bound for search previews. Stored notes are not truncated.
+	#[serde(alias = "max_note_chars")]
+	pub preview_max_chars: u32,
 	/// Candidate pool size used before final top-k selection.
 	pub candidate_k: u32,
 	/// Final top-k size for note retrieval.

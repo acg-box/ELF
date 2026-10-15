@@ -1,3 +1,5 @@
+pub(super) mod budget;
+
 mod windows;
 
 use std::collections::HashSet;
@@ -26,6 +28,8 @@ pub struct EvidencePackRequest {
 	pub note_ids: Vec<Uuid>,
 	/// Total original-text byte budget; defaults to 32768 and cannot exceed it.
 	pub max_source_bytes: Option<usize>,
+	/// Total serialized response budget, including notes, originals, and metadata.
+	pub max_bytes: Option<usize>,
 }
 
 /// Derived candidates linked to separate, immutable source context.
@@ -41,6 +45,8 @@ pub struct EvidencePackResponse {
 	pub complete: bool,
 	/// Number of original-text bytes included.
 	pub source_bytes: usize,
+	/// Requested notes not returned, including those that did not fit the response budget.
+	pub omitted_note_ids: Vec<Uuid>,
 }
 
 /// A derived note with links to its original context; no inferred subject merge.
@@ -129,6 +135,7 @@ impl ElfService {
 	/// Materialize selected memories without a new model, index, or storage authority.
 	pub async fn evidence_pack(&self, req: EvidencePackRequest) -> Result<EvidencePackResponse> {
 		let budget = req.max_source_bytes.unwrap_or(32_768);
+		let response_budget = budget::response_limit(req.max_bytes)?;
 
 		if req.note_ids.is_empty() || req.note_ids.len() > 12 || !(1..=32_768).contains(&budget) {
 			return Err(Error::InvalidRequest {
@@ -147,6 +154,7 @@ impl ElfService {
 			sources: Vec::new(),
 			complete: true,
 			source_bytes: 0,
+			omitted_note_ids: Vec::new(),
 		};
 		let mut seen = HashSet::new();
 
@@ -175,6 +183,8 @@ impl ElfService {
 					| Error::ScopeDenied { .. },
 				) => {
 					result.complete = false;
+
+					result.omitted_note_ids.push(note_id);
 
 					continue;
 				},
@@ -231,6 +241,8 @@ impl ElfService {
 		}
 
 		windows::merge_overlaps(&mut result);
+
+		result.limit_bytes(response_budget)?;
 
 		Ok(result)
 	}

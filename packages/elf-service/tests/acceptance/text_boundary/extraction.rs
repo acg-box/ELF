@@ -41,7 +41,7 @@ async fn chinese_evidence_and_date_only_relations_survive_native_extraction() {
 		.await
 		.expect("Extract and persist Chinese evidence");
 
-	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 7);
+	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 8);
 	assert_eq!(
 		result.extracted["notes"][0]["structured"]["relations"][0]["valid_from"],
 		"2026-10-01T00:00:00Z"
@@ -108,7 +108,7 @@ async fn new_builtin_profile_preserves_existing_versions_and_pins() {
 
 	assert_eq!(profiles.len(), 2);
 	assert_eq!(profiles[0], (3, legacy));
-	assert_eq!(profiles[1].0, 7);
+	assert_eq!(profiles[1].0, 8);
 	assert_ne!(profiles[1].1, profiles[0].1);
 
 	let activated = fixture
@@ -117,12 +117,12 @@ async fn new_builtin_profile_preserves_existing_versions_and_pins() {
 			tenant_id: "t".into(),
 			project_id: "p".into(),
 			profile_id: "default".into(),
-			version: Some(7),
+			version: Some(8),
 		})
 		.await
 		.expect("Explicitly activate the new guidance.");
 
-	assert_eq!(activated.version, Some(7));
+	assert_eq!(activated.version, Some(8));
 
 	fixture.test_db.cleanup().await.expect("Clean profile fixture.");
 }

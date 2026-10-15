@@ -1,17 +1,18 @@
 use time::OffsetDateTime;
 
 use crate::{
-	ElfService, Result,
+	ElfService, NoteOp, Result,
 	access::ORG_PROJECT_ID,
 	add_event::{
-		rejection,
+		audit, rejection,
 		types::{
 			AddEventContext, AddEventRequest, AddEventResult, ExtractedNote, NoteProcessingData,
 		},
 	},
+	ingest_budget::DEFERRED_INGEST_BUDGET,
 	ingestion_profiles::IngestionProfileRef,
 };
-use elf_domain::writegate::WritePolicyAudit;
+use elf_domain::{memory_policy::MemoryPolicyDecision, writegate::WritePolicyAudit};
 
 impl ElfService {
 	#[allow(clippy::too_many_arguments)]
@@ -26,6 +27,7 @@ impl ElfService {
 		now: OffsetDateTime,
 		embed_version: &str,
 		dry_run: bool,
+		within_budget: bool,
 	) -> Result<AddEventResult> {
 		let note_data = NoteProcessingData::from_request_and_note(req, &note);
 		let effective_project_id = if note_data.scope.trim() == "org_shared" {
@@ -75,6 +77,42 @@ impl ElfService {
 				)
 				.await?;
 			}
+		}
+
+		if !within_budget {
+			audit::record_ingest_decision(
+				&mut tx,
+				&ctx,
+				&note,
+				&note_data.note_type,
+				None,
+				None,
+				MemoryPolicyDecision::Ignore,
+				MemoryPolicyDecision::Ignore,
+				NoteOp::None,
+				Some(DEFERRED_INGEST_BUDGET),
+				None,
+				None,
+				false,
+				false,
+				None,
+				None,
+				Some(&ingestion_profile.id),
+				Some(ingestion_profile.version),
+				note_data.structured_present,
+				note_data.graph_present,
+				write_policy_audits.cloned(),
+			)
+			.await?;
+
+			tx.commit().await?;
+
+			return Ok(AddEventResult {
+				note_id: None, op: NoteOp::None, policy_decision: MemoryPolicyDecision::Ignore,
+				reason_code: Some(DEFERRED_INGEST_BUDGET.into()),
+				reason: Some("Candidate retained in extracted output but not persisted or queued. Submit it separately within the processing budget.".into()),
+				field_path: None, write_policy_audits: write_policy_audits.cloned(),
+			});
 		}
 
 		let result = self

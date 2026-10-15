@@ -54,7 +54,10 @@ impl ElfService {
 				.get(&item.note_id)
 				.and_then(|value| value.summary.clone())
 				.unwrap_or_else(|| {
-					details::build_summary(&item.snippet, self.cfg.memory.max_note_chars as usize)
+					details::build_summary(
+						&item.snippet,
+						self.cfg.memory.preview_max_chars as usize,
+					)
 				});
 
 			items.push(SearchSessionItemRecord {

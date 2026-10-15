@@ -37,6 +37,7 @@ mod error;
 mod graph_ingestion;
 mod history;
 mod ingest_audit;
+mod ingest_budget;
 mod ingestion_profiles;
 mod ops;
 mod providers;

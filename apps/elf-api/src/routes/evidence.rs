@@ -14,6 +14,7 @@ use elf_service::{
 pub(super) struct PackBody {
 	note_ids: Vec<Uuid>,
 	max_source_bytes: Option<usize>,
+	max_bytes: Option<usize>,
 }
 
 #[derive(Deserialize)]
@@ -27,6 +28,7 @@ pub(super) struct CheckBody {
 pub(super) struct RecallBody {
 	subjects: Vec<String>,
 	as_of: Option<String>,
+	max_bytes: Option<usize>,
 }
 
 #[utoipa::path(get, path = "/v2/notes/{note_id}/evidence", tag = "notes", params(("note_id" = Uuid, Path, description = "Note ID.")), responses((status = 200, description = "Derived note and bounded verified original context.", body = Value)))]
@@ -96,6 +98,7 @@ pub(super) async fn evidence_pack(
 				read_profile,
 				note_ids: body.note_ids,
 				max_source_bytes: body.max_source_bytes,
+				max_bytes: body.max_bytes,
 			})
 			.await?,
 	))
@@ -120,6 +123,7 @@ pub(super) async fn evidence_recall(
 				read_profile,
 				subjects: body.subjects,
 				as_of: routes::parse_optional_rfc3339(body.as_of.as_ref(), "as_of")?,
+				max_bytes: body.max_bytes,
 			})
 			.await?,
 	))

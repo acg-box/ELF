@@ -111,8 +111,14 @@ class Runtime:
         if hashlib.sha256(tokenizer.read_bytes()).hexdigest() != '8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6':
             raise ValueError('Tokenizer hash mismatch')
         config = (self.repo / 'elf.example.toml').read_text()
-        if 'note_character_limit' in protocol:
-            config = re.sub(r'max_note_chars\s*=\s*\d+', 'max_note_chars = ' + str(protocol['note_character_limit']), config)
+        if protocol.get('note_character_limit') is not None:
+            raise ValueError('This runtime has no per-note character admission limit; use the frozen historical build for that comparison')
+        for key in ('ingest_max_bytes', 'preview_max_chars'):
+            if key in protocol:
+                value = int(protocol[key])
+                if value <= 0:
+                    raise ValueError(key + ' must be positive')
+                config = re.sub(key + r'\s*=\s*\d+', key + ' = ' + str(value), config)
         if 'mmr_enabled' in protocol:
             config = re.sub(r'(\[ranking.diversity\]\s*enabled\s*=\s*)(true|false)',
                 lambda m: m[1] + str(protocol['mmr_enabled']).lower(), config)
@@ -134,8 +140,8 @@ class Runtime:
                 values['temperature'] = 0.1
             section = f'[providers.{name}]\ndefault_headers = {{}}\n' + ''.join(k + ' = ' + json.dumps(v) + '\n' for k, v in values.items()) + '\n'
             config = re.sub(r'\[providers\.' + name + r'\][\s\S]*?(?=\n\[)', lambda _: section, config, count=1)
-        config = config.replace('auth_mode                = "off"', 'auth_mode                = "static_keys"')
-        config = config.replace('auth_keys                = []', '')
+        config = re.sub(r'(?m)^auth_mode\s*=\s*"off"', 'auth_mode = "static_keys"', config)
+        config = re.sub(r'(?m)^auth_keys\s*=\s*\[\]\s*$', '', config)
         config += '\n[[security.auth_keys]]\n' + ''.join(k + ' = ' + json.dumps(v) + '\n' for k, v in {
             'token_id': self.owner, 'token': self.token, 'tenant_id': self.owner, 'project_id': 'project',
             'agent_id': 'pilot', 'read_profile': 'private_only', 'role': 'user'}.items())

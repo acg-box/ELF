@@ -5,8 +5,6 @@ use crate::writegate::{Deserialize, Serialize};
 pub enum RejectCode {
 	/// The note text contains unsupported control characters.
 	RejectInvalidText,
-	/// The note text exceeded the configured length limit.
-	RejectTooLong,
 	/// The note text appears to contain secret material.
 	RejectSecret,
 	/// The note type is not one of the allowed values.

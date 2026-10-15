@@ -68,10 +68,10 @@ org_shared     = true
 project_shared = true
 
 [memory]
-candidate_k             = 60
-max_note_chars          = 512
-max_notes_per_add_event = 3
-top_k                   = 12
+candidate_k       = 60
+ingest_max_bytes  = 32_768
+preview_max_chars = 512
+top_k             = 12
 
 [memory.policy]
 
@@ -188,13 +188,12 @@ purge_deleted_after_days    = 30
 purge_deprecated_after_days = 180
 
 [security]
-auth_keys                = []
-auth_mode                = "off"
-bind_localhost_only      = true
-evidence_max_quote_bytes = 320
-evidence_max_quotes      = 2
-evidence_min_quotes      = 1
-redact_secrets_on_write  = true
+auth_keys               = []
+auth_mode               = "off"
+bind_localhost_only     = true
+evidence_min_quotes     = 1
+evidence_span_bytes     = 320
+redact_secrets_on_write = true
 
 [context]
 scope_boost_weight = 0.0

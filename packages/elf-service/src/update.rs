@@ -6,7 +6,10 @@ use sqlx::{Postgres, Transaction};
 use time::OffsetDateTime;
 use uuid::Uuid;
 
-use crate::{ElfService, Error, InsertVersionArgs, NoteOp, Result, access::ORG_PROJECT_ID};
+use crate::{
+	ElfService, Error, InsertVersionArgs, NoteOp, Result, access::ORG_PROJECT_ID,
+	ingest_budget::IngestBudget,
+};
 use elf_domain::{
 	text_validation, ttl,
 	writegate::{self, NoteInput},
@@ -64,6 +67,12 @@ impl ElfService {
 			&& req.ttl_days.is_none()
 		{
 			return Err(Error::InvalidRequest { message: "No updates provided.".to_string() });
+		}
+		if !IngestBudget::new(self.cfg.memory.ingest_max_bytes).take(&req)? {
+			return Err(Error::InvalidRequest {
+				message: "Update exceeds memory.ingest_max_bytes; the existing note is unchanged."
+					.into(),
+			});
 		}
 
 		let text_update = req.text.clone();

@@ -10,12 +10,9 @@ pub struct Security {
 	pub redact_secrets_on_write: bool,
 	/// Minimum number of quotes required for evidence binding.
 	pub evidence_min_quotes: u32,
-	/// Maximum number of quotes allowed for evidence binding.
-	pub evidence_max_quotes: u32,
-	/// Maximum UTF-8 bytes allowed in one evidence quote.
-	/// The legacy `chars` key also counted bytes and remains readable.
-	#[serde(alias = "evidence_max_quote_chars")]
-	pub evidence_max_quote_bytes: u32,
+	/// Granularity of selectable source spans; contiguous spans can form one complete quote.
+	#[serde(alias = "evidence_max_quote_chars", alias = "evidence_max_quote_bytes")]
+	pub evidence_span_bytes: u32,
 	/// Authentication mode such as `off` or `static_keys`.
 	pub auth_mode: String,
 	/// Static bearer-token entries used when `auth_mode` is `static_keys`.

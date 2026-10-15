@@ -12,6 +12,7 @@ use crate::{
 	access::{self, ORG_PROJECT_ID},
 	evidence::{
 		ElfService, Error, EvidencePackRequest, EvidencePackResponse, EvidencePackSource, Result,
+		pack::budget,
 	},
 	search,
 };
@@ -31,6 +32,8 @@ pub struct EvidenceRecallRequest {
 	pub subjects: Vec<String>,
 	/// Requested fact time, not a document creation cutoff.
 	pub as_of: Option<OffsetDateTime>,
+	/// Total serialized response budget, including candidates and source context.
+	pub max_bytes: Option<usize>,
 }
 
 /// Source-diverse candidates from lexical and graph incidence retrieval.
@@ -47,6 +50,27 @@ pub struct EvidenceRecallResponse {
 	pub candidates: Vec<EvidenceRecallCandidate>,
 	/// Sources resolved under current permissions. Completeness is not answer coverage.
 	pub pack: EvidencePackResponse,
+}
+impl EvidenceRecallResponse {
+	fn limit_bytes(&mut self, maximum: usize) -> Result<()> {
+		while budget::serialized_size(self)? > maximum {
+			self.truncated = true;
+
+			if !self.pack.remove_last_entry() {
+				return Err(Error::InvalidRequest {
+					message: "Recall metadata does not fit max_bytes.".into(),
+				});
+			}
+
+			let visible: HashSet<_> = self.pack.notes.iter().map(|n| n.note_id).collect();
+
+			self.candidates.retain(|c| visible.contains(&c.note_id));
+		}
+
+		self.truncated |= !self.pack.complete;
+
+		Ok(())
+	}
 }
 
 /// A match explains navigation, not truth or entity equivalence.
@@ -74,6 +98,8 @@ impl ElfService {
 		&self,
 		req: EvidenceRecallRequest,
 	) -> Result<EvidenceRecallResponse> {
+		let response_budget = budget::response_limit(req.max_bytes)?;
+
 		if !(1..=4).contains(&req.subjects.len())
 			|| req.subjects.iter().any(|s| s.trim().chars().count() < 2 || s.len() > 128)
 		{
@@ -126,6 +152,7 @@ impl ElfService {
 				sources: vec![],
 				complete: true,
 				source_bytes: 0,
+				omitted_note_ids: vec![],
 			}
 		} else {
 			self.evidence_pack(EvidencePackRequest {
@@ -135,6 +162,7 @@ impl ElfService {
 				read_profile: req.read_profile,
 				note_ids: candidates.iter().map(|c| c.note_id).collect(),
 				max_source_bytes: None,
+				max_bytes: req.max_bytes,
 			})
 			.await?
 		};
@@ -177,14 +205,17 @@ impl ElfService {
 
 		let visible: HashSet<_> = pack.notes.iter().map(|n| n.note_id).collect();
 		let candidates = candidates.into_iter().filter(|c| visible.contains(&c.note_id)).collect();
-
-		Ok(EvidenceRecallResponse {
+		let mut response = EvidenceRecallResponse {
 			schema: "elf.evidence_recall/v1",
 			as_of: req.as_of,
 			truncated,
 			candidates,
 			pack,
-		})
+		};
+
+		response.limit_bytes(response_budget)?;
+
+		Ok(response)
 	}
 }
 

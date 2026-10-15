@@ -61,12 +61,15 @@ pub(super) fn resolve_selections(
 	for note in &mut extracted.notes {
 		for evidence in note.evidence.iter_mut().flatten() {
 			let ExtractedEvidence::Selection(selection) = evidence else { continue };
-			let quote = spans
+			let end_span_id = selection.end_span_id.unwrap_or(selection.span_id);
+			let selected = spans
 				.get(selection.message_index)
-				.and_then(|pieces| pieces.get(selection.span_id))
+				.and_then(|pieces| pieces.get(selection.span_id..=end_span_id))
+				.filter(|pieces| !pieces.is_empty())
 				.ok_or_else(|| Error::InvalidRequest {
 					message: "Extractor selected an unknown message or evidence span.".into(),
 				})?;
+			let quote = selected.concat();
 			let start = spans[selection.message_index][..selection.span_id]
 				.iter()
 				.map(|span| span.len())
@@ -75,7 +78,7 @@ pub(super) fn resolve_selections(
 			*evidence = ExtractedEvidence::Quote(EvidenceQuote {
 				position: Some(TextPositionSelector { start, end: start + quote.len() }),
 				message_index: selection.message_index,
-				quote: (*quote).into(),
+				quote,
 			});
 		}
 	}
@@ -118,6 +121,41 @@ mod tests {
 			crate::add_event::types::ExtractedEvidence::Quote(_)
 		));
 		assert_eq!(originals, before);
+	}
+
+	#[test]
+	fn contiguous_ranges_keep_qualifications_beyond_one_span() {
+		let original =
+			format!("{}\n仅在2026年10月15日之后且审核通过时适用。", "项目甲保留原文。".repeat(40));
+		let originals = vec![original.clone()];
+		let spans = extraction::evidence_spans(&originals, 320).expect("Spans");
+		let mut output: ExtractorOutput = serde_json::from_value(serde_json::json!({"notes":[{
+			"text":original, "evidence":[{"message_index":0,"span_id":0,"end_span_id":spans[0].len()-1}]
+		}]}))
+		.expect("Range");
+
+		extraction::resolve_selections(&mut output, &spans).expect("Exact range");
+
+		let crate::add_event::types::ExtractedEvidence::Quote(quote) =
+			&output.notes[0].evidence.as_ref().expect("Evidence")[0]
+		else {
+			panic!("Resolved quote")
+		};
+		let position = quote.position.as_ref().expect("Server-owned position");
+
+		assert_eq!(quote.quote, original);
+		assert_eq!(position.start, 0);
+		assert_eq!(position.end, original.len());
+
+		for (start, end) in [(1, 0), (0, usize::MAX)] {
+			let mut invalid: ExtractorOutput =
+				serde_json::from_value(serde_json::json!({"notes":[{
+					"evidence":[{"message_index":0,"span_id":start,"end_span_id":end}]
+				}]}))
+				.expect("Syntactic range");
+
+			assert!(extraction::resolve_selections(&mut invalid, &spans).is_err());
+		}
 	}
 
 	#[test]

@@ -47,6 +47,8 @@ pub struct SearchDetailsResult {
 /// Response payload for detail materialization.
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct SearchDetailsResponse {
+	/// True for L0/L1 previews. Fetch L2 or an evidence pack before using a complete claim.
+	pub is_preview: bool,
 	/// Search session identifier.
 	pub search_session_id: Uuid,
 	#[serde(with = "crate::time_serde")]

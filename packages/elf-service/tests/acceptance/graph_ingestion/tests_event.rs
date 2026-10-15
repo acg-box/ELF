@@ -301,6 +301,7 @@ async fn extracted_shared_alias_does_not_merge_distinct_canonical_identities() {
 
 	let recalled = service
 		.evidence_recall(EvidenceRecallRequest {
+			max_bytes: None,
 			tenant_id: "t".into(),
 			project_id: "p".into(),
 			agent_id: "a".into(),

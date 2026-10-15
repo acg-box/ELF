@@ -1,0 +1,1790 @@
+[
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0011143,
+    "usage": {
+      "prompt_tokens": 585,
+      "total_tokens": 585,
+      "cost": 5.85e-06,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 5.85e-06,
+        "upstream_inference_prompt_cost": 5.85e-06,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 0
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008878000000000001,
+    "usage": {
+      "prompt_tokens": 95,
+      "total_tokens": 95,
+      "cost": 9.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 9.5e-07,
+        "upstream_inference_prompt_cost": 9.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 1
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008472,
+    "usage": {
+      "prompt_tokens": 22,
+      "total_tokens": 22,
+      "cost": 2.2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.2e-07,
+        "upstream_inference_prompt_cost": 2.2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 2
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06689210000000001,
+    "usage": {
+      "prompt_tokens": 3496,
+      "completion_tokens": 86,
+      "total_tokens": 3582,
+      "cost": 0.000476625,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 3361,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000476625,
+        "upstream_inference_prompt_cost": 0.000433625,
+        "upstream_inference_completions_cost": 4.3e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 3
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008621,
+    "usage": {
+      "prompt_tokens": 73,
+      "total_tokens": 73,
+      "cost": 7.3e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 7.3e-07,
+        "upstream_inference_prompt_cost": 7.3e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 4
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.067235,
+    "usage": {
+      "prompt_tokens": 4345,
+      "completion_tokens": 61,
+      "total_tokens": 4406,
+      "cost": 0.000183735,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3361,
+        "cache_write_tokens": 849,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000183735,
+        "upstream_inference_prompt_cost": 0.000153235,
+        "upstream_inference_completions_cost": 3.05e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 5
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0677704,
+    "usage": {
+      "prompt_tokens": 5525,
+      "completion_tokens": 1246,
+      "total_tokens": 6771,
+      "cost": 0.00082529,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4219,
+        "cache_write_tokens": 1180,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00082529,
+        "upstream_inference_prompt_cost": 0.00020229,
+        "upstream_inference_completions_cost": 0.000623
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 411,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 6
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06689969999999999,
+    "usage": {
+      "prompt_tokens": 3501,
+      "completion_tokens": 49,
+      "total_tokens": 3550,
+      "cost": 0.00011283,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008,
+        "cache_write_tokens": 358,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00011283,
+        "upstream_inference_prompt_cost": 8.833e-05,
+        "upstream_inference_completions_cost": 2.45e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 7
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008514000000000001,
+    "usage": {
+      "prompt_tokens": 20,
+      "total_tokens": 20,
+      "cost": 2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2e-07,
+        "upstream_inference_prompt_cost": 2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 8
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06723219999999999,
+    "usage": {
+      "prompt_tokens": 4315,
+      "completion_tokens": 57,
+      "total_tokens": 4372,
+      "cost": 0.00017741,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3366,
+        "cache_write_tokens": 814,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00017741,
+        "upstream_inference_prompt_cost": 0.00014891,
+        "upstream_inference_completions_cost": 2.85e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 9
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0677835,
+    "usage": {
+      "prompt_tokens": 5538,
+      "completion_tokens": 1214,
+      "total_tokens": 6752,
+      "cost": 0.000814365,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4189,
+        "cache_write_tokens": 1223,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000814365,
+        "upstream_inference_prompt_cost": 0.000207365,
+        "upstream_inference_completions_cost": 0.000607
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 416,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 10
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06691219999999999,
+    "usage": {
+      "prompt_tokens": 3568,
+      "completion_tokens": 72,
+      "total_tokens": 3640,
+      "cost": 0.000132705,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008,
+        "cache_write_tokens": 425,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000132705,
+        "upstream_inference_prompt_cost": 9.6705e-05,
+        "upstream_inference_completions_cost": 3.6e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 11
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008573000000000001,
+    "usage": {
+      "prompt_tokens": 24,
+      "total_tokens": 24,
+      "cost": 2.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.4e-07,
+        "upstream_inference_prompt_cost": 2.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 12
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0674404,
+    "usage": {
+      "prompt_tokens": 4459,
+      "completion_tokens": 71,
+      "total_tokens": 4530,
+      "cost": 0.000194705,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3433,
+        "cache_write_tokens": 891,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000194705,
+        "upstream_inference_prompt_cost": 0.000159205,
+        "upstream_inference_completions_cost": 3.55e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 9,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 13
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0679395,
+    "usage": {
+      "prompt_tokens": 5149,
+      "completion_tokens": 192,
+      "total_tokens": 5341,
+      "cost": 0.00023818,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4333,
+        "cache_write_tokens": 690,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00023818,
+        "upstream_inference_prompt_cost": 0.00014218,
+        "upstream_inference_completions_cost": 9.6e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 118,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 14
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008623000000000001,
+    "usage": {
+      "prompt_tokens": 52,
+      "total_tokens": 52,
+      "cost": 5.2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 5.2e-07,
+        "upstream_inference_prompt_cost": 5.2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 15
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.068677,
+    "usage": {
+      "prompt_tokens": 6234,
+      "completion_tokens": 94,
+      "total_tokens": 6328,
+      "cost": 0.000245455,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 5023,
+        "cache_write_tokens": 1085,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000245455,
+        "upstream_inference_prompt_cost": 0.000198455,
+        "upstream_inference_completions_cost": 4.7e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 28,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 16
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.069172,
+    "usage": {
+      "prompt_tokens": 6859,
+      "completion_tokens": 304,
+      "total_tokens": 7163,
+      "cost": 0.000303805,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 6108,
+        "cache_write_tokens": 625,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000303805,
+        "upstream_inference_prompt_cost": 0.000151805,
+        "upstream_inference_completions_cost": 0.000152
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 258,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 17
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008494,
+    "usage": {
+      "prompt_tokens": 21,
+      "total_tokens": 21,
+      "cost": 2.1e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.1e-07,
+        "upstream_inference_prompt_cost": 2.1e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 18
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0701273,
+    "usage": {
+      "prompt_tokens": 7881,
+      "completion_tokens": 135,
+      "total_tokens": 8016,
+      "cost": 0.00027518,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 6733,
+        "cache_write_tokens": 1022,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00027518,
+        "upstream_inference_prompt_cost": 0.00020768,
+        "upstream_inference_completions_cost": 6.75e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 63,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 19
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0710958,
+    "usage": {
+      "prompt_tokens": 9393,
+      "completion_tokens": 503,
+      "total_tokens": 9896,
+      "cost": 0.00053065,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 7755,
+        "cache_write_tokens": 1512,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00053065,
+        "upstream_inference_prompt_cost": 0.00027915,
+        "upstream_inference_completions_cost": 0.0002515
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 475,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 20
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0721619,
+    "usage": {
+      "prompt_tokens": 11066,
+      "completion_tokens": 2416,
+      "total_tokens": 13482,
+      "cost": 0.00258795,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 10934,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00258795,
+        "upstream_inference_prompt_cost": 0.00137995,
+        "upstream_inference_completions_cost": 0.001208
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1817,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 21
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0669551,
+    "usage": {
+      "prompt_tokens": 3712,
+      "completion_tokens": 52,
+      "total_tokens": 3764,
+      "cost": 0.000140705,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008,
+        "cache_write_tokens": 569,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000140705,
+        "upstream_inference_prompt_cost": 0.000114705,
+        "upstream_inference_completions_cost": 2.6e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 22
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008467,
+    "usage": {
+      "prompt_tokens": 23,
+      "total_tokens": 23,
+      "cost": 2.3e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.3e-07,
+        "upstream_inference_prompt_cost": 2.3e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 23
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0672712,
+    "usage": {
+      "prompt_tokens": 4537,
+      "completion_tokens": 116,
+      "total_tokens": 4653,
+      "cost": 0.000210395,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3577,
+        "cache_write_tokens": 825,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000210395,
+        "upstream_inference_prompt_cost": 0.000152395,
+        "upstream_inference_completions_cost": 5.8e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 13,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 24
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0685116,
+    "usage": {
+      "prompt_tokens": 7036,
+      "completion_tokens": 129,
+      "total_tokens": 7165,
+      "cost": 0.000433585,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4411,
+        "cache_write_tokens": 2499,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000433585,
+        "upstream_inference_prompt_cost": 0.000369085,
+        "upstream_inference_completions_cost": 6.45e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 75,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 25
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008511,
+    "usage": {
+      "prompt_tokens": 23,
+      "total_tokens": 23,
+      "cost": 2.3e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.3e-07,
+        "upstream_inference_prompt_cost": 2.3e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 26
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0691635,
+    "usage": {
+      "prompt_tokens": 7932,
+      "completion_tokens": 86,
+      "total_tokens": 8018,
+      "cost": 0.0002367,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 6910,
+        "cache_write_tokens": 896,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0002367,
+        "upstream_inference_prompt_cost": 0.0001937,
+        "upstream_inference_completions_cost": 4.3e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 32,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 27
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.00085,
+    "usage": {
+      "prompt_tokens": 27,
+      "total_tokens": 27,
+      "cost": 2.7e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.7e-07,
+        "upstream_inference_prompt_cost": 2.7e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 28
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06992,
+    "usage": {
+      "prompt_tokens": 9345,
+      "completion_tokens": 264,
+      "total_tokens": 9609,
+      "cost": 0.000399285,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 7806,
+        "cache_write_tokens": 1413,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000399285,
+        "upstream_inference_prompt_cost": 0.000267285,
+        "upstream_inference_completions_cost": 0.000132
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 50,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 29
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.07121330000000001,
+    "usage": {
+      "prompt_tokens": 11468,
+      "completion_tokens": 1652,
+      "total_tokens": 13120,
+      "cost": 0.001196165,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 9219,
+        "cache_write_tokens": 2123,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.001196165,
+        "upstream_inference_prompt_cost": 0.000370165,
+        "upstream_inference_completions_cost": 0.000826
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 597,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 30
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0669551,
+    "usage": {
+      "prompt_tokens": 3712,
+      "completion_tokens": 69,
+      "total_tokens": 3781,
+      "cost": 8.377e-05,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3577,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 8.377e-05,
+        "upstream_inference_prompt_cost": 4.927e-05,
+        "upstream_inference_completions_cost": 3.45e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 31
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008556,
+    "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 41,
+      "cost": 4.1e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.1e-07,
+        "upstream_inference_prompt_cost": 4.1e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 32
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0673049,
+    "usage": {
+      "prompt_tokens": 4595,
+      "completion_tokens": 128,
+      "total_tokens": 4723,
+      "cost": 0.000223645,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3577,
+        "cache_write_tokens": 883,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000223645,
+        "upstream_inference_prompt_cost": 0.000159645,
+        "upstream_inference_completions_cost": 6.4e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 33
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06858339999999999,
+    "usage": {
+      "prompt_tokens": 7705,
+      "completion_tokens": 228,
+      "total_tokens": 7933,
+      "cost": 0.00056004,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4469,
+        "cache_write_tokens": 3110,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00056004,
+        "upstream_inference_prompt_cost": 0.00044604,
+        "upstream_inference_completions_cost": 0.000114
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 181,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 34
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008455,
+    "usage": {
+      "prompt_tokens": 20,
+      "total_tokens": 20,
+      "cost": 2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2e-07,
+        "upstream_inference_prompt_cost": 2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 35
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0693905,
+    "usage": {
+      "prompt_tokens": 8914,
+      "completion_tokens": 335,
+      "total_tokens": 9249,
+      "cost": 0.000407015,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 7579,
+        "cache_write_tokens": 1209,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000407015,
+        "upstream_inference_prompt_cost": 0.000239515,
+        "upstream_inference_completions_cost": 0.0001675
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 122,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 36
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0710693,
+    "usage": {
+      "prompt_tokens": 11879,
+      "completion_tokens": 1770,
+      "total_tokens": 13649,
+      "cost": 0.001356105,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 8788,
+        "cache_write_tokens": 2965,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.001356105,
+        "upstream_inference_prompt_cost": 0.000471105,
+        "upstream_inference_completions_cost": 0.000885
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 891,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 37
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06695430000000001,
+    "usage": {
+      "prompt_tokens": 3708,
+      "completion_tokens": 80,
+      "total_tokens": 3788,
+      "cost": 0.000154205,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008,
+        "cache_write_tokens": 565,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000154205,
+        "upstream_inference_prompt_cost": 0.000114205,
+        "upstream_inference_completions_cost": 4e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 38
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.000874,
+    "usage": {
+      "prompt_tokens": 43,
+      "total_tokens": 43,
+      "cost": 4.3e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.3e-07,
+        "upstream_inference_prompt_cost": 4.3e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 39
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0673284,
+    "usage": {
+      "prompt_tokens": 4610,
+      "completion_tokens": 128,
+      "total_tokens": 4738,
+      "cost": 0.00022598,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3573,
+        "cache_write_tokens": 902,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00022598,
+        "upstream_inference_prompt_cost": 0.00016198,
+        "upstream_inference_completions_cost": 6.4e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 40
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.068185,
+    "usage": {
+      "prompt_tokens": 6663,
+      "completion_tokens": 109,
+      "total_tokens": 6772,
+      "cost": 0.000368565,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4484,
+        "cache_write_tokens": 2053,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000368565,
+        "upstream_inference_prompt_cost": 0.000314065,
+        "upstream_inference_completions_cost": 5.45e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 54,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 41
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008502000000000001,
+    "usage": {
+      "prompt_tokens": 29,
+      "total_tokens": 29,
+      "cost": 2.9e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.9e-07,
+        "upstream_inference_prompt_cost": 2.9e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 42
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0690341,
+    "usage": {
+      "prompt_tokens": 8098,
+      "completion_tokens": 247,
+      "total_tokens": 8345,
+      "cost": 0.000380845,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 6537,
+        "cache_write_tokens": 1435,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000380845,
+        "upstream_inference_prompt_cost": 0.000257345,
+        "upstream_inference_completions_cost": 0.0001235
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 39,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 43
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.07038860000000001,
+    "usage": {
+      "prompt_tokens": 10491,
+      "completion_tokens": 1465,
+      "total_tokens": 11956,
+      "cost": 0.001123945,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 7972,
+        "cache_write_tokens": 2393,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.001123945,
+        "upstream_inference_prompt_cost": 0.000391445,
+        "upstream_inference_completions_cost": 0.0007325
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 44
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06695430000000001,
+    "usage": {
+      "prompt_tokens": 3708,
+      "completion_tokens": 89,
+      "total_tokens": 3797,
+      "cost": 9.373e-05,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3573,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 9.373e-05,
+        "upstream_inference_prompt_cost": 4.923e-05,
+        "upstream_inference_completions_cost": 4.45e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 11,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 45
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.000865,
+    "usage": {
+      "prompt_tokens": 48,
+      "total_tokens": 48,
+      "cost": 4.8e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.8e-07,
+        "upstream_inference_prompt_cost": 4.8e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 46
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0675206,
+    "usage": {
+      "prompt_tokens": 4629,
+      "completion_tokens": 143,
+      "total_tokens": 4772,
+      "cost": 0.000235855,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3573,
+        "cache_write_tokens": 921,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000235855,
+        "upstream_inference_prompt_cost": 0.000164355,
+        "upstream_inference_completions_cost": 7.15e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 10,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 47
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0688373,
+    "usage": {
+      "prompt_tokens": 7350,
+      "completion_tokens": 120,
+      "total_tokens": 7470,
+      "cost": 0.000457755,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4503,
+        "cache_write_tokens": 2721,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000457755,
+        "upstream_inference_prompt_cost": 0.000397755,
+        "upstream_inference_completions_cost": 6e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 104,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 48
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.069304,
+    "usage": {
+      "prompt_tokens": 7842,
+      "completion_tokens": 124,
+      "total_tokens": 7966,
+      "cost": 0.00020834,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 7224,
+        "cache_write_tokens": 492,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00020834,
+        "upstream_inference_prompt_cost": 0.00014634,
+        "upstream_inference_completions_cost": 6.2e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 49
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.07102439999999999,
+    "usage": {
+      "prompt_tokens": 11300,
+      "completion_tokens": 1886,
+      "total_tokens": 13186,
+      "cost": 0.00146501,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 7716,
+        "cache_write_tokens": 3458,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00146501,
+        "upstream_inference_prompt_cost": 0.00052201,
+        "upstream_inference_completions_cost": 0.000943
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 50
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0012886000000000002,
+    "usage": {
+      "prompt_tokens": 502,
+      "total_tokens": 502,
+      "cost": 5.02e-06,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 5.02e-06,
+        "upstream_inference_prompt_cost": 5.02e-06,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 51
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0668254,
+    "usage": {
+      "prompt_tokens": 3237,
+      "completion_tokens": 1867,
+      "total_tokens": 5104,
+      "cost": 0.00133805,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 3234,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00133805,
+        "upstream_inference_prompt_cost": 0.00040455,
+        "upstream_inference_completions_cost": 0.0009335
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1439,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 52
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008656,
+    "usage": {
+      "prompt_tokens": 67,
+      "total_tokens": 67,
+      "cost": 6.7e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 6.7e-07,
+        "upstream_inference_prompt_cost": 6.7e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 53
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008648000000000001,
+    "usage": {
+      "prompt_tokens": 55,
+      "total_tokens": 55,
+      "cost": 5.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 5.5e-07,
+        "upstream_inference_prompt_cost": 5.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 54
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008633000000000001,
+    "usage": {
+      "prompt_tokens": 75,
+      "total_tokens": 75,
+      "cost": 7.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 7.5e-07,
+        "upstream_inference_prompt_cost": 7.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 55
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008646,
+    "usage": {
+      "prompt_tokens": 49,
+      "total_tokens": 49,
+      "cost": 4.9e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.9e-07,
+        "upstream_inference_prompt_cost": 4.9e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 56
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008598000000000001,
+    "usage": {
+      "prompt_tokens": 44,
+      "total_tokens": 44,
+      "cost": 4.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.4e-07,
+        "upstream_inference_prompt_cost": 4.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 57
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0668604,
+    "usage": {
+      "prompt_tokens": 3420,
+      "completion_tokens": 42,
+      "total_tokens": 3462,
+      "cost": 9.9205e-05,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008,
+        "cache_write_tokens": 277,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 9.9205e-05,
+        "upstream_inference_prompt_cost": 7.8205e-05,
+        "upstream_inference_completions_cost": 2.1e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 58
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008446,
+    "usage": {
+      "prompt_tokens": 15,
+      "total_tokens": 15,
+      "cost": 1.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.5e-07,
+        "upstream_inference_prompt_cost": 1.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 59
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0649078,
+    "usage": {
+      "prompt_tokens": 123,
+      "completion_tokens": 117,
+      "total_tokens": 240,
+      "cost": 7.08e-05,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 7.08e-05,
+        "upstream_inference_prompt_cost": 1.23e-05,
+        "upstream_inference_completions_cost": 5.85e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 52,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 60
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008707000000000001,
+    "usage": {
+      "prompt_tokens": 43,
+      "total_tokens": 43,
+      "cost": 4.3e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.3e-07,
+        "upstream_inference_prompt_cost": 4.3e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 61
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06718489999999999,
+    "usage": {
+      "prompt_tokens": 4263,
+      "completion_tokens": 56,
+      "total_tokens": 4319,
+      "cost": 0.000179725,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3285,
+        "cache_write_tokens": 843,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000179725,
+        "upstream_inference_prompt_cost": 0.000151725,
+        "upstream_inference_completions_cost": 2.8e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 62
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0679114,
+    "usage": {
+      "prompt_tokens": 5453,
+      "completion_tokens": 365,
+      "total_tokens": 5818,
+      "cost": 0.00038522,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4137,
+        "cache_write_tokens": 1190,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00038522,
+        "upstream_inference_prompt_cost": 0.00020272,
+        "upstream_inference_completions_cost": 0.0001825
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 155,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 63
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.06689060000000001,
+    "usage": {
+      "prompt_tokens": 3463,
+      "completion_tokens": 89,
+      "total_tokens": 3552,
+      "cost": 0.00012808,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3008,
+        "cache_write_tokens": 320,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00012808,
+        "upstream_inference_prompt_cost": 8.358e-05,
+        "upstream_inference_completions_cost": 4.45e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 14,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 64
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0008663000000000001,
+    "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 41,
+      "cost": 4.1e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.1e-07,
+        "upstream_inference_prompt_cost": 4.1e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 65
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0649295,
+    "usage": {
+      "prompt_tokens": 154,
+      "completion_tokens": 290,
+      "total_tokens": 444,
+      "cost": 0.0001604,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0001604,
+        "upstream_inference_prompt_cost": 1.54e-05,
+        "upstream_inference_completions_cost": 0.000145
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 95,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 66
+  },
+  {
+    "kind": "embedding",
+    "status": "completed",
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "reserved_usd": 0.0009381,
+    "usage": {
+      "prompt_tokens": 133,
+      "total_tokens": 133,
+      "cost": 1.33e-06,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.33e-06,
+        "upstream_inference_prompt_cost": 1.33e-06,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "index": 67
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0674367,
+    "usage": {
+      "prompt_tokens": 4364,
+      "completion_tokens": 151,
+      "total_tokens": 4515,
+      "cost": 0.000234905,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 3328,
+        "cache_write_tokens": 901,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000234905,
+        "upstream_inference_prompt_cost": 0.000159405,
+        "upstream_inference_completions_cost": 7.55e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 20,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 68
+  },
+  {
+    "kind": "chat",
+    "status": "completed",
+    "model": "openai/gpt-6-luna",
+    "reserved_usd": 0.0688633,
+    "usage": {
+      "prompt_tokens": 6492,
+      "completion_tokens": 1258,
+      "total_tokens": 7750,
+      "cost": 0.00094998,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 4238,
+        "cache_write_tokens": 2128,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00094998,
+        "upstream_inference_prompt_cost": 0.00032098,
+        "upstream_inference_completions_cost": 0.000629
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 614,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "index": 69
+  }
+]

@@ -7,7 +7,7 @@ const ALL_TOOL_DEFINITIONS: [ToolDefinition; 42] = [
 		"elf_evidence_recall",
 		HttpMethod::Post,
 		"/v2/evidence/recall",
-		"Supplement incomplete recall with 1-4 literal subject names or identifiers. Retrieve original text independently of extraction, plus source-diverse note and incoming/outgoing graph evidence across distinct entity candidates without merging them. Supply as_of for historical questions; compare states effective then, retain late reports, and do not apply later decisions backward. Match and citation validity do not prove truth.",
+		"Supplement incomplete recall with 1-4 literal subject names or identifiers. Retrieve original text independently of extraction, plus source-diverse note and incoming/outgoing graph evidence across distinct entity candidates without merging them. Supply as_of for historical questions; compare states effective then, retain late reports, and do not apply later decisions backward. max_bytes bounds the full response; inspect truncated and pack.omitted_note_ids. Match and citation validity do not prove truth.",
 	),
 	ToolDefinition::new(
 		"elf_notes_evidence",
@@ -19,7 +19,7 @@ const ALL_TOOL_DEFINITIONS: [ToolDefinition; 42] = [
 		"elf_evidence_pack",
 		HttpMethod::Post,
 		"/v2/evidence/pack",
-		"Resolve 1-12 retrieved note IDs into deduplicated original context with native citation references. Source timestamps are record times, not inferred fact validity. Incomplete context does not prove absence.",
+		"Resolve 1-12 retrieved note IDs into deduplicated original context with native citation references. Source timestamps are record times, not inferred fact validity. max_bytes bounds the full response without clipping notes. Inspect complete and omitted_note_ids. Incomplete context does not prove absence.",
 	),
 	ToolDefinition::new(
 		"elf_evidence_check",

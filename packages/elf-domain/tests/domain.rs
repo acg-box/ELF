@@ -135,8 +135,8 @@ fn base_config() -> Config {
 			},
 		},
 		memory: Memory {
-			max_notes_per_add_event: 3,
-			max_note_chars: 240,
+			ingest_max_bytes: 32_768,
+			preview_max_chars: 240,
 			candidate_k: 60,
 			top_k: 12,
 			policy: MemoryPolicy { rules: vec![] },
@@ -192,8 +192,7 @@ fn base_config() -> Config {
 
 			redact_secrets_on_write: true,
 			evidence_min_quotes: 1,
-			evidence_max_quotes: 2,
-			evidence_max_quote_bytes: 320,
+			evidence_span_bytes: 320,
 			auth_mode: "off".to_string(),
 			auth_keys: vec![],
 		},

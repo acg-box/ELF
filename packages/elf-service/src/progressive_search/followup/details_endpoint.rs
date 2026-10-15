@@ -105,7 +105,7 @@ WHERE note_id = ANY($1::uuid[])
 			now,
 			record_hits_enabled: record_hits,
 			payload_level: req.payload_level,
-			max_note_chars: self.cfg.memory.max_note_chars as usize,
+			preview_max_chars: self.cfg.memory.preview_max_chars as usize,
 		};
 		let (results, hits) = details::build_search_details_results(req.note_ids, details_args);
 
@@ -118,6 +118,7 @@ WHERE note_id = ANY($1::uuid[])
 		}
 
 		Ok(SearchDetailsResponse {
+			is_preview: req.payload_level != PayloadLevel::L2,
 			search_session_id: session.search_session_id,
 			expires_at,
 			results,

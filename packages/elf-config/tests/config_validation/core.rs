@@ -66,17 +66,33 @@ fn trace_gate_fixture_toml_is_valid() {
 }
 
 #[test]
-fn legacy_quote_limit_keeps_byte_semantics() {
+fn legacy_quote_limit_sets_span_granularity() {
 	let payload = helpers::sample_toml();
-	let legacy = payload.replace("evidence_max_quote_bytes", "evidence_max_quote_chars");
+	let legacy = payload.replace("evidence_span_bytes", "evidence_max_quote_chars");
 	let cfg: Config = toml::from_str(&legacy).expect("Read legacy configuration");
 
-	assert_eq!(cfg.security.evidence_max_quote_bytes, 320);
+	assert_eq!(cfg.security.evidence_span_bytes, 320);
 
 	let ambiguous = payload.replace(
-		"evidence_max_quote_bytes = 320",
-		"evidence_max_quote_bytes = 320\nevidence_max_quote_chars = 320",
+		"evidence_span_bytes = 320",
+		"evidence_span_bytes = 320\nevidence_max_quote_chars = 320",
 	);
 
 	assert!(toml::from_str::<elf_config::Config>(&ambiguous).is_err());
+}
+
+#[test]
+fn note_admission_configuration_cannot_silently_keep_old_count_limits() {
+	let current = helpers::sample_toml();
+	let legacy_preview = current.replace("preview_max_chars", "max_note_chars");
+	let cfg: Config = toml::from_str(&legacy_preview).expect("Legacy preview alias");
+
+	assert_eq!(cfg.memory.preview_max_chars, 512);
+
+	for obsolete in ["max_notes_per_add_event = 3", "evidence_max_quotes = 2"] {
+		let section = if obsolete.starts_with("max_notes") { "[memory]" } else { "[security]" };
+		let payload = current.replace(section, &format!("{section}\n{obsolete}"));
+
+		assert!(toml::from_str::<Config>(&payload).is_err());
+	}
 }

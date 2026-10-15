@@ -1,0 +1,62 @@
+{
+  "schema": "elf.real_project_protocol/v8",
+  "conditions": [
+    "full_elf"
+  ],
+  "formal_repetitions": 2,
+  "calibration_repetitions": 1,
+  "max_rounds": 8,
+  "max_tool_calls": 16,
+  "max_evidence_bytes": 32768,
+  "max_tool_result_bytes": 12000,
+  "model": "openai/gpt-6-luna",
+  "provider": "openai",
+  "reasoning": "medium",
+  "max_output_tokens": 128000,
+  "embedding_model": "qwen/qwen3-embedding-8b",
+  "embedding_dimensions": 4096,
+  "embedding_provider": "nebius",
+  "reranker": "local-token-overlap",
+  "extraction_window_bytes": 6000,
+  "budget_usd": 10,
+  "calibration_tranche_usd": 1,
+  "paid_retries": false,
+  "ranking_or_prompt_tuning_after_formal_start": false,
+  "agent_contract": "v6",
+  "host_opening": true,
+  "hydrate_sources": true,
+  "client_v3": true,
+  "note_character_limit": null,
+  "mmr_enabled": true,
+  "frozen_extraction": true,
+  "omit_chat_temperature": true,
+  "chat_prompt_price": 0.1,
+  "chat_completion_price": 0.5,
+  "extractor_parse_attempts": 3,
+  "trial_scope": "Complete-memory regression with aggregate budgets; sequential comparison to historical readers, not a product-value win.",
+  "minimum_useful_effect": "All unchanged valid long candidates admitted with complete stored/indexed text and original bindings. All candidate outcomes explicit. Review reader omissions without tuning or repeating formal cells.",
+  "ingest_max_bytes": 32768,
+  "preview_max_chars": 512,
+  "setup_deviations": {
+    "pre_provider_failure": {
+      "log": "boundary-native.log",
+      "cause": "Benchmark auth overlay depended on TOML alignment. Both old exact whitespace replacements missed the reformatted security keys.",
+      "provider_requests": 0,
+      "fix_commit": "cf9ef14a",
+      "recovery": "boundary-native-2.log"
+    },
+    "boundary": "No model conversation was retried or changed; source fixtures, questions and budgets remain frozen.",
+    "synthetic_capture_envelope_failure": {
+      "log": "fresh-calibration.log",
+      "cause": "The synthetic record omitted source_kind, canonical_uri and trust_label required when the host adds captured_at. Native validation correctly returned 400 before extraction.",
+      "rejection_receipt": "fresh/capture-envelope-rejection.json",
+      "capture_recovery": "fresh/ingest/b01-document.json",
+      "original_text_questions_oracle_and_extraction_input_unchanged": true,
+      "model_calls_before_repair": 0
+    }
+  },
+  "old_formal_questions": 2,
+  "boundary_formal_questions": 2,
+  "calibration_cells": 3,
+  "comparison_boundary": "Sequential complete-memory regression, not an isolated length intervention or a new baseline comparison."
+}

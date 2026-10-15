@@ -189,27 +189,53 @@ Use `unknown` for missing information and `absent` for explicit absence.
 
 ## Activate the extraction profile
 
-Built-in ingestion profile `default`, version 7, keeps each claim's subject,
+Built-in ingestion profile `default`, version 8, keeps each claim's subject,
 applicable time, conditions, and exceptions together. It asks the model to select exact
 input spans. Existing stored profiles and default-version pins are not changed
 by a service upgrade. With the target project's existing admin identity, read
-`GET /v2/admin/events/ingestion-profiles/default`, then select version 7 with
+`GET /v2/admin/events/ingestion-profiles/default`, then select version 8 with
 `PUT /v2/admin/events/ingestion-profiles/default` and
-`{"profile_id":"default","version":7}`. Read the pointer back and verify the
+`{"profile_id":"default","version":8}`. Read the pointer back and verify the
 next event's returned profile version. Explicit event-level profile selectors
 still take precedence. Keep the previous pointer for rollback; do not edit its
 stored profile or rewrite existing notes.
 
-Runtime admission limits apply to all profiles. The canonical quote setting is
-`security.evidence_max_quote_bytes`; the legacy `evidence_max_quote_chars` alias
-still means UTF-8 bytes. Configure one name, not both. Note length continues to
-count Unicode characters.
+Runtime budgets apply to all profiles. Set `memory.ingest_max_bytes = 32768`
+for the aggregate serialized extraction input and complete candidates. Direct
+note writes count complete candidate bytes. This bounds processing per request,
+not model reasoning output or dollar cost. Keep provider usage accounting and a
+cumulative spending gate outside this byte budget.
 
-The supplied configurations set `memory.max_note_chars = 512`. Existing operator
-configuration files keep their explicit value until the operator updates them
-and restarts the service. Raising this bound does not recover rejected events or
-rewrite stored notes. Replay only selected original events with their existing
-source identities, and inspect admission results before claiming recovery.
+Remove `memory.max_notes_per_add_event` and `security.evidence_max_quotes` from
+operator configuration; these obsolete keys now fail configuration loading.
+Rename `memory.max_note_chars` to `memory.preview_max_chars` (default 512).
+The old name is accepted as a preview alias only. It no longer rejects writes.
+Rename `security.evidence_max_quote_bytes` or `evidence_max_quote_chars` to
+`security.evidence_span_bytes` (default 320). These aliases now set selectable
+span granularity, not a quote-length cap. Use only one name for each setting.
+No schema migration or source rewrite is required.
+
+Profile 8 lets the extractor select an inclusive `span_id` to `end_span_id`
+range within one message. ELF joins the exact original fragments and binds the
+resulting byte range. Independent claims remain separate notes; each claim keeps
+its subject, time, conditions, and exceptions. Existing pinned profiles remain
+unchanged; activate version 8 explicitly as described above.
+
+Inspect `processing_complete` and every per-note result. A
+`DEFERRED_INGEST_BUDGET` candidate has no stored note or indexing job. Retain the
+full candidate and source identity from the extraction receipt; retry a selected
+batch only with an explicit budget. Do not truncate its text or treat HTTP 200
+as complete admission. A successful processing flag does not prove complete
+semantic extraction. Upgrading does not automatically recover old rejections.
+
+Use evidence pack/recall `max_bytes` for the full response, including notes,
+originals, and metadata. `max_source_bytes` still bounds original text inside a
+pack. Both operations preserve complete returned notes and references; inspect
+`complete`, `truncated`, and `omitted_note_ids`. Request fewer selected IDs when
+a needed note does not fit. If one complete note still exceeds the reader budget,
+use bounded original-source reads or explicitly allocate a larger response budget;
+do not remove its conditions. Search `is_preview` marks display text, not a complete
+claim. The shared Agent contract is version 6.
 
 ## Compatibility and bounds
 

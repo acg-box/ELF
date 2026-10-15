@@ -116,6 +116,7 @@ async fn verify_historical_and_incoming_recall(service: &ElfService) {
 
 	let recalled = service
 		.evidence_recall(EvidenceRecallRequest {
+			max_bytes: None,
 			tenant_id: TEST_TENANT.into(),
 			project_id: TEST_PROJECT.into(),
 			agent_id: "a".into(),
@@ -156,6 +157,7 @@ async fn verify_historical_and_incoming_recall(service: &ElfService) {
 
 	let incoming = service
 		.evidence_recall(EvidenceRecallRequest {
+			max_bytes: None,
 			tenant_id: TEST_TENANT.into(),
 			project_id: TEST_PROJECT.into(),
 			agent_id: "a".into(),

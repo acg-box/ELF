@@ -102,8 +102,7 @@ mod tests {
 
 			redact_secrets_on_write: true,
 			evidence_min_quotes: 1,
-			evidence_max_quotes: 5,
-			evidence_max_quote_bytes: 400,
+			evidence_span_bytes: 400,
 			auth_mode: auth_mode.to_string(),
 			auth_keys,
 		}

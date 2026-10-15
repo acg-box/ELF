@@ -71,7 +71,7 @@ def export(root, destination):
                 'reasoning', 'max_output_tokens', 'embedding_model', 'embedding_dimensions',
                 'embedding_provider', 'reranker', 'extraction_window_bytes', 'memory_notes_per_event',
                 'budget_usd', 'calibration_tranche_usd', 'paid_retries', 'ranking_or_prompt_tuning_after_formal_start',
-                'host_opening', 'hydrate_sources', 'client_v3', 'note_character_limit', 'mmr_enabled', 'frozen_extraction', 'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
+                'host_opening', 'hydrate_sources', 'client_v3', 'ingest_max_bytes', 'preview_max_chars', 'note_character_limit', 'mmr_enabled', 'frozen_extraction', 'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
     public_protocol = {k: v for k, v in json.loads((fixture / 'protocol.json').read_text()).items() if k in controls}
     public_protocol.update({phase + '_task_count': sum(task['phase'] == phase for task in tasks)
                             for phase in ('formal', 'calibration')})
@@ -115,8 +115,8 @@ def export(root, destination):
     if native_config.exists():
         config = tomllib.loads(native_config.read_text())
         builds['native_limits'] = {key: config[section][key] for section, keys in (
-            ('memory', ('max_note_chars', 'max_notes_per_add_event')),
-            ('security', ('evidence_min_quotes', 'evidence_max_quotes', 'evidence_max_quote_bytes')))
+            ('memory', ('ingest_max_bytes', 'preview_max_chars', 'max_note_chars', 'max_notes_per_add_event')),
+            ('security', ('evidence_min_quotes', 'evidence_span_bytes', 'evidence_max_quotes', 'evidence_max_quote_bytes')))
             for key in keys if key in config[section]}
         diversity = config.get('ranking', {}).get('diversity', {})
         if 'enabled' in diversity:

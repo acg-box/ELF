@@ -130,22 +130,29 @@ class EvidenceClientTests(unittest.TestCase):
         names = {t['function']['name'] for t in schemas('exact_source', True)}
         self.assertEqual(names, {'submit_answer', 'elf_evidence_check'})
 
-    def test_pack_budget_does_not_leave_quotes_without_their_original_window(self):
-        original = 'Only after approval. ' + 'x' * 4000
-        ref = f'elf-source-v1/doc/hash/0/{len(original)}'
-        pack = {'complete': True, 'notes': [{'note_id': 'n', 'complete': True,
-                'source_references': [ref], 'evidence_quotes': ['Only after approval.']}],
-                'sources': [{'doc_id': 'doc', 'reference': ref, 'text': original,
-                             'start': 0, 'end': len(original), 'content_hash': 'hash'}]}
-        host = SourceTools('full_elf', [{'id': 's1', 'title': 'Source', 'timestamp': 't', 'text': original}],
-            {'s1': {'doc_id': 'doc', 'content_hash': 'hash'}}, lambda *args: pack,
-            {'client_v3': True, 'max_evidence_bytes': 32768, 'max_tool_result_bytes': 700})
+    def test_native_pack_budget_is_forwarded_and_whole_response_is_preserved(self):
+        seen = []
+        pack = {'complete': False, 'omitted_note_ids': ['n2'],
+                'notes': [{'note_id': 'n', 'text': 'Complete claim; only after approval.',
+                           'complete': True, 'source_references': []}], 'sources': []}
+        def api(path, body):
+            seen.append(body)
+            return pack
+        host = SourceTools('full_elf', [], {}, api,
+            {'client_v3': True, 'max_evidence_bytes': 32768, 'max_tool_result_bytes': 4000})
+        result = host.call('elf_evidence_pack', {'note_ids': ['n', 'n2']})
+        self.assertEqual(seen[0]['max_bytes'], 2976)
+        self.assertEqual(result, pack)
+        # If a backend violates its transport contract, do not turn a partial
+        # result into apparently usable notes. Preserve the model's retry choice.
+        pack['notes'][0]['text'] = 'x' * 5000 + '; only after approval.'
         result = host.call('elf_evidence_pack', {'note_ids': ['n']})
-        self.assertFalse(result['complete'])
-        self.assertEqual(result['sources'], [])
-        self.assertFalse(result['notes'][0]['complete'])
-        self.assertEqual(result['notes'][0]['source_references'], [])
-        self.assertEqual(result['notes'][0]['evidence_quotes'], [])
+        self.assertIn('error', result)
+        self.assertNotIn('notes', result)
+        host.remaining = 2200
+        before = len(seen)
+        self.assertIn('error', host.call('elf_evidence_pack', {'note_ids': ['n']}))
+        self.assertEqual(len(seen), before)
 
     def test_submission_is_host_owned_and_never_routes_to_graph(self):
         seen = []
