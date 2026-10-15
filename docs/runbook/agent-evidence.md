@@ -189,12 +189,13 @@ Use `unknown` for missing information and `absent` for explicit absence.
 
 ## Activate the extraction profile
 
-Built-in ingestion profile `default`, version 6, asks the model to select exact
+Built-in ingestion profile `default`, version 7, keeps each claim's subject,
+applicable time, conditions, and exceptions together. It asks the model to select exact
 input spans. Existing stored profiles and default-version pins are not changed
 by a service upgrade. With the target project's existing admin identity, read
-`GET /v2/admin/events/ingestion-profiles/default`, then select version 6 with
+`GET /v2/admin/events/ingestion-profiles/default`, then select version 7 with
 `PUT /v2/admin/events/ingestion-profiles/default` and
-`{"profile_id":"default","version":6}`. Read the pointer back and verify the
+`{"profile_id":"default","version":7}`. Read the pointer back and verify the
 next event's returned profile version. Explicit event-level profile selectors
 still take precedence. Keep the previous pointer for rollback; do not edit its
 stored profile or rewrite existing notes.
@@ -203,6 +204,12 @@ Runtime admission limits apply to all profiles. The canonical quote setting is
 `security.evidence_max_quote_bytes`; the legacy `evidence_max_quote_chars` alias
 still means UTF-8 bytes. Configure one name, not both. Note length continues to
 count Unicode characters.
+
+The supplied configurations set `memory.max_note_chars = 512`. Existing operator
+configuration files keep their explicit value until the operator updates them
+and restarts the service. Raising this bound does not recover rejected events or
+rewrite stored notes. Replay only selected original events with their existing
+source identities, and inspect admission results before claiming recovery.
 
 ## Compatibility and bounds
 

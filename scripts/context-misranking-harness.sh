@@ -189,7 +189,7 @@ project_shared = true
 
 [memory]
 candidate_k             = 60
-max_note_chars          = 240
+max_note_chars          = 512
 max_notes_per_add_event = 3
 top_k                   = 12
 

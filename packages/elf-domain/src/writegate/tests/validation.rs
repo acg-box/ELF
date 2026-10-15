@@ -1,3 +1,5 @@
+use std::path::Path;
+
 use crate::writegate::{self, NoteInput, RejectCode, tests::config};
 
 #[test]
@@ -8,6 +10,24 @@ fn rejects_long_text() {
 		scope: "agent_private".to_string(),
 		text: "12345678901".to_string(),
 	};
+
+	assert_eq!(writegate::writegate(&note, &cfg), Err(RejectCode::RejectTooLong));
+}
+
+#[test]
+fn configured_limit_admits_complete_repair_update() {
+	let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../elf.example.toml");
+	let note = NoteInput {
+		note_type: "fact".to_string(),
+		scope: "agent_private".to_string(),
+		text: "ELF source-admission repair recognizes secrets token-generation calls and bounded keyword-variable references, checking assignments independently. Literal credentials, unknown functions, fallbacks, and ambiguous bare assignments still fail; no secret-free guarantee.".to_string(),
+	};
+	let mut cfg = elf_config::load(&path).expect("Example config");
+
+	assert_eq!(note.text.chars().count(), 266);
+	assert_eq!(writegate::writegate(&note, &cfg), Ok(()));
+
+	cfg.memory.max_note_chars = 240;
 
 	assert_eq!(writegate::writegate(&note, &cfg), Err(RejectCode::RejectTooLong));
 }
