@@ -268,5 +268,6 @@ async fn extracted_budget_overflow_returns_the_complete_candidate_without_queuei
 	let counts: (i64, i64, i64) = sqlx::query_as("SELECT (SELECT count(*) FROM memory_notes), (SELECT count(*) FROM indexing_outbox), (SELECT count(*) FROM memory_ingest_decisions WHERE reason_code='DEFERRED_INGEST_BUDGET')").fetch_one(&fixture.service.db.pool).await.expect("Only complete admitted memory is queued");
 
 	assert_eq!(counts, (1, 1, 1));
+
 	fixture.test_db.cleanup().await.expect("Clean fixture");
 }

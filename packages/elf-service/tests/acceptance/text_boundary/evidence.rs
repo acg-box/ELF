@@ -203,6 +203,7 @@ async fn evidence_expansion_anchors_each_quote_in_a_long_source_span() {
 	let mut fixture = setup::setup_service_with_payload("long_evidence_window", payload)
 		.await
 		.expect("Test prerequisites");
+
 	// This read-path fixture deliberately ingests an 80 KB message in one call.
 	fixture.service.cfg.memory.ingest_max_bytes = 256 * 1_024;
 
