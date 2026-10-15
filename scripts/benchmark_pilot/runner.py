@@ -29,11 +29,11 @@ def usage(root):
     return {'paid_usd': paid, 'exposure_usd': exposure, 'requests': len(ledger['requests'])}
 
 
-def request(messages, condition, closing, protocol, required_tool=None):
+def request(messages, condition, closing, protocol, required_tool=None, tool_schemas=None):
     payload = {'model': protocol['model'], 'messages': messages,
                'max_tokens': protocol['max_output_tokens'], 'reasoning': {'effort': protocol['reasoning']}}
     if protocol.get('client_v3'):
-        available = schemas(condition, True)
+        available = schemas(condition, True) if tool_schemas is None else tool_schemas
         if closing:
             available = [tool for tool in available if tool['function']['name'] == 'submit_answer']
             required_tool = 'submit_answer'
@@ -193,7 +193,7 @@ def ingest(rt, root, sources, stage, protocol):
     if 'full_elf' not in protocol['conditions']:
         verify_state(rt, root, sources, documents, stage)
         return
-    for source in selected:
+    for source in (s for s in selected if s.get('extract_memory', True)):
         doc = documents[source['id']]
         for i, (start, end, text) in enumerate(spans(source['text'], protocol['extraction_window_bytes'])):
             path = root / 'ingest' / (source['id'] + f'-memory-{i}.json')
@@ -282,7 +282,8 @@ def main():
     os.umask(0o077)
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, required=True)
-    parser.add_argument('--phase', choices=['calibration', 'formal', 'report', 'export'], required=True)
+    parser.add_argument('--phase', choices=['calibration', 'formal', 'report', 'export', 'workflow'], required=True)
+    parser.add_argument('--batch')
     parser.add_argument('--export-dir', type=Path)
     parser.add_argument('--cell')
     parser.add_argument('--task')
@@ -292,6 +293,9 @@ def main():
     args.root = args.root.resolve()
     args.root.mkdir(parents=True, exist_ok=True)
     repo = Path(__file__).resolve().parents[2]
+    if args.phase == 'workflow':
+        from .workflow import run_workflow
+        return run_workflow(args, repo)
     frozen = args.root / 'fixture'
     sources, checkpoints = load(frozen)
     origin = read(frozen / 'freeze.json')['repository']

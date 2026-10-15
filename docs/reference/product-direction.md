@@ -48,34 +48,32 @@ exclusion; raw frozen scores remain available. See the
 
 ## Next coherent slice
 
-The next bounded question is whether the existing host can choose and hydrate the
-relevant current original before repeating broad discovery or applying historical
-memory. In one failure, the source index returned the complete retirement record
-as a preview, but the reader opened other documents and never obtained its usable
-original reference. More extracted fields did not solve that selection problem.
+The next work is a bounded maintenance trial, not another memory feature patch.
+The previous archive questions remain regression evidence. Two real gaps in the
+benchmark tooling provide executable deliverables: preserve opening settlement
+cost in public reports, and verify partial evidence without pretending a stopped
+trial completed its plan.
 
-Compare the shipped memory-first opening with a current-source-first candidate
-through the existing tools, with frozen extraction, questions, reader and budgets.
-Use source identity and version supplied by the owning application. A newer
-capture timestamp or similar subject name must not become authority. Preserve
-historical access and distinguish an earlier effective event from what was known
-at the requested cutoff. A later correction case is still a separate evidence gap.
+Compare ordinary current-checkout tools and file handoffs, indexed originals,
+and full ELF in two fresh sessions per task. The second session gets a frozen
+requirement update. Every arm can edit, test, and keep its own handoff. Measure
+accepted patches, critical scope/integrity errors, repeated inspection, elapsed
+time, and total provider cost including preparation. These are controlled
+maintenance episodes; scripted updates are not natural human corrections.
 
-Before the next quality claim, resolve ambiguous expected outcomes against the
-source owner and distinguish a historical archive search from a capable current
-checkout with history access. Keep justified uncertainty visible. Retain the
-existing failure classification:
+Freeze both small batches and their stop rule before execution. If neither batch
+shows the predeclared useful effect, stop this optimization line for that
+workflow and use ordinary files or source access by default. Do not add another
+repair batch to rescue these tasks. The
+[workflow trial decision](../decisions/2026-10-15-workflow-pilot.md) owns the
+protocol and thresholds. It does not establish customer readiness or justify
+removing memory from unrelated workflows.
 
-| Evidence state | Next action |
-| --- | --- |
-| Required qualifier was never selected | Inspect the original or named helper; read-time projection cannot reconstruct it. |
-| Useful candidate is returned but lacks a usable original reference | Close that read and citation gap before another broad search. |
-| Current evidence is read but old or foreign rules are applied | Examine reader use and explicit subject/version scope. More index recall alone is insufficient. |
-| A claim concerns live external state | Use an authorized current source; past source or local acceptance is not a live check. |
-
-This is the next experiment, not permission for a new state model, extra data
-collection, a reader/model change, or an unbudgeted run. The shipped opening stays
-unchanged until a measured alternative is accepted.
+Original selection and subject/time misuse remain known failure boundaries.
+Address them only when a real workflow or an isolated regression establishes a
+specific cause. A newer capture timestamp, valid citation, or similar subject
+name must not become authority. Resolve ambiguous expected outcomes before a
+new quality claim.
 
 ## Decisions under review
 
