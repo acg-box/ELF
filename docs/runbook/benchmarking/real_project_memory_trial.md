@@ -112,6 +112,12 @@ cargo make benchmark-project-pilot --root RUN_DIRECTORY --phase calibration
 Inspect all six calibration cells and all preparation receipts. If the protocol
 works, admit the formal phase under the same ledger and $10 ceiling:
 
+The current reference host also requires each full-ELF calibration cell to read
+a nonempty memory pack and cite a linked original with valid native bindings.
+A completed-phase marker alone is insufficient. This checks actual integration
+use, not semantic correctness. Keep failed calibration answers and review their
+meaning separately; do not replace them to obtain formal admission.
+
 ```sh
 cargo make benchmark-project-pilot --root RUN_DIRECTORY --phase formal
 cargo make benchmark-project-pilot --root RUN_DIRECTORY --phase report

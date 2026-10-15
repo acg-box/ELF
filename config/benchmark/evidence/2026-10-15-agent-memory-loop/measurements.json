@@ -1,0 +1,943 @@
+{
+  "cells": [
+    {
+      "phase": "calibration",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 45.36668608301261,
+      "tool_calls": 3,
+      "evidence_bytes": 6307,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 13609,
+        "completion_tokens": 2325,
+        "total_tokens": 15934,
+        "cached_prompt_tokens": 7410,
+        "cache_write_prompt_tokens": 5767,
+        "reasoning_tokens": 1274
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 3,
+        "originals_read": 2,
+        "originals_cited": 2
+      },
+      "paid_usd": 0.0019974349999998253,
+      "task_id": "task-01",
+      "criteria": 4,
+      "passed_criteria": 4,
+      "accepted": false,
+      "flags": [
+        "unsupported_claim",
+        "invalid_format"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 88420,
+      "requests": [
+        36,
+        40
+      ]
+    },
+    {
+      "phase": "calibration",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 31.89915937499609,
+      "tool_calls": 6,
+      "evidence_bytes": 11560,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 19986,
+        "completion_tokens": 1504,
+        "total_tokens": 21490,
+        "cached_prompt_tokens": 12456,
+        "cache_write_prompt_tokens": 7020,
+        "reasoning_tokens": 852
+      },
+      "tool_counts": {
+        "search_files": 2,
+        "read_source": 3,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.001805059999999692,
+      "task_id": "task-01",
+      "criteria": 4,
+      "passed_criteria": 3,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "pid": 88384,
+      "requests": [
+        27,
+        31
+      ]
+    },
+    {
+      "phase": "calibration",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 32.78908720800246,
+      "tool_calls": 4,
+      "evidence_bytes": 3820,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 16848,
+        "completion_tokens": 1755,
+        "total_tokens": 18603,
+        "cached_prompt_tokens": 11389,
+        "cache_write_prompt_tokens": 4886,
+        "reasoning_tokens": 1022
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 1,
+        "elf_docs_excerpts_get": 2,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.0016550299999997797,
+      "task_id": "task-01",
+      "criteria": 4,
+      "passed_criteria": 4,
+      "accepted": false,
+      "flags": [
+        "unsupported_claim"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 88401,
+      "requests": [
+        31,
+        36
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 48.46903054199356,
+      "tool_calls": 5,
+      "evidence_bytes": 16878,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 33149,
+        "completion_tokens": 2232,
+        "total_tokens": 35381,
+        "cached_prompt_tokens": 26252,
+        "cache_write_prompt_tokens": 6193,
+        "reasoning_tokens": 923
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_docs_search_l0": 1,
+        "elf_docs_excerpts_get": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 4,
+        "originals_read": 5,
+        "originals_cited": 2
+      },
+      "paid_usd": 0.002218005000000023,
+      "task_id": "task-03",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        false,
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 92053,
+      "requests": [
+        94,
+        101
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 43.348235958008445,
+      "tool_calls": 5,
+      "evidence_bytes": 17001,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 33653,
+        "completion_tokens": 2588,
+        "total_tokens": 36241,
+        "cached_prompt_tokens": 26996,
+        "cache_write_prompt_tokens": 5973,
+        "reasoning_tokens": 1191
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_searches_get": 1,
+        "elf_docs_excerpts_get": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 4,
+        "originals_read": 5,
+        "originals_cited": 1
+      },
+      "paid_usd": 0.002375744999999929,
+      "task_id": "task-03",
+      "criteria": 6,
+      "passed_criteria": 6,
+      "accepted": true,
+      "flags": [],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 96657,
+      "requests": [
+        122,
+        128
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 24.84655204199953,
+      "tool_calls": 2,
+      "evidence_bytes": 11640,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 9065,
+        "completion_tokens": 2144,
+        "total_tokens": 11209,
+        "cached_prompt_tokens": 5373,
+        "cache_write_prompt_tokens": 3434,
+        "reasoning_tokens": 849
+      },
+      "tool_counts": {
+        "search_files": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.0015807800000000594,
+      "task_id": "task-03",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        false,
+        true,
+        true
+      ],
+      "pid": 92957,
+      "requests": [
+        101,
+        103
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 34.65118287500809,
+      "tool_calls": 5,
+      "evidence_bytes": 30106,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 40026,
+        "completion_tokens": 2375,
+        "total_tokens": 42401,
+        "cached_prompt_tokens": 30843,
+        "cache_write_prompt_tokens": 8547,
+        "reasoning_tokens": 1147
+      },
+      "tool_counts": {
+        "search_files": 4,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.002627904999999764,
+      "task_id": "task-03",
+      "criteria": 6,
+      "passed_criteria": 4,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        false,
+        false,
+        true
+      ],
+      "pid": 93846,
+      "requests": [
+        108,
+        113
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 43.32255625000107,
+      "tool_calls": 4,
+      "evidence_bytes": 6338,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 17905,
+        "completion_tokens": 2067,
+        "total_tokens": 19972,
+        "cached_prompt_tokens": 14430,
+        "cache_write_prompt_tokens": 2902,
+        "reasoning_tokens": 799
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 1,
+        "elf_docs_excerpts_get": 2,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.001593439999999724,
+      "task_id": "task-03",
+      "criteria": 6,
+      "passed_criteria": 6,
+      "accepted": true,
+      "flags": [],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 92980,
+      "requests": [
+        103,
+        108
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 67.25224633300968,
+      "tool_calls": 6,
+      "evidence_bytes": 13420,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 32223,
+        "completion_tokens": 1963,
+        "total_tokens": 34186,
+        "cached_prompt_tokens": 27120,
+        "cache_write_prompt_tokens": 4248,
+        "reasoning_tokens": 766
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 3,
+        "elf_docs_excerpts_get": 2,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.0018620899999999274,
+      "task_id": "task-03",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        true,
+        true,
+        false,
+        true
+      ],
+      "pid": 93869,
+      "requests": [
+        113,
+        122
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 73.76407350000227,
+      "tool_calls": 8,
+      "evidence_bytes": 20910,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 63112,
+        "completion_tokens": 3421,
+        "total_tokens": 66533,
+        "cached_prompt_tokens": 43072,
+        "cache_write_prompt_tokens": 18952,
+        "reasoning_tokens": 1514
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_searches_get": 1,
+        "elf_docs_search_l0": 1,
+        "elf_docs_excerpts_get": 2,
+        "elf_evidence_check": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 4,
+        "originals_read": 3,
+        "originals_cited": 1
+      },
+      "paid_usd": 0.0046139799999997955,
+      "task_id": "task-02",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 91930,
+      "requests": [
+        60,
+        70
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "full_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 46.29301204199146,
+      "tool_calls": 6,
+      "evidence_bytes": 14796,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 37819,
+        "completion_tokens": 1756,
+        "total_tokens": 39575,
+        "cached_prompt_tokens": 31516,
+        "cache_write_prompt_tokens": 5454,
+        "reasoning_tokens": 612
+      },
+      "tool_counts": {
+        "elf_searches_create": 1,
+        "elf_evidence_pack": 1,
+        "elf_searches_get": 1,
+        "elf_docs_search_l0": 1,
+        "elf_docs_excerpts_get": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 2,
+        "originals_read": 2,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.001953059999999951,
+      "task_id": "task-02",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 91979,
+      "requests": [
+        74,
+        82
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 30.25158850000298,
+      "tool_calls": 7,
+      "evidence_bytes": 30611,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 33051,
+        "completion_tokens": 2252,
+        "total_tokens": 35303,
+        "cached_prompt_tokens": 22232,
+        "cache_write_prompt_tokens": 10309,
+        "reasoning_tokens": 565
+      },
+      "tool_counts": {
+        "search_files": 6,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.002687945000000136,
+      "task_id": "task-02",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "pid": 91967,
+      "requests": [
+        70,
+        74
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "no_elf",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 27.180710959000862,
+      "tool_calls": 3,
+      "evidence_bytes": 13780,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 15442,
+        "completion_tokens": 1929,
+        "total_tokens": 17371,
+        "cached_prompt_tokens": 11603,
+        "cache_write_prompt_tokens": 3455,
+        "reasoning_tokens": 742
+      },
+      "tool_counts": {
+        "search_files": 1,
+        "read_source": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.001550804999999933,
+      "task_id": "task-02",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        false,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "pid": 92010,
+      "requests": [
+        82,
+        85
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 1,
+      "status": "completed",
+      "seconds": 57.125685999999405,
+      "tool_calls": 10,
+      "evidence_bytes": 21890,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 47411,
+        "completion_tokens": 3240,
+        "total_tokens": 50651,
+        "cached_prompt_tokens": 37919,
+        "cache_write_prompt_tokens": 8559,
+        "reasoning_tokens": 857
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 2,
+        "elf_docs_excerpts_get": 6,
+        "elf_evidence_check": 1,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.00315957499999997,
+      "task_id": "task-02",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "pid": 91819,
+      "requests": [
+        51,
+        60
+      ]
+    },
+    {
+      "phase": "formal",
+      "condition": "source_only",
+      "repetition": 2,
+      "status": "completed",
+      "seconds": 63.302852208013064,
+      "tool_calls": 6,
+      "evidence_bytes": 13124,
+      "native_binding": true,
+      "all_references_seen": true,
+      "usage": {
+        "prompt_tokens": 32336,
+        "completion_tokens": 2215,
+        "total_tokens": 34551,
+        "cached_prompt_tokens": 27106,
+        "cache_write_prompt_tokens": 4387,
+        "reasoning_tokens": 743
+      },
+      "tool_counts": {
+        "elf_docs_search_l0": 3,
+        "elf_docs_excerpts_get": 2,
+        "submit_answer": 1
+      },
+      "memory_use": {
+        "notes_read": 0,
+        "originals_read": 0,
+        "originals_cited": 0
+      },
+      "paid_usd": 0.002005204999999899,
+      "task_id": "task-02",
+      "criteria": 6,
+      "passed_criteria": 5,
+      "accepted": false,
+      "flags": [
+        "missing_detail"
+      ],
+      "criterion_pass": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        true
+      ],
+      "pid": 92021,
+      "requests": [
+        85,
+        94
+      ]
+    }
+  ],
+  "summary": {
+    "no_elf": {
+      "cells": 4,
+      "passed_criteria": 19,
+      "criteria": 24,
+      "accepted": 0,
+      "mean_seconds": 29.232508594002866,
+      "paid_usd": 0.008447434999999892,
+      "memory_read_cells": 0,
+      "memory_cited_cells": 0
+    },
+    "source_only": {
+      "cells": 4,
+      "passed_criteria": 21,
+      "criteria": 24,
+      "accepted": 1,
+      "mean_seconds": 57.750835197755805,
+      "paid_usd": 0.00862030999999952,
+      "memory_read_cells": 0,
+      "memory_cited_cells": 0
+    },
+    "full_elf": {
+      "cells": 4,
+      "passed_criteria": 21,
+      "criteria": 24,
+      "accepted": 1,
+      "mean_seconds": 52.968588010498934,
+      "paid_usd": 0.011160789999999698,
+      "memory_read_cells": 4,
+      "memory_cited_cells": 3
+    }
+  },
+  "preparation": [
+    {
+      "kind": "source_index",
+      "requests": [
+        0,
+        1
+      ],
+      "seconds": 16.49479529200471,
+      "paid_usd": 3.5400000000240794e-06
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        7,
+        11
+      ],
+      "seconds": 40.78116366699396,
+      "paid_usd": 0.0006127399999997785
+    },
+    {
+      "kind": "source_index",
+      "requests": [
+        1,
+        2
+      ],
+      "seconds": 4.632218832994113,
+      "paid_usd": 6.699999999248973e-07
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        11,
+        13
+      ],
+      "seconds": 24.824524208001094,
+      "paid_usd": 0.00043899999999985617
+    },
+    {
+      "kind": "source_index",
+      "requests": [
+        2,
+        7
+      ],
+      "seconds": 60.48847504200239,
+      "paid_usd": 4.697999999980773e-05
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        13,
+        17
+      ],
+      "seconds": 47.77599199999531,
+      "paid_usd": 0.0008941650000000578
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        17,
+        21
+      ],
+      "seconds": 29.605746541987173,
+      "paid_usd": 0.0008454399999999751
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        21,
+        25
+      ],
+      "seconds": 35.40080316699459,
+      "paid_usd": 0.0008971599999998414
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        25,
+        27
+      ],
+      "seconds": 20.8261385000078,
+      "paid_usd": 0.0005253749999998281
+    },
+    {
+      "kind": "source_index",
+      "requests": [
+        40,
+        41
+      ],
+      "seconds": 6.850574875003076,
+      "paid_usd": 5.849999999973932e-06
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        44,
+        46
+      ],
+      "seconds": 43.81075283300015,
+      "paid_usd": 0.0015427600000001984
+    },
+    {
+      "kind": "source_index",
+      "requests": [
+        41,
+        43
+      ],
+      "seconds": 6.845282750000479,
+      "paid_usd": 2.390000000018766e-05
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        46,
+        48
+      ],
+      "seconds": 22.46439991700754,
+      "paid_usd": 0.0009785849999999208
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        48,
+        50
+      ],
+      "seconds": 18.173105082998518,
+      "paid_usd": 0.0009308400000000994
+    },
+    {
+      "kind": "source_index",
+      "requests": [
+        43,
+        44
+      ],
+      "seconds": 6.841503957999521,
+      "paid_usd": 8.25999999998217e-06
+    },
+    {
+      "kind": "memory",
+      "requests": [
+        50,
+        51
+      ],
+      "seconds": 24.102913416005322,
+      "paid_usd": 0.0012574249999999232
+    }
+  ],
+  "budget": {
+    "opening_settled_usd": 1.882564841000004,
+    "opening_exposure_usd": 1.9530496410000031,
+    "added_settled_usd": 0.04269874999999779,
+    "settled_usd": 1.9252635910000018,
+    "exposure_usd": 1.995748391000001,
+    "old_unresolved_reserve_usd": 0.07048479999999913,
+    "new_requests": 128,
+    "ceiling_usd": 10
+  },
+  "review_boundary": "Human semantic review of six frozen obligations per formal question. Explicit source binding, retained literal-secret rejection, semantic limits, and stated budget amounts are separate obligations. Missing detail is distinct from a wrong current-state or unsafe action. Public arithmetic cannot reproduce private semantic judgments."
+}
