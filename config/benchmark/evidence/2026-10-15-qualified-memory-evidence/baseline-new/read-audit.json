@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "verified_bodies": 498,
+    "original_bytes": 317096,
+    "native_rereads": 0,
+    "repeated_bodies_suppressed": 93,
+    "native_bounded_reads": 29
+  },
+  "all_delivered_original_bytes_match": true,
+  "all_native_caps_respected": true,
+  "formal": {
+    "no_elf": {
+      "verified_bodies": 338,
+      "original_bytes": 106672,
+      "repeated_bodies_suppressed": 72,
+      "native_bounded_reads": 0,
+      "native_rereads": 0
+    },
+    "source_only": {
+      "verified_bodies": 19,
+      "original_bytes": 64348,
+      "repeated_bodies_suppressed": 0,
+      "native_bounded_reads": 23,
+      "native_rereads": 0
+    },
+    "full_elf": {
+      "verified_bodies": 66,
+      "original_bytes": 61810,
+      "repeated_bodies_suppressed": 21,
+      "native_bounded_reads": 2,
+      "native_rereads": 0
+    },
+    "exact_source": {
+      "verified_bodies": 20,
+      "original_bytes": 44788,
+      "repeated_bodies_suppressed": 0,
+      "native_bounded_reads": 0,
+      "native_rereads": 0
+    }
+  },
+  "private_receipt_sha256": "350dc7572b1b827174addd4299a948d4898f0a2fe2dbb97b41d25dd3b1c4a7cd"
+}

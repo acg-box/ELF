@@ -1,0 +1,21 @@
+{
+  "summary": {
+    "native_rereads": 0,
+    "verified_bodies": 238,
+    "original_bytes": 260671,
+    "native_bounded_reads": 12,
+    "repeated_bodies_suppressed": 50
+  },
+  "all_delivered_original_bytes_match": true,
+  "all_native_caps_respected": true,
+  "formal": {
+    "full_elf": {
+      "verified_bodies": 235,
+      "original_bytes": 253749,
+      "repeated_bodies_suppressed": 50,
+      "native_bounded_reads": 12,
+      "native_rereads": 0
+    }
+  },
+  "private_receipt_sha256": "dba543ca050fe803fc4e467249b83c2b10d88035c420c96938bfced3a5cbf0f3"
+}

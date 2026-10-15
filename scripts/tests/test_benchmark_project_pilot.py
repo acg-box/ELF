@@ -159,6 +159,10 @@ evidence_max_quote_bytes = 320
             (root / 'provider-reuse.jsonl').write_text('\n'.join(json.dumps(row) for row in (
                 {'kind': 'embedding', 'reused': True}, {'kind': 'embedding', 'reused': False},
                 {'kind': 'extraction', 'reused': False}, {'kind': 'extraction', 'reused': False})))
+            save(root / 'qualifier-audit.json', {
+                'extraction': {'admitted_facts': 2, 'private_notes': canary},
+                'storage': {'fact_rows': 2, 'all_stored_facts_match_admitted_clauses': True,
+                            'private_payload': canary}, 'private_sources': canary})
             destination = Path(directory) / 'public'
             export(root, destination)
             self.assertTrue((destination / 'manifest.json').exists())
@@ -168,6 +172,8 @@ evidence_max_quote_bytes = 320
             metrics = json.loads((destination / 'measurements.json').read_text())
             self.assertIsNone(metrics['summary']['no_elf']['amortized_usd_per_task'])
             self.assertIn('Incremental replay cost', metrics['preparation_cost_basis'])
+            qualifiers = json.loads((destination / 'qualifier-audit.json').read_text())
+            self.assertEqual(qualifiers['storage']['fact_rows'], 2)
             for path in destination.iterdir():
                 self.assertNotIn(canary, path.read_text(), path.name)
 

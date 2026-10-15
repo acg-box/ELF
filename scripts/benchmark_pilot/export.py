@@ -144,6 +144,21 @@ def export(root, destination):
                 if row['phase'] == 'formal' and row['condition'] == condition) for key in metrics}
                 for condition in raw['summary']},
             'private_receipt_sha256': digest(read_audit.read_bytes())})
+    qualifier_audit = root / 'qualifier-audit.json'
+    if qualifier_audit.exists():
+        audit = json.loads(qualifier_audit.read_text())
+        fields = {
+            'extraction': ('proposed_notes_with_facts', 'proposed_facts', 'admitted_notes_with_facts',
+                          'admitted_facts', 'admitted_facts_verbatim_in_original'),
+            'delivery': ('note_presentations_with_facts', 'fact_presentations',
+                         'facts_also_in_this_original_window', 'notes_with_note_type',
+                         'notes_with_project_id', 'notes_with_scope',
+                         'note_presentations_with_evidence_quotes', 'evidence_quote_presentations',
+                         'evidence_quotes_bound_to_returned_windows'),
+            'storage': ('fact_rows', 'notes_with_facts', 'all_stored_facts_match_admitted_clauses')}
+        save(destination / 'qualifier-audit.json', {
+            section: {key: audit.get(section, {}).get(key, 0) for key in keys}
+            for section, keys in fields.items()})
     save(destination / 'private-evidence-hashes.json', {
         'boundary': 'These hashes identify private evidence. Original business records, task text, answer text and provider receipts are not published.',
         'files': [{'path_sha256': digest(str(p.relative_to(root)).encode()), 'content_sha256': digest(p.read_bytes())} for p in sorted(root.rglob('*.json'))
