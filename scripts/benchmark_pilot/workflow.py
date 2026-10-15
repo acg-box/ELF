@@ -141,9 +141,11 @@ def trajectory(experiment, repo, spec, condition, repetition):
     if root.exists():
         if (root / 'completed.json').exists():
             return
-        raise RuntimeError('Partial trajectory exists; do not silently rerun: ' + cell)
-    root.mkdir(parents=True)
-    (root / 'budget-ledger.json').symlink_to(experiment / 'budget-ledger.json')
+        if not (root / 'resume-preparation.json').exists() or list(root.glob('session-[0-9]*')):
+            raise RuntimeError('Partial trajectory exists; do not silently rerun: ' + cell)
+    root.mkdir(parents=True, exist_ok=True)
+    if not (root / 'budget-ledger.json').exists():
+        (root / 'budget-ledger.json').symlink_to(experiment / 'budget-ledger.json')
     protocol = {**read(experiment / 'fixture/protocol.json'), 'condition': condition,
                 'conditions': [condition]}
     save(root / 'fixture/protocol.json', protocol)
@@ -203,6 +205,10 @@ def trajectory(experiment, repo, spec, condition, repetition):
             'sessions_completed': sum(r['status'] == 'completed' for r in results),
             'seconds_including_preparation': time.monotonic() - started,
             'usage_before': before, 'usage_after': usage(root)})
+    except urllib.error.HTTPError as error:
+        save(root / 'preparation-error.json', {'http_status': error.code,
+             'detail': error.read().decode(errors='replace')})
+        raise RuntimeError('Native preparation rejected; inspect the preserved error') from error
     finally:
         workspace.close()
         if native:

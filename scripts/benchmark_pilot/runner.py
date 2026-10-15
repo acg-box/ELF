@@ -185,7 +185,9 @@ def ingest(rt, root, sources, stage, protocol):
             'source_created_at': source['timestamp'], 'trust_label': 'user_captured',
             'pilot_source_id': source['id']}, 'content': source['text']}
         if source['kind'] == 'work_record':
-            body['source_ref'].update(source_kind='text_export',
+            body['source_ref'].update(doc_type='chat', source_kind='chat_excerpt',
+                thread_id=source['canonical_uri'].split('/')[2],
+                role='assistant' if source['path'] == 'HANDOFF.md' else 'user',
                 canonical_uri=source['canonical_uri'], source_content_hash=source['sha256'],
                 trust_label='unverified' if source['path'] == 'HANDOFF.md' else 'user_captured')
             body['source_ref'].pop('commit_sha')

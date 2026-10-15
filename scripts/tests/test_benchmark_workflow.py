@@ -10,6 +10,7 @@ from benchmark_pilot.corpus import digest, save
 from benchmark_pilot.workflow import conversation, source_record, workflow_schemas
 from benchmark_pilot.workspace import frozen_files
 from benchmark_pilot.runtime import Runtime
+from benchmark_pilot.runner import ingest
 
 
 class WorkflowTests(unittest.TestCase):
@@ -73,3 +74,23 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(before['text'], '主体与条件')
         self.assertEqual(before['kind'], 'work_record')
         self.assertEqual(source_record('source.py', 'code', 0, 'revision', 'time')['kind'], 'blob')
+
+    def test_work_records_use_chat_provenance_instead_of_a_fictitious_git_blob(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            runtime = Mock()
+            runtime.api.return_value = {'doc_id': 'doc', 'content_hash': 'hash'}
+            source = source_record('HANDOFF.md', 'A previous agent plan.', 1, 'base',
+                                   '2026-10-15T00:00:00Z', True)
+            source['canonical_uri'] = 'elf-workflow://case/1/HANDOFF.md?sha256=' + source['sha256']
+            with patch('benchmark_pilot.runner.usage', return_value={}), \
+                    patch('benchmark_pilot.runner.verify_state'):
+                ingest(runtime, root, [source], 1, {'conditions': ['source_only']})
+            body = runtime.api.call_args.args[1]
+            reference = body['source_ref']
+            self.assertEqual((reference['doc_type'], reference['source_kind']), ('chat', 'chat_excerpt'))
+            self.assertEqual((reference['thread_id'], reference['role']), ('case', 'assistant'))
+            self.assertEqual(reference['trust_label'], 'unverified')
+            self.assertNotIn('commit_sha', reference)
+            self.assertNotIn('repo', reference)
+            self.assertEqual(body['content'], source['text'])
