@@ -140,8 +140,8 @@ class Runtime:
                 values['temperature'] = 0.1
             section = f'[providers.{name}]\ndefault_headers = {{}}\n' + ''.join(k + ' = ' + json.dumps(v) + '\n' for k, v in values.items()) + '\n'
             config = re.sub(r'\[providers\.' + name + r'\][\s\S]*?(?=\n\[)', lambda _: section, config, count=1)
-        config = config.replace('auth_mode                = "off"', 'auth_mode                = "static_keys"')
-        config = config.replace('auth_keys                = []', '')
+        config = re.sub(r'(?m)^auth_mode\s*=\s*"off"', 'auth_mode = "static_keys"', config)
+        config = re.sub(r'(?m)^auth_keys\s*=\s*\[\]\s*$', '', config)
         config += '\n[[security.auth_keys]]\n' + ''.join(k + ' = ' + json.dumps(v) + '\n' for k, v in {
             'token_id': self.owner, 'token': self.token, 'tenant_id': self.owner, 'project_id': 'project',
             'agent_id': 'pilot', 'read_profile': 'private_only', 'role': 'user'}.items())
