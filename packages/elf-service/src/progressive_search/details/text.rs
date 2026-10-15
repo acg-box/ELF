@@ -10,17 +10,17 @@ pub(super) fn apply_payload_level_to_search_details_text(
 	raw_text: &str,
 	structured: Option<&StructuredFields>,
 	payload_level: PayloadLevel,
-	max_note_chars: usize,
+	preview_max_chars: usize,
 ) -> String {
 	match payload_level {
-		PayloadLevel::L0 => build_summary(raw_text, max_note_chars),
+		PayloadLevel::L0 => build_summary(raw_text, preview_max_chars),
 		PayloadLevel::L1 => {
 			let candidate_text = structured
 				.and_then(|item| item.summary.as_deref())
 				.filter(|summary| !summary.trim().is_empty())
 				.unwrap_or(raw_text);
 
-			build_summary(candidate_text, max_note_chars)
+			build_summary(candidate_text, preview_max_chars)
 		},
 		PayloadLevel::L2 => raw_text.to_string(),
 	}

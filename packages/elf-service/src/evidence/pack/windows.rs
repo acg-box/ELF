@@ -117,6 +117,7 @@ mod tests {
 			vec![make(6, 15, "version-a"), make(0, 3, "version-b"), make(0, 9, "version-a")];
 		let refs = sources.iter().map(|s| s.reference.clone()).collect();
 		let mut pack = EvidencePackResponse {
+			omitted_note_ids: vec![],
 			schema: "elf.evidence_pack/v1",
 			source_bytes: 21,
 			complete: true,

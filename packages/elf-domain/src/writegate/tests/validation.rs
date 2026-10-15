@@ -3,7 +3,7 @@ use std::path::Path;
 use crate::writegate::{self, NoteInput, RejectCode, tests::config};
 
 #[test]
-fn rejects_long_text() {
+fn preview_length_does_not_reject_note_content() {
 	let cfg = config::config();
 	let note = NoteInput {
 		note_type: "fact".to_string(),
@@ -11,7 +11,7 @@ fn rejects_long_text() {
 		text: "12345678901".to_string(),
 	};
 
-	assert_eq!(writegate::writegate(&note, &cfg), Err(RejectCode::RejectTooLong));
+	assert_eq!(writegate::writegate(&note, &cfg), Ok(()));
 }
 
 #[test]
@@ -27,9 +27,9 @@ fn configured_limit_admits_complete_repair_update() {
 	assert_eq!(note.text.chars().count(), 266);
 	assert_eq!(writegate::writegate(&note, &cfg), Ok(()));
 
-	cfg.memory.max_note_chars = 240;
+	cfg.memory.preview_max_chars = 240;
 
-	assert_eq!(writegate::writegate(&note, &cfg), Err(RejectCode::RejectTooLong));
+	assert_eq!(writegate::writegate(&note, &cfg), Ok(()));
 }
 
 #[test]

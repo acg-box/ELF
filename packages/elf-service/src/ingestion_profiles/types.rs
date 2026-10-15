@@ -169,32 +169,28 @@ impl ResolvedIngestionProfile {
 	) -> Result<Vec<Value>> {
 		let mut schema = self.prompt_schema.clone();
 
-		// JSON Schema counts Unicode scalar values, as the note validator does.
+		// Preview and old count settings must not become semantic admission rules.
 		if let Some(notes) = schema.pointer_mut("/properties/notes").and_then(Value::as_object_mut)
 		{
-			notes.insert("maxItems".into(), cfg.memory.max_notes_per_add_event.into());
+			notes.remove("maxItems");
 		}
 		if let Some(text) = schema
 			.pointer_mut("/$defs/ExtractedNote/properties/text")
 			.and_then(Value::as_object_mut)
 		{
-			text.insert("maxLength".into(), cfg.memory.max_note_chars.into());
+			text.remove("maxLength");
 		}
 		if let Some(evidence) = schema
 			.pointer_mut("/$defs/ExtractedNote/properties/evidence")
 			.and_then(Value::as_object_mut)
 		{
 			evidence.insert("minItems".into(), cfg.security.evidence_min_quotes.max(1).into());
-			evidence.insert("maxItems".into(), cfg.security.evidence_max_quotes.into());
+			evidence.remove("maxItems");
 		}
 
 		let limits = format!(
-			"Runtime admission limits (apply to every profile): at most {} notes; each note text at most {} Unicode characters; {} to {} evidence quotes per note; each quote at most {} UTF-8 bytes (not characters). Use short complete verbatim passages. Do not change the original text or guess byte offsets.",
-			cfg.memory.max_notes_per_add_event,
-			cfg.memory.max_note_chars,
-			cfg.security.evidence_min_quotes.max(1),
-			cfg.security.evidence_max_quotes,
-			cfg.security.evidence_max_quote_bytes,
+			"Runtime processing budget: {} serialized UTF-8 bytes shared by extraction input and complete candidate objects. Return complete independent claims with all supporting source ranges. There is no per-note character or quote maximum. The service explicitly reports candidates it cannot process within the overall budget. Do not truncate or merge unrelated claims to fit. Do not change originals or guess byte offsets.",
+			cfg.memory.ingest_max_bytes,
 		);
 		let schema = serde_json::to_string(&schema).map_err(|_| Error::InvalidRequest {
 			message: "Failed to serialize ingestion profile schema.".to_string(),
@@ -202,8 +198,8 @@ impl ResolvedIngestionProfile {
 		let user_prompt = self
 			.prompt_user_template
 			.replace("{SCHEMA}", &schema)
-			.replace("{MAX_NOTES}", cfg.memory.max_notes_per_add_event.to_string().as_str())
-			.replace("{MAX_NOTE_CHARS}", cfg.memory.max_note_chars.to_string().as_str())
+			.replace("{MAX_NOTES}", "the request processing budget")
+			.replace("{MAX_NOTE_CHARS}", "no per-note character maximum")
 			.replace("{MESSAGES_JSON}", messages_json);
 
 		Ok(vec![
@@ -240,9 +236,8 @@ mod tests {
 		let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../elf.example.toml");
 		let mut cfg = elf_config::load(&path).expect("Example config");
 
-		cfg.memory.max_note_chars = 123;
-		cfg.security.evidence_max_quotes = 3;
-		cfg.security.evidence_max_quote_bytes = 99;
+		cfg.memory.preview_max_chars = 123;
+		cfg.memory.ingest_max_bytes = 12_345;
 
 		let profile = ResolvedIngestionProfile {
 			profile_ref: IngestionProfileRef { id: "custom".into(), version: 1 },
@@ -257,16 +252,18 @@ mod tests {
 		let messages = profile.build_extractor_messages("[]", &cfg).expect("Runtime prompt");
 		let system = messages[0]["content"].as_str().expect("System prompt");
 
-		assert!(system.contains("123 Unicode characters"));
-		assert!(system.contains("1 to 3 evidence quotes"));
-		assert!(system.contains("99 UTF-8 bytes"));
+		assert!(system.contains("12345 serialized UTF-8 bytes"));
+		assert!(!system.contains("123 Unicode characters"));
 
 		let user = messages[1]["content"].as_str().expect("User prompt");
 		let schema: Value =
 			serde_json::from_str(user.split('\n').next().expect("Schema")).expect("Valid schema");
 
-		assert_eq!(schema["$defs"]["ExtractedNote"]["properties"]["text"]["maxLength"], 123);
-		assert_eq!(schema["$defs"]["ExtractedNote"]["properties"]["evidence"]["maxItems"], 3);
+		assert!(schema["$defs"]["ExtractedNote"]["properties"]["text"].get("maxLength").is_none());
+		assert!(
+			schema["$defs"]["ExtractedNote"]["properties"]["evidence"].get("maxItems").is_none()
+		);
+		assert!(schema["properties"]["notes"].get("maxItems").is_none());
 		assert_eq!(profile.prompt_schema, before);
 	}
 }

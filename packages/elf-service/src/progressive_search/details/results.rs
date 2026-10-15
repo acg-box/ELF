@@ -28,7 +28,7 @@ pub(crate) struct SearchDetailsBuildArgs<'a> {
 	pub(crate) now: OffsetDateTime,
 	pub(crate) record_hits_enabled: bool,
 	pub(crate) payload_level: PayloadLevel,
-	pub(crate) max_note_chars: usize,
+	pub(crate) preview_max_chars: usize,
 }
 
 pub(crate) fn build_search_details_results(
@@ -87,7 +87,7 @@ pub(crate) fn build_search_details_results(
 			note.text.as_str(),
 			structured.as_ref(),
 			args.payload_level,
-			args.max_note_chars,
+			args.preview_max_chars,
 		);
 		let source_ref = if args.payload_level == PayloadLevel::L2 {
 			note.source_ref.clone()

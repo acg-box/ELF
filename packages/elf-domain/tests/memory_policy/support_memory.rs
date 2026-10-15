@@ -2,8 +2,8 @@ use elf_config::{Memory, MemoryPolicy, MemoryPolicyRule};
 
 pub(crate) fn memory_policy_memory_config() -> Memory {
 	Memory {
-		max_notes_per_add_event: 3,
-		max_note_chars: 240,
+		ingest_max_bytes: 32_768,
+		preview_max_chars: 240,
 		candidate_k: 60,
 		top_k: 12,
 		policy: MemoryPolicy {

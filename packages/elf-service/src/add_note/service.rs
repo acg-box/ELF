@@ -2,7 +2,7 @@ use sqlx::{Postgres, Transaction};
 use time::{Duration, OffsetDateTime};
 
 use crate::{
-	ElfService, ResolveUpdateArgs, Result, UpdateDecision, UpdateDecisionMetadata,
+	ElfService, NoteOp, ResolveUpdateArgs, Result, UpdateDecision, UpdateDecisionMetadata,
 	access::ORG_PROJECT_ID,
 	add_note::{
 		audit,
@@ -11,7 +11,9 @@ use crate::{
 		types::{AddNoteContext, AddNoteInput, AddNoteRequest, AddNoteResponse, AddNoteResult},
 		validation::{self},
 	},
+	ingest_budget::{DEFERRED_INGEST_BUDGET, IngestBudget},
 };
+use elf_domain::memory_policy::MemoryPolicyDecision;
 
 impl ElfService {
 	/// Validates and persists notes supplied directly by the caller.
@@ -26,6 +28,7 @@ impl ElfService {
 		let effective_project_id =
 			if scope.trim() == "org_shared" { ORG_PROJECT_ID } else { project_id.as_str() };
 		let mut results = Vec::with_capacity(notes.len());
+		let mut budget = IngestBudget::new(self.cfg.memory.ingest_max_bytes);
 
 		for (note_idx, note) in notes.into_iter().enumerate() {
 			let now = base_now + Duration::microseconds(note_idx as i64);
@@ -37,17 +40,24 @@ impl ElfService {
 				now,
 				embed_version: embed_version.as_str(),
 			};
+			let within_budget = budget.take(&note)?;
 
-			results.push(self.process_add_note_input(&ctx, note).await?);
+			results.push(self.process_add_note_input(&ctx, note, within_budget).await?);
 		}
 
-		Ok(AddNoteResponse { results })
+		Ok(AddNoteResponse {
+			processing_complete: results
+				.iter()
+				.all(|r| r.reason_code.as_deref() != Some(DEFERRED_INGEST_BUDGET)),
+			results,
+		})
 	}
 
 	async fn process_add_note_input(
 		&self,
 		ctx: &AddNoteContext<'_>,
 		note: AddNoteInput,
+		within_budget: bool,
 	) -> Result<AddNoteResult> {
 		let mut note = note;
 		let (transformed, write_policy_audit) =
@@ -71,6 +81,39 @@ impl ElfService {
 			tx.commit().await?;
 
 			return Ok(result);
+		}
+
+		if !within_budget {
+			audit::record_ingest_decision(
+				&mut tx,
+				ctx,
+				&note,
+				None,
+				None,
+				MemoryPolicyDecision::Ignore,
+				MemoryPolicyDecision::Ignore,
+				NoteOp::None,
+				Some(DEFERRED_INGEST_BUDGET),
+				None,
+				None,
+				false,
+				false,
+				None,
+				None,
+				write_policy_audit.clone(),
+			)
+			.await?;
+
+			tx.commit().await?;
+
+			return Ok(AddNoteResult {
+				note_id: None,
+				op: NoteOp::None,
+				policy_decision: MemoryPolicyDecision::Ignore,
+				reason_code: Some(DEFERRED_INGEST_BUDGET.into()),
+				field_path: None,
+				write_policy_audit,
+			});
 		}
 
 		let (decision, metadata) = self.resolve_update_decision(&mut tx, ctx, &note).await?;

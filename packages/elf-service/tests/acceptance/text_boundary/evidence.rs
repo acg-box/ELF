@@ -200,9 +200,12 @@ async fn evidence_expansion_anchors_each_quote_in_a_long_source_span() {
 	let last = "The project lead is Chen.";
 	let content = format!("{first}\n{}{last}", "padding ".repeat(10_000));
 	let payload = serde_json::json!({"notes":[{"type":"fact","text":"Egret budget owner 林澈; project lead Chen.","importance":0.8,"confidence":0.9,"evidence":[{"message_index":0,"quote":first},{"message_index":0,"quote":last}]}]});
-	let fixture = setup::setup_service_with_payload("long_evidence_window", payload)
+	let mut fixture = setup::setup_service_with_payload("long_evidence_window", payload)
 		.await
 		.expect("Test prerequisites");
+	// This read-path fixture deliberately ingests an 80 KB message in one call.
+	fixture.service.cfg.memory.ingest_max_bytes = 256 * 1_024;
+
 	let service = &fixture.service;
 	let doc = service.docs_put(DocsPutRequest { tenant_id:"t".into(), project_id:"p".into(), agent_id:"a".into(), scope:"agent_private".into(), doc_type:None, title:Some("Long source".into()), write_policy:None, source_ref:serde_json::json!({"schema":"doc_source_ref/v1","doc_type":"knowledge","ts":"2026-08-22T00:00:00Z"}), content:content.clone() }).await.expect("Archive long original");
 	let event = service
@@ -248,6 +251,7 @@ async fn evidence_expansion_anchors_each_quote_in_a_long_source_span() {
 
 	let bounded = service
 		.evidence_pack(EvidencePackRequest {
+			max_bytes: None,
 			tenant_id: "t".into(),
 			project_id: "p".into(),
 			agent_id: "a".into(),
@@ -296,6 +300,7 @@ async fn verify_evidence_pack(
 	content: &str,
 ) -> String {
 	let pack_request = EvidencePackRequest {
+		max_bytes: None,
 		tenant_id: "t".into(),
 		project_id: "p".into(),
 		agent_id: "a".into(),
@@ -340,6 +345,7 @@ async fn verify_evidence_pack(
 
 	let partial = service
 		.evidence_pack(EvidencePackRequest {
+			max_bytes: None,
 			max_source_bytes: Some(content.len() - 1),
 			..pack_request.clone()
 		})
@@ -410,6 +416,7 @@ async fn verify_evidence_pack(
 
 async fn verify_supplemental_recall(service: &ElfService, content: &str) {
 	let recall_req = EvidenceRecallRequest {
+		max_bytes: None,
 		tenant_id: "t".into(),
 		project_id: "p".into(),
 		agent_id: "a".into(),
@@ -441,6 +448,7 @@ async fn verify_supplemental_recall(service: &ElfService, content: &str) {
 async fn verify_source_only_recall(service: &ElfService, content: &str) {
 	let recalled = service
 		.evidence_recall(EvidenceRecallRequest {
+			max_bytes: None,
 			tenant_id: "t".into(),
 			project_id: "p".into(),
 			agent_id: "a".into(),

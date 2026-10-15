@@ -164,8 +164,8 @@ project_shared = true
 org_shared = true
 
 [memory]
-max_notes_per_add_event = 3
-max_note_chars = 512
+ingest_max_bytes = 32768
+preview_max_chars = 512
 # Similarity thresholds
 # Retrieval sizes
 candidate_k = 60
@@ -284,8 +284,7 @@ bind_localhost_only = true
 redact_secrets_on_write = true
 # Evidence rules for add_event
 evidence_min_quotes = 1
-evidence_max_quotes = 2
-evidence_max_quote_bytes = 320 # UTF-8 bytes; legacy evidence_max_quote_chars also counted bytes
+evidence_span_bytes = 320 # Selection granularity; contiguous spans can form a complete quote
 auth_mode = "off|static_keys"
 # Must exist. Empty array is allowed only when auth_mode = "off".
 auth_keys = []
@@ -368,9 +367,20 @@ HTTP 422
 4.2 Canonical note
 - A note is a concise, complete fact or decision in any language. Keep its subject,
   applicable time, conditions, and exceptions together. It can use more than one sentence.
-- The supplied configuration permits 512 Unicode scalar values per note through
-  `max_note_chars`. This is an admission bound, not a token budget or an original
-  document limit. Do not truncate a note or remove its qualifications to fit.
+- There is no per-note character admission bound. `preview_max_chars` controls
+  search previews only; previews carry `is_preview=true`. Stored notes and L2
+  reads preserve the complete note. Do not shorten conditions to fit a preview.
+- `ingest_max_bytes` bounds serialized extraction input plus complete candidates
+  per request (32768 bytes in the supplied configuration). Direct note ingestion
+  counts complete candidates. If a candidate does not fit, return its outcome
+  as `NONE` with `DEFERRED_INGEST_BUDGET`; do not store or queue it. Keep all
+  extracted candidates and return `processing_complete=false`. This flag does
+  not certify that the model found every relevant fact. An oversized extraction
+  input fails before the model call; submit a smaller source window explicitly.
+- Evidence pack and recall `max_bytes` bound the whole serialized response,
+  including notes, originals, and metadata (1024 to 32768 bytes). Omit complete
+  tail entries when needed, set completeness flags, and return omitted note IDs.
+  Never trim a stored claim or keep a wider citation after clipping its text.
 - Format is not enforced. Recommended prefixes for consistency:
   "Preference: ...", "Constraint: ...", "Decision: ...", "Profile: ...", "Fact: ...", "Plan: ..."
 
@@ -807,10 +817,12 @@ MUST NOT:
 
 8.2 add_event (LLM extraction write)
 MUST:
-- Must call the LLM extractor exactly once per request.
+- Must call the LLM extractor once for an admitted extraction request. Oversized
+  input fails before the call.
 - Must require evidence binding for each candidate note.
 - Each input message MAY include optional write_policy for per-message redact/exclude policy.
-- Must enforce max_notes_per_add_event on the server.
+- Must enforce the aggregate ingestion budget and return one result per candidate.
+- Must not silently discard candidates after a fixed count.
 - Must apply WriteGate and UpdateResolver after extraction.
 - Should support dry_run to return candidates without persisting.
 
@@ -854,14 +866,13 @@ Reject a note if any of the following are true:
 - The note contains unsupported control characters.
 - The type is not in the 6-type allowlist.
 - The scope is not allowed or write not allowed.
-- The text length is greater than max_note_chars.
 - Secrets or PII are detected (regex and heuristics).
 - The text is empty or whitespace only.
 
 On rejection:
 - op = REJECTED
 - reason_code is one of:
-  REJECT_INVALID_TEXT, REJECT_TOO_LONG, REJECT_SECRET, REJECT_INVALID_TYPE,
+  REJECT_INVALID_TEXT, REJECT_SECRET, REJECT_INVALID_TYPE,
   REJECT_SCOPE_DENIED, REJECT_EMPTY
 
 ============================================================
@@ -2381,7 +2392,7 @@ Payload-level semantics for search note details:
 
 | payload_level | `searches/{search_id}/notes`.text | `searches/{search_id}/notes`.structured | `searches/{search_id}/notes`.source_ref | `/admin/searches/raw`.source_ref |
 | --- | --- | --- | --- | --- |
-| l0 | compact summary (bounded by `max_note_chars`) | `null` | `{}` | `{}` |
+| l0 | compact summary (bounded by `preview_max_chars`; `is_preview=true`) | `null` | `{}` | `{}` |
 | l1 | compact summary (structured summary if available, else compact text) | object | `{}` | `{}` |
 | l2 | full text | object | full object | full object |
 

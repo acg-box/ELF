@@ -8,9 +8,6 @@ pub fn writegate(note: &NoteInput, cfg: &Config) -> Result<(), RejectCode> {
 	if !text_validation::is_valid_text(note.text.as_str()) {
 		return Err(RejectCode::RejectInvalidText);
 	}
-	if note.text.chars().count() as u32 > cfg.memory.max_note_chars {
-		return Err(RejectCode::RejectTooLong);
-	}
 	if !is_allowed_type(&note.note_type) {
 		return Err(RejectCode::RejectInvalidType);
 	}

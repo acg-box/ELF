@@ -50,6 +50,7 @@ pub(in crate::progressive_search) struct SearchSessionItemRecord {
 impl SearchSessionItemRecord {
 	pub(in crate::progressive_search) fn to_index_item(&self) -> SearchIndexItem {
 		SearchIndexItem {
+			is_preview: true,
 			note_id: self.note_id,
 			r#type: self.r#type.clone(),
 			key: self.key.clone(),

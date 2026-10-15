@@ -3,6 +3,18 @@ use std::collections::HashSet;
 use crate::{Config, Error, Result};
 
 pub(super) fn validate(cfg: &Config) -> Result<()> {
+	if cfg.memory.ingest_max_bytes == 0 || cfg.memory.preview_max_chars == 0 {
+		return Err(Error::Validation {
+			message: "memory.ingest_max_bytes and memory.preview_max_chars must be positive."
+				.into(),
+		});
+	}
+	if cfg.security.evidence_span_bytes == 0 {
+		return Err(Error::Validation {
+			message: "security.evidence_span_bytes must be positive.".into(),
+		});
+	}
+
 	let mut seen_rules = HashSet::new();
 
 	for (idx, rule) in cfg.memory.policy.rules.iter().enumerate() {

@@ -15,7 +15,7 @@ use crate::app::server::{
 
 #[rmcp::tool_router(router = core_notes_tool_router, vis = "pub(in crate::app::server)")]
 impl ElfMcp {
-	#[rmcp::tool(name = "elf_evidence_recall", description = "Supplement incomplete recall with 1-4 literal subject names or identifiers. Retrieve original text independently of extraction, plus source-diverse note and incoming/outgoing graph evidence across distinct entity candidates without merging them. Supply as_of for historical questions; compare states effective then, retain late reports, and do not apply later decisions backward. Match and citation validity do not prove truth.", input_schema = evidence_recall_schema())]
+	#[rmcp::tool(name = "elf_evidence_recall", description = "Supplement incomplete recall with 1-4 literal subject names or identifiers. Retrieve original text independently of extraction, plus source-diverse note and incoming/outgoing graph evidence across distinct entity candidates without merging them. Supply as_of for historical questions; compare states effective then, retain late reports, and do not apply later decisions backward. max_bytes bounds the full response; inspect truncated and pack.omitted_note_ids. Match and citation validity do not prove truth.", input_schema = evidence_recall_schema())]
 	async fn elf_evidence_recall(&self, params: JsonObject) -> Result<CallToolResult, ErrorData> {
 		self.forward(HttpMethod::Post, "/v2/evidence/recall", params, None).await
 	}
@@ -61,7 +61,7 @@ impl ElfMcp {
 		.await
 	}
 
-	#[rmcp::tool(name = "elf_evidence_pack", description = "Resolve 1-12 retrieved note IDs into deduplicated original context with native citation references. Source timestamps are record times, not inferred fact validity. Incomplete context does not prove absence.", input_schema = evidence_pack_schema())]
+	#[rmcp::tool(name = "elf_evidence_pack", description = "Resolve 1-12 retrieved note IDs into deduplicated original context with native citation references. Source timestamps are record times, not inferred fact validity. max_bytes bounds the full response without clipping notes. Inspect complete and omitted_note_ids. Incomplete context does not prove absence.", input_schema = evidence_pack_schema())]
 	async fn elf_evidence_pack(&self, params: JsonObject) -> Result<CallToolResult, ErrorData> {
 		self.forward(HttpMethod::Post, "/v2/evidence/pack", params, None).await
 	}

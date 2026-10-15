@@ -289,3 +289,33 @@ fn extractor_cannot_assign_caller_entity_identity() {
 		.is_err()
 	);
 }
+
+#[test]
+fn long_bound_clauses_keep_conditions_without_a_second_character_gate() {
+	let text = format!(
+		"{} Only after approval on 2026-10-15.",
+		"Project A preserves its immutable original and provenance. ".repeat(25)
+	);
+	let structured: StructuredFields =
+		serde_json::from_value(serde_json::json!({"summary":text,"facts":[text]}))
+			.expect("Complete fields");
+
+	assert!(
+		structured_fields::validate_structured_fields(
+			&structured,
+			&text,
+			&serde_json::json!({}),
+			None
+		)
+		.is_ok()
+	);
+	assert!(
+		structured_fields::validate_structured_fields(
+			&structured,
+			"A different unbound claim.",
+			&serde_json::json!({}),
+			None
+		)
+		.is_err()
+	);
+}

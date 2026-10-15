@@ -112,7 +112,8 @@ pub(in crate::app::server) fn evidence_pack_schema() -> Arc<JsonObject> {
         "type":"object", "additionalProperties":false, "required":["note_ids"],
         "properties":{
             "note_ids":{"type":"array","minItems":1,"maxItems":12,"items":{"type":"string","format":"uuid"}},
-            "max_source_bytes":{"type":"integer","minimum":1,"maximum":32_768}
+            "max_source_bytes":{"type":"integer","minimum":1,"maximum":32_768},
+            "max_bytes":{"type":"integer","minimum":1_024,"maximum":32_768}
         }
     })).expect("Valid evidence pack schema"))
 }
@@ -122,7 +123,8 @@ pub(in crate::app::server) fn evidence_recall_schema() -> Arc<JsonObject> {
 		"type": "object", "additionalProperties": false, "required": ["subjects"],
 		"properties": {
 			"subjects": {"type":"array", "minItems":1, "maxItems":4, "items":{"type":"string", "minLength":2, "maxLength":128}},
-			"as_of": {"type":["string", "null"], "format":"date-time"}
+			"as_of": {"type":["string", "null"], "format":"date-time"},
+			"max_bytes":{"type":"integer","minimum":1_024,"maximum":32_768}
 		}
 	})).expect("Valid evidence recall schema"))
 }

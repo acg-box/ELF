@@ -189,8 +189,8 @@ project_shared = true
 
 [memory]
 candidate_k             = 60
-max_note_chars          = 512
-max_notes_per_add_event = 3
+preview_max_chars          = 512
+ingest_max_bytes = 32_768
 top_k                   = 12
 
 [memory.policy]
@@ -308,8 +308,7 @@ purge_deprecated_after_days = 180
 auth_mode                = "off"
 auth_keys                = []
 bind_localhost_only      = true
-evidence_max_quote_bytes = 320
-evidence_max_quotes      = 2
+evidence_span_bytes = 320
 evidence_min_quotes      = 1
 redact_secrets_on_write  = true
 TOML

@@ -90,6 +90,9 @@ pub struct AddEventResult {
 /// Response payload for event-driven note extraction.
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct AddEventResponse {
+	/// Whether every returned candidate was processed within the request budget.
+	/// This does not certify extraction coverage or semantic correctness.
+	pub processing_complete: bool,
 	/// Raw structured extractor output after normalization.
 	pub extracted: Value,
 	/// One result per extracted note.
@@ -111,7 +114,7 @@ pub(super) struct ExtractedNote {
 	#[schemars(required)]
 	pub r#type: Option<String>,
 	pub key: Option<String>,
-	/// A concise reusable note, at most MAX_NOTE_CHARS characters.
+	/// A complete reusable claim with its subject, applicable time, conditions, and exceptions.
 	#[schemars(required)]
 	pub text: Option<String>,
 	pub structured: Option<StructuredFields>,
@@ -119,7 +122,7 @@ pub(super) struct ExtractedNote {
 	pub confidence: Option<f32>,
 	pub ttl_days: Option<i64>,
 	pub scope_suggestion: Option<String>,
-	/// Verbatim source quotes that support this note, within the runtime count and byte limits.
+	/// Source ranges that support the complete claim; do not omit a necessary qualification.
 	#[schemars(required)]
 	pub evidence: Option<Vec<ExtractedEvidence>>,
 	pub reason: Option<String>,
@@ -148,6 +151,8 @@ pub(super) struct EvidenceSelection {
 	pub message_index: usize,
 	/// Select an evidence_spans entry supplied with this message. Never invent a span ID.
 	pub span_id: usize,
+	/// Optional inclusive end span for a contiguous original range in the same message.
+	pub end_span_id: Option<usize>,
 }
 
 pub(super) struct NoteProcessingData {

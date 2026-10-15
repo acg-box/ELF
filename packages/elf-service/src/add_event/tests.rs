@@ -1,7 +1,7 @@
 use std::path::Path;
 
 use crate::{
-	REJECT_EVIDENCE_MISMATCH, REJECT_EVIDENCE_QUOTE_COUNT, REJECT_EVIDENCE_QUOTE_TOO_LONG,
+	REJECT_EVIDENCE_MISMATCH, REJECT_EVIDENCE_QUOTE_COUNT,
 	add_event::{
 		self,
 		types::{AddEventRequest, EventMessage, EvidenceQuote, ExtractorOutput},
@@ -55,11 +55,11 @@ fn extractor_schema_exposes_the_relation_time_contract() {
 }
 
 #[test]
-fn quote_rejections_distinguish_count_bytes_and_identity() {
+fn complete_quotes_can_cross_span_boundaries_but_must_match_originals() {
 	let path = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../elf.example.toml");
 	let mut cfg = elf_config::load(&path).expect("Example config");
 
-	cfg.security.evidence_max_quote_bytes = 6;
+	cfg.security.evidence_span_bytes = 6;
 
 	let messages = vec!["中文测试".to_string()];
 	let check = |quotes: &[EvidenceQuote]| {
@@ -80,13 +80,18 @@ fn quote_rejections_distinguish_count_bytes_and_identity() {
 		check(&[EvidenceQuote { position: None, message_index: 0, quote: "中文".into() }])
 			.is_none()
 	);
-
-	let long =
-		check(&[EvidenceQuote { position: None, message_index: 0, quote: "中文测".into() }])
-			.expect("Nine bytes");
-
-	assert_eq!(long.reason_code.as_deref(), Some(REJECT_EVIDENCE_QUOTE_TOO_LONG));
-	assert_eq!(long.field_path.as_deref(), Some("evidence[0].quote"));
+	assert!(
+		check(&[EvidenceQuote { position: None, message_index: 0, quote: "中文测试".into() }])
+			.is_none()
+	);
+	assert!(
+		check(&[
+			EvidenceQuote { position: None, message_index: 0, quote: "中文".into() },
+			EvidenceQuote { position: None, message_index: 0, quote: "文测".into() },
+			EvidenceQuote { position: None, message_index: 0, quote: "测试".into() },
+		])
+		.is_none()
+	);
 	assert_eq!(
 		check(&[EvidenceQuote { position: None, message_index: 0, quote: "not".into() }])
 			.expect("Wrong quote")

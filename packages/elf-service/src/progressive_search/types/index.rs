@@ -31,6 +31,8 @@ pub struct SearchIndexItem {
 	pub final_score: f32,
 	/// Short display summary.
 	pub summary: String,
+	/// True: the summary is a navigation preview, not a complete qualified claim.
+	pub is_preview: bool,
 }
 
 /// Response payload for initial indexed search results.

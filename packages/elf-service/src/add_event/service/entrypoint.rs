@@ -7,6 +7,7 @@ use crate::{
 		types::{AddEventRequest, AddEventResponse, ExtractorOutput},
 		validation,
 	},
+	ingest_budget::{DEFERRED_INGEST_BUDGET, IngestBudget},
 	ingestion_profiles,
 };
 
@@ -41,7 +42,7 @@ impl ElfService {
 
 		let spans = extraction::evidence_spans(
 			&message_texts,
-			self.cfg.security.evidence_max_quote_bytes as usize,
+			self.cfg.security.evidence_span_bytes as usize,
 		)?;
 
 		extraction::attach_spans(&mut extraction_messages, &spans);
@@ -49,17 +50,20 @@ impl ElfService {
 		let messages_json = extraction_messages.to_string();
 		let extractor_messages =
 			resolved_profile.build_extractor_messages(&messages_json, &self.cfg)?;
+		let mut budget = IngestBudget::new(self.cfg.memory.ingest_max_bytes);
+
+		if !budget.take(&extractor_messages)? {
+			return Err(Error::InvalidRequest {
+				message: "Extraction input exceeds memory.ingest_max_bytes. Keep the original and submit a smaller source window.".into(),
+			});
+		}
+
 		let llm_cfg = resolved_profile.resolved_llm_config(&self.cfg.providers.llm_extractor);
 		let extracted_raw = self.providers.extractor.extract(&llm_cfg, &extractor_messages).await?;
-		let max_notes = self.cfg.memory.max_notes_per_add_event as usize;
 		let mut extracted: ExtractorOutput = serde_json::from_value(extracted_raw.clone())
 			.map_err(|error| Error::InvalidRequest {
 				message: format!("Extractor output does not match the memory schema: {error}"),
 			})?;
-
-		if extracted.notes.len() > max_notes {
-			extracted.notes.truncate(max_notes);
-		}
 
 		extraction::resolve_selections(&mut extracted, &spans)?;
 
@@ -73,6 +77,7 @@ impl ElfService {
 
 		for (note_idx, note) in extracted.notes.into_iter().enumerate() {
 			let now = base_now + Duration::microseconds(note_idx as i64);
+			let within_budget = budget.take(&note)?;
 
 			results.push(
 				self.process_extracted_note(
@@ -85,12 +90,16 @@ impl ElfService {
 					now,
 					embed_version.as_str(),
 					dry_run,
+					within_budget,
 				)
 				.await?,
 			);
 		}
 
 		Ok(AddEventResponse {
+			processing_complete: results
+				.iter()
+				.all(|r| r.reason_code.as_deref() != Some(DEFERRED_INGEST_BUDGET)),
 			extracted: extracted_json,
 			results,
 			ingestion_profile: Some(resolved_profile.profile_ref),

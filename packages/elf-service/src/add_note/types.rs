@@ -68,6 +68,8 @@ pub struct AddNoteResult {
 /// Response payload for direct note ingestion.
 #[derive(Clone, Debug, Deserialize, Serialize)]
 pub struct AddNoteResponse {
+	/// Whether all requested notes were processed within the request budget.
+	pub processing_complete: bool,
 	/// One result per requested note.
 	pub results: Vec<AddNoteResult>,
 }

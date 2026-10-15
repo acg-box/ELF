@@ -94,7 +94,12 @@ def verify(root):
     if protocol.get('frozen_extraction'):
         limits = json.loads((root / 'runtime-provenance.json').read_text())['native_limits']
         reuse = json.loads((root / 'provider-reuse.json').read_text())
-        assert limits['max_note_chars'] == protocol['note_character_limit'] == audit['note_character_limit']
+        if protocol.get('note_character_limit') is not None:
+            assert limits['max_note_chars'] == protocol['note_character_limit'] == audit['note_character_limit']
+        else:
+            assert limits['ingest_max_bytes'] == protocol['ingest_max_bytes']
+            assert limits['preview_max_chars'] == protocol['preview_max_chars']
+            assert 'max_note_chars' not in limits
         assert limits['mmr_enabled'] == protocol['mmr_enabled']
         assert audit['same_frozen_proposals'] and len(audit['proposal_sha256']) == 64
         assert reuse['reused']['extraction'] == data['native_writes']['windows']

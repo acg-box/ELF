@@ -49,11 +49,13 @@ def schemas(condition, client_v3=False):
               'top_k': {'type': 'integer', 'minimum': 1, 'maximum': 12}}, ['query', 'mode']),
             ('elf_searches_get', 'Expand cached candidates before issuing another query.',
              {'search_id': {'type': 'string'}, 'top_k': {'type': 'integer', 'minimum': 1, 'maximum': 12}}, ['search_id']),
-            ('elf_evidence_pack', 'Resolve selected memory notes to verified original windows. Start with a small source budget.',
+            ('elf_evidence_pack', 'Read complete memory notes and verified original windows. max_bytes bounds the whole response; complete=false and omitted_note_ids identify gaps.',
              {'note_ids': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 12},
-              'max_source_bytes': {'type': 'integer', 'minimum': 1, 'maximum': 32768}}, ['note_ids']),
+              'max_source_bytes': {'type': 'integer', 'minimum': 1, 'maximum': 32768},
+              'max_bytes': {'type': 'integer', 'minimum': 1024, 'maximum': 32768}}, ['note_ids']),
             ('elf_evidence_recall', 'Recall missing evidence using up to four literal subjects. Optionally specify historical as_of in RFC3339.',
-             {'subjects': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 4}, 'as_of': {'type': ['string', 'null']}}, ['subjects']),
+             {'subjects': {'type': 'array', 'items': {'type': 'string'}, 'minItems': 1, 'maxItems': 4}, 'as_of': {'type': ['string', 'null']},
+              'max_bytes': {'type': 'integer', 'minimum': 1024, 'maximum': 32768}}, ['subjects']),
             ('elf_graph_query', 'Traverse native entity relationships. Read evidence_note_ids with elf_evidence_pack.',
              {'subject': {'type': 'object', 'properties': {'surface': {'type': 'string'}}, 'required': ['surface']},
               'as_of': {'type': ['string', 'null']}}, ['subject']),
@@ -223,15 +225,21 @@ class SourceTools:
                 value['already_returned_note_ids'] = [r['note_id'] for r in value['items'] if r['note_id'] in seen]
                 value['items'] = [r for r in value['items'] if r['note_id'] not in seen]
             return value
-        if name == 'elf_evidence_pack':
-            return self.project_pack(self.api('/v2/evidence/pack', {'max_source_bytes': 6000, **args}))
-        if name == 'elf_evidence_recall':
-            data = self.api('/v2/evidence/recall', args)
+        if name in ('elf_evidence_pack', 'elf_evidence_recall'):
+            # Leave room for host source IDs and JSON transport whitespace. Native code
+            # fits complete notes and linked originals together; the host never reslices them.
+            budget = min(int(args.get('max_bytes', 32768)), self.result_cap(name) - 1024)
+            if budget < 1024:
+                raise ValueError('Insufficient evidence budget for a complete native response')
+            body = {**args, 'max_bytes': budget}
+            if name == 'elf_evidence_pack':
+                return self.project_pack(self.api('/v2/evidence/pack', {'max_source_bytes': 6000, **body}))
+            data = self.api('/v2/evidence/recall', body)
             return {**data, 'pack': self.project_pack(data['pack'])}
         return self.api('/v2/graph/query', {'limit': 12, **args})
 
     def project_pack(self, pack):
-        # Native order is retained. The common output budget may trim the tail.
+        # Native order, completeness flags, and omission locators are retained.
         value = dict(pack)
         value['sources'] = [{**s, 'source_id': self.inverse.get(s['doc_id'])} for s in pack['sources'] if s['doc_id'] in self.inverse]
         if len(value['sources']) != len(pack['sources']):
@@ -253,6 +261,9 @@ class SourceTools:
         if self.handles:
             value = self.handles.project(value)
         cap = min(self.remaining - reserve, self.protocol['max_tool_result_bytes'])
+        if name in ('elf_evidence_pack', 'elf_evidence_recall'):
+            if len(json.dumps(value, ensure_ascii=False).encode()) > cap:
+                value = {'error': 'Complete native response does not fit host transport budget. Request fewer note IDs or a smaller max_bytes.'}
         if name == 'elf_evidence_check' and self.handles:
             if len(json.dumps(value, ensure_ascii=False).encode()) > cap:
                 value = {'error': 'Complete citation verdict does not fit. No partial success is returned.'}

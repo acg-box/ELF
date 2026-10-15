@@ -25,15 +25,15 @@ fn build_payload_shape_search_request(payload_level: PayloadLevel) -> SearchRequ
 }
 
 fn assert_search_detail_payload_levels(
-	max_note_chars: usize,
+	preview_max_chars: usize,
 	note_text: &str,
 	source_ref: &Value,
 	l0: &NoteFetchResponse,
 	l1: &NoteFetchResponse,
 	l2: &NoteFetchResponse,
 ) {
-	assert!(l0.text.chars().count() <= max_note_chars + 3);
-	assert!(l1.text.chars().count() <= max_note_chars + 3);
+	assert!(l0.text.chars().count() <= preview_max_chars + 3);
+	assert!(l1.text.chars().count() <= preview_max_chars + 3);
 	assert!(l0.text.ends_with("..."));
 	assert_eq!(l2.text, note_text);
 	assert_ne!(l0.text, l1.text);
@@ -84,6 +84,8 @@ async fn fetch_search_detail_note_for_level(
 		})
 		.await
 		.expect("Search details failed.");
+
+	assert_eq!(response.is_preview, payload_level != PayloadLevel::L2);
 
 	response
 		.results
@@ -174,10 +176,10 @@ async fn search_details_payload_level_shapes_text_and_fields() {
 	};
 	let note_id = Uuid::new_v4();
 	let chunk_id = Uuid::new_v4();
-	let max_note_chars = context.service.cfg.memory.max_note_chars as usize;
+	let preview_max_chars = context.service.cfg.memory.preview_max_chars as usize;
 	let note_text_seed =
 		"This is the long note body used for detail shaping and payload truncation. ";
-	let note_text = note_text_seed.repeat((max_note_chars / note_text_seed.len()) + 2);
+	let note_text = note_text_seed.repeat((preview_max_chars / note_text_seed.len()) + 2);
 	let source_ref = serde_json::json!({
 		"schema": "note_source_ref/v1",
 		"locator": {
@@ -189,7 +191,7 @@ async fn search_details_payload_level_shapes_text_and_fields() {
 	let structured_summary = "Structured summary about payload levels and compact text behavior.";
 	let field_id = Uuid::new_v4();
 
-	assert!(note_text.len() > max_note_chars);
+	assert!(note_text.len() > preview_max_chars);
 
 	tests_helpers::insert_note_with_importance_and_source_ref(
 		&context.service.db.pool,
@@ -271,7 +273,7 @@ async fn search_details_payload_level_shapes_text_and_fields() {
 	)
 	.await;
 
-	assert_search_detail_payload_levels(max_note_chars, &note_text, &source_ref, &l0, &l1, &l2);
+	assert_search_detail_payload_levels(preview_max_chars, &note_text, &source_ref, &l0, &l1, &l2);
 
 	context.test_db.cleanup().await.expect("Failed to cleanup test database.");
 }
