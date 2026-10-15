@@ -59,7 +59,7 @@ def conversation(root, repo, workspace, runtime, sources, documents, protocol, i
         messages.append({'role': 'user', 'content': json.dumps({
             'native_index_coverage': 'partial', 'unindexed_files': rejected,
             'file_access': 'The unchanged originals remain available in this checkout.'})})
-    trace, calls = [], 0
+    trace, calls, control_bytes = [], 0, 0
     started, before = time.monotonic(), usage(root)
     result = {'stage': stage, 'condition': condition, 'status': 'round_budget_exhausted',
               'pid': os.getpid(), 'scripted_requirement_updates': int(stage > 0),
@@ -96,12 +96,14 @@ def conversation(root, repo, workspace, runtime, sources, documents, protocol, i
                     result.update(status='completed', summary=arguments['summary'])
                     value = {'completed': True}
                 elif fn['name'] == 'shell':
-                    cap = min(host.remaining, protocol['max_tool_result_bytes'])
-                    if cap <= 0:
-                        value = {'error': 'Session evidence budget exhausted'}
+                    cap = max(0, min(host.remaining, protocol['max_tool_result_bytes']))
+                    value = workspace.shell(arguments['command'], directory, cap)
+                    size = len(json.dumps(value, ensure_ascii=False).encode())
+                    if size <= host.remaining:
+                        host.remaining -= size
                     else:
-                        value = workspace.shell(arguments['command'], directory, max(0, cap - 256))
-                        host.remaining -= len(json.dumps(value, ensure_ascii=False).encode())
+                        assert not value['output']
+                        control_bytes += size
                 else:
                     value = host.call(fn['name'], arguments)
                 step['tools'].append({'name': fn['name'], 'arguments': arguments, 'result': value})
@@ -121,6 +123,7 @@ def conversation(root, repo, workspace, runtime, sources, documents, protocol, i
     finally:
         result.update(seconds=time.monotonic() - started, tool_calls=calls,
             evidence_bytes=protocol['max_evidence_bytes'] - host.remaining,
+            output_omitted_control_bytes=control_bytes,
             usage_before=before, usage_after=usage(root))
         result['changed_files'] = workspace.snapshot(directory)
         save(directory / 'result.json', result)

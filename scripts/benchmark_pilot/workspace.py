@@ -11,6 +11,22 @@ import time
 from .corpus import save
 
 
+def bounded_shell_result(code, raw, total_bytes, seconds, cap):
+    result = {'exit_code': code, 'output': '', 'truncated': total_bytes > 0, 'seconds': seconds}
+    text = raw.decode('utf-8', errors='replace')
+    low, high = 0, len(text)
+    while low < high:
+        middle = (low + high + 1) // 2
+        candidate = {**result, 'output': text[:middle],
+                     'truncated': total_bytes > len(text[:middle].encode())}
+        if len(json.dumps(candidate, ensure_ascii=False).encode()) <= cap:
+            low = middle
+        else:
+            high = middle - 1
+    result.update(output=text[:low], truncated=total_bytes > len(text[:low].encode()))
+    return result
+
+
 def frozen_files(root):
     manifest = json.loads((root / 'freeze.json').read_text())
     for name, expected in manifest['files'].items():
@@ -58,8 +74,7 @@ class Workspace:
                 raise RuntimeError('Workspace command timed out; preserve the cell and stop')
         with path.open('rb') as output:
             raw = output.read(max(0, cap))
-        return {'exit_code': code, 'output': raw.decode('utf-8', errors='replace'),
-                'truncated': path.stat().st_size > len(raw), 'seconds': time.monotonic() - started}
+        return bounded_shell_result(code, raw, path.stat().st_size, time.monotonic() - started, cap)
 
     def snapshot(self, directory):
         subprocess.run(['git', '-C', str(self.checkout), 'add', '-A'], check=True)

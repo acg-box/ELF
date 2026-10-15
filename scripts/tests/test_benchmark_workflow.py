@@ -10,12 +10,44 @@ from unittest.mock import Mock, patch
 from scripts.tests.benchmark_support import REPO
 from benchmark_pilot.corpus import digest, save
 from benchmark_pilot.workflow import conversation, source_record, workflow_schemas
-from benchmark_pilot.workspace import frozen_files
+from benchmark_pilot.workspace import bounded_shell_result, frozen_files
 from benchmark_pilot.runtime import Runtime
 from benchmark_pilot.runner import ingest
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_shell_output_bound_counts_json_escaping_and_complete_unicode(self):
+        raw = ('quoted "line" \\ newline\n中文\n' * 1000).encode()
+        for cap in (100, 1000, 12000):
+            value = bounded_shell_result(0, raw, len(raw), 1.5, cap)
+            self.assertLessEqual(len(json.dumps(value, ensure_ascii=False).encode()), cap)
+            self.assertTrue(raw.decode().startswith(value['output']))
+            self.assertTrue(value['truncated'])
+        complete = bounded_shell_result(0, b'line', 4, 0.1, 200)
+        self.assertEqual(complete['output'], 'line')
+        self.assertFalse(complete['truncated'])
+
+    def test_exhausted_output_budget_does_not_disable_file_writes(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            save(root / 'budget-ledger.json', {'requests': []})
+            workspace = Mock()
+            workspace.snapshot.return_value = ['HANDOFF.md']
+            workspace.shell.return_value = {'exit_code': 0, 'output': '', 'truncated': True}
+            def response(messages, condition, closing, protocol, required, tools):
+                name, arguments = ('finish_work', {'summary': 'saved'}) if required else ('shell', {'command': 'write handoff'})
+                return {}, {'choices': [{'message': {'role': 'assistant', 'tool_calls': [{
+                    'id': name, 'function': {'name': name, 'arguments': json.dumps(arguments)}}]}}]}
+            protocol = {'condition': 'no_elf', 'max_evidence_bytes': 0,
+                        'max_tool_result_bytes': 12000, 'max_rounds': 2, 'max_tool_calls': 4}
+            with patch('benchmark_pilot.workflow.request', side_effect=response):
+                result = conversation(root, REPO, workspace, None, [], {}, protocol, 'Save handoff', 0)
+            self.assertEqual(result['status'], 'completed')
+            self.assertEqual(result['evidence_bytes'], 0)
+            self.assertGreater(result['output_omitted_control_bytes'], 0)
+            workspace.shell.assert_called_once()
+            self.assertEqual(workspace.shell.call_args.args[-1], 0)
+
     def test_runtime_owner_is_identical_in_memory_and_persistent_state(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
