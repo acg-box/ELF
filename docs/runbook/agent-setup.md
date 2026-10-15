@@ -82,7 +82,9 @@ The command runs `scripts/local-agent-loop.sh`, which:
 
 The script writes request and response artifacts to `tmp/local-agent-loop/`.
 It stops the background ELF service processes when the demo exits, but it leaves the
-Docker dependency containers running for normal local reuse. Stop dependencies with:
+Docker dependency containers running for normal local reuse. For an interactive
+client, keep the processes from [Start Services](#start-services) running.
+Stop dependencies with:
 
 ```sh
 docker compose -f docker-compose.yml down
@@ -228,31 +230,30 @@ provider-backed `elf.toml`.
 
 ### Codex
 
-Run the local stack first:
+Start the local dependencies and keep the API, worker, and MCP processes from
+[Start Services](#start-services) running. The one-command smoke loop stops its
+processes when its checks finish.
+
+ELF MCP serves Streamable HTTP at the configured `service.mcp_bind`. The local
+config uses `http://127.0.0.1:51893/`. It is not a stdio server. With that service
+running, register its URL in Codex:
 
 ```sh
-cargo make local-agent-loop
+codex mcp add elf-local --url http://127.0.0.1:51893/
+codex mcp list
 ```
 
-For an interactive Codex session, register an MCP server that starts ELF MCP from this
-repository checkout:
-
-```json
-{
-  "mcpServers": {
-    "elf-local": {
-      "command": "cargo",
-      "args": ["run", "-p", "elf-mcp", "--", "-c", "config/local/elf.docker.toml"],
-      "cwd": "<repo-root>"
-    }
-  }
-}
-```
+This uses the [official Codex HTTP registration form](https://developers.openai.com/learn/docs-mcp).
+For a static-key deployment, use the client's environment-backed bearer-token
+option and the matching ELF identity. Keep the token out of checked-in files.
+The local loopback recipe uses `auth_mode = "off"`.
 
 Use the configured MCP tools for the agent-facing loop:
 
 - `elf_docs_put` to store long-form source evidence.
-- `elf_notes_ingest` to store a compact deterministic memory candidate.
+- `elf_events_ingest` to extract memory from the exact captured bytes and their
+  returned document hash and span.
+- `elf_notes_ingest` only for an explicitly supplied deterministic candidate.
 - `elf_searches_create` to recall approved memory.
 - `elf_recall_debug_panel` to inspect selected, dropped, stale, blocked, and
   not-requested context.
@@ -265,24 +266,16 @@ Review and correction routes are admin HTTP operations in the current local reci
 
 ### Claude, Cursor, And MCP-Style Coding Agents
 
-For clients that accept a Claude/Cursor-style MCP server JSON block, use the same
-server command:
-
-```json
-{
-  "mcpServers": {
-    "elf-local": {
-      "command": "cargo",
-      "args": ["run", "-p", "elf-mcp", "--", "-c", "config/local/elf.docker.toml"],
-      "cwd": "<repo-root>"
-    }
-  }
-}
-```
-
-If the client does not support `cwd`, run it from the repository root or replace the
-config argument with the absolute path to the local config. Keep the MCP server
+Start the same service, then configure the client's Streamable HTTP transport
+with `http://127.0.0.1:51893/`. Use that client's supported URL and authentication
+fields. Do not configure the ELF executable as a stdio command. Keep the service
 loopback-only for this runbook.
+
+Registration makes tools available. The host still needs the capture hook and
+fresh-session opening in [the shared integration contract](agent-evidence.md).
+Verify actual capture, a memory-linked original read, and a final checked citation
+before treating a client as integrated. A successful connection alone is not
+cross-session memory acceptance.
 
 ### Generic MCP Clients
 
@@ -291,6 +284,9 @@ Start the MCP bridge directly:
 ```sh
 cargo run -p elf-mcp -- -c config/local/elf.docker.toml
 ```
+
+Connect a Streamable HTTP client to `http://127.0.0.1:51893/`. This command starts
+the HTTP bridge; it does not read MCP requests from standard input.
 
 The local MCP config supplies tenant, project, agent, and read-profile headers:
 

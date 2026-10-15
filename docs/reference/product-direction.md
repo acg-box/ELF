@@ -30,15 +30,23 @@ source access is still a hypothesis. Provenance, correction history, and scoped
 access are useful foundations, but their existence alone is not unique market
 value or customer acceptance.
 
-The latest bounded maintenance trial did not establish memory value. Its first
-batch was affected by prototype tool-budget defects. In the second batch, the
-full-ELF availability arm passed two functional checks, but no formal agent in
-any arm used a native retrieval or memory tool. No second-batch handoff was
-completed, and one source-arm session stopped at a local request-size limit.
-Functional passes therefore do not establish complete workflow acceptance or a
-memory ranking. The optional-tool prototype also differs from the shipped
-memory-first reader. See the
-[trial evidence and limitations](../evidence/benchmarking/2026-10-15-bounded-workflow-trial.md).
+The native capture/read loop now has evidence: MCP preserved six selected
+originals, and a fresh reference Agent read memory-linked originals and cited
+them with valid bindings. Four formal full-ELF readers used memory; three cited
+a memory-delivered original, while one used a current-source fallback. This
+does not install automatic capture into an external Agent client.
+
+The resulting handoff comparison still did not establish incremental memory
+value. Full ELF and indexed originals both covered 21/24 frozen obligations and
+completed 1/4 strict checklists. Full ELF cost about 29% more per reader set.
+Files plus the same authored handoff covered 19/24 and took about half the time.
+These are narrow handoff results, not coding completion or customer acceptance.
+See the [native loop evidence](../evidence/benchmarking/2026-10-15-agent-memory-loop.md).
+
+The earlier optional-tool maintenance trial had no native memory use and suffered
+prototype defects. Keep its
+[limitations](../evidence/benchmarking/2026-10-15-bounded-workflow-trial.md)
+separate; it is not a before/after score for the native loop.
 
 The preceding read-only evidence change raised original-task coverage from 46/64
 to 49/64, while frozen new variants changed from 27/32 to 26/32. Those archive
@@ -48,31 +56,31 @@ separate from the maintenance trial; these are different tasks and integrations.
 
 ## Next coherent slice
 
-Stop the synthetic maintenance optimization line. Do not add another adapter,
-repair batch, representation, or store to obtain a favorable score. The finite
-workflow adapter has been retired; its code and all results remain in the
-experiment record. Reporting defects found during the trial were fixed outside
-the scored comparison, without replacing any saved answer.
+Keep the bounded source-admission fix, shared capture contract, HTTP setup, and
+actual-use gate. The temporary maintenance adapter remains retired. Do not add
+another framework, representation, store, or repair batch to obtain a favorable
+score. Preserve both completed experiments and their failed answers.
 
 For short repository maintenance with an available current checkout, use normal
 file tools and an explicit handoff as the working approach. This is a scoped
 choice while incremental memory benefit is unproved. It does not remove memory
 from other workflows or change the shipped memory-first reader contract.
 
-The next value test must come from an actual work item with a demonstrated
-continuity need. Use the intended Agent integration. Verify capture, current
-source access, and actual use of the declared memory treatment in calibration.
-If the agent never uses that treatment, stop the comparison before a formal run;
-an API smoke check alone is insufficient. A capable baseline needs realistic
-context and file access, and may retain its own notes. Keep functional checks,
-handoff completion, human corrections, and product benefit separate.
+The next isolated correctness target is extraction/admission conformance. Seven
+of 26 candidates exceeded the existing 240-character limit. The candidate stating
+that the source-admission defect was repaired had 266 characters and never entered
+the index; the earlier "not yet fixed" note remained discoverable. Preserve the
+original and make the extractor satisfy its declared contract before revisiting
+the note limit, MMR, or the retrieval store. A source fallback recovered the current
+state in the observed case; that recovery is not a derived-memory benefit.
 
-A specific admission defect is now grounded: dynamic token-generation and
-variable-reference expressions in real source code were rejected as credentials.
-It needs a bounded correctness decision that preserves literal-secret rejection
-and immutable originals. Do not silently skip rejected records, rewrite their
-bytes, or treat index availability as complete. This defect is separate from
-whether derived memory improves the task.
+Any later value test still needs a real continuity need, the intended host,
+verified capture, and actual memory use before comparison. The reference gate
+now enforces a memory-linked original read and checked final citation in each
+full-ELF calibration cell. Check semantic correctness separately; a binding can
+pass while the reader misinterprets a budget amount. A capable baseline may keep
+its own handoff notes. Keep human corrections and product benefit separate from
+functional and integration checks.
 
 Current-original selection and subject/time misuse remain known boundaries.
 Reopen them only for an isolated regression or a real workflow, with a specific

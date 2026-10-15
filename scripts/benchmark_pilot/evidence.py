@@ -2,6 +2,29 @@
 from copy import deepcopy
 
 
+def memory_use(trace, answer, handles=None):
+    """Count delivered memory with bound originals, then trace it into final citations."""
+    handles = handles or {}
+    references = set()
+    notes = set()
+    for step in trace:
+        for tool in step['tools']:
+            if tool['name'] not in ('elf_evidence_pack', 'elf_evidence_recall'):
+                continue
+            pack = tool['result'].get('pack', tool['result'])
+            originals = {s['reference'] for s in pack.get('sources', [])
+                         if s.get('reference') and (s.get('text') or s.get('already_read'))}
+            for note in pack.get('notes', []):
+                bound = originals.intersection(note.get('source_references', []))
+                if bound:
+                    notes.add(note['note_id'])
+                    references.update(handles.get(ref, ref) for ref in bound)
+    cited = {c['reference'] for claim in answer.get('claims', [])
+             for c in claim.get('citations', []) if c.get('kind') == 'reference'}
+    return {'notes_read': len(notes), 'originals_read': len(references),
+            'originals_cited': len(references.intersection(cited))}
+
+
 def compact_check(response):
     # Keep every verdict and dependency slot. Repeating source bodies is unnecessary.
     return {'claims': [{k: v for k, v in claim.items() if k != 'resolved_citations'}

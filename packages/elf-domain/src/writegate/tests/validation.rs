@@ -58,3 +58,34 @@ fn environment_reference_exemption_does_not_accept_literal_or_fallback_secrets()
 		assert!(writegate::contains_secrets(source), "Secret-like source was accepted: {source}");
 	}
 }
+
+#[test]
+fn accepts_generated_tokens_and_keyword_references_in_real_source() {
+	for source in [
+		"token = secrets.token_hex(24)",
+		"token = secrets.token_urlsafe()",
+		"env.update(LITELLM_API_KEY=token, LITELLM_BASE_URL=base,\n    OPENAI_API_KEY=token)",
+		include_str!("../../../../../scripts/benchmark_budget.py"),
+	] {
+		assert!(!writegate::contains_secrets(source), "Runtime source was rejected.");
+	}
+}
+
+#[test]
+fn runtime_expressions_do_not_hide_literal_credentials() {
+	for source in [
+		"password: hunter2",
+		"token = hunter2",
+		"env.update(API_KEY='hunter2')",
+		"env.update(API_KEY=token, PASSWORD='hunter2')",
+		"env.update(API_KEY=token,\n    PASSWORD='hunter2')",
+		"token = secrets.token_hex(24) or 'hunter2'",
+		"token = secrets.token_hex('hunter2')",
+		"token = unknown_generator(24)",
+		"env.update(API_KEY=token + 'hunter2')",
+		"env.update(API_KEY=token); password = hunter2",
+		"env.update(API_KEY=token, SECRET=sk-abcdefghijklmnopqrstuvwxyz)",
+	] {
+		assert!(writegate::contains_secrets(source), "Secret-like source was accepted: {source}");
+	}
+}

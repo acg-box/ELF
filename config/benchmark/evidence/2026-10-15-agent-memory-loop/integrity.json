@@ -1,0 +1,127 @@
+{
+  "fixture_sha256": "e34280871bb51e5b77d68be900ce96f27b7a03b510d3e976f08765ded0e95f79",
+  "source_commit": "6dce5eb413b732d4dc6cd172270011e8aed3ded9",
+  "harness_files": {
+    "config/agent/evidence-reader.md": "8c5eacade724230f7c3fcfa4ef1972b8000090bfbc90c7c7922c2a8300e7e64a",
+    "scripts/benchmark_pilot/runner.py": "dc7f096d278b5776e1c6bd83863af7aa97576240353e73df313ed113ad23d208",
+    "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+    "scripts/benchmark_pilot/runtime.py": "99cbc6bad3bf2ea76b577d062be584a2db50a98fb3f137a9ca5b6d26aa0a26e1",
+    "scripts/benchmark_pilot/evidence.py": "9b023ec5c30c084bc72cf9db18051459e713db23a3c509eba2e2c16a15aef3ee",
+    "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9"
+  },
+  "native": [
+    {
+      "stage": 0,
+      "sources_verified": 3,
+      "vectors": {
+        "doc_chunk_embeddings": [
+          {
+            "embedding_dim": 4096,
+            "count": 7
+          }
+        ],
+        "note_embeddings": [
+          {
+            "embedding_dim": 4096,
+            "count": 14
+          }
+        ],
+        "note_chunk_embeddings": [
+          {
+            "embedding_dim": 4096,
+            "count": 14
+          }
+        ],
+        "note_field_embeddings": []
+      },
+      "notes": 14
+    },
+    {
+      "stage": 1,
+      "sources_verified": 6,
+      "vectors": {
+        "doc_chunk_embeddings": [
+          {
+            "embedding_dim": 4096,
+            "count": 11
+          }
+        ],
+        "note_embeddings": [
+          {
+            "embedding_dim": 4096,
+            "count": 17
+          }
+        ],
+        "note_chunk_embeddings": [
+          {
+            "embedding_dim": 4096,
+            "count": 17
+          }
+        ],
+        "note_field_embeddings": []
+      },
+      "notes": 17
+    }
+  ],
+  "capture_transport": "Native MCP Streamable HTTP",
+  "reader_transport": "Existing HTTP reference host, fresh process per cell",
+  "capture_shared_contract": "v5",
+  "originals_unchanged": true,
+  "literal_credential_native_rejection": true,
+  "admission": {
+    "proposals": 26,
+    "added": 17,
+    "rejected_too_long": 7,
+    "ignored_policy": 2,
+    "latest_work_receipt": {
+      "proposals": 3,
+      "added": 1,
+      "rejected_lengths": [
+        266,
+        261
+      ],
+      "limit": 240
+    }
+  },
+  "calibration": {
+    "memory_notes_read": 3,
+    "memory_originals_read": 2,
+    "memory_originals_cited": 2,
+    "bindings_verified": true,
+    "semantic_acceptance": false
+  },
+  "startup_deviation": "An empty MCP SSE priming event failed the first private probe parser before any provider request. The failed receipt remains; parsing was repaired before capture. No recorded reader cell was repeated.",
+  "restore": {
+    "source_count": 6,
+    "postgres_state_equal": true,
+    "qdrant": [
+      {
+        "collection": "doc_chunks_v1",
+        "dimension": 4096,
+        "points": 11,
+        "stored_vector_query_passed": true
+      },
+      {
+        "collection": "mem_notes_v2",
+        "dimension": 4096,
+        "points": 17,
+        "stored_vector_query_passed": true
+      }
+    ],
+    "image_manifests": {
+      "db": [
+        "pgvector/pgvector@sha256:2358fcba361ed2233a5ed81b5fe4ca779ccb304120ce531a3bf51c0ed7e2bc11"
+      ],
+      "qdrant": [
+        "qdrant/qdrant@sha256:b3063c673f3973877c038eeecc392bad5011f072ee7892b56c9a8e204a3bdea9"
+      ]
+    }
+  },
+  "private_receipt_hashes": {
+    "review.json": "0fc1d13a38c8dacbd5a49613e414f65b3dd0da301e87a52ce03e286f513bdd47",
+    "native-capture-calibration.json": "600de0321989edf8aa4712a27eaf827da410518e70684db54ce06cb04072d6da",
+    "native-capture-formal.json": "faa5954b64e659e882f18f468dd9c4c53a564c0aff4f9d46edaec3abf6fb47bc",
+    "calibration-admission.json": "469276ebdb0f14633267505328b641341a4acbcb94b731d32689df55c3cd6721",
+    "provider-work-closed.json": "114e1fc159084d9473e700a9f9bbf77620951ef4b871f6e340a92a9668701732"
+  }
+}

@@ -49,6 +49,11 @@ explicit expression matcher is limited to the supported forms and fails closed
 for other assignments. Revisit that choice if more language-specific forms become
 necessary; do not grow it into a general parser.
 
+The [2026-10-15 follow-up](2026-10-15-agent-memory-loop.md) extends the accepted
+forms to bounded runtime token generation and keyword-variable references after
+the actual gateway file was rejected. That decision owns the extension; the
+original trial and its dated evidence remain unchanged.
+
 ## Evidence boundary
 
 Freeze questions, source hashes, chronological membership, and required outcomes

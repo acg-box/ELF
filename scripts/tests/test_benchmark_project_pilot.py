@@ -15,6 +15,8 @@ from benchmark_pilot.corpus import load, spans
 from benchmark_pilot.corpus import save
 from benchmark_pilot.export import export
 from benchmark_pilot.runtime import Runtime
+from benchmark_pilot.runner import document_request, require_calibration
+from benchmark_pilot.evidence import memory_use
 from benchmark_pilot.tools import SourceTools, opening_tool, schemas
 
 
@@ -44,6 +46,48 @@ class ProjectPilotTests(unittest.TestCase):
         trace[0]['tools'][0]['result']['items'] = [{'note_id': 'a'}]
         self.assertEqual(opening_tool('full_elf', trace), 'elf_evidence_pack')
         self.assertIsNone(opening_tool('full_elf', trace * 2))
+
+    def test_chat_capture_preserves_original_role_and_origin(self):
+        origin = {'schema': 'doc_source_ref/v1', 'doc_type': 'chat',
+                  'thread_id': 'session-1', 'role': 'assistant', 'ts': self.source['timestamp'],
+                  'source_kind': 'chat_excerpt', 'canonical_uri': 'local://session-1/message-1'}
+        source = {**self.source, 'role': 'assistant', 'source_ref': origin}
+        request = document_request(source)
+        self.assertEqual(request['content'].encode(), self.source['text'].encode())
+        self.assertEqual(request['source_ref']['role'], 'assistant')
+        self.assertEqual(request['source_ref']['canonical_uri'], origin['canonical_uri'])
+        self.assertNotIn('commit_sha', request['source_ref'])
+        self.assertNotIn('captured_at', origin)
+
+    def test_formal_admission_requires_memory_originals_in_checked_calibration(self):
+        trace = [{'tools': [{'name': 'elf_searches_create', 'result': {'items': [{'note_id': 'n1'}]}}]}]
+        answer = {'claims': [{'citations': [{'kind': 'reference', 'reference': 'native-ref'}]}]}
+        handles = {'E1': 'native-ref'}
+        self.assertEqual(memory_use(trace, answer, handles)['originals_cited'], 0)
+        trace.append({'tools': [{'name': 'elf_evidence_pack', 'result': {
+            'notes': [{'note_id': 'n1', 'source_references': ['E1']}],
+            'sources': [{'reference': 'E1', 'text': 'Exact original'}]}}]})
+        used = memory_use(trace, answer, handles)
+        self.assertEqual(used, {'notes_read': 1, 'originals_read': 1, 'originals_cited': 1})
+        self.assertEqual(memory_use(trace, {'claims': []}, handles)['originals_cited'], 0)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            protocol = {'conditions': ['full_elf'], 'calibration_repetitions': 1}
+            tasks = [{'id': 'cal', 'phase': 'calibration'}]
+            save(root / 'calibration-completed.json', {})
+            with self.assertRaises(ValueError):
+                require_calibration(root, protocol, tasks)
+            row = {'task_id': 'cal', 'phase': 'calibration', 'condition': 'full_elf',
+                   'repetition': 1, 'status': 'completed', 'memory_use': used,
+                   'all_references_seen': True, 'claim_bindings': {'claims': [{'binding_verified': True}]}}
+            path = root / 'cases/cal--full_elf--1/result.json'
+            save(path, row)
+            require_calibration(root, protocol, tasks)
+            for changes in ({'memory_use': {}}, {'status': 'invalid_answer'},
+                            {'all_references_seen': False}, {'claim_bindings': {'claims': [{'binding_verified': False}]}}):
+                save(path, {**row, **changes})
+                with self.assertRaises(ValueError):
+                    require_calibration(root, protocol, tasks)
 
     def test_source_control_hydrates_before_more_discovery(self):
         trace = [{'tools': [{'name': 'elf_docs_search_l0', 'result': {'items': [{'doc_id': 'a'}]}}]}]
