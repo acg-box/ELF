@@ -1,8 +1,15 @@
 """Verify public measurements without access to private project source text."""
 import hashlib
 import json
+import math
 from pathlib import Path
 import sys
+
+
+def explicit_cost(row):
+    """Match the gateway's settled-cost semantics without a repository import."""
+    value = (row.get('usage') or {}).get('cost')
+    return value if isinstance(value, (int, float)) and math.isfinite(value) and value >= 0 else None
 
 
 def verify(root):
@@ -16,12 +23,14 @@ def verify(root):
     ledger = json.loads((root / 'request-ledger.json').read_text())
     assert [r['ordinal'] for r in ledger] == list(range(1, len(ledger) + 1))
     assert all(r['status'] in ('completed', 'uncertain', 'provider_failed', 'completed_cost_unknown') for r in ledger)
-    paid = sum(r['usage'].get('cost', 0) for r in ledger)
-    exposure = sum(r['usage']['cost'] if r['status'] == 'completed' else max(r['reserved_usd'], r['usage'].get('cost', 0)) for r in ledger)
+    opening_paid = data['new_budget'].get('prior_paid_usd', 0)
+    paid = opening_paid + sum(explicit_cost(r) or 0 for r in ledger)
+    exposure = opening_paid + sum(explicit_cost(r) if r['status'] == 'completed' and explicit_cost(r) is not None
+        else max(r['reserved_usd'], explicit_cost(r) or 0) for r in ledger)
     assert abs(paid - data['new_budget']['paid_usd']) < 1e-8
     assert abs(exposure - data['new_budget']['exposure_usd']) < 1e-8
     prior = data['exploration']['requests']
-    assert abs(sum(r['usage'].get('cost', 0) for r in ledger[:prior]) - data['exploration']['paid_usd']) < 1e-8
+    assert abs(opening_paid + sum(explicit_cost(r) or 0 for r in ledger[:prior]) - data['exploration']['paid_usd']) < 1e-8
     for row in ledger[prior:]:
         if row['kind'] == 'chat':
             if row['status'] == 'completed':
@@ -38,18 +47,26 @@ def verify(root):
         assert cell['review']['accepted'] == (cell['review']['passed_criteria'] == cell['required_criteria'] and not cell['review']['flags'])
         first, last = cell['request_interval']
         assert prior <= first < last <= len(ledger)
-        assert abs(sum(r['usage'].get('cost', 0) for r in ledger[first:last]) - cell['paid_usd']) < 1e-8
+        assert abs(sum(explicit_cost(r) or 0 for r in ledger[first:last]) - cell['paid_usd']) < 1e-8
     for condition, summary in data['summary'].items():
         group = [c for c in cells if c['condition'] == condition and c['phase'] == 'formal']
-        assert summary['planned'] == summary['measured'] == len(group)
+        assert summary['measured'] == len(group) <= summary['planned']
+        if 'formal_task_count' in protocol:
+            assert summary['planned'] == protocol['formal_task_count'] * protocol['formal_repetitions']
         assert summary['completed'] == sum(c['status'] == 'completed' for c in group)
         assert summary['semantic_acceptance'] == sum(c['review']['accepted'] for c in group)
         assert summary['reviewed'] == len(group)
         assert summary['reviewed_criteria'] == sum(c['required_criteria'] for c in group)
         assert summary['passed_criteria'] == sum(c['review']['passed_criteria'] for c in group)
         assert abs(summary['paid_usd'] - sum(c['paid_usd'] for c in group)) < 1e-9
-        matched = [c for c in group if not any(other['status'] in ('transport_failed', 'harness_failed')
-                   for other in cells if other['phase'] == 'formal' and other['task_id'] == c['task_id'] and other['repetition'] == c['repetition'])]
+        matched = []
+        for cell in group:
+            pair = [other for other in cells if other['phase'] == 'formal'
+                    and (other['task_id'], other['repetition']) == (cell['task_id'], cell['repetition'])]
+            if (len(pair) == len(protocol['conditions'])
+                    and {other['condition'] for other in pair} == set(protocol['conditions'])
+                    and not any(other['status'] in ('transport_failed', 'harness_failed') for other in pair)):
+                matched.append(cell)
         assert summary['matched_content_cells'] == len(matched)
         assert summary['matched_criteria'] == sum(c['required_criteria'] for c in matched)
         assert summary['matched_passed_criteria'] == sum(c['review']['passed_criteria'] for c in matched)
@@ -60,8 +77,9 @@ def verify(root):
         for rows in stage['vectors'].values():
             assert all(r['embedding_dim'] == 4096 for r in rows)
     expected_formal = sum(v['planned'] for v in data['summary'].values())
-    assert sum(c['phase'] == 'formal' for c in cells) == expected_formal
-    assert sum(c['phase'] == 'calibration' for c in cells) == 2 * protocol['calibration_repetitions'] * len(protocol['conditions'])
+    recorded_formal = sum(c['phase'] == 'formal' for c in cells)
+    assert recorded_formal == sum(s['measured'] for s in data['summary'].values()) <= expected_formal
+    assert sum(c['phase'] == 'calibration' for c in cells) <= protocol.get('calibration_task_count', 2) * protocol['calibration_repetitions'] * len(protocol['conditions'])
     accounted = data['exploration']['paid_usd'] + sum(v['paid_usd'] for v in data['preparation'].values()) + sum(c['paid_usd'] for c in cells)
     if data.get('native_recall_diagnostic'):
         accounted += data['native_recall_diagnostic']['paid_usd']
@@ -85,6 +103,7 @@ def verify(root):
     assert restore['source_count'] == len(sources) and restore['postgres_state_equal']
     assert all(row['dimension'] == 4096 and (row['stored_vector_query_passed'] if row['points'] else row['stored_vector_query_passed'] is None) for row in restore['qdrant'])
     return {'verified_cells': len(cells), 'original_records': len(sources),
+            'formal_cells': {'planned': expected_formal, 'recorded': recorded_formal},
             'paid_usd': data['new_budget']['paid_usd'],
             'boundary': 'Artifact integrity and metric consistency only; private semantic review is not independently reproduced.'}
 

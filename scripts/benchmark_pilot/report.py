@@ -63,6 +63,7 @@ def measurements(root, fixture):
             paired.setdefault((row['task_id'], row['repetition']), []).append(row)
     comparable = {key for key, group in paired.items()
                   if len(group) == len(protocol['conditions'])
+                  and {row['condition'] for row in group} == set(protocol['conditions'])
                   and not any(row['status'] in ('transport_failed', 'harness_failed') for row in group)}
     summary = {}
     for condition in protocol['conditions']:
@@ -142,7 +143,9 @@ def measurements(root, fixture):
     paid, exposure = totals(ledger)
     exploration_path = root / 'exploration.json'
     exploration_count = json.loads(exploration_path.read_text())['prior_request_count'] if exploration_path.exists() else 0
-    exploration_paid, exploration_exposure = totals({'requests': ledger['requests'][:exploration_count]})
+    prior_paid = ledger.get('prior_paid_usd', 0)
+    exploration_paid, exploration_exposure = totals({'prior_paid_usd': prior_paid,
+                                                   'requests': ledger['requests'][:exploration_count]})
     diagnostic_path = root / 'retrieval-diagnostic.json'
     diagnostic = json.loads(diagnostic_path.read_text()) if diagnostic_path.exists() else None
     diagnostic_summary = None if diagnostic is None else {
@@ -158,7 +161,8 @@ def measurements(root, fixture):
     return {'schema': 'elf.real_project_measurements/v1', 'summary': summary, 'cells': results,
             'preparation': setup,
             'preparation_cost_basis': 'Incremental replay cost; cold-start amortization is not estimated.' if protocol.get('reuse_receipts') or protocol.get('frozen_extraction') else 'Recorded provider preparation cost.',
-            'new_budget': {'paid_usd': paid, 'exposure_usd': exposure, 'ceiling_usd': 10},
+            'new_budget': {'paid_usd': paid, 'exposure_usd': exposure, 'ceiling_usd': 10,
+                           'prior_paid_usd': prior_paid},
             'exploration': {'requests': exploration_count, 'paid_usd': exploration_paid, 'exposure_usd': exploration_exposure},
             'native_writes': writes,
             'native_recall_diagnostic': diagnostic_summary,

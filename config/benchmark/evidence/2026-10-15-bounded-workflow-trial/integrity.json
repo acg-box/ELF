@@ -1,0 +1,88 @@
+{
+  "base_revision": "da5b18e53469f082a20cfde36f5f8fd7cae108de",
+  "fixture_original": "4508227d04862827a66872b3e89c418787c59f2657367242e0f7294c91ed681e",
+  "fixture_after_coverage_amendment": "2e08bd908728b713febd23e790faea3da4206d929b3815bdb57838ad8ec11f7f",
+  "task_and_acceptance_files": {
+    "calibration-0.md": "ced35dee8656f6027f3de9754f06a876323f44533771c478c57b4fb1ecb5b8e3",
+    "calibration-1.md": "60a1c3e1281ec88cb8df063c2f065e02958f1b5d55e54ba1d7ea3eae74da9648",
+    "calibration-check.py": "4344980653a0fb434f8fc6661e327a0fd75e39b9a416fa3fac3975fee2606407",
+    "opening-budget-0.md": "0998177b1232894f3494f1dec76200d1bb68a6175192b1cafebb9caa61e0e809",
+    "opening-budget-1.md": "b7140b50008ff4757112269ea5f1c93ac127d7da476350e63cc5f1e1fa96f236",
+    "opening-budget-check.py": "b413f3f4989b191a5dc4492601b86a9475882413a705056d3c5f768a026b45cc",
+    "partial-evidence-0.md": "1a8cbf3c3f6c33806686d06c4bd75d3813af63e8a41007b4532b424e03d8fb62",
+    "partial-evidence-1.md": "e3c5386e2f7925cf9d62b0fc2bbeb707e8a3e1b8ab440f92c7ca38478a0da3ed",
+    "partial-evidence-check.py": "90b88925d0f618aeaf0f302308ea3f6aa28b8f46712efd9aaa9bad7f7554c501"
+  },
+  "execution_versions": {
+    "49f2f7055f310926ec33c6bf15749a6325dba18b": {
+      "files": {
+        "scripts/benchmark_pilot/runner.py": "0b2f4c3de76e916052b49bba522630eb8772f660342bebcbe225277474bc160c",
+        "scripts/benchmark_pilot/workflow.py": "4bd01090f84f591d8601e266937a34a2127cdc4b4e5947932e79ded37218b752",
+        "scripts/benchmark_pilot/workspace.py": "073594ffc37d4e393c32aa5e57c2b95099f6ac8b25aa591fd0c1987ff8b12a21",
+        "scripts/benchmark_pilot/runtime.py": "40599878063d9c0a79523d5caf094909f3d14d991cf1791af32bb03e06b9566c",
+        "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+        "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9"
+      }
+    },
+    "f649241a14d8578bc51c9ec02245535b8fb923b0": {
+      "files": {
+        "scripts/benchmark_pilot/runner.py": "f5b7ad24da70bcd52dbdf5ef527802759c75bbc4f91263041121533fffc10c20",
+        "scripts/benchmark_pilot/workflow.py": "8bc001a71e63870e91afc7d247dfcac53ea22ed9e452926c8f02f879e385f538",
+        "scripts/benchmark_pilot/workspace.py": "073594ffc37d4e393c32aa5e57c2b95099f6ac8b25aa591fd0c1987ff8b12a21",
+        "scripts/benchmark_pilot/runtime.py": "99cbc6bad3bf2ea76b577d062be584a2db50a98fb3f137a9ca5b6d26aa0a26e1",
+        "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+        "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9"
+      }
+    },
+    "0433a096dd3ea0ed17f44ecf03c9e5d7ae2a4abe": {
+      "files": {
+        "scripts/benchmark_pilot/runner.py": "34cd9e1774838fd19722c1ae1e942ef4bb685dbb4206b3ab65bf3dc02078aeae",
+        "scripts/benchmark_pilot/workflow.py": "301e815f6dbed03ce6e75132861ab0682246a7d9f0a3be64d89be3d7e7603d43",
+        "scripts/benchmark_pilot/workspace.py": "073594ffc37d4e393c32aa5e57c2b95099f6ac8b25aa591fd0c1987ff8b12a21",
+        "scripts/benchmark_pilot/runtime.py": "40599878063d9c0a79523d5caf094909f3d14d991cf1791af32bb03e06b9566c",
+        "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+        "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9"
+      }
+    },
+    "3de0a9edf2a8879db719f1a8472ab0cd4830b78c": {
+      "files": {
+        "scripts/benchmark_pilot/runner.py": "148a08ab21f177ae8f1bfd5cdc3ad052c277cfce28be166539232578a13ff723",
+        "scripts/benchmark_pilot/workflow.py": "d3eb8b993215d7852d89cc59c95a52984fe9bb3187850f689ba8bbbb9c6466d3",
+        "scripts/benchmark_pilot/workspace.py": "073594ffc37d4e393c32aa5e57c2b95099f6ac8b25aa591fd0c1987ff8b12a21",
+        "scripts/benchmark_pilot/runtime.py": "40599878063d9c0a79523d5caf094909f3d14d991cf1791af32bb03e06b9566c",
+        "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+        "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9"
+      }
+    },
+    "54a226375c5fa1293014415461c10668b1ff8997": {
+      "files": {
+        "scripts/benchmark_pilot/runner.py": "148a08ab21f177ae8f1bfd5cdc3ad052c277cfce28be166539232578a13ff723",
+        "scripts/benchmark_pilot/workflow.py": "1d3f7c10a26e33d230858fe9bb5648bdf50eec8338f9b341c4ac90c4d8300b07",
+        "scripts/benchmark_pilot/workspace.py": "8c10a7a6108d8426dd45d5b8d27088fb147d0bdca788a89d383f090389550092",
+        "scripts/benchmark_pilot/runtime.py": "40599878063d9c0a79523d5caf094909f3d14d991cf1791af32bb03e06b9566c",
+        "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+        "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9"
+      }
+    },
+    "8747c24a33283c80a431587ea8d39197dba3eaab": {
+      "files": {
+        "scripts/benchmark_pilot/runner.py": "148a08ab21f177ae8f1bfd5cdc3ad052c277cfce28be166539232578a13ff723",
+        "scripts/benchmark_pilot/workflow.py": "344f42547c4c50ebdd9d84969095b60e86bfaff631688836b021d24a4f206306",
+        "scripts/benchmark_pilot/workspace.py": "8c10a7a6108d8426dd45d5b8d27088fb147d0bdca788a89d383f090389550092",
+        "scripts/benchmark_pilot/runtime.py": "40599878063d9c0a79523d5caf094909f3d14d991cf1791af32bb03e06b9566c",
+        "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+        "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9"
+      }
+    }
+  },
+  "protocol_deviations": [
+    "Unscored calibration repaired runtime ownership and generated-record provenance before formal native readers.",
+    "After the first file-only trajectory, native source-policy refusals were recorded while all arms retained unchanged file access.",
+    "The first batch violated its serialized output budget and blocked file actions; it is diagnostic only.",
+    "Before the second batch, output bounding and zero-output file actions were fixed, and Git postprocessing moved inside Docker.",
+    "One second-batch session stopped at the unchanged local request-body limit; only unstarted trajectories continued.",
+    "A stricter zero-success rule was clarified before any formal full-ELF outcome. No task or acceptance program changed."
+  ],
+  "new_paid_calls": 377,
+  "raw_questions_answers_and_traces_published": false
+}

@@ -10,6 +10,7 @@ related:
   - docs/spec/agent_memory_knowledge_system_v1.md
   - docs/evidence/external_memory/2026-10-15-product-alignment.md
   - docs/evidence/benchmarking/2026-10-15-qualified-memory-evidence.md
+  - docs/evidence/benchmarking/2026-10-15-bounded-workflow-trial.md
   - docs/evidence/benchmarking/2026-10-14-bounded-source-evidence.md
   - docs/decisions/2026-10-13-project-memory-trial.md
 ---
@@ -29,51 +30,55 @@ source access is still a hypothesis. Provenance, correction history, and scoped
 access are useful foundations, but their existence alone is not unique market
 value or customer acceptance.
 
-The October 15 read-only evidence change raised full ELF's original-task
-coverage from 46/64 to 49/64 and complete acceptance from 3/16 to 6/16. On four
-new frozen variants, coverage changed from 27/32 to 26/32 and acceptance from
-3/8 to 2/8. This is mixed evidence, not a stable task-quality gain. An attempted
-extractor expansion caused nine structured-binding rejections and was reverted.
-The delivered path preserves existing note context and already bound quotations
-without a new extraction pass.
+The latest bounded maintenance trial did not establish memory value. Its first
+batch was affected by prototype tool-budget defects. In the second batch, the
+full-ELF availability arm passed two functional checks, but no formal agent in
+any arm used a native retrieval or memory tool. No second-batch handoff was
+completed, and one source-arm session stopped at a local request-size limit.
+Functional passes therefore do not establish complete workflow acceptance or a
+memory ranking. The optional-tool prototype also differs from the shipped
+memory-first reader. See the
+[trial evidence and limitations](../evidence/benchmarking/2026-10-15-bounded-workflow-trial.md).
 
-The source-only control reached 47/64 on original tasks and 26/32 on new tasks;
-full ELF cost more per original answer. File-control coverage varied substantially
-without a tool change. All arms use the native citation checker. This is a small
-retrospective archive replay, not a current-checkout shell agent or a natural
-customer workflow. Supplied originals are a selection diagnostic, not a model
-ceiling. One ambiguous promotion-receipt item has a symmetric sensitivity
-exclusion; raw frozen scores remain available. See the
-[complete evidence and limits](../evidence/benchmarking/2026-10-15-qualified-memory-evidence.md).
+The preceding read-only evidence change raised original-task coverage from 46/64
+to 49/64, while frozen new variants changed from 27/32 to 26/32. Those archive
+results remain mixed evidence. Keep their
+[original scoring and boundaries](../evidence/benchmarking/2026-10-15-qualified-memory-evidence.md)
+separate from the maintenance trial; these are different tasks and integrations.
 
 ## Next coherent slice
 
-The next work is a bounded maintenance trial, not another memory feature patch.
-The previous archive questions remain regression evidence. Two real gaps in the
-benchmark tooling provide executable deliverables: preserve opening settlement
-cost in public reports, and verify partial evidence without pretending a stopped
-trial completed its plan.
+Stop the synthetic maintenance optimization line. Do not add another adapter,
+repair batch, representation, or store to obtain a favorable score. The finite
+workflow adapter has been retired; its code and all results remain in the
+experiment record. Reporting defects found during the trial were fixed outside
+the scored comparison, without replacing any saved answer.
 
-Compare ordinary current-checkout tools and file handoffs, indexed originals,
-and full ELF in two fresh sessions per task. The second session gets a frozen
-requirement update. Every arm can edit, test, and keep its own handoff. Measure
-accepted patches, critical scope/integrity errors, repeated inspection, elapsed
-time, and total provider cost including preparation. These are controlled
-maintenance episodes; scripted updates are not natural human corrections.
+For short repository maintenance with an available current checkout, use normal
+file tools and an explicit handoff as the working approach. This is a scoped
+choice while incremental memory benefit is unproved. It does not remove memory
+from other workflows or change the shipped memory-first reader contract.
 
-Freeze both small batches and their stop rule before execution. If neither batch
-shows the predeclared useful effect, stop this optimization line for that
-workflow and use ordinary files or source access by default. Do not add another
-repair batch to rescue these tasks. The
-[workflow trial decision](../decisions/2026-10-15-workflow-pilot.md) owns the
-protocol and thresholds. It does not establish customer readiness or justify
-removing memory from unrelated workflows.
+The next value test must come from an actual work item with a demonstrated
+continuity need. Use the intended Agent integration. Verify capture, current
+source access, and actual use of the declared memory treatment in calibration.
+If the agent never uses that treatment, stop the comparison before a formal run;
+an API smoke check alone is insufficient. A capable baseline needs realistic
+context and file access, and may retain its own notes. Keep functional checks,
+handoff completion, human corrections, and product benefit separate.
 
-Original selection and subject/time misuse remain known failure boundaries.
-Address them only when a real workflow or an isolated regression establishes a
-specific cause. A newer capture timestamp, valid citation, or similar subject
-name must not become authority. Resolve ambiguous expected outcomes before a
-new quality claim.
+A specific admission defect is now grounded: dynamic token-generation and
+variable-reference expressions in real source code were rejected as credentials.
+It needs a bounded correctness decision that preserves literal-secret rejection
+and immutable originals. Do not silently skip rejected records, rewrite their
+bytes, or treat index availability as complete. This defect is separate from
+whether derived memory improves the task.
+
+Current-original selection and subject/time misuse remain known boundaries.
+Reopen them only for an isolated regression or a real workflow, with a specific
+cause and an acceptance test. Future paid work still requires a frozen scope and
+admission under the existing cumulative ledger; unused budget is not a reason to
+continue experiments.
 
 ## Decisions under review
 
@@ -81,7 +86,7 @@ new quality claim.
 | --- | --- | --- |
 | PostgreSQL authority plus Qdrant retrieval | Retain the supported deployment. Qwen3-Embedding-8B uses the full 4096-dimensional profile in the current experiment. | Representative quality, load, recovery, or operating-cost evidence supports a simpler or better design. A vendor speed claim is insufficient. |
 | MMR and the 240-character note limit | Hold fixed for the next causal comparison. | Admission/recall evidence isolates them as the cause and a controlled test improves task outcomes. |
-| Mandatory memory opening in the reference host | Retain for reproduction; test task-appropriate routing separately. | A frozen comparison can show when memory-first, source-first, or direct current-file access is useful. This review does not change the shipped reader contract. |
+| Mandatory memory opening in the reference host | Retain the shipped contract. The optional-tool maintenance trial did not exercise it. | A frozen comparison can show when memory-first, source-first, or direct current-file access is useful. This review does not change the shipped reader contract. |
 | Compact facts as the main derived representation | Keep short notes with read-time bound source quotes. The extra model transcription into structured facts was rejected. | Observed workflows require a different representation and existing source/procedure references cannot meet the obligation. |
 | Stronger reader or extraction model | Evaluate roles separately when justified. Model size and coding scores do not grant authority. | A bounded diagnostic separates generation, retrieval, and use failures and reports total cost. |
 | Live verification of reusable lessons | Candidate for a narrow read-only probe through the application. | Current-state failures persist and an authorized source can resolve the uncertainty. Do not add broad background crawling. |

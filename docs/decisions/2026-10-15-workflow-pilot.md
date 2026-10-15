@@ -2,16 +2,23 @@
 type: Decision
 title: Bound the next memory trial with real maintenance outcomes
 description: Compare cross-session development with file handoffs, indexed originals, and native memory.
-status: accepted
-authority: normative
+status: completed
+authority: informative
 owner: benchmark
 last_verified: 2026-10-15
 related:
   - docs/spec/agent_memory_knowledge_system_v1.md
   - docs/reference/product-direction.md
   - docs/decisions/2026-10-13-project-memory-trial.md
+  - docs/evidence/benchmarking/2026-10-15-bounded-workflow-trial.md
 ---
 # Bound the next memory trial with real maintenance outcomes
+
+The trial is closed. This document retains the proposed design; it is not an
+active execution plan. The [completed evidence](../evidence/benchmarking/2026-10-15-bounded-workflow-trial.md)
+records protocol deviations, invalid first-batch comparisons, and absent native
+tool use. The finite adapter is retired. Do not infer a successful product test
+from this protocol or start another paid batch under it.
 
 ## Outcome and scope
 

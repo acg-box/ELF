@@ -72,7 +72,10 @@ def export(root, destination):
                 'embedding_provider', 'reranker', 'extraction_window_bytes', 'memory_notes_per_event',
                 'budget_usd', 'calibration_tranche_usd', 'paid_retries', 'ranking_or_prompt_tuning_after_formal_start',
                 'host_opening', 'hydrate_sources', 'client_v3', 'note_character_limit', 'mmr_enabled', 'frozen_extraction', 'agent_contract', 'omit_chat_temperature', 'chat_prompt_price', 'chat_completion_price', 'extractor_parse_attempts'}
-    save(destination / 'protocol.json', {k: v for k, v in json.loads((fixture / 'protocol.json').read_text()).items() if k in controls})
+    public_protocol = {k: v for k, v in json.loads((fixture / 'protocol.json').read_text()).items() if k in controls}
+    public_protocol.update({phase + '_task_count': sum(task['phase'] == phase for task in tasks)
+                            for phase in ('formal', 'calibration')})
+    save(destination / 'protocol.json', public_protocol)
     native = []
     for path in sorted(root.glob('native-stage-*.json')):
         state = json.loads(path.read_text())

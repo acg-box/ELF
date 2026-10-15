@@ -29,11 +29,11 @@ def usage(root):
     return {'paid_usd': paid, 'exposure_usd': exposure, 'requests': len(ledger['requests'])}
 
 
-def request(messages, condition, closing, protocol, required_tool=None, tool_schemas=None):
+def request(messages, condition, closing, protocol, required_tool=None):
     payload = {'model': protocol['model'], 'messages': messages,
                'max_tokens': protocol['max_output_tokens'], 'reasoning': {'effort': protocol['reasoning']}}
     if protocol.get('client_v3'):
-        available = schemas(condition, True) if tool_schemas is None else tool_schemas
+        available = schemas(condition, True)
         if closing:
             available = [tool for tool in available if tool['function']['name'] == 'submit_answer']
             required_tool = 'submit_answer'
@@ -184,37 +184,16 @@ def ingest(rt, root, sources, stage, protocol):
             'captured_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'source_created_at': source['timestamp'], 'trust_label': 'user_captured',
             'pilot_source_id': source['id']}, 'content': source['text']}
-        if source['kind'] == 'work_record':
-            body['source_ref'].update(doc_type='chat', source_kind='chat_excerpt',
-                thread_id=source['canonical_uri'].split('/')[2],
-                role='assistant' if source['path'] == 'HANDOFF.md' else 'user',
-                canonical_uri=source['canonical_uri'], source_content_hash=source['sha256'],
-                trust_label='unverified' if source['path'] == 'HANDOFF.md' else 'user_captured')
-            body['source_ref'].pop('commit_sha')
-            body['source_ref'].pop('repo')
-        try:
-            doc = rt.api('/v2/docs', body)
-        except urllib.error.HTTPError as error:
-            if not protocol.get('record_source_policy_rejections'):
-                raise
-            detail = error.read().decode(errors='replace')
-            if error.code != 400 or json.loads(detail).get('message') != 'content contains secrets.':
-                raise RuntimeError('Unexpected native document rejection: ' + detail) from error
-            save(root / 'ingest' / (source['id'] + '-source-rejected.json'), {
-                'source_id': source['id'], 'path': source['path'], 'sha256': source['sha256'],
-                'http_status': error.code, 'error': json.loads(detail),
-                'before': before, 'after': usage(root), 'seconds': time.monotonic() - started})
-            continue
+        doc = rt.api('/v2/docs', body)
         documents[source['id']] = doc
         save(documents_path, documents)
         rt.drain()
         save(root / 'ingest' / (source['id'] + '-document.json'), {'document': doc,
             'seconds': time.monotonic() - started, 'before': before, 'after': usage(root)})
-    admitted = [s for s in sources if s['id'] in documents] if protocol.get('record_source_policy_rejections') else sources
     if 'full_elf' not in protocol['conditions']:
-        verify_state(rt, root, admitted, documents, stage)
+        verify_state(rt, root, sources, documents, stage)
         return
-    for source in (s for s in selected if s.get('extract_memory', True) and s['id'] in documents):
+    for source in selected:
         doc = documents[source['id']]
         for i, (start, end, text) in enumerate(spans(source['text'], protocol['extraction_window_bytes'])):
             path = root / 'ingest' / (source['id'] + f'-memory-{i}.json')
@@ -243,7 +222,7 @@ def ingest(rt, root, sources, stage, protocol):
                 'before': before, 'after': usage(root)})
             print(json.dumps({'event': 'memory_ingest', 'source_id': source['id'], 'window': i,
                               'status': status, 'usage': usage(root)}), flush=True)
-    verify_state(rt, root, admitted, documents, stage)
+    verify_state(rt, root, sources, documents, stage)
 
 
 def verify_state(rt, root, sources, documents, stage):
@@ -303,8 +282,7 @@ def main():
     os.umask(0o077)
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', type=Path, required=True)
-    parser.add_argument('--phase', choices=['calibration', 'formal', 'report', 'export', 'workflow'], required=True)
-    parser.add_argument('--batch')
+    parser.add_argument('--phase', choices=['calibration', 'formal', 'report', 'export'], required=True)
     parser.add_argument('--export-dir', type=Path)
     parser.add_argument('--cell')
     parser.add_argument('--task')
@@ -314,9 +292,6 @@ def main():
     args.root = args.root.resolve()
     args.root.mkdir(parents=True, exist_ok=True)
     repo = Path(__file__).resolve().parents[2]
-    if args.phase == 'workflow':
-        from .workflow import run_workflow
-        return run_workflow(args, repo)
     frozen = args.root / 'fixture'
     sources, checkpoints = load(frozen)
     origin = read(frozen / 'freeze.json')['repository']
