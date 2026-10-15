@@ -16,7 +16,7 @@ from benchmark_budget import totals
 from .corpus import digest, load, save, spans
 from .runtime import Runtime
 from .tools import SourceTools, opening_tool, schemas
-from .evidence import compact_check
+from .evidence import compact_check, memory_use
 
 
 def read(path):
@@ -155,6 +155,8 @@ def cell(args, repo, sources, checkpoints, protocol, task):
     except (OSError, ValueError, KeyError, TypeError) as error:
         result.update(status='harness_failed', error=str(error))
     finally:
+        result['memory_use'] = memory_use(trace, result.get('answer', {}),
+            host.handles.native if host.handles else None)
         result.update(seconds=time.monotonic() - started, tool_calls=calls,
                       evidence_bytes=protocol['max_evidence_bytes'] - host.remaining,
                       usage_before=before, usage_after=usage(args.root))
@@ -166,6 +168,20 @@ def cell(args, repo, sources, checkpoints, protocol, task):
     return 2 if result['status'] in ('transport_failed', 'harness_failed') else 0
 
 
+def document_request(source):
+    """A host captures exact originals; a chat record must not impersonate a Git blob."""
+    origin = source.get('source_ref')
+    if origin is None:
+        origin = {'schema': 'doc_source_ref/v1', 'doc_type': 'dev', 'ts': source['timestamp'],
+            'repo': source['origin'], 'commit_sha': source['commit'], 'source_kind': 'repo_file',
+            'canonical_uri': source['origin'] + ('/blob/' + source['commit'] + '/' + source['path']
+                if source['kind'] == 'blob' else '/commit/' + source['commit']),
+            'source_created_at': source['timestamp'], 'trust_label': 'user_captured'}
+    return {'scope': 'agent_private', 'title': source['title'], 'source_ref': {
+        **origin, 'captured_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'pilot_source_id': source['id']}, 'content': source['text']}
+
+
 def ingest(rt, root, sources, stage, protocol):
     documents_path = root / 'documents.json'
     documents = read(documents_path) if documents_path.exists() else {}
@@ -175,16 +191,7 @@ def ingest(rt, root, sources, stage, protocol):
             continue
         before = usage(root)
         started = time.monotonic()
-        body = {'scope': 'agent_private', 'title': source['title'], 'source_ref': {
-            'schema': 'doc_source_ref/v1', 'doc_type': 'dev', 'ts': source['timestamp'],
-            'repo': source['origin'], 'commit_sha': source['commit'],
-            'source_kind': 'repo_file',
-            'canonical_uri': source['origin'] + ('/blob/' + source['commit'] + '/' + source['path']
-                if source['kind'] == 'blob' else '/commit/' + source['commit']),
-            'captured_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-            'source_created_at': source['timestamp'], 'trust_label': 'user_captured',
-            'pilot_source_id': source['id']}, 'content': source['text']}
-        doc = rt.api('/v2/docs', body)
+        doc = rt.api('/v2/docs', document_request(source))
         documents[source['id']] = doc
         save(documents_path, documents)
         rt.drain()
@@ -203,7 +210,7 @@ def ingest(rt, root, sources, stage, protocol):
             if attempt.exists():
                 raise RuntimeError('Unresolved extraction attempt; do not resend: ' + str(attempt))
             body = {'scope': 'agent_private', 'dry_run': False, 'messages': [{
-                'role': 'user', 'content': text, 'ts': source['timestamp'],
+                'role': source.get('role', 'user'), 'content': text, 'ts': source['timestamp'],
                 'msg_id': source['id'] + f'-{i}', 'source_document': {
                     'doc_id': doc['doc_id'], 'content_hash': doc['content_hash'],
                     'position': {'start': start, 'end': end}}}]}
@@ -278,6 +285,27 @@ def run(args, repo, sources, checkpoints, protocol, tasks):
         rt.close()
 
 
+def require_calibration(root, protocol, tasks):
+    if not (root / 'calibration-completed.json').exists():
+        raise ValueError('Complete and inspect calibration before the formal tranche')
+    if 'full_elf' not in protocol['conditions']:
+        return
+    expected = {(t['id'], r + 1) for t in tasks if t['phase'] == 'calibration'
+                for r in range(protocol['calibration_repetitions'])}
+    qualified = set()
+    for path in (root / 'cases').glob('*/result.json'):
+        row = read(path)
+        if row['phase'] != 'calibration' or row['condition'] != 'full_elf':
+            continue
+        bindings = row.get('claim_bindings', {}).get('claims', [])
+        if (row['status'] == 'completed' and row.get('memory_use', {}).get('originals_cited', 0)
+                and row.get('all_references_seen') and bindings
+                and all(c['binding_verified'] for c in bindings)):
+            qualified.add((row['task_id'], row['repetition']))
+    if not expected or qualified != expected:
+        raise ValueError('Stop: calibration must read memory-bound originals and cite them with valid bindings before formal comparison')
+
+
 def main():
     os.umask(0o077)
     parser = argparse.ArgumentParser()
@@ -308,10 +336,10 @@ def main():
             raise ValueError('Specify a new --export-dir for de-identified evidence')
         export(args.root, args.export_dir)
         return 0
+    if args.phase == 'formal':
+        require_calibration(args.root, protocol, tasks)
     if args.cell:
         task = next(t for t in tasks if t['id'] == args.task)
         return cell(args, repo, sources, checkpoints, protocol, task)
-    if args.phase == 'formal' and not (args.root / 'calibration-completed.json').exists():
-        raise ValueError('Complete and inspect calibration before the formal tranche')
     run(args, repo, sources, checkpoints, protocol, tasks)
     return 0

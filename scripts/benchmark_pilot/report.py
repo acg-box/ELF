@@ -10,6 +10,7 @@ from collections import Counter
 
 from benchmark_budget import totals
 from .corpus import save
+from .evidence import memory_use
 
 
 def measurements(root, fixture):
@@ -35,6 +36,8 @@ def measurements(root, fixture):
         binding = row.get('claim_bindings', {}).get('claims', [])
         trace = json.loads((path.parent / 'trace.json').read_text())
         tools = [tool for step in trace for tool in step['tools']]
+        handles_path = path.parent / 'evidence-handles.json'
+        handles = json.loads(handles_path.read_text())['native'] if handles_path.exists() else {}
         tool_counts = Counter(tool['name'] for tool in tools)
         budget_errors = sum('evidence-byte budget' in str(tool['result'].get('error', '')) for tool in tools)
         empty_truncations = sum(tool['result'].get('truncated') is True and tool['result'].get('items') == [] for tool in tools)
@@ -47,6 +50,7 @@ def measurements(root, fixture):
             'tool_counts': dict(tool_counts),
             'evidence_budget_errors': budget_errors, 'empty_truncated_results': empty_truncations,
             'memory_tool_completions': memory_completions,
+            'memory_use': memory_use(trace, answer, handles),
             'memory_evidence_reads': sum(tool['name'] in ('evidence_pack', 'elf_evidence_pack', 'recall_evidence', 'elf_evidence_recall')
                 and bool(tool['result'].get('pack', tool['result']).get('notes'))
                 and bool(tool['result'].get('pack', tool['result']).get('sources')) for tool in tools),
