@@ -1,0 +1,41 @@
+{
+  "calibration": {
+    "source_commit": "f7c9a174ad2db601d2ab02616d11fd9bb91b4d2a",
+    "binaries": {
+      "api": "f5d9a7af1e40c8914ad45e4d338e36d77ddc8aa80a0c58b8d16a72ac90611507",
+      "worker": "7c600409bdabf853d3cdff3b0377c4d11504199d6aad152205d820bcfaed7b66"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "formal": {
+    "source_commit": "8ef7e4c793256e604f5a95c86f3d48044a695ccd",
+    "binaries": {
+      "api": "f5d9a7af1e40c8914ad45e4d338e36d77ddc8aa80a0c58b8d16a72ac90611507",
+      "worker": "7c600409bdabf853d3cdff3b0377c4d11504199d6aad152205d820bcfaed7b66"
+    },
+    "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+    "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+  },
+  "reader_files": {
+    "config/agent/evidence-reader.md": "25ab887f8527933b53083c2f438a82c2fa56e5ef407af44146a302ef64dc67e6",
+    "scripts/benchmark-project-pilot.py": "1d0fbfa1c529714ac8bf4149f404b4be59debcaa9c558199c254b5e10a9d07b2",
+    "scripts/benchmark_budget.py": "db5d0fd0ee1a63cfc5df68de8a94930fded076b5312fa43b0dc3268deda983e9",
+    "scripts/benchmark_pilot/runner.py": "71234e44e961151309c085e189c060bf5ace1ec0eb080531d70ecee86a709fe3",
+    "scripts/benchmark_pilot/tools.py": "29dcf1b19b75cf16b344a2a74672ed7045f7cc0ed3e4926b36bd1943ad0fc074",
+    "scripts/benchmark_pilot/evidence.py": "3525b016b80c77069917e192b3aa0943f9074598d3c752b87762deca5924a9be",
+    "scripts/benchmark_pilot/corpus.py": "755d3fbe60ceb36acb706e24beed9c7e8fe4b0cdd74d086962a9a5a903818f41",
+    "scripts/benchmark_pilot/runtime.py": "99cbc6bad3bf2ea76b577d062be584a2db50a98fb3f137a9ca5b6d26aa0a26e1",
+    "scripts/benchmark_pilot/reuse.py": "d3cd05341ebe67c3a0781f59368039096dc61168ecec2b4faa19df0a64cd6b32"
+  },
+  "native_limits": {
+    "max_note_chars": 240,
+    "max_notes_per_add_event": 3,
+    "evidence_min_quotes": 1,
+    "evidence_max_quotes": 2,
+    "evidence_max_quote_bytes": 320,
+    "mmr_enabled": true
+  }
+}

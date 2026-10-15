@@ -75,8 +75,9 @@ fn claim_request(doc_id: Uuid, content_hash: &str, content: &str) -> EvidenceChe
 #[tokio::test]
 #[ignore = "Requires external Postgres and Qdrant. Set ELF_PG_DSN and ELF_QDRANT_URL to run."]
 async fn evidence_expansion_and_claim_binding_preserve_sources_and_current_access() {
-	let content = "2026-08-22。白鹭项目：林澈担任预算负责人。";
-	let payload = serde_json::json!({"notes":[{"type":"fact","text":"林澈担任预算负责人。","importance":0.8,"confidence":0.9,"evidence":[{"message_index":0,"quote":content}]}]});
+	let content =
+		"2026-08-22。白鹭项目：林澈担任预算负责人。仅在财务批准且金额不超过十万元时生效。";
+	let payload = serde_json::json!({"notes":[{"type":"fact","text":"林澈担任预算负责人。","importance":0.8,"confidence":0.9,"structured":{"facts":[content]},"evidence":[{"message_index":0,"quote":content}]}]});
 	let Some(fixture) = setup::setup_service_with_payload("evidence_read", payload).await else {
 		return;
 	};
@@ -306,9 +307,15 @@ async fn verify_evidence_pack(
 
 	assert!(pack.complete);
 	assert_eq!(pack.notes.len(), 1);
+	assert_eq!(pack.notes[0].note_type, "fact");
+	assert_eq!(pack.notes[0].project_id, "p");
+	assert_eq!(pack.notes[0].scope, "agent_private");
+	assert_eq!(pack.notes[0].facts, vec![content]);
+	assert_eq!(pack.notes[0].evidence_quotes, vec![content]);
 	assert_eq!(pack.sources.len(), 1);
 	assert_eq!(pack.sources[0].text, content);
 	assert_eq!(pack.sources[0].source_timestamp.as_deref(), Some("2026-08-22T00:00:00Z"));
+	assert_eq!(pack.sources[0].origin.as_deref(), Some("knowledge:2026-08-22T00:00:00Z"));
 	assert_eq!(pack.notes[0].source_references, vec![pack.sources[0].reference.clone()]);
 	assert_eq!(pack.source_bytes, content.len());
 
@@ -342,6 +349,7 @@ async fn verify_evidence_pack(
 	assert!(!partial.complete);
 	assert!(!partial.notes[0].complete);
 	assert!(partial.sources.is_empty());
+	assert!(partial.notes[0].evidence_quotes.is_empty());
 
 	let denied = service
 		.evidence_pack(EvidencePackRequest { agent_id: "other".into(), ..pack_request })

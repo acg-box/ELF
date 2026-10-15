@@ -74,6 +74,17 @@ pub(super) fn merge_overlaps(pack: &mut EvidencePackResponse) {
 		let mut seen = HashSet::new();
 
 		note.source_references.retain(|reference| seen.insert(reference.clone()));
+
+		let mut seen_quotes = HashSet::new();
+
+		note.evidence_quotes.retain(|quote| {
+			!quote.is_empty()
+				&& seen_quotes.insert(quote.clone())
+				&& pack.sources.iter().any(|source| {
+					note.source_references.contains(&source.reference)
+						&& source.text.contains(quote)
+				})
+		});
 	}
 }
 
@@ -98,6 +109,7 @@ mod tests {
 			end,
 			text: text[start..end].into(),
 			title: None,
+			origin: Some("repo:project/document@revision".into()),
 			source_timestamp: None,
 			captured_at: OffsetDateTime::UNIX_EPOCH,
 		};
@@ -111,7 +123,12 @@ mod tests {
 			sources,
 			notes: vec![EvidencePackNote {
 				note_id: Uuid::nil(),
+				note_type: "constraint".into(),
+				project_id: "project".into(),
+				scope: "agent_private".into(),
 				text: "Derived".into(),
+				facts: vec!["甲乙丙丁戊".into()],
+				evidence_quotes: vec!["甲乙丙丁戊".into(), "甲乙丙丁戊".into(), "unread".into()],
 				source_references: refs,
 				complete: true,
 			}],
@@ -122,6 +139,9 @@ mod tests {
 		assert_eq!(pack.sources.len(), 2);
 		assert_eq!(pack.sources[0].text, text);
 		assert_eq!(pack.sources[0].content_hash, "version-a");
+		assert_eq!(pack.sources[0].origin.as_deref(), Some("repo:project/document@revision"));
+		assert_eq!(pack.notes[0].facts, vec!["甲乙丙丁戊"]);
+		assert_eq!(pack.notes[0].evidence_quotes, vec!["甲乙丙丁戊"]);
 		assert_eq!(pack.source_bytes, 18);
 		assert_eq!(pack.notes[0].source_references.len(), 2);
 		assert_eq!(pack.notes[0].source_references[0], pack.sources[0].reference);

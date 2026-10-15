@@ -21,7 +21,7 @@ def key_for(body, kind):
 
 
 class RecordedProvider:
-    def __init__(self, root, directories, upstream, token):
+    def __init__(self, root, directories, upstream, token, frozen_extraction=True):
         self.root, self.upstream, self.token = root, upstream, token
         self.records = {}
         self.lock = threading.Lock()
@@ -30,6 +30,8 @@ class RecordedProvider:
                 row = json.loads(path.read_text())
                 body, response = row['request'], row['response']
                 kind = 'embedding' if 'input' in body else 'extraction'
+                if kind == 'extraction' and not frozen_extraction:
+                    continue
                 key = key_for(body, kind)
                 if key is None:
                     continue
@@ -53,12 +55,13 @@ class RecordedProvider:
                 kind = 'embedding' if self.path.endswith('/embeddings') else 'extraction'
                 key = key_for(body, kind)
                 response = provider.records.get((kind, key))
-                if response is None and kind == 'extraction':
+                if response is None and kind == 'extraction' and frozen_extraction:
                     self.send_error(409, 'No frozen extraction for this exact input; do not make a new model call.')
                     return
                 reused = response is not None
                 if not reused:
-                    request = urllib.request.Request(provider.upstream + '/embeddings',
+                    endpoint = '/embeddings' if kind == 'embedding' else '/chat/completions'
+                    request = urllib.request.Request(provider.upstream + endpoint,
                         data=json.dumps(body).encode(), headers={'Content-Type': 'application/json',
                         'Authorization': 'Bearer ' + provider.token})
                     try:

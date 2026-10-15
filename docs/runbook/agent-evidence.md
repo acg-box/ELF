@@ -5,7 +5,7 @@ description: Integrate native recall, historical interpretation, and claim depen
 status: active
 authority: procedural
 owner: elf-service
-last_verified: 2026-10-14
+last_verified: 2026-10-15
 ---
 # Answer with complete source evidence chains
 
@@ -68,6 +68,31 @@ The HTTP equivalents are `POST /v2/searches`, `POST /v2/evidence/pack`,
 `POST /v2/evidence/recall`, and `POST /v2/evidence/check`. Use the configured
 identity and read-profile headers described in [Agent Setup](agent-setup.md).
 References are locators, not permissions. No source text is rewritten.
+
+The evidence pack preserves each note's stored `note_type`, owning `project_id`,
+visibility `scope`, optional `facts`, and `evidence_quotes`. Stored facts can retain source clauses
+that qualify a short summary, such as a subject identifier, effective date, or
+conjunction. They remain derived records. Read the linked originals before using
+them; a copied clause alone does not establish that a rule is current or applies
+to another subject. `project_id` identifies storage ownership, not an inferred
+subject, and a stored `plan` is not evidence of completion.
+
+`evidence_quotes` reuses existing admitted quotes. The pack retains a quote only
+when it occurs in one of that note's linked, returned source windows. Unreadable
+or omitted windows contribute no quotes. Duplicate quotes are removed. Cite the
+original window; a short quotation does not establish the whole rule. This works
+with existing memories and does not require a new extraction pass.
+
+Each source window includes its stored `origin` when available, plus its title,
+source timestamp, and capture time. Use the origin to distinguish source owners
+and revisions. Neither timestamp establishes a fact's effective time. These are
+additive response fields; source byte limits, offsets, hashes, and access checks
+retain their existing meaning.
+
+`complete` describes resolution of the requested notes and known source pointers
+within the pack budget. It does not prove that the returned windows contain every
+premise needed for the question. For example, a source window can contain a helper
+call while its defining conditions remain elsewhere in the same original.
 
 For text-only HTTP model calls, do not advertise undeclared callable tools. The
 shared contract requires direct JSON output; the host submits `claims` to the

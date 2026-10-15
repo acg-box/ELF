@@ -130,7 +130,8 @@ class ProjectPilotTests(unittest.TestCase):
             save(fixture / 'checkpoints.json', [])
             save(fixture / 'tasks.json', [{'id': canary, 'phase': 'formal', 'question': canary}])
             save(fixture / 'oracle.json', [{'id': canary, 'criteria': [{'obligation': canary, 'patterns': [canary]}]}])
-            save(fixture / 'protocol.json', {'conditions': ['no_elf'], 'formal_repetitions': 1, 'private_annotation': canary})
+            save(fixture / 'protocol.json', {'conditions': ['no_elf'], 'formal_repetitions': 1,
+                'frozen_extraction': False, 'reuse_receipts': [canary], 'private_annotation': canary})
             save(fixture / 'freeze.json', {'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in fixture.iterdir()}})
             save(root / 'budget-ledger.json', {'prior_paid_usd': 0, 'requests': [{
                 'ordinal': 1, 'kind': 'chat', 'status': 'completed', 'reserved_usd': 0,
@@ -155,9 +156,24 @@ evidence_max_quote_bytes = 320
             save(root / 'cases' / cell_id / 'trace.json', [{'tools': [{'name': 'read_source', 'result': {'source_id': canary, 'text': canary}}]}])
             save(root / 'review.json', {cell_id: {'accepted': True, 'passed_criteria': 1, 'flags': [], 'private_notes': canary}})
             save(root / 'native-stage-0.json', {'stage': 0, 'sources_verified': 1, 'vectors': {}, 'notes': [canary]})
+            (root / 'provider-reuse.jsonl').write_text('\n'.join(json.dumps(row) for row in (
+                {'kind': 'embedding', 'reused': True}, {'kind': 'embedding', 'reused': False},
+                {'kind': 'extraction', 'reused': False}, {'kind': 'extraction', 'reused': False})))
+            save(root / 'qualifier-audit.json', {
+                'extraction': {'admitted_facts': 2, 'private_notes': canary},
+                'storage': {'fact_rows': 2, 'all_stored_facts_match_admitted_clauses': True,
+                            'private_payload': canary}, 'private_sources': canary})
             destination = Path(directory) / 'public'
             export(root, destination)
             self.assertTrue((destination / 'manifest.json').exists())
+            reuse = json.loads((destination / 'provider-reuse.json').read_text())
+            self.assertEqual(reuse['forwarded_embeddings'], 1)
+            self.assertEqual(reuse['forwarded_extractions'], 2)
+            metrics = json.loads((destination / 'measurements.json').read_text())
+            self.assertIsNone(metrics['summary']['no_elf']['amortized_usd_per_task'])
+            self.assertIn('Incremental replay cost', metrics['preparation_cost_basis'])
+            qualifiers = json.loads((destination / 'qualifier-audit.json').read_text())
+            self.assertEqual(qualifiers['storage']['fact_rows'], 2)
             for path in destination.iterdir():
                 self.assertNotIn(canary, path.read_text(), path.name)
 

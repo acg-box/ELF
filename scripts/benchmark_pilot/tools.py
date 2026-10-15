@@ -285,6 +285,10 @@ class SourceTools:
                     if any(ref not in available for ref in refs):
                         note['complete'] = False
                         note['source_references'] = [ref for ref in refs if ref in available]
+                    if 'evidence_quotes' in note:
+                        note['evidence_quotes'] = [quote for quote in note['evidence_quotes'] if any(
+                            source.get('reference') in note.get('source_references', [])
+                            and quote in source.get('text', '') for source in pack['sources'])]
         def references(node):
             if isinstance(node, dict):
                 ref = node.get('reference')
