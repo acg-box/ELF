@@ -1,8 +1,10 @@
 """Verify workflow isolation, fresh-session inputs, and stopping without paid calls."""
 import json
+import io
 from pathlib import Path
 import tempfile
 import unittest
+import urllib.error
 from unittest.mock import Mock, patch
 
 from scripts.tests.benchmark_support import REPO
@@ -94,3 +96,20 @@ class WorkflowTests(unittest.TestCase):
             self.assertNotIn('commit_sha', reference)
             self.assertNotIn('repo', reference)
             self.assertEqual(body['content'], source['text'])
+
+    def test_expected_policy_rejection_keeps_original_bytes_and_records_incomplete_index(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            source = source_record('code.py', 'token = secrets.token_hex(24)', 0, 'base', 'time')
+            runtime = Mock()
+            runtime.api.side_effect = urllib.error.HTTPError('http://local', 400, 'rejected', {},
+                io.BytesIO(b'{"message":"content contains secrets."}'))
+            with patch('benchmark_pilot.runner.usage', return_value={}), \
+                    patch('benchmark_pilot.runner.verify_state') as verify:
+                ingest(runtime, root, [source], 0, {'conditions': ['source_only'],
+                                                  'record_source_policy_rejections': True})
+            receipt = json.loads(next((root / 'ingest').glob('*-source-rejected.json')).read_text())
+            self.assertEqual(receipt['sha256'], digest(source['text'].encode()))
+            self.assertEqual(verify.call_args.args[2], [])
+            self.assertEqual(source['text'], 'token = secrets.token_hex(24)')
+            self.assertFalse((root / 'documents.json').exists())

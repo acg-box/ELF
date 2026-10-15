@@ -192,16 +192,29 @@ def ingest(rt, root, sources, stage, protocol):
                 trust_label='unverified' if source['path'] == 'HANDOFF.md' else 'user_captured')
             body['source_ref'].pop('commit_sha')
             body['source_ref'].pop('repo')
-        doc = rt.api('/v2/docs', body)
+        try:
+            doc = rt.api('/v2/docs', body)
+        except urllib.error.HTTPError as error:
+            if not protocol.get('record_source_policy_rejections'):
+                raise
+            detail = error.read().decode(errors='replace')
+            if error.code != 400 or json.loads(detail).get('message') != 'content contains secrets.':
+                raise RuntimeError('Unexpected native document rejection: ' + detail) from error
+            save(root / 'ingest' / (source['id'] + '-source-rejected.json'), {
+                'source_id': source['id'], 'path': source['path'], 'sha256': source['sha256'],
+                'http_status': error.code, 'error': json.loads(detail),
+                'before': before, 'after': usage(root), 'seconds': time.monotonic() - started})
+            continue
         documents[source['id']] = doc
         save(documents_path, documents)
         rt.drain()
         save(root / 'ingest' / (source['id'] + '-document.json'), {'document': doc,
             'seconds': time.monotonic() - started, 'before': before, 'after': usage(root)})
+    admitted = [s for s in sources if s['id'] in documents] if protocol.get('record_source_policy_rejections') else sources
     if 'full_elf' not in protocol['conditions']:
-        verify_state(rt, root, sources, documents, stage)
+        verify_state(rt, root, admitted, documents, stage)
         return
-    for source in (s for s in selected if s.get('extract_memory', True)):
+    for source in (s for s in selected if s.get('extract_memory', True) and s['id'] in documents):
         doc = documents[source['id']]
         for i, (start, end, text) in enumerate(spans(source['text'], protocol['extraction_window_bytes'])):
             path = root / 'ingest' / (source['id'] + f'-memory-{i}.json')
@@ -230,7 +243,7 @@ def ingest(rt, root, sources, stage, protocol):
                 'before': before, 'after': usage(root)})
             print(json.dumps({'event': 'memory_ingest', 'source_id': source['id'], 'window': i,
                               'status': status, 'usage': usage(root)}), flush=True)
-    verify_state(rt, root, sources, documents, stage)
+    verify_state(rt, root, admitted, documents, stage)
 
 
 def verify_state(rt, root, sources, documents, stage):

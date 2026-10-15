@@ -54,6 +54,11 @@ def conversation(root, repo, workspace, runtime, sources, documents, protocol, i
         'Leave HANDOFF.md with decisions, changed files, commands, results, and remaining work. '
         'Do not claim unperformed tests or completed work. Use finish_work to end the session.')},
         {'role': 'user', 'content': instruction}]
+    rejected = [read(p)['path'] for p in sorted((root / 'ingest').glob('*-source-rejected.json'))]
+    if rejected:
+        messages.append({'role': 'user', 'content': json.dumps({
+            'native_index_coverage': 'partial', 'unindexed_files': rejected,
+            'file_access': 'The unchanged originals remain available in this checkout.'})})
     trace, calls = [], 0
     started, before = time.monotonic(), usage(root)
     result = {'stage': stage, 'condition': condition, 'status': 'round_budget_exhausted',
@@ -203,6 +208,7 @@ def trajectory(experiment, repo, spec, condition, repetition):
             'repetition': repetition, 'acceptance_passed': assessed.returncode == 0,
             'scope_passed': not unexpected, 'unexpected_files': unexpected,
             'sessions_completed': sum(r['status'] == 'completed' for r in results),
+            'unindexed_source_records': len(list((root / 'ingest').glob('*-source-rejected.json'))),
             'seconds_including_preparation': time.monotonic() - started,
             'usage_before': before, 'usage_after': usage(root)})
     except urllib.error.HTTPError as error:
