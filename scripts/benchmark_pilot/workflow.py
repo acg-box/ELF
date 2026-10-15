@@ -126,7 +126,7 @@ def conversation(root, repo, workspace, runtime, sources, documents, protocol, i
 def source_record(name, text, stage, revision, timestamp, memory=False):
     return {'id': digest((str(stage) + ':' + name).encode())[:16], 'title': name,
         'path': name, 'text': text, 'sha256': digest(text.encode()), 'stage': stage,
-        'timestamp': timestamp, 'commit': revision, 'kind': 'blob',
+        'timestamp': timestamp, 'commit': revision, 'kind': 'work_record' if memory else 'blob',
         'origin': 'https://github.com/acg-box/ELF', 'extract_memory': memory}
 
 
@@ -148,10 +148,8 @@ def trajectory(experiment, repo, spec, condition, repetition):
                 'conditions': [condition]}
     save(root / 'fixture/protocol.json', protocol)
     workspace = Workspace(root, protocol['workspace_image'], 'elf-workflow-' + cell.replace('_', '-'))
-    native = Runtime(root, repo) if condition != 'no_elf' else None
+    native = Runtime(root, repo, owner=workspace.name + '-native') if condition != 'no_elf' else None
     if native:
-        native.state['owner'] = workspace.name + '-native'
-        save(root / 'runtime.json', native.state)
         shutil.copyfile(experiment / 'tokenizer.json', root / 'tokenizer.json')
     started, before = time.monotonic(), usage(root)
     sources, results = [], []
@@ -172,6 +170,9 @@ def trajectory(experiment, repo, spec, condition, repetition):
                         protocol['source_revision'], protocol['source_timestamp'], name == 'HANDOFF.md'))
             sources.append(source_record(f'pilot-requests/{stage}.md', instruction, stage,
                 protocol['source_revision'], protocol['source_timestamp'], True))
+            for source in sources:
+                if source['kind'] == 'work_record':
+                    source['canonical_uri'] = f"elf-workflow://{cell}/{source['stage']}/{source['path']}?sha256={source['sha256']}"
             save_sources(root, sources)
             if native:
                 ingest(native, root, sources, stage, protocol)

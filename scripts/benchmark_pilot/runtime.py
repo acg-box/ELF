@@ -29,7 +29,7 @@ def port():
 
 
 class Runtime:
-    def __init__(self, root, repo):
+    def __init__(self, root, repo, owner=OWNER):
         self.root, self.repo = root, repo
         self.processes = []
         self.logs = []
@@ -38,7 +38,7 @@ class Runtime:
         if path.exists():
             self.state = json.loads(path.read_text())
         else:
-            self.state = {'owner': OWNER, 'pg_port': port(), 'qdrant_port': port(),
+            self.state = {'owner': owner, 'pg_port': port(), 'qdrant_port': port(),
                           'http_port': port(), 'admin_port': port(), 'mcp_port': port()}
             save(path, self.state)
         self.owner = self.state['owner']

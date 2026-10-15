@@ -9,9 +9,18 @@ from scripts.tests.benchmark_support import REPO
 from benchmark_pilot.corpus import digest, save
 from benchmark_pilot.workflow import conversation, source_record, workflow_schemas
 from benchmark_pilot.workspace import frozen_files
+from benchmark_pilot.runtime import Runtime
 
 
 class WorkflowTests(unittest.TestCase):
+    def test_runtime_owner_is_identical_in_memory_and_persistent_state(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            runtime = Runtime(root, REPO, owner='elf-workflow-unit')
+            self.assertEqual(runtime.owner, 'elf-workflow-unit')
+            self.assertEqual(json.loads((root / 'runtime.json').read_text())['owner'], runtime.owner)
+            self.assertEqual(Runtime(root, REPO).owner, runtime.owner)
+
     def test_baselines_have_full_file_execution_and_no_memory_tools(self):
         names = {arm: {t['function']['name'] for t in workflow_schemas(arm)}
                  for arm in ('no_elf', 'source_only', 'full_elf')}
@@ -62,3 +71,5 @@ class WorkflowTests(unittest.TestCase):
         self.assertNotEqual(before['id'], after['id'])
         self.assertEqual(before['sha256'], digest('主体与条件'.encode()))
         self.assertEqual(before['text'], '主体与条件')
+        self.assertEqual(before['kind'], 'work_record')
+        self.assertEqual(source_record('source.py', 'code', 0, 'revision', 'time')['kind'], 'blob')

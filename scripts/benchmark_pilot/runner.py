@@ -184,6 +184,12 @@ def ingest(rt, root, sources, stage, protocol):
             'captured_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'source_created_at': source['timestamp'], 'trust_label': 'user_captured',
             'pilot_source_id': source['id']}, 'content': source['text']}
+        if source['kind'] == 'work_record':
+            body['source_ref'].update(source_kind='text_export',
+                canonical_uri=source['canonical_uri'], source_content_hash=source['sha256'],
+                trust_label='unverified' if source['path'] == 'HANDOFF.md' else 'user_captured')
+            body['source_ref'].pop('commit_sha')
+            body['source_ref'].pop('repo')
         doc = rt.api('/v2/docs', body)
         documents[source['id']] = doc
         save(documents_path, documents)
