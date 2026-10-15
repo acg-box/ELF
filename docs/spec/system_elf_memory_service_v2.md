@@ -1745,7 +1745,7 @@ Body:
     {
       "type": "preference|constraint|decision|profile|fact|plan",
       "key": "string|null",
-      "text": "Unicode sentence",
+      "text": "Complete qualified note",
       "importance": 0.0,
       "confidence": 0.0,
       "ttl_days": 180,
@@ -2641,7 +2641,7 @@ Schema:
     {
       "type": "preference|constraint|decision|profile|fact|plan",
       "key": "string|null",
-      "text": "Unicode sentence <= MAX_NOTE_CHARS",
+      "text": "Complete qualified note <= MAX_NOTE_CHARS",
       "importance": 0.0,
       "confidence": 0.0,
       "ttl_days": number|null,
