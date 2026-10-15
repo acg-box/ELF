@@ -137,7 +137,7 @@ def measurements(root, fixture):
         prep = 0 if condition == 'no_elf' else setup['source_index']['paid_usd']
         prep += setup['memory']['paid_usd'] if condition == 'full_elf' else 0
         mean = value['matched_paid_usd'] / value['matched_content_cells'] if value['matched_content_cells'] else None
-        value['amortized_usd_per_task'] = None if protocol.get('frozen_extraction') else {
+        value['amortized_usd_per_task'] = None if protocol.get('reuse_receipts') or protocol.get('frozen_extraction') else {
             str(n): prep / n + mean if mean is not None else None for n in (1, 5, 20)}
     paid, exposure = totals(ledger)
     exploration_path = root / 'exploration.json'
@@ -157,7 +157,7 @@ def measurements(root, fixture):
                            'seconds': row.get('seconds')} for row in diagnostic['queries']]}
     return {'schema': 'elf.real_project_measurements/v1', 'summary': summary, 'cells': results,
             'preparation': setup,
-            'preparation_cost_basis': 'Incremental replay cost; cold-start amortization is not estimated.' if protocol.get('frozen_extraction') else 'Recorded provider preparation cost.',
+            'preparation_cost_basis': 'Incremental replay cost; cold-start amortization is not estimated.' if protocol.get('reuse_receipts') or protocol.get('frozen_extraction') else 'Recorded provider preparation cost.',
             'new_budget': {'paid_usd': paid, 'exposure_usd': exposure, 'ceiling_usd': 10},
             'exploration': {'requests': exploration_count, 'paid_usd': exploration_paid, 'exposure_usd': exploration_exposure},
             'native_writes': writes,

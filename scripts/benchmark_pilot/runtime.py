@@ -103,7 +103,8 @@ class Runtime:
         if protocol.get('reuse_receipts'):
             from .reuse import RecordedProvider
             self.reuse = RecordedProvider(self.root, protocol['reuse_receipts'],
-                os.environ['LITELLM_BASE_URL'], os.environ['LITELLM_API_KEY'])
+                os.environ['LITELLM_BASE_URL'], os.environ['LITELLM_API_KEY'],
+                frozen_extraction=protocol.get('frozen_extraction', True))
         tokenizer = self.root / 'tokenizer.json'
         if not tokenizer.exists():
             raise ValueError('Supply the verified GPT-2 tokenizer.json in the run directory')

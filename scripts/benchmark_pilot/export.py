@@ -83,7 +83,9 @@ def export(root, destination):
     if reuse.exists():
         rows = [json.loads(line) for line in reuse.read_text().splitlines()]
         save(destination / 'provider-reuse.json', {'reused': {kind: sum(row['kind'] == kind and row['reused'] for row in rows)
-             for kind in ('embedding', 'extraction')}, 'forwarded_embeddings': sum(not row['reused'] for row in rows),
+             for kind in ('embedding', 'extraction')},
+             'forwarded_embeddings': sum(row['kind'] == 'embedding' and not row['reused'] for row in rows),
+             'forwarded_extractions': sum(row['kind'] == 'extraction' and not row['reused'] for row in rows),
              'log_sha256': digest(reuse.read_bytes()),
              'boundary': 'Reused responses were settled in the earlier ledger. These are not new provider invocations.'})
     ledger = json.loads((root / 'budget-ledger.json').read_text())

@@ -48,8 +48,18 @@ pub struct EvidencePackResponse {
 pub struct EvidencePackNote {
 	/// Native memory identifier.
 	pub note_id: Uuid,
+	/// Stored memory kind, such as a fact, constraint, or plan; not a truth verdict.
+	pub note_type: String,
+	/// Project that owns the memory, not an inferred subject identity.
+	pub project_id: String,
+	/// Stored visibility scope. Source reads still enforce their own permissions.
+	pub scope: String,
 	/// Derived memory text.
 	pub text: String,
+	/// Verbatim-bound stored clauses that can preserve qualifiers omitted by the short text.
+	/// These remain derived evidence; inspect the linked originals before using them.
+	#[serde(skip_serializing_if = "Vec::is_empty")]
+	pub facts: Vec<String>,
 	/// Source-window references, in pointer order.
 	pub source_references: Vec<String>,
 	/// Whether this note's source context resolved within the pack budget.
@@ -73,6 +83,9 @@ pub struct EvidencePackSource {
 	pub text: String,
 	/// Source title, when supplied by its owner.
 	pub title: Option<String>,
+	/// Stored source origin, including its owner/path/revision when supplied.
+	/// This locator is provenance, not evidence that a rule applies to another subject.
+	pub origin: Option<String>,
 	/// Timestamp declared by the source record; not an inferred fact-validity time.
 	pub source_timestamp: Option<String>,
 	#[serde(with = "crate::time_serde")]
@@ -97,6 +110,7 @@ impl EvidencePackSource {
 			end: excerpt.end_offset,
 			text: excerpt.excerpt,
 			title: metadata.title,
+			origin: metadata.source_ref.get("origin").and_then(|v| v.as_str()).map(str::to_string),
 			source_timestamp: metadata
 				.source_ref
 				.get("ts")
@@ -164,7 +178,11 @@ impl ElfService {
 			};
 			let mut note = EvidencePackNote {
 				note_id,
+				note_type: expanded.note.r#type,
+				project_id: expanded.note.project_id,
+				scope: expanded.note.scope,
 				text: expanded.note.text,
+				facts: expanded.note.structured.and_then(|fields| fields.facts).unwrap_or_default(),
 				source_references: Vec::new(),
 				complete: expanded.complete,
 			};

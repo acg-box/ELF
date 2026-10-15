@@ -41,7 +41,7 @@ async fn chinese_evidence_and_date_only_relations_survive_native_extraction() {
 		.await
 		.expect("Extract and persist Chinese evidence");
 
-	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 6);
+	assert_eq!(result.ingestion_profile.expect("Versioned profile").version, 7);
 	assert_eq!(
 		result.extracted["notes"][0]["structured"]["relations"][0]["valid_from"],
 		"2026-10-01T00:00:00Z"
@@ -78,7 +78,7 @@ async fn new_builtin_profile_preserves_existing_versions_and_pins() {
 		setup::setup_service("versioned_profile_upgrade").await.expect("Fixture required.");
 	let legacy = serde_json::json!({"schema_version":1,"prompt_system_template":"Pinned legacy instructions"});
 
-	sqlx::query("INSERT INTO memory_ingestion_profiles (tenant_id,project_id,pipeline,profile_id,version,profile) VALUES ('t','p','add_event','default',3,$1)")
+	sqlx::query("INSERT INTO memory_ingestion_profiles (tenant_id,project_id,pipeline,profile_id,version,profile) VALUES ('t','p','add_event','default',6,$1)")
         .bind(&legacy).execute(&fixture.service.db.pool).await.expect("Seed legacy profile.");
 
 	fixture
@@ -87,7 +87,7 @@ async fn new_builtin_profile_preserves_existing_versions_and_pins() {
 			tenant_id: "t".into(),
 			project_id: "p".into(),
 			profile_id: "default".into(),
-			version: Some(3),
+			version: Some(6),
 		})
 		.await
 		.expect("Pin legacy default.");
@@ -101,14 +101,14 @@ async fn new_builtin_profile_preserves_existing_versions_and_pins() {
 		.await
 		.expect("Seed the new builtin without moving the pin.");
 
-	assert_eq!(selected.version, Some(3));
+	assert_eq!(selected.version, Some(6));
 
 	let profiles: Vec<(i32, Value)> = sqlx::query_as("SELECT version,profile FROM memory_ingestion_profiles WHERE tenant_id='t' AND project_id='p' ORDER BY version")
         .fetch_all(&fixture.service.db.pool).await.expect("Read immutable versions.");
 
 	assert_eq!(profiles.len(), 2);
-	assert_eq!(profiles[0], (3, legacy));
-	assert_eq!(profiles[1].0, 6);
+	assert_eq!(profiles[0], (6, legacy));
+	assert_eq!(profiles[1].0, 7);
 	assert_ne!(profiles[1].1, profiles[0].1);
 
 	let activated = fixture
@@ -117,12 +117,12 @@ async fn new_builtin_profile_preserves_existing_versions_and_pins() {
 			tenant_id: "t".into(),
 			project_id: "p".into(),
 			profile_id: "default".into(),
-			version: Some(6),
+			version: Some(7),
 		})
 		.await
 		.expect("Explicitly activate the new guidance.");
 
-	assert_eq!(activated.version, Some(6));
+	assert_eq!(activated.version, Some(7));
 
 	fixture.test_db.cleanup().await.expect("Clean profile fixture.");
 }

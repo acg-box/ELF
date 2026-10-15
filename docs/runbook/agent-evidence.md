@@ -5,7 +5,7 @@ description: Integrate native recall, historical interpretation, and claim depen
 status: active
 authority: procedural
 owner: elf-service
-last_verified: 2026-10-14
+last_verified: 2026-10-15
 ---
 # Answer with complete source evidence chains
 
@@ -68,6 +68,20 @@ The HTTP equivalents are `POST /v2/searches`, `POST /v2/evidence/pack`,
 `POST /v2/evidence/recall`, and `POST /v2/evidence/check`. Use the configured
 identity and read-profile headers described in [Agent Setup](agent-setup.md).
 References are locators, not permissions. No source text is rewritten.
+
+The evidence pack preserves each note's stored `note_type`, owning `project_id`,
+visibility `scope`, and optional `facts`. These facts can retain source clauses
+that qualify a short summary, such as a subject identifier, effective date, or
+conjunction. They remain derived records. Read the linked originals before using
+them; a copied clause alone does not establish that a rule is current or applies
+to another subject. `project_id` identifies storage ownership, not an inferred
+subject, and a stored `plan` is not evidence of completion.
+
+Each source window includes its stored `origin` when available, plus its title,
+source timestamp, and capture time. Use the origin to distinguish source owners
+and revisions. Neither timestamp establishes a fact's effective time. These are
+additive response fields; source byte limits, offsets, hashes, and access checks
+retain their existing meaning.
 
 For text-only HTTP model calls, do not advertise undeclared callable tools. The
 shared contract requires direct JSON output; the host submits `claims` to the
@@ -137,12 +151,15 @@ Use `unknown` for missing information and `absent` for explicit absence.
 
 ## Activate the extraction profile
 
-Built-in ingestion profile `default`, version 6, asks the model to select exact
-input spans. Existing stored profiles and default-version pins are not changed
+Built-in ingestion profile `default`, version 7, asks the model to select exact
+input spans and retain necessary qualifiers in the existing `structured.facts`
+field when the short text omits them. The existing admission rules require each
+fact to be a verbatim substring of the note text or its evidence quotes. This
+checks a text binding, not semantic entailment. Existing stored profiles and default-version pins are not changed
 by a service upgrade. With the target project's existing admin identity, read
-`GET /v2/admin/events/ingestion-profiles/default`, then select version 6 with
+`GET /v2/admin/events/ingestion-profiles/default`, then select version 7 with
 `PUT /v2/admin/events/ingestion-profiles/default` and
-`{"profile_id":"default","version":6}`. Read the pointer back and verify the
+`{"profile_id":"default","version":7}`. Read the pointer back and verify the
 next event's returned profile version. Explicit event-level profile selectors
 still take precedence. Keep the previous pointer for rollback; do not edit its
 stored profile or rewrite existing notes.
