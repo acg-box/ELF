@@ -66,13 +66,14 @@ file tools and an explicit handoff as the working approach. This is a scoped
 choice while incremental memory benefit is unproved. It does not remove memory
 from other workflows or change the shipped memory-first reader contract.
 
-The next isolated correctness target is extraction/admission conformance. Seven
-of 26 candidates exceeded the existing 240-character limit. The candidate stating
-that the source-admission defect was repaired had 266 characters and never entered
-the index; the earlier "not yet fixed" note remained discoverable. Preserve the
-original and make the extractor satisfy its declared contract before revisiting
-the note limit, MMR, or the retrieval store. A source fallback recovered the current
-state in the observed case; that recovery is not a derived-memory benefit.
+The accepted next correction raises the supplied note limit to 512 characters.
+Seven of 26 candidates exceeded the old 240-character bound, including the
+266-character repair update. Preserve the complete claim and its qualifications,
+then verify native admission, recall, and use through a frozen replay. The new
+bound has user approval; it is not a proven quality optimum. The earlier
+recommendation to force every candidate below 240 is superseded by the
+[qualified-note decision](../decisions/2026-10-15-qualified-note-limit.md).
+Keep the original failure and comparison scores unchanged.
 
 Any later value test still needs a real continuity need, the intended host,
 verified capture, and actual memory use before comparison. The reference gate
@@ -93,7 +94,8 @@ continue experiments.
 | Choice or hypothesis | Current disposition | Reconsider when |
 | --- | --- | --- |
 | PostgreSQL authority plus Qdrant retrieval | Retain the supported deployment. Qwen3-Embedding-8B uses the full 4096-dimensional profile in the current experiment. | Representative quality, load, recovery, or operating-cost evidence supports a simpler or better design. A vendor speed claim is insufficient. |
-| MMR and the 240-character note limit | Hold fixed for the next causal comparison. | Admission/recall evidence isolates them as the cause and a controlled test improves task outcomes. |
+| MMR | Keep enabled during the note-limit replay. | A separate controlled test demonstrates better task outcomes. |
+| Note admission limit | Use 512 characters in the supplied configurations; preserve complete subjects, times, conditions, and exceptions. Verify the isolated update failure before a broader value claim. | Complete relevant claims still fail admission, or longer notes measurably harm retrieval and use. |
 | Mandatory memory opening in the reference host | Retain the shipped contract. The optional-tool maintenance trial did not exercise it. | A frozen comparison can show when memory-first, source-first, or direct current-file access is useful. This review does not change the shipped reader contract. |
 | Compact facts as the main derived representation | Keep short notes with read-time bound source quotes. The extra model transcription into structured facts was rejected. | Observed workflows require a different representation and existing source/procedure references cannot meet the obligation. |
 | Stronger reader or extraction model | Evaluate roles separately when justified. Model size and coding scores do not grant authority. | A bounded diagnostic separates generation, retrieval, and use failures and reports total cost. |

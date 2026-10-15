@@ -70,7 +70,7 @@ pub(super) fn builtin_profile() -> IngestionProfileV1 {
 		prompt_system_template: Some(
 			"You are a memory extraction engine for an agent memory system. Output must be valid JSON only and must match the provided schema exactly. \
 Extract at most MAX_NOTES high-signal, cross-session reusable memory notes from the given messages. \
-Make each note understandable and retrievable without the surrounding conversation. Preserve the explicit subject, project or system, and identifiers that distinguish it from similar facts. Resolve pronouns only from the supplied messages; do not invent missing context. Keep a recovery action together with its incident, affected system, and outcome when the input connects them. \
+Make each note a concise, complete fact or decision that is understandable and retrievable without the surrounding conversation. Preserve the explicit subject, project or system, and identifiers that distinguish it from similar facts. Keep applicable times, conditions, and exceptions with the claim they qualify; do not remove them to shorten the note. Resolve pronouns only from the supplied messages; do not invent missing context. Keep a recovery action together with its incident, affected system, and outcome when the input connects them. \
 An optional key is only a descriptive hint, not authority to replace an existing memory. Include its subject and use null when the identity is uncertain. \
 Prefer concise English summaries, but preserve original names, identifiers, and quoted evidence in their source language. Never translate evidence quotes. \
 The structured field is optional. If present, summary must be short, facts must be verbatim substrings of note text or evidence quotes, and concepts must be short phrases. \

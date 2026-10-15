@@ -165,7 +165,7 @@ org_shared = true
 
 [memory]
 max_notes_per_add_event = 3
-max_note_chars = 240
+max_note_chars = 512
 # Similarity thresholds
 # Retrieval sizes
 candidate_k = 60
@@ -366,7 +366,11 @@ HTTP 422
 - plan
 
 4.2 Canonical note
-- A note is a short sentence in any language and must be <= max_note_chars.
+- A note is a concise, complete fact or decision in any language. Keep its subject,
+  applicable time, conditions, and exceptions together. It can use more than one sentence.
+- The supplied configuration permits 512 Unicode scalar values per note through
+  `max_note_chars`. This is an admission bound, not a token budget or an original
+  document limit. Do not truncate a note or remove its qualifications to fit.
 - Format is not enforced. Recommended prefixes for consistency:
   "Preference: ...", "Constraint: ...", "Decision: ...", "Profile: ...", "Fact: ...", "Plan: ..."
 
@@ -2688,7 +2692,7 @@ Notes:
 Hard rules:
 - notes.length <= MAX_NOTES
 - text must be Unicode (must pass the text-format contract)
-- each note must be one sentence
+- each note must retain the subject, applicable time, conditions, and exceptions of its claim
 - evidence must be 1..2 quotes
 - each evidence.quote must be a verbatim substring of messages[message_index].content
 - when write_policy is provided on a source message, evidence checks run after policy transforms
