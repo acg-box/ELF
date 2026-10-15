@@ -77,10 +77,11 @@ class Workspace:
         return bounded_shell_result(code, raw, path.stat().st_size, time.monotonic() - started, cap)
 
     def snapshot(self, directory):
-        subprocess.run(['git', '-C', str(self.checkout), 'add', '-A'], check=True)
-        patch = subprocess.check_output(['git', '-C', str(self.checkout), 'diff', '--cached', '--binary', 'HEAD'])
+        git = ['docker', 'exec', self.name, 'git', '-C', '/work']
+        subprocess.run([*git, 'add', '-A'], check=True)
+        patch = subprocess.check_output([*git, 'diff', '--cached', '--binary', 'HEAD'])
         (directory / 'work.patch').write_bytes(patch)
-        files = subprocess.check_output(['git', '-C', str(self.checkout), 'diff', '--cached',
+        files = subprocess.check_output([*git, 'diff', '--cached',
                                          '--name-only', 'HEAD'], text=True).splitlines()
         save(directory / 'work.json', {'patch_sha256': hashlib.sha256(patch).hexdigest(),
                                       'changed_files': files})
