@@ -8,6 +8,9 @@ Routes to: External memory evidence concepts under `docs/evidence/external_memor
 
 ## Concepts
 
+- [October 15 product-alignment review](2026-10-15-product-alignment.md): primary
+  research, current source snapshots, product-contract drift, and Agentry handoff.
+
 - `research_projects_inventory.md`: audited and pending external memory/context
   projects.
 - `comparison_external_projects.md`: detailed external memory-system comparison.

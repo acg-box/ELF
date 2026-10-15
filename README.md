@@ -6,7 +6,7 @@ For current competitor runs and retired target versions, see the
 [benchmark target lifecycle](docs/reference/benchmark-target-lifecycle.md).
 Older dated benchmark reports describe their original frozen implementations.
 
-Evidence-linked fact memory for agents.
+Source-backed project memory for agents.
 
 [![License](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Language Checks](https://github.com/acg-box/ELF/actions/workflows/language.yml/badge.svg?branch=main)](https://github.com/acg-box/ELF/actions/workflows/language.yml)
@@ -19,15 +19,24 @@ Evidence-linked fact memory for agents.
 
 ## What Is ELF?
 
-ELF is a memory service for LLM agents that stores short, evidence-linked facts and retrieves them with chunk-first hybrid search. Postgres with pgvector is the source of truth for notes and embeddings. Qdrant is a derived, rebuildable index for fast candidate retrieval. ELF can also persist evidence-bound entity/relation facts and optionally attach them as `relation_context` in search explain output. ELF exposes both HTTP and MCP interfaces.
+ELF helps agents resume project work with source-backed decisions, constraints,
+and experience. It preserves original evidence and keeps derived memory, scope,
+and lifecycle explicit. HTTP and MCP expose source access and memory retrieval.
+Postgres currently owns records and embeddings; Qdrant is a rebuildable retrieval
+index. These mechanisms serve the product goal and can change with evidence.
 
 ## Project Goals
 
-- Improve effective context usage with compact memory retrieval instead of replaying long history.
-- Preserve correctness over time with update and lifecycle semantics, not append-only memory.
-- Keep memory behavior auditable with deterministic boundaries, evidence, and replayable traces.
-- Enable safe multi-agent collaboration through explicit scopes and sharing controls.
-- Make quality measurable with repeatable evaluation and regression checks.
+Help agents continue authorized work correctly across sessions, without repeated
+user explanations, at a justified total cost. The
+[product contract and stable principles](docs/spec/agent_memory_knowledge_system_v1.md#product-contract)
+own this goal. [Current direction](docs/reference/product-direction.md) records
+the latest evidence, hypotheses, and next step.
+
+The October 14 real-project replay did **not** establish an incremental quality
+win for full ELF over direct file access. See the
+[frozen results](docs/evidence/benchmarking/2026-10-14-bounded-source-evidence.md).
+Older operational and competitor reports remain evidence for their dated scope.
 
 ## Why Choose ELF
 

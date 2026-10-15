@@ -6,7 +6,7 @@ resource: docs/spec/agent_memory_knowledge_system_v1.md
 status: active
 authority: normative
 owner: spec
-last_verified: 2026-07-04
+last_verified: 2026-10-15
 tags:
   - docs
   - spec
@@ -17,6 +17,9 @@ source_refs:
 code_refs:
   - Makefile.toml
 related:
+  - docs/reference/product-direction.md
+  - docs/evidence/external_memory/2026-10-15-product-alignment.md
+  - docs/decisions/2026-10-10-language-neutral-source-memory.md
   - docs/evidence/benchmarking/2026-06-22-p1-memory-authority-closeout-report.md
   - docs/evidence/benchmarking/2026-06-23-p4-quality-hardening-productization-readiness-report.md
   - docs/runbook/benchmarking/real_world_agent_memory_benchmark.md
@@ -48,23 +51,35 @@ drift_watch:
 Purpose: Define the ELF source-backed project memory product contract, roadmap,
 phase gate, and claim boundaries.
 Status: normative
-Read this when: You are shaping product work, opening implementation issues, reviewing
-source-backed project memory claims, or deciding which phase may be queued.
+Read this when: You are shaping product work, implementing a change, or reviewing
+source-backed project memory claims. Read the product contract and stable principles
+first, then the relevant subsystem section.
 Not this document: Low-level service API semantics, benchmark fixture schemas,
 operator run commands, or implementation details for one subsystem.
-Defines: `elf.source_backed_project_memory/v1` product boundary, P0-P5 roadmap,
-phase-gate rules, agent-facing surfaces, benchmark metrics, competitor absorption
-rules, and phase closeout checklist.
+Defines: `elf.source_backed_project_memory/v1` product boundary, stable principles,
+agent-facing surfaces, benchmark metrics, and claim boundaries. The July execution
+program is retained below as historical context, not a current task queue.
 
 ## Product Contract
 
 ELF is open-source, source-backed project memory for AI agents.
 
-ELF lets agents remember project materials, decisions, progress, constraints,
-preferences, and long-term context without requiring the user to re-explain the
-project. Every important memory must have source provenance, freshness or lifecycle
-status, history, reviewability, correction or rollback support, recall debugging, and
-benchmark coverage for the claims made about it.
+The outcome is reliable continuity: agents can resume authorized project work,
+apply the right decisions and conditions, and reuse experience across sessions
+without making the user repeat the project context. ELF must earn its capture,
+maintenance, retrieval, and operating cost through measured task benefit.
+
+Project materials, decisions, progress, constraints, preferences, and reusable
+procedures can all support this outcome. Knowledge is part of durable memory;
+its storage format does not make it current authority. An observation, a derived
+lesson, an accepted instruction, and a historical decision have different roles.
+Model knowledge can help interpret evidence but does not prove a private project's
+current state or permission to act.
+
+Every important memory must have source provenance, freshness or lifecycle status,
+history, reviewability, correction or rollback support, recall debugging, and
+benchmark coverage for the claims made about it. These are product obligations,
+not a claim that every integration currently satisfies them.
 
 Knowledge pages, Work Journal entries, Dreaming proposals, Context Packs, recall
 routing, Recall Debug, and benchmarks exist to support source-backed project memory.
@@ -72,11 +87,67 @@ They are not separate product categories and must not expand ELF into a generic
 Knowledge OS, broad RAG platform, Notion/OpenKB clone, hosted memory SDK, graph
 database, or document-search replacement.
 
+### Stable principles
+
+1. **Keep originals and interpretations separate.** Preserve exact accepted source
+   versions and their identities. A changed source creates a new version. Notes,
+   summaries, graph relations, translations, and indexes are derived records.
+   Correction must preserve the evidence chain. Authorized deletion and access
+   revocation still apply; immutability does not require perpetual readability.
+2. **Keep authority explicit.** Identify the project, subject, owner, scope, and
+   provenance of a claim. Retrieved text is data, not a new instruction or access
+   grant. Derived confidence, repetition, or model strength cannot grant authority.
+   Promotion follows the existing policy; a valid citation does not prove meaning.
+3. **Represent change without erasing history.** Separate source capture time from
+   effective time. Preserve applicable conditions, exceptions, correction links,
+   and unresolved conflicts. Newer text alone does not establish supersession.
+   Historical evaluation must not use evidence unavailable at its cutoff.
+4. **Make context useful to the consuming agent.** Return bounded, inspectable
+   evidence with a path to the original. Choose memory or direct source access for
+   the task. Do not require every query to use every layer. Domain ontology and
+   live action semantics belong to the application that supplies them; ELF can
+   retain their evidenced identities and relations without inventing a universal
+   world model.
+5. **Accept source languages without rewriting evidence.** Storage and interfaces
+   are language-neutral. Extraction can use a configured presentation language;
+   original names and quotes stay intact. Multilingual quality still needs tests.
+6. **Measure incremental value and remove unsupported complexity.** Compare against
+   capable file, native-memory, and long-context alternatives where relevant. Count
+   preparation, maintenance, failures, query work, and operating burden. Prefer a
+   simpler mechanism when it meets the same obligations. A benchmark win, valid
+   binding, merged change, or newer dependency is not customer acceptance.
+
+The working loop is source capture, evidence-bound derivation, policy-controlled
+memory update, task-scoped recall, agent use, and outcome-driven correction.
+Recall can go directly to sources. A stored memory must not turn a tentative
+observation or a successful past attempt into an unconditional future rule.
+
+Models, databases, embedding dimensions, chunk sizes, MMR, graph depth, and tool
+routing are revisable design decisions. The current accepted implementation stays
+in force until a supported change is accepted; this separation does not authorize
+an unplanned migration. Use [current direction](../reference/product-direction.md)
+for the active hypotheses and next evidence boundary. New capabilities can justify
+removing a workaround as well as adding one.
+
+### Development and review ownership
+
+This document owns ELF's intent. Subsystem specs own detailed behavior; dated
+decisions own accepted rationale; evidence reports preserve what was measured.
+The current-direction reference links those owners rather than defining a second
+product contract. Update conflicting current guidance together when a decision
+changes. Do not rewrite historical benchmark conclusions.
+
+Agentry owns the shared alignment method and cross-project review coordination;
+see [Agentry issue 25](https://github.com/acg-box/agentry/issues/25). That issue is
+pending work, not an installed or running integration. ELF supplies its intent,
+decision evidence, and upstream signals. This contract creates no review schedule.
+
 ## System Boundary
 
-The product is composed of ten typed capabilities. Each capability supports the
-source-to-memory authority chain and must keep its authority boundary visible in API,
-MCP, UI, benchmark, and report surfaces.
+The following typed capabilities support the source-to-memory authority chain.
+They are an existing capability map, not a requirement to expand every subsystem
+or load every surface for each task. Each used capability must keep its authority
+boundary visible in API, MCP, UI, benchmark, and report surfaces.
 
 | Capability | Authority | Required boundary |
 | --- | --- | --- |
@@ -112,8 +183,10 @@ subsystems fit into the source-backed project memory product boundary.
 - Do not turn ELF into a broad RAGFlow, OpenKB, PageIndex, mem0, Zep, Letta, qmd,
   OpenViking, agentmemory, claude-mem, memsearch, Graphiti, Zep, GraphRAG, or
   LightRAG replacement.
-- Do not weaken Postgres source-of-truth, source-ref, evidence-binding, English-gate,
-  scope, lifecycle, or review boundaries to match another product's ergonomics.
+- Do not weaken source authority, source-ref, evidence-binding, language-neutral
+  text validation, scope, lifecycle, or review boundaries to match another
+  product's ergonomics. See the accepted
+  [language-neutral decision](../decisions/2026-10-10-language-neutral-source-memory.md).
 - Do not collapse `blocked`, `incomplete`, `not_encoded`, `wrong_result`, or
   `unsupported_claim` states into pass claims.
 - Do not queue later phases while the current accepted phase is still under review.
@@ -182,6 +255,12 @@ The UI is not the source of truth and must not bypass API, MCP, scope, review, o
 write-policy contracts.
 
 ## Execution Program
+
+Historical scope: this section, the P0-P5 roadmap, the R1/first-phase constraints,
+and the Decodex phase gate record the July 2026 program. They do not restart that
+program, prescribe the next implementation, or authorize queue operations.
+Use [current direction](../reference/product-direction.md) for present priorities.
+Detailed subsystem contracts remain in force independently of the old phase order.
 
 The execution program is split into Decodex-trackable implementation slices so
 cold-start lanes can work from their issue briefs plus this spec. The source issue
@@ -268,6 +347,11 @@ positioning, broad RAG clone scope, or unsupported product-leadership claims.
 
 External projects are references for targeted improvements. They are not hidden
 dependencies and are not automatic proof that ELF is weaker or stronger.
+The table below retains the July comparison categories. Its unresolved comparisons
+are dated evidence boundaries, not current rankings. Use the
+[October review](../evidence/external_memory/2026-10-15-product-alignment.md) for
+recent source review and [target lifecycle](../reference/benchmark-target-lifecycle.md)
+for executable competitor status.
 
 | Competitor/reference | Strength to absorb | Claim boundary |
 | --- | --- | --- |

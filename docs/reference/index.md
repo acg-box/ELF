@@ -10,6 +10,9 @@ Routes to: Reference concepts under `docs/reference/`.
 
 ## Concepts
 
+- [Current Product Direction](product-direction.md): active hypotheses, evidence,
+  next slice, and shared review ownership.
+
 - [Engineering Conventions](engineering_conventions.md): tooling, tasks, CI, and release ownership.
 
 - [Module Ownership](module_ownership.md): product, Context Pack, and benchmark code owners.

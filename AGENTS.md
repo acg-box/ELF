@@ -4,6 +4,21 @@ These instructions define repository-specific execution rules and scope limits f
 
 ---
 
+## Product intent
+
+- Before implementation, read the [product contract summary](docs/spec/agent_memory_knowledge_system_v1.md#product-contract)
+  and [current judgment](docs/reference/product-direction.md#current-judgment).
+  Then read only the affected principles, decisions, and subsystem contracts.
+  Do not preload historical phase plans or all research reports.
+- Connect material changes to a project outcome, an observed problem or accepted
+  requirement, and proportionate verification. A routine fix needs only a brief
+  statement; it does not need a new research report.
+- Keep goals separate from models, stores, algorithms, and tuning parameters.
+  Recheck an affected assumption when new evidence challenges it. Update its
+  existing owner in the same change; preserve dated evidence.
+- Shared alignment methods and review coordination belong to Agentry. Do not add
+  an ELF-specific review scheduler or copy the shared plugin into this repository.
+
 ## 1. Execution Model
 
 ## 1.1 Workspace Automation (cargo make)

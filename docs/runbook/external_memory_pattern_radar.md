@@ -89,6 +89,13 @@ The workflow is intentionally read-only with respect to Linear and repository co
 Codex or Decodex automation may consume the artifact, perform source review, search
 Linear, and then submit a small PR that updates the cursor and prose summary.
 
+The scheduled artifact is a metadata signal, not an architecture review. Current
+ELF decisions live in [current direction](../reference/product-direction.md).
+Shared project-alignment review and any recurring coordination are tracked in
+[Agentry issue 25](https://github.com/acg-box/agentry/issues/25). That work is
+pending; this runbook does not create a second ELF review schedule or authorize
+cross-repository changes.
+
 ## Next Comparison Report Input
 
 The next full comparison report should consume:

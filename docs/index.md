@@ -11,6 +11,10 @@ The split below is by question type, not by human-versus-agent audience.
 
 ## Read order
 
+- For development alignment, read the
+  [product contract and stable principles](spec/agent_memory_knowledge_system_v1.md#product-contract)
+  and [current direction](reference/product-direction.md), then only the relevant
+  subsystem contracts. Historical phase plans are not the active task queue.
 - Read `docs/policy.md` for document contracts and placement rules.
 - Read `Makefile.toml` when the task depends on repo task names or execution entrypoints.
 - Then choose one primary lane:
@@ -28,9 +32,11 @@ The split below is by question type, not by human-versus-agent audience.
 
 - Need contracts, invariants, schemas, enums, state machines, or required behavior ->
   `docs/spec/`
-- Need the source-backed project memory product boundary, P0-P5 roadmap,
-  Decodex phase gate, Context Pack/recall boundaries, or competitor absorption rules ->
+- Need the source-backed project memory goal, stable principles,
+  Context Pack/recall boundaries, or historical phase rationale ->
   `docs/spec/agent_memory_knowledge_system_v1.md`
+- Need current hypotheses, measured limits, next product evidence, or review triggers ->
+  `docs/reference/product-direction.md`
 - Need the model ladder, model profiles, or proposal-only local/background organizer
   gate -> `docs/spec/system_model_ladder_background_organizer_v1.md`
 - Need runbooks, migrations, validation steps, troubleshooting, or operational sequences ->
