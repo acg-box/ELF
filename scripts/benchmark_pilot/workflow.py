@@ -147,7 +147,7 @@ def trajectory(experiment, repo, spec, condition, repetition):
     cell = f"{spec['id']}--{condition}--{repetition}"
     root = experiment / 'runs' / cell
     if root.exists():
-        if (root / 'completed.json').exists():
+        if (root / 'completed.json').exists() or (root / 'terminated.json').exists():
             return
         if not (root / 'resume-preparation.json').exists() or list(root.glob('session-[0-9]*')):
             raise RuntimeError('Partial trajectory exists; do not silently rerun: ' + cell)
