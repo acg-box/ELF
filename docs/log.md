@@ -6,6 +6,17 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-10-15
+
+- Route development through the existing product contract and one current-direction
+  reference. Separate stable intent from replaceable mechanisms and mark the July
+  execution program as historical.
+- Reconcile the product spec with the accepted language-neutral contract. Record
+  primary-source research, current benchmark limits, and the semantic drift audit
+  without rewriting historical results.
+- Add a compact PR alignment prompt. Record central review ownership in Agentry
+  issue 25; retain the existing metadata radar and create no new automation.
+
 ## 2026-10-10
 
 - Add frozen memory ablation and cached-vector backend evidence. Separate note
