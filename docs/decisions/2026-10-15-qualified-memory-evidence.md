@@ -38,37 +38,45 @@ these fields without a new schema or model call at read time.
 
 ## Decision
 
-1. Keep the short note text as the retrieval summary. Built-in extraction profile
-   version 7 asks for a few necessary qualifier clauses in `structured.facts`,
-   copied from the selected evidence. Keep a condition with its rule. Narrow or
-   omit a note if its summary and bound clauses cannot preserve the distinction
-   between a past state, a proposal, and a current decision.
-2. Return existing note kind, owning project, visibility scope, and stored facts
-   in the evidence pack. Return the stored source origin with each original
-   window. Reuse the existing fetch and permission checks.
-3. Keep originals, hashes, byte offsets, note limits, MMR, storage, and the shared
-   reader contract unchanged. Do not infer supersession from a timestamp or
-   transfer authority between subjects from a similar name.
+Return existing note kind, owning project, visibility scope, and stored facts in
+the native evidence pack. Return the stored source origin with each original
+window. Also return the note's already admitted evidence quotes, but only when
+they occur in its linked, readable windows that fit the pack budget. Deduplicate
+quotes after merging windows of the same immutable version.
 
-The existing fact validator permits a verbatim substring of the note or its
-evidence quotes. This is a text binding, not a semantic verdict. Stored facts
-remain derived records, and the reader must inspect original evidence. The
-owning project and visibility scope do not identify the subject of every claim.
-The source origin is a locator, not permission or current authority.
+The note remains a retrieval summary. The quotations make its existing supporting
+clauses visible beside that summary. They do not certify semantic completeness,
+current authority, or applicability to another subject. The reader must still
+inspect and cite the original window. Storage ownership is not an inferred claim
+subject, and a source timestamp is not a fact's effective date.
 
-## Alternatives and limits
+This is read-time materialization of existing records. It preserves the original
+extractor profile, source hashes, offsets, note limit, MMR, and shared reader
+contract. Existing memories can use the change without rewriting or re-extracting
+them. Source access checks continue to run for each read.
 
-Longer summaries and different MMR settings would change admission and selection
-at the same time. A new temporal or ontology layer would duplicate existing
-source versions, lifecycle, entity, and graph mechanisms before their need was
-proved. A stronger reader would confound the measured product change. Defer
-those choices until a specific remaining failure requires them.
+## Rejected extraction expansion
 
-Additional qualifier text can increase evidence size and preparation cost. The
-common response budget still applies. This change does not guarantee that the
-extractor selects every necessary clause or that a reader applies it correctly.
-Existing stored notes do not gain missing fields automatically. Profile pins
-and custom profiles remain unchanged; activation is explicit in the runbook.
+A measured intermediate candidate asked extraction profile v7 to duplicate
+qualifiers in `structured.facts`. It produced 77 proposals, including nine
+structured-binding rejections, and admitted 38 notes instead of the frozen
+baseline's 45. Only six admitted notes retained facts. The profile change was
+reverted before delivery; its complete results and cost remain in the evidence.
+The binding validator remains strict.
+
+The stored evidence quotes already carry source clauses selected by the existing
+extractor. Materializing them avoids another model transcription, extra field
+embeddings, and a new write-time failure path. It cannot recover a predicate that
+the extractor never selected. Follow the relevant original or helper definition
+when a required condition is absent.
+
+## Limits
+
+Quotes add response bytes and remain subject to the common result budget. A
+complete pack means that its requested pointers resolved, not that every premise
+for a question was found. A valid original reference proves access and integrity,
+not entailment. No new temporal state, inferred supersession, or subject merge is
+introduced.
 
 ## Verification boundary
 
@@ -79,12 +87,13 @@ tool budgets, embedding dimensions, note limit, and MMR fixed. Preserve every
 answer and failure. The new questions are targeted variants, not independent
 customer evidence.
 
-Changed extraction instructions must make fresh, budgeted extraction calls.
-Reuse only exact 4096-dimensional embedding responses in the candidate. Preserve
-the old extraction responses for the baseline. Count preparation and failures in
+The intermediate extraction candidate uses fresh, budgeted extraction calls.
+The final read-only candidate reuses the original frozen proposals and exact
+4096-dimensional embeddings. Reuse completed non-memory controls only because
+their code paths, source inputs, and reader contract are unchanged. Count preparation and failures in
 the existing cumulative budget, and do not label reused preparation as a cold
-start. Compare the old and new cohorts separately. The combined change does not
-isolate extraction from evidence presentation.
+start. Compare the old and new cohorts separately. Keep the intermediate extraction trial separate from the final read-only
+comparison.
 
 The native integration check carries a subject, date, and conditional limit from
 an admitted event through storage and evidence materialization, with unchanged

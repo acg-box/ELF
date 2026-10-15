@@ -311,6 +311,7 @@ async fn verify_evidence_pack(
 	assert_eq!(pack.notes[0].project_id, "p");
 	assert_eq!(pack.notes[0].scope, "agent_private");
 	assert_eq!(pack.notes[0].facts, vec![content]);
+	assert_eq!(pack.notes[0].evidence_quotes, vec![content]);
 	assert_eq!(pack.sources.len(), 1);
 	assert_eq!(pack.sources[0].text, content);
 	assert_eq!(pack.sources[0].source_timestamp.as_deref(), Some("2026-08-22T00:00:00Z"));
@@ -348,6 +349,7 @@ async fn verify_evidence_pack(
 	assert!(!partial.complete);
 	assert!(!partial.notes[0].complete);
 	assert!(partial.sources.is_empty());
+	assert!(partial.notes[0].evidence_quotes.is_empty());
 
 	let denied = service
 		.evidence_pack(EvidencePackRequest { agent_id: "other".into(), ..pack_request })

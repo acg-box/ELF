@@ -60,6 +60,10 @@ pub struct EvidencePackNote {
 	/// These remain derived evidence; inspect the linked originals before using them.
 	#[serde(skip_serializing_if = "Vec::is_empty")]
 	pub facts: Vec<String>,
+	/// Stored evidence quotes present in this note's returned, readable source windows.
+	/// These fragments can preserve qualifiers; they do not establish a complete rule.
+	#[serde(skip_serializing_if = "Vec::is_empty")]
+	pub evidence_quotes: Vec<String>,
 	/// Source-window references, in pointer order.
 	pub source_references: Vec<String>,
 	/// Whether this note's source context resolved within the pack budget.
@@ -183,6 +187,12 @@ impl ElfService {
 				scope: expanded.note.scope,
 				text: expanded.note.text,
 				facts: expanded.note.structured.and_then(|fields| fields.facts).unwrap_or_default(),
+				evidence_quotes: expanded.note.source_ref["evidence"]
+					.as_array()
+					.into_iter()
+					.flatten()
+					.filter_map(|item| item["quote"].as_str().map(str::to_string))
+					.collect(),
 				source_references: Vec::new(),
 				complete: expanded.complete,
 			};
