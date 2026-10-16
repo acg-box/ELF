@@ -1,0 +1,56 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "knowledge",
+    "title": "m_c558d1541c4b9d0f",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "knowledge",
+      "ts": "2026-08-01T12:00:00Z",
+      "source_kind": "text_export",
+      "canonical_uri": "urn:elf-native-comparison:formal:knowledge:m_c558d1541c4b9d0f",
+      "captured_at": "2026-10-16T03:00:55.662322+00:00",
+      "trust_label": "user_captured",
+      "source_created_at": "2026-08-01T12:00:00Z"
+    },
+    "content": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 124,
+    "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+    "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+    "request_id": "d5b56fea-cf3c-45a0-8893-6a44fc0d04ef",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:00:55.662322+00:00",
+      "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:00:55.662322+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:knowledge:m_c558d1541c4b9d0f",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+      "source_spans": [
+        {
+          "chunk_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "chunk_id": "38f05b75-dc32-5e5f-a8af-06d00645328d",
+          "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "end_offset": 124,
+          "schema": "doc_source_span/v1",
+          "span_id": "5f19b69e-1349-5a4e-93fa-ea6be220c51d",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "text_export",
+      "title": "m_c558d1541c4b9d0f",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 1.470899749999944
+}

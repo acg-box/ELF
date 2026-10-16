@@ -1,0 +1,112 @@
+{
+  "preserved_initial_notes": [
+    {
+      "note_id": "e901d7f0-7a87-47fa-b0e7-a6f8e69bc2da",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "10e9f2b7-7a78-44a8-ac7b-df34dc4fe859",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "4412de8b-331f-4b91-a840-edbcc03efa5d",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "d08360f4-6de9-4d0e-859f-7bc7a298eb36",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "43dcdb4e-0dd7-4896-8861-fc986bca2dbe",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "d57450b1-d509-466f-8858-4a884dd29e40",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "f47a3330-b7ed-42d9-890f-f29c553cc2da",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "c8f0c870-75ab-494d-bb73-9352d023e4fe",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "6cbfd8c9-4a27-44c6-9959-0458330e4d01",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    },
+    {
+      "note_id": "ddda5c99-cde5-4690-9d63-4f70944fa0bc",
+      "exists_after_updates": true,
+      "text_unchanged": true,
+      "source_ref_unchanged": true
+    }
+  ],
+  "initial_note_count": 10,
+  "final_note_count": 22,
+  "final_note_statuses": [
+    "active"
+  ],
+  "keyed_notes": 0,
+  "graph_entities": 0,
+  "graph_facts": 0,
+  "larch_current_decision_evidence": {
+    "STREAM-0-286": [
+      {
+        "handle": "elf:note:965a94b4-31b0-45c2-b474-56c477e8bd6d",
+        "kind": "memory"
+      },
+      {
+        "handle": "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241",
+        "kind": "memory_raw_source"
+      }
+    ],
+    "RETRY-0-907": [
+      {
+        "handle": "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237",
+        "kind": "memory_raw_source"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "stage": "reader",
+      "case": "post/memory-1-0",
+      "finding": "The correct source and current decision reached the reader. Its answer is semantically correct, but an inserted ellipsis violates the exact-quote contract. Native evidence_check returns binding_verified=false. No repair or repeated answer was made."
+    },
+    {
+      "stage": "retrieval_and_hydration",
+      "case": "post/memory-0-0",
+      "finding": "The six selected derived notes contain STREAM-0-286 but not RETRY-0-907. Native hydration of the August 22 source supplies the current retry policy. This is a direct evidence-delivery observation, not a paid note-only ablation."
+    },
+    {
+      "stage": "extraction",
+      "finding": "Some extracted notes omit the named project or date, and Larch retrieval includes Cobalt memories. Exact linked originals retain the missing subject and time. A correct final answer does not mean note normalization or scope-sensitive ranking is solved."
+    },
+    {
+      "stage": "update_storage",
+      "finding": "All 22 records remain active, with no key on the stored note and no graph fact. The extraction key is metadata only; add_event/service/decision.rs deliberately passes key=None to update resolution and persistence. Current decisions are resolved by the reader from dated source evidence in this run. Native keyed correction and graph quality are not measured."
+    }
+  ],
+  "production_code_changed": false,
+  "direct_files_or_source_only_control_run": false
+}

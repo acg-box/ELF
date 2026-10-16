@@ -1,0 +1,105 @@
+{
+  "response": {
+    "extracted": {
+      "notes": [
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "On 2026-08-01, Ivo started project Cobalt.",
+          "ttl_days": null,
+          "type": "fact"
+        },
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "For project Cobalt, Ivo chose BATCH-1-741 for batch delivery.",
+          "ttl_days": null,
+          "type": "decision"
+        },
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "The initial retry policy for project Cobalt was RETRY-1-108.",
+          "ttl_days": null,
+          "type": "fact"
+        }
+      ]
+    },
+    "ingestion_profile": {
+      "id": "default",
+      "version": 8
+    },
+    "processing_complete": true,
+    "request_id": "bb18323c-b656-45cd-ade9-c770b16c1a2e",
+    "results": [
+      {
+        "field_path": null,
+        "note_id": "d57450b1-d509-466f-8858-4a884dd29e40",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "6cbfd8c9-4a27-44c6-9959-0458330e4d01",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "f47a3330-b7ed-42d9-890f-f29c553cc2da",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      }
+    ]
+  },
+  "seconds": 14.699436666999873,
+  "before": {
+    "paid_usd": 2.0021693210000007,
+    "exposure_usd": 2.0743500209999985,
+    "requests": 4558
+  },
+  "after": {
+    "paid_usd": 2.002598471000001,
+    "exposure_usd": 2.074779170999999,
+    "requests": 4562
+  }
+}

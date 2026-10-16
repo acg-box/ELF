@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "agent_id": "pilot",
+    "content_bytes": 241,
+    "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+    "created_at": [
+      2026,
+      289,
+      3,
+      3,
+      16,
+      726210000,
+      0,
+      0,
+      0
+    ],
+    "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+    "doc_type": "chat",
+    "project_id": "project",
+    "request_id": "93f2545a-2b4c-4789-8e21-d60e75f07aa6",
+    "scope": "agent_private",
+    "source_ref": {
+      "canonical_uri": "urn:elf-native-comparison:formal:memory:m_70bd88efee712a9a",
+      "captured_at": "2026-10-16T03:03:16.710167+00:00",
+      "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+      "doc_type": "chat",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:03:16.710167+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:memory:m_70bd88efee712a9a",
+      "role": "user",
+      "schema": "doc_source_ref/v1",
+      "source_created_at": "2026-08-15T12:00:00Z",
+      "source_kind": "chat_excerpt",
+      "source_record_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+      "source_spans": [
+        {
+          "chunk_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "chunk_id": "975a8676-b7ec-56c2-9204-7bef380dd0b6",
+          "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "end_offset": 241,
+          "schema": "doc_source_span/v1",
+          "span_id": "56aec7b1-d843-5a4a-9815-a3865478d346",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "chat_excerpt",
+      "thread_id": "m_70bd88efee712a9a",
+      "title": "m_70bd88efee712a9a",
+      "trust_label": "user_captured",
+      "ts": "2026-08-15T12:00:00Z",
+      "visibility_scope": "agent_private"
+    },
+    "status": "active",
+    "tenant_id": "elf-native-20261015-formal",
+    "title": "m_70bd88efee712a9a",
+    "updated_at": [
+      2026,
+      289,
+      3,
+      3,
+      16,
+      726210000,
+      0,
+      0,
+      0
+    ]
+  },
+  "source": {
+    "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+    "end_offset": 241,
+    "excerpt": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "locator": {
+      "match_end_offset": 241,
+      "match_start_offset": 0,
+      "position": {
+        "end": 241,
+        "start": 0
+      },
+      "selector_kind": "position",
+      "span_id": "0060074f-d77c-57e8-9eb3-976e7ce99187"
+    },
+    "reference": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+    "request_id": "5a87c37a-6c45-455e-be0d-8a144d1607e7",
+    "start_offset": 0,
+    "trace_id": "62430f61-1253-4f95-857d-946e4cf2ce9f",
+    "verification": {
+      "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+      "excerpt_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+      "verification_errors": [],
+      "verified": true
+    }
+  }
+}

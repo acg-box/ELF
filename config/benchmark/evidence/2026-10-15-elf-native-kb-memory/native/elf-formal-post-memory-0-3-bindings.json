@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        {
+          "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+          "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+          "kind": "source",
+          "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+        }
+      ]
+    }
+  ],
+  "request_id": "162bf8e1-0dc9-4d0f-aad8-1b5cb245bed9",
+  "semantic_support": "not_evaluated"
+}

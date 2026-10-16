@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 1.0,
+    "expires_at": null,
+    "importance": 0.7,
+    "key": null,
+    "note_id": "b9088a68-cd7e-4235-a867-778acffeca88",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+          "source": {
+            "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 125,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90",
+                "source_record_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769"
+              }
+            },
+            "extraction_content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+            "extraction_position": {
+              "end": 125,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_11ab570fcca41f15",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-01T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": "project Cedar batch delivery",
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-calibration",
+    "text": "For project Cedar, Devon chose BATCH-4-741 for batch delivery.",
+    "type": "decision",
+    "updated_at": "2026-10-16T02:59:23.785424Z"
+  },
+  "request_id": "4a3506f4-5da7-4e54-bc32-60783eb1bf3f",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90",
+        "end_offset": 125,
+        "excerpt": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+        "locator": {
+          "match_end_offset": 125,
+          "match_start_offset": 0,
+          "position": {
+            "end": 125,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "d9fa09c7-c4f6-512e-8a9a-40f00278a8c6"
+        },
+        "reference": "elf-source-v1/55b7c603-a4b8-5506-ae26-b5d7f7340a90/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125",
+        "start_offset": 0,
+        "trace_id": "ce6241be-5b94-46dd-a238-485fff3b173c",
+        "verification": {
+          "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+          "excerpt_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 125,
+        "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+        "created_at": [
+          2026,
+          289,
+          2,
+          59,
+          14,
+          152267000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:calibration:memory:m_11ab570fcca41f15",
+          "captured_at": "2026-10-16T02:59:14.144073+00:00",
+          "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T02:59:14.144073+00:00"
+          },
+          "origin": "urn:elf-native-comparison:calibration:memory:m_11ab570fcca41f15",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-01T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90",
+          "source_spans": [
+            {
+              "chunk_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+              "chunk_id": "5795d225-d042-5b9d-9a36-abfa3aee827a",
+              "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+              "end_offset": 125,
+              "schema": "doc_source_span/v1",
+              "span_id": "572a8866-c217-5df8-8fed-59b73c29cced",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_11ab570fcca41f15",
+          "title": "m_11ab570fcca41f15",
+          "trust_label": "user_captured",
+          "ts": "2026-08-01T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-calibration",
+        "title": "m_11ab570fcca41f15",
+        "updated_at": [
+          2026,
+          289,
+          2,
+          59,
+          14,
+          152267000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

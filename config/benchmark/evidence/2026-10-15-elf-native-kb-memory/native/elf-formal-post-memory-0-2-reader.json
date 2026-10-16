@@ -1,0 +1,55 @@
+{
+  "id": "gen-1792119861-1W1Nvlfg89KgoHXSWbkQ",
+  "object": "chat.completion",
+  "created": 1792119861,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"BATCH-0-741 batch delivery remained approved; no delivery-mode change was approved at the August 8 meeting.\",\"citations\":[{\"handle\":\"elf-source-v1/ff686235-3670-56c2-9736-c67a60f5e1c1/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124\",\"quote\":\"They chose BATCH-0-741 for batch delivery.\"},{\"handle\":\"elf-source-v1/a90214e9-0589-51df-8539-8b240a2f11bf/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205\",\"quote\":\"No change of delivery mode was approved at this meeting.\"}]}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZQ2-8plSCfYxCjIaUYUuGsvg2pVH9lLl4ktyb_zU1sFMUrEZ588vgL7M_MDPF4RVHXJluRoR615X3KbA44043P4AYuvsepsgJYTSDMNy0dNHaa-2GAvteLqww_q9DaNwgfbnaUPDpqTSQk0R1lbAghZCEn9ZyUczRv-SlQnPxaFxYDq7mVpgVncJydmzD3LrU2DWfWK0IYtkVnHLYt6-BNF1AxmvGL6dzQ9ZipNQ4y01CVJuJFCc8BT-E2NYJGg-7fAu5SmkA1ozkW0YzTxyyuYr4v_2C9JDISWuuEuF6GiuwcvACLTf5tH5wfoc-HQlZXroBbvsFllQLdEdmnBnwIgMW0Z2SSsHw3Y43pxb96weuWOQSnomDy1qrcvMlJ78enj53Itc0BCIWm-mCH16AlFOK_vWh-f9wGO7VE768x0ooZpNoGJwvzQRZv_wHMjg0vzq68Mx1j6UU7IwlqlGFdQhEN9Qol3FqHeQyF_wu_s9lO98kC5K7KmnnaVt1LakBs-LTtnmt5K7o6hdL7ni02psdalrBuR91SKiueetUOJqr7MhHhF81AltBJP_kMuN9mJVhKU_g7dAfyaOuq5z3vqPvAs7shsnGDrY0LSWiTfs1w4vPWBndQhDwi5R6SmczCezK_ArWx27p5WQA5kmdTZ6eDqg3E2tIjW-MILDTpU2Io1_L96kzFFQwkg8rXL0IKMGWG0-HrTxxwXi4kLeVsmMOT8EKQaTqhp4E6vVqjOwM4cY-nRgr23T4Mv4mjhkkyQuJoKejo7xKCTtmiMOZPNPoG8B9_9Iv-_wMJtr16T3OS1wM26Oz5xaHi9_Yeyof-1lfctTULvpz2wu9KYZ5cNWOUgaBeJ_xDzuwWxNHm8kD98altwwdv4ONYNCw8wl6-xEBosDCxtY4-Vh1FYIXscVwgwA4E2ksPwdfPt-_kZ3jGvzigWHaAkiBWJu9c7xiiSgJ4lXgWGHajP82Mi-YigkgMU8z2m51fi-Yrf-f6zm58z_1f0nRK0ZvgEb-yQiJlNPRPLi8bl4DhTOgdAeXBN7BSrnDS1xnpv3TaimfyjoRt-ep8MopypPhCLzzu5rIPqA-q1C0DcWou36uiakE4m58a0wAibqOFsDfsEOhQzJIZd6YYoKU3mRHF8VMqDTGfon0s56wYpUuisqzMGGNV1hdsM0aiWbmYxVR0Gu7ZDZQuMJsCHBpQZ6hna7Jmxo77vgZt6WR5jUKSsfzGKtj0JwUz4_8fODIu9KSrVBW_u-H9awFuXDbMngcs2ta7pa9fNqJQchzr1XP9YB9TyeTFtBaka_9cPqkvBJq5Q5O8yl2YAm4J2NQuW7gzNsgvFkg8IVb55_WDdR73w1dcS9tuBFo6Fye0AgvmUhK5M2CTCXkcgR34Io0uxLPr3IW_NqCoIQDOiO6hTfys7ZMmL3zekBnuUdY0uOKwJdh2Vso8WasF-3r6dOn5r8tVk2KFLiIBgY4C_ZrOT4VU-aMkRSe2K7mJoS9qu7xfMSHkZMY2smo7-QE4i2HxGPN5EtAwfZ74phHke3QcMibDvJxnjtFbYP_yQLK4NoikuGLNa5HD7Muw4zpAuFv8yKyBdl0-rB1ONW05qDr94rJUMPxaI8WjCbUGxBdC3YP3Nb-BEfyym4El5uEsg8YKCnn8Usv_JfhBGfTMlRRlaRcUIfPSWwT3BN6KLZM8Tu7Wgd0UGBvbiClHWR_1vWv0NIIVDQgjMoi7ALOmPX-HEIDZLo0m6G_8Vi_MmwJAxwIUwuHGYZDdnWhjrv9sIk0gSa8WsrlEGA_FQ_6VlP7J4QpBy7QPBSbFyO3nFw0QAIFzzMCgZzGoQti-AL5lqXvuTma5CO6_nHswm3cYmV-OpwHajiAI0lrJodATdZEFifuQL83adbg8punmgezRCHKiVi-J0FtbcX0W9tGlji24GIHRiEBezwyALLaNd4E-4d1s5AabT97aKJ8rp2Q2omwmNSfe2MQlPAlhM4FubvAx_UWSclGen100UhA==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_074ee1501fa43ca3016ad19435a44c87d183c718533f16bc7a",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5156,
+    "completion_tokens": 247,
+    "total_tokens": 5403,
+    "cost": 0.000767925,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 5153,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000767925,
+      "upstream_inference_prompt_cost": 0.000644425,
+      "upstream_inference_completions_cost": 0.0001235
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 35,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,457 @@
+"""Small native KB and memory comparison. No oracle is read by this client."""
+from __future__ import annotations
+import base64
+import hashlib
+import json
+import os
+from pathlib import Path
+import secrets
+import subprocess
+import sys
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+import uuid
+
+ROOT = Path(__file__).resolve().parent
+RAG = 'http://127.0.0.1:19480/api/v1'
+OV = 'http://127.0.0.1:19433/api/v1'
+RAG_CONTAINER = 'elf-unified-smoke-20261015-ragflow-cpu-1'
+OV_CONTAINER = 'elf-unified-openviking-20261015'
+OV_IMAGE = 'ghcr.io/volcengine/openviking@sha256:2c104187d17d9b5c837d578990ae574807ad8ab78ba84191ddafabfde207af38'
+EMBED = 'qwen/qwen3-embedding-8b'
+CHAT = 'openai/gpt-6-luna'
+INSTANCE = 'elf_smoke'
+MODEL_SUFFIX = '@elf_smoke@OpenAI-API-Compatible'
+
+def save(name, data):
+    p = ROOT / name
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(data, indent=2, ensure_ascii=False))
+    p.chmod(0o600)
+    return data
+
+def read(name):
+    return json.loads((ROOT / name).read_text())
+
+def event(kind, **values):
+    row = dict(time=time.time(), event=kind, **values)
+    with (ROOT / 'events.jsonl').open('a') as f:
+        f.write(json.dumps(row) + '\n')
+    print(json.dumps(row), flush=True)
+
+def request(url, method='GET', value=None, headers=None, data=None, content_type='application/json', raw=False, timeout=3600):
+    if value is not None:
+        data = json.dumps(value, ensure_ascii=False).encode()
+    h = {'Content-Type': content_type, **(headers or {})}
+    req = urllib.request.Request(url, data=data, headers=h, method=method)
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as response:
+            payload = response.read()
+            if raw:
+                return payload
+            result = json.loads(payload)
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode(errors='replace')
+        raise RuntimeError(f'{method} {urllib.parse.urlsplit(url).path}: HTTP {e.code}: {detail[:2500]}') from None
+    if isinstance(result, dict) and (result.get('code', 0) != 0 or result.get('status') == 'error'):
+        raise RuntimeError(f'{method} {urllib.parse.urlsplit(url).path}: {result}')
+    return result
+
+def rag(path, method='GET', value=None, **kwargs):
+    s = read('ragflow-session.json')
+    return request(RAG + path, method, value, {'Authorization': 'Bearer ' + s['api_key']}, **kwargs).get('data')
+
+def ov(path, method='GET', value=None, **kwargs):
+    a = read('openviking-auth.json')
+    return request(OV + path, method, value, {'X-API-Key': a['active_user_key']}, **kwargs).get('result')
+
+def ov_activate(scope):
+    a = read('openviking-auth.json')
+    a.setdefault('users', {})
+    if scope not in a['users']:
+        r = request(OV + '/admin/accounts', 'POST', {'account_id': 'elf-' + scope, 'admin_user_id': scope}, {'X-API-Key': a['key']})['result']
+        a['users'][scope] = r['user_key']
+    a['active_user_key'] = a['users'][scope]
+    save('openviking-auth.json', a)
+    event('openviking_user_ready', scope=scope)
+
+def multipart(name, text):
+    boundary = 'elf-' + uuid.uuid4().hex
+    body = (f'--{boundary}\r\nContent-Disposition: form-data; name="file"; filename="{name}"\r\nContent-Type: text/plain\r\n\r\n').encode()
+    return body + text.encode() + f'\r\n--{boundary}--\r\n'.encode(), 'multipart/form-data; boundary=' + boundary
+
+def register():
+    if (ROOT / 'ragflow-session.json').exists():
+        event('ragflow_registration_reused')
+        return
+    subprocess.run(['docker', 'cp', RAG_CONTAINER + ':/ragflow/conf/public.pem', str(ROOT / 'public.pem')], check=True, capture_output=True)
+    password = secrets.token_hex(20)
+    encrypted = subprocess.check_output(['openssl', 'pkeyutl', '-encrypt', '-pubin', '-inkey', str(ROOT / 'public.pem'), '-pkeyopt', 'rsa_padding_mode:pkcs1'], input=base64.b64encode(password.encode()))
+    data = {'nickname': 'ELF Unified Memory Trial', 'email': 'elf-unified-20261015@example.test', 'password': base64.b64encode(encrypted).decode()}
+    req = urllib.request.Request(RAG + '/users', data=json.dumps(data).encode(), headers={'Content-Type': 'application/json'})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        result = json.load(r)
+        auth = r.headers.get('Authorization')
+    if result.get('code') != 0 or not auth:
+        raise RuntimeError('Registration failed: ' + str(result.get('message')))
+    token = request(RAG + '/system/tokens', 'POST', {}, {'Authorization': auth})['data']['token']
+    save('ragflow-session.json', {'auth': auth, 'api_key': token, 'password': password, 'user_id': result['data'].get('id'), 'email': data['email']})
+    event('ragflow_registered', user_id=result['data'].get('id'))
+
+def gateway():
+    # The provider credential is removed by benchmark-budget before this process.
+    assert 'OPENROUTER_API_KEY' not in os.environ
+    save('gateway.json', {'base': os.environ['OPENAI_BASE_URL'], 'token': os.environ['OPENAI_API_KEY'], 'pid': os.getpid()})
+    (ROOT / 'gateway.stop').unlink(missing_ok=True)
+    event('gateway_consumer_ready')
+    try:
+        end = time.monotonic() + 7200
+        while time.monotonic() < end and not (ROOT / 'gateway.stop').exists():
+            time.sleep(1)
+    finally:
+        (ROOT / 'gateway.json').unlink(missing_ok=True)
+        event('gateway_consumer_stopped')
+
+def configure_rag():
+    g = read('gateway.json')
+    if not (ROOT / 'ragflow-provider-created.json').exists():
+        rag('/providers', 'PUT', {'provider_name': 'OpenAI-API-Compatible'})
+        rag('/providers/OpenAI-API-Compatible/instances', 'POST', {'instance_name': INSTANCE})
+        save('ragflow-provider-created.json', {'created': True})
+    config = {'instance_name': INSTANCE, 'verify': False, 'api_key': g['token'], 'base_url': g['base'].replace('127.0.0.1', 'host.docker.internal'),
+        'model_info': [
+            {'model_name': EMBED, 'model_type': ['embedding'], 'max_tokens': 8192, 'extra': {'max_dimension': 4096, 'dimensions': [4096]}},
+            {'model_name': CHAT, 'model_type': ['chat'], 'max_tokens': 128000}]}
+    rag('/providers/OpenAI-API-Compatible/instances/' + INSTANCE, 'PUT', config)
+    models = rag('/providers/OpenAI-API-Compatible/instances/' + INSTANCE + '/models')
+    save('ragflow-models.json', models)
+    event('ragflow_models_configured', embedding_dimension=4096)
+
+def start_ov(scope):
+    g = read('gateway.json')
+    directory = ROOT / ('openviking-' + scope)
+    directory.mkdir(exist_ok=True, mode=0o700)
+    b = g['base'].replace('127.0.0.1', 'host.docker.internal')
+    a = read('openviking-auth.json') if (ROOT / 'openviking-auth.json').exists() else save('openviking-auth.json', {'key': secrets.token_hex(24)})
+    config = {'default_account': 'elfbench', 'default_user': scope,
+        'server': {'host': '0.0.0.0', 'port': 1933, 'auth_mode': 'api_key', 'root_api_key': a['key']},
+        'storage': {'workspace': '/app/.openviking/native', 'vectordb': {'backend': 'local', 'dimension': 4096}},
+        'embedding': {'dense': {'provider': 'openai', 'api_base': b, 'api_key': g['token'], 'model': EMBED, 'dimension': 4096, 'encoding_format': 'float'}, 'text_source': 'content_only', 'max_concurrent': 1},
+        'auto_generate_l0': True, 'auto_generate_l1': True, 'default_search_mode': 'thinking',
+        'vlm': {'provider': 'openai', 'api_base': b, 'api_key': g['token'], 'model': CHAT, 'reasoning_effort': 'medium', 'max_tokens': 128000, 'max_concurrent': 1, 'max_retries': 0, 'timeout': 3600}}
+    save(str(directory.relative_to(ROOT) / 'ov.conf'), config)
+    inspect = subprocess.run(['docker', 'inspect', '-f', '{{.State.Status}}', OV_CONTAINER], capture_output=True, text=True)
+    if inspect.returncode == 0:
+        subprocess.run(['docker', 'stop', OV_CONTAINER], check=True, capture_output=True)
+        subprocess.run(['docker', 'rm', OV_CONTAINER], check=True, capture_output=True)
+    started = time.monotonic()
+    subprocess.run(['docker', 'run', '-d', '--name', OV_CONTAINER, '--platform', 'linux/amd64', '--label', 'elf.trial=unified-memory-2026-10-15', '--memory', '4g', '--cpus', '2', '-p', '127.0.0.1:19433:1933', '-v', str(directory) + ':/app/.openviking', OV_IMAGE], check=True, capture_output=True)
+    for _ in range(180):
+        try:
+            result = request('http://127.0.0.1:19433/health', headers={'X-API-Key': a['key']}, timeout=3)
+            event('openviking_started', scope=scope, seconds=round(time.monotonic()-started, 3), health=result)
+            ov_activate(scope)
+            return
+        except Exception:
+            time.sleep(1)
+    raise TimeoutError('OpenViking did not become healthy; inspect private Docker logs')
+
+def state(product, scope):
+    path = f'{product}-{scope}-state.json'
+    return read(path) if (ROOT / path).exists() else {}
+
+def state_save(product, scope, value):
+    return save(f'{product}-{scope}-state.json', value)
+
+def rag_create(scope):
+    s = state('ragflow', scope)
+    if 'dataset' not in s:
+        s['dataset'] = rag('/datasets', 'POST', {'name': 'elf-unified-' + scope, 'embedding_model': EMBED + MODEL_SUFFIX, 'parser_id': 'general', 'permission': 'me'})
+        state_save('ragflow', scope, s)
+    if 'memory' not in s:
+        s['memory'] = rag('/memories', 'POST', {'name': 'elf-unified-' + scope, 'memory_type': ['raw', 'semantic', 'episodic', 'procedural'], 'embd_id': EMBED + MODEL_SUFFIX, 'llm_id': CHAT + MODEL_SUFFIX})
+        state_save('ragflow', scope, s)
+    event('ragflow_scopes_ready', scope=scope, dataset=s['dataset']['id'], memory=s['memory']['id'])
+    return s
+
+def rag_ingest_knowledge(scope, items):
+    s = rag_create(scope)
+    d = s['dataset']['id']
+    s.setdefault('documents', {})
+    start = time.monotonic()
+    for item in items:
+        if item['evidence_id'] in s['documents']:
+            continue
+        body, ct = multipart(item['evidence_id'] + '.txt', item['text'])
+        doc = rag(f'/datasets/{d}/documents', 'POST', data=body, content_type=ct)[0]
+        s['documents'][item['evidence_id']] = doc
+        state_save('ragflow', scope, s)
+        parsed = rag(f'/datasets/{d}/chunks', 'POST', {'document_ids': [doc['id']]})
+        save(f'native/ragflow-{scope}-parse-{item["evidence_id"]}.json', parsed)
+    deadline = time.monotonic() + 900
+    while time.monotonic() < deadline:
+        docs = rag(f'/datasets/{d}/documents?page_size=100')
+        save(f'native/ragflow-{scope}-documents.json', docs)
+        rows = docs['docs']
+        statuses = [str(x.get('ingestion_status', x.get('run'))).upper() for x in rows]
+        if any(x in ['FAIL', 'FAILED', 'CANCELED', '4'] for x in statuses):
+            raise RuntimeError('RAGFlow document parse failed; see saved native documents')
+        if len(rows) == len(items) and all(x in ['COMPLETED', 'DONE', 'SUCCEEDED', 'SUCCESS', '3'] for x in statuses):
+            event('ragflow_knowledge_ready', scope=scope, count=len(rows), seconds=round(time.monotonic()-start, 3))
+            return
+        time.sleep(2)
+    raise TimeoutError('RAGFlow parsing did not finish within 900 seconds')
+
+def rag_memory_list(scope):
+    s = state('ragflow', scope)
+    return rag('/memories/' + s['memory']['id'] + '?page=1&page_size=100')
+
+def rag_add_memory(scope, item):
+    s = state('ragflow', scope)
+    s.setdefault('messages', {})
+    eid = item['evidence_id']
+    if eid in s['messages']:
+        return
+    session = scope + '-' + eid
+    started = time.monotonic()
+    result = rag('/messages', 'POST', {'memory_id': [s['memory']['id']], 'agent_id': 'elf-trial', 'session_id': session, 'user_id': scope,
+        'user_input': item['text'], 'agent_response': 'Recorded.'})
+    s['messages'][eid] = {'session_id': session, 'submission': result, 'submitted_at': time.time()}
+    state_save('ragflow', scope, s)
+    event('ragflow_memory_submitted', scope=scope, evidence_id=eid, seconds=round(time.monotonic()-started, 3))
+
+def rag_wait_memory(scope, expected):
+    start = time.monotonic()
+    while time.monotonic() - start < 900:
+        result = rag_memory_list(scope)
+        save(f'native/ragflow-{scope}-memory.json', result)
+        rows = result['messages']['message_list']
+        if len(rows) >= expected:
+            if any(float(x.get('task', {}).get('progress', 0)) < 0 for x in rows):
+                raise RuntimeError('RAGFlow memory extraction task failed; see saved native memory')
+            if all(float(x.get('task', {}).get('progress', 0)) >= 1 for x in rows):
+                event('ragflow_memory_ready', scope=scope, records=len(rows), derived=sum(len(x.get('extract', [])) for x in rows), seconds=round(time.monotonic()-start, 3))
+                return result
+        time.sleep(2)
+    raise TimeoutError('RAGFlow memory extraction did not finish within 900 seconds')
+
+def ov_ingest_knowledge(scope, items):
+    s = state('openviking', scope)
+    s.setdefault('documents', {})
+    start = time.monotonic()
+    for item in items:
+        eid = item['evidence_id']
+        if eid in s['documents']:
+            continue
+        body, ct = multipart(eid + '.txt', item['text'])
+        uploaded = ov('/resources/temp_upload', 'POST', data=body, content_type=ct)
+        result = ov('/resources', 'POST', {'temp_file_id': uploaded['temp_file_id'], 'to': f'viking://resources/{scope}/{eid}', 'create_parent': True, 'wait': True, 'timeout': 900})
+        s['documents'][eid] = result
+        state_save('openviking', scope, s)
+        save(f'native/openviking-{scope}-ingest-{eid}.json', result)
+        event('openviking_document_ready', scope=scope, evidence_id=eid)
+    event('openviking_knowledge_ready', scope=scope, count=len(items), seconds=round(time.monotonic()-start, 3))
+
+def ov_add_memory(scope, item):
+    s = state('openviking', scope)
+    s.setdefault('messages', {})
+    eid = item['evidence_id']
+    if eid in s['messages'] and s['messages'][eid].get('complete'):
+        return
+    started = time.monotonic()
+    if eid not in s['messages']:
+        session = ov('/sessions', 'POST', {'session_id': scope + '-' + eid})
+        sid = session['session_id']
+        timestamp = {'created_at': item['timestamp']} if item.get('timestamp') else {}
+        ov('/sessions/' + sid + '/messages', 'POST', {'role': 'user', 'content': item['text'], **timestamp})
+        ov('/sessions/' + sid + '/messages', 'POST', {'role': 'assistant', 'content': 'Recorded.', **timestamp})
+        committed = ov('/sessions/' + sid + '/commit', 'POST', {})
+        s['messages'][eid] = {'session': session, 'commit': committed}
+        state_save('openviking', scope, s)
+    row = s['messages'][eid]
+    task_id = row['commit'].get('task_id')
+    if not task_id:
+        raise RuntimeError('Nonempty OpenViking session did not create a commit task')
+    while time.monotonic() - started < 900:
+        task = ov('/tasks/' + task_id)
+        save(f'native/openviking-{scope}-memory-{eid}.json', task)
+        status = str(task.get('status', '')).lower()
+        if status in ['completed', 'done', 'success', 'succeeded']:
+            row['task'] = task
+            row['complete'] = True
+            state_save('openviking', scope, s)
+            event('openviking_memory_ready', scope=scope, evidence_id=eid, seconds=round(time.monotonic()-started, 3))
+            return
+        if status in ['failed', 'error', 'cancelled']:
+            raise RuntimeError('OpenViking commit task failed: ' + str(task))
+        time.sleep(2)
+    raise TimeoutError('OpenViking memory extraction did not finish within 900 seconds')
+
+def rag_contexts(scope, question):
+    s = state('ragflow', scope)
+    d, m = s['dataset']['id'], s['memory']['id']
+    knowledge = rag('/retrieval', 'POST', {'question': question, 'dataset_ids': [d], 'page': 1, 'page_size': 6, 'similarity_threshold': 0.2, 'vector_similarity_weight': 0.3, 'top_k': 1024, 'keyword': False})
+    memory = rag('/messages/search?' + urllib.parse.urlencode({'memory_id': m, 'query': question, 'top_n': 6, 'similarity_threshold': 0.2, 'keywords_similarity_weight': 0.7, 'user_id': scope}))
+    contexts = []
+    hydrated = {}
+    for x in (knowledge or {}).get('chunks', [])[:6]:
+        doc = x.get('document_id', x.get('doc_id'))
+        contexts.append({'handle': f'ragflow:document:{doc}:chunk:{x.get("id")}', 'kind': 'knowledge_chunk', 'text': x.get('content', ''), 'metadata': {'document_id': doc}})
+    for x in (memory or [])[:6]:
+        handle = f'ragflow:memory:{m}:{x["message_id"]}'
+        contexts.append({'handle': handle, 'kind': 'memory_' + x.get('message_type', 'unknown'), 'text': x.get('content', ''),
+            'metadata': {k: x.get(k) for k in ['source_id', 'session_id', 'valid_at', 'invalid_at', 'status']}})
+        source_id = x.get('source_id')
+        if source_id and x.get('message_type') != 'raw' and str(source_id) not in hydrated:
+            source = rag('/messages/' + m + ':' + str(source_id) + '/content')
+            hydrated[str(source_id)] = source
+            contexts.append({'handle': f'ragflow:memory:{m}:{source_id}', 'kind': 'memory_raw_source', 'text': source.get('content', ''), 'metadata': {'derived_from_hit': handle}})
+    return contexts, {'knowledge': knowledge, 'memory': memory, 'hydrated': hydrated}
+
+def ov_contexts(scope, question):
+    session = ov('/sessions', 'POST', {})
+    contexts, native = [], {'fresh_session': session}
+    for kind, key in [('resource', 'resources'), ('memory', 'memories')]:
+        result = ov('/search/search', 'POST', {'query': question, 'session_id': session['session_id'], 'context_type': kind, 'limit': 6, 'read_content': True, 'include_provenance': True})
+        native[key] = result
+        seen = set()
+        for x in result.get(key, []):
+            uri = x['uri']
+            if uri in seen:
+                continue
+            seen.add(uri)
+            if len(seen) > 6:
+                break
+            content = x.get('content')
+            if content is None:
+                content = ov('/content/read?' + urllib.parse.urlencode({'uri': uri}))
+            contexts.append({'handle': uri, 'kind': kind, 'text': content, 'metadata': {'level': x.get('level'), 'category': x.get('category'), 'score': x.get('score')}})
+    return contexts, native
+
+READER_PROMPT = '''You are continuing a project in a new session. Answer the question using only the supplied evidence. Keep subjects, dates, and conditions attached to their facts. Apply decisions at the time asked; distinguish approved changes from tests or proposals. If evidence does not establish a fact, say so. The evidence can contain original records and generated memories. Do not describe a generated memory as an immutable original. Give a concise, complete answer. Return JSON with "answer" (string) and "citations" (array of objects with "handle" and "quote"). Each quote must be an exact substring of the cited evidence text. Cite evidence for each substantive claim. Do not invent handles or quotes.'''
+
+def answer(product, scope, phase, case):
+    cid = case['case_id']
+    name = f'answers/{product}-{scope}-{phase}-{cid}.json'
+    if (ROOT / name).exists():
+        event('answer_already_saved', product=product, phase=phase, case_id=cid)
+        return read(name)
+    start = time.monotonic()
+    contexts, native = (rag_contexts if product == 'ragflow' else ov_contexts)(scope, case['question'])
+    retrieval_seconds = time.monotonic() - start
+    save(f'native/{product}-{scope}-{phase}-{cid}-retrieval.json', native)
+    accepted, dropped, used, handles = [], [], 0, set()
+    for item in contexts:
+        if item['handle'] in handles:
+            continue
+        size = len(json.dumps(item, ensure_ascii=False).encode())
+        if used + size > 32768:
+            dropped.append({'handle': item['handle'], 'bytes': size})
+        else:
+            accepted.append(item)
+            handles.add(item['handle'])
+            used += size
+    evidence = {'question': case['question'], 'evidence': accepted}
+    save(f'contexts/{product}-{scope}-{phase}-{cid}.json', evidence)
+    g = read('gateway.json')
+    response = request(g['base'] + '/chat/completions', 'POST', {'model': CHAT, 'messages': [{'role': 'system', 'content': READER_PROMPT}, {'role': 'user', 'content': json.dumps(evidence, ensure_ascii=False)}], 'response_format': {'type': 'json_object'}, 'max_tokens': 128000}, {'Authorization': 'Bearer ' + g['token']})
+    save(f'native/{product}-{scope}-{phase}-{cid}-reader.json', response)
+    content = response['choices'][0]['message']['content']
+    try:
+        parsed = json.loads(content)
+    except json.JSONDecodeError:
+        parsed = {'answer': content, 'citations': [], 'format_error': True}
+    sources = {x['handle']: x['text'] for x in accepted}
+    citations = parsed.get('citations', [])
+    checks = [{'handle': x.get('handle'), 'quote_bound': bool(x.get('quote')) and x.get('quote', '') in sources.get(x.get('handle'), '')} for x in citations]
+    result = {'product': product, 'scope': scope, 'phase': phase, 'case_id': cid, 'question': case['question'], 'answer': parsed, 'citation_checks': checks,
+        'retrieval_seconds': round(retrieval_seconds, 3), 'total_seconds': round(time.monotonic()-start, 3), 'context_bytes': used, 'context_entries': len(accepted), 'dropped': dropped, 'usage': response.get('usage'), 'finish_reason': response['choices'][0].get('finish_reason')}
+    save(name, result)
+    event('answer_saved', product=product, phase=phase, case_id=cid, seconds=result['total_seconds'], contexts=len(accepted), all_quotes_bound=bool(checks) and all(x['quote_bound'] for x in checks))
+    return result
+
+def wait_rag_api():
+    for _ in range(180):
+        try:
+            request(RAG + '/system/version', timeout=3)
+            rag('/memories', timeout=3)
+            return
+        except Exception:
+            time.sleep(1)
+    raise TimeoutError('RAGFlow API did not become ready after restart')
+
+def restart_product(product):
+    name = RAG_CONTAINER if product == 'ragflow' else OV_CONTAINER
+    start = time.monotonic()
+    subprocess.run(['docker', 'restart', name], check=True, capture_output=True)
+    if product == 'ragflow':
+        wait_rag_api()
+    else:
+        a = read('openviking-auth.json')
+        for _ in range(180):
+            try:
+                result = request('http://127.0.0.1:19433/health', headers={'X-API-Key': a['active_user_key']}, timeout=3)
+                if result.get('healthy'):
+                    break
+            except Exception:
+                pass
+            time.sleep(1)
+        else:
+            raise TimeoutError('OpenViking did not become ready after restart')
+    event('product_restarted', product=product, seconds=round(time.monotonic()-start, 3))
+
+def formal(product):
+    inputs = read('inputs.json')
+    protocol = read('protocol.json')
+    assert hashlib.sha256((ROOT/'inputs.json').read_bytes()).hexdigest() == protocol['input_sha256']
+    assert hashlib.sha256((ROOT/'oracle.json').read_bytes()).hexdigest() == protocol['oracle_sha256']
+    snapshot = read('../elf-real-project-pilot/budget-ledger.json')
+    save(f'{product}-formal-opening-ledger.json', snapshot)
+    start = time.monotonic()
+    ingest = rag_ingest_knowledge if product == 'ragflow' else ov_ingest_knowledge
+    add = rag_add_memory if product == 'ragflow' else ov_add_memory
+    ingest('formal', inputs['knowledge'])
+    for i, item in enumerate(inputs['memory_initial']):
+        add('formal', item)
+        if product == 'ragflow':
+            rag_wait_memory('formal', i + 1)
+    event('formal_initial_ingest_complete', product=product, seconds=round(time.monotonic()-start, 3))
+    for case in inputs['pre_update_queries']:
+        answer(product, 'formal', 'pre', case)
+    for i, item in enumerate(inputs['memory_updates']):
+        add('formal', item)
+        if product == 'ragflow':
+            rag_wait_memory('formal', len(inputs['memory_initial']) + i + 1)
+    event('formal_updates_complete', product=product)
+    restart_product(product)
+    for case in inputs['post_update_queries']:
+        answer(product, 'formal', 'post', case)
+    save(f'{product}-formal-closing-ledger.json', read('../elf-real-project-pilot/budget-ledger.json'))
+    event('formal_answers_complete', product=product, seconds=round(time.monotonic()-start, 3))
+
+def main():
+    command = sys.argv[1]
+    if command == 'register': register()
+    elif command == 'gateway': gateway()
+    elif command == 'configure-rag': configure_rag()
+    elif command == 'start-ov': start_ov(sys.argv[2])
+    elif command == 'activate-ov': ov_activate(sys.argv[2])
+    elif command == 'rag-create': rag_create(sys.argv[2])
+    elif command == 'rag-cal-ingest':
+        inputs = read('inputs.json')['calibration']
+        rag_ingest_knowledge('calibration', inputs['knowledge'])
+        rag_add_memory('calibration', inputs['memory'][0])
+        rag_wait_memory('calibration', 1)
+    elif command == 'ov-cal-ingest':
+        inputs = read('inputs.json')['calibration']
+        ov_ingest_knowledge('calibration', inputs['knowledge'])
+        ov_add_memory('calibration', inputs['memory'][0])
+    elif command == 'cal-answer':
+        answer(sys.argv[2], 'calibration', 'calibration', {'case_id': 'calibration', 'question': read('inputs.json')['calibration']['question']})
+    elif command == 'formal': formal(sys.argv[2])
+    else: raise SystemExit('Unknown command')
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,115 @@
+{
+  "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+  "evidence": [
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/m_c558d1541c4b9d0f.md",
+      "kind": "resource",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.829100489616394
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_c558d1541c4b9d0f/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_0b5e9a45211f4fb991f17dfef4fd0b99.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a brief project note about the start of project Larch and two selected identifiers: one for batch delivery and one for the initial retry policy.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.7853678464889526
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md",
+      "kind": "resource",
+      "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7599396705627441
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_d7a9d1f22107f233/.overview.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_d7a9d1f22107f233/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_0932bc3f237e4b04b2fc5d6e87fcfa27.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# m_d7a9d1f22107f233\n\nThis directory contains a brief meeting note about lost updates associated with outages and a tested recovery option. It records Mara’s report that BATCH-0-741 lost updates during GATE-0-519 outages, the team’s test of REPLAY-0-632, and the meeting’s decision not to approve a change in delivery mode. The note is relevant to tracking BATCH-0-741, GATE-0-519, REPLAY-0-632, lost updates, outages, and delivery mode. No specific audience or required prior knowledge is stated.\n\n## Directory Coverage\n\nThere is **1 direct entry**, and **all entries are represented** in the summaries provided.\n\n## Quick Navigation\n\nWhat do you want to learn?\n\n- → Read the meeting report, outage context, replay test, and delivery-mode decision: [m_d7a9d1f22107f233.md](viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md)\n\n## Detailed Description\n\n### [m_d7a9d1f22107f233.md](viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md)\n\nThis brief meeting note records an update-loss issue, a recovery test, and the decision about whether to change delivery mode. It is dated 2026-08-08 and identifies the reported issue as lost updates in BATCH-0-741 during GATE-0-519 outages.\n\nThe note attributes the report to Mara. It states that the team tested REPLAY-0-632 and that this test restored the missing updates. It does not specify how the test was performed, provide further technical details about the outage or recovery process, or describe the underlying systems beyond the named identifiers. These limits mean the note supports tracking the reported incident and test outcome, but does not provide a detailed technical account of either.\n\nThe meeting decision is also explicit: no change of delivery mode was approved. The note therefore records a successful recovery test alongside a decision not to approve a delivery-mode change at that meeting. It does not state why the change was not approved or whether a later decision was made.\n\nFor retrieval, the main terms associated with this entry are BATCH-0-741, GATE-0-519, REPLAY-0-632, lost updates, outages, and delivery mode. The note may be useful to readers following these update and outage issues; the source does not identify a particular audience or specify prior knowledge.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.7501765489578247
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_f7ff6441bdd98e53/.overview.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_f7ff6441bdd98e53/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_07358da9e4124ed690805a9b15a09280.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# m_f7ff6441bdd98e53\n\nThis directory contains an operational update dated 2026-08-08 about lost updates associated with outages and a tested recovery approach. The note reports that BATCH-1-741 lost updates during GATE-1-519 outages and that testing REPLAY-1-632 restored the missing updates. It also records an important decision outcome: no change of delivery mode was approved at the meeting. The directory is useful for readers tracking the reported update loss, the replay-based recovery, and the delivery-mode decision. The identifiers are recorded without further technical explanation.\n\n## Directory Coverage\n\nThere is **1 direct entry**, and **all entries are represented** in the overview.\n\n## Quick Navigation\n\nWhat do you want to learn?\n\n- What update loss was reported and what recovery was tested? → [m_f7ff6441bdd98e53.md](viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md)\n- What was decided about changing the delivery mode? → [m_f7ff6441bdd98e53.md](viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md)\n\n## Detailed Description\n\n### [m_f7ff6441bdd98e53.md](viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md)\n\nThis brief operational meeting or incident note records an update dated 2026-08-08. It reports that Ivo identified lost updates in BATCH-1-741 during GATE-1-519 outages. The note then describes a tested recovery approach: REPLAY-1-632 restored the missing updates. It does not provide further technical details about the identifiers, the outage conditions, or how replay was performed.\n\nThe note also distinguishes the recovery result from a delivery-mode decision. Although replay restored the missing updates, the meeting did not approve a change of delivery mode. Thus, the recorded outcome is that the tested replay approach recovered the missing updates, while the delivery mode remained without an approved change in this meeting note. The document does not state whether a change was considered elsewhere or whether any later decision followed.\n\nThis file is suited to readers who need a concise record of the reported loss and recovery, or who are checking the stated meeting outcome. Its searchable terms include BATCH-1-741, GATE-1-519, REPLAY-1-632, outages, lost updates, replay, and delivery mode. These terms reflect the subjects named in the note; the note itself does not expand on them with additional system descriptions, implementation guidance, or explanations.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.7315054535865784
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/larch_project_started.md",
+      "kind": "memory",
+      "text": "# Summary\nMara started project Larch on 2026-08-01, chose BATCH-0-741 for batch delivery, and set RETRY-0-108 as the initial retry policy.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8197237253189087
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/08/delivery_mode_unchanged.md",
+      "kind": "memory",
+      "text": "# Summary\nAt the 2026-08-08 meeting, no change of delivery mode was approved.\n# 2026-08-08 (Saturday) ChatLog:\n**user**: 2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7932873964309692
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/08/delivery_mode_decision.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-08, no change of delivery mode was approved at the meeting.\n# 2026-08-08 (Saturday) ChatLog:\n**user**: 2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7853368520736694
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/.overview.md",
+      "kind": "memory",
+      "text": "---\ndirectory: viking://user/formal/memories/events/2026/08/01/\ngenerated_by:\n  component: MemoryUpdater\n  trigger: memory_update\nfreshness:\n  total_entries: 4\n  sampled_entries: 4\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# Events Overview\n\n- [On 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.](./batch_delivery_selected.md)\n\n- [Mara started project Larch on 2026-08-01, chose BATCH-0-741 for batch delivery, and set RETRY-0-108 as the initial retry policy.](./larch_project_started.md)\n\n- [On 2026-08-01, Ivo started Project Cobalt.](./project_cobalt_started.md)\n\n- [On 2026-08-01, Ivo set RETRY-1-108 as the initial retry policy for Project Cobalt.](./retry_policy_set.md)\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.7620382308959961
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/batch_delivery_selected.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7575599551200867
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/08/.overview.md",
+      "kind": "memory",
+      "text": "---\ndirectory: viking://user/formal/memories/events/2026/08/08/\ngenerated_by:\n  component: MemoryUpdater\n  trigger: memory_update\nfreshness:\n  total_entries: 6\n  sampled_entries: 6\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# Events Overview\n\n- [At the 2026-08-08 meeting, Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages.](./batch_update_loss_report.md)\n\n- [On 2026-08-08, no change of delivery mode was approved at the meeting.](./delivery_mode_decision.md)\n\n- [At the 2026-08-08 meeting, no change of delivery mode was approved.](./delivery_mode_unchanged.md)\n\n- [On 2026-08-08, the team tested REPLAY-1-632, which restored the missing updates to BATCH-1-741.](./replay_restoration.md)\n\n- [At the 2026-08-08 meeting, the team tested REPLAY-0-632, which restored the missing updates to BATCH-0-741.](./replay_restoration_test.md)\n\n- [On 2026-08-08, Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages.](./update_loss_report.md)\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.7556666135787964
+      }
+    }
+  ]
+}

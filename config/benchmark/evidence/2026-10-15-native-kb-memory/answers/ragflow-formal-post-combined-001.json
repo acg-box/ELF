@@ -1,0 +1,67 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "combined-001",
+  "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project? Also list both exception identifiers in the signed Kestrel-0 return policy.",
+  "answer": {
+    "answer": "For Mara’s Larch project, the delivery mode as of August 22 is not established: the August 22 note says to keep the August 15 delivery choice, but the choice itself is not provided. The retry policy is RETRY-0-907, superseding RETRY-0-108. The signed Kestrel-0 return policy lists CUSTOM-0-7c2 and DEFECT-0-9b4.",
+    "citations": [
+      {
+        "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+        "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+      },
+      {
+        "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+        "quote": "They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+      },
+      {
+        "handle": "ragflow:document:1eb527ed80114d08b3a6a330b85991b0:chunk:5f612a1ed973221d",
+        "quote": "custom-made goods use exception CUSTOM-0-7c2\n quality defects use exception DEFECT-0-9b4"
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:document:1eb527ed80114d08b3a6a330b85991b0:chunk:5f612a1ed973221d",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 7.801,
+  "total_seconds": 15.643,
+  "context_bytes": 5128,
+  "context_entries": 13,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1985,
+    "completion_tokens": 669,
+    "total_tokens": 2654,
+    "cost": 0.00058255,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1982,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00058255,
+      "upstream_inference_prompt_cost": 0.00024805,
+      "upstream_inference_completions_cost": 0.0003345
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 306,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

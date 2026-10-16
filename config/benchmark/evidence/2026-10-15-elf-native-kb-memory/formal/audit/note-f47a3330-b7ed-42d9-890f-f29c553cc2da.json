@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 0.0,
+    "expires_at": "2027-04-14T03:01:50.04344Z",
+    "importance": 0.0,
+    "key": null,
+    "note_id": "f47a3330-b7ed-42d9-890f-f29c553cc2da",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+          "source": {
+            "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 124,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "70758802-2d9b-517d-b75b-a67ddfc638e8",
+                "source_record_id": "70758802-2d9b-517d-b75b-a67ddfc638e8"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686"
+              }
+            },
+            "extraction_content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+            "extraction_position": {
+              "end": 124,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_eb85892166acc8ef",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-01T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": null,
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "The initial retry policy for project Cobalt was RETRY-1-108.",
+    "type": "fact",
+    "updated_at": "2026-10-16T03:01:50.04344Z"
+  },
+  "request_id": "dbd3bef6-61dd-45aa-9292-956b972a75b8",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "70758802-2d9b-517d-b75b-a67ddfc638e8",
+        "end_offset": 124,
+        "excerpt": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+        "locator": {
+          "match_end_offset": 124,
+          "match_start_offset": 0,
+          "position": {
+            "end": 124,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "da43e174-ee4c-55c0-a9ad-35e31e4151cb"
+        },
+        "reference": "elf-source-v1/70758802-2d9b-517d-b75b-a67ddfc638e8/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+        "start_offset": 0,
+        "trace_id": "73911878-4f23-45b5-b015-9453d9042e0e",
+        "verification": {
+          "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+          "excerpt_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 124,
+        "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+        "created_at": [
+          2026,
+          289,
+          3,
+          1,
+          44,
+          1713000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "70758802-2d9b-517d-b75b-a67ddfc638e8",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_eb85892166acc8ef",
+          "captured_at": "2026-10-16T03:01:43.993395+00:00",
+          "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:01:43.993395+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_eb85892166acc8ef",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-01T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "70758802-2d9b-517d-b75b-a67ddfc638e8",
+          "source_spans": [
+            {
+              "chunk_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+              "chunk_id": "87a30859-42fd-589f-84a3-7da56170e9d7",
+              "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+              "end_offset": 124,
+              "schema": "doc_source_span/v1",
+              "span_id": "4075c1be-8110-5d07-aa79-2559e23b61f3",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_eb85892166acc8ef",
+          "title": "m_eb85892166acc8ef",
+          "trust_label": "user_captured",
+          "ts": "2026-08-01T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_eb85892166acc8ef",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          1,
+          44,
+          1713000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

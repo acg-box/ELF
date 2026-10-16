@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-16",
+  "source_base_commit": "9940af3ca8b71e68f217c25c4061a8349f80b87e",
+  "implementation_files": {
+    "scripts/benchmark_agent/answer.py": "fadb5004af594f7524e2d7d330d66ac4a728c169515ba9f15cf8c23c26348824",
+    "scripts/benchmark_pilot/tools.py": "213d5ea56bb333303d8bcaa8ccb29196c93a048a56eec510f6ada1e1408ee3be",
+    "scripts/benchmark_pilot/runner.py": "9925fe1c9591636e75f7bce8a72a0e959c657726e4a8343568e2c1df3d51cbb4",
+    "config/agent/evidence-reader.md": "bb80ea9fe6e3058087cf70e4ecf6709d3312efd79061dc6db2d1d79c00a0301b",
+    "tmp/unified-memory-comparison-2026-10-15/validate_final_gate.py": "2640e940bcaa5e208958e6969bfc20055c4c7db44e0191f74c77f7ad9803d141"
+  },
+  "original_artifact": "config/benchmark/evidence/2026-10-15-elf-native-kb-memory",
+  "cases": 13,
+  "method": "Exact saved drafts and contexts, live native checker, common finalizer. At most one correction call total. Preserve the rejection. No source repair, extraction, retrieval, or embedding calls.",
+  "model": "openai/gpt-6-luna",
+  "provider": "openai",
+  "reasoning": "medium",
+  "max_output_tokens": 128000,
+  "embedding_model": "qwen/qwen3-embedding-8b",
+  "embedding_dimensions": 4096,
+  "new_embedding_requests": 0,
+  "ceiling_usd": 10,
+  "tranche_usd": 0.25,
+  "score_boundary": "Delivery-gate regression, not a replacement competitive score"
+}

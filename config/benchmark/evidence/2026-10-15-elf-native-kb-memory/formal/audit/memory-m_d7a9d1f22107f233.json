@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "agent_id": "pilot",
+    "content_bytes": 205,
+    "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+    "created_at": [
+      2026,
+      289,
+      3,
+      1,
+      30,
+      532313000,
+      0,
+      0,
+      0
+    ],
+    "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+    "doc_type": "chat",
+    "project_id": "project",
+    "request_id": "5cdeffd8-38ac-4950-86da-79886da7779c",
+    "scope": "agent_private",
+    "source_ref": {
+      "canonical_uri": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+      "captured_at": "2026-10-16T03:01:30.524145+00:00",
+      "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+      "doc_type": "chat",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:01:30.524145+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+      "role": "user",
+      "schema": "doc_source_ref/v1",
+      "source_created_at": "2026-08-08T12:00:00Z",
+      "source_kind": "chat_excerpt",
+      "source_record_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+      "source_spans": [
+        {
+          "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "chunk_id": "2152fa12-c3f4-5905-9443-af6fe4782da7",
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "end_offset": 205,
+          "schema": "doc_source_span/v1",
+          "span_id": "d7715191-3931-5102-a2ba-a95876be5508",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "chat_excerpt",
+      "thread_id": "m_d7a9d1f22107f233",
+      "title": "m_d7a9d1f22107f233",
+      "trust_label": "user_captured",
+      "ts": "2026-08-08T12:00:00Z",
+      "visibility_scope": "agent_private"
+    },
+    "status": "active",
+    "tenant_id": "elf-native-20261015-formal",
+    "title": "m_d7a9d1f22107f233",
+    "updated_at": [
+      2026,
+      289,
+      3,
+      1,
+      30,
+      532313000,
+      0,
+      0,
+      0
+    ]
+  },
+  "source": {
+    "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+    "end_offset": 205,
+    "excerpt": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+    "locator": {
+      "match_end_offset": 205,
+      "match_start_offset": 0,
+      "position": {
+        "end": 205,
+        "start": 0
+      },
+      "selector_kind": "position",
+      "span_id": "b38337f7-99aa-5b1b-84ef-817c9d9316a6"
+    },
+    "reference": "elf-source-v1/941b074d-8fd6-56fb-a718-f7403ca6c323/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+    "request_id": "71c304a4-12a3-449b-a4e8-185ee6c6d9d3",
+    "start_offset": 0,
+    "trace_id": "9f9000b8-3b60-4e40-bab0-dd9a143020f7",
+    "verification": {
+      "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+      "excerpt_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+      "verification_errors": [],
+      "verified": true
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "product": "elf",
+  "scope": "calibration",
+  "phase": "calibration",
+  "case_id": "calibration",
+  "question": "Which initial delivery mode did Devon choose for Cedar, and what are both Kestrel-3 return exception identifiers?",
+  "answer": {
+    "answer": "Devon chose batch delivery for Cedar (BATCH-4-741). The Kestrel-3 return exception identifiers are CUSTOM-3-7c2 (custom-made goods) and DEFECT-3-9b4 (quality defects).",
+    "citations": [
+      {
+        "handle": "elf-source-v1/55b7c603-a4b8-5506-ae26-b5d7f7340a90/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125",
+        "quote": "They chose BATCH-4-741 for batch delivery."
+      },
+      {
+        "handle": "elf-source-v1/01d83a92-e276-5253-bedd-13e5161c3937/39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476/0/395",
+        "quote": "custom-made goods use exception CUSTOM-3-7c2; quality defects use exception DEFECT-3-9b4"
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "elf-source-v1/55b7c603-a4b8-5506-ae26-b5d7f7340a90/7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769/0/125",
+      "quote_bound": true
+    },
+    {
+      "handle": "elf-source-v1/01d83a92-e276-5253-bedd-13e5161c3937/39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476/0/395",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 5.254,
+  "total_seconds": 9.527,
+  "context_bytes": 3381,
+  "context_entries": 5,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1493,
+    "completion_tokens": 246,
+    "total_tokens": 1739,
+    "cost": 0.00030955,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1490,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00030955,
+      "upstream_inference_prompt_cost": 0.00018655,
+      "upstream_inference_completions_cost": 0.000123
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

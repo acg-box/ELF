@@ -1,0 +1,60 @@
+{
+  "containers": [
+    {
+      "container": "elf-native-20261015-calibration-db",
+      "container_id": "3e9d712a7a286e38f33a4591f2fb05f851596d118bebabeedf6f5184d32b256d",
+      "running": false,
+      "volume": "elf-native-20261015-calibration-db-data",
+      "owner": "elf-native-20261015-calibration"
+    },
+    {
+      "container": "elf-native-20261015-calibration-qdrant",
+      "container_id": "5490a26d49434a6c2aff556c6e540bcec821329a02bd81ea13886ce9b0428ef3",
+      "running": false,
+      "volume": "elf-native-20261015-calibration-qdrant-data",
+      "owner": "elf-native-20261015-calibration"
+    },
+    {
+      "container": "elf-native-20261015-formal-db",
+      "container_id": "c5c797ffaf742ddf5d80149ad0ec22be93fb0656f13ad6b62a95c131ccd278ab",
+      "running": true,
+      "volume": "elf-native-20261015-formal-db-data",
+      "owner": "elf-native-20261015-formal"
+    },
+    {
+      "container": "elf-native-20261015-formal-qdrant",
+      "container_id": "1daac8978f2838f4afb780b347bfdf27891b8f52329d8d68d608355e9e5db6d9",
+      "running": true,
+      "volume": "elf-native-20261015-formal-qdrant-data",
+      "owner": "elf-native-20261015-formal"
+    }
+  ],
+  "preserved_backups": [
+    {
+      "scope": "calibration",
+      "bytes": 244289,
+      "sha256": "05d2d92b307cabf3781ae060a47c1a10c50816bbcb07214fdca991bd23c22e9a"
+    },
+    {
+      "scope": "formal",
+      "bytes": 1144998,
+      "sha256": "32197e68b72edd5bbf8c46e40ebb355c13590d31ecd4f79221f804e8a875f808"
+    }
+  ],
+  "shared_images_retained": true,
+  "provider_gateway_stopped": true,
+  "verified_at": 1792120015.278132,
+  "remaining": {
+    "calibration": {
+      "containers": [],
+      "volumes": []
+    },
+    "formal": {
+      "containers": [],
+      "volumes": []
+    }
+  },
+  "removed_containers": 4,
+  "removed_volumes": 4,
+  "native_process_ports_closed": true
+}

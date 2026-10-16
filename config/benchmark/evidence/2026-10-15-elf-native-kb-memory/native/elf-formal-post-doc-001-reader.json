@@ -1,0 +1,46 @@
+{
+  "id": "gen-1792119894-LGvhqI3RNKuim2LS6QPr",
+  "object": "chat.completion",
+  "created": 1792119894,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"The approved queue for Kestrel-0’s South region is SOUTH-0-3e5.\",\"citations\":[{\"handle\":\"elf-source-v1/6e41fa8a-ca25-57d9-add2-a51b95e2d3c0/e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a/0/207\",\"quote\":\"South | 12 hours | SOUTH-0-3e5\"}]}",
+        "refusal": null,
+        "reasoning": null
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5135,
+    "completion_tokens": 126,
+    "total_tokens": 5261,
+    "cost": 0.0007048,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 5132,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0007048,
+      "upstream_inference_prompt_cost": 0.0006418,
+      "upstream_inference_completions_cost": 6.3e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

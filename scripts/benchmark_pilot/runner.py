@@ -13,6 +13,7 @@ import urllib.error
 import urllib.request
 
 from benchmark_budget import totals
+from benchmark_agent.answer import AnswerRejected
 from .corpus import digest, load, save, spans
 from .runtime import Runtime
 from .tools import SourceTools, opening_tool, schemas
@@ -103,13 +104,10 @@ def cell(args, repo, sources, checkpoints, protocol, task):
                     break
                 try:
                     answer = json.loads(content)
-                    if not isinstance(answer.get('text'), str) or not isinstance(answer.get('supported'), bool) or not isinstance(answer.get('claims'), list):
-                        raise ValueError('Expected text, supported and claims')
-                    result['answer'] = answer
-                    claimed = [c['reference'] for claim in answer['claims'] for c in claim.get('citations', []) if c.get('kind') == 'reference']
-                    result['all_references_seen'] = bool(claimed) and all(ref in host.references for ref in claimed)
-                    result['claim_bindings'] = rt.api('/v2/evidence/check', {'claims': answer['claims']})
-                    result['status'] = 'completed'
+                    result.update(host.finalize(answer), status='completed')
+                except AnswerRejected as error:
+                    result.update(status='invalid_answer', error=str(error),
+                                  draft_answer=answer, claim_bindings=error.bindings)
                 except (ValueError, KeyError, TypeError) as error:
                     result.update(status='invalid_answer', error=str(error))
                 break
@@ -121,10 +119,13 @@ def cell(args, repo, sources, checkpoints, protocol, task):
                     try:
                         final = host.finalize(arguments)
                         value = compact_check(final['claim_bindings'])
-                        if not all(c['binding_verified'] for c in value['claims']) and not closing:
-                            value['error'] = 'The complete answer has invalid bindings. Repair before resubmitting.'
-                        else:
-                            result.update(final, raw_answer=json.dumps(arguments, ensure_ascii=False), status='completed')
+                        result.update(final, raw_answer=json.dumps(arguments, ensure_ascii=False), status='completed')
+                    except AnswerRejected as error:
+                        value = {**compact_check(error.bindings), 'error': str(error)}
+                        if closing:
+                            result.update(status='invalid_answer', error=str(error),
+                                          draft_answer=arguments, claim_bindings=error.bindings,
+                                          raw_answer=json.dumps(arguments, ensure_ascii=False))
                     except (ValueError, KeyError, TypeError) as error:
                         value = {'error': str(error)}
                         if closing:

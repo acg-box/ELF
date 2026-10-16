@@ -1,0 +1,251 @@
+{
+  "products": {
+    "ragflow": {
+      "answers_completed": 13,
+      "correct": 11,
+      "answers_reviewed": 13,
+      "by_lane": {
+        "combined_knowledge_memory": {
+          "correct": 0,
+          "total": 1
+        },
+        "document_exceptions": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_table": {
+          "correct": 1,
+          "total": 1
+        },
+        "updates": {
+          "correct": 1,
+          "total": 2
+        },
+        "cross_session": {
+          "correct": 2,
+          "total": 2
+        },
+        "temporal": {
+          "correct": 4,
+          "total": 4
+        },
+        "abstention": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "query_mean_seconds": 16.363923076923076,
+      "query_median_seconds": 18.474,
+      "context_mean_bytes": 4433.2307692307695,
+      "context_max_bytes": 5128,
+      "dropped_entries": 0,
+      "quote_bindings": {
+        "pass": 26,
+        "total": 26
+      },
+      "formal_paid_usd": 0.006921865000000027,
+      "formal_requests": 77,
+      "source_readback": {
+        "knowledge_originals": {
+          "pass": 6,
+          "total": 6
+        },
+        "raw_messages": {
+          "pass": 8,
+          "total": 8
+        }
+      },
+      "derived_parent_bindings": {
+        "pass": 21,
+        "total": 21
+      },
+      "identifier_coverage_correct": 11,
+      "semantic_and_quotes_complete": 11,
+      "all_quotes_valid_answers": 13
+    },
+    "openviking": {
+      "answers_completed": 13,
+      "correct": 11,
+      "answers_reviewed": 13,
+      "by_lane": {
+        "combined_knowledge_memory": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_exceptions": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_table": {
+          "correct": 1,
+          "total": 1
+        },
+        "updates": {
+          "correct": 1,
+          "total": 2
+        },
+        "cross_session": {
+          "correct": 1,
+          "total": 2
+        },
+        "temporal": {
+          "correct": 4,
+          "total": 4
+        },
+        "abstention": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "query_mean_seconds": 23.619,
+      "query_median_seconds": 21.457,
+      "context_mean_bytes": 9468,
+      "context_max_bytes": 11592,
+      "dropped_entries": 0,
+      "quote_bindings": {
+        "pass": 30,
+        "total": 30
+      },
+      "formal_paid_usd": 0.02426141499999912,
+      "formal_requests": 205,
+      "source_readback": {
+        "knowledge_originals": {
+          "pass": 6,
+          "total": 6
+        },
+        "raw_messages": {
+          "pass": 8,
+          "total": 8
+        }
+      },
+      "native_archive_memory_operations": 23,
+      "identifier_coverage_correct": 12,
+      "semantic_and_quotes_complete": 11,
+      "all_quotes_valid_answers": 13
+    },
+    "elf": {
+      "answers_completed": 13,
+      "answers_reviewed": 13,
+      "correct": 13,
+      "by_lane": {
+        "combined_knowledge_memory": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_exceptions": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_table": {
+          "correct": 1,
+          "total": 1
+        },
+        "updates": {
+          "correct": 2,
+          "total": 2
+        },
+        "cross_session": {
+          "correct": 2,
+          "total": 2
+        },
+        "temporal": {
+          "correct": 4,
+          "total": 4
+        },
+        "abstention": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "semantic_and_quotes_complete": 12,
+      "all_quotes_valid_answers": 12,
+      "original_source_citations": 25,
+      "reader_paid_usd": 0.010119525,
+      "query_mean_seconds": 4.841,
+      "query_median_seconds": 4.484,
+      "context_mean_bytes": 11978,
+      "context_max_bytes": 13497,
+      "dropped_entries": 0,
+      "quote_bindings": {
+        "pass": 24,
+        "total": 25
+      },
+      "native_bindings": {
+        "pass": 24,
+        "total": 25
+      },
+      "formal_paid_usd": 0.01404329999999998,
+      "source_readback": {
+        "knowledge_originals": {
+          "pass": 6,
+          "total": 6
+        },
+        "raw_messages": {
+          "pass": 8,
+          "total": 8
+        }
+      },
+      "derived_parent_bindings": {
+        "pass": 22,
+        "total": 22
+      }
+    }
+  },
+  "budget": {
+    "ceiling_usd": 10,
+    "opening_paid_usd": 2.0003644010000006,
+    "elf_addition_paid_usd": 0.014936554999999796,
+    "paid_total_usd": 2.0153009560000004,
+    "conservative_exposure_total_usd": 2.0874816559999982,
+    "remaining_conservative_usd": 7.912518344000002,
+    "calibration_paid_usd": 0.0008932549999998152,
+    "requests": 58,
+    "states": {
+      "completed": 58
+    },
+    "tokens": {
+      "prompt_tokens": 86403,
+      "completion_tokens": 8596,
+      "total_tokens": 94999
+    },
+    "by_kind": {
+      "chat": {
+        "requests": 24,
+        "paid_usd": 0.014922925
+      },
+      "embedding": {
+        "requests": 34,
+        "paid_usd": 1.363e-05
+      }
+    }
+  },
+  "embedding": {
+    "new_returned_dimensions": {
+      "4096": 36
+    },
+    "exact_request_reuse_count": 36,
+    "storage_dimension_counts": {
+      "doc_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 14
+        }
+      ],
+      "note_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 22
+        }
+      ],
+      "note_chunk_embeddings": [
+        {
+          "embedding_dim": 4096,
+          "count": 22
+        }
+      ],
+      "note_field_embeddings": []
+    }
+  },
+  "speed_comparison_allowed": false,
+  "comparison_boundary": "Frozen questions, reader, models, dimensions, hit and context limits. Native product pipelines differ. No source-only arm or feature ablation in this addition."
+}

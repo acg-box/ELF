@@ -1,0 +1,154 @@
+{
+  "memory-0-0": {
+    "facts": [
+      "STREAM-0-286",
+      "RETRY-0-907"
+    ],
+    "forbidden": [
+      "BATCH-0-741",
+      "RETRY-0-108"
+    ],
+    "supported": true,
+    "evidence": [
+      "m_c558d1541c4b9d0f",
+      "m_d7a9d1f22107f233",
+      "m_99ab4da076b7c734",
+      "m_d6297f549707f98d"
+    ]
+  },
+  "memory-0-1": {
+    "facts": [
+      "REPLAY-0-632",
+      "GATE-0-519"
+    ],
+    "forbidden": [],
+    "supported": true,
+    "evidence": [
+      "m_c558d1541c4b9d0f",
+      "m_d7a9d1f22107f233",
+      "m_99ab4da076b7c734",
+      "m_d6297f549707f98d"
+    ]
+  },
+  "memory-0-2": {
+    "facts": [
+      "BATCH-0-741"
+    ],
+    "forbidden": [
+      "STREAM-0-286"
+    ],
+    "supported": true,
+    "evidence": [
+      "m_c558d1541c4b9d0f",
+      "m_d7a9d1f22107f233",
+      "m_99ab4da076b7c734",
+      "m_d6297f549707f98d"
+    ]
+  },
+  "memory-0-3": {
+    "facts": [],
+    "forbidden": [],
+    "supported": false,
+    "evidence": []
+  },
+  "memory-1-0": {
+    "facts": [
+      "STREAM-1-286",
+      "RETRY-1-907"
+    ],
+    "forbidden": [
+      "BATCH-1-741",
+      "RETRY-1-108"
+    ],
+    "supported": true,
+    "evidence": [
+      "m_eb85892166acc8ef",
+      "m_f7ff6441bdd98e53",
+      "m_70bd88efee712a9a",
+      "m_4a54af2b364be476"
+    ]
+  },
+  "memory-1-1": {
+    "facts": [
+      "REPLAY-1-632",
+      "GATE-1-519"
+    ],
+    "forbidden": [],
+    "supported": true,
+    "evidence": [
+      "m_eb85892166acc8ef",
+      "m_f7ff6441bdd98e53",
+      "m_70bd88efee712a9a",
+      "m_4a54af2b364be476"
+    ]
+  },
+  "memory-1-2": {
+    "facts": [
+      "BATCH-1-741"
+    ],
+    "forbidden": [
+      "STREAM-1-286"
+    ],
+    "supported": true,
+    "evidence": [
+      "m_eb85892166acc8ef",
+      "m_f7ff6441bdd98e53",
+      "m_70bd88efee712a9a",
+      "m_4a54af2b364be476"
+    ]
+  },
+  "memory-1-3": {
+    "facts": [],
+    "forbidden": [],
+    "supported": false,
+    "evidence": []
+  },
+  "doc-000": {
+    "lane": "document_exceptions",
+    "facts": [
+      "CUSTOM-0-7c2",
+      "DEFECT-0-9b4"
+    ],
+    "evidence": [
+      "e_6d31f2e707b427b03ebe5cab"
+    ],
+    "forbidden": [
+      "DRAFT-0-2d1"
+    ],
+    "supported": true
+  },
+  "doc-001": {
+    "lane": "document_table",
+    "facts": [
+      "SOUTH-0-3e5"
+    ],
+    "evidence": [
+      "e_44d1d038212b769f1cefdbec"
+    ],
+    "forbidden": [
+      "NORTH-0-6a8"
+    ],
+    "supported": true
+  },
+  "combined-001": {
+    "facts": [
+      "STREAM-0-286",
+      "RETRY-0-907",
+      "CUSTOM-0-7c2",
+      "DEFECT-0-9b4"
+    ],
+    "forbidden": [
+      "BATCH-0-741",
+      "RETRY-0-108",
+      "DRAFT-0-2d1"
+    ],
+    "evidence": [
+      "m_c558d1541c4b9d0f",
+      "m_d7a9d1f22107f233",
+      "m_99ab4da076b7c734",
+      "m_d6297f549707f98d",
+      "e_6d31f2e707b427b03ebe5cab"
+    ],
+    "supported": true
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-0-3",
+  "question": "Who is the appointed budget owner for Mara's Larch project as of August 22?",
+  "answer": {
+    "answer": "No budget owner had been appointed for Mara’s Larch project as of August 22.",
+    "citations": [
+      {
+        "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+        "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 15.618,
+  "total_seconds": 18.59,
+  "context_bytes": 3706,
+  "context_entries": 10,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1491,
+    "completion_tokens": 166,
+    "total_tokens": 1657,
+    "cost": 0.0002693,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1488,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0002693,
+      "upstream_inference_prompt_cost": 0.0001863,
+      "upstream_inference_completions_cost": 8.3e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 36,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

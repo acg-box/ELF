@@ -1,0 +1,20 @@
+{
+  "closed_at": 1792091780.926692,
+  "paid_increment_usd": 0.0037569850000007676,
+  "paid_total_usd": 1.9691811210000014,
+  "exposure_total_usd": 2.0405195209999993,
+  "answers": {
+    "openviking": {
+      "correct_identifiers": true,
+      "all_quotes_bound_to_returned_text": true,
+      "context_bytes": 9518,
+      "total_seconds": 16.196
+    },
+    "ragflow": {
+      "correct_identifiers": true,
+      "all_quotes_bound_to_returned_text": true,
+      "context_bytes": 1377,
+      "total_seconds": 11.978
+    }
+  }
+}

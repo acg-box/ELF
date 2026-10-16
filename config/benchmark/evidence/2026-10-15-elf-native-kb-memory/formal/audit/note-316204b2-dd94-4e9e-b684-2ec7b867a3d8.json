@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 0.0,
+    "expires_at": null,
+    "importance": 0.0,
+    "key": null,
+    "note_id": "316204b2-dd94-4e9e-b684-2ec7b867a3d8",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+          "source": {
+            "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 237,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+                "source_record_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777"
+              }
+            },
+            "extraction_content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+            "extraction_position": {
+              "end": 237,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_d6297f549707f98d",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-22T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": null,
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "Keep the August 15 delivery choice discussed in the context of Mara’s review of Larch.",
+    "type": "decision",
+    "updated_at": "2026-10-16T03:02:51.769104Z"
+  },
+  "request_id": "72b49d68-0f63-46ec-8628-04dfbc71998e",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+        "end_offset": 237,
+        "excerpt": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+        "locator": {
+          "match_end_offset": 237,
+          "match_start_offset": 0,
+          "position": {
+            "end": 237,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "5c77a53f-082e-53af-89f4-ced4a0151541"
+        },
+        "reference": "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237",
+        "start_offset": 0,
+        "trace_id": "0d066c38-0f3a-437e-9252-0937f4b907d1",
+        "verification": {
+          "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+          "excerpt_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 237,
+        "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+        "created_at": [
+          2026,
+          289,
+          3,
+          2,
+          41,
+          412403000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_d6297f549707f98d",
+          "captured_at": "2026-10-16T03:02:41.402639+00:00",
+          "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:02:41.402639+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_d6297f549707f98d",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-22T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+          "source_spans": [
+            {
+              "chunk_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "chunk_id": "0bfd5bdd-a198-5963-a7ff-aaac99b0abcb",
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "end_offset": 237,
+              "schema": "doc_source_span/v1",
+              "span_id": "6c8188d2-bacf-552f-8cb6-87f41483a966",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_d6297f549707f98d",
+          "title": "m_d6297f549707f98d",
+          "trust_label": "user_captured",
+          "ts": "2026-08-22T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_d6297f549707f98d",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          2,
+          41,
+          412403000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

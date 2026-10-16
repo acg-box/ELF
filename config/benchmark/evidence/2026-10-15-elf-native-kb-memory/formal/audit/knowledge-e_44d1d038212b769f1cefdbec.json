@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "agent_id": "pilot",
+    "content_bytes": 207,
+    "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+    "created_at": [
+      2026,
+      289,
+      3,
+      1,
+      3,
+      859441000,
+      0,
+      0,
+      0
+    ],
+    "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+    "doc_type": "knowledge",
+    "project_id": "project",
+    "request_id": "6aa22b89-f3a4-424d-b7e5-ee881d6dbe91",
+    "scope": "agent_private",
+    "source_ref": {
+      "canonical_uri": "urn:elf-native-comparison:formal:knowledge:e_44d1d038212b769f1cefdbec",
+      "captured_at": "2026-10-16T03:01:03.850226+00:00",
+      "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+      "doc_type": "knowledge",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:01:03.850226+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:knowledge:e_44d1d038212b769f1cefdbec",
+      "schema": "doc_source_ref/v1",
+      "source_kind": "text_export",
+      "source_record_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+      "source_spans": [
+        {
+          "chunk_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+          "chunk_id": "46bebef7-9d99-5797-b9f1-44ed0515561f",
+          "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+          "end_offset": 207,
+          "schema": "doc_source_span/v1",
+          "span_id": "a12d5b9f-cb10-554b-8fe9-4658dec7f110",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "text_export",
+      "title": "e_44d1d038212b769f1cefdbec",
+      "trust_label": "user_captured",
+      "ts": "2026-10-16T03:01:03.850226+00:00",
+      "visibility_scope": "agent_private"
+    },
+    "status": "active",
+    "tenant_id": "elf-native-20261015-formal",
+    "title": "e_44d1d038212b769f1cefdbec",
+    "updated_at": [
+      2026,
+      289,
+      3,
+      1,
+      3,
+      859441000,
+      0,
+      0,
+      0
+    ]
+  },
+  "source": {
+    "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+    "end_offset": 207,
+    "excerpt": "Kestrel-0 approved regional routing table. Columns are region, response window, queue.\nNorth | 4 hours | NORTH-0-6a8\nSouth | 12 hours | SOUTH-0-3e5\nRows are independent; do not mix a region with another row.",
+    "locator": {
+      "match_end_offset": 207,
+      "match_start_offset": 0,
+      "position": {
+        "end": 207,
+        "start": 0
+      },
+      "selector_kind": "position",
+      "span_id": "c8b92208-5a11-5f83-aa83-598c3dc36c9f"
+    },
+    "reference": "elf-source-v1/6e41fa8a-ca25-57d9-add2-a51b95e2d3c0/e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a/0/207",
+    "request_id": "382f38fa-6751-424a-8792-235c889d28d3",
+    "start_offset": 0,
+    "trace_id": "0e487ef2-2594-4310-ac91-b9ded1d6c6c1",
+    "verification": {
+      "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+      "excerpt_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+      "verification_errors": [],
+      "verified": true
+    }
+  }
+}

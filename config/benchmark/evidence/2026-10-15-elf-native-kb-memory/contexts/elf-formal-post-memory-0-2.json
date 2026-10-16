@@ -1,0 +1,278 @@
+{
+  "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+  "evidence": [
+    {
+      "handle": "elf-source-v1/a90214e9-0589-51df-8539-8b240a2f11bf/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+        "chunk_id": "b7e23517-072e-5881-a98b-c46b46a0d6ec",
+        "verification": {
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "excerpt_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "verification_errors": [],
+          "verified": true
+        }
+      }
+    },
+    {
+      "handle": "elf-source-v1/ff686235-3670-56c2-9736-c67a60f5e1c1/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+        "chunk_id": "38f05b75-dc32-5e5f-a8af-06d00645328d",
+        "verification": {
+          "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "excerpt_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "verification_errors": [],
+          "verified": true
+        }
+      }
+    },
+    {
+      "handle": "elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+        "chunk_id": "2f5b4f98-b658-5088-a20c-103531227c41",
+        "verification": {
+          "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "excerpt_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "verification_errors": [],
+          "verified": true
+        }
+      }
+    },
+    {
+      "handle": "elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+        "chunk_id": "32aa6c35-91f0-5d69-bf28-9c2942006377",
+        "verification": {
+          "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+          "excerpt_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+          "verification_errors": [],
+          "verified": true
+        }
+      }
+    },
+    {
+      "handle": "elf-source-v1/6e41fa8a-ca25-57d9-add2-a51b95e2d3c0/e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a/0/207",
+      "kind": "knowledge_chunk",
+      "text": "Kestrel-0 approved regional routing table. Columns are region, response window, queue.\nNorth | 4 hours | NORTH-0-6a8\nSouth | 12 hours | SOUTH-0-3e5\nRows are independent; do not mix a region with another row.",
+      "metadata": {
+        "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+        "chunk_id": "46bebef7-9d99-5797-b9f1-44ed0515561f",
+        "verification": {
+          "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+          "excerpt_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+          "verification_errors": [],
+          "verified": true
+        }
+      }
+    },
+    {
+      "handle": "elf-source-v1/daf44d7c-4098-5a60-8032-3ac4d2370267/b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7/0/395",
+      "kind": "knowledge_chunk",
+      "text": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-0-2d1 and has no authority.",
+      "metadata": {
+        "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+        "chunk_id": "436f0d5e-cc1a-5642-bfe1-e61c8b152c76",
+        "verification": {
+          "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+          "excerpt_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+          "verification_errors": [],
+          "verified": true
+        }
+      }
+    },
+    {
+      "handle": "elf:note:965a94b4-31b0-45c2-b474-56c477e8bd6d",
+      "kind": "memory",
+      "text": "On 2026-08-15, Mara approved switching Larch from BATCH-0-741 to STREAM-0-286, superseding the August 1 delivery decision; the cause was the GATE-0-519 outages recorded on August 8.",
+      "metadata": {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+        ],
+        "note_id": "965a94b4-31b0-45c2-b474-56c477e8bd6d",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+        ]
+      }
+    },
+    {
+      "handle": "elf:note:43dcdb4e-0dd7-4896-8861-fc986bca2dbe",
+      "kind": "memory",
+      "text": "At the 2026-08-08 meeting, no change of delivery mode was approved.",
+      "metadata": {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+        ],
+        "note_id": "43dcdb4e-0dd7-4896-8861-fc986bca2dbe",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/941b074d-8fd6-56fb-a718-f7403ca6c323/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205"
+        ]
+      }
+    },
+    {
+      "handle": "elf:note:316204b2-dd94-4e9e-b684-2ec7b867a3d8",
+      "kind": "memory",
+      "text": "Keep the August 15 delivery choice discussed in the context of Mara’s review of Larch.",
+      "metadata": {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+        ],
+        "note_id": "316204b2-dd94-4e9e-b684-2ec7b867a3d8",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+        ]
+      }
+    },
+    {
+      "handle": "elf:note:10e9f2b7-7a78-44a8-ac7b-df34dc4fe859",
+      "kind": "memory",
+      "text": "For project Larch, BATCH-0-741 was chosen for batch delivery.",
+      "metadata": {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+        ],
+        "note_id": "10e9f2b7-7a78-44a8-ac7b-df34dc4fe859",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/d17f946a-c663-5c4d-99e6-b6985f2ad1da/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124"
+        ]
+      }
+    },
+    {
+      "handle": "elf:note:d7a44c49-952c-47e2-8106-a03f0898b957",
+      "kind": "memory",
+      "text": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision; the cause was GATE-1-519 outages recorded on August 8.",
+      "metadata": {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+        ],
+        "note_id": "d7a44c49-952c-47e2-8106-a03f0898b957",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241"
+        ]
+      }
+    },
+    {
+      "handle": "elf:note:e901d7f0-7a87-47fa-b0e7-a6f8e69bc2da",
+      "kind": "memory",
+      "text": "Mara started project Larch on 2026-08-01.",
+      "metadata": {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+        ],
+        "note_id": "e901d7f0-7a87-47fa-b0e7-a6f8e69bc2da",
+        "note_type": "fact",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/d17f946a-c663-5c4d-99e6-b6985f2ad1da/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124"
+        ]
+      }
+    },
+    {
+      "handle": "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241",
+      "kind": "memory_raw_source",
+      "text": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "metadata": {
+        "captured_at": "2026-10-16T03:02:23.849038Z",
+        "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+        "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+        "end": 241,
+        "origin": "urn:elf-native-comparison:formal:memory:m_99ab4da076b7c734",
+        "source_timestamp": "2026-08-15T12:00:00Z",
+        "start": 0,
+        "title": "m_99ab4da076b7c734"
+      }
+    },
+    {
+      "handle": "elf-source-v1/941b074d-8fd6-56fb-a718-f7403ca6c323/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+      "kind": "memory_raw_source",
+      "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "captured_at": "2026-10-16T03:01:30.532313Z",
+        "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+        "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+        "end": 205,
+        "origin": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+        "source_timestamp": "2026-08-08T12:00:00Z",
+        "start": 0,
+        "title": "m_d7a9d1f22107f233"
+      }
+    },
+    {
+      "handle": "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237",
+      "kind": "memory_raw_source",
+      "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "captured_at": "2026-10-16T03:02:41.412403Z",
+        "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+        "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+        "end": 237,
+        "origin": "urn:elf-native-comparison:formal:memory:m_d6297f549707f98d",
+        "source_timestamp": "2026-08-22T12:00:00Z",
+        "start": 0,
+        "title": "m_d6297f549707f98d"
+      }
+    },
+    {
+      "handle": "elf-source-v1/d17f946a-c663-5c4d-99e6-b6985f2ad1da/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124",
+      "kind": "memory_raw_source",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "captured_at": "2026-10-16T03:01:11.65014Z",
+        "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+        "doc_id": "d17f946a-c663-5c4d-99e6-b6985f2ad1da",
+        "end": 124,
+        "origin": "urn:elf-native-comparison:formal:memory:m_c558d1541c4b9d0f",
+        "source_timestamp": "2026-08-01T12:00:00Z",
+        "start": 0,
+        "title": "m_c558d1541c4b9d0f"
+      }
+    },
+    {
+      "handle": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+      "kind": "memory_raw_source",
+      "text": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+      "metadata": {
+        "captured_at": "2026-10-16T03:03:16.72621Z",
+        "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+        "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+        "end": 241,
+        "origin": "urn:elf-native-comparison:formal:memory:m_70bd88efee712a9a",
+        "source_timestamp": "2026-08-15T12:00:00Z",
+        "start": 0,
+        "title": "m_70bd88efee712a9a"
+      }
+    }
+  ]
+}

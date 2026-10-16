@@ -1,0 +1,59 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-2",
+  "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "BATCH-1-741 for batch delivery remained the approved delivery mode immediately after the August 8 meeting. REPLAY-1-632 was tested as a recovery approach, but no delivery-mode change was approved.",
+    "citations": [
+      {
+        "handle": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+        "quote": "They chose BATCH-1-741 for batch delivery."
+      },
+      {
+        "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+        "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 16.51,
+  "total_seconds": 22.887,
+  "context_bytes": 10698,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 3234,
+    "completion_tokens": 236,
+    "total_tokens": 3470,
+    "cost": 0.000522175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 3231,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000522175,
+      "upstream_inference_prompt_cost": 0.000404175,
+      "upstream_inference_completions_cost": 0.000118
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 73,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

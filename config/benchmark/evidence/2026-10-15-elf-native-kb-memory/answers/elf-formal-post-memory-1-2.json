@@ -1,0 +1,59 @@
+{
+  "product": "elf",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-2",
+  "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "BATCH-1-741 batch delivery remained approved; on August 8, no delivery-mode change was approved. REPLAY-1-632 was tested as a recovery procedure, not approved as a new delivery mode.",
+    "citations": [
+      {
+        "handle": "elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+        "quote": "They chose BATCH-1-741 for batch delivery."
+      },
+      {
+        "handle": "elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+        "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+      "quote_bound": true
+    },
+    {
+      "handle": "elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 0.323,
+  "total_seconds": 4.484,
+  "context_bytes": 12416,
+  "context_entries": 17,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 5117,
+    "completion_tokens": 322,
+    "total_tokens": 5439,
+    "cost": 0.00080055,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 5114,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00080055,
+      "upstream_inference_prompt_cost": 0.00063955,
+      "upstream_inference_completions_cost": 0.000161
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 43,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

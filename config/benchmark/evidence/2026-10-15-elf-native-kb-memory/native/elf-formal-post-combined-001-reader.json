@@ -1,0 +1,55 @@
+{
+  "id": "gen-1792119897-O9VcILsIDV1QZMPGrtmd",
+  "object": "chat.completion",
+  "created": 1792119897,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"answer\": \"As of August 22, Mara’s Larch project uses STREAM-0-286 delivery and retry policy RETRY-0-907. The two exception identifiers in the signed Kestrel-0 return policy are CUSTOM-0-7c2 and DEFECT-0-9b4.\",\n  \"citations\": [\n    {\n      \"handle\": \"elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241\",\n      \"quote\": \"Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.\"\n    },\n    {\n      \"handle\": \"elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237\",\n      \"quote\": \"2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108.\"\n    },\n    {\n      \"handle\": \"elf-source-v1/daf44d7c-4098-5a60-8032-3ac4d2370267/b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7/0/395\",\n      \"quote\": \"The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZRb2Ko9MFgTuHfx-gdrj0uHItIzcQojJ3OQbUSiIpl_nVbTsDcePSxCbvoxRbtgKsdJlyeL3NiOGskBWk8ulu3mYtBM1uDEdAAbqww83fdlCqxpnceQSE3FIa3Civd90jxYseWQzcu8dWz3E3bgs_KGFUjkiM0XlL35QsJ2WZm3SUnTXSqoQv00lX0XkSwBt9rIyZttyUiSrMss9_-IyIe1gwVkB3T5Y-FT8hKkiIHV1GZFq-ZuUy92CzCn6KLIkUMA_MVO3exYUkJt8aTC5nZjG81wBNnpfd4uZRfKtOef478EARyYMvWUvLgBic1lAXlxejjxhLIbRttiZ8WwAs8BbC1ojC_EbI8W1k_iJSKx2fwfIvDr_xEJPLJFs2kD9Ab7H23NFffpdpjhFBIlwZhK2OZC9DlAau_c5KTsqq6eD65Ck4Hznk9l1PM6khT4Np7MBXcSfZEBs0_pmJ7OtIxQG6GYO9pzjD6QZw-nFlSTR1kNU2WIEijCpzNi6Z-DycfWZyonW25uhwT-2ywKR-wr1WjRGEWBqh5qpzJH1_3-PXxtwYKVj4PBDQO-4WALqIVrRNEUmrhjk08AGMk_JckcPb8pdjWgyP4YmLDuQdYd3BNX_RrzXJvd3gOhkE59eIRZbHyZdt-SRsaWKvGdQEjB_8sKcttJie9cvl2wn6fevrc_65derpQz3ADetCyQZzjEYlheZn3YkEqppKVGvoavJazCw9LBuwuxYJYDpCqKGebjfPuMZ2wGtNZf0KQgGPN8ermoDAkuafMTH0Xz1qllXR2KZxO1tCSkIfqeKDeViADauW6aC4-4fvMAAhDcWJbMDnrJ2oaSD9nSl7vSfLkrsq64cZgGi9wGq5IVgiylj5-2V4CCLhQ2y3NFCzz07tEYTN2ThVm6z9Aoq0--8Vsz-gZCFpxYgC0fxK-UES3DVWBQWVbFgezo1mVdd6ngphipeDh_YMmX1PMSsCZfuiMK2vNa8rOrofXJoboYKG25KR95orj-K8RmV3hnpWAn809tBNkHIE1f2nA1dkMt179hCrWDitTZGHdUv2QYrRT-pz5-ThDdtoct1IRllHXSdNMzR5q3Iq2HLDTTPPigAPETNa7fTHtNROaq-4ek77A9Yh17r7dRinxX0YvKhd0Jutn0dvX2uYdNpwqH6kfK8UQbDKcYC0fwjfwdQYkVJfUKdEKNgAG9gVfLZUQaf68DGXa39yYf50XvraT56BqPWs5czh1ilf4_en5TlW30-sG1G_Unl4CiiUg8XM2PiFauG35CKBU3Zsuj7G_xkjIsgvLhMrU3qy1GTEqatmoIELAWQQYG2ZpbnjSKaZliozsJZ8njqqtqGZEEiz6rhpAOvBRpZTHp1dXEPnZQoIdnziZBo1PuXksDfCdU0n2RQUzRDwCtLJ893YB8GQfIEzMMZSP2MqcyNpxD-ylOHdcoHFd3pzHoWg62WJ6p2MaDfh4fK0YG_KlpyEA4UDu9bCQG6TPHty3PDkCEjbflPqrAkyD98uIf73eml-gohcpg112BdUO6i5bK1dfc90laPwHEFHv6glfvn_qNwsws9NHZK8boKtHrsufeuU8Ao5-9khDTv_oOzGoqrJ7xW6xtXzlWu2QMBjboM5vfRVSWYnnSl3j3OB5H14DM9i8d9MFtSI9O1SfwIDaXtUJg672iti4sgS0u_-Sv_5CpSgIxL02PxiaAOB6USP7Ts58KxM2Qr9y_2HvYdLM7YBptDSTAere24-IyZ9Wn2UwHF3bEYbDCU2_XL_3DAwfw61zOkS6WDGn7tvOfQT3ioJw5om5RLdm3dfcJL2OavtmnfG9WK5N3xzrp2IuWDBwLrKmhJf0FYieNAfph3BsdE64iw1UiPfCt3f2IPaQAIt3THWeSjxBb4kLs8WJykDqXnWvdvBZ0RZ21D15WfcmNMTN3hlyMOuEHYpcXhGTeDlguHQTqcniTYEz6RezTi-iX-ZCEGnE7iUuWhuwZ0M4pIQR2Vl_aIunXWdlikdc9K7JUu-vS412K2Y5D91zUptE5hwz0gd07luJcRwHAJatQKiXgJb3pnbiTjT3TtWBJqPvUw8bDnunEtKvOs3WXoAWXGZCRzWrHj9phQvcb1rZebcngXFyqagOoL0N8w9tlglNQhFRKe5Qjip4JEQ8y75Yo2n3aj8OjFyVe-XeuaiweRVs7J4oQT9Z5d5_V22UDnhw2t1ymoai25AgFvr4pQGE8z5mNNXa-X6rciTQ8CC8acR27Ijp9VhtlafwclpZTxnnl3P8iTpZpYJPOglvcTABpa-DMiA415mbdwQI8JkLvAfIoEBZP-APIsdS1AmXds7GaSsJnaGo-kztu79ZQpuIrzAyNHk4PPsKY-XWFaDCVHtA4DSf6hzrmb7P6j7ctfeid844dVDxfsmbgK0I3120C5fmPlOSna7qW-ibGWVR0oLHgdO0bnNB9Vcnm-16x0-02Nn2DOO4_P51BXv0wSFjgcIECB23ESSrV5VCLq05FT_rHWpvLjHCvrjgpOAw27qQfyWl2Fw3ZhVrSwaw=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0b3d336aea8b40dd016ad1945a2ba887d1be7ddf9fdea4cc29",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4871,
+    "completion_tokens": 520,
+    "total_tokens": 5391,
+    "cost": 0.0008688,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4868,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0008688,
+      "upstream_inference_prompt_cost": 0.0006088,
+      "upstream_inference_completions_cost": 0.00026
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 76,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "claims": [
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        {
+          "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+          "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+          "kind": "source",
+          "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286."
+        }
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 1,
+      "resolved_citations": [
+        {
+          "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+          "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+          "kind": "source",
+          "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+        }
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 2,
+      "resolved_citations": [
+        {
+          "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+          "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+          "kind": "source",
+          "quote": "The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+        }
+      ]
+    }
+  ],
+  "request_id": "5d95cb2e-9762-4033-8105-ea53c8594215",
+  "semantic_support": "not_evaluated"
+}

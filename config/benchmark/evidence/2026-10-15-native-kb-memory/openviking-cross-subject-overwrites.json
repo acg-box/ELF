@@ -1,0 +1,16 @@
+[
+  {
+    "source_archive": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001",
+    "uri": "viking://user/formal/memories/events/2026/08/22/retry_policy_replaced.md",
+    "memory_type": "events",
+    "before": "# Summary\nOn 2026-08-22, retry policy RETRY-0-907 replaced RETRY-0-108.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+    "after": "# Summary\nOn 2026-08-22, retry policy RETRY-1-907 superseded RETRY-1-108.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+  },
+  {
+    "source_archive": "viking://user/formal/sessions/formal-m_70bd88efee712a9a/history/archive_001",
+    "uri": "viking://user/formal/memories/events/2026/08/15/gate_outage_recovery.md",
+    "memory_type": "events",
+    "before": "# Summary\nGATE-0-519 outages were recorded on 2026-08-08. The user asked to retain the successful recovery procedure from that incident.\n# 2026-08-15 (Saturday) ChatLog:\n**user**: ...The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+    "after": "# Summary\nGATE-1-519 outages were recorded on 2026-08-08. The user asked to retain the successful recovery procedure from that incident.\n# 2026-08-15 (Saturday) ChatLog:\n**user**: ...The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+  }
+]

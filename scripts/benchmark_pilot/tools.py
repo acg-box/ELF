@@ -6,6 +6,7 @@ import re
 import urllib.error
 
 from .evidence import EvidenceHandles, compact_check
+from benchmark_agent.answer import finalize_answer
 
 
 def schemas(condition, client_v3=False):
@@ -334,15 +335,14 @@ class SourceTools:
         return value
 
     def finalize(self, answer):
-        if not isinstance(answer.get('text'), str) or not isinstance(answer.get('supported'), bool):
-            raise ValueError('Expected text, supported, and claims')
+        if not isinstance(answer, dict) or not isinstance(answer.get('claims'), list):
+            raise ValueError('Expected an answer object with claims')
         claims = self.handles.resolve(answer['claims']) if self.handles else answer['claims']
         try:
-            binding = self.api('/v2/evidence/check', {'claims': claims})
+            final = finalize_answer({**answer, 'claims': claims}, self.api)
         except urllib.error.HTTPError as error:
             if error.code >= 500 or error.code == 402:
                 raise
             raise ValueError(error.read().decode()) from error
         refs = [c['reference'] for claim in claims for c in claim.get('citations', []) if c.get('kind') == 'reference']
-        return {'answer': {**answer, 'claims': claims}, 'claim_bindings': binding,
-                'all_references_seen': bool(refs) and all(ref in self.references for ref in refs)}
+        return {**final, 'all_references_seen': bool(refs) and all(ref in self.references for ref in refs)}

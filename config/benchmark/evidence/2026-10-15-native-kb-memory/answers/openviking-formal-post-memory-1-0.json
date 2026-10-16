@@ -1,0 +1,67 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-0",
+  "question": "As of August 22, what delivery mode and retry policy apply to Ivo's Cobalt project?",
+  "answer": {
+    "answer": "As of August 22, the retry policy was RETRY-1-907, superseding RETRY-1-108. The delivery choice was to keep the choice made on August 15, but the evidence does not identify that choice. BATCH-1-741 was the original batch-delivery choice; the August 8 record says no delivery-mode change was approved at that meeting, but that does not establish the August 15 choice.",
+    "citations": [
+      {
+        "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+        "quote": "Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+      },
+      {
+        "handle": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+        "quote": "They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108."
+      },
+      {
+        "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+        "quote": "No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 11.723,
+  "total_seconds": 19.453,
+  "context_bytes": 8258,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 2672,
+    "completion_tokens": 491,
+    "total_tokens": 3163,
+    "cost": 0.000579425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 2669,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000579425,
+      "upstream_inference_prompt_cost": 0.000333925,
+      "upstream_inference_completions_cost": 0.0002455
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 213,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

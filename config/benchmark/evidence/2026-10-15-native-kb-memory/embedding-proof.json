@@ -1,0 +1,33 @@
+{
+  "openviking": {
+    "collection_fields": [
+      {
+        "FieldName": "vector",
+        "FieldType": "vector",
+        "Dim": 4096,
+        "FieldID": 4
+      }
+    ]
+  },
+  "ragflow": {
+    "memory_0a515ba2392d4cab87abd73ecb013ec3": {
+      "q_4096_vec": {
+        "type": "dense_vector",
+        "dims": 4096,
+        "index": true,
+        "similarity": "cosine"
+      }
+    },
+    "ragflow_0a515ba2392d4cab87abd73ecb013ec3": {
+      "q_4096_vec": {
+        "type": "dense_vector",
+        "dims": 4096,
+        "index": true,
+        "similarity": "cosine"
+      }
+    }
+  },
+  "provider_returned_dimensions": {
+    "4096": 299
+  }
+}

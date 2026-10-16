@@ -1,0 +1,27 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "dry_run": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "2026-08-01. Devon started project Cedar. They chose BATCH-4-741 for batch delivery. The initial retry policy was RETRY-4-108.",
+        "ts": "2026-08-01T12:00:00Z",
+        "msg_id": "m_11ab570fcca41f15",
+        "source_document": {
+          "doc_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90",
+          "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+          "position": {
+            "start": 0,
+            "end": 125
+          }
+        }
+      }
+    ]
+  },
+  "before": {
+    "paid_usd": 2.0003657810000006,
+    "exposure_usd": 2.0725464809999985,
+    "requests": 4542
+  }
+}

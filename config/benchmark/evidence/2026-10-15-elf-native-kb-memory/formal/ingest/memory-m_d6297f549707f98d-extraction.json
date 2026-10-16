@@ -1,0 +1,131 @@
+{
+  "response": {
+    "extracted": {
+      "notes": [
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "Keep the August 15 delivery choice discussed in the context of Mara’s review of Larch.",
+          "ttl_days": null,
+          "type": "decision"
+        },
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "For the next outage, use the recovery procedure validated on August 8.",
+          "ttl_days": null,
+          "type": "plan"
+        },
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "The retry policy is now RETRY-0-907, superseding RETRY-0-108.",
+          "ttl_days": null,
+          "type": "fact"
+        },
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "As of 2026-08-22, no budget owner has been appointed.",
+          "ttl_days": null,
+          "type": "fact"
+        }
+      ]
+    },
+    "ingestion_profile": {
+      "id": "default",
+      "version": 8
+    },
+    "processing_complete": true,
+    "request_id": "74f2df4f-82bb-4156-9910-65576a1e7613",
+    "results": [
+      {
+        "field_path": null,
+        "note_id": "316204b2-dd94-4e9e-b684-2ec7b867a3d8",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "720cf920-ed5a-481d-9ca3-b881aedcce27",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "957393b1-1a8c-4f1e-b070-2fa162d2801c",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "75721d26-20fd-4c79-bcce-9c42f9c4c074",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      }
+    ]
+  },
+  "seconds": 32.76475054100001,
+  "before": {
+    "paid_usd": 2.0049087810000006,
+    "exposure_usd": 2.0770894809999985,
+    "requests": 4572
+  },
+  "after": {
+    "paid_usd": 2.005517556000001,
+    "exposure_usd": 2.077698255999999,
+    "requests": 4577
+  }
+}

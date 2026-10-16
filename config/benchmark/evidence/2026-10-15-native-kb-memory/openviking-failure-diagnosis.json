@@ -1,0 +1,21 @@
+{
+  "incomplete_cases": [
+    "post/memory-0-1",
+    "post/memory-1-0"
+  ],
+  "identifier_coverage_correct": 12,
+  "complete_answer_correct": 11,
+  "questions": 13,
+  "scoring_note": "Completeness includes the causal relation explicitly asked by memory-0-1. The answer names the gate but says that its causal role cannot be established. Keep the raw identifier score beside this manual semantic review; do not silently redefine the frozen oracle.",
+  "failure_stages": {
+    "memory-0-1": "Derived memory merge and source selection: a same-named gate_outage_recovery event is updated from the Larch record to the Cobalt record. The decision event keeps only chunk 0, while the cause clause was in chunk 1. The correct original remains in the source archive, but the causal record is absent from the final memory view and reader context.",
+    "memory-1-0": "Native retrieval: cobalt_stream_switch.md still stores STREAM-1-286, but it is not returned in the reader context. The August 22 instruction only refers to the August 15 choice."
+  },
+  "observed_cross_subject_updates": 2,
+  "original_sources_unchanged": true,
+  "source_chunking": "The release packs sentence units with a 100-character minimum and renders selected ranges with explicit ellipses. This is not a source-file mutation or a single-note hard rejection.",
+  "source_urls": [
+    "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/session/memory/memory_updater.py"
+  ],
+  "limit": "No tuning, model change, source reingestion, or answer-selected retry was performed. The official ARM64 recovery is a separate operational qualification."
+}

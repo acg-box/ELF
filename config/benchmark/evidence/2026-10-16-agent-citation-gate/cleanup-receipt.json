@@ -1,0 +1,24 @@
+{
+  "removed": [
+    {
+      "container": "elf-native-20261015-formal-db",
+      "id": "4f660e0567728728551f6b84fb33817a4054fba8f33b9b28ce9770ebc3d0ada9",
+      "volume": "elf-native-20261015-formal-db-data",
+      "owner": "elf-native-20261015-formal"
+    },
+    {
+      "container": "elf-native-20261015-formal-qdrant",
+      "id": "9caa320ceed9d4bb4568fece0418aa29ec0fe8bcd5e4b1b34bfccb1d4a70cea3",
+      "volume": "elf-native-20261015-formal-qdrant-data",
+      "owner": "elf-native-20261015-formal"
+    }
+  ],
+  "remaining": {
+    "containers": [],
+    "volumes": []
+  },
+  "provider_gateway_stopped": true,
+  "api_worker_ports_closed": true,
+  "original_backup_preserved": true,
+  "unrelated_resources_retained": true
+}

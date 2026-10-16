@@ -1,0 +1,61 @@
+{
+  "id": "gen-1792119740-hpYVHZBivN74inu58u0E",
+  "object": "chat.completion",
+  "created": 1792119740,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"answer\": \"Batch delivery using BATCH-1-741 remained approved for Ivo’s Cobalt project; the August 8 meeting tested REPLAY-1-632, but approved no change in delivery mode.\",\n  \"citations\": [\n    {\n      \"handle\": \"elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124\",\n      \"quote\": \"They chose BATCH-1-741 for batch delivery.\"\n    },\n    {\n      \"handle\": \"elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204\",\n      \"quote\": \"The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": "**Preparing JSON response**\n\nI need to create a JSON answer with exact quotes and citations. It's important to specify that the batch delivery labeled BATCH-1-741 has remained approved as of August 8, and there's been no mode change. I also need to note that the test replay was not approved for change. Don’t forget to cite two evidence chunks to back this up! I'll focus on getting all the details specified correctly.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Preparing JSON response**\n\nI need to create a JSON answer with exact quotes and citations. It's important to specify that the batch delivery labeled BATCH-1-741 has remained approved as of August 8, and there's been no mode change. I also need to note that the test replay was not approved for change. Don’t forget to cite two evidence chunks to back this up! I'll focus on getting all the details specified correctly.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZO-mCxgNHrKednuC5UGxar9bv2gx5oU_nasTEObuGmS_yoFLQqEil0djGBveS5rWCtkISYh5y9w58L2g0zVtpjgwa3IvhTBlzwLua1xpdtVIoirvOfsCMSiLLairb6-D0Hx_9w84koDTKFaZp45u12E733wmdYzOK8R-slNL8ALqxIsu0vooiDE2H5Gjra9qALY77j-fhJc86pAVbK8greeHs6J7OB4Pkto1V7mxO5zyn-kafWLjaywe-MZvgF0GDQHlWbAbzFpdJDpF-LkYVw_sw6yyffMWbMuDF2_dZ1kTNxdGClCHdYbNCxiAGIQAoN3yiPjr6Q-LICg8T-YWhjjYpy4VqNCE-Su8TP5gmFDR5EhIn0UFDOafEC7mI7-5S5ZfV3VpRSZbb01vWurj4I26pLw5Gkysqx1-NoFz3OBGdb1XRoJpdzc1Qfgu2zEvDBRK9AcnVkq70JnkbX76rvj4ZzeWfkXrdz9WyvyBZwWtXSkd4L_YDFFPoBZc8_DoDXt1EYr5IuVpyLGOaX-1dnojAoQIiiRHWfkFU3RsBNGpxCOQbqXd46BmOagFCB3KPIAlxqCfvPj7a9L_2w3UZMcGOikcAnlDQfnVt6lchwAd5oxnitpQ4Z8_V5KIDV1sM-bY-Q-HUi1sJ4oB8xl-EaITwA_IbeOkGAV67YNNY5QMIkpsWsO4toa_Gke1iIMugzRLCvUkXraxEG0FGvhpx7wGEbEGaR7F8-DtmoxqYNx6ZrpANmzbu7L7qORAzrIa2HVEwuutqg9qF6xS_Yc0zTq3lLT8UpexfSx1DHhDlJuaqhoCUZyxnlPYtb_nFxx433QLTw76MKOBSccCHxZMSVrHddq2_6WbMgsRy4x9tpGUy8qoYJr7qMIhW322PIUawx8YOqGcOCedIKpMUXJVeyZobWTWgash9iAOoYRdG_3e22Y49VmSpzZR-DzenaZXGjYoXjAQ8Gjn9UqAgL8MdWDOEGEo4FNIeJA3a31CXPpzxDzQG98n0gEbDuQyp7RZUXOYO2fyDjlC2PoB20eGPJP9DOrY2v6wTT5ynxOX63VDX_wNaluQMY9R-C5ZNRlneFcnMaTsGGeaV-ATFJ01KAAz8vXkRiVhPvwUtIjzhPEiuYGw5tGfkAkNknZ2prcdDQRmJQfhMC6XgdW565vIoXj_ne3-gPj5ja1kOzEh4OQvgLetG3MIVHc1vCqoJUeZokzkeG6Z7COGjoZ5Tr6lvq00NS_JLHxjf_EqQv7EM6Xvfw8VHGyQe1hdGvwyZfITJhBMwZITp9mXVGGjeBFDouIoLYkDFMjZFlVJx66RFRvxvd3A3Eu2i1IZrh40AbW8XSdmPgX5B--H_LyII_G1Qzakft5vhLmMmxP9OSfDtgWY60xC9vkS3sKduSG0GTjl7GwSUQ32vSwgrlDaTTVCrY8s6hhoaiBM10n63nmOJq1oH5oMn9ngMPfdWI5TOHENdBJh9oUgr4-L8_ks53f6ZW8xG7Hrjz-xTZg3VxzlMDpMDjYiRURBDGkEgA3FCYpq5Q5hHOr0wePG-TCiNLUFmdsJ6p6ZoLiWGyHXalrRNhazkqOdo7-VGJerD5TzGrkJuwHUg_z_tHPToVhS9eMXsYf8e1WpVKyuq0LkhUjcbHzKBMrOPxyl-MIdkuugdhkxQ4gv8urMj4kRQBWLYxRz4foAm5tmiD9un-FXLrkaPJFnK575Zp-MmMS3TsvH_vP6pv4QWnWVwF5TuprSXNWeJDh_pYh9BCC6ktRLneGln-szfMo-wqWh0vPdgQ_NTbThvDf45ohNyEZ-cY91zm1Gt6dwA8MByNGLch9RNY48OXKi1NFinPGcOGnhdBQGUEFW7KE0hTCAg78jnvigf_y634g1ozMuORgVTLjH3mG02KZ3yY7_W_fa1mTXxZ2M3hu89azpIi1qhijIx5NLYorR-JCd2PPahy9nv5oD2mHUqAnYVSjjYQglOGYwYy9tjn8meL7uUqFD2OmR-HKR17s8r7Jcb1WMJ1ses2jp8N4Mtz655akl87eiZrf1iiuvIAEj8KN0nhRwpL5y2T8NHi781R9wPI11UN2cR8qPBgM7moyaDA9EczF69RQujBeKjmzFy05.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_03536edc49b0c2c6016ad193bccd6c87d18eef8abc5645e461",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4655,
+    "completion_tokens": 319,
+    "total_tokens": 4974,
+    "cost": 0.0007413,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4652,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0007413,
+      "upstream_inference_prompt_cost": 0.0005818,
+      "upstream_inference_completions_cost": 0.0001595
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 44,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

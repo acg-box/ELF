@@ -1,0 +1,59 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "pre",
+  "case_id": "memory-1-2",
+  "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "BATCH-1-741 for batch delivery remained approved; no delivery-mode change was approved at the August 8 meeting.",
+    "citations": [
+      {
+        "handle": "ragflow:document:60c7b04dd9a54820b17be95530bb5bda:chunk:814df48295aa88f7",
+        "quote": "They chose BATCH-1-741 for batch delivery."
+      },
+      {
+        "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+        "quote": "No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:document:60c7b04dd9a54820b17be95530bb5bda:chunk:814df48295aa88f7",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 15.703,
+  "total_seconds": 19.672,
+  "context_bytes": 4487,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1756,
+    "completion_tokens": 191,
+    "total_tokens": 1947,
+    "cost": 0.000314925,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1753,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000314925,
+      "upstream_inference_prompt_cost": 0.000219425,
+      "upstream_inference_completions_cost": 9.55e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 43,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

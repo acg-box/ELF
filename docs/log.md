@@ -6,8 +6,28 @@ Read this when: You need to understand why documentation structure changed.
 Not this document: Detailed subsystem history, raw research state, or plan execution
 logs.
 
+## 2026-10-16
+
+- Require all native claim verdicts before the reference Agent host returns a
+  final answer. Preserve failed drafts and budget-limited correction traces.
+  Add the retained thirteen-case replay, one exact-quote correction, and source
+  readback evidence without replacing the earlier competitive scores.
+
 ## 2026-10-15
 
+- Add unchanged ELF to the frozen native knowledge and memory comparison.
+  Separate 13/13 semantic completeness from 12/13 complete answers with valid
+  quotes. Retain the failed quote, source-hydration evidence, untested graph and
+  keyed-update boundaries, cumulative cost, and exact Docker cleanup receipt.
+
+- Record the bounded OpenViking/RAGFlow knowledge and native Memory comparison.
+  Preserve both incomplete answers and cross-project replacements, verify original
+  text and 4096-dimensional storage, and qualify the reuse recommendation with
+  the observed runtime recovery and cumulative cost.
+- Record the complete external-system reuse assessment with current upstream
+  identities and preserved historical benchmark boundaries. Recommend one
+  integrated candidate, identify portable ELF assets, and make no runtime or
+  migration change.
 - Route development through the existing product contract and one current-direction
   reference. Separate stable intent from replaceable mechanisms and mark the July
   execution program as historical.

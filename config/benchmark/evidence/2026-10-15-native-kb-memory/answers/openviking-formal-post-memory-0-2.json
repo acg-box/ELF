@@ -1,0 +1,59 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-0-2",
+  "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "BATCH-0-741 for batch delivery remained the approved mode; the August 8 meeting approved no change.",
+    "citations": [
+      {
+        "handle": "viking://resources/formal/m_c558d1541c4b9d0f/m_c558d1541c4b9d0f.md",
+        "quote": "They chose BATCH-0-741 for batch delivery."
+      },
+      {
+        "handle": "viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md",
+        "quote": "No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/m_c558d1541c4b9d0f.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 15.593,
+  "total_seconds": 20.945,
+  "context_bytes": 10392,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 3155,
+    "completion_tokens": 181,
+    "total_tokens": 3336,
+    "cost": 0.0004848,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 3152,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0004848,
+      "upstream_inference_prompt_cost": 0.0003943,
+      "upstream_inference_completions_cost": 9.05e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 42,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

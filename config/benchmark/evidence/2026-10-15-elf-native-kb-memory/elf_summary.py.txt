@@ -1,0 +1,102 @@
+"""Summarize the completed ELF addition without paid calls or product writes."""
+from collections import Counter, defaultdict
+import hashlib
+import json
+from pathlib import Path
+import statistics
+import sys
+
+ROOT = Path(__file__).resolve().parent / 'elf-appendix'
+REPO = ROOT.parents[2]
+sys.path.insert(0, str(REPO / 'scripts'))
+from benchmark_budget import totals
+
+
+def read(name):
+    return json.loads((ROOT / name).read_text())
+
+
+def main():
+    reviewed = read('review-elf.json')
+    answers = [json.loads(p.read_text()) for p in sorted((ROOT / 'answers').glob('*-formal-*.json'))]
+    assert len(reviewed) == len(answers) == 13
+    old = REPO / 'config/benchmark/evidence/2026-10-15-native-kb-memory'
+    previous = json.loads((old / 'results-summary.json').read_text())
+    inputs = json.loads((old / 'inputs.json').read_text())
+    lanes = {(phase, x['case_id']): x['lane'] for phase, key in
+             [('pre', 'pre_update_queries'), ('post', 'post_update_queries')] for x in inputs[key]}
+    by_lane = defaultdict(lambda: {'correct': 0, 'total': 0})
+    for row in reviewed:
+        value = by_lane[lanes[(row['phase'], row['case_id'])]]
+        value['total'] += 1
+        value['correct'] += int(row['correct'])
+    opening, closing = read('calibration-opening-ledger.json'), read('formal-closing-ledger.json')
+    new = closing['requests'][len(opening['requests']):]
+    assert all(x['status'] != 'in_flight' for x in new)
+    paid, exposure = totals(closing)
+    quotes = [c for a in answers for c in a['citation_checks']]
+    audit = read('audit-formal-elf.json')
+    bindings = [x for p in (ROOT / 'native').glob('*-formal-*-bindings.json')
+                for x in json.loads(p.read_text())['claims']]
+    reuse = [json.loads(x) for scope in ['calibration', 'formal']
+             for x in (ROOT / scope / 'provider-reuse.jsonl').read_text().splitlines()]
+    dimensions = Counter()
+    for p in (ROOT / 'receipts').glob('*/*.json'):
+        row = json.loads(p.read_text())
+        if 'input' in row['request']:
+            assert row['request']['model'] == 'qwen/qwen3-embedding-8b'
+            assert row['request']['dimensions'] == 4096
+            for vector in row['response']['data']:
+                dimensions[len(vector['embedding'])] += 1
+        else:
+            body = row['request']
+            assert body['model'] == 'openai/gpt-6-luna'
+            assert body['max_tokens'] == 128000
+            assert body['reasoning']['effort'] == 'medium'
+    assert set(dimensions) == {4096}
+    current = {'answers_completed': 13, 'answers_reviewed': 13,
+        'correct': sum(x['correct'] for x in reviewed), 'by_lane': dict(by_lane),
+        'semantic_and_quotes_complete': sum(x['correct'] and x['quote_binding'] for x in reviewed),
+        'all_quotes_valid_answers': sum(bool(a['citation_checks']) and all(x['quote_bound'] for x in a['citation_checks']) for a in answers),
+        'original_source_citations': sum(c['handle'].startswith('elf-source-v1/') for a in answers for c in a['answer'].get('citations', [])),
+        'reader_paid_usd': sum((a.get('usage') or {}).get('cost', 0) for a in answers),
+        'query_mean_seconds': statistics.mean(a['total_seconds'] for a in answers),
+        'query_median_seconds': statistics.median(a['total_seconds'] for a in answers),
+        'context_mean_bytes': statistics.mean(a['context_bytes'] for a in answers),
+        'context_max_bytes': max(a['context_bytes'] for a in answers),
+        'dropped_entries': sum(len(a['dropped']) for a in answers),
+        'quote_bindings': {'pass': sum(x['quote_bound'] for x in quotes), 'total': len(quotes)},
+        'native_bindings': {'pass': sum(x['binding_verified'] for x in bindings), 'total': len(bindings)},
+        'formal_paid_usd': paid - totals(read('formal-opening-ledger.json'))[0],
+        'source_readback': {k: {'pass': sum(x['exact_utf8_original'] for x in audit[k]), 'total': len(audit[k])}
+                            for k in ['knowledge_originals', 'raw_messages']},
+        'derived_parent_bindings': {'pass': sum(x['sources_verified'] and x['complete'] for x in audit['derived_lineage']),
+                                    'total': len(audit['derived_lineage'])}}
+    for product, value in previous['products'].items():
+        rows = json.loads((old / f'review-{product}.json').read_text())
+        value['semantic_and_quotes_complete'] = sum(x['correct'] and x['quote_binding'] for x in rows)
+        value['all_quotes_valid_answers'] = sum(x['quote_binding'] for x in rows)
+    result = {'products': {**previous['products'], 'elf': current},
+        'budget': {'ceiling_usd': 10, 'opening_paid_usd': totals(opening)[0],
+            'elf_addition_paid_usd': paid - totals(opening)[0], 'paid_total_usd': paid,
+            'conservative_exposure_total_usd': exposure, 'remaining_conservative_usd': 10 - exposure,
+            'calibration_paid_usd': totals(read('calibration-closing-ledger.json'))[0] - totals(opening)[0],
+            'requests': len(new), 'states': dict(Counter(x['status'] for x in new)),
+            'tokens': {k: sum((x.get('usage') or {}).get(k, 0) or 0 for x in new)
+                       for k in ['prompt_tokens', 'completion_tokens', 'total_tokens']},
+            'by_kind': {kind: {'requests': sum(x['kind'] == kind for x in new),
+                              'paid_usd': sum((x.get('usage') or {}).get('cost', 0) or 0
+                                             for x in new if x['kind'] == kind)} for kind in ['chat', 'embedding']}},
+        'embedding': {'new_returned_dimensions': dict(dimensions),
+            'exact_request_reuse_count': sum(x['kind'] == 'embedding' and x['reused'] for x in reuse),
+            'storage_dimension_counts': read('formal/snapshot-final.json')['vectors']},
+        'speed_comparison_allowed': False,
+        'comparison_boundary': 'Frozen questions, reader, models, dimensions, hit and context limits. Native product pipelines differ. No source-only arm or feature ablation in this addition.'}
+    assert exposure <= 10
+    (ROOT / 'results-summary.json').write_text(json.dumps(result, indent=2) + '\n')
+    (ROOT / 'request-ledger.json').write_text(json.dumps(new, indent=2) + '\n')
+    print(json.dumps(result, indent=2))
+
+
+if __name__ == '__main__':
+    main()

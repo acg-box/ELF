@@ -1,0 +1,36 @@
+{
+  "claims": [
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        {
+          "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+          "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+          "kind": "source",
+          "quote": "They chose BATCH-1-741 for batch delivery."
+        }
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 1,
+      "resolved_citations": [
+        {
+          "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+          "kind": "source",
+          "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+        }
+      ]
+    }
+  ],
+  "request_id": "3856d404-98b5-48d6-9d9c-9dbdd4d1cff8",
+  "semantic_support": "not_evaluated"
+}

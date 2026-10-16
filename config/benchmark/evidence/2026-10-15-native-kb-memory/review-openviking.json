@@ -1,0 +1,106 @@
+[
+  {
+    "phase": "post",
+    "case_id": "combined-001",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-000",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-001",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-0",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-1",
+    "correct": false,
+    "identifier_coverage": true,
+    "review": "The answer gives the required gate identifier but explicitly declines to establish the requested causal link. Count this as incomplete, despite identifier coverage.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-2",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-3",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-0",
+    "correct": false,
+    "identifier_coverage": false,
+    "review": "The current STREAM-1-286 decision is absent from the answer and its supplied context. The reader correctly avoids inventing it.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-1",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-2",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-3",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-0-2",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-1-2",
+    "correct": true,
+    "identifier_coverage": true,
+    "review": "All requested facts and temporal qualifications are correct. Historical mentions explicitly marked as superseded are not treated as current-value errors.",
+    "quote_binding": true
+  }
+]

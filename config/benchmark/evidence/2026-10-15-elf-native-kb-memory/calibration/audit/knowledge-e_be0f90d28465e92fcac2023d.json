@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "agent_id": "pilot",
+    "content_bytes": 395,
+    "content_hash": "39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476",
+    "created_at": [
+      2026,
+      289,
+      2,
+      59,
+      10,
+      652581000,
+      0,
+      0,
+      0
+    ],
+    "doc_id": "01d83a92-e276-5253-bedd-13e5161c3937",
+    "doc_type": "knowledge",
+    "project_id": "project",
+    "request_id": "c07b9ca8-d2b2-4e0c-b3d6-2d475e6c5ef0",
+    "scope": "agent_private",
+    "source_ref": {
+      "canonical_uri": "urn:elf-native-comparison:calibration:knowledge:e_be0f90d28465e92fcac2023d",
+      "captured_at": "2026-10-16T02:59:10.639910+00:00",
+      "content_hash": "39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476",
+      "doc_type": "knowledge",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T02:59:10.639910+00:00"
+      },
+      "origin": "urn:elf-native-comparison:calibration:knowledge:e_be0f90d28465e92fcac2023d",
+      "schema": "doc_source_ref/v1",
+      "source_kind": "text_export",
+      "source_record_id": "01d83a92-e276-5253-bedd-13e5161c3937",
+      "source_spans": [
+        {
+          "chunk_hash": "39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476",
+          "chunk_id": "69539283-be4c-5e34-93ca-6f0f856645e0",
+          "content_hash": "39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476",
+          "end_offset": 395,
+          "schema": "doc_source_span/v1",
+          "span_id": "892fccb5-6be0-5e99-b9a1-26b212311550",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "text_export",
+      "title": "e_be0f90d28465e92fcac2023d",
+      "trust_label": "user_captured",
+      "ts": "2026-10-16T02:59:10.639910+00:00",
+      "visibility_scope": "agent_private"
+    },
+    "status": "active",
+    "tenant_id": "elf-native-20261015-calibration",
+    "title": "e_be0f90d28465e92fcac2023d",
+    "updated_at": [
+      2026,
+      289,
+      2,
+      59,
+      10,
+      652581000,
+      0,
+      0,
+      0
+    ]
+  },
+  "source": {
+    "doc_id": "01d83a92-e276-5253-bedd-13e5161c3937",
+    "end_offset": 395,
+    "excerpt": "Kestrel-3 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-3-7c2; quality defects use exception DEFECT-3-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-3-2d1 and has no authority.",
+    "locator": {
+      "match_end_offset": 395,
+      "match_start_offset": 0,
+      "position": {
+        "end": 395,
+        "start": 0
+      },
+      "selector_kind": "position",
+      "span_id": "813e154a-ced8-5f27-83d4-382a5d132c18"
+    },
+    "reference": "elf-source-v1/01d83a92-e276-5253-bedd-13e5161c3937/39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476/0/395",
+    "request_id": "2b443ae9-05a9-4ebc-b050-88446b2f5fd4",
+    "start_offset": 0,
+    "trace_id": "c21e7302-3654-4a9f-8de1-f0604df73c35",
+    "verification": {
+      "content_hash": "39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476",
+      "excerpt_hash": "39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476",
+      "verification_errors": [],
+      "verified": true
+    }
+  }
+}

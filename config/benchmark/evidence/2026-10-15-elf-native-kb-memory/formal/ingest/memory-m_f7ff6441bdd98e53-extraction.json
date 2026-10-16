@@ -1,0 +1,79 @@
+{
+  "response": {
+    "extracted": {
+      "notes": [
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "On 2026-08-08, Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages; the team tested REPLAY-1-632, which restored the missing updates.",
+          "ttl_days": null,
+          "type": "fact"
+        },
+        {
+          "confidence": null,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ],
+          "importance": null,
+          "key": null,
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "At the 2026-08-08 meeting, no change of delivery mode was approved.",
+          "ttl_days": null,
+          "type": "decision"
+        }
+      ]
+    },
+    "ingestion_profile": {
+      "id": "default",
+      "version": 8
+    },
+    "processing_complete": true,
+    "request_id": "d930df28-c16c-44ab-82ce-8d9793a20b2d",
+    "results": [
+      {
+        "field_path": null,
+        "note_id": "c8f0c870-75ab-494d-bb73-9352d023e4fe",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "ddda5c99-cde5-4690-9d63-4f70944fa0bc",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      }
+    ]
+  },
+  "seconds": 13.2764095,
+  "before": {
+    "paid_usd": 2.002598471000001,
+    "exposure_usd": 2.074779170999999,
+    "requests": 4562
+  },
+  "after": {
+    "paid_usd": 2.003027706000001,
+    "exposure_usd": 2.075208405999999,
+    "requests": 4565
+  }
+}

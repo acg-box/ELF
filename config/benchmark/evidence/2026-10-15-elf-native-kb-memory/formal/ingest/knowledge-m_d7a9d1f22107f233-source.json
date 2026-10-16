@@ -1,0 +1,56 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "knowledge",
+    "title": "m_d7a9d1f22107f233",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "knowledge",
+      "ts": "2026-08-08T12:00:00Z",
+      "source_kind": "text_export",
+      "canonical_uri": "urn:elf-native-comparison:formal:knowledge:m_d7a9d1f22107f233",
+      "captured_at": "2026-10-16T03:00:57.159328+00:00",
+      "trust_label": "user_captured",
+      "source_created_at": "2026-08-08T12:00:00Z"
+    },
+    "content": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 205,
+    "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+    "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+    "request_id": "93c1a460-6e39-4c26-8591-c62bce4d993e",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:00:57.159328+00:00",
+      "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:00:57.159328+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:knowledge:m_d7a9d1f22107f233",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+      "source_spans": [
+        {
+          "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "chunk_id": "b7e23517-072e-5881-a98b-c46b46a0d6ec",
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "end_offset": 205,
+          "schema": "doc_source_span/v1",
+          "span_id": "d7715191-3931-5102-a2ba-a95876be5508",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "text_export",
+      "title": "m_d7a9d1f22107f233",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 0.32270554199999424
+}

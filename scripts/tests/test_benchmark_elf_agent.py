@@ -50,9 +50,10 @@ class AgentBoundaries(unittest.TestCase):
         response={'choices':[{'finish_reason':'stop','message':{'role':'assistant','content':json.dumps(answer)}}]}
         with patch('benchmark_agent.runner.urllib.request.urlopen',return_value=io.BytesIO(json.dumps(response).encode())) as call:
             result=run(lambda *args:(_ for _ in ()).throw(ValueError('audit unavailable')),'notes','question',[],'http://local','token',grounded=True)
-        self.assertEqual(result['text'],answer['text'])
-        self.assertEqual(result['status'],'completed')
-        self.assertIn('claim_binding_error',result)
+        self.assertEqual(result['draft_answer']['text'],answer['text'])
+        self.assertEqual(result['status'],'invalid_answer')
+        self.assertNotIn('text',result)
+        self.assertIn('audit unavailable',result['error'])
         self.assertEqual(call.call_count,1)
 
     def test_query_echo_is_not_retrieved_evidence(self):
@@ -117,13 +118,15 @@ class AgentBoundaries(unittest.TestCase):
             requests.append(json.loads(request.data));return io.BytesIO(json.dumps(response).encode())
         def audit(path,body):
             self.assertEqual(len(requests),1);audits.append((path,body))
-            return {'semantic_support':'not_evaluated','claims':[{'binding_verified':False}]}
+            return {'semantic_support':'not_evaluated','claims':[{'claim_index':0,'binding_verified':False}]}
         with patch('benchmark_agent.runner.urllib.request.urlopen',side_effect=reply):
             result=run(audit,'initial','question',[],'http://unused','token',max_rounds=1,max_calls=0,grounded=True)
         self.assertEqual(len(requests),1)
         self.assertNotIn('tools',requests[0])
         self.assertEqual(result['tool_calls'],0)
-        self.assertEqual(result['text'],answer['text'])
+        self.assertEqual(result['draft_answer']['text'],answer['text'])
+        self.assertEqual(result['status'],'invalid_answer')
+        self.assertNotIn('text',result)
         self.assertEqual(audits,[('/v2/evidence/check',{'claims':answer['claims']})])
         self.assertFalse(result['claim_bindings']['claims'][0]['binding_verified'])
 

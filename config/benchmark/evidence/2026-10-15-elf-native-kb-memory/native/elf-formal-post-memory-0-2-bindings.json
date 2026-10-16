@@ -1,0 +1,36 @@
+{
+  "claims": [
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        {
+          "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+          "kind": "source",
+          "quote": "They chose BATCH-0-741 for batch delivery."
+        }
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 1,
+      "resolved_citations": [
+        {
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+          "kind": "source",
+          "quote": "No change of delivery mode was approved at this meeting."
+        }
+      ]
+    }
+  ],
+  "request_id": "924a2f9f-c90d-423e-b4cc-81bb74d47d1b",
+  "semantic_support": "not_evaluated"
+}

@@ -1,0 +1,59 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-0",
+  "question": "As of August 22, what delivery mode and retry policy apply to Ivo's Cobalt project?",
+  "answer": {
+    "answer": "As of August 22, Ivo’s Cobalt project was set to STREAM-1-286, and its retry policy was RETRY-1-907.",
+    "citations": [
+      {
+        "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:25",
+        "quote": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+      },
+      {
+        "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:28",
+        "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:25",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:28",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 13.645,
+  "total_seconds": 18.474,
+  "context_bytes": 4727,
+  "context_entries": 12,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1830,
+    "completion_tokens": 292,
+    "total_tokens": 2122,
+    "cost": 0.000374675,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1827,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000374675,
+      "upstream_inference_prompt_cost": 0.000228675,
+      "upstream_inference_completions_cost": 0.000146
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 130,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

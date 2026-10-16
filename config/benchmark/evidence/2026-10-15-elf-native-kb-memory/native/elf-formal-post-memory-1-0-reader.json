@@ -1,0 +1,61 @@
+{
+  "id": "gen-1792119869-UiRQBSEkAwIOvH4EaIFj",
+  "object": "chat.completion",
+  "created": 1792119869,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.\",\"citations\":[{\"handle\":\"elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237\",\"quote\":\"Keep the August 15 delivery choice. ... The retry policy is now RETRY-1-907, superseding RETRY-1-108.\"},{\"handle\":\"elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241\",\"quote\":\"Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.\"}]}",
+        "refusal": null,
+        "reasoning": "**Preparing concise JSON response**\n\nI need to present the answer in a concise JSON format and make sure to cite the raw records. I'm considering the August 22 mode, which includes the Stream-1-286 that retained the delivery choice from August 15. It looks like retry 907 supersedes 108. I should also address the outage recovery validated on August 8 and possibly question the delivery mode and retry policy. It might help to cite evidence for every claim, quoting exactly in JSON.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Preparing concise JSON response**\n\nI need to present the answer in a concise JSON format and make sure to cite the raw records. I'm considering the August 22 mode, which includes the Stream-1-286 that retained the delivery choice from August 15. It looks like retry 907 supersedes 108. I should also address the outage recovery validated on August 8 and possibly question the delivery mode and retry policy. It might help to cite evidence for every claim, quoting exactly in JSON.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZQ_gTRmSk3I-rPqnZmen91mZpG99Fdg43pyeRPtnkexzSsBJQ-tr9Vtg1z_Ory_zkJrpd4JcNH6kXNDgxtv1-UlT3B7Rbv2zEYnywnHhr3hEnw1_JLYwTD9bupqKRQm14mad_jDvZsP_YwaEgqcQ8UNl-34rEs2YnQIH-xF61hCXVNuuYU6fGZl5mIkmNGWdq5DuOMob_JFRbcBhXHcUYUJOhJxKNLiHeRoZe7UqXvdIfZqd8QPloMzYWefpxVBsz1Lxxglr9UUlsTJVLncIL_mbm7ySgjph5F8ofQI-Oe67nrgQQqRGNRvOLDPyHffOvC6pVpj6Dphhvt5xRgmd2bCMak1IxPkjY59XCZEI2pAO3oGpwGb-k_RT-y9Y3btxZlNiDE7ZHdruC4xOqJLDqX8ewhaHwSmnLJScQVgtBHzyZWOFcORvI1Sf3_83AWppXuZEX2j4nLstJI1nVZDWM-F9SZWMAYVW-OHApq3fy4fUPKTBHBzYhWYvLiD1-c5h69mckZSUFZgarUzvhCc2smX6mjtqLUNUJ0rZvKlHE0L5lp2WfsueOlX8M6W7lKJSkvcS16mBFbcMHHadpA5TaI7OmxysimNuBYTN6L3z_e3xnmYwbHVr4CkQyIcjOPqyAcdr7OLI1s83W0eaPmT3_3oRknaVazPPsABfwQQJ70Nvi9hxtyoweHTn-dnuiWanDdJQ05oXrYzXp2xy8nGhJyFJKQl_qmFHkdKfREZhisikkssklfQKHGuzoirVHiG11Q00uv6jDv8ZPtRoJY4BrRixH6MPIo2FcwcMzh7Q9HSdPEy6UZUkLYlUoxPuLCn7FkTtciFrKDHVQK4UE3gVP_udPz4k9mJ4nzXwjnExN18ZJvv67qW0h06ki-yV47m1GUgWE42zteN4cignm6EhTl73PavfICNTV8rQSX_oiLJdjNvp53rHXWYC53ZVVxIJuAEqToNgJPTzAtpWqMdDi0rLb_zoW-1XCvvN4GjKgP_FriVSTCjLjKP1_n1UF7vPCGzumjHK1OD7sVT6RuOOhBW8Tq52i4gWip3qlWNfaNDVpTJPsXt60UBusc0m9iMv5q1jl5hkpUefSCx6b-QZtMnyFUqi1qdYTLhKSTaemDRpZJOGyTHY8ji1i9pxM_DXCTWufkLE17XBWjlT204c7ZMM1kYCbqofifRyUJmSXyb2Zv3IWTDK15RD-EBSRU8-k6V6Zfi0Flttq70QTPvNIjG851c8HdgvnkF9akPxwnXBANY6rvxQ8UDTjPbbHQxQ78xEwmHP9qM-7QLDLhGD2RSotbeAT6VlPkcg3cY60Wo5P7_A0y-ijnms2Vz7haieXX3dW7uqpAuh5atXjdlcl6AmD-Hl9EPbrTpMiUs3wQxJ_BRivapojcNKsyeoyFR5Az1m5Bn2clJis1yBqrUFyYDNu5fpvDAHS5UBOB4ru7hWIP02bMZcDNh2fnfn5HyZA9yldFCgTY7rssOteuXZzazJlHbg11aK4SoPOnjtPn8PEuYfYAu9SnOvgBopdaaLu846RZX7-7XYPdcpTAknnvN-P6expt5tNCx47_ZWaRbeIQUQdzGtzuupKLE5ot2c-lDaNp7cgUM1qjnIqT_r0ui5HcIdsOHinpkVU3itNcAu1vXg4gNPNLCyHrefF9Mnmsv2zJV-4XpOyF6KBdCtc1_rh3Kz1P46N9xoyT34pQkPDrKWQd46oZ9D5SBxddSabwniYsCSQkAtj-fWO4Sv5ixanPIh0WxAmErFPi4WUgj5_LWrW6ZbZAIpJdMo9kehtR1VOQ6NQlxbTW8Il4DZ8vc_9LQl7m-k8pbcyl12WnWjCGpVOHkNhqMo-th3Zg4fazeNAjHbcU9LOazicl5eWwFeq0nyn2lxEgJ2cxZ9WGheq39F7KnjZKD0BI7dW4CmvRlh9psyIm5Tr6sMpiExBj4s2Ucxqe3-6x9KLOzhpYsZxL858oiyyhNhhnpsn2nd_TMyI1ahY70FS_3i1F94DgY12AoyYaBz4C876iPstaQZ-rqBXGA7as4Spunv_e6FkqO-wAzNFs2O9gxyDwDvcRHEUTMxlVfpjufBXEVIRJybmJ_kJ9i1Bp7rw7_n0QgNkW2C3YZCkMJGsgiGP3AWEcrU9bYaMReNh3bq-8cnFEcdjZr3e3Xw8KT-8uuPUAKIXZY2SCzAA-g0BLJGNU-D-CZ6V5yQqUSWcdcCTq13f-ADnKClWDz-XKh15wYcAyewTuCFPJFktdmDJZIihJYnGE73w8C5GilqA3vHXTQ1rSlLL8KdbIyreTvg7holSnmUJoCEdMtyobp6R4BXFU1l9zlrYV69f8GFNBbmfFaAQTLwf3eTxmS18QlXzVLw4fFFOPBV1R_kxdy9aD0Lm8aYOj7Bqvzey_WL6sTav8iZnR7Jg5isrL-ufQ4Wm5FfmhTGX3thpZquhDbhYXnq5uSWiAkKLI-6Q-N8-gMgHo2v11VOQ4HIB5ETf-HS5v26fpldfO5o7mqHe70226MlyTf2kkWNQ==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_04c4f4c3bc8f84a7016ad1943ddcc487d1b3f64354b1b574ea",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4500,
+    "completion_tokens": 338,
+    "total_tokens": 4838,
+    "cost": 0.000731425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4497,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000731425,
+      "upstream_inference_prompt_cost": 0.000562425,
+      "upstream_inference_completions_cost": 0.000169
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 74,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

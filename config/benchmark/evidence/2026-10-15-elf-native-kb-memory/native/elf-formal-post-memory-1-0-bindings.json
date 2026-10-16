@@ -1,0 +1,31 @@
+{
+  "claims": [
+    {
+      "binding_verified": false,
+      "citation_verified": [
+        false
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        null
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 1,
+      "resolved_citations": [
+        {
+          "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+          "kind": "source",
+          "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+        }
+      ]
+    }
+  ],
+  "request_id": "d2be28d4-5736-4491-8a52-55d3312fb1bb",
+  "semantic_support": "not_evaluated"
+}

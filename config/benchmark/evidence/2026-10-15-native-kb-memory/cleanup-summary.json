@@ -1,0 +1,39 @@
+{
+  "completed_at": 1792096136.211991,
+  "removed_containers": [
+    "elf-unified-smoke-20261015-ragflow-cpu-1",
+    "elf-unified-smoke-20261015-mysql-1",
+    "elf-unified-smoke-20261015-minio-1",
+    "elf-unified-smoke-20261015-kvrocks-1",
+    "elf-unified-smoke-20261015-es01-1",
+    "elf-unified-smoke-20261015-nats-1",
+    "elf-unified-smoke-20261015-clickhouse-1",
+    "elf-unified-smoke-20261015-infinity-1",
+    "elf-unified-smoke-20261015-opensearch01-1",
+    "elf-unified-openviking-20261015"
+  ],
+  "removed_volumes": [
+    "deployment_osdata01",
+    "elf-unified-smoke-20261015_clickhouse_data",
+    "elf-unified-smoke-20261015_esdata01",
+    "elf-unified-smoke-20261015_infinity_data",
+    "elf-unified-smoke-20261015_kvrocks_data",
+    "elf-unified-smoke-20261015_minio_data",
+    "elf-unified-smoke-20261015_mysql_data",
+    "elf-unified-smoke-20261015_nats_data"
+  ],
+  "removed_networks": [
+    "elf-unified-smoke-20261015_ragflow"
+  ],
+  "removed_image_refs": [
+    "ghcr.io/volcengine/openviking@sha256:2c104187d17d9b5c837d578990ae574807ad8ab78ba84191ddafabfde207af38",
+    "ghcr.io/volcengine/openviking@sha256:9e0a87c15ded8f8d7eca68d8b7213c8f54e258caa2f7d04e54ceb995fcc8b31e",
+    "infiniflow/ragflow:v1.0.0-rc1",
+    "elasticsearch:8.11.3",
+    "opensearchproject/opensearch:2.19.1"
+  ],
+  "remaining_owned_containers": [],
+  "remaining_owned_volumes": [],
+  "provider_gateway_stopped": true,
+  "original_evidence_and_workspace_snapshots_retained": true
+}

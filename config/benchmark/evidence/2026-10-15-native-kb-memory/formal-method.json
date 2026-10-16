@@ -1,0 +1,36 @@
+{
+  "adapter_sha256": "b4e24de1ac4544ae15985323bc3b8b5c4a339695431a4b68f10f76cb544d8867",
+  "ragflow_backend": "Elasticsearch 8.11.3, official release default",
+  "knowledge_memory_scope": "Separate datasets/banks for RAGFlow and separate OpenViking native workspace/account for formal cases",
+  "native_memory_types": {
+    "ragflow": [
+      "raw",
+      "semantic",
+      "episodic",
+      "procedural"
+    ],
+    "openviking": "release defaults, self memory, working memory off"
+  },
+  "retrieval": "Native KB and native Memory search; at most 6 ranked unique hits from each. Use native returned full content. RAGFlow derived memory can follow its explicit source_id through the native content API. No oracle-dependent hydration or archive scan at answer time. Full source-preservation audit is separate.",
+  "answer_retries": false,
+  "source_fidelity_checks": "Native original download and native archived user message read; compare original UTF-8 bytes after updates and restart",
+  "performance_limitations": [
+    "AMD64 emulation on ARM host",
+    "One provider request at a time in the shared budget gateway",
+    "Cold account initialization and model latency must be reported separately from stable query time"
+  ],
+  "timestamp_transport": {
+    "recorded_at": 1792092040.324474,
+    "change": "Map the frozen record timestamp into OpenViking AddMessageRequest.created_at before any formal OpenViking ingestion. The date remains in identical user_input text for both products. RAGFlow AddMessageRequest has no event-time input field; its native extractor sets derived valid_at from that text.",
+    "reason": "Calibration archived the imported historical conversation at the current import time; the supported API can preserve its supplied original message timestamp.",
+    "calibration_original_attempt_preserved": true,
+    "formal_questions_rerun": false
+  },
+  "cost_and_timing_boundary": "Both answer phases use ready native indexes and the same serial provider gateway. OpenViking formal ingestion starts in a new native workspace/account; RAGFlow formal ingestion starts in new datasets/banks on its already initialized trial service. Thus total setup/ingestion wall time and bootstrap cost are observations, not a matched cold-start performance comparison. The formal provider totals retain all actual costs. Steady query times are one small sequential sample, not a throughput result.",
+  "runtime_recovery_boundary": {
+    "original_amd64_restart": "Did not meet readiness; the entrypoint timed out under high host load.",
+    "continuation": "Preserve a complete workspace snapshot, then use the official ARM64 build of the same 0.5.0 release with the existing data and vectors. No source reingestion, memory re-extraction, or repeated scored answer.",
+    "speed_comparison_allowed": false,
+    "remaining_quality_condition": "Same cases, 4096-dimensional model, Luna model profile, context budget, retrieval limits, and shared reader. Execution platform differs after recovery."
+  }
+}

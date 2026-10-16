@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        {
+          "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+          "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+          "kind": "source",
+          "quote": "custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+        }
+      ]
+    }
+  ],
+  "request_id": "5780bd68-13c1-4dfc-83fc-4bd50b020d5a",
+  "semantic_support": "not_evaluated"
+}

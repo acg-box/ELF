@@ -1,0 +1,97 @@
+"""Read-only source and lineage checks after the native trial."""
+from __future__ import annotations
+import hashlib
+import json
+import sys
+import urllib.parse
+import trial
+
+def digest(value):
+    if isinstance(value, str):
+        value = value.encode()
+    return hashlib.sha256(value).hexdigest()
+
+def ragflow(scope='formal'):
+    s = trial.state('ragflow', scope)
+    inputs = trial.read('inputs.json')
+    knowledge = inputs['knowledge'] if scope == 'formal' else inputs['calibration']['knowledge']
+    memories = inputs['memory_initial'] + inputs['memory_updates'] if scope == 'formal' else inputs['calibration']['memory']
+    result = {'knowledge_originals': [], 'raw_messages': [], 'derived_lineage': []}
+    auth = trial.read('ragflow-session.json')
+    for item in knowledge:
+        doc = s['documents'][item['evidence_id']]['id']
+        b = trial.request(trial.RAG + f'/datasets/{s["dataset"]["id"]}/documents/{doc}', headers={'Authorization': 'Bearer ' + auth['api_key']}, raw=True)
+        result['knowledge_originals'].append({'evidence_id': item['evidence_id'], 'native_document_id': doc, 'exact_utf8_original': b == item['text'].encode(), 'input_sha256': digest(item['text']), 'readback_sha256': digest(b)})
+        trial.save(f'audit-native/{scope}-rag-document-{item["evidence_id"]}.json', {'native_id': doc, 'content': b.decode()})
+    listing = trial.rag_memory_list(scope)
+    rows = listing['messages']['message_list']
+    for item in memories:
+        sid = s['messages'][item['evidence_id']]['session_id']
+        matches = [x for x in rows if x['session_id'] == sid]
+        if len(matches) != 1:
+            result['raw_messages'].append({'evidence_id': item['evidence_id'], 'raw_matches': len(matches), 'exact_utf8_original': False})
+            continue
+        row = matches[0]
+        native = trial.rag(f'/messages/{s["memory"]["id"]}:{row["message_id"]}/content')
+        expected = 'User Input: ' + item['text'] + '\nAgent Response: Recorded.'
+        result['raw_messages'].append({'evidence_id': item['evidence_id'], 'native_memory_id': s['memory']['id'], 'message_id': row['message_id'], 'session_id': sid, 'exact_utf8_original': native.get('content') == expected, 'input_envelope_sha256': digest(expected), 'readback_sha256': digest(native.get('content', ''))})
+        trial.save(f'audit-native/{scope}-rag-memory-{item["evidence_id"]}.json', {k: native.get(k) for k in ['id', 'content', 'message_id', 'memory_id', 'message_type', 'source_id', 'session_id', 'valid_at', 'invalid_at', 'status']})
+        for extracted in row.get('extract', []):
+            result['derived_lineage'].append({'memory_id': s['memory']['id'], 'message_id': extracted['message_id'], 'message_type': extracted['message_type'], 'source_id': extracted['source_id'], 'parent_raw_found': extracted['source_id'] == row['message_id'], 'parent_evidence_id': item['evidence_id'], 'valid_at': extracted.get('valid_at'), 'invalid_at': extracted.get('invalid_at'), 'status': extracted.get('status')})
+    trial.save(f'audit-{scope}-ragflow.json', result)
+    return result
+
+def ovread(uri):
+    return trial.ov('/content/read?' + urllib.parse.urlencode({'uri': uri, 'raw': 'true'}))
+
+def user_text(row):
+    if isinstance(row.get('content'), str):
+        return row['content']
+    return ''.join(x.get('text', x.get('content', '')) for x in row.get('parts', []) if isinstance(x, dict))
+
+def openviking(scope='formal'):
+    s = trial.state('openviking', scope)
+    inputs = trial.read('inputs.json')
+    knowledge = inputs['knowledge'] if scope == 'formal' else inputs['calibration']['knowledge']
+    memories = inputs['memory_initial'] + inputs['memory_updates'] if scope == 'formal' else inputs['calibration']['memory']
+    result = {'knowledge_originals': [], 'raw_messages': [], 'archive_to_memory_lineage': [], 'memory_metadata': []}
+    uris = set()
+    for item in knowledge:
+        root = s['documents'][item['evidence_id']]['root_uri']
+        ls = trial.ov('/fs/ls?' + urllib.parse.urlencode({'uri': root, 'recursive': 'true'}))
+        leaves = [x['uri'] for x in ls if not x.get('isDir') and not x['uri'].rsplit('/', 1)[-1].startswith('.')]
+        contents = [{'uri': uri, 'content': ovread(uri)} for uri in leaves]
+        matches = [x for x in contents if x['content'].encode() == item['text'].encode()]
+        result['knowledge_originals'].append({'evidence_id': item['evidence_id'], 'native_root_uri': root, 'exact_utf8_original': len(matches) == 1, 'matching_uri': matches[0]['uri'] if matches else None, 'input_sha256': digest(item['text']), 'readback_sha256': digest(matches[0]['content']) if matches else None})
+        trial.save(f'audit-native/{scope}-ov-document-{item["evidence_id"]}.json', contents)
+    for item in memories:
+        entry = s['messages'][item['evidence_id']]
+        archive = entry['commit']['archive_uri']
+        content = ovread(archive + '/messages.jsonl')
+        parsed = [json.loads(line) for line in content.splitlines() if line.strip()]
+        users = [user_text(x) for x in parsed if x.get('role') == 'user']
+        result['raw_messages'].append({'evidence_id': item['evidence_id'], 'archive_uri': archive, 'exact_utf8_original': users == [item['text']], 'input_sha256': digest(item['text']), 'readback_user_sha256': digest(users[0]) if len(users) == 1 else None})
+        diff = json.loads(ovread(archive + '/memory_diff.json'))
+        trial.save(f'audit-native/{scope}-ov-memory-{item["evidence_id"]}.json', {'archive_uri': archive, 'messages': parsed, 'diff': diff})
+        for operation, rows in diff.get('operations', {}).items():
+            for row in rows:
+                uri = row.get('uri')
+                if uri:
+                    uris.add(uri)
+                result['archive_to_memory_lineage'].append({'evidence_id': item['evidence_id'], 'archive_uri': archive, 'memory_uri': uri, 'operation': operation, 'native_diff_uri': archive + '/memory_diff.json'})
+    for uri in sorted(uris):
+        try:
+            content = ovread(uri)
+            marker = '<!-- MEMORY_FIELDS'
+            fields = json.loads(content.split(marker, 1)[1].split('-->', 1)[0]) if marker in content else {}
+            result['memory_metadata'].append({'uri': uri, 'fields': fields, 'contains_archive_uri': '/history/archive_' in content, 'readable_after_updates': True})
+        except Exception as e:
+            result['memory_metadata'].append({'uri': uri, 'readable_after_updates': False, 'error': str(e)[:300]})
+    trial.save(f'audit-{scope}-openviking.json', result)
+    return result
+
+if __name__ == '__main__':
+    product = sys.argv[1]
+    scope = sys.argv[2] if len(sys.argv) > 2 else 'formal'
+    r = globals()[product](scope)
+    print(json.dumps({'product': product, 'scope': scope, 'knowledge_originals': [sum(x['exact_utf8_original'] for x in r['knowledge_originals']), len(r['knowledge_originals'])], 'raw_messages': [sum(x['exact_utf8_original'] for x in r['raw_messages']), len(r['raw_messages'])]}, indent=2))

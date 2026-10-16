@@ -1,0 +1,27 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "dry_run": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+        "ts": "2026-08-22T12:00:00Z",
+        "msg_id": "m_4a54af2b364be476",
+        "source_document": {
+          "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+          "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+          "position": {
+            "start": 0,
+            "end": 237
+          }
+        }
+      }
+    ]
+  },
+  "before": {
+    "paid_usd": 2.0060184260000007,
+    "exposure_usd": 2.0781991259999986,
+    "requests": 4582
+  }
+}

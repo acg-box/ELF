@@ -1,0 +1,115 @@
+{
+  "question": "As of August 22, what delivery mode and retry policy apply to Ivo's Cobalt project?",
+  "evidence": [
+    {
+      "handle": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+      "kind": "resource",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.9176962971687317
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_eb85892166acc8ef/.overview.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_eb85892166acc8ef/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_01cf5be1d3384594a19c8291d8c765d5.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# m_eb85892166acc8ef\n\nThis directory contains a brief informational record about the start of project Cobalt and two configuration choices associated with it. The note states that Ivo started the project on 2026-08-01, with BATCH-1-741 selected for batch delivery and RETRY-1-108 identified as the initial retry policy. It does not explain what the identifiers mean or describe the project, delivery process, or retry behavior in further detail. The material is suitable for readers looking for the recorded date, project name, or configuration identifiers; no intended audience or prerequisite knowledge is specified.\n\n## Directory Coverage\n\nThere is 1 direct entry, and all entries are represented in the summaries provided.\n\n## Quick Navigation\n\nWhat do you want to learn?\n\n- **Find the dated record of the project start** → [m_eb85892166acc8ef.md](viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md)\n- **Look up the stated batch delivery choice** → [m_eb85892166acc8ef.md](viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md), which records BATCH-1-741.\n- **Look up the initial retry policy identifier** → [m_eb85892166acc8ef.md](viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md), which records RETRY-1-108.\n- **Check what context is provided about the project or configuration behavior** → [m_eb85892166acc8ef.md](viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md); the note does not provide further explanations of these topics.\n\n## Detailed Description\n\n### [m_eb85892166acc8ef.md](viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md)\n\nThis file is a short, dated statement about the start of project Cobalt and two associated configuration choices. It records that Ivo started the project on 2026-08-01. In connection with the project, it states that BATCH-1-741 was chosen for batch delivery and that RETRY-1-108 was the initial retry policy.\n\nThe note does not define either identifier, explain why these choices were selected, or describe how batch delivery or retry behavior works. It also provides no further details about the project beyond the stated start and configuration information. Accordingly, the file serves as a concise record rather than a tutorial, reference guide, or API document.\n\nReaders can use it to retrieve the recorded date, the name Cobalt, and the two identifiers associated with batch delivery and the initial retry policy. The summary does not specify an intended audience or prerequisite knowledge. It also does not establish broader context for the project or explain the implications of the configuration choices, so those details should not be inferred from this note.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.833602786064148
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/m_c558d1541c4b9d0f.md",
+      "kind": "resource",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7897207736968994
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+      "kind": "resource",
+      "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7828654050827026
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_c558d1541c4b9d0f/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_0b5e9a45211f4fb991f17dfef4fd0b99.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a brief project note about the start of project Larch and two selected identifiers: one for batch delivery and one for the initial retry policy.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.7637779712677002
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/project_cobalt_started.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo started Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8925846815109253
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/retry_policy_set.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo set RETRY-1-108 as the initial retry policy for Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8837552666664124
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/batch_delivery_selected.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8786971569061279
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, Ivo reviewed Cobalt.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8700273036956787
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/.overview.md",
+      "kind": "memory",
+      "text": "---\ndirectory: viking://user/formal/memories/events/2026/08/01/\ngenerated_by:\n  component: MemoryUpdater\n  trigger: memory_update\nfreshness:\n  total_entries: 4\n  sampled_entries: 4\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# Events Overview\n\n- [On 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.](./batch_delivery_selected.md)\n\n- [Mara started project Larch on 2026-08-01, chose BATCH-0-741 for batch delivery, and set RETRY-0-108 as the initial retry policy.](./larch_project_started.md)\n\n- [On 2026-08-01, Ivo started Project Cobalt.](./project_cobalt_started.md)\n\n- [On 2026-08-01, Ivo set RETRY-1-108 as the initial retry policy for Project Cobalt.](./retry_policy_set.md)\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.8578782677650452
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/retry_policy_replaced.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, retry policy RETRY-1-907 superseded RETRY-1-108.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8454095721244812
+      }
+    }
+  ]
+}

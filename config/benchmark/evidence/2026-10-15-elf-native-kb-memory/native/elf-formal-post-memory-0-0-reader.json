@@ -1,0 +1,61 @@
+{
+  "id": "gen-1792119848-t3KIfkD3w1esqcabYjXW",
+  "object": "chat.completion",
+  "created": 1792119848,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"answer\": \"As of August 22, Mara’s Larch project uses STREAM-0-286, and its retry policy is RETRY-0-907, which superseded RETRY-0-108.\",\n  \"citations\": [\n    {\n      \"handle\": \"elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241\",\n      \"quote\": \"2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.\"\n    },\n    {\n      \"handle\": \"elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237\",\n      \"quote\": \"2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": "**Delivering JSON output**\n\nI need to provide the output in JSON format. The delivery mode should reflect the August 22 choice while still keeping the August 15 option in mind. I'll emphasize that it's STREAM-0-286 and note that retrying RETRY-0-907 supersedes previous choices. I must also ensure to cite the raw source with exact quotes, as the evidence from the source is crucial. It seems important to validate that the JSON is correct without adding mentions of batch processing.",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Delivering JSON output**\n\nI need to provide the output in JSON format. The delivery mode should reflect the August 22 choice while still keeping the August 15 option in mind. I'll emphasize that it's STREAM-0-286 and note that retrying RETRY-0-907 supersedes previous choices. I must also ensure to cite the raw source with exact quotes, as the evidence from the source is crucial. It seems important to validate that the JSON is correct without adding mentions of batch processing.",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZQqHwrfPUGvHnO05fVCQIBpBNEBl3hRV1s0G82-1d4hzL766GzpgPoHIW_znYREZQ4jAAk1VAYxVeI2T1OJ5wgSzOJ5COYdF9qVSPg5Qq9h5z2ovhqXWlvCgEtoLnv0ezXpPECsc_47Ra2NKtltmlcWOIgUILAmSV3sbd-j_gBRUoAccm40sZrd4uyKcbV8zrx02oaD7T8a5SPfKn8JTw8RuqXyKoJbbH6BnWkbnox9bDVF9X_Mk4Nt-q6W5vygdhmOj_xBWevnhMgNNiQSfAl8JsujENQ6wYebUY-m8cF1fweCo7jJrfo1Uis1QkCPzWe95LoMofDuXcQjlo5XwY9ZBk5Z8229L5u5EWF3jv5z8RU-_EgcDnKOQKhkJnlkGgITWTt02eLURuZY4Mg76LFqgBE_kXSJ1fqMw0kHoxEebLuU6WnDBIx4gpLDNQUJdyx7UDWLGje9_MHyp9S1o1MMErfM_l_ZmfUg4Q8Z7f-ahD4d7XA1y6MjE2xoSTZPSTOD0J9j3qhLXQUH8FZ0PeKKuUJT_xeC6KwCfaYKTNJ47o09FEGHCKQnU7YggAn4Q9OKQ2MB_VQFd0xmVrfrc_3Ww-YxXtmYbRSsb-D_V5fwZ3PyY2ddOnVTg6wMBtxbRcYjXn37nlXvwrxWJ1xPky5nQ753fYK39vVPoFQhU8bwTc7BXoa7bBiEHAKtFhWdZzwYi7Qi7DMfNX3CoI45g8hmQkKfAWyxXl8PfPrQVFIHvokmz8Ry01GSjJ8eDsJ1_qlDISVGRGz6ogSUecwYI35i1qgbokyRSU7gvr0QxJ6RVDFzzbswe_QIvDwKzzGT8h-5n_VGnI32JYbarvB-ioWGWoqemT6bFyuRo7g25Mo7JLAA23mWPzX0I_AM74rVoKEacGp2b2F7SSsWUuPTyJtEvRRLPlhcTWYxB5I0z767-rKu3ADGTzcE03vuiEPYuIBllF47BZad-A1DoYo_SMhQUFrMnDjK_d2phc3Bose1T_iZDWE0sGu77PrIxsGDgZbaw9sKnCAyzzZa89uTEjoM6b4m1abw_i6jYnLBc6XZD1oslYTzvRy5Sy2yfC_30IVw1_uKD8g9RQriAbuWehFrGbbVp5a25En-o0xulaiFWnzVSwbDGYTU9sttCBwWmB2cuFAESo-tiXFu5Xn00HOIMnYq3NFicigpAepg_7cp__l87VstMb4npoUsHHB2XpSRX6jyv1XMR47hpmAkPqWxlU17wLHoGnO6v4VlwiB5eSaIsFfbtbLhiGGJq_gmHHUEaBJK4Helu_DeLMQWE-p-lQf1fuHiWLYe8s9xJE-JwsmWOm2ZJM22Aq2jUJB6rOI8kobc557073R1-f1hoMhW809BAy4sesr6b8q37MA16J4PB6TQ7Anic27FtBaWfIl5ciCMRUoQ8sNzPX_oqnETtwEyPYwHDjdMddQZ_AtG_d7ERHKtBNr74VXFMZBmnV5ZSppPycMGouuFpTkH7EwzRZle3aIRVXpJumdeyBdS4tdurIXipVCuNP9qKu3c_cdnBDryI3Hc_FjZjjVelGI38U8Wg_jU18B9qth0FXgWCdgjkLuw703xgI0nlDNpvD4ALe0VRKvuX6rNJIQUBL6mVu0breKzhvMHGq7oieEswHEbDEp-llkYnmsY_JSO7tjw6lMg77ZO0dRH4PnElMhjj4La14dTwSwCTkxlnhgp9FjD9yfICR77Q1yqpMMLkHgKX7DFZkXEFKRg0GsfdwMdcZp3sHCnmjNcvd6bBWzH7FnLZE0K9vsECtL5Sc8gMD3aisHzVE5GLUsw9QwvMg27pico0E6ewJaEeGz_mzP7TCmkn8cMJhwz4mJwyuQL_ZXRBJDxWhDd1_nACLjSZX3qS2sl0qfstLTWUG_nAD0x2tzrPvNAUPKF4sqcVzgM5vZ3MZsAtEWfmfT41zmA9XwDZpC4iAZR4Awo2-Xyjv5IRuN5WQs8DZxN6C17yhEAAN8LF3OpeoLFAz_aNT3AZUTgM5dsR64Njh8gFeGwtwKXAsBVkas9XgVfAhVeLDr_CgnQYM_ZJon_y_qQ2jl4ZyJ4iLEwfAmuubElRyyc-amdWJsR7d-hPBvW69ixKpYH3L9i8HmC3t4Jcig9d2Jbjea0Fi40sHI5wuSTpUvxabyAHauKHWde62ienaRCVHHB9holVZH7253hBCMg1J9dL27jbCHcxmfslIhowoL5rRE-kkQStRXjQld5jp_UXgB3HNXU7fRdriy9CvvdG0k8VdhuwfbT-WcLOiz7Kr-9_F1J788smtMFusW01e6w_hmBVJcHHhY3AgFC23k_8IHpb19PvMPmsz3pUXwi4G3lBL-cbscBWnENEv7CiUPacLDSXiuWYYO5yJfan8ajhwNzGTnvgGrt_VLnwnm6-dBJ6C1dAJ1JOgW0gB6TUvuxN3d3c53WlRcCGEBAbmHjfl6i4zrN0dpkQbZgW5iHiKMD7eY6NX5123GahBrcD3iW9StEESTJRKtdrcXJ-bglpqBxy1xGNuVf687BOm1RNl1IYx2WlbukTelLQkHEZxE2-HBgG25uroVFbT2i4X0Vz8kinZepo--cfZU-VPxGJ9ruDKWkGeG0uGl95a9fI87SxKeD89bTisO-OBhonrnTQVjesxWV1nJECVPvdGk7lWzsQrSsI2E=.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_09de7c0802a2edd5016ad19428d56887d1b291f9fdbbc0111d",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4832,
+    "completion_tokens": 399,
+    "total_tokens": 5231,
+    "cost": 0.000803425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4829,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000803425,
+      "upstream_inference_prompt_cost": 0.000603925,
+      "upstream_inference_completions_cost": 0.0001995
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 88,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

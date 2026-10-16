@@ -1,0 +1,1826 @@
+[
+  {
+    "ordinal": 4541,
+    "kind": "embedding",
+    "reserved_usd": 0.0008748000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 94,
+      "total_tokens": 94,
+      "cost": 9.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 9.4e-07,
+        "upstream_inference_prompt_cost": 9.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.6882312499999443,
+    "attempt": 1,
+    "request_ordinal": 4541,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4542,
+    "kind": "embedding",
+    "reserved_usd": 0.0008478000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 44,
+      "total_tokens": 44,
+      "cost": 4.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.4e-07,
+        "upstream_inference_prompt_cost": 4.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.390568667000025,
+    "attempt": 1,
+    "request_ordinal": 4542,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4543,
+    "kind": "chat",
+    "reserved_usd": 0.06591939999999999,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2078,
+      "completion_tokens": 438,
+      "total_tokens": 2516,
+      "cost": 0.000478675,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2075,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000478675,
+        "upstream_inference_prompt_cost": 0.000259675,
+        "upstream_inference_completions_cost": 0.000219
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 202,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 5.895930459000056,
+    "attempt": 1,
+    "request_ordinal": 4543,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4544,
+    "kind": "embedding",
+    "reserved_usd": 0.0008396,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 19,
+      "total_tokens": 19,
+      "cost": 1.9e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.9e-07,
+        "upstream_inference_prompt_cost": 1.9e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.165950415999987,
+    "attempt": 1,
+    "request_ordinal": 4544,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4545,
+    "kind": "embedding",
+    "reserved_usd": 0.0008415,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 18,
+      "total_tokens": 18,
+      "cost": 1.8e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.8e-07,
+        "upstream_inference_prompt_cost": 1.8e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.6308142499999576,
+    "attempt": 1,
+    "request_ordinal": 4545,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4546,
+    "kind": "embedding",
+    "reserved_usd": 0.0008412000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 18,
+      "total_tokens": 18,
+      "cost": 1.8e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.8e-07,
+        "upstream_inference_prompt_cost": 1.8e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 4.103483417000007,
+    "attempt": 1,
+    "request_ordinal": 4546,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4547,
+    "kind": "chat",
+    "reserved_usd": 0.0649098,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 134,
+      "completion_tokens": 178,
+      "total_tokens": 312,
+      "cost": 0.0001024,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0001024,
+        "upstream_inference_prompt_cost": 1.34e-05,
+        "upstream_inference_completions_cost": 8.9e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 65,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 2.774938875000089,
+    "attempt": 1,
+    "request_ordinal": 4547,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4548,
+    "kind": "embedding",
+    "reserved_usd": 0.0008678000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 70,
+      "total_tokens": 70,
+      "cost": 7e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 7e-07,
+        "upstream_inference_prompt_cost": 7e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.282656541000051,
+    "attempt": 1,
+    "request_ordinal": 4548,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4549,
+    "kind": "chat",
+    "reserved_usd": 0.0652973,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 1493,
+      "completion_tokens": 246,
+      "total_tokens": 1739,
+      "cost": 0.00030955,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 1490,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00030955,
+        "upstream_inference_prompt_cost": 0.00018655,
+        "upstream_inference_completions_cost": 0.000123
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 4.228746624999985,
+    "attempt": 1,
+    "request_ordinal": 4549,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4550,
+    "kind": "embedding",
+    "reserved_usd": 0.0008748000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 94,
+      "total_tokens": 94,
+      "cost": 9.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 9.4e-07,
+        "upstream_inference_prompt_cost": 9.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.127844750000122,
+    "attempt": 1,
+    "request_ordinal": 4550,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4551,
+    "kind": "embedding",
+    "reserved_usd": 0.0008563,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 62,
+      "total_tokens": 62,
+      "cost": 6.2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 6.2e-07,
+        "upstream_inference_prompt_cost": 6.2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 6.593643166999982,
+    "attempt": 1,
+    "request_ordinal": 4551,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4552,
+    "kind": "chat",
+    "reserved_usd": 0.0659192,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2083,
+      "completion_tokens": 389,
+      "total_tokens": 2472,
+      "cost": 0.0004548,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2080,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0004548,
+        "upstream_inference_prompt_cost": 0.0002603,
+        "upstream_inference_completions_cost": 0.0001945
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 207,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 5.4425542079998195,
+    "attempt": 1,
+    "request_ordinal": 4552,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4553,
+    "kind": "embedding",
+    "reserved_usd": 0.0008394000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 20,
+      "total_tokens": 20,
+      "cost": 2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2e-07,
+        "upstream_inference_prompt_cost": 2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 5.247296750000032,
+    "attempt": 1,
+    "request_ordinal": 4553,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4554,
+    "kind": "embedding",
+    "reserved_usd": 0.0008414000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 19,
+      "total_tokens": 19,
+      "cost": 1.9e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.9e-07,
+        "upstream_inference_prompt_cost": 1.9e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.0439642910000657,
+    "attempt": 1,
+    "request_ordinal": 4554,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4555,
+    "kind": "embedding",
+    "reserved_usd": 0.0008412000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 19,
+      "total_tokens": 19,
+      "cost": 1.9e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.9e-07,
+        "upstream_inference_prompt_cost": 1.9e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 1.5814315000000079,
+    "attempt": 1,
+    "request_ordinal": 4555,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4556,
+    "kind": "chat",
+    "reserved_usd": 0.06593539999999999,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2116,
+      "completion_tokens": 379,
+      "total_tokens": 2495,
+      "cost": 0.000453925,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2113,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000453925,
+        "upstream_inference_prompt_cost": 0.000264425,
+        "upstream_inference_completions_cost": 0.0001895
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 185,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 5.249937125000088,
+    "attempt": 1,
+    "request_ordinal": 4556,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4557,
+    "kind": "embedding",
+    "reserved_usd": 0.0008504000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 56,
+      "total_tokens": 56,
+      "cost": 5.6e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 5.6e-07,
+        "upstream_inference_prompt_cost": 5.6e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 1.6240783749999537,
+    "attempt": 1,
+    "request_ordinal": 4557,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4558,
+    "kind": "embedding",
+    "reserved_usd": 0.000842,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 24,
+      "total_tokens": 24,
+      "cost": 2.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.4e-07,
+        "upstream_inference_prompt_cost": 2.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.202607500000113,
+    "attempt": 1,
+    "request_ordinal": 4558,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4559,
+    "kind": "chat",
+    "reserved_usd": 0.0659192,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2081,
+      "completion_tokens": 337,
+      "total_tokens": 2418,
+      "cost": 0.00042855,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2078,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00042855,
+        "upstream_inference_prompt_cost": 0.00026005,
+        "upstream_inference_completions_cost": 0.0001685
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 213,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 4.575674041999946,
+    "attempt": 1,
+    "request_ordinal": 4559,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4560,
+    "kind": "embedding",
+    "reserved_usd": 0.0008395,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 21,
+      "total_tokens": 21,
+      "cost": 2.1e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.1e-07,
+        "upstream_inference_prompt_cost": 2.1e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.4957244580000406,
+    "attempt": 1,
+    "request_ordinal": 4560,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4561,
+    "kind": "embedding",
+    "reserved_usd": 0.0008414000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 20,
+      "total_tokens": 20,
+      "cost": 2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2e-07,
+        "upstream_inference_prompt_cost": 2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.7929538749999665,
+    "attempt": 1,
+    "request_ordinal": 4561,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4562,
+    "kind": "embedding",
+    "reserved_usd": 0.0008413000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 19,
+      "total_tokens": 19,
+      "cost": 1.9e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.9e-07,
+        "upstream_inference_prompt_cost": 1.9e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.0441952500000298,
+    "attempt": 1,
+    "request_ordinal": 4562,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4563,
+    "kind": "chat",
+    "reserved_usd": 0.0659352,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2116,
+      "completion_tokens": 328,
+      "total_tokens": 2444,
+      "cost": 0.000428425,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2113,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000428425,
+        "upstream_inference_prompt_cost": 0.000264425,
+        "upstream_inference_completions_cost": 0.000164
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 210,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 4.39559416599991,
+    "attempt": 1,
+    "request_ordinal": 4563,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4564,
+    "kind": "embedding",
+    "reserved_usd": 0.0008503,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 57,
+      "total_tokens": 57,
+      "cost": 5.7e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 5.7e-07,
+        "upstream_inference_prompt_cost": 5.7e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 4.731640916999822,
+    "attempt": 1,
+    "request_ordinal": 4564,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4565,
+    "kind": "embedding",
+    "reserved_usd": 0.000842,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 24,
+      "total_tokens": 24,
+      "cost": 2.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.4e-07,
+        "upstream_inference_prompt_cost": 2.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.3944367080000575,
+    "attempt": 1,
+    "request_ordinal": 4565,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4566,
+    "kind": "chat",
+    "reserved_usd": 0.0660477,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 4426,
+      "completion_tokens": 280,
+      "total_tokens": 4706,
+      "cost": 0.000693175,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 4423,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000693175,
+        "upstream_inference_prompt_cost": 0.000553175,
+        "upstream_inference_completions_cost": 0.00014
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 33,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 3.5870494579999104,
+    "attempt": 1,
+    "request_ordinal": 4566,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4567,
+    "kind": "chat",
+    "reserved_usd": 0.06610210000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 4655,
+      "completion_tokens": 319,
+      "total_tokens": 4974,
+      "cost": 0.0007413,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 4652,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0007413,
+        "upstream_inference_prompt_cost": 0.0005818,
+        "upstream_inference_completions_cost": 0.0001595
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 44,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 4.174258000000009,
+    "attempt": 1,
+    "request_ordinal": 4567,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4568,
+    "kind": "embedding",
+    "reserved_usd": 0.0008594000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 74,
+      "total_tokens": 74,
+      "cost": 7.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 7.4e-07,
+        "upstream_inference_prompt_cost": 7.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 4.030766207999932,
+    "attempt": 1,
+    "request_ordinal": 4568,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4569,
+    "kind": "chat",
+    "reserved_usd": 0.0659426,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2131,
+      "completion_tokens": 356,
+      "total_tokens": 2487,
+      "cost": 0.0004443,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2128,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0004443,
+        "upstream_inference_prompt_cost": 0.0002663,
+        "upstream_inference_completions_cost": 0.000178
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 234,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 4.697320958999853,
+    "attempt": 1,
+    "request_ordinal": 4569,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4570,
+    "kind": "embedding",
+    "reserved_usd": 0.0008534000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 65,
+      "total_tokens": 65,
+      "cost": 6.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 6.5e-07,
+        "upstream_inference_prompt_cost": 6.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.6263184160000037,
+    "attempt": 1,
+    "request_ordinal": 4570,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4571,
+    "kind": "embedding",
+    "reserved_usd": 0.0008421,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 18,
+      "total_tokens": 18,
+      "cost": 1.8e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.8e-07,
+        "upstream_inference_prompt_cost": 1.8e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.681055792000052,
+    "attempt": 1,
+    "request_ordinal": 4571,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4572,
+    "kind": "embedding",
+    "reserved_usd": 0.000859,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 73,
+      "total_tokens": 73,
+      "cost": 7.3e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 7.3e-07,
+        "upstream_inference_prompt_cost": 7.3e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 1.5924145839999255,
+    "attempt": 1,
+    "request_ordinal": 4572,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4573,
+    "kind": "chat",
+    "reserved_usd": 0.06594180000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2132,
+      "completion_tokens": 683,
+      "total_tokens": 2815,
+      "cost": 0.000607925,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2129,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000607925,
+        "upstream_inference_prompt_cost": 0.000266425,
+        "upstream_inference_completions_cost": 0.0003415
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 516,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 7.817744999999832,
+    "attempt": 1,
+    "request_ordinal": 4573,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4574,
+    "kind": "embedding",
+    "reserved_usd": 0.0008444000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 21,
+      "total_tokens": 21,
+      "cost": 2.1e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.1e-07,
+        "upstream_inference_prompt_cost": 2.1e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 6.988873792000049,
+    "attempt": 1,
+    "request_ordinal": 4574,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4575,
+    "kind": "embedding",
+    "reserved_usd": 0.0008423,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 16,
+      "total_tokens": 16,
+      "cost": 1.6e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.6e-07,
+        "upstream_inference_prompt_cost": 1.6e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 1.900172166999937,
+    "attempt": 1,
+    "request_ordinal": 4575,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4576,
+    "kind": "embedding",
+    "reserved_usd": 0.0008414000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 26,
+      "total_tokens": 26,
+      "cost": 2.6e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.6e-07,
+        "upstream_inference_prompt_cost": 2.6e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 8.54126554100003,
+    "attempt": 1,
+    "request_ordinal": 4576,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4577,
+    "kind": "embedding",
+    "reserved_usd": 0.0008406,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 22,
+      "total_tokens": 22,
+      "cost": 2.2e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.2e-07,
+        "upstream_inference_prompt_cost": 2.2e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 4.043087874999856,
+    "attempt": 1,
+    "request_ordinal": 4577,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4578,
+    "kind": "embedding",
+    "reserved_usd": 0.0008594000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 75,
+      "total_tokens": 75,
+      "cost": 7.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 7.5e-07,
+        "upstream_inference_prompt_cost": 7.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.938448833999928,
+    "attempt": 1,
+    "request_ordinal": 4578,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4579,
+    "kind": "chat",
+    "reserved_usd": 0.0659426,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2133,
+      "completion_tokens": 464,
+      "total_tokens": 2597,
+      "cost": 0.00049855,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2130,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00049855,
+        "upstream_inference_prompt_cost": 0.00026655,
+        "upstream_inference_completions_cost": 0.000232
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 256,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 6.449495166000133,
+    "attempt": 1,
+    "request_ordinal": 4579,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4580,
+    "kind": "embedding",
+    "reserved_usd": 0.000853,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 65,
+      "total_tokens": 65,
+      "cost": 6.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 6.5e-07,
+        "upstream_inference_prompt_cost": 6.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.8939195840000593,
+    "attempt": 1,
+    "request_ordinal": 4580,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4581,
+    "kind": "embedding",
+    "reserved_usd": 0.0008421,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 18,
+      "total_tokens": 18,
+      "cost": 1.8e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.8e-07,
+        "upstream_inference_prompt_cost": 1.8e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.8189609999999448,
+    "attempt": 1,
+    "request_ordinal": 4581,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4582,
+    "kind": "embedding",
+    "reserved_usd": 0.000859,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 74,
+      "total_tokens": 74,
+      "cost": 7.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 7.4e-07,
+        "upstream_inference_prompt_cost": 7.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.879865124999924,
+    "attempt": 1,
+    "request_ordinal": 4582,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4583,
+    "kind": "chat",
+    "reserved_usd": 0.06594180000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 2135,
+      "completion_tokens": 659,
+      "total_tokens": 2794,
+      "cost": 0.0005963,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 2132,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0005963,
+        "upstream_inference_prompt_cost": 0.0002668,
+        "upstream_inference_completions_cost": 0.0003295
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 306,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 7.562390625000035,
+    "attempt": 1,
+    "request_ordinal": 4583,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4584,
+    "kind": "embedding",
+    "reserved_usd": 0.0008446,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 34,
+      "total_tokens": 34,
+      "cost": 3.4e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 3.4e-07,
+        "upstream_inference_prompt_cost": 3.4e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 3.522305499999902,
+    "attempt": 1,
+    "request_ordinal": 4584,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4585,
+    "kind": "embedding",
+    "reserved_usd": 0.000843,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 18,
+      "total_tokens": 18,
+      "cost": 1.8e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 1.8e-07,
+        "upstream_inference_prompt_cost": 1.8e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 1.6244455839998864,
+    "attempt": 1,
+    "request_ordinal": 4585,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4586,
+    "kind": "embedding",
+    "reserved_usd": 0.0008433000000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 41,
+      "total_tokens": 41,
+      "cost": 4.1e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 4.1e-07,
+        "upstream_inference_prompt_cost": 4.1e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 5.448900082999899,
+    "attempt": 1,
+    "request_ordinal": 4586,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4587,
+    "kind": "embedding",
+    "reserved_usd": 0.0008417,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 25,
+      "total_tokens": 25,
+      "cost": 2.5e-07,
+      "is_byok": false,
+      "cost_details": {
+        "upstream_inference_cost": 2.5e-07,
+        "upstream_inference_prompt_cost": 2.5e-07,
+        "upstream_inference_completions_cost": 0
+      }
+    },
+    "model": "Qwen/Qwen3-Embedding-8B",
+    "provider": "Nebius",
+    "seconds": 2.795912416999954,
+    "attempt": 1,
+    "request_ordinal": 4587,
+    "requested_provider": "nebius"
+  },
+  {
+    "ordinal": 4588,
+    "kind": "chat",
+    "reserved_usd": 0.0661662,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 4832,
+      "completion_tokens": 399,
+      "total_tokens": 5231,
+      "cost": 0.000803425,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 4829,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000803425,
+        "upstream_inference_prompt_cost": 0.000603925,
+        "upstream_inference_completions_cost": 0.0001995
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 88,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 5.03167016600014,
+    "attempt": 1,
+    "request_ordinal": 4588,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4589,
+    "kind": "chat",
+    "reserved_usd": 0.06636410000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 5499,
+      "completion_tokens": 493,
+      "total_tokens": 5992,
+      "cost": 0.0009338,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 5496,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0009338,
+        "upstream_inference_prompt_cost": 0.0006873,
+        "upstream_inference_completions_cost": 0.0002465
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 91,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 6.592865625000059,
+    "attempt": 1,
+    "request_ordinal": 4589,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4590,
+    "kind": "chat",
+    "reserved_usd": 0.0662527,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 5156,
+      "completion_tokens": 247,
+      "total_tokens": 5403,
+      "cost": 0.000767925,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 5153,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000767925,
+        "upstream_inference_prompt_cost": 0.000644425,
+        "upstream_inference_completions_cost": 0.0001235
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 35,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 3.456744250000156,
+    "attempt": 1,
+    "request_ordinal": 4590,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4591,
+    "kind": "chat",
+    "reserved_usd": 0.0661745,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 4843,
+      "completion_tokens": 206,
+      "total_tokens": 5049,
+      "cost": 0.0007083,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 4840,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0007083,
+        "upstream_inference_prompt_cost": 0.0006053,
+        "upstream_inference_completions_cost": 0.000103
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 38,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 3.0843127079999704,
+    "attempt": 1,
+    "request_ordinal": 4591,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4592,
+    "kind": "chat",
+    "reserved_usd": 0.066083,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 4500,
+      "completion_tokens": 338,
+      "total_tokens": 4838,
+      "cost": 0.000731425,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 4497,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000731425,
+        "upstream_inference_prompt_cost": 0.000562425,
+        "upstream_inference_completions_cost": 0.000169
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 74,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 4.673405666000008,
+    "attempt": 1,
+    "request_ordinal": 4592,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4593,
+    "kind": "chat",
+    "reserved_usd": 0.06636339999999999,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 5498,
+      "completion_tokens": 508,
+      "total_tokens": 6006,
+      "cost": 0.000941175,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 5495,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000941175,
+        "upstream_inference_prompt_cost": 0.000687175,
+        "upstream_inference_completions_cost": 0.000254
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 79,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 6.410828165999874,
+    "attempt": 1,
+    "request_ordinal": 4593,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4594,
+    "kind": "chat",
+    "reserved_usd": 0.0662495,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 5117,
+      "completion_tokens": 322,
+      "total_tokens": 5439,
+      "cost": 0.00080055,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 5114,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00080055,
+        "upstream_inference_prompt_cost": 0.00063955,
+        "upstream_inference_completions_cost": 0.000161
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 43,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 4.106825874999913,
+    "attempt": 1,
+    "request_ordinal": 4594,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4595,
+    "kind": "chat",
+    "reserved_usd": 0.0661727,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 4826,
+      "completion_tokens": 217,
+      "total_tokens": 5043,
+      "cost": 0.000711675,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 4823,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000711675,
+        "upstream_inference_prompt_cost": 0.000603175,
+        "upstream_inference_completions_cost": 0.0001085
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 45,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 3.352460707999853,
+    "attempt": 1,
+    "request_ordinal": 4595,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4596,
+    "kind": "chat",
+    "reserved_usd": 0.0662235,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 5050,
+      "completion_tokens": 164,
+      "total_tokens": 5214,
+      "cost": 0.000713175,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 5047,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.000713175,
+        "upstream_inference_prompt_cost": 0.000631175,
+        "upstream_inference_completions_cost": 8.2e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 30,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 2.8514251669998885,
+    "attempt": 1,
+    "request_ordinal": 4596,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4597,
+    "kind": "chat",
+    "reserved_usd": 0.0662505,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 5135,
+      "completion_tokens": 126,
+      "total_tokens": 5261,
+      "cost": 0.0007048,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 5132,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0007048,
+        "upstream_inference_prompt_cost": 0.0006418,
+        "upstream_inference_completions_cost": 6.3e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 2.1906750830000874,
+    "attempt": 1,
+    "request_ordinal": 4597,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  },
+  {
+    "ordinal": 4598,
+    "kind": "chat",
+    "reserved_usd": 0.06618710000000001,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 4871,
+      "completion_tokens": 520,
+      "total_tokens": 5391,
+      "cost": 0.0008688,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 4868,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0008688,
+        "upstream_inference_prompt_cost": 0.0006088,
+        "upstream_inference_completions_cost": 0.00026
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 76,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 6.136045250000052,
+    "attempt": 1,
+    "request_ordinal": 4598,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "first_restart_state": {
+    "Status": "exited",
+    "Running": false,
+    "Paused": false,
+    "Restarting": false,
+    "OOMKilled": false,
+    "Dead": false,
+    "Pid": 0,
+    "ExitCode": 1,
+    "Error": "",
+    "StartedAt": "2026-10-15T19:53:22.287238997Z",
+    "FinishedAt": "2026-10-15T20:01:44.563469145Z",
+    "Health": {
+      "Status": "unhealthy",
+      "FailingStreak": 12,
+      "Log": [
+        {
+          "Start": "2026-10-15T15:59:14.326675366-04:00",
+          "End": "2026-10-15T15:59:16.978205941-04:00",
+          "ExitCode": 7,
+          "Output": "curl: (7) Failed to connect to 127.0.0.1 port 1933 after 10 ms: Could not connect to server\n"
+        },
+        {
+          "Start": "2026-10-15T15:59:46.986238216-04:00",
+          "End": "2026-10-15T15:59:49.960574067-04:00",
+          "ExitCode": 7,
+          "Output": "curl: (7) Failed to connect to 127.0.0.1 port 1933 after 8 ms: Could not connect to server\n"
+        },
+        {
+          "Start": "2026-10-15T16:00:20.055792618-04:00",
+          "End": "2026-10-15T16:00:23.993683445-04:00",
+          "ExitCode": 7,
+          "Output": "curl: (7) Failed to connect to 127.0.0.1 port 1933 after 78 ms: Could not connect to server\n"
+        },
+        {
+          "Start": "2026-10-15T16:00:53.997636162-04:00",
+          "End": "2026-10-15T16:00:59.341805647-04:00",
+          "ExitCode": -1,
+          "Output": "Health check exceeded timeout (5s)"
+        },
+        {
+          "Start": "2026-10-15T16:01:29.346998105-04:00",
+          "End": "2026-10-15T16:01:33.029698765-04:00",
+          "ExitCode": 7,
+          "Output": "curl: (7) Failed to connect to 127.0.0.1 port 1933 after 177 ms: Could not connect to server\n"
+        }
+      ]
+    }
+  },
+  "host_load_observed": [
+    162.26,
+    212.82,
+    165.47
+  ],
+  "load_units": "1, 5, and 15 minute host load averages",
+  "interpretation": "The same-architecture restart did not meet readiness. High host load and AMD64 emulation prevent attribution to a product persistence defect. Official ARM64 recovery will preserve the existing workspace; no score-selected re-extraction is permitted.",
+  "paid_requests_while_waiting": 0,
+  "time": 1792094774.522519
+}

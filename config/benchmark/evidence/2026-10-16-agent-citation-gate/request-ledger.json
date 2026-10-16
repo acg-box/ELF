@@ -1,0 +1,44 @@
+[
+  {
+    "ordinal": 4599,
+    "kind": "chat",
+    "reserved_usd": 0.06624569999999999,
+    "status": "completed",
+    "http_status": 200,
+    "usage": {
+      "prompt_tokens": 5009,
+      "completion_tokens": 432,
+      "total_tokens": 5441,
+      "cost": 0.00084205,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 5006,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.00084205,
+        "upstream_inference_prompt_cost": 0.00062605,
+        "upstream_inference_completions_cost": 0.000216
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 97,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    },
+    "model": "openai/gpt-6-luna",
+    "provider": "OpenAI",
+    "seconds": 5.01073400000314,
+    "attempt": 1,
+    "request_ordinal": 4599,
+    "requested_provider": "openai",
+    "requested_max_tokens": 128000,
+    "reasoning_effort": "medium",
+    "max_price": {
+      "prompt": 0.1,
+      "completion": 0.5
+    }
+  }
+]

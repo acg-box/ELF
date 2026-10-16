@@ -1,0 +1,115 @@
+{
+  "question": "List both exception identifiers in the signed Kestrel-0 return policy.",
+  "evidence": [
+    {
+      "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/.overview.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/e_6d31f2e707b427b03ebe5cab/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_7dd386a75d9c4d2ba197dd5e12a79fba.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# e_6d31f2e707b427b03ebe5cab\n\nThis directory contains a concise reference to the Kestrel-0 signed return policy. It explains the ordinary 7-day return window and distinguishes two exceptions: custom-made goods and quality defects. The quality-defect exception is exempt from the ordinary time limit, and both exception identifiers must be retained when listing all exceptions. The reference also distinguishes the authoritative policy from an informal draft that is not a complete exception list. It is suitable for readers who need to interpret or communicate the return policy; no prerequisite knowledge is stated.\n\n## Directory Coverage\n\nThere is **1 direct entry**, and **all entries are represented** in the summaries.\n\n## Quick Navigation\n\nWhat do you want to learn?\n\n- → Find the signed return policy, ordinary 7-day window, custom-made goods exception, and quality-defect exception: [e_6d31f2e707b427b03ebe5cab.md](viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md)\n\n## Detailed Description\n\n### [e_6d31f2e707b427b03ebe5cab.md](viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md)\n\nThis document is a concise reference for interpreting or communicating the Kestrel-0 signed return policy. For ordinary goods, the stated return window is 7 days. The document also identifies two exceptions to the ordinary rule:\n\n- **Custom-made goods:** covered by exception **CUSTOM-0-7c2**.\n- **Quality defects:** covered by exception **DEFECT-0-9b4** and exempt from the 7-day limit.\n\nWhen listing all exceptions, both identifiers must be retained. The document explicitly distinguishes the authoritative policy from informal draft identifier **DRAFT-0-2d1**, which is not authoritative and does not provide a complete exception list. Thus, the draft identifier should not be treated as a substitute for the two exception identifiers when communicating the policy’s exceptions.\n\nThe reference centers on the signed return policy, its 7-day return window, and the different treatment of custom-made goods and quality defects. It provides the rules and identifiers needed to state the ordinary return period and the specified exceptions, while cautioning against relying on an incomplete informal draft. The summary states no prerequisite knowledge for readers.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.8661350011825562
+      }
+    },
+    {
+      "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md",
+      "kind": "resource",
+      "text": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-0-2d1 and has no authority.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8464800119400024
+      }
+    },
+    {
+      "handle": "viking://resources/formal/.overview.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/\ngenerated_by:\n  component: SemanticProcessor\n  trigger: parent_refresh\nfreshness:\n  total_entries: 6\n  sampled_entries: 6\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# formal\n\nThis directory appears to bring together concise reference material and records about policies, project setup, and operational issues. The entries cover the Kestrel-0 regional routing table and signed return policy, notes on the starts of projects Larch and Cobalt, and records about lost updates associated with outages and tested recovery approaches. It is useful for locating these specific topics, including batch delivery, retry policy, configuration choices, and return exceptions.\n\n## Directory Coverage\n\nThere are 6 direct entries, and all 6 are represented in the summaries below.\n\n## Quick Navigation\n\nWhat do you want to learn?\n\n- Regional routing → [Kestrel-0 approved regional routing table](viking://resources/formal/e_44d1d038212b769f1cefdbec)\n- Return windows and exceptions → [Kestrel-0 signed return policy](viking://resources/formal/e_6d31f2e707b427b03ebe5cab)\n- Project Larch start, batch delivery, or retry policy → [Project Larch note](viking://resources/formal/m_c558d1541c4b9d0f)\n- A meeting record about outage-related lost updates → [Lost updates meeting note](viking://resources/formal/m_d7a9d1f22107f233)\n- Project Cobalt start and configuration choices → [Project Cobalt record](viking://resources/formal/m_eb85892166acc8ef)\n- An operational update on lost updates and recovery → [2026-08-08 operational update](viking://resources/formal/m_f7ff6441bdd98e53)\n\n## Detailed Description\n\n### [Kestrel-0 approved regional routing table](viking://resources/formal/e_44d1d038212b769f1cefdbec)\n\nThis subdirectory contains a reference document for the Kestrel-0 approved regional routing table. It is the relevant entry for consulting that routing reference.\n\n### [Kestrel-0 signed return policy](viking://resources/formal/e_6d31f2e707b427b03ebe5cab)\n\nThis subdirectory contains a concise reference to the Kestrel-0 signed return policy. It describes the ordinary 7-day return window and distinguishes two exceptions: custom-made goods and quality defects.\n\n### [Project Larch note](viking://resources/formal/m_c558d1541c4b9d0f)\n\nThis subdirectory contains a brief project note about the start of project Larch. It also records two selected identifiers: one for batch delivery and another for the initial retry policy.\n\n### [Lost updates meeting note](viking://resources/formal/m_d7a9d1f22107f233)\n\nThis subdirectory contains a brief meeting note about lost updates associated with outages. The note also records a recovery option that was tested.\n\n### [Project Cobalt record](viking://resources/formal/m_eb85892166acc8ef)\n\nThis subdirectory contains a brief informational record about the start of project Cobalt. It also identifies two configuration choices associated with the project.\n\n### [2026-08-08 operational update](viking://resources/formal/m_f7ff6441bdd98e53)\n\nThis subdirectory contains an operational update dated 2026-08-08. It concerns lost updates associated with outages and describes a tested recovery approach.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.7573800683021545
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_c558d1541c4b9d0f/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_0b5e9a45211f4fb991f17dfef4fd0b99.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a brief project note about the start of project Larch and two selected identifiers: one for batch delivery and one for the initial retry policy.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.7401893734931946
+      }
+    },
+    {
+      "handle": "viking://resources/formal/e_44d1d038212b769f1cefdbec/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/e_44d1d038212b769f1cefdbec/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_de5e590a91764cb3b4cd90f94a4286c7.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a reference document for the Kestrel-0 approved regional routing table.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.7276235818862915
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/retry_policy_replaced.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, retry policy RETRY-1-907 superseded RETRY-1-108.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7447071671485901
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/outage_procedure_selected.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, the user specified that the recovery procedure validated on 2026-08-08 be used for the next outage.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7353639006614685
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/procedure_validated.md",
+      "kind": "memory",
+      "text": "# Summary\nThe recovery procedure was validated on 2026-08-08.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7278307676315308
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/retry_policy_set.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo set RETRY-1-108 as the initial retry policy for Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7246520519256592
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/delivery_choice_kept.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, the user directed that the delivery choice made on 2026-08-15 remain in effect.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7232716679573059
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/delivery_choice_retained.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, the user reaffirmed that the delivery choice made on 2026-08-15 should remain in effect; the specific choice was not stated.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7187168002128601
+      }
+    }
+  ]
+}

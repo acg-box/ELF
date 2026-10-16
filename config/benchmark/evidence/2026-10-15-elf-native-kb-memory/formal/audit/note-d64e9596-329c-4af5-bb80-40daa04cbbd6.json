@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 0.0,
+    "expires_at": null,
+    "importance": 0.0,
+    "key": null,
+    "note_id": "d64e9596-329c-4af5-bb80-40daa04cbbd6",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+          "source": {
+            "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 241,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+                "source_record_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7"
+              }
+            },
+            "extraction_content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+            "extraction_position": {
+              "end": 241,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_99ab4da076b7c734",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-15T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": null,
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "Keep the successful recovery procedure from the GATE-0-519 incident.",
+    "type": "decision",
+    "updated_at": "2026-10-16T03:02:33.438123Z"
+  },
+  "request_id": "4fc9193c-7d8e-464e-9618-7dee78ecb192",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+        "end_offset": 241,
+        "excerpt": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "locator": {
+          "match_end_offset": 241,
+          "match_start_offset": 0,
+          "position": {
+            "end": 241,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "61ba7013-f040-5114-bcc0-72b53b975f0f"
+        },
+        "reference": "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241",
+        "start_offset": 0,
+        "trace_id": "659518e4-a4ae-4a68-9139-3a1952f91018",
+        "verification": {
+          "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+          "excerpt_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 241,
+        "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+        "created_at": [
+          2026,
+          289,
+          3,
+          2,
+          23,
+          849038000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_99ab4da076b7c734",
+          "captured_at": "2026-10-16T03:02:23.840059+00:00",
+          "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:02:23.840059+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_99ab4da076b7c734",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-15T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+          "source_spans": [
+            {
+              "chunk_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "chunk_id": "23233840-aec3-58b1-a688-ddb1b4f51911",
+              "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "end_offset": 241,
+              "schema": "doc_source_span/v1",
+              "span_id": "758b43f6-c2c9-518c-add2-c0c997e02a12",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_99ab4da076b7c734",
+          "title": "m_99ab4da076b7c734",
+          "trust_label": "user_captured",
+          "ts": "2026-08-15T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_99ab4da076b7c734",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          2,
+          23,
+          849038000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

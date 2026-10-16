@@ -1,0 +1,115 @@
+{
+  "question": "Who is the appointed budget owner for Ivo's Cobalt project as of August 22?",
+  "evidence": [
+    {
+      "handle": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+      "kind": "resource",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8018019795417786
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_eb85892166acc8ef/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_eb85892166acc8ef/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_01cf5be1d3384594a19c8291d8c765d5.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a brief informational record about the start of project Cobalt and two configuration choices associated with it.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.7609169483184814
+      }
+    },
+    {
+      "handle": "viking://user/formal/resources/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://user/formal/resources/\ngenerated_by:\n  component: VikingFS.write_context\n  trigger: context_write\n---\n\nUser-owned resource storage. Contains private documents and knowledge resources owned by the current User.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.6776354908943176
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_c558d1541c4b9d0f/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_0b5e9a45211f4fb991f17dfef4fd0b99.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a brief project note about the start of project Larch and two selected identifiers: one for batch delivery and one for the initial retry policy.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.6750717163085938
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/m_c558d1541c4b9d0f.md",
+      "kind": "resource",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.6680196523666382
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/budget_owner_unassigned.md",
+      "kind": "memory",
+      "text": "# Summary\nAs of 2026-08-22, no budget owner had been appointed.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8020449876785278
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, Ivo reviewed Cobalt.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7962627410888672
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/project_cobalt_started.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo started Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7915171384811401
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/.overview.md",
+      "kind": "memory",
+      "text": "---\ndirectory: viking://user/formal/memories/events/2026/08/22/\ngenerated_by:\n  component: MemoryUpdater\n  trigger: memory_update\nfreshness:\n  total_entries: 8\n  sampled_entries: 8\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# Events Overview\n\n- [As of 2026-08-22, no budget owner had been appointed.](./budget_owner_unassigned.md)\n\n- [On 2026-08-22, Ivo reviewed Cobalt.](./cobalt_reviewed.md)\n\n- [On 2026-08-22, the user directed that the delivery choice made on 2026-08-15 remain in effect.](./delivery_choice_kept.md)\n\n- [On 2026-08-22, the user reaffirmed that the delivery choice made on 2026-08-15 should remain in effect; the specific choice was not stated.](./delivery_choice_retained.md)\n\n- [Mara reviewed Larch on 2026-08-22.](./larch_reviewed.md)\n\n- [On 2026-08-22, the user specified that the recovery procedure validated on 2026-08-08 be used for the next outage.](./outage_procedure_selected.md)\n\n- [The recovery procedure was validated on 2026-08-08.](./procedure_validated.md)\n\n- [On 2026-08-22, retry policy RETRY-1-907 superseded RETRY-1-108.](./retry_policy_replaced.md)\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.7777273654937744
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/.overview.md",
+      "kind": "memory",
+      "text": "---\ndirectory: viking://user/formal/memories/events/2026/08/01/\ngenerated_by:\n  component: MemoryUpdater\n  trigger: memory_update\nfreshness:\n  total_entries: 4\n  sampled_entries: 4\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# Events Overview\n\n- [On 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.](./batch_delivery_selected.md)\n\n- [Mara started project Larch on 2026-08-01, chose BATCH-0-741 for batch delivery, and set RETRY-0-108 as the initial retry policy.](./larch_project_started.md)\n\n- [On 2026-08-01, Ivo started Project Cobalt.](./project_cobalt_started.md)\n\n- [On 2026-08-01, Ivo set RETRY-1-108 as the initial retry policy for Project Cobalt.](./retry_policy_set.md)\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.7678675651550293
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/batch_delivery_selected.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7474496960639954
+      }
+    }
+  ]
+}

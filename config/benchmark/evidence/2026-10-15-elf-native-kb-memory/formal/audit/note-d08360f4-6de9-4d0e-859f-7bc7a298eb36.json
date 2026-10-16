@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 1.0,
+    "expires_at": "2027-04-14T03:01:37.206166Z",
+    "importance": 0.8,
+    "key": null,
+    "note_id": "d08360f4-6de9-4d0e-859f-7bc7a298eb36",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+          "source": {
+            "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 205,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+                "source_record_id": "941b074d-8fd6-56fb-a718-f7403ca6c323"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d"
+              }
+            },
+            "extraction_content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+            "extraction_position": {
+              "end": 205,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_d7a9d1f22107f233",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-08T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": "BATCH-0-741 update loss and recovery",
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "On 2026-08-08, Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages; the team tested REPLAY-0-632, which restored the missing updates.",
+    "type": "fact",
+    "updated_at": "2026-10-16T03:01:37.206166Z"
+  },
+  "request_id": "d5fec796-5911-458d-83ed-dd61ca391856",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+        "end_offset": 205,
+        "excerpt": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "locator": {
+          "match_end_offset": 205,
+          "match_start_offset": 0,
+          "position": {
+            "end": 205,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "b38337f7-99aa-5b1b-84ef-817c9d9316a6"
+        },
+        "reference": "elf-source-v1/941b074d-8fd6-56fb-a718-f7403ca6c323/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+        "start_offset": 0,
+        "trace_id": "5ee3990c-31ba-4a28-9c11-995d05bda9bd",
+        "verification": {
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "excerpt_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 205,
+        "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+        "created_at": [
+          2026,
+          289,
+          3,
+          1,
+          30,
+          532313000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+          "captured_at": "2026-10-16T03:01:30.524145+00:00",
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:01:30.524145+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-08T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+          "source_spans": [
+            {
+              "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "chunk_id": "2152fa12-c3f4-5905-9443-af6fe4782da7",
+              "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "end_offset": 205,
+              "schema": "doc_source_span/v1",
+              "span_id": "d7715191-3931-5102-a2ba-a95876be5508",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_d7a9d1f22107f233",
+          "title": "m_d7a9d1f22107f233",
+          "trust_label": "user_captured",
+          "ts": "2026-08-08T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_d7a9d1f22107f233",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          1,
+          30,
+          532313000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

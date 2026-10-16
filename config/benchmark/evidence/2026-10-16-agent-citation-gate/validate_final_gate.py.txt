@@ -1,0 +1,146 @@
+"""Replay the Python Agent host against the restored native source store."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+
+import trial
+
+REPO = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parent / 'final-citation-gate'
+BASE = REPO / 'config/benchmark/evidence/2026-10-15-elf-native-kb-memory'
+sys.path.insert(0, str(REPO / 'scripts'))
+from benchmark_agent.answer import AnswerRejected, finalize_answer
+from benchmark_budget import totals
+from benchmark_pilot.runtime import Runtime, port
+
+LEDGER = REPO / 'tmp/elf-real-project-pilot/budget-ledger.json'
+
+
+def save(name, value):
+    p = ROOT / name
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    p.chmod(0o600)
+
+
+def read(path):
+    return json.loads(path.read_text())
+
+
+def native_answer(value, context):
+    """Map the frozen flat reader envelope to the native claim-check schema."""
+    visible = {x['handle']: x['text'] for x in context['evidence']}
+    claims = []
+    for citation in value['citations']:
+        handle = citation['handle']
+        if handle not in visible or not handle.startswith('elf-source-v1/'):
+            raise ValueError('Use an original handle already delivered to this reader')
+        _, doc, content_hash, _, _ = handle.split('/')
+        claims.append({'text': citation['quote'], 'state': 'supported', 'citations': [
+            {'kind': 'source', 'doc_id': doc, 'content_hash': content_hash, 'quote': citation['quote']}]})
+    return {'text': value['answer'], 'supported': True, 'claims': claims}
+
+
+def originals(rt, phase):
+    baseline = read(BASE / 'audit-formal-elf.json')
+    checks = []
+    for row in baseline['knowledge_originals'] + baseline['raw_messages']:
+        metadata = rt.api('/v2/docs/' + row['doc_id'])
+        result = rt.api('/v2/docs/excerpts', {'doc_id': row['doc_id'], 'level': 'L1',
+            'max_bytes': 8192, 'position': {'start': 0, 'end': metadata['content_bytes']}})
+        actual = hashlib.sha256(result['excerpt'].encode()).hexdigest()
+        checks.append({'doc_id': row['doc_id'], 'expected_sha256': row['input_sha256'],
+                       'actual_sha256': actual, 'equal': actual == row['input_sha256'],
+                       'native_verified': result['verification']['verified']})
+    save('originals-' + phase + '.json', checks)
+    assert all(x['equal'] and x['native_verified'] for x in checks)
+
+
+def run():
+    assert 'OPENROUTER_API_KEY' not in os.environ
+    ROOT.mkdir(parents=True, exist_ok=True)
+    if (ROOT / 'replay.json').exists() or (ROOT / 'repair-response.json').exists():
+        raise RuntimeError('Recorded output exists; do not repeat the run')
+    owner = 'elf-native-20261015-formal'
+    # Keep the original tenant identity; the prior run removed these stores.
+    save('runtime.json', {'owner': owner,
+        **{name + '_port': port() for name in ('pg', 'qdrant', 'http', 'admin', 'mcp')}})
+    save('fixture/protocol.json', {'model': 'openai/gpt-6-luna'})
+    shutil.copyfile(REPO / 'tmp/elf-real-project-pilot/tokenizer.json', ROOT / 'tokenizer.json')
+    rt = Runtime(ROOT, REPO)
+    rt.stores()
+    dump = ROOT.parent / 'elf-appendix/formal/postgres.dump'
+    restored = subprocess.run(['docker', 'exec', '-i', owner + '-db', 'pg_restore', '-U', 'postgres',
+        '-d', 'elf', '--exit-on-error', '--no-owner'], input=dump.read_bytes(), capture_output=True)
+    (ROOT / 'restore.log').write_bytes(restored.stdout + restored.stderr)
+    restored.check_returncode()
+    save('opening-ledger.json', read(LEDGER))
+    try:
+        try:
+            rt.start()
+        except RuntimeError as error:
+            save('startup-retry.json', {'reason': str(error), 'provider_calls_before_retry':
+                len(read(LEDGER)['requests']) - len(read(ROOT / 'opening-ledger.json')['requests'])})
+            rt.close()
+            rt = Runtime(ROOT, REPO)
+            rt.start()
+        originals(rt, 'before')
+        results, repairs = [], 0
+        for path in sorted((BASE / 'answers').glob('*-formal-*.json')):
+            old = read(path)
+            context = read(BASE / 'contexts' / path.name)
+            draft = native_answer(old['answer'], context)
+            row = {'phase': old['phase'], 'case_id': old['case_id'],
+                   'original_answer_sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+            try:
+                row.update(finalize_answer(draft, rt.api), accepted=True, repair_calls=0)
+            except AnswerRejected as error:
+                row.update(accepted=False, draft_answer=draft, claim_bindings=error.bindings, repair_calls=0)
+                save('rejected-draft.json', row)
+                if repairs:
+                    raise RuntimeError('The single correction allowance is exhausted')
+                repairs += 1
+                feedback = {'error': str(error), 'claim_verdicts': error.bindings['claims'],
+                    'instruction': 'Correct the invalid quotations using only the evidence already supplied. Preserve the answer meaning. Use exact contiguous quotes, with no inserted ellipsis. Return the same JSON answer and citations format. This is the only correction turn; another failed check ends delivery.'}
+                payload = {'model': trial.CHAT, 'messages': [
+                    {'role': 'system', 'content': trial.READER_PROMPT},
+                    {'role': 'user', 'content': json.dumps(context, ensure_ascii=False)},
+                    {'role': 'assistant', 'content': json.dumps(old['answer'], ensure_ascii=False)},
+                    {'role': 'user', 'content': json.dumps(feedback, ensure_ascii=False)}],
+                    'response_format': {'type': 'json_object'}, 'max_tokens': 128000}
+                save('repair-request.json', payload)
+                response = trial.request(os.environ['OPENAI_BASE_URL'] + '/chat/completions', 'POST',
+                    payload, {'Authorization': 'Bearer ' + os.environ['OPENAI_API_KEY']})
+                save('repair-response.json', response)
+                if response['choices'][0]['finish_reason'] != 'stop':
+                    raise RuntimeError('Incomplete correction; no retry is permitted')
+                corrected = json.loads(response['choices'][0]['message']['content'])
+                final = finalize_answer(native_answer(corrected, context), rt.api)
+                row.update(final, accepted=True, repair_calls=1, repaired_reader_envelope=corrected)
+                save('repaired-result.json', row)
+            results.append(row)
+        save('replay.json', results)
+        originals(rt, 'after')
+        closing = read(LEDGER)
+        opening = read(ROOT / 'opening-ledger.json')
+        new = closing['requests'][len(opening['requests']):]
+        save('request-ledger.json', new)
+        save('summary.json', {'cases': len(results), 'original_drafts_accepted': sum(x['repair_calls'] == 0 for x in results),
+            'rejected_before_delivery': sum(x['repair_calls'] > 0 for x in results),
+            'accepted_after_bounded_correction': sum(x['accepted'] for x in results),
+            'correction_calls': repairs, 'new_paid_usd': totals(closing)[0] - totals(opening)[0],
+            'paid_total_usd': totals(closing)[0], 'conservative_exposure_usd': totals(closing)[1],
+            'provider_requests': len(new), 'embedding_requests': sum(x['kind'] == 'embedding' for x in new),
+            'source_originals_unchanged': 14, 'new_retrieval_or_extraction': False,
+            'boundary': 'Exact 13 recorded drafts through the shared finalizer and live native checker. One failed draft receives one same-model correction with its already-delivered context. Not a new competitive score or fresh end-to-end benchmark.'})
+    finally:
+        rt.close()
+        save('closing-ledger.json', read(LEDGER))
+
+
+if __name__ == '__main__':
+    run()

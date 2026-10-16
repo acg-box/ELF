@@ -1,0 +1,59 @@
+{
+  "product": "elf",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-0-0",
+  "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project?",
+  "answer": {
+    "answer": "As of August 22, Mara’s Larch project uses STREAM-0-286, and its retry policy is RETRY-0-907, which superseded RETRY-0-108.",
+    "citations": [
+      {
+        "handle": "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241",
+        "quote": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286."
+      },
+      {
+        "handle": "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237",
+        "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241",
+      "quote_bound": true
+    },
+    {
+      "handle": "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 0.334,
+  "total_seconds": 5.421,
+  "context_bytes": 11643,
+  "context_entries": 16,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 4832,
+    "completion_tokens": 399,
+    "total_tokens": 5231,
+    "cost": 0.000803425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4829,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000803425,
+      "upstream_inference_prompt_cost": 0.000603925,
+      "upstream_inference_completions_cost": 0.0001995
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 88,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

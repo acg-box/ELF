@@ -1,0 +1,51 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "doc-000",
+  "question": "List both exception identifiers in the signed Kestrel-0 return policy.",
+  "answer": {
+    "answer": "CUSTOM-0-7c2 and DEFECT-0-9b4.",
+    "citations": [
+      {
+        "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md",
+        "quote": "custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 16.169,
+  "total_seconds": 20.608,
+  "context_bytes": 11592,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 3436,
+    "completion_tokens": 122,
+    "total_tokens": 3558,
+    "cost": 0.000490425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 3433,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000490425,
+      "upstream_inference_prompt_cost": 0.000429425,
+      "upstream_inference_completions_cost": 6.1e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 18,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-15",
+  "products": {
+    "elf": "9940af3ca8b71e68f217c25c4061a8349f80b87e"
+  },
+  "model": "openai/gpt-6-luna",
+  "provider": "openai",
+  "reasoning": "medium",
+  "max_output_tokens": 128000,
+  "force_full_model_output_limit": true,
+  "chat_price_caps_per_million": {
+    "input": 0.1,
+    "output": 0.5
+  },
+  "embedding_model": "qwen/qwen3-embedding-8b",
+  "embedding_provider": "nebius",
+  "embedding_dimensions": 4096,
+  "parent_ledger": "Existing elf-real-project-pilot campaign ledger; not reset",
+  "ceiling_usd": 10,
+  "calibration_tranche_usd": 0.5,
+  "formal_tranche_usd": 1.0,
+  "native_retrieval_top_n": 6,
+  "combined_context_max_bytes": 32768,
+  "reader_output": "answer plus citations containing exact quote and native handle",
+  "paid_answer_retries": false,
+  "source_text_mutations": false,
+  "conditions": "Native knowledge ingestion and native session-memory extraction; same shared reader after native retrieval. No claim of complete native Agent UI acceptance.",
+  "knowledge_sources": 6,
+  "initial_memory_records": 4,
+  "updated_memory_records": 4,
+  "pre_update_questions": 2,
+  "post_update_questions": 11,
+  "calibration_is_separate": true,
+  "after_update_restart": true,
+  "input_sha256": "7141532c7efb77758ab36f3d7acc2db5369b234134a6119ba4a891c58dd3e47d",
+  "oracle_sha256": "8ac3caf4055989d319ef143eb1fad280d3372c6c85113bbd639498fdc7871644",
+  "existing_competitor_results_reused": true,
+  "reader_prompt_sha256": "3e3eccd7709bb48b74401399d9bbf9e1da92233d07b98d7b04c14ec58bd157c9",
+  "client_sha256": "3257deab65d4eaee4b1c04d6d00304a8b859e6173da2361b042bcfa360b2f88c",
+  "elf_transport": {
+    "knowledge": "Native docs_put(doc_type=knowledge), docs_search_l0 top_k=6 candidate_k=60, read returned chunks through docs_excerpts.",
+    "memory": "Original user messages stored as doc_type=chat; native events_ingest with exact source_document, full byte span, message ID, and supplied timestamp. No hand-authored notes or keys.",
+    "scope": "Both named projects share one native project and agent namespace; calibration uses separate containers and volumes.",
+    "retrieval": "Native planned_search top_k=6 candidate_k=60 and evidence_pack. No oracle subjects, date filters, fallback original searches, or follow-up reader calls.",
+    "rerank": "Existing local-token-overlap, as in ELF reference runtime; no extra paid reranker.",
+    "source_hydration": "Only parents returned by native evidence_pack; all-source audit is separate from answer context.",
+    "embedding_reuse": "Exact request matches only, from the existing 4096-dimensional provider receipts; no chat response reuse.",
+    "configuration": "Current elf.example.toml defaults; native per-note and aggregate admission, MMR, query planning remain unchanged.",
+    "runtime": "Native ARM64 binaries built from current source, PostgreSQL and Qdrant Docker stores; no product speed ranking."
+  }
+}

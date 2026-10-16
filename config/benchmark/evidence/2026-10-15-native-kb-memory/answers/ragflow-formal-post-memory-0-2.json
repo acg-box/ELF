@@ -1,0 +1,59 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-0-2",
+  "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "BATCH-0-741 for batch delivery remained approved; no delivery-mode change was approved at the August 8 meeting.",
+    "citations": [
+      {
+        "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+        "quote": "They chose BATCH-0-741 for batch delivery."
+      },
+      {
+        "handle": "ragflow:document:95244f4933ba4a2bb8c270eecf201f4a:chunk:422cd16eee930caa",
+        "quote": "No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:document:95244f4933ba4a2bb8c270eecf201f4a:chunk:422cd16eee930caa",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 15.908,
+  "total_seconds": 19.55,
+  "context_bytes": 4440,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1719,
+    "completion_tokens": 200,
+    "total_tokens": 1919,
+    "cost": 0.0003148,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1716,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0003148,
+      "upstream_inference_prompt_cost": 0.0002148,
+      "upstream_inference_completions_cost": 0.0001
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 51,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

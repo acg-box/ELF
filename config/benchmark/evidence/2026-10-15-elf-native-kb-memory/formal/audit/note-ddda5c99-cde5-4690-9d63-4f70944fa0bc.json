@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 0.0,
+    "expires_at": null,
+    "importance": 0.0,
+    "key": null,
+    "note_id": "ddda5c99-cde5-4690-9d63-4f70944fa0bc",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+          "source": {
+            "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 204,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "17716a69-dd41-5bbe-bf06-10ac3a96f9f3",
+                "source_record_id": "17716a69-dd41-5bbe-bf06-10ac3a96f9f3"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1"
+              }
+            },
+            "extraction_content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+            "extraction_position": {
+              "end": 204,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_f7ff6441bdd98e53",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-08T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": null,
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "At the 2026-08-08 meeting, no change of delivery mode was approved.",
+    "type": "decision",
+    "updated_at": "2026-10-16T03:02:06.090044Z"
+  },
+  "request_id": "f6bb3093-25a6-40d3-95f3-e8239e2113db",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "17716a69-dd41-5bbe-bf06-10ac3a96f9f3",
+        "end_offset": 204,
+        "excerpt": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "locator": {
+          "match_end_offset": 204,
+          "match_start_offset": 0,
+          "position": {
+            "end": 204,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "eff75657-e96a-5abe-a408-5b7d85acf94c"
+        },
+        "reference": "elf-source-v1/17716a69-dd41-5bbe-bf06-10ac3a96f9f3/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+        "start_offset": 0,
+        "trace_id": "286603dd-9418-401a-95b5-658dfea385b3",
+        "verification": {
+          "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "excerpt_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 204,
+        "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+        "created_at": [
+          2026,
+          289,
+          3,
+          2,
+          0,
+          160334000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "17716a69-dd41-5bbe-bf06-10ac3a96f9f3",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_f7ff6441bdd98e53",
+          "captured_at": "2026-10-16T03:02:00.150396+00:00",
+          "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:02:00.150396+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_f7ff6441bdd98e53",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-08T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "17716a69-dd41-5bbe-bf06-10ac3a96f9f3",
+          "source_spans": [
+            {
+              "chunk_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "chunk_id": "0a48ca89-184d-5633-9a0c-09f0285ae7bf",
+              "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "end_offset": 204,
+              "schema": "doc_source_span/v1",
+              "span_id": "38f0f1c3-3eaf-5eae-801f-72374845bbb3",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_f7ff6441bdd98e53",
+          "title": "m_f7ff6441bdd98e53",
+          "trust_label": "user_captured",
+          "ts": "2026-08-08T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_f7ff6441bdd98e53",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          2,
+          0,
+          160334000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

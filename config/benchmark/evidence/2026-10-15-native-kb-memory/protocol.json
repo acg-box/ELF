@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-15",
+  "products": {
+    "openviking": "0.5.0",
+    "ragflow": "1.0.0-rc1"
+  },
+  "model": "openai/gpt-6-luna",
+  "provider": "openai",
+  "reasoning": "medium",
+  "max_output_tokens": 128000,
+  "force_full_model_output_limit": true,
+  "chat_price_caps_per_million": {
+    "input": 0.1,
+    "output": 0.5
+  },
+  "embedding_model": "qwen/qwen3-embedding-8b",
+  "embedding_provider": "nebius",
+  "embedding_dimensions": 4096,
+  "parent_ledger": "Existing elf-real-project-pilot campaign ledger; not reset for this comparison",
+  "ceiling_usd": 10,
+  "calibration_tranche_usd": 0.5,
+  "formal_tranche_usd": 1.0,
+  "native_retrieval_top_n": 6,
+  "combined_context_max_bytes": 32768,
+  "reader_output": "answer plus citations containing exact quote and native handle",
+  "paid_answer_retries": false,
+  "source_text_mutations": false,
+  "conditions": "Native knowledge ingestion and native session-memory extraction; same shared reader after native retrieval. No claim of complete native Agent UI acceptance.",
+  "knowledge_sources": 6,
+  "initial_memory_records": 4,
+  "updated_memory_records": 4,
+  "pre_update_questions": 2,
+  "post_update_questions": 11,
+  "calibration_is_separate": true,
+  "after_update_restart": true,
+  "input_sha256": "7141532c7efb77758ab36f3d7acc2db5369b234134a6119ba4a891c58dd3e47d",
+  "oracle_sha256": "8ac3caf4055989d319ef143eb1fad280d3372c6c85113bbd639498fdc7871644"
+}

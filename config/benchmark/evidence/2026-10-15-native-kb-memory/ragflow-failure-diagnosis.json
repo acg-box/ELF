@@ -1,0 +1,25 @@
+{
+  "failed_cases": [
+    "post/memory-0-0",
+    "post/combined-001"
+  ],
+  "shared_missing_fact": "STREAM-0-286",
+  "stage": "native Memory retrieval",
+  "observations": [
+    "The correct original is stored as raw message 15. Derived episodic message 16 also contains the correct decision with valid_at 2026-08-15.",
+    "Neither failed reader context contains STREAM-0-286. Both include partial August 22 instructions and unrelated Cobalt entries.",
+    "The shared reader abstains on the absent delivery mode while correctly returning the newer retry policy.",
+    "Native Memory queryMessage explicitly requests valid_at descending order, and the Elasticsearch connector passes that sort into the query body.",
+    "Raw message validity timestamps are import timestamps; some derived records use event dates, while other extracted records keep import time. Some extracted text loses the subject or assigns the import date to the event."
+  ],
+  "inference": "Sorting mixed timestamp meanings favors later-imported or current-dated records. Combined with fragmented or generic notes, this can displace an earlier but still-valid project decision from top 6. The stored decision is not lost, and the reader is not shown it in the two failed cases.",
+  "not_claimed": [
+    "A sort-policy intervention was not run.",
+    "This is not an optimal-configuration quality ceiling.",
+    "The two failed questions are not two independent root defects."
+  ],
+  "source_urls": [
+    "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/service/memory.go",
+    "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/engine/elasticsearch/chunk.go"
+  ]
+}

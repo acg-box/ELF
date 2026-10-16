@@ -1,0 +1,51 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "doc-001",
+  "question": "What is the approved queue for the South region of Kestrel-0?",
+  "answer": {
+    "answer": "The approved queue for the South region of Kestrel-0 is SOUTH-0-3e5.",
+    "citations": [
+      {
+        "handle": "ragflow:document:3c24f970a9124622a9820e38febee2fd:chunk:7ff75b3fe7ceaded",
+        "quote": "South | 12 hours | SOUTH-0-3e5"
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:document:3c24f970a9124622a9820e38febee2fd:chunk:7ff75b3fe7ceaded",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 8.509,
+  "total_seconds": 11.048,
+  "context_bytes": 4550,
+  "context_entries": 10,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1720,
+    "completion_tokens": 127,
+    "total_tokens": 1847,
+    "cost": 0.000278425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1717,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000278425,
+      "upstream_inference_prompt_cost": 0.000214925,
+      "upstream_inference_completions_cost": 6.35e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 34,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

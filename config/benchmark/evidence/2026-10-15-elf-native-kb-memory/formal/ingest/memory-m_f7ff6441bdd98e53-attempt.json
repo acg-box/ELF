@@ -1,0 +1,27 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "dry_run": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "ts": "2026-08-08T12:00:00Z",
+        "msg_id": "m_f7ff6441bdd98e53",
+        "source_document": {
+          "doc_id": "17716a69-dd41-5bbe-bf06-10ac3a96f9f3",
+          "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "position": {
+            "start": 0,
+            "end": 204
+          }
+        }
+      }
+    ]
+  },
+  "before": {
+    "paid_usd": 2.002598471000001,
+    "exposure_usd": 2.074779170999999,
+    "requests": 4562
+  }
+}

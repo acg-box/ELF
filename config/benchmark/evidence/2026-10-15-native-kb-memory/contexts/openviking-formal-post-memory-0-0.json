@@ -1,0 +1,115 @@
+{
+  "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project?",
+  "evidence": [
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/m_c558d1541c4b9d0f.md",
+      "kind": "resource",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.906531810760498
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_c558d1541c4b9d0f/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_c558d1541c4b9d0f/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_0b5e9a45211f4fb991f17dfef4fd0b99.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a brief project note about the start of project Larch and two selected identifiers: one for batch delivery and one for the initial retry policy.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.8342400789260864
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md",
+      "kind": "resource",
+      "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.797843873500824
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_d7a9d1f22107f233/.overview.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/m_d7a9d1f22107f233/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_0932bc3f237e4b04b2fc5d6e87fcfa27.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# m_d7a9d1f22107f233\n\nThis directory contains a brief meeting note about lost updates associated with outages and a tested recovery option. It records Mara’s report that BATCH-0-741 lost updates during GATE-0-519 outages, the team’s test of REPLAY-0-632, and the meeting’s decision not to approve a change in delivery mode. The note is relevant to tracking BATCH-0-741, GATE-0-519, REPLAY-0-632, lost updates, outages, and delivery mode. No specific audience or required prior knowledge is stated.\n\n## Directory Coverage\n\nThere is **1 direct entry**, and **all entries are represented** in the summaries provided.\n\n## Quick Navigation\n\nWhat do you want to learn?\n\n- → Read the meeting report, outage context, replay test, and delivery-mode decision: [m_d7a9d1f22107f233.md](viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md)\n\n## Detailed Description\n\n### [m_d7a9d1f22107f233.md](viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md)\n\nThis brief meeting note records an update-loss issue, a recovery test, and the decision about whether to change delivery mode. It is dated 2026-08-08 and identifies the reported issue as lost updates in BATCH-0-741 during GATE-0-519 outages.\n\nThe note attributes the report to Mara. It states that the team tested REPLAY-0-632 and that this test restored the missing updates. It does not specify how the test was performed, provide further technical details about the outage or recovery process, or describe the underlying systems beyond the named identifiers. These limits mean the note supports tracking the reported incident and test outcome, but does not provide a detailed technical account of either.\n\nThe meeting decision is also explicit: no change of delivery mode was approved. The note therefore records a successful recovery test alongside a decision not to approve a delivery-mode change at that meeting. It does not state why the change was not approved or whether a later decision was made.\n\nFor retrieval, the main terms associated with this entry are BATCH-0-741, GATE-0-519, REPLAY-0-632, lost updates, outages, and delivery mode. The note may be useful to readers following these update and outage issues; the source does not identify a particular audience or specify prior knowledge.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.780739426612854
+      }
+    },
+    {
+      "handle": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+      "kind": "resource",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7746131420135498
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/larch_project_started.md",
+      "kind": "memory",
+      "text": "# Summary\nMara started project Larch on 2026-08-01, chose BATCH-0-741 for batch delivery, and set RETRY-0-108 as the initial retry policy.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8881816864013672
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/larch_reviewed.md",
+      "kind": "memory",
+      "text": "# Summary\nMara reviewed Larch on 2026-08-22.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8738782405853271
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/delivery_choice_kept.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, the user directed that the delivery choice made on 2026-08-15 remain in effect.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8388425707817078
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/procedure_validated.md",
+      "kind": "memory",
+      "text": "# Summary\nThe recovery procedure was validated on 2026-08-08.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8185821771621704
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/15/larch_source_switch.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-15, Mara approved switching Larch from BATCH-0-741 to STREAM-0-286, superseding the 2026-08-01 delivery decision.\n# 2026-08-15 (Saturday) ChatLog:\n**user**: 2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision....",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8160111904144287
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/batch_delivery_selected.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8122100234031677
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 0.99,
+    "expires_at": "2027-04-14T03:03:47.021412Z",
+    "importance": 0.8,
+    "key": null,
+    "note_id": "84055f7b-9ff4-45f9-8181-b89c263a1d71",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+          "source": {
+            "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 237,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+                "source_record_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3"
+              }
+            },
+            "extraction_content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+            "extraction_position": {
+              "end": 237,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_4a54af2b364be476",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-22T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": "Cobalt retry policy",
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "As of 2026-08-22, Cobalt's retry policy is RETRY-1-907, superseding RETRY-1-108.",
+    "type": "fact",
+    "updated_at": "2026-10-16T03:03:47.021412Z"
+  },
+  "request_id": "4b952781-0305-4b62-bd11-d73cf5fbce5f",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+        "end_offset": 237,
+        "excerpt": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+        "locator": {
+          "match_end_offset": 237,
+          "match_start_offset": 0,
+          "position": {
+            "end": 237,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "184fa2e6-f1d4-543f-bbf5-5af76c7ad59b"
+        },
+        "reference": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+        "start_offset": 0,
+        "trace_id": "593fc4b9-cf3d-4283-8254-4328054b332b",
+        "verification": {
+          "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+          "excerpt_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 237,
+        "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+        "created_at": [
+          2026,
+          289,
+          3,
+          3,
+          35,
+          671228000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_4a54af2b364be476",
+          "captured_at": "2026-10-16T03:03:35.659532+00:00",
+          "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:03:35.659532+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_4a54af2b364be476",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-22T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+          "source_spans": [
+            {
+              "chunk_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "chunk_id": "f886626e-63de-5b29-ab81-05a6173e4c4f",
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "end_offset": 237,
+              "schema": "doc_source_span/v1",
+              "span_id": "8a1832e7-4093-52e4-8564-3c2a70ac102b",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_4a54af2b364be476",
+          "title": "m_4a54af2b364be476",
+          "trust_label": "user_captured",
+          "ts": "2026-08-22T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_4a54af2b364be476",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          3,
+          35,
+          671228000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+[
+  {
+    "phase": "post",
+    "case_id": "combined-001",
+    "correct": false,
+    "review": "The answer omits STREAM-0-286 because the exact decision is missing from the retrieved context. It gives a bounded unknown, not a false delivery mode. These two questions share one missing-decision failure.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-000",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-001",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-0",
+    "correct": false,
+    "review": "The answer omits STREAM-0-286 because the exact decision is missing from the retrieved context. It gives a bounded unknown, not a false delivery mode. These two questions share one missing-decision failure.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-1",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-2",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-3",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-0",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-1",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-2",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-3",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-0-2",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-1-2",
+    "correct": true,
+    "review": "All requested facts are correct for the subject and time in the question. Unknown-owner cases correctly state that no owner was appointed.",
+    "quote_binding": true
+  }
+]

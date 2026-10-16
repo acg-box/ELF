@@ -1,0 +1,19 @@
+{
+  "source_commit": "9940af3ca8b71e68f217c25c4061a8349f80b87e",
+  "build": "cargo make build-harness passed",
+  "docs": "cargo make check-docs passed",
+  "whitespace": "git diff --check passed",
+  "original_manifest_files_verified": 80,
+  "frozen_client_input_oracle_reader": true,
+  "fresh_reader_responses": 14,
+  "formal_answers": 13,
+  "formal_finish_reason_stop": 13,
+  "formal_answers_repeated": 0,
+  "formal_dropped_context_entries": 0,
+  "provider_gateway_lock_absent": true,
+  "owned_containers_remaining": 0,
+  "owned_volumes_remaining": 0,
+  "production_code_changed": false,
+  "pr_created": false,
+  "pr_merged": false
+}

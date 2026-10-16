@@ -1,0 +1,59 @@
+{
+  "product": "elf",
+  "scope": "formal",
+  "phase": "pre",
+  "case_id": "memory-0-2",
+  "question": "What delivery mode was still approved for Mara's Larch project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "BATCH-0-741 for batch delivery remained approved; no change of delivery mode was approved at the August 8 meeting. REPLAY-0-632 was tested, not approved as a delivery-mode change.",
+    "citations": [
+      {
+        "handle": "elf-source-v1/ff686235-3670-56c2-9736-c67a60f5e1c1/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124",
+        "quote": "They chose BATCH-0-741 for batch delivery."
+      },
+      {
+        "handle": "elf-source-v1/a90214e9-0589-51df-8539-8b240a2f11bf/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+        "quote": "The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "elf-source-v1/ff686235-3670-56c2-9736-c67a60f5e1c1/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124",
+      "quote_bound": true
+    },
+    {
+      "handle": "elf-source-v1/a90214e9-0589-51df-8539-8b240a2f11bf/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 0.22,
+  "total_seconds": 3.86,
+  "context_bytes": 10489,
+  "context_entries": 15,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 4426,
+    "completion_tokens": 280,
+    "total_tokens": 4706,
+    "cost": 0.000693175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4423,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000693175,
+      "upstream_inference_prompt_cost": 0.000553175,
+      "upstream_inference_completions_cost": 0.00014
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 33,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

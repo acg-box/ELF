@@ -1,0 +1,105 @@
+{
+  "response": {
+    "extracted": {
+      "notes": [
+        {
+          "confidence": 1.0,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+            }
+          ],
+          "importance": 0.699999988079071,
+          "key": "project Larch start",
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "Mara started project Larch on 2026-08-01.",
+          "ttl_days": null,
+          "type": "fact"
+        },
+        {
+          "confidence": 0.9900000095367432,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+            }
+          ],
+          "importance": 0.699999988079071,
+          "key": "project Larch batch delivery",
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "For project Larch, BATCH-0-741 was chosen for batch delivery.",
+          "ttl_days": null,
+          "type": "decision"
+        },
+        {
+          "confidence": 0.9900000095367432,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+            }
+          ],
+          "importance": 0.699999988079071,
+          "key": "project Larch initial retry policy",
+          "reason": null,
+          "scope_suggestion": null,
+          "structured": null,
+          "text": "The initial retry policy for project Larch was RETRY-0-108.",
+          "ttl_days": null,
+          "type": "fact"
+        }
+      ]
+    },
+    "ingestion_profile": {
+      "id": "default",
+      "version": 8
+    },
+    "processing_complete": true,
+    "request_id": "91e89ba6-8154-4761-ba13-1eee127d7142",
+    "results": [
+      {
+        "field_path": null,
+        "note_id": "e901d7f0-7a87-47fa-b0e7-a6f8e69bc2da",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "10e9f2b7-7a78-44a8-ac7b-df34dc4fe859",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "4412de8b-331f-4b91-a840-edbcc03efa5d",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      }
+    ]
+  },
+  "seconds": 17.458014542,
+  "before": {
+    "paid_usd": 2.0012592160000002,
+    "exposure_usd": 2.073439915999998,
+    "requests": 4551
+  },
+  "after": {
+    "paid_usd": 2.0017145960000007,
+    "exposure_usd": 2.0738952959999986,
+    "requests": 4555
+  }
+}
