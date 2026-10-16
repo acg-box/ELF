@@ -1,0 +1,55 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "knowledge",
+    "title": "e_44d1d038212b769f1cefdbec",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "knowledge",
+      "ts": "2026-10-16T03:01:03.850226+00:00",
+      "source_kind": "text_export",
+      "canonical_uri": "urn:elf-native-comparison:formal:knowledge:e_44d1d038212b769f1cefdbec",
+      "captured_at": "2026-10-16T03:01:03.850226+00:00",
+      "trust_label": "user_captured"
+    },
+    "content": "Kestrel-0 approved regional routing table. Columns are region, response window, queue.\nNorth | 4 hours | NORTH-0-6a8\nSouth | 12 hours | SOUTH-0-3e5\nRows are independent; do not mix a region with another row."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 207,
+    "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+    "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+    "request_id": "51115d89-0f35-4dc9-85b9-653370ece8cd",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:01:03.850226+00:00",
+      "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:01:03.850226+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:knowledge:e_44d1d038212b769f1cefdbec",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+      "source_spans": [
+        {
+          "chunk_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+          "chunk_id": "46bebef7-9d99-5797-b9f1-44ed0515561f",
+          "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+          "end_offset": 207,
+          "schema": "doc_source_span/v1",
+          "span_id": "a12d5b9f-cb10-554b-8fe9-4658dec7f110",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "text_export",
+      "title": "e_44d1d038212b769f1cefdbec",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 7.767789040999787
+}

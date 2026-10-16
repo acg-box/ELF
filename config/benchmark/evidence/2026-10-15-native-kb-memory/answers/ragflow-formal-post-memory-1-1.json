@@ -1,0 +1,59 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-1",
+  "question": "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?",
+  "answer": {
+    "answer": "For Cobalt’s next outage, Ivo should use REPLAY-1-632, the procedure tested on August 8 that restored the missing updates. The delivery-mode change was prompted by GATE-1-519 outages: on August 15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+    "citations": [
+      {
+        "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+        "quote": "The team tested REPLAY-1-632, which restored the missing updates."
+      },
+      {
+        "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:25",
+        "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:25",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 17.942,
+  "total_seconds": 22.238,
+  "context_bytes": 4625,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1760,
+    "completion_tokens": 333,
+    "total_tokens": 2093,
+    "cost": 0.000386425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1757,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000386425,
+      "upstream_inference_prompt_cost": 0.000219925,
+      "upstream_inference_completions_cost": 0.0001665
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 74,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

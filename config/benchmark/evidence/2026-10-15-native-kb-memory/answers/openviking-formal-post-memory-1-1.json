@@ -1,0 +1,83 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-1",
+  "question": "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?",
+  "answer": {
+    "answer": "For Cobalt’s next outage, Ivo should use REPLAY-1-632, the recovery procedure tested on August 8 that restored the missing updates. The outage gate was GATE-1-519: it was associated with the lost updates, and Ivo later approved switching Cobalt from BATCH-1-741 to STREAM-1-286. The August 8 meeting itself did not approve a delivery-mode change.",
+    "citations": [
+      {
+        "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+        "quote": "For the next outage, use the recovery procedure validated on August 8."
+      },
+      {
+        "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+        "quote": "The team tested REPLAY-1-632, which restored the missing updates."
+      },
+      {
+        "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+        "quote": "Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages."
+      },
+      {
+        "handle": "viking://user/formal/memories/events/2026/08/15/.overview.md",
+        "quote": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision."
+      },
+      {
+        "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+        "quote": "No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/15/.overview.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 21.139,
+  "total_seconds": 34.209,
+  "context_bytes": 10162,
+  "context_entries": 10,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 3056,
+    "completion_tokens": 866,
+    "total_tokens": 3922,
+    "cost": 0.000814925,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 3053,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000814925,
+      "upstream_inference_prompt_cost": 0.000381925,
+      "upstream_inference_completions_cost": 0.000433
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 456,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

@@ -1,0 +1,106 @@
+[
+  {
+    "phase": "post",
+    "case_id": "combined-001",
+    "correct": true,
+    "review": "Combines the current Larch delivery and retry decisions with both signed-policy exceptions.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-000",
+    "correct": true,
+    "review": "Names both signed-policy exceptions and does not substitute the informal draft.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-001",
+    "correct": true,
+    "review": "Uses the South row and its matching queue.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-0",
+    "correct": true,
+    "review": "States the approved STREAM-0-286 and current RETRY-0-907; treats RETRY-0-108 only as superseded history.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-1",
+    "correct": true,
+    "review": "Connects the retained August 8 REPLAY-0-632 recovery to August 22 and explicitly identifies GATE-0-519 as the cause of the August 15 switch.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-2",
+    "correct": true,
+    "review": "Keeps BATCH-0-741 approved at the August 8 cutoff; the recovery trial is not an approved delivery change.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-3",
+    "correct": true,
+    "review": "Correctly states the explicit absence of an appointed Larch budget owner.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-0",
+    "correct": true,
+    "review": "States the correct STREAM-1-286 and RETRY-1-907 for Cobalt. One quote inserts an ellipsis that is absent from the original. Native evidence_check rejects it; the answer is not repaired or rerun.",
+    "quote_binding": false,
+    "complete_with_quote_binding": false
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-1",
+    "correct": true,
+    "review": "Connects the retained August 8 REPLAY-1-632 recovery to August 22 and explicitly identifies GATE-1-519 as the cause of the August 15 switch.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-2",
+    "correct": true,
+    "review": "Keeps BATCH-1-741 approved at the August 8 cutoff; the recovery trial is not an approved delivery change.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-3",
+    "correct": true,
+    "review": "Correctly states the explicit absence of an appointed Cobalt budget owner.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-0-2",
+    "correct": true,
+    "review": "Keeps BATCH-0-741 approved at the August 8 cutoff; the recovery trial is not an approved delivery change.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-1-2",
+    "correct": true,
+    "review": "Keeps BATCH-1-741 approved at the August 8 cutoff; the recovery trial is not an approved delivery change.",
+    "quote_binding": true,
+    "complete_with_quote_binding": true
+  }
+]

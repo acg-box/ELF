@@ -1,0 +1,36 @@
+{
+  "claims": [
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        {
+          "content_hash": "7523fa6d26063ad9562a9f674956a414942571af5dfb34c50a3d218cce0f6769",
+          "doc_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90",
+          "kind": "source",
+          "quote": "They chose BATCH-4-741 for batch delivery."
+        }
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 1,
+      "resolved_citations": [
+        {
+          "content_hash": "39d25bfe058c5e15ccdfe883ece0eb53934bf54ac7ed004c519418e320cab476",
+          "doc_id": "01d83a92-e276-5253-bedd-13e5161c3937",
+          "kind": "source",
+          "quote": "custom-made goods use exception CUSTOM-3-7c2; quality defects use exception DEFECT-3-9b4"
+        }
+      ]
+    }
+  ],
+  "request_id": "2034af57-7f8f-413c-ac94-4b4049f5998f",
+  "semantic_support": "not_evaluated"
+}

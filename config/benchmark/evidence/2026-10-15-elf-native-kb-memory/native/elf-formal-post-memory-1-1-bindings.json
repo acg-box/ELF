@@ -1,0 +1,51 @@
+{
+  "claims": [
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 0,
+      "resolved_citations": [
+        {
+          "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+          "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+          "kind": "source",
+          "quote": "The team tested REPLAY-1-632, which restored the missing updates."
+        }
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 1,
+      "resolved_citations": [
+        {
+          "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+          "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+          "kind": "source",
+          "quote": "For the next outage, use the recovery procedure validated on August 8."
+        }
+      ]
+    },
+    {
+      "binding_verified": true,
+      "citation_verified": [
+        true
+      ],
+      "claim_index": 2,
+      "resolved_citations": [
+        {
+          "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+          "kind": "source",
+          "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8"
+        }
+      ]
+    }
+  ],
+  "request_id": "eb0a0354-650f-4297-8bca-90b46d83f42a",
+  "semantic_support": "not_evaluated"
+}

@@ -1,0 +1,58 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "chat",
+    "title": "m_99ab4da076b7c734",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "chat",
+      "ts": "2026-08-15T12:00:00Z",
+      "source_kind": "chat_excerpt",
+      "canonical_uri": "urn:elf-native-comparison:formal:memory:m_99ab4da076b7c734",
+      "captured_at": "2026-10-16T03:02:23.840059+00:00",
+      "trust_label": "user_captured",
+      "source_created_at": "2026-08-15T12:00:00Z",
+      "thread_id": "m_99ab4da076b7c734",
+      "role": "user"
+    },
+    "content": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 241,
+    "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+    "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+    "request_id": "15143d85-5ea8-424f-9936-2a09d0f6da5a",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:02:23.840059+00:00",
+      "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:02:23.840059+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:memory:m_99ab4da076b7c734",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+      "source_spans": [
+        {
+          "chunk_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+          "chunk_id": "23233840-aec3-58b1-a688-ddb1b4f51911",
+          "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+          "end_offset": 241,
+          "schema": "doc_source_span/v1",
+          "span_id": "758b43f6-c2c9-518c-add2-c0c997e02a12",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "chat_excerpt",
+      "title": "m_99ab4da076b7c734",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 4.690333207999856
+}

@@ -1,0 +1,59 @@
+{
+  "product": "elf",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-0",
+  "question": "As of August 22, what delivery mode and retry policy apply to Ivo's Cobalt project?",
+  "answer": {
+    "answer": "As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.",
+    "citations": [
+      {
+        "handle": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+        "quote": "Keep the August 15 delivery choice. ... The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+      },
+      {
+        "handle": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+        "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+      "quote_bound": false
+    },
+    {
+      "handle": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 0.727,
+  "total_seconds": 5.447,
+  "context_bytes": 10858,
+  "context_entries": 15,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 4500,
+    "completion_tokens": 338,
+    "total_tokens": 4838,
+    "cost": 0.000731425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4497,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000731425,
+      "upstream_inference_prompt_cost": 0.000562425,
+      "upstream_inference_completions_cost": 0.000169
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 74,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

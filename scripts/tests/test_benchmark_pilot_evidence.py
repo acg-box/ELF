@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 import sys
+import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
@@ -9,10 +11,56 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from benchmark_pilot.evidence import EvidenceHandles, compact_check
 from benchmark_pilot.reuse import key_for
 from benchmark_pilot.tools import SourceTools, schemas
-from benchmark_pilot.runner import request
+from benchmark_pilot.runner import cell, request
 
 
 class EvidenceClientTests(unittest.TestCase):
+    def run_submission_cell(self, verdicts):
+        repo = Path(__file__).resolve().parents[2]
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / 'fixture').mkdir()
+            (root / 'documents.json').write_text(json.dumps({'s': {'doc_id': 'doc', 'content_hash': 'hash'}}))
+            (root / 'fixture/exact-source.json').write_text(json.dumps({'task': [{'source_id': 's', 'start': 0, 'end': 5}]}))
+            draft = {'text': 'Fact.', 'supported': True, 'claims': [
+                {'text': 'Fact.', 'state': 'supported', 'citations': [{'kind': 'reference', 'reference': 'E1'}]}]}
+            response = {'choices': [{'finish_reason': 'tool_calls', 'message': {'role': 'assistant', 'content': None,
+                'tool_calls': [{'id': 'submission', 'function': {'name': 'submit_answer', 'arguments': json.dumps(draft)}}]}}]}
+            checked = []
+            def api(path, body):
+                checked.append(body)
+                return {'claims': [{'claim_index': 0, 'binding_verified': verdicts[len(checked) - 1]}],
+                        'semantic_support': 'not_evaluated'}
+            args = SimpleNamespace(root=root, cell='submission', condition='exact_source', repetition=1)
+            task = {'id': 'task', 'phase': 'formal', 'stage': 0, 'question': 'What is recorded?'}
+            protocol = {'client_v3': True, 'max_rounds': len(verdicts), 'max_tool_calls': 4,
+                        'max_evidence_bytes': 32768, 'max_tool_result_bytes': 12000}
+            source = {'id': 's', 'stage': 0, 'title': 'Source', 'timestamp': '2026-08-01', 'text': 'Fact.'}
+            with patch('benchmark_pilot.runner.Runtime', return_value=SimpleNamespace(api=api)), \
+                    patch('benchmark_pilot.runner.request', return_value=({}, response)) as ask, \
+                    patch('benchmark_pilot.runner.usage', return_value={}):
+                cell(args, repo, [source], {0: 'checkpoint'}, protocol, task)
+            result = json.loads((root / 'cases/submission/result.json').read_text())
+            trace = json.loads((root / 'cases/submission/trace.json').read_text())
+            return result, trace, ask.call_count, checked
+
+    def test_failed_last_submission_is_not_marked_completed_or_renderable(self):
+        result, trace, calls, checked = self.run_submission_cell([False])
+        self.assertEqual(result['status'], 'invalid_answer')
+        self.assertNotIn('answer', result)
+        self.assertEqual(result['draft_answer']['text'], 'Fact.')
+        self.assertFalse(result['claim_bindings']['claims'][0]['binding_verified'])
+        self.assertEqual((calls, len(checked)), (1, 1))
+        self.assertIn('error', trace[-1]['tools'][-1]['result'])
+
+    def test_failed_submission_can_be_rechecked_only_within_existing_turn_budget(self):
+        result, trace, calls, checked = self.run_submission_cell([False, True])
+        self.assertEqual(result['status'], 'completed')
+        self.assertEqual(result['answer']['claims'], checked[-1]['claims'])
+        self.assertEqual((calls, len(checked)), (2, 2))
+        self.assertFalse(trace[0]['tools'][0]['result']['claims'][0]['binding_verified'])
+        self.assertTrue(trace[1]['tools'][0]['result']['claims'][0]['binding_verified'])
+
     def test_repeated_original_is_compact_only_after_it_reaches_the_reader(self):
         registry = EvidenceHandles()
         original = {'reference': 'elf-source-v1/doc/hash/0/12', 'text': 'Original'}

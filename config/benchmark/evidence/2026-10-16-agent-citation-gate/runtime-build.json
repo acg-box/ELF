@@ -1,0 +1,10 @@
+{
+  "source_commit": "9940af3ca8b71e68f217c25c4061a8349f80b87e",
+  "binaries": {
+    "api": "e7de6753d31f274c8f37b5920e38057322347d9ce6e6be7bbe4092137fb35d58",
+    "worker": "260c461863a9f47e275d3e4fe53b4429372348c448a087fdd10ee4a43ded10a4"
+  },
+  "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+  "database_image": "sha256:5b25d0109e0f11965ea3083aecde1b2f7386b0e5cf133980c32f246cc18e081f",
+  "qdrant_image": "sha256:7659681a8a66e4543db3073ea58f4fd25c9a52cae2374c98a6ee7a0d78cf579c"
+}

@@ -9,6 +9,18 @@ Routes to: Benchmarking evidence concepts under `docs/evidence/benchmarking/`.
 
 ## Concepts
 
+- [Agent final citation gate regression](2026-10-16-agent-citation-gate.md): reject
+  invalid final drafts, verify the retained Cobalt correction against native
+  sources, and preserve historical scores and cumulative accounting.
+
+- [ELF addition to the native comparison](2026-10-15-elf-native-kb-memory.md): the
+  same frozen cases and reader, separate semantic and citation scores, source
+  hydration contribution, retained failures, and the bounded reuse judgment.
+
+- [Native knowledge and memory comparison](2026-10-15-native-kb-memory.md): current
+  OpenViking and RAGFlow, complete 4096-dimensional embeddings, native Memory,
+  source readback, failure diagnosis, operating limits, and cumulative cost.
+
 - [Daily-cost project memory trial](2026-10-13-daily-project-trial.md): real private project handoffs, matched requirement coverage, complete cost exposure, and native recall diagnosis.
 
 - [Frozen memory ablation and retrieval backends](2026-10-10-retrieval-laboratory.md): source versus note contribution, cached-vector database comparison, sustained load, and ontology boundaries.

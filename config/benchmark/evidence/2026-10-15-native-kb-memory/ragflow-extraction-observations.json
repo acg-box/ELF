@@ -1,0 +1,33 @@
+{
+  "observed_subject_or_time_loss": [
+    {
+      "message_id": 29,
+      "message_type": "semantic",
+      "source_id": 28,
+      "content": "As of 2026-10-16, retry policy RETRY-1-907 supersedes RETRY-1-108.",
+      "valid_at": "2026-10-16 03:22:07"
+    },
+    {
+      "message_id": 30,
+      "message_type": "semantic",
+      "source_id": 28,
+      "content": "No budget owner had been appointed as of 2026-10-16.",
+      "valid_at": "2026-10-16 03:22:07"
+    },
+    {
+      "message_id": 32,
+      "message_type": "episodic",
+      "source_id": 28,
+      "content": "On 2026-10-16, the user said to keep the delivery choice made on August 15, 2026.",
+      "valid_at": "2026-10-16 03:22:07"
+    },
+    {
+      "message_id": 23,
+      "message_type": "episodic",
+      "source_id": 19,
+      "content": "The user instructed that the August 15 delivery choice be kept.",
+      "valid_at": "2026-10-16 03:21:27"
+    }
+  ],
+  "limit": "Read-only diagnosis. No settings were tuned and no paid answer was repeated after scoring."
+}

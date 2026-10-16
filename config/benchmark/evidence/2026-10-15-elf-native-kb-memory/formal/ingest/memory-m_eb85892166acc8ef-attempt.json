@@ -1,0 +1,27 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "dry_run": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+        "ts": "2026-08-01T12:00:00Z",
+        "msg_id": "m_eb85892166acc8ef",
+        "source_document": {
+          "doc_id": "70758802-2d9b-517d-b75b-a67ddfc638e8",
+          "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+          "position": {
+            "start": 0,
+            "end": 124
+          }
+        }
+      }
+    ]
+  },
+  "before": {
+    "paid_usd": 2.0021693210000007,
+    "exposure_usd": 2.0743500209999985,
+    "requests": 4558
+  }
+}

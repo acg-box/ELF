@@ -1,0 +1,67 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "combined-001",
+  "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project? Also list both exception identifiers in the signed Kestrel-0 return policy.",
+  "answer": {
+    "answer": "As of August 22, Mara’s Larch project uses STREAM-0-286 delivery, and its retry policy is RETRY-0-907. The signed Kestrel-0 return policy lists CUSTOM-0-7c2 and DEFECT-0-9b4 as its two exception identifiers.",
+    "citations": [
+      {
+        "handle": "viking://user/formal/memories/events/2026/08/15/larch_source_switch.md",
+        "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286"
+      },
+      {
+        "handle": "viking://user/formal/memories/events/2026/08/22/larch_reviewed.md",
+        "quote": "Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+      },
+      {
+        "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md",
+        "quote": "The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/15/larch_source_switch.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/larch_reviewed.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 12.774,
+  "total_seconds": 21.457,
+  "context_bytes": 8929,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 2825,
+    "completion_tokens": 410,
+    "total_tokens": 3235,
+    "cost": 0.00055805,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 2822,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00055805,
+      "upstream_inference_prompt_cost": 0.00035305,
+      "upstream_inference_completions_cost": 0.000205
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 96,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

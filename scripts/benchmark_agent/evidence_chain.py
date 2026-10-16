@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 import time
 import urllib.error
+from .answer import AnswerRejected, finalize_answer
 
 
 def prepare(args, read, save, freeze, api, token):
@@ -81,8 +82,12 @@ def run(args, read, save, api, token, reader_request, parse_claim_answer):
         save(response_path, {'request': request, 'response': response})
         result = {'case_id': key, 'seconds': time.monotonic() - started, 'status': 'completed'}
         try:
-            result.update(parse_claim_answer(response['choices'][0]['message']['content']))
-            result['claim_bindings'] = api(args.api_base, token, '/v2/evidence/check', {'claims': result['claims']})
+            draft = parse_claim_answer(response['choices'][0]['message']['content'])
+            final = finalize_answer(draft, lambda path, body: api(args.api_base, token, path, body))
+            result.update(draft, **final['answer'], claim_bindings=final['claim_bindings'])
+        except AnswerRejected as error:
+            result.update(status='invalid', error=str(error), draft_answer=draft,
+                          claim_bindings=error.bindings)
         except (ValueError, KeyError, urllib.error.HTTPError) as error:
             result.update(status='invalid', error=str(error))
         save(target, result)

@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 1.0,
+    "expires_at": null,
+    "importance": 0.8,
+    "key": null,
+    "note_id": "d7a44c49-952c-47e2-8106-a03f0898b957",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+          "source": {
+            "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 241,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+                "source_record_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da"
+              }
+            },
+            "extraction_content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+            "extraction_position": {
+              "end": 241,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_70bd88efee712a9a",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-15T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": "Cobalt delivery decision",
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision; the cause was GATE-1-519 outages recorded on August 8.",
+    "type": "decision",
+    "updated_at": "2026-10-16T03:03:26.828307Z"
+  },
+  "request_id": "1a142a27-f245-457d-8a6e-f6e9447cb662",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+        "end_offset": 241,
+        "excerpt": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "locator": {
+          "match_end_offset": 241,
+          "match_start_offset": 0,
+          "position": {
+            "end": 241,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "0060074f-d77c-57e8-9eb3-976e7ce99187"
+        },
+        "reference": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+        "start_offset": 0,
+        "trace_id": "1f8b4374-0779-4d95-a476-7ad231065a5b",
+        "verification": {
+          "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "excerpt_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 241,
+        "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+        "created_at": [
+          2026,
+          289,
+          3,
+          3,
+          16,
+          726210000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_70bd88efee712a9a",
+          "captured_at": "2026-10-16T03:03:16.710167+00:00",
+          "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:03:16.710167+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_70bd88efee712a9a",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-15T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+          "source_spans": [
+            {
+              "chunk_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+              "chunk_id": "975a8676-b7ec-56c2-9204-7bef380dd0b6",
+              "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+              "end_offset": 241,
+              "schema": "doc_source_span/v1",
+              "span_id": "56aec7b1-d843-5a4a-9815-a3865478d346",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_70bd88efee712a9a",
+          "title": "m_70bd88efee712a9a",
+          "trust_label": "user_captured",
+          "ts": "2026-08-15T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_70bd88efee712a9a",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          3,
+          16,
+          726210000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

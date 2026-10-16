@@ -1,0 +1,121 @@
+{
+  "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project?",
+  "evidence": [
+    {
+      "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "document_id": "1f8934b0b894451dbb5d157df1eeac46"
+      }
+    },
+    {
+      "handle": "ragflow:document:60c7b04dd9a54820b17be95530bb5bda:chunk:814df48295aa88f7",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "document_id": "60c7b04dd9a54820b17be95530bb5bda"
+      }
+    },
+    {
+      "handle": "ragflow:document:95244f4933ba4a2bb8c270eecf201f4a:chunk:422cd16eee930caa",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "document_id": "95244f4933ba4a2bb8c270eecf201f4a"
+      }
+    },
+    {
+      "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "document_id": "984a41009bde4f3d83d2447f0b92191b"
+      }
+    },
+    {
+      "handle": "ragflow:document:1eb527ed80114d08b3a6a330b85991b0:chunk:5f612a1ed973221d",
+      "kind": "knowledge_chunk",
+      "text": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2\n quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-0-2d1 and has no authority.",
+      "metadata": {
+        "document_id": "1eb527ed80114d08b3a6a330b85991b0"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:29",
+      "kind": "memory_semantic",
+      "text": "As of 2026-10-16, retry policy RETRY-1-907 supersedes RETRY-1-108.",
+      "metadata": {
+        "source_id": 28,
+        "session_id": "formal-m_4a54af2b364be476",
+        "valid_at": "2026-10-16 03:22:07",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:28",
+      "kind": "memory_raw_source",
+      "text": "User Input: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.\nAgent Response: Recorded.",
+      "metadata": {
+        "derived_from_hit": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:29"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:32",
+      "kind": "memory_episodic",
+      "text": "On 2026-10-16, the user said to keep the delivery choice made on August 15, 2026.",
+      "metadata": {
+        "source_id": 28,
+        "session_id": "formal-m_4a54af2b364be476",
+        "valid_at": "2026-10-16 03:22:07",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:25",
+      "kind": "memory_raw",
+      "text": "User Input: 2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.\nAgent Response: Recorded.",
+      "metadata": {
+        "source_id": 0,
+        "session_id": "formal-m_70bd88efee712a9a",
+        "valid_at": "2026-10-16 03:21:44",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:20",
+      "kind": "memory_semantic",
+      "text": "The retry policy is RETRY-0-907, which supersedes RETRY-0-108.",
+      "metadata": {
+        "source_id": 19,
+        "session_id": "formal-m_d6297f549707f98d",
+        "valid_at": "2026-10-16 03:21:27",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+      "kind": "memory_raw_source",
+      "text": "User Input: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.\nAgent Response: Recorded.",
+      "metadata": {
+        "derived_from_hit": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:20"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:23",
+      "kind": "memory_episodic",
+      "text": "The user instructed that the August 15 delivery choice be kept.",
+      "metadata": {
+        "source_id": 19,
+        "session_id": "formal-m_d6297f549707f98d",
+        "valid_at": "2026-10-16 03:21:27",
+        "invalid_at": null,
+        "status": true
+      }
+    }
+  ]
+}

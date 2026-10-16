@@ -1,0 +1,58 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "chat",
+    "title": "m_4a54af2b364be476",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "chat",
+      "ts": "2026-08-22T12:00:00Z",
+      "source_kind": "chat_excerpt",
+      "canonical_uri": "urn:elf-native-comparison:formal:memory:m_4a54af2b364be476",
+      "captured_at": "2026-10-16T03:03:35.659532+00:00",
+      "trust_label": "user_captured",
+      "source_created_at": "2026-08-22T12:00:00Z",
+      "thread_id": "m_4a54af2b364be476",
+      "role": "user"
+    },
+    "content": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 237,
+    "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+    "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+    "request_id": "646a6995-61df-43da-9e0d-ebbd8fd2d3a9",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:03:35.659532+00:00",
+      "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:03:35.659532+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:memory:m_4a54af2b364be476",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+      "source_spans": [
+        {
+          "chunk_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+          "chunk_id": "f886626e-63de-5b29-ab81-05a6173e4c4f",
+          "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+          "end_offset": 237,
+          "schema": "doc_source_span/v1",
+          "span_id": "8a1832e7-4093-52e4-8564-3c2a70ac102b",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "chat_excerpt",
+      "title": "m_4a54af2b364be476",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 3.683479499999976
+}

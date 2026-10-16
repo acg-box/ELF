@@ -1,0 +1,27 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "dry_run": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "ts": "2026-08-15T12:00:00Z",
+        "msg_id": "m_70bd88efee712a9a",
+        "source_document": {
+          "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+          "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+          "position": {
+            "start": 0,
+            "end": 241
+          }
+        }
+      }
+    ]
+  },
+  "before": {
+    "paid_usd": 2.005518306000001,
+    "exposure_usd": 2.0776990059999987,
+    "requests": 4578
+  }
+}

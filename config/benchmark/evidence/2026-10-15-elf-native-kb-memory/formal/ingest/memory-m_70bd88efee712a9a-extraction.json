@@ -1,0 +1,79 @@
+{
+  "response": {
+    "extracted": {
+      "notes": [
+        {
+          "confidence": 1.0,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+            }
+          ],
+          "importance": 0.800000011920929,
+          "key": "Cobalt delivery decision",
+          "reason": null,
+          "scope_suggestion": "Cobalt",
+          "structured": null,
+          "text": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision; the cause was GATE-1-519 outages recorded on August 8.",
+          "ttl_days": null,
+          "type": "decision"
+        },
+        {
+          "confidence": 1.0,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+            }
+          ],
+          "importance": 0.699999988079071,
+          "key": "GATE-1-519 recovery procedure",
+          "reason": null,
+          "scope_suggestion": "GATE-1-519",
+          "structured": null,
+          "text": "Keep the successful recovery procedure from the GATE-1-519 incident.",
+          "ttl_days": null,
+          "type": "constraint"
+        }
+      ]
+    },
+    "ingestion_profile": {
+      "id": "default",
+      "version": 8
+    },
+    "processing_complete": true,
+    "request_id": "4a72b0d6-c794-42f3-a362-a51a0eee3ce4",
+    "results": [
+      {
+        "field_path": null,
+        "note_id": "d7a44c49-952c-47e2-8106-a03f0898b957",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "d8016d50-5be6-40ac-83fd-f641659d93ee",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      }
+    ]
+  },
+  "seconds": 15.271145624999917,
+  "before": {
+    "paid_usd": 2.005518306000001,
+    "exposure_usd": 2.0776990059999987,
+    "requests": 4578
+  },
+  "after": {
+    "paid_usd": 2.0060176860000007,
+    "exposure_usd": 2.0781983859999986,
+    "requests": 4581
+  }
+}

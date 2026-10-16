@@ -1,0 +1,67 @@
+"""Publish only synthetic fixture evidence from the completed ELF addition."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import shutil
+
+ROOT = Path(__file__).resolve().parent / 'elf-appendix'
+REPO = ROOT.parents[2]
+TARGET = REPO / 'config/benchmark/evidence/2026-10-15-elf-native-kb-memory'
+
+
+def copy(relative, target=None):
+    out = TARGET / (target or relative)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(ROOT / relative, out)
+    out.chmod(0o644)
+
+
+TARGET.mkdir(parents=True, exist_ok=True)
+for name in ['protocol.json', 'results-summary.json', 'request-ledger.json', 'review-elf.json',
+             'audit-formal-elf.json', 'audit-calibration-elf.json', 'qdrant-collections.json',
+             'failure-and-mechanism-analysis.json', 'setup-observations.json',
+             'calibration-completed.json', 'formal-completed.json', 'cleanup-receipt.json']:
+    copy(name)
+for scope in ['calibration', 'formal']:
+    for name in ['runtime-build.json', 'snapshot-initial.json', 'snapshot-final.json', 'provider-reuse.jsonl']:
+        copy(scope + '/' + name)
+    for p in (ROOT / scope / 'ingest').glob('*.json'):
+        copy(str(p.relative_to(ROOT)))
+    for p in (ROOT / scope / 'audit').glob('*.json'):
+        copy(str(p.relative_to(ROOT)))
+copy('formal/snapshot-before-restart.json')
+for folder in ['answers', 'contexts', 'native']:
+    for p in (ROOT / folder).glob('*.json'):
+        copy(str(p.relative_to(ROOT)))
+for name in ['elf_trial.py', 'elf_summary.py', 'elf_promote.py']:
+    shutil.copyfile(ROOT.parent / name, TARGET / (name + '.txt'))
+protocol = json.loads((TARGET / 'protocol.json').read_text())
+protocol['parent_ledger'] = 'Existing elf-real-project-pilot campaign ledger; not reset'
+(TARGET / 'protocol.json').write_text(json.dumps(protocol, indent=2) + '\n')
+source = REPO / 'config/benchmark/evidence/2026-10-15-native-kb-memory'
+provenance = {'base_artifact': '../2026-10-15-native-kb-memory',
+    'base_files': {name: hashlib.sha256((source / name).read_bytes()).hexdigest()
+                   for name in ['inputs.json', 'oracle.json', 'protocol.json', 'results-summary.json',
+                                'trial.py.txt', 'review-ragflow.json', 'review-openviking.json']},
+    'base_artifact_changed': False, 'production_code_changed': False}
+(TARGET / 'base-provenance.json').write_text(json.dumps(provenance, indent=2) + '\n')
+tokens = [json.loads((ROOT / scope / 'private-auth.json').read_text())['token']
+          for scope in ['calibration', 'formal']]
+import tomllib
+for scope in ['calibration', 'formal']:
+    config = tomllib.loads((ROOT / scope / 'private-elf.toml').read_text())
+    tokens.extend(x['api_key'] for x in config['providers'].values())
+manifest = []
+for p in sorted(TARGET.rglob('*')):
+    if not p.is_file() or p.name == 'manifest.json':
+        continue
+    b = p.read_bytes()
+    content = b.decode()
+    assert not re.search(r'sk-or-v1-[0-9a-f]{32,}', content), p
+    assert not any(token and token in content for token in tokens), p
+    manifest.append({'path': str(p.relative_to(TARGET)), 'bytes': len(b),
+                     'sha256': hashlib.sha256(b).hexdigest()})
+(TARGET / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
+print(json.dumps({'path': str(TARGET), 'files': len(manifest) + 1,
+                  'bytes': sum(x['bytes'] for x in manifest)}))

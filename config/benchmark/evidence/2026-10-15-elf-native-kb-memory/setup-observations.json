@@ -1,0 +1,7 @@
+{
+  "initial_formal_start": "API exited during Qdrant collection readiness with internal error 0 of 0 read operations failed. API and worker start together in the existing test runtime.",
+  "additional_provider_calls": 0,
+  "scored_answers": 0,
+  "product_source_changed": false,
+  "recovery": "Retry service start after stores have initialized, preserving the failed logs and current stores."
+}

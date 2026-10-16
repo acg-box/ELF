@@ -1,0 +1,131 @@
+{
+  "response": {
+    "extracted": {
+      "notes": [
+        {
+          "confidence": 0.949999988079071,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": 0.699999988079071,
+          "key": "Cobalt August 15 delivery choice",
+          "reason": null,
+          "scope_suggestion": "Cobalt",
+          "structured": null,
+          "text": "For Cobalt, keep the August 15 delivery choice, as stated in Ivo’s review on 2026-08-22.",
+          "ttl_days": null,
+          "type": "decision"
+        },
+        {
+          "confidence": 0.9399999976158142,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": 0.800000011920929,
+          "key": "Cobalt outage recovery procedure",
+          "reason": null,
+          "scope_suggestion": "Cobalt",
+          "structured": null,
+          "text": "For the next Cobalt outage, use the recovery procedure validated on August 8.",
+          "ttl_days": null,
+          "type": "decision"
+        },
+        {
+          "confidence": 0.9900000095367432,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": 0.800000011920929,
+          "key": "Cobalt retry policy",
+          "reason": null,
+          "scope_suggestion": "Cobalt",
+          "structured": null,
+          "text": "As of 2026-08-22, Cobalt's retry policy is RETRY-1-907, superseding RETRY-1-108.",
+          "ttl_days": null,
+          "type": "fact"
+        },
+        {
+          "confidence": 0.8999999761581421,
+          "evidence": [
+            {
+              "message_index": 0,
+              "quote": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+            }
+          ],
+          "importance": 0.6000000238418579,
+          "key": "Cobalt budget owner appointment",
+          "reason": null,
+          "scope_suggestion": "Cobalt",
+          "structured": null,
+          "text": "As of 2026-08-22, no budget owner has been appointed for Cobalt.",
+          "ttl_days": null,
+          "type": "fact"
+        }
+      ]
+    },
+    "ingestion_profile": {
+      "id": "default",
+      "version": 8
+    },
+    "processing_complete": true,
+    "request_id": "9ba41fcc-946f-43c6-88f2-f280e677818a",
+    "results": [
+      {
+        "field_path": null,
+        "note_id": "165435e9-e2ca-446c-b0c8-7d2ca441ecd8",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "878b6213-655c-44bf-a1ff-8beb643c9bb6",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "84055f7b-9ff4-45f9-8181-b89c263a1d71",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      },
+      {
+        "field_path": null,
+        "note_id": "914fecd3-689c-4a39-95e2-7ff19834263d",
+        "op": "ADD",
+        "policy_decision": "remember",
+        "reason": null,
+        "reason_code": null,
+        "write_policy_audits": null
+      }
+    ]
+  },
+  "seconds": 24.64057283299985,
+  "before": {
+    "paid_usd": 2.0060184260000007,
+    "exposure_usd": 2.0781991259999986,
+    "requests": 4582
+  },
+  "after": {
+    "paid_usd": 2.006615906000001,
+    "exposure_usd": 2.0787966059999987,
+    "requests": 4587
+  }
+}

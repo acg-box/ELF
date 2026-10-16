@@ -1,0 +1,147 @@
+{
+  "phase": "post",
+  "case_id": "memory-1-0",
+  "original_answer_sha256": "888a1c17ac0e44bb33602d3a961d3206f478ed49e53a77b1b4f6c59b61af8988",
+  "accepted": true,
+  "draft_answer": {
+    "text": "As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.",
+    "supported": true,
+    "claims": [
+      {
+        "text": "Keep the August 15 delivery choice. ... The retry policy is now RETRY-1-907, superseding RETRY-1-108.",
+        "state": "supported",
+        "citations": [
+          {
+            "kind": "source",
+            "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+            "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+            "quote": "Keep the August 15 delivery choice. ... The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+          }
+        ]
+      },
+      {
+        "text": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+        "state": "supported",
+        "citations": [
+          {
+            "kind": "source",
+            "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+            "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+            "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+          }
+        ]
+      }
+    ]
+  },
+  "claim_bindings": {
+    "claims": [
+      {
+        "binding_verified": true,
+        "citation_verified": [
+          true
+        ],
+        "claim_index": 0,
+        "resolved_citations": [
+          {
+            "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+            "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+            "kind": "source",
+            "quote": "Keep the August 15 delivery choice."
+          }
+        ]
+      },
+      {
+        "binding_verified": true,
+        "citation_verified": [
+          true
+        ],
+        "claim_index": 1,
+        "resolved_citations": [
+          {
+            "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+            "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+            "kind": "source",
+            "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+          }
+        ]
+      },
+      {
+        "binding_verified": true,
+        "citation_verified": [
+          true
+        ],
+        "claim_index": 2,
+        "resolved_citations": [
+          {
+            "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+            "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+            "kind": "source",
+            "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+          }
+        ]
+      }
+    ],
+    "request_id": "af13ea73-06be-4328-ab59-daa96414ef1b",
+    "semantic_support": "not_evaluated"
+  },
+  "repair_calls": 1,
+  "answer": {
+    "text": "As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.",
+    "supported": true,
+    "claims": [
+      {
+        "text": "Keep the August 15 delivery choice.",
+        "state": "supported",
+        "citations": [
+          {
+            "kind": "source",
+            "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+            "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+            "quote": "Keep the August 15 delivery choice."
+          }
+        ]
+      },
+      {
+        "text": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+        "state": "supported",
+        "citations": [
+          {
+            "kind": "source",
+            "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+            "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+            "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+          }
+        ]
+      },
+      {
+        "text": "The retry policy is now RETRY-1-907, superseding RETRY-1-108.",
+        "state": "supported",
+        "citations": [
+          {
+            "kind": "source",
+            "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+            "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+            "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+          }
+        ]
+      }
+    ]
+  },
+  "repaired_reader_envelope": {
+    "answer": "As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.",
+    "citations": [
+      {
+        "handle": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+        "quote": "Keep the August 15 delivery choice."
+      },
+      {
+        "handle": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+        "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+      },
+      {
+        "handle": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+        "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+      }
+    ]
+  }
+}

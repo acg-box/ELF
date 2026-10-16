@@ -1,0 +1,59 @@
+{
+  "product": "elf",
+  "scope": "formal",
+  "phase": "pre",
+  "case_id": "memory-1-2",
+  "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "Batch delivery using BATCH-1-741 remained approved for Ivo’s Cobalt project; the August 8 meeting tested REPLAY-1-632, but approved no change in delivery mode.",
+    "citations": [
+      {
+        "handle": "elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+        "quote": "They chose BATCH-1-741 for batch delivery."
+      },
+      {
+        "handle": "elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+        "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+      "quote_bound": true
+    },
+    {
+      "handle": "elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 0.127,
+  "total_seconds": 4.349,
+  "context_bytes": 10989,
+  "context_entries": 16,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 4655,
+    "completion_tokens": 319,
+    "total_tokens": 4974,
+    "cost": 0.0007413,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4652,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0007413,
+      "upstream_inference_prompt_cost": 0.0005818,
+      "upstream_inference_completions_cost": 0.0001595
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 44,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

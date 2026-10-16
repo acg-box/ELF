@@ -1,0 +1,55 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "knowledge",
+    "title": "e_6d31f2e707b427b03ebe5cab",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "knowledge",
+      "ts": "2026-10-16T03:01:00.332140+00:00",
+      "source_kind": "text_export",
+      "canonical_uri": "urn:elf-native-comparison:formal:knowledge:e_6d31f2e707b427b03ebe5cab",
+      "captured_at": "2026-10-16T03:01:00.332140+00:00",
+      "trust_label": "user_captured"
+    },
+    "content": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-0-2d1 and has no authority."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 395,
+    "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+    "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+    "request_id": "5a3e8f1d-7c60-4757-9cca-78dc56bd9fdb",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:01:00.332140+00:00",
+      "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:01:00.332140+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:knowledge:e_6d31f2e707b427b03ebe5cab",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+      "source_spans": [
+        {
+          "chunk_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+          "chunk_id": "436f0d5e-cc1a-5642-bfe1-e61c8b152c76",
+          "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+          "end_offset": 395,
+          "schema": "doc_source_span/v1",
+          "span_id": "e85b8e14-4565-534b-862f-fa8c03bee5e5",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "text_export",
+      "title": "e_6d31f2e707b427b03ebe5cab",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 3.493037374999858
+}

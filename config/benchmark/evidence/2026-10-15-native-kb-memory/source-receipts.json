@@ -1,0 +1,266 @@
+[
+  {
+    "file": "upstream/OpenViking__docker-compose.yml",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docker-compose.yml",
+    "sha256": "e2c954c9c1d2233c8e898d271008ef43493f94a6c7a96c7e6d7b7e69c0bae1da",
+    "bytes": 3020
+  },
+  {
+    "file": "upstream/OpenViking__docker-entrypoint",
+    "url": "docker-image:ghcr.io/volcengine/openviking@sha256:2c104187d17d9b5c837d578990ae574807ad8ab78ba84191ddafabfde207af38/usr/local/bin/openviking-entrypoint",
+    "sha256": "45f9b5b0651e4a0c5ab16c8a9a54a82845a7a84d171bc2e0cd86ffa6080577f0",
+    "bytes": 4475
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__api__02-resources.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/api/02-resources.md",
+    "sha256": "c462333d3dd6e3dd18b6042ee033bc573b4d2968e416e2e2542e7c89b33afb18",
+    "bytes": 47212
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__api__03-filesystem.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/api/03-filesystem.md",
+    "sha256": "a92688b90fecb82c149d94ddd05e649cf03ee0c06b94d85c39459b6e8d2d7346",
+    "bytes": 26020
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__api__05-sessions.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/api/05-sessions.md",
+    "sha256": "786107b0a0d0cc656215f12b86bb6ed9c0d5324850e1d9cb41bf0aef7b583506",
+    "bytes": 52705
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__api__06-retrieval.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/api/06-retrieval.md",
+    "sha256": "a0fe31b66cb606804876b3da14b2191c72c3aae3d6aaefb55c854e4ef0d62607",
+    "bytes": 53371
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__api__08-admin.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/api/08-admin.md",
+    "sha256": "2332cc7eaa49c46aba4240a6fb6702a1e08ff1718b1c603fdd2e034932062d16",
+    "bytes": 83479
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__api__16-memory.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/api/16-memory.md",
+    "sha256": "8fd01ef5caba5c8aaeb1d756aaa1fad9e7ad0f9dddf86055fe2bd21ac27495f7",
+    "bytes": 2539
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__configuration__01-server.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/configuration/01-server.md",
+    "sha256": "5a39571602b2bc0697d40c68f0fabe7f23bfefebc8cda83488048c1350296c10",
+    "bytes": 21039
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__guides__01-configuration.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/guides/01-configuration.md",
+    "sha256": "c6d2d8770a27a2f5e6f0b35a91968343205c96b4f2eb436907a8bdace0fcb10d",
+    "bytes": 107201
+  },
+  {
+    "file": "upstream/OpenViking__docs__en__guides__04-authentication.md",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/guides/04-authentication.md",
+    "sha256": "b42ba431f45e4c990c8ea4c8e0b2e71702baf0bf9f61ba65ede5a3dcd04daaf8",
+    "bytes": 25588
+  },
+  {
+    "file": "upstream/OpenViking__openviking__server__routers__content.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/server/routers/content.py",
+    "sha256": "3b3f61a4b29fc5550e42ba075c0f3692f0394495c42e6a06bc159ced13049af6",
+    "bytes": 11484
+  },
+  {
+    "file": "upstream/OpenViking__openviking__server__routers__resources.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/server/routers/resources.py",
+    "sha256": "36a2ee1c50a2e6069558ee3638761a8e6dbf5dff7ce06a9c829b99f4dfcbd647",
+    "bytes": 18798
+  },
+  {
+    "file": "upstream/OpenViking__openviking__server__routers__search.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/server/routers/search.py",
+    "sha256": "5ce47214d019c751f3362881a30d4e47b16f1c14f5b81b6f7fa4dcc6ffa93971",
+    "bytes": 23582
+  },
+  {
+    "file": "upstream/OpenViking__openviking__server__routers__sessions.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/server/routers/sessions.py",
+    "sha256": "f057987a42944e9b789a38bb7599d857afe1dede12434ca26f4210a6c6af4b20",
+    "bytes": 31333
+  },
+  {
+    "file": "upstream/OpenViking__openviking__session__memory__memory_updater.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/session/memory/memory_updater.py",
+    "sha256": "e66a4b6ec080b9c59c8f64c95377ebea6eac374c3d43121f6579d51a54a16450",
+    "bytes": 84887
+  },
+  {
+    "file": "upstream/OpenViking__openviking__session__memory__streaming_memory_updater.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/session/memory/streaming_memory_updater.py",
+    "sha256": "e5607df2d047707e5c061417f15f832307d06b3e569677b2644e65b44b252468",
+    "bytes": 89988
+  },
+  {
+    "file": "upstream/OpenViking__openviking__session__memory__utils__memory_fields.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/session/memory/utils/memory_fields.py",
+    "sha256": "0e9fc85fce8b414dfef12a67d635c49d28ed4ad07524210ba766b0f0a64404e7",
+    "bytes": 945
+  },
+  {
+    "file": "upstream/OpenViking__openviking__session__memory__utils__memory_file_utils.py",
+    "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking/session/memory/utils/memory_file_utils.py",
+    "sha256": "2a190fada4305fa4b3b2c5d247a0671ede2137762f7de281d8f1a517a2e0b655",
+    "bytes": 6774
+  },
+  {
+    "file": "upstream/ragflow__conf__models__openai-api-compatible.json",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/conf/models/openai-api-compatible.json",
+    "sha256": "d9b139e9407001817899535b81efe013412e7dbdcd7bf5da8bd4178ce4bfff5e",
+    "bytes": 260
+  },
+  {
+    "file": "upstream/ragflow__docker__.env",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/.env",
+    "sha256": "410a0d3b81d65df6f0169ecdf6549800528ca3964105d3e9a8407a5c759af0f9",
+    "bytes": 21123
+  },
+  {
+    "file": "upstream/ragflow__docker__docker-compose-base.yml",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/docker-compose-base.yml",
+    "sha256": "30f5c2c990ff94d7a3f3e41cccadbc77ecfb695eeb2150d573a89902b698f816",
+    "bytes": 15758
+  },
+  {
+    "file": "upstream/ragflow__docker__docker-compose.yml",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/docker-compose.yml",
+    "sha256": "567f5b61556b66beb09e0d22166c9d913744f80ebe1aea0ce8bf60cfebfbca10",
+    "bytes": 2297
+  },
+  {
+    "file": "upstream/ragflow__docker__entrypoint-go.sh",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/entrypoint-go.sh",
+    "sha256": "8717843a943fe0709567465d11a9f1c272339283b9282fb090c5c5f07656318e",
+    "bytes": 8285
+  },
+  {
+    "file": "upstream/ragflow__docker__infinity_conf.toml",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/infinity_conf.toml",
+    "sha256": "da76df144b7fd259164f3773d8a93e7e19d6e3313622124db8d2b33bc89fdcf1",
+    "bytes": 1613
+  },
+  {
+    "file": "upstream/ragflow__docker__init.sql",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/init.sql",
+    "sha256": "68217c32597373c52bead702e38b740c5d14279f8fd226def77780cdb7eaa125",
+    "bytes": 53
+  },
+  {
+    "file": "upstream/ragflow__docker__kvrocks-entrypoint.sh",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/kvrocks-entrypoint.sh",
+    "sha256": "6920d61f8e1a05d3805866fdc797096a779bffcbce7dd401d6f75140f74f615e",
+    "bytes": 1700
+  },
+  {
+    "file": "upstream/ragflow__docker__service_conf.yaml.template",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docker/service_conf.yaml.template",
+    "sha256": "3689a721d07e49b0a82d8a1a3720d9b3b149282251865608a49960dad9582aca",
+    "bytes": 8575
+  },
+  {
+    "file": "upstream/ragflow__docs__references__http_api_reference.md",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docs/references/http_api_reference.md",
+    "sha256": "cf0f49e3db0e2a7bf00231993b4b184a584f40a0f90f80ce02a85a77e30db832",
+    "bytes": 236089
+  },
+  {
+    "file": "upstream/ragflow__internal__common__environments.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/common/environments.go",
+    "sha256": "32bbdfe3107345b2b6c0f50aed9bf1900b9917285da1914955bc640b69481eb3",
+    "bytes": 17146
+  },
+  {
+    "file": "upstream/ragflow__internal__dao__memory_task.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/dao/memory_task.go",
+    "sha256": "90a229734a80109d946fa14f8af333bdeb85e007a07a04fcf989221a107bdb51",
+    "bytes": 12153
+  },
+  {
+    "file": "upstream/ragflow__internal__engine__infinity__chunk.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/engine/infinity/chunk.go",
+    "sha256": "b3be202e19bcf58e4c447dfc77715b89669c9745085b139e2ecedd11062bb6a2",
+    "bytes": 101527
+  },
+  {
+    "file": "upstream/ragflow__internal__engine__infinity__client.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/engine/infinity/client.go",
+    "sha256": "01cc9a0341c6255e34ecd5bb4246c91bbb4e61d53c1101c0869afa615e5831c6",
+    "bytes": 15212
+  },
+  {
+    "file": "upstream/ragflow__internal__engine__infinity__common.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/engine/infinity/common.go",
+    "sha256": "a2e85d31ce046b667f38a76dabd18c30d75ef3b61ef0c37411cb02d368f5d704",
+    "bytes": 16561
+  },
+  {
+    "file": "upstream/ragflow__internal__engine__infinity__infinity.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/engine/infinity/infinity.go",
+    "sha256": "0ef0964b2a8cae93d54ca2ba4574809ee73cebf6c9a890dc7fbf3ebe6c2f78a5",
+    "bytes": 809
+  },
+  {
+    "file": "upstream/ragflow__internal__entity__memory.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/entity/memory.go",
+    "sha256": "2be9264ad48ab0733b5bbd232977317b02987c438ad7b39d39c740743183c648",
+    "bytes": 2801
+  },
+  {
+    "file": "upstream/ragflow__internal__entity__memory_task.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/entity/memory_task.go",
+    "sha256": "7e91fbef687a37c5d467a2d93c6984ce220491730f5834b03f7da9b801eac0a1",
+    "bytes": 2552
+  },
+  {
+    "file": "upstream/ragflow__internal__handler__memory.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/handler/memory.go",
+    "sha256": "563bb0543216e17d23179a17d54bf5cf5d3a026cdc25c35546407b8261d06445",
+    "bytes": 29094
+  },
+  {
+    "file": "upstream/ragflow__internal__handler__providers.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/handler/providers.go",
+    "sha256": "2c199648bb680e963dd6305167a4ec89e22e639c7867cd8afdf386a0181ebcb8",
+    "bytes": 50048
+  },
+  {
+    "file": "upstream/ragflow__internal__router__router.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/router/router.go",
+    "sha256": "15766e84b892b0226f639f1aff895e9a8862cac16b14b1bc4a2fa99e9cd83a26",
+    "bytes": 34853
+  },
+  {
+    "file": "upstream/ragflow__internal__service__memory.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/service/memory.go",
+    "sha256": "8579d730c27d8b74a462a290276ff4aebb910d713d505eae0a6e15c65d22660e",
+    "bytes": 70332
+  },
+  {
+    "file": "upstream/ragflow__internal__service__memory_message_service.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/service/memory_message_service.go",
+    "sha256": "77edcee83ed6d348b57d6ca23c27df5b8dc60aa7fb8e3038e9e386566061a486",
+    "bytes": 14222
+  },
+  {
+    "file": "upstream/ragflow__internal__service__model_service.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/service/model_service.go",
+    "sha256": "739f8b72cd61176dc4065c99be548fb2d86f6811cdac578a4948960e5801d4a7",
+    "bytes": 130114
+  },
+  {
+    "file": "upstream/ragflow__internal__engine__elasticsearch__chunk.go",
+    "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/engine/elasticsearch/chunk.go",
+    "sha256": "cc4addbe6906e2af5b10a7e968f19e6138301210f34580805eaa3c833284054a",
+    "bytes": 99909
+  }
+]

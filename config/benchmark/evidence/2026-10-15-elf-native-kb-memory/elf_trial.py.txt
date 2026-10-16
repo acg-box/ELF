@@ -1,0 +1,301 @@
+"""Append ELF to the frozen native comparison; no oracle-driven retrieval."""
+from __future__ import annotations
+
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import time
+
+import trial
+
+REPO = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parent / 'elf-appendix'
+sys.path.insert(0, str(REPO / 'scripts'))
+from benchmark_budget import totals
+from benchmark_pilot.runtime import Runtime, port
+
+LEDGER = REPO / 'tmp/elf-real-project-pilot/budget-ledger.json'
+
+
+def save(name, value):
+    p = ROOT / name
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(value, ensure_ascii=False, indent=2) + '\n')
+    p.chmod(0o600)
+    return value
+
+
+def read(name):
+    return json.loads((ROOT / name).read_text())
+
+
+def event(name, **values):
+    row = {'event': name, 'time': time.time(), **values}
+    with (ROOT / 'events.jsonl').open('a') as f:
+        f.write(json.dumps(row) + '\n')
+    print(json.dumps(row), flush=True)
+
+
+def usage():
+    data = json.loads(LEDGER.read_text())
+    paid, exposure = totals(data)
+    return {'paid_usd': paid, 'exposure_usd': exposure, 'requests': len(data['requests'])}
+
+
+def prepare(scope):
+    base = ROOT / scope
+    base.mkdir(parents=True, exist_ok=True)
+    if not (base / 'runtime.json').exists():
+        save(scope + '/runtime.json', {'owner': 'elf-native-20261015-' + scope,
+            **{x + '_port': port() for x in ('pg', 'qdrant', 'http', 'admin', 'mcp')}})
+    protocol = trial.read('protocol.json')
+    protocol.update(reuse_receipts=[str(trial.ROOT / 'receipts' / phase)
+                                   for phase in ('calibration', 'formal')],
+                    frozen_extraction=False)
+    save(scope + '/fixture/protocol.json', protocol)
+    shutil.copyfile(REPO / 'tmp/elf-real-project-pilot/tokenizer.json', base / 'tokenizer.json')
+    return Runtime(base, REPO)
+
+
+def put(rt, scope, kind, item):
+    eid = item['evidence_id']
+    path = f'{scope}/ingest/{kind}-{eid}-source.json'
+    if (ROOT / path).exists():
+        return read(path)['response']
+    now = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    ts = item.get('timestamp', now)
+    doc_type = 'knowledge' if kind == 'knowledge' else 'chat'
+    origin = {'schema': 'doc_source_ref/v1', 'doc_type': doc_type, 'ts': ts,
+        'source_kind': 'text_export' if kind == 'knowledge' else 'chat_excerpt',
+        'canonical_uri': f'urn:elf-native-comparison:{scope}:{kind}:{eid}',
+        'captured_at': now, 'trust_label': 'user_captured'}
+    if 'timestamp' in item:
+        origin['source_created_at'] = item['timestamp']
+    if kind == 'memory':
+        origin.update(thread_id=eid, role='user')
+    body = {'scope': 'agent_private', 'doc_type': doc_type, 'title': eid,
+            'source_ref': origin, 'content': item['text']}
+    start = time.monotonic()
+    response = rt.api('/v2/docs', body)
+    rt.drain()
+    save(path, {'request': body, 'response': response, 'seconds': time.monotonic() - start})
+    event('source_stored', scope=scope, kind=kind, evidence_id=eid, usage=usage())
+    return response
+
+
+def add_memory(rt, scope, item):
+    eid = item['evidence_id']
+    name = f'{scope}/ingest/memory-{eid}-extraction.json'
+    if (ROOT / name).exists():
+        return
+    attempt = f'{scope}/ingest/memory-{eid}-attempt.json'
+    if (ROOT / attempt).exists():
+        raise RuntimeError('Unresolved extraction; inspect before resending: ' + eid)
+    doc = put(rt, scope, 'memory', item)
+    body = {'scope': 'agent_private', 'dry_run': False, 'messages': [{
+        'role': 'user', 'content': item['text'], 'ts': item['timestamp'], 'msg_id': eid,
+        'source_document': {'doc_id': doc['doc_id'], 'content_hash': doc['content_hash'],
+                            'position': {'start': 0, 'end': len(item['text'].encode())}}}]}
+    before, start = usage(), time.monotonic()
+    save(attempt, {'request': body, 'before': before})
+    response = rt.api('/v2/events/ingest', body)
+    rt.drain()
+    save(name, {'response': response, 'seconds': time.monotonic() - start,
+                'before': before, 'after': usage()})
+    event('memory_extracted', scope=scope, evidence_id=eid, response=response, usage=usage())
+
+
+def contexts(rt, question):
+    # Filter by native document type: later chat originals are source evidence,
+    # not additional knowledge-search candidates. Both named projects share scope.
+    kb = rt.api('/v2/docs/search/l0', {'query': question, 'doc_type': 'knowledge',
+                 'top_k': 6, 'candidate_k': 60, 'explain': True})
+    memory = rt.api('/v2/searches', {'mode': 'planned_search', 'query': question,
+                   'top_k': 6, 'candidate_k': 60})
+    output, hydrated, seen = [], [], set()
+    for hit in kb['items']:
+        if hit['chunk_id'] in seen:
+            continue
+        seen.add(hit['chunk_id'])
+        if len(seen) > 6:
+            break
+        source = rt.api('/v2/docs/excerpts', {'doc_id': hit['doc_id'],
+                       'chunk_id': hit['chunk_id'], 'level': 'L1', 'max_bytes': 8192})
+        hydrated.append(source)
+        output.append({'handle': source['reference'], 'kind': 'knowledge_chunk',
+            'text': source['excerpt'], 'metadata': {'doc_id': hit['doc_id'],
+            'chunk_id': hit['chunk_id'], 'verification': source['verification']}})
+    ids = list(dict.fromkeys(x['note_id'] for x in memory['items']))[:6]
+    pack = rt.api('/v2/evidence/pack', {'note_ids': ids,
+        'max_source_bytes': 32768, 'max_bytes': 32768}) if ids else {
+        'notes': [], 'sources': [], 'complete': True, 'omitted_note_ids': []}
+    for note in pack['notes']:
+        output.append({'handle': 'elf:note:' + note['note_id'], 'kind': 'memory',
+            'text': note['text'], 'metadata': {k: v for k, v in note.items() if k != 'text'}})
+    for source in pack['sources']:
+        output.append({'handle': source['reference'], 'kind': 'memory_raw_source',
+            'text': source['text'], 'metadata': {k: v for k, v in source.items()
+                                                if k not in ('text', 'reference')}})
+    return output, {'knowledge': kb, 'memory': memory, 'hydrated': hydrated, 'pack': pack}
+
+
+def answer(rt, scope, phase, case):
+    # Same reader prompt, request, context packing, and quote checks as trial.answer.
+    cid = case['case_id']
+    name = f'answers/elf-{scope}-{phase}-{cid}.json'
+    if (ROOT / name).exists():
+        raise RuntimeError('Refuse to repeat an already scored answer: ' + name)
+    start = time.monotonic()
+    candidates, native = contexts(rt, case['question'])
+    retrieval_seconds = time.monotonic() - start
+    save(f'native/elf-{scope}-{phase}-{cid}-retrieval.json', native)
+    accepted, dropped, used, handles = [], [], 0, set()
+    for item in candidates:
+        if item['handle'] in handles:
+            continue
+        size = len(json.dumps(item, ensure_ascii=False).encode())
+        if used + size > 32768:
+            dropped.append({'handle': item['handle'], 'bytes': size})
+        else:
+            accepted.append(item)
+            handles.add(item['handle'])
+            used += size
+    evidence = {'question': case['question'], 'evidence': accepted}
+    save(f'contexts/elf-{scope}-{phase}-{cid}.json', evidence)
+    response = trial.request(os.environ['OPENAI_BASE_URL'] + '/chat/completions', 'POST',
+        {'model': trial.CHAT, 'messages': [{'role': 'system', 'content': trial.READER_PROMPT},
+         {'role': 'user', 'content': json.dumps(evidence, ensure_ascii=False)}],
+         'response_format': {'type': 'json_object'}, 'max_tokens': 128000},
+        {'Authorization': 'Bearer ' + os.environ['OPENAI_API_KEY']})
+    save(f'native/elf-{scope}-{phase}-{cid}-reader.json', response)
+    content = response['choices'][0]['message']['content']
+    try:
+        parsed = json.loads(content)
+    except json.JSONDecodeError:
+        parsed = {'answer': content, 'citations': [], 'format_error': True}
+    sources = {x['handle']: x['text'] for x in accepted}
+    citations = parsed.get('citations', [])
+    checks = [{'handle': x.get('handle'), 'quote_bound': bool(x.get('quote')) and
+               x.get('quote', '') in sources.get(x.get('handle'), '')} for x in citations]
+    result = {'product': 'elf', 'scope': scope, 'phase': phase, 'case_id': cid,
+        'question': case['question'], 'answer': parsed, 'citation_checks': checks,
+        'retrieval_seconds': round(retrieval_seconds, 3),
+        'total_seconds': round(time.monotonic() - start, 3), 'context_bytes': used,
+        'context_entries': len(accepted), 'dropped': dropped,
+        'usage': response.get('usage'), 'finish_reason': response['choices'][0].get('finish_reason')}
+    save(name, result)
+    claims = []
+    for citation in citations:
+        handle, quote = citation.get('handle', ''), citation.get('quote', '')
+        if handle.startswith('elf-source-v1/'):
+            _, doc, content_hash, _, _ = handle.split('/')
+            native_citation = {'kind': 'source', 'doc_id': doc,
+                               'content_hash': content_hash, 'quote': quote}
+        elif handle.startswith('elf:note:'):
+            native_citation = {'kind': 'note', 'note_id': handle[len('elf:note:'):], 'quote': quote}
+        else:
+            continue
+        claims.append({'text': quote, 'state': 'supported', 'citations': [native_citation]})
+    if claims:
+        save(f'native/elf-{scope}-{phase}-{cid}-bindings.json', rt.api('/v2/evidence/check', {'claims': claims}))
+    event('answer_saved', scope=scope, phase=phase, case_id=cid,
+          contexts=len(accepted), all_quotes_bound=bool(checks) and all(x['quote_bound'] for x in checks), usage=usage())
+
+
+def snapshot(rt, scope, label):
+    tables = {}
+    for table in ('memory_notes', 'memory_note_versions', 'memory_ingest_decisions',
+                  'doc_documents', 'graph_entities', 'graph_facts'):
+        tables[table] = json.loads(rt.sql(f"SELECT COALESCE(json_agg(t),'[]'::json) FROM {table} t"))
+    vectors = {}
+    for table in ('doc_chunk_embeddings', 'note_embeddings', 'note_chunk_embeddings', 'note_field_embeddings'):
+        rows = json.loads(rt.sql(f"SELECT COALESCE(json_agg(t),'[]'::json) FROM (SELECT embedding_dim, count(*) FROM {table} GROUP BY embedding_dim) t"))
+        assert all(x['embedding_dim'] == 4096 for x in rows), (table, rows)
+        vectors[table] = rows
+    save(f'{scope}/snapshot-{label}.json', {'tables': tables, 'vectors': vectors})
+
+
+def audit(rt, scope, inputs):
+    result = {'knowledge_originals': [], 'raw_messages': [], 'derived_lineage': []}
+    knowledge = inputs['knowledge'] if scope == 'formal' else inputs['calibration']['knowledge']
+    memories = inputs['memory_initial'] + inputs['memory_updates'] if scope == 'formal' else inputs['calibration']['memory']
+    for kind, rows, key in [('knowledge', knowledge, 'knowledge_originals'),
+                            ('memory', memories, 'raw_messages')]:
+        for item in rows:
+            doc = read(f'{scope}/ingest/{kind}-{item["evidence_id"]}-source.json')['response']
+            metadata = rt.api('/v2/docs/' + doc['doc_id'])
+            source = rt.api('/v2/docs/excerpts', {'doc_id': doc['doc_id'], 'level': 'L1',
+                'position': {'start': 0, 'end': len(item['text'].encode())}, 'max_bytes': 8192})
+            save(f'{scope}/audit/{kind}-{item["evidence_id"]}.json', {'metadata': metadata, 'source': source})
+            result[key].append({'evidence_id': item['evidence_id'], 'doc_id': doc['doc_id'],
+                'exact_utf8_original': source['excerpt'].encode() == item['text'].encode(),
+                'hash_unchanged': source['verification']['content_hash'] == doc['content_hash'],
+                'native_verified': source['verification']['verified'],
+                'input_sha256': hashlib.sha256(item['text'].encode()).hexdigest(),
+                'readback_sha256': hashlib.sha256(source['excerpt'].encode()).hexdigest()})
+    notes = json.loads(rt.sql("SELECT COALESCE(json_agg(t),'[]'::json) FROM (SELECT note_id,status,source_ref FROM memory_notes) t"))
+    for note in notes:
+        evidence = rt.api('/v2/notes/' + note['note_id'] + '/evidence')
+        save(f'{scope}/audit/note-{note["note_id"]}.json', evidence)
+        result['derived_lineage'].append({'note_id': note['note_id'], 'status': note['status'],
+            'complete': evidence['complete'], 'source_count': len(evidence['sources']),
+            'sources_verified': bool(evidence['sources']) and all(x['excerpt']['verification']['verified'] for x in evidence['sources'])})
+    save(f'audit-{scope}-elf.json', result)
+    event('audit_complete', scope=scope, source_checks={k: [sum(x['exact_utf8_original'] for x in result[k]), len(result[k])] for k in ('knowledge_originals', 'raw_messages')}, notes=len(notes))
+
+
+def run(scope):
+    inputs, protocol = trial.read('inputs.json'), trial.read('protocol.json')
+    for field, path in [('input_sha256', 'inputs.json'), ('oracle_sha256', 'oracle.json')]:
+        assert hashlib.sha256((trial.ROOT / path).read_bytes()).hexdigest() == protocol[field]
+    # Only the oracle digest is checked. The ingestion, retrieval, and reader never read its contents.
+    rt = prepare(scope)
+    save(f'{scope}-opening-ledger.json', json.loads(LEDGER.read_text()))
+    start = time.monotonic()
+    try:
+        rt.start()
+        event('runtime_ready', scope=scope, seconds=round(time.monotonic() - start, 3))
+        selected = inputs if scope == 'formal' else inputs['calibration']
+        for item in selected['knowledge']:
+            put(rt, scope, 'knowledge', item)
+        for item in selected['memory_initial'] if scope == 'formal' else selected['memory']:
+            add_memory(rt, scope, item)
+        snapshot(rt, scope, 'initial')
+        if scope == 'calibration':
+            answer(rt, scope, scope, {'case_id': 'calibration', 'question': selected['question']})
+        else:
+            for case in inputs['pre_update_queries']:
+                answer(rt, scope, 'pre', case)
+            for item in inputs['memory_updates']:
+                add_memory(rt, scope, item)
+            snapshot(rt, scope, 'before-restart')
+            rt.drain()
+            rt.close()
+            rt = prepare(scope)
+            restarted = time.monotonic()
+            rt.start()
+            event('runtime_restarted', scope=scope, seconds=round(time.monotonic() - restarted, 3))
+            for case in inputs['post_update_queries']:
+                answer(rt, scope, 'post', case)
+        rt.drain()
+        audit(rt, scope, inputs)
+        snapshot(rt, scope, 'final')
+        backup = ROOT / scope / 'postgres.dump'
+        with backup.open('wb') as f:
+            subprocess.run(['docker', 'exec', rt.owner + '-db', 'pg_dump', '-U', 'postgres', '-d', 'elf', '-Fc'], stdout=f, check=True)
+        backup.chmod(0o600)
+        save(f'{scope}-completed.json', {'seconds': time.monotonic() - start, 'usage': usage()})
+    finally:
+        rt.close()
+        save(f'{scope}-closing-ledger.json', json.loads(LEDGER.read_text()))
+
+
+if __name__ == '__main__':
+    ROOT.mkdir(parents=True, exist_ok=True)
+    assert 'OPENROUTER_API_KEY' not in os.environ
+    run(sys.argv[1])

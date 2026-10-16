@@ -1,0 +1,27 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "dry_run": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+        "ts": "2026-08-01T12:00:00Z",
+        "msg_id": "m_c558d1541c4b9d0f",
+        "source_document": {
+          "doc_id": "d17f946a-c663-5c4d-99e6-b6985f2ad1da",
+          "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "position": {
+            "start": 0,
+            "end": 124
+          }
+        }
+      }
+    ]
+  },
+  "before": {
+    "paid_usd": 2.0012592160000002,
+    "exposure_usd": 2.073439915999998,
+    "requests": 4551
+  }
+}

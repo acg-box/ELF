@@ -1,0 +1,59 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-3",
+  "question": "Who is the appointed budget owner for Ivo's Cobalt project as of August 22?",
+  "answer": {
+    "answer": "As of August 22, no budget owner had been appointed for Ivo’s Cobalt project.",
+    "citations": [
+      {
+        "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+        "quote": "No budget owner has been appointed."
+      },
+      {
+        "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+        "quote": "2026-08-22. Ivo reviewed Cobalt."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "quote_bound": true
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 16.634,
+  "total_seconds": 20.638,
+  "context_bytes": 6537,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 2278,
+    "completion_tokens": 111,
+    "total_tokens": 2389,
+    "cost": 0.000340175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 2275,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000340175,
+      "upstream_inference_prompt_cost": 0.000284675,
+      "upstream_inference_completions_cost": 5.55e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

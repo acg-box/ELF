@@ -1,0 +1,75 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-0-0",
+  "question": "As of August 22, what delivery mode and retry policy apply to Mara's Larch project?",
+  "answer": {
+    "answer": "As of August 22, Mara’s retry policy is RETRY-0-907, superseding RETRY-0-108. The delivery mode cannot be determined from the supplied evidence: Larch began with BATCH-0-741, and no delivery-mode change was approved on August 8, but Mara’s August 22 instruction refers to an August 15 delivery choice that is not identified here.",
+    "citations": [
+      {
+        "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+        "quote": "The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+      },
+      {
+        "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+        "quote": "They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108."
+      },
+      {
+        "handle": "ragflow:document:95244f4933ba4a2bb8c270eecf201f4a:chunk:422cd16eee930caa",
+        "quote": "No change of delivery mode was approved at this meeting."
+      },
+      {
+        "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+        "quote": "Keep the August 15 delivery choice."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:document:95244f4933ba4a2bb8c270eecf201f4a:chunk:422cd16eee930caa",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 16.467,
+  "total_seconds": 23.519,
+  "context_bytes": 4727,
+  "context_entries": 12,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1829,
+    "completion_tokens": 526,
+    "total_tokens": 2355,
+    "cost": 0.00049155,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1826,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00049155,
+      "upstream_inference_prompt_cost": 0.00022855,
+      "upstream_inference_completions_cost": 0.000263
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 215,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

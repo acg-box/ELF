@@ -1,0 +1,156 @@
+{
+  "budget": {
+    "ceiling_usd": 10,
+    "opening_paid_usd": 1.9654241360000007,
+    "trial_paid_usd": 0.034940264999999915,
+    "paid_total_usd": 2.0003644010000006,
+    "conservative_exposure_total_usd": 2.0725451009999984,
+    "remaining_conservative_usd": 7.9274548990000016,
+    "requests": 367,
+    "states": {
+      "completed": 366,
+      "provider_failed": 1
+    },
+    "tokens": {
+      "prompt_tokens": 211989,
+      "completion_tokens": 42426,
+      "total_tokens": 254415
+    },
+    "by_kind": {
+      "chat": {
+        "requests": 80,
+        "paid_usd": 0.034681675
+      },
+      "embedding": {
+        "requests": 287,
+        "paid_usd": 0.00025859
+      }
+    }
+  },
+  "products": {
+    "ragflow": {
+      "answers_completed": 13,
+      "correct": 11,
+      "answers_reviewed": 13,
+      "by_lane": {
+        "combined_knowledge_memory": {
+          "correct": 0,
+          "total": 1
+        },
+        "document_exceptions": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_table": {
+          "correct": 1,
+          "total": 1
+        },
+        "updates": {
+          "correct": 1,
+          "total": 2
+        },
+        "cross_session": {
+          "correct": 2,
+          "total": 2
+        },
+        "temporal": {
+          "correct": 4,
+          "total": 4
+        },
+        "abstention": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "query_mean_seconds": 16.363923076923076,
+      "query_median_seconds": 18.474,
+      "context_mean_bytes": 4433.2307692307695,
+      "context_max_bytes": 5128,
+      "dropped_entries": 0,
+      "quote_bindings": {
+        "pass": 26,
+        "total": 26
+      },
+      "formal_paid_usd": 0.006921865000000027,
+      "formal_requests": 77,
+      "source_readback": {
+        "knowledge_originals": {
+          "pass": 6,
+          "total": 6
+        },
+        "raw_messages": {
+          "pass": 8,
+          "total": 8
+        }
+      },
+      "derived_parent_bindings": {
+        "pass": 21,
+        "total": 21
+      },
+      "identifier_coverage_correct": 11
+    },
+    "openviking": {
+      "answers_completed": 13,
+      "correct": 11,
+      "answers_reviewed": 13,
+      "by_lane": {
+        "combined_knowledge_memory": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_exceptions": {
+          "correct": 1,
+          "total": 1
+        },
+        "document_table": {
+          "correct": 1,
+          "total": 1
+        },
+        "updates": {
+          "correct": 1,
+          "total": 2
+        },
+        "cross_session": {
+          "correct": 1,
+          "total": 2
+        },
+        "temporal": {
+          "correct": 4,
+          "total": 4
+        },
+        "abstention": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "query_mean_seconds": 23.619,
+      "query_median_seconds": 21.457,
+      "context_mean_bytes": 9468,
+      "context_max_bytes": 11592,
+      "dropped_entries": 0,
+      "quote_bindings": {
+        "pass": 30,
+        "total": 30
+      },
+      "formal_paid_usd": 0.02426141499999912,
+      "formal_requests": 205,
+      "source_readback": {
+        "knowledge_originals": {
+          "pass": 6,
+          "total": 6
+        },
+        "raw_messages": {
+          "pass": 8,
+          "total": 8
+        }
+      },
+      "native_archive_memory_operations": 23,
+      "identifier_coverage_correct": 12
+    }
+  },
+  "returned_embedding_dimensions": {
+    "4096": 299
+  },
+  "scoring_note": "Complete-answer review checks the relations and temporal qualifications asked in the unchanged questions. Identifier coverage is kept separate. Quote binding is not semantic entailment.",
+  "speed_comparison_allowed": false
+}

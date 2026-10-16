@@ -1,0 +1,58 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "chat",
+    "title": "m_d6297f549707f98d",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "chat",
+      "ts": "2026-08-22T12:00:00Z",
+      "source_kind": "chat_excerpt",
+      "canonical_uri": "urn:elf-native-comparison:formal:memory:m_d6297f549707f98d",
+      "captured_at": "2026-10-16T03:02:41.402639+00:00",
+      "trust_label": "user_captured",
+      "source_created_at": "2026-08-22T12:00:00Z",
+      "thread_id": "m_d6297f549707f98d",
+      "role": "user"
+    },
+    "content": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 237,
+    "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+    "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+    "request_id": "41b66caf-2872-452a-b82c-0696cf7b341c",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:02:41.402639+00:00",
+      "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:02:41.402639+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:memory:m_d6297f549707f98d",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+      "source_spans": [
+        {
+          "chunk_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+          "chunk_id": "0bfd5bdd-a198-5963-a7ff-aaac99b0abcb",
+          "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+          "end_offset": 237,
+          "schema": "doc_source_span/v1",
+          "span_id": "6c8188d2-bacf-552f-8cb6-87f41483a966",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "chat_excerpt",
+      "title": "m_d6297f549707f98d",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 2.448514791999969
+}

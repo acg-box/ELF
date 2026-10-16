@@ -1,0 +1,58 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "doc_type": "chat",
+    "title": "m_d7a9d1f22107f233",
+    "source_ref": {
+      "schema": "doc_source_ref/v1",
+      "doc_type": "chat",
+      "ts": "2026-08-08T12:00:00Z",
+      "source_kind": "chat_excerpt",
+      "canonical_uri": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+      "captured_at": "2026-10-16T03:01:30.524145+00:00",
+      "trust_label": "user_captured",
+      "source_created_at": "2026-08-08T12:00:00Z",
+      "thread_id": "m_d7a9d1f22107f233",
+      "role": "user"
+    },
+    "content": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+  },
+  "response": {
+    "chunk_count": 1,
+    "content_bytes": 205,
+    "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+    "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+    "request_id": "b326f060-ec51-4afa-ba04-2f01023b39e0",
+    "source_capture": {
+      "captured_at": "2026-10-16T03:01:30.524145+00:00",
+      "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+      "lifecycle": {
+        "actor_agent_id": "pilot",
+        "freshness": "current",
+        "reason_code": "SOURCE_CAPTURED",
+        "schema": "elf.source_lifecycle/v1",
+        "status": "active",
+        "ts": "2026-10-16T03:01:30.524145+00:00"
+      },
+      "origin": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+      "schema": "doc_source_capture/v1",
+      "source_record_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+      "source_spans": [
+        {
+          "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "chunk_id": "2152fa12-c3f4-5905-9443-af6fe4782da7",
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "end_offset": 205,
+          "schema": "doc_source_span/v1",
+          "span_id": "d7715191-3931-5102-a2ba-a95876be5508",
+          "start_offset": 0,
+          "status": "captured"
+        }
+      ],
+      "source_type": "chat_excerpt",
+      "title": "m_d7a9d1f22107f233",
+      "visibility_scope": "agent_private"
+    }
+  },
+  "seconds": 1.3356031250000342
+}

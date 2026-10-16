@@ -1,0 +1,998 @@
+[
+  {
+    "phase": "post",
+    "case_id": "combined-001",
+    "original_answer_sha256": "e72640c4369c321596ca1ac3b309d7c6e0e14c653ee56419f7125df834f918fd",
+    "answer": {
+      "text": "As of August 22, Mara’s Larch project uses STREAM-0-286 delivery and retry policy RETRY-0-907. The two exception identifiers in the signed Kestrel-0 return policy are CUSTOM-0-7c2 and DEFECT-0-9b4.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+              "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286."
+            }
+          ]
+        },
+        {
+          "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+            }
+          ]
+        },
+        {
+          "text": "The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+              "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+              "quote": "The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+              "kind": "source",
+              "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "kind": "source",
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 2,
+          "resolved_citations": [
+            {
+              "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+              "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+              "kind": "source",
+              "quote": "The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+            }
+          ]
+        }
+      ],
+      "request_id": "af313778-37e5-4c59-8013-e20add77ff40",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-000",
+    "original_answer_sha256": "e5796e6193019cb98566e107e44292ef6e8d0a565aa15a104739967bdca23d2b",
+    "answer": {
+      "text": "CUSTOM-0-7c2 and DEFECT-0-9b4.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+              "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+              "quote": "custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+              "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+              "kind": "source",
+              "quote": "custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4"
+            }
+          ]
+        }
+      ],
+      "request_id": "6f65b8a8-2969-4499-9735-225bae187356",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "doc-001",
+    "original_answer_sha256": "a3090b6bf100133cd7cac20da4bf5adf729d426445e6f2aa190270c3e6b26363",
+    "answer": {
+      "text": "The approved queue for Kestrel-0’s South region is SOUTH-0-3e5.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "South | 12 hours | SOUTH-0-3e5",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+              "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+              "quote": "South | 12 hours | SOUTH-0-3e5"
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+              "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+              "kind": "source",
+              "quote": "South | 12 hours | SOUTH-0-3e5"
+            }
+          ]
+        }
+      ],
+      "request_id": "b1085079-efda-4b0e-84c7-ca89fa8d5075",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-0",
+    "original_answer_sha256": "0b475ceee52a20b6c299de973cce9362168dbcad2b9da60358983e5c52f38a56",
+    "answer": {
+      "text": "As of August 22, Mara’s Larch project uses STREAM-0-286, and its retry policy is RETRY-0-907, which superseded RETRY-0-108.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+              "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "quote": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286."
+            }
+          ]
+        },
+        {
+          "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+              "kind": "source",
+              "quote": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "kind": "source",
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108."
+            }
+          ]
+        }
+      ],
+      "request_id": "8b881514-35eb-496f-bc74-1127677e8a34",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-1",
+    "original_answer_sha256": "8411780b99b90977947dc9fa9209c6649241df02f0cade359a1e66defe8769b4",
+    "answer": {
+      "text": "Mara should use REPLAY-0-632 for Larch’s next outage: it was tested on August 8 and restored the missing updates, and the August 22 review says to use the recovery procedure validated then. The delivery-mode change was attributed to GATE-0-519 outages: on August 15, Mara approved switching Larch from BATCH-0-741 to STREAM-0-286 because of those outages.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "The team tested REPLAY-0-632, which restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+              "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "quote": "The team tested REPLAY-0-632, which restored the missing updates."
+            }
+          ]
+        },
+        {
+          "text": "For the next outage, use the recovery procedure validated on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "quote": "For the next outage, use the recovery procedure validated on August 8."
+            }
+          ]
+        },
+        {
+          "text": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8;",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+              "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8;"
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+              "kind": "source",
+              "quote": "The team tested REPLAY-0-632, which restored the missing updates."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "kind": "source",
+              "quote": "For the next outage, use the recovery procedure validated on August 8."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 2,
+          "resolved_citations": [
+            {
+              "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+              "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+              "kind": "source",
+              "quote": "Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8;"
+            }
+          ]
+        }
+      ],
+      "request_id": "98ed8138-4195-4896-ba6d-2ccae6f535c5",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-2",
+    "original_answer_sha256": "6cafd79a529dd6b43df04e3945db15e24793cc476e89d51cbedf6a0a91870676",
+    "answer": {
+      "text": "BATCH-0-741 batch delivery remained approved; no delivery-mode change was approved at the August 8 meeting.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "They chose BATCH-0-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+              "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+              "quote": "They chose BATCH-0-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "text": "No change of delivery mode was approved at this meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+              "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "quote": "No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+              "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+              "kind": "source",
+              "quote": "They chose BATCH-0-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+              "kind": "source",
+              "quote": "No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ],
+      "request_id": "712042e0-bd29-42c3-8548-4c174528b947",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-0-3",
+    "original_answer_sha256": "d5453d85102663f773f3ae3867bb234a393d80b9656149894650aab69ca1e675",
+    "answer": {
+      "text": "No budget owner had been appointed for Mara’s Larch project as of August 22.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+              "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+              "kind": "source",
+              "quote": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+            }
+          ]
+        }
+      ],
+      "request_id": "91682631-2dfd-4708-8fa9-15e6ed4d812f",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-0",
+    "original_answer_sha256": "888a1c17ac0e44bb33602d3a961d3206f478ed49e53a77b1b4f6c59b61af8988",
+    "accepted": true,
+    "draft_answer": {
+      "text": "As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Keep the August 15 delivery choice. ... The retry policy is now RETRY-1-907, superseding RETRY-1-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "quote": "Keep the August 15 delivery choice. ... The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+            }
+          ]
+        },
+        {
+          "text": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+              "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+              "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "kind": "source",
+              "quote": "Keep the August 15 delivery choice."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+              "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+              "kind": "source",
+              "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 2,
+          "resolved_citations": [
+            {
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "kind": "source",
+              "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+            }
+          ]
+        }
+      ],
+      "request_id": "af13ea73-06be-4328-ab59-daa96414ef1b",
+      "semantic_support": "not_evaluated"
+    },
+    "repair_calls": 1,
+    "answer": {
+      "text": "As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "Keep the August 15 delivery choice.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "quote": "Keep the August 15 delivery choice."
+            }
+          ]
+        },
+        {
+          "text": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+              "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+              "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+            }
+          ]
+        },
+        {
+          "text": "The retry policy is now RETRY-1-907, superseding RETRY-1-108.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+            }
+          ]
+        }
+      ]
+    },
+    "repaired_reader_envelope": {
+      "answer": "As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.",
+      "citations": [
+        {
+          "handle": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+          "quote": "Keep the August 15 delivery choice."
+        },
+        {
+          "handle": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+          "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286."
+        },
+        {
+          "handle": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+          "quote": "The retry policy is now RETRY-1-907, superseding RETRY-1-108."
+        }
+      ]
+    }
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-1",
+    "original_answer_sha256": "f1d0948c3c978c449d3a732cdf40ce78ef32d9b7ee52a8cc59abbb74b8cb073a",
+    "answer": {
+      "text": "For Cobalt’s next outage, Ivo should use REPLAY-1-632, the procedure tested on August 8 that restored the missing updates. The delivery-mode change was prompted by GATE-1-519 outages: on August 15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "The team tested REPLAY-1-632, which restored the missing updates.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+              "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "quote": "The team tested REPLAY-1-632, which restored the missing updates."
+            }
+          ]
+        },
+        {
+          "text": "For the next outage, use the recovery procedure validated on August 8.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "quote": "For the next outage, use the recovery procedure validated on August 8."
+            }
+          ]
+        },
+        {
+          "text": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+              "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+              "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8"
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+              "kind": "source",
+              "quote": "The team tested REPLAY-1-632, which restored the missing updates."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "kind": "source",
+              "quote": "For the next outage, use the recovery procedure validated on August 8."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 2,
+          "resolved_citations": [
+            {
+              "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+              "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+              "kind": "source",
+              "quote": "Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8"
+            }
+          ]
+        }
+      ],
+      "request_id": "429e0576-bdd1-4f71-8997-e2d3c37dfced",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-2",
+    "original_answer_sha256": "4fe5539779e3c171cf536df40062bf6167328d0e4c29e47125304a9ff810d1dd",
+    "answer": {
+      "text": "BATCH-1-741 batch delivery remained approved; on August 8, no delivery-mode change was approved. REPLAY-1-632 was tested as a recovery procedure, not approved as a new delivery mode.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "They chose BATCH-1-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+              "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+              "quote": "They chose BATCH-1-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "text": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+              "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+              "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+              "kind": "source",
+              "quote": "They chose BATCH-1-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+              "kind": "source",
+              "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ],
+      "request_id": "30a490a2-ed30-4907-a710-fa821c33ee50",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "post",
+    "case_id": "memory-1-3",
+    "original_answer_sha256": "214cab9500ad0e7cf4a6797e368f4417af20e59ab14ab876e590f3173344a492",
+    "answer": {
+      "text": "No budget owner had been appointed for Ivo’s Cobalt project as of August 22.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "quote": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+              "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+              "kind": "source",
+              "quote": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+            }
+          ]
+        }
+      ],
+      "request_id": "98d40b7a-3d34-4073-982b-f2c5a949bbfc",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-0-2",
+    "original_answer_sha256": "522d4930fd23f640988eb2bfbba6f385f51a3cade91a286c0eb0c8e2e70f646a",
+    "answer": {
+      "text": "BATCH-0-741 for batch delivery remained approved; no change of delivery mode was approved at the August 8 meeting. REPLAY-0-632 was tested, not approved as a delivery-mode change.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "They chose BATCH-0-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+              "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+              "quote": "They chose BATCH-0-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "text": "The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+              "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "quote": "The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+              "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+              "kind": "source",
+              "quote": "They chose BATCH-0-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+              "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+              "kind": "source",
+              "quote": "The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ],
+      "request_id": "a2096d03-985c-4a7e-8e0c-384dd0ea2c88",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  },
+  {
+    "phase": "pre",
+    "case_id": "memory-1-2",
+    "original_answer_sha256": "68c8b3c21272790e20fa8d6170a3b066a1ec13248ae863db29600df71e51e4e3",
+    "answer": {
+      "text": "Batch delivery using BATCH-1-741 remained approved for Ivo’s Cobalt project; the August 8 meeting tested REPLAY-1-632, but approved no change in delivery mode.",
+      "supported": true,
+      "claims": [
+        {
+          "text": "They chose BATCH-1-741 for batch delivery.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+              "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+              "quote": "They chose BATCH-1-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "text": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+          "state": "supported",
+          "citations": [
+            {
+              "kind": "source",
+              "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+              "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ]
+    },
+    "claim_bindings": {
+      "claims": [
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 0,
+          "resolved_citations": [
+            {
+              "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+              "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+              "kind": "source",
+              "quote": "They chose BATCH-1-741 for batch delivery."
+            }
+          ]
+        },
+        {
+          "binding_verified": true,
+          "citation_verified": [
+            true
+          ],
+          "claim_index": 1,
+          "resolved_citations": [
+            {
+              "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+              "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+              "kind": "source",
+              "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+            }
+          ]
+        }
+      ],
+      "request_id": "415a4587-9ccc-47af-beb7-991fa61c0bf9",
+      "semantic_support": "not_evaluated"
+    },
+    "accepted": true,
+    "repair_calls": 0
+  }
+]

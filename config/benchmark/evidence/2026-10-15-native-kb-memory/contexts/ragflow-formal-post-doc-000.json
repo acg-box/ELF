@@ -1,0 +1,101 @@
+{
+  "question": "List both exception identifiers in the signed Kestrel-0 return policy.",
+  "evidence": [
+    {
+      "handle": "ragflow:document:1eb527ed80114d08b3a6a330b85991b0:chunk:5f612a1ed973221d",
+      "kind": "knowledge_chunk",
+      "text": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2\n quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-0-2d1 and has no authority.",
+      "metadata": {
+        "document_id": "1eb527ed80114d08b3a6a330b85991b0"
+      }
+    },
+    {
+      "handle": "ragflow:document:3c24f970a9124622a9820e38febee2fd:chunk:7ff75b3fe7ceaded",
+      "kind": "knowledge_chunk",
+      "text": "Kestrel-0 approved regional routing table. Columns are region, response window, queue.\nNorth | 4 hours | NORTH-0-6a8\nSouth | 12 hours | SOUTH-0-3e5\nRows are independent\n do not mix a region with another row.",
+      "metadata": {
+        "document_id": "3c24f970a9124622a9820e38febee2fd"
+      }
+    },
+    {
+      "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "document_id": "1f8934b0b894451dbb5d157df1eeac46"
+      }
+    },
+    {
+      "handle": "ragflow:document:60c7b04dd9a54820b17be95530bb5bda:chunk:814df48295aa88f7",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "document_id": "60c7b04dd9a54820b17be95530bb5bda"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:29",
+      "kind": "memory_semantic",
+      "text": "As of 2026-10-16, retry policy RETRY-1-907 supersedes RETRY-1-108.",
+      "metadata": {
+        "source_id": 28,
+        "session_id": "formal-m_4a54af2b364be476",
+        "valid_at": "2026-10-16 03:22:07",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:28",
+      "kind": "memory_raw_source",
+      "text": "User Input: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.\nAgent Response: Recorded.",
+      "metadata": {
+        "derived_from_hit": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:29"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:20",
+      "kind": "memory_semantic",
+      "text": "The retry policy is RETRY-0-907, which supersedes RETRY-0-108.",
+      "metadata": {
+        "source_id": 19,
+        "session_id": "formal-m_d6297f549707f98d",
+        "valid_at": "2026-10-16 03:21:27",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+      "kind": "memory_raw_source",
+      "text": "User Input: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.\nAgent Response: Recorded.",
+      "metadata": {
+        "derived_from_hit": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:20"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:9",
+      "kind": "memory_raw",
+      "text": "User Input: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.\nAgent Response: Recorded.",
+      "metadata": {
+        "source_id": 0,
+        "session_id": "formal-m_eb85892166acc8ef",
+        "valid_at": "2026-10-16 03:19:28",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:5",
+      "kind": "memory_raw",
+      "text": "User Input: 2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.\nAgent Response: Recorded.",
+      "metadata": {
+        "source_id": 0,
+        "session_id": "formal-m_c558d1541c4b9d0f",
+        "valid_at": "2026-10-16 03:18:37",
+        "invalid_at": null,
+        "status": true
+      }
+    }
+  ]
+}

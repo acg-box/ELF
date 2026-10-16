@@ -7,7 +7,7 @@ from pathlib import Path
 import time
 import urllib.request
 
-from benchmark_agent.answer import decode_answer, parse_claim_answer
+from benchmark_agent.answer import AnswerRejected, decode_answer, finalize_answer, parse_claim_answer
 
 BASELINE = Path(__file__).resolve().parent.parent / 'config/benchmark/evidence/2026-10-12-grounded-evidence'
 MODEL = 'deepseek/deepseek-v4.1-flash'
@@ -172,13 +172,15 @@ def main():
             raise RuntimeError('Preserved incomplete provider response: ' + key)
         content = choice['message'].get('content') or ''
         try:
-            answer = parse_claim_answer(content)
-            answer['status'] = 'completed'
+            draft = parse_claim_answer(content)
+            final = finalize_answer(draft, lambda path, body: api(args.api_base, auth, path, body))
+            answer = {**draft, **final['answer'], 'claim_bindings': final['claim_bindings'], 'status': 'completed'}
+        except AnswerRejected as error:
+            answer = {'draft_answer': draft, 'claim_bindings': error.bindings,
+                      'status': 'invalid_answer', 'error': str(error)}
         except ValueError as error:
             answer = {'text': content, 'claims': [], 'citations': [], 'supported': False, 'status': 'invalid_answer', 'error': str(error)}
         answer.update(query=query, expected=work['oracle'][key], seconds=elapsed, condition='evidence_pack')
-        if answer.get('claims'):
-            answer['claim_bindings'] = api(args.api_base, auth, '/v2/evidence/check', {'claims': answer['claims']})
         save(output, answer)
         count += 1
         print(json.dumps({'case_id': key, 'status': answer['status'], 'cost': response.get('usage', {}).get('cost')}), flush=True)

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "scope": "agent_private",
+    "dry_run": false,
+    "messages": [
+      {
+        "role": "user",
+        "content": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "ts": "2026-08-08T12:00:00Z",
+        "msg_id": "m_d7a9d1f22107f233",
+        "source_document": {
+          "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+          "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+          "position": {
+            "start": 0,
+            "end": 205
+          }
+        }
+      }
+    ]
+  },
+  "before": {
+    "paid_usd": 2.0017145960000007,
+    "exposure_usd": 2.0738952959999986,
+    "requests": 4555
+  }
+}

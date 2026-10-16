@@ -5,7 +5,7 @@ description: Integrate native recall, historical interpretation, and claim depen
 status: active
 authority: procedural
 owner: elf-service
-last_verified: 2026-10-15
+last_verified: 2026-10-16
 ---
 # Answer with complete source evidence chains
 
@@ -87,7 +87,14 @@ this sequence in `opening_tool`; it does not preload expected answers.
    the dependent binding fail. Repair the citation using an inspected source,
    then check the full chain again within the host's declared workflow budget.
    If evidence remains insufficient, report the gap. Do not fabricate a locator.
-5. Render each conclusion with its returned `resolved_citations`. A conclusion
+5. Require a native verdict for every claim and `binding_verified: true` on all
+   verdicts. A failed check blocks delivery even in the last workflow turn.
+   Missing checks and checker errors also block delivery. Keep the rejected
+   draft and diagnostics; allow correction only inside the existing call, time,
+   and cost budgets. If no budget remains, report validation failure without
+   presenting the draft as an accepted answer. Do not silently edit quotes or
+   remove failed citations. Check the complete corrected submission again.
+6. Render each conclusion with its returned `resolved_citations`. A conclusion
    can have sources inherited from several premises. Recheck semantic support
    yourself: `binding_verified` checks access and source integrity only.
 
@@ -133,10 +140,15 @@ For a tool-calling client, keep a conversation-local lookup such as
 that reader. Resolve handles before the native check; reject unknown handles.
 The reference HTTP host implements this in
 [`EvidenceHandles`](../../scripts/benchmark_pilot/evidence.py).
-Its host-local `submit_answer` tool checks the final text and claims object, then
-returns that same object for rendering. It does not ask the model to repeat long
+Its host-local `submit_answer` tool calls the shared
+[`finalize_answer`](../../scripts/benchmark_agent/answer.py) helper. That helper
+uses the existing native checker and returns an answer object only when all
+claim bindings pass. Tool submission and direct JSON output use this same gate.
+The host retains a rejected draft separately from the renderable answer, including
+on the final turn. It does not ask the model to repeat long
 hashes after verification. This tool is a client hook, not an ELF server endpoint.
-MCP hosts can apply the same policy around native tools.
+MCP hosts must apply the same gate around native tools. Publishing MCP instructions
+does not install an output hook into an external client's renderer.
 
 For intermediate checks, send all claim verdicts and dependency indices back to
 the model. Omit repeated `resolved_citations` source bodies from the model view

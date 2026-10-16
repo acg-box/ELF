@@ -1,0 +1,51 @@
+{
+  "product": "openviking",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "doc-001",
+  "question": "What is the approved queue for the South region of Kestrel-0?",
+  "answer": {
+    "answer": "The approved queue for the South region of Kestrel-0 is SOUTH-0-3e5.",
+    "citations": [
+      {
+        "handle": "viking://resources/formal/e_44d1d038212b769f1cefdbec/e_44d1d038212b769f1cefdbec.md",
+        "quote": "South | 12 hours | SOUTH-0-3e5"
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "viking://resources/formal/e_44d1d038212b769f1cefdbec/e_44d1d038212b769f1cefdbec.md",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 16.002,
+  "total_seconds": 18.623,
+  "context_bytes": 7765,
+  "context_entries": 10,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 2432,
+    "completion_tokens": 93,
+    "total_tokens": 2525,
+    "cost": 0.000350425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 2429,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000350425,
+      "upstream_inference_prompt_cost": 0.000303925,
+      "upstream_inference_completions_cost": 4.65e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

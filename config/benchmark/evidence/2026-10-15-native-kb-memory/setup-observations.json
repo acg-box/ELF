@@ -1,0 +1,74 @@
+[
+  {
+    "product": "ragflow",
+    "phase": "cold deployment",
+    "type": "readiness",
+    "detail": "The application started after the MySQL health check passed but the first database connection was refused. Starting the application again after database startup succeeded.",
+    "evidence": "ragflow-boot.log"
+  },
+  {
+    "product": "ragflow",
+    "phase": "calibration",
+    "type": "Infinity native memory integration failure",
+    "detail": "The release used the generic Infinity document mapping for a Memory store. Native message insertion failed because valid_at and message_id were not columns in that store. Knowledge ingestion succeeded. Preserve this as a release integration failure, not an Infinity vector-quality result.",
+    "evidence": [
+      "ragflow-calibration-infinity-state.json",
+      "upstream/ragflow__internal__engine__infinity__chunk.go",
+      "upstream/ragflow__internal__service__memory.go"
+    ]
+  },
+  {
+    "product": "ragflow",
+    "phase": "calibration",
+    "type": "OpenSearch runtime support mismatch",
+    "detail": "The release Compose file includes OpenSearch 2.19.1, but the Go migration/runtime rejected DOC_ENGINE=opensearch as not implemented. No model call was needed to identify the rejection.",
+    "evidence": [
+      "elf-unified-smoke-20261015-ragflow-cpu-1-recent.log",
+      "upstream/ragflow__docker__docker-compose-base.yml"
+    ]
+  },
+  {
+    "product": "ragflow",
+    "phase": "calibration",
+    "type": "supported backend resolution",
+    "detail": "The official default Elasticsearch 8.11.3 supports both tested native paths. Its knowledge and Memory mappings both use dense_vector dimensions=4096. No product source patch was applied.",
+    "evidence": [
+      "native/ragflow-es-mappings.json",
+      "calibration-result.json"
+    ]
+  },
+  {
+    "product": "ragflow",
+    "phase": "readiness",
+    "type": "application health boundary",
+    "detail": "The version endpoint was available before the admin/license heartbeat. The trial now waits for an authenticated native Memory list request before ingestion or restart acceptance.",
+    "evidence": "trial.py"
+  },
+  {
+    "product": "openviking",
+    "phase": "setup",
+    "type": "client configuration correction",
+    "detail": "The correct release Docker tag is v0.5.0. The first server configuration was rejected because dev authentication cannot bind to 0.0.0.0. The trial enabled native API-key authentication, created an account and scoped admin user, and used the issued user key for data operations.",
+    "evidence": [
+      "openviking-pull.log",
+      "upstream/OpenViking__docs__en__api__08-admin.md"
+    ]
+  },
+  {
+    "product": "openviking",
+    "phase": "calibration",
+    "type": "cold account indexing",
+    "detail": "Native namespace initialization queued directory-description embeddings before the first resource completed. Preserve cold setup time separately; all provider calls remained within the budget.",
+    "evidence": [
+      "native/ov-observer-queue.json",
+      "openviking-calibration-state.json"
+    ]
+  },
+  {
+    "product": "openviking",
+    "phase": "before formal ingestion",
+    "type": "native timestamp input mapping",
+    "detail": "The fixed historical input timestamp is passed into the documented created_at field. The initial calibration attempt used import time and remains preserved. No formal answer was rerun.",
+    "evidence": "formal-method.json"
+  }
+]

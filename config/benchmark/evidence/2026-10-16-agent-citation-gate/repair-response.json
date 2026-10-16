@@ -1,0 +1,55 @@
+{
+  "id": "gen-1792159452-9dB7U8naq1uk2ysg4bre",
+  "object": "chat.completion",
+  "created": 1792159452,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"As of August 22, Cobalt’s delivery mode is STREAM-1-286, the August 15 choice Ivo said to keep; its retry policy is RETRY-1-907, superseding RETRY-1-108.\",\"citations\":[{\"handle\":\"elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237\",\"quote\":\"Keep the August 15 delivery choice.\"},{\"handle\":\"elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241\",\"quote\":\"Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286.\"},{\"handle\":\"elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237\",\"quote\":\"The retry policy is now RETRY-1-907, superseding RETRY-1-108.\"}]}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0i7exAFl251CGNveMto4h9jB2Rqj-kVp4bP7kEgLKmXMkHXNlSqnYjbCKcbEIscEyuPhKY8dfQNW8SivnV-iz1emBMKzoMBJSFCbxNS0WuPmBkpIGrtEEMJKq6ODJMs1ZqqNz6G1eBOO6LZM--1JdswjUXCBAi7p5n28nkZANGzTKdYWshZzkzlKWmz6NVkSyZDNPCD8gzDB6ZrYmlFMl_VT7bZkKOpZFGmetkqgX03QXyDa3SZKMO252hMtqO2VxxCgtIs8UkXaX_eioFqCAUboEeoyeoMwL8QJmlj51W92OsF9AKLY_Wcc5NO0dswecCq79Po5OYE3qvYQTiBMvrk7m4qGMT3G3AOVZHK6lx3iOQi3Lt_4MGLKaleBbgqyfvj0YZtB-3TfPF8YpQRoLwvG3gS3ffaJWlpxn8WvIGMOjCCS7z6v5lIEjWr_cAeEH9L4QkhHsgZcpWnsaK-QT8G2vfh8H8VoPuPKnjFlIQGoYo9uViB0u8x4cj6Y1zmKWftrBmbKqZdIiHa0KFilf73FhyM1LJdvfrVDypU1DI-9YR4NHgj_zxl6p41JmMycJAcsUnlWGfpBRTC3qgktqLxrz7NWvttTRyMxz5im_IdCmkbCPGlECO6o7AMT9G0ct2cRwwUYYSf3U3X2-EZLm6MH1P77YhKgr2kq55EWZUb0-0zZq3vqW3l8Z_X30b96C5UjgASERr6wkAseFkECUdv7UGzfYEGUtR3AKK5cxvPd1bC5fPcrXtBMI1-gWXR3rjvJ_n_v_mse0zsbQDNfRqpVxj9IhL-f4ueTgP4HyLeDF0KzotD7wjHu91yVFrqkkyoMfpgKQ9_KJb1FZQ581kPOzAxyfHD_Pz14EjSZ0XkbpiqjNia1w8gy28W-Ta3ZJwa86RRpEqNDbOuZ3IBp1zv3QAgNEkL8jCHOuQR7F2do_hXF3AaoNFPgWZ-diDrmaSJmK-FhNFHnXq9qpHjccXtYq2OcRV7aNROskmne9UsJ1GztJory6lGKuVQDD7w-250qcvwSw2KtTKq2wZEHDPj7njvNaB48CpqwCMTUrvYOVbDph6hNuURek6KfvqjqGa3MCL7cES_AS6IDKdG-r1Xa9NmX--L2Dy-taNitJQs6A-Ty1wasq19I0iP29lqpC-1SxO2iCPejL_WR_oLTpQpzWDT-JFL2NZA7QzlM3JWP2Ss_P_wqazLOXtP_DmB7kKBLx-z7GfRkdFHQDYNOzrr6b99FYiv-9tOx4l1sn3RYyTBZcoKSc1BmIeZYJoDbrk8aS88VM2E5mn4EQY83nuX8WSF6T5yif-cNnuL00lLiPDp6gh4pCP8q14I7mODNAPAI7NUjth1pwIsoZ2GkgX2a32Dr-sGcGyM0GsULyVWaduyNZDIJlPQ1IKSm8Ds_t7LxTGfM2zFordMPKZuVH8LAIiCvOJYKBONs6efo_tR_TtM5_wp5dICNGNjn7hYXbsPc1PFjFY3PKQ_iB8EJGuXAJwScK5KTgJSiJ7D2IpNtS8H0qMnLnl5UEN5dIf6AwcLd1nY2_8dod8Amwet5MRAuRlCxj0JOpROPNrpqWRIkh_fs3yXCv_rvg_3niREz9ixLkQmch8HrmUepO6ltrH9kUU5Mo-rBaGmJkuNWXNmb-dTr3z2FyZ90wvF3NUKeoDqgvboQZ7U7ob1hD7qbIGjimTEfyNEmBAqOc75evNDT6xgSrLkOHsUBPe7lL-6_WaZCHXcdVL9_1CUgoHMBzYOTBO9gx8DHaMDJHdDRaVRfCRZcJLM0yATBJLyZrixs7srFocN1NIqD4VW6b3t6X_C4KXbdWhDXVj9k0ffV6wU5swRss2-_eq169fqIYn1vlUo8KYRyFtPEcXP3CzkdSN_sSUVbEGB-7TRH7TIWAzDeGP-4voKkRGSFjgv568LJ-27IE755RBTgJmloNKWTtGRoCZtxYtqiU-DOnv6Z25KpaRWUORJds_h8fwmjMryox583LQb6j7tZFqxkc1QgeKvdBJuk-YKq6thdEKDva0234hRg-qjstkm4x66lHPIqhnNbhU5RPB_YE2txgFuZw4AJ3RRsgThHdI-afq1cBckLZ_wdGab4dQOxcXBzdQ2MKdds3frHYpJW96KJbwOMgTr1LVO9nhoJw1oPuTNhC5oBBiAQIJ8GVNX5Ab9v5q8o5E8tNMByfqT2gpjCqkiYMWq4Rhyz881gpgk1GcgJ8Akypi-_jxxfCosRrhyYdyuxiLKM7qAUEXeo8R-ra6D8N_aVQtj_fTM8EWrqv42fqRkSketPriw5-f6rHSCWE8u-NzKVQnlYw3_XbX2IxWCZnpidHPQlO4AJm3_N0qBR_jJCtWQWAfN449ZV9Wt8WEHxbucqitwsrZTunsv1rhTbf6r2gSgotSqHl2-RJa9ZdnOahQd3zfRAwoQ8DpzloqHqnnTM4ZBxXGD2gtHLvCt55gtkbFamOoEjUVSE89mk7__csCCb1DwCng4ccUTfG8poIMmaAO-F1cvJkLAbXm3fmcZ-LaqnjKuO_mPSSJkMk0t7EiYn0EivCfCpkdF_j-SRB-UpWWQDOHib-LVG2WdHv_6hdkMGxEmruA4165p2ztXRBceyexzT14fYiMA6gJAvOc_n0QPR2aYENVALSSb9Av0cSvyvJYZZZLeSRa0YvIOr12Tu-yHl7hNWXrkjFRUYhd7eopdCvzUt486HrwTOQ6vbbm7E-37RkAJNlldedl0xGY018k4Fl0Er2P01wmiQ7tTMnqw1ddkNohDxjGM8kmtCEVcbGyafMz5d-gGo9sw_BGbnyP4_PTooiSU0wEEZybxD.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0cb94e6535ef10b7016ad22edcf1a087d19aaa24d2d09ae5ab",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5009,
+    "completion_tokens": 432,
+    "total_tokens": 5441,
+    "cost": 0.00084205,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 5006,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00084205,
+      "upstream_inference_prompt_cost": 0.00062605,
+      "upstream_inference_completions_cost": 0.000216
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 97,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

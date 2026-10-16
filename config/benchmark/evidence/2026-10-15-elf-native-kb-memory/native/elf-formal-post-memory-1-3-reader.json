@@ -1,0 +1,55 @@
+{
+  "id": "gen-1792119887-0jwrz023jbQ4pKCFvq6B",
+  "object": "chat.completion",
+  "created": 1792119887,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"No budget owner had been appointed for Ivo’s Cobalt project as of August 22.\",\"citations\":[{\"handle\":\"elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237\",\"quote\":\"2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.\"}]}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZRRQCe-C6DyS3P2SAd-wds8qL7rCFqX3oOi7b9F7iC-ZTJYypYc3P_P5OYcA5J0rbEdKoN-Fu7FzWg1o_zL0o48fExtH-LmlFwmrT_BrQH6X4hKC6n7sLxcYiBGVWOInGBP9aYgZM4dy4i2mQmrki8T0RRf3Mlf8_Na4RWc2sP5QrekI99gRzakkar0MXEvwYHnn1M57SCc6T0adDax6TabcjY-sn_SmM1o-GWDoGHrVyPyQQKvxDV0B2Si-devqpQpmqWW0DlIQvPGuKg2VA0ui_zd0sa-MfBlnbWFnXdpZeRAYCYQ9Vu8B6DOObulhKCEbDqWX5CH2oEb4Oq_ZpLF15jdAV4a-CBgCegM91RTh2rf9xJhEiLGEUKG7YKibNXoRrf8tO4-MdqKIGOb6VMo1Y1T1_4D2Q6gcndIV6ec96JVh_FPd18l4kwcmv0B_05ueB-4sOEyyNYLJMjdIpRMIPXqLD_m9_C0pB9-Pslb09dj2v3sjX6yNumGjznNDCYRQfWn5LaFTvwcSf2wEGhXUJhUKrXabMnY9PjD30Lqi-KRONsvvojcRG99AJo2U4t3YXEPIjY5KIVOSGqbvUiQRODXOVRDVK8v3kNH-q81el1F4uoHOWVbiq7zWGm8guAmKuHeDeTUmxbLrt1vr-8_UlUwR8kTDDjhSd-zGCmI1S2NwqP17AQRcaQ64MyPsNxPbq9byFr124ktrXJeihRs05g8QEXBLLSAUK0WKtrTHAgWV7Yob_XSlJ0K_WoMEghie5OlwAcNAiqY4ZgHZ175uWtB-skOQPY0tmwnVhx9fSfixtO5yfECo9z59D4Ic_PEC_l_l5EfNtrokF0MZ4wLuwCIUDdl6pZCWibt6BzWCit4EempLDbNm92C5kIZtCWBtFqVMWm_v1qRz8WTlYSNZM1x6V0ykHSOqQHhdB4cb9M7DByuFQsD1GlkWxi3jJwyXXQ6CTIwgVrJI3zuJjccwC2KRdsNlRZfCgVAcjASk7U-Wy0_KyrmCCNNrg-p0MrDLe4InZHIEy75qkXnxEcTYJPpTp7_ujCR56lycfmK4IjuS-sNW6k2OrbuHnfAOpzVal6diFNLvBf-7KFN_l1rn2HfWhwyFr5ZXHOlzHmcilYkbxTLD7fdNiOfCcVvCOEn0vEFUMPAoGdVub6f8DUdfC9pabF3ZrLJE6f_HYiPAIs_qGqCJeHAyv4o7z80sGCKEGsQe8B3drMFdZRcTcuLUkva-PB4mvlSWpkpZpMWHFk_U-4V8M3p5ckBvl3_oS-HSvZXHn-cusGDa94Ec-mR88eLrDxIQtS40IjjWYlvvdZo06t9nlvBGRgVFTUINBHbCGkUWzz65KfYRl9ijPR53YpA-vIAZ8V9xHli__J_LWlXZhcdxIGEe3h70Z80hFLVajk6-teTnurTEruGekJ_0xuNg_4jxMBY8vBtsWtDwcS-puDjwejd9D65iYq2ZdG0idAX_tk0gZhzjiQ-DiUW35c0gJ2KkA8jzjZDWnaTu8-FhRz01lguJIB5pFRJ_VQbNYzRrr7az7eW-jwb23lSoMbOhWLsmA0IN4fvz3TGrGIE_9EoedAQKPeV-3La-qdsqAeQJ0x3J9Fsfp644g6_P2uyJPViNKBsX7x0JkEWsP81IOYXACX-uJaHywZ_kCmxanpa9uYGzygHHekUC-i9yd0UXVjRNrSkqyLBo8i424q9UxzgJ6tMc3W6e-amJN2TwvZDHCF0WOCfJf51ICkTnioJMBaPITCLv-4R21LFZlUGFV_HAXbagLM03bDth1a1BgrKMbjXEwqccawmvWqJPUCLxQmu0KPDPUS-XniQg6APdZjLSaZ9MImYUqcctLCg9bDqvu0FQ_YN2opCHbIgDHXa28svHy3xNGAhcAtSu3VmYSTkLiR1ZKikyGOmJ917vaiUp3eJLSCcB9W9Wp9Ul8yP0r51EMOZ3pqY2PMFGs2nKfNHJ7j28euYsQ1ZNPqrZVGD5NKSL9TZQCiVvq3JsmkiciOlKsU9c52UFO45tgCdjb3i4UuD6xrzB42dRDDkZyvh7Xm8iZuNwi41y345Xra-7Z9TjZm2ldCqkM_wZUzB9_CbYasJE5cUpj80WMv53hgpZxSk0yIlqTbbmVL5-OknrBg0zG7NqvxUzvfyJBswRK0tFivcVcf7mmZjItPL.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0b8cb49748f9a142016ad1944fcd2487d1a8d3fcd1dfdd9f7e",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4826,
+    "completion_tokens": 217,
+    "total_tokens": 5043,
+    "cost": 0.000711675,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4823,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000711675,
+      "upstream_inference_prompt_cost": 0.000603175,
+      "upstream_inference_completions_cost": 0.0001085
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 45,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

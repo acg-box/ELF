@@ -30,6 +30,23 @@ source access is still a hypothesis. Provenance, correction history, and scoped
 access are useful foundations, but their existence alone is not unique market
 value or customer acceptance.
 
+The [small native system comparison](../evidence/benchmarking/2026-10-15-elf-native-kb-memory.md)
+adds unchanged ELF to the frozen OpenViking and RAGFlow cases. ELF completes
+13/13 answers semantically and 12/13 with valid exact quotes; each other product
+completes 11/13 on both measures. A native parent read supplies a current retry
+decision missing from selected memory text. The checker detects the one bad
+quote. Keep the working source and evidence path; this does not justify replacing
+ELF for answer quality or expanding all its engines. The run has no source-only
+arm, no graph use, and no native keyed corrections. It does not overturn the
+real-project incremental-value limits below.
+
+The [final citation gate regression](../evidence/benchmarking/2026-10-16-agent-citation-gate.md)
+now blocks a rejected draft before delivery in the reference Agent host. The
+same thirteen saved drafts pass after one bounded correction of the failed
+quote; all fourteen originals remain unchanged. This verifies the output gate,
+not a new competitor score. External Agent clients still need to connect the
+native check to their own final-output hook.
+
 The native capture/read loop now has evidence: MCP preserved six selected
 originals, and a fresh reference Agent read memory-linked originals and cited
 them with valid bindings. Four formal full-ELF readers used memory; three cited

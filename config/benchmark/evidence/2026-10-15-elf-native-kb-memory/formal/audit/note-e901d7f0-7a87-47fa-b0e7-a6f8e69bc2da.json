@@ -1,0 +1,165 @@
+{
+  "complete": true,
+  "note": {
+    "agent_id": "pilot",
+    "confidence": 1.0,
+    "expires_at": "2027-04-14T03:01:18.565931Z",
+    "importance": 0.7,
+    "key": null,
+    "note_id": "e901d7f0-7a87-47fa-b0e7-a6f8e69bc2da",
+    "project_id": "project",
+    "scope": "agent_private",
+    "source_ref": {
+      "evidence": [
+        {
+          "message_index": 0,
+          "quote": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+          "source": {
+            "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+            "document": {
+              "locator": {
+                "position": {
+                  "end": 124,
+                  "start": 0
+                }
+              },
+              "ref": {
+                "doc_id": "d17f946a-c663-5c4d-99e6-b6985f2ad1da",
+                "source_record_id": "d17f946a-c663-5c4d-99e6-b6985f2ad1da"
+              },
+              "resolver": "elf_doc_ext/v1",
+              "schema": "source_ref/v1",
+              "state": {
+                "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc"
+              }
+            },
+            "extraction_content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+            "extraction_position": {
+              "end": 124,
+              "start": 0
+            },
+            "hash_algorithm": "blake3",
+            "message_id": "m_c558d1541c4b9d0f",
+            "role": "user",
+            "schema": "elf.event_source/v1",
+            "timestamp": "2026-08-01T12:00:00Z",
+            "write_policy_audit": null
+          }
+        }
+      ],
+      "extracted_key": "project Larch start",
+      "ingestion_profile": {
+        "id": "default",
+        "version": 8
+      },
+      "reason": ""
+    },
+    "status": "active",
+    "structured": null,
+    "tenant_id": "elf-native-20261015-formal",
+    "text": "Mara started project Larch on 2026-08-01.",
+    "type": "fact",
+    "updated_at": "2026-10-16T03:01:18.565931Z"
+  },
+  "request_id": "0b70347b-ab4b-4af7-961a-2bae85b9caca",
+  "sources": [
+    {
+      "excerpt": {
+        "doc_id": "d17f946a-c663-5c4d-99e6-b6985f2ad1da",
+        "end_offset": 124,
+        "excerpt": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+        "locator": {
+          "match_end_offset": 124,
+          "match_start_offset": 0,
+          "position": {
+            "end": 124,
+            "start": 0
+          },
+          "selector_kind": "position",
+          "span_id": "4229d785-a516-53fc-9923-d58968aca832"
+        },
+        "reference": "elf-source-v1/d17f946a-c663-5c4d-99e6-b6985f2ad1da/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124",
+        "start_offset": 0,
+        "trace_id": "ece6e88c-b1f0-435e-8d50-80cd7ad09044",
+        "verification": {
+          "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "excerpt_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "verification_errors": [],
+          "verified": true
+        }
+      },
+      "metadata": {
+        "agent_id": "pilot",
+        "content_bytes": 124,
+        "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+        "created_at": [
+          2026,
+          289,
+          3,
+          1,
+          11,
+          650140000,
+          0,
+          0,
+          0
+        ],
+        "doc_id": "d17f946a-c663-5c4d-99e6-b6985f2ad1da",
+        "doc_type": "chat",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_ref": {
+          "canonical_uri": "urn:elf-native-comparison:formal:memory:m_c558d1541c4b9d0f",
+          "captured_at": "2026-10-16T03:01:11.641385+00:00",
+          "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+          "doc_type": "chat",
+          "lifecycle": {
+            "actor_agent_id": "pilot",
+            "freshness": "current",
+            "reason_code": "SOURCE_CAPTURED",
+            "schema": "elf.source_lifecycle/v1",
+            "status": "active",
+            "ts": "2026-10-16T03:01:11.641385+00:00"
+          },
+          "origin": "urn:elf-native-comparison:formal:memory:m_c558d1541c4b9d0f",
+          "role": "user",
+          "schema": "doc_source_ref/v1",
+          "source_created_at": "2026-08-01T12:00:00Z",
+          "source_kind": "chat_excerpt",
+          "source_record_id": "d17f946a-c663-5c4d-99e6-b6985f2ad1da",
+          "source_spans": [
+            {
+              "chunk_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+              "chunk_id": "17e14144-671e-5d2e-b58b-f24e4bcd6814",
+              "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+              "end_offset": 124,
+              "schema": "doc_source_span/v1",
+              "span_id": "5f19b69e-1349-5a4e-93fa-ea6be220c51d",
+              "start_offset": 0,
+              "status": "captured"
+            }
+          ],
+          "source_type": "chat_excerpt",
+          "thread_id": "m_c558d1541c4b9d0f",
+          "title": "m_c558d1541c4b9d0f",
+          "trust_label": "user_captured",
+          "ts": "2026-08-01T12:00:00Z",
+          "visibility_scope": "agent_private"
+        },
+        "status": "active",
+        "tenant_id": "elf-native-20261015-formal",
+        "title": "m_c558d1541c4b9d0f",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          1,
+          11,
+          650140000,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ]
+}

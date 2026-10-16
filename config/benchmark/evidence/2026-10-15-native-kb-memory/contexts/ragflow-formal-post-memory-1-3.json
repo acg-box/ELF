@@ -1,0 +1,105 @@
+{
+  "question": "Who is the appointed budget owner for Ivo's Cobalt project as of August 22?",
+  "evidence": [
+    {
+      "handle": "ragflow:document:60c7b04dd9a54820b17be95530bb5bda:chunk:814df48295aa88f7",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "document_id": "60c7b04dd9a54820b17be95530bb5bda"
+      }
+    },
+    {
+      "handle": "ragflow:document:1f8934b0b894451dbb5d157df1eeac46:chunk:91cba475d750a4e8",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "metadata": {
+        "document_id": "1f8934b0b894451dbb5d157df1eeac46"
+      }
+    },
+    {
+      "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+      "kind": "knowledge_chunk",
+      "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "metadata": {
+        "document_id": "984a41009bde4f3d83d2447f0b92191b"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:30",
+      "kind": "memory_semantic",
+      "text": "No budget owner had been appointed as of 2026-10-16.",
+      "metadata": {
+        "source_id": 28,
+        "session_id": "formal-m_4a54af2b364be476",
+        "valid_at": "2026-10-16 03:22:07",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:28",
+      "kind": "memory_raw_source",
+      "text": "User Input: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.\nAgent Response: Recorded.",
+      "metadata": {
+        "derived_from_hit": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:30"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:32",
+      "kind": "memory_episodic",
+      "text": "On 2026-10-16, the user said to keep the delivery choice made on August 15, 2026.",
+      "metadata": {
+        "source_id": 28,
+        "session_id": "formal-m_4a54af2b364be476",
+        "valid_at": "2026-10-16 03:22:07",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:25",
+      "kind": "memory_raw",
+      "text": "User Input: 2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.\nAgent Response: Recorded.",
+      "metadata": {
+        "source_id": 0,
+        "session_id": "formal-m_70bd88efee712a9a",
+        "valid_at": "2026-10-16 03:21:44",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:21",
+      "kind": "memory_semantic",
+      "text": "No budget owner has been appointed.",
+      "metadata": {
+        "source_id": 19,
+        "session_id": "formal-m_d6297f549707f98d",
+        "valid_at": "2026-10-16 03:21:27",
+        "invalid_at": null,
+        "status": true
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:19",
+      "kind": "memory_raw_source",
+      "text": "User Input: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.\nAgent Response: Recorded.",
+      "metadata": {
+        "derived_from_hit": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:21"
+      }
+    },
+    {
+      "handle": "ragflow:memory:a14659ca2f114db9b1b8c1707f3bbb35:23",
+      "kind": "memory_episodic",
+      "text": "The user instructed that the August 15 delivery choice be kept.",
+      "metadata": {
+        "source_id": 19,
+        "session_id": "formal-m_d6297f549707f98d",
+        "valid_at": "2026-10-16 03:21:27",
+        "invalid_at": null,
+        "status": true
+      }
+    }
+  ]
+}

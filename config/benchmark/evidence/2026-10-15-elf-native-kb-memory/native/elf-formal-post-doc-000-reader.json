@@ -1,0 +1,61 @@
+{
+  "id": "gen-1792119891-iQ64ojRtpajL3LRkIa77",
+  "object": "chat.completion",
+  "created": 1792119891,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"CUSTOM-0-7c2 and DEFECT-0-9b4.\",\"citations\":[{\"handle\":\"elf-source-v1/daf44d7c-4098-5a60-8032-3ac4d2370267/b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7/0/395\",\"quote\":\"custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4\"}]}",
+        "refusal": null,
+        "reasoning": "**Ensuring JSON formatting**\n\nI need to provide a JSON answer with exact quotes. First, I should identify two specific quotes to include. It would be good to find a substring that mentions both items. Maybe I could also quote the complete exception clause. It's super important that the JSON is valid, so I'll double-check the formatting. Let’s make sure everything is clear and follows the right structure!",
+        "reasoning_details": [
+          {
+            "type": "reasoning.summary",
+            "summary": "**Ensuring JSON formatting**\n\nI need to provide a JSON answer with exact quotes. First, I should identify two specific quotes to include. It would be good to find a substring that mentions both items. Maybe I could also quote the complete exception clause. It's super important that the JSON is valid, so I'll double-check the formatting. Let’s make sure everything is clear and follows the right structure!",
+            "format": "openai-responses-v1",
+            "index": 0
+          },
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZRUoY7HgTnfDtEFs_RyHIIiOMo_3Wh1ozoH6cdiqLp1mWMwbQPVIC976DYwORMWl13EPohx-WpNcOiw-CRFNQETPccCva0ymkH1vRc2jlLXckKwnG1gfKMakWk0c5-cl9fLoq8fDhWFVV7VfZi-CCv13gVDIK4cH2xltrdf9VcvlsB83YYaeA5wNAhtvQs_T7NoI3mc-DP9qf0V3C09WZgpGBlQQQI4UhuNl9oho9AArr4u2ddlGlj4QGIzQJXlivWxQAS0HQdcFa-c96iCYzFnmVOvptVONHqJwqC1trCuUG6Ia6XK7TyzrVrLs3JCXCvOm9sVmgXHldODrt6NSVxIWdlvmBNB1HFM66auWkxTnW0VwMypy5rsJceRjbYD1Waty5mH75Lpx6dhwbGYsxWG-CBTVGfIsWviF1lDATjkPpju5EvcJ4Z9uzyupmmCk0ea2S5AYTWFjmNr5gBbq_LPaGLP57eZqQfdxTp85kSIzt6TMU-NDrtd31P_YRGZxiBM6WNsBvi52ZIwrCm_g8-FWA6yhPDKNGSjsupVPqpKBBxUDYcL4aPbwVEQzC_7D3hBnU_2mqANOPO__cVF2w0ghQXyi7F1ZiIclm-7URP4rAGEnVmbIPnigTELcuIcrGDp1Evk3GqUZUfSHMkqguD6oUVzYOFAfgNeJVTD87mtFzl2fenqSYeA0yTT5lCmGvH3sZGDyw9DkOyS1v-okgXFSXL6l-elIHJOKz3L0EEydS_et21_kC3wsKENgMrHoYJwB3s5E9iE8uUwzBoltAXMk6qHr_fzrmTSXk_7etQxxqUxSCpRE3Xr3T4Mm0AuzjwYD_oZgQjgioxlibGEt1j6hgAouV23xp7iDlmGrooNcwaBBCc32C63U2s53-_daYZoTzUWTvOALYarkhw8mTkVwGFVa_GEYPulfpR2Hn_9r9RyWgJ-tpqcwcsXcZ1Hvhe-ysJms9IFgZSif4yq1ydqQc0RPt1qQd2JIB-BbG5SmaX4GRVn1HKzr7Ydqv7ym4qPkuZb49_-cQeH8VzUjrY9pzqVWJ8YrffcK3nZVLFrRNjNMRF6NOn2OOMdHm55mIftZvv86l65raPW_XG8coSpAw_GTgzEsMV4Dec5QwHMqYp1z5nnYBSVAxERN7HARNO5omINwP1sW3iNTWoS_k6Ji2ydOdvOfo86aE5PGPKGprZeVLhRAafoGRIjQ762b6zM1bdEOYY6UH81XEhIq-VR9TtVYdIGftQruC-S9MK954J5VASRxImBr4kpgTvjqqaQ_KC-Re5DVflTbUDVy8k0YiboAwJb0YIlXDKX8nlm6AJi6LkP4o3R5Z0qXMMDsow_vZUO5ecYcSWeS845FS2JbVxsZENn5ArU9vRrwerkMAwqc5ff271M1WCajJE_O1KrYPLJpi78Ix4WLVK3hkkyTBwqoNza_hlMphYwUxTIFiqE7HZuyuxndvnwl9jMPimAt-94S12PvYhjZDqinMMOp7kos4ry3bUCteNr8DmfKbfzExinhrGCP-bVLit07VxbyxJ9pIHmB8fuz8qffCvBaUPXkMc9EWPU2rvsHsPUsWpZMtpB-5jXu0z4u8C55K_VQVe7NKiD3nlNYx9Od7115v_bB41F45cl5Yiwc2choc4TTZO8swG1BO-DpOybbLi0YpA0fZ-XFDDva7BiX5WiyuWKwdoQ3-UoZ8Irrp33L6XzYyPFYOUpr5drlAEFNv4rfFJWk0taxOsrW_CsCL5-pNsrGvoPFt5lGL41ifeN5OipP_GGnLyJPcqVqMIEIgEHEX4D6YVTJ2T3dTO-10Br2bhjHbckIrmVSbRauXq2eBwX_RvwUtt45TiezVtwM69EmkmafAhhyVsRs73aop9xs_ooP483Lag9MfrRddijYjRPx93xyEwMzCOcDLkFvvJaTmX-PvujKwESWoVhNT6RGz7Y8FpJnmgqGWVsjrJPuXw0Q-3bkUbWpF0njPiApCvw.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0c62a140c9fcefc4016ad19453b57c87d1b01a65131464454a",
+            "index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5050,
+    "completion_tokens": 164,
+    "total_tokens": 5214,
+    "cost": 0.000713175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 5047,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000713175,
+      "upstream_inference_prompt_cost": 0.000631175,
+      "upstream_inference_completions_cost": 8.2e-05
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 30,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

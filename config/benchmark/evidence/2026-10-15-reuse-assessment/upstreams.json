@@ -1,0 +1,1574 @@
+{
+  "review_date": "2026-10-15",
+  "scope": "Read-only current-version and source review, combined with preserved historical benchmark evidence. This is not a new benchmark result.",
+  "new_runtime_runs": 0,
+  "new_provider_model_calls": 0,
+  "new_embedding_calls": 0,
+  "repository_metadata": {
+    "observed_date": "2026-10-15",
+    "scope": "Read-only upstream metadata; latest release and default branch are distinct",
+    "repositories": [
+      {
+        "nameWithOwner": "volcengine/OpenViking",
+        "url": "https://github.com/volcengine/OpenViking",
+        "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T17:27:31Z",
+        "licenseInfo": {
+          "spdxId": "AGPL-3.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+            "committedDate": "2026-10-15T17:15:17Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.5.0",
+          "publishedAt": "2026-10-09T15:46:55Z",
+          "isPrerelease": false,
+          "url": "https://github.com/volcengine/OpenViking/releases/tag/v0.5.0"
+        },
+        "requested": "volcengine/OpenViking"
+      },
+      {
+        "nameWithOwner": "garrytan/gbrain",
+        "url": "https://github.com/garrytan/gbrain",
+        "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T18:17:48Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "master",
+          "target": {
+            "oid": "ea93c770b6133c887eb11472c8912b1e15943b54",
+            "committedDate": "2026-10-15T17:59:12Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.60.248.0",
+          "publishedAt": "2026-10-15T16:25:15Z",
+          "isPrerelease": false,
+          "url": "https://github.com/garrytan/gbrain/releases/tag/v0.60.248.0"
+        },
+        "requested": "garrytan/gbrain"
+      },
+      {
+        "nameWithOwner": "MemTensor/MemOS",
+        "url": "https://github.com/MemTensor/MemOS",
+        "description": "Self-evolving memory OS for LLM & AI Agents: ultra-persistent memory, hybrid-retrieval, and cross-task skill reuse, with 35.24% token savings and DeepSeek Harness support.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-10T07:55:31Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+            "committedDate": "2026-09-22T01:51:03Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v2.0.34",
+          "publishedAt": "2026-09-23T05:24:20Z",
+          "isPrerelease": false,
+          "url": "https://github.com/MemTensor/MemOS/releases/tag/v2.0.34"
+        },
+        "requested": "MemTensor/MemOS"
+      },
+      {
+        "nameWithOwner": "vectorize-io/hindsight",
+        "url": "https://github.com/vectorize-io/hindsight",
+        "description": "Hindsight: Agent Memory That Learns",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T17:12:13Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "9a499b1759084a86598eff8af30ed59f7354e76c",
+            "committedDate": "2026-10-15T17:12:09Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v1.0.0",
+          "publishedAt": "2026-10-13T14:08:48Z",
+          "isPrerelease": false,
+          "url": "https://github.com/vectorize-io/hindsight/releases/tag/v1.0.0"
+        },
+        "requested": "vectorize-io/hindsight"
+      },
+      {
+        "nameWithOwner": "infiniflow/ragflow",
+        "url": "https://github.com/infiniflow/ragflow",
+        "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T14:27:44Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+            "committedDate": "2026-10-15T14:27:44Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v1.0.0-rc1",
+          "publishedAt": "2026-09-29T05:52:57Z",
+          "isPrerelease": false,
+          "url": "https://github.com/infiniflow/ragflow/releases/tag/v1.0.0-rc1"
+        },
+        "requested": "infiniflow/ragflow"
+      },
+      {
+        "nameWithOwner": "mem0ai/mem0",
+        "url": "https://github.com/mem0ai/mem0",
+        "description": "The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. Built for production.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-14T15:40:09Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "0724291bd864cf807e88ee8981c8226644e8fb42",
+            "committedDate": "2026-10-14T15:39:50Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "ts-v3.3.1",
+          "publishedAt": "2026-09-25T17:36:35Z",
+          "isPrerelease": false,
+          "url": "https://github.com/mem0ai/mem0/releases/tag/ts-v3.3.1"
+        },
+        "requested": "mem0ai/mem0"
+      },
+      {
+        "nameWithOwner": "plastic-labs/honcho",
+        "url": "https://github.com/plastic-labs/honcho",
+        "description": " Memory library for building stateful agents",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T17:56:14Z",
+        "licenseInfo": {
+          "spdxId": "AGPL-3.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "29e20d5ea9731dd2ef1b947c9f242673a1639035",
+            "committedDate": "2026-10-15T15:56:42Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v3.3.0",
+          "publishedAt": "2026-10-14T16:18:18Z",
+          "isPrerelease": false,
+          "url": "https://github.com/plastic-labs/honcho/releases/tag/v3.3.0"
+        },
+        "requested": "plastic-labs/honcho"
+      },
+      {
+        "nameWithOwner": "tobi/qmd",
+        "url": "https://github.com/tobi/qmd",
+        "description": "mini cli search engine for your docs, knowledge bases, meeting notes, whatever. Tracking current sota approaches while being all local",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T03:04:06Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "86d2365d17fc682e491c2c53d1e4a884aee8682a",
+            "committedDate": "2026-10-15T03:04:06Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v2.8.3",
+          "publishedAt": "2026-08-16T22:30:34Z",
+          "isPrerelease": false,
+          "url": "https://github.com/tobi/qmd/releases/tag/v2.8.3"
+        },
+        "requested": "tobi/qmd"
+      },
+      {
+        "nameWithOwner": "VectifyAI/PageIndex",
+        "url": "https://github.com/VectifyAI/PageIndex",
+        "description": "\ud83d\udcd1 PageIndex: Document Index for Vectorless, Reasoning-based RAG",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T17:47:21Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "216d7c1f996a7c43ccd1168b31a541c83cd6e3bf",
+            "committedDate": "2026-10-15T11:34:06Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.4.0",
+          "publishedAt": "2026-10-12T15:39:46Z",
+          "isPrerelease": false,
+          "url": "https://github.com/VectifyAI/PageIndex/releases/tag/v0.4.0"
+        },
+        "requested": "VectifyAI/PageIndex"
+      },
+      {
+        "nameWithOwner": "VectifyAI/OpenKB",
+        "url": "https://github.com/VectifyAI/OpenKB",
+        "description": "OpenKB: Open LLM Knowledge Base",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-07-22T03:45:16Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "ff54396e575ee6feb0113b631a34caa082b441cc",
+            "committedDate": "2026-07-22T03:44:01Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.4.5",
+          "publishedAt": "2026-07-20T10:35:09Z",
+          "isPrerelease": false,
+          "url": "https://github.com/VectifyAI/OpenKB/releases/tag/v0.4.5"
+        },
+        "requested": "VectifyAI/OpenKB"
+      },
+      {
+        "nameWithOwner": "getzep/graphiti",
+        "url": "https://github.com/getzep/graphiti",
+        "description": "Build Real-Time Knowledge Graphs for AI Agents",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T15:57:03Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "dd3fd6ca7671c90b299fe8e8867a9f8439eafbeb",
+            "committedDate": "2026-10-15T15:56:30Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.31.1",
+          "publishedAt": "2026-10-15T15:02:17Z",
+          "isPrerelease": false,
+          "url": "https://github.com/getzep/graphiti/releases/tag/v0.31.1"
+        },
+        "requested": "getzep/graphiti"
+      },
+      {
+        "nameWithOwner": "HKUDS/LightRAG",
+        "url": "https://github.com/HKUDS/LightRAG",
+        "description": "[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T18:04:12Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a",
+            "committedDate": "2026-10-14T14:55:37Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v1.5.7",
+          "publishedAt": "2026-09-02T07:23:55Z",
+          "isPrerelease": false,
+          "url": "https://github.com/HKUDS/LightRAG/releases/tag/v1.5.7"
+        },
+        "requested": "HKUDS/LightRAG"
+      },
+      {
+        "nameWithOwner": "microsoft/graphrag",
+        "url": "https://github.com/microsoft/graphrag",
+        "description": "A modular graph-based Retrieval-Augmented Generation (RAG) system",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-12T22:32:27Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "5faaaf4f5685fa2056fa8c3bf9342cb089f2942f",
+            "committedDate": "2026-10-08T18:24:13Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v3.3.0",
+          "publishedAt": "2026-10-08T18:28:43Z",
+          "isPrerelease": false,
+          "url": "https://github.com/microsoft/graphrag/releases/tag/v3.3.0"
+        },
+        "requested": "microsoft/graphrag"
+      },
+      {
+        "requested": "Zleap-AI/zleap",
+        "unavailable": true
+      },
+      {
+        "nameWithOwner": "letta-ai/letta",
+        "url": "https://github.com/letta-ai/letta",
+        "description": "Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-09-10T17:59:08Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a",
+            "committedDate": "2026-09-10T17:59:06Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "0.16.8",
+          "publishedAt": "2026-05-14T17:14:24Z",
+          "isPrerelease": false,
+          "url": "https://github.com/letta-ai/letta/releases/tag/0.16.8"
+        },
+        "requested": "letta-ai/letta"
+      },
+      {
+        "nameWithOwner": "letta-ai/letta-code",
+        "url": "https://github.com/letta-ai/letta-code",
+        "description": "Stateful agents that are like people, with memory, identity, and the ability to learn and adapt",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T18:23:40Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "a586e9aedcb3ee5241f71d02a17badde82ac9012",
+            "committedDate": "2026-10-15T16:37:52Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.34.15",
+          "publishedAt": "2026-10-15T05:10:26Z",
+          "isPrerelease": false,
+          "url": "https://github.com/letta-ai/letta-code/releases/tag/v0.34.15"
+        },
+        "requested": "letta-ai/letta-code"
+      },
+      {
+        "nameWithOwner": "rohitg00/agentmemory",
+        "url": "https://github.com/rohitg00/agentmemory",
+        "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-14T13:53:58Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "36eb328e12970c84e6031fd75b8ab77b977cd281",
+            "committedDate": "2026-10-13T11:49:45Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.9.30",
+          "publishedAt": "2026-10-06T13:42:33Z",
+          "isPrerelease": false,
+          "url": "https://github.com/rohitg00/agentmemory/releases/tag/v0.9.30"
+        },
+        "requested": "rohitg00/agentmemory"
+      },
+      {
+        "nameWithOwner": "thedotmack/claude-mem",
+        "url": "https://github.com/thedotmack/claude-mem",
+        "description": "Persistent Context Across Sessions for Every Agent \u2013  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T18:03:13Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "fef3402e674bebbf72a23aeb735e91c92cd34afd",
+            "committedDate": "2026-10-13T21:31:45Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v13.39.0",
+          "publishedAt": "2026-10-13T21:31:41Z",
+          "isPrerelease": false,
+          "url": "https://github.com/thedotmack/claude-mem/releases/tag/v13.39.0"
+        },
+        "requested": "thedotmack/claude-mem"
+      },
+      {
+        "nameWithOwner": "zilliztech/memsearch",
+        "url": "https://github.com/zilliztech/memsearch",
+        "description": "A persistent, unified memory layer for all your AI agents (e.g. Claude Code, Codex, DSH), backed by Markdown and Milvus.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-09T11:51:36Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "09e07d86b31ff81938b4f44a57099b6a9fc8723f",
+            "committedDate": "2026-10-09T11:51:19Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.4.21",
+          "publishedAt": "2026-09-24T08:08:42Z",
+          "isPrerelease": false,
+          "url": "https://github.com/zilliztech/memsearch/releases/tag/v0.4.21"
+        },
+        "requested": "zilliztech/memsearch"
+      },
+      {
+        "nameWithOwner": "Graphify-Labs/graphify",
+        "url": "https://github.com/Graphify-Labs/graphify",
+        "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-14T22:17:45Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "v8",
+          "target": {
+            "oid": "10130e79ed9caf8f60d998073e097531eaa1a395",
+            "committedDate": "2026-10-14T22:09:54Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.9.91",
+          "publishedAt": "2026-10-14T22:17:45Z",
+          "isPrerelease": false,
+          "url": "https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.91"
+        },
+        "requested": "safishamsi/graphify"
+      },
+      {
+        "nameWithOwner": "nvk/llm-wiki",
+        "url": "https://github.com/nvk/llm-wiki",
+        "description": "LLM-compiled knowledge bases for any AI agent. Parallel multi-agent research, thesis-driven investigation, source ingestion, wiki compilation, querying, and artifact generation. ",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-02T14:14:00Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "master",
+          "target": {
+            "oid": "95a042c68998559305bc69ac8c482c4e1a415ad3",
+            "committedDate": "2026-10-02T14:13:12Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.25.1",
+          "publishedAt": "2026-10-02T14:14:10Z",
+          "isPrerelease": false,
+          "url": "https://github.com/nvk/llm-wiki/releases/tag/v0.25.1"
+        },
+        "requested": "nvk/llm-wiki"
+      },
+      {
+        "nameWithOwner": "langchain-ai/langgraph",
+        "url": "https://github.com/langchain-ai/langgraph",
+        "description": "Build resilient agents.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T18:17:05Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "5eb60aef6f3837a1fb632a8abc6cf8e8da81785b",
+            "committedDate": "2026-10-15T01:31:09Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "prebuilt==1.1.1",
+          "publishedAt": "2026-10-15T04:32:40Z",
+          "isPrerelease": false,
+          "url": "https://github.com/langchain-ai/langgraph/releases/tag/prebuilt%3D%3D1.1.1"
+        },
+        "requested": "langchain-ai/langgraph"
+      },
+      {
+        "nameWithOwner": "nanograph/nanograph",
+        "url": "https://github.com/nanograph/nanograph",
+        "description": "On-device property graph database. Schema-as-code. One CLI \u2192 One Folder. No Server. Think: DuckDB for graphs.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-05-17T01:49:29Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "972a98703bd503d0336f9f095366fbff69f70f9b",
+            "committedDate": "2026-05-17T01:42:12Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v1.3.0",
+          "publishedAt": "2026-05-16T23:25:46Z",
+          "isPrerelease": false,
+          "url": "https://github.com/nanograph/nanograph/releases/tag/v1.3.0"
+        },
+        "requested": "nanograph/nanograph"
+      },
+      {
+        "nameWithOwner": "AgentMemoryRepo/agentmemoryrepo",
+        "url": "https://github.com/AgentMemoryRepo/agentmemoryrepo",
+        "description": "Spec for Agent Memory Repo",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-06T23:52:20Z",
+        "licenseInfo": {
+          "spdxId": "MIT"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "8798cb26c817d451a5ed6cba0ad8d9eca8d5ec3e",
+            "committedDate": "2026-10-06T23:52:19Z"
+          }
+        },
+        "latestRelease": null,
+        "requested": "AgentMemoryRepo/agentmemoryrepo"
+      },
+      {
+        "nameWithOwner": "google-gemini/gemini-cli",
+        "url": "https://github.com/google-gemini/gemini-cli",
+        "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T18:09:50Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "84f2b80e8bb00abf7b79b7f03eb972f1381128fb",
+            "committedDate": "2026-10-15T17:52:06Z"
+          }
+        },
+        "latestRelease": {
+          "tagName": "v0.64.0",
+          "publishedAt": "2026-10-13T20:44:46Z",
+          "isPrerelease": false,
+          "url": "https://github.com/google-gemini/gemini-cli/releases/tag/v0.64.0"
+        },
+        "requested": "google-gemini/gemini-cli"
+      },
+      {
+        "nameWithOwner": "GoogleCloudPlatform/generative-ai",
+        "url": "https://github.com/GoogleCloudPlatform/generative-ai",
+        "description": "Sample code and notebooks for Generative AI on Google Cloud, with Gemini Enterprise Agent Platform",
+        "isArchived": false,
+        "isFork": false,
+        "pushedAt": "2026-10-15T17:21:27Z",
+        "licenseInfo": {
+          "spdxId": "Apache-2.0"
+        },
+        "defaultBranchRef": {
+          "name": "main",
+          "target": {
+            "oid": "4fc5a2fa13847d97a8cbd00939683d3bdf537176",
+            "committedDate": "2026-10-14T14:57:44Z"
+          }
+        },
+        "latestRelease": null,
+        "requested": "GoogleCloudPlatform/generative-ai"
+      }
+    ],
+    "errors": [
+      {
+        "type": "NOT_FOUND",
+        "path": [
+          "r13"
+        ],
+        "locations": [
+          {
+            "line": 1,
+            "column": 3408
+          }
+        ],
+        "message": "Could not resolve to a Repository with the name 'Zleap-AI/zleap'."
+      }
+    ]
+  },
+  "sag_current_repository": {
+    "nameWithOwner": "Zleap-AI/SAG",
+    "url": "https://github.com/Zleap-AI/SAG",
+    "description": "A new SOTA for RAG \u2014 an original retrieval architecture and an open-source knowledge base for humans and agents.",
+    "isArchived": false,
+    "pushedAt": "2026-10-14T18:28:37Z",
+    "licenseInfo": {
+      "spdxId": "MIT"
+    },
+    "defaultBranchRef": {
+      "name": "main",
+      "target": {
+        "oid": "56f073c1c0c300b46707c7249d48732730656cb0",
+        "committedDate": "2026-10-09T08:55:43Z"
+      }
+    },
+    "latestRelease": {
+      "tagName": "fnos-v1.5.11-fnos",
+      "publishedAt": "2026-09-30T11:30:14Z",
+      "isPrerelease": false,
+      "url": "https://github.com/Zleap-AI/SAG/releases/tag/fnos-v1.5.11-fnos"
+    }
+  },
+  "package_versions": [
+    {
+      "package": "mem0ai",
+      "version": "2.2.1",
+      "published_at": "2026-09-25T17:36:07.480270Z",
+      "project_urls": null,
+      "package_url": "https://pypi.org/project/mem0ai/"
+    },
+    {
+      "package": "openviking",
+      "version": "0.5.0",
+      "published_at": "2026-10-09T16:31:08.022864Z",
+      "project_urls": {
+        "Documentation": "https://openviking.ai",
+        "Homepage": "https://github.com/volcengine/openviking",
+        "Issues": "https://github.com/volcengine/openviking/issues",
+        "Repository": "https://github.com/volcengine/openviking"
+      },
+      "package_url": "https://pypi.org/project/openviking/"
+    },
+    {
+      "package": "zleap-sag",
+      "version": "0.14.0",
+      "published_at": "2026-10-08T12:06:57.419996Z",
+      "project_urls": {
+        "Changelog": "https://github.com/Zleap-AI/zleap/blob/main/packages/sag/CHANGELOG.md",
+        "Documentation": "https://github.com/Zleap-AI/zleap/tree/main/packages/sag#readme",
+        "Homepage": "https://github.com/Zleap-AI/zleap",
+        "Issues": "https://github.com/Zleap-AI/zleap/issues",
+        "Repository": "https://github.com/Zleap-AI/zleap"
+      },
+      "package_url": "https://pypi.org/project/zleap-sag/"
+    },
+    {
+      "package": "pageindex",
+      "version": "0.4.0",
+      "published_at": "2026-10-12T15:39:37.926666Z",
+      "project_urls": {
+        "Documentation": "https://docs.pageindex.ai",
+        "Homepage": "https://pageindex.ai",
+        "Issues": "https://github.com/VectifyAI/PageIndex/issues",
+        "Repository": "https://github.com/VectifyAI/PageIndex"
+      },
+      "package_url": "https://pypi.org/project/pageindex/"
+    },
+    {
+      "package": "graphiti-core",
+      "version": "0.31.1",
+      "published_at": "2026-10-15T15:02:54.146401Z",
+      "project_urls": {
+        "Homepage": "https://help.getzep.com/graphiti/graphiti/overview",
+        "Repository": "https://github.com/getzep/graphiti"
+      },
+      "package_url": "https://pypi.org/project/graphiti-core/"
+    },
+    {
+      "package": "graphrag",
+      "version": "3.3.0",
+      "published_at": "2026-10-08T18:27:13.990509Z",
+      "project_urls": {
+        "Source": "https://github.com/microsoft/graphrag"
+      },
+      "package_url": "https://pypi.org/project/graphrag/"
+    },
+    {
+      "package": "hindsight-api",
+      "version": "1.0.0",
+      "published_at": "2026-10-13T13:47:15.686749Z",
+      "project_urls": null,
+      "package_url": "https://pypi.org/project/hindsight-api/"
+    }
+  ],
+  "source_receipts": [
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "2ac6825991c2bc6f3db6324f861a333772af69857452856702de9d15ff69404d",
+      "bytes": 26869,
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/README.md"
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "tree.json",
+      "ok": true,
+      "sha256": "3844ff654dab78b6e718f789b3c57d3285234383ddff055e1a23cc2d27390ffc",
+      "bytes": 1528567
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "518fd9dcaacca7341c5e756bc52919f9badfef0e043d4f47fe23dcd8d7bf9d36",
+      "bytes": 44989,
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/README.md"
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "tree.json",
+      "ok": true,
+      "sha256": "5b79b13a3cb4b7154c3b359e4b8afed4446bba84f21c1895b3ff8fbf64c71404",
+      "bytes": 3158852
+    },
+    {
+      "repository": "MemTensor/MemOS",
+      "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "9c2ec97ba97e5371088e041d04085f70195b4626a9dcb517194f90b9495b30dc",
+      "bytes": 17535,
+      "url": "https://github.com/MemTensor/MemOS/blob/a7367d07e55db61099f7b4e2c1108bc5831a24f3/README.md"
+    },
+    {
+      "repository": "MemTensor/MemOS",
+      "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+      "path": "tree.json",
+      "ok": true,
+      "sha256": "75d956feb9247213d6321fad8e6d57ad1f0a6c02cf91b6f8c4ee8099d9c6cf0c",
+      "bytes": 618242
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "a3e2745dedec4f9e0d4452857ef054699e60414740f5d8f12d41bd42711d476a",
+      "bytes": 24997,
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/README.md"
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "tree.json",
+      "ok": true,
+      "sha256": "2648a7f79854790357c594a2338a60a29c290b8177c30c83892ff2e3c12db818",
+      "bytes": 1548072
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "fac60858d157e4dd64dbd1ec75355b5815c54bd4d9c6e628b75ee3717d36e196",
+      "bytes": 17281,
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/README.md"
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "tree.json",
+      "ok": true,
+      "sha256": "55980e5ff78e592efdab6d2e0b729caa9a82c5a870059fdd2eff7d5a922fd923",
+      "bytes": 1470334
+    },
+    {
+      "repository": "mem0ai/mem0",
+      "revision": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "f72db3426438dbdf6879a2b50583fbee8e7e2dde5d01308c6295bcd09fd3db86",
+      "bytes": 12306,
+      "url": "https://github.com/mem0ai/mem0/blob/0724291bd864cf807e88ee8981c8226644e8fb42/README.md"
+    },
+    {
+      "repository": "mem0ai/mem0",
+      "revision": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "path": "tree.json",
+      "ok": true,
+      "sha256": "18b34c2c48bef97f1062bae464d121f7d4ae6d2158c09ed2e765619bd59861fa",
+      "bytes": 530526
+    },
+    {
+      "repository": "plastic-labs/honcho",
+      "revision": "29e20d5ea9731dd2ef1b947c9f242673a1639035",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "9843107513bc5b47c6b100b312d4cf7ba4543a8d4ac108ce306f9b7c73fdd4b1",
+      "bytes": 34738,
+      "url": "https://github.com/plastic-labs/honcho/blob/29e20d5ea9731dd2ef1b947c9f242673a1639035/README.md"
+    },
+    {
+      "repository": "plastic-labs/honcho",
+      "revision": "29e20d5ea9731dd2ef1b947c9f242673a1639035",
+      "path": "tree.json",
+      "ok": true,
+      "sha256": "93a052a1992d21c965ae855939cfcfa62e375e3e7938f6e45d7a00776281a9c7",
+      "bytes": 343122
+    },
+    {
+      "repository": "tobi/qmd",
+      "revision": "86d2365d17fc682e491c2c53d1e4a884aee8682a",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "af5f41ebeea04e0928fccd38ba5f47d90749b8f0417b84a99f89a677fefae76a",
+      "bytes": 66389,
+      "url": "https://github.com/tobi/qmd/blob/86d2365d17fc682e491c2c53d1e4a884aee8682a/README.md"
+    },
+    {
+      "repository": "VectifyAI/PageIndex",
+      "revision": "216d7c1f996a7c43ccd1168b31a541c83cd6e3bf",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "af6c8a70730572d114e9d1abae561a8419522fd23bbfb9a6b14c81f50960df43",
+      "bytes": 12965,
+      "url": "https://github.com/VectifyAI/PageIndex/blob/216d7c1f996a7c43ccd1168b31a541c83cd6e3bf/README.md"
+    },
+    {
+      "repository": "VectifyAI/OpenKB",
+      "revision": "ff54396e575ee6feb0113b631a34caa082b441cc",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "d3f1e5ef1ad4e6dc90cfa1ab65b8b1d9e0e516f3d052275f7e59026b7ac50374",
+      "bytes": 22572,
+      "url": "https://github.com/VectifyAI/OpenKB/blob/ff54396e575ee6feb0113b631a34caa082b441cc/README.md"
+    },
+    {
+      "repository": "getzep/graphiti",
+      "revision": "dd3fd6ca7671c90b299fe8e8867a9f8439eafbeb",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "e0beb0d34b53e25e72c22d68bd951c34a1dfdc1b4454fd821ecc29f3552708de",
+      "bytes": 33169,
+      "url": "https://github.com/getzep/graphiti/blob/dd3fd6ca7671c90b299fe8e8867a9f8439eafbeb/README.md"
+    },
+    {
+      "repository": "HKUDS/LightRAG",
+      "revision": "aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "b495a0fb015976fca63152962ebd4a4daf82f32fdd8c3bb146fab90a0b09e8e4",
+      "bytes": 52594,
+      "url": "https://github.com/HKUDS/LightRAG/blob/aaebfe1bb8d55deb6a4304d357a3bf4c92fcd40a/README.md"
+    },
+    {
+      "repository": "microsoft/graphrag",
+      "revision": "5faaaf4f5685fa2056fa8c3bf9342cb089f2942f",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "36df9326f1e83343fd46373a2a059093590e4c2ad2256d3ed5de5c5e6e492709",
+      "bytes": 5099,
+      "url": "https://github.com/microsoft/graphrag/blob/5faaaf4f5685fa2056fa8c3bf9342cb089f2942f/README.md"
+    },
+    {
+      "repository": "letta-ai/letta",
+      "revision": "5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "1d624e8fd383c1198c8d42da87b055d591a5760e19607692eb46bbbfe2a58f03",
+      "bytes": 1574,
+      "url": "https://github.com/letta-ai/letta/blob/5bcdd177d70fa2b31a754cfcd801e77b2e1ab16a/README.md"
+    },
+    {
+      "repository": "letta-ai/letta-code",
+      "revision": "a586e9aedcb3ee5241f71d02a17badde82ac9012",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "61811b022086eeb9d0bdab91cce960f193e9b1bec544c36f64cf6a1f5eb9382c",
+      "bytes": 9696,
+      "url": "https://github.com/letta-ai/letta-code/blob/a586e9aedcb3ee5241f71d02a17badde82ac9012/README.md"
+    },
+    {
+      "repository": "rohitg00/agentmemory",
+      "revision": "36eb328e12970c84e6031fd75b8ab77b977cd281",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "6890af2208fa65cf6c0689e6d9bbd2e255edbf0b38c9a37130e8af9b82b03597",
+      "bytes": 129311,
+      "url": "https://github.com/rohitg00/agentmemory/blob/36eb328e12970c84e6031fd75b8ab77b977cd281/README.md"
+    },
+    {
+      "repository": "thedotmack/claude-mem",
+      "revision": "fef3402e674bebbf72a23aeb735e91c92cd34afd",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "47367f4dea69084ef8bfdcd19fb1ef8afcce02a7d9deaea5b4184d19d00b5799",
+      "bytes": 20025,
+      "url": "https://github.com/thedotmack/claude-mem/blob/fef3402e674bebbf72a23aeb735e91c92cd34afd/README.md"
+    },
+    {
+      "repository": "zilliztech/memsearch",
+      "revision": "09e07d86b31ff81938b4f44a57099b6a9fc8723f",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "c52b5f0576aa0460b0b80abf0f1f59ed8285ebac91607acf27cab3e66f56236a",
+      "bytes": 30988,
+      "url": "https://github.com/zilliztech/memsearch/blob/09e07d86b31ff81938b4f44a57099b6a9fc8723f/README.md"
+    },
+    {
+      "repository": "Graphify-Labs/graphify",
+      "revision": "10130e79ed9caf8f60d998073e097531eaa1a395",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "a5c5814bb51c4425318aede7a5163688d7d0a334f134efd51874b820a3a7e107",
+      "bytes": 34450,
+      "url": "https://github.com/Graphify-Labs/graphify/blob/10130e79ed9caf8f60d998073e097531eaa1a395/README.md"
+    },
+    {
+      "repository": "nvk/llm-wiki",
+      "revision": "95a042c68998559305bc69ac8c482c4e1a415ad3",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "8b604c3d68148323ce4f887f43c20ba3722b08b27ee827c0ba4d6a77ec0b4a8f",
+      "bytes": 54149,
+      "url": "https://github.com/nvk/llm-wiki/blob/95a042c68998559305bc69ac8c482c4e1a415ad3/README.md"
+    },
+    {
+      "repository": "langchain-ai/langgraph",
+      "revision": "5eb60aef6f3837a1fb632a8abc6cf8e8da81785b",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "3a13e257af1216962d53d72414a7f44ac1fc5cea34d994bdff60ea2a3b045933",
+      "bytes": 6395,
+      "url": "https://github.com/langchain-ai/langgraph/blob/5eb60aef6f3837a1fb632a8abc6cf8e8da81785b/README.md"
+    },
+    {
+      "repository": "nanograph/nanograph",
+      "revision": "972a98703bd503d0336f9f095366fbff69f70f9b",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "cdca0666172a4bf7733c6ff31e6770e202385a7ad9d84b13275ac4ee9daefd74",
+      "bytes": 2561,
+      "url": "https://github.com/nanograph/nanograph/blob/972a98703bd503d0336f9f095366fbff69f70f9b/README.md"
+    },
+    {
+      "repository": "AgentMemoryRepo/agentmemoryrepo",
+      "revision": "8798cb26c817d451a5ed6cba0ad8d9eca8d5ec3e",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "9b1ae9d657371375d743d68366ce793f9ce5cf8d8665c313f8a7a5ad48c1504f",
+      "bytes": 12364,
+      "url": "https://github.com/AgentMemoryRepo/agentmemoryrepo/blob/8798cb26c817d451a5ed6cba0ad8d9eca8d5ec3e/README.md"
+    },
+    {
+      "repository": "google-gemini/gemini-cli",
+      "revision": "84f2b80e8bb00abf7b79b7f03eb972f1381128fb",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "bacf354f3f674d57679ebf7b42dd69311bb9ef14200e18ca703d82aba48bf833",
+      "bytes": 13489,
+      "url": "https://github.com/google-gemini/gemini-cli/blob/84f2b80e8bb00abf7b79b7f03eb972f1381128fb/README.md"
+    },
+    {
+      "repository": "GoogleCloudPlatform/generative-ai",
+      "revision": "4fc5a2fa13847d97a8cbd00939683d3bdf537176",
+      "path": "README.md",
+      "ok": true,
+      "sha256": "1f8a05fe583bf45c15f46c70c6be7175f260a52a89e2ab1f13198675316242e4",
+      "bytes": 8221,
+      "url": "https://github.com/GoogleCloudPlatform/generative-ai/blob/4fc5a2fa13847d97a8cbd00939683d3bdf537176/README.md"
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/concepts/02-context-types.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/concepts/02-context-types.md",
+      "ok": true,
+      "sha256": "73c79e98d0d745fa4224d62c4086b8b5b7276a535f958b560ed9f453cc2e862e",
+      "bytes": 8672
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/concepts/05-storage.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/concepts/05-storage.md",
+      "ok": true,
+      "sha256": "b4b3e5af4525bb58ae090f4f19100431f9a19276a0615b77ce539e1f14ba6533",
+      "bytes": 6136
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/concepts/08-session.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/concepts/08-session.md",
+      "ok": true,
+      "sha256": "9b2c27a00af47872c2220a1fa54dff1280bd85a0166ae839e8a36799186cdb21",
+      "bytes": 9460
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/api/16-memory.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/api/16-memory.md",
+      "ok": true,
+      "sha256": "8fd01ef5caba5c8aaeb1d756aaa1fad9e7ad0f9dddf86055fe2bd21ac27495f7",
+      "bytes": 2539
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/guides/03-deployment.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/guides/03-deployment.md",
+      "ok": true,
+      "sha256": "30f8dcf790877e624a6d691f70543604daa4cdb103504197dd9c75497c48a2b7",
+      "bytes": 18564
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/context-compilation/01-overview.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/context-compilation/01-overview.md",
+      "ok": true,
+      "sha256": "917938c657d0851ce559a7251be3dd230264d992a887486c1f9bc3ef675673a4",
+      "bytes": 5871
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/context-compilation/02-llm-wiki.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/context-compilation/02-llm-wiki.md",
+      "ok": true,
+      "sha256": "eeae4d6781e948a6f27e97ca33503aa47885972584e95deab4bc9033fb92c44b",
+      "bytes": 5210
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "docs/en/context-compilation/06-memory-consolidation.md",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/docs/en/context-compilation/06-memory-consolidation.md",
+      "ok": true,
+      "sha256": "5ace7c8788a5c9a456462403f3747f62b421eb0de4f7ff0c7a01ee6c31075d83",
+      "bytes": 7111
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "openviking/session/memory/memory_updater.py",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/openviking/session/memory/memory_updater.py",
+      "ok": true,
+      "sha256": "68e1d35062c855882e754f359c9e5d47ff3b2716f459083f12e233261094c14c",
+      "bytes": 84892
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "openviking/session/memory/utils/resource_refs.py",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/openviking/session/memory/utils/resource_refs.py",
+      "ok": true,
+      "sha256": "715d3885fb171a5f427d4fbf1f1deed55f1f5a2cc641f45c963e52e1a75b5624",
+      "bytes": 14064
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "openviking_cli/utils/config/embedding_config.py",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/openviking_cli/utils/config/embedding_config.py",
+      "ok": true,
+      "sha256": "3159fb35e45e516f37af25cde930eba57104f040e7f3aabb9ba8605bc8b30f24",
+      "bytes": 48635
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/guides/brain-vs-memory.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/guides/brain-vs-memory.md",
+      "ok": true,
+      "sha256": "d16008c3a285e742e940ad5a15661819025e807cacd878f6ec220fed57fc0ec4",
+      "bytes": 3130
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/guides/memory-boundaries.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/guides/memory-boundaries.md",
+      "ok": true,
+      "sha256": "2ec3165b5810d3685f8914cb361fea68f69ef467b131ec933a10fcd9ab099fd1",
+      "bytes": 22986
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/guides/memory-trust.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/guides/memory-trust.md",
+      "ok": true,
+      "sha256": "81717dc4ba4b9b2b076b4934dfca6592d26cb707193e63b52757e15b9d4725d2",
+      "bytes": 8048
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/guides/source-attribution.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/guides/source-attribution.md",
+      "ok": true,
+      "sha256": "461fc53dcf2c9701a52e8514cb7d88a4e7f7aa588e60b2a64cc18c3aaf7ddd6d",
+      "bytes": 4547
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/guides/time-aware-recall.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/guides/time-aware-recall.md",
+      "ok": true,
+      "sha256": "c83d860b8d662baa9c5f898efbb406ee18422d9279e2e14bbb701fb13d360604",
+      "bytes": 2797
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/architecture/brains-and-sources.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/architecture/brains-and-sources.md",
+      "ok": true,
+      "sha256": "94f4a5bf7751297443aace1e91cb22120148439e6f36f11313f06f9819944b14",
+      "bytes": 17783
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/architecture/canonical-writers.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/architecture/canonical-writers.md",
+      "ok": true,
+      "sha256": "7ed21885addd8660feea67f3ff9f214e765905d600ea712f2c55bf963a2f130c",
+      "bytes": 7209
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "docs/integrations/embedding-providers.md",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/docs/integrations/embedding-providers.md",
+      "ok": true,
+      "sha256": "c6e3600cdaee0f6772c4212432be1930e678fadb99e006f9ffed394db4c1aa1d",
+      "bytes": 32671
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "src/core/vector-index.ts",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/src/core/vector-index.ts",
+      "ok": true,
+      "sha256": "29934e6f4307bbcd5b13e400bf0b2df7baee0af5cae89bdc89096828676d9bdf",
+      "bytes": 15554
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "src/core/facts/proposal-supersede.ts",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/src/core/facts/proposal-supersede.ts",
+      "ok": true,
+      "sha256": "e35307c2d3963f265f8b8f2944140ed1873623ddf13cf0f59ca3f6642055ebbd",
+      "bytes": 29501
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "revision": "ea93c770b6133c887eb11472c8912b1e15943b54",
+      "path": "src/core/facts/forget.ts",
+      "url": "https://github.com/garrytan/gbrain/blob/ea93c770b6133c887eb11472c8912b1e15943b54/src/core/facts/forget.ts",
+      "ok": true,
+      "sha256": "e100a54c67ee44adca2307aee2b25bd267061a5362b17b89002e6b5028b0e5bd",
+      "bytes": 14166
+    },
+    {
+      "repository": "MemTensor/MemOS",
+      "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+      "path": "docs/en/open_source/best_practice/memory_structure_design.md",
+      "url": "https://github.com/MemTensor/MemOS/blob/a7367d07e55db61099f7b4e2c1108bc5831a24f3/docs/en/open_source/best_practice/memory_structure_design.md",
+      "ok": true,
+      "sha256": "d26288897d84589f7c7dca542946ebdad6b9881f2984cdf6e2d1cec3c3351f0b",
+      "bytes": 3143
+    },
+    {
+      "repository": "MemTensor/MemOS",
+      "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+      "path": "docs/en/open_source/modules/memories/tree_textual_memory.md",
+      "url": "https://github.com/MemTensor/MemOS/blob/a7367d07e55db61099f7b4e2c1108bc5831a24f3/docs/en/open_source/modules/memories/tree_textual_memory.md",
+      "ok": true,
+      "sha256": "7c55c3c217ead7d45a7e68c2225d585efd2ac92c83e46dd6ffb12ef00679cae1",
+      "bytes": 17944
+    },
+    {
+      "repository": "MemTensor/MemOS",
+      "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+      "path": "docs/en/open_source/modules/mem_cube.md",
+      "url": "https://github.com/MemTensor/MemOS/blob/a7367d07e55db61099f7b4e2c1108bc5831a24f3/docs/en/open_source/modules/mem_cube.md",
+      "ok": true,
+      "sha256": "f8e49a7514c592f9022951babf1f42553faf6f70e49c556aaadc2e40cd9b8ab9",
+      "bytes": 9512
+    },
+    {
+      "repository": "MemTensor/MemOS",
+      "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+      "path": "docker/docker-compose.yml",
+      "url": "https://github.com/MemTensor/MemOS/blob/a7367d07e55db61099f7b4e2c1108bc5831a24f3/docker/docker-compose.yml",
+      "ok": true,
+      "sha256": "3bda164e36cf4b8dceea37f57be47c2d8ba82dd5d0694c4d80c7b3163f8ba691",
+      "bytes": 1465
+    },
+    {
+      "repository": "MemTensor/MemOS",
+      "revision": "a7367d07e55db61099f7b4e2c1108bc5831a24f3",
+      "path": "src/memos/memories/textual/tree_text_memory/organize/manager.py",
+      "url": "https://github.com/MemTensor/MemOS/blob/a7367d07e55db61099f7b4e2c1108bc5831a24f3/src/memos/memories/textual/tree_text_memory/organize/manager.py",
+      "ok": true,
+      "sha256": "f6705f2b059eb6a08bac880979ce28c8cbb7ea638fbe6bbc1d66d306a5e36bee",
+      "bytes": 21475
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/storage.md",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/storage.md",
+      "ok": true,
+      "sha256": "daf96ee642ef56842edc6b2c7251f61ea72069b03e3228921d1392be67219d19",
+      "bytes": 3404
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/configuration.mdx",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/configuration.mdx",
+      "ok": true,
+      "sha256": "6bd0d17b91fcfe47445e0c07b21493d872a977e98ab56abc24ce907c2b47452a",
+      "bytes": 261528
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/retain.md",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/retain.md",
+      "ok": true,
+      "sha256": "e9414264ff51543ff10572ed4bfc04b7dbf296cc0d341bfa3ed2667f5c8cbb70",
+      "bytes": 17128
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/observations.mdx",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/observations.mdx",
+      "ok": true,
+      "sha256": "f1aa14debbc1276dc814a8eb5efc12bcf1157ad1309e287f5b6090d9cb7b327b",
+      "bytes": 22606
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/mental-models.mdx",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/mental-models.mdx",
+      "ok": true,
+      "sha256": "7b2a56b2c5b45cf91a5ab3fe3999fbba937f9c5f3e29531b972d4d639693aec3",
+      "bytes": 4603
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/knowledge-pages.mdx",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/knowledge-pages.mdx",
+      "ok": true,
+      "sha256": "e02a06512c2e5c979e17e8221b2be564a37faff4b39e383f960d9ac24f5e3f70",
+      "bytes": 5268
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/installation.md",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/installation.md",
+      "ok": true,
+      "sha256": "0075c5a620447062615bba16fcf17749d2b961a8ca07a7e881fe13ff54a45b5b",
+      "bytes": 19397
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-docs/docs/developer/api/retain.mdx",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-docs/docs/developer/api/retain.mdx",
+      "ok": true,
+      "sha256": "c7a95efd8c264ab49e92c9e7ed60ae4f4a81498dab571d5640d71d6a58f63236",
+      "bytes": 21683
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "docs/guides/memory/configure_memory.md",
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/docs/guides/memory/configure_memory.md",
+      "ok": true,
+      "sha256": "0f904caefa9f5bbf91b4ac460a932f92a4c78d2869648fc1b2e63395469e8334",
+      "bytes": 3810
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "docs/guides/memory/connect_to_an_agent.md",
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/docs/guides/memory/connect_to_an_agent.md",
+      "ok": true,
+      "sha256": "1bd6f9b03138be0b1b2d52543af7fc33635f320d610dc661712bb6bd8dff4509",
+      "bytes": 1849
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "docs/guides/knowledge_compilation/overview.md",
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/docs/guides/knowledge_compilation/overview.md",
+      "ok": true,
+      "sha256": "9258106b241e5d41daa429f9cd0fd7284306276c27ae7484edb235ae42c2915f",
+      "bytes": 6909
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "internal/service/memory_extractor.go",
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/internal/service/memory_extractor.go",
+      "ok": true,
+      "sha256": "db60a8163efad972e0798fb9ca63c7262a995d538ec1972248845940f41c9a6c",
+      "bytes": 28139
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "internal/service/memory_message_service.go",
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/internal/service/memory_message_service.go",
+      "ok": true,
+      "sha256": "e348503f4323cfbee824dd8bce050edefffce40e669c958443e2ea808d16c526",
+      "bytes": 14094
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "internal/entity/memory.go",
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/internal/entity/memory.go",
+      "ok": true,
+      "sha256": "2be9264ad48ab0733b5bbd232977317b02987c438ad7b39d39c740743183c648",
+      "bytes": 2801
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "revision": "26ec6912865fa0553f0d3ad2f30b887c7966c873",
+      "path": "docker/docker-compose-base.yml",
+      "url": "https://github.com/infiniflow/ragflow/blob/26ec6912865fa0553f0d3ad2f30b887c7966c873/docker/docker-compose-base.yml",
+      "ok": true,
+      "sha256": "c536465a66d27d1c0ccb194eefe0566743a0dc542e8a56514c7d98d057c50b4a",
+      "bytes": 17154
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-api-slim/hindsight_api/_vector_index.py",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-api-slim/hindsight_api/_vector_index.py",
+      "ok": true,
+      "sha256": "65ab60669a5e675ae69d56e891c9e939c97752332151fc81bf9897d3f5ba444a"
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "hindsight-api-slim/hindsight_api/engine/schema.py",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/hindsight-api-slim/hindsight_api/engine/schema.py",
+      "ok": true,
+      "sha256": "313d498fa25b067dba00ecf8a6c248baf1a1214ebdf91846a90868184742d08a"
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "revision": "9a499b1759084a86598eff8af30ed59f7354e76c",
+      "path": "docker/docker-compose/vchord/docker-compose.yaml",
+      "url": "https://github.com/vectorize-io/hindsight/blob/9a499b1759084a86598eff8af30ed59f7354e76c/docker/docker-compose/vchord/docker-compose.yaml",
+      "ok": true,
+      "sha256": "c80e370c9eac3dca63d23b7b6370bbb3e62bc422c2e0d44943d655391c58c506"
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "openviking/storage/collection_schemas.py",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/openviking/storage/collection_schemas.py",
+      "ok": true,
+      "sha256": "c3d3ccf1c74545668c26dea0e6458928c36e9e5cb554c84ed4a0e145ab27c740"
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "revision": "6006fc3403b52f52ef8c01f128691b5a10a01e99",
+      "path": "openviking/storage/vectordb/collection/local_collection.py",
+      "url": "https://github.com/volcengine/OpenViking/blob/6006fc3403b52f52ef8c01f128691b5a10a01e99/openviking/storage/vectordb/collection/local_collection.py",
+      "ok": true,
+      "sha256": "4ecb296575da851c71850a251f0dd6170adff7302bb80875683839906199375a"
+    },
+    {
+      "repository": "plastic-labs/honcho",
+      "revision": "29e20d5ea9731dd2ef1b947c9f242673a1639035",
+      "path": "scripts/configure_embeddings.py",
+      "url": "https://github.com/plastic-labs/honcho/blob/29e20d5ea9731dd2ef1b947c9f242673a1639035/scripts/configure_embeddings.py",
+      "ok": true,
+      "sha256": "e528478b3569e26cf6cda078e997e11fe5970933bb3bc7dd19a4c254ef38369f"
+    },
+    {
+      "repository": "mem0ai/mem0",
+      "revision": "0724291bd864cf807e88ee8981c8226644e8fb42",
+      "path": "mem0/memory/storage.py",
+      "url": "https://github.com/mem0ai/mem0/blob/0724291bd864cf807e88ee8981c8226644e8fb42/mem0/memory/storage.py",
+      "ok": true,
+      "sha256": "5f5ecdadd2b260fd14f36a0f338336eb760275465dd1056a99a47e1ef07702bd"
+    },
+    {
+      "repository": "Zleap-AI/SAG",
+      "revision": "56f073c1c0c300b46707c7249d48732730656cb0",
+      "path": "README.md",
+      "url": "https://github.com/Zleap-AI/SAG/blob/56f073c1c0c300b46707c7249d48732730656cb0/README.md",
+      "ok": true,
+      "sha256": "c9e807945c855d4e4ef82f5dcb179780c6bb2f68a51a7b0339501959f244bf1d"
+    },
+    {
+      "repository": "GoogleCloudPlatform/generative-ai",
+      "revision": "4fc5a2fa13847d97a8cbd00939683d3bdf537176",
+      "path": "gemini/agents/always-on-memory-agent/README.md",
+      "url": "https://github.com/GoogleCloudPlatform/generative-ai/blob/4fc5a2fa13847d97a8cbd00939683d3bdf537176/gemini/agents/always-on-memory-agent/README.md",
+      "ok": true,
+      "sha256": "e5b61c12061ba33c42cc053fee7dae804bb09fb705389355edf331017a2d70b4"
+    }
+  ],
+  "release_source_checks": [
+    {
+      "repository": "volcengine/OpenViking",
+      "ref": "v0.5.0",
+      "path": "docs/en/concepts/08-session.md",
+      "ok": true,
+      "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/concepts/08-session.md",
+      "sha256": "9b2c27a00af47872c2220a1fa54dff1280bd85a0166ae839e8a36799186cdb21",
+      "same_as_reviewed_head": true
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "ref": "v0.5.0",
+      "path": "docs/en/context-compilation/01-overview.md",
+      "ok": true,
+      "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/docs/en/context-compilation/01-overview.md",
+      "sha256": "917938c657d0851ce559a7251be3dd230264d992a887486c1f9bc3ef675673a4",
+      "same_as_reviewed_head": true
+    },
+    {
+      "repository": "volcengine/OpenViking",
+      "ref": "v0.5.0",
+      "path": "openviking_cli/utils/config/embedding_config.py",
+      "ok": true,
+      "url": "https://github.com/volcengine/OpenViking/blob/v0.5.0/openviking_cli/utils/config/embedding_config.py",
+      "sha256": "66cf9058116a700772bc881850c302c1c9da6630f94f1605160e8fb4bd3d6283",
+      "same_as_reviewed_head": false
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "ref": "v1.0.0",
+      "path": "hindsight-docs/docs/developer/api/retain.mdx",
+      "ok": true,
+      "url": "https://github.com/vectorize-io/hindsight/blob/v1.0.0/hindsight-docs/docs/developer/api/retain.mdx",
+      "sha256": "c7a95efd8c264ab49e92c9e7ed60ae4f4a81498dab571d5640d71d6a58f63236",
+      "same_as_reviewed_head": true
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "ref": "v1.0.0",
+      "path": "hindsight-docs/docs/developer/knowledge-pages.mdx",
+      "ok": true,
+      "url": "https://github.com/vectorize-io/hindsight/blob/v1.0.0/hindsight-docs/docs/developer/knowledge-pages.mdx",
+      "sha256": "e02a06512c2e5c979e17e8221b2be564a37faff4b39e383f960d9ac24f5e3f70",
+      "same_as_reviewed_head": true
+    },
+    {
+      "repository": "vectorize-io/hindsight",
+      "ref": "v1.0.0",
+      "path": "hindsight-docs/docs/developer/configuration.mdx",
+      "ok": true,
+      "url": "https://github.com/vectorize-io/hindsight/blob/v1.0.0/hindsight-docs/docs/developer/configuration.mdx",
+      "sha256": "5e7931f99fe30ff7b0ff5d57f19224dc338ba8aaa795434a271f47577cb9f8a0",
+      "same_as_reviewed_head": false
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "ref": "v0.60.248.0",
+      "path": "src/core/vector-index.ts",
+      "ok": true,
+      "url": "https://github.com/garrytan/gbrain/blob/v0.60.248.0/src/core/vector-index.ts",
+      "sha256": "29934e6f4307bbcd5b13e400bf0b2df7baee0af5cae89bdc89096828676d9bdf",
+      "same_as_reviewed_head": true
+    },
+    {
+      "repository": "garrytan/gbrain",
+      "ref": "v0.60.248.0",
+      "path": "docs/guides/memory-trust.md",
+      "ok": true,
+      "url": "https://github.com/garrytan/gbrain/blob/v0.60.248.0/docs/guides/memory-trust.md",
+      "sha256": "1c84637708a6b0e83caf059af135f3f8e20f646f0b88e4b867a294bf37c7a608",
+      "same_as_reviewed_head": false
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "ref": "v1.0.0-rc1",
+      "path": "docs/guides/memory/configure_memory.md",
+      "ok": true,
+      "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/docs/guides/memory/configure_memory.md",
+      "sha256": "0f904caefa9f5bbf91b4ac460a932f92a4c78d2869648fc1b2e63395469e8334",
+      "same_as_reviewed_head": true
+    },
+    {
+      "repository": "infiniflow/ragflow",
+      "ref": "v1.0.0-rc1",
+      "path": "internal/service/memory_extractor.go",
+      "ok": true,
+      "url": "https://github.com/infiniflow/ragflow/blob/v1.0.0-rc1/internal/service/memory_extractor.go",
+      "sha256": "d7a5cf6c7c48f11b2708873459dbef8bdd3bb92d41d1e4609f305e56b3e23400",
+      "same_as_reviewed_head": false
+    }
+  ],
+  "evidence_limits": [
+    "Default branch review is not release runtime acceptance.",
+    "Latest GitHub release can identify a component or platform-specific distribution.",
+    "The former SAG engine repository lookup failed; the current app repository and Python package were resolved separately.",
+    "Historical 1536-dimensional tests do not prove current 4096-dimensional runtime behavior.",
+    "Maintenance levels are engineering judgments, not measured monthly costs."
+  ]
+}

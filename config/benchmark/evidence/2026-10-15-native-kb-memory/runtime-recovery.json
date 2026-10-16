@@ -1,0 +1,26 @@
+{
+  "same_release": "0.5.0",
+  "from_platform": "linux/amd64",
+  "to_platform": "linux/arm64",
+  "image": "ghcr.io/volcengine/openviking@sha256:9e0a87c15ded8f8d7eca68d8b7213c8f54e258caa2f7d04e54ceb995fcc8b31e",
+  "old_container_id": "3f25b1d3136053aefe9b546bcab191bc55b7793d9684c091081a1cf88dfcb8cf",
+  "workspace_snapshot": "openviking-pre-recovery",
+  "new_runtime_ready_seconds": 50.927564999990864,
+  "native_health": {
+    "status": "ok",
+    "healthy": true,
+    "version": "v0.5.0",
+    "auth_mode": "api_key",
+    "account_id": "default",
+    "user_id": "default",
+    "role": "root"
+  },
+  "native_data_status": {
+    "initialized": true,
+    "user": "formal"
+  },
+  "reingested_sources": 0,
+  "reextracted_sessions": 0,
+  "prior_answers_repeated": 0,
+  "speed_comparison_allowed": false
+}

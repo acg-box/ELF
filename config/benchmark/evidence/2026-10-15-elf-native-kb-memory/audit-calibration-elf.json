@@ -1,0 +1,47 @@
+{
+  "knowledge_originals": [
+    {
+      "evidence_id": "e_be0f90d28465e92fcac2023d",
+      "doc_id": "01d83a92-e276-5253-bedd-13e5161c3937",
+      "exact_utf8_original": true,
+      "hash_unchanged": true,
+      "native_verified": true,
+      "input_sha256": "b7a3c19b73135ddebc00bc2418d6fbbe5b98774917bdbdc62b7e63f4f48b67fa",
+      "readback_sha256": "b7a3c19b73135ddebc00bc2418d6fbbe5b98774917bdbdc62b7e63f4f48b67fa"
+    }
+  ],
+  "raw_messages": [
+    {
+      "evidence_id": "m_11ab570fcca41f15",
+      "doc_id": "55b7c603-a4b8-5506-ae26-b5d7f7340a90",
+      "exact_utf8_original": true,
+      "hash_unchanged": true,
+      "native_verified": true,
+      "input_sha256": "11ab570fcca41f156987dc88cb670c813be2866849f45fad2da24b41f37e1967",
+      "readback_sha256": "11ab570fcca41f156987dc88cb670c813be2866849f45fad2da24b41f37e1967"
+    }
+  ],
+  "derived_lineage": [
+    {
+      "note_id": "79638f49-2cb7-4d8e-b857-fb05250a45a0",
+      "status": "active",
+      "complete": true,
+      "source_count": 1,
+      "sources_verified": true
+    },
+    {
+      "note_id": "b9088a68-cd7e-4235-a867-778acffeca88",
+      "status": "active",
+      "complete": true,
+      "source_count": 1,
+      "sources_verified": true
+    },
+    {
+      "note_id": "0324d498-a9a1-4582-8d3c-6f2c1fe40391",
+      "status": "active",
+      "complete": true,
+      "source_count": 1,
+      "sources_verified": true
+    }
+  ]
+}

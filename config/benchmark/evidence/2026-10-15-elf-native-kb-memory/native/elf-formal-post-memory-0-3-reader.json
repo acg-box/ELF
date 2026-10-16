@@ -1,0 +1,55 @@
+{
+  "id": "gen-1792119865-L580lSqeN1HNIf94uETv",
+  "object": "chat.completion",
+  "created": 1792119865,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"No budget owner had been appointed for Mara’s Larch project as of August 22.\",\"citations\":[{\"handle\":\"elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237\",\"quote\":\"2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.\"}]}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZQ77i9USmYcpg2Tq0KWLez7XDVKzRDQZ5-vNEMGBPdhUm2SSiN6sKAOiyCONGyZ1n5awCQRw0lqE7pUDfUZ9jf8mEB3-A9Q-k9SOeakni-ZNQss6RI6AHRfWn2by4Lxqb5C99H4TFzATYXTI7ZPtVtvts2gc0k6g9XWkMTjhhEUapuike5ppnSa9P2Ty_UXaWbIx0OZNFDejSHrZlQnnf6kIussHHOMJzQMHPwTfZ3AGMor9ZhnCGiG3NATpQg4HIK4XKIhi17kvmMTp5f_4oWbkl4TxwvLfJs8a2Yo3v8T91apEDbJNn8MMTEDMbU_NWT27RXEHa8NN_Eu5Bd9IUUh6A70F87x-gZ2DGJ1ghHCu3exFGC-cbJdjJ42Msbs5yDIdKFfggMBe0gwuQSUHDXgtw_Dh1CkaeOzSU6lfcA17C0SpypWno3F_Uzq5luDr1ddDqVmT0ZPV0wK5Y3PitfCmEpgLAUFdiTtXBRu1rzWmzIg64YgwiwFCmagcQveLrkE0hGwiB_Flve7JDg8jg83OkdRWItfJjgQ2dmG2WncZm0GqmcXZF55K1TdBS_hcSt1oCi_-w7zigz4kfQDbxCn_5R4OrgU6uTgaafowenJiLgrSk4q4gSXoYZJF6wlwA6VgOEQFZGPSWDvoPmGNC0zWHxyltVMZyzhRg4kjG08H1_w4rkRA_77iyJ7AJg-OCCP6DnjG_lah1tcaavE_rxhQaMDvyvVSchiNDNuz8iArp6z14SQ6-dhmAbJxMCUIv4sGpVre5uFBrpRt22trc8IMUe1utIWn6be1ans9nmGlCZ4WORvkwEFYorplBDbjnaC0I-w_bw8O-4ElpmHAonVfuHJfafA7BsZcx4CTxU4-Z3OTOPoIcNfPTuGWypOPBL43-9LKztFCCUYqdje8zNBe2NK8pURp3ce3-4VxQp1h2Kl5H_op6_vp1z8N2ASKgQbJATPBL8BZaiK36XEUfuLP0o8mHicpjU8lxA5rdUR4Go7gQMAQKkI6VTqsVT5z5C3La4AoKyzSgd_0vvzHatlUAl5iaVy65Yh1vB1RoM7B_Ob_k4UKqptGJxfvviXb24KIORXHKWbFPDUUzXIBsT1Tu8DwLIiZmr9rSc7l8ZVFR5h54KovFx7PE-bAYC63dtYeUtty1GdPjbiPCf1SLEQMTbp2o5oViKUgC1fc5XC_C49UWnLBRTySeVGjI9jcCsUK-pokUF-yuGmpYQXfrcnttLmeHn5F2BXEdw4TIVuNBsyWK6l3hP-Pj2_Fxf-ZBjCgwiORK9n6lKNPau74wfAVbszMg1e9XZQX_ewezSVZHYdK9uIEzFCL1RfrSbI7-lN-fmBV1MMuO2i522gAK7NEVbQ1rdN73ag_IN9k9N0QTXZoUZuwWmhyAIgvsDMOx60GskMTXzRo4QqDTytbcpUUbbF1R2T7_RPy6jPZeTWGkj2b4797t7OqqeWm49c-UHDJflqwodyLbCyOMjfZ7SIyc43hEsJgvuWViBxUHH2hQqa7uOej54dNSNWn1k2w7PuPdmwCOc6jZRAhVku06T92r_XE34VoDtYTtZSladfZDgjUxtfnMD2ws4NoV-4M6TCqcUFJqmbjBte1L94Epg07ds63UYnuUq9QEK5v2LVxjIVlVyO0gC4F3hIx7X3IZVpcpo9DQYHl-Z2uj1weFVvF2FxmVEcfQgEdshidad4_re6Kc7Blq2qSg_xrMDEcRzMIdAbCKAM5EqX0_jfffi4u8OgN38NE7zYb8kbVil4sjmLvtSFs38q07KVLUlpM8_k4wIHa3IY3Q7eBYUXvZYHhBAKFDpqJJ0OC_egrHtcsohOP6x_eUCIFg8YIrBw3olUNRwpCsnG0pWS6a-MsoswaWgnEJrV7mt2Z-BKTEf_k_8zlRIScaBxIHPUvPVzDrsWtAw1H-a-iq3F3sDtR7TyZ5bvk34gPKS4tB4FvQCZxJChHvtmdiNl5auZC5Q5_yAy8KOHSyE7-XQ9O8XD0w1xxJ118UBcDZmpjs6aa1SQTLDaRVVebN1wWoU62urRMtSABPJEMS6cVcnQzMu2RiWZqw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_00f282bf656c1147016ad19439b2b887d19984e75a442e9239",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4843,
+    "completion_tokens": 206,
+    "total_tokens": 5049,
+    "cost": 0.0007083,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4840,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0007083,
+      "upstream_inference_prompt_cost": 0.0006053,
+      "upstream_inference_completions_cost": 0.000103
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 38,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

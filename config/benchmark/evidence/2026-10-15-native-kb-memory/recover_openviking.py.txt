@@ -1,0 +1,37 @@
+"""Recover the fixed native workspace with the same release on ARM64."""
+import json
+import shutil
+import subprocess
+import time
+import trial
+
+IMAGE = 'ghcr.io/volcengine/openviking@sha256:9e0a87c15ded8f8d7eca68d8b7213c8f54e258caa2f7d04e54ceb995fcc8b31e'
+old = json.loads(subprocess.check_output(['docker', 'inspect', trial.OV_CONTAINER]))[0]
+assert old['Config']['Labels']['elf.trial'] == 'unified-memory-2026-10-15'
+assert not old['State']['Running'], 'Do not replace a running container'
+assert subprocess.check_output(['docker', 'image', 'inspect', IMAGE, '--format', '{{.Architecture}}'], text=True).strip() == 'arm64'
+original = trial.ROOT / 'openviking-formal'
+snapshot = trial.ROOT / 'openviking-pre-recovery'
+if not snapshot.exists():
+    shutil.copytree(original, snapshot, symlinks=True)
+trial.event('native_workspace_snapshot_saved', path=snapshot.name)
+subprocess.run(['docker', 'rm', trial.OV_CONTAINER], capture_output=True, check=True)
+subprocess.run(['docker', 'run', '-d', '--pull=never', '--name', trial.OV_CONTAINER, '--platform', 'linux/arm64', '--label', 'elf.trial=unified-memory-2026-10-15', '--memory', '4g', '--cpus', '2', '-p', '127.0.0.1:19433:1933', '-v', str(original) + ':/app/.openviking', IMAGE], capture_output=True, check=True)
+start = time.monotonic()
+for _ in range(180):
+    try:
+        health = trial.request('http://127.0.0.1:19433/health', headers={'X-API-Key': trial.read('openviking-auth.json')['key']}, timeout=3)
+        status = trial.ov('/system/status', timeout=3)
+        if health.get('healthy') and status.get('initialized'):
+            break
+    except Exception:
+        pass
+    time.sleep(1)
+else:
+    raise TimeoutError('ARM64 runtime did not become ready')
+trial.save('runtime-recovery.json', {'same_release': '0.5.0', 'from_platform': 'linux/amd64', 'to_platform': 'linux/arm64', 'image': IMAGE, 'old_container_id': old['Id'], 'workspace_snapshot': snapshot.name, 'new_runtime_ready_seconds': time.monotonic()-start, 'native_health': health, 'native_data_status': status, 'reingested_sources': 0, 'reextracted_sessions': 0, 'prior_answers_repeated': 0, 'speed_comparison_allowed': False})
+trial.event('openviking_native_recovery_ready', seconds=round(time.monotonic()-start,3))
+for case in trial.read('inputs.json')['post_update_queries']:
+    trial.answer('openviking', 'formal', 'post', case)
+trial.save('openviking-formal-closing-ledger.json', trial.read('../elf-real-project-pilot/budget-ledger.json'))
+trial.event('formal_answers_complete', product='openviking', recovered_runtime='linux/arm64')

@@ -1,0 +1,105 @@
+{
+  "question": "What is the approved queue for the South region of Kestrel-0?",
+  "evidence": [
+    {
+      "handle": "viking://resources/formal/e_44d1d038212b769f1cefdbec/e_44d1d038212b769f1cefdbec.md",
+      "kind": "resource",
+      "text": "Kestrel-0 approved regional routing table. Columns are region, response window, queue.\nNorth | 4 hours | NORTH-0-6a8\nSouth | 12 hours | SOUTH-0-3e5\nRows are independent; do not mix a region with another row.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.8980081081390381
+      }
+    },
+    {
+      "handle": "viking://resources/formal/e_44d1d038212b769f1cefdbec/.overview.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/e_44d1d038212b769f1cefdbec/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_de5e590a91764cb3b4cd90f94a4286c7.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\n# e_44d1d038212b769f1cefdbec\n\nThis directory contains a reference document for the Kestrel-0 approved regional routing table. It covers the response windows and queues assigned to the North and South regions, with each region’s routing details presented together in a three-column table. A key instruction is to treat table rows independently: do not combine a region with another row’s response window or queue. The document is suitable for readers looking up regional routing details; no prerequisite knowledge is stated.\n\n## Directory Coverage\n\nThere is 1 direct entry, and all entries are represented in the summaries below.\n\n## Quick Navigation\n\nWhat do you want to learn?\n\n- Look up a region’s response window and queue, or review the row-independence instruction → [e_44d1d038212b769f1cefdbec.md](viking://resources/formal/e_44d1d038212b769f1cefdbec/e_44d1d038212b769f1cefdbec.md)\n\n## Detailed Description\n\n### [e_44d1d038212b769f1cefdbec.md](viking://resources/formal/e_44d1d038212b769f1cefdbec/e_44d1d038212b769f1cefdbec.md)\n\nThis reference document presents the Kestrel-0 approved regional routing table. Its sole section is a table with three columns: region, response window, and queue. The entries associate North with a 4-hour response window and queue NORTH-0-6a8, and South with a 12-hour response window and queue SOUTH-0-3e5.\n\nThe central interpretation rule is that rows are independent. When consulting the table, readers should keep each region paired only with the response window and queue listed on that same row. In particular, the North region’s details should not be combined with the South row’s response window or queue, and the South region’s details should not be combined with the North row’s values. This row-level rule preserves the pairings as presented in the reference.\n\nThe document is intended for readers who need to look up regional routing details. To use it, identify the relevant region, then read its response window and queue from the same table row. The table provides those three pieces of information together, making it possible to find the routing details for North or South without treating values from different rows as interchangeable. No prerequisite knowledge is stated in the summary.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.8140285015106201
+      }
+    },
+    {
+      "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md",
+      "kind": "resource",
+      "text": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-0-2d1 and has no authority.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7865911722183228
+      }
+    },
+    {
+      "handle": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/.abstract.md",
+      "kind": "resource",
+      "text": "---\ndirectory: viking://resources/formal/e_6d31f2e707b427b03ebe5cab/\nsource:\n  kind: local\n  uri: /app/.openviking/native/temp/upload/upload_7dd386a75d9c4d2ba197dd5e12a79fba.txt\ngenerated_by:\n  component: SemanticProcessor\n  trigger: resource_ingest\nfreshness:\n  total_entries: 1\n  sampled_entries: 1\n  unsampled_entries: 0\n  pending_child_changes: 0\n---\n\nThis directory contains a concise reference to the Kestrel-0 signed return policy. It explains the ordinary 7-day return window and distinguishes two exceptions: custom-made goods and quality defects.\n",
+      "metadata": {
+        "level": 0,
+        "category": null,
+        "score": 0.7415928840637207
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/outage_procedure_selected.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, the user specified that the recovery procedure validated on 2026-08-08 be used for the next outage.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7456833124160767
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/batch_delivery_selected.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7351670265197754
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/delivery_choice_kept.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, the user directed that the delivery choice made on 2026-08-15 remain in effect.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7279406189918518
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/01/retry_policy_set.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-01, Ivo set RETRY-1-108 as the initial retry policy for Project Cobalt.\n# 2026-08-01 (Saturday) ChatLog:\n**user**: 2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7223697304725647
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/events/2026/08/22/delivery_choice_retained.md",
+      "kind": "memory",
+      "text": "# Summary\nOn 2026-08-22, the user reaffirmed that the delivery choice made on 2026-08-15 should remain in effect; the specific choice was not stated.\n# 2026-08-22 (Saturday) ChatLog:\n**user**: 2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+      "metadata": {
+        "level": 2,
+        "category": null,
+        "score": 0.7200441956520081
+      }
+    },
+    {
+      "handle": "viking://user/formal/memories/.overview.md",
+      "kind": "memory",
+      "text": "---\ndirectory: viking://user/formal/memories/\ngenerated_by:\n  component: VikingFS.write_context\n  trigger: context_write\n---\n\nUse this directory to access user's personalized memories. Contains three main categories: 1) preferences-user preferences, 2) entities-entity memories, 3) events-event records.\n",
+      "metadata": {
+        "level": 1,
+        "category": null,
+        "score": 0.719496488571167
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "id": "gen-1792119881-12hZ6tbx2NdXSshm1mdC",
+  "object": "chat.completion",
+  "created": 1792119881,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\n  \"answer\": \"BATCH-1-741 batch delivery remained approved; on August 8, no delivery-mode change was approved. REPLAY-1-632 was tested as a recovery procedure, not approved as a new delivery mode.\",\n  \"citations\": [\n    {\n      \"handle\": \"elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124\",\n      \"quote\": \"They chose BATCH-1-741 for batch delivery.\"\n    },\n    {\n      \"handle\": \"elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204\",\n      \"quote\": \"The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.\"\n    }\n  ]\n}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZRKAWIqjmNHuCQyPor9PWymy_ZmxaUoKsjZycpufOopv3UkumYNbnh0BtpTl39TDcdyCbhtMxUElShEMfT-GVALwl00Ypgcq0-2Ex05nI82AxKnrzTRmHdk6dLmJFLeoMRNGt0ZlMXpvHbb5gl49iVLC-eBgt290BTrVFEwiD0knf1N8p-0pWTzYVlZhC7DKJM8p4DShxLwkVBQfhlDQk3Jn04-dlwmoyVY6cpd7mfaiy5zrek4W883ggKQfT5pADHKt5ZoCdZMBj53LytZUBpERqf8CdIUhC0EAppUIe0sgbB2ByIiBtEynHSWo6OctDu7JNyJNPC_F8YgrXySY6onma9-zCMsxVyzK0FEGJ28WujBh7Fykto81wV4DPpxhBj91aYRdGzYoF8gcBgOKKPq4RUMbOeN_mRksANmljBb3hNDMEZYyNpx8Jx1b3wqng0s0FkBkwft-kfF6XM-vOxl1XoUgsJNPL2LuMA7k9uRx-caD_XeGKB8OqJzYM6vkY8nPFJZtdwP2fUT9gW0csBdpHJq2VWlXYuQJO3xobjhcqcxFXQwmGuTEg1ApZ6-xuBpaxlnsylbVGmOVDIK2ATTumCF9tPrSaaje94vW4Ess9MY4jG5LLx9TK0zVzRdo1ysENb5tcOsSLUlfit4G3gMA_fjYoerlxWLkO-sxHEJw_TMTU45WfsH_ndPO-s7ldbdjxU_wchBdBaTcepxyxlMRCc1DIfbgx-LY8kfBH1EVKr1EVqo-kS_EDF0B9ZkpIl8PXXvANJwuA22amFgDW2tgMeOZ1xYFzS4VKF9DTUa4ClvzxtLqIVPt9DiUBeqdeqGgRQ5nrdNSNZJn4iihVXJZUEDJmDoducA4TlXCXw2o9d1EcdOOOxHjjrN6L4UnFLNr4Ws0-5IBgOGa-gP9lVkMHyDo4PprAGQT5DjIL7cbsDbLy-rW5AAsDzsRS6O7UMfqeWMmjaoT36FNH5H52kARxlIPvbAsHW-4ThqNs2DjoVOk0_Gx5t8o9sjXAZzmPKqKu2ZPq2Emygnbk5qsJjh0a77VG1L1W9eIa-0Ssic6OjLnrPeomjmdRPSLndv7Th1PLg7SEm8j2lvxhD0JwPs4w_nVPGZ87m23Dam-4RtAvOuc3dhVuSLaqWBHlbsod5sZAKDkkFRdZ8PJD3ZQJOBQ6MAX9CXi29reAmD07__6zowN0h682ez-V_FErNnkxKoWxynuv2-Rm0l0i8qiSo3e9aSk8_psQK83GNUa__p7fFz4BRr4GYsGCSnRuxEIHmkcbFJBHRaR5-ul2dwSn1cGJv8OXn8SxP5Nzh8xkzqhXkNW74vIJBgTzr9pTXmVWm2gVqWZfuQysV1iOgXbn-B9nNJDwWDWkJ4Utq2gIqj-HG7-ZnWAm5zUE-M5gzlIVYiJ7HpyF-PJ-Tk8bmbOuHFpx2BQfGHV-XpkWj1D-z8d_m9AS6DAofK0lv3foqNVmsnPdcjuVvACFzmiapKNJKyNJ0BMFsCf8vqXouTpEb44WfbPBmlm3XHiefb7C9HBI-fMrrZ6uXxQnAZq6J4uv4t_C4-FAOmcUR7VHBhELuRa1DZmo85uLYqbapLvS5CbJWugkz6o005pg6uggJz9oyVy2cDR6z5lhSdu38BH128gHva1RGcyRMLXXaOgBoWANwW6CnZYIc04WUMHDy49E81XOYsjuLQCWvnpggO9DRLu8dKZflD3pG41JIz3ATwupUmlDKy4qfCff-aQPgt0FZE7vqnMGO8h2dCqnP3uDNaXnR1yIZVH8qq-qzrJjvNCv9Cox_Q-oh9nMdNehZGU9hPT08Jwtn1fQKYhPwvIoq0ukhl12StuSzwQ6ekCcRXfwKsSrbaPquy7dZKluHPgCQhG3wi3Dzl47V7Ipkw9zmd-oQFZflGdmsZHosvMH20HLMn5zt_Iu24LIJi0baWqtNWzehMEwW7rhzkfbLIOyRR975N77Xu9MwjgTJk7McTvYEpq-UjXYlhLE9FX2iTgKN5wyX_4CccaazJm48rVPiOX4OljKxIB380KCs6Csor2kEP9Wl8iqTlRM6Z5lIaO_ovsw==.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0ccaad0fa78c3774016ad19449982887d1a747e9063513db69",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 5117,
+    "completion_tokens": 322,
+    "total_tokens": 5439,
+    "cost": 0.00080055,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 5114,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.00080055,
+      "upstream_inference_prompt_cost": 0.00063955,
+      "upstream_inference_completions_cost": 0.000161
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 43,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

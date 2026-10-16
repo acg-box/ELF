@@ -1,0 +1,59 @@
+{
+  "product": "ragflow",
+  "scope": "formal",
+  "phase": "post",
+  "case_id": "memory-1-2",
+  "question": "What delivery mode was still approved for Ivo's Cobalt project immediately after the August 8 meeting?",
+  "answer": {
+    "answer": "Immediately after the August 8 meeting, BATCH-1-741 remained the approved delivery mode for Ivo’s Cobalt project. REPLAY-1-632 was tested as a recovery procedure, but no delivery-mode change was approved at that meeting.",
+    "citations": [
+      {
+        "handle": "ragflow:document:60c7b04dd9a54820b17be95530bb5bda:chunk:814df48295aa88f7",
+        "quote": "They chose BATCH-1-741 for batch delivery."
+      },
+      {
+        "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+        "quote": "The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+      }
+    ]
+  },
+  "citation_checks": [
+    {
+      "handle": "ragflow:document:60c7b04dd9a54820b17be95530bb5bda:chunk:814df48295aa88f7",
+      "quote_bound": true
+    },
+    {
+      "handle": "ragflow:document:984a41009bde4f3d83d2447f0b92191b:chunk:e9c52ba58c534573",
+      "quote_bound": true
+    }
+  ],
+  "retrieval_seconds": 5.655,
+  "total_seconds": 9.691,
+  "context_bytes": 4440,
+  "context_entries": 11,
+  "dropped": [],
+  "usage": {
+    "prompt_tokens": 1720,
+    "completion_tokens": 253,
+    "total_tokens": 1973,
+    "cost": 0.000341425,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 1717,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000341425,
+      "upstream_inference_prompt_cost": 0.000214925,
+      "upstream_inference_completions_cost": 0.0001265
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 63,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "finish_reason": "stop"
+}

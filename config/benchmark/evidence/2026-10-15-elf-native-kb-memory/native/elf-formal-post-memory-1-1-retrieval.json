@@ -1,0 +1,959 @@
+{
+  "knowledge": {
+    "items": [
+      {
+        "agent_id": "pilot",
+        "chunk_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+        "chunk_id": "2f5b4f98-b658-5088-a20c-103531227c41",
+        "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+        "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+        "doc_type": "knowledge",
+        "pointer": {
+          "hashes": {
+            "chunk_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+            "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1"
+          },
+          "locator": {
+            "position": {
+              "end": 204,
+              "start": 0
+            },
+            "span_id": "38f0f1c3-3eaf-5eae-801f-72374845bbb3"
+          },
+          "ref": {
+            "chunk_id": "2f5b4f98-b658-5088-a20c-103531227c41",
+            "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+            "source_record_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+            "source_span_id": "38f0f1c3-3eaf-5eae-801f-72374845bbb3"
+          },
+          "resolver": "elf_doc_ext/v1",
+          "schema": "source_ref/v1",
+          "state": {
+            "chunk_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+            "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+            "doc_updated_at": "2026-10-16T03:00:59.008141Z"
+          }
+        },
+        "project_id": "project",
+        "scope": "agent_private",
+        "score": 1.0999959,
+        "snippet": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          0,
+          59,
+          8141000,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "agent_id": "pilot",
+        "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+        "chunk_id": "b7e23517-072e-5881-a98b-c46b46a0d6ec",
+        "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+        "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+        "doc_type": "knowledge",
+        "pointer": {
+          "hashes": {
+            "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+            "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d"
+          },
+          "locator": {
+            "position": {
+              "end": 205,
+              "start": 0
+            },
+            "span_id": "d7715191-3931-5102-a2ba-a95876be5508"
+          },
+          "ref": {
+            "chunk_id": "b7e23517-072e-5881-a98b-c46b46a0d6ec",
+            "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+            "source_record_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+            "source_span_id": "d7715191-3931-5102-a2ba-a95876be5508"
+          },
+          "resolver": "elf_doc_ext/v1",
+          "schema": "source_ref/v1",
+          "state": {
+            "chunk_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+            "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+            "doc_updated_at": "2026-10-16T03:00:57.168146Z"
+          }
+        },
+        "project_id": "project",
+        "scope": "agent_private",
+        "score": 0.6833292,
+        "snippet": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          0,
+          57,
+          168146000,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "agent_id": "pilot",
+        "chunk_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+        "chunk_id": "32aa6c35-91f0-5d69-bf28-9c2942006377",
+        "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+        "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+        "doc_type": "knowledge",
+        "pointer": {
+          "hashes": {
+            "chunk_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+            "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686"
+          },
+          "locator": {
+            "position": {
+              "end": 124,
+              "start": 0
+            },
+            "span_id": "4075c1be-8110-5d07-aa79-2559e23b61f3"
+          },
+          "ref": {
+            "chunk_id": "32aa6c35-91f0-5d69-bf28-9c2942006377",
+            "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+            "source_record_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+            "source_span_id": "4075c1be-8110-5d07-aa79-2559e23b61f3"
+          },
+          "resolver": "elf_doc_ext/v1",
+          "schema": "source_ref/v1",
+          "state": {
+            "chunk_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+            "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+            "doc_updated_at": "2026-10-16T03:00:57.516763Z"
+          }
+        },
+        "project_id": "project",
+        "scope": "agent_private",
+        "score": 0.6833292,
+        "snippet": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          0,
+          57,
+          516763000,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "agent_id": "pilot",
+        "chunk_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+        "chunk_id": "436f0d5e-cc1a-5642-bfe1-e61c8b152c76",
+        "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+        "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+        "doc_type": "knowledge",
+        "pointer": {
+          "hashes": {
+            "chunk_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+            "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7"
+          },
+          "locator": {
+            "position": {
+              "end": 395,
+              "start": 0
+            },
+            "span_id": "e85b8e14-4565-534b-862f-fa8c03bee5e5"
+          },
+          "ref": {
+            "chunk_id": "436f0d5e-cc1a-5642-bfe1-e61c8b152c76",
+            "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+            "source_record_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+            "source_span_id": "e85b8e14-4565-534b-862f-fa8c03bee5e5"
+          },
+          "resolver": "elf_doc_ext/v1",
+          "schema": "source_ref/v1",
+          "state": {
+            "chunk_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+            "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+            "doc_updated_at": "2026-10-16T03:01:00.340538Z"
+          }
+        },
+        "project_id": "project",
+        "scope": "agent_private",
+        "score": 0.46666256,
+        "snippet": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Bo",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          1,
+          0,
+          340538000,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "agent_id": "pilot",
+        "chunk_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+        "chunk_id": "38f05b75-dc32-5e5f-a8af-06d00645328d",
+        "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+        "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+        "doc_type": "knowledge",
+        "pointer": {
+          "hashes": {
+            "chunk_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+            "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc"
+          },
+          "locator": {
+            "position": {
+              "end": 124,
+              "start": 0
+            },
+            "span_id": "5f19b69e-1349-5a4e-93fa-ea6be220c51d"
+          },
+          "ref": {
+            "chunk_id": "38f05b75-dc32-5e5f-a8af-06d00645328d",
+            "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+            "source_record_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+            "source_span_id": "5f19b69e-1349-5a4e-93fa-ea6be220c51d"
+          },
+          "resolver": "elf_doc_ext/v1",
+          "schema": "source_ref/v1",
+          "state": {
+            "chunk_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+            "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+            "doc_updated_at": "2026-10-16T03:00:55.672247Z"
+          }
+        },
+        "project_id": "project",
+        "scope": "agent_private",
+        "score": 0.46666247,
+        "snippet": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          0,
+          55,
+          672247000,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "agent_id": "pilot",
+        "chunk_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+        "chunk_id": "46bebef7-9d99-5797-b9f1-44ed0515561f",
+        "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+        "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+        "doc_type": "knowledge",
+        "pointer": {
+          "hashes": {
+            "chunk_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+            "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a"
+          },
+          "locator": {
+            "position": {
+              "end": 207,
+              "start": 0
+            },
+            "span_id": "a12d5b9f-cb10-554b-8fe9-4658dec7f110"
+          },
+          "ref": {
+            "chunk_id": "46bebef7-9d99-5797-b9f1-44ed0515561f",
+            "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+            "source_record_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+            "source_span_id": "a12d5b9f-cb10-554b-8fe9-4658dec7f110"
+          },
+          "resolver": "elf_doc_ext/v1",
+          "schema": "source_ref/v1",
+          "state": {
+            "chunk_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+            "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+            "doc_updated_at": "2026-10-16T03:01:03.859441Z"
+          }
+        },
+        "project_id": "project",
+        "scope": "agent_private",
+        "score": 0.2428531,
+        "snippet": "Kestrel-0 approved regional routing table. Columns are region, response window, queue.\nNorth | 4 hours | NORTH-0-6a8\nSouth | 12 hours | SOUTH-0-3e5\nRows are independent; do not mix a region with another row.",
+        "updated_at": [
+          2026,
+          289,
+          3,
+          1,
+          3,
+          859441000,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "request_id": "6c8fca55-01b5-45d3-91cf-14ccbdc46c3c",
+    "trace_id": "ce2cf050-d11b-4bb0-9390-effa949e990d",
+    "trajectory": {
+      "schema": "doc_retrieval_trajectory/v1",
+      "stages": [
+        {
+          "stage_name": "request_validation",
+          "stage_order": 0,
+          "stats": {
+            "candidate_k": 60,
+            "doc_type": "knowledge",
+            "query_len": 126,
+            "sparse_mode": "auto",
+            "status": "active",
+            "top_k": 6
+          }
+        },
+        {
+          "stage_name": "query_embedding",
+          "stage_order": 1,
+          "stats": {
+            "provider": "embedding"
+          }
+        },
+        {
+          "stage_name": "vector_dimension_check",
+          "stage_order": 2,
+          "stats": {
+            "expected_dim": 4096,
+            "provided_dim": 4096
+          }
+        },
+        {
+          "stage_name": "vector_search",
+          "stage_order": 3,
+          "stats": {
+            "channels": [
+              "dense",
+              "sparse"
+            ],
+            "raw_points": 6,
+            "sparse_mode": "auto"
+          }
+        },
+        {
+          "stage_name": "chunk_lookup",
+          "stage_order": 4,
+          "stats": {
+            "loaded_chunks": 6,
+            "requested_chunks": 6
+          }
+        },
+        {
+          "stage_name": "dedupe",
+          "stage_order": 5,
+          "stats": {
+            "deduped_candidates": 6,
+            "raw_candidates": 6
+          }
+        },
+        {
+          "stage_name": "result_projection",
+          "stage_order": 6,
+          "stats": {
+            "pre_authorization_candidates": 6,
+            "recency_boost_applied": true,
+            "recency_tau_days": 60.0,
+            "returned_items": 6,
+            "tie_breaker_weight": 0.10000000149011612
+          }
+        }
+      ]
+    }
+  },
+  "memory": {
+    "expires_at": "2026-10-16T09:04:33.725079Z",
+    "has_more": true,
+    "items": [
+      {
+        "confidence": 0.94,
+        "expires_at": null,
+        "final_score": 1.1542487,
+        "importance": 0.8,
+        "is_preview": true,
+        "key": null,
+        "note_id": "878b6213-655c-44bf-a1ff-8beb643c9bb6",
+        "scope": "agent_private",
+        "summary": "For the next Cobalt outage, use the recovery procedure validated on August 8.",
+        "type": "decision",
+        "updated_at": "2026-10-16T03:03:47.021411Z"
+      },
+      {
+        "confidence": 1.0,
+        "expires_at": null,
+        "final_score": 1.05901,
+        "importance": 0.8,
+        "is_preview": true,
+        "key": null,
+        "note_id": "d7a44c49-952c-47e2-8106-a03f0898b957",
+        "scope": "agent_private",
+        "summary": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision; the cause was GATE-1-519 outages recorded on August 8.",
+        "type": "decision",
+        "updated_at": "2026-10-16T03:03:26.828307Z"
+      },
+      {
+        "confidence": 0.0,
+        "expires_at": null,
+        "final_score": 0.891962,
+        "importance": 0.0,
+        "is_preview": true,
+        "key": null,
+        "note_id": "d64e9596-329c-4af5-bb80-40daa04cbbd6",
+        "scope": "agent_private",
+        "summary": "Keep the successful recovery procedure from the GATE-0-519 incident.",
+        "type": "decision",
+        "updated_at": "2026-10-16T03:02:33.438123Z"
+      },
+      {
+        "confidence": 0.0,
+        "expires_at": "2026-10-30T03:02:51.769105Z",
+        "final_score": 1.058629,
+        "importance": 0.0,
+        "is_preview": true,
+        "key": null,
+        "note_id": "720cf920-ed5a-481d-9ca3-b881aedcce27",
+        "scope": "agent_private",
+        "summary": "For the next outage, use the recovery procedure validated on August 8.",
+        "type": "plan",
+        "updated_at": "2026-10-16T03:02:51.769105Z"
+      },
+      {
+        "confidence": 0.0,
+        "expires_at": "2027-04-14T03:02:06.090043Z",
+        "final_score": 0.86815196,
+        "importance": 0.0,
+        "is_preview": true,
+        "key": null,
+        "note_id": "c8f0c870-75ab-494d-bb73-9352d023e4fe",
+        "scope": "agent_private",
+        "summary": "On 2026-08-08, Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages; the team tested REPLAY-1-632, which restored the missing updates.",
+        "type": "fact",
+        "updated_at": "2026-10-16T03:02:06.090043Z"
+      },
+      {
+        "confidence": 1.0,
+        "expires_at": null,
+        "final_score": 0.8327216,
+        "importance": 0.6,
+        "is_preview": true,
+        "key": null,
+        "note_id": "43dcdb4e-0dd7-4896-8861-fc986bca2dbe",
+        "scope": "agent_private",
+        "summary": "At the 2026-08-08 meeting, no change of delivery mode was approved.",
+        "type": "decision",
+        "updated_at": "2026-10-16T03:01:37.206167Z"
+      }
+    ],
+    "mode": "planned_search",
+    "query_plan": {
+      "budget": {
+        "cache_enabled": true,
+        "candidate_k": 60,
+        "expansion_max_queries": 4,
+        "prefilter_max_candidates": 0,
+        "top_k": 60
+      },
+      "fusion_policy": {
+        "fusion_priority": 1,
+        "fusion_weight": 1.0,
+        "recursive_priority": 1,
+        "recursive_weight": 1.0,
+        "strategy": "weighted_merge",
+        "structured_field_priority": 0,
+        "structured_field_weight": 1.0
+      },
+      "intent": {
+        "agent_id": "pilot",
+        "allowed_scopes": [
+          "agent_private"
+        ],
+        "project_id": "project",
+        "query": "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?",
+        "read_profile": "private_only",
+        "tenant_id": "elf-native-20261015-formal"
+      },
+      "rerank_policy": {
+        "blend_enabled": true,
+        "blend_segments": [
+          {
+            "max_retrieval_rank": 3,
+            "retrieval_weight": 0.8
+          },
+          {
+            "max_retrieval_rank": 10,
+            "retrieval_weight": 0.5
+          },
+          {
+            "max_retrieval_rank": 1000000,
+            "retrieval_weight": 0.2
+          }
+        ],
+        "diversity_enabled": true,
+        "diversity_mmr_lambda": 0.7,
+        "model": "local-token-overlap",
+        "provider_id": "local",
+        "rerank_normalization": "rank",
+        "retrieval_normalization": "rank"
+      },
+      "retrieval_stages": [
+        {
+          "candidate_limit": 60,
+          "enabled": true,
+          "name": "fusion_dense_bm25",
+          "source": "qdrant_fusion"
+        },
+        {
+          "candidate_limit": 60,
+          "enabled": true,
+          "name": "structured_field_vector",
+          "source": "postgres_vector"
+        }
+      ],
+      "rewrite": {
+        "dynamic_gate": {
+          "considered": true,
+          "min_candidates": 10,
+          "min_top_score": 0.12,
+          "observed_candidates": 22,
+          "observed_top_score": 1.0,
+          "should_expand": false
+        },
+        "expanded_queries": [
+          "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?"
+        ],
+        "expansion_mode": "dynamic"
+      },
+      "schema": "elf.search.query_plan",
+      "stages": [
+        {
+          "details": {
+            "allowed_scope_count": 1,
+            "path": "planned",
+            "query": "For the next outage on Cobalt, which recovery procedure should Ivo use, and which outage gate led to the delivery-mode change?",
+            "read_profile": "private_only"
+          },
+          "name": "intent"
+        },
+        {
+          "details": {
+            "dynamic_gate_considered": true,
+            "dynamic_gate_should_expand": false,
+            "expanded_query_count": 1,
+            "expansion_mode": "dynamic"
+          },
+          "name": "rewrite"
+        },
+        {
+          "details": {
+            "stages": [
+              {
+                "candidate_limit": 60,
+                "enabled": true,
+                "name": "fusion_dense_bm25",
+                "source": "qdrant_fusion"
+              },
+              {
+                "candidate_limit": 60,
+                "enabled": true,
+                "name": "structured_field_vector",
+                "source": "postgres_vector"
+              }
+            ]
+          },
+          "name": "retrieval"
+        },
+        {
+          "details": {
+            "fusion_weight": 1.0,
+            "strategy": "weighted_merge",
+            "structured_field_weight": 1.0
+          },
+          "name": "fusion"
+        },
+        {
+          "details": {
+            "blend_enabled": true,
+            "diversity_enabled": true,
+            "model": "local-token-overlap",
+            "provider_id": "local"
+          },
+          "name": "rerank"
+        },
+        {
+          "details": {
+            "cache_enabled": true,
+            "candidate_k": 60,
+            "expansion_max_queries": 4,
+            "prefilter_max_candidates": 0,
+            "top_k": 60
+          },
+          "name": "budget"
+        }
+      ],
+      "version": "v1"
+    },
+    "request_id": "c23087cf-1271-43b7-8b20-06a19bd539d6",
+    "search_id": "b333f306-e2ae-496b-ab90-5793c1405d9f",
+    "total": 22,
+    "trace_id": "15d3b3e0-782d-4dcc-9396-552c815aaa3c",
+    "trajectory_summary": {
+      "schema": "search_retrieval_trajectory/v1",
+      "stages": [
+        {
+          "item_count": 0,
+          "stage_name": "rewrite.expansion",
+          "stage_order": 1,
+          "stats": {
+            "expanded_query_count": 1
+          }
+        },
+        {
+          "item_count": 22,
+          "stage_name": "recall.candidates",
+          "stage_order": 2,
+          "stats": {
+            "candidate_count_after_filter": 22,
+            "candidate_count_before_filter": 22,
+            "snippet_count": 22
+          }
+        },
+        {
+          "item_count": 22,
+          "stage_name": "fusion.merge",
+          "stage_order": 3,
+          "stats": {
+            "fused_count": 22,
+            "scored_count": 22
+          }
+        },
+        {
+          "item_count": 22,
+          "stage_name": "rerank.score",
+          "stage_order": 4,
+          "stats": {
+            "reranked_count": 22
+          }
+        },
+        {
+          "item_count": 22,
+          "stage_name": "selection.final",
+          "stage_order": 5,
+          "stats": {
+            "selected_count": 22,
+            "top_k": 60
+          }
+        }
+      ]
+    }
+  },
+  "hydrated": [
+    {
+      "doc_id": "af3703c6-b86c-5247-8f33-0a32ace5f9c0",
+      "end_offset": 204,
+      "excerpt": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "locator": {
+        "chunk_id": "2f5b4f98-b658-5088-a20c-103531227c41",
+        "match_end_offset": 204,
+        "match_start_offset": 0,
+        "selector_kind": "chunk_id",
+        "span_id": "38f0f1c3-3eaf-5eae-801f-72374845bbb3"
+      },
+      "reference": "elf-source-v1/af3703c6-b86c-5247-8f33-0a32ace5f9c0/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+      "request_id": "9dc69ddf-57ce-404e-b3d3-351a1d29387b",
+      "start_offset": 0,
+      "trace_id": "b4a31d93-ac74-4186-b6f0-b33caefe67ec",
+      "verification": {
+        "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+        "excerpt_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+        "verification_errors": [],
+        "verified": true
+      }
+    },
+    {
+      "doc_id": "a90214e9-0589-51df-8539-8b240a2f11bf",
+      "end_offset": 205,
+      "excerpt": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+      "locator": {
+        "chunk_id": "b7e23517-072e-5881-a98b-c46b46a0d6ec",
+        "match_end_offset": 205,
+        "match_start_offset": 0,
+        "selector_kind": "chunk_id",
+        "span_id": "d7715191-3931-5102-a2ba-a95876be5508"
+      },
+      "reference": "elf-source-v1/a90214e9-0589-51df-8539-8b240a2f11bf/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+      "request_id": "89f85c07-f78b-479e-b5f1-9cffb1a66186",
+      "start_offset": 0,
+      "trace_id": "fa4d2159-ae9a-467c-a2cd-29da42c73124",
+      "verification": {
+        "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+        "excerpt_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+        "verification_errors": [],
+        "verified": true
+      }
+    },
+    {
+      "doc_id": "f791d96f-2e18-5f2c-a62b-fb142d61dde2",
+      "end_offset": 124,
+      "excerpt": "2026-08-01. Ivo started project Cobalt. They chose BATCH-1-741 for batch delivery. The initial retry policy was RETRY-1-108.",
+      "locator": {
+        "chunk_id": "32aa6c35-91f0-5d69-bf28-9c2942006377",
+        "match_end_offset": 124,
+        "match_start_offset": 0,
+        "selector_kind": "chunk_id",
+        "span_id": "4075c1be-8110-5d07-aa79-2559e23b61f3"
+      },
+      "reference": "elf-source-v1/f791d96f-2e18-5f2c-a62b-fb142d61dde2/6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686/0/124",
+      "request_id": "3d3ff1e8-d4a1-4226-88dd-437d74f0c51d",
+      "start_offset": 0,
+      "trace_id": "b2bface7-d011-4098-ac64-8360b5cc5583",
+      "verification": {
+        "content_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+        "excerpt_hash": "6e6bda58d410191738f82a1146bbaaaf421f44856281db1751e0378d968a4686",
+        "verification_errors": [],
+        "verified": true
+      }
+    },
+    {
+      "doc_id": "daf44d7c-4098-5a60-8032-3ac4d2370267",
+      "end_offset": 395,
+      "excerpt": "Kestrel-0 signed return policy. Ordinary goods have a 7-day return window. The complete exception list consists of two clauses: custom-made goods use exception CUSTOM-0-7c2; quality defects use exception DEFECT-0-9b4 and are exempt from the 7-day limit. Both exception identifiers must be retained when listing all exceptions. The old informal draft listed only DRAFT-0-2d1 and has no authority.",
+      "locator": {
+        "chunk_id": "436f0d5e-cc1a-5642-bfe1-e61c8b152c76",
+        "match_end_offset": 395,
+        "match_start_offset": 0,
+        "selector_kind": "chunk_id",
+        "span_id": "e85b8e14-4565-534b-862f-fa8c03bee5e5"
+      },
+      "reference": "elf-source-v1/daf44d7c-4098-5a60-8032-3ac4d2370267/b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7/0/395",
+      "request_id": "676120e7-ffd6-4638-9e8d-ab9d8d67a69f",
+      "start_offset": 0,
+      "trace_id": "15bf7931-211e-4d99-8075-d9587a501ece",
+      "verification": {
+        "content_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+        "excerpt_hash": "b778596563f372e0b2e181f12114691d7f285ce3e45706c7faa03b346ef7f9d7",
+        "verification_errors": [],
+        "verified": true
+      }
+    },
+    {
+      "doc_id": "ff686235-3670-56c2-9736-c67a60f5e1c1",
+      "end_offset": 124,
+      "excerpt": "2026-08-01. Mara started project Larch. They chose BATCH-0-741 for batch delivery. The initial retry policy was RETRY-0-108.",
+      "locator": {
+        "chunk_id": "38f05b75-dc32-5e5f-a8af-06d00645328d",
+        "match_end_offset": 124,
+        "match_start_offset": 0,
+        "selector_kind": "chunk_id",
+        "span_id": "5f19b69e-1349-5a4e-93fa-ea6be220c51d"
+      },
+      "reference": "elf-source-v1/ff686235-3670-56c2-9736-c67a60f5e1c1/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124",
+      "request_id": "91b28df3-271f-4ab3-b968-a7534e22c6c7",
+      "start_offset": 0,
+      "trace_id": "841b1dc4-1996-429d-a5eb-311e49a11d45",
+      "verification": {
+        "content_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+        "excerpt_hash": "e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc",
+        "verification_errors": [],
+        "verified": true
+      }
+    },
+    {
+      "doc_id": "6e41fa8a-ca25-57d9-add2-a51b95e2d3c0",
+      "end_offset": 207,
+      "excerpt": "Kestrel-0 approved regional routing table. Columns are region, response window, queue.\nNorth | 4 hours | NORTH-0-6a8\nSouth | 12 hours | SOUTH-0-3e5\nRows are independent; do not mix a region with another row.",
+      "locator": {
+        "chunk_id": "46bebef7-9d99-5797-b9f1-44ed0515561f",
+        "match_end_offset": 207,
+        "match_start_offset": 0,
+        "selector_kind": "chunk_id",
+        "span_id": "a12d5b9f-cb10-554b-8fe9-4658dec7f110"
+      },
+      "reference": "elf-source-v1/6e41fa8a-ca25-57d9-add2-a51b95e2d3c0/e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a/0/207",
+      "request_id": "b84dbde6-622e-4fcf-8467-47bbb231131c",
+      "start_offset": 0,
+      "trace_id": "11b0c9b3-b2dd-4a23-b7e9-e3002dcd3a09",
+      "verification": {
+        "content_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+        "excerpt_hash": "e55b11a13bea7da6dcd3693a2ca5aed4dedb029fbb969e48962d2009a8f8391a",
+        "verification_errors": [],
+        "verified": true
+      }
+    }
+  ],
+  "pack": {
+    "complete": true,
+    "notes": [
+      {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed."
+        ],
+        "note_id": "878b6213-655c-44bf-a1ff-8beb643c9bb6",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237"
+        ],
+        "text": "For the next Cobalt outage, use the recovery procedure validated on August 8."
+      },
+      {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+        ],
+        "note_id": "d7a44c49-952c-47e2-8106-a03f0898b957",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241"
+        ],
+        "text": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision; the cause was GATE-1-519 outages recorded on August 8."
+      },
+      {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident."
+        ],
+        "note_id": "d64e9596-329c-4af5-bb80-40daa04cbbd6",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241"
+        ],
+        "text": "Keep the successful recovery procedure from the GATE-0-519 incident."
+      },
+      {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed."
+        ],
+        "note_id": "720cf920-ed5a-481d-9ca3-b881aedcce27",
+        "note_type": "plan",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237"
+        ],
+        "text": "For the next outage, use the recovery procedure validated on August 8."
+      },
+      {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+        ],
+        "note_id": "c8f0c870-75ab-494d-bb73-9352d023e4fe",
+        "note_type": "fact",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/17716a69-dd41-5bbe-bf06-10ac3a96f9f3/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204"
+        ],
+        "text": "On 2026-08-08, Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages; the team tested REPLAY-1-632, which restored the missing updates."
+      },
+      {
+        "complete": true,
+        "evidence_quotes": [
+          "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting."
+        ],
+        "note_id": "43dcdb4e-0dd7-4896-8861-fc986bca2dbe",
+        "note_type": "decision",
+        "project_id": "project",
+        "scope": "agent_private",
+        "source_references": [
+          "elf-source-v1/941b074d-8fd6-56fb-a718-f7403ca6c323/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205"
+        ],
+        "text": "At the 2026-08-08 meeting, no change of delivery mode was approved."
+      }
+    ],
+    "omitted_note_ids": [],
+    "request_id": "743e06da-511b-4357-a89f-e56e35c6927c",
+    "schema": "elf.evidence_pack/v1",
+    "source_bytes": 1365,
+    "sources": [
+      {
+        "captured_at": "2026-10-16T03:03:35.671228Z",
+        "content_hash": "42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3",
+        "doc_id": "0685adcf-5a33-5380-ab6c-f7bd5a887289",
+        "end": 237,
+        "origin": "urn:elf-native-comparison:formal:memory:m_4a54af2b364be476",
+        "reference": "elf-source-v1/0685adcf-5a33-5380-ab6c-f7bd5a887289/42824d6015130eaafe6af59baeee1e2fb77cf15533e9ca6a35b2fc43c244daf3/0/237",
+        "source_timestamp": "2026-08-22T12:00:00Z",
+        "start": 0,
+        "text": "2026-08-22. Ivo reviewed Cobalt. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-1-907, superseding RETRY-1-108. No budget owner has been appointed.",
+        "title": "m_4a54af2b364be476"
+      },
+      {
+        "captured_at": "2026-10-16T03:03:16.72621Z",
+        "content_hash": "330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da",
+        "doc_id": "131eb7ca-dea4-5b41-bb33-eb15e7b6f558",
+        "end": 241,
+        "origin": "urn:elf-native-comparison:formal:memory:m_70bd88efee712a9a",
+        "reference": "elf-source-v1/131eb7ca-dea4-5b41-bb33-eb15e7b6f558/330e5e94ebc7f3dca4697c847f00d5f11459303f19621e56c2ee27090256a4da/0/241",
+        "source_timestamp": "2026-08-15T12:00:00Z",
+        "start": 0,
+        "text": "2026-08-15. Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286. This supersedes the August 1 delivery decision. The cause was the GATE-1-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "title": "m_70bd88efee712a9a"
+      },
+      {
+        "captured_at": "2026-10-16T03:02:23.849038Z",
+        "content_hash": "81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7",
+        "doc_id": "28b018b8-4904-5d01-8702-954f7ec6d9bb",
+        "end": 241,
+        "origin": "urn:elf-native-comparison:formal:memory:m_99ab4da076b7c734",
+        "reference": "elf-source-v1/28b018b8-4904-5d01-8702-954f7ec6d9bb/81ba3957defdaf85d0c093d897f903b6952bfaa41a2ac5a6381a9e8caeda03f7/0/241",
+        "source_timestamp": "2026-08-15T12:00:00Z",
+        "start": 0,
+        "text": "2026-08-15. Mara approved switching Larch from BATCH-0-741 to STREAM-0-286. This supersedes the August 1 delivery decision. The cause was the GATE-0-519 outages recorded on August 8; keep the successful recovery procedure from that incident.",
+        "title": "m_99ab4da076b7c734"
+      },
+      {
+        "captured_at": "2026-10-16T03:02:41.412403Z",
+        "content_hash": "a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777",
+        "doc_id": "90fa4572-7aec-5532-ac53-f2862c36c4e4",
+        "end": 237,
+        "origin": "urn:elf-native-comparison:formal:memory:m_d6297f549707f98d",
+        "reference": "elf-source-v1/90fa4572-7aec-5532-ac53-f2862c36c4e4/a5fa8970b9570af806b22f8040643263aab32cdfd54eadb52882ab35ef8f4777/0/237",
+        "source_timestamp": "2026-08-22T12:00:00Z",
+        "start": 0,
+        "text": "2026-08-22. Mara reviewed Larch. Keep the August 15 delivery choice. For the next outage, use the recovery procedure validated on August 8. The retry policy is now RETRY-0-907, superseding RETRY-0-108. No budget owner has been appointed.",
+        "title": "m_d6297f549707f98d"
+      },
+      {
+        "captured_at": "2026-10-16T03:02:00.160334Z",
+        "content_hash": "172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1",
+        "doc_id": "17716a69-dd41-5bbe-bf06-10ac3a96f9f3",
+        "end": 204,
+        "origin": "urn:elf-native-comparison:formal:memory:m_f7ff6441bdd98e53",
+        "reference": "elf-source-v1/17716a69-dd41-5bbe-bf06-10ac3a96f9f3/172b03aeb2ed540ad884f1534a7bc70e2f22c21e6ad1866d8da06ba5e4feb6a1/0/204",
+        "source_timestamp": "2026-08-08T12:00:00Z",
+        "start": 0,
+        "text": "2026-08-08. Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages. The team tested REPLAY-1-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "title": "m_f7ff6441bdd98e53"
+      },
+      {
+        "captured_at": "2026-10-16T03:01:30.532313Z",
+        "content_hash": "125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d",
+        "doc_id": "941b074d-8fd6-56fb-a718-f7403ca6c323",
+        "end": 205,
+        "origin": "urn:elf-native-comparison:formal:memory:m_d7a9d1f22107f233",
+        "reference": "elf-source-v1/941b074d-8fd6-56fb-a718-f7403ca6c323/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205",
+        "source_timestamp": "2026-08-08T12:00:00Z",
+        "start": 0,
+        "text": "2026-08-08. Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages. The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.",
+        "title": "m_d7a9d1f22107f233"
+      }
+    ]
+  }
+}

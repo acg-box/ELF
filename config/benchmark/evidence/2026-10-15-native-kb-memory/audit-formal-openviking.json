@@ -1,0 +1,569 @@
+{
+  "knowledge_originals": [
+    {
+      "evidence_id": "m_c558d1541c4b9d0f",
+      "native_root_uri": "viking://resources/formal/m_c558d1541c4b9d0f",
+      "exact_utf8_original": true,
+      "matching_uri": "viking://resources/formal/m_c558d1541c4b9d0f/m_c558d1541c4b9d0f.md",
+      "input_sha256": "c558d1541c4b9d0f9434a1cf35ee6d489a2dd8ae150074a7bfd61f5597d71aa0",
+      "readback_sha256": "c558d1541c4b9d0f9434a1cf35ee6d489a2dd8ae150074a7bfd61f5597d71aa0"
+    },
+    {
+      "evidence_id": "m_d7a9d1f22107f233",
+      "native_root_uri": "viking://resources/formal/m_d7a9d1f22107f233",
+      "exact_utf8_original": true,
+      "matching_uri": "viking://resources/formal/m_d7a9d1f22107f233/m_d7a9d1f22107f233.md",
+      "input_sha256": "d7a9d1f22107f233338c525a7e55d34acfe90630c27e4fe9f29b7f5f2aef29af",
+      "readback_sha256": "d7a9d1f22107f233338c525a7e55d34acfe90630c27e4fe9f29b7f5f2aef29af"
+    },
+    {
+      "evidence_id": "m_eb85892166acc8ef",
+      "native_root_uri": "viking://resources/formal/m_eb85892166acc8ef",
+      "exact_utf8_original": true,
+      "matching_uri": "viking://resources/formal/m_eb85892166acc8ef/m_eb85892166acc8ef.md",
+      "input_sha256": "eb85892166acc8efb24c985b46b0548b05a16ead96df701b9c2aa55da3f08a2b",
+      "readback_sha256": "eb85892166acc8efb24c985b46b0548b05a16ead96df701b9c2aa55da3f08a2b"
+    },
+    {
+      "evidence_id": "m_f7ff6441bdd98e53",
+      "native_root_uri": "viking://resources/formal/m_f7ff6441bdd98e53",
+      "exact_utf8_original": true,
+      "matching_uri": "viking://resources/formal/m_f7ff6441bdd98e53/m_f7ff6441bdd98e53.md",
+      "input_sha256": "f7ff6441bdd98e539ebcb54cc67a849c51784261d6431ec4f668f3390bcb1b22",
+      "readback_sha256": "f7ff6441bdd98e539ebcb54cc67a849c51784261d6431ec4f668f3390bcb1b22"
+    },
+    {
+      "evidence_id": "e_6d31f2e707b427b03ebe5cab",
+      "native_root_uri": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab",
+      "exact_utf8_original": true,
+      "matching_uri": "viking://resources/formal/e_6d31f2e707b427b03ebe5cab/e_6d31f2e707b427b03ebe5cab.md",
+      "input_sha256": "16120554e6bf8a02bffb70503cd05701ebc42000fc961b3e8e5234fb365e4e31",
+      "readback_sha256": "16120554e6bf8a02bffb70503cd05701ebc42000fc961b3e8e5234fb365e4e31"
+    },
+    {
+      "evidence_id": "e_44d1d038212b769f1cefdbec",
+      "native_root_uri": "viking://resources/formal/e_44d1d038212b769f1cefdbec",
+      "exact_utf8_original": true,
+      "matching_uri": "viking://resources/formal/e_44d1d038212b769f1cefdbec/e_44d1d038212b769f1cefdbec.md",
+      "input_sha256": "36e59aed3199d5de35890280386f70adcc35ae743180f9e32c2745e00eca8ad9",
+      "readback_sha256": "36e59aed3199d5de35890280386f70adcc35ae743180f9e32c2745e00eca8ad9"
+    }
+  ],
+  "raw_messages": [
+    {
+      "evidence_id": "m_c558d1541c4b9d0f",
+      "archive_uri": "viking://user/formal/sessions/formal-m_c558d1541c4b9d0f/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "c558d1541c4b9d0f9434a1cf35ee6d489a2dd8ae150074a7bfd61f5597d71aa0",
+      "readback_user_sha256": "c558d1541c4b9d0f9434a1cf35ee6d489a2dd8ae150074a7bfd61f5597d71aa0"
+    },
+    {
+      "evidence_id": "m_d7a9d1f22107f233",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d7a9d1f22107f233/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "d7a9d1f22107f233338c525a7e55d34acfe90630c27e4fe9f29b7f5f2aef29af",
+      "readback_user_sha256": "d7a9d1f22107f233338c525a7e55d34acfe90630c27e4fe9f29b7f5f2aef29af"
+    },
+    {
+      "evidence_id": "m_eb85892166acc8ef",
+      "archive_uri": "viking://user/formal/sessions/formal-m_eb85892166acc8ef/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "eb85892166acc8efb24c985b46b0548b05a16ead96df701b9c2aa55da3f08a2b",
+      "readback_user_sha256": "eb85892166acc8efb24c985b46b0548b05a16ead96df701b9c2aa55da3f08a2b"
+    },
+    {
+      "evidence_id": "m_f7ff6441bdd98e53",
+      "archive_uri": "viking://user/formal/sessions/formal-m_f7ff6441bdd98e53/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "f7ff6441bdd98e539ebcb54cc67a849c51784261d6431ec4f668f3390bcb1b22",
+      "readback_user_sha256": "f7ff6441bdd98e539ebcb54cc67a849c51784261d6431ec4f668f3390bcb1b22"
+    },
+    {
+      "evidence_id": "m_99ab4da076b7c734",
+      "archive_uri": "viking://user/formal/sessions/formal-m_99ab4da076b7c734/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "99ab4da076b7c734f32dc02f77e229037d19cc0083ac69c89a704b03fa15ec1c",
+      "readback_user_sha256": "99ab4da076b7c734f32dc02f77e229037d19cc0083ac69c89a704b03fa15ec1c"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "d6297f549707f98dc69a487f0b81c8af2e02a8e083f9875ecdafddd9ed7e38f2",
+      "readback_user_sha256": "d6297f549707f98dc69a487f0b81c8af2e02a8e083f9875ecdafddd9ed7e38f2"
+    },
+    {
+      "evidence_id": "m_70bd88efee712a9a",
+      "archive_uri": "viking://user/formal/sessions/formal-m_70bd88efee712a9a/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "70bd88efee712a9a2350516152ef85c7b371579022c2a8ee15f7eba2823ae176",
+      "readback_user_sha256": "70bd88efee712a9a2350516152ef85c7b371579022c2a8ee15f7eba2823ae176"
+    },
+    {
+      "evidence_id": "m_4a54af2b364be476",
+      "archive_uri": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001",
+      "exact_utf8_original": true,
+      "input_sha256": "4a54af2b364be4763105262a57d08f8d654f30b407e9bc0edf21d23574e64fca",
+      "readback_user_sha256": "4a54af2b364be4763105262a57d08f8d654f30b407e9bc0edf21d23574e64fca"
+    }
+  ],
+  "archive_to_memory_lineage": [
+    {
+      "evidence_id": "m_c558d1541c4b9d0f",
+      "archive_uri": "viking://user/formal/sessions/formal-m_c558d1541c4b9d0f/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/01/larch_project_started.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_c558d1541c4b9d0f/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d7a9d1f22107f233",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d7a9d1f22107f233/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/08/batch_update_loss_report.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d7a9d1f22107f233/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d7a9d1f22107f233",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d7a9d1f22107f233/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/08/replay_restoration_test.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d7a9d1f22107f233/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d7a9d1f22107f233",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d7a9d1f22107f233/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/08/delivery_mode_unchanged.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d7a9d1f22107f233/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_eb85892166acc8ef",
+      "archive_uri": "viking://user/formal/sessions/formal-m_eb85892166acc8ef/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/01/project_cobalt_started.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_eb85892166acc8ef/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_eb85892166acc8ef",
+      "archive_uri": "viking://user/formal/sessions/formal-m_eb85892166acc8ef/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/01/batch_delivery_selected.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_eb85892166acc8ef/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_eb85892166acc8ef",
+      "archive_uri": "viking://user/formal/sessions/formal-m_eb85892166acc8ef/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/01/retry_policy_set.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_eb85892166acc8ef/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_f7ff6441bdd98e53",
+      "archive_uri": "viking://user/formal/sessions/formal-m_f7ff6441bdd98e53/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/08/update_loss_report.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_f7ff6441bdd98e53/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_f7ff6441bdd98e53",
+      "archive_uri": "viking://user/formal/sessions/formal-m_f7ff6441bdd98e53/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/08/replay_restoration.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_f7ff6441bdd98e53/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_f7ff6441bdd98e53",
+      "archive_uri": "viking://user/formal/sessions/formal-m_f7ff6441bdd98e53/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/08/delivery_mode_decision.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_f7ff6441bdd98e53/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_99ab4da076b7c734",
+      "archive_uri": "viking://user/formal/sessions/formal-m_99ab4da076b7c734/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/15/larch_source_switch.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_99ab4da076b7c734/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_99ab4da076b7c734",
+      "archive_uri": "viking://user/formal/sessions/formal-m_99ab4da076b7c734/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/15/gate_outage_recovery.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_99ab4da076b7c734/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/larch_reviewed.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/delivery_choice_kept.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/procedure_validated.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/outage_procedure_selected.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/retry_policy_replaced.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_d6297f549707f98d",
+      "archive_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/budget_owner_unassigned.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_d6297f549707f98d/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_70bd88efee712a9a",
+      "archive_uri": "viking://user/formal/sessions/formal-m_70bd88efee712a9a/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/15/cobalt_stream_switch.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_70bd88efee712a9a/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_70bd88efee712a9a",
+      "archive_uri": "viking://user/formal/sessions/formal-m_70bd88efee712a9a/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/15/gate_outage_recovery.md",
+      "operation": "updates",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_70bd88efee712a9a/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_4a54af2b364be476",
+      "archive_uri": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_4a54af2b364be476",
+      "archive_uri": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/delivery_choice_retained.md",
+      "operation": "adds",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001/memory_diff.json"
+    },
+    {
+      "evidence_id": "m_4a54af2b364be476",
+      "archive_uri": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001",
+      "memory_uri": "viking://user/formal/memories/events/2026/08/22/retry_policy_replaced.md",
+      "operation": "updates",
+      "native_diff_uri": "viking://user/formal/sessions/formal-m_4a54af2b364be476/history/archive_001/memory_diff.json"
+    }
+  ],
+  "memory_metadata": [
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/01/batch_delivery_selected.md",
+      "fields": {
+        "event_name": "batch_delivery_selected",
+        "goal": "Choose batch delivery",
+        "summary": "On 2026-08-01, Ivo chose BATCH-1-741 for batch delivery in Project Cobalt.",
+        "ranges": "0",
+        "source_extraction_id": "5b48faef60cd48aa8a30723926e8f1a0",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/01/larch_project_started.md",
+      "fields": {
+        "event_name": "larch_project_started",
+        "goal": "Record project startup settings",
+        "summary": "Mara started project Larch on 2026-08-01, chose BATCH-0-741 for batch delivery, and set RETRY-0-108 as the initial retry policy.",
+        "ranges": "0",
+        "source_extraction_id": "60c061596dae47e4b38de12534b85cc7",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/01/project_cobalt_started.md",
+      "fields": {
+        "event_name": "project_cobalt_started",
+        "goal": "Start Project Cobalt",
+        "summary": "On 2026-08-01, Ivo started Project Cobalt.",
+        "ranges": "0",
+        "source_extraction_id": "5b48faef60cd48aa8a30723926e8f1a0",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/01/retry_policy_set.md",
+      "fields": {
+        "event_name": "retry_policy_set",
+        "goal": "Set initial retry policy",
+        "summary": "On 2026-08-01, Ivo set RETRY-1-108 as the initial retry policy for Project Cobalt.",
+        "ranges": "0",
+        "source_extraction_id": "5b48faef60cd48aa8a30723926e8f1a0",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/08/batch_update_loss_report.md",
+      "fields": {
+        "event_name": "batch_update_loss_report",
+        "goal": "Record outage update loss",
+        "summary": "At the 2026-08-08 meeting, Mara reported that BATCH-0-741 lost updates during GATE-0-519 outages.",
+        "ranges": "0",
+        "source_extraction_id": "179ee81da6c04625acaf4c70053a94b2",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/08/delivery_mode_decision.md",
+      "fields": {
+        "event_name": "delivery_mode_decision",
+        "goal": "Record delivery decision",
+        "summary": "On 2026-08-08, no change of delivery mode was approved at the meeting.",
+        "ranges": "0",
+        "source_extraction_id": "69e6fb4a671d48e0a937e46a1a387a62",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/08/delivery_mode_unchanged.md",
+      "fields": {
+        "event_name": "delivery_mode_unchanged",
+        "goal": "Record delivery mode decision",
+        "summary": "At the 2026-08-08 meeting, no change of delivery mode was approved.",
+        "ranges": "0",
+        "source_extraction_id": "179ee81da6c04625acaf4c70053a94b2",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/08/replay_restoration.md",
+      "fields": {
+        "event_name": "replay_restoration",
+        "goal": "Restore missing updates",
+        "summary": "On 2026-08-08, the team tested REPLAY-1-632, which restored the missing updates to BATCH-1-741.",
+        "ranges": "0",
+        "source_extraction_id": "69e6fb4a671d48e0a937e46a1a387a62",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/08/replay_restoration_test.md",
+      "fields": {
+        "event_name": "replay_restoration_test",
+        "goal": "Record replay test result",
+        "summary": "At the 2026-08-08 meeting, the team tested REPLAY-0-632, which restored the missing updates to BATCH-0-741.",
+        "ranges": "0",
+        "source_extraction_id": "179ee81da6c04625acaf4c70053a94b2",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/08/update_loss_report.md",
+      "fields": {
+        "event_name": "update_loss_report",
+        "goal": "Record update loss",
+        "summary": "On 2026-08-08, Ivo reported that BATCH-1-741 lost updates during GATE-1-519 outages.",
+        "ranges": "0",
+        "source_extraction_id": "69e6fb4a671d48e0a937e46a1a387a62",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/15/cobalt_stream_switch.md",
+      "fields": {
+        "event_name": "cobalt_stream_switch",
+        "goal": "Record approved delivery switch",
+        "summary": "On 2026-08-15, Ivo approved switching Cobalt from BATCH-1-741 to STREAM-1-286, superseding the August 1 delivery decision.",
+        "ranges": "0",
+        "source_extraction_id": "7759b6b51101469c88c6e546f274d719",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/15/gate_outage_recovery.md",
+      "fields": {
+        "event_name": "gate_outage_recovery",
+        "goal": "Record outage and recovery",
+        "summary": "GATE-1-519 outages were recorded on 2026-08-08. The user asked to retain the successful recovery procedure from that incident.",
+        "ranges": "1",
+        "source_extraction_id": "7759b6b51101469c88c6e546f274d719",
+        "version": 2,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/15/larch_source_switch.md",
+      "fields": {
+        "event_name": "larch_source_switch",
+        "goal": "Record approved source change",
+        "summary": "On 2026-08-15, Mara approved switching Larch from BATCH-0-741 to STREAM-0-286, superseding the 2026-08-01 delivery decision.",
+        "ranges": "0",
+        "source_extraction_id": "4514a14104d24497888cd65ee185f2d5",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/budget_owner_unassigned.md",
+      "fields": {
+        "event_name": "budget_owner_unassigned",
+        "goal": "Record owner status",
+        "summary": "As of 2026-08-22, no budget owner had been appointed.",
+        "ranges": "0",
+        "source_extraction_id": "436bc0164c634b47adad6fa14e8111fb",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/cobalt_reviewed.md",
+      "fields": {
+        "event_name": "cobalt_reviewed",
+        "goal": "Record Cobalt review",
+        "summary": "On 2026-08-22, Ivo reviewed Cobalt.",
+        "ranges": "0",
+        "source_extraction_id": "ec47e5dd38b641839cc4903a2e8ce6e0",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/delivery_choice_kept.md",
+      "fields": {
+        "event_name": "delivery_choice_kept",
+        "goal": "Retain delivery choice",
+        "summary": "On 2026-08-22, the user directed that the delivery choice made on 2026-08-15 remain in effect.",
+        "ranges": "0",
+        "source_extraction_id": "436bc0164c634b47adad6fa14e8111fb",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/delivery_choice_retained.md",
+      "fields": {
+        "event_name": "delivery_choice_retained",
+        "goal": "Retain delivery choice",
+        "summary": "On 2026-08-22, the user reaffirmed that the delivery choice made on 2026-08-15 should remain in effect; the specific choice was not stated.",
+        "ranges": "0",
+        "source_extraction_id": "ec47e5dd38b641839cc4903a2e8ce6e0",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/larch_reviewed.md",
+      "fields": {
+        "event_name": "larch_reviewed",
+        "goal": "Record Larch review",
+        "summary": "Mara reviewed Larch on 2026-08-22.",
+        "ranges": "0",
+        "source_extraction_id": "436bc0164c634b47adad6fa14e8111fb",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/outage_procedure_selected.md",
+      "fields": {
+        "event_name": "outage_procedure_selected",
+        "goal": "Set next outage procedure",
+        "summary": "On 2026-08-22, the user specified that the recovery procedure validated on 2026-08-08 be used for the next outage.",
+        "ranges": "0",
+        "source_extraction_id": "436bc0164c634b47adad6fa14e8111fb",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/procedure_validated.md",
+      "fields": {
+        "event_name": "procedure_validated",
+        "goal": "Record procedure validation",
+        "summary": "The recovery procedure was validated on 2026-08-08.",
+        "ranges": "0",
+        "source_extraction_id": "436bc0164c634b47adad6fa14e8111fb",
+        "version": 1,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    },
+    {
+      "uri": "viking://user/formal/memories/events/2026/08/22/retry_policy_replaced.md",
+      "fields": {
+        "event_name": "retry_policy_replaced",
+        "goal": "Record retry policy change",
+        "summary": "On 2026-08-22, retry policy RETRY-1-907 superseded RETRY-1-108.",
+        "ranges": "0",
+        "source_extraction_id": "ec47e5dd38b641839cc4903a2e8ce6e0",
+        "version": 2,
+        "memory_type": "events"
+      },
+      "contains_archive_uri": false,
+      "readable_after_updates": true
+    }
+  ]
+}

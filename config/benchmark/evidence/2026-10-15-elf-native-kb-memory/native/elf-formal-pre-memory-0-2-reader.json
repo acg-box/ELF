@@ -1,0 +1,55 @@
+{
+  "id": "gen-1792119736-kdbgljV6v69z3hdjoC1I",
+  "object": "chat.completion",
+  "created": 1792119736,
+  "model": "openai/gpt-6-luna",
+  "provider": "OpenAI",
+  "system_fingerprint": null,
+  "service_tier": "default",
+  "choices": [
+    {
+      "index": 0,
+      "logprobs": null,
+      "finish_reason": "stop",
+      "native_finish_reason": "completed",
+      "message": {
+        "role": "assistant",
+        "content": "{\"answer\":\"BATCH-0-741 for batch delivery remained approved; no change of delivery mode was approved at the August 8 meeting. REPLAY-0-632 was tested, not approved as a delivery-mode change.\",\"citations\":[{\"handle\":\"elf-source-v1/ff686235-3670-56c2-9736-c67a60f5e1c1/e032cf6428958d6bb5f40287c837cb31bb75c83cb6b7e3b2222615de9cb2d6dc/0/124\",\"quote\":\"They chose BATCH-0-741 for batch delivery.\"},{\"handle\":\"elf-source-v1/a90214e9-0589-51df-8539-8b240a2f11bf/125196e162e06eeea996a67f139012614473ae7a4725d1409bb3c66c8f22640d/0/205\",\"quote\":\"The team tested REPLAY-0-632, which restored the missing updates. No change of delivery mode was approved at this meeting.\"}]}",
+        "refusal": null,
+        "reasoning": null,
+        "reasoning_details": [
+          {
+            "type": "reasoning.encrypted",
+            "data": "gAAAAABq0ZO5Bfa4kThN7Lr7VMDVY2j7HsBEAZWx9I-XH7l5yzqJ2NmlnOZxK2LR4sJU92f_KZrOsF1BWPrItVI1nu-rsdCrxNfkkKPRxxgdU2wQS24qsxb_WC2dTAGO6ISRH6jtQiicL3qHInk07Lw201yXDeTpsh1c7Z0qFP0Q3A8PBdbgDSRAOey9cdL2yd9FW165GnzfVTOfHHga5cf3hDvlaerUtni3PGDFy0_hlgVDPpO563YsSDxk8YsQ9HzMEOWccVgvPP2j86PPWQcWO-nIXVIGzDCwXHU99hYCP22-5d5aj0BkmGdMeBiyJNSiZ7nQKoxH0w5a8euCzkMRuMoTNCiprtN5i2wuAjJZ3YpcQ5nPSuzIYX2Z27uZZPWg-hBnt_CRp6dlbd1hOnJa4ygMWHh52e6iiqYsTfi_caQ09d4H7GQ0BOK3qsKLM7pm03cyRxRXjl82Kk4mD0mLHx6-VVHV8UShV5YYa0b9pqSmJyNOdyXmW_igkoczT0WWWZlJ5L2gdDIjdZrgsxdjbDLixsW5-0EooeU4jJnlhEIW2t4HiD10YMrGWA1Zk2lBGbM2kulk2J2QT22ZsSgKDR5ukf_HIx47dnWAPNm7FyAX6BgMUR7BilBYIHwQc8krNNiN-h-cqsp8ZauigWZbGuiB9yCYbA_Vo2yeEqOmfwSsZqHrDuakwwD8DgIYdm20eHkzRDd3ykQnRFliqFUBWpM5nol4FXfgxxjBVbE7FXXsVhlUBXGl_xYg2p4fgI6X43RoFKo_ZKzjGN-sajlmBqrsbr5RzF-915M8TyEPU-NvezmMJ_U4oBpd3ms6i0aW6JxvI5PH47BtG6HM7ztGs5UBnB8DKcUqmDggY7mm13DLH0AUoiUpOaAmcB8kJgZA6n2X-CSMgDGMGjSa406dniBRv2CNe-lAjlvkXmCaNsndd7Y7WU5loncFyq_PwmTAhLOJ0JjdY9_OoRWeFV5ob4jyg0gBq8zGhTfOW0MsulEz05I3Ki27W0ch-GbV1ibSPJ6KsWFylepYI3tlrTgD9QFAWGi0x0fXhlvI5kRwuzXl3rLG5iSKh5whovrUg-3YA36bdou3MPZ3st_NfuRkn4R_7aaCJSekxk5QNCM276IigdDuJPJ8cfVE3qV0kRoNVqEN5dfumC5_FLw2jAzvg271YQY3MrvQSBRAZGXh7ZcgTJKRh2wddZB0J1RIDzhvEpJ0GnB6ya1fNiQjqaIgHQ25bhntdnEVUByHAqennpLnH96fP84yU3WRI8cMT4ieZVv_2SDyxV-9S5gV9XehA8MpNNOJl0q0xl-Na1YRcmidrDyMdwZ45ZEfL0onpfVVilbspBzABK3u_POd1nG8rSymj978GV2olgdACs_o3Dy5E9dvvuyZc0OJD_lkY14II9M_03lqIK8A7DObZqwXRgU7RNfAfYMiNr3nllLT2kteT1jEswWjFcZWn7bNJHqvxqswdlNyPOHw8zGlqKtmAoHLce_Sn4Jn8MTHf39PS9ag_4U-pjxlx5QbGn1CVaQ4HaKkS0hqhHHI0tRoafiFvAs_J64kcEhnrtEu4Yv2zExpQT7AROXmPMe7gOV6PHZbIEsqBezyLEjxtW6_45VHyxmwsDuf-99crPeKezJNcpOONt-Nqcmh98i8TZDEH2WvOs0cc4xD4qap6t0nUiEup4bTCPYMKQ0pA4nNX4qTCWFFvR_rm2dmGgzdZuFwuUzk7VyCTnmw8bpPswvijZNzFzoelv-bPCEqFN86-G4ALiczi7npVzGClcbCEefBYGY3OMKIrtgio-MsR7B-5KYQ190T-gqvYT0G_AVvL49Q7eMbjUaXBzBlfg6sy_cYdOlNAuX9P2pXdK2Ff_AOFCrCFIR5iO-ly6Gvrv759vvl0osLW7-6EaNHnutekCUmXeMUl0kb9_36HsjSWQqkEn0Dte7L858QMkid3s2R4NEJkmX2iO5XgCT6b-uiX3U0yqopxoEA6wSS.eyJlbmRwb2ludF9zbHVnIjoib3BlbmFpL2dwdC02LWx1bmEtMjAyNjA5MjJ8b3BlbmFpIn0",
+            "format": "openai-responses-v1",
+            "id": "rs_0bce933bc4fe6d04016ad193b8d18c87d188666ffcbfc41f91",
+            "index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 4426,
+    "completion_tokens": 280,
+    "total_tokens": 4706,
+    "cost": 0.000693175,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 4423,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.000693175,
+      "upstream_inference_prompt_cost": 0.000553175,
+      "upstream_inference_completions_cost": 0.00014
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 33,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  }
+}

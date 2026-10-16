@@ -1,0 +1,15 @@
+{
+  "cases": 13,
+  "original_drafts_accepted": 12,
+  "rejected_before_delivery": 1,
+  "accepted_after_bounded_correction": 13,
+  "correction_calls": 1,
+  "new_paid_usd": 0.0008420500000001496,
+  "paid_total_usd": 2.0161430060000005,
+  "conservative_exposure_usd": 2.0883237059999984,
+  "provider_requests": 1,
+  "embedding_requests": 0,
+  "source_originals_unchanged": 14,
+  "new_retrieval_or_extraction": false,
+  "boundary": "Exact 13 recorded drafts through the shared finalizer and live native checker. One failed draft receives one same-model correction with its already-delivered context. Not a new competitive score or fresh end-to-end benchmark."
+}

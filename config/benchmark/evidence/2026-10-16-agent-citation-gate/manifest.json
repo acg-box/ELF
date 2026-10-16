@@ -1,0 +1,77 @@
+[
+  {
+    "path": "base-provenance.json",
+    "bytes": 20991,
+    "sha256": "92981dffc3f9475b57e3790eadcfabfcb324be7b7fa63c8e4926bcd5c374d2d2"
+  },
+  {
+    "path": "cleanup-receipt.json",
+    "bytes": 726,
+    "sha256": "a355855b5a5958b61471fc146d7ccd25f949e26ee7a4890f80c3e3effc348b86"
+  },
+  {
+    "path": "originals-after.json",
+    "bytes": 4063,
+    "sha256": "56f454adf102e2e618b1d575b4e2a849b9378002065759724fd84ae09f393263"
+  },
+  {
+    "path": "originals-before.json",
+    "bytes": 4063,
+    "sha256": "56f454adf102e2e618b1d575b4e2a849b9378002065759724fd84ae09f393263"
+  },
+  {
+    "path": "protocol.json",
+    "bytes": 1357,
+    "sha256": "5fe38ab949835ad7fd4fb9bae02f764fa92364b96e6cb5d280e41c7aff37315e"
+  },
+  {
+    "path": "rejected-draft.json",
+    "bytes": 2242,
+    "sha256": "60230aae694ffaef0eb94c5b3f10018b56f6c7a0b4dc0c27c1fb934aee1ef027"
+  },
+  {
+    "path": "repair-request.json",
+    "bytes": 14209,
+    "sha256": "c5103c2f8756169383c7b8fc1342a0b787ad52a7a738989e98ef4ad1e19ae1c9"
+  },
+  {
+    "path": "repair-response.json",
+    "bytes": 5078,
+    "sha256": "1144ca597f4abd849b31236061807f08bb2e19a0c9c84d079fae5790bb36f81f"
+  },
+  {
+    "path": "repaired-result.json",
+    "bytes": 5461,
+    "sha256": "3f6abbe44b87142d8d22148141706f437d376c3ce3ee57a40947b15ae334fd4a"
+  },
+  {
+    "path": "replay.json",
+    "bytes": 38851,
+    "sha256": "8ab6ede32a9bc130377f7eaf71e1001558b54cfd999c88e35c9db1349b62be97"
+  },
+  {
+    "path": "request-ledger.json",
+    "bytes": 1101,
+    "sha256": "b9ed22e60d8618e8f14ab172e20fe1567ad791b87e21a4b642621419dcd4a5f5"
+  },
+  {
+    "path": "review.json",
+    "bytes": 365,
+    "sha256": "a086222fbcfb5d3d3c204cfff178aeacd06efeaf74f532cda68c9ae0d7e8c963"
+  },
+  {
+    "path": "runtime-build.json",
+    "bytes": 525,
+    "sha256": "603a9fcb668bb434ab51e05ed791e3cec604dd0305685cd8ad912e5fa0c7c714"
+  },
+  {
+    "path": "summary.json",
+    "bytes": 657,
+    "sha256": "98170fb54bb84e4e89f00f1f80098af4b0afcd298b4be1700fae134ba78661a6"
+  },
+  {
+    "path": "validate_final_gate.py.txt",
+    "bytes": 7929,
+    "sha256": "2640e940bcaa5e208958e6969bfc20055c4c7db44e0191f74c77f7ad9803d141"
+  }
+]

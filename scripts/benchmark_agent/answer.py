@@ -1,6 +1,33 @@
 """Consume native claims with one citation authority; retain legacy-envelope diagnostics."""
 import json
 import re
+from copy import deepcopy
+
+
+class AnswerRejected(ValueError):
+    """Retain failed native checks without exposing a renderable answer."""
+
+    def __init__(self, bindings):
+        super().__init__('The final answer has invalid citation bindings. Repair it before submission.')
+        self.bindings = bindings
+
+
+def finalize_answer(answer, api):
+    """Return the exact draft only after every native claim binding passes."""
+    if (not isinstance(answer, dict) or not isinstance(answer.get('text'), str)
+            or not isinstance(answer.get('supported'), bool)
+            or not isinstance(answer.get('claims'), list) or not answer['claims']):
+        raise ValueError('Expected text, supported, and nonempty claims')
+    final = deepcopy({key: answer[key] for key in ('text', 'supported', 'claims')})
+    bindings = api('/v2/evidence/check', {'claims': final['claims']})
+    checks = bindings.get('claims')
+    if (not isinstance(checks, list) or len(checks) != len(final['claims'])
+            or any(not isinstance(check, dict) or check.get('claim_index') != index
+                   for index, check in enumerate(checks))):
+        raise ValueError('The native checker did not return every claim verdict in order')
+    if any(check.get('binding_verified') is not True for check in checks):
+        raise AnswerRejected(bindings)
+    return {'answer': final, 'claim_bindings': bindings}
 
 
 def decode_answer(content):
